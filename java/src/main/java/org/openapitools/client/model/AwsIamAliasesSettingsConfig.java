@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * AwsIamAliasesSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T15:11:59.259059170Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T19:12:39.049199002Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class AwsIamAliasesSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNTS = "accounts";
   @SerializedName(SERIALIZED_NAME_ACCOUNTS)
