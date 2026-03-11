@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SQS Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T00:00:33.294828636Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T01:35:06.937475822Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class AwssqsoutputSettingsConfig {
   public static final String SERIALIZED_NAME_MESSAGE_GROUP_ID = "message_group_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_GROUP_ID)
