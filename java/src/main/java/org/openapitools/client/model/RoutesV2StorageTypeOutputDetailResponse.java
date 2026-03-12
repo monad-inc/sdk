@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2StorageTypeOutputDetailResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T20:11:52.011576256Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T21:10:24.791895260Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2StorageTypeOutputDetailResponse {
   public static final String SERIALIZED_NAME_EGRESS_BYTES = "egress_bytes";
   @SerializedName(SERIALIZED_NAME_EGRESS_BYTES)
