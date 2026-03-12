@@ -4,11 +4,98 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**v2OrganizationIdSandboxTransformPost**](SandboxApi.md#v2OrganizationIdSandboxTransformPost) | **POST** /v2/{organization_id}/sandbox/transform | Apply transformation to record
 [**v2SandboxTemplateGet**](SandboxApi.md#v2SandboxTemplateGet) | **GET** /v2/sandbox/template | List available templates
 [**v2SandboxTemplatePost**](SandboxApi.md#v2SandboxTemplatePost) | **POST** /v2/sandbox/template | Generate sample record
 [**v2SandboxTransformPost**](SandboxApi.md#v2SandboxTransformPost) | **POST** /v2/sandbox/transform | Apply transformation to record
 [**v3OrganizationIdEnrichmentsSandboxPost**](SandboxApi.md#v3OrganizationIdEnrichmentsSandboxPost) | **POST** /v3/{organization_id}/enrichments/sandbox | Apply enrichment to record
 
+
+# **v2OrganizationIdSandboxTransformPost**
+> RoutesV2ApplyTransformationResponse v2OrganizationIdSandboxTransformPost(routesV2ApplyTransformationRequest)
+
+Apply a transformation configuration to a JSON record, resolving secret references from the organization
+
+### Example
+
+
+```typescript
+import { createConfiguration, SandboxApi } from '';
+import type { SandboxApiV2OrganizationIdSandboxTransformPostRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new SandboxApi(configuration);
+
+const request: SandboxApiV2OrganizationIdSandboxTransformPostRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Transform configuration and record
+  routesV2ApplyTransformationRequest: {
+    config: {
+      conditional: {
+        conditions: {
+          conditions: [
+            ,
+          ],
+          config: {
+            "key": null,
+          },
+          operator: "operator_example",
+          typeId: "typeId_example",
+        },
+        _else: "_else_example",
+      },
+      operations: [
+        {
+          arguments: {
+            "key": null,
+          },
+          description: "description_example",
+          operation: "operation_example",
+        },
+      ],
+    },
+    record: [
+      1,
+    ],
+  },
+};
+
+const data = await apiInstance.v2OrganizationIdSandboxTransformPost(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV2ApplyTransformationRequest** | **RoutesV2ApplyTransformationRequest**| Transform configuration and record |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+
+
+### Return type
+
+**RoutesV2ApplyTransformationResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid request parameters |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2SandboxTemplateGet**
 > RoutesV2ListTemplatesResponse v2SandboxTemplateGet()
@@ -158,9 +245,6 @@ const request: SandboxApiV2SandboxTransformPostRequest = {
           },
           description: "description_example",
           operation: "operation_example",
-          secrets: {
-            "key": null,
-          },
         },
       ],
     },

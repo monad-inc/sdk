@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-11T21:29:49.377672289Z[Etc/UTC]
+  - Build date: 2026-03-12T01:51:34.959314Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -265,6 +265,7 @@ Class | Method | HTTP request | Description
 *RolesApi* | [**v2OrganizationIdRolesRoleIdDelete**](docs/RolesApi.md#v2OrganizationIdRolesRoleIdDelete) | **DELETE** /v2/{organization_id}/roles/{role_id} | Delete role
 *RolesApi* | [**v2OrganizationIdRolesRoleIdGet**](docs/RolesApi.md#v2OrganizationIdRolesRoleIdGet) | **GET** /v2/{organization_id}/roles/{role_id} | Get role
 *RolesApi* | [**v2OrganizationIdRolesRoleIdPatch**](docs/RolesApi.md#v2OrganizationIdRolesRoleIdPatch) | **PATCH** /v2/{organization_id}/roles/{role_id} | Update role
+*SandboxApi* | [**v2OrganizationIdSandboxTransformPost**](docs/SandboxApi.md#v2OrganizationIdSandboxTransformPost) | **POST** /v2/{organization_id}/sandbox/transform | Apply transformation to record
 *SandboxApi* | [**v2SandboxTemplateGet**](docs/SandboxApi.md#v2SandboxTemplateGet) | **GET** /v2/sandbox/template | List available templates
 *SandboxApi* | [**v2SandboxTemplatePost**](docs/SandboxApi.md#v2SandboxTemplatePost) | **POST** /v2/sandbox/template | Generate sample record
 *SandboxApi* | [**v2SandboxTransformPost**](docs/SandboxApi.md#v2SandboxTransformPost) | **POST** /v2/sandbox/transform | Apply transformation to record

@@ -4,11 +4,91 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**v2OrganizationIdSandboxTransformPost**](SandboxApi.md#v2OrganizationIdSandboxTransformPost) | **POST** /v2/{organization_id}/sandbox/transform | Apply transformation to record |
 | [**v2SandboxTemplateGet**](SandboxApi.md#v2SandboxTemplateGet) | **GET** /v2/sandbox/template | List available templates |
 | [**v2SandboxTemplatePost**](SandboxApi.md#v2SandboxTemplatePost) | **POST** /v2/sandbox/template | Generate sample record |
 | [**v2SandboxTransformPost**](SandboxApi.md#v2SandboxTransformPost) | **POST** /v2/sandbox/transform | Apply transformation to record |
 | [**v3OrganizationIdEnrichmentsSandboxPost**](SandboxApi.md#v3OrganizationIdEnrichmentsSandboxPost) | **POST** /v3/{organization_id}/enrichments/sandbox | Apply enrichment to record |
 
+
+<a id="v2OrganizationIdSandboxTransformPost"></a>
+# **v2OrganizationIdSandboxTransformPost**
+> RoutesV2ApplyTransformationResponse v2OrganizationIdSandboxTransformPost(organizationId, routesV2ApplyTransformationRequest)
+
+Apply transformation to record
+
+Apply a transformation configuration to a JSON record, resolving secret references from the organization
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SandboxApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    SandboxApi apiInstance = new SandboxApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest = new RoutesV2ApplyTransformationRequest(); // RoutesV2ApplyTransformationRequest | Transform configuration and record
+    try {
+      RoutesV2ApplyTransformationResponse result = apiInstance.v2OrganizationIdSandboxTransformPost(organizationId, routesV2ApplyTransformationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SandboxApi#v2OrganizationIdSandboxTransformPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **routesV2ApplyTransformationRequest** | [**RoutesV2ApplyTransformationRequest**](RoutesV2ApplyTransformationRequest.md)| Transform configuration and record | |
+
+### Return type
+
+[**RoutesV2ApplyTransformationResponse**](RoutesV2ApplyTransformationResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Invalid request parameters |  -  |
+| **500** | Internal server error |  -  |
 
 <a id="v2SandboxTemplateGet"></a>
 # **v2SandboxTemplateGet**

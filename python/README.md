@@ -238,6 +238,7 @@ Class | Method | HTTP request | Description
 *RolesApi* | [**v2_organization_id_roles_role_id_delete**](docs/RolesApi.md#v2_organization_id_roles_role_id_delete) | **DELETE** /v2/{organization_id}/roles/{role_id} | Delete role
 *RolesApi* | [**v2_organization_id_roles_role_id_get**](docs/RolesApi.md#v2_organization_id_roles_role_id_get) | **GET** /v2/{organization_id}/roles/{role_id} | Get role
 *RolesApi* | [**v2_organization_id_roles_role_id_patch**](docs/RolesApi.md#v2_organization_id_roles_role_id_patch) | **PATCH** /v2/{organization_id}/roles/{role_id} | Update role
+*SandboxApi* | [**v2_organization_id_sandbox_transform_post**](docs/SandboxApi.md#v2_organization_id_sandbox_transform_post) | **POST** /v2/{organization_id}/sandbox/transform | Apply transformation to record
 *SandboxApi* | [**v2_sandbox_template_get**](docs/SandboxApi.md#v2_sandbox_template_get) | **GET** /v2/sandbox/template | List available templates
 *SandboxApi* | [**v2_sandbox_template_post**](docs/SandboxApi.md#v2_sandbox_template_post) | **POST** /v2/sandbox/template | Generate sample record
 *SandboxApi* | [**v2_sandbox_transform_post**](docs/SandboxApi.md#v2_sandbox_transform_post) | **POST** /v2/sandbox/transform | Apply transformation to record

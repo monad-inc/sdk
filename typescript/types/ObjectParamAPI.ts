@@ -6190,6 +6190,22 @@ export class ObjectRolesApi {
 import { ObservableSandboxApi } from "./ObservableAPI";
 import { SandboxApiRequestFactory, SandboxApiResponseProcessor} from "../apis/SandboxApi";
 
+export interface SandboxApiV2OrganizationIdSandboxTransformPostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof SandboxApiv2OrganizationIdSandboxTransformPost
+     */
+    organizationId: string
+    /**
+     * Transform configuration and record
+     * @type RoutesV2ApplyTransformationRequest
+     * @memberof SandboxApiv2OrganizationIdSandboxTransformPost
+     */
+    routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
+}
+
 export interface SandboxApiV2SandboxTemplateGetRequest {
     /**
      * 
@@ -6238,6 +6254,24 @@ export class ObjectSandboxApi {
 
     public constructor(configuration: Configuration, requestFactory?: SandboxApiRequestFactory, responseProcessor?: SandboxApiResponseProcessor) {
         this.api = new ObservableSandboxApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param param the request object
+     */
+    public v2OrganizationIdSandboxTransformPostWithHttpInfo(param: SandboxApiV2OrganizationIdSandboxTransformPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+        return this.api.v2OrganizationIdSandboxTransformPostWithHttpInfo(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param param the request object
+     */
+    public v2OrganizationIdSandboxTransformPost(param: SandboxApiV2OrganizationIdSandboxTransformPostRequest, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
+        return this.api.v2OrganizationIdSandboxTransformPost(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
     }
 
     /**

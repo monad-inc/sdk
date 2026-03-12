@@ -215,6 +215,7 @@ Class | Method | HTTP request | Description
 *RolesAPI* | [**V2OrganizationIdRolesRoleIdDelete**](docs/RolesAPI.md#v2organizationidrolesroleiddelete) | **Delete** /v2/{organization_id}/roles/{role_id} | Delete role
 *RolesAPI* | [**V2OrganizationIdRolesRoleIdGet**](docs/RolesAPI.md#v2organizationidrolesroleidget) | **Get** /v2/{organization_id}/roles/{role_id} | Get role
 *RolesAPI* | [**V2OrganizationIdRolesRoleIdPatch**](docs/RolesAPI.md#v2organizationidrolesroleidpatch) | **Patch** /v2/{organization_id}/roles/{role_id} | Update role
+*SandboxAPI* | [**V2OrganizationIdSandboxTransformPost**](docs/SandboxAPI.md#v2organizationidsandboxtransformpost) | **Post** /v2/{organization_id}/sandbox/transform | Apply transformation to record
 *SandboxAPI* | [**V2SandboxTemplateGet**](docs/SandboxAPI.md#v2sandboxtemplateget) | **Get** /v2/sandbox/template | List available templates
 *SandboxAPI* | [**V2SandboxTemplatePost**](docs/SandboxAPI.md#v2sandboxtemplatepost) | **Post** /v2/sandbox/template | Generate sample record
 *SandboxAPI* | [**V2SandboxTransformPost**](docs/SandboxAPI.md#v2sandboxtransformpost) | **Post** /v2/sandbox/transform | Apply transformation to record

@@ -4536,6 +4536,30 @@ export class PromiseSandboxApi {
     }
 
     /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param organizationId Organization ID
+     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     */
+    public v2OrganizationIdSandboxTransformPostWithHttpInfo(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdSandboxTransformPostWithHttpInfo(organizationId, routesV2ApplyTransformationRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param organizationId Organization ID
+     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     */
+    public v2OrganizationIdSandboxTransformPost(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdSandboxTransformPost(organizationId, routesV2ApplyTransformationRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Get a list of all valid record type templates
      * List available templates
      * @param [body]

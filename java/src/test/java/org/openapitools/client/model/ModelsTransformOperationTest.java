@@ -63,12 +63,4 @@ public class ModelsTransformOperationTest {
         // TODO: test operation
     }
 
-    /**
-     * Test the property 'secrets'
-     */
-    @Test
-    public void secretsTest() {
-        // TODO: test secrets
-    }
-
 }

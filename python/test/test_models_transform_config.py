@@ -50,10 +50,7 @@ class TestModelsTransformConfig(unittest.TestCase):
                             'key' : null
                             }, 
                         description = '', 
-                        operation = '', 
-                        secrets = {
-                            'key' : null
-                            }, )
+                        operation = '', )
                     ]
             )
         else:

@@ -40,10 +40,7 @@ class TestModelsTransformOperation(unittest.TestCase):
                     'key' : null
                     },
                 description = '',
-                operation = '',
-                secrets = {
-                    'key' : null
-                    }
+                operation = ''
             )
         else:
             return ModelsTransformOperation(

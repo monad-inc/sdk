@@ -54,10 +54,7 @@ class TestModelsTransformsRepositoryList(unittest.TestCase):
                                         'key' : null
                                         }, 
                                     description = '', 
-                                    operation = '', 
-                                    secrets = {
-                                        'key' : null
-                                        }, )
+                                    operation = '', )
                                 ], ), 
                         created_at = '', 
                         description = '', 

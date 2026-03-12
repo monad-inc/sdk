@@ -16,7 +16,6 @@ export class ModelsTransformOperation {
     'arguments'?: { [key: string]: any; };
     'description'?: string;
     'operation'?: string;
-    'secrets'?: { [key: string]: any; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -39,12 +38,6 @@ export class ModelsTransformOperation {
             "name": "operation",
             "baseName": "operation",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "secrets",
-            "baseName": "secrets",
-            "type": "{ [key: string]: any; }",
             "format": ""
         }    ];
 

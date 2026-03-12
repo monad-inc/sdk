@@ -51,10 +51,7 @@ class TestRoutesV2ApplyTransformationRequest(unittest.TestCase):
                                 'key' : null
                                 }, 
                             description = '', 
-                            operation = '', 
-                            secrets = {
-                                'key' : null
-                                }, )
+                            operation = '', )
                         ], ),
                 record = [
                     56

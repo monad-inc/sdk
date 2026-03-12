@@ -6143,6 +6143,42 @@ export class ObservableSandboxApi {
     }
 
     /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param organizationId Organization ID
+     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     */
+    public v2OrganizationIdSandboxTransformPostWithHttpInfo(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdSandboxTransformPost(organizationId, routesV2ApplyTransformationRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdSandboxTransformPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param organizationId Organization ID
+     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     */
+    public v2OrganizationIdSandboxTransformPost(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: ConfigurationOptions): Observable<RoutesV2ApplyTransformationResponse> {
+        return this.v2OrganizationIdSandboxTransformPostWithHttpInfo(organizationId, routesV2ApplyTransformationRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyTransformationResponse>) => apiResponse.data));
+    }
+
+    /**
      * Get a list of all valid record type templates
      * List available templates
      * @param [body]
