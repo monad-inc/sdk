@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.GithubComMonadIncAlertsModelsAlert;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsAlert;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

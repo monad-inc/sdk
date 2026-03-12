@@ -21,8 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.GithubComMonadIncAlertsModelsAlertStatus;
-import org.openapitools.client.model.GithubComMonadIncAlertsModelsResourceReference;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsAlertStatus;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsResourceReference;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,10 +49,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * GithubComMonadIncAlertsModelsAlert
+ * GithubComMonadIncCorePkgTypesModelsAlert
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T01:51:34.959314Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class GithubComMonadIncAlertsModelsAlert {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T19:44:55.767350696Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+public class GithubComMonadIncCorePkgTypesModelsAlert {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -86,7 +86,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
   @javax.annotation.Nullable
-  private GithubComMonadIncAlertsModelsResourceReference resource;
+  private GithubComMonadIncCorePkgTypesModelsResourceReference resource;
 
   public static final String SERIALIZED_NAME_RULE_ID = "rule_id";
   @SerializedName(SERIALIZED_NAME_RULE_ID)
@@ -106,18 +106,18 @@ public class GithubComMonadIncAlertsModelsAlert {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
-  private GithubComMonadIncAlertsModelsAlertStatus status;
+  private GithubComMonadIncCorePkgTypesModelsAlertStatus status;
 
-  public GithubComMonadIncAlertsModelsAlert() {
+  public GithubComMonadIncCorePkgTypesModelsAlert() {
   }
 
-  public GithubComMonadIncAlertsModelsAlert createdAt(@javax.annotation.Nullable Integer createdAt) {
+  public GithubComMonadIncCorePkgTypesModelsAlert createdAt(@javax.annotation.Nullable Integer createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
   /**
-   * Timestamp of original alert creation
+   * Get createdAt
    * @return createdAt
    */
   @javax.annotation.Nullable
@@ -130,7 +130,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert description(@javax.annotation.Nullable String description) {
+  public GithubComMonadIncCorePkgTypesModelsAlert description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -149,7 +149,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert id(@javax.annotation.Nullable String id) {
+  public GithubComMonadIncCorePkgTypesModelsAlert id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -168,7 +168,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert metadata(@javax.annotation.Nullable Object metadata) {
+  public GithubComMonadIncCorePkgTypesModelsAlert metadata(@javax.annotation.Nullable Object metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -187,7 +187,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert name(@javax.annotation.Nullable String name) {
+  public GithubComMonadIncCorePkgTypesModelsAlert name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -206,7 +206,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert organizationId(@javax.annotation.Nullable String organizationId) {
+  public GithubComMonadIncCorePkgTypesModelsAlert organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -225,7 +225,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert resource(@javax.annotation.Nullable GithubComMonadIncAlertsModelsResourceReference resource) {
+  public GithubComMonadIncCorePkgTypesModelsAlert resource(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsResourceReference resource) {
     this.resource = resource;
     return this;
   }
@@ -235,16 +235,16 @@ public class GithubComMonadIncAlertsModelsAlert {
    * @return resource
    */
   @javax.annotation.Nullable
-  public GithubComMonadIncAlertsModelsResourceReference getResource() {
+  public GithubComMonadIncCorePkgTypesModelsResourceReference getResource() {
     return resource;
   }
 
-  public void setResource(@javax.annotation.Nullable GithubComMonadIncAlertsModelsResourceReference resource) {
+  public void setResource(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsResourceReference resource) {
     this.resource = resource;
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert ruleId(@javax.annotation.Nullable String ruleId) {
+  public GithubComMonadIncCorePkgTypesModelsAlert ruleId(@javax.annotation.Nullable String ruleId) {
     this.ruleId = ruleId;
     return this;
   }
@@ -263,7 +263,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert ruleType(@javax.annotation.Nullable String ruleType) {
+  public GithubComMonadIncCorePkgTypesModelsAlert ruleType(@javax.annotation.Nullable String ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -282,7 +282,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert severity(@javax.annotation.Nullable String severity) {
+  public GithubComMonadIncCorePkgTypesModelsAlert severity(@javax.annotation.Nullable String severity) {
     this.severity = severity;
     return this;
   }
@@ -301,7 +301,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlert status(@javax.annotation.Nullable GithubComMonadIncAlertsModelsAlertStatus status) {
+  public GithubComMonadIncCorePkgTypesModelsAlert status(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsAlertStatus status) {
     this.status = status;
     return this;
   }
@@ -311,11 +311,11 @@ public class GithubComMonadIncAlertsModelsAlert {
    * @return status
    */
   @javax.annotation.Nullable
-  public GithubComMonadIncAlertsModelsAlertStatus getStatus() {
+  public GithubComMonadIncCorePkgTypesModelsAlertStatus getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable GithubComMonadIncAlertsModelsAlertStatus status) {
+  public void setStatus(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsAlertStatus status) {
     this.status = status;
   }
 
@@ -329,18 +329,18 @@ public class GithubComMonadIncAlertsModelsAlert {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GithubComMonadIncAlertsModelsAlert githubComMonadIncAlertsModelsAlert = (GithubComMonadIncAlertsModelsAlert) o;
-    return Objects.equals(this.createdAt, githubComMonadIncAlertsModelsAlert.createdAt) &&
-        Objects.equals(this.description, githubComMonadIncAlertsModelsAlert.description) &&
-        Objects.equals(this.id, githubComMonadIncAlertsModelsAlert.id) &&
-        Objects.equals(this.metadata, githubComMonadIncAlertsModelsAlert.metadata) &&
-        Objects.equals(this.name, githubComMonadIncAlertsModelsAlert.name) &&
-        Objects.equals(this.organizationId, githubComMonadIncAlertsModelsAlert.organizationId) &&
-        Objects.equals(this.resource, githubComMonadIncAlertsModelsAlert.resource) &&
-        Objects.equals(this.ruleId, githubComMonadIncAlertsModelsAlert.ruleId) &&
-        Objects.equals(this.ruleType, githubComMonadIncAlertsModelsAlert.ruleType) &&
-        Objects.equals(this.severity, githubComMonadIncAlertsModelsAlert.severity) &&
-        Objects.equals(this.status, githubComMonadIncAlertsModelsAlert.status);
+    GithubComMonadIncCorePkgTypesModelsAlert githubComMonadIncCorePkgTypesModelsAlert = (GithubComMonadIncCorePkgTypesModelsAlert) o;
+    return Objects.equals(this.createdAt, githubComMonadIncCorePkgTypesModelsAlert.createdAt) &&
+        Objects.equals(this.description, githubComMonadIncCorePkgTypesModelsAlert.description) &&
+        Objects.equals(this.id, githubComMonadIncCorePkgTypesModelsAlert.id) &&
+        Objects.equals(this.metadata, githubComMonadIncCorePkgTypesModelsAlert.metadata) &&
+        Objects.equals(this.name, githubComMonadIncCorePkgTypesModelsAlert.name) &&
+        Objects.equals(this.organizationId, githubComMonadIncCorePkgTypesModelsAlert.organizationId) &&
+        Objects.equals(this.resource, githubComMonadIncCorePkgTypesModelsAlert.resource) &&
+        Objects.equals(this.ruleId, githubComMonadIncCorePkgTypesModelsAlert.ruleId) &&
+        Objects.equals(this.ruleType, githubComMonadIncCorePkgTypesModelsAlert.ruleType) &&
+        Objects.equals(this.severity, githubComMonadIncCorePkgTypesModelsAlert.severity) &&
+        Objects.equals(this.status, githubComMonadIncCorePkgTypesModelsAlert.status);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -362,7 +362,7 @@ public class GithubComMonadIncAlertsModelsAlert {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GithubComMonadIncAlertsModelsAlert {\n");
+    sb.append("class GithubComMonadIncCorePkgTypesModelsAlert {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -405,20 +405,20 @@ public class GithubComMonadIncAlertsModelsAlert {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncAlertsModelsAlert
+   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncCorePkgTypesModelsAlert
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!GithubComMonadIncAlertsModelsAlert.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncAlertsModelsAlert is not found in the empty JSON string", GithubComMonadIncAlertsModelsAlert.openapiRequiredFields.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsAlert.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncCorePkgTypesModelsAlert is not found in the empty JSON string", GithubComMonadIncCorePkgTypesModelsAlert.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!GithubComMonadIncAlertsModelsAlert.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncAlertsModelsAlert` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsAlert.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncCorePkgTypesModelsAlert` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -436,7 +436,7 @@ public class GithubComMonadIncAlertsModelsAlert {
       }
       // validate the optional field `resource`
       if (jsonObj.get("resource") != null && !jsonObj.get("resource").isJsonNull()) {
-        GithubComMonadIncAlertsModelsResourceReference.validateJsonElement(jsonObj.get("resource"));
+        GithubComMonadIncCorePkgTypesModelsResourceReference.validateJsonElement(jsonObj.get("resource"));
       }
       if ((jsonObj.get("rule_id") != null && !jsonObj.get("rule_id").isJsonNull()) && !jsonObj.get("rule_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rule_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rule_id").toString()));
@@ -449,7 +449,7 @@ public class GithubComMonadIncAlertsModelsAlert {
       }
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        GithubComMonadIncAlertsModelsAlertStatus.validateJsonElement(jsonObj.get("status"));
+        GithubComMonadIncCorePkgTypesModelsAlertStatus.validateJsonElement(jsonObj.get("status"));
       }
   }
 
@@ -457,22 +457,22 @@ public class GithubComMonadIncAlertsModelsAlert {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GithubComMonadIncAlertsModelsAlert.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GithubComMonadIncAlertsModelsAlert' and its subtypes
+       if (!GithubComMonadIncCorePkgTypesModelsAlert.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GithubComMonadIncCorePkgTypesModelsAlert' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GithubComMonadIncAlertsModelsAlert> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncAlertsModelsAlert.class));
+       final TypeAdapter<GithubComMonadIncCorePkgTypesModelsAlert> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncCorePkgTypesModelsAlert.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncAlertsModelsAlert>() {
+       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncCorePkgTypesModelsAlert>() {
            @Override
-           public void write(JsonWriter out, GithubComMonadIncAlertsModelsAlert value) throws IOException {
+           public void write(JsonWriter out, GithubComMonadIncCorePkgTypesModelsAlert value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public GithubComMonadIncAlertsModelsAlert read(JsonReader in) throws IOException {
+           public GithubComMonadIncCorePkgTypesModelsAlert read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -483,18 +483,18 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
   /**
-   * Create an instance of GithubComMonadIncAlertsModelsAlert given an JSON string
+   * Create an instance of GithubComMonadIncCorePkgTypesModelsAlert given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of GithubComMonadIncAlertsModelsAlert
-   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncAlertsModelsAlert
+   * @return An instance of GithubComMonadIncCorePkgTypesModelsAlert
+   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncCorePkgTypesModelsAlert
    */
-  public static GithubComMonadIncAlertsModelsAlert fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GithubComMonadIncAlertsModelsAlert.class);
+  public static GithubComMonadIncCorePkgTypesModelsAlert fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GithubComMonadIncCorePkgTypesModelsAlert.class);
   }
 
   /**
-   * Convert an instance of GithubComMonadIncAlertsModelsAlert to an JSON string
+   * Convert an instance of GithubComMonadIncCorePkgTypesModelsAlert to an JSON string
    *
    * @return JSON string
    */

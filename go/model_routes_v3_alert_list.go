@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV3AlertList{}
 
 // RoutesV3AlertList struct for RoutesV3AlertList
 type RoutesV3AlertList struct {
-	Alerts []GithubComMonadIncAlertsModelsAlert `json:"alerts,omitempty"`
+	Alerts []GithubComMonadIncCorePkgTypesModelsAlert `json:"alerts,omitempty"`
 	Total *int32 `json:"total,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV3AlertListWithDefaults() *RoutesV3AlertList {
 }
 
 // GetAlerts returns the Alerts field value if set, zero value otherwise.
-func (o *RoutesV3AlertList) GetAlerts() []GithubComMonadIncAlertsModelsAlert {
+func (o *RoutesV3AlertList) GetAlerts() []GithubComMonadIncCorePkgTypesModelsAlert {
 	if o == nil || IsNil(o.Alerts) {
-		var ret []GithubComMonadIncAlertsModelsAlert
+		var ret []GithubComMonadIncCorePkgTypesModelsAlert
 		return ret
 	}
 	return o.Alerts
@@ -52,7 +52,7 @@ func (o *RoutesV3AlertList) GetAlerts() []GithubComMonadIncAlertsModelsAlert {
 
 // GetAlertsOk returns a tuple with the Alerts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3AlertList) GetAlertsOk() ([]GithubComMonadIncAlertsModelsAlert, bool) {
+func (o *RoutesV3AlertList) GetAlertsOk() ([]GithubComMonadIncCorePkgTypesModelsAlert, bool) {
 	if o == nil || IsNil(o.Alerts) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *RoutesV3AlertList) HasAlerts() bool {
 	return false
 }
 
-// SetAlerts gets a reference to the given []GithubComMonadIncAlertsModelsAlert and assigns it to the Alerts field.
-func (o *RoutesV3AlertList) SetAlerts(v []GithubComMonadIncAlertsModelsAlert) {
+// SetAlerts gets a reference to the given []GithubComMonadIncCorePkgTypesModelsAlert and assigns it to the Alerts field.
+func (o *RoutesV3AlertList) SetAlerts(v []GithubComMonadIncCorePkgTypesModelsAlert) {
 	o.Alerts = v
 }
 

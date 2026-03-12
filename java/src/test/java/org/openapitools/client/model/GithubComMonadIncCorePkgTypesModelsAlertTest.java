@@ -20,24 +20,24 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.GithubComMonadIncAlertsModelsAlertStatus;
-import org.openapitools.client.model.GithubComMonadIncAlertsModelsResourceReference;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsAlertStatus;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsResourceReference;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for GithubComMonadIncAlertsModelsAlert
+ * Model tests for GithubComMonadIncCorePkgTypesModelsAlert
  */
-public class GithubComMonadIncAlertsModelsAlertTest {
-    private final GithubComMonadIncAlertsModelsAlert model = new GithubComMonadIncAlertsModelsAlert();
+public class GithubComMonadIncCorePkgTypesModelsAlertTest {
+    private final GithubComMonadIncCorePkgTypesModelsAlert model = new GithubComMonadIncCorePkgTypesModelsAlert();
 
     /**
-     * Model tests for GithubComMonadIncAlertsModelsAlert
+     * Model tests for GithubComMonadIncCorePkgTypesModelsAlert
      */
     @Test
-    public void testGithubComMonadIncAlertsModelsAlert() {
-        // TODO: test GithubComMonadIncAlertsModelsAlert
+    public void testGithubComMonadIncCorePkgTypesModelsAlert() {
+        // TODO: test GithubComMonadIncCorePkgTypesModelsAlert
     }
 
     /**

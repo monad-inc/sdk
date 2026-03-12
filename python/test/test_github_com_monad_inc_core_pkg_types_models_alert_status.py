@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.github_com_monad_inc_alerts_models_alert_status import GithubComMonadIncAlertsModelsAlertStatus
+from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus
 
-class TestGithubComMonadIncAlertsModelsAlertStatus(unittest.TestCase):
-    """GithubComMonadIncAlertsModelsAlertStatus unit test stubs"""
+class TestGithubComMonadIncCorePkgTypesModelsAlertStatus(unittest.TestCase):
+    """GithubComMonadIncCorePkgTypesModelsAlertStatus unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,27 @@ class TestGithubComMonadIncAlertsModelsAlertStatus(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GithubComMonadIncAlertsModelsAlertStatus:
-        """Test GithubComMonadIncAlertsModelsAlertStatus
+    def make_instance(self, include_optional) -> GithubComMonadIncCorePkgTypesModelsAlertStatus:
+        """Test GithubComMonadIncCorePkgTypesModelsAlertStatus
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `GithubComMonadIncAlertsModelsAlertStatus`
+        # uncomment below to create an instance of `GithubComMonadIncCorePkgTypesModelsAlertStatus`
         """
-        model = GithubComMonadIncAlertsModelsAlertStatus()
+        model = GithubComMonadIncCorePkgTypesModelsAlertStatus()
         if include_optional:
-            return GithubComMonadIncAlertsModelsAlertStatus(
+            return GithubComMonadIncCorePkgTypesModelsAlertStatus(
                 clearing_started_at = 56,
                 resolved_at = 56,
                 state = ''
             )
         else:
-            return GithubComMonadIncAlertsModelsAlertStatus(
+            return GithubComMonadIncCorePkgTypesModelsAlertStatus(
         )
         """
 
-    def testGithubComMonadIncAlertsModelsAlertStatus(self):
-        """Test GithubComMonadIncAlertsModelsAlertStatus"""
+    def testGithubComMonadIncCorePkgTypesModelsAlertStatus(self):
+        """Test GithubComMonadIncCorePkgTypesModelsAlertStatus"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

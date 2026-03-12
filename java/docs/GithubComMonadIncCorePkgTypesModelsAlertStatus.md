@@ -1,6 +1,6 @@
 
 
-# GithubComMonadIncAlertsModelsAlertStatus
+# GithubComMonadIncCorePkgTypesModelsAlertStatus
 
 
 ## Properties
@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**clearingStartedAt** | **Integer** | When clearing began |  [optional] |
 |**resolvedAt** | **Integer** | Unix timestamp when resolved |  [optional] |
-|**state** | **String** | FIRING or RESOLVED |  [optional] |
+|**state** | **String** |  |  [optional] |
 
 
 

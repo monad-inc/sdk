@@ -1,4 +1,4 @@
-# GithubComMonadIncAlertsModelsAlertStatus
+# GithubComMonadIncCorePkgTypesModelsAlertStatus
 
 ## Properties
 
@@ -6,99 +6,99 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClearingStartedAt** | Pointer to **int32** | When clearing began | [optional] 
 **ResolvedAt** | Pointer to **int32** | Unix timestamp when resolved | [optional] 
-**State** | Pointer to **string** | FIRING or RESOLVED | [optional] 
+**State** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
-### NewGithubComMonadIncAlertsModelsAlertStatus
+### NewGithubComMonadIncCorePkgTypesModelsAlertStatus
 
-`func NewGithubComMonadIncAlertsModelsAlertStatus() *GithubComMonadIncAlertsModelsAlertStatus`
+`func NewGithubComMonadIncCorePkgTypesModelsAlertStatus() *GithubComMonadIncCorePkgTypesModelsAlertStatus`
 
-NewGithubComMonadIncAlertsModelsAlertStatus instantiates a new GithubComMonadIncAlertsModelsAlertStatus object
+NewGithubComMonadIncCorePkgTypesModelsAlertStatus instantiates a new GithubComMonadIncCorePkgTypesModelsAlertStatus object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGithubComMonadIncAlertsModelsAlertStatusWithDefaults
+### NewGithubComMonadIncCorePkgTypesModelsAlertStatusWithDefaults
 
-`func NewGithubComMonadIncAlertsModelsAlertStatusWithDefaults() *GithubComMonadIncAlertsModelsAlertStatus`
+`func NewGithubComMonadIncCorePkgTypesModelsAlertStatusWithDefaults() *GithubComMonadIncCorePkgTypesModelsAlertStatus`
 
-NewGithubComMonadIncAlertsModelsAlertStatusWithDefaults instantiates a new GithubComMonadIncAlertsModelsAlertStatus object
+NewGithubComMonadIncCorePkgTypesModelsAlertStatusWithDefaults instantiates a new GithubComMonadIncCorePkgTypesModelsAlertStatus object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetClearingStartedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) GetClearingStartedAt() int32`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetClearingStartedAt() int32`
 
 GetClearingStartedAt returns the ClearingStartedAt field if non-nil, zero value otherwise.
 
 ### GetClearingStartedAtOk
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) GetClearingStartedAtOk() (*int32, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetClearingStartedAtOk() (*int32, bool)`
 
 GetClearingStartedAtOk returns a tuple with the ClearingStartedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClearingStartedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) SetClearingStartedAt(v int32)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetClearingStartedAt(v int32)`
 
 SetClearingStartedAt sets ClearingStartedAt field to given value.
 
 ### HasClearingStartedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) HasClearingStartedAt() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) HasClearingStartedAt() bool`
 
 HasClearingStartedAt returns a boolean if a field has been set.
 
 ### GetResolvedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) GetResolvedAt() int32`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetResolvedAt() int32`
 
 GetResolvedAt returns the ResolvedAt field if non-nil, zero value otherwise.
 
 ### GetResolvedAtOk
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) GetResolvedAtOk() (*int32, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetResolvedAtOk() (*int32, bool)`
 
 GetResolvedAtOk returns a tuple with the ResolvedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResolvedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) SetResolvedAt(v int32)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetResolvedAt(v int32)`
 
 SetResolvedAt sets ResolvedAt field to given value.
 
 ### HasResolvedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) HasResolvedAt() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) HasResolvedAt() bool`
 
 HasResolvedAt returns a boolean if a field has been set.
 
 ### GetState
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) GetState() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetState() string`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) GetStateOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetStateOk() (*string, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) SetState(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetState(v string)`
 
 SetState sets State field to given value.
 
 ### HasState
 
-`func (o *GithubComMonadIncAlertsModelsAlertStatus) HasState() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) HasState() bool`
 
 HasState returns a boolean if a field has been set.
 

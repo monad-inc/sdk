@@ -15,44 +15,43 @@ import (
 	"encoding/json"
 )
 
-// checks if the GithubComMonadIncAlertsModelsAlert type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GithubComMonadIncAlertsModelsAlert{}
+// checks if the GithubComMonadIncCorePkgTypesModelsAlert type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsAlert{}
 
-// GithubComMonadIncAlertsModelsAlert struct for GithubComMonadIncAlertsModelsAlert
-type GithubComMonadIncAlertsModelsAlert struct {
-	// Timestamp of original alert creation
+// GithubComMonadIncCorePkgTypesModelsAlert struct for GithubComMonadIncCorePkgTypesModelsAlert
+type GithubComMonadIncCorePkgTypesModelsAlert struct {
 	CreatedAt *int32 `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Metadata interface{} `json:"metadata,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
-	Resource *GithubComMonadIncAlertsModelsResourceReference `json:"resource,omitempty"`
+	Resource *GithubComMonadIncCorePkgTypesModelsResourceReference `json:"resource,omitempty"`
 	RuleId *string `json:"rule_id,omitempty"`
 	RuleType *string `json:"rule_type,omitempty"`
 	Severity *string `json:"severity,omitempty"`
-	Status *GithubComMonadIncAlertsModelsAlertStatus `json:"status,omitempty"`
+	Status *GithubComMonadIncCorePkgTypesModelsAlertStatus `json:"status,omitempty"`
 }
 
-// NewGithubComMonadIncAlertsModelsAlert instantiates a new GithubComMonadIncAlertsModelsAlert object
+// NewGithubComMonadIncCorePkgTypesModelsAlert instantiates a new GithubComMonadIncCorePkgTypesModelsAlert object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGithubComMonadIncAlertsModelsAlert() *GithubComMonadIncAlertsModelsAlert {
-	this := GithubComMonadIncAlertsModelsAlert{}
+func NewGithubComMonadIncCorePkgTypesModelsAlert() *GithubComMonadIncCorePkgTypesModelsAlert {
+	this := GithubComMonadIncCorePkgTypesModelsAlert{}
 	return &this
 }
 
-// NewGithubComMonadIncAlertsModelsAlertWithDefaults instantiates a new GithubComMonadIncAlertsModelsAlert object
+// NewGithubComMonadIncCorePkgTypesModelsAlertWithDefaults instantiates a new GithubComMonadIncCorePkgTypesModelsAlert object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGithubComMonadIncAlertsModelsAlertWithDefaults() *GithubComMonadIncAlertsModelsAlert {
-	this := GithubComMonadIncAlertsModelsAlert{}
+func NewGithubComMonadIncCorePkgTypesModelsAlertWithDefaults() *GithubComMonadIncCorePkgTypesModelsAlert {
+	this := GithubComMonadIncCorePkgTypesModelsAlert{}
 	return &this
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetCreatedAt() int32 {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetCreatedAt() int32 {
 	if o == nil || IsNil(o.CreatedAt) {
 		var ret int32
 		return ret
@@ -62,7 +61,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetCreatedAt() int32 {
 
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetCreatedAtOk() (*int32, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetCreatedAtOk() (*int32, bool) {
 	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
@@ -70,7 +69,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetCreatedAtOk() (*int32, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasCreatedAt() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -79,12 +78,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given int32 and assigns it to the CreatedAt field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetCreatedAt(v int32) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetCreatedAt(v int32) {
 	o.CreatedAt = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetDescription() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
@@ -94,7 +93,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetDescriptionOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetDescriptionOk() (*string, bool) {
 	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
@@ -102,7 +101,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetDescriptionOk() (*string, bool) 
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasDescription() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -111,12 +110,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetDescription(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetId() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetId() string {
 	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
@@ -126,7 +125,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetIdOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetIdOk() (*string, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -134,7 +133,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasId() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -143,12 +142,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetId(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetId(v string) {
 	o.Id = &v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GithubComMonadIncAlertsModelsAlert) GetMetadata() interface{} {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetMetadata() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
@@ -159,7 +158,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetMetadata() interface{} {
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GithubComMonadIncAlertsModelsAlert) GetMetadataOk() (*interface{}, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetMetadataOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
@@ -167,7 +166,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetMetadataOk() (*interface{}, bool
 }
 
 // HasMetadata returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasMetadata() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasMetadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -176,12 +175,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasMetadata() bool {
 }
 
 // SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetMetadata(v interface{}) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetName() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -191,7 +190,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetNameOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -199,7 +198,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasName() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -208,12 +207,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetName(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetName(v string) {
 	o.Name = &v
 }
 
 // GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetOrganizationId() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetOrganizationId() string {
 	if o == nil || IsNil(o.OrganizationId) {
 		var ret string
 		return ret
@@ -223,7 +222,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetOrganizationId() string {
 
 // GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetOrganizationIdOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetOrganizationIdOk() (*string, bool) {
 	if o == nil || IsNil(o.OrganizationId) {
 		return nil, false
 	}
@@ -231,7 +230,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetOrganizationIdOk() (*string, boo
 }
 
 // HasOrganizationId returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasOrganizationId() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasOrganizationId() bool {
 	if o != nil && !IsNil(o.OrganizationId) {
 		return true
 	}
@@ -240,14 +239,14 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasOrganizationId() bool {
 }
 
 // SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetOrganizationId(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetResource() GithubComMonadIncAlertsModelsResourceReference {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetResource() GithubComMonadIncCorePkgTypesModelsResourceReference {
 	if o == nil || IsNil(o.Resource) {
-		var ret GithubComMonadIncAlertsModelsResourceReference
+		var ret GithubComMonadIncCorePkgTypesModelsResourceReference
 		return ret
 	}
 	return *o.Resource
@@ -255,7 +254,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetResource() GithubComMonadIncAler
 
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetResourceOk() (*GithubComMonadIncAlertsModelsResourceReference, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetResourceOk() (*GithubComMonadIncCorePkgTypesModelsResourceReference, bool) {
 	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
@@ -263,7 +262,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetResourceOk() (*GithubComMonadInc
 }
 
 // HasResource returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasResource() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasResource() bool {
 	if o != nil && !IsNil(o.Resource) {
 		return true
 	}
@@ -271,13 +270,13 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasResource() bool {
 	return false
 }
 
-// SetResource gets a reference to the given GithubComMonadIncAlertsModelsResourceReference and assigns it to the Resource field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetResource(v GithubComMonadIncAlertsModelsResourceReference) {
+// SetResource gets a reference to the given GithubComMonadIncCorePkgTypesModelsResourceReference and assigns it to the Resource field.
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetResource(v GithubComMonadIncCorePkgTypesModelsResourceReference) {
 	o.Resource = &v
 }
 
 // GetRuleId returns the RuleId field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetRuleId() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleId() string {
 	if o == nil || IsNil(o.RuleId) {
 		var ret string
 		return ret
@@ -287,7 +286,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetRuleId() string {
 
 // GetRuleIdOk returns a tuple with the RuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetRuleIdOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleIdOk() (*string, bool) {
 	if o == nil || IsNil(o.RuleId) {
 		return nil, false
 	}
@@ -295,7 +294,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetRuleIdOk() (*string, bool) {
 }
 
 // HasRuleId returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasRuleId() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasRuleId() bool {
 	if o != nil && !IsNil(o.RuleId) {
 		return true
 	}
@@ -304,12 +303,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasRuleId() bool {
 }
 
 // SetRuleId gets a reference to the given string and assigns it to the RuleId field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetRuleId(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetRuleId(v string) {
 	o.RuleId = &v
 }
 
 // GetRuleType returns the RuleType field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetRuleType() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleType() string {
 	if o == nil || IsNil(o.RuleType) {
 		var ret string
 		return ret
@@ -319,7 +318,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetRuleType() string {
 
 // GetRuleTypeOk returns a tuple with the RuleType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetRuleTypeOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.RuleType) {
 		return nil, false
 	}
@@ -327,7 +326,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetRuleTypeOk() (*string, bool) {
 }
 
 // HasRuleType returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasRuleType() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasRuleType() bool {
 	if o != nil && !IsNil(o.RuleType) {
 		return true
 	}
@@ -336,12 +335,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasRuleType() bool {
 }
 
 // SetRuleType gets a reference to the given string and assigns it to the RuleType field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetRuleType(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetRuleType(v string) {
 	o.RuleType = &v
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetSeverity() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetSeverity() string {
 	if o == nil || IsNil(o.Severity) {
 		var ret string
 		return ret
@@ -351,7 +350,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetSeverity() string {
 
 // GetSeverityOk returns a tuple with the Severity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetSeverityOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetSeverityOk() (*string, bool) {
 	if o == nil || IsNil(o.Severity) {
 		return nil, false
 	}
@@ -359,7 +358,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetSeverityOk() (*string, bool) {
 }
 
 // HasSeverity returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasSeverity() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasSeverity() bool {
 	if o != nil && !IsNil(o.Severity) {
 		return true
 	}
@@ -368,14 +367,14 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasSeverity() bool {
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetSeverity(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetSeverity(v string) {
 	o.Severity = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlert) GetStatus() GithubComMonadIncAlertsModelsAlertStatus {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetStatus() GithubComMonadIncCorePkgTypesModelsAlertStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret GithubComMonadIncAlertsModelsAlertStatus
+		var ret GithubComMonadIncCorePkgTypesModelsAlertStatus
 		return ret
 	}
 	return *o.Status
@@ -383,7 +382,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetStatus() GithubComMonadIncAlerts
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) GetStatusOk() (*GithubComMonadIncAlertsModelsAlertStatus, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetStatusOk() (*GithubComMonadIncCorePkgTypesModelsAlertStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -391,7 +390,7 @@ func (o *GithubComMonadIncAlertsModelsAlert) GetStatusOk() (*GithubComMonadIncAl
 }
 
 // HasStatus returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlert) HasStatus() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -399,12 +398,12 @@ func (o *GithubComMonadIncAlertsModelsAlert) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given GithubComMonadIncAlertsModelsAlertStatus and assigns it to the Status field.
-func (o *GithubComMonadIncAlertsModelsAlert) SetStatus(v GithubComMonadIncAlertsModelsAlertStatus) {
+// SetStatus gets a reference to the given GithubComMonadIncCorePkgTypesModelsAlertStatus and assigns it to the Status field.
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetStatus(v GithubComMonadIncCorePkgTypesModelsAlertStatus) {
 	o.Status = &v
 }
 
-func (o GithubComMonadIncAlertsModelsAlert) MarshalJSON() ([]byte, error) {
+func (o GithubComMonadIncCorePkgTypesModelsAlert) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -412,7 +411,7 @@ func (o GithubComMonadIncAlertsModelsAlert) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GithubComMonadIncAlertsModelsAlert) ToMap() (map[string]interface{}, error) {
+func (o GithubComMonadIncCorePkgTypesModelsAlert) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
@@ -450,38 +449,38 @@ func (o GithubComMonadIncAlertsModelsAlert) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 
-type NullableGithubComMonadIncAlertsModelsAlert struct {
-	value *GithubComMonadIncAlertsModelsAlert
+type NullableGithubComMonadIncCorePkgTypesModelsAlert struct {
+	value *GithubComMonadIncCorePkgTypesModelsAlert
 	isSet bool
 }
 
-func (v NullableGithubComMonadIncAlertsModelsAlert) Get() *GithubComMonadIncAlertsModelsAlert {
+func (v NullableGithubComMonadIncCorePkgTypesModelsAlert) Get() *GithubComMonadIncCorePkgTypesModelsAlert {
 	return v.value
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsAlert) Set(val *GithubComMonadIncAlertsModelsAlert) {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsAlert) Set(val *GithubComMonadIncCorePkgTypesModelsAlert) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGithubComMonadIncAlertsModelsAlert) IsSet() bool {
+func (v NullableGithubComMonadIncCorePkgTypesModelsAlert) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsAlert) Unset() {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsAlert) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGithubComMonadIncAlertsModelsAlert(val *GithubComMonadIncAlertsModelsAlert) *NullableGithubComMonadIncAlertsModelsAlert {
-	return &NullableGithubComMonadIncAlertsModelsAlert{value: val, isSet: true}
+func NewNullableGithubComMonadIncCorePkgTypesModelsAlert(val *GithubComMonadIncCorePkgTypesModelsAlert) *NullableGithubComMonadIncCorePkgTypesModelsAlert {
+	return &NullableGithubComMonadIncCorePkgTypesModelsAlert{value: val, isSet: true}
 }
 
-func (v NullableGithubComMonadIncAlertsModelsAlert) MarshalJSON() ([]byte, error) {
+func (v NullableGithubComMonadIncCorePkgTypesModelsAlert) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsAlert) UnmarshalJSON(src []byte) error {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsAlert) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -159,12 +159,12 @@ export * from '../models/FullScansSettingsConfig';
 export * from '../models/GeolocusSettingsConfig';
 export * from '../models/GithubAdvisoryUserSettingsConfig';
 export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
-export * from '../models/GithubComMonadIncAlertsModelsAlert';
-export * from '../models/GithubComMonadIncAlertsModelsAlertStatus';
-export * from '../models/GithubComMonadIncAlertsModelsResourceReference';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
@@ -698,12 +698,12 @@ import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
 import { GithubAdvisoryUserSettingsConfig } from '../models/GithubAdvisoryUserSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
-import { GithubComMonadIncAlertsModelsAlert } from '../models/GithubComMonadIncAlertsModelsAlert';
-import { GithubComMonadIncAlertsModelsAlertStatus } from '../models/GithubComMonadIncAlertsModelsAlertStatus';
-import { GithubComMonadIncAlertsModelsResourceReference } from '../models/GithubComMonadIncAlertsModelsResourceReference';
+import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
+import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
+import { GithubComMonadIncCorePkgTypesModelsResourceReference } from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
 import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
@@ -1269,12 +1269,12 @@ let typeMap: {[index: string]: any} = {
     "GeolocusSettingsConfig": GeolocusSettingsConfig,
     "GithubAdvisoryUserSettingsConfig": GithubAdvisoryUserSettingsConfig,
     "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
-    "GithubComMonadIncAlertsModelsAlert": GithubComMonadIncAlertsModelsAlert,
-    "GithubComMonadIncAlertsModelsAlertStatus": GithubComMonadIncAlertsModelsAlertStatus,
-    "GithubComMonadIncAlertsModelsResourceReference": GithubComMonadIncAlertsModelsResourceReference,
+    "GithubComMonadIncCorePkgTypesModelsAlert": GithubComMonadIncCorePkgTypesModelsAlert,
+    "GithubComMonadIncCorePkgTypesModelsAlertStatus": GithubComMonadIncCorePkgTypesModelsAlertStatus,
     "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,
     "GithubComMonadIncCorePkgTypesModelsPermission": GithubComMonadIncCorePkgTypesModelsPermission,
     "GithubComMonadIncCorePkgTypesModelsQuota": GithubComMonadIncCorePkgTypesModelsQuota,
+    "GithubComMonadIncCorePkgTypesModelsResourceReference": GithubComMonadIncCorePkgTypesModelsResourceReference,
     "GithubComMonadIncCorePkgTypesModelsUser": GithubComMonadIncCorePkgTypesModelsUser,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,

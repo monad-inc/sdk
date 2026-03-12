@@ -15,38 +15,37 @@ import (
 	"encoding/json"
 )
 
-// checks if the GithubComMonadIncAlertsModelsAlertStatus type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GithubComMonadIncAlertsModelsAlertStatus{}
+// checks if the GithubComMonadIncCorePkgTypesModelsAlertStatus type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsAlertStatus{}
 
-// GithubComMonadIncAlertsModelsAlertStatus struct for GithubComMonadIncAlertsModelsAlertStatus
-type GithubComMonadIncAlertsModelsAlertStatus struct {
+// GithubComMonadIncCorePkgTypesModelsAlertStatus struct for GithubComMonadIncCorePkgTypesModelsAlertStatus
+type GithubComMonadIncCorePkgTypesModelsAlertStatus struct {
 	// When clearing began
 	ClearingStartedAt *int32 `json:"clearing_started_at,omitempty"`
 	// Unix timestamp when resolved
 	ResolvedAt *int32 `json:"resolved_at,omitempty"`
-	// FIRING or RESOLVED
 	State *string `json:"state,omitempty"`
 }
 
-// NewGithubComMonadIncAlertsModelsAlertStatus instantiates a new GithubComMonadIncAlertsModelsAlertStatus object
+// NewGithubComMonadIncCorePkgTypesModelsAlertStatus instantiates a new GithubComMonadIncCorePkgTypesModelsAlertStatus object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGithubComMonadIncAlertsModelsAlertStatus() *GithubComMonadIncAlertsModelsAlertStatus {
-	this := GithubComMonadIncAlertsModelsAlertStatus{}
+func NewGithubComMonadIncCorePkgTypesModelsAlertStatus() *GithubComMonadIncCorePkgTypesModelsAlertStatus {
+	this := GithubComMonadIncCorePkgTypesModelsAlertStatus{}
 	return &this
 }
 
-// NewGithubComMonadIncAlertsModelsAlertStatusWithDefaults instantiates a new GithubComMonadIncAlertsModelsAlertStatus object
+// NewGithubComMonadIncCorePkgTypesModelsAlertStatusWithDefaults instantiates a new GithubComMonadIncCorePkgTypesModelsAlertStatus object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGithubComMonadIncAlertsModelsAlertStatusWithDefaults() *GithubComMonadIncAlertsModelsAlertStatus {
-	this := GithubComMonadIncAlertsModelsAlertStatus{}
+func NewGithubComMonadIncCorePkgTypesModelsAlertStatusWithDefaults() *GithubComMonadIncCorePkgTypesModelsAlertStatus {
+	this := GithubComMonadIncCorePkgTypesModelsAlertStatus{}
 	return &this
 }
 
 // GetClearingStartedAt returns the ClearingStartedAt field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) GetClearingStartedAt() int32 {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetClearingStartedAt() int32 {
 	if o == nil || IsNil(o.ClearingStartedAt) {
 		var ret int32
 		return ret
@@ -56,7 +55,7 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) GetClearingStartedAt() int32 
 
 // GetClearingStartedAtOk returns a tuple with the ClearingStartedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) GetClearingStartedAtOk() (*int32, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetClearingStartedAtOk() (*int32, bool) {
 	if o == nil || IsNil(o.ClearingStartedAt) {
 		return nil, false
 	}
@@ -64,7 +63,7 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) GetClearingStartedAtOk() (*in
 }
 
 // HasClearingStartedAt returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) HasClearingStartedAt() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) HasClearingStartedAt() bool {
 	if o != nil && !IsNil(o.ClearingStartedAt) {
 		return true
 	}
@@ -73,12 +72,12 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) HasClearingStartedAt() bool {
 }
 
 // SetClearingStartedAt gets a reference to the given int32 and assigns it to the ClearingStartedAt field.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) SetClearingStartedAt(v int32) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetClearingStartedAt(v int32) {
 	o.ClearingStartedAt = &v
 }
 
 // GetResolvedAt returns the ResolvedAt field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) GetResolvedAt() int32 {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetResolvedAt() int32 {
 	if o == nil || IsNil(o.ResolvedAt) {
 		var ret int32
 		return ret
@@ -88,7 +87,7 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) GetResolvedAt() int32 {
 
 // GetResolvedAtOk returns a tuple with the ResolvedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) GetResolvedAtOk() (*int32, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetResolvedAtOk() (*int32, bool) {
 	if o == nil || IsNil(o.ResolvedAt) {
 		return nil, false
 	}
@@ -96,7 +95,7 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) GetResolvedAtOk() (*int32, bo
 }
 
 // HasResolvedAt returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) HasResolvedAt() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) HasResolvedAt() bool {
 	if o != nil && !IsNil(o.ResolvedAt) {
 		return true
 	}
@@ -105,12 +104,12 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) HasResolvedAt() bool {
 }
 
 // SetResolvedAt gets a reference to the given int32 and assigns it to the ResolvedAt field.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) SetResolvedAt(v int32) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetResolvedAt(v int32) {
 	o.ResolvedAt = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) GetState() string {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetState() string {
 	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
@@ -120,7 +119,7 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) GetStateOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetStateOk() (*string, bool) {
 	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
@@ -128,7 +127,7 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) GetStateOk() (*string, bool) 
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) HasState() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) HasState() bool {
 	if o != nil && !IsNil(o.State) {
 		return true
 	}
@@ -137,11 +136,11 @@ func (o *GithubComMonadIncAlertsModelsAlertStatus) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *GithubComMonadIncAlertsModelsAlertStatus) SetState(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetState(v string) {
 	o.State = &v
 }
 
-func (o GithubComMonadIncAlertsModelsAlertStatus) MarshalJSON() ([]byte, error) {
+func (o GithubComMonadIncCorePkgTypesModelsAlertStatus) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -149,7 +148,7 @@ func (o GithubComMonadIncAlertsModelsAlertStatus) MarshalJSON() ([]byte, error) 
 	return json.Marshal(toSerialize)
 }
 
-func (o GithubComMonadIncAlertsModelsAlertStatus) ToMap() (map[string]interface{}, error) {
+func (o GithubComMonadIncCorePkgTypesModelsAlertStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ClearingStartedAt) {
 		toSerialize["clearing_started_at"] = o.ClearingStartedAt
@@ -163,38 +162,38 @@ func (o GithubComMonadIncAlertsModelsAlertStatus) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 
-type NullableGithubComMonadIncAlertsModelsAlertStatus struct {
-	value *GithubComMonadIncAlertsModelsAlertStatus
+type NullableGithubComMonadIncCorePkgTypesModelsAlertStatus struct {
+	value *GithubComMonadIncCorePkgTypesModelsAlertStatus
 	isSet bool
 }
 
-func (v NullableGithubComMonadIncAlertsModelsAlertStatus) Get() *GithubComMonadIncAlertsModelsAlertStatus {
+func (v NullableGithubComMonadIncCorePkgTypesModelsAlertStatus) Get() *GithubComMonadIncCorePkgTypesModelsAlertStatus {
 	return v.value
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsAlertStatus) Set(val *GithubComMonadIncAlertsModelsAlertStatus) {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsAlertStatus) Set(val *GithubComMonadIncCorePkgTypesModelsAlertStatus) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGithubComMonadIncAlertsModelsAlertStatus) IsSet() bool {
+func (v NullableGithubComMonadIncCorePkgTypesModelsAlertStatus) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsAlertStatus) Unset() {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsAlertStatus) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGithubComMonadIncAlertsModelsAlertStatus(val *GithubComMonadIncAlertsModelsAlertStatus) *NullableGithubComMonadIncAlertsModelsAlertStatus {
-	return &NullableGithubComMonadIncAlertsModelsAlertStatus{value: val, isSet: true}
+func NewNullableGithubComMonadIncCorePkgTypesModelsAlertStatus(val *GithubComMonadIncCorePkgTypesModelsAlertStatus) *NullableGithubComMonadIncCorePkgTypesModelsAlertStatus {
+	return &NullableGithubComMonadIncCorePkgTypesModelsAlertStatus{value: val, isSet: true}
 }
 
-func (v NullableGithubComMonadIncAlertsModelsAlertStatus) MarshalJSON() ([]byte, error) {
+func (v NullableGithubComMonadIncCorePkgTypesModelsAlertStatus) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsAlertStatus) UnmarshalJSON(src []byte) error {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsAlertStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

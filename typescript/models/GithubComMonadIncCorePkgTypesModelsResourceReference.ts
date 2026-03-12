@@ -12,19 +12,20 @@
 
 import { HttpFile } from '../http/http';
 
-export class GithubComMonadIncAlertsModelsAlertStatus {
+export class GithubComMonadIncCorePkgTypesModelsResourceReference {
     /**
-    * When clearing began
+    * e.g., pipeline ID if resource is a node
     */
-    'clearingStartedAt'?: number;
+    'parentId'?: string;
     /**
-    * Unix timestamp when resolved
+    * For hierarchical resources
     */
-    'resolvedAt'?: number;
+    'parentType'?: string;
+    'resourceId'?: string;
     /**
-    * FIRING or RESOLVED
+    * \"pipeline\", \"node\", \"organization\"
     */
-    'state'?: string;
+    'resourceType'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,26 +33,32 @@ export class GithubComMonadIncAlertsModelsAlertStatus {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "clearingStartedAt",
-            "baseName": "clearing_started_at",
-            "type": "number",
+            "name": "parentId",
+            "baseName": "parent_id",
+            "type": "string",
             "format": ""
         },
         {
-            "name": "resolvedAt",
-            "baseName": "resolved_at",
-            "type": "number",
+            "name": "parentType",
+            "baseName": "parent_type",
+            "type": "string",
             "format": ""
         },
         {
-            "name": "state",
-            "baseName": "state",
+            "name": "resourceId",
+            "baseName": "resource_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "resourceType",
+            "baseName": "resource_type",
             "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return GithubComMonadIncAlertsModelsAlertStatus.attributeTypeMap;
+        return GithubComMonadIncCorePkgTypesModelsResourceReference.attributeTypeMap;
     }
 
     public constructor() {

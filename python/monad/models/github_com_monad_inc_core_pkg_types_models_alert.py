@@ -18,28 +18,28 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_alerts_models_alert_status import GithubComMonadIncAlertsModelsAlertStatus
-from monad.models.github_com_monad_inc_alerts_models_resource_reference import GithubComMonadIncAlertsModelsResourceReference
+from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus
+from monad.models.github_com_monad_inc_core_pkg_types_models_resource_reference import GithubComMonadIncCorePkgTypesModelsResourceReference
 from typing import Optional, Set
 from typing_extensions import Self
 
-class GithubComMonadIncAlertsModelsAlert(BaseModel):
+class GithubComMonadIncCorePkgTypesModelsAlert(BaseModel):
     """
-    GithubComMonadIncAlertsModelsAlert
+    GithubComMonadIncCorePkgTypesModelsAlert
     """ # noqa: E501
-    created_at: Optional[StrictInt] = Field(default=None, description="Timestamp of original alert creation")
+    created_at: Optional[StrictInt] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     metadata: Optional[Any] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
-    resource: Optional[GithubComMonadIncAlertsModelsResourceReference] = None
+    resource: Optional[GithubComMonadIncCorePkgTypesModelsResourceReference] = None
     rule_id: Optional[StrictStr] = None
     rule_type: Optional[StrictStr] = None
     severity: Optional[StrictStr] = None
-    status: Optional[GithubComMonadIncAlertsModelsAlertStatus] = None
+    status: Optional[GithubComMonadIncCorePkgTypesModelsAlertStatus] = None
     __properties: ClassVar[List[str]] = ["created_at", "description", "id", "metadata", "name", "organization_id", "resource", "rule_id", "rule_type", "severity", "status"]
 
     model_config = ConfigDict(
@@ -60,7 +60,7 @@ class GithubComMonadIncAlertsModelsAlert(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of GithubComMonadIncAlertsModelsAlert from a JSON string"""
+        """Create an instance of GithubComMonadIncCorePkgTypesModelsAlert from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -96,7 +96,7 @@ class GithubComMonadIncAlertsModelsAlert(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of GithubComMonadIncAlertsModelsAlert from a dict"""
+        """Create an instance of GithubComMonadIncCorePkgTypesModelsAlert from a dict"""
         if obj is None:
             return None
 
@@ -110,11 +110,11 @@ class GithubComMonadIncAlertsModelsAlert(BaseModel):
             "metadata": obj.get("metadata"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
-            "resource": GithubComMonadIncAlertsModelsResourceReference.from_dict(obj["resource"]) if obj.get("resource") is not None else None,
+            "resource": GithubComMonadIncCorePkgTypesModelsResourceReference.from_dict(obj["resource"]) if obj.get("resource") is not None else None,
             "rule_id": obj.get("rule_id"),
             "rule_type": obj.get("rule_type"),
             "severity": obj.get("severity"),
-            "status": GithubComMonadIncAlertsModelsAlertStatus.from_dict(obj["status"]) if obj.get("status") is not None else None
+            "status": GithubComMonadIncCorePkgTypesModelsAlertStatus.from_dict(obj["status"]) if obj.get("status") is not None else None
         })
         return _obj
 

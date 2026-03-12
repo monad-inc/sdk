@@ -37,14 +37,14 @@ class TestRoutesV3AlertList(unittest.TestCase):
         if include_optional:
             return RoutesV3AlertList(
                 alerts = [
-                    monad.models.github_com_monad_inc_alerts_models/alert.github_com_monad-inc_alerts_models.Alert(
+                    monad.models.github_com_monad_inc_core_pkg_types_models/alert.github_com_monad-inc_core_pkg_types_models.Alert(
                         created_at = 56, 
                         description = '', 
                         id = '', 
                         metadata = null, 
                         name = '', 
                         organization_id = '', 
-                        resource = monad.models.github_com_monad_inc_alerts_models/resource_reference.github_com_monad-inc_alerts_models.ResourceReference(
+                        resource = monad.models.github_com_monad_inc_core_pkg_types_models/resource_reference.github_com_monad-inc_core_pkg_types_models.ResourceReference(
                             parent_id = '', 
                             parent_type = '', 
                             resource_id = '', 
@@ -52,7 +52,7 @@ class TestRoutesV3AlertList(unittest.TestCase):
                         rule_id = '', 
                         rule_type = '', 
                         severity = '', 
-                        status = monad.models.github_com_monad_inc_alerts_models/alert_status.github_com_monad-inc_alerts_models.AlertStatus(
+                        status = monad.models.github_com_monad_inc_core_pkg_types_models/alert_status.github_com_monad-inc_core_pkg_types_models.AlertStatus(
                             clearing_started_at = 56, 
                             resolved_at = 56, 
                             state = '', ), )

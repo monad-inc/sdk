@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.github_com_monad_inc_alerts_models_resource_reference import GithubComMonadIncAlertsModelsResourceReference
+from monad.models.github_com_monad_inc_core_pkg_types_models_resource_reference import GithubComMonadIncCorePkgTypesModelsResourceReference
 
-class TestGithubComMonadIncAlertsModelsResourceReference(unittest.TestCase):
-    """GithubComMonadIncAlertsModelsResourceReference unit test stubs"""
+class TestGithubComMonadIncCorePkgTypesModelsResourceReference(unittest.TestCase):
+    """GithubComMonadIncCorePkgTypesModelsResourceReference unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,28 @@ class TestGithubComMonadIncAlertsModelsResourceReference(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GithubComMonadIncAlertsModelsResourceReference:
-        """Test GithubComMonadIncAlertsModelsResourceReference
+    def make_instance(self, include_optional) -> GithubComMonadIncCorePkgTypesModelsResourceReference:
+        """Test GithubComMonadIncCorePkgTypesModelsResourceReference
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `GithubComMonadIncAlertsModelsResourceReference`
+        # uncomment below to create an instance of `GithubComMonadIncCorePkgTypesModelsResourceReference`
         """
-        model = GithubComMonadIncAlertsModelsResourceReference()
+        model = GithubComMonadIncCorePkgTypesModelsResourceReference()
         if include_optional:
-            return GithubComMonadIncAlertsModelsResourceReference(
+            return GithubComMonadIncCorePkgTypesModelsResourceReference(
                 parent_id = '',
                 parent_type = '',
                 resource_id = '',
                 resource_type = ''
             )
         else:
-            return GithubComMonadIncAlertsModelsResourceReference(
+            return GithubComMonadIncCorePkgTypesModelsResourceReference(
         )
         """
 
-    def testGithubComMonadIncAlertsModelsResourceReference(self):
-        """Test GithubComMonadIncAlertsModelsResourceReference"""
+    def testGithubComMonadIncCorePkgTypesModelsResourceReference(self):
+        """Test GithubComMonadIncCorePkgTypesModelsResourceReference"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

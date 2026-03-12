@@ -24,17 +24,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for GithubComMonadIncAlertsModelsResourceReference
+ * Model tests for GithubComMonadIncCorePkgTypesModelsResourceReference
  */
-public class GithubComMonadIncAlertsModelsResourceReferenceTest {
-    private final GithubComMonadIncAlertsModelsResourceReference model = new GithubComMonadIncAlertsModelsResourceReference();
+public class GithubComMonadIncCorePkgTypesModelsResourceReferenceTest {
+    private final GithubComMonadIncCorePkgTypesModelsResourceReference model = new GithubComMonadIncCorePkgTypesModelsResourceReference();
 
     /**
-     * Model tests for GithubComMonadIncAlertsModelsResourceReference
+     * Model tests for GithubComMonadIncCorePkgTypesModelsResourceReference
      */
     @Test
-    public void testGithubComMonadIncAlertsModelsResourceReference() {
-        // TODO: test GithubComMonadIncAlertsModelsResourceReference
+    public void testGithubComMonadIncCorePkgTypesModelsResourceReference() {
+        // TODO: test GithubComMonadIncCorePkgTypesModelsResourceReference
     }
 
     /**

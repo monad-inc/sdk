@@ -46,10 +46,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * GithubComMonadIncAlertsModelsResourceReference
+ * GithubComMonadIncCorePkgTypesModelsResourceReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T01:51:34.959314Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class GithubComMonadIncAlertsModelsResourceReference {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T19:44:55.767350696Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+public class GithubComMonadIncCorePkgTypesModelsResourceReference {
   public static final String SERIALIZED_NAME_PARENT_ID = "parent_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ID)
   @javax.annotation.Nullable
@@ -70,10 +70,10 @@ public class GithubComMonadIncAlertsModelsResourceReference {
   @javax.annotation.Nullable
   private String resourceType;
 
-  public GithubComMonadIncAlertsModelsResourceReference() {
+  public GithubComMonadIncCorePkgTypesModelsResourceReference() {
   }
 
-  public GithubComMonadIncAlertsModelsResourceReference parentId(@javax.annotation.Nullable String parentId) {
+  public GithubComMonadIncCorePkgTypesModelsResourceReference parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -92,7 +92,7 @@ public class GithubComMonadIncAlertsModelsResourceReference {
   }
 
 
-  public GithubComMonadIncAlertsModelsResourceReference parentType(@javax.annotation.Nullable String parentType) {
+  public GithubComMonadIncCorePkgTypesModelsResourceReference parentType(@javax.annotation.Nullable String parentType) {
     this.parentType = parentType;
     return this;
   }
@@ -111,7 +111,7 @@ public class GithubComMonadIncAlertsModelsResourceReference {
   }
 
 
-  public GithubComMonadIncAlertsModelsResourceReference resourceId(@javax.annotation.Nullable String resourceId) {
+  public GithubComMonadIncCorePkgTypesModelsResourceReference resourceId(@javax.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
     return this;
   }
@@ -130,7 +130,7 @@ public class GithubComMonadIncAlertsModelsResourceReference {
   }
 
 
-  public GithubComMonadIncAlertsModelsResourceReference resourceType(@javax.annotation.Nullable String resourceType) {
+  public GithubComMonadIncCorePkgTypesModelsResourceReference resourceType(@javax.annotation.Nullable String resourceType) {
     this.resourceType = resourceType;
     return this;
   }
@@ -158,11 +158,11 @@ public class GithubComMonadIncAlertsModelsResourceReference {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GithubComMonadIncAlertsModelsResourceReference githubComMonadIncAlertsModelsResourceReference = (GithubComMonadIncAlertsModelsResourceReference) o;
-    return Objects.equals(this.parentId, githubComMonadIncAlertsModelsResourceReference.parentId) &&
-        Objects.equals(this.parentType, githubComMonadIncAlertsModelsResourceReference.parentType) &&
-        Objects.equals(this.resourceId, githubComMonadIncAlertsModelsResourceReference.resourceId) &&
-        Objects.equals(this.resourceType, githubComMonadIncAlertsModelsResourceReference.resourceType);
+    GithubComMonadIncCorePkgTypesModelsResourceReference githubComMonadIncCorePkgTypesModelsResourceReference = (GithubComMonadIncCorePkgTypesModelsResourceReference) o;
+    return Objects.equals(this.parentId, githubComMonadIncCorePkgTypesModelsResourceReference.parentId) &&
+        Objects.equals(this.parentType, githubComMonadIncCorePkgTypesModelsResourceReference.parentType) &&
+        Objects.equals(this.resourceId, githubComMonadIncCorePkgTypesModelsResourceReference.resourceId) &&
+        Objects.equals(this.resourceType, githubComMonadIncCorePkgTypesModelsResourceReference.resourceType);
   }
 
   @Override
@@ -173,7 +173,7 @@ public class GithubComMonadIncAlertsModelsResourceReference {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GithubComMonadIncAlertsModelsResourceReference {\n");
+    sb.append("class GithubComMonadIncCorePkgTypesModelsResourceReference {\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    parentType: ").append(toIndentedString(parentType)).append("\n");
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
@@ -209,20 +209,20 @@ public class GithubComMonadIncAlertsModelsResourceReference {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncAlertsModelsResourceReference
+   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncCorePkgTypesModelsResourceReference
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!GithubComMonadIncAlertsModelsResourceReference.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncAlertsModelsResourceReference is not found in the empty JSON string", GithubComMonadIncAlertsModelsResourceReference.openapiRequiredFields.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsResourceReference.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncCorePkgTypesModelsResourceReference is not found in the empty JSON string", GithubComMonadIncCorePkgTypesModelsResourceReference.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!GithubComMonadIncAlertsModelsResourceReference.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncAlertsModelsResourceReference` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsResourceReference.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncCorePkgTypesModelsResourceReference` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -244,22 +244,22 @@ public class GithubComMonadIncAlertsModelsResourceReference {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GithubComMonadIncAlertsModelsResourceReference.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GithubComMonadIncAlertsModelsResourceReference' and its subtypes
+       if (!GithubComMonadIncCorePkgTypesModelsResourceReference.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GithubComMonadIncCorePkgTypesModelsResourceReference' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GithubComMonadIncAlertsModelsResourceReference> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncAlertsModelsResourceReference.class));
+       final TypeAdapter<GithubComMonadIncCorePkgTypesModelsResourceReference> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncCorePkgTypesModelsResourceReference.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncAlertsModelsResourceReference>() {
+       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncCorePkgTypesModelsResourceReference>() {
            @Override
-           public void write(JsonWriter out, GithubComMonadIncAlertsModelsResourceReference value) throws IOException {
+           public void write(JsonWriter out, GithubComMonadIncCorePkgTypesModelsResourceReference value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public GithubComMonadIncAlertsModelsResourceReference read(JsonReader in) throws IOException {
+           public GithubComMonadIncCorePkgTypesModelsResourceReference read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -270,18 +270,18 @@ public class GithubComMonadIncAlertsModelsResourceReference {
   }
 
   /**
-   * Create an instance of GithubComMonadIncAlertsModelsResourceReference given an JSON string
+   * Create an instance of GithubComMonadIncCorePkgTypesModelsResourceReference given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of GithubComMonadIncAlertsModelsResourceReference
-   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncAlertsModelsResourceReference
+   * @return An instance of GithubComMonadIncCorePkgTypesModelsResourceReference
+   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncCorePkgTypesModelsResourceReference
    */
-  public static GithubComMonadIncAlertsModelsResourceReference fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GithubComMonadIncAlertsModelsResourceReference.class);
+  public static GithubComMonadIncCorePkgTypesModelsResourceReference fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GithubComMonadIncCorePkgTypesModelsResourceReference.class);
   }
 
   /**
-   * Convert an instance of GithubComMonadIncAlertsModelsResourceReference to an JSON string
+   * Convert an instance of GithubComMonadIncCorePkgTypesModelsResourceReference to an JSON string
    *
    * @return JSON string
    */

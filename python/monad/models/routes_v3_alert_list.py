@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_alerts_models_alert import GithubComMonadIncAlertsModelsAlert
+from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class RoutesV3AlertList(BaseModel):
     """
     RoutesV3AlertList
     """ # noqa: E501
-    alerts: Optional[List[GithubComMonadIncAlertsModelsAlert]] = None
+    alerts: Optional[List[GithubComMonadIncCorePkgTypesModelsAlert]] = None
     total: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["alerts", "total"]
 
@@ -90,7 +90,7 @@ class RoutesV3AlertList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "alerts": [GithubComMonadIncAlertsModelsAlert.from_dict(_item) for _item in obj["alerts"]] if obj.get("alerts") is not None else None,
+            "alerts": [GithubComMonadIncCorePkgTypesModelsAlert.from_dict(_item) for _item in obj["alerts"]] if obj.get("alerts") is not None else None,
             "total": obj.get("total")
         })
         return _obj

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**alerts** | [**List&lt;GithubComMonadIncAlertsModelsAlert&gt;**](GithubComMonadIncAlertsModelsAlert.md) |  |  [optional] |
+|**alerts** | [**List&lt;GithubComMonadIncCorePkgTypesModelsAlert&gt;**](GithubComMonadIncCorePkgTypesModelsAlert.md) |  |  [optional] |
 |**total** | **Integer** |  |  [optional] |
 
 

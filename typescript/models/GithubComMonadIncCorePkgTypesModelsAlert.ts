@@ -10,25 +10,22 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncAlertsModelsAlertStatus } from '../models/GithubComMonadIncAlertsModelsAlertStatus';
-import { GithubComMonadIncAlertsModelsResourceReference } from '../models/GithubComMonadIncAlertsModelsResourceReference';
+import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
+import { GithubComMonadIncCorePkgTypesModelsResourceReference } from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
 import { HttpFile } from '../http/http';
 
-export class GithubComMonadIncAlertsModelsAlert {
-    /**
-    * Timestamp of original alert creation
-    */
+export class GithubComMonadIncCorePkgTypesModelsAlert {
     'createdAt'?: number;
     'description'?: string;
     'id'?: string;
     'metadata'?: any | null;
     'name'?: string;
     'organizationId'?: string;
-    'resource'?: GithubComMonadIncAlertsModelsResourceReference;
+    'resource'?: GithubComMonadIncCorePkgTypesModelsResourceReference;
     'ruleId'?: string;
     'ruleType'?: string;
     'severity'?: string;
-    'status'?: GithubComMonadIncAlertsModelsAlertStatus;
+    'status'?: GithubComMonadIncCorePkgTypesModelsAlertStatus;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -74,7 +71,7 @@ export class GithubComMonadIncAlertsModelsAlert {
         {
             "name": "resource",
             "baseName": "resource",
-            "type": "GithubComMonadIncAlertsModelsResourceReference",
+            "type": "GithubComMonadIncCorePkgTypesModelsResourceReference",
             "format": ""
         },
         {
@@ -98,12 +95,12 @@ export class GithubComMonadIncAlertsModelsAlert {
         {
             "name": "status",
             "baseName": "status",
-            "type": "GithubComMonadIncAlertsModelsAlertStatus",
+            "type": "GithubComMonadIncCorePkgTypesModelsAlertStatus",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return GithubComMonadIncAlertsModelsAlert.attributeTypeMap;
+        return GithubComMonadIncCorePkgTypesModelsAlert.attributeTypeMap;
     }
 
     public constructor() {

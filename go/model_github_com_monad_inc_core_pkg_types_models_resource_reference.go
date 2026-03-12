@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the GithubComMonadIncAlertsModelsResourceReference type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GithubComMonadIncAlertsModelsResourceReference{}
+// checks if the GithubComMonadIncCorePkgTypesModelsResourceReference type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsResourceReference{}
 
-// GithubComMonadIncAlertsModelsResourceReference struct for GithubComMonadIncAlertsModelsResourceReference
-type GithubComMonadIncAlertsModelsResourceReference struct {
+// GithubComMonadIncCorePkgTypesModelsResourceReference struct for GithubComMonadIncCorePkgTypesModelsResourceReference
+type GithubComMonadIncCorePkgTypesModelsResourceReference struct {
 	// e.g., pipeline ID if resource is a node
 	ParentId *string `json:"parent_id,omitempty"`
 	// For hierarchical resources
@@ -29,25 +29,25 @@ type GithubComMonadIncAlertsModelsResourceReference struct {
 	ResourceType *string `json:"resource_type,omitempty"`
 }
 
-// NewGithubComMonadIncAlertsModelsResourceReference instantiates a new GithubComMonadIncAlertsModelsResourceReference object
+// NewGithubComMonadIncCorePkgTypesModelsResourceReference instantiates a new GithubComMonadIncCorePkgTypesModelsResourceReference object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGithubComMonadIncAlertsModelsResourceReference() *GithubComMonadIncAlertsModelsResourceReference {
-	this := GithubComMonadIncAlertsModelsResourceReference{}
+func NewGithubComMonadIncCorePkgTypesModelsResourceReference() *GithubComMonadIncCorePkgTypesModelsResourceReference {
+	this := GithubComMonadIncCorePkgTypesModelsResourceReference{}
 	return &this
 }
 
-// NewGithubComMonadIncAlertsModelsResourceReferenceWithDefaults instantiates a new GithubComMonadIncAlertsModelsResourceReference object
+// NewGithubComMonadIncCorePkgTypesModelsResourceReferenceWithDefaults instantiates a new GithubComMonadIncCorePkgTypesModelsResourceReference object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGithubComMonadIncAlertsModelsResourceReferenceWithDefaults() *GithubComMonadIncAlertsModelsResourceReference {
-	this := GithubComMonadIncAlertsModelsResourceReference{}
+func NewGithubComMonadIncCorePkgTypesModelsResourceReferenceWithDefaults() *GithubComMonadIncCorePkgTypesModelsResourceReference {
+	this := GithubComMonadIncCorePkgTypesModelsResourceReference{}
 	return &this
 }
 
 // GetParentId returns the ParentId field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentId() string {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetParentId() string {
 	if o == nil || IsNil(o.ParentId) {
 		var ret string
 		return ret
@@ -57,7 +57,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentId() string {
 
 // GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentIdOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetParentIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ParentId) {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentIdOk() (*strin
 }
 
 // HasParentId returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) HasParentId() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) HasParentId() bool {
 	if o != nil && !IsNil(o.ParentId) {
 		return true
 	}
@@ -74,12 +74,12 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) HasParentId() bool {
 }
 
 // SetParentId gets a reference to the given string and assigns it to the ParentId field.
-func (o *GithubComMonadIncAlertsModelsResourceReference) SetParentId(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) SetParentId(v string) {
 	o.ParentId = &v
 }
 
 // GetParentType returns the ParentType field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentType() string {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetParentType() string {
 	if o == nil || IsNil(o.ParentType) {
 		var ret string
 		return ret
@@ -89,7 +89,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentType() string 
 
 // GetParentTypeOk returns a tuple with the ParentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentTypeOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetParentTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.ParentType) {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetParentTypeOk() (*str
 }
 
 // HasParentType returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) HasParentType() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) HasParentType() bool {
 	if o != nil && !IsNil(o.ParentType) {
 		return true
 	}
@@ -106,12 +106,12 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) HasParentType() bool {
 }
 
 // SetParentType gets a reference to the given string and assigns it to the ParentType field.
-func (o *GithubComMonadIncAlertsModelsResourceReference) SetParentType(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) SetParentType(v string) {
 	o.ParentType = &v
 }
 
 // GetResourceId returns the ResourceId field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceId() string {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetResourceId() string {
 	if o == nil || IsNil(o.ResourceId) {
 		var ret string
 		return ret
@@ -121,7 +121,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceId() string 
 
 // GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceIdOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetResourceIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ResourceId) {
 		return nil, false
 	}
@@ -129,7 +129,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceIdOk() (*str
 }
 
 // HasResourceId returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) HasResourceId() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) HasResourceId() bool {
 	if o != nil && !IsNil(o.ResourceId) {
 		return true
 	}
@@ -138,12 +138,12 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) HasResourceId() bool {
 }
 
 // SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
-func (o *GithubComMonadIncAlertsModelsResourceReference) SetResourceId(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) SetResourceId(v string) {
 	o.ResourceId = &v
 }
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceType() string {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetResourceType() string {
 	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
@@ -153,7 +153,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceType() strin
 
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceTypeOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) GetResourceTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
@@ -161,7 +161,7 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) GetResourceTypeOk() (*s
 }
 
 // HasResourceType returns a boolean if a field has been set.
-func (o *GithubComMonadIncAlertsModelsResourceReference) HasResourceType() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) HasResourceType() bool {
 	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
@@ -170,11 +170,11 @@ func (o *GithubComMonadIncAlertsModelsResourceReference) HasResourceType() bool 
 }
 
 // SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
-func (o *GithubComMonadIncAlertsModelsResourceReference) SetResourceType(v string) {
+func (o *GithubComMonadIncCorePkgTypesModelsResourceReference) SetResourceType(v string) {
 	o.ResourceType = &v
 }
 
-func (o GithubComMonadIncAlertsModelsResourceReference) MarshalJSON() ([]byte, error) {
+func (o GithubComMonadIncCorePkgTypesModelsResourceReference) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -182,7 +182,7 @@ func (o GithubComMonadIncAlertsModelsResourceReference) MarshalJSON() ([]byte, e
 	return json.Marshal(toSerialize)
 }
 
-func (o GithubComMonadIncAlertsModelsResourceReference) ToMap() (map[string]interface{}, error) {
+func (o GithubComMonadIncCorePkgTypesModelsResourceReference) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ParentId) {
 		toSerialize["parent_id"] = o.ParentId
@@ -199,38 +199,38 @@ func (o GithubComMonadIncAlertsModelsResourceReference) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 
-type NullableGithubComMonadIncAlertsModelsResourceReference struct {
-	value *GithubComMonadIncAlertsModelsResourceReference
+type NullableGithubComMonadIncCorePkgTypesModelsResourceReference struct {
+	value *GithubComMonadIncCorePkgTypesModelsResourceReference
 	isSet bool
 }
 
-func (v NullableGithubComMonadIncAlertsModelsResourceReference) Get() *GithubComMonadIncAlertsModelsResourceReference {
+func (v NullableGithubComMonadIncCorePkgTypesModelsResourceReference) Get() *GithubComMonadIncCorePkgTypesModelsResourceReference {
 	return v.value
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsResourceReference) Set(val *GithubComMonadIncAlertsModelsResourceReference) {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsResourceReference) Set(val *GithubComMonadIncCorePkgTypesModelsResourceReference) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGithubComMonadIncAlertsModelsResourceReference) IsSet() bool {
+func (v NullableGithubComMonadIncCorePkgTypesModelsResourceReference) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsResourceReference) Unset() {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsResourceReference) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGithubComMonadIncAlertsModelsResourceReference(val *GithubComMonadIncAlertsModelsResourceReference) *NullableGithubComMonadIncAlertsModelsResourceReference {
-	return &NullableGithubComMonadIncAlertsModelsResourceReference{value: val, isSet: true}
+func NewNullableGithubComMonadIncCorePkgTypesModelsResourceReference(val *GithubComMonadIncCorePkgTypesModelsResourceReference) *NullableGithubComMonadIncCorePkgTypesModelsResourceReference {
+	return &NullableGithubComMonadIncCorePkgTypesModelsResourceReference{value: val, isSet: true}
 }
 
-func (v NullableGithubComMonadIncAlertsModelsResourceReference) MarshalJSON() ([]byte, error) {
+func (v NullableGithubComMonadIncCorePkgTypesModelsResourceReference) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGithubComMonadIncAlertsModelsResourceReference) UnmarshalJSON(src []byte) error {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsResourceReference) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

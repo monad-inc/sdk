@@ -12,20 +12,16 @@
 
 import { HttpFile } from '../http/http';
 
-export class GithubComMonadIncAlertsModelsResourceReference {
+export class GithubComMonadIncCorePkgTypesModelsAlertStatus {
     /**
-    * e.g., pipeline ID if resource is a node
+    * When clearing began
     */
-    'parentId'?: string;
+    'clearingStartedAt'?: number;
     /**
-    * For hierarchical resources
+    * Unix timestamp when resolved
     */
-    'parentType'?: string;
-    'resourceId'?: string;
-    /**
-    * \"pipeline\", \"node\", \"organization\"
-    */
-    'resourceType'?: string;
+    'resolvedAt'?: number;
+    'state'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,32 +29,26 @@ export class GithubComMonadIncAlertsModelsResourceReference {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "parentId",
-            "baseName": "parent_id",
-            "type": "string",
+            "name": "clearingStartedAt",
+            "baseName": "clearing_started_at",
+            "type": "number",
             "format": ""
         },
         {
-            "name": "parentType",
-            "baseName": "parent_type",
-            "type": "string",
+            "name": "resolvedAt",
+            "baseName": "resolved_at",
+            "type": "number",
             "format": ""
         },
         {
-            "name": "resourceId",
-            "baseName": "resource_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "resourceType",
-            "baseName": "resource_type",
+            "name": "state",
+            "baseName": "state",
             "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return GithubComMonadIncAlertsModelsResourceReference.attributeTypeMap;
+        return GithubComMonadIncCorePkgTypesModelsAlertStatus.attributeTypeMap;
     }
 
     public constructor() {

@@ -23,13 +23,13 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class GithubComMonadIncAlertsModelsAlertStatus(BaseModel):
+class GithubComMonadIncCorePkgTypesModelsAlertStatus(BaseModel):
     """
-    GithubComMonadIncAlertsModelsAlertStatus
+    GithubComMonadIncCorePkgTypesModelsAlertStatus
     """ # noqa: E501
     clearing_started_at: Optional[StrictInt] = Field(default=None, description="When clearing began")
     resolved_at: Optional[StrictInt] = Field(default=None, description="Unix timestamp when resolved")
-    state: Optional[StrictStr] = Field(default=None, description="FIRING or RESOLVED")
+    state: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["clearing_started_at", "resolved_at", "state"]
 
     model_config = ConfigDict(
@@ -50,7 +50,7 @@ class GithubComMonadIncAlertsModelsAlertStatus(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of GithubComMonadIncAlertsModelsAlertStatus from a JSON string"""
+        """Create an instance of GithubComMonadIncCorePkgTypesModelsAlertStatus from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +75,7 @@ class GithubComMonadIncAlertsModelsAlertStatus(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of GithubComMonadIncAlertsModelsAlertStatus from a dict"""
+        """Create an instance of GithubComMonadIncCorePkgTypesModelsAlertStatus from a dict"""
         if obj is None:
             return None
 

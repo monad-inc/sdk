@@ -1,322 +1,322 @@
-# GithubComMonadIncAlertsModelsAlert
+# GithubComMonadIncCorePkgTypesModelsAlert
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **int32** | Timestamp of original alert creation | [optional] 
+**CreatedAt** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to **interface{}** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
-**Resource** | Pointer to [**GithubComMonadIncAlertsModelsResourceReference**](GithubComMonadIncAlertsModelsResourceReference.md) |  | [optional] 
+**Resource** | Pointer to [**GithubComMonadIncCorePkgTypesModelsResourceReference**](GithubComMonadIncCorePkgTypesModelsResourceReference.md) |  | [optional] 
 **RuleId** | Pointer to **string** |  | [optional] 
 **RuleType** | Pointer to **string** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to [**GithubComMonadIncAlertsModelsAlertStatus**](GithubComMonadIncAlertsModelsAlertStatus.md) |  | [optional] 
+**Status** | Pointer to [**GithubComMonadIncCorePkgTypesModelsAlertStatus**](GithubComMonadIncCorePkgTypesModelsAlertStatus.md) |  | [optional] 
 
 ## Methods
 
-### NewGithubComMonadIncAlertsModelsAlert
+### NewGithubComMonadIncCorePkgTypesModelsAlert
 
-`func NewGithubComMonadIncAlertsModelsAlert() *GithubComMonadIncAlertsModelsAlert`
+`func NewGithubComMonadIncCorePkgTypesModelsAlert() *GithubComMonadIncCorePkgTypesModelsAlert`
 
-NewGithubComMonadIncAlertsModelsAlert instantiates a new GithubComMonadIncAlertsModelsAlert object
+NewGithubComMonadIncCorePkgTypesModelsAlert instantiates a new GithubComMonadIncCorePkgTypesModelsAlert object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGithubComMonadIncAlertsModelsAlertWithDefaults
+### NewGithubComMonadIncCorePkgTypesModelsAlertWithDefaults
 
-`func NewGithubComMonadIncAlertsModelsAlertWithDefaults() *GithubComMonadIncAlertsModelsAlert`
+`func NewGithubComMonadIncCorePkgTypesModelsAlertWithDefaults() *GithubComMonadIncCorePkgTypesModelsAlert`
 
-NewGithubComMonadIncAlertsModelsAlertWithDefaults instantiates a new GithubComMonadIncAlertsModelsAlert object
+NewGithubComMonadIncCorePkgTypesModelsAlertWithDefaults instantiates a new GithubComMonadIncCorePkgTypesModelsAlert object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCreatedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetCreatedAt() int32`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetCreatedAt() int32`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetCreatedAtOk() (*int32, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetCreatedAtOk() (*int32, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetCreatedAt(v int32)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetCreatedAt(v int32)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasCreatedAt() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### GetDescription
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetDescription() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetDescriptionOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetDescription(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasDescription() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetId() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetIdOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetId(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasId() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetMetadata() interface{}`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetMetadata() interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetMetadataOk() (*interface{}, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetMetadataOk() (*interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetMetadata(v interface{})`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetMetadata(v interface{})`
 
 SetMetadata sets Metadata field to given value.
 
 ### HasMetadata
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasMetadata() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
 
 ### SetMetadataNil
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetMetadataNil(b bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetMetadataNil(b bool)`
 
  SetMetadataNil sets the value for Metadata to be an explicit nil
 
 ### UnsetMetadata
-`func (o *GithubComMonadIncAlertsModelsAlert) UnsetMetadata()`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) UnsetMetadata()`
 
 UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 ### GetName
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetName() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetNameOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetName(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasName() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetOrganizationId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetOrganizationId() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetOrganizationId() string`
 
 GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
 
 ### GetOrganizationIdOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetOrganizationIdOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetOrganizationIdOk() (*string, bool)`
 
 GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizationId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetOrganizationId(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetOrganizationId(v string)`
 
 SetOrganizationId sets OrganizationId field to given value.
 
 ### HasOrganizationId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasOrganizationId() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
 
 ### GetResource
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetResource() GithubComMonadIncAlertsModelsResourceReference`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetResource() GithubComMonadIncCorePkgTypesModelsResourceReference`
 
 GetResource returns the Resource field if non-nil, zero value otherwise.
 
 ### GetResourceOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetResourceOk() (*GithubComMonadIncAlertsModelsResourceReference, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetResourceOk() (*GithubComMonadIncCorePkgTypesModelsResourceReference, bool)`
 
 GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResource
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetResource(v GithubComMonadIncAlertsModelsResourceReference)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetResource(v GithubComMonadIncCorePkgTypesModelsResourceReference)`
 
 SetResource sets Resource field to given value.
 
 ### HasResource
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasResource() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasResource() bool`
 
 HasResource returns a boolean if a field has been set.
 
 ### GetRuleId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetRuleId() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleId() string`
 
 GetRuleId returns the RuleId field if non-nil, zero value otherwise.
 
 ### GetRuleIdOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetRuleIdOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleIdOk() (*string, bool)`
 
 GetRuleIdOk returns a tuple with the RuleId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetRuleId(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetRuleId(v string)`
 
 SetRuleId sets RuleId field to given value.
 
 ### HasRuleId
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasRuleId() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasRuleId() bool`
 
 HasRuleId returns a boolean if a field has been set.
 
 ### GetRuleType
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetRuleType() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleType() string`
 
 GetRuleType returns the RuleType field if non-nil, zero value otherwise.
 
 ### GetRuleTypeOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetRuleTypeOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetRuleTypeOk() (*string, bool)`
 
 GetRuleTypeOk returns a tuple with the RuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleType
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetRuleType(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetRuleType(v string)`
 
 SetRuleType sets RuleType field to given value.
 
 ### HasRuleType
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasRuleType() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasRuleType() bool`
 
 HasRuleType returns a boolean if a field has been set.
 
 ### GetSeverity
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetSeverity() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetSeverity() string`
 
 GetSeverity returns the Severity field if non-nil, zero value otherwise.
 
 ### GetSeverityOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetSeverityOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetSeverityOk() (*string, bool)`
 
 GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSeverity
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetSeverity(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetSeverity(v string)`
 
 SetSeverity sets Severity field to given value.
 
 ### HasSeverity
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasSeverity() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasSeverity() bool`
 
 HasSeverity returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetStatus() GithubComMonadIncAlertsModelsAlertStatus`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetStatus() GithubComMonadIncCorePkgTypesModelsAlertStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *GithubComMonadIncAlertsModelsAlert) GetStatusOk() (*GithubComMonadIncAlertsModelsAlertStatus, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetStatusOk() (*GithubComMonadIncCorePkgTypesModelsAlertStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *GithubComMonadIncAlertsModelsAlert) SetStatus(v GithubComMonadIncAlertsModelsAlertStatus)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetStatus(v GithubComMonadIncCorePkgTypesModelsAlertStatus)`
 
 SetStatus sets Status field to given value.
 
 ### HasStatus
 
-`func (o *GithubComMonadIncAlertsModelsAlert) HasStatus() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
 

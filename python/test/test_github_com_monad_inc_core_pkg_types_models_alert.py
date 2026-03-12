@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.github_com_monad_inc_alerts_models_alert import GithubComMonadIncAlertsModelsAlert
+from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert
 
-class TestGithubComMonadIncAlertsModelsAlert(unittest.TestCase):
-    """GithubComMonadIncAlertsModelsAlert unit test stubs"""
+class TestGithubComMonadIncCorePkgTypesModelsAlert(unittest.TestCase):
+    """GithubComMonadIncCorePkgTypesModelsAlert unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,23 +26,23 @@ class TestGithubComMonadIncAlertsModelsAlert(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GithubComMonadIncAlertsModelsAlert:
-        """Test GithubComMonadIncAlertsModelsAlert
+    def make_instance(self, include_optional) -> GithubComMonadIncCorePkgTypesModelsAlert:
+        """Test GithubComMonadIncCorePkgTypesModelsAlert
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `GithubComMonadIncAlertsModelsAlert`
+        # uncomment below to create an instance of `GithubComMonadIncCorePkgTypesModelsAlert`
         """
-        model = GithubComMonadIncAlertsModelsAlert()
+        model = GithubComMonadIncCorePkgTypesModelsAlert()
         if include_optional:
-            return GithubComMonadIncAlertsModelsAlert(
+            return GithubComMonadIncCorePkgTypesModelsAlert(
                 created_at = 56,
                 description = '',
                 id = '',
                 metadata = None,
                 name = '',
                 organization_id = '',
-                resource = monad.models.github_com_monad_inc_alerts_models/resource_reference.github_com_monad-inc_alerts_models.ResourceReference(
+                resource = monad.models.github_com_monad_inc_core_pkg_types_models/resource_reference.github_com_monad-inc_core_pkg_types_models.ResourceReference(
                     parent_id = '', 
                     parent_type = '', 
                     resource_id = '', 
@@ -50,18 +50,18 @@ class TestGithubComMonadIncAlertsModelsAlert(unittest.TestCase):
                 rule_id = '',
                 rule_type = '',
                 severity = '',
-                status = monad.models.github_com_monad_inc_alerts_models/alert_status.github_com_monad-inc_alerts_models.AlertStatus(
+                status = monad.models.github_com_monad_inc_core_pkg_types_models/alert_status.github_com_monad-inc_core_pkg_types_models.AlertStatus(
                     clearing_started_at = 56, 
                     resolved_at = 56, 
                     state = '', )
             )
         else:
-            return GithubComMonadIncAlertsModelsAlert(
+            return GithubComMonadIncCorePkgTypesModelsAlert(
         )
         """
 
-    def testGithubComMonadIncAlertsModelsAlert(self):
-        """Test GithubComMonadIncAlertsModelsAlert"""
+    def testGithubComMonadIncCorePkgTypesModelsAlert(self):
+        """Test GithubComMonadIncCorePkgTypesModelsAlert"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

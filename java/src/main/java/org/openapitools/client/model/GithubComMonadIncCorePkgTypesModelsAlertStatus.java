@@ -46,10 +46,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * GithubComMonadIncAlertsModelsAlertStatus
+ * GithubComMonadIncCorePkgTypesModelsAlertStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T01:51:34.959314Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class GithubComMonadIncAlertsModelsAlertStatus {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T19:44:55.767350696Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+public class GithubComMonadIncCorePkgTypesModelsAlertStatus {
   public static final String SERIALIZED_NAME_CLEARING_STARTED_AT = "clearing_started_at";
   @SerializedName(SERIALIZED_NAME_CLEARING_STARTED_AT)
   @javax.annotation.Nullable
@@ -65,10 +65,10 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
   @javax.annotation.Nullable
   private String state;
 
-  public GithubComMonadIncAlertsModelsAlertStatus() {
+  public GithubComMonadIncCorePkgTypesModelsAlertStatus() {
   }
 
-  public GithubComMonadIncAlertsModelsAlertStatus clearingStartedAt(@javax.annotation.Nullable Integer clearingStartedAt) {
+  public GithubComMonadIncCorePkgTypesModelsAlertStatus clearingStartedAt(@javax.annotation.Nullable Integer clearingStartedAt) {
     this.clearingStartedAt = clearingStartedAt;
     return this;
   }
@@ -87,7 +87,7 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlertStatus resolvedAt(@javax.annotation.Nullable Integer resolvedAt) {
+  public GithubComMonadIncCorePkgTypesModelsAlertStatus resolvedAt(@javax.annotation.Nullable Integer resolvedAt) {
     this.resolvedAt = resolvedAt;
     return this;
   }
@@ -106,13 +106,13 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
   }
 
 
-  public GithubComMonadIncAlertsModelsAlertStatus state(@javax.annotation.Nullable String state) {
+  public GithubComMonadIncCorePkgTypesModelsAlertStatus state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
 
   /**
-   * FIRING or RESOLVED
+   * Get state
    * @return state
    */
   @javax.annotation.Nullable
@@ -134,10 +134,10 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GithubComMonadIncAlertsModelsAlertStatus githubComMonadIncAlertsModelsAlertStatus = (GithubComMonadIncAlertsModelsAlertStatus) o;
-    return Objects.equals(this.clearingStartedAt, githubComMonadIncAlertsModelsAlertStatus.clearingStartedAt) &&
-        Objects.equals(this.resolvedAt, githubComMonadIncAlertsModelsAlertStatus.resolvedAt) &&
-        Objects.equals(this.state, githubComMonadIncAlertsModelsAlertStatus.state);
+    GithubComMonadIncCorePkgTypesModelsAlertStatus githubComMonadIncCorePkgTypesModelsAlertStatus = (GithubComMonadIncCorePkgTypesModelsAlertStatus) o;
+    return Objects.equals(this.clearingStartedAt, githubComMonadIncCorePkgTypesModelsAlertStatus.clearingStartedAt) &&
+        Objects.equals(this.resolvedAt, githubComMonadIncCorePkgTypesModelsAlertStatus.resolvedAt) &&
+        Objects.equals(this.state, githubComMonadIncCorePkgTypesModelsAlertStatus.state);
   }
 
   @Override
@@ -148,7 +148,7 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GithubComMonadIncAlertsModelsAlertStatus {\n");
+    sb.append("class GithubComMonadIncCorePkgTypesModelsAlertStatus {\n");
     sb.append("    clearingStartedAt: ").append(toIndentedString(clearingStartedAt)).append("\n");
     sb.append("    resolvedAt: ").append(toIndentedString(resolvedAt)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
@@ -183,20 +183,20 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncAlertsModelsAlertStatus
+   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncCorePkgTypesModelsAlertStatus
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!GithubComMonadIncAlertsModelsAlertStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncAlertsModelsAlertStatus is not found in the empty JSON string", GithubComMonadIncAlertsModelsAlertStatus.openapiRequiredFields.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsAlertStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncCorePkgTypesModelsAlertStatus is not found in the empty JSON string", GithubComMonadIncCorePkgTypesModelsAlertStatus.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!GithubComMonadIncAlertsModelsAlertStatus.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncAlertsModelsAlertStatus` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsAlertStatus.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncCorePkgTypesModelsAlertStatus` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -209,22 +209,22 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GithubComMonadIncAlertsModelsAlertStatus.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GithubComMonadIncAlertsModelsAlertStatus' and its subtypes
+       if (!GithubComMonadIncCorePkgTypesModelsAlertStatus.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GithubComMonadIncCorePkgTypesModelsAlertStatus' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GithubComMonadIncAlertsModelsAlertStatus> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncAlertsModelsAlertStatus.class));
+       final TypeAdapter<GithubComMonadIncCorePkgTypesModelsAlertStatus> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncCorePkgTypesModelsAlertStatus.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncAlertsModelsAlertStatus>() {
+       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncCorePkgTypesModelsAlertStatus>() {
            @Override
-           public void write(JsonWriter out, GithubComMonadIncAlertsModelsAlertStatus value) throws IOException {
+           public void write(JsonWriter out, GithubComMonadIncCorePkgTypesModelsAlertStatus value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public GithubComMonadIncAlertsModelsAlertStatus read(JsonReader in) throws IOException {
+           public GithubComMonadIncCorePkgTypesModelsAlertStatus read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -235,18 +235,18 @@ public class GithubComMonadIncAlertsModelsAlertStatus {
   }
 
   /**
-   * Create an instance of GithubComMonadIncAlertsModelsAlertStatus given an JSON string
+   * Create an instance of GithubComMonadIncCorePkgTypesModelsAlertStatus given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of GithubComMonadIncAlertsModelsAlertStatus
-   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncAlertsModelsAlertStatus
+   * @return An instance of GithubComMonadIncCorePkgTypesModelsAlertStatus
+   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncCorePkgTypesModelsAlertStatus
    */
-  public static GithubComMonadIncAlertsModelsAlertStatus fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GithubComMonadIncAlertsModelsAlertStatus.class);
+  public static GithubComMonadIncCorePkgTypesModelsAlertStatus fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GithubComMonadIncCorePkgTypesModelsAlertStatus.class);
   }
 
   /**
-   * Convert an instance of GithubComMonadIncAlertsModelsAlertStatus to an JSON string
+   * Convert an instance of GithubComMonadIncCorePkgTypesModelsAlertStatus to an JSON string
    *
    * @return JSON string
    */

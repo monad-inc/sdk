@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-12T01:51:34.959314Z[Etc/UTC]
+  - Build date: 2026-03-12T19:44:55.767350696Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -454,12 +454,12 @@ Class | Method | HTTP request | Description
  - [GeolocusSettingsConfig](docs/GeolocusSettingsConfig.md)
  - [GithubAdvisoryUserSettingsConfig](docs/GithubAdvisoryUserSettingsConfig.md)
  - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
- - [GithubComMonadIncAlertsModelsAlert](docs/GithubComMonadIncAlertsModelsAlert.md)
- - [GithubComMonadIncAlertsModelsAlertStatus](docs/GithubComMonadIncAlertsModelsAlertStatus.md)
- - [GithubComMonadIncAlertsModelsResourceReference](docs/GithubComMonadIncAlertsModelsResourceReference.md)
+ - [GithubComMonadIncCorePkgTypesModelsAlert](docs/GithubComMonadIncCorePkgTypesModelsAlert.md)
+ - [GithubComMonadIncCorePkgTypesModelsAlertStatus](docs/GithubComMonadIncCorePkgTypesModelsAlertStatus.md)
  - [GithubComMonadIncCorePkgTypesModelsOrganization](docs/GithubComMonadIncCorePkgTypesModelsOrganization.md)
  - [GithubComMonadIncCorePkgTypesModelsPermission](docs/GithubComMonadIncCorePkgTypesModelsPermission.md)
  - [GithubComMonadIncCorePkgTypesModelsQuota](docs/GithubComMonadIncCorePkgTypesModelsQuota.md)
+ - [GithubComMonadIncCorePkgTypesModelsResourceReference](docs/GithubComMonadIncCorePkgTypesModelsResourceReference.md)
  - [GithubComMonadIncCorePkgTypesModelsUser](docs/GithubComMonadIncCorePkgTypesModelsUser.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)
