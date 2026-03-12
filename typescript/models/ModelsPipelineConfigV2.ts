@@ -25,6 +25,7 @@ export class ModelsPipelineConfigV2 {
     'enabled'?: boolean;
     'id'?: string;
     'isSynthetic'?: boolean;
+    'managedBy'?: string;
     'name'?: string;
     'nextCronRunAt'?: string;
     'nodes'?: Array<ModelsPipelineNode>;
@@ -90,6 +91,12 @@ export class ModelsPipelineConfigV2 {
             "name": "isSynthetic",
             "baseName": "is_synthetic",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "managedBy",
+            "baseName": "managed_by",
+            "type": "string",
             "format": ""
         },
         {

@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T21:10:24.791895260Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T22:42:44.461075482Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billingAccountId";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -99,6 +99,11 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_IS_SYNTHETIC)
   @javax.annotation.Nullable
   private Boolean isSynthetic;
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @javax.annotation.Nullable
+  private String managedBy;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -317,6 +322,25 @@ public class ModelsPipelineConfigV2 {
   }
 
 
+  public ModelsPipelineConfigV2 managedBy(@javax.annotation.Nullable String managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * Get managedBy
+   * @return managedBy
+   */
+  @javax.annotation.Nullable
+  public String getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@javax.annotation.Nullable String managedBy) {
+    this.managedBy = managedBy;
+  }
+
+
   public ModelsPipelineConfigV2 name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -477,6 +501,7 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.enabled, modelsPipelineConfigV2.enabled) &&
         Objects.equals(this.id, modelsPipelineConfigV2.id) &&
         Objects.equals(this.isSynthetic, modelsPipelineConfigV2.isSynthetic) &&
+        Objects.equals(this.managedBy, modelsPipelineConfigV2.managedBy) &&
         Objects.equals(this.name, modelsPipelineConfigV2.name) &&
         Objects.equals(this.nextCronRunAt, modelsPipelineConfigV2.nextCronRunAt) &&
         Objects.equals(this.nodes, modelsPipelineConfigV2.nodes) &&
@@ -488,7 +513,7 @@ public class ModelsPipelineConfigV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
   }
 
   @Override
@@ -504,6 +529,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isSynthetic: ").append(toIndentedString(isSynthetic)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nextCronRunAt: ").append(toIndentedString(nextCronRunAt)).append("\n");
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
@@ -532,7 +558,7 @@ public class ModelsPipelineConfigV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -587,6 +613,9 @@ public class ModelsPipelineConfigV2 {
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

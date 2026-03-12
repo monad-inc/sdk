@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **IsSynthetic** | Pointer to **bool** |  | [optional] 
+**ManagedBy** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NextCronRunAt** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNode**](ModelsPipelineNode.md) |  | [optional] 
@@ -264,6 +265,31 @@ SetIsSynthetic sets IsSynthetic field to given value.
 `func (o *ModelsPipelineConfigV2) HasIsSynthetic() bool`
 
 HasIsSynthetic returns a boolean if a field has been set.
+
+### GetManagedBy
+
+`func (o *ModelsPipelineConfigV2) GetManagedBy() string`
+
+GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
+
+### GetManagedByOk
+
+`func (o *ModelsPipelineConfigV2) GetManagedByOk() (*string, bool)`
+
+GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagedBy
+
+`func (o *ModelsPipelineConfigV2) SetManagedBy(v string)`
+
+SetManagedBy sets ManagedBy field to given value.
+
+### HasManagedBy
+
+`func (o *ModelsPipelineConfigV2) HasManagedBy() bool`
+
+HasManagedBy returns a boolean if a field has been set.
 
 ### GetName
 

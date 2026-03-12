@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Snyk projects settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T21:10:24.791895260Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T22:42:44.461075482Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class SnykProjectsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)

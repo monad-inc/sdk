@@ -62,6 +62,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                 enabled = True,
                 id = '',
                 is_synthetic = True,
+                managed_by = '',
                 name = '',
                 next_cron_run_at = '',
                 nodes = [
