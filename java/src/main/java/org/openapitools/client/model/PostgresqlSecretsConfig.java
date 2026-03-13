@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * PostgresqlSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-13T16:37:05.097091303Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-13T17:35:13.049187525Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class PostgresqlSecretsConfig {
   public static final String SERIALIZED_NAME_CONNECTION_STRING = "connection_string";
   @SerializedName(SERIALIZED_NAME_CONNECTION_STRING)

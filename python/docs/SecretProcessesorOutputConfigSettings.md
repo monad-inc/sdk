@@ -67,6 +67,8 @@ Name | Type | Description | Notes
 **source_account_details** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
 **rule_id** | **str** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **stream_name** | **str** | The name of the data stream defined in the Data Collection Rule. | [optional] 
+**auth_config** | [**SlackAuthConfig**](SlackAuthConfig.md) |  | [optional] 
+**message_template** | **str** |  | [optional] 
 **account** | **str** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **case_insensitivity** | **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 

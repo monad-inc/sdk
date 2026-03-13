@@ -39,6 +39,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	S3SettingsConfig *S3SettingsConfig
 	SecurityLakeSettingsConfig *SecurityLakeSettingsConfig
 	SentinelSettingsConfig *SentinelSettingsConfig
+	SlackSettingsConfig *SlackSettingsConfig
 	SnowflakeOutputSettingsConfig *SnowflakeOutputSettingsConfig
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
@@ -182,6 +183,13 @@ func SecurityLakeSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Securi
 func SentinelSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SentinelSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		SentinelSettingsConfig: v,
+	}
+}
+
+// SlackSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns SlackSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func SlackSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SlackSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		SlackSettingsConfig: v,
 	}
 }
 
@@ -558,6 +566,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SentinelSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SlackSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SlackSettingsConfig)
+	if err == nil {
+		jsonSlackSettingsConfig, _ := json.Marshal(dst.SlackSettingsConfig)
+		if string(jsonSlackSettingsConfig) == "{}" { // empty struct
+			dst.SlackSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SlackSettingsConfig); err != nil {
+				dst.SlackSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SlackSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SnowflakeOutputSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnowflakeOutputSettingsConfig)
 	if err == nil {
@@ -648,6 +673,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.S3SettingsConfig = nil
 		dst.SecurityLakeSettingsConfig = nil
 		dst.SentinelSettingsConfig = nil
+		dst.SlackSettingsConfig = nil
 		dst.SnowflakeOutputSettingsConfig = nil
 		dst.SplunkSettingsConfig = nil
 		dst.SumologicSettingsConfig = nil
@@ -741,6 +767,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SentinelSettingsConfig != nil {
 		return json.Marshal(&src.SentinelSettingsConfig)
+	}
+
+	if src.SlackSettingsConfig != nil {
+		return json.Marshal(&src.SlackSettingsConfig)
 	}
 
 	if src.SnowflakeOutputSettingsConfig != nil {
@@ -847,6 +877,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.SentinelSettingsConfig
 	}
 
+	if obj.SlackSettingsConfig != nil {
+		return obj.SlackSettingsConfig
+	}
+
 	if obj.SnowflakeOutputSettingsConfig != nil {
 		return obj.SnowflakeOutputSettingsConfig
 	}
@@ -947,6 +981,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.SentinelSettingsConfig != nil {
 		return *obj.SentinelSettingsConfig
+	}
+
+	if obj.SlackSettingsConfig != nil {
+		return *obj.SlackSettingsConfig
 	}
 
 	if obj.SnowflakeOutputSettingsConfig != nil {

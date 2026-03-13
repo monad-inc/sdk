@@ -66,6 +66,8 @@ Name | Type | Description | Notes
 **SourceAccountDetails** | Pointer to [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
+**AuthConfig** | Pointer to [**SlackAuthConfig**](SlackAuthConfig.md) |  | [optional] 
+**MessageTemplate** | Pointer to **string** |  | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **CaseInsensitivity** | Pointer to **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -1644,6 +1646,56 @@ SetStreamName sets StreamName field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasStreamName() bool`
 
 HasStreamName returns a boolean if a field has been set.
+
+### GetAuthConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthConfig() SlackAuthConfig`
+
+GetAuthConfig returns the AuthConfig field if non-nil, zero value otherwise.
+
+### GetAuthConfigOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthConfigOk() (*SlackAuthConfig, bool)`
+
+GetAuthConfigOk returns a tuple with the AuthConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) SetAuthConfig(v SlackAuthConfig)`
+
+SetAuthConfig sets AuthConfig field to given value.
+
+### HasAuthConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) HasAuthConfig() bool`
+
+HasAuthConfig returns a boolean if a field has been set.
+
+### GetMessageTemplate
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMessageTemplate() string`
+
+GetMessageTemplate returns the MessageTemplate field if non-nil, zero value otherwise.
+
+### GetMessageTemplateOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMessageTemplateOk() (*string, bool)`
+
+GetMessageTemplateOk returns a tuple with the MessageTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageTemplate
+
+`func (o *SecretProcessesorOutputConfigSettings) SetMessageTemplate(v string)`
+
+SetMessageTemplate sets MessageTemplate field to given value.
+
+### HasMessageTemplate
+
+`func (o *SecretProcessesorOutputConfigSettings) HasMessageTemplate() bool`
+
+HasMessageTemplate returns a boolean if a field has been set.
 
 ### GetAccount
 

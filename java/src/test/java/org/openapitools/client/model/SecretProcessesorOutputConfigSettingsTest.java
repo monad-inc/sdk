@@ -50,6 +50,8 @@ import org.openapitools.client.model.S3SettingsConfig;
 import org.openapitools.client.model.SecurityLakeSettingsConfig;
 import org.openapitools.client.model.SecurityLakeSourceAccountDetails;
 import org.openapitools.client.model.SentinelSettingsConfig;
+import org.openapitools.client.model.SlackAuthConfig;
+import org.openapitools.client.model.SlackSettingsConfig;
 import org.openapitools.client.model.SnowflakeOutputSettingsConfig;
 import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
@@ -565,6 +567,22 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void streamNameTest() {
         // TODO: test streamName
+    }
+
+    /**
+     * Test the property 'authConfig'
+     */
+    @Test
+    public void authConfigTest() {
+        // TODO: test authConfig
+    }
+
+    /**
+     * Test the property 'messageTemplate'
+     */
+    @Test
+    public void messageTemplateTest() {
+        // TODO: test messageTemplate
     }
 
     /**

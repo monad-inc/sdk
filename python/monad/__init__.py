@@ -521,10 +521,14 @@ __all__ = [
     "SentinelSettingsConfig",
     "SentryOrgAuditLogsSecretsConfig",
     "SentryOrgAuditLogsSettingsConfig",
+    "SlackAuthConfig",
+    "SlackBotTokenVariant",
     "SlackEnterpriseAuditLogsSecretsConfig",
     "SlackEnterpriseAuditLogsSettingsConfig",
+    "SlackSettingsConfig",
     "SlackUsersSecretsConfig",
     "SlackUsersSettingsConfig",
+    "SlackWebhookVariant",
     "SlackgroupsSecretsConfig",
     "SlackgroupsSettingsConfig",
     "SnowflakeInputSecretsConfig",
@@ -1110,10 +1114,14 @@ from monad.models.sentinel_secrets_config import SentinelSecretsConfig as Sentin
 from monad.models.sentinel_settings_config import SentinelSettingsConfig as SentinelSettingsConfig
 from monad.models.sentry_org_audit_logs_secrets_config import SentryOrgAuditLogsSecretsConfig as SentryOrgAuditLogsSecretsConfig
 from monad.models.sentry_org_audit_logs_settings_config import SentryOrgAuditLogsSettingsConfig as SentryOrgAuditLogsSettingsConfig
+from monad.models.slack_auth_config import SlackAuthConfig as SlackAuthConfig
+from monad.models.slack_bot_token_variant import SlackBotTokenVariant as SlackBotTokenVariant
 from monad.models.slack_enterprise_audit_logs_secrets_config import SlackEnterpriseAuditLogsSecretsConfig as SlackEnterpriseAuditLogsSecretsConfig
 from monad.models.slack_enterprise_audit_logs_settings_config import SlackEnterpriseAuditLogsSettingsConfig as SlackEnterpriseAuditLogsSettingsConfig
+from monad.models.slack_settings_config import SlackSettingsConfig as SlackSettingsConfig
 from monad.models.slack_users_secrets_config import SlackUsersSecretsConfig as SlackUsersSecretsConfig
 from monad.models.slack_users_settings_config import SlackUsersSettingsConfig as SlackUsersSettingsConfig
+from monad.models.slack_webhook_variant import SlackWebhookVariant as SlackWebhookVariant
 from monad.models.slackgroups_secrets_config import SlackgroupsSecretsConfig as SlackgroupsSecretsConfig
 from monad.models.slackgroups_settings_config import SlackgroupsSettingsConfig as SlackgroupsSettingsConfig
 from monad.models.snowflake_input_secrets_config import SnowflakeInputSecretsConfig as SnowflakeInputSecretsConfig

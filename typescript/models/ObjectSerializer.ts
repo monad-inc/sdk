@@ -456,10 +456,14 @@ export * from '../models/SentinelSecretsConfig';
 export * from '../models/SentinelSettingsConfig';
 export * from '../models/SentryOrgAuditLogsSecretsConfig';
 export * from '../models/SentryOrgAuditLogsSettingsConfig';
+export * from '../models/SlackAuthConfig';
+export * from '../models/SlackBotTokenVariant';
 export * from '../models/SlackEnterpriseAuditLogsSecretsConfig';
 export * from '../models/SlackEnterpriseAuditLogsSettingsConfig';
+export * from '../models/SlackSettingsConfig';
 export * from '../models/SlackUsersSecretsConfig';
 export * from '../models/SlackUsersSettingsConfig';
+export * from '../models/SlackWebhookVariant';
 export * from '../models/SlackgroupsSecretsConfig';
 export * from '../models/SlackgroupsSettingsConfig';
 export * from '../models/SnowflakeInputSecretsConfig';
@@ -995,10 +999,14 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
+import { SlackAuthConfig } from '../models/SlackAuthConfig';
+import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
 import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
 import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
+import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
+import { SlackWebhookVariant } from '../models/SlackWebhookVariant';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
 import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
@@ -1566,10 +1574,14 @@ let typeMap: {[index: string]: any} = {
     "SentinelSettingsConfig": SentinelSettingsConfig,
     "SentryOrgAuditLogsSecretsConfig": SentryOrgAuditLogsSecretsConfig,
     "SentryOrgAuditLogsSettingsConfig": SentryOrgAuditLogsSettingsConfig,
+    "SlackAuthConfig": SlackAuthConfig,
+    "SlackBotTokenVariant": SlackBotTokenVariant,
     "SlackEnterpriseAuditLogsSecretsConfig": SlackEnterpriseAuditLogsSecretsConfig,
     "SlackEnterpriseAuditLogsSettingsConfig": SlackEnterpriseAuditLogsSettingsConfig,
+    "SlackSettingsConfig": SlackSettingsConfig,
     "SlackUsersSecretsConfig": SlackUsersSecretsConfig,
     "SlackUsersSettingsConfig": SlackUsersSettingsConfig,
+    "SlackWebhookVariant": SlackWebhookVariant,
     "SlackgroupsSecretsConfig": SlackgroupsSecretsConfig,
     "SlackgroupsSettingsConfig": SlackgroupsSettingsConfig,
     "SnowflakeInputSecretsConfig": SnowflakeInputSecretsConfig,

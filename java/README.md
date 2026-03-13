@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-13T16:37:05.097091303Z[Etc/UTC]
+  - Build date: 2026-03-13T17:35:13.049187525Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -751,10 +751,14 @@ Class | Method | HTTP request | Description
  - [SentinelSettingsConfig](docs/SentinelSettingsConfig.md)
  - [SentryOrgAuditLogsSecretsConfig](docs/SentryOrgAuditLogsSecretsConfig.md)
  - [SentryOrgAuditLogsSettingsConfig](docs/SentryOrgAuditLogsSettingsConfig.md)
+ - [SlackAuthConfig](docs/SlackAuthConfig.md)
+ - [SlackBotTokenVariant](docs/SlackBotTokenVariant.md)
  - [SlackEnterpriseAuditLogsSecretsConfig](docs/SlackEnterpriseAuditLogsSecretsConfig.md)
  - [SlackEnterpriseAuditLogsSettingsConfig](docs/SlackEnterpriseAuditLogsSettingsConfig.md)
+ - [SlackSettingsConfig](docs/SlackSettingsConfig.md)
  - [SlackUsersSecretsConfig](docs/SlackUsersSecretsConfig.md)
  - [SlackUsersSettingsConfig](docs/SlackUsersSettingsConfig.md)
+ - [SlackWebhookVariant](docs/SlackWebhookVariant.md)
  - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)
  - [SlackgroupsSettingsConfig](docs/SlackgroupsSettingsConfig.md)
  - [SnowflakeInputSecretsConfig](docs/SnowflakeInputSecretsConfig.md)
