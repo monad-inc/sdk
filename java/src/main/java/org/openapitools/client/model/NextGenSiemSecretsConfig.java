@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * NextGenSiemSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T22:42:44.461075482Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-13T15:21:53.406683458Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class NextGenSiemSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_TOKEN = "auth_token";
   @SerializedName(SERIALIZED_NAME_AUTH_TOKEN)
