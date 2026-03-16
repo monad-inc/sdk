@@ -46,6 +46,49 @@ class TestModelsPipeline(unittest.TestCase):
                 managed_by = '',
                 name = '',
                 organization_id = '',
+                status = monad.models.models/pipeline_status.models.PipelineStatus(
+                    average_size_egressed = 56, 
+                    average_size_ingested = 56, 
+                    egress = monad.models.models/data_usage.models.DataUsage(
+                        bytes = 56, 
+                        records = 56, ), 
+                    errors = 56, 
+                    expired_messages = 56, 
+                    ingress = monad.models.models/data_usage.models.DataUsage(
+                        bytes = 56, 
+                        records = 56, ), 
+                    last_ingested_time = '', 
+                    nodes = [
+                        monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
+                            avg_bytes_per_record_egress = 56, 
+                            avg_bytes_per_record_ingress = 56, 
+                            component_type = '', 
+                            component_type_id = '', 
+                            errors = 56, 
+                            expired_messages = 56, 
+                            last_ingested_time = '', 
+                            last_record_processed_time = '', 
+                            node_id = '', 
+                            node_slug = '', 
+                            progress = monad.models.models/progress_entries.models.ProgressEntries(
+                                entries = [
+                                    monad.models.models/progress_entry.models.ProgressEntry(
+                                        label = '', 
+                                        partition_key = '', 
+                                        ranges = [
+                                            monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
+                                                end = '', 
+                                                start = '', )
+                                            ], )
+                                    ], ), 
+                            status = '', )
+                        ], 
+                    organization_id = '', 
+                    organization_name = '', 
+                    pipeline_id = '', 
+                    pipeline_name = '', 
+                    progress = monad.models.models/progress_entries.models.ProgressEntries(), 
+                    status = '', ),
                 updated_at = ''
             )
         else:

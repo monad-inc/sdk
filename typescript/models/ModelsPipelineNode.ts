@@ -11,6 +11,7 @@
  */
 
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
+import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineNode {
@@ -25,6 +26,7 @@ export class ModelsPipelineNode {
     'organizationId'?: string;
     'pipelineId'?: string;
     'slug'?: string;
+    'status'?: ModelsPipelineNodeStatus;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -95,6 +97,12 @@ export class ModelsPipelineNode {
             "name": "slug",
             "baseName": "slug",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "status",
+            "baseName": "status",
+            "type": "ModelsPipelineNodeStatus",
             "format": ""
         }    ];
 

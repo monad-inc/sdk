@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ManagedBy** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -284,6 +285,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *ModelsPipeline) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *ModelsPipeline) GetStatus() ModelsPipelineStatus`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *ModelsPipeline) GetStatusOk() (*ModelsPipelineStatus, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *ModelsPipeline) SetStatus(v ModelsPipelineStatus)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *ModelsPipeline) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **organization_id** | **str** |  | [optional] 
 **organization_name** | **str** |  | [optional] 
 **retention_policy** | [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  | [optional] 
+**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

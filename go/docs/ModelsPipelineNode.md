@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -309,6 +310,31 @@ SetSlug sets Slug field to given value.
 `func (o *ModelsPipelineNode) HasSlug() bool`
 
 HasSlug returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *ModelsPipelineNode) GetStatus() ModelsPipelineNodeStatus`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *ModelsPipelineNode) GetStatusOk() (*ModelsPipelineNodeStatus, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *ModelsPipelineNode) SetStatus(v ModelsPipelineNodeStatus)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *ModelsPipelineNode) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

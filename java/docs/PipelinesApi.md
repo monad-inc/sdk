@@ -605,7 +605,7 @@ public class Example {
 
 <a id="v2OrganizationIdPipelinesGet"></a>
 # **v2OrganizationIdPipelinesGet**
-> ModelsPipelineList v2OrganizationIdPipelinesGet(organizationId, limit, offset)
+> ModelsPipelineList v2OrganizationIdPipelinesGet(organizationId, limit, offset, includeStatus)
 
 List pipelines
 
@@ -642,8 +642,9 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
+    Boolean includeStatus = true; // Boolean | Include the status of the pipeline nodes
     try {
-      ModelsPipelineList result = apiInstance.v2OrganizationIdPipelinesGet(organizationId, limit, offset);
+      ModelsPipelineList result = apiInstance.v2OrganizationIdPipelinesGet(organizationId, limit, offset, includeStatus);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PipelinesApi#v2OrganizationIdPipelinesGet");
@@ -663,6 +664,7 @@ public class Example {
 | **organizationId** | **String**| Organization ID | |
 | **limit** | **Integer**| Limit | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
+| **includeStatus** | **Boolean**| Include the status of the pipeline nodes | [optional] |
 
 ### Return type
 
@@ -928,7 +930,7 @@ null (empty response body)
 
 <a id="v2OrganizationIdPipelinesPipelineIdGet"></a>
 # **v2OrganizationIdPipelinesPipelineIdGet**
-> ModelsPipelineConfigV2 v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId)
+> ModelsPipelineConfigV2 v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, includeStatus)
 
 Get pipeline configuration
 
@@ -964,8 +966,9 @@ public class Example {
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    Boolean includeStatus = true; // Boolean | Include the status of the pipeline nodes
     try {
-      ModelsPipelineConfigV2 result = apiInstance.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId);
+      ModelsPipelineConfigV2 result = apiInstance.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, includeStatus);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PipelinesApi#v2OrganizationIdPipelinesPipelineIdGet");
@@ -984,6 +987,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **pipelineId** | **String**| Pipeline ID | |
+| **includeStatus** | **Boolean**| Include the status of the pipeline nodes | [optional] |
 
 ### Return type
 

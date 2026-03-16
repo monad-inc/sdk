@@ -5213,6 +5213,13 @@ export interface PipelinesApiV2OrganizationIdPipelinesGetRequest {
      * @memberof PipelinesApiv2OrganizationIdPipelinesGet
      */
     offset?: number
+    /**
+     * Include the status of the pipeline nodes
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof PipelinesApiv2OrganizationIdPipelinesGet
+     */
+    includeStatus?: boolean
 }
 
 export interface PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest {
@@ -5301,6 +5308,13 @@ export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest {
      * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdGet
      */
     pipelineId: string
+    /**
+     * Include the status of the pipeline nodes
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdGet
+     */
+    includeStatus?: boolean
 }
 
 export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest {
@@ -5677,7 +5691,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public v2OrganizationIdPipelinesGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
-        return this.api.v2OrganizationIdPipelinesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+        return this.api.v2OrganizationIdPipelinesGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.includeStatus,  options).toPromise();
     }
 
     /**
@@ -5686,7 +5700,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public v2OrganizationIdPipelinesGet(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
-        return this.api.v2OrganizationIdPipelinesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+        return this.api.v2OrganizationIdPipelinesGet(param.organizationId, param.limit, param.offset, param.includeStatus,  options).toPromise();
     }
 
     /**
@@ -5749,7 +5763,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
+        return this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.includeStatus,  options).toPromise();
     }
 
     /**
@@ -5758,7 +5772,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public v2OrganizationIdPipelinesPipelineIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdGet(param.organizationId, param.pipelineId,  options).toPromise();
+        return this.api.v2OrganizationIdPipelinesPipelineIdGet(param.organizationId, param.pipelineId, param.includeStatus,  options).toPromise();
     }
 
     /**

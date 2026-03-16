@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_pipelines_get**
-> ModelsPipelineList v2_organization_id_pipelines_get(organization_id, limit=limit, offset=offset)
+> ModelsPipelineList v2_organization_id_pipelines_get(organization_id, limit=limit, offset=offset, include_status=include_status)
 
 List pipelines
 
@@ -728,10 +728,11 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID
     limit = 56 # int | Limit (optional)
     offset = 56 # int | Offset (optional)
+    include_status = True # bool | Include the status of the pipeline nodes (optional)
 
     try:
         # List pipelines
-        api_response = api_instance.v2_organization_id_pipelines_get(organization_id, limit=limit, offset=offset)
+        api_response = api_instance.v2_organization_id_pipelines_get(organization_id, limit=limit, offset=offset, include_status=include_status)
         print("The response of PipelinesApi->v2_organization_id_pipelines_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -748,6 +749,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **limit** | **int**| Limit | [optional] 
  **offset** | **int**| Offset | [optional] 
+ **include_status** | **bool**| Include the status of the pipeline nodes | [optional] 
 
 ### Return type
 
@@ -1046,7 +1048,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_pipelines_pipeline_id_get**
-> ModelsPipelineConfigV2 v2_organization_id_pipelines_pipeline_id_get(organization_id, pipeline_id)
+> ModelsPipelineConfigV2 v2_organization_id_pipelines_pipeline_id_get(organization_id, pipeline_id, include_status=include_status)
 
 Get pipeline configuration
 
@@ -1092,10 +1094,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    include_status = True # bool | Include the status of the pipeline nodes (optional)
 
     try:
         # Get pipeline configuration
-        api_response = api_instance.v2_organization_id_pipelines_pipeline_id_get(organization_id, pipeline_id)
+        api_response = api_instance.v2_organization_id_pipelines_pipeline_id_get(organization_id, pipeline_id, include_status=include_status)
         print("The response of PipelinesApi->v2_organization_id_pipelines_pipeline_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1111,6 +1114,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **pipeline_id** | **str**| Pipeline ID | 
+ **include_status** | **bool**| Include the status of the pipeline nodes | [optional] 
 
 ### Return type
 

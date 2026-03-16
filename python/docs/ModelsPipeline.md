@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **managed_by** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
+**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

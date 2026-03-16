@@ -1242,6 +1242,7 @@ type ApiV2OrganizationIdPipelinesGetRequest struct {
 	organizationId string
 	limit *int32
 	offset *int32
+	includeStatus *bool
 }
 
 // Limit
@@ -1253,6 +1254,12 @@ func (r ApiV2OrganizationIdPipelinesGetRequest) Limit(limit int32) ApiV2Organiza
 // Offset
 func (r ApiV2OrganizationIdPipelinesGetRequest) Offset(offset int32) ApiV2OrganizationIdPipelinesGetRequest {
 	r.offset = &offset
+	return r
+}
+
+// Include the status of the pipeline nodes
+func (r ApiV2OrganizationIdPipelinesGetRequest) IncludeStatus(includeStatus bool) ApiV2OrganizationIdPipelinesGetRequest {
+	r.includeStatus = &includeStatus
 	return r
 }
 
@@ -1304,6 +1311,9 @@ func (a *PipelinesAPIService) V2OrganizationIdPipelinesGetExecute(r ApiV2Organiz
 	}
 	if r.offset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	}
+	if r.includeStatus != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_status", r.includeStatus, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1903,6 +1913,13 @@ type ApiV2OrganizationIdPipelinesPipelineIdGetRequest struct {
 	ApiService *PipelinesAPIService
 	organizationId string
 	pipelineId string
+	includeStatus *bool
+}
+
+// Include the status of the pipeline nodes
+func (r ApiV2OrganizationIdPipelinesPipelineIdGetRequest) IncludeStatus(includeStatus bool) ApiV2OrganizationIdPipelinesPipelineIdGetRequest {
+	r.includeStatus = &includeStatus
+	return r
 }
 
 func (r ApiV2OrganizationIdPipelinesPipelineIdGetRequest) Execute() (*ModelsPipelineConfigV2, *http.Response, error) {
@@ -1951,6 +1968,9 @@ func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdGetExecute(r Ap
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.includeStatus != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_status", r.includeStatus, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

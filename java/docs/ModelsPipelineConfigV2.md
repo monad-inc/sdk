@@ -23,6 +23,7 @@
 |**organizationId** | **String** |  |  [optional] |
 |**organizationName** | **String** |  |  [optional] |
 |**retentionPolicy** | [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  |  [optional] |
+|**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

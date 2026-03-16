@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipeline {
@@ -23,6 +24,7 @@ export class ModelsPipeline {
     'managedBy'?: string;
     'name'?: string;
     'organizationId'?: string;
+    'status'?: ModelsPipelineStatus;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -88,6 +90,12 @@ export class ModelsPipeline {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "status",
+            "baseName": "status",
+            "type": "ModelsPipelineStatus",
             "format": ""
         },
         {

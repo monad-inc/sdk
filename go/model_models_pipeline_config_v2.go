@@ -36,6 +36,7 @@ type ModelsPipelineConfigV2 struct {
 	OrganizationId *string `json:"organizationId,omitempty"`
 	OrganizationName *string `json:"organizationName,omitempty"`
 	RetentionPolicy *ModelsPipelineRetentionPolicy `json:"retention_policy,omitempty"`
+	Status *ModelsPipelineStatus `json:"status,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
@@ -568,6 +569,38 @@ func (o *ModelsPipelineConfigV2) SetRetentionPolicy(v ModelsPipelineRetentionPol
 	o.RetentionPolicy = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetStatus() ModelsPipelineStatus {
+	if o == nil || IsNil(o.Status) {
+		var ret ModelsPipelineStatus
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetStatusOk() (*ModelsPipelineStatus, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasStatus() bool {
+	if o != nil && !IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given ModelsPipelineStatus and assigns it to the Status field.
+func (o *ModelsPipelineConfigV2) SetStatus(v ModelsPipelineStatus) {
+	o.Status = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -657,6 +690,9 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RetentionPolicy) {
 		toSerialize["retention_policy"] = o.RetentionPolicy
+	}
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updatedAt"] = o.UpdatedAt

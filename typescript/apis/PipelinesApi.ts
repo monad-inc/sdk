@@ -494,14 +494,16 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param limit Limit
      * @param offset Offset
+     * @param includeStatus Include the status of the pipeline nodes
      */
-    public async v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, includeStatus?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
             throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesGet", "organizationId");
         }
+
 
 
 
@@ -522,6 +524,11 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (offset !== undefined) {
             requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
+
+        // Query Params
+        if (includeStatus !== undefined) {
+            requestContext.setQueryParam("include_status", ObjectSerializer.serialize(includeStatus, "boolean", ""));
         }
 
 
@@ -740,8 +747,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * Get pipeline configuration
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
+     * @param includeStatus Include the status of the pipeline nodes
      */
-    public async v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, includeStatus?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -756,6 +764,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
@@ -764,6 +773,11 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (includeStatus !== undefined) {
+            requestContext.setQueryParam("include_status", ObjectSerializer.serialize(includeStatus, "boolean", ""));
+        }
 
 
         let authMethod: SecurityAuthentication | undefined;

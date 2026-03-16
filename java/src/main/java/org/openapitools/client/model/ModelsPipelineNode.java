@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsNodeComponent;
+import org.openapitools.client.model.ModelsPipelineNodeStatus;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T20:41:19.502397764Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T21:38:13.540752909Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsPipelineNode {
   public static final String SERIALIZED_NAME_COMPONENT = "component";
   @SerializedName(SERIALIZED_NAME_COMPONENT)
@@ -105,6 +106,11 @@ public class ModelsPipelineNode {
   @SerializedName(SERIALIZED_NAME_SLUG)
   @javax.annotation.Nullable
   private String slug;
+
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
+  private ModelsPipelineNodeStatus status;
 
   public ModelsPipelineNode() {
   }
@@ -318,6 +324,25 @@ public class ModelsPipelineNode {
   }
 
 
+  public ModelsPipelineNode status(@javax.annotation.Nullable ModelsPipelineNodeStatus status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Get status
+   * @return status
+   */
+  @javax.annotation.Nullable
+  public ModelsPipelineNodeStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(@javax.annotation.Nullable ModelsPipelineNodeStatus status) {
+    this.status = status;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -338,12 +363,13 @@ public class ModelsPipelineNode {
         Objects.equals(this.id, modelsPipelineNode.id) &&
         Objects.equals(this.organizationId, modelsPipelineNode.organizationId) &&
         Objects.equals(this.pipelineId, modelsPipelineNode.pipelineId) &&
-        Objects.equals(this.slug, modelsPipelineNode.slug);
+        Objects.equals(this.slug, modelsPipelineNode.slug) &&
+        Objects.equals(this.status, modelsPipelineNode.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(component, componentHouse, componentId, componentSubType, componentType, createdAt, enabled, id, organizationId, pipelineId, slug);
+    return Objects.hash(component, componentHouse, componentId, componentSubType, componentType, createdAt, enabled, id, organizationId, pipelineId, slug, status);
   }
 
   @Override
@@ -361,6 +387,7 @@ public class ModelsPipelineNode {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -382,7 +409,7 @@ public class ModelsPipelineNode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "slug"));
+    openapiFields = new HashSet<String>(Arrays.asList("component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "slug", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -439,6 +466,10 @@ public class ModelsPipelineNode {
       }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        ModelsPipelineNodeStatus.validateJsonElement(jsonObj.get("status"));
       }
   }
 

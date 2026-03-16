@@ -5336,11 +5336,12 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param [limit] Limit
      * @param [offset] Offset
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineList>> {
+    public v2OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, includeStatus?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v2OrganizationIdPipelinesGet(organizationId, limit, offset, _config);
+        const requestContextPromise = this.requestFactory.v2OrganizationIdPipelinesGet(organizationId, limit, offset, includeStatus, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -5363,9 +5364,10 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param [limit] Limit
      * @param [offset] Offset
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsPipelineList> {
-        return this.v2OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineList>) => apiResponse.data));
+    public v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, includeStatus?: boolean, _options?: ConfigurationOptions): Observable<ModelsPipelineList> {
+        return this.v2OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, includeStatus, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineList>) => apiResponse.data));
     }
 
     /**
@@ -5487,11 +5489,12 @@ export class ObservablePipelinesApi {
      * Get pipeline configuration
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineConfigV2>> {
+    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, includeStatus?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineConfigV2>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, _config);
+        const requestContextPromise = this.requestFactory.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, includeStatus, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -5513,9 +5516,10 @@ export class ObservablePipelinesApi {
      * Get pipeline configuration
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: ConfigurationOptions): Observable<ModelsPipelineConfigV2> {
-        return this.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineConfigV2>) => apiResponse.data));
+    public v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, includeStatus?: boolean, _options?: ConfigurationOptions): Observable<ModelsPipelineConfigV2> {
+        return this.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, includeStatus, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineConfigV2>) => apiResponse.data));
     }
 
     /**

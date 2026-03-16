@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from monad.models.models_pipeline import ModelsPipeline
@@ -2252,6 +2252,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
+        include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2275,6 +2276,8 @@ class PipelinesApi:
         :type limit: int
         :param offset: Offset
         :type offset: int
+        :param include_status: Include the status of the pipeline nodes
+        :type include_status: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2301,6 +2304,7 @@ class PipelinesApi:
             organization_id=organization_id,
             limit=limit,
             offset=offset,
+            include_status=include_status,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2329,6 +2333,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
+        include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2352,6 +2357,8 @@ class PipelinesApi:
         :type limit: int
         :param offset: Offset
         :type offset: int
+        :param include_status: Include the status of the pipeline nodes
+        :type include_status: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2378,6 +2385,7 @@ class PipelinesApi:
             organization_id=organization_id,
             limit=limit,
             offset=offset,
+            include_status=include_status,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2406,6 +2414,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
+        include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2429,6 +2438,8 @@ class PipelinesApi:
         :type limit: int
         :param offset: Offset
         :type offset: int
+        :param include_status: Include the status of the pipeline nodes
+        :type include_status: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2455,6 +2466,7 @@ class PipelinesApi:
             organization_id=organization_id,
             limit=limit,
             offset=offset,
+            include_status=include_status,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2478,6 +2490,7 @@ class PipelinesApi:
         organization_id,
         limit,
         offset,
+        include_status,
         _request_auth,
         _content_type,
         _headers,
@@ -2509,6 +2522,10 @@ class PipelinesApi:
         if offset is not None:
             
             _query_params.append(('offset', offset))
+            
+        if include_status is not None:
+            
+            _query_params.append(('include_status', include_status))
             
         # process the header parameters
         # process the form parameters
@@ -3464,6 +3481,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
+        include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3485,6 +3503,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
+        :param include_status: Include the status of the pipeline nodes
+        :type include_status: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3510,6 +3530,7 @@ class PipelinesApi:
         _param = self._v2_organization_id_pipelines_pipeline_id_get_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
+            include_status=include_status,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3536,6 +3557,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
+        include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3557,6 +3579,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
+        :param include_status: Include the status of the pipeline nodes
+        :type include_status: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3582,6 +3606,7 @@ class PipelinesApi:
         _param = self._v2_organization_id_pipelines_pipeline_id_get_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
+            include_status=include_status,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3608,6 +3633,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
+        include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3629,6 +3655,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
+        :param include_status: Include the status of the pipeline nodes
+        :type include_status: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3654,6 +3682,7 @@ class PipelinesApi:
         _param = self._v2_organization_id_pipelines_pipeline_id_get_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
+            include_status=include_status,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3675,6 +3704,7 @@ class PipelinesApi:
         self,
         organization_id,
         pipeline_id,
+        include_status,
         _request_auth,
         _content_type,
         _headers,
@@ -3701,6 +3731,10 @@ class PipelinesApi:
         if pipeline_id is not None:
             _path_params['pipeline_id'] = pipeline_id
         # process the query parameters
+        if include_status is not None:
+            
+            _query_params.append(('include_status', include_status))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

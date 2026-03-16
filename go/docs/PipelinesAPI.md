@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdPipelinesGet
 
-> ModelsPipelineList V2OrganizationIdPipelinesGet(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> ModelsPipelineList V2OrganizationIdPipelinesGet(ctx, organizationId).Limit(limit).Offset(offset).IncludeStatus(includeStatus).Execute()
 
 List pipelines
 
@@ -586,10 +586,11 @@ func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	limit := int32(56) // int32 | Limit (optional)
 	offset := int32(56) // int32 | Offset (optional)
+	includeStatus := true // bool | Include the status of the pipeline nodes (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdPipelinesGet(context.Background(), organizationId).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdPipelinesGet(context.Background(), organizationId).Limit(limit).Offset(offset).IncludeStatus(includeStatus).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdPipelinesGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -617,6 +618,7 @@ Name | Type | Description  | Notes
 
  **limit** | **int32** | Limit | 
  **offset** | **int32** | Offset | 
+ **includeStatus** | **bool** | Include the status of the pipeline nodes | 
 
 ### Return type
 
@@ -861,7 +863,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdPipelinesPipelineIdGet
 
-> ModelsPipelineConfigV2 V2OrganizationIdPipelinesPipelineIdGet(ctx, organizationId, pipelineId).Execute()
+> ModelsPipelineConfigV2 V2OrganizationIdPipelinesPipelineIdGet(ctx, organizationId, pipelineId).IncludeStatus(includeStatus).Execute()
 
 Get pipeline configuration
 
@@ -882,10 +884,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
+	includeStatus := true // bool | Include the status of the pipeline nodes (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdPipelinesPipelineIdGet(context.Background(), organizationId, pipelineId).Execute()
+	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdPipelinesPipelineIdGet(context.Background(), organizationId, pipelineId).IncludeStatus(includeStatus).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdPipelinesPipelineIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -913,6 +916,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **includeStatus** | **bool** | Include the status of the pipeline nodes | 
 
 ### Return type
 

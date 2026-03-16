@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_pipeline_status import ModelsPipelineStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,8 +38,9 @@ class ModelsPipeline(BaseModel):
     managed_by: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
+    status: Optional[ModelsPipelineStatus] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "managed_by", "name", "organization_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "managed_by", "name", "organization_id", "status", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +81,9 @@ class ModelsPipeline(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of status
+        if self.status:
+            _dict['status'] = self.status.to_dict()
         return _dict
 
     @classmethod
@@ -101,6 +106,7 @@ class ModelsPipeline(BaseModel):
             "managed_by": obj.get("managed_by"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
+            "status": ModelsPipelineStatus.from_dict(obj["status"]) if obj.get("status") is not None else None,
             "updated_at": obj.get("updated_at")
         })
         return _obj

@@ -3966,10 +3966,11 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param [limit] Limit
      * @param [offset] Offset
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
+    public v2OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, includeStatus?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, observableOptions);
+        const result = this.api.v2OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, includeStatus, observableOptions);
         return result.toPromise();
     }
 
@@ -3979,10 +3980,11 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param [limit] Limit
      * @param [offset] Offset
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineList> {
+    public v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, includeStatus?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineList> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2OrganizationIdPipelinesGet(organizationId, limit, offset, observableOptions);
+        const result = this.api.v2OrganizationIdPipelinesGet(organizationId, limit, offset, includeStatus, observableOptions);
         return result.toPromise();
     }
 
@@ -4069,10 +4071,11 @@ export class PromisePipelinesApi {
      * Get pipeline configuration
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, includeStatus?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, observableOptions);
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, includeStatus, observableOptions);
         return result.toPromise();
     }
 
@@ -4081,10 +4084,11 @@ export class PromisePipelinesApi {
      * Get pipeline configuration
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
+     * @param [includeStatus] Include the status of the pipeline nodes
      */
-    public v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+    public v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, includeStatus?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, observableOptions);
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, includeStatus, observableOptions);
         return result.toPromise();
     }
 

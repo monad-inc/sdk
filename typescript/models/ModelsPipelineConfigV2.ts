@@ -13,6 +13,7 @@
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
+import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineConfigV2 {
@@ -32,6 +33,7 @@ export class ModelsPipelineConfigV2 {
     'organizationId'?: string;
     'organizationName'?: string;
     'retentionPolicy'?: ModelsPipelineRetentionPolicy;
+    'status'?: ModelsPipelineStatus;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -133,6 +135,12 @@ export class ModelsPipelineConfigV2 {
             "name": "retentionPolicy",
             "baseName": "retention_policy",
             "type": "ModelsPipelineRetentionPolicy",
+            "format": ""
+        },
+        {
+            "name": "status",
+            "baseName": "status",
+            "type": "ModelsPipelineStatus",
             "format": ""
         },
         {

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
 **RetentionPolicy** | Pointer to [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  | [optional] 
+**Status** | Pointer to [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -440,6 +441,31 @@ SetRetentionPolicy sets RetentionPolicy field to given value.
 `func (o *ModelsPipelineConfigV2) HasRetentionPolicy() bool`
 
 HasRetentionPolicy returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *ModelsPipelineConfigV2) GetStatus() ModelsPipelineStatus`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *ModelsPipelineConfigV2) GetStatusOk() (*ModelsPipelineStatus, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *ModelsPipelineConfigV2) SetStatus(v ModelsPipelineStatus)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *ModelsPipelineConfigV2) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **organization_id** | **str** |  | [optional] 
 **pipeline_id** | **str** |  | [optional] 
 **slug** | **str** |  | [optional] 
+**status** | [**ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 
 ## Example
 

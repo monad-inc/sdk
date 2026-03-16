@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_node_component import ModelsNodeComponent
+from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,7 +40,8 @@ class ModelsPipelineNode(BaseModel):
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     slug: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "slug"]
+    status: Optional[ModelsPipelineNodeStatus] = None
+    __properties: ClassVar[List[str]] = ["component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "slug", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +85,9 @@ class ModelsPipelineNode(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of component
         if self.component:
             _dict['component'] = self.component.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of status
+        if self.status:
+            _dict['status'] = self.status.to_dict()
         return _dict
 
     @classmethod
@@ -105,7 +110,8 @@ class ModelsPipelineNode(BaseModel):
             "id": obj.get("id"),
             "organization_id": obj.get("organization_id"),
             "pipeline_id": obj.get("pipeline_id"),
-            "slug": obj.get("slug")
+            "slug": obj.get("slug"),
+            "status": ModelsPipelineNodeStatus.from_dict(obj["status"]) if obj.get("status") is not None else None
         })
         return _obj
 

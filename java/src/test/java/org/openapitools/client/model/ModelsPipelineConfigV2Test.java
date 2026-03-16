@@ -25,6 +25,7 @@ import java.util.List;
 import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
 import org.openapitools.client.model.ModelsPipelineRetentionPolicy;
+import org.openapitools.client.model.ModelsPipelineStatus;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -168,6 +169,14 @@ public class ModelsPipelineConfigV2Test {
     @Test
     public void retentionPolicyTest() {
         // TODO: test retentionPolicy
+    }
+
+    /**
+     * Test the property 'status'
+     */
+    @Test
+    public void statusTest() {
+        // TODO: test status
     }
 
     /**

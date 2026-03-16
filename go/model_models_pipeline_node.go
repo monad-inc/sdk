@@ -31,6 +31,7 @@ type ModelsPipelineNode struct {
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
 	Slug *string `json:"slug,omitempty"`
+	Status *ModelsPipelineNodeStatus `json:"status,omitempty"`
 }
 
 // NewModelsPipelineNode instantiates a new ModelsPipelineNode object
@@ -402,6 +403,38 @@ func (o *ModelsPipelineNode) SetSlug(v string) {
 	o.Slug = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *ModelsPipelineNode) GetStatus() ModelsPipelineNodeStatus {
+	if o == nil || IsNil(o.Status) {
+		var ret ModelsPipelineNodeStatus
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNode) GetStatusOk() (*ModelsPipelineNodeStatus, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasStatus() bool {
+	if o != nil && !IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given ModelsPipelineNodeStatus and assigns it to the Status field.
+func (o *ModelsPipelineNode) SetStatus(v ModelsPipelineNodeStatus) {
+	o.Status = &v
+}
+
 func (o ModelsPipelineNode) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -444,6 +477,9 @@ func (o ModelsPipelineNode) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Slug) {
 		toSerialize["slug"] = o.Slug
+	}
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
 	}
 	return toSerialize, nil
 }

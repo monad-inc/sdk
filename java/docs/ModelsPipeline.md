@@ -17,6 +17,7 @@
 |**managedBy** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
+|**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

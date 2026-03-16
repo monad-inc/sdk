@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_pipeline_edge import ModelsPipelineEdge
 from monad.models.models_pipeline_node import ModelsPipelineNode
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy
+from monad.models.models_pipeline_status import ModelsPipelineStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -46,8 +47,9 @@ class ModelsPipelineConfigV2(BaseModel):
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
+    status: Optional[ModelsPipelineStatus] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,6 +107,9 @@ class ModelsPipelineConfigV2(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of retention_policy
         if self.retention_policy:
             _dict['retention_policy'] = self.retention_policy.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of status
+        if self.status:
+            _dict['status'] = self.status.to_dict()
         return _dict
 
     @classmethod
@@ -133,6 +138,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "organizationId": obj.get("organizationId"),
             "organizationName": obj.get("organizationName"),
             "retention_policy": ModelsPipelineRetentionPolicy.from_dict(obj["retention_policy"]) if obj.get("retention_policy") is not None else None,
+            "status": ModelsPipelineStatus.from_dict(obj["status"]) if obj.get("status") is not None else None,
             "updatedAt": obj.get("updatedAt")
         })
         return _obj

@@ -26,6 +26,7 @@ import java.util.List;
 import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
 import org.openapitools.client.model.ModelsPipelineRetentionPolicy;
+import org.openapitools.client.model.ModelsPipelineStatus;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T20:41:19.502397764Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T21:38:13.540752909Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billingAccountId";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -134,6 +135,11 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_RETENTION_POLICY)
   @javax.annotation.Nullable
   private ModelsPipelineRetentionPolicy retentionPolicy;
+
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
+  private ModelsPipelineStatus status;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -463,6 +469,25 @@ public class ModelsPipelineConfigV2 {
   }
 
 
+  public ModelsPipelineConfigV2 status(@javax.annotation.Nullable ModelsPipelineStatus status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Get status
+   * @return status
+   */
+  @javax.annotation.Nullable
+  public ModelsPipelineStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(@javax.annotation.Nullable ModelsPipelineStatus status) {
+    this.status = status;
+  }
+
+
   public ModelsPipelineConfigV2 updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -508,12 +533,13 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.organizationId, modelsPipelineConfigV2.organizationId) &&
         Objects.equals(this.organizationName, modelsPipelineConfigV2.organizationName) &&
         Objects.equals(this.retentionPolicy, modelsPipelineConfigV2.retentionPolicy) &&
+        Objects.equals(this.status, modelsPipelineConfigV2.status) &&
         Objects.equals(this.updatedAt, modelsPipelineConfigV2.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, status, updatedAt);
   }
 
   @Override
@@ -536,6 +562,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -558,7 +585,7 @@ public class ModelsPipelineConfigV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -646,6 +673,10 @@ public class ModelsPipelineConfigV2 {
       // validate the optional field `retention_policy`
       if (jsonObj.get("retention_policy") != null && !jsonObj.get("retention_policy").isJsonNull()) {
         ModelsPipelineRetentionPolicy.validateJsonElement(jsonObj.get("retention_policy"));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        ModelsPipelineStatus.validateJsonElement(jsonObj.get("status"));
       }
       if ((jsonObj.get("updatedAt") != null && !jsonObj.get("updatedAt").isJsonNull()) && !jsonObj.get("updatedAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updatedAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedAt").toString()));

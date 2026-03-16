@@ -494,6 +494,8 @@ const request: PipelinesApiV2OrganizationIdPipelinesGetRequest = {
   limit: 1,
     // Offset (optional)
   offset: 1,
+    // Include the status of the pipeline nodes (optional)
+  includeStatus: true,
 };
 
 const data = await apiInstance.v2OrganizationIdPipelinesGet(request);
@@ -508,6 +510,7 @@ Name | Type | Description  | Notes
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **limit** | [**number**] | Limit | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
+ **includeStatus** | [**boolean**] | Include the status of the pipeline nodes | (optional) defaults to undefined
 
 
 ### Return type
@@ -738,6 +741,8 @@ const request: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest = {
   organizationId: "organization_id_example",
     // Pipeline ID
   pipelineId: "pipeline_id_example",
+    // Include the status of the pipeline nodes (optional)
+  includeStatus: true,
 };
 
 const data = await apiInstance.v2OrganizationIdPipelinesPipelineIdGet(request);
@@ -751,6 +756,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **includeStatus** | [**boolean**] | Include the status of the pipeline nodes | (optional) defaults to undefined
 
 
 ### Return type
