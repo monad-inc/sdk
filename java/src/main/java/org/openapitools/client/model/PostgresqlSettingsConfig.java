@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * PostgresqlSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T21:38:13.540752909Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T22:03:42.788845833Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class PostgresqlSettingsConfig {
   public static final String SERIALIZED_NAME_COLUMN_NAMES = "column_names";
   @SerializedName(SERIALIZED_NAME_COLUMN_NAMES)
