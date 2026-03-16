@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-16T19:45:04.606774637Z[Etc/UTC]
+  - Build date: 2026-03-16T20:41:19.502397764Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -460,6 +460,7 @@ Class | Method | HTTP request | Description
  - [GithubComMonadIncCorePkgTypesModelsPermission](docs/GithubComMonadIncCorePkgTypesModelsPermission.md)
  - [GithubComMonadIncCorePkgTypesModelsQuota](docs/GithubComMonadIncCorePkgTypesModelsQuota.md)
  - [GithubComMonadIncCorePkgTypesModelsResourceReference](docs/GithubComMonadIncCorePkgTypesModelsResourceReference.md)
+ - [GithubComMonadIncCorePkgTypesModelsTimeRange](docs/GithubComMonadIncCorePkgTypesModelsTimeRange.md)
  - [GithubComMonadIncCorePkgTypesModelsUser](docs/GithubComMonadIncCorePkgTypesModelsUser.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)
@@ -548,6 +549,8 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineNodeStatus](docs/ModelsPipelineNodeStatus.md)
  - [ModelsPipelineRetentionPolicy](docs/ModelsPipelineRetentionPolicy.md)
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
+ - [ModelsProgressEntries](docs/ModelsProgressEntries.md)
+ - [ModelsProgressEntry](docs/ModelsProgressEntry.md)
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
@@ -612,9 +615,6 @@ Class | Method | HTTP request | Description
  - [PantherSecretsConfig](docs/PantherSecretsConfig.md)
  - [PantherSettingsConfig](docs/PantherSettingsConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
- - [PipelineNodeStatusProgressEntries](docs/PipelineNodeStatusProgressEntries.md)
- - [PipelineNodeStatusProgressEntry](docs/PipelineNodeStatusProgressEntry.md)
- - [PipelineNodeStatusTimeRange](docs/PipelineNodeStatusTimeRange.md)
  - [PolymerSecretsConfig](docs/PolymerSecretsConfig.md)
  - [PolymerSettingsConfig](docs/PolymerSettingsConfig.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)

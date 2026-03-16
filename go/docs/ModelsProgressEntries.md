@@ -1,52 +1,52 @@
-# PipelineNodeStatusProgressEntries
+# ModelsProgressEntries
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entries** | Pointer to [**[]PipelineNodeStatusProgressEntry**](PipelineNodeStatusProgressEntry.md) |  | [optional] 
+**Entries** | Pointer to [**[]ModelsProgressEntry**](ModelsProgressEntry.md) |  | [optional] 
 
 ## Methods
 
-### NewPipelineNodeStatusProgressEntries
+### NewModelsProgressEntries
 
-`func NewPipelineNodeStatusProgressEntries() *PipelineNodeStatusProgressEntries`
+`func NewModelsProgressEntries() *ModelsProgressEntries`
 
-NewPipelineNodeStatusProgressEntries instantiates a new PipelineNodeStatusProgressEntries object
+NewModelsProgressEntries instantiates a new ModelsProgressEntries object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPipelineNodeStatusProgressEntriesWithDefaults
+### NewModelsProgressEntriesWithDefaults
 
-`func NewPipelineNodeStatusProgressEntriesWithDefaults() *PipelineNodeStatusProgressEntries`
+`func NewModelsProgressEntriesWithDefaults() *ModelsProgressEntries`
 
-NewPipelineNodeStatusProgressEntriesWithDefaults instantiates a new PipelineNodeStatusProgressEntries object
+NewModelsProgressEntriesWithDefaults instantiates a new ModelsProgressEntries object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetEntries
 
-`func (o *PipelineNodeStatusProgressEntries) GetEntries() []PipelineNodeStatusProgressEntry`
+`func (o *ModelsProgressEntries) GetEntries() []ModelsProgressEntry`
 
 GetEntries returns the Entries field if non-nil, zero value otherwise.
 
 ### GetEntriesOk
 
-`func (o *PipelineNodeStatusProgressEntries) GetEntriesOk() (*[]PipelineNodeStatusProgressEntry, bool)`
+`func (o *ModelsProgressEntries) GetEntriesOk() (*[]ModelsProgressEntry, bool)`
 
 GetEntriesOk returns a tuple with the Entries field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntries
 
-`func (o *PipelineNodeStatusProgressEntries) SetEntries(v []PipelineNodeStatusProgressEntry)`
+`func (o *ModelsProgressEntries) SetEntries(v []ModelsProgressEntry)`
 
 SetEntries sets Entries field to given value.
 
 ### HasEntries
 
-`func (o *PipelineNodeStatusProgressEntries) HasEntries() bool`
+`func (o *ModelsProgressEntries) HasEntries() bool`
 
 HasEntries returns a boolean if a field has been set.
 

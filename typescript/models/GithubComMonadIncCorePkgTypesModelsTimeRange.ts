@@ -10,11 +10,17 @@
  * Do not edit the class manually.
  */
 
-import { PipelineNodeStatusProgressEntry } from '../models/PipelineNodeStatusProgressEntry';
 import { HttpFile } from '../http/http';
 
-export class PipelineNodeStatusProgressEntries {
-    'entries'?: Array<PipelineNodeStatusProgressEntry>;
+export class GithubComMonadIncCorePkgTypesModelsTimeRange {
+    /**
+    * End is the end of the time range (inclusive)
+    */
+    'end'?: string;
+    /**
+    * Start is the beginning of the time range (inclusive)
+    */
+    'start'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -22,14 +28,20 @@ export class PipelineNodeStatusProgressEntries {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "entries",
-            "baseName": "entries",
-            "type": "Array<PipelineNodeStatusProgressEntry>",
+            "name": "end",
+            "baseName": "end",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "start",
+            "baseName": "start",
+            "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return PipelineNodeStatusProgressEntries.attributeTypeMap;
+        return GithubComMonadIncCorePkgTypesModelsTimeRange.attributeTypeMap;
     }
 
     public constructor() {

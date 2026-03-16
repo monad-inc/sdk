@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.pipeline_node_status_progress_entry import PipelineNodeStatusProgressEntry
+from monad.models.models_progress_entry import ModelsProgressEntry
 
-class TestPipelineNodeStatusProgressEntry(unittest.TestCase):
-    """PipelineNodeStatusProgressEntry unit test stubs"""
+class TestModelsProgressEntry(unittest.TestCase):
+    """ModelsProgressEntry unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,31 +26,31 @@ class TestPipelineNodeStatusProgressEntry(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PipelineNodeStatusProgressEntry:
-        """Test PipelineNodeStatusProgressEntry
+    def make_instance(self, include_optional) -> ModelsProgressEntry:
+        """Test ModelsProgressEntry
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PipelineNodeStatusProgressEntry`
+        # uncomment below to create an instance of `ModelsProgressEntry`
         """
-        model = PipelineNodeStatusProgressEntry()
+        model = ModelsProgressEntry()
         if include_optional:
-            return PipelineNodeStatusProgressEntry(
+            return ModelsProgressEntry(
                 label = '',
                 partition_key = '',
                 ranges = [
-                    monad.models.pipeline_node_status/time_range.pipeline_node_status.TimeRange(
+                    monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
                         end = '', 
                         start = '', )
                     ]
             )
         else:
-            return PipelineNodeStatusProgressEntry(
+            return ModelsProgressEntry(
         )
         """
 
-    def testPipelineNodeStatusProgressEntry(self):
-        """Test PipelineNodeStatusProgressEntry"""
+    def testModelsProgressEntry(self):
+        """Test ModelsProgressEntry"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

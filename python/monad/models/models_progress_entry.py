@@ -20,16 +20,18 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.github_com_monad_inc_core_pkg_types_models_time_range import GithubComMonadIncCorePkgTypesModelsTimeRange
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PipelineNodeStatusTimeRange(BaseModel):
+class ModelsProgressEntry(BaseModel):
     """
-    PipelineNodeStatusTimeRange
+    ModelsProgressEntry
     """ # noqa: E501
-    end: Optional[StrictStr] = Field(default=None, description="End is the end of the time range (inclusive)")
-    start: Optional[StrictStr] = Field(default=None, description="Start is the beginning of the time range (inclusive)")
-    __properties: ClassVar[List[str]] = ["end", "start"]
+    label: Optional[StrictStr] = Field(default=None, description="Label is an optional descriptor that is human-readable and can be displayed in the UI It should mainly be used to contain the field name/path that is used to extract timestamp for a given inputs data")
+    partition_key: Optional[StrictStr] = Field(default=None, description="PartitionKey is an optional identifier for multi-entity inputs (e.g., \"detector-123\", \"us-east-1\") In a case where we store multiple state timestamps for a singular input we would use this field as a differentiator")
+    ranges: Optional[List[GithubComMonadIncCorePkgTypesModelsTimeRange]] = Field(default=None, description="Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.")
+    __properties: ClassVar[List[str]] = ["label", "partition_key", "ranges"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +51,7 @@ class PipelineNodeStatusTimeRange(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PipelineNodeStatusTimeRange from a JSON string"""
+        """Create an instance of ModelsProgressEntry from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +72,18 @@ class PipelineNodeStatusTimeRange(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in ranges (list)
+        _items = []
+        if self.ranges:
+            for _item_ranges in self.ranges:
+                if _item_ranges:
+                    _items.append(_item_ranges.to_dict())
+            _dict['ranges'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PipelineNodeStatusTimeRange from a dict"""
+        """Create an instance of ModelsProgressEntry from a dict"""
         if obj is None:
             return None
 
@@ -82,8 +91,9 @@ class PipelineNodeStatusTimeRange(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "end": obj.get("end"),
-            "start": obj.get("start")
+            "label": obj.get("label"),
+            "partition_key": obj.get("partition_key"),
+            "ranges": [GithubComMonadIncCorePkgTypesModelsTimeRange.from_dict(_item) for _item in obj["ranges"]] if obj.get("ranges") is not None else None
         })
         return _obj
 

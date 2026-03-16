@@ -10,10 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { PipelineNodeStatusTimeRange } from '../models/PipelineNodeStatusTimeRange';
+import { GithubComMonadIncCorePkgTypesModelsTimeRange } from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
 import { HttpFile } from '../http/http';
 
-export class PipelineNodeStatusProgressEntry {
+export class ModelsProgressEntry {
     /**
     * Label is an optional descriptor that is human-readable and can be displayed in the UI It should mainly be used to contain the field name/path that is used to extract timestamp for a given inputs data
     */
@@ -25,7 +25,7 @@ export class PipelineNodeStatusProgressEntry {
     /**
     * Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.
     */
-    'ranges'?: Array<PipelineNodeStatusTimeRange>;
+    'ranges'?: Array<GithubComMonadIncCorePkgTypesModelsTimeRange>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -47,12 +47,12 @@ export class PipelineNodeStatusProgressEntry {
         {
             "name": "ranges",
             "baseName": "ranges",
-            "type": "Array<PipelineNodeStatusTimeRange>",
+            "type": "Array<GithubComMonadIncCorePkgTypesModelsTimeRange>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return PipelineNodeStatusProgressEntry.attributeTypeMap;
+        return ModelsProgressEntry.attributeTypeMap;
     }
 
     public constructor() {

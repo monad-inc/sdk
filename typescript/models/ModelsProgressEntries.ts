@@ -10,17 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
 import { HttpFile } from '../http/http';
 
-export class PipelineNodeStatusTimeRange {
-    /**
-    * End is the end of the time range (inclusive)
-    */
-    'end'?: string;
-    /**
-    * Start is the beginning of the time range (inclusive)
-    */
-    'start'?: string;
+export class ModelsProgressEntries {
+    'entries'?: Array<ModelsProgressEntry>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,20 +22,14 @@ export class PipelineNodeStatusTimeRange {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "end",
-            "baseName": "end",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "start",
-            "baseName": "start",
-            "type": "string",
+            "name": "entries",
+            "baseName": "entries",
+            "type": "Array<ModelsProgressEntry>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return PipelineNodeStatusTimeRange.attributeTypeMap;
+        return ModelsProgressEntries.attributeTypeMap;
     }
 
     public constructor() {

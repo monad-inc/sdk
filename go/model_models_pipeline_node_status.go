@@ -32,7 +32,7 @@ type ModelsPipelineNodeStatus struct {
 	LastRecordProcessedTime *string `json:"last_record_processed_time,omitempty"`
 	NodeId *string `json:"node_id,omitempty"`
 	NodeSlug *string `json:"node_slug,omitempty"`
-	Progress *PipelineNodeStatusProgressEntries `json:"progress,omitempty"`
+	Progress *ModelsProgressEntries `json:"progress,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
 
@@ -438,9 +438,9 @@ func (o *ModelsPipelineNodeStatus) SetNodeSlug(v string) {
 }
 
 // GetProgress returns the Progress field value if set, zero value otherwise.
-func (o *ModelsPipelineNodeStatus) GetProgress() PipelineNodeStatusProgressEntries {
+func (o *ModelsPipelineNodeStatus) GetProgress() ModelsProgressEntries {
 	if o == nil || IsNil(o.Progress) {
-		var ret PipelineNodeStatusProgressEntries
+		var ret ModelsProgressEntries
 		return ret
 	}
 	return *o.Progress
@@ -448,7 +448,7 @@ func (o *ModelsPipelineNodeStatus) GetProgress() PipelineNodeStatusProgressEntri
 
 // GetProgressOk returns a tuple with the Progress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipelineNodeStatus) GetProgressOk() (*PipelineNodeStatusProgressEntries, bool) {
+func (o *ModelsPipelineNodeStatus) GetProgressOk() (*ModelsProgressEntries, bool) {
 	if o == nil || IsNil(o.Progress) {
 		return nil, false
 	}
@@ -464,8 +464,8 @@ func (o *ModelsPipelineNodeStatus) HasProgress() bool {
 	return false
 }
 
-// SetProgress gets a reference to the given PipelineNodeStatusProgressEntries and assigns it to the Progress field.
-func (o *ModelsPipelineNodeStatus) SetProgress(v PipelineNodeStatusProgressEntries) {
+// SetProgress gets a reference to the given ModelsProgressEntries and assigns it to the Progress field.
+func (o *ModelsPipelineNodeStatus) SetProgress(v ModelsProgressEntries) {
 	o.Progress = &v
 }
 

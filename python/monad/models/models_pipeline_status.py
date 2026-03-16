@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
-from monad.models.pipeline_node_status_progress_entries import PipelineNodeStatusProgressEntries
+from monad.models.models_progress_entries import ModelsProgressEntries
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,7 +42,7 @@ class ModelsPipelineStatus(BaseModel):
     organization_name: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     pipeline_name: Optional[StrictStr] = None
-    progress: Optional[PipelineNodeStatusProgressEntries] = None
+    progress: Optional[ModelsProgressEntries] = None
     status: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["average_size_egressed", "average_size_ingested", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
 
@@ -125,7 +125,7 @@ class ModelsPipelineStatus(BaseModel):
             "organization_name": obj.get("organization_name"),
             "pipeline_id": obj.get("pipeline_id"),
             "pipeline_name": obj.get("pipeline_name"),
-            "progress": PipelineNodeStatusProgressEntries.from_dict(obj["progress"]) if obj.get("progress") is not None else None,
+            "progress": ModelsProgressEntries.from_dict(obj["progress"]) if obj.get("progress") is not None else None,
             "status": obj.get("status")
         })
         return _obj

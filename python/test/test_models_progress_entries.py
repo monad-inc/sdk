@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.pipeline_node_status_progress_entries import PipelineNodeStatusProgressEntries
+from monad.models.models_progress_entries import ModelsProgressEntries
 
-class TestPipelineNodeStatusProgressEntries(unittest.TestCase):
-    """PipelineNodeStatusProgressEntries unit test stubs"""
+class TestModelsProgressEntries(unittest.TestCase):
+    """ModelsProgressEntries unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,34 +26,34 @@ class TestPipelineNodeStatusProgressEntries(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PipelineNodeStatusProgressEntries:
-        """Test PipelineNodeStatusProgressEntries
+    def make_instance(self, include_optional) -> ModelsProgressEntries:
+        """Test ModelsProgressEntries
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PipelineNodeStatusProgressEntries`
+        # uncomment below to create an instance of `ModelsProgressEntries`
         """
-        model = PipelineNodeStatusProgressEntries()
+        model = ModelsProgressEntries()
         if include_optional:
-            return PipelineNodeStatusProgressEntries(
+            return ModelsProgressEntries(
                 entries = [
-                    monad.models.pipeline_node_status/progress_entry.pipeline_node_status.ProgressEntry(
+                    monad.models.models/progress_entry.models.ProgressEntry(
                         label = '', 
                         partition_key = '', 
                         ranges = [
-                            monad.models.pipeline_node_status/time_range.pipeline_node_status.TimeRange(
+                            monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
                                 end = '', 
                                 start = '', )
                             ], )
                     ]
             )
         else:
-            return PipelineNodeStatusProgressEntries(
+            return ModelsProgressEntries(
         )
         """
 
-    def testPipelineNodeStatusProgressEntries(self):
-        """Test PipelineNodeStatusProgressEntries"""
+    def testModelsProgressEntries(self):
+        """Test ModelsProgressEntries"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

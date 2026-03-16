@@ -165,6 +165,7 @@ export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
@@ -253,6 +254,8 @@ export * from '../models/ModelsPipelineNode';
 export * from '../models/ModelsPipelineNodeStatus';
 export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
+export * from '../models/ModelsProgressEntries';
+export * from '../models/ModelsProgressEntry';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
@@ -317,9 +320,6 @@ export * from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
 export * from '../models/PantherSecretsConfig';
 export * from '../models/PantherSettingsConfig';
 export * from '../models/ParquetParquetFormatter';
-export * from '../models/PipelineNodeStatusProgressEntries';
-export * from '../models/PipelineNodeStatusProgressEntry';
-export * from '../models/PipelineNodeStatusTimeRange';
 export * from '../models/PolymerSecretsConfig';
 export * from '../models/PolymerSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
@@ -708,6 +708,7 @@ import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/Githu
 import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
 import { GithubComMonadIncCorePkgTypesModelsResourceReference } from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
+import { GithubComMonadIncCorePkgTypesModelsTimeRange } from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
 import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
@@ -796,6 +797,8 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
+import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
+import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
@@ -860,9 +863,6 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
-import { PipelineNodeStatusProgressEntries } from '../models/PipelineNodeStatusProgressEntries';
-import { PipelineNodeStatusProgressEntry } from '../models/PipelineNodeStatusProgressEntry';
-import { PipelineNodeStatusTimeRange } from '../models/PipelineNodeStatusTimeRange';
 import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
 import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
@@ -1283,6 +1283,7 @@ let typeMap: {[index: string]: any} = {
     "GithubComMonadIncCorePkgTypesModelsPermission": GithubComMonadIncCorePkgTypesModelsPermission,
     "GithubComMonadIncCorePkgTypesModelsQuota": GithubComMonadIncCorePkgTypesModelsQuota,
     "GithubComMonadIncCorePkgTypesModelsResourceReference": GithubComMonadIncCorePkgTypesModelsResourceReference,
+    "GithubComMonadIncCorePkgTypesModelsTimeRange": GithubComMonadIncCorePkgTypesModelsTimeRange,
     "GithubComMonadIncCorePkgTypesModelsUser": GithubComMonadIncCorePkgTypesModelsUser,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
@@ -1371,6 +1372,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineNodeStatus": ModelsPipelineNodeStatus,
     "ModelsPipelineRetentionPolicy": ModelsPipelineRetentionPolicy,
     "ModelsPipelineStatus": ModelsPipelineStatus,
+    "ModelsProgressEntries": ModelsProgressEntries,
+    "ModelsProgressEntry": ModelsProgressEntry,
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
@@ -1435,9 +1438,6 @@ let typeMap: {[index: string]: any} = {
     "PantherSecretsConfig": PantherSecretsConfig,
     "PantherSettingsConfig": PantherSettingsConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
-    "PipelineNodeStatusProgressEntries": PipelineNodeStatusProgressEntries,
-    "PipelineNodeStatusProgressEntry": PipelineNodeStatusProgressEntry,
-    "PipelineNodeStatusTimeRange": PipelineNodeStatusTimeRange,
     "PolymerSecretsConfig": PolymerSecretsConfig,
     "PolymerSettingsConfig": PolymerSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,

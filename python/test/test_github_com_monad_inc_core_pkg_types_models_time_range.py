@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.pipeline_node_status_time_range import PipelineNodeStatusTimeRange
+from monad.models.github_com_monad_inc_core_pkg_types_models_time_range import GithubComMonadIncCorePkgTypesModelsTimeRange
 
-class TestPipelineNodeStatusTimeRange(unittest.TestCase):
-    """PipelineNodeStatusTimeRange unit test stubs"""
+class TestGithubComMonadIncCorePkgTypesModelsTimeRange(unittest.TestCase):
+    """GithubComMonadIncCorePkgTypesModelsTimeRange unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,26 @@ class TestPipelineNodeStatusTimeRange(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PipelineNodeStatusTimeRange:
-        """Test PipelineNodeStatusTimeRange
+    def make_instance(self, include_optional) -> GithubComMonadIncCorePkgTypesModelsTimeRange:
+        """Test GithubComMonadIncCorePkgTypesModelsTimeRange
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PipelineNodeStatusTimeRange`
+        # uncomment below to create an instance of `GithubComMonadIncCorePkgTypesModelsTimeRange`
         """
-        model = PipelineNodeStatusTimeRange()
+        model = GithubComMonadIncCorePkgTypesModelsTimeRange()
         if include_optional:
-            return PipelineNodeStatusTimeRange(
+            return GithubComMonadIncCorePkgTypesModelsTimeRange(
                 end = '',
                 start = ''
             )
         else:
-            return PipelineNodeStatusTimeRange(
+            return GithubComMonadIncCorePkgTypesModelsTimeRange(
         )
         """
 
-    def testPipelineNodeStatusTimeRange(self):
-        """Test PipelineNodeStatusTimeRange"""
+    def testGithubComMonadIncCorePkgTypesModelsTimeRange(self):
+        """Test GithubComMonadIncCorePkgTypesModelsTimeRange"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

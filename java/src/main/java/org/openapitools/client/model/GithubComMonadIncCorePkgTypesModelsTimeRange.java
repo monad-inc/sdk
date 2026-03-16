@@ -46,10 +46,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * PipelineNodeStatusTimeRange
+ * GithubComMonadIncCorePkgTypesModelsTimeRange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T19:45:04.606774637Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class PipelineNodeStatusTimeRange {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T20:41:19.502397764Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+public class GithubComMonadIncCorePkgTypesModelsTimeRange {
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)
   @javax.annotation.Nullable
@@ -60,10 +60,10 @@ public class PipelineNodeStatusTimeRange {
   @javax.annotation.Nullable
   private String start;
 
-  public PipelineNodeStatusTimeRange() {
+  public GithubComMonadIncCorePkgTypesModelsTimeRange() {
   }
 
-  public PipelineNodeStatusTimeRange end(@javax.annotation.Nullable String end) {
+  public GithubComMonadIncCorePkgTypesModelsTimeRange end(@javax.annotation.Nullable String end) {
     this.end = end;
     return this;
   }
@@ -82,7 +82,7 @@ public class PipelineNodeStatusTimeRange {
   }
 
 
-  public PipelineNodeStatusTimeRange start(@javax.annotation.Nullable String start) {
+  public GithubComMonadIncCorePkgTypesModelsTimeRange start(@javax.annotation.Nullable String start) {
     this.start = start;
     return this;
   }
@@ -110,9 +110,9 @@ public class PipelineNodeStatusTimeRange {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PipelineNodeStatusTimeRange pipelineNodeStatusTimeRange = (PipelineNodeStatusTimeRange) o;
-    return Objects.equals(this.end, pipelineNodeStatusTimeRange.end) &&
-        Objects.equals(this.start, pipelineNodeStatusTimeRange.start);
+    GithubComMonadIncCorePkgTypesModelsTimeRange githubComMonadIncCorePkgTypesModelsTimeRange = (GithubComMonadIncCorePkgTypesModelsTimeRange) o;
+    return Objects.equals(this.end, githubComMonadIncCorePkgTypesModelsTimeRange.end) &&
+        Objects.equals(this.start, githubComMonadIncCorePkgTypesModelsTimeRange.start);
   }
 
   @Override
@@ -123,7 +123,7 @@ public class PipelineNodeStatusTimeRange {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PipelineNodeStatusTimeRange {\n");
+    sb.append("class GithubComMonadIncCorePkgTypesModelsTimeRange {\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("}");
@@ -157,20 +157,20 @@ public class PipelineNodeStatusTimeRange {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PipelineNodeStatusTimeRange
+   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncCorePkgTypesModelsTimeRange
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PipelineNodeStatusTimeRange.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PipelineNodeStatusTimeRange is not found in the empty JSON string", PipelineNodeStatusTimeRange.openapiRequiredFields.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsTimeRange.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncCorePkgTypesModelsTimeRange is not found in the empty JSON string", GithubComMonadIncCorePkgTypesModelsTimeRange.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!PipelineNodeStatusTimeRange.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PipelineNodeStatusTimeRange` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsTimeRange.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncCorePkgTypesModelsTimeRange` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -186,22 +186,22 @@ public class PipelineNodeStatusTimeRange {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PipelineNodeStatusTimeRange.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PipelineNodeStatusTimeRange' and its subtypes
+       if (!GithubComMonadIncCorePkgTypesModelsTimeRange.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GithubComMonadIncCorePkgTypesModelsTimeRange' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PipelineNodeStatusTimeRange> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PipelineNodeStatusTimeRange.class));
+       final TypeAdapter<GithubComMonadIncCorePkgTypesModelsTimeRange> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncCorePkgTypesModelsTimeRange.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PipelineNodeStatusTimeRange>() {
+       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncCorePkgTypesModelsTimeRange>() {
            @Override
-           public void write(JsonWriter out, PipelineNodeStatusTimeRange value) throws IOException {
+           public void write(JsonWriter out, GithubComMonadIncCorePkgTypesModelsTimeRange value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public PipelineNodeStatusTimeRange read(JsonReader in) throws IOException {
+           public GithubComMonadIncCorePkgTypesModelsTimeRange read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -212,18 +212,18 @@ public class PipelineNodeStatusTimeRange {
   }
 
   /**
-   * Create an instance of PipelineNodeStatusTimeRange given an JSON string
+   * Create an instance of GithubComMonadIncCorePkgTypesModelsTimeRange given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of PipelineNodeStatusTimeRange
-   * @throws IOException if the JSON string is invalid with respect to PipelineNodeStatusTimeRange
+   * @return An instance of GithubComMonadIncCorePkgTypesModelsTimeRange
+   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncCorePkgTypesModelsTimeRange
    */
-  public static PipelineNodeStatusTimeRange fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PipelineNodeStatusTimeRange.class);
+  public static GithubComMonadIncCorePkgTypesModelsTimeRange fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GithubComMonadIncCorePkgTypesModelsTimeRange.class);
   }
 
   /**
-   * Convert an instance of PipelineNodeStatusTimeRange to an JSON string
+   * Convert an instance of GithubComMonadIncCorePkgTypesModelsTimeRange to an JSON string
    *
    * @return JSON string
    */

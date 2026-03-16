@@ -1,4 +1,4 @@
-# PipelineNodeStatusTimeRange
+# GithubComMonadIncCorePkgTypesModelsTimeRange
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewPipelineNodeStatusTimeRange
+### NewGithubComMonadIncCorePkgTypesModelsTimeRange
 
-`func NewPipelineNodeStatusTimeRange() *PipelineNodeStatusTimeRange`
+`func NewGithubComMonadIncCorePkgTypesModelsTimeRange() *GithubComMonadIncCorePkgTypesModelsTimeRange`
 
-NewPipelineNodeStatusTimeRange instantiates a new PipelineNodeStatusTimeRange object
+NewGithubComMonadIncCorePkgTypesModelsTimeRange instantiates a new GithubComMonadIncCorePkgTypesModelsTimeRange object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPipelineNodeStatusTimeRangeWithDefaults
+### NewGithubComMonadIncCorePkgTypesModelsTimeRangeWithDefaults
 
-`func NewPipelineNodeStatusTimeRangeWithDefaults() *PipelineNodeStatusTimeRange`
+`func NewGithubComMonadIncCorePkgTypesModelsTimeRangeWithDefaults() *GithubComMonadIncCorePkgTypesModelsTimeRange`
 
-NewPipelineNodeStatusTimeRangeWithDefaults instantiates a new PipelineNodeStatusTimeRange object
+NewGithubComMonadIncCorePkgTypesModelsTimeRangeWithDefaults instantiates a new GithubComMonadIncCorePkgTypesModelsTimeRange object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetEnd
 
-`func (o *PipelineNodeStatusTimeRange) GetEnd() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) GetEnd() string`
 
 GetEnd returns the End field if non-nil, zero value otherwise.
 
 ### GetEndOk
 
-`func (o *PipelineNodeStatusTimeRange) GetEndOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) GetEndOk() (*string, bool)`
 
 GetEndOk returns a tuple with the End field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnd
 
-`func (o *PipelineNodeStatusTimeRange) SetEnd(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) SetEnd(v string)`
 
 SetEnd sets End field to given value.
 
 ### HasEnd
 
-`func (o *PipelineNodeStatusTimeRange) HasEnd() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) HasEnd() bool`
 
 HasEnd returns a boolean if a field has been set.
 
 ### GetStart
 
-`func (o *PipelineNodeStatusTimeRange) GetStart() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) GetStart() string`
 
 GetStart returns the Start field if non-nil, zero value otherwise.
 
 ### GetStartOk
 
-`func (o *PipelineNodeStatusTimeRange) GetStartOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) GetStartOk() (*string, bool)`
 
 GetStartOk returns a tuple with the Start field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStart
 
-`func (o *PipelineNodeStatusTimeRange) SetStart(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) SetStart(v string)`
 
 SetStart sets Start field to given value.
 
 ### HasStart
 
-`func (o *PipelineNodeStatusTimeRange) HasStart() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsTimeRange) HasStart() bool`
 
 HasStart returns a boolean if a field has been set.
 

@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsDataUsage;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
-import org.openapitools.client.model.PipelineNodeStatusProgressEntries;
+import org.openapitools.client.model.ModelsProgressEntries;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T19:45:04.606774637Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T20:41:19.502397764Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_AVERAGE_SIZE_EGRESSED = "average_size_egressed";
   @SerializedName(SERIALIZED_NAME_AVERAGE_SIZE_EGRESSED)
@@ -118,7 +118,7 @@ public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_PROGRESS = "progress";
   @SerializedName(SERIALIZED_NAME_PROGRESS)
   @javax.annotation.Nullable
-  private PipelineNodeStatusProgressEntries progress;
+  private ModelsProgressEntries progress;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -364,7 +364,7 @@ public class ModelsPipelineStatus {
   }
 
 
-  public ModelsPipelineStatus progress(@javax.annotation.Nullable PipelineNodeStatusProgressEntries progress) {
+  public ModelsPipelineStatus progress(@javax.annotation.Nullable ModelsProgressEntries progress) {
     this.progress = progress;
     return this;
   }
@@ -374,11 +374,11 @@ public class ModelsPipelineStatus {
    * @return progress
    */
   @javax.annotation.Nullable
-  public PipelineNodeStatusProgressEntries getProgress() {
+  public ModelsProgressEntries getProgress() {
     return progress;
   }
 
-  public void setProgress(@javax.annotation.Nullable PipelineNodeStatusProgressEntries progress) {
+  public void setProgress(@javax.annotation.Nullable ModelsProgressEntries progress) {
     this.progress = progress;
   }
 
@@ -538,7 +538,7 @@ public class ModelsPipelineStatus {
       }
       // validate the optional field `progress`
       if (jsonObj.get("progress") != null && !jsonObj.get("progress").isJsonNull()) {
-        PipelineNodeStatusProgressEntries.validateJsonElement(jsonObj.get("progress"));
+        ModelsProgressEntries.validateJsonElement(jsonObj.get("progress"));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

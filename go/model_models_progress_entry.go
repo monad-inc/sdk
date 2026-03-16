@@ -15,38 +15,38 @@ import (
 	"encoding/json"
 )
 
-// checks if the PipelineNodeStatusProgressEntry type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PipelineNodeStatusProgressEntry{}
+// checks if the ModelsProgressEntry type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ModelsProgressEntry{}
 
-// PipelineNodeStatusProgressEntry struct for PipelineNodeStatusProgressEntry
-type PipelineNodeStatusProgressEntry struct {
+// ModelsProgressEntry struct for ModelsProgressEntry
+type ModelsProgressEntry struct {
 	// Label is an optional descriptor that is human-readable and can be displayed in the UI It should mainly be used to contain the field name/path that is used to extract timestamp for a given inputs data
 	Label *string `json:"label,omitempty"`
 	// PartitionKey is an optional identifier for multi-entity inputs (e.g., \"detector-123\", \"us-east-1\") In a case where we store multiple state timestamps for a singular input we would use this field as a differentiator
 	PartitionKey *string `json:"partition_key,omitempty"`
 	// Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.
-	Ranges []PipelineNodeStatusTimeRange `json:"ranges,omitempty"`
+	Ranges []GithubComMonadIncCorePkgTypesModelsTimeRange `json:"ranges,omitempty"`
 }
 
-// NewPipelineNodeStatusProgressEntry instantiates a new PipelineNodeStatusProgressEntry object
+// NewModelsProgressEntry instantiates a new ModelsProgressEntry object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPipelineNodeStatusProgressEntry() *PipelineNodeStatusProgressEntry {
-	this := PipelineNodeStatusProgressEntry{}
+func NewModelsProgressEntry() *ModelsProgressEntry {
+	this := ModelsProgressEntry{}
 	return &this
 }
 
-// NewPipelineNodeStatusProgressEntryWithDefaults instantiates a new PipelineNodeStatusProgressEntry object
+// NewModelsProgressEntryWithDefaults instantiates a new ModelsProgressEntry object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPipelineNodeStatusProgressEntryWithDefaults() *PipelineNodeStatusProgressEntry {
-	this := PipelineNodeStatusProgressEntry{}
+func NewModelsProgressEntryWithDefaults() *ModelsProgressEntry {
+	this := ModelsProgressEntry{}
 	return &this
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *PipelineNodeStatusProgressEntry) GetLabel() string {
+func (o *ModelsProgressEntry) GetLabel() string {
 	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *PipelineNodeStatusProgressEntry) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PipelineNodeStatusProgressEntry) GetLabelOk() (*string, bool) {
+func (o *ModelsProgressEntry) GetLabelOk() (*string, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *PipelineNodeStatusProgressEntry) GetLabelOk() (*string, bool) {
 }
 
 // HasLabel returns a boolean if a field has been set.
-func (o *PipelineNodeStatusProgressEntry) HasLabel() bool {
+func (o *ModelsProgressEntry) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *PipelineNodeStatusProgressEntry) HasLabel() bool {
 }
 
 // SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *PipelineNodeStatusProgressEntry) SetLabel(v string) {
+func (o *ModelsProgressEntry) SetLabel(v string) {
 	o.Label = &v
 }
 
 // GetPartitionKey returns the PartitionKey field value if set, zero value otherwise.
-func (o *PipelineNodeStatusProgressEntry) GetPartitionKey() string {
+func (o *ModelsProgressEntry) GetPartitionKey() string {
 	if o == nil || IsNil(o.PartitionKey) {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *PipelineNodeStatusProgressEntry) GetPartitionKey() string {
 
 // GetPartitionKeyOk returns a tuple with the PartitionKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PipelineNodeStatusProgressEntry) GetPartitionKeyOk() (*string, bool) {
+func (o *ModelsProgressEntry) GetPartitionKeyOk() (*string, bool) {
 	if o == nil || IsNil(o.PartitionKey) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *PipelineNodeStatusProgressEntry) GetPartitionKeyOk() (*string, bool) {
 }
 
 // HasPartitionKey returns a boolean if a field has been set.
-func (o *PipelineNodeStatusProgressEntry) HasPartitionKey() bool {
+func (o *ModelsProgressEntry) HasPartitionKey() bool {
 	if o != nil && !IsNil(o.PartitionKey) {
 		return true
 	}
@@ -105,14 +105,14 @@ func (o *PipelineNodeStatusProgressEntry) HasPartitionKey() bool {
 }
 
 // SetPartitionKey gets a reference to the given string and assigns it to the PartitionKey field.
-func (o *PipelineNodeStatusProgressEntry) SetPartitionKey(v string) {
+func (o *ModelsProgressEntry) SetPartitionKey(v string) {
 	o.PartitionKey = &v
 }
 
 // GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *PipelineNodeStatusProgressEntry) GetRanges() []PipelineNodeStatusTimeRange {
+func (o *ModelsProgressEntry) GetRanges() []GithubComMonadIncCorePkgTypesModelsTimeRange {
 	if o == nil || IsNil(o.Ranges) {
-		var ret []PipelineNodeStatusTimeRange
+		var ret []GithubComMonadIncCorePkgTypesModelsTimeRange
 		return ret
 	}
 	return o.Ranges
@@ -120,7 +120,7 @@ func (o *PipelineNodeStatusProgressEntry) GetRanges() []PipelineNodeStatusTimeRa
 
 // GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PipelineNodeStatusProgressEntry) GetRangesOk() ([]PipelineNodeStatusTimeRange, bool) {
+func (o *ModelsProgressEntry) GetRangesOk() ([]GithubComMonadIncCorePkgTypesModelsTimeRange, bool) {
 	if o == nil || IsNil(o.Ranges) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *PipelineNodeStatusProgressEntry) GetRangesOk() ([]PipelineNodeStatusTim
 }
 
 // HasRanges returns a boolean if a field has been set.
-func (o *PipelineNodeStatusProgressEntry) HasRanges() bool {
+func (o *ModelsProgressEntry) HasRanges() bool {
 	if o != nil && !IsNil(o.Ranges) {
 		return true
 	}
@@ -136,12 +136,12 @@ func (o *PipelineNodeStatusProgressEntry) HasRanges() bool {
 	return false
 }
 
-// SetRanges gets a reference to the given []PipelineNodeStatusTimeRange and assigns it to the Ranges field.
-func (o *PipelineNodeStatusProgressEntry) SetRanges(v []PipelineNodeStatusTimeRange) {
+// SetRanges gets a reference to the given []GithubComMonadIncCorePkgTypesModelsTimeRange and assigns it to the Ranges field.
+func (o *ModelsProgressEntry) SetRanges(v []GithubComMonadIncCorePkgTypesModelsTimeRange) {
 	o.Ranges = v
 }
 
-func (o PipelineNodeStatusProgressEntry) MarshalJSON() ([]byte, error) {
+func (o ModelsProgressEntry) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -149,7 +149,7 @@ func (o PipelineNodeStatusProgressEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o PipelineNodeStatusProgressEntry) ToMap() (map[string]interface{}, error) {
+func (o ModelsProgressEntry) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
@@ -163,38 +163,38 @@ func (o PipelineNodeStatusProgressEntry) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 
-type NullablePipelineNodeStatusProgressEntry struct {
-	value *PipelineNodeStatusProgressEntry
+type NullableModelsProgressEntry struct {
+	value *ModelsProgressEntry
 	isSet bool
 }
 
-func (v NullablePipelineNodeStatusProgressEntry) Get() *PipelineNodeStatusProgressEntry {
+func (v NullableModelsProgressEntry) Get() *ModelsProgressEntry {
 	return v.value
 }
 
-func (v *NullablePipelineNodeStatusProgressEntry) Set(val *PipelineNodeStatusProgressEntry) {
+func (v *NullableModelsProgressEntry) Set(val *ModelsProgressEntry) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePipelineNodeStatusProgressEntry) IsSet() bool {
+func (v NullableModelsProgressEntry) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePipelineNodeStatusProgressEntry) Unset() {
+func (v *NullableModelsProgressEntry) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePipelineNodeStatusProgressEntry(val *PipelineNodeStatusProgressEntry) *NullablePipelineNodeStatusProgressEntry {
-	return &NullablePipelineNodeStatusProgressEntry{value: val, isSet: true}
+func NewNullableModelsProgressEntry(val *ModelsProgressEntry) *NullableModelsProgressEntry {
+	return &NullableModelsProgressEntry{value: val, isSet: true}
 }
 
-func (v NullablePipelineNodeStatusProgressEntry) MarshalJSON() ([]byte, error) {
+func (v NullableModelsProgressEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePipelineNodeStatusProgressEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableModelsProgressEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

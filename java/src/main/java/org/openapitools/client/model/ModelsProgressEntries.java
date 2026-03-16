@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.PipelineNodeStatusProgressEntry;
+import org.openapitools.client.model.ModelsProgressEntry;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,24 +49,24 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * PipelineNodeStatusProgressEntries
+ * ModelsProgressEntries
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T19:45:04.606774637Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class PipelineNodeStatusProgressEntries {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T20:41:19.502397764Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+public class ModelsProgressEntries {
   public static final String SERIALIZED_NAME_ENTRIES = "entries";
   @SerializedName(SERIALIZED_NAME_ENTRIES)
   @javax.annotation.Nullable
-  private List<PipelineNodeStatusProgressEntry> entries = new ArrayList<>();
+  private List<ModelsProgressEntry> entries = new ArrayList<>();
 
-  public PipelineNodeStatusProgressEntries() {
+  public ModelsProgressEntries() {
   }
 
-  public PipelineNodeStatusProgressEntries entries(@javax.annotation.Nullable List<PipelineNodeStatusProgressEntry> entries) {
+  public ModelsProgressEntries entries(@javax.annotation.Nullable List<ModelsProgressEntry> entries) {
     this.entries = entries;
     return this;
   }
 
-  public PipelineNodeStatusProgressEntries addEntriesItem(PipelineNodeStatusProgressEntry entriesItem) {
+  public ModelsProgressEntries addEntriesItem(ModelsProgressEntry entriesItem) {
     if (this.entries == null) {
       this.entries = new ArrayList<>();
     }
@@ -79,11 +79,11 @@ public class PipelineNodeStatusProgressEntries {
    * @return entries
    */
   @javax.annotation.Nullable
-  public List<PipelineNodeStatusProgressEntry> getEntries() {
+  public List<ModelsProgressEntry> getEntries() {
     return entries;
   }
 
-  public void setEntries(@javax.annotation.Nullable List<PipelineNodeStatusProgressEntry> entries) {
+  public void setEntries(@javax.annotation.Nullable List<ModelsProgressEntry> entries) {
     this.entries = entries;
   }
 
@@ -97,8 +97,8 @@ public class PipelineNodeStatusProgressEntries {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PipelineNodeStatusProgressEntries pipelineNodeStatusProgressEntries = (PipelineNodeStatusProgressEntries) o;
-    return Objects.equals(this.entries, pipelineNodeStatusProgressEntries.entries);
+    ModelsProgressEntries modelsProgressEntries = (ModelsProgressEntries) o;
+    return Objects.equals(this.entries, modelsProgressEntries.entries);
   }
 
   @Override
@@ -109,7 +109,7 @@ public class PipelineNodeStatusProgressEntries {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PipelineNodeStatusProgressEntries {\n");
+    sb.append("class ModelsProgressEntries {\n");
     sb.append("    entries: ").append(toIndentedString(entries)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -142,20 +142,20 @@ public class PipelineNodeStatusProgressEntries {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PipelineNodeStatusProgressEntries
+   * @throws IOException if the JSON Element is invalid with respect to ModelsProgressEntries
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PipelineNodeStatusProgressEntries.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PipelineNodeStatusProgressEntries is not found in the empty JSON string", PipelineNodeStatusProgressEntries.openapiRequiredFields.toString()));
+        if (!ModelsProgressEntries.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsProgressEntries is not found in the empty JSON string", ModelsProgressEntries.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!PipelineNodeStatusProgressEntries.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PipelineNodeStatusProgressEntries` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ModelsProgressEntries.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsProgressEntries` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -169,7 +169,7 @@ public class PipelineNodeStatusProgressEntries {
 
           // validate the optional field `entries` (array)
           for (int i = 0; i < jsonArrayentries.size(); i++) {
-            PipelineNodeStatusProgressEntry.validateJsonElement(jsonArrayentries.get(i));
+            ModelsProgressEntry.validateJsonElement(jsonArrayentries.get(i));
           };
         }
       }
@@ -179,22 +179,22 @@ public class PipelineNodeStatusProgressEntries {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PipelineNodeStatusProgressEntries.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PipelineNodeStatusProgressEntries' and its subtypes
+       if (!ModelsProgressEntries.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelsProgressEntries' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PipelineNodeStatusProgressEntries> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PipelineNodeStatusProgressEntries.class));
+       final TypeAdapter<ModelsProgressEntries> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsProgressEntries.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PipelineNodeStatusProgressEntries>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelsProgressEntries>() {
            @Override
-           public void write(JsonWriter out, PipelineNodeStatusProgressEntries value) throws IOException {
+           public void write(JsonWriter out, ModelsProgressEntries value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public PipelineNodeStatusProgressEntries read(JsonReader in) throws IOException {
+           public ModelsProgressEntries read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -205,18 +205,18 @@ public class PipelineNodeStatusProgressEntries {
   }
 
   /**
-   * Create an instance of PipelineNodeStatusProgressEntries given an JSON string
+   * Create an instance of ModelsProgressEntries given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of PipelineNodeStatusProgressEntries
-   * @throws IOException if the JSON string is invalid with respect to PipelineNodeStatusProgressEntries
+   * @return An instance of ModelsProgressEntries
+   * @throws IOException if the JSON string is invalid with respect to ModelsProgressEntries
    */
-  public static PipelineNodeStatusProgressEntries fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PipelineNodeStatusProgressEntries.class);
+  public static ModelsProgressEntries fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelsProgressEntries.class);
   }
 
   /**
-   * Convert an instance of PipelineNodeStatusProgressEntries to an JSON string
+   * Convert an instance of ModelsProgressEntries to an JSON string
    *
    * @return JSON string
    */

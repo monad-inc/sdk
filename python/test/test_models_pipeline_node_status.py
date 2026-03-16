@@ -52,13 +52,13 @@ class TestModelsPipelineNodeStatus(unittest.TestCase):
                 last_record_processed_time = '',
                 node_id = '',
                 node_slug = '',
-                progress = monad.models.pipeline_node_status/progress_entries.pipeline_node_status.ProgressEntries(
+                progress = monad.models.models/progress_entries.models.ProgressEntries(
                     entries = [
-                        monad.models.pipeline_node_status/progress_entry.pipeline_node_status.ProgressEntry(
+                        monad.models.models/progress_entry.models.ProgressEntry(
                             label = '', 
                             partition_key = '', 
                             ranges = [
-                                monad.models.pipeline_node_status/time_range.pipeline_node_status.TimeRange(
+                                monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
                                     end = '', 
                                     start = '', )
                                 ], )

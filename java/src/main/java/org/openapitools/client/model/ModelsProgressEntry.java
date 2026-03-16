@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.PipelineNodeStatusTimeRange;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsTimeRange;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,10 +49,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * PipelineNodeStatusProgressEntry
+ * ModelsProgressEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T19:45:04.606774637Z[Etc/UTC]", comments = "Generator version: 7.20.0")
-public class PipelineNodeStatusProgressEntry {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T20:41:19.502397764Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+public class ModelsProgressEntry {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
   @javax.annotation.Nullable
@@ -66,12 +66,12 @@ public class PipelineNodeStatusProgressEntry {
   public static final String SERIALIZED_NAME_RANGES = "ranges";
   @SerializedName(SERIALIZED_NAME_RANGES)
   @javax.annotation.Nullable
-  private List<PipelineNodeStatusTimeRange> ranges = new ArrayList<>();
+  private List<GithubComMonadIncCorePkgTypesModelsTimeRange> ranges = new ArrayList<>();
 
-  public PipelineNodeStatusProgressEntry() {
+  public ModelsProgressEntry() {
   }
 
-  public PipelineNodeStatusProgressEntry label(@javax.annotation.Nullable String label) {
+  public ModelsProgressEntry label(@javax.annotation.Nullable String label) {
     this.label = label;
     return this;
   }
@@ -90,7 +90,7 @@ public class PipelineNodeStatusProgressEntry {
   }
 
 
-  public PipelineNodeStatusProgressEntry partitionKey(@javax.annotation.Nullable String partitionKey) {
+  public ModelsProgressEntry partitionKey(@javax.annotation.Nullable String partitionKey) {
     this.partitionKey = partitionKey;
     return this;
   }
@@ -109,12 +109,12 @@ public class PipelineNodeStatusProgressEntry {
   }
 
 
-  public PipelineNodeStatusProgressEntry ranges(@javax.annotation.Nullable List<PipelineNodeStatusTimeRange> ranges) {
+  public ModelsProgressEntry ranges(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsTimeRange> ranges) {
     this.ranges = ranges;
     return this;
   }
 
-  public PipelineNodeStatusProgressEntry addRangesItem(PipelineNodeStatusTimeRange rangesItem) {
+  public ModelsProgressEntry addRangesItem(GithubComMonadIncCorePkgTypesModelsTimeRange rangesItem) {
     if (this.ranges == null) {
       this.ranges = new ArrayList<>();
     }
@@ -127,11 +127,11 @@ public class PipelineNodeStatusProgressEntry {
    * @return ranges
    */
   @javax.annotation.Nullable
-  public List<PipelineNodeStatusTimeRange> getRanges() {
+  public List<GithubComMonadIncCorePkgTypesModelsTimeRange> getRanges() {
     return ranges;
   }
 
-  public void setRanges(@javax.annotation.Nullable List<PipelineNodeStatusTimeRange> ranges) {
+  public void setRanges(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsTimeRange> ranges) {
     this.ranges = ranges;
   }
 
@@ -145,10 +145,10 @@ public class PipelineNodeStatusProgressEntry {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PipelineNodeStatusProgressEntry pipelineNodeStatusProgressEntry = (PipelineNodeStatusProgressEntry) o;
-    return Objects.equals(this.label, pipelineNodeStatusProgressEntry.label) &&
-        Objects.equals(this.partitionKey, pipelineNodeStatusProgressEntry.partitionKey) &&
-        Objects.equals(this.ranges, pipelineNodeStatusProgressEntry.ranges);
+    ModelsProgressEntry modelsProgressEntry = (ModelsProgressEntry) o;
+    return Objects.equals(this.label, modelsProgressEntry.label) &&
+        Objects.equals(this.partitionKey, modelsProgressEntry.partitionKey) &&
+        Objects.equals(this.ranges, modelsProgressEntry.ranges);
   }
 
   @Override
@@ -159,7 +159,7 @@ public class PipelineNodeStatusProgressEntry {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PipelineNodeStatusProgressEntry {\n");
+    sb.append("class ModelsProgressEntry {\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    partitionKey: ").append(toIndentedString(partitionKey)).append("\n");
     sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");
@@ -194,20 +194,20 @@ public class PipelineNodeStatusProgressEntry {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PipelineNodeStatusProgressEntry
+   * @throws IOException if the JSON Element is invalid with respect to ModelsProgressEntry
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PipelineNodeStatusProgressEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PipelineNodeStatusProgressEntry is not found in the empty JSON string", PipelineNodeStatusProgressEntry.openapiRequiredFields.toString()));
+        if (!ModelsProgressEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsProgressEntry is not found in the empty JSON string", ModelsProgressEntry.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!PipelineNodeStatusProgressEntry.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PipelineNodeStatusProgressEntry` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ModelsProgressEntry.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsProgressEntry` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -227,7 +227,7 @@ public class PipelineNodeStatusProgressEntry {
 
           // validate the optional field `ranges` (array)
           for (int i = 0; i < jsonArrayranges.size(); i++) {
-            PipelineNodeStatusTimeRange.validateJsonElement(jsonArrayranges.get(i));
+            GithubComMonadIncCorePkgTypesModelsTimeRange.validateJsonElement(jsonArrayranges.get(i));
           };
         }
       }
@@ -237,22 +237,22 @@ public class PipelineNodeStatusProgressEntry {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PipelineNodeStatusProgressEntry.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PipelineNodeStatusProgressEntry' and its subtypes
+       if (!ModelsProgressEntry.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelsProgressEntry' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PipelineNodeStatusProgressEntry> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PipelineNodeStatusProgressEntry.class));
+       final TypeAdapter<ModelsProgressEntry> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsProgressEntry.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PipelineNodeStatusProgressEntry>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelsProgressEntry>() {
            @Override
-           public void write(JsonWriter out, PipelineNodeStatusProgressEntry value) throws IOException {
+           public void write(JsonWriter out, ModelsProgressEntry value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public PipelineNodeStatusProgressEntry read(JsonReader in) throws IOException {
+           public ModelsProgressEntry read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -263,18 +263,18 @@ public class PipelineNodeStatusProgressEntry {
   }
 
   /**
-   * Create an instance of PipelineNodeStatusProgressEntry given an JSON string
+   * Create an instance of ModelsProgressEntry given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of PipelineNodeStatusProgressEntry
-   * @throws IOException if the JSON string is invalid with respect to PipelineNodeStatusProgressEntry
+   * @return An instance of ModelsProgressEntry
+   * @throws IOException if the JSON string is invalid with respect to ModelsProgressEntry
    */
-  public static PipelineNodeStatusProgressEntry fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PipelineNodeStatusProgressEntry.class);
+  public static ModelsProgressEntry fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelsProgressEntry.class);
   }
 
   /**
-   * Convert an instance of PipelineNodeStatusProgressEntry to an JSON string
+   * Convert an instance of ModelsProgressEntry to an JSON string
    *
    * @return JSON string
    */

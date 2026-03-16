@@ -12,7 +12,7 @@
 
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
-import { PipelineNodeStatusProgressEntries } from '../models/PipelineNodeStatusProgressEntries';
+import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineStatus {
@@ -28,7 +28,7 @@ export class ModelsPipelineStatus {
     'organizationName'?: string;
     'pipelineId'?: string;
     'pipelineName'?: string;
-    'progress'?: PipelineNodeStatusProgressEntries;
+    'progress'?: ModelsProgressEntries;
     'status'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -111,7 +111,7 @@ export class ModelsPipelineStatus {
         {
             "name": "progress",
             "baseName": "progress",
-            "type": "PipelineNodeStatusProgressEntries",
+            "type": "ModelsProgressEntries",
             "format": ""
         },
         {

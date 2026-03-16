@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsDataUsage;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
-import org.openapitools.client.model.PipelineNodeStatusProgressEntries;
+import org.openapitools.client.model.ModelsProgressEntries;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

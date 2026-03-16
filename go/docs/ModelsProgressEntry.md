@@ -1,4 +1,4 @@
-# PipelineNodeStatusProgressEntry
+# ModelsProgressEntry
 
 ## Properties
 
@@ -6,99 +6,99 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Label** | Pointer to **string** | Label is an optional descriptor that is human-readable and can be displayed in the UI It should mainly be used to contain the field name/path that is used to extract timestamp for a given inputs data | [optional] 
 **PartitionKey** | Pointer to **string** | PartitionKey is an optional identifier for multi-entity inputs (e.g., \&quot;detector-123\&quot;, \&quot;us-east-1\&quot;) In a case where we store multiple state timestamps for a singular input we would use this field as a differentiator | [optional] 
-**Ranges** | Pointer to [**[]PipelineNodeStatusTimeRange**](PipelineNodeStatusTimeRange.md) | Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads. | [optional] 
+**Ranges** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsTimeRange**](GithubComMonadIncCorePkgTypesModelsTimeRange.md) | Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads. | [optional] 
 
 ## Methods
 
-### NewPipelineNodeStatusProgressEntry
+### NewModelsProgressEntry
 
-`func NewPipelineNodeStatusProgressEntry() *PipelineNodeStatusProgressEntry`
+`func NewModelsProgressEntry() *ModelsProgressEntry`
 
-NewPipelineNodeStatusProgressEntry instantiates a new PipelineNodeStatusProgressEntry object
+NewModelsProgressEntry instantiates a new ModelsProgressEntry object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPipelineNodeStatusProgressEntryWithDefaults
+### NewModelsProgressEntryWithDefaults
 
-`func NewPipelineNodeStatusProgressEntryWithDefaults() *PipelineNodeStatusProgressEntry`
+`func NewModelsProgressEntryWithDefaults() *ModelsProgressEntry`
 
-NewPipelineNodeStatusProgressEntryWithDefaults instantiates a new PipelineNodeStatusProgressEntry object
+NewModelsProgressEntryWithDefaults instantiates a new ModelsProgressEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLabel
 
-`func (o *PipelineNodeStatusProgressEntry) GetLabel() string`
+`func (o *ModelsProgressEntry) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *PipelineNodeStatusProgressEntry) GetLabelOk() (*string, bool)`
+`func (o *ModelsProgressEntry) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *PipelineNodeStatusProgressEntry) SetLabel(v string)`
+`func (o *ModelsProgressEntry) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 
 ### HasLabel
 
-`func (o *PipelineNodeStatusProgressEntry) HasLabel() bool`
+`func (o *ModelsProgressEntry) HasLabel() bool`
 
 HasLabel returns a boolean if a field has been set.
 
 ### GetPartitionKey
 
-`func (o *PipelineNodeStatusProgressEntry) GetPartitionKey() string`
+`func (o *ModelsProgressEntry) GetPartitionKey() string`
 
 GetPartitionKey returns the PartitionKey field if non-nil, zero value otherwise.
 
 ### GetPartitionKeyOk
 
-`func (o *PipelineNodeStatusProgressEntry) GetPartitionKeyOk() (*string, bool)`
+`func (o *ModelsProgressEntry) GetPartitionKeyOk() (*string, bool)`
 
 GetPartitionKeyOk returns a tuple with the PartitionKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPartitionKey
 
-`func (o *PipelineNodeStatusProgressEntry) SetPartitionKey(v string)`
+`func (o *ModelsProgressEntry) SetPartitionKey(v string)`
 
 SetPartitionKey sets PartitionKey field to given value.
 
 ### HasPartitionKey
 
-`func (o *PipelineNodeStatusProgressEntry) HasPartitionKey() bool`
+`func (o *ModelsProgressEntry) HasPartitionKey() bool`
 
 HasPartitionKey returns a boolean if a field has been set.
 
 ### GetRanges
 
-`func (o *PipelineNodeStatusProgressEntry) GetRanges() []PipelineNodeStatusTimeRange`
+`func (o *ModelsProgressEntry) GetRanges() []GithubComMonadIncCorePkgTypesModelsTimeRange`
 
 GetRanges returns the Ranges field if non-nil, zero value otherwise.
 
 ### GetRangesOk
 
-`func (o *PipelineNodeStatusProgressEntry) GetRangesOk() (*[]PipelineNodeStatusTimeRange, bool)`
+`func (o *ModelsProgressEntry) GetRangesOk() (*[]GithubComMonadIncCorePkgTypesModelsTimeRange, bool)`
 
 GetRangesOk returns a tuple with the Ranges field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRanges
 
-`func (o *PipelineNodeStatusProgressEntry) SetRanges(v []PipelineNodeStatusTimeRange)`
+`func (o *ModelsProgressEntry) SetRanges(v []GithubComMonadIncCorePkgTypesModelsTimeRange)`
 
 SetRanges sets Ranges field to given value.
 
 ### HasRanges
 
-`func (o *PipelineNodeStatusProgressEntry) HasRanges() bool`
+`func (o *ModelsProgressEntry) HasRanges() bool`
 
 HasRanges returns a boolean if a field has been set.
 

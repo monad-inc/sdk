@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **last_record_processed_time** | **str** |  | [optional] 
 **node_id** | **str** |  | [optional] 
 **node_slug** | **str** |  | [optional] 
-**progress** | [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 
+**progress** | [**ModelsProgressEntries**](ModelsProgressEntries.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 
 ## Example

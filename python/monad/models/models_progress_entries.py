@@ -18,20 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.pipeline_node_status_time_range import PipelineNodeStatusTimeRange
+from monad.models.models_progress_entry import ModelsProgressEntry
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PipelineNodeStatusProgressEntry(BaseModel):
+class ModelsProgressEntries(BaseModel):
     """
-    PipelineNodeStatusProgressEntry
+    ModelsProgressEntries
     """ # noqa: E501
-    label: Optional[StrictStr] = Field(default=None, description="Label is an optional descriptor that is human-readable and can be displayed in the UI It should mainly be used to contain the field name/path that is used to extract timestamp for a given inputs data")
-    partition_key: Optional[StrictStr] = Field(default=None, description="PartitionKey is an optional identifier for multi-entity inputs (e.g., \"detector-123\", \"us-east-1\") In a case where we store multiple state timestamps for a singular input we would use this field as a differentiator")
-    ranges: Optional[List[PipelineNodeStatusTimeRange]] = Field(default=None, description="Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.")
-    __properties: ClassVar[List[str]] = ["label", "partition_key", "ranges"]
+    entries: Optional[List[ModelsProgressEntry]] = None
+    __properties: ClassVar[List[str]] = ["entries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +49,7 @@ class PipelineNodeStatusProgressEntry(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PipelineNodeStatusProgressEntry from a JSON string"""
+        """Create an instance of ModelsProgressEntries from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,18 +70,18 @@ class PipelineNodeStatusProgressEntry(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in ranges (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in entries (list)
         _items = []
-        if self.ranges:
-            for _item_ranges in self.ranges:
-                if _item_ranges:
-                    _items.append(_item_ranges.to_dict())
-            _dict['ranges'] = _items
+        if self.entries:
+            for _item_entries in self.entries:
+                if _item_entries:
+                    _items.append(_item_entries.to_dict())
+            _dict['entries'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PipelineNodeStatusProgressEntry from a dict"""
+        """Create an instance of ModelsProgressEntries from a dict"""
         if obj is None:
             return None
 
@@ -91,9 +89,7 @@ class PipelineNodeStatusProgressEntry(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "label": obj.get("label"),
-            "partition_key": obj.get("partition_key"),
-            "ranges": [PipelineNodeStatusTimeRange.from_dict(_item) for _item in obj["ranges"]] if obj.get("ranges") is not None else None
+            "entries": [ModelsProgressEntry.from_dict(_item) for _item in obj["entries"]] if obj.get("entries") is not None else None
         })
         return _obj
 

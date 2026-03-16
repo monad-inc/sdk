@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **LastRecordProcessedTime** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **NodeSlug** | Pointer to **string** |  | [optional] 
-**Progress** | Pointer to [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 
+**Progress** | Pointer to [**ModelsProgressEntries**](ModelsProgressEntries.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -340,20 +340,20 @@ HasNodeSlug returns a boolean if a field has been set.
 
 ### GetProgress
 
-`func (o *ModelsPipelineNodeStatus) GetProgress() PipelineNodeStatusProgressEntries`
+`func (o *ModelsPipelineNodeStatus) GetProgress() ModelsProgressEntries`
 
 GetProgress returns the Progress field if non-nil, zero value otherwise.
 
 ### GetProgressOk
 
-`func (o *ModelsPipelineNodeStatus) GetProgressOk() (*PipelineNodeStatusProgressEntries, bool)`
+`func (o *ModelsPipelineNodeStatus) GetProgressOk() (*ModelsProgressEntries, bool)`
 
 GetProgressOk returns a tuple with the Progress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProgress
 
-`func (o *ModelsPipelineNodeStatus) SetProgress(v PipelineNodeStatusProgressEntries)`
+`func (o *ModelsPipelineNodeStatus) SetProgress(v ModelsProgressEntries)`
 
 SetProgress sets Progress field to given value.
 

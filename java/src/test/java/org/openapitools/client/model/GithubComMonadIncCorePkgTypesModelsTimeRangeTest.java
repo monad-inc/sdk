@@ -24,17 +24,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for PipelineNodeStatusTimeRange
+ * Model tests for GithubComMonadIncCorePkgTypesModelsTimeRange
  */
-public class PipelineNodeStatusTimeRangeTest {
-    private final PipelineNodeStatusTimeRange model = new PipelineNodeStatusTimeRange();
+public class GithubComMonadIncCorePkgTypesModelsTimeRangeTest {
+    private final GithubComMonadIncCorePkgTypesModelsTimeRange model = new GithubComMonadIncCorePkgTypesModelsTimeRange();
 
     /**
-     * Model tests for PipelineNodeStatusTimeRange
+     * Model tests for GithubComMonadIncCorePkgTypesModelsTimeRange
      */
     @Test
-    public void testPipelineNodeStatusTimeRange() {
-        // TODO: test PipelineNodeStatusTimeRange
+    public void testGithubComMonadIncCorePkgTypesModelsTimeRange() {
+        // TODO: test GithubComMonadIncCorePkgTypesModelsTimeRange
     }
 
     /**

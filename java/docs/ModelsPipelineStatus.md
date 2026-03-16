@@ -19,7 +19,7 @@
 |**organizationName** | **String** |  |  [optional] |
 |**pipelineId** | **String** |  |  [optional] |
 |**pipelineName** | **String** |  |  [optional] |
-|**progress** | [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  |  [optional] |
+|**progress** | [**ModelsProgressEntries**](ModelsProgressEntries.md) |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 
 

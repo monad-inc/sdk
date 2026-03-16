@@ -22,30 +22,46 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.PipelineNodeStatusProgressEntry;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsTimeRange;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for PipelineNodeStatusProgressEntries
+ * Model tests for ModelsProgressEntry
  */
-public class PipelineNodeStatusProgressEntriesTest {
-    private final PipelineNodeStatusProgressEntries model = new PipelineNodeStatusProgressEntries();
+public class ModelsProgressEntryTest {
+    private final ModelsProgressEntry model = new ModelsProgressEntry();
 
     /**
-     * Model tests for PipelineNodeStatusProgressEntries
+     * Model tests for ModelsProgressEntry
      */
     @Test
-    public void testPipelineNodeStatusProgressEntries() {
-        // TODO: test PipelineNodeStatusProgressEntries
+    public void testModelsProgressEntry() {
+        // TODO: test ModelsProgressEntry
     }
 
     /**
-     * Test the property 'entries'
+     * Test the property 'label'
      */
     @Test
-    public void entriesTest() {
-        // TODO: test entries
+    public void labelTest() {
+        // TODO: test label
+    }
+
+    /**
+     * Test the property 'partitionKey'
+     */
+    @Test
+    public void partitionKeyTest() {
+        // TODO: test partitionKey
+    }
+
+    /**
+     * Test the property 'ranges'
+     */
+    @Test
+    public void rangesTest() {
+        // TODO: test ranges
     }
 
 }

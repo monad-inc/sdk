@@ -18,18 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.pipeline_node_status_progress_entry import PipelineNodeStatusProgressEntry
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PipelineNodeStatusProgressEntries(BaseModel):
+class GithubComMonadIncCorePkgTypesModelsTimeRange(BaseModel):
     """
-    PipelineNodeStatusProgressEntries
+    GithubComMonadIncCorePkgTypesModelsTimeRange
     """ # noqa: E501
-    entries: Optional[List[PipelineNodeStatusProgressEntry]] = None
-    __properties: ClassVar[List[str]] = ["entries"]
+    end: Optional[StrictStr] = Field(default=None, description="End is the end of the time range (inclusive)")
+    start: Optional[StrictStr] = Field(default=None, description="Start is the beginning of the time range (inclusive)")
+    __properties: ClassVar[List[str]] = ["end", "start"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +49,7 @@ class PipelineNodeStatusProgressEntries(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PipelineNodeStatusProgressEntries from a JSON string"""
+        """Create an instance of GithubComMonadIncCorePkgTypesModelsTimeRange from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,18 +70,11 @@ class PipelineNodeStatusProgressEntries(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in entries (list)
-        _items = []
-        if self.entries:
-            for _item_entries in self.entries:
-                if _item_entries:
-                    _items.append(_item_entries.to_dict())
-            _dict['entries'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PipelineNodeStatusProgressEntries from a dict"""
+        """Create an instance of GithubComMonadIncCorePkgTypesModelsTimeRange from a dict"""
         if obj is None:
             return None
 
@@ -89,7 +82,8 @@ class PipelineNodeStatusProgressEntries(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "entries": [PipelineNodeStatusProgressEntry.from_dict(_item) for _item in obj["entries"]] if obj.get("entries") is not None else None
+            "end": obj.get("end"),
+            "start": obj.get("start")
         })
         return _obj
 
