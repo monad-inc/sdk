@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2ApplyTransformationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-16T23:53:19.094051171Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T16:06:58.764670664Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2ApplyTransformationResponse {
   public static final String SERIALIZED_NAME_BYTES_AFTER = "bytes_after";
   @SerializedName(SERIALIZED_NAME_BYTES_AFTER)
