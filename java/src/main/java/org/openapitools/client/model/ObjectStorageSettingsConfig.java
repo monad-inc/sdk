@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Object Storage Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:30:26.671443644Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T18:18:17.428197787Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ObjectStorageSettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
