@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * GreyNoise Community Edition secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T21:52:28.024445325Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T22:43:50.143770355Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class CommunityEditionSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
