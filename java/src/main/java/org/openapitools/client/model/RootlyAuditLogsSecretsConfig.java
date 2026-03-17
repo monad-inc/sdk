@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Rootly Audit Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T16:42:59.462664759Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:30:26.671443644Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RootlyAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
