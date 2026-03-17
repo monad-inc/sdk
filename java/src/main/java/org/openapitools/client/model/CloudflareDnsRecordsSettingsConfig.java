@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Cloudflare DNS Records settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T16:06:58.764670664Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T16:42:59.462664759Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class CloudflareDnsRecordsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
