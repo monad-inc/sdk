@@ -166,6 +166,7 @@ Class | Method | HTTP request | Description
 *OrganizationTransformsAPI* | [**V1OrganizationIdTransformsTransformIdGet**](docs/OrganizationTransformsAPI.md#v1organizationidtransformstransformidget) | **Get** /v1/{organization_id}/transforms/{transform_id} | Get transform
 *OrganizationTransformsAPI* | [**V1OrganizationIdTransformsTransformIdPatch**](docs/OrganizationTransformsAPI.md#v1organizationidtransformstransformidpatch) | **Patch** /v1/{organization_id}/transforms/{transform_id} | Update transform
 *OrganizationUsersAPI* | [**V1OrganizationIdUsersGet**](docs/OrganizationUsersAPI.md#v1organizationidusersget) | **Get** /v1/{organization_id}/users | List organization users
+*OrganizationUsersAPI* | [**V1OrganizationIdUsersLeavePost**](docs/OrganizationUsersAPI.md#v1organizationidusersleavepost) | **Post** /v1/{organization_id}/users/leave | Leave organization
 *OrganizationUsersAPI* | [**V1OrganizationIdUsersPost**](docs/OrganizationUsersAPI.md#v1organizationiduserspost) | **Post** /v1/{organization_id}/users | Add user to organization
 *OrganizationUsersAPI* | [**V1OrganizationIdUsersUserIdDelete**](docs/OrganizationUsersAPI.md#v1organizationidusersuseriddelete) | **Delete** /v1/{organization_id}/users/{user_id} | Remove user from organization
 *OrganizationUsersAPI* | [**V1OrganizationIdUsersUserIdPatch**](docs/OrganizationUsersAPI.md#v1organizationidusersuseridpatch) | **Patch** /v1/{organization_id}/users/{user_id} | Update user in organization

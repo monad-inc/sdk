@@ -5,6 +5,7 @@ All URIs are relative to *https://monad.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1OrganizationIdUsersGet**](OrganizationUsersApi.md#v1OrganizationIdUsersGet) | **GET** /v1/{organization_id}/users | List organization users
+[**v1OrganizationIdUsersLeavePost**](OrganizationUsersApi.md#v1OrganizationIdUsersLeavePost) | **POST** /v1/{organization_id}/users/leave | Leave organization
 [**v1OrganizationIdUsersPost**](OrganizationUsersApi.md#v1OrganizationIdUsersPost) | **POST** /v1/{organization_id}/users | Add user to organization
 [**v1OrganizationIdUsersUserIdDelete**](OrganizationUsersApi.md#v1OrganizationIdUsersUserIdDelete) | **DELETE** /v1/{organization_id}/users/{user_id} | Remove user from organization
 [**v1OrganizationIdUsersUserIdPatch**](OrganizationUsersApi.md#v1OrganizationIdUsersUserIdPatch) | **PATCH** /v1/{organization_id}/users/{user_id} | Update user in organization
@@ -66,6 +67,61 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of organization users |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v1OrganizationIdUsersLeavePost**
+> any v1OrganizationIdUsersLeavePost()
+
+Leave organization (self-service removal)
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationUsersApi } from '';
+import type { OrganizationUsersApiV1OrganizationIdUsersLeavePostRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationUsersApi(configuration);
+
+const request: OrganizationUsersApiV1OrganizationIdUsersLeavePostRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+};
+
+const data = await apiInstance.v1OrganizationIdUsersLeavePost(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+
+
+### Return type
+
+**any**
+
+### Authorization
+
+[Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad request |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

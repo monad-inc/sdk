@@ -3985,6 +3985,16 @@ export interface OrganizationUsersApiV1OrganizationIdUsersGetRequest {
     offset?: number
 }
 
+export interface OrganizationUsersApiV1OrganizationIdUsersLeavePostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiv1OrganizationIdUsersLeavePost
+     */
+    organizationId: string
+}
+
 export interface OrganizationUsersApiV1OrganizationIdUsersPostRequest {
     /**
      * organization ID
@@ -4071,6 +4081,24 @@ export class ObjectOrganizationUsersApi {
      */
     public v1OrganizationIdUsersGet(param: OrganizationUsersApiV1OrganizationIdUsersGetRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUserList> {
         return this.api.v1OrganizationIdUsersGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Leave organization (self-service removal)
+     * Leave organization
+     * @param param the request object
+     */
+    public v1OrganizationIdUsersLeavePostWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersLeavePostRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.v1OrganizationIdUsersLeavePostWithHttpInfo(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * Leave organization (self-service removal)
+     * Leave organization
+     * @param param the request object
+     */
+    public v1OrganizationIdUsersLeavePost(param: OrganizationUsersApiV1OrganizationIdUsersLeavePostRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.v1OrganizationIdUsersLeavePost(param.organizationId,  options).toPromise();
     }
 
     /**

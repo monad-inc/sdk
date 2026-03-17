@@ -3115,6 +3115,28 @@ export class PromiseOrganizationUsersApi {
     }
 
     /**
+     * Leave organization (self-service removal)
+     * Leave organization
+     * @param organizationId Organization ID
+     */
+    public v1OrganizationIdUsersLeavePostWithHttpInfo(organizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v1OrganizationIdUsersLeavePostWithHttpInfo(organizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Leave organization (self-service removal)
+     * Leave organization
+     * @param organizationId Organization ID
+     */
+    public v1OrganizationIdUsersLeavePost(organizationId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v1OrganizationIdUsersLeavePost(organizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Add user to organization
      * Add user to organization
      * @param organizationId organization ID

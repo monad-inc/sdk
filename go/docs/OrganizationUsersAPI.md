@@ -5,6 +5,7 @@ All URIs are relative to *https://monad.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**V1OrganizationIdUsersGet**](OrganizationUsersAPI.md#V1OrganizationIdUsersGet) | **Get** /v1/{organization_id}/users | List organization users
+[**V1OrganizationIdUsersLeavePost**](OrganizationUsersAPI.md#V1OrganizationIdUsersLeavePost) | **Post** /v1/{organization_id}/users/leave | Leave organization
 [**V1OrganizationIdUsersPost**](OrganizationUsersAPI.md#V1OrganizationIdUsersPost) | **Post** /v1/{organization_id}/users | Add user to organization
 [**V1OrganizationIdUsersUserIdDelete**](OrganizationUsersAPI.md#V1OrganizationIdUsersUserIdDelete) | **Delete** /v1/{organization_id}/users/{user_id} | Remove user from organization
 [**V1OrganizationIdUsersUserIdPatch**](OrganizationUsersAPI.md#V1OrganizationIdUsersUserIdPatch) | **Patch** /v1/{organization_id}/users/{user_id} | Update user in organization
@@ -74,6 +75,76 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V1OrganizationIdUsersLeavePost
+
+> map[string]interface{} V1OrganizationIdUsersLeavePost(ctx, organizationId).Execute()
+
+Leave organization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationUsersAPI.V1OrganizationIdUsersLeavePost(context.Background(), organizationId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationUsersAPI.V1OrganizationIdUsersLeavePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1OrganizationIdUsersLeavePost`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationUsersAPI.V1OrganizationIdUsersLeavePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1OrganizationIdUsersLeavePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

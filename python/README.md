@@ -189,6 +189,7 @@ Class | Method | HTTP request | Description
 *OrganizationTransformsApi* | [**v1_organization_id_transforms_transform_id_get**](docs/OrganizationTransformsApi.md#v1_organization_id_transforms_transform_id_get) | **GET** /v1/{organization_id}/transforms/{transform_id} | Get transform
 *OrganizationTransformsApi* | [**v1_organization_id_transforms_transform_id_patch**](docs/OrganizationTransformsApi.md#v1_organization_id_transforms_transform_id_patch) | **PATCH** /v1/{organization_id}/transforms/{transform_id} | Update transform
 *OrganizationUsersApi* | [**v1_organization_id_users_get**](docs/OrganizationUsersApi.md#v1_organization_id_users_get) | **GET** /v1/{organization_id}/users | List organization users
+*OrganizationUsersApi* | [**v1_organization_id_users_leave_post**](docs/OrganizationUsersApi.md#v1_organization_id_users_leave_post) | **POST** /v1/{organization_id}/users/leave | Leave organization
 *OrganizationUsersApi* | [**v1_organization_id_users_post**](docs/OrganizationUsersApi.md#v1_organization_id_users_post) | **POST** /v1/{organization_id}/users | Add user to organization
 *OrganizationUsersApi* | [**v1_organization_id_users_user_id_delete**](docs/OrganizationUsersApi.md#v1_organization_id_users_user_id_delete) | **DELETE** /v1/{organization_id}/users/{user_id} | Remove user from organization
 *OrganizationUsersApi* | [**v1_organization_id_users_user_id_patch**](docs/OrganizationUsersApi.md#v1_organization_id_users_user_id_patch) | **PATCH** /v1/{organization_id}/users/{user_id} | Update user in organization

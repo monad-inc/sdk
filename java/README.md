@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-17T18:18:17.428197787Z[Etc/UTC]
+  - Build date: 2026-03-17T18:48:52.353925970Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -216,6 +216,7 @@ Class | Method | HTTP request | Description
 *OrganizationTransformsApi* | [**v1OrganizationIdTransformsTransformIdGet**](docs/OrganizationTransformsApi.md#v1OrganizationIdTransformsTransformIdGet) | **GET** /v1/{organization_id}/transforms/{transform_id} | Get transform
 *OrganizationTransformsApi* | [**v1OrganizationIdTransformsTransformIdPatch**](docs/OrganizationTransformsApi.md#v1OrganizationIdTransformsTransformIdPatch) | **PATCH** /v1/{organization_id}/transforms/{transform_id} | Update transform
 *OrganizationUsersApi* | [**v1OrganizationIdUsersGet**](docs/OrganizationUsersApi.md#v1OrganizationIdUsersGet) | **GET** /v1/{organization_id}/users | List organization users
+*OrganizationUsersApi* | [**v1OrganizationIdUsersLeavePost**](docs/OrganizationUsersApi.md#v1OrganizationIdUsersLeavePost) | **POST** /v1/{organization_id}/users/leave | Leave organization
 *OrganizationUsersApi* | [**v1OrganizationIdUsersPost**](docs/OrganizationUsersApi.md#v1OrganizationIdUsersPost) | **POST** /v1/{organization_id}/users | Add user to organization
 *OrganizationUsersApi* | [**v1OrganizationIdUsersUserIdDelete**](docs/OrganizationUsersApi.md#v1OrganizationIdUsersUserIdDelete) | **DELETE** /v1/{organization_id}/users/{user_id} | Remove user from organization
 *OrganizationUsersApi* | [**v1OrganizationIdUsersUserIdPatch**](docs/OrganizationUsersApi.md#v1OrganizationIdUsersUserIdPatch) | **PATCH** /v1/{organization_id}/users/{user_id} | Update user in organization
