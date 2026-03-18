@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Ownbackup Audit Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-18T15:54:03.610987937Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-18T17:33:28.262722006Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class OwnbackupAccountEventsSettingsConfig {
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
