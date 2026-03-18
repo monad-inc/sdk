@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Tines Audit Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T22:43:50.143770355Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-18T15:04:22.496677693Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class TinesAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
