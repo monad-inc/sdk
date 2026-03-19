@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Zoom Operation Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T22:48:55.963300960Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T23:17:32.863694925Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class OperationLogsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
