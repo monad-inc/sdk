@@ -154,7 +154,6 @@ Name | Type | Description | Notes
 **domain_url** | **str** | Domain URL for the Salesforce instance | [optional] 
 **topic** | **str** | Pub/Sub topic to subscribe to | [optional] 
 **evaluation_context_identifier** | **str** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
-**include_inactive** | **bool** | Include inactive users in the results | [optional] 
 **include_planned_deletion** | **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **host_name** | **str** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
 **team_id** | **str** | Filter by the given team. | [optional] 

@@ -153,7 +153,6 @@ Name | Type | Description | Notes
 **DomainUrl** | Pointer to **string** | Domain URL for the Salesforce instance | [optional] 
 **Topic** | Pointer to **string** | Pub/Sub topic to subscribe to | [optional] 
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
-**IncludeInactive** | Pointer to **bool** | Include inactive users in the results | [optional] 
 **IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **HostName** | Pointer to **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
 **TeamId** | Pointer to **string** | Filter by the given team. | [optional] 
@@ -3928,31 +3927,6 @@ SetEvaluationContextIdentifier sets EvaluationContextIdentifier field to given v
 `func (o *SecretProcessesorInputConfigSettings) HasEvaluationContextIdentifier() bool`
 
 HasEvaluationContextIdentifier returns a boolean if a field has been set.
-
-### GetIncludeInactive
-
-`func (o *SecretProcessesorInputConfigSettings) GetIncludeInactive() bool`
-
-GetIncludeInactive returns the IncludeInactive field if non-nil, zero value otherwise.
-
-### GetIncludeInactiveOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIncludeInactiveOk() (*bool, bool)`
-
-GetIncludeInactiveOk returns a tuple with the IncludeInactive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeInactive
-
-`func (o *SecretProcessesorInputConfigSettings) SetIncludeInactive(v bool)`
-
-SetIncludeInactive sets IncludeInactive field to given value.
-
-### HasIncludeInactive
-
-`func (o *SecretProcessesorInputConfigSettings) HasIncludeInactive() bool`
-
-HasIncludeInactive returns a boolean if a field has been set.
 
 ### GetIncludePlannedDeletion
 

@@ -121,7 +121,6 @@ import org.openapitools.client.model.PubsubSettingsConfig;
 import org.openapitools.client.model.ResourceEvaluationsSettingsConfig;
 import org.openapitools.client.model.RolesInfoSettingsConfig;
 import org.openapitools.client.model.RootlyAuditLogsSettingsConfig;
-import org.openapitools.client.model.SalesforceUsersSettingsConfig;
 import org.openapitools.client.model.SecretsmanagerSettingsConfig;
 import org.openapitools.client.model.SecurityGroupsFilter;
 import org.openapitools.client.model.SecurityGroupsSettingsConfig;
@@ -1374,14 +1373,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void evaluationContextIdentifierTest() {
         // TODO: test evaluationContextIdentifier
-    }
-
-    /**
-     * Test the property 'includeInactive'
-     */
-    @Test
-    public void includeInactiveTest() {
-        // TODO: test includeInactive
     }
 
     /**

@@ -428,8 +428,6 @@ import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnect
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
-import { SalesforceUsersSecretsConfig } from '../models/SalesforceUsersSecretsConfig';
-import { SalesforceUsersSettingsConfig } from '../models/SalesforceUsersSettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecrets } from '../models/SecretProcessesorEnrichmentConfigSecrets';
 import { SecretProcessesorEnrichmentConfigSettings } from '../models/SecretProcessesorEnrichmentConfigSettings';

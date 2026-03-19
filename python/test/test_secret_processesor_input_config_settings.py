@@ -248,7 +248,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 domain_url = '',
                 topic = '',
                 evaluation_context_identifier = '',
-                include_inactive = True,
                 include_planned_deletion = True,
                 host_name = '',
                 team_id = '',

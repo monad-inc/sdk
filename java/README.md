@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-19T16:12:13.725085580Z[Etc/UTC]
+  - Build date: 2026-03-19T16:59:30.228113892Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -719,8 +719,6 @@ Class | Method | HTTP request | Description
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
  - [S3SecretsConfig](docs/S3SecretsConfig.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
- - [SalesforceUsersSecretsConfig](docs/SalesforceUsersSecretsConfig.md)
- - [SalesforceUsersSettingsConfig](docs/SalesforceUsersSettingsConfig.md)
  - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)
  - [SecretProcessesorEnrichmentConfigSecrets](docs/SecretProcessesorEnrichmentConfigSecrets.md)
  - [SecretProcessesorEnrichmentConfigSettings](docs/SecretProcessesorEnrichmentConfigSettings.md)

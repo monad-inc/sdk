@@ -488,8 +488,6 @@ __all__ = [
     "RoutesV3UpdateEnrichmentRequest",
     "S3SecretsConfig",
     "S3SettingsConfig",
-    "SalesforceUsersSecretsConfig",
-    "SalesforceUsersSettingsConfig",
     "SecretProcessesorEnrichmentConfig",
     "SecretProcessesorEnrichmentConfigSecrets",
     "SecretProcessesorEnrichmentConfigSettings",
@@ -1079,8 +1077,6 @@ from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConne
 from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest as RoutesV3UpdateEnrichmentRequest
 from monad.models.s3_secrets_config import S3SecretsConfig as S3SecretsConfig
 from monad.models.s3_settings_config import S3SettingsConfig as S3SettingsConfig
-from monad.models.salesforce_users_secrets_config import SalesforceUsersSecretsConfig as SalesforceUsersSecretsConfig
-from monad.models.salesforce_users_settings_config import SalesforceUsersSettingsConfig as SalesforceUsersSettingsConfig
 from monad.models.secret_processesor_enrichment_config import SecretProcessesorEnrichmentConfig as SecretProcessesorEnrichmentConfig
 from monad.models.secret_processesor_enrichment_config_secrets import SecretProcessesorEnrichmentConfigSecrets as SecretProcessesorEnrichmentConfigSecrets
 from monad.models.secret_processesor_enrichment_config_settings import SecretProcessesorEnrichmentConfigSettings as SecretProcessesorEnrichmentConfigSettings

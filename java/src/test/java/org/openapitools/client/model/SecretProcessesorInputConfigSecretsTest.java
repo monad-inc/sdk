@@ -103,7 +103,6 @@ import org.openapitools.client.model.PostmanAuditLogsSecretsConfig;
 import org.openapitools.client.model.PubsubSecretsConfig;
 import org.openapitools.client.model.RolesInfoSecretsConfig;
 import org.openapitools.client.model.RootlyAuditLogsSecretsConfig;
-import org.openapitools.client.model.SalesforceUsersSecretsConfig;
 import org.openapitools.client.model.SecretsmanagerSecretsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSecretsConfig;
 import org.openapitools.client.model.SemgrepDeploymentsSecretsConfig;

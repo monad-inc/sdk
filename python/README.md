@@ -692,8 +692,6 @@ Class | Method | HTTP request | Description
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
  - [S3SecretsConfig](docs/S3SecretsConfig.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
- - [SalesforceUsersSecretsConfig](docs/SalesforceUsersSecretsConfig.md)
- - [SalesforceUsersSettingsConfig](docs/SalesforceUsersSettingsConfig.md)
  - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)
  - [SecretProcessesorEnrichmentConfigSecrets](docs/SecretProcessesorEnrichmentConfigSecrets.md)
  - [SecretProcessesorEnrichmentConfigSettings](docs/SecretProcessesorEnrichmentConfigSettings.md)

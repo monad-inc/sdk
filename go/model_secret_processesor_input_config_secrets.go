@@ -100,7 +100,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	PubsubSecretsConfig *PubsubSecretsConfig
 	RolesInfoSecretsConfig *RolesInfoSecretsConfig
 	RootlyAuditLogsSecretsConfig *RootlyAuditLogsSecretsConfig
-	SalesforceUsersSecretsConfig *SalesforceUsersSecretsConfig
 	SecretsmanagerSecretsConfig *SecretsmanagerSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
 	SemgrepDeploymentsSecretsConfig *SemgrepDeploymentsSecretsConfig
@@ -708,13 +707,6 @@ func RolesInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *RolesInfoSec
 func RootlyAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *RootlyAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		RootlyAuditLogsSecretsConfig: v,
-	}
-}
-
-// SalesforceUsersSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SalesforceUsersSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SalesforceUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SalesforceUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SalesforceUsersSecretsConfig: v,
 	}
 }
 
@@ -2387,23 +2379,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.RootlyAuditLogsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SalesforceUsersSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SalesforceUsersSecretsConfig)
-	if err == nil {
-		jsonSalesforceUsersSecretsConfig, _ := json.Marshal(dst.SalesforceUsersSecretsConfig)
-		if string(jsonSalesforceUsersSecretsConfig) == "{}" { // empty struct
-			dst.SalesforceUsersSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SalesforceUsersSecretsConfig); err != nil {
-				dst.SalesforceUsersSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SalesforceUsersSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SecretsmanagerSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SecretsmanagerSecretsConfig)
 	if err == nil {
@@ -3184,7 +3159,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PubsubSecretsConfig = nil
 		dst.RolesInfoSecretsConfig = nil
 		dst.RootlyAuditLogsSecretsConfig = nil
-		dst.SalesforceUsersSecretsConfig = nil
 		dst.SecretsmanagerSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
 		dst.SemgrepDeploymentsSecretsConfig = nil
@@ -3559,10 +3533,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.RootlyAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.RootlyAuditLogsSecretsConfig)
-	}
-
-	if src.SalesforceUsersSecretsConfig != nil {
-		return json.Marshal(&src.SalesforceUsersSecretsConfig)
 	}
 
 	if src.SecretsmanagerSecretsConfig != nil {
@@ -4061,10 +4031,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.RootlyAuditLogsSecretsConfig
 	}
 
-	if obj.SalesforceUsersSecretsConfig != nil {
-		return obj.SalesforceUsersSecretsConfig
-	}
-
 	if obj.SecretsmanagerSecretsConfig != nil {
 		return obj.SecretsmanagerSecretsConfig
 	}
@@ -4557,10 +4523,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.RootlyAuditLogsSecretsConfig != nil {
 		return *obj.RootlyAuditLogsSecretsConfig
-	}
-
-	if obj.SalesforceUsersSecretsConfig != nil {
-		return *obj.SalesforceUsersSecretsConfig
 	}
 
 	if obj.SecretsmanagerSecretsConfig != nil {

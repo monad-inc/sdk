@@ -423,8 +423,6 @@ export * from '../models/RoutesV3UpdateConnectionRequest';
 export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SecretsConfig';
 export * from '../models/S3SettingsConfig';
-export * from '../models/SalesforceUsersSecretsConfig';
-export * from '../models/SalesforceUsersSettingsConfig';
 export * from '../models/SecretProcessesorEnrichmentConfig';
 export * from '../models/SecretProcessesorEnrichmentConfigSecrets';
 export * from '../models/SecretProcessesorEnrichmentConfigSettings';
@@ -964,8 +962,6 @@ import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnect
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
-import { SalesforceUsersSecretsConfig } from '../models/SalesforceUsersSecretsConfig';
-import { SalesforceUsersSettingsConfig } from '../models/SalesforceUsersSettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecretsClass } from '../models/SecretProcessesorEnrichmentConfigSecrets';
 import { SecretProcessesorEnrichmentConfigSettingsClass } from '../models/SecretProcessesorEnrichmentConfigSettings';
@@ -1537,8 +1533,6 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
     "S3SecretsConfig": S3SecretsConfig,
     "S3SettingsConfig": S3SettingsConfig,
-    "SalesforceUsersSecretsConfig": SalesforceUsersSecretsConfig,
-    "SalesforceUsersSettingsConfig": SalesforceUsersSettingsConfig,
     "SecretProcessesorEnrichmentConfig": SecretProcessesorEnrichmentConfig,
     "SecretProcessesorEnrichmentConfigSecrets": SecretProcessesorEnrichmentConfigSecretsClass,
     "SecretProcessesorEnrichmentConfigSettings": SecretProcessesorEnrichmentConfigSettingsClass,
