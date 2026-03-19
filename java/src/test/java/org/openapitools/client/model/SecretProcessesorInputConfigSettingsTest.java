@@ -79,7 +79,6 @@ import org.openapitools.client.model.CrowdstrikeFdrSettingsConfig;
 import org.openapitools.client.model.CustomerEventDataSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
 import org.openapitools.client.model.DeviceDetailsSettingsConfig;
-import org.openapitools.client.model.DevicesSettingsConfig;
 import org.openapitools.client.model.DuoSecurityActivityLogsSettingsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
@@ -131,15 +130,11 @@ import org.openapitools.client.model.SemgrepProjectsSettingsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
 import org.openapitools.client.model.SentryOrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
-import org.openapitools.client.model.SlackUsersSettingsConfig;
-import org.openapitools.client.model.SlackgroupsSettingsConfig;
 import org.openapitools.client.model.SnowflakeInputSettingsConfig;
 import org.openapitools.client.model.SnykIssuesSettingsConfig;
-import org.openapitools.client.model.SnykProjectsSettingsConfig;
 import org.openapitools.client.model.SnykTargetsSettingsConfig;
 import org.openapitools.client.model.SyntheticDataCustomSettingsConfig;
 import org.openapitools.client.model.SyntheticDataSettingsConfig;
-import org.openapitools.client.model.TailscaleUsersSettingsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSettingsConfig;
 import org.openapitools.client.model.TeamAccessLogsSettingsConfig;
 import org.openapitools.client.model.TeamIntegrationLogsSettingsConfig;
@@ -960,14 +955,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'fieldOption'
-     */
-    @Test
-    public void fieldOptionTest() {
-        // TODO: test fieldOption
-    }
-
-    /**
      * Test the property 'namespace'
      */
     @Test
@@ -1392,14 +1379,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'teamId'
-     */
-    @Test
-    public void teamIdTest() {
-        // TODO: test teamId
-    }
-
-    /**
      * Test the property 'account'
      */
     @Test
@@ -1464,22 +1443,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'userRoleOption'
-     */
-    @Test
-    public void userRoleOptionTest() {
-        // TODO: test userRoleOption
-    }
-
-    /**
-     * Test the property 'userTypeOption'
-     */
-    @Test
-    public void userTypeOptionTest() {
-        // TODO: test userTypeOption
-    }
-
-    /**
      * Test the property 'operationNames'
      */
     @Test
@@ -1509,6 +1472,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void storyIdTest() {
         // TODO: test storyId
+    }
+
+    /**
+     * Test the property 'teamId'
+     */
+    @Test
+    public void teamIdTest() {
+        // TODO: test teamId
     }
 
     /**

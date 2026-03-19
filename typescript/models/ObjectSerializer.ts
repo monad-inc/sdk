@@ -129,8 +129,6 @@ export * from '../models/DefenderForEndpointAlertsSettingsConfig';
 export * from '../models/DelimitedDelimiterFormatter';
 export * from '../models/DeviceDetailsSecretsConfig';
 export * from '../models/DeviceDetailsSettingsConfig';
-export * from '../models/DevicesSecretsConfig';
-export * from '../models/DevicesSettingsConfig';
 export * from '../models/DropKeyArgumentsConfig';
 export * from '../models/DropKeyWhereValueEqArgumentsConfig';
 export * from '../models/DropRecordWhereValueEqArgumentsConfig';
@@ -457,19 +455,13 @@ export * from '../models/SlackBotTokenVariant';
 export * from '../models/SlackEnterpriseAuditLogsSecretsConfig';
 export * from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 export * from '../models/SlackSettingsConfig';
-export * from '../models/SlackUsersSecretsConfig';
-export * from '../models/SlackUsersSettingsConfig';
 export * from '../models/SlackWebhookVariant';
-export * from '../models/SlackgroupsSecretsConfig';
-export * from '../models/SlackgroupsSettingsConfig';
 export * from '../models/SnowflakeInputSecretsConfig';
 export * from '../models/SnowflakeInputSettingsConfig';
 export * from '../models/SnowflakeOutputSecretsConfig';
 export * from '../models/SnowflakeOutputSettingsConfig';
 export * from '../models/SnykIssuesSecretsConfig';
 export * from '../models/SnykIssuesSettingsConfig';
-export * from '../models/SnykProjectsSecretsConfig';
-export * from '../models/SnykProjectsSettingsConfig';
 export * from '../models/SnykTargetsSecretsConfig';
 export * from '../models/SnykTargetsSettingsConfig';
 export * from '../models/SplunkSecretsConfig';
@@ -480,8 +472,6 @@ export * from '../models/SumologicSourceMetadata';
 export * from '../models/SumologicSumoField';
 export * from '../models/SyntheticDataCustomSettingsConfig';
 export * from '../models/SyntheticDataSettingsConfig';
-export * from '../models/TailscaleUsersSecretsConfig';
-export * from '../models/TailscaleUsersSettingsConfig';
 export * from '../models/TaniumGraphqlInputSecretsConfig';
 export * from '../models/TaniumGraphqlInputSettingsConfig';
 export * from '../models/TeamAccessLogsSecretsConfig';
@@ -668,8 +658,6 @@ import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEn
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
 import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
 import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
-import { DevicesSecretsConfig } from '../models/DevicesSecretsConfig';
-import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
 import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
@@ -996,19 +984,13 @@ import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
 import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
 import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
-import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
-import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackWebhookVariant } from '../models/SlackWebhookVariant';
-import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
-import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
 import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
 import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
-import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
-import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
 import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
 import { SnykTargetsSettingsConfig } from '../models/SnykTargetsSettingsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
@@ -1019,8 +1001,6 @@ import { SumologicSourceMetadata } from '../models/SumologicSourceMetadata';
 import { SumologicSumoField } from '../models/SumologicSumoField';
 import { SyntheticDataCustomSettingsConfig } from '../models/SyntheticDataCustomSettingsConfig';
 import { SyntheticDataSettingsConfig } from '../models/SyntheticDataSettingsConfig';
-import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
-import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
 import { TaniumGraphqlInputSecretsConfig } from '../models/TaniumGraphqlInputSecretsConfig';
 import { TaniumGraphqlInputSettingsConfig } from '../models/TaniumGraphqlInputSettingsConfig';
 import { TeamAccessLogsSecretsConfig } from '../models/TeamAccessLogsSecretsConfig';
@@ -1239,8 +1219,6 @@ let typeMap: {[index: string]: any} = {
     "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
     "DeviceDetailsSecretsConfig": DeviceDetailsSecretsConfig,
     "DeviceDetailsSettingsConfig": DeviceDetailsSettingsConfig,
-    "DevicesSecretsConfig": DevicesSecretsConfig,
-    "DevicesSettingsConfig": DevicesSettingsConfig,
     "DropKeyArgumentsConfig": DropKeyArgumentsConfig,
     "DropKeyWhereValueEqArgumentsConfig": DropKeyWhereValueEqArgumentsConfig,
     "DropRecordWhereValueEqArgumentsConfig": DropRecordWhereValueEqArgumentsConfig,
@@ -1567,19 +1545,13 @@ let typeMap: {[index: string]: any} = {
     "SlackEnterpriseAuditLogsSecretsConfig": SlackEnterpriseAuditLogsSecretsConfig,
     "SlackEnterpriseAuditLogsSettingsConfig": SlackEnterpriseAuditLogsSettingsConfig,
     "SlackSettingsConfig": SlackSettingsConfig,
-    "SlackUsersSecretsConfig": SlackUsersSecretsConfig,
-    "SlackUsersSettingsConfig": SlackUsersSettingsConfig,
     "SlackWebhookVariant": SlackWebhookVariant,
-    "SlackgroupsSecretsConfig": SlackgroupsSecretsConfig,
-    "SlackgroupsSettingsConfig": SlackgroupsSettingsConfig,
     "SnowflakeInputSecretsConfig": SnowflakeInputSecretsConfig,
     "SnowflakeInputSettingsConfig": SnowflakeInputSettingsConfig,
     "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
     "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
     "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
     "SnykIssuesSettingsConfig": SnykIssuesSettingsConfig,
-    "SnykProjectsSecretsConfig": SnykProjectsSecretsConfig,
-    "SnykProjectsSettingsConfig": SnykProjectsSettingsConfig,
     "SnykTargetsSecretsConfig": SnykTargetsSecretsConfig,
     "SnykTargetsSettingsConfig": SnykTargetsSettingsConfig,
     "SplunkSecretsConfig": SplunkSecretsConfig,
@@ -1590,8 +1562,6 @@ let typeMap: {[index: string]: any} = {
     "SumologicSumoField": SumologicSumoField,
     "SyntheticDataCustomSettingsConfig": SyntheticDataCustomSettingsConfig,
     "SyntheticDataSettingsConfig": SyntheticDataSettingsConfig,
-    "TailscaleUsersSecretsConfig": TailscaleUsersSecretsConfig,
-    "TailscaleUsersSettingsConfig": TailscaleUsersSettingsConfig,
     "TaniumGraphqlInputSecretsConfig": TaniumGraphqlInputSecretsConfig,
     "TaniumGraphqlInputSettingsConfig": TaniumGraphqlInputSettingsConfig,
     "TeamAccessLogsSecretsConfig": TeamAccessLogsSecretsConfig,

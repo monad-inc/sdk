@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-19T16:59:30.228113892Z[Etc/UTC]
+  - Build date: 2026-03-19T18:23:12.490197145Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -425,8 +425,6 @@ Class | Method | HTTP request | Description
  - [DelimitedDelimiterFormatter](docs/DelimitedDelimiterFormatter.md)
  - [DeviceDetailsSecretsConfig](docs/DeviceDetailsSecretsConfig.md)
  - [DeviceDetailsSettingsConfig](docs/DeviceDetailsSettingsConfig.md)
- - [DevicesSecretsConfig](docs/DevicesSecretsConfig.md)
- - [DevicesSettingsConfig](docs/DevicesSettingsConfig.md)
  - [DropKeyArgumentsConfig](docs/DropKeyArgumentsConfig.md)
  - [DropKeyWhereValueEqArgumentsConfig](docs/DropKeyWhereValueEqArgumentsConfig.md)
  - [DropRecordWhereValueEqArgumentsConfig](docs/DropRecordWhereValueEqArgumentsConfig.md)
@@ -753,19 +751,13 @@ Class | Method | HTTP request | Description
  - [SlackEnterpriseAuditLogsSecretsConfig](docs/SlackEnterpriseAuditLogsSecretsConfig.md)
  - [SlackEnterpriseAuditLogsSettingsConfig](docs/SlackEnterpriseAuditLogsSettingsConfig.md)
  - [SlackSettingsConfig](docs/SlackSettingsConfig.md)
- - [SlackUsersSecretsConfig](docs/SlackUsersSecretsConfig.md)
- - [SlackUsersSettingsConfig](docs/SlackUsersSettingsConfig.md)
  - [SlackWebhookVariant](docs/SlackWebhookVariant.md)
- - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)
- - [SlackgroupsSettingsConfig](docs/SlackgroupsSettingsConfig.md)
  - [SnowflakeInputSecretsConfig](docs/SnowflakeInputSecretsConfig.md)
  - [SnowflakeInputSettingsConfig](docs/SnowflakeInputSettingsConfig.md)
  - [SnowflakeOutputSecretsConfig](docs/SnowflakeOutputSecretsConfig.md)
  - [SnowflakeOutputSettingsConfig](docs/SnowflakeOutputSettingsConfig.md)
  - [SnykIssuesSecretsConfig](docs/SnykIssuesSecretsConfig.md)
  - [SnykIssuesSettingsConfig](docs/SnykIssuesSettingsConfig.md)
- - [SnykProjectsSecretsConfig](docs/SnykProjectsSecretsConfig.md)
- - [SnykProjectsSettingsConfig](docs/SnykProjectsSettingsConfig.md)
  - [SnykTargetsSecretsConfig](docs/SnykTargetsSecretsConfig.md)
  - [SnykTargetsSettingsConfig](docs/SnykTargetsSettingsConfig.md)
  - [SplunkSecretsConfig](docs/SplunkSecretsConfig.md)
@@ -776,8 +768,6 @@ Class | Method | HTTP request | Description
  - [SumologicSumoField](docs/SumologicSumoField.md)
  - [SyntheticDataCustomSettingsConfig](docs/SyntheticDataCustomSettingsConfig.md)
  - [SyntheticDataSettingsConfig](docs/SyntheticDataSettingsConfig.md)
- - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
- - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
  - [TaniumGraphqlInputSecretsConfig](docs/TaniumGraphqlInputSecretsConfig.md)
  - [TaniumGraphqlInputSettingsConfig](docs/TaniumGraphqlInputSettingsConfig.md)
  - [TeamAccessLogsSecretsConfig](docs/TeamAccessLogsSecretsConfig.md)

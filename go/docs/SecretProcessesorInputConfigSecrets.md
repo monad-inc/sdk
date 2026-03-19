@@ -31,8 +31,8 @@ Name | Type | Description | Notes
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RefreshToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **UserOauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TwilioAccountSid** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TwilioAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CustomerId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -722,31 +722,6 @@ SetUserOauthToken sets UserOauthToken field to given value.
 
 HasUserOauthToken returns a boolean if a field has been set.
 
-### GetToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetToken() ModelsSecret`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetTokenOk() (*ModelsSecret, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetToken(v ModelsSecret)`
-
-SetToken sets Token field to given value.
-
-### HasToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
-
 ### GetPrivateKey
 
 `func (o *SecretProcessesorInputConfigSecrets) GetPrivateKey() ModelsSecret`
@@ -771,6 +746,31 @@ SetPrivateKey sets PrivateKey field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasPrivateKey() bool`
 
 HasPrivateKey returns a boolean if a field has been set.
+
+### GetToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetToken() ModelsSecret`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTokenOk() (*ModelsSecret, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetToken(v ModelsSecret)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
 
 ### GetTwilioAccountSid
 

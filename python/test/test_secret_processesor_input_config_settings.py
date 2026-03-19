@@ -166,7 +166,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 environment = '',
                 user_id = '',
                 category = '',
-                field_option = '',
                 namespace = '',
                 workspace_id = '',
                 app_name = '',
@@ -250,7 +249,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 evaluation_context_identifier = '',
                 include_planned_deletion = True,
                 host_name = '',
-                team_id = '',
                 account = '',
                 database = '',
                 role = '',
@@ -259,8 +257,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 rate = 56,
                 record_type = '',
                 custom_template = '',
-                user_role_option = '',
-                user_type_option = '',
                 operation_names = [
                     ''
                     ],
@@ -269,6 +265,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ''
                     ],
                 story_id = '',
+                team_id = '',
                 tenant_url = '',
                 actor_sid = '',
                 replication_start_time = '',

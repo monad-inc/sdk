@@ -252,7 +252,7 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
                     organization_id = '', 
                     updated_at = '', 
                     value = '', ),
-                token = monad.models.models/secret.models.Secret(
+                private_key = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
                     id = '', 
@@ -260,7 +260,7 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
                     organization_id = '', 
                     updated_at = '', 
                     value = '', ),
-                private_key = monad.models.models/secret.models.Secret(
+                token = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
                     id = '', 

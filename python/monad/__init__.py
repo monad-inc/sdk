@@ -194,8 +194,6 @@ __all__ = [
     "DelimitedDelimiterFormatter",
     "DeviceDetailsSecretsConfig",
     "DeviceDetailsSettingsConfig",
-    "DevicesSecretsConfig",
-    "DevicesSettingsConfig",
     "DropKeyArgumentsConfig",
     "DropKeyWhereValueEqArgumentsConfig",
     "DropRecordWhereValueEqArgumentsConfig",
@@ -522,19 +520,13 @@ __all__ = [
     "SlackEnterpriseAuditLogsSecretsConfig",
     "SlackEnterpriseAuditLogsSettingsConfig",
     "SlackSettingsConfig",
-    "SlackUsersSecretsConfig",
-    "SlackUsersSettingsConfig",
     "SlackWebhookVariant",
-    "SlackgroupsSecretsConfig",
-    "SlackgroupsSettingsConfig",
     "SnowflakeInputSecretsConfig",
     "SnowflakeInputSettingsConfig",
     "SnowflakeOutputSecretsConfig",
     "SnowflakeOutputSettingsConfig",
     "SnykIssuesSecretsConfig",
     "SnykIssuesSettingsConfig",
-    "SnykProjectsSecretsConfig",
-    "SnykProjectsSettingsConfig",
     "SnykTargetsSecretsConfig",
     "SnykTargetsSettingsConfig",
     "SplunkSecretsConfig",
@@ -545,8 +537,6 @@ __all__ = [
     "SumologicSumoField",
     "SyntheticDataCustomSettingsConfig",
     "SyntheticDataSettingsConfig",
-    "TailscaleUsersSecretsConfig",
-    "TailscaleUsersSettingsConfig",
     "TaniumGraphqlInputSecretsConfig",
     "TaniumGraphqlInputSettingsConfig",
     "TeamAccessLogsSecretsConfig",
@@ -783,8 +773,6 @@ from monad.models.defender_for_endpoint_alerts_settings_config import DefenderFo
 from monad.models.delimited_delimiter_formatter import DelimitedDelimiterFormatter as DelimitedDelimiterFormatter
 from monad.models.device_details_secrets_config import DeviceDetailsSecretsConfig as DeviceDetailsSecretsConfig
 from monad.models.device_details_settings_config import DeviceDetailsSettingsConfig as DeviceDetailsSettingsConfig
-from monad.models.devices_secrets_config import DevicesSecretsConfig as DevicesSecretsConfig
-from monad.models.devices_settings_config import DevicesSettingsConfig as DevicesSettingsConfig
 from monad.models.drop_key_arguments_config import DropKeyArgumentsConfig as DropKeyArgumentsConfig
 from monad.models.drop_key_where_value_eq_arguments_config import DropKeyWhereValueEqArgumentsConfig as DropKeyWhereValueEqArgumentsConfig
 from monad.models.drop_record_where_value_eq_arguments_config import DropRecordWhereValueEqArgumentsConfig as DropRecordWhereValueEqArgumentsConfig
@@ -1111,19 +1099,13 @@ from monad.models.slack_bot_token_variant import SlackBotTokenVariant as SlackBo
 from monad.models.slack_enterprise_audit_logs_secrets_config import SlackEnterpriseAuditLogsSecretsConfig as SlackEnterpriseAuditLogsSecretsConfig
 from monad.models.slack_enterprise_audit_logs_settings_config import SlackEnterpriseAuditLogsSettingsConfig as SlackEnterpriseAuditLogsSettingsConfig
 from monad.models.slack_settings_config import SlackSettingsConfig as SlackSettingsConfig
-from monad.models.slack_users_secrets_config import SlackUsersSecretsConfig as SlackUsersSecretsConfig
-from monad.models.slack_users_settings_config import SlackUsersSettingsConfig as SlackUsersSettingsConfig
 from monad.models.slack_webhook_variant import SlackWebhookVariant as SlackWebhookVariant
-from monad.models.slackgroups_secrets_config import SlackgroupsSecretsConfig as SlackgroupsSecretsConfig
-from monad.models.slackgroups_settings_config import SlackgroupsSettingsConfig as SlackgroupsSettingsConfig
 from monad.models.snowflake_input_secrets_config import SnowflakeInputSecretsConfig as SnowflakeInputSecretsConfig
 from monad.models.snowflake_input_settings_config import SnowflakeInputSettingsConfig as SnowflakeInputSettingsConfig
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig as SnowflakeOutputSecretsConfig
 from monad.models.snowflake_output_settings_config import SnowflakeOutputSettingsConfig as SnowflakeOutputSettingsConfig
 from monad.models.snyk_issues_secrets_config import SnykIssuesSecretsConfig as SnykIssuesSecretsConfig
 from monad.models.snyk_issues_settings_config import SnykIssuesSettingsConfig as SnykIssuesSettingsConfig
-from monad.models.snyk_projects_secrets_config import SnykProjectsSecretsConfig as SnykProjectsSecretsConfig
-from monad.models.snyk_projects_settings_config import SnykProjectsSettingsConfig as SnykProjectsSettingsConfig
 from monad.models.snyk_targets_secrets_config import SnykTargetsSecretsConfig as SnykTargetsSecretsConfig
 from monad.models.snyk_targets_settings_config import SnykTargetsSettingsConfig as SnykTargetsSettingsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig as SplunkSecretsConfig
@@ -1134,8 +1116,6 @@ from monad.models.sumologic_source_metadata import SumologicSourceMetadata as Su
 from monad.models.sumologic_sumo_field import SumologicSumoField as SumologicSumoField
 from monad.models.synthetic_data_custom_settings_config import SyntheticDataCustomSettingsConfig as SyntheticDataCustomSettingsConfig
 from monad.models.synthetic_data_settings_config import SyntheticDataSettingsConfig as SyntheticDataSettingsConfig
-from monad.models.tailscale_users_secrets_config import TailscaleUsersSecretsConfig as TailscaleUsersSecretsConfig
-from monad.models.tailscale_users_settings_config import TailscaleUsersSettingsConfig as TailscaleUsersSettingsConfig
 from monad.models.tanium_graphql_input_secrets_config import TaniumGraphqlInputSecretsConfig as TaniumGraphqlInputSecretsConfig
 from monad.models.tanium_graphql_input_settings_config import TaniumGraphqlInputSettingsConfig as TaniumGraphqlInputSettingsConfig
 from monad.models.team_access_logs_secrets_config import TeamAccessLogsSecretsConfig as TeamAccessLogsSecretsConfig

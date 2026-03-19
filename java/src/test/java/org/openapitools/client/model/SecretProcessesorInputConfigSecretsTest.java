@@ -68,7 +68,6 @@ import org.openapitools.client.model.CrowdstrikeFdrSecretsConfig;
 import org.openapitools.client.model.CustomerEventDataSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
 import org.openapitools.client.model.DeviceDetailsSecretsConfig;
-import org.openapitools.client.model.DevicesSecretsConfig;
 import org.openapitools.client.model.DuoSecurityActivityLogsSecretsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
@@ -111,13 +110,9 @@ import org.openapitools.client.model.SemgrepProjectsSecretsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig;
 import org.openapitools.client.model.SentryOrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSecretsConfig;
-import org.openapitools.client.model.SlackUsersSecretsConfig;
-import org.openapitools.client.model.SlackgroupsSecretsConfig;
 import org.openapitools.client.model.SnowflakeInputSecretsConfig;
 import org.openapitools.client.model.SnykIssuesSecretsConfig;
-import org.openapitools.client.model.SnykProjectsSecretsConfig;
 import org.openapitools.client.model.SnykTargetsSecretsConfig;
-import org.openapitools.client.model.TailscaleUsersSecretsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSecretsConfig;
 import org.openapitools.client.model.TeamAccessLogsSecretsConfig;
 import org.openapitools.client.model.TeamIntegrationLogsSecretsConfig;
@@ -377,19 +372,19 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'token'
-     */
-    @Test
-    public void tokenTest() {
-        // TODO: test token
-    }
-
-    /**
      * Test the property 'privateKey'
      */
     @Test
     public void privateKeyTest() {
         // TODO: test privateKey
+    }
+
+    /**
+     * Test the property 'token'
+     */
+    @Test
+    public void tokenTest() {
+        // TODO: test token
     }
 
     /**

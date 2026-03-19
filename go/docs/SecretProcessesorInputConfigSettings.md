@@ -60,7 +60,7 @@ Name | Type | Description | Notes
 **BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
-**OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
+**OrganizationId** | Pointer to **string** | Organization ID for the Salesforce instance | [optional] 
 **OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
 **GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
@@ -101,7 +101,6 @@ Name | Type | Description | Notes
 **Environment** | Pointer to **string** | Determines the URI {environment}.docusign.com | [optional] 
 **UserId** | Pointer to **string** | ID of the user to harvest audit logs for | [optional] 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
-**FieldOption** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | [optional] 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
@@ -155,7 +154,6 @@ Name | Type | Description | Notes
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
 **IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **HostName** | Pointer to **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
-**TeamId** | Pointer to **string** | Filter by the given team. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -164,12 +162,11 @@ Name | Type | Description | Notes
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
 **CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
-**UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
-**UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
 **OperationNames** | Pointer to **[]string** | Filter by specific operation names (optional) | [optional] 
 **TenantDomain** | Pointer to **string** | The Tines tenant domain (e.g., your-org.tines.com) | [optional] 
 **UserIds** | Pointer to **[]string** | Filter by specific user IDs (optional) | [optional] 
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
+**TeamId** | Pointer to **string** | Filter by the given team. | [optional] 
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
 **ActorSid** | Pointer to **string** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. | [optional] 
 **ReplicationStartTime** | Pointer to **string** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
@@ -2628,31 +2625,6 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
-### GetFieldOption
-
-`func (o *SecretProcessesorInputConfigSettings) GetFieldOption() string`
-
-GetFieldOption returns the FieldOption field if non-nil, zero value otherwise.
-
-### GetFieldOptionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetFieldOptionOk() (*string, bool)`
-
-GetFieldOptionOk returns a tuple with the FieldOption field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFieldOption
-
-`func (o *SecretProcessesorInputConfigSettings) SetFieldOption(v string)`
-
-SetFieldOption sets FieldOption field to given value.
-
-### HasFieldOption
-
-`func (o *SecretProcessesorInputConfigSettings) HasFieldOption() bool`
-
-HasFieldOption returns a boolean if a field has been set.
-
 ### GetNamespace
 
 `func (o *SecretProcessesorInputConfigSettings) GetNamespace() string`
@@ -3978,31 +3950,6 @@ SetHostName sets HostName field to given value.
 
 HasHostName returns a boolean if a field has been set.
 
-### GetTeamId
-
-`func (o *SecretProcessesorInputConfigSettings) GetTeamId() string`
-
-GetTeamId returns the TeamId field if non-nil, zero value otherwise.
-
-### GetTeamIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetTeamIdOk() (*string, bool)`
-
-GetTeamIdOk returns a tuple with the TeamId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTeamId
-
-`func (o *SecretProcessesorInputConfigSettings) SetTeamId(v string)`
-
-SetTeamId sets TeamId field to given value.
-
-### HasTeamId
-
-`func (o *SecretProcessesorInputConfigSettings) HasTeamId() bool`
-
-HasTeamId returns a boolean if a field has been set.
-
 ### GetAccount
 
 `func (o *SecretProcessesorInputConfigSettings) GetAccount() string`
@@ -4203,56 +4150,6 @@ SetCustomTemplate sets CustomTemplate field to given value.
 
 HasCustomTemplate returns a boolean if a field has been set.
 
-### GetUserRoleOption
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserRoleOption() string`
-
-GetUserRoleOption returns the UserRoleOption field if non-nil, zero value otherwise.
-
-### GetUserRoleOptionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserRoleOptionOk() (*string, bool)`
-
-GetUserRoleOptionOk returns a tuple with the UserRoleOption field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserRoleOption
-
-`func (o *SecretProcessesorInputConfigSettings) SetUserRoleOption(v string)`
-
-SetUserRoleOption sets UserRoleOption field to given value.
-
-### HasUserRoleOption
-
-`func (o *SecretProcessesorInputConfigSettings) HasUserRoleOption() bool`
-
-HasUserRoleOption returns a boolean if a field has been set.
-
-### GetUserTypeOption
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserTypeOption() string`
-
-GetUserTypeOption returns the UserTypeOption field if non-nil, zero value otherwise.
-
-### GetUserTypeOptionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserTypeOptionOk() (*string, bool)`
-
-GetUserTypeOptionOk returns a tuple with the UserTypeOption field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserTypeOption
-
-`func (o *SecretProcessesorInputConfigSettings) SetUserTypeOption(v string)`
-
-SetUserTypeOption sets UserTypeOption field to given value.
-
-### HasUserTypeOption
-
-`func (o *SecretProcessesorInputConfigSettings) HasUserTypeOption() bool`
-
-HasUserTypeOption returns a boolean if a field has been set.
-
 ### GetOperationNames
 
 `func (o *SecretProcessesorInputConfigSettings) GetOperationNames() []string`
@@ -4352,6 +4249,31 @@ SetStoryId sets StoryId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasStoryId() bool`
 
 HasStoryId returns a boolean if a field has been set.
+
+### GetTeamId
+
+`func (o *SecretProcessesorInputConfigSettings) GetTeamId() string`
+
+GetTeamId returns the TeamId field if non-nil, zero value otherwise.
+
+### GetTeamIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetTeamIdOk() (*string, bool)`
+
+GetTeamIdOk returns a tuple with the TeamId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTeamId
+
+`func (o *SecretProcessesorInputConfigSettings) SetTeamId(v string)`
+
+SetTeamId sets TeamId field to given value.
+
+### HasTeamId
+
+`func (o *SecretProcessesorInputConfigSettings) HasTeamId() bool`
+
+HasTeamId returns a boolean if a field has been set.
 
 ### GetTenantUrl
 

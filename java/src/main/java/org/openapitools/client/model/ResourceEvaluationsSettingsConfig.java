@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Resource Evaluations settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T16:59:30.228113892Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T18:23:12.490197145Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ResourceEvaluationsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)

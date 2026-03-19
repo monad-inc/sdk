@@ -63,7 +63,7 @@
 |**baseUrl** | **String** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) |  [optional] |
 |**eventType** | **String** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types |  [optional] |
 |**hostname** | **String** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) |  [optional] |
-|**organizationId** | **String** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. |  [optional] |
+|**organizationId** | **String** | Organization ID for the Salesforce instance |  [optional] |
 |**orgSlug** | **String** | The ID or slug of the organization |  [optional] |
 |**enablePagination** | **Boolean** | Enable pagination support |  [optional] |
 |**graphqlQuery** | **String** | The GraphQL query to execute against the endpoint to fetch data |  [optional] |
@@ -104,7 +104,6 @@
 |**environment** | **String** | Determines the URI {environment}.docusign.com |  [optional] |
 |**userId** | **String** | ID of the user to harvest audit logs for |  [optional] |
 |**category** | **String** | The Category of logs to query |  [optional] |
-|**fieldOption** | **String** |  |  [optional] |
 |**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  [optional] |
 |**workspaceId** | **String** | The workspace ID of the Log Analytics workspace |  [optional] |
 |**appName** | **String** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. |  [optional] |
@@ -158,7 +157,6 @@
 |**evaluationContextIdentifier** | **String** | Filters proactive resource evaluations for a given infrastructure deployment. |  [optional] |
 |**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |
 |**hostName** | **String** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. |  [optional] |
-|**teamId** | **String** | Filter by the given team. |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
@@ -167,12 +165,11 @@
 |**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |
 |**recordType** | **String** | The type of record to generate |  [optional] |
 |**customTemplate** | **String** | A custom template using the functions we provide to generate demo data |  [optional] |
-|**userRoleOption** | **String** | Allows for filtering the output by user role. |  [optional] |
-|**userTypeOption** | **String** | Allows for filtering the output by user type. |  [optional] |
 |**operationNames** | **List&lt;String&gt;** | Filter by specific operation names (optional) |  [optional] |
 |**tenantDomain** | **String** | The Tines tenant domain (e.g., your-org.tines.com) |  [optional] |
 |**userIds** | **List&lt;String&gt;** | Filter by specific user IDs (optional) |  [optional] |
 |**storyId** | **String** | Filter by the given story. |  [optional] |
+|**teamId** | **String** | Filter by the given team. |  [optional] |
 |**tenantUrl** | **String** | Unique URL for your Tines instance |  [optional] |
 |**actorSid** | **String** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. |  [optional] |
 |**replicationStartTime** | **String** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; |  [optional] |

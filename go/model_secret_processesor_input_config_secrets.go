@@ -66,7 +66,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	CustomerEventDataSecretsConfig *CustomerEventDataSecretsConfig
 	DefenderForEndpointAlertsSecretsConfig *DefenderForEndpointAlertsSecretsConfig
 	DeviceDetailsSecretsConfig *DeviceDetailsSecretsConfig
-	DevicesSecretsConfig *DevicesSecretsConfig
 	DuoSecurityActivityLogsSecretsConfig *DuoSecurityActivityLogsSecretsConfig
 	EndorLabsAuditLogsSecretsConfig *EndorLabsAuditLogsSecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
@@ -108,13 +107,9 @@ type SecretProcessesorInputConfigSecrets struct {
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
 	SentryOrgAuditLogsSecretsConfig *SentryOrgAuditLogsSecretsConfig
 	SlackEnterpriseAuditLogsSecretsConfig *SlackEnterpriseAuditLogsSecretsConfig
-	SlackUsersSecretsConfig *SlackUsersSecretsConfig
-	SlackgroupsSecretsConfig *SlackgroupsSecretsConfig
 	SnowflakeInputSecretsConfig *SnowflakeInputSecretsConfig
 	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
-	SnykProjectsSecretsConfig *SnykProjectsSecretsConfig
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
-	TailscaleUsersSecretsConfig *TailscaleUsersSecretsConfig
 	TaniumGraphqlInputSecretsConfig *TaniumGraphqlInputSecretsConfig
 	TeamAccessLogsSecretsConfig *TeamAccessLogsSecretsConfig
 	TeamIntegrationLogsSecretsConfig *TeamIntegrationLogsSecretsConfig
@@ -472,13 +467,6 @@ func DeviceDetailsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DeviceDe
 	}
 }
 
-// DevicesSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DevicesSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func DevicesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DevicesSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		DevicesSecretsConfig: v,
-	}
-}
-
 // DuoSecurityActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DuoSecurityActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func DuoSecurityActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DuoSecurityActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -766,20 +754,6 @@ func SlackEnterpriseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(
 	}
 }
 
-// SlackUsersSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SlackUsersSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SlackUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SlackUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SlackUsersSecretsConfig: v,
-	}
-}
-
-// SlackgroupsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SlackgroupsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SlackgroupsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SlackgroupsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SlackgroupsSecretsConfig: v,
-	}
-}
-
 // SnowflakeInputSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SnowflakeInputSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func SnowflakeInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnowflakeInputSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -794,24 +768,10 @@ func SnykIssuesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykIssuesS
 	}
 }
 
-// SnykProjectsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SnykProjectsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SnykProjectsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykProjectsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SnykProjectsSecretsConfig: v,
-	}
-}
-
 // SnykTargetsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SnykTargetsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func SnykTargetsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykTargetsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		SnykTargetsSecretsConfig: v,
-	}
-}
-
-// TailscaleUsersSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TailscaleUsersSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func TailscaleUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TailscaleUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		TailscaleUsersSecretsConfig: v,
 	}
 }
 
@@ -1801,23 +1761,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.DeviceDetailsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into DevicesSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.DevicesSecretsConfig)
-	if err == nil {
-		jsonDevicesSecretsConfig, _ := json.Marshal(dst.DevicesSecretsConfig)
-		if string(jsonDevicesSecretsConfig) == "{}" { // empty struct
-			dst.DevicesSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DevicesSecretsConfig); err != nil {
-				dst.DevicesSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DevicesSecretsConfig = nil
-	}
-
 	// try to unmarshal data into DuoSecurityActivityLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.DuoSecurityActivityLogsSecretsConfig)
 	if err == nil {
@@ -2515,40 +2458,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SlackUsersSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SlackUsersSecretsConfig)
-	if err == nil {
-		jsonSlackUsersSecretsConfig, _ := json.Marshal(dst.SlackUsersSecretsConfig)
-		if string(jsonSlackUsersSecretsConfig) == "{}" { // empty struct
-			dst.SlackUsersSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SlackUsersSecretsConfig); err != nil {
-				dst.SlackUsersSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SlackUsersSecretsConfig = nil
-	}
-
-	// try to unmarshal data into SlackgroupsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SlackgroupsSecretsConfig)
-	if err == nil {
-		jsonSlackgroupsSecretsConfig, _ := json.Marshal(dst.SlackgroupsSecretsConfig)
-		if string(jsonSlackgroupsSecretsConfig) == "{}" { // empty struct
-			dst.SlackgroupsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SlackgroupsSecretsConfig); err != nil {
-				dst.SlackgroupsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SlackgroupsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SnowflakeInputSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnowflakeInputSecretsConfig)
 	if err == nil {
@@ -2583,23 +2492,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SnykIssuesSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SnykProjectsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnykProjectsSecretsConfig)
-	if err == nil {
-		jsonSnykProjectsSecretsConfig, _ := json.Marshal(dst.SnykProjectsSecretsConfig)
-		if string(jsonSnykProjectsSecretsConfig) == "{}" { // empty struct
-			dst.SnykProjectsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnykProjectsSecretsConfig); err != nil {
-				dst.SnykProjectsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnykProjectsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SnykTargetsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykTargetsSecretsConfig)
 	if err == nil {
@@ -2615,23 +2507,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.SnykTargetsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into TailscaleUsersSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.TailscaleUsersSecretsConfig)
-	if err == nil {
-		jsonTailscaleUsersSecretsConfig, _ := json.Marshal(dst.TailscaleUsersSecretsConfig)
-		if string(jsonTailscaleUsersSecretsConfig) == "{}" { // empty struct
-			dst.TailscaleUsersSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TailscaleUsersSecretsConfig); err != nil {
-				dst.TailscaleUsersSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TailscaleUsersSecretsConfig = nil
 	}
 
 	// try to unmarshal data into TaniumGraphqlInputSecretsConfig
@@ -3125,7 +3000,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CustomerEventDataSecretsConfig = nil
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
 		dst.DeviceDetailsSecretsConfig = nil
-		dst.DevicesSecretsConfig = nil
 		dst.DuoSecurityActivityLogsSecretsConfig = nil
 		dst.EndorLabsAuditLogsSecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
@@ -3167,13 +3041,9 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 		dst.SentryOrgAuditLogsSecretsConfig = nil
 		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
-		dst.SlackUsersSecretsConfig = nil
-		dst.SlackgroupsSecretsConfig = nil
 		dst.SnowflakeInputSecretsConfig = nil
 		dst.SnykIssuesSecretsConfig = nil
-		dst.SnykProjectsSecretsConfig = nil
 		dst.SnykTargetsSecretsConfig = nil
-		dst.TailscaleUsersSecretsConfig = nil
 		dst.TaniumGraphqlInputSecretsConfig = nil
 		dst.TeamAccessLogsSecretsConfig = nil
 		dst.TeamIntegrationLogsSecretsConfig = nil
@@ -3399,10 +3269,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DeviceDetailsSecretsConfig)
 	}
 
-	if src.DevicesSecretsConfig != nil {
-		return json.Marshal(&src.DevicesSecretsConfig)
-	}
-
 	if src.DuoSecurityActivityLogsSecretsConfig != nil {
 		return json.Marshal(&src.DuoSecurityActivityLogsSecretsConfig)
 	}
@@ -3567,14 +3433,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SlackEnterpriseAuditLogsSecretsConfig)
 	}
 
-	if src.SlackUsersSecretsConfig != nil {
-		return json.Marshal(&src.SlackUsersSecretsConfig)
-	}
-
-	if src.SlackgroupsSecretsConfig != nil {
-		return json.Marshal(&src.SlackgroupsSecretsConfig)
-	}
-
 	if src.SnowflakeInputSecretsConfig != nil {
 		return json.Marshal(&src.SnowflakeInputSecretsConfig)
 	}
@@ -3583,16 +3441,8 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SnykIssuesSecretsConfig)
 	}
 
-	if src.SnykProjectsSecretsConfig != nil {
-		return json.Marshal(&src.SnykProjectsSecretsConfig)
-	}
-
 	if src.SnykTargetsSecretsConfig != nil {
 		return json.Marshal(&src.SnykTargetsSecretsConfig)
-	}
-
-	if src.TailscaleUsersSecretsConfig != nil {
-		return json.Marshal(&src.TailscaleUsersSecretsConfig)
 	}
 
 	if src.TaniumGraphqlInputSecretsConfig != nil {
@@ -3895,10 +3745,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.DeviceDetailsSecretsConfig
 	}
 
-	if obj.DevicesSecretsConfig != nil {
-		return obj.DevicesSecretsConfig
-	}
-
 	if obj.DuoSecurityActivityLogsSecretsConfig != nil {
 		return obj.DuoSecurityActivityLogsSecretsConfig
 	}
@@ -4063,14 +3909,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.SlackEnterpriseAuditLogsSecretsConfig
 	}
 
-	if obj.SlackUsersSecretsConfig != nil {
-		return obj.SlackUsersSecretsConfig
-	}
-
-	if obj.SlackgroupsSecretsConfig != nil {
-		return obj.SlackgroupsSecretsConfig
-	}
-
 	if obj.SnowflakeInputSecretsConfig != nil {
 		return obj.SnowflakeInputSecretsConfig
 	}
@@ -4079,16 +3917,8 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.SnykIssuesSecretsConfig
 	}
 
-	if obj.SnykProjectsSecretsConfig != nil {
-		return obj.SnykProjectsSecretsConfig
-	}
-
 	if obj.SnykTargetsSecretsConfig != nil {
 		return obj.SnykTargetsSecretsConfig
-	}
-
-	if obj.TailscaleUsersSecretsConfig != nil {
-		return obj.TailscaleUsersSecretsConfig
 	}
 
 	if obj.TaniumGraphqlInputSecretsConfig != nil {
@@ -4389,10 +4219,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.DeviceDetailsSecretsConfig
 	}
 
-	if obj.DevicesSecretsConfig != nil {
-		return *obj.DevicesSecretsConfig
-	}
-
 	if obj.DuoSecurityActivityLogsSecretsConfig != nil {
 		return *obj.DuoSecurityActivityLogsSecretsConfig
 	}
@@ -4557,14 +4383,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.SlackEnterpriseAuditLogsSecretsConfig
 	}
 
-	if obj.SlackUsersSecretsConfig != nil {
-		return *obj.SlackUsersSecretsConfig
-	}
-
-	if obj.SlackgroupsSecretsConfig != nil {
-		return *obj.SlackgroupsSecretsConfig
-	}
-
 	if obj.SnowflakeInputSecretsConfig != nil {
 		return *obj.SnowflakeInputSecretsConfig
 	}
@@ -4573,16 +4391,8 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.SnykIssuesSecretsConfig
 	}
 
-	if obj.SnykProjectsSecretsConfig != nil {
-		return *obj.SnykProjectsSecretsConfig
-	}
-
 	if obj.SnykTargetsSecretsConfig != nil {
 		return *obj.SnykTargetsSecretsConfig
-	}
-
-	if obj.TailscaleUsersSecretsConfig != nil {
-		return *obj.TailscaleUsersSecretsConfig
 	}
 
 	if obj.TaniumGraphqlInputSecretsConfig != nil {
