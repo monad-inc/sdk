@@ -36,6 +36,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	PagerdutySettingsConfig *PagerdutySettingsConfig
 	PantherSettingsConfig *PantherSettingsConfig
 	PostgresqlSettingsConfig *PostgresqlSettingsConfig
+	PrometheusSettingsConfig *PrometheusSettingsConfig
 	S3SettingsConfig *S3SettingsConfig
 	SecurityLakeSettingsConfig *SecurityLakeSettingsConfig
 	SentinelSettingsConfig *SentinelSettingsConfig
@@ -162,6 +163,13 @@ func PantherSettingsConfigAsSecretProcessesorOutputConfigSettings(v *PantherSett
 func PostgresqlSettingsConfigAsSecretProcessesorOutputConfigSettings(v *PostgresqlSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		PostgresqlSettingsConfig: v,
+	}
+}
+
+// PrometheusSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns PrometheusSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func PrometheusSettingsConfigAsSecretProcessesorOutputConfigSettings(v *PrometheusSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		PrometheusSettingsConfig: v,
 	}
 }
 
@@ -515,6 +523,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.PostgresqlSettingsConfig = nil
 	}
 
+	// try to unmarshal data into PrometheusSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PrometheusSettingsConfig)
+	if err == nil {
+		jsonPrometheusSettingsConfig, _ := json.Marshal(dst.PrometheusSettingsConfig)
+		if string(jsonPrometheusSettingsConfig) == "{}" { // empty struct
+			dst.PrometheusSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PrometheusSettingsConfig); err != nil {
+				dst.PrometheusSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PrometheusSettingsConfig = nil
+	}
+
 	// try to unmarshal data into S3SettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.S3SettingsConfig)
 	if err == nil {
@@ -670,6 +695,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.PagerdutySettingsConfig = nil
 		dst.PantherSettingsConfig = nil
 		dst.PostgresqlSettingsConfig = nil
+		dst.PrometheusSettingsConfig = nil
 		dst.S3SettingsConfig = nil
 		dst.SecurityLakeSettingsConfig = nil
 		dst.SentinelSettingsConfig = nil
@@ -755,6 +781,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.PostgresqlSettingsConfig != nil {
 		return json.Marshal(&src.PostgresqlSettingsConfig)
+	}
+
+	if src.PrometheusSettingsConfig != nil {
+		return json.Marshal(&src.PrometheusSettingsConfig)
 	}
 
 	if src.S3SettingsConfig != nil {
@@ -865,6 +895,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.PostgresqlSettingsConfig
 	}
 
+	if obj.PrometheusSettingsConfig != nil {
+		return obj.PrometheusSettingsConfig
+	}
+
 	if obj.S3SettingsConfig != nil {
 		return obj.S3SettingsConfig
 	}
@@ -969,6 +1003,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.PostgresqlSettingsConfig != nil {
 		return *obj.PostgresqlSettingsConfig
+	}
+
+	if obj.PrometheusSettingsConfig != nil {
+		return *obj.PrometheusSettingsConfig
 	}
 
 	if obj.S3SettingsConfig != nil {

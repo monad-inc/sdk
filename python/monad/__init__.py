@@ -387,6 +387,13 @@ __all__ = [
     "PostgresqlSettingsConfig",
     "PostmanAuditLogsSecretsConfig",
     "PostmanAuditLogsSettingsConfig",
+    "PrometheusAuthConfig",
+    "PrometheusBasicVariant",
+    "PrometheusBearerVariant",
+    "PrometheusFieldMetricVariant",
+    "PrometheusMetricNameConfig",
+    "PrometheusSettingsConfig",
+    "PrometheusStaticMetricVariant",
     "PubsubSecretsConfig",
     "PubsubSettingsConfig",
     "RenameKeyArgumentsConfig",
@@ -966,6 +973,13 @@ from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as Po
 from monad.models.postgresql_settings_config import PostgresqlSettingsConfig as PostgresqlSettingsConfig
 from monad.models.postman_audit_logs_secrets_config import PostmanAuditLogsSecretsConfig as PostmanAuditLogsSecretsConfig
 from monad.models.postman_audit_logs_settings_config import PostmanAuditLogsSettingsConfig as PostmanAuditLogsSettingsConfig
+from monad.models.prometheus_auth_config import PrometheusAuthConfig as PrometheusAuthConfig
+from monad.models.prometheus_basic_variant import PrometheusBasicVariant as PrometheusBasicVariant
+from monad.models.prometheus_bearer_variant import PrometheusBearerVariant as PrometheusBearerVariant
+from monad.models.prometheus_field_metric_variant import PrometheusFieldMetricVariant as PrometheusFieldMetricVariant
+from monad.models.prometheus_metric_name_config import PrometheusMetricNameConfig as PrometheusMetricNameConfig
+from monad.models.prometheus_settings_config import PrometheusSettingsConfig as PrometheusSettingsConfig
+from monad.models.prometheus_static_metric_variant import PrometheusStaticMetricVariant as PrometheusStaticMetricVariant
 from monad.models.pubsub_secrets_config import PubsubSecretsConfig as PubsubSecretsConfig
 from monad.models.pubsub_settings_config import PubsubSettingsConfig as PubsubSettingsConfig
 from monad.models.rename_key_arguments_config import RenameKeyArgumentsConfig as RenameKeyArgumentsConfig

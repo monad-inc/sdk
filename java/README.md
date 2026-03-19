@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-19T18:23:12.490197145Z[Etc/UTC]
+  - Build date: 2026-03-19T18:51:05.127033829Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -618,6 +618,13 @@ Class | Method | HTTP request | Description
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)
  - [PostmanAuditLogsSecretsConfig](docs/PostmanAuditLogsSecretsConfig.md)
  - [PostmanAuditLogsSettingsConfig](docs/PostmanAuditLogsSettingsConfig.md)
+ - [PrometheusAuthConfig](docs/PrometheusAuthConfig.md)
+ - [PrometheusBasicVariant](docs/PrometheusBasicVariant.md)
+ - [PrometheusBearerVariant](docs/PrometheusBearerVariant.md)
+ - [PrometheusFieldMetricVariant](docs/PrometheusFieldMetricVariant.md)
+ - [PrometheusMetricNameConfig](docs/PrometheusMetricNameConfig.md)
+ - [PrometheusSettingsConfig](docs/PrometheusSettingsConfig.md)
+ - [PrometheusStaticMetricVariant](docs/PrometheusStaticMetricVariant.md)
  - [PubsubSecretsConfig](docs/PubsubSecretsConfig.md)
  - [PubsubSettingsConfig](docs/PubsubSettingsConfig.md)
  - [RenameKeyArgumentsConfig](docs/RenameKeyArgumentsConfig.md)

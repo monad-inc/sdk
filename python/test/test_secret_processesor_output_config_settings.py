@@ -131,6 +131,37 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 database = '',
                 host = '',
                 user = '',
+                auth = monad.models.prometheus/auth_config.prometheus.AuthConfig(
+                    basic = monad.models.prometheus/basic_variant.prometheus.BasicVariant(
+                        password = monad.models.models/secret.models.Secret(
+                            created_at = '', 
+                            description = '', 
+                            id = '', 
+                            name = '', 
+                            organization_id = '', 
+                            updated_at = '', 
+                            value = '', ), 
+                        username = monad.models.models/secret.models.Secret(
+                            created_at = '', 
+                            description = '', 
+                            id = '', 
+                            name = '', 
+                            organization_id = '', 
+                            updated_at = '', 
+                            value = '', ), ), 
+                    bearer = monad.models.prometheus/bearer_variant.prometheus.BearerVariant(
+                        bearer_token = , ), 
+                    type = '', ),
+                label_fields = [
+                    ''
+                    ],
+                metric_name = monad.models.prometheus/metric_name_config.prometheus.MetricNameConfig(
+                    field = monad.models.prometheus/field_metric_variant.prometheus.FieldMetricVariant(
+                        field_name = '', ), 
+                    static = monad.models.prometheus/static_metric_variant.prometheus.StaticMetricVariant(
+                        value = '', ), 
+                    type = '', ),
+                timestamp_field = '',
                 bucket_name = '',
                 bucket_url = '',
                 key = '',

@@ -322,6 +322,13 @@ export * from '../models/PostgresqlSecretsConfig';
 export * from '../models/PostgresqlSettingsConfig';
 export * from '../models/PostmanAuditLogsSecretsConfig';
 export * from '../models/PostmanAuditLogsSettingsConfig';
+export * from '../models/PrometheusAuthConfig';
+export * from '../models/PrometheusBasicVariant';
+export * from '../models/PrometheusBearerVariant';
+export * from '../models/PrometheusFieldMetricVariant';
+export * from '../models/PrometheusMetricNameConfig';
+export * from '../models/PrometheusSettingsConfig';
+export * from '../models/PrometheusStaticMetricVariant';
 export * from '../models/PubsubSecretsConfig';
 export * from '../models/PubsubSettingsConfig';
 export * from '../models/RenameKeyArgumentsConfig';
@@ -851,6 +858,13 @@ import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
 import { PostmanAuditLogsSecretsConfig } from '../models/PostmanAuditLogsSecretsConfig';
 import { PostmanAuditLogsSettingsConfig } from '../models/PostmanAuditLogsSettingsConfig';
+import { PrometheusAuthConfig } from '../models/PrometheusAuthConfig';
+import { PrometheusBasicVariant } from '../models/PrometheusBasicVariant';
+import { PrometheusBearerVariant } from '../models/PrometheusBearerVariant';
+import { PrometheusFieldMetricVariant } from '../models/PrometheusFieldMetricVariant';
+import { PrometheusMetricNameConfig } from '../models/PrometheusMetricNameConfig';
+import { PrometheusSettingsConfig } from '../models/PrometheusSettingsConfig';
+import { PrometheusStaticMetricVariant } from '../models/PrometheusStaticMetricVariant';
 import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
@@ -1412,6 +1426,13 @@ let typeMap: {[index: string]: any} = {
     "PostgresqlSettingsConfig": PostgresqlSettingsConfig,
     "PostmanAuditLogsSecretsConfig": PostmanAuditLogsSecretsConfig,
     "PostmanAuditLogsSettingsConfig": PostmanAuditLogsSettingsConfig,
+    "PrometheusAuthConfig": PrometheusAuthConfig,
+    "PrometheusBasicVariant": PrometheusBasicVariant,
+    "PrometheusBearerVariant": PrometheusBearerVariant,
+    "PrometheusFieldMetricVariant": PrometheusFieldMetricVariant,
+    "PrometheusMetricNameConfig": PrometheusMetricNameConfig,
+    "PrometheusSettingsConfig": PrometheusSettingsConfig,
+    "PrometheusStaticMetricVariant": PrometheusStaticMetricVariant,
     "PubsubSecretsConfig": PubsubSecretsConfig,
     "PubsubSettingsConfig": PubsubSettingsConfig,
     "RenameKeyArgumentsConfig": RenameKeyArgumentsConfig,

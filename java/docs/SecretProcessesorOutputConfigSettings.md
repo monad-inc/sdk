@@ -46,11 +46,11 @@
 |**method** | **String** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). |  [optional] |
 |**payloadStructure** | **String** | Determines how the payload is structured. &#39;single&#39; sends each record as a separate request, &#39;array&#39; sends multiple records as an array, &#39;wrapped&#39; sends multiple records within a wrapper object. |  [optional] |
 |**rateLimit** | **Integer** | Maximum number of requests per second to send to the endpoint. |  [optional] |
-|**tlsSkipVerify** | **Boolean** | Skip TLS verification. |  [optional] |
+|**tlsSkipVerify** | **Boolean** |  |  [optional] |
 |**wrapperKey** | **String** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. |  [optional] |
 |**keyField** | **String** | The field in the incoming record to use as the key |  [optional] |
 |**ttl** | **Integer** | Time-to-live in hours for stored key-value pairs (0 means no expiration) |  [optional] |
-|**valueField** | **String** | The field in the incoming record to use as the value |  [optional] |
+|**valueField** | **String** |  |  [optional] |
 |**skipSslVerification** | **Boolean** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |
@@ -62,6 +62,10 @@
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**host** | **String** | The host of the PostgreSQL database |  [optional] |
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
+|**auth** | [**PrometheusAuthConfig**](PrometheusAuthConfig.md) |  |  [optional] |
+|**labelFields** | **List&lt;String&gt;** |  |  [optional] |
+|**metricName** | [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  |  [optional] |
+|**timestampField** | **String** |  |  [optional] |
 |**bucketName** | **String** | Bucket Name |  [optional] |
 |**bucketUrl** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
 |**key** | **String** | S3 Key |  [optional] |

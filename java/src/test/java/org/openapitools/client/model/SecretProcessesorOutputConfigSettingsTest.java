@@ -46,6 +46,9 @@ import org.openapitools.client.model.PagerdutySummaryConfig;
 import org.openapitools.client.model.PantherSettingsConfig;
 import org.openapitools.client.model.ParquetParquetFormatter;
 import org.openapitools.client.model.PostgresqlSettingsConfig;
+import org.openapitools.client.model.PrometheusAuthConfig;
+import org.openapitools.client.model.PrometheusMetricNameConfig;
+import org.openapitools.client.model.PrometheusSettingsConfig;
 import org.openapitools.client.model.S3SettingsConfig;
 import org.openapitools.client.model.SecurityLakeSettingsConfig;
 import org.openapitools.client.model.SecurityLakeSourceAccountDetails;
@@ -511,6 +514,38 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void userTest() {
         // TODO: test user
+    }
+
+    /**
+     * Test the property 'auth'
+     */
+    @Test
+    public void authTest() {
+        // TODO: test auth
+    }
+
+    /**
+     * Test the property 'labelFields'
+     */
+    @Test
+    public void labelFieldsTest() {
+        // TODO: test labelFields
+    }
+
+    /**
+     * Test the property 'metricName'
+     */
+    @Test
+    public void metricNameTest() {
+        // TODO: test metricName
+    }
+
+    /**
+     * Test the property 'timestampField'
+     */
+    @Test
+    public void timestampFieldTest() {
+        // TODO: test timestampField
     }
 
     /**

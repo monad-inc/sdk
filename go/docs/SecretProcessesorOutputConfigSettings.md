@@ -43,11 +43,11 @@ Name | Type | Description | Notes
 **Method** | Pointer to **string** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). | [optional] 
 **PayloadStructure** | Pointer to **string** | Determines how the payload is structured. &#39;single&#39; sends each record as a separate request, &#39;array&#39; sends multiple records as an array, &#39;wrapped&#39; sends multiple records within a wrapper object. | [optional] 
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
-**TlsSkipVerify** | Pointer to **bool** | Skip TLS verification. | [optional] 
+**TlsSkipVerify** | Pointer to **bool** |  | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
 **KeyField** | Pointer to **string** | The field in the incoming record to use as the key | [optional] 
 **Ttl** | Pointer to **int32** | Time-to-live in hours for stored key-value pairs (0 means no expiration) | [optional] 
-**ValueField** | Pointer to **string** | The field in the incoming record to use as the value | [optional] 
+**ValueField** | Pointer to **string** |  | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
@@ -59,6 +59,10 @@ Name | Type | Description | Notes
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Host** | Pointer to **string** | The host of the PostgreSQL database | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
+**Auth** | Pointer to [**PrometheusAuthConfig**](PrometheusAuthConfig.md) |  | [optional] 
+**LabelFields** | Pointer to **[]string** |  | [optional] 
+**MetricName** | Pointer to [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
+**TimestampField** | Pointer to **string** |  | [optional] 
 **BucketName** | Pointer to **string** | Bucket Name | [optional] 
 **BucketUrl** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Key** | Pointer to **string** | S3 Key | [optional] 
@@ -1471,6 +1475,106 @@ SetUser sets User field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasUser() bool`
 
 HasUser returns a boolean if a field has been set.
+
+### GetAuth
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuth() PrometheusAuthConfig`
+
+GetAuth returns the Auth field if non-nil, zero value otherwise.
+
+### GetAuthOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthOk() (*PrometheusAuthConfig, bool)`
+
+GetAuthOk returns a tuple with the Auth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuth
+
+`func (o *SecretProcessesorOutputConfigSettings) SetAuth(v PrometheusAuthConfig)`
+
+SetAuth sets Auth field to given value.
+
+### HasAuth
+
+`func (o *SecretProcessesorOutputConfigSettings) HasAuth() bool`
+
+HasAuth returns a boolean if a field has been set.
+
+### GetLabelFields
+
+`func (o *SecretProcessesorOutputConfigSettings) GetLabelFields() []string`
+
+GetLabelFields returns the LabelFields field if non-nil, zero value otherwise.
+
+### GetLabelFieldsOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetLabelFieldsOk() (*[]string, bool)`
+
+GetLabelFieldsOk returns a tuple with the LabelFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLabelFields
+
+`func (o *SecretProcessesorOutputConfigSettings) SetLabelFields(v []string)`
+
+SetLabelFields sets LabelFields field to given value.
+
+### HasLabelFields
+
+`func (o *SecretProcessesorOutputConfigSettings) HasLabelFields() bool`
+
+HasLabelFields returns a boolean if a field has been set.
+
+### GetMetricName
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMetricName() PrometheusMetricNameConfig`
+
+GetMetricName returns the MetricName field if non-nil, zero value otherwise.
+
+### GetMetricNameOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMetricNameOk() (*PrometheusMetricNameConfig, bool)`
+
+GetMetricNameOk returns a tuple with the MetricName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricName
+
+`func (o *SecretProcessesorOutputConfigSettings) SetMetricName(v PrometheusMetricNameConfig)`
+
+SetMetricName sets MetricName field to given value.
+
+### HasMetricName
+
+`func (o *SecretProcessesorOutputConfigSettings) HasMetricName() bool`
+
+HasMetricName returns a boolean if a field has been set.
+
+### GetTimestampField
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTimestampField() string`
+
+GetTimestampField returns the TimestampField field if non-nil, zero value otherwise.
+
+### GetTimestampFieldOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTimestampFieldOk() (*string, bool)`
+
+GetTimestampFieldOk returns a tuple with the TimestampField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestampField
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTimestampField(v string)`
+
+SetTimestampField sets TimestampField field to given value.
+
+### HasTimestampField
+
+`func (o *SecretProcessesorOutputConfigSettings) HasTimestampField() bool`
+
+HasTimestampField returns a boolean if a field has been set.
 
 ### GetBucketName
 
