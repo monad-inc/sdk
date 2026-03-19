@@ -57,8 +57,6 @@ export * from '../models/BitwardenEventsSecretsConfig';
 export * from '../models/BitwardenEventsSettingsConfig';
 export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
-export * from '../models/BoxUsersSecretsConfig';
-export * from '../models/BoxUsersSettingsConfig';
 export * from '../models/BrinqaAuditLogsSecretsConfig';
 export * from '../models/BrinqaAuditLogsSettingsConfig';
 export * from '../models/BugsnagOrgEventsSecretsConfig';
@@ -600,8 +598,6 @@ import { BitwardenEventsSecretsConfig } from '../models/BitwardenEventsSecretsCo
 import { BitwardenEventsSettingsConfig } from '../models/BitwardenEventsSettingsConfig';
 import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
-import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
-import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
@@ -1175,8 +1171,6 @@ let typeMap: {[index: string]: any} = {
     "BitwardenEventsSettingsConfig": BitwardenEventsSettingsConfig,
     "BoxEventsSecretsConfig": BoxEventsSecretsConfig,
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
-    "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
-    "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
     "BrinqaAuditLogsSecretsConfig": BrinqaAuditLogsSecretsConfig,
     "BrinqaAuditLogsSettingsConfig": BrinqaAuditLogsSettingsConfig,
     "BugsnagOrgEventsSecretsConfig": BugsnagOrgEventsSecretsConfig,

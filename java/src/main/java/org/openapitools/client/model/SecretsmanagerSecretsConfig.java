@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * SecretsmanagerSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-18T22:50:49.013070753Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T13:48:30.050949692Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class SecretsmanagerSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)

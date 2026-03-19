@@ -59,7 +59,6 @@ Name | Type | Description | Notes
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
-**FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
 **Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
 **OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
@@ -1579,31 +1578,6 @@ SetEventType sets EventType field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasEventType() bool`
 
 HasEventType returns a boolean if a field has been set.
-
-### GetFilterTerm
-
-`func (o *SecretProcessesorInputConfigSettings) GetFilterTerm() string`
-
-GetFilterTerm returns the FilterTerm field if non-nil, zero value otherwise.
-
-### GetFilterTermOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetFilterTermOk() (*string, bool)`
-
-GetFilterTermOk returns a tuple with the FilterTerm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilterTerm
-
-`func (o *SecretProcessesorInputConfigSettings) SetFilterTerm(v string)`
-
-SetFilterTerm sets FilterTerm field to given value.
-
-### HasFilterTerm
-
-`func (o *SecretProcessesorInputConfigSettings) HasFilterTerm() bool`
-
-HasFilterTerm returns a boolean if a field has been set.
 
 ### GetHostname
 

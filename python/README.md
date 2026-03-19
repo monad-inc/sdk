@@ -326,8 +326,6 @@ Class | Method | HTTP request | Description
  - [BitwardenEventsSettingsConfig](docs/BitwardenEventsSettingsConfig.md)
  - [BoxEventsSecretsConfig](docs/BoxEventsSecretsConfig.md)
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
- - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
- - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
  - [BrinqaAuditLogsSecretsConfig](docs/BrinqaAuditLogsSecretsConfig.md)
  - [BrinqaAuditLogsSettingsConfig](docs/BrinqaAuditLogsSettingsConfig.md)
  - [BugsnagOrgEventsSecretsConfig](docs/BugsnagOrgEventsSecretsConfig.md)

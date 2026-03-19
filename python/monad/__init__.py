@@ -122,8 +122,6 @@ __all__ = [
     "BitwardenEventsSettingsConfig",
     "BoxEventsSecretsConfig",
     "BoxEventsSettingsConfig",
-    "BoxUsersSecretsConfig",
-    "BoxUsersSettingsConfig",
     "BrinqaAuditLogsSecretsConfig",
     "BrinqaAuditLogsSettingsConfig",
     "BugsnagOrgEventsSecretsConfig",
@@ -715,8 +713,6 @@ from monad.models.bitwarden_events_secrets_config import BitwardenEventsSecretsC
 from monad.models.bitwarden_events_settings_config import BitwardenEventsSettingsConfig as BitwardenEventsSettingsConfig
 from monad.models.box_events_secrets_config import BoxEventsSecretsConfig as BoxEventsSecretsConfig
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig as BoxEventsSettingsConfig
-from monad.models.box_users_secrets_config import BoxUsersSecretsConfig as BoxUsersSecretsConfig
-from monad.models.box_users_settings_config import BoxUsersSettingsConfig as BoxUsersSettingsConfig
 from monad.models.brinqa_audit_logs_secrets_config import BrinqaAuditLogsSecretsConfig as BrinqaAuditLogsSecretsConfig
 from monad.models.brinqa_audit_logs_settings_config import BrinqaAuditLogsSettingsConfig as BrinqaAuditLogsSettingsConfig
 from monad.models.bugsnag_org_events_secrets_config import BugsnagOrgEventsSecretsConfig as BugsnagOrgEventsSecretsConfig

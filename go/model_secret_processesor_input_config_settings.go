@@ -42,7 +42,6 @@ type SecretProcessesorInputConfigSettings struct {
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BitwardenEventsSettingsConfig *BitwardenEventsSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
-	BoxUsersSettingsConfig *BoxUsersSettingsConfig
 	BrinqaAuditLogsSettingsConfig *BrinqaAuditLogsSettingsConfig
 	BugsnagOrgEventsSettingsConfig *BugsnagOrgEventsSettingsConfig
 	BuildkiteAuditLogsSettingsConfig *BuildkiteAuditLogsSettingsConfig
@@ -320,13 +319,6 @@ func BitwardenEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Bitw
 func BoxEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BoxEventsSettingsConfig: v,
-	}
-}
-
-// BoxUsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BoxUsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func BoxUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxUsersSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		BoxUsersSettingsConfig: v,
 	}
 }
 
@@ -1543,23 +1535,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BoxEventsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into BoxUsersSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.BoxUsersSettingsConfig)
-	if err == nil {
-		jsonBoxUsersSettingsConfig, _ := json.Marshal(dst.BoxUsersSettingsConfig)
-		if string(jsonBoxUsersSettingsConfig) == "{}" { // empty struct
-			dst.BoxUsersSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BoxUsersSettingsConfig); err != nil {
-				dst.BoxUsersSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BoxUsersSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BrinqaAuditLogsSettingsConfig
@@ -3576,7 +3551,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BitwardenEventsSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
-		dst.BoxUsersSettingsConfig = nil
 		dst.BrinqaAuditLogsSettingsConfig = nil
 		dst.BugsnagOrgEventsSettingsConfig = nil
 		dst.BuildkiteAuditLogsSettingsConfig = nil
@@ -3795,10 +3769,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BoxEventsSettingsConfig != nil {
 		return json.Marshal(&src.BoxEventsSettingsConfig)
-	}
-
-	if src.BoxUsersSettingsConfig != nil {
-		return json.Marshal(&src.BoxUsersSettingsConfig)
 	}
 
 	if src.BrinqaAuditLogsSettingsConfig != nil {
@@ -4369,10 +4339,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.BoxEventsSettingsConfig
 	}
 
-	if obj.BoxUsersSettingsConfig != nil {
-		return obj.BoxUsersSettingsConfig
-	}
-
 	if obj.BrinqaAuditLogsSettingsConfig != nil {
 		return obj.BrinqaAuditLogsSettingsConfig
 	}
@@ -4937,10 +4903,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BoxEventsSettingsConfig != nil {
 		return *obj.BoxEventsSettingsConfig
-	}
-
-	if obj.BoxUsersSettingsConfig != nil {
-		return *obj.BoxUsersSettingsConfig
 	}
 
 	if obj.BrinqaAuditLogsSettingsConfig != nil {

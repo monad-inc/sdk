@@ -47,7 +47,6 @@ import org.openapitools.client.model.BigqueryCronSettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
 import org.openapitools.client.model.BitwardenEventsSettingsConfig;
 import org.openapitools.client.model.BoxEventsSettingsConfig;
-import org.openapitools.client.model.BoxUsersSettingsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSettingsConfig;
 import org.openapitools.client.model.BugsnagOrgEventsSettingsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig;
@@ -623,14 +622,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void eventTypeTest() {
         // TODO: test eventType
-    }
-
-    /**
-     * Test the property 'filterTerm'
-     */
-    @Test
-    public void filterTermTest() {
-        // TODO: test filterTerm
     }
 
     /**

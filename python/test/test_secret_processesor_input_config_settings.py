@@ -97,7 +97,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 timestamp_column = '',
                 base_url = '',
                 event_type = '',
-                filter_term = '',
                 hostname = '',
                 organization_id = '',
                 org_slug = '',

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Log Analytics Query settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-18T22:50:49.013070753Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T13:48:30.050949692Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class LogAnalyticsQuerySettingsConfig {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)

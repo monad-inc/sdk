@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SAML is the configuration for SAML connections
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-18T22:50:49.013070753Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T13:48:30.050949692Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV3CreateConnectionRequestSaml {
   public static final String SERIALIZED_NAME_ENTITY_ID = "entity_id";
   @SerializedName(SERIALIZED_NAME_ENTITY_ID)

@@ -40,7 +40,6 @@ import org.openapitools.client.model.BigqueryCronSecretsConfig;
 import org.openapitools.client.model.BigqueryInputSecretsConfig;
 import org.openapitools.client.model.BitwardenEventsSecretsConfig;
 import org.openapitools.client.model.BoxEventsSecretsConfig;
-import org.openapitools.client.model.BoxUsersSecretsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSecretsConfig;
 import org.openapitools.client.model.BugsnagOrgEventsSecretsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSecretsConfig;
