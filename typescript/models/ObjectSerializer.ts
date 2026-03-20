@@ -39,7 +39,6 @@ export * from '../models/AzureBlobStorageSecretsConfig';
 export * from '../models/AzureBlobStorageSettingsConfig';
 export * from '../models/AzureEventHubsSecretsConfig';
 export * from '../models/AzureEventHubsSettingsConfig';
-export * from '../models/AzureVirtualMachineSettingsConfig';
 export * from '../models/AzureVnetFlowLogsSecretsConfig';
 export * from '../models/AzureVnetFlowLogsSettingsConfig';
 export * from '../models/BackblazeB2SecretsConfig';
@@ -575,7 +574,6 @@ import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecrets
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
 import { AzureEventHubsSecretsConfig } from '../models/AzureEventHubsSecretsConfig';
 import { AzureEventHubsSettingsConfig } from '../models/AzureEventHubsSettingsConfig';
-import { AzureVirtualMachineSettingsConfig } from '../models/AzureVirtualMachineSettingsConfig';
 import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
 import { BackblazeB2SecretsConfig } from '../models/BackblazeB2SecretsConfig';
@@ -1143,7 +1141,6 @@ let typeMap: {[index: string]: any} = {
     "AzureBlobStorageSettingsConfig": AzureBlobStorageSettingsConfig,
     "AzureEventHubsSecretsConfig": AzureEventHubsSecretsConfig,
     "AzureEventHubsSettingsConfig": AzureEventHubsSettingsConfig,
-    "AzureVirtualMachineSettingsConfig": AzureVirtualMachineSettingsConfig,
     "AzureVnetFlowLogsSecretsConfig": AzureVnetFlowLogsSecretsConfig,
     "AzureVnetFlowLogsSettingsConfig": AzureVnetFlowLogsSettingsConfig,
     "BackblazeB2SecretsConfig": BackblazeB2SecretsConfig,

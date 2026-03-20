@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-19T23:17:32.863694925Z[Etc/UTC]
+  - Build date: 2026-03-20T15:55:55.631263562Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -335,7 +335,6 @@ Class | Method | HTTP request | Description
  - [AzureBlobStorageSettingsConfig](docs/AzureBlobStorageSettingsConfig.md)
  - [AzureEventHubsSecretsConfig](docs/AzureEventHubsSecretsConfig.md)
  - [AzureEventHubsSettingsConfig](docs/AzureEventHubsSettingsConfig.md)
- - [AzureVirtualMachineSettingsConfig](docs/AzureVirtualMachineSettingsConfig.md)
  - [AzureVnetFlowLogsSecretsConfig](docs/AzureVnetFlowLogsSecretsConfig.md)
  - [AzureVnetFlowLogsSettingsConfig](docs/AzureVnetFlowLogsSettingsConfig.md)
  - [BackblazeB2SecretsConfig](docs/BackblazeB2SecretsConfig.md)

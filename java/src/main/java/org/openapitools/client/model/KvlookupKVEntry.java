@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * KvlookupKVEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T23:17:32.863694925Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T15:55:55.631263562Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class KvlookupKVEntry {
   public static final String SERIALIZED_NAME_LAST_UPDATED_AT = "last_updated_at";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATED_AT)

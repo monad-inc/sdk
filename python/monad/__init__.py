@@ -104,7 +104,6 @@ __all__ = [
     "AzureBlobStorageSettingsConfig",
     "AzureEventHubsSecretsConfig",
     "AzureEventHubsSettingsConfig",
-    "AzureVirtualMachineSettingsConfig",
     "AzureVnetFlowLogsSecretsConfig",
     "AzureVnetFlowLogsSettingsConfig",
     "BackblazeB2SecretsConfig",
@@ -690,7 +689,6 @@ from monad.models.azure_blob_storage_secrets_config import AzureBlobStorageSecre
 from monad.models.azure_blob_storage_settings_config import AzureBlobStorageSettingsConfig as AzureBlobStorageSettingsConfig
 from monad.models.azure_event_hubs_secrets_config import AzureEventHubsSecretsConfig as AzureEventHubsSecretsConfig
 from monad.models.azure_event_hubs_settings_config import AzureEventHubsSettingsConfig as AzureEventHubsSettingsConfig
-from monad.models.azure_virtual_machine_settings_config import AzureVirtualMachineSettingsConfig as AzureVirtualMachineSettingsConfig
 from monad.models.azure_vnet_flow_logs_secrets_config import AzureVnetFlowLogsSecretsConfig as AzureVnetFlowLogsSecretsConfig
 from monad.models.azure_vnet_flow_logs_settings_config import AzureVnetFlowLogsSettingsConfig as AzureVnetFlowLogsSettingsConfig
 from monad.models.backblaze_b2_secrets_config import BackblazeB2SecretsConfig as BackblazeB2SecretsConfig

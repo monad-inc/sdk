@@ -40,7 +40,6 @@ import org.openapitools.client.model.Awssqss3SettingsConfig;
 import org.openapitools.client.model.AzureActivityLogsSettingsConfig;
 import org.openapitools.client.model.AzureBlobStorageSettingsConfig;
 import org.openapitools.client.model.AzureEventHubsSettingsConfig;
-import org.openapitools.client.model.AzureVirtualMachineSettingsConfig;
 import org.openapitools.client.model.AzureVnetFlowLogsSettingsConfig;
 import org.openapitools.client.model.BackblazeB2SettingsConfig;
 import org.openapitools.client.model.BigqueryCronSettingsConfig;

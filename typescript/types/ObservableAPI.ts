@@ -44,7 +44,6 @@ import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecrets
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
 import { AzureEventHubsSecretsConfig } from '../models/AzureEventHubsSecretsConfig';
 import { AzureEventHubsSettingsConfig } from '../models/AzureEventHubsSettingsConfig';
-import { AzureVirtualMachineSettingsConfig } from '../models/AzureVirtualMachineSettingsConfig';
 import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
 import { BackblazeB2SecretsConfig } from '../models/BackblazeB2SecretsConfig';

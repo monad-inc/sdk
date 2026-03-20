@@ -35,7 +35,6 @@ type SecretProcessesorInputConfigSettings struct {
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	AzureBlobStorageSettingsConfig *AzureBlobStorageSettingsConfig
 	AzureEventHubsSettingsConfig *AzureEventHubsSettingsConfig
-	AzureVirtualMachineSettingsConfig *AzureVirtualMachineSettingsConfig
 	AzureVnetFlowLogsSettingsConfig *AzureVnetFlowLogsSettingsConfig
 	BackblazeB2SettingsConfig *BackblazeB2SettingsConfig
 	BigqueryCronSettingsConfig *BigqueryCronSettingsConfig
@@ -264,13 +263,6 @@ func AzureBlobStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *Azu
 func AzureEventHubsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureEventHubsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AzureEventHubsSettingsConfig: v,
-	}
-}
-
-// AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AzureVirtualMachineSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureVirtualMachineSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AzureVirtualMachineSettingsConfig: v,
 	}
 }
 
@@ -1368,23 +1360,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AzureEventHubsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into AzureVirtualMachineSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AzureVirtualMachineSettingsConfig)
-	if err == nil {
-		jsonAzureVirtualMachineSettingsConfig, _ := json.Marshal(dst.AzureVirtualMachineSettingsConfig)
-		if string(jsonAzureVirtualMachineSettingsConfig) == "{}" { // empty struct
-			dst.AzureVirtualMachineSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AzureVirtualMachineSettingsConfig); err != nil {
-				dst.AzureVirtualMachineSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AzureVirtualMachineSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AzureVnetFlowLogsSettingsConfig
@@ -3394,7 +3369,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.AzureBlobStorageSettingsConfig = nil
 		dst.AzureEventHubsSettingsConfig = nil
-		dst.AzureVirtualMachineSettingsConfig = nil
 		dst.AzureVnetFlowLogsSettingsConfig = nil
 		dst.BackblazeB2SettingsConfig = nil
 		dst.BigqueryCronSettingsConfig = nil
@@ -3585,10 +3559,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AzureEventHubsSettingsConfig != nil {
 		return json.Marshal(&src.AzureEventHubsSettingsConfig)
-	}
-
-	if src.AzureVirtualMachineSettingsConfig != nil {
-		return json.Marshal(&src.AzureVirtualMachineSettingsConfig)
 	}
 
 	if src.AzureVnetFlowLogsSettingsConfig != nil {
@@ -4131,10 +4101,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AzureEventHubsSettingsConfig
 	}
 
-	if obj.AzureVirtualMachineSettingsConfig != nil {
-		return obj.AzureVirtualMachineSettingsConfig
-	}
-
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {
 		return obj.AzureVnetFlowLogsSettingsConfig
 	}
@@ -4671,10 +4637,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AzureEventHubsSettingsConfig != nil {
 		return *obj.AzureEventHubsSettingsConfig
-	}
-
-	if obj.AzureVirtualMachineSettingsConfig != nil {
-		return *obj.AzureVirtualMachineSettingsConfig
 	}
 
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {

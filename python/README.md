@@ -308,7 +308,6 @@ Class | Method | HTTP request | Description
  - [AzureBlobStorageSettingsConfig](docs/AzureBlobStorageSettingsConfig.md)
  - [AzureEventHubsSecretsConfig](docs/AzureEventHubsSecretsConfig.md)
  - [AzureEventHubsSettingsConfig](docs/AzureEventHubsSettingsConfig.md)
- - [AzureVirtualMachineSettingsConfig](docs/AzureVirtualMachineSettingsConfig.md)
  - [AzureVnetFlowLogsSecretsConfig](docs/AzureVnetFlowLogsSecretsConfig.md)
  - [AzureVnetFlowLogsSettingsConfig](docs/AzureVnetFlowLogsSettingsConfig.md)
  - [BackblazeB2SecretsConfig](docs/BackblazeB2SecretsConfig.md)
