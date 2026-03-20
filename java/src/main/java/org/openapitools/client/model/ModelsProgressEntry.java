@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsProgressEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T19:21:18.582025416Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T20:46:33.561909855Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsProgressEntry {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
