@@ -444,12 +444,6 @@ export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
 export * from '../models/SemgrepCodeFindingsSettingsConfig';
-export * from '../models/SemgrepDeploymentsSecretsConfig';
-export * from '../models/SemgrepDeploymentsSettingsConfig';
-export * from '../models/SemgrepProjectDetailsSecretsConfig';
-export * from '../models/SemgrepProjectDetailsSettingsConfig';
-export * from '../models/SemgrepProjectsSecretsConfig';
-export * from '../models/SemgrepProjectsSettingsConfig';
 export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 export * from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 export * from '../models/SentinelSecretsConfig';
@@ -979,12 +973,6 @@ import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
 import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
-import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSecretsConfig';
-import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
-import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
-import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
-import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
-import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
@@ -1546,12 +1534,6 @@ let typeMap: {[index: string]: any} = {
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,
     "SemgrepCodeFindingsSettingsConfig": SemgrepCodeFindingsSettingsConfig,
-    "SemgrepDeploymentsSecretsConfig": SemgrepDeploymentsSecretsConfig,
-    "SemgrepDeploymentsSettingsConfig": SemgrepDeploymentsSettingsConfig,
-    "SemgrepProjectDetailsSecretsConfig": SemgrepProjectDetailsSecretsConfig,
-    "SemgrepProjectDetailsSettingsConfig": SemgrepProjectDetailsSettingsConfig,
-    "SemgrepProjectsSecretsConfig": SemgrepProjectsSecretsConfig,
-    "SemgrepProjectsSettingsConfig": SemgrepProjectsSettingsConfig,
     "SemgrepSupplyChainFindingsSecretsConfig": SemgrepSupplyChainFindingsSecretsConfig,
     "SemgrepSupplyChainFindingsSettingsConfig": SemgrepSupplyChainFindingsSettingsConfig,
     "SentinelSecretsConfig": SentinelSecretsConfig,

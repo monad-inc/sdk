@@ -449,12 +449,6 @@ import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
 import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
-import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSecretsConfig';
-import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
-import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
-import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
-import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
-import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';

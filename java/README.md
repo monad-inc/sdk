@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-20T20:46:33.561909855Z[Etc/UTC]
+  - Build date: 2026-03-22T20:12:44.935115881Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -740,12 +740,6 @@ Class | Method | HTTP request | Description
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)
  - [SemgrepCodeFindingsSettingsConfig](docs/SemgrepCodeFindingsSettingsConfig.md)
- - [SemgrepDeploymentsSecretsConfig](docs/SemgrepDeploymentsSecretsConfig.md)
- - [SemgrepDeploymentsSettingsConfig](docs/SemgrepDeploymentsSettingsConfig.md)
- - [SemgrepProjectDetailsSecretsConfig](docs/SemgrepProjectDetailsSecretsConfig.md)
- - [SemgrepProjectDetailsSettingsConfig](docs/SemgrepProjectDetailsSettingsConfig.md)
- - [SemgrepProjectsSecretsConfig](docs/SemgrepProjectsSecretsConfig.md)
- - [SemgrepProjectsSettingsConfig](docs/SemgrepProjectsSettingsConfig.md)
  - [SemgrepSupplyChainFindingsSecretsConfig](docs/SemgrepSupplyChainFindingsSecretsConfig.md)
  - [SemgrepSupplyChainFindingsSettingsConfig](docs/SemgrepSupplyChainFindingsSettingsConfig.md)
  - [SentinelSecretsConfig](docs/SentinelSecretsConfig.md)

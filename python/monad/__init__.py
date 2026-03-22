@@ -509,12 +509,6 @@ __all__ = [
     "SecurityLakeSourceAccountDetails",
     "SemgrepCodeFindingsSecretsConfig",
     "SemgrepCodeFindingsSettingsConfig",
-    "SemgrepDeploymentsSecretsConfig",
-    "SemgrepDeploymentsSettingsConfig",
-    "SemgrepProjectDetailsSecretsConfig",
-    "SemgrepProjectDetailsSettingsConfig",
-    "SemgrepProjectsSecretsConfig",
-    "SemgrepProjectsSettingsConfig",
     "SemgrepSupplyChainFindingsSecretsConfig",
     "SemgrepSupplyChainFindingsSettingsConfig",
     "SentinelSecretsConfig",
@@ -1094,12 +1088,6 @@ from monad.models.security_lake_settings_config import SecurityLakeSettingsConfi
 from monad.models.security_lake_source_account_details import SecurityLakeSourceAccountDetails as SecurityLakeSourceAccountDetails
 from monad.models.semgrep_code_findings_secrets_config import SemgrepCodeFindingsSecretsConfig as SemgrepCodeFindingsSecretsConfig
 from monad.models.semgrep_code_findings_settings_config import SemgrepCodeFindingsSettingsConfig as SemgrepCodeFindingsSettingsConfig
-from monad.models.semgrep_deployments_secrets_config import SemgrepDeploymentsSecretsConfig as SemgrepDeploymentsSecretsConfig
-from monad.models.semgrep_deployments_settings_config import SemgrepDeploymentsSettingsConfig as SemgrepDeploymentsSettingsConfig
-from monad.models.semgrep_project_details_secrets_config import SemgrepProjectDetailsSecretsConfig as SemgrepProjectDetailsSecretsConfig
-from monad.models.semgrep_project_details_settings_config import SemgrepProjectDetailsSettingsConfig as SemgrepProjectDetailsSettingsConfig
-from monad.models.semgrep_projects_secrets_config import SemgrepProjectsSecretsConfig as SemgrepProjectsSecretsConfig
-from monad.models.semgrep_projects_settings_config import SemgrepProjectsSettingsConfig as SemgrepProjectsSettingsConfig
 from monad.models.semgrep_supply_chain_findings_secrets_config import SemgrepSupplyChainFindingsSecretsConfig as SemgrepSupplyChainFindingsSecretsConfig
 from monad.models.semgrep_supply_chain_findings_settings_config import SemgrepSupplyChainFindingsSettingsConfig as SemgrepSupplyChainFindingsSettingsConfig
 from monad.models.sentinel_secrets_config import SentinelSecretsConfig as SentinelSecretsConfig

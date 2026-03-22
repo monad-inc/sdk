@@ -101,9 +101,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	RootlyAuditLogsSecretsConfig *RootlyAuditLogsSecretsConfig
 	SecretsmanagerSecretsConfig *SecretsmanagerSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
-	SemgrepDeploymentsSecretsConfig *SemgrepDeploymentsSecretsConfig
-	SemgrepProjectDetailsSecretsConfig *SemgrepProjectDetailsSecretsConfig
-	SemgrepProjectsSecretsConfig *SemgrepProjectsSecretsConfig
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
 	SentryOrgAuditLogsSecretsConfig *SentryOrgAuditLogsSecretsConfig
 	SlackEnterpriseAuditLogsSecretsConfig *SlackEnterpriseAuditLogsSecretsConfig
@@ -709,27 +706,6 @@ func SecretsmanagerSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Secrets
 func SemgrepCodeFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SemgrepCodeFindingsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		SemgrepCodeFindingsSecretsConfig: v,
-	}
-}
-
-// SemgrepDeploymentsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SemgrepDeploymentsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SemgrepDeploymentsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SemgrepDeploymentsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SemgrepDeploymentsSecretsConfig: v,
-	}
-}
-
-// SemgrepProjectDetailsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SemgrepProjectDetailsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SemgrepProjectDetailsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SemgrepProjectDetailsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SemgrepProjectDetailsSecretsConfig: v,
-	}
-}
-
-// SemgrepProjectsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SemgrepProjectsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SemgrepProjectsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SemgrepProjectsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SemgrepProjectsSecretsConfig: v,
 	}
 }
 
@@ -2356,57 +2332,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SemgrepCodeFindingsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SemgrepDeploymentsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SemgrepDeploymentsSecretsConfig)
-	if err == nil {
-		jsonSemgrepDeploymentsSecretsConfig, _ := json.Marshal(dst.SemgrepDeploymentsSecretsConfig)
-		if string(jsonSemgrepDeploymentsSecretsConfig) == "{}" { // empty struct
-			dst.SemgrepDeploymentsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SemgrepDeploymentsSecretsConfig); err != nil {
-				dst.SemgrepDeploymentsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SemgrepDeploymentsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into SemgrepProjectDetailsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SemgrepProjectDetailsSecretsConfig)
-	if err == nil {
-		jsonSemgrepProjectDetailsSecretsConfig, _ := json.Marshal(dst.SemgrepProjectDetailsSecretsConfig)
-		if string(jsonSemgrepProjectDetailsSecretsConfig) == "{}" { // empty struct
-			dst.SemgrepProjectDetailsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SemgrepProjectDetailsSecretsConfig); err != nil {
-				dst.SemgrepProjectDetailsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SemgrepProjectDetailsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into SemgrepProjectsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SemgrepProjectsSecretsConfig)
-	if err == nil {
-		jsonSemgrepProjectsSecretsConfig, _ := json.Marshal(dst.SemgrepProjectsSecretsConfig)
-		if string(jsonSemgrepProjectsSecretsConfig) == "{}" { // empty struct
-			dst.SemgrepProjectsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SemgrepProjectsSecretsConfig); err != nil {
-				dst.SemgrepProjectsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SemgrepProjectsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SemgrepSupplyChainFindingsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SemgrepSupplyChainFindingsSecretsConfig)
 	if err == nil {
@@ -3035,9 +2960,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.RootlyAuditLogsSecretsConfig = nil
 		dst.SecretsmanagerSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
-		dst.SemgrepDeploymentsSecretsConfig = nil
-		dst.SemgrepProjectDetailsSecretsConfig = nil
-		dst.SemgrepProjectsSecretsConfig = nil
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 		dst.SentryOrgAuditLogsSecretsConfig = nil
 		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
@@ -3407,18 +3329,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SemgrepCodeFindingsSecretsConfig != nil {
 		return json.Marshal(&src.SemgrepCodeFindingsSecretsConfig)
-	}
-
-	if src.SemgrepDeploymentsSecretsConfig != nil {
-		return json.Marshal(&src.SemgrepDeploymentsSecretsConfig)
-	}
-
-	if src.SemgrepProjectDetailsSecretsConfig != nil {
-		return json.Marshal(&src.SemgrepProjectDetailsSecretsConfig)
-	}
-
-	if src.SemgrepProjectsSecretsConfig != nil {
-		return json.Marshal(&src.SemgrepProjectsSecretsConfig)
 	}
 
 	if src.SemgrepSupplyChainFindingsSecretsConfig != nil {
@@ -3885,18 +3795,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.SemgrepCodeFindingsSecretsConfig
 	}
 
-	if obj.SemgrepDeploymentsSecretsConfig != nil {
-		return obj.SemgrepDeploymentsSecretsConfig
-	}
-
-	if obj.SemgrepProjectDetailsSecretsConfig != nil {
-		return obj.SemgrepProjectDetailsSecretsConfig
-	}
-
-	if obj.SemgrepProjectsSecretsConfig != nil {
-		return obj.SemgrepProjectsSecretsConfig
-	}
-
 	if obj.SemgrepSupplyChainFindingsSecretsConfig != nil {
 		return obj.SemgrepSupplyChainFindingsSecretsConfig
 	}
@@ -4357,18 +4255,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.SemgrepCodeFindingsSecretsConfig != nil {
 		return *obj.SemgrepCodeFindingsSecretsConfig
-	}
-
-	if obj.SemgrepDeploymentsSecretsConfig != nil {
-		return *obj.SemgrepDeploymentsSecretsConfig
-	}
-
-	if obj.SemgrepProjectDetailsSecretsConfig != nil {
-		return *obj.SemgrepProjectDetailsSecretsConfig
-	}
-
-	if obj.SemgrepProjectsSecretsConfig != nil {
-		return *obj.SemgrepProjectsSecretsConfig
 	}
 
 	if obj.SemgrepSupplyChainFindingsSecretsConfig != nil {

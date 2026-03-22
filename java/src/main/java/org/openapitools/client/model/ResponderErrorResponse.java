@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ResponderErrorResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T20:46:33.561909855Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T20:12:44.935115881Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ResponderErrorResponse {
   public static final String SERIALIZED_NAME_ADDITIONAL_DETAILS = "additional_details";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DETAILS)
