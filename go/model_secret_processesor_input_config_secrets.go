@@ -48,16 +48,10 @@ type SecretProcessesorInputConfigSecrets struct {
 	CloudResourceInventoryReportsSecretsConfig *CloudResourceInventoryReportsSecretsConfig
 	CloudResourceInventorySecretsConfig *CloudResourceInventorySecretsConfig
 	CloudflareDdosAttackAnalyticsSecretsConfig *CloudflareDdosAttackAnalyticsSecretsConfig
-	CloudflareDnsRecordsSecretsConfig *CloudflareDnsRecordsSecretsConfig
 	CloudflareFirewallEventsSecretsConfig *CloudflareFirewallEventsSecretsConfig
 	CloudflareHttpRequestsSecretsConfig *CloudflareHttpRequestsSecretsConfig
-	CloudflarePageShieldConnectionsSecretsConfig *CloudflarePageShieldConnectionsSecretsConfig
-	CloudflareRulesetsSecretsConfig *CloudflareRulesetsSecretsConfig
-	CloudflareSecurityInsightsSecretsConfig *CloudflareSecurityInsightsSecretsConfig
 	CloudflareUrlScannerSecretsConfig *CloudflareUrlScannerSecretsConfig
-	CloudflareUsersSecretsConfig *CloudflareUsersSecretsConfig
 	CloudflareZeroTrustAccessRequestsSecretsConfig *CloudflareZeroTrustAccessRequestsSecretsConfig
-	CloudflareZonesSecretsConfig *CloudflareZonesSecretsConfig
 	ClumioAuditLogsSecretsConfig *ClumioAuditLogsSecretsConfig
 	ClumioConsolidatedAlertsSecretsConfig *ClumioConsolidatedAlertsSecretsConfig
 	CodaAuditEventsSecretsConfig *CodaAuditEventsSecretsConfig
@@ -338,13 +332,6 @@ func CloudflareDdosAttackAnalyticsSecretsConfigAsSecretProcessesorInputConfigSec
 	}
 }
 
-// CloudflareDnsRecordsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareDnsRecordsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudflareDnsRecordsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareDnsRecordsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudflareDnsRecordsSecretsConfig: v,
-	}
-}
-
 // CloudflareFirewallEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareFirewallEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func CloudflareFirewallEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareFirewallEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -359,27 +346,6 @@ func CloudflareHttpRequestsSecretsConfigAsSecretProcessesorInputConfigSecrets(v 
 	}
 }
 
-// CloudflarePageShieldConnectionsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflarePageShieldConnectionsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudflarePageShieldConnectionsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflarePageShieldConnectionsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudflarePageShieldConnectionsSecretsConfig: v,
-	}
-}
-
-// CloudflareRulesetsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareRulesetsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudflareRulesetsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareRulesetsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudflareRulesetsSecretsConfig: v,
-	}
-}
-
-// CloudflareSecurityInsightsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareSecurityInsightsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudflareSecurityInsightsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareSecurityInsightsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudflareSecurityInsightsSecretsConfig: v,
-	}
-}
-
 // CloudflareUrlScannerSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareUrlScannerSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func CloudflareUrlScannerSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareUrlScannerSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -387,24 +353,10 @@ func CloudflareUrlScannerSecretsConfigAsSecretProcessesorInputConfigSecrets(v *C
 	}
 }
 
-// CloudflareUsersSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareUsersSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudflareUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudflareUsersSecretsConfig: v,
-	}
-}
-
 // CloudflareZeroTrustAccessRequestsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareZeroTrustAccessRequestsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func CloudflareZeroTrustAccessRequestsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareZeroTrustAccessRequestsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		CloudflareZeroTrustAccessRequestsSecretsConfig: v,
-	}
-}
-
-// CloudflareZonesSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareZonesSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudflareZonesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareZonesSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudflareZonesSecretsConfig: v,
 	}
 }
 
@@ -1431,23 +1383,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CloudflareDdosAttackAnalyticsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into CloudflareDnsRecordsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudflareDnsRecordsSecretsConfig)
-	if err == nil {
-		jsonCloudflareDnsRecordsSecretsConfig, _ := json.Marshal(dst.CloudflareDnsRecordsSecretsConfig)
-		if string(jsonCloudflareDnsRecordsSecretsConfig) == "{}" { // empty struct
-			dst.CloudflareDnsRecordsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudflareDnsRecordsSecretsConfig); err != nil {
-				dst.CloudflareDnsRecordsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudflareDnsRecordsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into CloudflareFirewallEventsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CloudflareFirewallEventsSecretsConfig)
 	if err == nil {
@@ -1482,57 +1417,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CloudflareHttpRequestsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into CloudflarePageShieldConnectionsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudflarePageShieldConnectionsSecretsConfig)
-	if err == nil {
-		jsonCloudflarePageShieldConnectionsSecretsConfig, _ := json.Marshal(dst.CloudflarePageShieldConnectionsSecretsConfig)
-		if string(jsonCloudflarePageShieldConnectionsSecretsConfig) == "{}" { // empty struct
-			dst.CloudflarePageShieldConnectionsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudflarePageShieldConnectionsSecretsConfig); err != nil {
-				dst.CloudflarePageShieldConnectionsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudflarePageShieldConnectionsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into CloudflareRulesetsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudflareRulesetsSecretsConfig)
-	if err == nil {
-		jsonCloudflareRulesetsSecretsConfig, _ := json.Marshal(dst.CloudflareRulesetsSecretsConfig)
-		if string(jsonCloudflareRulesetsSecretsConfig) == "{}" { // empty struct
-			dst.CloudflareRulesetsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudflareRulesetsSecretsConfig); err != nil {
-				dst.CloudflareRulesetsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudflareRulesetsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into CloudflareSecurityInsightsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudflareSecurityInsightsSecretsConfig)
-	if err == nil {
-		jsonCloudflareSecurityInsightsSecretsConfig, _ := json.Marshal(dst.CloudflareSecurityInsightsSecretsConfig)
-		if string(jsonCloudflareSecurityInsightsSecretsConfig) == "{}" { // empty struct
-			dst.CloudflareSecurityInsightsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudflareSecurityInsightsSecretsConfig); err != nil {
-				dst.CloudflareSecurityInsightsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudflareSecurityInsightsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into CloudflareUrlScannerSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CloudflareUrlScannerSecretsConfig)
 	if err == nil {
@@ -1550,23 +1434,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CloudflareUrlScannerSecretsConfig = nil
 	}
 
-	// try to unmarshal data into CloudflareUsersSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudflareUsersSecretsConfig)
-	if err == nil {
-		jsonCloudflareUsersSecretsConfig, _ := json.Marshal(dst.CloudflareUsersSecretsConfig)
-		if string(jsonCloudflareUsersSecretsConfig) == "{}" { // empty struct
-			dst.CloudflareUsersSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudflareUsersSecretsConfig); err != nil {
-				dst.CloudflareUsersSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudflareUsersSecretsConfig = nil
-	}
-
 	// try to unmarshal data into CloudflareZeroTrustAccessRequestsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CloudflareZeroTrustAccessRequestsSecretsConfig)
 	if err == nil {
@@ -1582,23 +1449,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.CloudflareZeroTrustAccessRequestsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into CloudflareZonesSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudflareZonesSecretsConfig)
-	if err == nil {
-		jsonCloudflareZonesSecretsConfig, _ := json.Marshal(dst.CloudflareZonesSecretsConfig)
-		if string(jsonCloudflareZonesSecretsConfig) == "{}" { // empty struct
-			dst.CloudflareZonesSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudflareZonesSecretsConfig); err != nil {
-				dst.CloudflareZonesSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudflareZonesSecretsConfig = nil
 	}
 
 	// try to unmarshal data into ClumioAuditLogsSecretsConfig
@@ -2907,16 +2757,10 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CloudResourceInventoryReportsSecretsConfig = nil
 		dst.CloudResourceInventorySecretsConfig = nil
 		dst.CloudflareDdosAttackAnalyticsSecretsConfig = nil
-		dst.CloudflareDnsRecordsSecretsConfig = nil
 		dst.CloudflareFirewallEventsSecretsConfig = nil
 		dst.CloudflareHttpRequestsSecretsConfig = nil
-		dst.CloudflarePageShieldConnectionsSecretsConfig = nil
-		dst.CloudflareRulesetsSecretsConfig = nil
-		dst.CloudflareSecurityInsightsSecretsConfig = nil
 		dst.CloudflareUrlScannerSecretsConfig = nil
-		dst.CloudflareUsersSecretsConfig = nil
 		dst.CloudflareZeroTrustAccessRequestsSecretsConfig = nil
-		dst.CloudflareZonesSecretsConfig = nil
 		dst.ClumioAuditLogsSecretsConfig = nil
 		dst.ClumioConsolidatedAlertsSecretsConfig = nil
 		dst.CodaAuditEventsSecretsConfig = nil
@@ -3119,10 +2963,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudflareDdosAttackAnalyticsSecretsConfig)
 	}
 
-	if src.CloudflareDnsRecordsSecretsConfig != nil {
-		return json.Marshal(&src.CloudflareDnsRecordsSecretsConfig)
-	}
-
 	if src.CloudflareFirewallEventsSecretsConfig != nil {
 		return json.Marshal(&src.CloudflareFirewallEventsSecretsConfig)
 	}
@@ -3131,32 +2971,12 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudflareHttpRequestsSecretsConfig)
 	}
 
-	if src.CloudflarePageShieldConnectionsSecretsConfig != nil {
-		return json.Marshal(&src.CloudflarePageShieldConnectionsSecretsConfig)
-	}
-
-	if src.CloudflareRulesetsSecretsConfig != nil {
-		return json.Marshal(&src.CloudflareRulesetsSecretsConfig)
-	}
-
-	if src.CloudflareSecurityInsightsSecretsConfig != nil {
-		return json.Marshal(&src.CloudflareSecurityInsightsSecretsConfig)
-	}
-
 	if src.CloudflareUrlScannerSecretsConfig != nil {
 		return json.Marshal(&src.CloudflareUrlScannerSecretsConfig)
 	}
 
-	if src.CloudflareUsersSecretsConfig != nil {
-		return json.Marshal(&src.CloudflareUsersSecretsConfig)
-	}
-
 	if src.CloudflareZeroTrustAccessRequestsSecretsConfig != nil {
 		return json.Marshal(&src.CloudflareZeroTrustAccessRequestsSecretsConfig)
-	}
-
-	if src.CloudflareZonesSecretsConfig != nil {
-		return json.Marshal(&src.CloudflareZonesSecretsConfig)
 	}
 
 	if src.ClumioAuditLogsSecretsConfig != nil {
@@ -3583,10 +3403,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.CloudflareDdosAttackAnalyticsSecretsConfig
 	}
 
-	if obj.CloudflareDnsRecordsSecretsConfig != nil {
-		return obj.CloudflareDnsRecordsSecretsConfig
-	}
-
 	if obj.CloudflareFirewallEventsSecretsConfig != nil {
 		return obj.CloudflareFirewallEventsSecretsConfig
 	}
@@ -3595,32 +3411,12 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.CloudflareHttpRequestsSecretsConfig
 	}
 
-	if obj.CloudflarePageShieldConnectionsSecretsConfig != nil {
-		return obj.CloudflarePageShieldConnectionsSecretsConfig
-	}
-
-	if obj.CloudflareRulesetsSecretsConfig != nil {
-		return obj.CloudflareRulesetsSecretsConfig
-	}
-
-	if obj.CloudflareSecurityInsightsSecretsConfig != nil {
-		return obj.CloudflareSecurityInsightsSecretsConfig
-	}
-
 	if obj.CloudflareUrlScannerSecretsConfig != nil {
 		return obj.CloudflareUrlScannerSecretsConfig
 	}
 
-	if obj.CloudflareUsersSecretsConfig != nil {
-		return obj.CloudflareUsersSecretsConfig
-	}
-
 	if obj.CloudflareZeroTrustAccessRequestsSecretsConfig != nil {
 		return obj.CloudflareZeroTrustAccessRequestsSecretsConfig
-	}
-
-	if obj.CloudflareZonesSecretsConfig != nil {
-		return obj.CloudflareZonesSecretsConfig
 	}
 
 	if obj.ClumioAuditLogsSecretsConfig != nil {
@@ -4045,10 +3841,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.CloudflareDdosAttackAnalyticsSecretsConfig
 	}
 
-	if obj.CloudflareDnsRecordsSecretsConfig != nil {
-		return *obj.CloudflareDnsRecordsSecretsConfig
-	}
-
 	if obj.CloudflareFirewallEventsSecretsConfig != nil {
 		return *obj.CloudflareFirewallEventsSecretsConfig
 	}
@@ -4057,32 +3849,12 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.CloudflareHttpRequestsSecretsConfig
 	}
 
-	if obj.CloudflarePageShieldConnectionsSecretsConfig != nil {
-		return *obj.CloudflarePageShieldConnectionsSecretsConfig
-	}
-
-	if obj.CloudflareRulesetsSecretsConfig != nil {
-		return *obj.CloudflareRulesetsSecretsConfig
-	}
-
-	if obj.CloudflareSecurityInsightsSecretsConfig != nil {
-		return *obj.CloudflareSecurityInsightsSecretsConfig
-	}
-
 	if obj.CloudflareUrlScannerSecretsConfig != nil {
 		return *obj.CloudflareUrlScannerSecretsConfig
 	}
 
-	if obj.CloudflareUsersSecretsConfig != nil {
-		return *obj.CloudflareUsersSecretsConfig
-	}
-
 	if obj.CloudflareZeroTrustAccessRequestsSecretsConfig != nil {
 		return *obj.CloudflareZeroTrustAccessRequestsSecretsConfig
-	}
-
-	if obj.CloudflareZonesSecretsConfig != nil {
-		return *obj.CloudflareZonesSecretsConfig
 	}
 
 	if obj.ClumioAuditLogsSecretsConfig != nil {

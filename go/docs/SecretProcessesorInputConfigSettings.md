@@ -79,14 +79,9 @@ Name | Type | Description | Notes
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
-**ZoneIds** | Pointer to **[]string** | List of zone IDs (for zone-level rulesets). If empty and AccountID is not specified, fetches from all zones. | [optional] 
 **IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
 **Fields** | Pointer to **[]string** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. | [optional] 
-**ExcludeCdnCgi** | Pointer to **bool** | Exclude connections to Cloudflare /cdn-cgi paths. Default: true | [optional] 
-**ExcludeIssueType** | Pointer to **[]string** | Filter to exclude specific issue types. Applied after the include filter. | [optional] 
-**ExcludeSeverity** | Pointer to **[]string** | Filter to exclude specific severity levels. Applied after the include filter. | [optional] 
-**IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
 **FilterMyScans** | Pointer to **bool** | Filter to only show scans created by the current API token | [optional] 
 **ParentEntityId** | Pointer to **string** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **ParentEntityType** | Pointer to **string** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
@@ -110,6 +105,7 @@ Name | Type | Description | Notes
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
 **GitlabUrl** | Pointer to **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
+**IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
 **ProjectId** | Pointer to **string** | The Google Cloud project ID to use | [optional] 
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
@@ -2075,31 +2071,6 @@ SetAccountId sets AccountId field to given value.
 
 HasAccountId returns a boolean if a field has been set.
 
-### GetZoneIds
-
-`func (o *SecretProcessesorInputConfigSettings) GetZoneIds() []string`
-
-GetZoneIds returns the ZoneIds field if non-nil, zero value otherwise.
-
-### GetZoneIdsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetZoneIdsOk() (*[]string, bool)`
-
-GetZoneIdsOk returns a tuple with the ZoneIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZoneIds
-
-`func (o *SecretProcessesorInputConfigSettings) SetZoneIds(v []string)`
-
-SetZoneIds sets ZoneIds field to given value.
-
-### HasZoneIds
-
-`func (o *SecretProcessesorInputConfigSettings) HasZoneIds() bool`
-
-HasZoneIds returns a boolean if a field has been set.
-
 ### GetIncludeBotFields
 
 `func (o *SecretProcessesorInputConfigSettings) GetIncludeBotFields() bool`
@@ -2174,106 +2145,6 @@ SetFields sets Fields field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFields() bool`
 
 HasFields returns a boolean if a field has been set.
-
-### GetExcludeCdnCgi
-
-`func (o *SecretProcessesorInputConfigSettings) GetExcludeCdnCgi() bool`
-
-GetExcludeCdnCgi returns the ExcludeCdnCgi field if non-nil, zero value otherwise.
-
-### GetExcludeCdnCgiOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetExcludeCdnCgiOk() (*bool, bool)`
-
-GetExcludeCdnCgiOk returns a tuple with the ExcludeCdnCgi field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExcludeCdnCgi
-
-`func (o *SecretProcessesorInputConfigSettings) SetExcludeCdnCgi(v bool)`
-
-SetExcludeCdnCgi sets ExcludeCdnCgi field to given value.
-
-### HasExcludeCdnCgi
-
-`func (o *SecretProcessesorInputConfigSettings) HasExcludeCdnCgi() bool`
-
-HasExcludeCdnCgi returns a boolean if a field has been set.
-
-### GetExcludeIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) GetExcludeIssueType() []string`
-
-GetExcludeIssueType returns the ExcludeIssueType field if non-nil, zero value otherwise.
-
-### GetExcludeIssueTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetExcludeIssueTypeOk() (*[]string, bool)`
-
-GetExcludeIssueTypeOk returns a tuple with the ExcludeIssueType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExcludeIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) SetExcludeIssueType(v []string)`
-
-SetExcludeIssueType sets ExcludeIssueType field to given value.
-
-### HasExcludeIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) HasExcludeIssueType() bool`
-
-HasExcludeIssueType returns a boolean if a field has been set.
-
-### GetExcludeSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) GetExcludeSeverity() []string`
-
-GetExcludeSeverity returns the ExcludeSeverity field if non-nil, zero value otherwise.
-
-### GetExcludeSeverityOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetExcludeSeverityOk() (*[]string, bool)`
-
-GetExcludeSeverityOk returns a tuple with the ExcludeSeverity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExcludeSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) SetExcludeSeverity(v []string)`
-
-SetExcludeSeverity sets ExcludeSeverity field to given value.
-
-### HasExcludeSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) HasExcludeSeverity() bool`
-
-HasExcludeSeverity returns a boolean if a field has been set.
-
-### GetIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) GetIssueType() string`
-
-GetIssueType returns the IssueType field if non-nil, zero value otherwise.
-
-### GetIssueTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIssueTypeOk() (*string, bool)`
-
-GetIssueTypeOk returns a tuple with the IssueType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) SetIssueType(v string)`
-
-SetIssueType sets IssueType field to given value.
-
-### HasIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) HasIssueType() bool`
-
-HasIssueType returns a boolean if a field has been set.
 
 ### GetFilterMyScans
 
@@ -2849,6 +2720,31 @@ SetGitlabUrl sets GitlabUrl field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasGitlabUrl() bool`
 
 HasGitlabUrl returns a boolean if a field has been set.
+
+### GetIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) GetIssueType() string`
+
+GetIssueType returns the IssueType field if non-nil, zero value otherwise.
+
+### GetIssueTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIssueTypeOk() (*string, bool)`
+
+GetIssueTypeOk returns a tuple with the IssueType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) SetIssueType(v string)`
+
+SetIssueType sets IssueType field to given value.
+
+### HasIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) HasIssueType() bool`
+
+HasIssueType returns a boolean if a field has been set.
 
 ### GetProjectId
 

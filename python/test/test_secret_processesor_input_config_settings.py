@@ -136,22 +136,11 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 full_snapshot = True,
                 interval = 56,
                 account_id = '',
-                zone_ids = [
-                    ''
-                    ],
                 include_bot_fields = True,
                 zone_id = '',
                 fields = [
                     ''
                     ],
-                exclude_cdn_cgi = True,
-                exclude_issue_type = [
-                    ''
-                    ],
-                exclude_severity = [
-                    ''
-                    ],
-                issue_type = '',
                 filter_my_scans = True,
                 parent_entity_id = '',
                 parent_entity_type = '',
@@ -175,6 +164,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 repo = '',
                 confidential = True,
                 gitlab_url = '',
+                issue_type = '',
                 project_id = '',
                 state = '',
                 with_label_details = True,

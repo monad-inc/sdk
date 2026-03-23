@@ -82,14 +82,9 @@
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
 |**interval** | **Integer** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. |  [optional] |
 |**accountId** | **String** | Account ID for the input |  [optional] |
-|**zoneIds** | **List&lt;String&gt;** | List of zone IDs (for zone-level rulesets). If empty and AccountID is not specified, fetches from all zones. |  [optional] |
 |**includeBotFields** | **Boolean** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) |  [optional] |
 |**zoneId** | **String** | Cloudflare Zone ID |  [optional] |
 |**fields** | **List&lt;String&gt;** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. |  [optional] |
-|**excludeCdnCgi** | **Boolean** | Exclude connections to Cloudflare /cdn-cgi paths. Default: true |  [optional] |
-|**excludeIssueType** | **List&lt;String&gt;** | Filter to exclude specific issue types. Applied after the include filter. |  [optional] |
-|**excludeSeverity** | **List&lt;String&gt;** | Filter to exclude specific severity levels. Applied after the include filter. |  [optional] |
-|**issueType** | **String** | IssueType to filter issues by type e.g. issue, incident, etc. |  [optional] |
 |**filterMyScans** | **Boolean** | Filter to only show scans created by the current API token |  [optional] |
 |**parentEntityId** | **String** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
 |**parentEntityType** | **String** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
@@ -113,6 +108,7 @@
 |**repo** | **String** | A repository slug to filter full-scans by. |  [optional] |
 |**confidential** | **Boolean** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. |  [optional] |
 |**gitlabUrl** | **String** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) |  [optional] |
+|**issueType** | **String** | IssueType to filter issues by type e.g. issue, incident, etc. |  [optional] |
 |**projectId** | **String** | The Google Cloud project ID to use |  [optional] |
 |**state** | **String** | State to filter issues by e.g. opened, closed |  [optional] |
 |**withLabelDetails** | **Boolean** | Include label details in the response |  [optional] |

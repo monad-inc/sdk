@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-23T17:08:47.693293731Z[Etc/UTC]
+  - Build date: 2026-03-23T17:35:08.054479048Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -373,26 +373,14 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudflareDdosAttackAnalyticsSecretsConfig](docs/CloudflareDdosAttackAnalyticsSecretsConfig.md)
  - [CloudflareDdosAttackAnalyticsSettingsConfig](docs/CloudflareDdosAttackAnalyticsSettingsConfig.md)
- - [CloudflareDnsRecordsSecretsConfig](docs/CloudflareDnsRecordsSecretsConfig.md)
- - [CloudflareDnsRecordsSettingsConfig](docs/CloudflareDnsRecordsSettingsConfig.md)
  - [CloudflareFirewallEventsSecretsConfig](docs/CloudflareFirewallEventsSecretsConfig.md)
  - [CloudflareFirewallEventsSettingsConfig](docs/CloudflareFirewallEventsSettingsConfig.md)
  - [CloudflareHttpRequestsSecretsConfig](docs/CloudflareHttpRequestsSecretsConfig.md)
  - [CloudflareHttpRequestsSettingsConfig](docs/CloudflareHttpRequestsSettingsConfig.md)
- - [CloudflarePageShieldConnectionsSecretsConfig](docs/CloudflarePageShieldConnectionsSecretsConfig.md)
- - [CloudflarePageShieldConnectionsSettingsConfig](docs/CloudflarePageShieldConnectionsSettingsConfig.md)
- - [CloudflareRulesetsSecretsConfig](docs/CloudflareRulesetsSecretsConfig.md)
- - [CloudflareRulesetsSettingsConfig](docs/CloudflareRulesetsSettingsConfig.md)
- - [CloudflareSecurityInsightsSecretsConfig](docs/CloudflareSecurityInsightsSecretsConfig.md)
- - [CloudflareSecurityInsightsSettingsConfig](docs/CloudflareSecurityInsightsSettingsConfig.md)
  - [CloudflareUrlScannerSecretsConfig](docs/CloudflareUrlScannerSecretsConfig.md)
  - [CloudflareUrlScannerSettingsConfig](docs/CloudflareUrlScannerSettingsConfig.md)
- - [CloudflareUsersSecretsConfig](docs/CloudflareUsersSecretsConfig.md)
- - [CloudflareUsersSettingsConfig](docs/CloudflareUsersSettingsConfig.md)
  - [CloudflareZeroTrustAccessRequestsSecretsConfig](docs/CloudflareZeroTrustAccessRequestsSecretsConfig.md)
  - [CloudflareZeroTrustAccessRequestsSettingsConfig](docs/CloudflareZeroTrustAccessRequestsSettingsConfig.md)
- - [CloudflareZonesSecretsConfig](docs/CloudflareZonesSecretsConfig.md)
- - [CloudflareZonesSettingsConfig](docs/CloudflareZonesSettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
  - [ClumioAuditLogsSecretsConfig](docs/ClumioAuditLogsSecretsConfig.md)
  - [ClumioAuditLogsSettingsConfig](docs/ClumioAuditLogsSettingsConfig.md)

@@ -142,26 +142,14 @@ __all__ = [
     "CloudResourceInventorySettingsConfig",
     "CloudflareDdosAttackAnalyticsSecretsConfig",
     "CloudflareDdosAttackAnalyticsSettingsConfig",
-    "CloudflareDnsRecordsSecretsConfig",
-    "CloudflareDnsRecordsSettingsConfig",
     "CloudflareFirewallEventsSecretsConfig",
     "CloudflareFirewallEventsSettingsConfig",
     "CloudflareHttpRequestsSecretsConfig",
     "CloudflareHttpRequestsSettingsConfig",
-    "CloudflarePageShieldConnectionsSecretsConfig",
-    "CloudflarePageShieldConnectionsSettingsConfig",
-    "CloudflareRulesetsSecretsConfig",
-    "CloudflareRulesetsSettingsConfig",
-    "CloudflareSecurityInsightsSecretsConfig",
-    "CloudflareSecurityInsightsSettingsConfig",
     "CloudflareUrlScannerSecretsConfig",
     "CloudflareUrlScannerSettingsConfig",
-    "CloudflareUsersSecretsConfig",
-    "CloudflareUsersSettingsConfig",
     "CloudflareZeroTrustAccessRequestsSecretsConfig",
     "CloudflareZeroTrustAccessRequestsSettingsConfig",
-    "CloudflareZonesSecretsConfig",
-    "CloudflareZonesSettingsConfig",
     "CloudtrailSettingsConfig",
     "ClumioAuditLogsSecretsConfig",
     "ClumioAuditLogsSettingsConfig",
@@ -721,26 +709,14 @@ from monad.models.cloud_resource_inventory_secrets_config import CloudResourceIn
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig as CloudResourceInventorySettingsConfig
 from monad.models.cloudflare_ddos_attack_analytics_secrets_config import CloudflareDdosAttackAnalyticsSecretsConfig as CloudflareDdosAttackAnalyticsSecretsConfig
 from monad.models.cloudflare_ddos_attack_analytics_settings_config import CloudflareDdosAttackAnalyticsSettingsConfig as CloudflareDdosAttackAnalyticsSettingsConfig
-from monad.models.cloudflare_dns_records_secrets_config import CloudflareDnsRecordsSecretsConfig as CloudflareDnsRecordsSecretsConfig
-from monad.models.cloudflare_dns_records_settings_config import CloudflareDnsRecordsSettingsConfig as CloudflareDnsRecordsSettingsConfig
 from monad.models.cloudflare_firewall_events_secrets_config import CloudflareFirewallEventsSecretsConfig as CloudflareFirewallEventsSecretsConfig
 from monad.models.cloudflare_firewall_events_settings_config import CloudflareFirewallEventsSettingsConfig as CloudflareFirewallEventsSettingsConfig
 from monad.models.cloudflare_http_requests_secrets_config import CloudflareHttpRequestsSecretsConfig as CloudflareHttpRequestsSecretsConfig
 from monad.models.cloudflare_http_requests_settings_config import CloudflareHttpRequestsSettingsConfig as CloudflareHttpRequestsSettingsConfig
-from monad.models.cloudflare_page_shield_connections_secrets_config import CloudflarePageShieldConnectionsSecretsConfig as CloudflarePageShieldConnectionsSecretsConfig
-from monad.models.cloudflare_page_shield_connections_settings_config import CloudflarePageShieldConnectionsSettingsConfig as CloudflarePageShieldConnectionsSettingsConfig
-from monad.models.cloudflare_rulesets_secrets_config import CloudflareRulesetsSecretsConfig as CloudflareRulesetsSecretsConfig
-from monad.models.cloudflare_rulesets_settings_config import CloudflareRulesetsSettingsConfig as CloudflareRulesetsSettingsConfig
-from monad.models.cloudflare_security_insights_secrets_config import CloudflareSecurityInsightsSecretsConfig as CloudflareSecurityInsightsSecretsConfig
-from monad.models.cloudflare_security_insights_settings_config import CloudflareSecurityInsightsSettingsConfig as CloudflareSecurityInsightsSettingsConfig
 from monad.models.cloudflare_url_scanner_secrets_config import CloudflareUrlScannerSecretsConfig as CloudflareUrlScannerSecretsConfig
 from monad.models.cloudflare_url_scanner_settings_config import CloudflareUrlScannerSettingsConfig as CloudflareUrlScannerSettingsConfig
-from monad.models.cloudflare_users_secrets_config import CloudflareUsersSecretsConfig as CloudflareUsersSecretsConfig
-from monad.models.cloudflare_users_settings_config import CloudflareUsersSettingsConfig as CloudflareUsersSettingsConfig
 from monad.models.cloudflare_zero_trust_access_requests_secrets_config import CloudflareZeroTrustAccessRequestsSecretsConfig as CloudflareZeroTrustAccessRequestsSecretsConfig
 from monad.models.cloudflare_zero_trust_access_requests_settings_config import CloudflareZeroTrustAccessRequestsSettingsConfig as CloudflareZeroTrustAccessRequestsSettingsConfig
-from monad.models.cloudflare_zones_secrets_config import CloudflareZonesSecretsConfig as CloudflareZonesSecretsConfig
-from monad.models.cloudflare_zones_settings_config import CloudflareZonesSettingsConfig as CloudflareZonesSettingsConfig
 from monad.models.cloudtrail_settings_config import CloudtrailSettingsConfig as CloudtrailSettingsConfig
 from monad.models.clumio_audit_logs_secrets_config import ClumioAuditLogsSecretsConfig as ClumioAuditLogsSecretsConfig
 from monad.models.clumio_audit_logs_settings_config import ClumioAuditLogsSettingsConfig as ClumioAuditLogsSettingsConfig

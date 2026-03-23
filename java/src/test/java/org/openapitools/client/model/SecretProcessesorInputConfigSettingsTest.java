@@ -57,16 +57,10 @@ import org.openapitools.client.model.CloudLogsSettingsConfig;
 import org.openapitools.client.model.CloudResourceInventoryReportsSettingsConfig;
 import org.openapitools.client.model.CloudResourceInventorySettingsConfig;
 import org.openapitools.client.model.CloudflareDdosAttackAnalyticsSettingsConfig;
-import org.openapitools.client.model.CloudflareDnsRecordsSettingsConfig;
 import org.openapitools.client.model.CloudflareFirewallEventsSettingsConfig;
 import org.openapitools.client.model.CloudflareHttpRequestsSettingsConfig;
-import org.openapitools.client.model.CloudflarePageShieldConnectionsSettingsConfig;
-import org.openapitools.client.model.CloudflareRulesetsSettingsConfig;
-import org.openapitools.client.model.CloudflareSecurityInsightsSettingsConfig;
 import org.openapitools.client.model.CloudflareUrlScannerSettingsConfig;
-import org.openapitools.client.model.CloudflareUsersSettingsConfig;
 import org.openapitools.client.model.CloudflareZeroTrustAccessRequestsSettingsConfig;
-import org.openapitools.client.model.CloudflareZonesSettingsConfig;
 import org.openapitools.client.model.CloudtrailSettingsConfig;
 import org.openapitools.client.model.ClumioAuditLogsSettingsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSettingsConfig;
@@ -775,14 +769,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'zoneIds'
-     */
-    @Test
-    public void zoneIdsTest() {
-        // TODO: test zoneIds
-    }
-
-    /**
      * Test the property 'includeBotFields'
      */
     @Test
@@ -804,38 +790,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void fieldsTest() {
         // TODO: test fields
-    }
-
-    /**
-     * Test the property 'excludeCdnCgi'
-     */
-    @Test
-    public void excludeCdnCgiTest() {
-        // TODO: test excludeCdnCgi
-    }
-
-    /**
-     * Test the property 'excludeIssueType'
-     */
-    @Test
-    public void excludeIssueTypeTest() {
-        // TODO: test excludeIssueType
-    }
-
-    /**
-     * Test the property 'excludeSeverity'
-     */
-    @Test
-    public void excludeSeverityTest() {
-        // TODO: test excludeSeverity
-    }
-
-    /**
-     * Test the property 'issueType'
-     */
-    @Test
-    public void issueTypeTest() {
-        // TODO: test issueType
     }
 
     /**
@@ -1020,6 +974,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void gitlabUrlTest() {
         // TODO: test gitlabUrl
+    }
+
+    /**
+     * Test the property 'issueType'
+     */
+    @Test
+    public void issueTypeTest() {
+        // TODO: test issueType
     }
 
     /**

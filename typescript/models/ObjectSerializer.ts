@@ -77,26 +77,14 @@ export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
 export * from '../models/CloudflareDdosAttackAnalyticsSettingsConfig';
-export * from '../models/CloudflareDnsRecordsSecretsConfig';
-export * from '../models/CloudflareDnsRecordsSettingsConfig';
 export * from '../models/CloudflareFirewallEventsSecretsConfig';
 export * from '../models/CloudflareFirewallEventsSettingsConfig';
 export * from '../models/CloudflareHttpRequestsSecretsConfig';
 export * from '../models/CloudflareHttpRequestsSettingsConfig';
-export * from '../models/CloudflarePageShieldConnectionsSecretsConfig';
-export * from '../models/CloudflarePageShieldConnectionsSettingsConfig';
-export * from '../models/CloudflareRulesetsSecretsConfig';
-export * from '../models/CloudflareRulesetsSettingsConfig';
-export * from '../models/CloudflareSecurityInsightsSecretsConfig';
-export * from '../models/CloudflareSecurityInsightsSettingsConfig';
 export * from '../models/CloudflareUrlScannerSecretsConfig';
 export * from '../models/CloudflareUrlScannerSettingsConfig';
-export * from '../models/CloudflareUsersSecretsConfig';
-export * from '../models/CloudflareUsersSettingsConfig';
 export * from '../models/CloudflareZeroTrustAccessRequestsSecretsConfig';
 export * from '../models/CloudflareZeroTrustAccessRequestsSettingsConfig';
-export * from '../models/CloudflareZonesSecretsConfig';
-export * from '../models/CloudflareZonesSettingsConfig';
 export * from '../models/CloudtrailSettingsConfig';
 export * from '../models/ClumioAuditLogsSecretsConfig';
 export * from '../models/ClumioAuditLogsSettingsConfig';
@@ -606,26 +594,14 @@ import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInve
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudflareDdosAttackAnalyticsSecretsConfig } from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
 import { CloudflareDdosAttackAnalyticsSettingsConfig } from '../models/CloudflareDdosAttackAnalyticsSettingsConfig';
-import { CloudflareDnsRecordsSecretsConfig } from '../models/CloudflareDnsRecordsSecretsConfig';
-import { CloudflareDnsRecordsSettingsConfig } from '../models/CloudflareDnsRecordsSettingsConfig';
 import { CloudflareFirewallEventsSecretsConfig } from '../models/CloudflareFirewallEventsSecretsConfig';
 import { CloudflareFirewallEventsSettingsConfig } from '../models/CloudflareFirewallEventsSettingsConfig';
 import { CloudflareHttpRequestsSecretsConfig } from '../models/CloudflareHttpRequestsSecretsConfig';
 import { CloudflareHttpRequestsSettingsConfig } from '../models/CloudflareHttpRequestsSettingsConfig';
-import { CloudflarePageShieldConnectionsSecretsConfig } from '../models/CloudflarePageShieldConnectionsSecretsConfig';
-import { CloudflarePageShieldConnectionsSettingsConfig } from '../models/CloudflarePageShieldConnectionsSettingsConfig';
-import { CloudflareRulesetsSecretsConfig } from '../models/CloudflareRulesetsSecretsConfig';
-import { CloudflareRulesetsSettingsConfig } from '../models/CloudflareRulesetsSettingsConfig';
-import { CloudflareSecurityInsightsSecretsConfig } from '../models/CloudflareSecurityInsightsSecretsConfig';
-import { CloudflareSecurityInsightsSettingsConfig } from '../models/CloudflareSecurityInsightsSettingsConfig';
 import { CloudflareUrlScannerSecretsConfig } from '../models/CloudflareUrlScannerSecretsConfig';
 import { CloudflareUrlScannerSettingsConfig } from '../models/CloudflareUrlScannerSettingsConfig';
-import { CloudflareUsersSecretsConfig } from '../models/CloudflareUsersSecretsConfig';
-import { CloudflareUsersSettingsConfig } from '../models/CloudflareUsersSettingsConfig';
 import { CloudflareZeroTrustAccessRequestsSecretsConfig } from '../models/CloudflareZeroTrustAccessRequestsSecretsConfig';
 import { CloudflareZeroTrustAccessRequestsSettingsConfig } from '../models/CloudflareZeroTrustAccessRequestsSettingsConfig';
-import { CloudflareZonesSecretsConfig } from '../models/CloudflareZonesSecretsConfig';
-import { CloudflareZonesSettingsConfig } from '../models/CloudflareZonesSettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ClumioAuditLogsSecretsConfig } from '../models/ClumioAuditLogsSecretsConfig';
 import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
@@ -1167,26 +1143,14 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudflareDdosAttackAnalyticsSecretsConfig": CloudflareDdosAttackAnalyticsSecretsConfig,
     "CloudflareDdosAttackAnalyticsSettingsConfig": CloudflareDdosAttackAnalyticsSettingsConfig,
-    "CloudflareDnsRecordsSecretsConfig": CloudflareDnsRecordsSecretsConfig,
-    "CloudflareDnsRecordsSettingsConfig": CloudflareDnsRecordsSettingsConfig,
     "CloudflareFirewallEventsSecretsConfig": CloudflareFirewallEventsSecretsConfig,
     "CloudflareFirewallEventsSettingsConfig": CloudflareFirewallEventsSettingsConfig,
     "CloudflareHttpRequestsSecretsConfig": CloudflareHttpRequestsSecretsConfig,
     "CloudflareHttpRequestsSettingsConfig": CloudflareHttpRequestsSettingsConfig,
-    "CloudflarePageShieldConnectionsSecretsConfig": CloudflarePageShieldConnectionsSecretsConfig,
-    "CloudflarePageShieldConnectionsSettingsConfig": CloudflarePageShieldConnectionsSettingsConfig,
-    "CloudflareRulesetsSecretsConfig": CloudflareRulesetsSecretsConfig,
-    "CloudflareRulesetsSettingsConfig": CloudflareRulesetsSettingsConfig,
-    "CloudflareSecurityInsightsSecretsConfig": CloudflareSecurityInsightsSecretsConfig,
-    "CloudflareSecurityInsightsSettingsConfig": CloudflareSecurityInsightsSettingsConfig,
     "CloudflareUrlScannerSecretsConfig": CloudflareUrlScannerSecretsConfig,
     "CloudflareUrlScannerSettingsConfig": CloudflareUrlScannerSettingsConfig,
-    "CloudflareUsersSecretsConfig": CloudflareUsersSecretsConfig,
-    "CloudflareUsersSettingsConfig": CloudflareUsersSettingsConfig,
     "CloudflareZeroTrustAccessRequestsSecretsConfig": CloudflareZeroTrustAccessRequestsSecretsConfig,
     "CloudflareZeroTrustAccessRequestsSettingsConfig": CloudflareZeroTrustAccessRequestsSettingsConfig,
-    "CloudflareZonesSecretsConfig": CloudflareZonesSecretsConfig,
-    "CloudflareZonesSettingsConfig": CloudflareZonesSettingsConfig,
     "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
     "ClumioAuditLogsSecretsConfig": ClumioAuditLogsSecretsConfig,
     "ClumioAuditLogsSettingsConfig": ClumioAuditLogsSettingsConfig,
