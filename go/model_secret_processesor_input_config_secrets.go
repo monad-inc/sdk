@@ -28,7 +28,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	AuthLogsSecretsConfig *AuthLogsSecretsConfig
 	AwsGuarddutySecretsConfig *AwsGuarddutySecretsConfig
 	AwsS3SecretsConfig *AwsS3SecretsConfig
-	AwssecurityhubSecretsConfig *AwssecurityhubSecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
 	AzureBlobStorageSecretsConfig *AzureBlobStorageSecretsConfig
 	AzureEventHubsSecretsConfig *AzureEventHubsSecretsConfig
@@ -41,7 +40,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	BugsnagOrgEventsSecretsConfig *BugsnagOrgEventsSecretsConfig
 	BuildkiteAuditLogsSecretsConfig *BuildkiteAuditLogsSecretsConfig
 	BuildkiteGraphqlInputSecretsConfig *BuildkiteGraphqlInputSecretsConfig
-	CloudAssetInventorySecretsConfig *CloudAssetInventorySecretsConfig
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
 	CloudLogsSecretsConfig *CloudLogsSecretsConfig
 	CloudResourceInventoryReportsSecretsConfig *CloudResourceInventoryReportsSecretsConfig
@@ -92,7 +90,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	PubsubSecretsConfig *PubsubSecretsConfig
 	RolesInfoSecretsConfig *RolesInfoSecretsConfig
 	RootlyAuditLogsSecretsConfig *RootlyAuditLogsSecretsConfig
-	SecretsmanagerSecretsConfig *SecretsmanagerSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
 	SentryOrgAuditLogsSecretsConfig *SentryOrgAuditLogsSecretsConfig
@@ -190,13 +187,6 @@ func AwsS3SecretsConfigAsSecretProcessesorInputConfigSecrets(v *AwsS3SecretsConf
 	}
 }
 
-// AwssecurityhubSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AwssecurityhubSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func AwssecurityhubSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AwssecurityhubSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		AwssecurityhubSecretsConfig: v,
-	}
-}
-
 // AzureActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AzureActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func AzureActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AzureActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -278,13 +268,6 @@ func BuildkiteAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Bui
 func BuildkiteGraphqlInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BuildkiteGraphqlInputSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		BuildkiteGraphqlInputSecretsConfig: v,
-	}
-}
-
-// CloudAssetInventorySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudAssetInventorySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudAssetInventorySecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudAssetInventorySecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudAssetInventorySecretsConfig: v,
 	}
 }
 
@@ -635,13 +618,6 @@ func RolesInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *RolesInfoSec
 func RootlyAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *RootlyAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		RootlyAuditLogsSecretsConfig: v,
-	}
-}
-
-// SecretsmanagerSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SecretsmanagerSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SecretsmanagerSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SecretsmanagerSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SecretsmanagerSecretsConfig: v,
 	}
 }
 
@@ -1027,23 +1003,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.AwsS3SecretsConfig = nil
 	}
 
-	// try to unmarshal data into AwssecurityhubSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.AwssecurityhubSecretsConfig)
-	if err == nil {
-		jsonAwssecurityhubSecretsConfig, _ := json.Marshal(dst.AwssecurityhubSecretsConfig)
-		if string(jsonAwssecurityhubSecretsConfig) == "{}" { // empty struct
-			dst.AwssecurityhubSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AwssecurityhubSecretsConfig); err != nil {
-				dst.AwssecurityhubSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AwssecurityhubSecretsConfig = nil
-	}
-
 	// try to unmarshal data into AzureActivityLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AzureActivityLogsSecretsConfig)
 	if err == nil {
@@ -1246,23 +1205,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.BuildkiteGraphqlInputSecretsConfig = nil
-	}
-
-	// try to unmarshal data into CloudAssetInventorySecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudAssetInventorySecretsConfig)
-	if err == nil {
-		jsonCloudAssetInventorySecretsConfig, _ := json.Marshal(dst.CloudAssetInventorySecretsConfig)
-		if string(jsonCloudAssetInventorySecretsConfig) == "{}" { // empty struct
-			dst.CloudAssetInventorySecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudAssetInventorySecretsConfig); err != nil {
-				dst.CloudAssetInventorySecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudAssetInventorySecretsConfig = nil
 	}
 
 	// try to unmarshal data into CloudConfigurationFindingsSecretsConfig
@@ -2115,23 +2057,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.RootlyAuditLogsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SecretsmanagerSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SecretsmanagerSecretsConfig)
-	if err == nil {
-		jsonSecretsmanagerSecretsConfig, _ := json.Marshal(dst.SecretsmanagerSecretsConfig)
-		if string(jsonSecretsmanagerSecretsConfig) == "{}" { // empty struct
-			dst.SecretsmanagerSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SecretsmanagerSecretsConfig); err != nil {
-				dst.SecretsmanagerSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SecretsmanagerSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SemgrepCodeFindingsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SemgrepCodeFindingsSecretsConfig)
 	if err == nil {
@@ -2687,7 +2612,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.AuthLogsSecretsConfig = nil
 		dst.AwsGuarddutySecretsConfig = nil
 		dst.AwsS3SecretsConfig = nil
-		dst.AwssecurityhubSecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
 		dst.AzureBlobStorageSecretsConfig = nil
 		dst.AzureEventHubsSecretsConfig = nil
@@ -2700,7 +2624,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BugsnagOrgEventsSecretsConfig = nil
 		dst.BuildkiteAuditLogsSecretsConfig = nil
 		dst.BuildkiteGraphqlInputSecretsConfig = nil
-		dst.CloudAssetInventorySecretsConfig = nil
 		dst.CloudConfigurationFindingsSecretsConfig = nil
 		dst.CloudLogsSecretsConfig = nil
 		dst.CloudResourceInventoryReportsSecretsConfig = nil
@@ -2751,7 +2674,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PubsubSecretsConfig = nil
 		dst.RolesInfoSecretsConfig = nil
 		dst.RootlyAuditLogsSecretsConfig = nil
-		dst.SecretsmanagerSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 		dst.SentryOrgAuditLogsSecretsConfig = nil
@@ -2831,10 +2753,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AwsS3SecretsConfig)
 	}
 
-	if src.AwssecurityhubSecretsConfig != nil {
-		return json.Marshal(&src.AwssecurityhubSecretsConfig)
-	}
-
 	if src.AzureActivityLogsSecretsConfig != nil {
 		return json.Marshal(&src.AzureActivityLogsSecretsConfig)
 	}
@@ -2881,10 +2799,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.BuildkiteGraphqlInputSecretsConfig != nil {
 		return json.Marshal(&src.BuildkiteGraphqlInputSecretsConfig)
-	}
-
-	if src.CloudAssetInventorySecretsConfig != nil {
-		return json.Marshal(&src.CloudAssetInventorySecretsConfig)
 	}
 
 	if src.CloudConfigurationFindingsSecretsConfig != nil {
@@ -3087,10 +3001,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.RootlyAuditLogsSecretsConfig)
 	}
 
-	if src.SecretsmanagerSecretsConfig != nil {
-		return json.Marshal(&src.SecretsmanagerSecretsConfig)
-	}
-
 	if src.SemgrepCodeFindingsSecretsConfig != nil {
 		return json.Marshal(&src.SemgrepCodeFindingsSecretsConfig)
 	}
@@ -3263,10 +3173,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.AwsS3SecretsConfig
 	}
 
-	if obj.AwssecurityhubSecretsConfig != nil {
-		return obj.AwssecurityhubSecretsConfig
-	}
-
 	if obj.AzureActivityLogsSecretsConfig != nil {
 		return obj.AzureActivityLogsSecretsConfig
 	}
@@ -3313,10 +3219,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.BuildkiteGraphqlInputSecretsConfig != nil {
 		return obj.BuildkiteGraphqlInputSecretsConfig
-	}
-
-	if obj.CloudAssetInventorySecretsConfig != nil {
-		return obj.CloudAssetInventorySecretsConfig
 	}
 
 	if obj.CloudConfigurationFindingsSecretsConfig != nil {
@@ -3519,10 +3421,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.RootlyAuditLogsSecretsConfig
 	}
 
-	if obj.SecretsmanagerSecretsConfig != nil {
-		return obj.SecretsmanagerSecretsConfig
-	}
-
 	if obj.SemgrepCodeFindingsSecretsConfig != nil {
 		return obj.SemgrepCodeFindingsSecretsConfig
 	}
@@ -3693,10 +3591,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.AwsS3SecretsConfig
 	}
 
-	if obj.AwssecurityhubSecretsConfig != nil {
-		return *obj.AwssecurityhubSecretsConfig
-	}
-
 	if obj.AzureActivityLogsSecretsConfig != nil {
 		return *obj.AzureActivityLogsSecretsConfig
 	}
@@ -3743,10 +3637,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.BuildkiteGraphqlInputSecretsConfig != nil {
 		return *obj.BuildkiteGraphqlInputSecretsConfig
-	}
-
-	if obj.CloudAssetInventorySecretsConfig != nil {
-		return *obj.CloudAssetInventorySecretsConfig
 	}
 
 	if obj.CloudConfigurationFindingsSecretsConfig != nil {
@@ -3947,10 +3837,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.RootlyAuditLogsSecretsConfig != nil {
 		return *obj.RootlyAuditLogsSecretsConfig
-	}
-
-	if obj.SecretsmanagerSecretsConfig != nil {
-		return *obj.SecretsmanagerSecretsConfig
 	}
 
 	if obj.SemgrepCodeFindingsSecretsConfig != nil {

@@ -31,11 +31,7 @@ import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
 import org.openapitools.client.model.AuditLogsSettingsConfig;
 import org.openapitools.client.model.AuthLogsSettingsConfig;
 import org.openapitools.client.model.AwsGuarddutySettingsConfig;
-import org.openapitools.client.model.AwsIamAliasesAccount;
-import org.openapitools.client.model.AwsIamAliasesSettingsConfig;
-import org.openapitools.client.model.AwsOrganizationsSettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
-import org.openapitools.client.model.AwssecurityhubSettingsConfig;
 import org.openapitools.client.model.Awssqss3SettingsConfig;
 import org.openapitools.client.model.AzureActivityLogsSettingsConfig;
 import org.openapitools.client.model.AzureBlobStorageSettingsConfig;
@@ -50,7 +46,6 @@ import org.openapitools.client.model.BugsnagOrgEventsSettingsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig;
 import org.openapitools.client.model.BuildkiteGraphqlInputSettingsConfig;
 import org.openapitools.client.model.CisaUserSettingsConfig;
-import org.openapitools.client.model.CloudAssetInventorySettingsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSettingsConfig;
 import org.openapitools.client.model.CloudLogsSettingsConfig;
 import org.openapitools.client.model.CloudResourceInventoryReportsSettingsConfig;
@@ -64,8 +59,6 @@ import org.openapitools.client.model.CloudtrailSettingsConfig;
 import org.openapitools.client.model.ClumioAuditLogsSettingsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSettingsConfig;
 import org.openapitools.client.model.CodaAuditEventsSettingsConfig;
-import org.openapitools.client.model.CognitoUsersFilter;
-import org.openapitools.client.model.CognitoUsersSettingsConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.CrowdstrikeFdrSettingsConfig;
 import org.openapitools.client.model.CustomerEventDataSettingsConfig;
@@ -82,12 +75,10 @@ import org.openapitools.client.model.GitlabIssuesSettingsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
 import org.openapitools.client.model.GreenhouseAuditLogsSettingsConfig;
-import org.openapitools.client.model.IamAccessAnalyzerSettingsConfig;
 import org.openapitools.client.model.IndividualAlertsSettingsConfig;
 import org.openapitools.client.model.InspectorSettingsConfig;
 import org.openapitools.client.model.IssuesReportSettingsConfig;
 import org.openapitools.client.model.IssuesSettingsConfig;
-import org.openapitools.client.model.KmsSettingsConfig;
 import org.openapitools.client.model.KoiAuditLogsSettingsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
 import org.openapitools.client.model.LoginSessionsSettingsConfig;
@@ -109,12 +100,8 @@ import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PolymerSettingsConfig;
 import org.openapitools.client.model.PostmanAuditLogsSettingsConfig;
 import org.openapitools.client.model.PubsubSettingsConfig;
-import org.openapitools.client.model.ResourceEvaluationsSettingsConfig;
 import org.openapitools.client.model.RolesInfoSettingsConfig;
 import org.openapitools.client.model.RootlyAuditLogsSettingsConfig;
-import org.openapitools.client.model.SecretsmanagerSettingsConfig;
-import org.openapitools.client.model.SecurityGroupsFilter;
-import org.openapitools.client.model.SecurityGroupsSettingsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
 import org.openapitools.client.model.SentryOrgAuditLogsSettingsConfig;
@@ -356,30 +343,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void severityTest() {
         // TODO: test severity
-    }
-
-    /**
-     * Test the property 'accounts'
-     */
-    @Test
-    public void accountsTest() {
-        // TODO: test accounts
-    }
-
-    /**
-     * Test the property 'childType'
-     */
-    @Test
-    public void childTypeTest() {
-        // TODO: test childType
-    }
-
-    /**
-     * Test the property 'parentId'
-     */
-    @Test
-    public void parentIdTest() {
-        // TODO: test parentId
     }
 
     /**
@@ -671,22 +634,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'assetTypes'
-     */
-    @Test
-    public void assetTypesTest() {
-        // TODO: test assetTypes
-    }
-
-    /**
-     * Test the property 'resourceNames'
-     */
-    @Test
-    public void resourceNamesTest() {
-        // TODO: test resourceNames
-    }
-
-    /**
      * Test the property 'endpointUrl'
      */
     @Test
@@ -724,6 +671,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void filterTest() {
         // TODO: test filter
+    }
+
+    /**
+     * Test the property 'resourceNames'
+     */
+    @Test
+    public void resourceNamesTest() {
+        // TODO: test resourceNames
     }
 
     /**
@@ -820,14 +775,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void orgIdTest() {
         // TODO: test orgId
-    }
-
-    /**
-     * Test the property 'userPoolId'
-     */
-    @Test
-    public void userPoolIdTest() {
-        // TODO: test userPoolId
     }
 
     /**
@@ -1015,22 +962,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'analyzerArn'
-     */
-    @Test
-    public void analyzerArnTest() {
-        // TODO: test analyzerArn
-    }
-
-    /**
-     * Test the property 'filters'
-     */
-    @Test
-    public void filtersTest() {
-        // TODO: test filters
-    }
-
-    /**
      * Test the property 'alertType'
      */
     @Test
@@ -1199,14 +1130,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'kmsType'
-     */
-    @Test
-    public void kmsTypeTest() {
-        // TODO: test kmsType
-    }
-
-    /**
      * Test the property 'auditLogTypes'
      */
     @Test
@@ -1308,22 +1231,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void topicTest() {
         // TODO: test topic
-    }
-
-    /**
-     * Test the property 'evaluationContextIdentifier'
-     */
-    @Test
-    public void evaluationContextIdentifierTest() {
-        // TODO: test evaluationContextIdentifier
-    }
-
-    /**
-     * Test the property 'includePlannedDeletion'
-     */
-    @Test
-    public void includePlannedDeletionTest() {
-        // TODO: test includePlannedDeletion
     }
 
     /**
@@ -1508,6 +1415,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void assetStatusTest() {
         // TODO: test assetStatus
+    }
+
+    /**
+     * Test the property 'assetTypes'
+     */
+    @Test
+    public void assetTypesTest() {
+        // TODO: test assetTypes
     }
 
     /**

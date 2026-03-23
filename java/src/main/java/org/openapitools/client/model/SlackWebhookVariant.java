@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * SlackWebhookVariant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T18:43:12.395405761Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T20:50:20.864315177Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class SlackWebhookVariant {
   public static final String SERIALIZED_NAME_WEBHOOK_URL = "webhook_url";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_URL)

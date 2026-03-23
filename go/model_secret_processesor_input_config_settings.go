@@ -27,10 +27,7 @@ type SecretProcessesorInputConfigSettings struct {
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
-	AwsIamAliasesSettingsConfig *AwsIamAliasesSettingsConfig
-	AwsOrganizationsSettingsConfig *AwsOrganizationsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
-	AwssecurityhubSettingsConfig *AwssecurityhubSettingsConfig
 	Awssqss3SettingsConfig *Awssqss3SettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	AzureBlobStorageSettingsConfig *AzureBlobStorageSettingsConfig
@@ -45,7 +42,6 @@ type SecretProcessesorInputConfigSettings struct {
 	BuildkiteAuditLogsSettingsConfig *BuildkiteAuditLogsSettingsConfig
 	BuildkiteGraphqlInputSettingsConfig *BuildkiteGraphqlInputSettingsConfig
 	CisaUserSettingsConfig *CisaUserSettingsConfig
-	CloudAssetInventorySettingsConfig *CloudAssetInventorySettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
 	CloudResourceInventoryReportsSettingsConfig *CloudResourceInventoryReportsSettingsConfig
@@ -59,7 +55,6 @@ type SecretProcessesorInputConfigSettings struct {
 	ClumioAuditLogsSettingsConfig *ClumioAuditLogsSettingsConfig
 	ClumioConsolidatedAlertsSettingsConfig *ClumioConsolidatedAlertsSettingsConfig
 	CodaAuditEventsSettingsConfig *CodaAuditEventsSettingsConfig
-	CognitoUsersSettingsConfig *CognitoUsersSettingsConfig
 	CortexXsoarManagementLogsSettingsConfig *CortexXsoarManagementLogsSettingsConfig
 	CrowdstrikeFdrSettingsConfig *CrowdstrikeFdrSettingsConfig
 	CustomerEventDataSettingsConfig *CustomerEventDataSettingsConfig
@@ -76,12 +71,10 @@ type SecretProcessesorInputConfigSettings struct {
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	GoogleWorkspaceSettingsConfig *GoogleWorkspaceSettingsConfig
 	GreenhouseAuditLogsSettingsConfig *GreenhouseAuditLogsSettingsConfig
-	IamAccessAnalyzerSettingsConfig *IamAccessAnalyzerSettingsConfig
 	IndividualAlertsSettingsConfig *IndividualAlertsSettingsConfig
 	InspectorSettingsConfig *InspectorSettingsConfig
 	IssuesReportSettingsConfig *IssuesReportSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
-	KmsSettingsConfig *KmsSettingsConfig
 	KoiAuditLogsSettingsConfig *KoiAuditLogsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
@@ -102,11 +95,8 @@ type SecretProcessesorInputConfigSettings struct {
 	PolymerSettingsConfig *PolymerSettingsConfig
 	PostmanAuditLogsSettingsConfig *PostmanAuditLogsSettingsConfig
 	PubsubSettingsConfig *PubsubSettingsConfig
-	ResourceEvaluationsSettingsConfig *ResourceEvaluationsSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
 	RootlyAuditLogsSettingsConfig *RootlyAuditLogsSettingsConfig
-	SecretsmanagerSettingsConfig *SecretsmanagerSettingsConfig
-	SecurityGroupsSettingsConfig *SecurityGroupsSettingsConfig
 	SemgrepCodeFindingsSettingsConfig *SemgrepCodeFindingsSettingsConfig
 	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
 	SentryOrgAuditLogsSettingsConfig *SentryOrgAuditLogsSettingsConfig
@@ -199,31 +189,10 @@ func AwsGuarddutySettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsGuar
 	}
 }
 
-// AwsIamAliasesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsIamAliasesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AwsIamAliasesSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsIamAliasesSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AwsIamAliasesSettingsConfig: v,
-	}
-}
-
-// AwsOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsOrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AwsOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsOrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AwsOrganizationsSettingsConfig: v,
-	}
-}
-
 // AwsS3SettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsS3SettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func AwsS3SettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsS3SettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AwsS3SettingsConfig: v,
-	}
-}
-
-// AwssecurityhubSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwssecurityhubSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AwssecurityhubSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwssecurityhubSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AwssecurityhubSettingsConfig: v,
 	}
 }
 
@@ -325,13 +294,6 @@ func CisaUserSettingsConfigAsSecretProcessesorInputConfigSettings(v *CisaUserSet
 	}
 }
 
-// CloudAssetInventorySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudAssetInventorySettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func CloudAssetInventorySettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudAssetInventorySettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		CloudAssetInventorySettingsConfig: v,
-	}
-}
-
 // CloudConfigurationFindingsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudConfigurationFindingsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func CloudConfigurationFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudConfigurationFindingsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -420,13 +382,6 @@ func ClumioConsolidatedAlertsSettingsConfigAsSecretProcessesorInputConfigSetting
 func CodaAuditEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CodaAuditEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CodaAuditEventsSettingsConfig: v,
-	}
-}
-
-// CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CognitoUsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *CognitoUsersSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		CognitoUsersSettingsConfig: v,
 	}
 }
 
@@ -542,13 +497,6 @@ func GreenhouseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *
 	}
 }
 
-// IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IamAccessAnalyzerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings(v *IamAccessAnalyzerSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		IamAccessAnalyzerSettingsConfig: v,
-	}
-}
-
 // IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IndividualAlertsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *IndividualAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -574,13 +522,6 @@ func IssuesReportSettingsConfigAsSecretProcessesorInputConfigSettings(v *IssuesR
 func IssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *IssuesSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		IssuesSettingsConfig: v,
-	}
-}
-
-// KmsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns KmsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func KmsSettingsConfigAsSecretProcessesorInputConfigSettings(v *KmsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		KmsSettingsConfig: v,
 	}
 }
 
@@ -724,13 +665,6 @@ func PubsubSettingsConfigAsSecretProcessesorInputConfigSettings(v *PubsubSetting
 	}
 }
 
-// ResourceEvaluationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ResourceEvaluationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func ResourceEvaluationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ResourceEvaluationsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		ResourceEvaluationsSettingsConfig: v,
-	}
-}
-
 // RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns RolesInfoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *RolesInfoSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -742,20 +676,6 @@ func RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *RolesInfoS
 func RootlyAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *RootlyAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RootlyAuditLogsSettingsConfig: v,
-	}
-}
-
-// SecretsmanagerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SecretsmanagerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SecretsmanagerSettingsConfigAsSecretProcessesorInputConfigSettings(v *SecretsmanagerSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SecretsmanagerSettingsConfig: v,
-	}
-}
-
-// SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SecurityGroupsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SecurityGroupsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SecurityGroupsSettingsConfig: v,
 	}
 }
 
@@ -1138,40 +1058,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AwsGuarddutySettingsConfig = nil
 	}
 
-	// try to unmarshal data into AwsIamAliasesSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AwsIamAliasesSettingsConfig)
-	if err == nil {
-		jsonAwsIamAliasesSettingsConfig, _ := json.Marshal(dst.AwsIamAliasesSettingsConfig)
-		if string(jsonAwsIamAliasesSettingsConfig) == "{}" { // empty struct
-			dst.AwsIamAliasesSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AwsIamAliasesSettingsConfig); err != nil {
-				dst.AwsIamAliasesSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AwsIamAliasesSettingsConfig = nil
-	}
-
-	// try to unmarshal data into AwsOrganizationsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AwsOrganizationsSettingsConfig)
-	if err == nil {
-		jsonAwsOrganizationsSettingsConfig, _ := json.Marshal(dst.AwsOrganizationsSettingsConfig)
-		if string(jsonAwsOrganizationsSettingsConfig) == "{}" { // empty struct
-			dst.AwsOrganizationsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AwsOrganizationsSettingsConfig); err != nil {
-				dst.AwsOrganizationsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AwsOrganizationsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into AwsS3SettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AwsS3SettingsConfig)
 	if err == nil {
@@ -1187,23 +1073,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AwsS3SettingsConfig = nil
-	}
-
-	// try to unmarshal data into AwssecurityhubSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AwssecurityhubSettingsConfig)
-	if err == nil {
-		jsonAwssecurityhubSettingsConfig, _ := json.Marshal(dst.AwssecurityhubSettingsConfig)
-		if string(jsonAwssecurityhubSettingsConfig) == "{}" { // empty struct
-			dst.AwssecurityhubSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AwssecurityhubSettingsConfig); err != nil {
-				dst.AwssecurityhubSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AwssecurityhubSettingsConfig = nil
 	}
 
 	// try to unmarshal data into Awssqss3SettingsConfig
@@ -1444,23 +1313,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CisaUserSettingsConfig = nil
 	}
 
-	// try to unmarshal data into CloudAssetInventorySettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudAssetInventorySettingsConfig)
-	if err == nil {
-		jsonCloudAssetInventorySettingsConfig, _ := json.Marshal(dst.CloudAssetInventorySettingsConfig)
-		if string(jsonCloudAssetInventorySettingsConfig) == "{}" { // empty struct
-			dst.CloudAssetInventorySettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudAssetInventorySettingsConfig); err != nil {
-				dst.CloudAssetInventorySettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudAssetInventorySettingsConfig = nil
-	}
-
 	// try to unmarshal data into CloudConfigurationFindingsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.CloudConfigurationFindingsSettingsConfig)
 	if err == nil {
@@ -1680,23 +1532,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CodaAuditEventsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into CognitoUsersSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.CognitoUsersSettingsConfig)
-	if err == nil {
-		jsonCognitoUsersSettingsConfig, _ := json.Marshal(dst.CognitoUsersSettingsConfig)
-		if string(jsonCognitoUsersSettingsConfig) == "{}" { // empty struct
-			dst.CognitoUsersSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CognitoUsersSettingsConfig); err != nil {
-				dst.CognitoUsersSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CognitoUsersSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CortexXsoarManagementLogsSettingsConfig
@@ -1971,23 +1806,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GreenhouseAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into IamAccessAnalyzerSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.IamAccessAnalyzerSettingsConfig)
-	if err == nil {
-		jsonIamAccessAnalyzerSettingsConfig, _ := json.Marshal(dst.IamAccessAnalyzerSettingsConfig)
-		if string(jsonIamAccessAnalyzerSettingsConfig) == "{}" { // empty struct
-			dst.IamAccessAnalyzerSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.IamAccessAnalyzerSettingsConfig); err != nil {
-				dst.IamAccessAnalyzerSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.IamAccessAnalyzerSettingsConfig = nil
-	}
-
 	// try to unmarshal data into IndividualAlertsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.IndividualAlertsSettingsConfig)
 	if err == nil {
@@ -2054,23 +1872,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.IssuesSettingsConfig = nil
-	}
-
-	// try to unmarshal data into KmsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.KmsSettingsConfig)
-	if err == nil {
-		jsonKmsSettingsConfig, _ := json.Marshal(dst.KmsSettingsConfig)
-		if string(jsonKmsSettingsConfig) == "{}" { // empty struct
-			dst.KmsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.KmsSettingsConfig); err != nil {
-				dst.KmsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.KmsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into KoiAuditLogsSettingsConfig
@@ -2413,23 +2214,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PubsubSettingsConfig = nil
 	}
 
-	// try to unmarshal data into ResourceEvaluationsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.ResourceEvaluationsSettingsConfig)
-	if err == nil {
-		jsonResourceEvaluationsSettingsConfig, _ := json.Marshal(dst.ResourceEvaluationsSettingsConfig)
-		if string(jsonResourceEvaluationsSettingsConfig) == "{}" { // empty struct
-			dst.ResourceEvaluationsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ResourceEvaluationsSettingsConfig); err != nil {
-				dst.ResourceEvaluationsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ResourceEvaluationsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into RolesInfoSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.RolesInfoSettingsConfig)
 	if err == nil {
@@ -2462,40 +2246,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.RootlyAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into SecretsmanagerSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SecretsmanagerSettingsConfig)
-	if err == nil {
-		jsonSecretsmanagerSettingsConfig, _ := json.Marshal(dst.SecretsmanagerSettingsConfig)
-		if string(jsonSecretsmanagerSettingsConfig) == "{}" { // empty struct
-			dst.SecretsmanagerSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SecretsmanagerSettingsConfig); err != nil {
-				dst.SecretsmanagerSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SecretsmanagerSettingsConfig = nil
-	}
-
-	// try to unmarshal data into SecurityGroupsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SecurityGroupsSettingsConfig)
-	if err == nil {
-		jsonSecurityGroupsSettingsConfig, _ := json.Marshal(dst.SecurityGroupsSettingsConfig)
-		if string(jsonSecurityGroupsSettingsConfig) == "{}" { // empty struct
-			dst.SecurityGroupsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SecurityGroupsSettingsConfig); err != nil {
-				dst.SecurityGroupsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SecurityGroupsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SemgrepCodeFindingsSettingsConfig
@@ -3086,10 +2836,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsGuarddutySettingsConfig = nil
-		dst.AwsIamAliasesSettingsConfig = nil
-		dst.AwsOrganizationsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
-		dst.AwssecurityhubSettingsConfig = nil
 		dst.Awssqss3SettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.AzureBlobStorageSettingsConfig = nil
@@ -3104,7 +2851,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.BuildkiteAuditLogsSettingsConfig = nil
 		dst.BuildkiteGraphqlInputSettingsConfig = nil
 		dst.CisaUserSettingsConfig = nil
-		dst.CloudAssetInventorySettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
 		dst.CloudResourceInventoryReportsSettingsConfig = nil
@@ -3118,7 +2864,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ClumioAuditLogsSettingsConfig = nil
 		dst.ClumioConsolidatedAlertsSettingsConfig = nil
 		dst.CodaAuditEventsSettingsConfig = nil
-		dst.CognitoUsersSettingsConfig = nil
 		dst.CortexXsoarManagementLogsSettingsConfig = nil
 		dst.CrowdstrikeFdrSettingsConfig = nil
 		dst.CustomerEventDataSettingsConfig = nil
@@ -3135,12 +2880,10 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.GoogleWorkspaceSettingsConfig = nil
 		dst.GreenhouseAuditLogsSettingsConfig = nil
-		dst.IamAccessAnalyzerSettingsConfig = nil
 		dst.IndividualAlertsSettingsConfig = nil
 		dst.InspectorSettingsConfig = nil
 		dst.IssuesReportSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
-		dst.KmsSettingsConfig = nil
 		dst.KoiAuditLogsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginSessionsSettingsConfig = nil
@@ -3161,11 +2904,8 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PolymerSettingsConfig = nil
 		dst.PostmanAuditLogsSettingsConfig = nil
 		dst.PubsubSettingsConfig = nil
-		dst.ResourceEvaluationsSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
 		dst.RootlyAuditLogsSettingsConfig = nil
-		dst.SecretsmanagerSettingsConfig = nil
-		dst.SecurityGroupsSettingsConfig = nil
 		dst.SemgrepCodeFindingsSettingsConfig = nil
 		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
 		dst.SentryOrgAuditLogsSettingsConfig = nil
@@ -3243,20 +2983,8 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AwsGuarddutySettingsConfig)
 	}
 
-	if src.AwsIamAliasesSettingsConfig != nil {
-		return json.Marshal(&src.AwsIamAliasesSettingsConfig)
-	}
-
-	if src.AwsOrganizationsSettingsConfig != nil {
-		return json.Marshal(&src.AwsOrganizationsSettingsConfig)
-	}
-
 	if src.AwsS3SettingsConfig != nil {
 		return json.Marshal(&src.AwsS3SettingsConfig)
-	}
-
-	if src.AwssecurityhubSettingsConfig != nil {
-		return json.Marshal(&src.AwssecurityhubSettingsConfig)
 	}
 
 	if src.Awssqss3SettingsConfig != nil {
@@ -3315,10 +3043,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CisaUserSettingsConfig)
 	}
 
-	if src.CloudAssetInventorySettingsConfig != nil {
-		return json.Marshal(&src.CloudAssetInventorySettingsConfig)
-	}
-
 	if src.CloudConfigurationFindingsSettingsConfig != nil {
 		return json.Marshal(&src.CloudConfigurationFindingsSettingsConfig)
 	}
@@ -3369,10 +3093,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.CodaAuditEventsSettingsConfig != nil {
 		return json.Marshal(&src.CodaAuditEventsSettingsConfig)
-	}
-
-	if src.CognitoUsersSettingsConfig != nil {
-		return json.Marshal(&src.CognitoUsersSettingsConfig)
 	}
 
 	if src.CortexXsoarManagementLogsSettingsConfig != nil {
@@ -3439,10 +3159,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.GreenhouseAuditLogsSettingsConfig)
 	}
 
-	if src.IamAccessAnalyzerSettingsConfig != nil {
-		return json.Marshal(&src.IamAccessAnalyzerSettingsConfig)
-	}
-
 	if src.IndividualAlertsSettingsConfig != nil {
 		return json.Marshal(&src.IndividualAlertsSettingsConfig)
 	}
@@ -3457,10 +3173,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.IssuesSettingsConfig != nil {
 		return json.Marshal(&src.IssuesSettingsConfig)
-	}
-
-	if src.KmsSettingsConfig != nil {
-		return json.Marshal(&src.KmsSettingsConfig)
 	}
 
 	if src.KoiAuditLogsSettingsConfig != nil {
@@ -3543,24 +3255,12 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.PubsubSettingsConfig)
 	}
 
-	if src.ResourceEvaluationsSettingsConfig != nil {
-		return json.Marshal(&src.ResourceEvaluationsSettingsConfig)
-	}
-
 	if src.RolesInfoSettingsConfig != nil {
 		return json.Marshal(&src.RolesInfoSettingsConfig)
 	}
 
 	if src.RootlyAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.RootlyAuditLogsSettingsConfig)
-	}
-
-	if src.SecretsmanagerSettingsConfig != nil {
-		return json.Marshal(&src.SecretsmanagerSettingsConfig)
-	}
-
-	if src.SecurityGroupsSettingsConfig != nil {
-		return json.Marshal(&src.SecurityGroupsSettingsConfig)
 	}
 
 	if src.SemgrepCodeFindingsSettingsConfig != nil {
@@ -3739,20 +3439,8 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AwsGuarddutySettingsConfig
 	}
 
-	if obj.AwsIamAliasesSettingsConfig != nil {
-		return obj.AwsIamAliasesSettingsConfig
-	}
-
-	if obj.AwsOrganizationsSettingsConfig != nil {
-		return obj.AwsOrganizationsSettingsConfig
-	}
-
 	if obj.AwsS3SettingsConfig != nil {
 		return obj.AwsS3SettingsConfig
-	}
-
-	if obj.AwssecurityhubSettingsConfig != nil {
-		return obj.AwssecurityhubSettingsConfig
 	}
 
 	if obj.Awssqss3SettingsConfig != nil {
@@ -3811,10 +3499,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CisaUserSettingsConfig
 	}
 
-	if obj.CloudAssetInventorySettingsConfig != nil {
-		return obj.CloudAssetInventorySettingsConfig
-	}
-
 	if obj.CloudConfigurationFindingsSettingsConfig != nil {
 		return obj.CloudConfigurationFindingsSettingsConfig
 	}
@@ -3865,10 +3549,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.CodaAuditEventsSettingsConfig != nil {
 		return obj.CodaAuditEventsSettingsConfig
-	}
-
-	if obj.CognitoUsersSettingsConfig != nil {
-		return obj.CognitoUsersSettingsConfig
 	}
 
 	if obj.CortexXsoarManagementLogsSettingsConfig != nil {
@@ -3935,10 +3615,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.GreenhouseAuditLogsSettingsConfig
 	}
 
-	if obj.IamAccessAnalyzerSettingsConfig != nil {
-		return obj.IamAccessAnalyzerSettingsConfig
-	}
-
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return obj.IndividualAlertsSettingsConfig
 	}
@@ -3953,10 +3629,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.IssuesSettingsConfig != nil {
 		return obj.IssuesSettingsConfig
-	}
-
-	if obj.KmsSettingsConfig != nil {
-		return obj.KmsSettingsConfig
 	}
 
 	if obj.KoiAuditLogsSettingsConfig != nil {
@@ -4039,24 +3711,12 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.PubsubSettingsConfig
 	}
 
-	if obj.ResourceEvaluationsSettingsConfig != nil {
-		return obj.ResourceEvaluationsSettingsConfig
-	}
-
 	if obj.RolesInfoSettingsConfig != nil {
 		return obj.RolesInfoSettingsConfig
 	}
 
 	if obj.RootlyAuditLogsSettingsConfig != nil {
 		return obj.RootlyAuditLogsSettingsConfig
-	}
-
-	if obj.SecretsmanagerSettingsConfig != nil {
-		return obj.SecretsmanagerSettingsConfig
-	}
-
-	if obj.SecurityGroupsSettingsConfig != nil {
-		return obj.SecurityGroupsSettingsConfig
 	}
 
 	if obj.SemgrepCodeFindingsSettingsConfig != nil {
@@ -4233,20 +3893,8 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.AwsGuarddutySettingsConfig
 	}
 
-	if obj.AwsIamAliasesSettingsConfig != nil {
-		return *obj.AwsIamAliasesSettingsConfig
-	}
-
-	if obj.AwsOrganizationsSettingsConfig != nil {
-		return *obj.AwsOrganizationsSettingsConfig
-	}
-
 	if obj.AwsS3SettingsConfig != nil {
 		return *obj.AwsS3SettingsConfig
-	}
-
-	if obj.AwssecurityhubSettingsConfig != nil {
-		return *obj.AwssecurityhubSettingsConfig
 	}
 
 	if obj.Awssqss3SettingsConfig != nil {
@@ -4305,10 +3953,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.CisaUserSettingsConfig
 	}
 
-	if obj.CloudAssetInventorySettingsConfig != nil {
-		return *obj.CloudAssetInventorySettingsConfig
-	}
-
 	if obj.CloudConfigurationFindingsSettingsConfig != nil {
 		return *obj.CloudConfigurationFindingsSettingsConfig
 	}
@@ -4359,10 +4003,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.CodaAuditEventsSettingsConfig != nil {
 		return *obj.CodaAuditEventsSettingsConfig
-	}
-
-	if obj.CognitoUsersSettingsConfig != nil {
-		return *obj.CognitoUsersSettingsConfig
 	}
 
 	if obj.CortexXsoarManagementLogsSettingsConfig != nil {
@@ -4429,10 +4069,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.GreenhouseAuditLogsSettingsConfig
 	}
 
-	if obj.IamAccessAnalyzerSettingsConfig != nil {
-		return *obj.IamAccessAnalyzerSettingsConfig
-	}
-
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return *obj.IndividualAlertsSettingsConfig
 	}
@@ -4447,10 +4083,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.IssuesSettingsConfig != nil {
 		return *obj.IssuesSettingsConfig
-	}
-
-	if obj.KmsSettingsConfig != nil {
-		return *obj.KmsSettingsConfig
 	}
 
 	if obj.KoiAuditLogsSettingsConfig != nil {
@@ -4533,24 +4165,12 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.PubsubSettingsConfig
 	}
 
-	if obj.ResourceEvaluationsSettingsConfig != nil {
-		return *obj.ResourceEvaluationsSettingsConfig
-	}
-
 	if obj.RolesInfoSettingsConfig != nil {
 		return *obj.RolesInfoSettingsConfig
 	}
 
 	if obj.RootlyAuditLogsSettingsConfig != nil {
 		return *obj.RootlyAuditLogsSettingsConfig
-	}
-
-	if obj.SecretsmanagerSettingsConfig != nil {
-		return *obj.SecretsmanagerSettingsConfig
-	}
-
-	if obj.SecurityGroupsSettingsConfig != nil {
-		return *obj.SecurityGroupsSettingsConfig
 	}
 
 	if obj.SemgrepCodeFindingsSettingsConfig != nil {

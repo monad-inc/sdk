@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-23T18:43:12.395405761Z[Etc/UTC]
+  - Build date: 2026-03-23T20:50:20.864315177Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -318,13 +318,8 @@ Class | Method | HTTP request | Description
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsGuarddutySecretsConfig](docs/AwsGuarddutySecretsConfig.md)
  - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
- - [AwsIamAliasesAccount](docs/AwsIamAliasesAccount.md)
- - [AwsIamAliasesSettingsConfig](docs/AwsIamAliasesSettingsConfig.md)
- - [AwsOrganizationsSettingsConfig](docs/AwsOrganizationsSettingsConfig.md)
  - [AwsS3SecretsConfig](docs/AwsS3SecretsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
- - [AwssecurityhubSecretsConfig](docs/AwssecurityhubSecretsConfig.md)
- - [AwssecurityhubSettingsConfig](docs/AwssecurityhubSettingsConfig.md)
  - [AwssqsoutputSettingsConfig](docs/AwssqsoutputSettingsConfig.md)
  - [Awssqss3SettingsConfig](docs/Awssqss3SettingsConfig.md)
  - [AxiomSecretsConfig](docs/AxiomSecretsConfig.md)
@@ -359,8 +354,6 @@ Class | Method | HTTP request | Description
  - [BuildkiteGraphqlInputSecretsConfig](docs/BuildkiteGraphqlInputSecretsConfig.md)
  - [BuildkiteGraphqlInputSettingsConfig](docs/BuildkiteGraphqlInputSettingsConfig.md)
  - [CisaUserSettingsConfig](docs/CisaUserSettingsConfig.md)
- - [CloudAssetInventorySecretsConfig](docs/CloudAssetInventorySecretsConfig.md)
- - [CloudAssetInventorySettingsConfig](docs/CloudAssetInventorySettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
  - [CloudConfigurationFindingsSettingsConfig](docs/CloudConfigurationFindingsSettingsConfig.md)
  - [CloudLogsSecretsConfig](docs/CloudLogsSecretsConfig.md)
@@ -386,8 +379,6 @@ Class | Method | HTTP request | Description
  - [ClumioConsolidatedAlertsSettingsConfig](docs/ClumioConsolidatedAlertsSettingsConfig.md)
  - [CodaAuditEventsSecretsConfig](docs/CodaAuditEventsSecretsConfig.md)
  - [CodaAuditEventsSettingsConfig](docs/CodaAuditEventsSettingsConfig.md)
- - [CognitoUsersFilter](docs/CognitoUsersFilter.md)
- - [CognitoUsersSettingsConfig](docs/CognitoUsersSettingsConfig.md)
  - [CommunityEditionSecretsConfig](docs/CommunityEditionSecretsConfig.md)
  - [CommunityEditionSettingsConfig](docs/CommunityEditionSettingsConfig.md)
  - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
@@ -435,7 +426,6 @@ Class | Method | HTTP request | Description
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
  - [GeolocusSettingsConfig](docs/GeolocusSettingsConfig.md)
  - [GithubAdvisoryUserSettingsConfig](docs/GithubAdvisoryUserSettingsConfig.md)
- - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
  - [GithubComMonadIncCorePkgTypesModelsAlert](docs/GithubComMonadIncCorePkgTypesModelsAlert.md)
  - [GithubComMonadIncCorePkgTypesModelsAlertStatus](docs/GithubComMonadIncCorePkgTypesModelsAlertStatus.md)
  - [GithubComMonadIncCorePkgTypesModelsOrganization](docs/GithubComMonadIncCorePkgTypesModelsOrganization.md)
@@ -457,9 +447,6 @@ Class | Method | HTTP request | Description
  - [HttpHeaders](docs/HttpHeaders.md)
  - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
- - [IamAccessAnalyzerCriterion](docs/IamAccessAnalyzerCriterion.md)
- - [IamAccessAnalyzerFilter](docs/IamAccessAnalyzerFilter.md)
- - [IamAccessAnalyzerSettingsConfig](docs/IamAccessAnalyzerSettingsConfig.md)
  - [IndividualAlertsSecretsConfig](docs/IndividualAlertsSecretsConfig.md)
  - [IndividualAlertsSettingsConfig](docs/IndividualAlertsSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
@@ -471,7 +458,6 @@ Class | Method | HTTP request | Description
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)
  - [JqArgumentsConfig](docs/JqArgumentsConfig.md)
  - [JsonJsonFormatter](docs/JsonJsonFormatter.md)
- - [KmsSettingsConfig](docs/KmsSettingsConfig.md)
  - [KoiAuditLogsSecretsConfig](docs/KoiAuditLogsSecretsConfig.md)
  - [KoiAuditLogsSettingsConfig](docs/KoiAuditLogsSettingsConfig.md)
  - [KvLookupOutputSettingsConfig](docs/KvLookupOutputSettingsConfig.md)
@@ -614,7 +600,6 @@ Class | Method | HTTP request | Description
  - [PubsubSettingsConfig](docs/PubsubSettingsConfig.md)
  - [RenameKeyArgumentsConfig](docs/RenameKeyArgumentsConfig.md)
  - [RenameKeyWhereValueEqArgumentsConfig](docs/RenameKeyWhereValueEqArgumentsConfig.md)
- - [ResourceEvaluationsSettingsConfig](docs/ResourceEvaluationsSettingsConfig.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)
@@ -718,10 +703,6 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
  - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
- - [SecretsmanagerSecretsConfig](docs/SecretsmanagerSecretsConfig.md)
- - [SecretsmanagerSettingsConfig](docs/SecretsmanagerSettingsConfig.md)
- - [SecurityGroupsFilter](docs/SecurityGroupsFilter.md)
- - [SecurityGroupsSettingsConfig](docs/SecurityGroupsSettingsConfig.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)
@@ -778,7 +759,6 @@ Class | Method | HTTP request | Description
  - [TwilioEventsSettingsConfig](docs/TwilioEventsSettingsConfig.md)
  - [TwilioSendgridEmailActivitySecretsConfig](docs/TwilioSendgridEmailActivitySecretsConfig.md)
  - [TwilioSendgridEmailActivitySettingsConfig](docs/TwilioSendgridEmailActivitySettingsConfig.md)
- - [TypesFilterNameStringType](docs/TypesFilterNameStringType.md)
  - [TypesStringComparison](docs/TypesStringComparison.md)
  - [TypesStringFilter](docs/TypesStringFilter.md)
  - [UniversalSecretsConfig](docs/UniversalSecretsConfig.md)

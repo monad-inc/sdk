@@ -87,13 +87,8 @@ __all__ = [
     "AuthenticationtypesTokenResponse",
     "AwsGuarddutySecretsConfig",
     "AwsGuarddutySettingsConfig",
-    "AwsIamAliasesAccount",
-    "AwsIamAliasesSettingsConfig",
-    "AwsOrganizationsSettingsConfig",
     "AwsS3SecretsConfig",
     "AwsS3SettingsConfig",
-    "AwssecurityhubSecretsConfig",
-    "AwssecurityhubSettingsConfig",
     "AwssqsoutputSettingsConfig",
     "Awssqss3SettingsConfig",
     "AxiomSecretsConfig",
@@ -128,8 +123,6 @@ __all__ = [
     "BuildkiteGraphqlInputSecretsConfig",
     "BuildkiteGraphqlInputSettingsConfig",
     "CisaUserSettingsConfig",
-    "CloudAssetInventorySecretsConfig",
-    "CloudAssetInventorySettingsConfig",
     "CloudConfigurationFindingsSecretsConfig",
     "CloudConfigurationFindingsSettingsConfig",
     "CloudLogsSecretsConfig",
@@ -155,8 +148,6 @@ __all__ = [
     "ClumioConsolidatedAlertsSettingsConfig",
     "CodaAuditEventsSecretsConfig",
     "CodaAuditEventsSettingsConfig",
-    "CognitoUsersFilter",
-    "CognitoUsersSettingsConfig",
     "CommunityEditionSecretsConfig",
     "CommunityEditionSettingsConfig",
     "CommunityTransformsInternalTransformConfig",
@@ -204,7 +195,6 @@ __all__ = [
     "FullScansSettingsConfig",
     "GeolocusSettingsConfig",
     "GithubAdvisoryUserSettingsConfig",
-    "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter",
     "GithubComMonadIncCorePkgTypesModelsAlert",
     "GithubComMonadIncCorePkgTypesModelsAlertStatus",
     "GithubComMonadIncCorePkgTypesModelsOrganization",
@@ -226,9 +216,6 @@ __all__ = [
     "HttpHeaders",
     "HttpSecretsConfig",
     "HttpSettingsConfig",
-    "IamAccessAnalyzerCriterion",
-    "IamAccessAnalyzerFilter",
-    "IamAccessAnalyzerSettingsConfig",
     "IndividualAlertsSecretsConfig",
     "IndividualAlertsSettingsConfig",
     "InputsConnectorMeta",
@@ -240,7 +227,6 @@ __all__ = [
     "IssuesSettingsConfig",
     "JqArgumentsConfig",
     "JsonJsonFormatter",
-    "KmsSettingsConfig",
     "KoiAuditLogsSecretsConfig",
     "KoiAuditLogsSettingsConfig",
     "KvLookupOutputSettingsConfig",
@@ -383,7 +369,6 @@ __all__ = [
     "PubsubSettingsConfig",
     "RenameKeyArgumentsConfig",
     "RenameKeyWhereValueEqArgumentsConfig",
-    "ResourceEvaluationsSettingsConfig",
     "ResponderErrorResponse",
     "RolesInfoSecretsConfig",
     "RolesInfoSettingsConfig",
@@ -487,10 +472,6 @@ __all__ = [
     "SecretProcessesorOutputConfig",
     "SecretProcessesorOutputConfigSecrets",
     "SecretProcessesorOutputConfigSettings",
-    "SecretsmanagerSecretsConfig",
-    "SecretsmanagerSettingsConfig",
-    "SecurityGroupsFilter",
-    "SecurityGroupsSettingsConfig",
     "SecurityLakeSettingsConfig",
     "SecurityLakeSourceAccountDetails",
     "SemgrepCodeFindingsSecretsConfig",
@@ -547,7 +528,6 @@ __all__ = [
     "TwilioEventsSettingsConfig",
     "TwilioSendgridEmailActivitySecretsConfig",
     "TwilioSendgridEmailActivitySettingsConfig",
-    "TypesFilterNameStringType",
     "TypesStringComparison",
     "TypesStringFilter",
     "UniversalSecretsConfig",
@@ -650,13 +630,8 @@ from monad.models.authenticationtypes_mfa_enrollment_ticket import Authenticatio
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse
 from monad.models.aws_guardduty_secrets_config import AwsGuarddutySecretsConfig as AwsGuarddutySecretsConfig
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig as AwsGuarddutySettingsConfig
-from monad.models.aws_iam_aliases_account import AwsIamAliasesAccount as AwsIamAliasesAccount
-from monad.models.aws_iam_aliases_settings_config import AwsIamAliasesSettingsConfig as AwsIamAliasesSettingsConfig
-from monad.models.aws_organizations_settings_config import AwsOrganizationsSettingsConfig as AwsOrganizationsSettingsConfig
 from monad.models.aws_s3_secrets_config import AwsS3SecretsConfig as AwsS3SecretsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
-from monad.models.awssecurityhub_secrets_config import AwssecurityhubSecretsConfig as AwssecurityhubSecretsConfig
-from monad.models.awssecurityhub_settings_config import AwssecurityhubSettingsConfig as AwssecurityhubSettingsConfig
 from monad.models.awssqsoutput_settings_config import AwssqsoutputSettingsConfig as AwssqsoutputSettingsConfig
 from monad.models.awssqss3_settings_config import Awssqss3SettingsConfig as Awssqss3SettingsConfig
 from monad.models.axiom_secrets_config import AxiomSecretsConfig as AxiomSecretsConfig
@@ -691,8 +666,6 @@ from monad.models.buildkite_audit_logs_settings_config import BuildkiteAuditLogs
 from monad.models.buildkite_graphql_input_secrets_config import BuildkiteGraphqlInputSecretsConfig as BuildkiteGraphqlInputSecretsConfig
 from monad.models.buildkite_graphql_input_settings_config import BuildkiteGraphqlInputSettingsConfig as BuildkiteGraphqlInputSettingsConfig
 from monad.models.cisa_user_settings_config import CisaUserSettingsConfig as CisaUserSettingsConfig
-from monad.models.cloud_asset_inventory_secrets_config import CloudAssetInventorySecretsConfig as CloudAssetInventorySecretsConfig
-from monad.models.cloud_asset_inventory_settings_config import CloudAssetInventorySettingsConfig as CloudAssetInventorySettingsConfig
 from monad.models.cloud_configuration_findings_secrets_config import CloudConfigurationFindingsSecretsConfig as CloudConfigurationFindingsSecretsConfig
 from monad.models.cloud_configuration_findings_settings_config import CloudConfigurationFindingsSettingsConfig as CloudConfigurationFindingsSettingsConfig
 from monad.models.cloud_logs_secrets_config import CloudLogsSecretsConfig as CloudLogsSecretsConfig
@@ -718,8 +691,6 @@ from monad.models.clumio_consolidated_alerts_secrets_config import ClumioConsoli
 from monad.models.clumio_consolidated_alerts_settings_config import ClumioConsolidatedAlertsSettingsConfig as ClumioConsolidatedAlertsSettingsConfig
 from monad.models.coda_audit_events_secrets_config import CodaAuditEventsSecretsConfig as CodaAuditEventsSecretsConfig
 from monad.models.coda_audit_events_settings_config import CodaAuditEventsSettingsConfig as CodaAuditEventsSettingsConfig
-from monad.models.cognito_users_filter import CognitoUsersFilter as CognitoUsersFilter
-from monad.models.cognito_users_settings_config import CognitoUsersSettingsConfig as CognitoUsersSettingsConfig
 from monad.models.community_edition_secrets_config import CommunityEditionSecretsConfig as CommunityEditionSecretsConfig
 from monad.models.community_edition_settings_config import CommunityEditionSettingsConfig as CommunityEditionSettingsConfig
 from monad.models.community_transforms_internal_transform_config import CommunityTransformsInternalTransformConfig as CommunityTransformsInternalTransformConfig
@@ -767,7 +738,6 @@ from monad.models.full_scans_secrets_config import FullScansSecretsConfig as Ful
 from monad.models.full_scans_settings_config import FullScansSettingsConfig as FullScansSettingsConfig
 from monad.models.geolocus_settings_config import GeolocusSettingsConfig as GeolocusSettingsConfig
 from monad.models.github_advisory_user_settings_config import GithubAdvisoryUserSettingsConfig as GithubAdvisoryUserSettingsConfig
-from monad.models.github_com_aws_aws_sdk_go_v2_service_secretsmanager_types_filter import GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter as GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert as GithubComMonadIncCorePkgTypesModelsAlert
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus as GithubComMonadIncCorePkgTypesModelsAlertStatus
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization as GithubComMonadIncCorePkgTypesModelsOrganization
@@ -789,9 +759,6 @@ from monad.models.greenhouse_audit_logs_settings_config import GreenhouseAuditLo
 from monad.models.http_headers import HttpHeaders as HttpHeaders
 from monad.models.http_secrets_config import HttpSecretsConfig as HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig as HttpSettingsConfig
-from monad.models.iam_access_analyzer_criterion import IamAccessAnalyzerCriterion as IamAccessAnalyzerCriterion
-from monad.models.iam_access_analyzer_filter import IamAccessAnalyzerFilter as IamAccessAnalyzerFilter
-from monad.models.iam_access_analyzer_settings_config import IamAccessAnalyzerSettingsConfig as IamAccessAnalyzerSettingsConfig
 from monad.models.individual_alerts_secrets_config import IndividualAlertsSecretsConfig as IndividualAlertsSecretsConfig
 from monad.models.individual_alerts_settings_config import IndividualAlertsSettingsConfig as IndividualAlertsSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta as InputsConnectorMeta
@@ -803,7 +770,6 @@ from monad.models.issues_secrets_config import IssuesSecretsConfig as IssuesSecr
 from monad.models.issues_settings_config import IssuesSettingsConfig as IssuesSettingsConfig
 from monad.models.jq_arguments_config import JqArgumentsConfig as JqArgumentsConfig
 from monad.models.json_json_formatter import JsonJsonFormatter as JsonJsonFormatter
-from monad.models.kms_settings_config import KmsSettingsConfig as KmsSettingsConfig
 from monad.models.koi_audit_logs_secrets_config import KoiAuditLogsSecretsConfig as KoiAuditLogsSecretsConfig
 from monad.models.koi_audit_logs_settings_config import KoiAuditLogsSettingsConfig as KoiAuditLogsSettingsConfig
 from monad.models.kv_lookup_output_settings_config import KvLookupOutputSettingsConfig as KvLookupOutputSettingsConfig
@@ -946,7 +912,6 @@ from monad.models.pubsub_secrets_config import PubsubSecretsConfig as PubsubSecr
 from monad.models.pubsub_settings_config import PubsubSettingsConfig as PubsubSettingsConfig
 from monad.models.rename_key_arguments_config import RenameKeyArgumentsConfig as RenameKeyArgumentsConfig
 from monad.models.rename_key_where_value_eq_arguments_config import RenameKeyWhereValueEqArgumentsConfig as RenameKeyWhereValueEqArgumentsConfig
-from monad.models.resource_evaluations_settings_config import ResourceEvaluationsSettingsConfig as ResourceEvaluationsSettingsConfig
 from monad.models.responder_error_response import ResponderErrorResponse as ResponderErrorResponse
 from monad.models.roles_info_secrets_config import RolesInfoSecretsConfig as RolesInfoSecretsConfig
 from monad.models.roles_info_settings_config import RolesInfoSettingsConfig as RolesInfoSettingsConfig
@@ -1050,10 +1015,6 @@ from monad.models.secret_processesor_input_config_settings import SecretProcesse
 from monad.models.secret_processesor_output_config import SecretProcessesorOutputConfig as SecretProcessesorOutputConfig
 from monad.models.secret_processesor_output_config_secrets import SecretProcessesorOutputConfigSecrets as SecretProcessesorOutputConfigSecrets
 from monad.models.secret_processesor_output_config_settings import SecretProcessesorOutputConfigSettings as SecretProcessesorOutputConfigSettings
-from monad.models.secretsmanager_secrets_config import SecretsmanagerSecretsConfig as SecretsmanagerSecretsConfig
-from monad.models.secretsmanager_settings_config import SecretsmanagerSettingsConfig as SecretsmanagerSettingsConfig
-from monad.models.security_groups_filter import SecurityGroupsFilter as SecurityGroupsFilter
-from monad.models.security_groups_settings_config import SecurityGroupsSettingsConfig as SecurityGroupsSettingsConfig
 from monad.models.security_lake_settings_config import SecurityLakeSettingsConfig as SecurityLakeSettingsConfig
 from monad.models.security_lake_source_account_details import SecurityLakeSourceAccountDetails as SecurityLakeSourceAccountDetails
 from monad.models.semgrep_code_findings_secrets_config import SemgrepCodeFindingsSecretsConfig as SemgrepCodeFindingsSecretsConfig
@@ -1110,7 +1071,6 @@ from monad.models.twilio_events_secrets_config import TwilioEventsSecretsConfig 
 from monad.models.twilio_events_settings_config import TwilioEventsSettingsConfig as TwilioEventsSettingsConfig
 from monad.models.twilio_sendgrid_email_activity_secrets_config import TwilioSendgridEmailActivitySecretsConfig as TwilioSendgridEmailActivitySecretsConfig
 from monad.models.twilio_sendgrid_email_activity_settings_config import TwilioSendgridEmailActivitySettingsConfig as TwilioSendgridEmailActivitySettingsConfig
-from monad.models.types_filter_name_string_type import TypesFilterNameStringType as TypesFilterNameStringType
 from monad.models.types_string_comparison import TypesStringComparison as TypesStringComparison
 from monad.models.types_string_filter import TypesStringFilter as TypesStringFilter
 from monad.models.universal_secrets_config import UniversalSecretsConfig as UniversalSecretsConfig

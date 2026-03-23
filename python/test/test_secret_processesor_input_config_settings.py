@@ -62,13 +62,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 region = '',
                 role_arn = '',
                 severity = '',
-                accounts = [
-                    monad.models.aws_iam_aliases/account.aws_iam_aliases.Account(
-                        account_id = '', 
-                        role_name = '', )
-                    ],
-                child_type = '',
-                parent_id = '',
                 bucket = '',
                 compression = '',
                 format = '',
@@ -109,12 +102,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                         name = '', 
                         value = '', )
                     ],
-                asset_types = [
-                    ''
-                    ],
-                resource_names = [
-                    ''
-                    ],
                 endpoint_url = '',
                 result = [
                     ''
@@ -123,10 +110,10 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ''
                     ],
                 enable_proto_payload_parsing = True,
-                filter = monad.models.cognito_users/filter.cognito_users.Filter(
-                    attribute = '', 
-                    operator = '', 
-                    value = '', ),
+                filter = '',
+                resource_names = [
+                    ''
+                    ],
                 cloud_platform = [
                     ''
                     ],
@@ -145,7 +132,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 parent_entity_id = '',
                 parent_entity_type = '',
                 org_id = '',
-                user_pool_id = '',
                 api_key_id = '',
                 domain_name = '',
                 aws_queue_url = '',
@@ -169,14 +155,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 state = '',
                 with_label_details = True,
                 bucket_name = '',
-                analyzer_arn = '',
-                filters = [
-                    monad.models.security_groups/filter.security_groups.Filter(
-                        name = '', 
-                        values = [
-                            ''
-                            ], )
-                    ],
                 alert_type = '',
                 embed = '',
                 primary_entity_type = '',
@@ -220,7 +198,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     'APPLICATION_AND_DATA'
                     ],
                 tenant_data_center = '',
-                kms_type = '',
                 audit_log_types = [
                     ''
                     ],
@@ -236,8 +213,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 github_client_id = '',
                 domain_url = '',
                 topic = '',
-                evaluation_context_identifier = '',
-                include_planned_deletion = True,
                 host_name = '',
                 account = '',
                 database = '',
@@ -267,6 +242,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 with_payload = True,
                 customer_id = '',
                 asset_status = [
+                    ''
+                    ],
+                asset_types = [
                     ''
                     ],
                 detection_method = [

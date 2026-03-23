@@ -28,12 +28,9 @@
 |**organization** | **String** | Your GitHub organization name |  [optional] |
 |**repository** | **String** | Filter by repository (format: org-name/repo-name) |  [optional] |
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
-|**region** | **String** | The AWS region where the security groups that are being fetched are located. |  [optional] |
-|**roleArn** | **String** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. |  [optional] |
+|**region** | **String** | Region of the OwnBackup instance |  [optional] |
+|**roleArn** | **String** | The ARN of the IAM role to assume for accessing Inspector. |  [optional] |
 |**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
-|**accounts** | [**List&lt;AwsIamAliasesAccount&gt;**](AwsIamAliasesAccount.md) | List of AWS accounts to fetch IAM aliases from |  [optional] |
-|**childType** | **String** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. |  [optional] |
-|**parentId** | **String** | Parent ID to list children for |  [optional] |
 |**bucket** | **String** | Name of the storage bucket |  [optional] |
 |**compression** | **String** | Compression format of the objects |  [optional] |
 |**format** | **String** | File format of the objects |  [optional] |
@@ -70,13 +67,12 @@
 |**hasNextPagePath** | **String** | JSONPath location to check if there are more pages |  [optional] |
 |**paginationCursorPath** | **String** | JSONPath location for pagination cursor/token |  [optional] |
 |**variables** | [**List&lt;MonadGraphqlInputVariable&gt;**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request |  [optional] |
-|**assetTypes** | **List&lt;String&gt;** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. |  [optional] |
-|**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
 |**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  [optional] |
 |**result** | **List&lt;String&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. |  [optional] |
 |**status** | **List&lt;String&gt;** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. |  [optional] |
 |**enableProtoPayloadParsing** | **Boolean** | Enables automatic parsing of embedded protocol buffer payloads within the input. |  [optional] |
-|**filter** | [**CognitoUsersFilter**](CognitoUsersFilter.md) |  |  [optional] |
+|**filter** | **String** | The filter to apply to the logs. |  [optional] |
+|**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
 |**cloudPlatform** | **List&lt;String&gt;** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |
 |**entityType** | **List&lt;String&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  [optional] |
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
@@ -89,7 +85,6 @@
 |**parentEntityId** | **String** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
 |**parentEntityType** | **String** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
 |**orgId** | **String** | URL of the organization |  [optional] |
-|**userPoolId** | **String** | User Pool ID to extract users from |  [optional] |
 |**apiKeyId** | **String** | API Key ID for authentication |  [optional] |
 |**domainName** | **String** | TODO: Name of domain added on Polymer Hub portal |  [optional] |
 |**awsQueueUrl** | **String** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console |  [optional] |
@@ -113,8 +108,6 @@
 |**state** | **String** | State to filter issues by e.g. opened, closed |  [optional] |
 |**withLabelDetails** | **Boolean** | Include label details in the response |  [optional] |
 |**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
-|**analyzerArn** | **String** | The [ARN of the analyzer] to retrieve findings from. |  [optional] |
-|**filters** | [**List&lt;SecurityGroupsFilter&gt;**](SecurityGroupsFilter.md) | Filters for the security groups |  [optional] |
 |**alertType** | **String** | Filter by alert type (e.g., policy_violated, tag_conflict) |  [optional] |
 |**embed** | **String** | Embed related resources in the data returned (e.g., read-consolidated-alert) |  [optional] |
 |**primaryEntityType** | **String** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) |  [optional] |
@@ -136,7 +129,6 @@
 |**securityScan** | **String** | @Description Filter by security scan source |  [optional] |
 |**stackLayers** | [**List&lt;StackLayersEnum&gt;**](#List&lt;StackLayersEnum&gt;) | @Description Filter Issues from specific stack layers |  [optional] |
 |**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; |  [optional] |
-|**kmsType** | **String** | Type of KMS resources to list |  [optional] |
 |**auditLogTypes** | **List&lt;String&gt;** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. |  [optional] |
 |**logType** | **String** |  |  [optional] |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  [optional] |
@@ -150,8 +142,6 @@
 |**githubClientId** | **String** | GitHub Client ID (alternative to personal access token) |  [optional] |
 |**domainUrl** | **String** | Domain URL for the Salesforce instance |  [optional] |
 |**topic** | **String** | Pub/Sub topic to subscribe to |  [optional] |
-|**evaluationContextIdentifier** | **String** | Filters proactive resource evaluations for a given infrastructure deployment. |  [optional] |
-|**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |
 |**hostName** | **String** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
@@ -175,6 +165,7 @@
 |**withPayload** | **Boolean** | Whether to include detailed payload information in the events. |  [optional] |
 |**customerId** | **String** | Optional: Filter audit logs by specific customer ID |  [optional] |
 |**assetStatus** | **List&lt;String&gt;** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. |  [optional] |
+|**assetTypes** | **List&lt;String&gt;** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. |  [optional] |
 |**detectionMethod** | **List&lt;String&gt;** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. |  [optional] |
 |**vendorSeverity** | **List&lt;String&gt;** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. |  [optional] |
 |**emailAddress** | **String** | This is the email address registered with your Zendesk account |  [optional] |

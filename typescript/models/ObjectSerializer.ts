@@ -22,13 +22,8 @@ export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
 export * from '../models/AuthenticationtypesTokenResponse';
 export * from '../models/AwsGuarddutySecretsConfig';
 export * from '../models/AwsGuarddutySettingsConfig';
-export * from '../models/AwsIamAliasesAccount';
-export * from '../models/AwsIamAliasesSettingsConfig';
-export * from '../models/AwsOrganizationsSettingsConfig';
 export * from '../models/AwsS3SecretsConfig';
 export * from '../models/AwsS3SettingsConfig';
-export * from '../models/AwssecurityhubSecretsConfig';
-export * from '../models/AwssecurityhubSettingsConfig';
 export * from '../models/AwssqsoutputSettingsConfig';
 export * from '../models/Awssqss3SettingsConfig';
 export * from '../models/AxiomSecretsConfig';
@@ -63,8 +58,6 @@ export * from '../models/BuildkiteAuditLogsSettingsConfig';
 export * from '../models/BuildkiteGraphqlInputSecretsConfig';
 export * from '../models/BuildkiteGraphqlInputSettingsConfig';
 export * from '../models/CisaUserSettingsConfig';
-export * from '../models/CloudAssetInventorySecretsConfig';
-export * from '../models/CloudAssetInventorySettingsConfig';
 export * from '../models/CloudConfigurationFindingsSecretsConfig';
 export * from '../models/CloudConfigurationFindingsSettingsConfig';
 export * from '../models/CloudLogsSecretsConfig';
@@ -90,8 +83,6 @@ export * from '../models/ClumioConsolidatedAlertsSecretsConfig';
 export * from '../models/ClumioConsolidatedAlertsSettingsConfig';
 export * from '../models/CodaAuditEventsSecretsConfig';
 export * from '../models/CodaAuditEventsSettingsConfig';
-export * from '../models/CognitoUsersFilter';
-export * from '../models/CognitoUsersSettingsConfig';
 export * from '../models/CommunityEditionSecretsConfig';
 export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
@@ -139,7 +130,6 @@ export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
 export * from '../models/GeolocusSettingsConfig';
 export * from '../models/GithubAdvisoryUserSettingsConfig';
-export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -161,9 +151,6 @@ export * from '../models/GreenhouseAuditLogsSettingsConfig';
 export * from '../models/HttpHeaders';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
-export * from '../models/IamAccessAnalyzerCriterion';
-export * from '../models/IamAccessAnalyzerFilter';
-export * from '../models/IamAccessAnalyzerSettingsConfig';
 export * from '../models/IndividualAlertsSecretsConfig';
 export * from '../models/IndividualAlertsSettingsConfig';
 export * from '../models/InputsConnectorMeta';
@@ -175,7 +162,6 @@ export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqArgumentsConfig';
 export * from '../models/JsonJsonFormatter';
-export * from '../models/KmsSettingsConfig';
 export * from '../models/KoiAuditLogsSecretsConfig';
 export * from '../models/KoiAuditLogsSettingsConfig';
 export * from '../models/KvLookupOutputSettingsConfig';
@@ -318,7 +304,6 @@ export * from '../models/PubsubSecretsConfig';
 export * from '../models/PubsubSettingsConfig';
 export * from '../models/RenameKeyArgumentsConfig';
 export * from '../models/RenameKeyWhereValueEqArgumentsConfig';
-export * from '../models/ResourceEvaluationsSettingsConfig';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RolesInfoSecretsConfig';
 export * from '../models/RolesInfoSettingsConfig';
@@ -422,10 +407,6 @@ export * from '../models/SecretProcessesorInputConfigSettings';
 export * from '../models/SecretProcessesorOutputConfig';
 export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
-export * from '../models/SecretsmanagerSecretsConfig';
-export * from '../models/SecretsmanagerSettingsConfig';
-export * from '../models/SecurityGroupsFilter';
-export * from '../models/SecurityGroupsSettingsConfig';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -482,7 +463,6 @@ export * from '../models/TwilioEventsSecretsConfig';
 export * from '../models/TwilioEventsSettingsConfig';
 export * from '../models/TwilioSendgridEmailActivitySecretsConfig';
 export * from '../models/TwilioSendgridEmailActivitySettingsConfig';
-export * from '../models/TypesFilterNameStringType';
 export * from '../models/TypesStringComparison';
 export * from '../models/TypesStringFilter';
 export * from '../models/UniversalSecretsConfig';
@@ -535,13 +515,8 @@ import { AuthenticationtypesMFAEnrollmentTicket } from '../models/Authentication
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
-import { AwsIamAliasesAccount } from '../models/AwsIamAliasesAccount';
-import { AwsIamAliasesSettingsConfig } from '../models/AwsIamAliasesSettingsConfig';
-import { AwsOrganizationsSettingsConfig } from '../models/AwsOrganizationsSettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
-import { AwssecurityhubSecretsConfig } from '../models/AwssecurityhubSecretsConfig';
-import { AwssecurityhubSettingsConfig } from '../models/AwssecurityhubSettingsConfig';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
 import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
@@ -576,8 +551,6 @@ import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSe
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
 import { BuildkiteGraphqlInputSettingsConfig } from '../models/BuildkiteGraphqlInputSettingsConfig';
 import { CisaUserSettingsConfig } from '../models/CisaUserSettingsConfig';
-import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
-import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
 import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
@@ -603,8 +576,6 @@ import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolida
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
 import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
-import { CognitoUsersFilter } from '../models/CognitoUsersFilter';
-import { CognitoUsersSettingsConfig } from '../models/CognitoUsersSettingsConfig';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
@@ -652,7 +623,6 @@ import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
 import { GithubAdvisoryUserSettingsConfig } from '../models/GithubAdvisoryUserSettingsConfig';
-import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -674,9 +644,6 @@ import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogs
 import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
-import { IamAccessAnalyzerCriterion } from '../models/IamAccessAnalyzerCriterion';
-import { IamAccessAnalyzerFilter } from '../models/IamAccessAnalyzerFilter';
-import { IamAccessAnalyzerSettingsConfig } from '../models/IamAccessAnalyzerSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
@@ -688,7 +655,6 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig      , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
-import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
@@ -831,7 +797,6 @@ import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
-import { ResourceEvaluationsSettingsConfig } from '../models/ResourceEvaluationsSettingsConfig';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -935,10 +900,6 @@ import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
-import { SecretsmanagerSecretsConfig } from '../models/SecretsmanagerSecretsConfig';
-import { SecretsmanagerSettingsConfig } from '../models/SecretsmanagerSettingsConfig';
-import { SecurityGroupsFilter } from '../models/SecurityGroupsFilter';
-import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -995,7 +956,6 @@ import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
 import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
 import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';
 import { TwilioSendgridEmailActivitySettingsConfig } from '../models/TwilioSendgridEmailActivitySettingsConfig';
-import { TypesFilterNameStringType } from '../models/TypesFilterNameStringType';
 import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter   } from '../models/TypesStringFilter';
 import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
@@ -1051,7 +1011,6 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsIssueTypesEnum",
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsStackLayersEnum",
-    "TypesFilterNameStringType",
     "TypesStringComparison",
 ]);
 
@@ -1080,13 +1039,8 @@ let typeMap: {[index: string]: any} = {
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
     "AwsGuarddutySecretsConfig": AwsGuarddutySecretsConfig,
     "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
-    "AwsIamAliasesAccount": AwsIamAliasesAccount,
-    "AwsIamAliasesSettingsConfig": AwsIamAliasesSettingsConfig,
-    "AwsOrganizationsSettingsConfig": AwsOrganizationsSettingsConfig,
     "AwsS3SecretsConfig": AwsS3SecretsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
-    "AwssecurityhubSecretsConfig": AwssecurityhubSecretsConfig,
-    "AwssecurityhubSettingsConfig": AwssecurityhubSettingsConfig,
     "AwssqsoutputSettingsConfig": AwssqsoutputSettingsConfig,
     "Awssqss3SettingsConfig": Awssqss3SettingsConfig,
     "AxiomSecretsConfig": AxiomSecretsConfig,
@@ -1121,8 +1075,6 @@ let typeMap: {[index: string]: any} = {
     "BuildkiteGraphqlInputSecretsConfig": BuildkiteGraphqlInputSecretsConfig,
     "BuildkiteGraphqlInputSettingsConfig": BuildkiteGraphqlInputSettingsConfig,
     "CisaUserSettingsConfig": CisaUserSettingsConfig,
-    "CloudAssetInventorySecretsConfig": CloudAssetInventorySecretsConfig,
-    "CloudAssetInventorySettingsConfig": CloudAssetInventorySettingsConfig,
     "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
     "CloudConfigurationFindingsSettingsConfig": CloudConfigurationFindingsSettingsConfig,
     "CloudLogsSecretsConfig": CloudLogsSecretsConfig,
@@ -1148,8 +1100,6 @@ let typeMap: {[index: string]: any} = {
     "ClumioConsolidatedAlertsSettingsConfig": ClumioConsolidatedAlertsSettingsConfig,
     "CodaAuditEventsSecretsConfig": CodaAuditEventsSecretsConfig,
     "CodaAuditEventsSettingsConfig": CodaAuditEventsSettingsConfig,
-    "CognitoUsersFilter": CognitoUsersFilter,
-    "CognitoUsersSettingsConfig": CognitoUsersSettingsConfig,
     "CommunityEditionSecretsConfig": CommunityEditionSecretsConfig,
     "CommunityEditionSettingsConfig": CommunityEditionSettingsConfig,
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
@@ -1197,7 +1147,6 @@ let typeMap: {[index: string]: any} = {
     "FullScansSettingsConfig": FullScansSettingsConfig,
     "GeolocusSettingsConfig": GeolocusSettingsConfig,
     "GithubAdvisoryUserSettingsConfig": GithubAdvisoryUserSettingsConfig,
-    "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
     "GithubComMonadIncCorePkgTypesModelsAlert": GithubComMonadIncCorePkgTypesModelsAlert,
     "GithubComMonadIncCorePkgTypesModelsAlertStatus": GithubComMonadIncCorePkgTypesModelsAlertStatus,
     "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,
@@ -1219,9 +1168,6 @@ let typeMap: {[index: string]: any} = {
     "HttpHeaders": HttpHeaders,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
-    "IamAccessAnalyzerCriterion": IamAccessAnalyzerCriterion,
-    "IamAccessAnalyzerFilter": IamAccessAnalyzerFilter,
-    "IamAccessAnalyzerSettingsConfig": IamAccessAnalyzerSettingsConfig,
     "IndividualAlertsSecretsConfig": IndividualAlertsSecretsConfig,
     "IndividualAlertsSettingsConfig": IndividualAlertsSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
@@ -1233,7 +1179,6 @@ let typeMap: {[index: string]: any} = {
     "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqArgumentsConfig": JqArgumentsConfig,
     "JsonJsonFormatter": JsonJsonFormatter,
-    "KmsSettingsConfig": KmsSettingsConfig,
     "KoiAuditLogsSecretsConfig": KoiAuditLogsSecretsConfig,
     "KoiAuditLogsSettingsConfig": KoiAuditLogsSettingsConfig,
     "KvLookupOutputSettingsConfig": KvLookupOutputSettingsConfig,
@@ -1376,7 +1321,6 @@ let typeMap: {[index: string]: any} = {
     "PubsubSettingsConfig": PubsubSettingsConfig,
     "RenameKeyArgumentsConfig": RenameKeyArgumentsConfig,
     "RenameKeyWhereValueEqArgumentsConfig": RenameKeyWhereValueEqArgumentsConfig,
-    "ResourceEvaluationsSettingsConfig": ResourceEvaluationsSettingsConfig,
     "ResponderErrorResponse": ResponderErrorResponse,
     "RolesInfoSecretsConfig": RolesInfoSecretsConfig,
     "RolesInfoSettingsConfig": RolesInfoSettingsConfig,
@@ -1480,10 +1424,6 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfig": SecretProcessesorOutputConfig,
     "SecretProcessesorOutputConfigSecrets": SecretProcessesorOutputConfigSecretsClass,
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
-    "SecretsmanagerSecretsConfig": SecretsmanagerSecretsConfig,
-    "SecretsmanagerSettingsConfig": SecretsmanagerSettingsConfig,
-    "SecurityGroupsFilter": SecurityGroupsFilter,
-    "SecurityGroupsSettingsConfig": SecurityGroupsSettingsConfig,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,
