@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DefenderForEndpointAlertsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T20:12:44.935115881Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:30:39.445438032Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class DefenderForEndpointAlertsSettingsConfig {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
