@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineMetric
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T16:30:39.445438032Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T17:08:47.693293731Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2PipelineMetric {
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
