@@ -36,7 +36,6 @@ import org.openapitools.client.model.AzureBlobStorageSecretsConfig;
 import org.openapitools.client.model.AzureEventHubsSecretsConfig;
 import org.openapitools.client.model.AzureVnetFlowLogsSecretsConfig;
 import org.openapitools.client.model.BackblazeB2SecretsConfig;
-import org.openapitools.client.model.BigqueryCronSecretsConfig;
 import org.openapitools.client.model.BigqueryInputSecretsConfig;
 import org.openapitools.client.model.BitwardenEventsSecretsConfig;
 import org.openapitools.client.model.BoxEventsSecretsConfig;
@@ -118,7 +117,6 @@ import org.openapitools.client.model.TwilioEventsSecretsConfig;
 import org.openapitools.client.model.TwilioSendgridEmailActivitySecretsConfig;
 import org.openapitools.client.model.UniversalSecretsConfig;
 import org.openapitools.client.model.UsersInfoSecretsConfig;
-import org.openapitools.client.model.UsersSecretsConfig;
 import org.openapitools.client.model.VercelUserEventsSecretsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSecretsConfig;
 import org.openapitools.client.model.VulnerabilitiesCronSecretsConfig;
@@ -392,22 +390,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void twilioAuthTokenTest() {
         // TODO: test twilioAuthToken
-    }
-
-    /**
-     * Test the property 'customerId'
-     */
-    @Test
-    public void customerIdTest() {
-        // TODO: test customerId
-    }
-
-    /**
-     * Test the property 'domain'
-     */
-    @Test
-    public void domainTest() {
-        // TODO: test domain
     }
 
 }

@@ -46,8 +46,6 @@ export * from '../models/BackblazeB2SettingsConfig';
 export * from '../models/BackblazeSecretsConfig';
 export * from '../models/BackblazeSettingsConfig';
 export * from '../models/BatchConfigBatchConfig';
-export * from '../models/BigqueryCronSecretsConfig';
-export * from '../models/BigqueryCronSettingsConfig';
 export * from '../models/BigqueryInputSecretsConfig';
 export * from '../models/BigqueryInputSettingsConfig';
 export * from '../models/BigquerySecretsConfig';
@@ -491,8 +489,6 @@ export * from '../models/UniversalSecretsConfig';
 export * from '../models/UniversalSettingsConfig';
 export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
-export * from '../models/UsersSecretsConfig';
-export * from '../models/UsersSettingsConfig';
 export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/VercelUserEventsSecretsConfig';
 export * from '../models/VercelUserEventsSettingsConfig';
@@ -563,8 +559,6 @@ import { BackblazeB2SettingsConfig } from '../models/BackblazeB2SettingsConfig';
 import { BackblazeSecretsConfig } from '../models/BackblazeSecretsConfig';
 import { BackblazeSettingsConfig } from '../models/BackblazeSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
-import { BigqueryCronSecretsConfig } from '../models/BigqueryCronSecretsConfig';
-import { BigqueryCronSettingsConfig } from '../models/BigqueryCronSettingsConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
@@ -1008,8 +1002,6 @@ import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
 import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
-import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
-import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
@@ -1112,8 +1104,6 @@ let typeMap: {[index: string]: any} = {
     "BackblazeSecretsConfig": BackblazeSecretsConfig,
     "BackblazeSettingsConfig": BackblazeSettingsConfig,
     "BatchConfigBatchConfig": BatchConfigBatchConfig,
-    "BigqueryCronSecretsConfig": BigqueryCronSecretsConfig,
-    "BigqueryCronSettingsConfig": BigqueryCronSettingsConfig,
     "BigqueryInputSecretsConfig": BigqueryInputSecretsConfig,
     "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,
     "BigquerySecretsConfig": BigquerySecretsConfig,
@@ -1555,8 +1545,6 @@ let typeMap: {[index: string]: any} = {
     "UniversalSettingsConfig": UniversalSettingsConfig,
     "UsersInfoSecretsConfig": UsersInfoSecretsConfig,
     "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
-    "UsersSecretsConfig": UsersSecretsConfig,
-    "UsersSettingsConfig": UsersSettingsConfig,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,

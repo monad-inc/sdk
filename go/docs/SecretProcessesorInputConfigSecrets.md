@@ -35,8 +35,6 @@ Name | Type | Description | Notes
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TwilioAccountSid** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TwilioAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**CustomerId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Domain** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -821,56 +819,6 @@ SetTwilioAuthToken sets TwilioAuthToken field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasTwilioAuthToken() bool`
 
 HasTwilioAuthToken returns a boolean if a field has been set.
-
-### GetCustomerId
-
-`func (o *SecretProcessesorInputConfigSecrets) GetCustomerId() ModelsSecret`
-
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
-
-### GetCustomerIdOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetCustomerIdOk() (*ModelsSecret, bool)`
-
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerId
-
-`func (o *SecretProcessesorInputConfigSecrets) SetCustomerId(v ModelsSecret)`
-
-SetCustomerId sets CustomerId field to given value.
-
-### HasCustomerId
-
-`func (o *SecretProcessesorInputConfigSecrets) HasCustomerId() bool`
-
-HasCustomerId returns a boolean if a field has been set.
-
-### GetDomain
-
-`func (o *SecretProcessesorInputConfigSecrets) GetDomain() ModelsSecret`
-
-GetDomain returns the Domain field if non-nil, zero value otherwise.
-
-### GetDomainOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetDomainOk() (*ModelsSecret, bool)`
-
-GetDomainOk returns a tuple with the Domain field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDomain
-
-`func (o *SecretProcessesorInputConfigSecrets) SetDomain(v ModelsSecret)`
-
-SetDomain sets Domain field to given value.
-
-### HasDomain
-
-`func (o *SecretProcessesorInputConfigSecrets) HasDomain() bool`
-
-HasDomain returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

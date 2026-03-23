@@ -37,7 +37,6 @@ type SecretProcessesorInputConfigSettings struct {
 	AzureEventHubsSettingsConfig *AzureEventHubsSettingsConfig
 	AzureVnetFlowLogsSettingsConfig *AzureVnetFlowLogsSettingsConfig
 	BackblazeB2SettingsConfig *BackblazeB2SettingsConfig
-	BigqueryCronSettingsConfig *BigqueryCronSettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BitwardenEventsSettingsConfig *BitwardenEventsSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
@@ -131,7 +130,6 @@ type SecretProcessesorInputConfigSettings struct {
 	TwilioSendgridEmailActivitySettingsConfig *TwilioSendgridEmailActivitySettingsConfig
 	UniversalSettingsConfig *UniversalSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
-	UsersSettingsConfig *UsersSettingsConfig
 	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
 	VulnerabilitiesCronSettingsConfig *VulnerabilitiesCronSettingsConfig
@@ -268,13 +266,6 @@ func AzureVnetFlowLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Az
 func BackblazeB2SettingsConfigAsSecretProcessesorInputConfigSettings(v *BackblazeB2SettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BackblazeB2SettingsConfig: v,
-	}
-}
-
-// BigqueryCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BigqueryCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func BigqueryCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *BigqueryCronSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		BigqueryCronSettingsConfig: v,
 	}
 }
 
@@ -929,13 +920,6 @@ func UsersInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *UsersInfoS
 	}
 }
 
-// UsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns UsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func UsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *UsersSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		UsersSettingsConfig: v,
-	}
-}
-
 // VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VercelUserEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VercelUserEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -1322,23 +1306,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BackblazeB2SettingsConfig = nil
-	}
-
-	// try to unmarshal data into BigqueryCronSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.BigqueryCronSettingsConfig)
-	if err == nil {
-		jsonBigqueryCronSettingsConfig, _ := json.Marshal(dst.BigqueryCronSettingsConfig)
-		if string(jsonBigqueryCronSettingsConfig) == "{}" { // empty struct
-			dst.BigqueryCronSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BigqueryCronSettingsConfig); err != nil {
-				dst.BigqueryCronSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BigqueryCronSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BigqueryInputSettingsConfig
@@ -2922,23 +2889,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.UsersInfoSettingsConfig = nil
 	}
 
-	// try to unmarshal data into UsersSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.UsersSettingsConfig)
-	if err == nil {
-		jsonUsersSettingsConfig, _ := json.Marshal(dst.UsersSettingsConfig)
-		if string(jsonUsersSettingsConfig) == "{}" { // empty struct
-			dst.UsersSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.UsersSettingsConfig); err != nil {
-				dst.UsersSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.UsersSettingsConfig = nil
-	}
-
 	// try to unmarshal data into VercelUserEventsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSettingsConfig)
 	if err == nil {
@@ -3146,7 +3096,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AzureEventHubsSettingsConfig = nil
 		dst.AzureVnetFlowLogsSettingsConfig = nil
 		dst.BackblazeB2SettingsConfig = nil
-		dst.BigqueryCronSettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BitwardenEventsSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
@@ -3240,7 +3189,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TwilioSendgridEmailActivitySettingsConfig = nil
 		dst.UniversalSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
-		dst.UsersSettingsConfig = nil
 		dst.VercelUserEventsSettingsConfig = nil
 		dst.VoltioAuditLogsSettingsConfig = nil
 		dst.VulnerabilitiesCronSettingsConfig = nil
@@ -3333,10 +3281,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BackblazeB2SettingsConfig != nil {
 		return json.Marshal(&src.BackblazeB2SettingsConfig)
-	}
-
-	if src.BigqueryCronSettingsConfig != nil {
-		return json.Marshal(&src.BigqueryCronSettingsConfig)
 	}
 
 	if src.BigqueryInputSettingsConfig != nil {
@@ -3711,10 +3655,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.UsersInfoSettingsConfig)
 	}
 
-	if src.UsersSettingsConfig != nil {
-		return json.Marshal(&src.UsersSettingsConfig)
-	}
-
 	if src.VercelUserEventsSettingsConfig != nil {
 		return json.Marshal(&src.VercelUserEventsSettingsConfig)
 	}
@@ -3837,10 +3777,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.BackblazeB2SettingsConfig != nil {
 		return obj.BackblazeB2SettingsConfig
-	}
-
-	if obj.BigqueryCronSettingsConfig != nil {
-		return obj.BigqueryCronSettingsConfig
 	}
 
 	if obj.BigqueryInputSettingsConfig != nil {
@@ -4215,10 +4151,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.UsersInfoSettingsConfig
 	}
 
-	if obj.UsersSettingsConfig != nil {
-		return obj.UsersSettingsConfig
-	}
-
 	if obj.VercelUserEventsSettingsConfig != nil {
 		return obj.VercelUserEventsSettingsConfig
 	}
@@ -4339,10 +4271,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BackblazeB2SettingsConfig != nil {
 		return *obj.BackblazeB2SettingsConfig
-	}
-
-	if obj.BigqueryCronSettingsConfig != nil {
-		return *obj.BigqueryCronSettingsConfig
 	}
 
 	if obj.BigqueryInputSettingsConfig != nil {
@@ -4715,10 +4643,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.UsersInfoSettingsConfig != nil {
 		return *obj.UsersInfoSettingsConfig
-	}
-
-	if obj.UsersSettingsConfig != nil {
-		return *obj.UsersSettingsConfig
 	}
 
 	if obj.VercelUserEventsSettingsConfig != nil {

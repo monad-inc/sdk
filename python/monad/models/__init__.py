@@ -62,8 +62,6 @@ from monad.models.backblaze_b2_settings_config import BackblazeB2SettingsConfig
 from monad.models.backblaze_secrets_config import BackblazeSecretsConfig
 from monad.models.backblaze_settings_config import BackblazeSettingsConfig
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig
-from monad.models.bigquery_cron_secrets_config import BigqueryCronSecretsConfig
-from monad.models.bigquery_cron_settings_config import BigqueryCronSettingsConfig
 from monad.models.bigquery_input_secrets_config import BigqueryInputSecretsConfig
 from monad.models.bigquery_input_settings_config import BigqueryInputSettingsConfig
 from monad.models.bigquery_secrets_config import BigquerySecretsConfig
@@ -507,8 +505,6 @@ from monad.models.universal_secrets_config import UniversalSecretsConfig
 from monad.models.universal_settings_config import UniversalSettingsConfig
 from monad.models.users_info_secrets_config import UsersInfoSecretsConfig
 from monad.models.users_info_settings_config import UsersInfoSettingsConfig
-from monad.models.users_secrets_config import UsersSecretsConfig
-from monad.models.users_settings_config import UsersSettingsConfig
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig
 from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecretsConfig
 from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig

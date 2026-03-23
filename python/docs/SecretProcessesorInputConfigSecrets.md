@@ -36,8 +36,6 @@ Name | Type | Description | Notes
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**customer_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**domain** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

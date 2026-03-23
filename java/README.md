@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-23T17:35:08.054479048Z[Etc/UTC]
+  - Build date: 2026-03-23T18:43:12.395405761Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -342,8 +342,6 @@ Class | Method | HTTP request | Description
  - [BackblazeSecretsConfig](docs/BackblazeSecretsConfig.md)
  - [BackblazeSettingsConfig](docs/BackblazeSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
- - [BigqueryCronSecretsConfig](docs/BigqueryCronSecretsConfig.md)
- - [BigqueryCronSettingsConfig](docs/BigqueryCronSettingsConfig.md)
  - [BigqueryInputSecretsConfig](docs/BigqueryInputSecretsConfig.md)
  - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)
  - [BigquerySecretsConfig](docs/BigquerySecretsConfig.md)
@@ -787,8 +785,6 @@ Class | Method | HTTP request | Description
  - [UniversalSettingsConfig](docs/UniversalSettingsConfig.md)
  - [UsersInfoSecretsConfig](docs/UsersInfoSecretsConfig.md)
  - [UsersInfoSettingsConfig](docs/UsersInfoSettingsConfig.md)
- - [UsersSecretsConfig](docs/UsersSecretsConfig.md)
- - [UsersSettingsConfig](docs/UsersSettingsConfig.md)
  - [UtcTimestampArgumentsConfig](docs/UtcTimestampArgumentsConfig.md)
  - [VercelUserEventsSecretsConfig](docs/VercelUserEventsSecretsConfig.md)
  - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)

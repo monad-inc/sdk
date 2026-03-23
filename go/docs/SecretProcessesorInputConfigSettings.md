@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Service** | Pointer to **string** | The Aiven service name | [optional] 
 **AuthType** | Pointer to **string** | AuthType is the type of authentication used for the input | [optional] 
-**Email** | Pointer to **string** | Email address to use to authenticate with Google Cloud (required for service_account auth). | [optional] 
+**Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **Actions** | Pointer to **[]string** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) | [optional] 
 **Actor** | Pointer to **string** | Filter by the username that initiated the action | [optional] 

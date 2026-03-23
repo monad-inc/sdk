@@ -111,8 +111,6 @@ __all__ = [
     "BackblazeSecretsConfig",
     "BackblazeSettingsConfig",
     "BatchConfigBatchConfig",
-    "BigqueryCronSecretsConfig",
-    "BigqueryCronSettingsConfig",
     "BigqueryInputSecretsConfig",
     "BigqueryInputSettingsConfig",
     "BigquerySecretsConfig",
@@ -556,8 +554,6 @@ __all__ = [
     "UniversalSettingsConfig",
     "UsersInfoSecretsConfig",
     "UsersInfoSettingsConfig",
-    "UsersSecretsConfig",
-    "UsersSettingsConfig",
     "UtcTimestampArgumentsConfig",
     "VercelUserEventsSecretsConfig",
     "VercelUserEventsSettingsConfig",
@@ -678,8 +674,6 @@ from monad.models.backblaze_b2_settings_config import BackblazeB2SettingsConfig 
 from monad.models.backblaze_secrets_config import BackblazeSecretsConfig as BackblazeSecretsConfig
 from monad.models.backblaze_settings_config import BackblazeSettingsConfig as BackblazeSettingsConfig
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig as BatchConfigBatchConfig
-from monad.models.bigquery_cron_secrets_config import BigqueryCronSecretsConfig as BigqueryCronSecretsConfig
-from monad.models.bigquery_cron_settings_config import BigqueryCronSettingsConfig as BigqueryCronSettingsConfig
 from monad.models.bigquery_input_secrets_config import BigqueryInputSecretsConfig as BigqueryInputSecretsConfig
 from monad.models.bigquery_input_settings_config import BigqueryInputSettingsConfig as BigqueryInputSettingsConfig
 from monad.models.bigquery_secrets_config import BigquerySecretsConfig as BigquerySecretsConfig
@@ -1123,8 +1117,6 @@ from monad.models.universal_secrets_config import UniversalSecretsConfig as Univ
 from monad.models.universal_settings_config import UniversalSettingsConfig as UniversalSettingsConfig
 from monad.models.users_info_secrets_config import UsersInfoSecretsConfig as UsersInfoSecretsConfig
 from monad.models.users_info_settings_config import UsersInfoSettingsConfig as UsersInfoSettingsConfig
-from monad.models.users_secrets_config import UsersSecretsConfig as UsersSecretsConfig
-from monad.models.users_settings_config import UsersSettingsConfig as UsersSettingsConfig
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig as UtcTimestampArgumentsConfig
 from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecretsConfig as VercelUserEventsSecretsConfig
 from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig as VercelUserEventsSettingsConfig

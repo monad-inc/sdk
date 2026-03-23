@@ -283,22 +283,6 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
                     name = '', 
                     organization_id = '', 
                     updated_at = '', 
-                    value = '', ),
-                customer_id = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    updated_at = '', 
-                    value = '', ),
-                domain = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    updated_at = '', 
                     value = '', )
             )
         else:

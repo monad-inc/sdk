@@ -38,8 +38,6 @@
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**customerId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**domain** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 
