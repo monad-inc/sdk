@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Salesforce Pubsub secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-24T16:08:59.822639412Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-24T17:38:20.483920839Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PubsubSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
