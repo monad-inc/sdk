@@ -26,8 +26,6 @@
 |**personalAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**awsAccessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**awsSecretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**rsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

@@ -23,8 +23,6 @@ Name | Type | Description | Notes
 **PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**AwsAccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**AwsSecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RsaPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **HarvestApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -519,56 +517,6 @@ SetAccessToken sets AccessToken field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasAccessToken() bool`
 
 HasAccessToken returns a boolean if a field has been set.
-
-### GetAwsAccessKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAwsAccessKey() ModelsSecret`
-
-GetAwsAccessKey returns the AwsAccessKey field if non-nil, zero value otherwise.
-
-### GetAwsAccessKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAwsAccessKeyOk() (*ModelsSecret, bool)`
-
-GetAwsAccessKeyOk returns a tuple with the AwsAccessKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAwsAccessKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetAwsAccessKey(v ModelsSecret)`
-
-SetAwsAccessKey sets AwsAccessKey field to given value.
-
-### HasAwsAccessKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasAwsAccessKey() bool`
-
-HasAwsAccessKey returns a boolean if a field has been set.
-
-### GetAwsSecretKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAwsSecretKey() ModelsSecret`
-
-GetAwsSecretKey returns the AwsSecretKey field if non-nil, zero value otherwise.
-
-### GetAwsSecretKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAwsSecretKeyOk() (*ModelsSecret, bool)`
-
-GetAwsSecretKeyOk returns a tuple with the AwsSecretKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAwsSecretKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetAwsSecretKey(v ModelsSecret)`
-
-SetAwsSecretKey sets AwsSecretKey field to given value.
-
-### HasAwsSecretKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasAwsSecretKey() bool`
-
-HasAwsSecretKey returns a boolean if a field has been set.
 
 ### GetRsaPrivateKey
 

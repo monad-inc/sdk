@@ -55,7 +55,6 @@ import org.openapitools.client.model.ClumioAuditLogsSecretsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSecretsConfig;
 import org.openapitools.client.model.CodaAuditEventsSecretsConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSecretsConfig;
-import org.openapitools.client.model.CrowdstrikeFdrSecretsConfig;
 import org.openapitools.client.model.CustomerEventDataSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
 import org.openapitools.client.model.DeviceDetailsSecretsConfig;
@@ -291,22 +290,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void accessTokenTest() {
         // TODO: test accessToken
-    }
-
-    /**
-     * Test the property 'awsAccessKey'
-     */
-    @Test
-    public void awsAccessKeyTest() {
-        // TODO: test awsAccessKey
-    }
-
-    /**
-     * Test the property 'awsSecretKey'
-     */
-    @Test
-    public void awsSecretKeyTest() {
-        // TODO: test awsSecretKey
     }
 
     /**

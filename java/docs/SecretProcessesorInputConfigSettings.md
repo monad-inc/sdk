@@ -87,10 +87,6 @@
 |**orgId** | **String** | URL of the organization |  [optional] |
 |**apiKeyId** | **String** | API Key ID for authentication |  [optional] |
 |**domainName** | **String** | TODO: Name of domain added on Polymer Hub portal |  [optional] |
-|**awsQueueUrl** | **String** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console |  [optional] |
-|**awsRegionName** | **String** | Name of the region where the queue resides |  [optional] |
-|**awsS3Url** | **String** | The URL of the S3 bucket |  [optional] |
-|**visibilityTimeout** | **Integer** | Time in seconds before a message is returned back to the SQS queue |  [optional] |
 |**environment** | **String** | Determines the URI {environment}.docusign.com |  [optional] |
 |**userId** | **String** | ID of the user to harvest audit logs for |  [optional] |
 |**category** | **String** | The Category of logs to query |  [optional] |

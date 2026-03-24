@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-24T15:41:38.093637516Z[Etc/UTC]
+  - Build date: 2026-03-24T16:08:59.822639412Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -390,8 +390,6 @@ Class | Method | HTTP request | Description
  - [CreateKeyValueIfKeyValueArgumentsConfig](docs/CreateKeyValueIfKeyValueArgumentsConfig.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)
  - [CriblHttpSettingsConfig](docs/CriblHttpSettingsConfig.md)
- - [CrowdstrikeFdrSecretsConfig](docs/CrowdstrikeFdrSecretsConfig.md)
- - [CrowdstrikeFdrSettingsConfig](docs/CrowdstrikeFdrSettingsConfig.md)
  - [CustomerEventDataSecretsConfig](docs/CustomerEventDataSecretsConfig.md)
  - [CustomerEventDataSettingsConfig](docs/CustomerEventDataSettingsConfig.md)
  - [DatadogSecretsConfig](docs/DatadogSecretsConfig.md)

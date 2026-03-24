@@ -60,7 +60,6 @@ import org.openapitools.client.model.ClumioAuditLogsSettingsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSettingsConfig;
 import org.openapitools.client.model.CodaAuditEventsSettingsConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
-import org.openapitools.client.model.CrowdstrikeFdrSettingsConfig;
 import org.openapitools.client.model.CustomerEventDataSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
 import org.openapitools.client.model.DeviceDetailsSettingsConfig;
@@ -791,38 +790,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void domainNameTest() {
         // TODO: test domainName
-    }
-
-    /**
-     * Test the property 'awsQueueUrl'
-     */
-    @Test
-    public void awsQueueUrlTest() {
-        // TODO: test awsQueueUrl
-    }
-
-    /**
-     * Test the property 'awsRegionName'
-     */
-    @Test
-    public void awsRegionNameTest() {
-        // TODO: test awsRegionName
-    }
-
-    /**
-     * Test the property 'awsS3Url'
-     */
-    @Test
-    public void awsS3UrlTest() {
-        // TODO: test awsS3Url
-    }
-
-    /**
-     * Test the property 'visibilityTimeout'
-     */
-    @Test
-    public void visibilityTimeoutTest() {
-        // TODO: test visibilityTimeout
     }
 
     /**

@@ -84,10 +84,6 @@ Name | Type | Description | Notes
 **OrgId** | Pointer to **string** | URL of the organization | [optional] 
 **ApiKeyId** | Pointer to **string** | API Key ID for authentication | [optional] 
 **DomainName** | Pointer to **string** | TODO: Name of domain added on Polymer Hub portal | [optional] 
-**AwsQueueUrl** | Pointer to **string** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console | [optional] 
-**AwsRegionName** | Pointer to **string** | Name of the region where the queue resides | [optional] 
-**AwsS3Url** | Pointer to **string** | The URL of the S3 bucket | [optional] 
-**VisibilityTimeout** | Pointer to **int32** | Time in seconds before a message is returned back to the SQS queue | [optional] 
 **Environment** | Pointer to **string** | Determines the URI {environment}.docusign.com | [optional] 
 **UserId** | Pointer to **string** | ID of the user to harvest audit logs for | [optional] 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
@@ -2186,106 +2182,6 @@ SetDomainName sets DomainName field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasDomainName() bool`
 
 HasDomainName returns a boolean if a field has been set.
-
-### GetAwsQueueUrl
-
-`func (o *SecretProcessesorInputConfigSettings) GetAwsQueueUrl() string`
-
-GetAwsQueueUrl returns the AwsQueueUrl field if non-nil, zero value otherwise.
-
-### GetAwsQueueUrlOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAwsQueueUrlOk() (*string, bool)`
-
-GetAwsQueueUrlOk returns a tuple with the AwsQueueUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAwsQueueUrl
-
-`func (o *SecretProcessesorInputConfigSettings) SetAwsQueueUrl(v string)`
-
-SetAwsQueueUrl sets AwsQueueUrl field to given value.
-
-### HasAwsQueueUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasAwsQueueUrl() bool`
-
-HasAwsQueueUrl returns a boolean if a field has been set.
-
-### GetAwsRegionName
-
-`func (o *SecretProcessesorInputConfigSettings) GetAwsRegionName() string`
-
-GetAwsRegionName returns the AwsRegionName field if non-nil, zero value otherwise.
-
-### GetAwsRegionNameOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAwsRegionNameOk() (*string, bool)`
-
-GetAwsRegionNameOk returns a tuple with the AwsRegionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAwsRegionName
-
-`func (o *SecretProcessesorInputConfigSettings) SetAwsRegionName(v string)`
-
-SetAwsRegionName sets AwsRegionName field to given value.
-
-### HasAwsRegionName
-
-`func (o *SecretProcessesorInputConfigSettings) HasAwsRegionName() bool`
-
-HasAwsRegionName returns a boolean if a field has been set.
-
-### GetAwsS3Url
-
-`func (o *SecretProcessesorInputConfigSettings) GetAwsS3Url() string`
-
-GetAwsS3Url returns the AwsS3Url field if non-nil, zero value otherwise.
-
-### GetAwsS3UrlOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAwsS3UrlOk() (*string, bool)`
-
-GetAwsS3UrlOk returns a tuple with the AwsS3Url field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAwsS3Url
-
-`func (o *SecretProcessesorInputConfigSettings) SetAwsS3Url(v string)`
-
-SetAwsS3Url sets AwsS3Url field to given value.
-
-### HasAwsS3Url
-
-`func (o *SecretProcessesorInputConfigSettings) HasAwsS3Url() bool`
-
-HasAwsS3Url returns a boolean if a field has been set.
-
-### GetVisibilityTimeout
-
-`func (o *SecretProcessesorInputConfigSettings) GetVisibilityTimeout() int32`
-
-GetVisibilityTimeout returns the VisibilityTimeout field if non-nil, zero value otherwise.
-
-### GetVisibilityTimeoutOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetVisibilityTimeoutOk() (*int32, bool)`
-
-GetVisibilityTimeoutOk returns a tuple with the VisibilityTimeout field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVisibilityTimeout
-
-`func (o *SecretProcessesorInputConfigSettings) SetVisibilityTimeout(v int32)`
-
-SetVisibilityTimeout sets VisibilityTimeout field to given value.
-
-### HasVisibilityTimeout
-
-`func (o *SecretProcessesorInputConfigSettings) HasVisibilityTimeout() bool`
-
-HasVisibilityTimeout returns a boolean if a field has been set.
 
 ### GetEnvironment
 

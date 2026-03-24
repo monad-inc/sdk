@@ -94,8 +94,6 @@ export * from '../models/CortexXsoarManagementLogsSettingsConfig';
 export * from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
-export * from '../models/CrowdstrikeFdrSecretsConfig';
-export * from '../models/CrowdstrikeFdrSettingsConfig';
 export * from '../models/CustomerEventDataSecretsConfig';
 export * from '../models/CustomerEventDataSettingsConfig';
 export * from '../models/DatadogSecretsConfig';
@@ -587,8 +585,6 @@ import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarMa
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
-import { CrowdstrikeFdrSecretsConfig } from '../models/CrowdstrikeFdrSecretsConfig';
-import { CrowdstrikeFdrSettingsConfig } from '../models/CrowdstrikeFdrSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
 import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
@@ -1111,8 +1107,6 @@ let typeMap: {[index: string]: any} = {
     "CreateKeyValueIfKeyValueArgumentsConfig": CreateKeyValueIfKeyValueArgumentsConfig,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
-    "CrowdstrikeFdrSecretsConfig": CrowdstrikeFdrSecretsConfig,
-    "CrowdstrikeFdrSettingsConfig": CrowdstrikeFdrSettingsConfig,
     "CustomerEventDataSecretsConfig": CustomerEventDataSecretsConfig,
     "CustomerEventDataSettingsConfig": CustomerEventDataSettingsConfig,
     "DatadogSecretsConfig": DatadogSecretsConfig,

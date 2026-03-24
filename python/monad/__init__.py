@@ -159,8 +159,6 @@ __all__ = [
     "CreateKeyValueIfKeyValueArgumentsConfig",
     "CriblHttpSecretsConfig",
     "CriblHttpSettingsConfig",
-    "CrowdstrikeFdrSecretsConfig",
-    "CrowdstrikeFdrSettingsConfig",
     "CustomerEventDataSecretsConfig",
     "CustomerEventDataSettingsConfig",
     "DatadogSecretsConfig",
@@ -702,8 +700,6 @@ from monad.models.cortex_xsoar_management_logs_settings_config import CortexXsoa
 from monad.models.create_key_value_if_key_value_arguments_config import CreateKeyValueIfKeyValueArgumentsConfig as CreateKeyValueIfKeyValueArgumentsConfig
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig as CriblHttpSecretsConfig
 from monad.models.cribl_http_settings_config import CriblHttpSettingsConfig as CriblHttpSettingsConfig
-from monad.models.crowdstrike_fdr_secrets_config import CrowdstrikeFdrSecretsConfig as CrowdstrikeFdrSecretsConfig
-from monad.models.crowdstrike_fdr_settings_config import CrowdstrikeFdrSettingsConfig as CrowdstrikeFdrSettingsConfig
 from monad.models.customer_event_data_secrets_config import CustomerEventDataSecretsConfig as CustomerEventDataSecretsConfig
 from monad.models.customer_event_data_settings_config import CustomerEventDataSettingsConfig as CustomerEventDataSettingsConfig
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig

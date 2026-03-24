@@ -333,8 +333,6 @@ Class | Method | HTTP request | Description
  - [CreateKeyValueIfKeyValueArgumentsConfig](docs/CreateKeyValueIfKeyValueArgumentsConfig.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)
  - [CriblHttpSettingsConfig](docs/CriblHttpSettingsConfig.md)
- - [CrowdstrikeFdrSecretsConfig](docs/CrowdstrikeFdrSecretsConfig.md)
- - [CrowdstrikeFdrSettingsConfig](docs/CrowdstrikeFdrSettingsConfig.md)
  - [CustomerEventDataSecretsConfig](docs/CustomerEventDataSecretsConfig.md)
  - [CustomerEventDataSettingsConfig](docs/CustomerEventDataSettingsConfig.md)
  - [DatadogSecretsConfig](docs/DatadogSecretsConfig.md)

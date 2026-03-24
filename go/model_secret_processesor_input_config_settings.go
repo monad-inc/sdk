@@ -56,7 +56,6 @@ type SecretProcessesorInputConfigSettings struct {
 	ClumioConsolidatedAlertsSettingsConfig *ClumioConsolidatedAlertsSettingsConfig
 	CodaAuditEventsSettingsConfig *CodaAuditEventsSettingsConfig
 	CortexXsoarManagementLogsSettingsConfig *CortexXsoarManagementLogsSettingsConfig
-	CrowdstrikeFdrSettingsConfig *CrowdstrikeFdrSettingsConfig
 	CustomerEventDataSettingsConfig *CustomerEventDataSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
 	DeviceDetailsSettingsConfig *DeviceDetailsSettingsConfig
@@ -389,13 +388,6 @@ func CodaAuditEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Coda
 func CortexXsoarManagementLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CortexXsoarManagementLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CortexXsoarManagementLogsSettingsConfig: v,
-	}
-}
-
-// CrowdstrikeFdrSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CrowdstrikeFdrSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func CrowdstrikeFdrSettingsConfigAsSecretProcessesorInputConfigSettings(v *CrowdstrikeFdrSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		CrowdstrikeFdrSettingsConfig: v,
 	}
 }
 
@@ -1549,23 +1541,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CortexXsoarManagementLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into CrowdstrikeFdrSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.CrowdstrikeFdrSettingsConfig)
-	if err == nil {
-		jsonCrowdstrikeFdrSettingsConfig, _ := json.Marshal(dst.CrowdstrikeFdrSettingsConfig)
-		if string(jsonCrowdstrikeFdrSettingsConfig) == "{}" { // empty struct
-			dst.CrowdstrikeFdrSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CrowdstrikeFdrSettingsConfig); err != nil {
-				dst.CrowdstrikeFdrSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CrowdstrikeFdrSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CustomerEventDataSettingsConfig
@@ -2865,7 +2840,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ClumioConsolidatedAlertsSettingsConfig = nil
 		dst.CodaAuditEventsSettingsConfig = nil
 		dst.CortexXsoarManagementLogsSettingsConfig = nil
-		dst.CrowdstrikeFdrSettingsConfig = nil
 		dst.CustomerEventDataSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 		dst.DeviceDetailsSettingsConfig = nil
@@ -3097,10 +3071,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.CortexXsoarManagementLogsSettingsConfig != nil {
 		return json.Marshal(&src.CortexXsoarManagementLogsSettingsConfig)
-	}
-
-	if src.CrowdstrikeFdrSettingsConfig != nil {
-		return json.Marshal(&src.CrowdstrikeFdrSettingsConfig)
 	}
 
 	if src.CustomerEventDataSettingsConfig != nil {
@@ -3555,10 +3525,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CortexXsoarManagementLogsSettingsConfig
 	}
 
-	if obj.CrowdstrikeFdrSettingsConfig != nil {
-		return obj.CrowdstrikeFdrSettingsConfig
-	}
-
 	if obj.CustomerEventDataSettingsConfig != nil {
 		return obj.CustomerEventDataSettingsConfig
 	}
@@ -4007,10 +3973,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.CortexXsoarManagementLogsSettingsConfig != nil {
 		return *obj.CortexXsoarManagementLogsSettingsConfig
-	}
-
-	if obj.CrowdstrikeFdrSettingsConfig != nil {
-		return *obj.CrowdstrikeFdrSettingsConfig
 	}
 
 	if obj.CustomerEventDataSettingsConfig != nil {
