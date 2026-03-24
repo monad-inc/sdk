@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_billing_account_role_user import ModelsBillingAccountRoleUser
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ModelsBillingAccountRole(BaseModel):
     """
@@ -39,7 +40,8 @@ class ModelsBillingAccountRole(BaseModel):
     __properties: ClassVar[List[str]] = ["billing_account_id", "created_at", "description", "id", "name", "permissions", "updated_at", "users"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -51,8 +53,7 @@ class ModelsBillingAccountRole(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

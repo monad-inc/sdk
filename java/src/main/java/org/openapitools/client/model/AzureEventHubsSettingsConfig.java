@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Event Hubs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T20:50:20.864315177Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-24T15:41:38.093637516Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AzureEventHubsSettingsConfig {
   public static final String SERIALIZED_NAME_CONSUMER_GROUP = "consumer_group";
   @SerializedName(SERIALIZED_NAME_CONSUMER_GROUP)
@@ -239,10 +239,7 @@ public class AzureEventHubsSettingsConfig {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 

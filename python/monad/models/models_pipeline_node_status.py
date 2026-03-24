@@ -24,6 +24,7 @@ from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_progress_entries import ModelsProgressEntries
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ModelsPipelineNodeStatus(BaseModel):
     """
@@ -46,7 +47,8 @@ class ModelsPipelineNodeStatus(BaseModel):
     __properties: ClassVar[List[str]] = ["avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "last_record_processed_time", "node_id", "node_slug", "progress", "status"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -58,8 +60,7 @@ class ModelsPipelineNodeStatus(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

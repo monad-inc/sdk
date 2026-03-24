@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ModelsStorageTypeOutputDetail(BaseModel):
     """
@@ -39,7 +40,8 @@ class ModelsStorageTypeOutputDetail(BaseModel):
     __properties: ClassVar[List[str]] = ["cost_id", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -51,8 +53,7 @@ class ModelsStorageTypeOutputDetail(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SAML is the configuration for SAML connections
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T20:50:20.864315177Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-24T15:41:38.093637516Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesV3CreateConnectionRequestSaml {
   public static final String SERIALIZED_NAME_ENTITY_ID = "entity_id";
   @SerializedName(SERIALIZED_NAME_ENTITY_ID)
@@ -135,10 +135,7 @@ public class RoutesV3CreateConnectionRequestSaml {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 

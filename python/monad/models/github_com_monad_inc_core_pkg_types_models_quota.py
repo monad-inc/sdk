@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class GithubComMonadIncCorePkgTypesModelsQuota(BaseModel):
     """
@@ -45,7 +46,8 @@ class GithubComMonadIncCorePkgTypesModelsQuota(BaseModel):
     __properties: ClassVar[List[str]] = ["action", "billing_account_id", "created_at", "current_usage", "current_usage_updated_at", "end_at", "id", "limit_amount", "limit_type", "limit_unit", "name", "organization_id", "start_at", "timeframe", "updated_at"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -57,8 +59,7 @@ class GithubComMonadIncCorePkgTypesModelsQuota(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

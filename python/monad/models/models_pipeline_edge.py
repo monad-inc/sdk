@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ModelsPipelineEdge(BaseModel):
     """
@@ -41,7 +42,8 @@ class ModelsPipelineEdge(BaseModel):
     __properties: ClassVar[List[str]] = ["conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -53,8 +55,7 @@ class ModelsPipelineEdge(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
