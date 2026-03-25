@@ -21,18 +21,18 @@ export class OrganizationInvitesApiRequestFactory extends BaseAPIRequestFactory 
      * @param organizationId Organization ID
      * @param routesInviteUserToOrganizationRequest Request body for inviting a user to an organization
      */
-    public async v1OrganizationIdInvitesPost(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
+    public async inviteUser(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInvitesApi", "v1OrganizationIdInvitesPost", "organizationId");
+            throw new RequiredError("OrganizationInvitesApi", "inviteUser", "organizationId");
         }
 
 
         // verify required parameter 'routesInviteUserToOrganizationRequest' is not null or undefined
         if (routesInviteUserToOrganizationRequest === null || routesInviteUserToOrganizationRequest === undefined) {
-            throw new RequiredError("OrganizationInvitesApi", "v1OrganizationIdInvitesPost", "routesInviteUserToOrganizationRequest");
+            throw new RequiredError("OrganizationInvitesApi", "inviteUser", "routesInviteUserToOrganizationRequest");
         }
 
 
@@ -84,10 +84,10 @@ export class OrganizationInvitesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdInvitesPost
+     * @params response Response returned by the server for a request to inviteUser
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdInvitesPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+     public async inviteUserWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

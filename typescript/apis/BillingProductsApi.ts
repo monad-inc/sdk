@@ -23,12 +23,12 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
      * Cancel Billing Account Subscription
      * @param billingAccountId Billing Account ID
      */
-    public async v2BillingAccountsBillingAccountIdSubscriptionDelete(billingAccountId: string, _options?: Configuration): Promise<RequestContext> {
+    public async cancelBillingAccountSubscription(billingAccountId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
         if (billingAccountId === null || billingAccountId === undefined) {
-            throw new RequiredError("BillingProductsApi", "v2BillingAccountsBillingAccountIdSubscriptionDelete", "billingAccountId");
+            throw new RequiredError("BillingProductsApi", "cancelBillingAccountSubscription", "billingAccountId");
         }
 
 
@@ -57,61 +57,23 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Get Billing Account Subscription
-     * Get Billing Account Subscription
-     * @param billingAccountId Billing Account ID
-     */
-    public async v2BillingAccountsBillingAccountIdSubscriptionGet(billingAccountId: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'billingAccountId' is not null or undefined
-        if (billingAccountId === null || billingAccountId === undefined) {
-            throw new RequiredError("BillingProductsApi", "v2BillingAccountsBillingAccountIdSubscriptionGet", "billingAccountId");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v2/billing/accounts/{billing_account_id}/subscription'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID
      * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
      */
-    public async v2BillingAccountsBillingAccountIdSubscriptionPost(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createBillingAccountSubscription(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
         if (billingAccountId === null || billingAccountId === undefined) {
-            throw new RequiredError("BillingProductsApi", "v2BillingAccountsBillingAccountIdSubscriptionPost", "billingAccountId");
+            throw new RequiredError("BillingProductsApi", "createBillingAccountSubscription", "billingAccountId");
         }
 
 
         // verify required parameter 'routesV2CreateBillingAccountSubscriptionRequest' is not null or undefined
         if (routesV2CreateBillingAccountSubscriptionRequest === null || routesV2CreateBillingAccountSubscriptionRequest === undefined) {
-            throw new RequiredError("BillingProductsApi", "v2BillingAccountsBillingAccountIdSubscriptionPost", "routesV2CreateBillingAccountSubscriptionRequest");
+            throw new RequiredError("BillingProductsApi", "createBillingAccountSubscription", "routesV2CreateBillingAccountSubscriptionRequest");
         }
 
 
@@ -151,13 +113,51 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public async getBillingAccountSubscription(billingAccountId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'billingAccountId' is not null or undefined
+        if (billingAccountId === null || billingAccountId === undefined) {
+            throw new RequiredError("BillingProductsApi", "getBillingAccountSubscription", "billingAccountId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v2/billing/accounts/{billing_account_id}/subscription'
+            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * List Billing Products
      * List Billing Products
      * @param showInactive Show inactive products
      * @param limit Limit
      * @param offset Offset
      */
-    public async v2BillingProductsGet(showInactive?: boolean, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async getBillingProducts(showInactive?: boolean, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -209,10 +209,10 @@ export class BillingProductsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2BillingAccountsBillingAccountIdSubscriptionDelete
+     * @params response Response returned by the server for a request to cancelBillingAccountSubscription
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
+     public async cancelBillingAccountSubscriptionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("204", response.httpStatusCode)) {
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
@@ -248,53 +248,10 @@ export class BillingProductsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2BillingAccountsBillingAccountIdSubscriptionGet
+     * @params response Response returned by the server for a request to createBillingAccountSubscription
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsBillingProduct >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsBillingProduct = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsBillingProduct", ""
-            ) as ModelsBillingProduct;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to get billing account subscription", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsBillingProduct = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsBillingProduct", ""
-            ) as ModelsBillingProduct;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2BillingAccountsBillingAccountIdSubscriptionPost
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse >> {
+     public async createBillingAccountSubscriptionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesV2CreateBillingAccountSubscriptionResponse = ObjectSerializer.deserialize(
@@ -334,10 +291,53 @@ export class BillingProductsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2BillingProductsGet
+     * @params response Response returned by the server for a request to getBillingAccountSubscription
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2BillingProductsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsBillingProductList >> {
+     public async getBillingAccountSubscriptionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsBillingProduct >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsBillingProduct = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsBillingProduct", ""
+            ) as ModelsBillingProduct;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to get billing account subscription", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsBillingProduct = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsBillingProduct", ""
+            ) as ModelsBillingProduct;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getBillingProducts
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getBillingProductsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsBillingProductList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsBillingProductList = ObjectSerializer.deserialize(

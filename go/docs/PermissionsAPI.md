@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V2OrganizationIdRolesPermissionsGet**](PermissionsAPI.md#V2OrganizationIdRolesPermissionsGet) | **Get** /v2/{organization_id}/roles/permissions | List permissions
+[**ListPermissions**](PermissionsAPI.md#ListPermissions) | **Get** /v2/{organization_id}/roles/permissions | List permissions
 
 
 
-## V2OrganizationIdRolesPermissionsGet
+## ListPermissions
 
-> ModelsPermissionList V2OrganizationIdRolesPermissionsGet(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> ModelsPermissionList ListPermissions(ctx, organizationId).Limit(limit).Offset(offset).Execute()
 
 List permissions
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PermissionsAPI.V2OrganizationIdRolesPermissionsGet(context.Background(), organizationId).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PermissionsAPI.ListPermissions(context.Background(), organizationId).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PermissionsAPI.V2OrganizationIdRolesPermissionsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PermissionsAPI.ListPermissions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2OrganizationIdRolesPermissionsGet`: ModelsPermissionList
-	fmt.Fprintf(os.Stdout, "Response from `PermissionsAPI.V2OrganizationIdRolesPermissionsGet`: %v\n", resp)
+	// response from `ListPermissions`: ModelsPermissionList
+	fmt.Fprintf(os.Stdout, "Response from `PermissionsAPI.ListPermissions`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2OrganizationIdRolesPermissionsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListPermissionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

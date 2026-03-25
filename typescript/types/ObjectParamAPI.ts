@@ -496,114 +496,114 @@ import { ZoomMeetingActivityLogsSettingsConfig } from '../models/ZoomMeetingActi
 import { ObservableAlertRulesApi } from "./ObservableAPI";
 import { AlertRulesApiRequestFactory, AlertRulesApiResponseProcessor} from "../apis/AlertRulesApi";
 
-export interface AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest {
-    /**
-     * Alert Rule Type ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof AlertRulesApiv3AlertRulesAlertRuleTypeIdGet
-     */
-    alertRuleTypeId: string
-}
-
-export interface AlertRulesApiV3AlertRulesGetRequest {
-}
-
-export interface AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest {
+export interface AlertRulesApiCreateAlertRuleRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdDelete
+     * @memberof AlertRulesApicreateAlertRule
+     */
+    organizationId: string
+    /**
+     * Request body for creating an alert rule
+     * @type RoutesV3CreateAlertRuleRequest
+     * @memberof AlertRulesApicreateAlertRule
+     */
+    routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest
+}
+
+export interface AlertRulesApiDeleteAlertRuleRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApideleteAlertRule
      */
     organizationId: string
     /**
      * Alert Rule ID to delete
      * Defaults to: undefined
      * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdDelete
+     * @memberof AlertRulesApideleteAlertRule
      */
     alertRuleId: string
 }
 
-export interface AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest {
+export interface AlertRulesApiGetAlertRuleByIDRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdGet
+     * @memberof AlertRulesApigetAlertRuleByID
      */
     organizationId: string
     /**
      * Alert Rule ID to retrieve
      * Defaults to: undefined
      * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdGet
+     * @memberof AlertRulesApigetAlertRuleByID
      */
     alertRuleId: string
 }
 
-export interface AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest {
+export interface AlertRulesApiGetAlertRuleConfigMetaRequest {
     /**
-     * Organization ID
+     * Alert Rule Type ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdPut
+     * @memberof AlertRulesApigetAlertRuleConfigMeta
      */
-    organizationId: string
-    /**
-     * Alert Rule ID to update
-     * Defaults to: undefined
-     * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdPut
-     */
-    alertRuleId: string
-    /**
-     * Request body for updating an alert rule
-     * @type RoutesV3UpdateAlertRuleRequest
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdPut
-     */
-    routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest
+    alertRuleTypeId: string
 }
 
-export interface AlertRulesApiV3OrganizationIdAlertRulesGetRequest {
+export interface AlertRulesApiListAlertRuleTypesRequest {
+}
+
+export interface AlertRulesApiListAlertRulesRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesGet
+     * @memberof AlertRulesApilistAlertRules
      */
     organizationId: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesGet
+     * @memberof AlertRulesApilistAlertRules
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesGet
+     * @memberof AlertRulesApilistAlertRules
      */
     offset?: number
 }
 
-export interface AlertRulesApiV3OrganizationIdAlertRulesPostRequest {
+export interface AlertRulesApiUpdateAlertRuleRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesPost
+     * @memberof AlertRulesApiupdateAlertRule
      */
     organizationId: string
     /**
-     * Request body for creating an alert rule
-     * @type RoutesV3CreateAlertRuleRequest
-     * @memberof AlertRulesApiv3OrganizationIdAlertRulesPost
+     * Alert Rule ID to update
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiupdateAlertRule
      */
-    routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest
+    alertRuleId: string
+    /**
+     * Request body for updating an alert rule
+     * @type RoutesV3UpdateAlertRuleRequest
+     * @memberof AlertRulesApiupdateAlertRule
+     */
+    routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest
 }
 
 export class ObjectAlertRulesApi {
@@ -614,111 +614,12 @@ export class ObjectAlertRulesApi {
     }
 
     /**
-     * Get configuration metadata for a specific alert rule type by its type ID
-     * Get alert rule type config metadata
+     * Create a new alert rule with the provided details
+     * Create a new alert rule
      * @param param the request object
      */
-    public v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(param: AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<AlertsAlertMeta>> {
-        return this.api.v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(param.alertRuleTypeId,  options).toPromise();
-    }
-
-    /**
-     * Get configuration metadata for a specific alert rule type by its type ID
-     * Get alert rule type config metadata
-     * @param param the request object
-     */
-    public v3AlertRulesAlertRuleTypeIdGet(param: AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest, options?: ConfigurationOptions): Promise<AlertsAlertMeta> {
-        return this.api.v3AlertRulesAlertRuleTypeIdGet(param.alertRuleTypeId,  options).toPromise();
-    }
-
-    /**
-     * List all available alert rule types with their configuration metadata
-     * List alert rule types
-     * @param param the request object
-     */
-    public v3AlertRulesGetWithHttpInfo(param: AlertRulesApiV3AlertRulesGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<AlertsAlertMeta>>> {
-        return this.api.v3AlertRulesGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * List all available alert rule types with their configuration metadata
-     * List alert rule types
-     * @param param the request object
-     */
-    public v3AlertRulesGet(param: AlertRulesApiV3AlertRulesGetRequest = {}, options?: ConfigurationOptions): Promise<Array<AlertsAlertMeta>> {
-        return this.api.v3AlertRulesGet( options).toPromise();
-    }
-
-    /**
-     * Delete an existing alert rule
-     * Delete alert rule
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(param.organizationId, param.alertRuleId,  options).toPromise();
-    }
-
-    /**
-     * Delete an existing alert rule
-     * Delete alert rule
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesAlertRuleIdDelete(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v3OrganizationIdAlertRulesAlertRuleIdDelete(param.organizationId, param.alertRuleId,  options).toPromise();
-    }
-
-    /**
-     * Retrieve an alert rule by its ID
-     * Get alert rule by ID
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
-        return this.api.v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(param.organizationId, param.alertRuleId,  options).toPromise();
-    }
-
-    /**
-     * Retrieve an alert rule by its ID
-     * Get alert rule by ID
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesAlertRuleIdGet(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
-        return this.api.v3OrganizationIdAlertRulesAlertRuleIdGet(param.organizationId, param.alertRuleId,  options).toPromise();
-    }
-
-    /**
-     * Update an existing alert rule
-     * Update alert rule
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
-        return this.api.v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
-    }
-
-    /**
-     * Update an existing alert rule
-     * Update alert rule
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesAlertRuleIdPut(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
-        return this.api.v3OrganizationIdAlertRulesAlertRuleIdPut(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
-    }
-
-    /**
-     * Retrieve all alert rules for an organization
-     * Get all alert rules
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesGetWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRuleList>> {
-        return this.api.v3OrganizationIdAlertRulesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Retrieve all alert rules for an organization
-     * Get all alert rules
-     * @param param the request object
-     */
-    public v3OrganizationIdAlertRulesGet(param: AlertRulesApiV3OrganizationIdAlertRulesGetRequest, options?: ConfigurationOptions): Promise<ModelsAlertRuleList> {
-        return this.api.v3OrganizationIdAlertRulesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public createAlertRuleWithHttpInfo(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+        return this.api.createAlertRuleWithHttpInfo(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
     }
 
     /**
@@ -726,17 +627,116 @@ export class ObjectAlertRulesApi {
      * Create a new alert rule
      * @param param the request object
      */
-    public v3OrganizationIdAlertRulesPostWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
-        return this.api.v3OrganizationIdAlertRulesPostWithHttpInfo(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
+    public createAlertRule(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+        return this.api.createAlertRule(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
     }
 
     /**
-     * Create a new alert rule with the provided details
-     * Create a new alert rule
+     * Delete an existing alert rule
+     * Delete alert rule
      * @param param the request object
      */
-    public v3OrganizationIdAlertRulesPost(param: AlertRulesApiV3OrganizationIdAlertRulesPostRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
-        return this.api.v3OrganizationIdAlertRulesPost(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
+    public deleteAlertRuleWithHttpInfo(param: AlertRulesApiDeleteAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.deleteAlertRuleWithHttpInfo(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Delete an existing alert rule
+     * Delete alert rule
+     * @param param the request object
+     */
+    public deleteAlertRule(param: AlertRulesApiDeleteAlertRuleRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.deleteAlertRule(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve an alert rule by its ID
+     * Get alert rule by ID
+     * @param param the request object
+     */
+    public getAlertRuleByIDWithHttpInfo(param: AlertRulesApiGetAlertRuleByIDRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+        return this.api.getAlertRuleByIDWithHttpInfo(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve an alert rule by its ID
+     * Get alert rule by ID
+     * @param param the request object
+     */
+    public getAlertRuleByID(param: AlertRulesApiGetAlertRuleByIDRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+        return this.api.getAlertRuleByID(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Get configuration metadata for a specific alert rule type by its type ID
+     * Get alert rule type config metadata
+     * @param param the request object
+     */
+    public getAlertRuleConfigMetaWithHttpInfo(param: AlertRulesApiGetAlertRuleConfigMetaRequest, options?: ConfigurationOptions): Promise<HttpInfo<AlertsAlertMeta>> {
+        return this.api.getAlertRuleConfigMetaWithHttpInfo(param.alertRuleTypeId,  options).toPromise();
+    }
+
+    /**
+     * Get configuration metadata for a specific alert rule type by its type ID
+     * Get alert rule type config metadata
+     * @param param the request object
+     */
+    public getAlertRuleConfigMeta(param: AlertRulesApiGetAlertRuleConfigMetaRequest, options?: ConfigurationOptions): Promise<AlertsAlertMeta> {
+        return this.api.getAlertRuleConfigMeta(param.alertRuleTypeId,  options).toPromise();
+    }
+
+    /**
+     * List all available alert rule types with their configuration metadata
+     * List alert rule types
+     * @param param the request object
+     */
+    public listAlertRuleTypesWithHttpInfo(param: AlertRulesApiListAlertRuleTypesRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<AlertsAlertMeta>>> {
+        return this.api.listAlertRuleTypesWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * List all available alert rule types with their configuration metadata
+     * List alert rule types
+     * @param param the request object
+     */
+    public listAlertRuleTypes(param: AlertRulesApiListAlertRuleTypesRequest = {}, options?: ConfigurationOptions): Promise<Array<AlertsAlertMeta>> {
+        return this.api.listAlertRuleTypes( options).toPromise();
+    }
+
+    /**
+     * Retrieve all alert rules for an organization
+     * Get all alert rules
+     * @param param the request object
+     */
+    public listAlertRulesWithHttpInfo(param: AlertRulesApiListAlertRulesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRuleList>> {
+        return this.api.listAlertRulesWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Retrieve all alert rules for an organization
+     * Get all alert rules
+     * @param param the request object
+     */
+    public listAlertRules(param: AlertRulesApiListAlertRulesRequest, options?: ConfigurationOptions): Promise<ModelsAlertRuleList> {
+        return this.api.listAlertRules(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Update an existing alert rule
+     * Update alert rule
+     * @param param the request object
+     */
+    public updateAlertRuleWithHttpInfo(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+        return this.api.updateAlertRuleWithHttpInfo(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
+    }
+
+    /**
+     * Update an existing alert rule
+     * Update alert rule
+     * @param param the request object
+     */
+    public updateAlertRule(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+        return this.api.updateAlertRule(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
     }
 
 }
@@ -744,113 +744,113 @@ export class ObjectAlertRulesApi {
 import { ObservableAlertsApi } from "./ObservableAPI";
 import { AlertsApiRequestFactory, AlertsApiResponseProcessor} from "../apis/AlertsApi";
 
-export interface AlertsApiV3OrganizationIdAlertsGetRequest {
+export interface AlertsApiListAlertsRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     organizationId: string
     /**
      * Comma-separated alert rule IDs
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     ruleIds?: string
     /**
      * Comma-separated severity levels
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     severities?: string
     /**
      * Comma-separated pipeline IDs
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     pipelineIds?: string
     /**
      * Resource type filter
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     resourceType?: string
     /**
      * Specific resource ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     resourceId?: string
     /**
      * RFC3339 timestamp for start time
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     since?: string
     /**
      * RFC3339 timestamp for end time
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     * @memberof AlertsApilistAlerts
      */
     until?: string
 }
 
-export interface AlertsApiV3OrganizationIdAlertsStreamGetRequest {
+export interface AlertsApiStreamAlertsRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     * @memberof AlertsApistreamAlerts
      */
     organizationId: string
     /**
      * RFC3339 timestamp to start streaming from
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     * @memberof AlertsApistreamAlerts
      */
     since?: string
     /**
      * Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     * @memberof AlertsApistreamAlerts
      */
     last?: string
     /**
      * Comma-separated alert rule IDs
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     * @memberof AlertsApistreamAlerts
      */
     ruleIds?: string
     /**
      * Comma-separated severity levels
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     * @memberof AlertsApistreamAlerts
      */
     severities?: string
     /**
      * Comma-separated resource IDs
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     * @memberof AlertsApistreamAlerts
      */
     resourceIds?: string
     /**
      * Resource type filter
      * Defaults to: undefined
      * @type string
-     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     * @memberof AlertsApistreamAlerts
      */
     resourceType?: string
 }
@@ -867,8 +867,8 @@ export class ObjectAlertsApi {
      * List alerts with pagination
      * @param param the request object
      */
-    public v3OrganizationIdAlertsGetWithHttpInfo(param: AlertsApiV3OrganizationIdAlertsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertList>> {
-        return this.api.v3OrganizationIdAlertsGetWithHttpInfo(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
+    public listAlertsWithHttpInfo(param: AlertsApiListAlertsRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertList>> {
+        return this.api.listAlertsWithHttpInfo(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
     }
 
     /**
@@ -876,8 +876,8 @@ export class ObjectAlertsApi {
      * List alerts with pagination
      * @param param the request object
      */
-    public v3OrganizationIdAlertsGet(param: AlertsApiV3OrganizationIdAlertsGetRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertList> {
-        return this.api.v3OrganizationIdAlertsGet(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
+    public listAlerts(param: AlertsApiListAlertsRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertList> {
+        return this.api.listAlerts(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
     }
 
     /**
@@ -885,8 +885,8 @@ export class ObjectAlertsApi {
      * Stream alerts in real-time
      * @param param the request object
      */
-    public v3OrganizationIdAlertsStreamGetWithHttpInfo(param: AlertsApiV3OrganizationIdAlertsStreamGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v3OrganizationIdAlertsStreamGetWithHttpInfo(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
+    public streamAlertsWithHttpInfo(param: AlertsApiStreamAlertsRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.streamAlertsWithHttpInfo(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
     }
 
     /**
@@ -894,8 +894,8 @@ export class ObjectAlertsApi {
      * Stream alerts in real-time
      * @param param the request object
      */
-    public v3OrganizationIdAlertsStreamGet(param: AlertsApiV3OrganizationIdAlertsStreamGetRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v3OrganizationIdAlertsStreamGet(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
+    public streamAlerts(param: AlertsApiStreamAlertsRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.streamAlerts(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
     }
 
 }
@@ -903,22 +903,22 @@ export class ObjectAlertsApi {
 import { ObservableAuthenticationApi } from "./ObservableAPI";
 import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} from "../apis/AuthenticationApi";
 
-export interface AuthenticationApiV1LoginCallbackGetRequest {
-}
-
-export interface AuthenticationApiV1LoginGetRequest {
-}
-
-export interface AuthenticationApiV1LoginResendVerificationPostRequest {
-}
-
-export interface AuthenticationApiV1LoginTokenPostRequest {
+export interface AuthenticationApiGetTokenRequest {
     /**
      * Login request
      * @type RoutesLoginRequest
-     * @memberof AuthenticationApiv1LoginTokenPost
+     * @memberof AuthenticationApigetToken
      */
     routesLoginRequest: RoutesLoginRequest
+}
+
+export interface AuthenticationApiLoginCallbackHandlerRequest {
+}
+
+export interface AuthenticationApiLoginHandlerRequest {
+}
+
+export interface AuthenticationApiResendVerificationHandlerRequest {
 }
 
 export class ObjectAuthenticationApi {
@@ -929,57 +929,12 @@ export class ObjectAuthenticationApi {
     }
 
     /**
-     * Displays a page with the access token for the user to include in requests.
-     * Handle login callback
+     * Retrieve an authentication token from the authentication service using username and password.
+     * Get Authentication token
      * @param param the request object
      */
-    public v1LoginCallbackGetWithHttpInfo(param: AuthenticationApiV1LoginCallbackGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1LoginCallbackGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * Displays a page with the access token for the user to include in requests.
-     * Handle login callback
-     * @param param the request object
-     */
-    public v1LoginCallbackGet(param: AuthenticationApiV1LoginCallbackGetRequest = {}, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1LoginCallbackGet( options).toPromise();
-    }
-
-    /**
-     * Redirects the user to authentication service login page to initiate the login process.
-     * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
-     * @param param the request object
-     */
-    public v1LoginGetWithHttpInfo(param: AuthenticationApiV1LoginGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v1LoginGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * Redirects the user to authentication service login page to initiate the login process.
-     * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
-     * @param param the request object
-     */
-    public v1LoginGet(param: AuthenticationApiV1LoginGetRequest = {}, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v1LoginGet( options).toPromise();
-    }
-
-    /**
-     * Resends the email verification to the user\'s email address
-     * Resend email verification
-     * @param param the request object
-     */
-    public v1LoginResendVerificationPostWithHttpInfo(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1LoginResendVerificationPostWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * Resends the email verification to the user\'s email address
-     * Resend email verification
-     * @param param the request object
-     */
-    public v1LoginResendVerificationPost(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1LoginResendVerificationPost( options).toPromise();
+    public getTokenWithHttpInfo(param: AuthenticationApiGetTokenRequest, options?: ConfigurationOptions): Promise<HttpInfo<AuthenticationtypesTokenResponse>> {
+        return this.api.getTokenWithHttpInfo(param.routesLoginRequest,  options).toPromise();
     }
 
     /**
@@ -987,17 +942,62 @@ export class ObjectAuthenticationApi {
      * Get Authentication token
      * @param param the request object
      */
-    public v1LoginTokenPostWithHttpInfo(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<AuthenticationtypesTokenResponse>> {
-        return this.api.v1LoginTokenPostWithHttpInfo(param.routesLoginRequest,  options).toPromise();
+    public getToken(param: AuthenticationApiGetTokenRequest, options?: ConfigurationOptions): Promise<AuthenticationtypesTokenResponse> {
+        return this.api.getToken(param.routesLoginRequest,  options).toPromise();
     }
 
     /**
-     * Retrieve an authentication token from the authentication service using username and password.
-     * Get Authentication token
+     * Displays a page with the access token for the user to include in requests.
+     * Handle login callback
      * @param param the request object
      */
-    public v1LoginTokenPost(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<AuthenticationtypesTokenResponse> {
-        return this.api.v1LoginTokenPost(param.routesLoginRequest,  options).toPromise();
+    public loginCallbackHandlerWithHttpInfo(param: AuthenticationApiLoginCallbackHandlerRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.loginCallbackHandlerWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Displays a page with the access token for the user to include in requests.
+     * Handle login callback
+     * @param param the request object
+     */
+    public loginCallbackHandler(param: AuthenticationApiLoginCallbackHandlerRequest = {}, options?: ConfigurationOptions): Promise<string> {
+        return this.api.loginCallbackHandler( options).toPromise();
+    }
+
+    /**
+     * Redirects the user to authentication service login page to initiate the login process.
+     * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
+     * @param param the request object
+     */
+    public loginHandlerWithHttpInfo(param: AuthenticationApiLoginHandlerRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.loginHandlerWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Redirects the user to authentication service login page to initiate the login process.
+     * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
+     * @param param the request object
+     */
+    public loginHandler(param: AuthenticationApiLoginHandlerRequest = {}, options?: ConfigurationOptions): Promise<void> {
+        return this.api.loginHandler( options).toPromise();
+    }
+
+    /**
+     * Resends the email verification to the user\'s email address
+     * Resend email verification
+     * @param param the request object
+     */
+    public resendVerificationHandlerWithHttpInfo(param: AuthenticationApiResendVerificationHandlerRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.resendVerificationHandlerWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Resends the email verification to the user\'s email address
+     * Resend email verification
+     * @param param the request object
+     */
+    public resendVerificationHandler(param: AuthenticationApiResendVerificationHandlerRequest = {}, options?: ConfigurationOptions): Promise<string> {
+        return this.api.resendVerificationHandler( options).toPromise();
     }
 
 }
@@ -1005,66 +1005,66 @@ export class ObjectAuthenticationApi {
 import { ObservableBillingAccountsApi } from "./ObservableAPI";
 import { BillingAccountsApiRequestFactory, BillingAccountsApiResponseProcessor} from "../apis/BillingAccountsApi";
 
-export interface BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest {
+export interface BillingAccountsApiCreateBillingAccountRequest {
+    /**
+     * Request body for creating a billing account
+     * @type RoutesV2CreateBillingAccountRequest
+     * @memberof BillingAccountsApicreateBillingAccount
+     */
+    routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest
+}
+
+export interface BillingAccountsApiDeleteBillingAccountRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdDelete
+     * @memberof BillingAccountsApideleteBillingAccount
      */
     billingAccountId: string
 }
 
-export interface BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest {
+export interface BillingAccountsApiGetBillingAccountRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdGet
+     * @memberof BillingAccountsApigetBillingAccount
      */
     billingAccountId: string
 }
 
-export interface BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest {
-    /**
-     * Billing Account ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdPatch
-     */
-    billingAccountId: string
-    /**
-     * Request body for updating a billing account
-     * @type RoutesV2UpdateBillingAccountRequest
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdPatch
-     */
-    routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest
-}
-
-export interface BillingAccountsApiV2BillingAccountsGetRequest {
+export interface BillingAccountsApiGetBillingAccountsRequest {
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof BillingAccountsApiv2BillingAccountsGet
+     * @memberof BillingAccountsApigetBillingAccounts
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof BillingAccountsApiv2BillingAccountsGet
+     * @memberof BillingAccountsApigetBillingAccounts
      */
     offset?: number
 }
 
-export interface BillingAccountsApiV2BillingAccountsPostRequest {
+export interface BillingAccountsApiUpdateBillingAccountRequest {
     /**
-     * Request body for creating a billing account
-     * @type RoutesV2CreateBillingAccountRequest
-     * @memberof BillingAccountsApiv2BillingAccountsPost
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiupdateBillingAccount
      */
-    routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest
+    billingAccountId: string
+    /**
+     * Request body for updating a billing account
+     * @type RoutesV2UpdateBillingAccountRequest
+     * @memberof BillingAccountsApiupdateBillingAccount
+     */
+    routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest
 }
 
 export class ObjectBillingAccountsApi {
@@ -1075,75 +1075,12 @@ export class ObjectBillingAccountsApi {
     }
 
     /**
-     * Delete Billing Account
-     * Delete Billing Account
+     * Create Billing Account
+     * Create Billing Account
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(param.billingAccountId,  options).toPromise();
-    }
-
-    /**
-     * Delete Billing Account
-     * Delete Billing Account
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdDelete(param: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v2BillingAccountsBillingAccountIdDelete(param.billingAccountId,  options).toPromise();
-    }
-
-    /**
-     * Get Billing Account
-     * Get Billing Account
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
-        return this.api.v2BillingAccountsBillingAccountIdGetWithHttpInfo(param.billingAccountId,  options).toPromise();
-    }
-
-    /**
-     * Get Billing Account
-     * Get Billing Account
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdGet(param: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
-        return this.api.v2BillingAccountsBillingAccountIdGet(param.billingAccountId,  options).toPromise();
-    }
-
-    /**
-     * Update Billing Account
-     * Update Billing Account
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdPatchWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
-        return this.api.v2BillingAccountsBillingAccountIdPatchWithHttpInfo(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
-    }
-
-    /**
-     * Update Billing Account
-     * Update Billing Account
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdPatch(param: BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
-        return this.api.v2BillingAccountsBillingAccountIdPatch(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
-    }
-
-    /**
-     * List Billing Accounts
-     * List Billing Accounts
-     * @param param the request object
-     */
-    public v2BillingAccountsGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountList>> {
-        return this.api.v2BillingAccountsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List Billing Accounts
-     * List Billing Accounts
-     * @param param the request object
-     */
-    public v2BillingAccountsGet(param: BillingAccountsApiV2BillingAccountsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsBillingAccountList> {
-        return this.api.v2BillingAccountsGet(param.limit, param.offset,  options).toPromise();
+    public createBillingAccountWithHttpInfo(param: BillingAccountsApiCreateBillingAccountRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        return this.api.createBillingAccountWithHttpInfo(param.routesV2CreateBillingAccountRequest,  options).toPromise();
     }
 
     /**
@@ -1151,180 +1088,225 @@ export class ObjectBillingAccountsApi {
      * Create Billing Account
      * @param param the request object
      */
-    public v2BillingAccountsPostWithHttpInfo(param: BillingAccountsApiV2BillingAccountsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
-        return this.api.v2BillingAccountsPostWithHttpInfo(param.routesV2CreateBillingAccountRequest,  options).toPromise();
+    public createBillingAccount(param: BillingAccountsApiCreateBillingAccountRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
+        return this.api.createBillingAccount(param.routesV2CreateBillingAccountRequest,  options).toPromise();
     }
 
     /**
-     * Create Billing Account
-     * Create Billing Account
+     * Delete Billing Account
+     * Delete Billing Account
      * @param param the request object
      */
-    public v2BillingAccountsPost(param: BillingAccountsApiV2BillingAccountsPostRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
-        return this.api.v2BillingAccountsPost(param.routesV2CreateBillingAccountRequest,  options).toPromise();
+    public deleteBillingAccountWithHttpInfo(param: BillingAccountsApiDeleteBillingAccountRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.deleteBillingAccountWithHttpInfo(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account
+     * Delete Billing Account
+     * @param param the request object
+     */
+    public deleteBillingAccount(param: BillingAccountsApiDeleteBillingAccountRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.deleteBillingAccount(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param param the request object
+     */
+    public getBillingAccountWithHttpInfo(param: BillingAccountsApiGetBillingAccountRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        return this.api.getBillingAccountWithHttpInfo(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param param the request object
+     */
+    public getBillingAccount(param: BillingAccountsApiGetBillingAccountRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
+        return this.api.getBillingAccount(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param param the request object
+     */
+    public getBillingAccountsWithHttpInfo(param: BillingAccountsApiGetBillingAccountsRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountList>> {
+        return this.api.getBillingAccountsWithHttpInfo(param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param param the request object
+     */
+    public getBillingAccounts(param: BillingAccountsApiGetBillingAccountsRequest = {}, options?: ConfigurationOptions): Promise<ModelsBillingAccountList> {
+        return this.api.getBillingAccounts(param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param param the request object
+     */
+    public updateBillingAccountWithHttpInfo(param: BillingAccountsApiUpdateBillingAccountRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        return this.api.updateBillingAccountWithHttpInfo(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param param the request object
+     */
+    public updateBillingAccount(param: BillingAccountsApiUpdateBillingAccountRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
+        return this.api.updateBillingAccount(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
     }
 
 }
 
-import { ObservableBillingAccountsRbacApi } from "./ObservableAPI";
-import { BillingAccountsRbacApiRequestFactory, BillingAccountsRbacApiResponseProcessor} from "../apis/BillingAccountsRbacApi";
+import { ObservableBillingAccountsRBACApi } from "./ObservableAPI";
+import { BillingAccountsRBACApiRequestFactory, BillingAccountsRBACApiResponseProcessor} from "../apis/BillingAccountsRBACApi";
 
-export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest {
+export interface BillingAccountsRBACApiCreateBillingAccountRoleRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesGet
-     */
-    billingAccountId: string
-}
-
-export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesPostRequest {
-    /**
-     * Billing Account ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesPost
+     * @memberof BillingAccountsRBACApicreateBillingAccountRole
      */
     billingAccountId: string
     /**
      * Create Billing Account Role Request
      * @type RoutesV2CreateBillingAccountRoleRequest
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesPost
+     * @memberof BillingAccountsRBACApicreateBillingAccountRole
      */
     routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest
 }
 
-export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest {
+export interface BillingAccountsRBACApiCreateBillingAccountUserRoleRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
+     * @memberof BillingAccountsRBACApicreateBillingAccountUserRole
      */
     billingAccountId: string
     /**
      * Role ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
-     */
-    roleId: string
-}
-
-export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest {
-    /**
-     * Billing Account ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
-     */
-    billingAccountId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
-     */
-    roleId: string
-}
-
-export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest {
-    /**
-     * Billing Account ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
-     */
-    billingAccountId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
-     */
-    roleId: string
-    /**
-     * Update Billing Account Role Request
-     * @type RoutesV2UpdateBillingAccountRoleRequest
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
-     */
-    routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest
-}
-
-export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest {
-    /**
-     * Billing Account ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
-     */
-    billingAccountId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     * @memberof BillingAccountsRBACApicreateBillingAccountUserRole
      */
     roleId: string
     /**
      * Create Billing Account User Role Request
      * @type RoutesV2CreatebillingAccountUserRoleRequest
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     * @memberof BillingAccountsRBACApicreateBillingAccountUserRole
      */
     routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest
 }
 
-export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest {
+export interface BillingAccountsRBACApiDeleteBillingAccountRoleRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     * @memberof BillingAccountsRBACApideleteBillingAccountRole
      */
     billingAccountId: string
     /**
      * Role ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     * @memberof BillingAccountsRBACApideleteBillingAccountRole
+     */
+    roleId: string
+}
+
+export interface BillingAccountsRBACApiDeleteBillingAccountUserRoleRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRBACApideleteBillingAccountUserRole
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRBACApideleteBillingAccountUserRole
      */
     roleId: string
     /**
      * User ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     * @memberof BillingAccountsRBACApideleteBillingAccountUserRole
      */
     userId: string
 }
 
-export interface BillingAccountsRbacApiV2BillingPermissionsGetRequest {
+export interface BillingAccountsRBACApiGetBillingAccountRoleRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRBACApigetBillingAccountRole
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRBACApigetBillingAccountRole
+     */
+    roleId: string
 }
 
-export class ObjectBillingAccountsRbacApi {
-    private api: ObservableBillingAccountsRbacApi
-
-    public constructor(configuration: Configuration, requestFactory?: BillingAccountsRbacApiRequestFactory, responseProcessor?: BillingAccountsRbacApiResponseProcessor) {
-        this.api = new ObservableBillingAccountsRbacApi(configuration, requestFactory, responseProcessor);
-    }
-
+export interface BillingAccountsRBACApiGetBillingAccountRolesRequest {
     /**
-     * Get Billing Account Roles
-     * Get Billing Account Roles
-     * @param param the request object
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRBACApigetBillingAccountRoles
      */
-    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param.billingAccountId,  options).toPromise();
-    }
+    billingAccountId: string
+}
 
+export interface BillingAccountsRBACApiGetBillingPermissionsRequest {
+}
+
+export interface BillingAccountsRBACApiUpdateBillingAccountRoleRequest {
     /**
-     * Get Billing Account Roles
-     * Get Billing Account Roles
-     * @param param the request object
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRBACApiupdateBillingAccountRole
      */
-    public v2BillingAccountsBillingAccountIdRolesGet(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesGet(param.billingAccountId,  options).toPromise();
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRBACApiupdateBillingAccountRole
+     */
+    roleId: string
+    /**
+     * Update Billing Account Role Request
+     * @type RoutesV2UpdateBillingAccountRoleRequest
+     * @memberof BillingAccountsRBACApiupdateBillingAccountRole
+     */
+    routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest
+}
+
+export class ObjectBillingAccountsRBACApi {
+    private api: ObservableBillingAccountsRBACApi
+
+    public constructor(configuration: Configuration, requestFactory?: BillingAccountsRBACApiRequestFactory, responseProcessor?: BillingAccountsRBACApiResponseProcessor) {
+        this.api = new ObservableBillingAccountsRBACApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -1332,8 +1314,8 @@ export class ObjectBillingAccountsRbacApi {
      * Create Billing Account Role
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
+    public createBillingAccountRoleWithHttpInfo(param: BillingAccountsRBACApiCreateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.createBillingAccountRoleWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1341,62 +1323,8 @@ export class ObjectBillingAccountsRbacApi {
      * Create Billing Account Role
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdRolesPost(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesPost(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Delete Billing Account Role
-     * Delete Billing Account Role
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Delete Billing Account Role
-     * Delete Billing Account Role
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param.billingAccountId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Get Billing Account Role
-     * Get Billing Account Role
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Get Billing Account Role
-     * Get Billing Account Role
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(param.billingAccountId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Update Billing Account Role
-     * Update Billing Account Role
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Update Billing Account Role
-     * Update Billing Account Role
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdPatch(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatch(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+    public createBillingAccountRole(param: BillingAccountsRBACApiCreateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.createBillingAccountRole(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1404,8 +1332,8 @@ export class ObjectBillingAccountsRbacApi {
      * Create Billing Account User Role
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+    public createBillingAccountUserRoleWithHttpInfo(param: BillingAccountsRBACApiCreateBillingAccountUserRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.createBillingAccountUserRoleWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1413,8 +1341,26 @@ export class ObjectBillingAccountsRbacApi {
      * Create Billing Account User Role
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+    public createBillingAccountUserRole(param: BillingAccountsRBACApiCreateBillingAccountUserRoleRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.createBillingAccountUserRole(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param param the request object
+     */
+    public deleteBillingAccountRoleWithHttpInfo(param: BillingAccountsRBACApiDeleteBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.deleteBillingAccountRoleWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param param the request object
+     */
+    public deleteBillingAccountRole(param: BillingAccountsRBACApiDeleteBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.deleteBillingAccountRole(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -1422,8 +1368,8 @@ export class ObjectBillingAccountsRbacApi {
      * Delete Billing Account User Role
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
+    public deleteBillingAccountUserRoleWithHttpInfo(param: BillingAccountsRBACApiDeleteBillingAccountUserRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.deleteBillingAccountUserRoleWithHttpInfo(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
     }
 
     /**
@@ -1431,8 +1377,44 @@ export class ObjectBillingAccountsRbacApi {
      * Delete Billing Account User Role
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
+    public deleteBillingAccountUserRole(param: BillingAccountsRBACApiDeleteBillingAccountUserRoleRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.deleteBillingAccountUserRole(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param param the request object
+     */
+    public getBillingAccountRoleWithHttpInfo(param: BillingAccountsRBACApiGetBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.getBillingAccountRoleWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param param the request object
+     */
+    public getBillingAccountRole(param: BillingAccountsRBACApiGetBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.getBillingAccountRole(param.billingAccountId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param param the request object
+     */
+    public getBillingAccountRolesWithHttpInfo(param: BillingAccountsRBACApiGetBillingAccountRolesRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
+        return this.api.getBillingAccountRolesWithHttpInfo(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param param the request object
+     */
+    public getBillingAccountRoles(param: BillingAccountsRBACApiGetBillingAccountRolesRequest, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
+        return this.api.getBillingAccountRoles(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -1440,8 +1422,8 @@ export class ObjectBillingAccountsRbacApi {
      * Get Billing Permissions
      * @param param the request object
      */
-    public v2BillingPermissionsGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
-        return this.api.v2BillingPermissionsGetWithHttpInfo( options).toPromise();
+    public getBillingPermissionsWithHttpInfo(param: BillingAccountsRBACApiGetBillingPermissionsRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+        return this.api.getBillingPermissionsWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -1449,8 +1431,26 @@ export class ObjectBillingAccountsRbacApi {
      * Get Billing Permissions
      * @param param the request object
      */
-    public v2BillingPermissionsGet(param: BillingAccountsRbacApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
-        return this.api.v2BillingPermissionsGet( options).toPromise();
+    public getBillingPermissions(param: BillingAccountsRBACApiGetBillingPermissionsRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
+        return this.api.getBillingPermissions( options).toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param param the request object
+     */
+    public updateBillingAccountRoleWithHttpInfo(param: BillingAccountsRBACApiUpdateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.updateBillingAccountRoleWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param param the request object
+     */
+    public updateBillingAccountRole(param: BillingAccountsRBACApiUpdateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.updateBillingAccountRole(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
     }
 
 }
@@ -1458,62 +1458,62 @@ export class ObjectBillingAccountsRbacApi {
 import { ObservableBillingProductsApi } from "./ObservableAPI";
 import { BillingProductsApiRequestFactory, BillingProductsApiResponseProcessor} from "../apis/BillingProductsApi";
 
-export interface BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest {
+export interface BillingProductsApiCancelBillingAccountSubscriptionRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionDelete
+     * @memberof BillingProductsApicancelBillingAccountSubscription
      */
     billingAccountId: string
 }
 
-export interface BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest {
+export interface BillingProductsApiCreateBillingAccountSubscriptionRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionGet
-     */
-    billingAccountId: string
-}
-
-export interface BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest {
-    /**
-     * Billing Account ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionPost
+     * @memberof BillingProductsApicreateBillingAccountSubscription
      */
     billingAccountId: string
     /**
      * Request body for creating a billing subscription
      * @type RoutesV2CreateBillingAccountSubscriptionRequest
-     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionPost
+     * @memberof BillingProductsApicreateBillingAccountSubscription
      */
     routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest
 }
 
-export interface BillingProductsApiV2BillingProductsGetRequest {
+export interface BillingProductsApiGetBillingAccountSubscriptionRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingProductsApigetBillingAccountSubscription
+     */
+    billingAccountId: string
+}
+
+export interface BillingProductsApiGetBillingProductsRequest {
     /**
      * Show inactive products
      * Defaults to: undefined
      * @type boolean
-     * @memberof BillingProductsApiv2BillingProductsGet
+     * @memberof BillingProductsApigetBillingProducts
      */
     showInactive?: boolean
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof BillingProductsApiv2BillingProductsGet
+     * @memberof BillingProductsApigetBillingProducts
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof BillingProductsApiv2BillingProductsGet
+     * @memberof BillingProductsApigetBillingProducts
      */
     offset?: number
 }
@@ -1530,8 +1530,8 @@ export class ObjectBillingProductsApi {
      * Cancel Billing Account Subscription
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(param.billingAccountId,  options).toPromise();
+    public cancelBillingAccountSubscriptionWithHttpInfo(param: BillingProductsApiCancelBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.cancelBillingAccountSubscriptionWithHttpInfo(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -1539,26 +1539,8 @@ export class ObjectBillingProductsApi {
      * Cancel Billing Account Subscription
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdSubscriptionDelete(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v2BillingAccountsBillingAccountIdSubscriptionDelete(param.billingAccountId,  options).toPromise();
-    }
-
-    /**
-     * Get Billing Account Subscription
-     * Get Billing Account Subscription
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingProduct>> {
-        return this.api.v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(param.billingAccountId,  options).toPromise();
-    }
-
-    /**
-     * Get Billing Account Subscription
-     * Get Billing Account Subscription
-     * @param param the request object
-     */
-    public v2BillingAccountsBillingAccountIdSubscriptionGet(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingProduct> {
-        return this.api.v2BillingAccountsBillingAccountIdSubscriptionGet(param.billingAccountId,  options).toPromise();
+    public cancelBillingAccountSubscription(param: BillingProductsApiCancelBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.cancelBillingAccountSubscription(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -1566,8 +1548,8 @@ export class ObjectBillingProductsApi {
      * Create Billing Account Subscription
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
-        return this.api.v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
+    public createBillingAccountSubscriptionWithHttpInfo(param: BillingProductsApiCreateBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
+        return this.api.createBillingAccountSubscriptionWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
     }
 
     /**
@@ -1575,8 +1557,26 @@ export class ObjectBillingProductsApi {
      * Create Billing Account Subscription
      * @param param the request object
      */
-    public v2BillingAccountsBillingAccountIdSubscriptionPost(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2CreateBillingAccountSubscriptionResponse> {
-        return this.api.v2BillingAccountsBillingAccountIdSubscriptionPost(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
+    public createBillingAccountSubscription(param: BillingProductsApiCreateBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<RoutesV2CreateBillingAccountSubscriptionResponse> {
+        return this.api.createBillingAccountSubscription(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param param the request object
+     */
+    public getBillingAccountSubscriptionWithHttpInfo(param: BillingProductsApiGetBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingProduct>> {
+        return this.api.getBillingAccountSubscriptionWithHttpInfo(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param param the request object
+     */
+    public getBillingAccountSubscription(param: BillingProductsApiGetBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<ModelsBillingProduct> {
+        return this.api.getBillingAccountSubscription(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -1584,8 +1584,8 @@ export class ObjectBillingProductsApi {
      * List Billing Products
      * @param param the request object
      */
-    public v2BillingProductsGetWithHttpInfo(param: BillingProductsApiV2BillingProductsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingProductList>> {
-        return this.api.v2BillingProductsGetWithHttpInfo(param.showInactive, param.limit, param.offset,  options).toPromise();
+    public getBillingProductsWithHttpInfo(param: BillingProductsApiGetBillingProductsRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingProductList>> {
+        return this.api.getBillingProductsWithHttpInfo(param.showInactive, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -1593,8 +1593,8 @@ export class ObjectBillingProductsApi {
      * List Billing Products
      * @param param the request object
      */
-    public v2BillingProductsGet(param: BillingProductsApiV2BillingProductsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsBillingProductList> {
-        return this.api.v2BillingProductsGet(param.showInactive, param.limit, param.offset,  options).toPromise();
+    public getBillingProducts(param: BillingProductsApiGetBillingProductsRequest = {}, options?: ConfigurationOptions): Promise<ModelsBillingProductList> {
+        return this.api.getBillingProducts(param.showInactive, param.limit, param.offset,  options).toPromise();
     }
 
 }
@@ -1602,7 +1602,7 @@ export class ObjectBillingProductsApi {
 import { ObservableConditionsApi } from "./ObservableAPI";
 import { ConditionsApiRequestFactory, ConditionsApiResponseProcessor} from "../apis/ConditionsApi";
 
-export interface ConditionsApiV2ConditionsGetRequest {
+export interface ConditionsApiListConditionsRequest {
 }
 
 export class ObjectConditionsApi {
@@ -1617,8 +1617,8 @@ export class ObjectConditionsApi {
      * List conditions
      * @param param the request object
      */
-    public v2ConditionsGetWithHttpInfo(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<LeafconditionsInfo>>> {
-        return this.api.v2ConditionsGetWithHttpInfo( options).toPromise();
+    public listConditionsWithHttpInfo(param: ConditionsApiListConditionsRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<LeafconditionsInfo>>> {
+        return this.api.listConditionsWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -1626,8 +1626,8 @@ export class ObjectConditionsApi {
      * List conditions
      * @param param the request object
      */
-    public v2ConditionsGet(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<LeafconditionsInfo>> {
-        return this.api.v2ConditionsGet( options).toPromise();
+    public listConditions(param: ConditionsApiListConditionsRequest = {}, options?: ConfigurationOptions): Promise<Array<LeafconditionsInfo>> {
+        return this.api.listConditions( options).toPromise();
     }
 
 }
@@ -1635,101 +1635,101 @@ export class ObjectConditionsApi {
 import { ObservableConnectionsApi } from "./ObservableAPI";
 import { ConnectionsApiRequestFactory, ConnectionsApiResponseProcessor} from "../apis/ConnectionsApi";
 
-export interface ConnectionsApiV3OrganizationIdConnectionsConnectionIdDeleteRequest {
+export interface ConnectionsApiCreateConnectionRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdDelete
+     * @memberof ConnectionsApicreateConnection
+     */
+    organizationId: string
+    /**
+     * Request body for creating a connection
+     * @type RoutesV3CreateConnectionRequest
+     * @memberof ConnectionsApicreateConnection
+     */
+    routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest
+}
+
+export interface ConnectionsApiDeleteConnectionRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ConnectionsApideleteConnection
      */
     organizationId: string
     /**
      * Connection ID to delete
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdDelete
+     * @memberof ConnectionsApideleteConnection
      */
     connectionId: string
 }
 
-export interface ConnectionsApiV3OrganizationIdConnectionsConnectionIdGetRequest {
+export interface ConnectionsApiGetConnectionByIDRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdGet
+     * @memberof ConnectionsApigetConnectionByID
      */
     organizationId: string
     /**
      * Connection ID to retrieve
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdGet
+     * @memberof ConnectionsApigetConnectionByID
      */
     connectionId: string
 }
 
-export interface ConnectionsApiV3OrganizationIdConnectionsConnectionIdPatchRequest {
+export interface ConnectionsApiListConnectionsRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdPatch
-     */
-    organizationId: string
-    /**
-     * Connection ID to update
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdPatch
-     */
-    connectionId: string
-    /**
-     * Request body for updating a connection
-     * @type RoutesV3UpdateConnectionRequest
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdPatch
-     */
-    routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest
-}
-
-export interface ConnectionsApiV3OrganizationIdConnectionsGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsGet
+     * @memberof ConnectionsApilistConnections
      */
     organizationId: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsGet
+     * @memberof ConnectionsApilistConnections
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsGet
+     * @memberof ConnectionsApilistConnections
      */
     offset?: number
 }
 
-export interface ConnectionsApiV3OrganizationIdConnectionsPostRequest {
+export interface ConnectionsApiUpdateConnectionRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsPost
+     * @memberof ConnectionsApiupdateConnection
      */
     organizationId: string
     /**
-     * Request body for creating a connection
-     * @type RoutesV3CreateConnectionRequest
-     * @memberof ConnectionsApiv3OrganizationIdConnectionsPost
+     * Connection ID to update
+     * Defaults to: undefined
+     * @type string
+     * @memberof ConnectionsApiupdateConnection
      */
-    routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest
+    connectionId: string
+    /**
+     * Request body for updating a connection
+     * @type RoutesV3UpdateConnectionRequest
+     * @memberof ConnectionsApiupdateConnection
+     */
+    routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest
 }
 
 export class ObjectConnectionsApi {
@@ -1740,75 +1740,12 @@ export class ObjectConnectionsApi {
     }
 
     /**
-     * Delete an existing connection
-     * Delete connection
+     * Create a new connection with the provided details
+     * Create a new connection
      * @param param the request object
      */
-    public v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(param.organizationId, param.connectionId,  options).toPromise();
-    }
-
-    /**
-     * Delete an existing connection
-     * Delete connection
-     * @param param the request object
-     */
-    public v3OrganizationIdConnectionsConnectionIdDelete(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v3OrganizationIdConnectionsConnectionIdDelete(param.organizationId, param.connectionId,  options).toPromise();
-    }
-
-    /**
-     * Retrieve a connection by its ID
-     * Get connection by ID
-     * @param param the request object
-     */
-    public v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(param.organizationId, param.connectionId,  options).toPromise();
-    }
-
-    /**
-     * Retrieve a connection by its ID
-     * Get connection by ID
-     * @param param the request object
-     */
-    public v3OrganizationIdConnectionsConnectionIdGet(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.v3OrganizationIdConnectionsConnectionIdGet(param.organizationId, param.connectionId,  options).toPromise();
-    }
-
-    /**
-     * Update an existing connection
-     * Update connection
-     * @param param the request object
-     */
-    public v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
-    }
-
-    /**
-     * Update an existing connection
-     * Update connection
-     * @param param the request object
-     */
-    public v3OrganizationIdConnectionsConnectionIdPatch(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.v3OrganizationIdConnectionsConnectionIdPatch(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
-    }
-
-    /**
-     * Retrieve all connections
-     * Get all connections
-     * @param param the request object
-     */
-    public v3OrganizationIdConnectionsGetWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionList>> {
-        return this.api.v3OrganizationIdConnectionsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Retrieve all connections
-     * Get all connections
-     * @param param the request object
-     */
-    public v3OrganizationIdConnectionsGet(param: ConnectionsApiV3OrganizationIdConnectionsGetRequest, options?: ConfigurationOptions): Promise<ModelsConnectionList> {
-        return this.api.v3OrganizationIdConnectionsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public createConnectionWithHttpInfo(param: ConnectionsApiCreateConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        return this.api.createConnectionWithHttpInfo(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1816,64 +1753,126 @@ export class ObjectConnectionsApi {
      * Create a new connection
      * @param param the request object
      */
-    public v3OrganizationIdConnectionsPostWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.v3OrganizationIdConnectionsPostWithHttpInfo(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
+    public createConnection(param: ConnectionsApiCreateConnectionRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
+        return this.api.createConnection(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
     }
 
     /**
-     * Create a new connection with the provided details
-     * Create a new connection
+     * Delete an existing connection
+     * Delete connection
      * @param param the request object
      */
-    public v3OrganizationIdConnectionsPost(param: ConnectionsApiV3OrganizationIdConnectionsPostRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.v3OrganizationIdConnectionsPost(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
+    public deleteConnectionWithHttpInfo(param: ConnectionsApiDeleteConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.deleteConnectionWithHttpInfo(param.organizationId, param.connectionId,  options).toPromise();
+    }
+
+    /**
+     * Delete an existing connection
+     * Delete connection
+     * @param param the request object
+     */
+    public deleteConnection(param: ConnectionsApiDeleteConnectionRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.deleteConnection(param.organizationId, param.connectionId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve a connection by its ID
+     * Get connection by ID
+     * @param param the request object
+     */
+    public getConnectionByIDWithHttpInfo(param: ConnectionsApiGetConnectionByIDRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        return this.api.getConnectionByIDWithHttpInfo(param.organizationId, param.connectionId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve a connection by its ID
+     * Get connection by ID
+     * @param param the request object
+     */
+    public getConnectionByID(param: ConnectionsApiGetConnectionByIDRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
+        return this.api.getConnectionByID(param.organizationId, param.connectionId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve all connections
+     * Get all connections
+     * @param param the request object
+     */
+    public listConnectionsWithHttpInfo(param: ConnectionsApiListConnectionsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionList>> {
+        return this.api.listConnectionsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Retrieve all connections
+     * Get all connections
+     * @param param the request object
+     */
+    public listConnections(param: ConnectionsApiListConnectionsRequest, options?: ConfigurationOptions): Promise<ModelsConnectionList> {
+        return this.api.listConnections(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Update an existing connection
+     * Update connection
+     * @param param the request object
+     */
+    public updateConnectionWithHttpInfo(param: ConnectionsApiUpdateConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        return this.api.updateConnectionWithHttpInfo(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
+    }
+
+    /**
+     * Update an existing connection
+     * Update connection
+     * @param param the request object
+     */
+    public updateConnection(param: ConnectionsApiUpdateConnectionRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
+        return this.api.updateConnection(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
     }
 
 }
 
-import { ObservableDataApi } from "./ObservableAPI";
-import { DataApiRequestFactory, DataApiResponseProcessor} from "../apis/DataApi";
+import { ObservableEnrichmentSandboxApi } from "./ObservableAPI";
+import { EnrichmentSandboxApiRequestFactory, EnrichmentSandboxApiResponseProcessor} from "../apis/EnrichmentSandboxApi";
 
-export interface DataApiV1OrganizationIdDataNodeIdGetRequest {
+export interface EnrichmentSandboxApiEnrichmentSandboxRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof DataApiv1OrganizationIdDataNodeIdGet
+     * @memberof EnrichmentSandboxApienrichmentSandbox
      */
     organizationId: string
     /**
-     * Node ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof DataApiv1OrganizationIdDataNodeIdGet
+     * Enrichment configuration and record
+     * @type RoutesV3EnrichmentSandboxRequest
+     * @memberof EnrichmentSandboxApienrichmentSandbox
      */
-    nodeId: string
+    routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest
 }
 
-export class ObjectDataApi {
-    private api: ObservableDataApi
+export class ObjectEnrichmentSandboxApi {
+    private api: ObservableEnrichmentSandboxApi
 
-    public constructor(configuration: Configuration, requestFactory?: DataApiRequestFactory, responseProcessor?: DataApiResponseProcessor) {
-        this.api = new ObservableDataApi(configuration, requestFactory, responseProcessor);
+    public constructor(configuration: Configuration, requestFactory?: EnrichmentSandboxApiRequestFactory, responseProcessor?: EnrichmentSandboxApiResponseProcessor) {
+        this.api = new ObservableEnrichmentSandboxApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
-     * Stream data for a specific node within an organization
-     * Stream node data
+     * Apply a enrichment configuration to a JSON record
+     * Apply enrichment to record
      * @param param the request object
      */
-    public v1OrganizationIdDataNodeIdGetWithHttpInfo(param: DataApiV1OrganizationIdDataNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdDataNodeIdGetWithHttpInfo(param.organizationId, param.nodeId,  options).toPromise();
+    public enrichmentSandboxWithHttpInfo(param: EnrichmentSandboxApiEnrichmentSandboxRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
+        return this.api.enrichmentSandboxWithHttpInfo(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
     }
 
     /**
-     * Stream data for a specific node within an organization
-     * Stream node data
+     * Apply a enrichment configuration to a JSON record
+     * Apply enrichment to record
      * @param param the request object
      */
-    public v1OrganizationIdDataNodeIdGet(param: DataApiV1OrganizationIdDataNodeIdGetRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdDataNodeIdGet(param.organizationId, param.nodeId,  options).toPromise();
+    public enrichmentSandbox(param: EnrichmentSandboxApiEnrichmentSandboxRequest, options?: ConfigurationOptions): Promise<RoutesV3EnrichmentSandboxResponse> {
+        return this.api.enrichmentSandbox(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
     }
 
 }
@@ -1881,29 +1880,29 @@ export class ObjectDataApi {
 import { ObservableEnrichmentsApi } from "./ObservableAPI";
 import { EnrichmentsApiRequestFactory, EnrichmentsApiResponseProcessor} from "../apis/EnrichmentsApi";
 
-export interface EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest {
+export interface EnrichmentsApiGetEnrichmentTypeMetaRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof EnrichmentsApiv3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet
+     * @memberof EnrichmentsApigetEnrichmentTypeMeta
      */
     organizationId: string
     /**
      * Enrichment type ID
      * Defaults to: undefined
      * @type string
-     * @memberof EnrichmentsApiv3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet
+     * @memberof EnrichmentsApigetEnrichmentTypeMeta
      */
     enrichmentTypeId: string
 }
 
-export interface EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest {
+export interface EnrichmentsApiListEnrichmentTypesRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof EnrichmentsApiv3OrganizationIdEnrichmentsMetaGet
+     * @memberof EnrichmentsApilistEnrichmentTypes
      */
     organizationId: string
 }
@@ -1920,8 +1919,8 @@ export class ObjectEnrichmentsApi {
      * Get enrichment config meta
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetWithHttpInfo(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<EnrichmentConnectorMeta>> {
-        return this.api.v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetWithHttpInfo(param.organizationId, param.enrichmentTypeId,  options).toPromise();
+    public getEnrichmentTypeMetaWithHttpInfo(param: EnrichmentsApiGetEnrichmentTypeMetaRequest, options?: ConfigurationOptions): Promise<HttpInfo<EnrichmentConnectorMeta>> {
+        return this.api.getEnrichmentTypeMetaWithHttpInfo(param.organizationId, param.enrichmentTypeId,  options).toPromise();
     }
 
     /**
@@ -1929,8 +1928,8 @@ export class ObjectEnrichmentsApi {
      * Get enrichment config meta
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest, options?: ConfigurationOptions): Promise<EnrichmentConnectorMeta> {
-        return this.api.v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(param.organizationId, param.enrichmentTypeId,  options).toPromise();
+    public getEnrichmentTypeMeta(param: EnrichmentsApiGetEnrichmentTypeMetaRequest, options?: ConfigurationOptions): Promise<EnrichmentConnectorMeta> {
+        return this.api.getEnrichmentTypeMeta(param.organizationId, param.enrichmentTypeId,  options).toPromise();
     }
 
     /**
@@ -1938,8 +1937,8 @@ export class ObjectEnrichmentsApi {
      * List enrichments
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsMetaGetWithHttpInfo(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<EnrichmentConnectorMeta>>> {
-        return this.api.v3OrganizationIdEnrichmentsMetaGetWithHttpInfo(param.organizationId,  options).toPromise();
+    public listEnrichmentTypesWithHttpInfo(param: EnrichmentsApiListEnrichmentTypesRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<EnrichmentConnectorMeta>>> {
+        return this.api.listEnrichmentTypesWithHttpInfo(param.organizationId,  options).toPromise();
     }
 
     /**
@@ -1947,8 +1946,8 @@ export class ObjectEnrichmentsApi {
      * List enrichments
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsMetaGet(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest, options?: ConfigurationOptions): Promise<Array<EnrichmentConnectorMeta>> {
-        return this.api.v3OrganizationIdEnrichmentsMetaGet(param.organizationId,  options).toPromise();
+    public listEnrichmentTypes(param: EnrichmentsApiListEnrichmentTypesRequest, options?: ConfigurationOptions): Promise<Array<EnrichmentConnectorMeta>> {
+        return this.api.listEnrichmentTypes(param.organizationId,  options).toPromise();
     }
 
 }
@@ -1956,7 +1955,7 @@ export class ObjectEnrichmentsApi {
 import { ObservableFeatureFlagsApi } from "./ObservableAPI";
 import { FeatureFlagsApiRequestFactory, FeatureFlagsApiResponseProcessor} from "../apis/FeatureFlagsApi";
 
-export interface FeatureFlagsApiV3FeatureFlagsGetRequest {
+export interface FeatureFlagsApiGetFeatureFlagsRequest {
 }
 
 export class ObjectFeatureFlagsApi {
@@ -1971,8 +1970,8 @@ export class ObjectFeatureFlagsApi {
      * Get feature flags
      * @param param the request object
      */
-    public v3FeatureFlagsGetWithHttpInfo(param: FeatureFlagsApiV3FeatureFlagsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3GetFeatureFlagResponse>> {
-        return this.api.v3FeatureFlagsGetWithHttpInfo( options).toPromise();
+    public getFeatureFlagsWithHttpInfo(param: FeatureFlagsApiGetFeatureFlagsRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3GetFeatureFlagResponse>> {
+        return this.api.getFeatureFlagsWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -1980,8 +1979,8 @@ export class ObjectFeatureFlagsApi {
      * Get feature flags
      * @param param the request object
      */
-    public v3FeatureFlagsGet(param: FeatureFlagsApiV3FeatureFlagsGetRequest = {}, options?: ConfigurationOptions): Promise<RoutesV3GetFeatureFlagResponse> {
-        return this.api.v3FeatureFlagsGet( options).toPromise();
+    public getFeatureFlags(param: FeatureFlagsApiGetFeatureFlagsRequest = {}, options?: ConfigurationOptions): Promise<RoutesV3GetFeatureFlagResponse> {
+        return this.api.getFeatureFlags( options).toPromise();
     }
 
 }
@@ -1989,17 +1988,17 @@ export class ObjectFeatureFlagsApi {
 import { ObservableInputsApi } from "./ObservableAPI";
 import { InputsApiRequestFactory, InputsApiResponseProcessor} from "../apis/InputsApi";
 
-export interface InputsApiV1InputsGetRequest {
-}
-
-export interface InputsApiV1InputsInputTypeIdGetRequest {
+export interface InputsApiGetInputTypeMetaRequest {
     /**
      * Input type ID
      * Defaults to: undefined
      * @type string
-     * @memberof InputsApiv1InputsInputTypeIdGet
+     * @memberof InputsApigetInputTypeMeta
      */
     inputTypeId: string
+}
+
+export interface InputsApiListInputTypesRequest {
 }
 
 export class ObjectInputsApi {
@@ -2010,21 +2009,12 @@ export class ObjectInputsApi {
     }
 
     /**
-     * List inputs
-     * List inputs
+     * Get input config meta
+     * Get input config meta
      * @param param the request object
      */
-    public v1InputsGetWithHttpInfo(param: InputsApiV1InputsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<InputsConnectorMeta>>> {
-        return this.api.v1InputsGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * List inputs
-     * List inputs
-     * @param param the request object
-     */
-    public v1InputsGet(param: InputsApiV1InputsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<InputsConnectorMeta>> {
-        return this.api.v1InputsGet( options).toPromise();
+    public getInputTypeMetaWithHttpInfo(param: InputsApiGetInputTypeMetaRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
+        return this.api.getInputTypeMetaWithHttpInfo(param.inputTypeId,  options).toPromise();
     }
 
     /**
@@ -2032,94 +2022,103 @@ export class ObjectInputsApi {
      * Get input config meta
      * @param param the request object
      */
-    public v1InputsInputTypeIdGetWithHttpInfo(param: InputsApiV1InputsInputTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
-        return this.api.v1InputsInputTypeIdGetWithHttpInfo(param.inputTypeId,  options).toPromise();
+    public getInputTypeMeta(param: InputsApiGetInputTypeMetaRequest, options?: ConfigurationOptions): Promise<ModelsConnectorMeta> {
+        return this.api.getInputTypeMeta(param.inputTypeId,  options).toPromise();
     }
 
     /**
-     * Get input config meta
-     * Get input config meta
+     * List inputs
+     * List inputs
      * @param param the request object
      */
-    public v1InputsInputTypeIdGet(param: InputsApiV1InputsInputTypeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnectorMeta> {
-        return this.api.v1InputsInputTypeIdGet(param.inputTypeId,  options).toPromise();
+    public listInputTypesWithHttpInfo(param: InputsApiListInputTypesRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<InputsConnectorMeta>>> {
+        return this.api.listInputTypesWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * List inputs
+     * List inputs
+     * @param param the request object
+     */
+    public listInputTypes(param: InputsApiListInputTypesRequest = {}, options?: ConfigurationOptions): Promise<Array<InputsConnectorMeta>> {
+        return this.api.listInputTypes( options).toPromise();
     }
 
 }
 
-import { ObservableKvApi } from "./ObservableAPI";
-import { KvApiRequestFactory, KvApiResponseProcessor} from "../apis/KvApi";
+import { ObservableKeyValueStoreApi } from "./ObservableAPI";
+import { KeyValueStoreApiRequestFactory, KeyValueStoreApiResponseProcessor} from "../apis/KeyValueStoreApi";
 
-export interface KvApiV3OrganizationIdKvLookupMetadataGetRequest {
+export interface KeyValueStoreApiGetKVLookupMetadataRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof KvApiv3OrganizationIdKvLookupMetadataGet
+     * @memberof KeyValueStoreApigetKVLookupMetadata
      */
     organizationId: string
     /**
      * Component ID
      * Defaults to: undefined
      * @type string
-     * @memberof KvApiv3OrganizationIdKvLookupMetadataGet
+     * @memberof KeyValueStoreApigetKVLookupMetadata
      */
     componentId: string
 }
 
-export interface KvApiV3OrganizationIdKvLookupSampleGetRequest {
+export interface KeyValueStoreApiGetKVLookupSampleEntriesRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof KvApiv3OrganizationIdKvLookupSampleGet
+     * @memberof KeyValueStoreApigetKVLookupSampleEntries
      */
     organizationId: string
     /**
      * Component ID
      * Defaults to: undefined
      * @type string
-     * @memberof KvApiv3OrganizationIdKvLookupSampleGet
+     * @memberof KeyValueStoreApigetKVLookupSampleEntries
      */
     componentId: string
     /**
      * Number of sample entries to return
      * Defaults to: undefined
      * @type number
-     * @memberof KvApiv3OrganizationIdKvLookupSampleGet
+     * @memberof KeyValueStoreApigetKVLookupSampleEntries
      */
     numEntries: number
 }
 
-export interface KvApiV3OrganizationIdKvLookupValueGetRequest {
+export interface KeyValueStoreApiGetValueFromKvStoreRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof KvApiv3OrganizationIdKvLookupValueGet
+     * @memberof KeyValueStoreApigetValueFromKvStore
      */
     organizationId: string
     /**
      * Component ID
      * Defaults to: undefined
      * @type string
-     * @memberof KvApiv3OrganizationIdKvLookupValueGet
+     * @memberof KeyValueStoreApigetValueFromKvStore
      */
     componentId: string
     /**
      * Key to look up
      * Defaults to: undefined
      * @type string
-     * @memberof KvApiv3OrganizationIdKvLookupValueGet
+     * @memberof KeyValueStoreApigetValueFromKvStore
      */
     key: string
 }
 
-export class ObjectKvApi {
-    private api: ObservableKvApi
+export class ObjectKeyValueStoreApi {
+    private api: ObservableKeyValueStoreApi
 
-    public constructor(configuration: Configuration, requestFactory?: KvApiRequestFactory, responseProcessor?: KvApiResponseProcessor) {
-        this.api = new ObservableKvApi(configuration, requestFactory, responseProcessor);
+    public constructor(configuration: Configuration, requestFactory?: KeyValueStoreApiRequestFactory, responseProcessor?: KeyValueStoreApiResponseProcessor) {
+        this.api = new ObservableKeyValueStoreApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -2127,8 +2126,8 @@ export class ObjectKvApi {
      * Get KV lookup metadata
      * @param param the request object
      */
-    public v3OrganizationIdKvLookupMetadataGetWithHttpInfo(param: KvApiV3OrganizationIdKvLookupMetadataGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<KvlookupGetMetadataResponse>> {
-        return this.api.v3OrganizationIdKvLookupMetadataGetWithHttpInfo(param.organizationId, param.componentId,  options).toPromise();
+    public getKVLookupMetadataWithHttpInfo(param: KeyValueStoreApiGetKVLookupMetadataRequest, options?: ConfigurationOptions): Promise<HttpInfo<KvlookupGetMetadataResponse>> {
+        return this.api.getKVLookupMetadataWithHttpInfo(param.organizationId, param.componentId,  options).toPromise();
     }
 
     /**
@@ -2136,8 +2135,8 @@ export class ObjectKvApi {
      * Get KV lookup metadata
      * @param param the request object
      */
-    public v3OrganizationIdKvLookupMetadataGet(param: KvApiV3OrganizationIdKvLookupMetadataGetRequest, options?: ConfigurationOptions): Promise<KvlookupGetMetadataResponse> {
-        return this.api.v3OrganizationIdKvLookupMetadataGet(param.organizationId, param.componentId,  options).toPromise();
+    public getKVLookupMetadata(param: KeyValueStoreApiGetKVLookupMetadataRequest, options?: ConfigurationOptions): Promise<KvlookupGetMetadataResponse> {
+        return this.api.getKVLookupMetadata(param.organizationId, param.componentId,  options).toPromise();
     }
 
     /**
@@ -2145,8 +2144,8 @@ export class ObjectKvApi {
      * Get KV lookup sample entries
      * @param param the request object
      */
-    public v3OrganizationIdKvLookupSampleGetWithHttpInfo(param: KvApiV3OrganizationIdKvLookupSampleGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<KvlookupKVEntry>>> {
-        return this.api.v3OrganizationIdKvLookupSampleGetWithHttpInfo(param.organizationId, param.componentId, param.numEntries,  options).toPromise();
+    public getKVLookupSampleEntriesWithHttpInfo(param: KeyValueStoreApiGetKVLookupSampleEntriesRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<KvlookupKVEntry>>> {
+        return this.api.getKVLookupSampleEntriesWithHttpInfo(param.organizationId, param.componentId, param.numEntries,  options).toPromise();
     }
 
     /**
@@ -2154,8 +2153,8 @@ export class ObjectKvApi {
      * Get KV lookup sample entries
      * @param param the request object
      */
-    public v3OrganizationIdKvLookupSampleGet(param: KvApiV3OrganizationIdKvLookupSampleGetRequest, options?: ConfigurationOptions): Promise<Array<KvlookupKVEntry>> {
-        return this.api.v3OrganizationIdKvLookupSampleGet(param.organizationId, param.componentId, param.numEntries,  options).toPromise();
+    public getKVLookupSampleEntries(param: KeyValueStoreApiGetKVLookupSampleEntriesRequest, options?: ConfigurationOptions): Promise<Array<KvlookupKVEntry>> {
+        return this.api.getKVLookupSampleEntries(param.organizationId, param.componentId, param.numEntries,  options).toPromise();
     }
 
     /**
@@ -2163,8 +2162,8 @@ export class ObjectKvApi {
      * Get value by key from KV lookup
      * @param param the request object
      */
-    public v3OrganizationIdKvLookupValueGetWithHttpInfo(param: KvApiV3OrganizationIdKvLookupValueGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<KvlookupKVEntry>> {
-        return this.api.v3OrganizationIdKvLookupValueGetWithHttpInfo(param.organizationId, param.componentId, param.key,  options).toPromise();
+    public getValueFromKvStoreWithHttpInfo(param: KeyValueStoreApiGetValueFromKvStoreRequest, options?: ConfigurationOptions): Promise<HttpInfo<KvlookupKVEntry>> {
+        return this.api.getValueFromKvStoreWithHttpInfo(param.organizationId, param.componentId, param.key,  options).toPromise();
     }
 
     /**
@@ -2172,8 +2171,8 @@ export class ObjectKvApi {
      * Get value by key from KV lookup
      * @param param the request object
      */
-    public v3OrganizationIdKvLookupValueGet(param: KvApiV3OrganizationIdKvLookupValueGetRequest, options?: ConfigurationOptions): Promise<KvlookupKVEntry> {
-        return this.api.v3OrganizationIdKvLookupValueGet(param.organizationId, param.componentId, param.key,  options).toPromise();
+    public getValueFromKvStore(param: KeyValueStoreApiGetValueFromKvStoreRequest, options?: ConfigurationOptions): Promise<KvlookupKVEntry> {
+        return this.api.getValueFromKvStore(param.organizationId, param.componentId, param.key,  options).toPromise();
     }
 
 }
@@ -2181,129 +2180,146 @@ export class ObjectKvApi {
 import { ObservableLogsApi } from "./ObservableAPI";
 import { LogsApiRequestFactory, LogsApiResponseProcessor} from "../apis/LogsApi";
 
-export interface LogsApiV1OrganizationIdLogsApiGetRequest {
+export interface LogsApiStreamNodeDataRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof LogsApiv1OrganizationIdLogsApiGet
+     * @memberof LogsApistreamNodeData
      */
     organizationId: string
     /**
-     * RFC3339 timestamp to start streaming from
+     * Node ID
      * Defaults to: undefined
      * @type string
-     * @memberof LogsApiv1OrganizationIdLogsApiGet
+     * @memberof LogsApistreamNodeData
      */
-    since?: string
+    nodeId: string
 }
 
-export interface LogsApiV1OrganizationIdLogsGetRequest {
+export interface LogsApiStreamNodeLogsRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof LogsApiv1OrganizationIdLogsGet
-     */
-    organizationId: string
-    /**
-     * RFC3339 timestamp to start streaming from
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsGet
-     */
-    since?: string
-    /**
-     * Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsGet
-     */
-    last?: string
-}
-
-export interface LogsApiV1OrganizationIdLogsPipelinesGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesGet
-     */
-    organizationId: string
-    /**
-     * RFC3339 timestamp to start streaming from
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesGet
-     */
-    since?: string
-}
-
-export interface LogsApiV1OrganizationIdLogsPipelinesPipelineIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdGet
+     * @memberof LogsApistreamNodeLogs
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdGet
-     */
-    pipelineId: string
-    /**
-     * RFC3339 timestamp to start streaming from
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdGet
-     */
-    since?: string
-    /**
-     * Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdGet
-     */
-    last?: string
-}
-
-export interface LogsApiV1OrganizationIdLogsPipelinesPipelineIdNodeIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdNodeIdGet
-     */
-    organizationId: string
-    /**
-     * Pipeline ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdNodeIdGet
+     * @memberof LogsApistreamNodeLogs
      */
     pipelineId: string
     /**
      * Node ID
      * Defaults to: undefined
      * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdNodeIdGet
+     * @memberof LogsApistreamNodeLogs
      */
     nodeId: string
     /**
      * RFC3339 timestamp to start streaming from
      * Defaults to: undefined
      * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdNodeIdGet
+     * @memberof LogsApistreamNodeLogs
      */
     since?: string
     /**
      * Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
      * Defaults to: undefined
      * @type string
-     * @memberof LogsApiv1OrganizationIdLogsPipelinesPipelineIdNodeIdGet
+     * @memberof LogsApistreamNodeLogs
+     */
+    last?: string
+}
+
+export interface LogsApiStreamOrganizationAPILogsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamOrganizationAPILogs
+     */
+    organizationId: string
+    /**
+     * RFC3339 timestamp to start streaming from
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamOrganizationAPILogs
+     */
+    since?: string
+}
+
+export interface LogsApiStreamOrganizationLogsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamOrganizationLogs
+     */
+    organizationId: string
+    /**
+     * RFC3339 timestamp to start streaming from
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamOrganizationLogs
+     */
+    since?: string
+    /**
+     * Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamOrganizationLogs
+     */
+    last?: string
+}
+
+export interface LogsApiStreamOrganizationPipelinesLogsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamOrganizationPipelinesLogs
+     */
+    organizationId: string
+    /**
+     * RFC3339 timestamp to start streaming from
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamOrganizationPipelinesLogs
+     */
+    since?: string
+}
+
+export interface LogsApiStreamPipelineLogsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamPipelineLogs
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamPipelineLogs
+     */
+    pipelineId: string
+    /**
+     * RFC3339 timestamp to start streaming from
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamPipelineLogs
+     */
+    since?: string
+    /**
+     * Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
+     * Defaults to: undefined
+     * @type string
+     * @memberof LogsApistreamPipelineLogs
      */
     last?: string
 }
@@ -2316,75 +2332,21 @@ export class ObjectLogsApi {
     }
 
     /**
-     * Stream api logs for an organization
-     * Stream organization api logs
+     * Stream data for a specific node within an organization
+     * Stream node data
      * @param param the request object
      */
-    public v1OrganizationIdLogsApiGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsApiGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdLogsApiGetWithHttpInfo(param.organizationId, param.since,  options).toPromise();
+    public streamNodeDataWithHttpInfo(param: LogsApiStreamNodeDataRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.streamNodeDataWithHttpInfo(param.organizationId, param.nodeId,  options).toPromise();
     }
 
     /**
-     * Stream api logs for an organization
-     * Stream organization api logs
+     * Stream data for a specific node within an organization
+     * Stream node data
      * @param param the request object
      */
-    public v1OrganizationIdLogsApiGet(param: LogsApiV1OrganizationIdLogsApiGetRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdLogsApiGet(param.organizationId, param.since,  options).toPromise();
-    }
-
-    /**
-     * Stream logs for an entire organization
-     * Stream organization logs
-     * @param param the request object
-     */
-    public v1OrganizationIdLogsGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdLogsGetWithHttpInfo(param.organizationId, param.since, param.last,  options).toPromise();
-    }
-
-    /**
-     * Stream logs for an entire organization
-     * Stream organization logs
-     * @param param the request object
-     */
-    public v1OrganizationIdLogsGet(param: LogsApiV1OrganizationIdLogsGetRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdLogsGet(param.organizationId, param.since, param.last,  options).toPromise();
-    }
-
-    /**
-     * Stream pipeline logs for an organization
-     * Stream organization pipeline logs
-     * @param param the request object
-     */
-    public v1OrganizationIdLogsPipelinesGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdLogsPipelinesGetWithHttpInfo(param.organizationId, param.since,  options).toPromise();
-    }
-
-    /**
-     * Stream pipeline logs for an organization
-     * Stream organization pipeline logs
-     * @param param the request object
-     */
-    public v1OrganizationIdLogsPipelinesGet(param: LogsApiV1OrganizationIdLogsPipelinesGetRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdLogsPipelinesGet(param.organizationId, param.since,  options).toPromise();
-    }
-
-    /**
-     * Stream logs for a specific pipeline within an organization
-     * Stream pipeline logs
-     * @param param the request object
-     */
-    public v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.since, param.last,  options).toPromise();
-    }
-
-    /**
-     * Stream logs for a specific pipeline within an organization
-     * Stream pipeline logs
-     * @param param the request object
-     */
-    public v1OrganizationIdLogsPipelinesPipelineIdGet(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdLogsPipelinesPipelineIdGet(param.organizationId, param.pipelineId, param.since, param.last,  options).toPromise();
+    public streamNodeData(param: LogsApiStreamNodeDataRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.streamNodeData(param.organizationId, param.nodeId,  options).toPromise();
     }
 
     /**
@@ -2392,8 +2354,8 @@ export class ObjectLogsApi {
      * Stream node logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.since, param.last,  options).toPromise();
+    public streamNodeLogsWithHttpInfo(param: LogsApiStreamNodeLogsRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.streamNodeLogsWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.since, param.last,  options).toPromise();
     }
 
     /**
@@ -2401,8 +2363,80 @@ export class ObjectLogsApi {
      * Stream node logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(param.organizationId, param.pipelineId, param.nodeId, param.since, param.last,  options).toPromise();
+    public streamNodeLogs(param: LogsApiStreamNodeLogsRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.streamNodeLogs(param.organizationId, param.pipelineId, param.nodeId, param.since, param.last,  options).toPromise();
+    }
+
+    /**
+     * Stream api logs for an organization
+     * Stream organization api logs
+     * @param param the request object
+     */
+    public streamOrganizationAPILogsWithHttpInfo(param: LogsApiStreamOrganizationAPILogsRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.streamOrganizationAPILogsWithHttpInfo(param.organizationId, param.since,  options).toPromise();
+    }
+
+    /**
+     * Stream api logs for an organization
+     * Stream organization api logs
+     * @param param the request object
+     */
+    public streamOrganizationAPILogs(param: LogsApiStreamOrganizationAPILogsRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.streamOrganizationAPILogs(param.organizationId, param.since,  options).toPromise();
+    }
+
+    /**
+     * Stream logs for an entire organization
+     * Stream organization logs
+     * @param param the request object
+     */
+    public streamOrganizationLogsWithHttpInfo(param: LogsApiStreamOrganizationLogsRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.streamOrganizationLogsWithHttpInfo(param.organizationId, param.since, param.last,  options).toPromise();
+    }
+
+    /**
+     * Stream logs for an entire organization
+     * Stream organization logs
+     * @param param the request object
+     */
+    public streamOrganizationLogs(param: LogsApiStreamOrganizationLogsRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.streamOrganizationLogs(param.organizationId, param.since, param.last,  options).toPromise();
+    }
+
+    /**
+     * Stream pipeline logs for an organization
+     * Stream organization pipeline logs
+     * @param param the request object
+     */
+    public streamOrganizationPipelinesLogsWithHttpInfo(param: LogsApiStreamOrganizationPipelinesLogsRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.streamOrganizationPipelinesLogsWithHttpInfo(param.organizationId, param.since,  options).toPromise();
+    }
+
+    /**
+     * Stream pipeline logs for an organization
+     * Stream organization pipeline logs
+     * @param param the request object
+     */
+    public streamOrganizationPipelinesLogs(param: LogsApiStreamOrganizationPipelinesLogsRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.streamOrganizationPipelinesLogs(param.organizationId, param.since,  options).toPromise();
+    }
+
+    /**
+     * Stream logs for a specific pipeline within an organization
+     * Stream pipeline logs
+     * @param param the request object
+     */
+    public streamPipelineLogsWithHttpInfo(param: LogsApiStreamPipelineLogsRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.streamPipelineLogsWithHttpInfo(param.organizationId, param.pipelineId, param.since, param.last,  options).toPromise();
+    }
+
+    /**
+     * Stream logs for a specific pipeline within an organization
+     * Stream pipeline logs
+     * @param param the request object
+     */
+    public streamPipelineLogs(param: LogsApiStreamPipelineLogsRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.streamPipelineLogs(param.organizationId, param.pipelineId, param.since, param.last,  options).toPromise();
     }
 
 }
@@ -2410,31 +2444,31 @@ export class ObjectLogsApi {
 import { ObservableOauthApi } from "./ObservableAPI";
 import { OauthApiRequestFactory, OauthApiResponseProcessor} from "../apis/OauthApi";
 
-export interface OauthApiV1OauthTypeIdCallbackGetRequest {
+export interface OauthApiGetOAuthRedirectRequest {
     /**
      * component type ID
      * Defaults to: undefined
      * @type string
-     * @memberof OauthApiv1OauthTypeIdCallbackGet
-     */
-    typeId: string
-}
-
-export interface OauthApiV1OauthTypeIdOrganizationIdGetRequest {
-    /**
-     * component type ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OauthApiv1OauthTypeIdOrganizationIdGet
+     * @memberof OauthApigetOAuthRedirect
      */
     typeId: string
     /**
      * organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OauthApiv1OauthTypeIdOrganizationIdGet
+     * @memberof OauthApigetOAuthRedirect
      */
     organizationId: string
+}
+
+export interface OauthApiOAuthCallbackRequest {
+    /**
+     * component type ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OauthApioAuthCallback
+     */
+    typeId: string
 }
 
 export class ObjectOauthApi {
@@ -2445,21 +2479,12 @@ export class ObjectOauthApi {
     }
 
     /**
-     * Oauth callback
-     * Oauth callback
+     * Get oauth redirect
+     * Get oauth redirect
      * @param param the request object
      */
-    public v1OauthTypeIdCallbackGetWithHttpInfo(param: OauthApiV1OauthTypeIdCallbackGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OauthTypeIdCallbackGetWithHttpInfo(param.typeId,  options).toPromise();
-    }
-
-    /**
-     * Oauth callback
-     * Oauth callback
-     * @param param the request object
-     */
-    public v1OauthTypeIdCallbackGet(param: OauthApiV1OauthTypeIdCallbackGetRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OauthTypeIdCallbackGet(param.typeId,  options).toPromise();
+    public getOAuthRedirectWithHttpInfo(param: OauthApiGetOAuthRedirectRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.getOAuthRedirectWithHttpInfo(param.typeId, param.organizationId,  options).toPromise();
     }
 
     /**
@@ -2467,143 +2492,170 @@ export class ObjectOauthApi {
      * Get oauth redirect
      * @param param the request object
      */
-    public v1OauthTypeIdOrganizationIdGetWithHttpInfo(param: OauthApiV1OauthTypeIdOrganizationIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OauthTypeIdOrganizationIdGetWithHttpInfo(param.typeId, param.organizationId,  options).toPromise();
+    public getOAuthRedirect(param: OauthApiGetOAuthRedirectRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.getOAuthRedirect(param.typeId, param.organizationId,  options).toPromise();
     }
 
     /**
-     * Get oauth redirect
-     * Get oauth redirect
+     * Oauth callback
+     * Oauth callback
      * @param param the request object
      */
-    public v1OauthTypeIdOrganizationIdGet(param: OauthApiV1OauthTypeIdOrganizationIdGetRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OauthTypeIdOrganizationIdGet(param.typeId, param.organizationId,  options).toPromise();
+    public oAuthCallbackWithHttpInfo(param: OauthApiOAuthCallbackRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.oAuthCallbackWithHttpInfo(param.typeId,  options).toPromise();
+    }
+
+    /**
+     * Oauth callback
+     * Oauth callback
+     * @param param the request object
+     */
+    public oAuthCallback(param: OauthApiOAuthCallbackRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.oAuthCallback(param.typeId,  options).toPromise();
     }
 
 }
 
-import { ObservableOrganizationApiKeysApi } from "./ObservableAPI";
-import { OrganizationApiKeysApiRequestFactory, OrganizationApiKeysApiResponseProcessor} from "../apis/OrganizationApiKeysApi";
+import { ObservableOrganizationAPIKeysApi } from "./ObservableAPI";
+import { OrganizationAPIKeysApiRequestFactory, OrganizationAPIKeysApiResponseProcessor} from "../apis/OrganizationAPIKeysApi";
 
-export interface OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdDeleteRequest {
+export interface OrganizationAPIKeysApiCreateAPIKeyRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdDelete
+     * @memberof OrganizationAPIKeysApicreateAPIKey
+     */
+    organizationId: string
+    /**
+     * Request body for creating an API key
+     * @type RoutesV2CreateAPIKeyRequest
+     * @memberof OrganizationAPIKeysApicreateAPIKey
+     */
+    routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest
+}
+
+export interface OrganizationAPIKeysApiDeleteAPIKeyRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationAPIKeysApideleteAPIKey
      */
     organizationId: string
     /**
      * API Key ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdDelete
+     * @memberof OrganizationAPIKeysApideleteAPIKey
      */
     apiKeyId: string
 }
 
-export interface OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdGetRequest {
+export interface OrganizationAPIKeysApiGetAPIKeyRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdGet
+     * @memberof OrganizationAPIKeysApigetAPIKey
      */
     organizationId: string
     /**
      * API Key ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdGet
+     * @memberof OrganizationAPIKeysApigetAPIKey
      */
     apiKeyId: string
 }
 
-export interface OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdPatchRequest {
+export interface OrganizationAPIKeysApiListAPIKeysRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdPatch
-     */
-    organizationId: string
-    /**
-     * API Key ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdPatch
-     */
-    apiKeyId: string
-    /**
-     * Request body for updating an API key
-     * @type RoutesV2UpdateAPIKeyRequest
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdPatch
-     */
-    routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest
-}
-
-export interface OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdRegeneratePostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdRegeneratePost
-     */
-    organizationId: string
-    /**
-     * API Key ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysApiKeyIdRegeneratePost
-     */
-    apiKeyId: string
-}
-
-export interface OrganizationApiKeysApiV2OrganizationIdApiKeysGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysGet
+     * @memberof OrganizationAPIKeysApilistAPIKeys
      */
     organizationId: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysGet
+     * @memberof OrganizationAPIKeysApilistAPIKeys
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysGet
+     * @memberof OrganizationAPIKeysApilistAPIKeys
      */
     offset?: number
 }
 
-export interface OrganizationApiKeysApiV2OrganizationIdApiKeysPostRequest {
+export interface OrganizationAPIKeysApiRegenerateAPIKeyRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysPost
+     * @memberof OrganizationAPIKeysApiregenerateAPIKey
      */
     organizationId: string
     /**
-     * Request body for creating an API key
-     * @type RoutesV2CreateAPIKeyRequest
-     * @memberof OrganizationApiKeysApiv2OrganizationIdApiKeysPost
+     * API Key ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationAPIKeysApiregenerateAPIKey
      */
-    routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest
+    apiKeyId: string
 }
 
-export class ObjectOrganizationApiKeysApi {
-    private api: ObservableOrganizationApiKeysApi
+export interface OrganizationAPIKeysApiUpdateAPIKeyRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationAPIKeysApiupdateAPIKey
+     */
+    organizationId: string
+    /**
+     * API Key ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationAPIKeysApiupdateAPIKey
+     */
+    apiKeyId: string
+    /**
+     * Request body for updating an API key
+     * @type RoutesV2UpdateAPIKeyRequest
+     * @memberof OrganizationAPIKeysApiupdateAPIKey
+     */
+    routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest
+}
 
-    public constructor(configuration: Configuration, requestFactory?: OrganizationApiKeysApiRequestFactory, responseProcessor?: OrganizationApiKeysApiResponseProcessor) {
-        this.api = new ObservableOrganizationApiKeysApi(configuration, requestFactory, responseProcessor);
+export class ObjectOrganizationAPIKeysApi {
+    private api: ObservableOrganizationAPIKeysApi
+
+    public constructor(configuration: Configuration, requestFactory?: OrganizationAPIKeysApiRequestFactory, responseProcessor?: OrganizationAPIKeysApiResponseProcessor) {
+        this.api = new ObservableOrganizationAPIKeysApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Create API key
+     * Create API key
+     * @param param the request object
+     */
+    public createAPIKeyWithHttpInfo(param: OrganizationAPIKeysApiCreateAPIKeyRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+        return this.api.createAPIKeyWithHttpInfo(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
+    }
+
+    /**
+     * Create API key
+     * Create API key
+     * @param param the request object
+     */
+    public createAPIKey(param: OrganizationAPIKeysApiCreateAPIKeyRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
+        return this.api.createAPIKey(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
     }
 
     /**
@@ -2611,8 +2663,8 @@ export class ObjectOrganizationApiKeysApi {
      * Delete API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
+    public deleteAPIKeyWithHttpInfo(param: OrganizationAPIKeysApiDeleteAPIKeyRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.deleteAPIKeyWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
     /**
@@ -2620,8 +2672,8 @@ export class ObjectOrganizationApiKeysApi {
      * Delete API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdDelete(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdDelete(param.organizationId, param.apiKeyId,  options).toPromise();
+    public deleteAPIKey(param: OrganizationAPIKeysApiDeleteAPIKeyRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.deleteAPIKey(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
     /**
@@ -2629,8 +2681,8 @@ export class ObjectOrganizationApiKeysApi {
      * Get API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
+    public getAPIKeyWithHttpInfo(param: OrganizationAPIKeysApiGetAPIKeyRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
+        return this.api.getAPIKeyWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
     /**
@@ -2638,26 +2690,26 @@ export class ObjectOrganizationApiKeysApi {
      * Get API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdGet(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdGetRequest, options?: ConfigurationOptions): Promise<ModelsAPIKey> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdGet(param.organizationId, param.apiKeyId,  options).toPromise();
+    public getAPIKey(param: OrganizationAPIKeysApiGetAPIKeyRequest, options?: ConfigurationOptions): Promise<ModelsAPIKey> {
+        return this.api.getAPIKey(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
     /**
-     * Update API key
-     * Update API key
+     * List API keys
+     * List API keys
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
+    public listAPIKeysWithHttpInfo(param: OrganizationAPIKeysApiListAPIKeysRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyList>> {
+        return this.api.listAPIKeysWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
-     * Update API key
-     * Update API key
+     * List API keys
+     * List API keys
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdPatch(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsAPIKey> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdPatch(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
+    public listAPIKeys(param: OrganizationAPIKeysApiListAPIKeysRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyList> {
+        return this.api.listAPIKeys(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -2665,8 +2717,8 @@ export class ObjectOrganizationApiKeysApi {
      * Regenerate API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdRegeneratePostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
+    public regenerateAPIKeyWithHttpInfo(param: OrganizationAPIKeysApiRegenerateAPIKeyRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+        return this.api.regenerateAPIKeyWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
     /**
@@ -2674,44 +2726,26 @@ export class ObjectOrganizationApiKeysApi {
      * Regenerate API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdRegeneratePost(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdRegeneratePostRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
-        return this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePost(param.organizationId, param.apiKeyId,  options).toPromise();
+    public regenerateAPIKey(param: OrganizationAPIKeysApiRegenerateAPIKeyRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
+        return this.api.regenerateAPIKey(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
     /**
-     * List API keys
-     * List API keys
+     * Update API key
+     * Update API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysGetWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyList>> {
-        return this.api.v2OrganizationIdApiKeysGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public updateAPIKeyWithHttpInfo(param: OrganizationAPIKeysApiUpdateAPIKeyRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
+        return this.api.updateAPIKeyWithHttpInfo(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
     }
 
     /**
-     * List API keys
-     * List API keys
+     * Update API key
+     * Update API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysGet(param: OrganizationApiKeysApiV2OrganizationIdApiKeysGetRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyList> {
-        return this.api.v2OrganizationIdApiKeysGet(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Create API key
-     * Create API key
-     * @param param the request object
-     */
-    public v2OrganizationIdApiKeysPostWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
-        return this.api.v2OrganizationIdApiKeysPostWithHttpInfo(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
-    }
-
-    /**
-     * Create API key
-     * Create API key
-     * @param param the request object
-     */
-    public v2OrganizationIdApiKeysPost(param: OrganizationApiKeysApiV2OrganizationIdApiKeysPostRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
-        return this.api.v2OrganizationIdApiKeysPost(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
+    public updateAPIKey(param: OrganizationAPIKeysApiUpdateAPIKeyRequest, options?: ConfigurationOptions): Promise<ModelsAPIKey> {
+        return this.api.updateAPIKey(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
     }
 
 }
@@ -2719,161 +2753,161 @@ export class ObjectOrganizationApiKeysApi {
 import { ObservableOrganizationEnrichmentsApi } from "./ObservableAPI";
 import { OrganizationEnrichmentsApiRequestFactory, OrganizationEnrichmentsApiResponseProcessor} from "../apis/OrganizationEnrichmentsApi";
 
-export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdDeleteRequest {
+export interface OrganizationEnrichmentsApiCreateEnrichmentRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdDelete
-     */
-    organizationId: string
-    /**
-     * Enrichment ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdDelete
-     */
-    enrichmentId: string
-}
-
-export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdGet
-     */
-    organizationId: string
-    /**
-     * Enrichment ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdGet
-     */
-    enrichmentId: string
-}
-
-export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPatch
-     */
-    organizationId: string
-    /**
-     * Enrichment ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPatch
-     */
-    enrichmentId: string
-    /**
-     * Enrichment configuration update
-     * @type RoutesV3UpdateEnrichmentRequest
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPatch
-     */
-    routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest
-    /**
-     * Test connection before updating the enrichment
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPatch
-     */
-    testConnection?: boolean
-}
-
-export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
-     */
-    organizationId: string
-    /**
-     * Enrichment ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
-     */
-    enrichmentId: string
-    /**
-     * Enrichment configuration update
-     * @type RoutesV3PutEnrichmentRequest
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
-     */
-    routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest
-    /**
-     * Test connection before updating the enrichment
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
-     */
-    testConnection?: boolean
-}
-
-export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsGet
-     */
-    organizationId: string
-    /**
-     * Number of results to return (default 100)
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsGet
-     */
-    limit?: number
-    /**
-     * Number of results to skip (default 0)
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsGet
-     */
-    offset?: number
-}
-
-export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsPost
+     * @memberof OrganizationEnrichmentsApicreateEnrichment
      */
     organizationId: string
     /**
      * Enrichment configuration
      * @type RoutesV3CreateEnrichmentRequest
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsPost
+     * @memberof OrganizationEnrichmentsApicreateEnrichment
      */
     routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest
     /**
      * Test connection before creating the enrichment
      * Defaults to: undefined
      * @type boolean
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsPost
+     * @memberof OrganizationEnrichmentsApicreateEnrichment
      */
     testConnection?: boolean
 }
 
-export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsTestConnectionPostRequest {
+export interface OrganizationEnrichmentsApiDeleteEnrichmentRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsTestConnectionPost
+     * @memberof OrganizationEnrichmentsApideleteEnrichment
+     */
+    organizationId: string
+    /**
+     * Enrichment ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApideleteEnrichment
+     */
+    enrichmentId: string
+}
+
+export interface OrganizationEnrichmentsApiGetEnrichmentRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApigetEnrichment
+     */
+    organizationId: string
+    /**
+     * Enrichment ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApigetEnrichment
+     */
+    enrichmentId: string
+}
+
+export interface OrganizationEnrichmentsApiListEnrichmentsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApilistEnrichments
+     */
+    organizationId: string
+    /**
+     * Number of results to return (default 100)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationEnrichmentsApilistEnrichments
+     */
+    limit?: number
+    /**
+     * Number of results to skip (default 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationEnrichmentsApilistEnrichments
+     */
+    offset?: number
+}
+
+export interface OrganizationEnrichmentsApiReplaceEnrichmentRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApireplaceEnrichment
+     */
+    organizationId: string
+    /**
+     * Enrichment ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApireplaceEnrichment
+     */
+    enrichmentId: string
+    /**
+     * Enrichment configuration update
+     * @type RoutesV3PutEnrichmentRequest
+     * @memberof OrganizationEnrichmentsApireplaceEnrichment
+     */
+    routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest
+    /**
+     * Test connection before updating the enrichment
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationEnrichmentsApireplaceEnrichment
+     */
+    testConnection?: boolean
+}
+
+export interface OrganizationEnrichmentsApiTestEnrichmentConnectionRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApitestEnrichmentConnection
      */
     organizationId: string
     /**
      * Enrichment configuration to test
      * @type RoutesV3TestEnrichmentConnectionRequest
-     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsTestConnectionPost
+     * @memberof OrganizationEnrichmentsApitestEnrichmentConnection
      */
     routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest
+}
+
+export interface OrganizationEnrichmentsApiUpdateEnrichmentRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApiupdateEnrichment
+     */
+    organizationId: string
+    /**
+     * Enrichment ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApiupdateEnrichment
+     */
+    enrichmentId: string
+    /**
+     * Enrichment configuration update
+     * @type RoutesV3UpdateEnrichmentRequest
+     * @memberof OrganizationEnrichmentsApiupdateEnrichment
+     */
+    routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest
+    /**
+     * Test connection before updating the enrichment
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationEnrichmentsApiupdateEnrichment
+     */
+    testConnection?: boolean
 }
 
 export class ObjectOrganizationEnrichmentsApi {
@@ -2884,93 +2918,12 @@ export class ObjectOrganizationEnrichmentsApi {
     }
 
     /**
-     * Delete an enrichment by ID
-     * Delete enrichment
+     * Create a new enrichment with configuration including secrets handling
+     * Create enrichment
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsEnrichmentIdDeleteWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdDeleteWithHttpInfo(param.organizationId, param.enrichmentId,  options).toPromise();
-    }
-
-    /**
-     * Delete an enrichment by ID
-     * Delete enrichment
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsEnrichmentIdDelete(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdDeleteRequest, options?: ConfigurationOptions): Promise<RoutesV3SuccessResponse> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdDelete(param.organizationId, param.enrichmentId,  options).toPromise();
-    }
-
-    /**
-     * Get an enrichment by ID
-     * Get enrichment
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3GetEnrichmentResponse>> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(param.organizationId, param.enrichmentId,  options).toPromise();
-    }
-
-    /**
-     * Get an enrichment by ID
-     * Get enrichment
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGet(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest, options?: ConfigurationOptions): Promise<RoutesV3GetEnrichmentResponse> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdGet(param.organizationId, param.enrichmentId,  options).toPromise();
-    }
-
-    /**
-     * Update an existing enrichment with new configuration including secrets handling
-     * Update enrichment
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsEnrichmentIdPatchWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdPatchWithHttpInfo(param.organizationId, param.enrichmentId, param.routesV3UpdateEnrichmentRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Update an existing enrichment with new configuration including secrets handling
-     * Update enrichment
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsEnrichmentIdPatch(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdPatch(param.organizationId, param.enrichmentId, param.routesV3UpdateEnrichmentRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Replace an existing enrichment with new configuration including secrets handling
-     * Replace enrichment
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Replace an existing enrichment with new configuration including secrets handling
-     * Replace enrichment
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsEnrichmentIdPut(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
-        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdPut(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * List all enrichments for an organization
-     * List enrichments
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsGetWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichmentList>> {
-        return this.api.v3OrganizationIdEnrichmentsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List all enrichments for an organization
-     * List enrichments
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsGet(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsGetRequest, options?: ConfigurationOptions): Promise<ModelsEnrichmentList> {
-        return this.api.v3OrganizationIdEnrichmentsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public createEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiCreateEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        return this.api.createEnrichmentWithHttpInfo(param.organizationId, param.routesV3CreateEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -2978,17 +2931,80 @@ export class ObjectOrganizationEnrichmentsApi {
      * Create enrichment
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsPostWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
-        return this.api.v3OrganizationIdEnrichmentsPostWithHttpInfo(param.organizationId, param.routesV3CreateEnrichmentRequest, param.testConnection,  options).toPromise();
+    public createEnrichment(param: OrganizationEnrichmentsApiCreateEnrichmentRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
+        return this.api.createEnrichment(param.organizationId, param.routesV3CreateEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
-     * Create a new enrichment with configuration including secrets handling
-     * Create enrichment
+     * Delete an enrichment by ID
+     * Delete enrichment
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsPost(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsPostRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
-        return this.api.v3OrganizationIdEnrichmentsPost(param.organizationId, param.routesV3CreateEnrichmentRequest, param.testConnection,  options).toPromise();
+    public deleteEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiDeleteEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
+        return this.api.deleteEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId,  options).toPromise();
+    }
+
+    /**
+     * Delete an enrichment by ID
+     * Delete enrichment
+     * @param param the request object
+     */
+    public deleteEnrichment(param: OrganizationEnrichmentsApiDeleteEnrichmentRequest, options?: ConfigurationOptions): Promise<RoutesV3SuccessResponse> {
+        return this.api.deleteEnrichment(param.organizationId, param.enrichmentId,  options).toPromise();
+    }
+
+    /**
+     * Get an enrichment by ID
+     * Get enrichment
+     * @param param the request object
+     */
+    public getEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiGetEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3GetEnrichmentResponse>> {
+        return this.api.getEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId,  options).toPromise();
+    }
+
+    /**
+     * Get an enrichment by ID
+     * Get enrichment
+     * @param param the request object
+     */
+    public getEnrichment(param: OrganizationEnrichmentsApiGetEnrichmentRequest, options?: ConfigurationOptions): Promise<RoutesV3GetEnrichmentResponse> {
+        return this.api.getEnrichment(param.organizationId, param.enrichmentId,  options).toPromise();
+    }
+
+    /**
+     * List all enrichments for an organization
+     * List enrichments
+     * @param param the request object
+     */
+    public listEnrichmentsWithHttpInfo(param: OrganizationEnrichmentsApiListEnrichmentsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichmentList>> {
+        return this.api.listEnrichmentsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List all enrichments for an organization
+     * List enrichments
+     * @param param the request object
+     */
+    public listEnrichments(param: OrganizationEnrichmentsApiListEnrichmentsRequest, options?: ConfigurationOptions): Promise<ModelsEnrichmentList> {
+        return this.api.listEnrichments(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param param the request object
+     */
+    public replaceEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiReplaceEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        return this.api.replaceEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param param the request object
+     */
+    public replaceEnrichment(param: OrganizationEnrichmentsApiReplaceEnrichmentRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
+        return this.api.replaceEnrichment(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -2996,8 +3012,8 @@ export class ObjectOrganizationEnrichmentsApi {
      * Test enrichment connection
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsTestConnectionPostWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
-        return this.api.v3OrganizationIdEnrichmentsTestConnectionPostWithHttpInfo(param.organizationId, param.routesV3TestEnrichmentConnectionRequest,  options).toPromise();
+    public testEnrichmentConnectionWithHttpInfo(param: OrganizationEnrichmentsApiTestEnrichmentConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
+        return this.api.testEnrichmentConnectionWithHttpInfo(param.organizationId, param.routesV3TestEnrichmentConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3005,8 +3021,26 @@ export class ObjectOrganizationEnrichmentsApi {
      * Test enrichment connection
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsTestConnectionPost(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<RoutesV3SuccessResponse> {
-        return this.api.v3OrganizationIdEnrichmentsTestConnectionPost(param.organizationId, param.routesV3TestEnrichmentConnectionRequest,  options).toPromise();
+    public testEnrichmentConnection(param: OrganizationEnrichmentsApiTestEnrichmentConnectionRequest, options?: ConfigurationOptions): Promise<RoutesV3SuccessResponse> {
+        return this.api.testEnrichmentConnection(param.organizationId, param.routesV3TestEnrichmentConnectionRequest,  options).toPromise();
+    }
+
+    /**
+     * Update an existing enrichment with new configuration including secrets handling
+     * Update enrichment
+     * @param param the request object
+     */
+    public updateEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiUpdateEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        return this.api.updateEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId, param.routesV3UpdateEnrichmentRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Update an existing enrichment with new configuration including secrets handling
+     * Update enrichment
+     * @param param the request object
+     */
+    public updateEnrichment(param: OrganizationEnrichmentsApiUpdateEnrichmentRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
+        return this.api.updateEnrichment(param.organizationId, param.enrichmentId, param.routesV3UpdateEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
 }
@@ -3014,161 +3048,161 @@ export class ObjectOrganizationEnrichmentsApi {
 import { ObservableOrganizationInputsApi } from "./ObservableAPI";
 import { OrganizationInputsApiRequestFactory, OrganizationInputsApiResponseProcessor} from "../apis/OrganizationInputsApi";
 
-export interface OrganizationInputsApiV1OrganizationIdInputsGetRequest {
+export interface OrganizationInputsApiCreateInputRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsGet
-     */
-    organizationId: string
-    /**
-     * Limit the number of organizations returned (default: DefaultLimit)
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsGet
-     */
-    limit?: number
-    /**
-     * Offset the organizations returned (default: 0)
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsGet
-     */
-    offset?: number
-}
-
-export interface OrganizationInputsApiV1OrganizationIdInputsInputIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdDelete
-     */
-    organizationId: string
-    /**
-     * Input ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdDelete
-     */
-    inputId: string
-}
-
-export interface OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdGet
-     */
-    organizationId: string
-    /**
-     * Input ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdGet
-     */
-    inputId: string
-}
-
-export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPatch
-     */
-    organizationId: string
-    /**
-     * Input ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPatch
-     */
-    inputId: string
-    /**
-     * Input configuration update
-     * @type RoutesV2UpdateInputRequest
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPatch
-     */
-    routesV2UpdateInputRequest: RoutesV2UpdateInputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPatch
-     */
-    testConnection?: boolean
-}
-
-export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPutRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
-     */
-    organizationId: string
-    /**
-     * Input ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
-     */
-    inputId: string
-    /**
-     * Input configuration update
-     * @type RoutesV2PutInputRequest
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
-     */
-    routesV2PutInputRequest: RoutesV2PutInputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
-     */
-    testConnection?: boolean
-}
-
-export interface OrganizationInputsApiV2OrganizationIdInputsPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsPost
+     * @memberof OrganizationInputsApicreateInput
      */
     organizationId: string
     /**
      * Input configuration
      * @type RoutesV2CreateInputRequest
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsPost
+     * @memberof OrganizationInputsApicreateInput
      */
     routesV2CreateInputRequest: RoutesV2CreateInputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
      * @type boolean
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsPost
+     * @memberof OrganizationInputsApicreateInput
      */
     testConnection?: boolean
 }
 
-export interface OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest {
+export interface OrganizationInputsApiDeleteOrganizationInputRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsTestConnectionPost
+     * @memberof OrganizationInputsApideleteOrganizationInput
+     */
+    organizationId: string
+    /**
+     * Input ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApideleteOrganizationInput
+     */
+    inputId: string
+}
+
+export interface OrganizationInputsApiGetOrganizationInputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApigetOrganizationInput
+     */
+    organizationId: string
+    /**
+     * Input ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApigetOrganizationInput
+     */
+    inputId: string
+}
+
+export interface OrganizationInputsApiListOrganizationInputsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApilistOrganizationInputs
+     */
+    organizationId: string
+    /**
+     * Limit the number of organizations returned (default: DefaultLimit)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationInputsApilistOrganizationInputs
+     */
+    limit?: number
+    /**
+     * Offset the organizations returned (default: 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationInputsApilistOrganizationInputs
+     */
+    offset?: number
+}
+
+export interface OrganizationInputsApiReplaceInputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApireplaceInput
+     */
+    organizationId: string
+    /**
+     * Input ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApireplaceInput
+     */
+    inputId: string
+    /**
+     * Input configuration update
+     * @type RoutesV2PutInputRequest
+     * @memberof OrganizationInputsApireplaceInput
+     */
+    routesV2PutInputRequest: RoutesV2PutInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApireplaceInput
+     */
+    testConnection?: boolean
+}
+
+export interface OrganizationInputsApiTestInputConnectionRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApitestInputConnection
      */
     organizationId: string
     /**
      * Input configuration to test
      * @type RoutesV2TestInputConnectionRequest
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsTestConnectionPost
+     * @memberof OrganizationInputsApitestInputConnection
      */
     routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest
+}
+
+export interface OrganizationInputsApiUpdateInputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApiupdateInput
+     */
+    organizationId: string
+    /**
+     * Input ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApiupdateInput
+     */
+    inputId: string
+    /**
+     * Input configuration update
+     * @type RoutesV2UpdateInputRequest
+     * @memberof OrganizationInputsApiupdateInput
+     */
+    routesV2UpdateInputRequest: RoutesV2UpdateInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiupdateInput
+     */
+    testConnection?: boolean
 }
 
 export class ObjectOrganizationInputsApi {
@@ -3179,93 +3213,12 @@ export class ObjectOrganizationInputsApi {
     }
 
     /**
-     * List inputs
-     * List inputs
+     * Create a new input with configuration including secrets handling
+     * Create input
      * @param param the request object
      */
-    public v1OrganizationIdInputsGetWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInputList>> {
-        return this.api.v1OrganizationIdInputsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List inputs
-     * List inputs
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsGet(param: OrganizationInputsApiV1OrganizationIdInputsGetRequest, options?: ConfigurationOptions): Promise<ModelsInputList> {
-        return this.api.v1OrganizationIdInputsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Delete input
-     * Delete input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsInputIdDeleteWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OrganizationIdInputsInputIdDeleteWithHttpInfo(param.organizationId, param.inputId,  options).toPromise();
-    }
-
-    /**
-     * Delete input
-     * Delete input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsInputIdDelete(param: OrganizationInputsApiV1OrganizationIdInputsInputIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OrganizationIdInputsInputIdDelete(param.organizationId, param.inputId,  options).toPromise();
-    }
-
-    /**
-     * Get input
-     * Get input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsInputIdGetWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetInputResponse>> {
-        return this.api.v1OrganizationIdInputsInputIdGetWithHttpInfo(param.organizationId, param.inputId,  options).toPromise();
-    }
-
-    /**
-     * Get input
-     * Get input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsInputIdGet(param: OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetInputResponse> {
-        return this.api.v1OrganizationIdInputsInputIdGet(param.organizationId, param.inputId,  options).toPromise();
-    }
-
-    /**
-     * Update an existing input with new configuration including secrets handling
-     * Update input
-     * @param param the request object
-     */
-    public v2OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Update an existing input with new configuration including secrets handling
-     * Update input
-     * @param param the request object
-     */
-    public v2OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.v2OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Replace an existing input with new configuration including secrets handling
-     * Replace input
-     * @param param the request object
-     */
-    public v2OrganizationIdInputsInputIdPutWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsInputIdPutWithHttpInfo(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Replace an existing input with new configuration including secrets handling
-     * Replace input
-     * @param param the request object
-     */
-    public v2OrganizationIdInputsInputIdPut(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPutRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.v2OrganizationIdInputsInputIdPut(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
+    public createInputWithHttpInfo(param: OrganizationInputsApiCreateInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        return this.api.createInputWithHttpInfo(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3273,17 +3226,80 @@ export class ObjectOrganizationInputsApi {
      * Create input
      * @param param the request object
      */
-    public v2OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
+    public createInput(param: OrganizationInputsApiCreateInputRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
+        return this.api.createInput(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
-     * Create a new input with configuration including secrets handling
-     * Create input
+     * Delete input
+     * Delete input
      * @param param the request object
      */
-    public v2OrganizationIdInputsPost(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.v2OrganizationIdInputsPost(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
+    public deleteOrganizationInputWithHttpInfo(param: OrganizationInputsApiDeleteOrganizationInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.deleteOrganizationInputWithHttpInfo(param.organizationId, param.inputId,  options).toPromise();
+    }
+
+    /**
+     * Delete input
+     * Delete input
+     * @param param the request object
+     */
+    public deleteOrganizationInput(param: OrganizationInputsApiDeleteOrganizationInputRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.deleteOrganizationInput(param.organizationId, param.inputId,  options).toPromise();
+    }
+
+    /**
+     * Get a configured input in organization
+     * Get organization input
+     * @param param the request object
+     */
+    public getOrganizationInputWithHttpInfo(param: OrganizationInputsApiGetOrganizationInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetInputResponse>> {
+        return this.api.getOrganizationInputWithHttpInfo(param.organizationId, param.inputId,  options).toPromise();
+    }
+
+    /**
+     * Get a configured input in organization
+     * Get organization input
+     * @param param the request object
+     */
+    public getOrganizationInput(param: OrganizationInputsApiGetOrganizationInputRequest, options?: ConfigurationOptions): Promise<RoutesGetInputResponse> {
+        return this.api.getOrganizationInput(param.organizationId, param.inputId,  options).toPromise();
+    }
+
+    /**
+     * List configured inputs in organization
+     * List organization inputs
+     * @param param the request object
+     */
+    public listOrganizationInputsWithHttpInfo(param: OrganizationInputsApiListOrganizationInputsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInputList>> {
+        return this.api.listOrganizationInputsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List configured inputs in organization
+     * List organization inputs
+     * @param param the request object
+     */
+    public listOrganizationInputs(param: OrganizationInputsApiListOrganizationInputsRequest, options?: ConfigurationOptions): Promise<ModelsInputList> {
+        return this.api.listOrganizationInputs(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param param the request object
+     */
+    public replaceInputWithHttpInfo(param: OrganizationInputsApiReplaceInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        return this.api.replaceInputWithHttpInfo(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param param the request object
+     */
+    public replaceInput(param: OrganizationInputsApiReplaceInputRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
+        return this.api.replaceInput(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3291,8 +3307,8 @@ export class ObjectOrganizationInputsApi {
      * Test input connection
      * @param param the request object
      */
-    public v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        return this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
+    public testInputConnectionWithHttpInfo(param: OrganizationInputsApiTestInputConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+        return this.api.testInputConnectionWithHttpInfo(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3300,8 +3316,26 @@ export class ObjectOrganizationInputsApi {
      * Test input connection
      * @param param the request object
      */
-    public v2OrganizationIdInputsTestConnectionPost(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
-        return this.api.v2OrganizationIdInputsTestConnectionPost(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
+    public testInputConnection(param: OrganizationInputsApiTestInputConnectionRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
+        return this.api.testInputConnection(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
+    }
+
+    /**
+     * Update an existing input with new configuration including secrets handling
+     * Update input
+     * @param param the request object
+     */
+    public updateInputWithHttpInfo(param: OrganizationInputsApiUpdateInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        return this.api.updateInputWithHttpInfo(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Update an existing input with new configuration including secrets handling
+     * Update input
+     * @param param the request object
+     */
+    public updateInput(param: OrganizationInputsApiUpdateInputRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
+        return this.api.updateInput(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
 }
@@ -3309,18 +3343,18 @@ export class ObjectOrganizationInputsApi {
 import { ObservableOrganizationInvitesApi } from "./ObservableAPI";
 import { OrganizationInvitesApiRequestFactory, OrganizationInvitesApiResponseProcessor} from "../apis/OrganizationInvitesApi";
 
-export interface OrganizationInvitesApiV1OrganizationIdInvitesPostRequest {
+export interface OrganizationInvitesApiInviteUserRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationInvitesApiv1OrganizationIdInvitesPost
+     * @memberof OrganizationInvitesApiinviteUser
      */
     organizationId: string
     /**
      * Request body for inviting a user to an organization
      * @type RoutesInviteUserToOrganizationRequest
-     * @memberof OrganizationInvitesApiv1OrganizationIdInvitesPost
+     * @memberof OrganizationInvitesApiinviteUser
      */
     routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest
 }
@@ -3337,8 +3371,8 @@ export class ObjectOrganizationInvitesApi {
      * Invite user to organization
      * @param param the request object
      */
-    public v1OrganizationIdInvitesPostWithHttpInfo(param: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdInvitesPostWithHttpInfo(param.organizationId, param.routesInviteUserToOrganizationRequest,  options).toPromise();
+    public inviteUserWithHttpInfo(param: OrganizationInvitesApiInviteUserRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.inviteUserWithHttpInfo(param.organizationId, param.routesInviteUserToOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -3346,8 +3380,8 @@ export class ObjectOrganizationInvitesApi {
      * Invite user to organization
      * @param param the request object
      */
-    public v1OrganizationIdInvitesPost(param: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdInvitesPost(param.organizationId, param.routesInviteUserToOrganizationRequest,  options).toPromise();
+    public inviteUser(param: OrganizationInvitesApiInviteUserRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.inviteUser(param.organizationId, param.routesInviteUserToOrganizationRequest,  options).toPromise();
     }
 
 }
@@ -3355,161 +3389,161 @@ export class ObjectOrganizationInvitesApi {
 import { ObservableOrganizationOutputsApi } from "./ObservableAPI";
 import { OrganizationOutputsApiRequestFactory, OrganizationOutputsApiResponseProcessor} from "../apis/OrganizationOutputsApi";
 
-export interface OrganizationOutputsApiV1OrganizationIdOutputsGetRequest {
+export interface OrganizationOutputsApiCreateOutputRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsGet
-     */
-    organizationId: string
-    /**
-     * Limit
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsGet
-     */
-    limit?: number
-    /**
-     * Offset
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsGet
-     */
-    offset?: number
-}
-
-export interface OrganizationOutputsApiV1OrganizationIdOutputsOutputIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsOutputIdDelete
-     */
-    organizationId: string
-    /**
-     * Output ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsOutputIdDelete
-     */
-    outputId: string
-}
-
-export interface OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsOutputIdGet
-     */
-    organizationId: string
-    /**
-     * Output ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsOutputIdGet
-     */
-    outputId: string
-}
-
-export interface OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPatch
-     */
-    organizationId: string
-    /**
-     * Output ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPatch
-     */
-    outputId: string
-    /**
-     * Output configuration update
-     * @type RoutesV2UpdateOutputRequest
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPatch
-     */
-    routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPatch
-     */
-    testConnection?: boolean
-}
-
-export interface OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
-     */
-    organizationId: string
-    /**
-     * Output ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
-     */
-    outputId: string
-    /**
-     * Output configuration update
-     * @type RoutesV2PutOutputRequest
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
-     */
-    routesV2PutOutputRequest: RoutesV2PutOutputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
-     */
-    testConnection?: boolean
-}
-
-export interface OrganizationOutputsApiV2OrganizationIdOutputsPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsPost
+     * @memberof OrganizationOutputsApicreateOutput
      */
     organizationId: string
     /**
      * Output configuration
      * @type RoutesV2CreateOutputRequest
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsPost
+     * @memberof OrganizationOutputsApicreateOutput
      */
     routesV2CreateOutputRequest: RoutesV2CreateOutputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
      * @type boolean
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsPost
+     * @memberof OrganizationOutputsApicreateOutput
      */
     testConnection?: boolean
 }
 
-export interface OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest {
+export interface OrganizationOutputsApiDeleteOrganizationOutputRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsTestConnectionPost
+     * @memberof OrganizationOutputsApideleteOrganizationOutput
+     */
+    organizationId: string
+    /**
+     * Output ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApideleteOrganizationOutput
+     */
+    outputId: string
+}
+
+export interface OrganizationOutputsApiGetOrganizationOutputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApigetOrganizationOutput
+     */
+    organizationId: string
+    /**
+     * Output ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApigetOrganizationOutput
+     */
+    outputId: string
+}
+
+export interface OrganizationOutputsApiListOrganizationOutputsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApilistOrganizationOutputs
+     */
+    organizationId: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationOutputsApilistOrganizationOutputs
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationOutputsApilistOrganizationOutputs
+     */
+    offset?: number
+}
+
+export interface OrganizationOutputsApiReplaceOutputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApireplaceOutput
+     */
+    organizationId: string
+    /**
+     * Output ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApireplaceOutput
+     */
+    outputId: string
+    /**
+     * Output configuration update
+     * @type RoutesV2PutOutputRequest
+     * @memberof OrganizationOutputsApireplaceOutput
+     */
+    routesV2PutOutputRequest: RoutesV2PutOutputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationOutputsApireplaceOutput
+     */
+    testConnection?: boolean
+}
+
+export interface OrganizationOutputsApiTestOutputConnectionRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApitestOutputConnection
      */
     organizationId: string
     /**
      * Output configuration to test
      * @type RoutesV2TestOutputConnectionRequest
-     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsTestConnectionPost
+     * @memberof OrganizationOutputsApitestOutputConnection
      */
     routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest
+}
+
+export interface OrganizationOutputsApiUpdateOutputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApiupdateOutput
+     */
+    organizationId: string
+    /**
+     * Output ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApiupdateOutput
+     */
+    outputId: string
+    /**
+     * Output configuration update
+     * @type RoutesV2UpdateOutputRequest
+     * @memberof OrganizationOutputsApiupdateOutput
+     */
+    routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationOutputsApiupdateOutput
+     */
+    testConnection?: boolean
 }
 
 export class ObjectOrganizationOutputsApi {
@@ -3520,93 +3554,12 @@ export class ObjectOrganizationOutputsApi {
     }
 
     /**
-     * List outputs
-     * List outputs
+     * Create a new output with configuration including secrets handling
+     * Create output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsGetWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutputList>> {
-        return this.api.v1OrganizationIdOutputsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List outputs
-     * List outputs
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsGet(param: OrganizationOutputsApiV1OrganizationIdOutputsGetRequest, options?: ConfigurationOptions): Promise<ModelsOutputList> {
-        return this.api.v1OrganizationIdOutputsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Delete output
-     * Delete output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(param.organizationId, param.outputId,  options).toPromise();
-    }
-
-    /**
-     * Delete output
-     * Delete output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsOutputIdDelete(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdOutputsOutputIdDelete(param.organizationId, param.outputId,  options).toPromise();
-    }
-
-    /**
-     * Get output
-     * Get output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsOutputIdGetWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetOutputResponse>> {
-        return this.api.v1OrganizationIdOutputsOutputIdGetWithHttpInfo(param.organizationId, param.outputId,  options).toPromise();
-    }
-
-    /**
-     * Get output
-     * Get output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsOutputIdGet(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetOutputResponse> {
-        return this.api.v1OrganizationIdOutputsOutputIdGet(param.organizationId, param.outputId,  options).toPromise();
-    }
-
-    /**
-     * Update an existing output with new configuration including secrets handling
-     * Update output
-     * @param param the request object
-     */
-    public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Update an existing output with new configuration including secrets handling
-     * Update output
-     * @param param the request object
-     */
-    public v2OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.v2OrganizationIdOutputsOutputIdPatch(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Replace an existing output with new configuration including secrets handling
-     * Replace output
-     * @param param the request object
-     */
-    public v2OrganizationIdOutputsOutputIdPutWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.v2OrganizationIdOutputsOutputIdPutWithHttpInfo(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Replace an existing output with new configuration including secrets handling
-     * Replace output
-     * @param param the request object
-     */
-    public v2OrganizationIdOutputsOutputIdPut(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.v2OrganizationIdOutputsOutputIdPut(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
+    public createOutputWithHttpInfo(param: OrganizationOutputsApiCreateOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        return this.api.createOutputWithHttpInfo(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3614,17 +3567,80 @@ export class ObjectOrganizationOutputsApi {
      * Create output
      * @param param the request object
      */
-    public v2OrganizationIdOutputsPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.v2OrganizationIdOutputsPostWithHttpInfo(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
+    public createOutput(param: OrganizationOutputsApiCreateOutputRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
+        return this.api.createOutput(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
-     * Create a new output with configuration including secrets handling
-     * Create output
+     * Delete output
+     * Delete output
      * @param param the request object
      */
-    public v2OrganizationIdOutputsPost(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.v2OrganizationIdOutputsPost(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
+    public deleteOrganizationOutputWithHttpInfo(param: OrganizationOutputsApiDeleteOrganizationOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.deleteOrganizationOutputWithHttpInfo(param.organizationId, param.outputId,  options).toPromise();
+    }
+
+    /**
+     * Delete output
+     * Delete output
+     * @param param the request object
+     */
+    public deleteOrganizationOutput(param: OrganizationOutputsApiDeleteOrganizationOutputRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.deleteOrganizationOutput(param.organizationId, param.outputId,  options).toPromise();
+    }
+
+    /**
+     * Get a configured output in organization
+     * Get a output
+     * @param param the request object
+     */
+    public getOrganizationOutputWithHttpInfo(param: OrganizationOutputsApiGetOrganizationOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetOutputResponse>> {
+        return this.api.getOrganizationOutputWithHttpInfo(param.organizationId, param.outputId,  options).toPromise();
+    }
+
+    /**
+     * Get a configured output in organization
+     * Get a output
+     * @param param the request object
+     */
+    public getOrganizationOutput(param: OrganizationOutputsApiGetOrganizationOutputRequest, options?: ConfigurationOptions): Promise<RoutesGetOutputResponse> {
+        return this.api.getOrganizationOutput(param.organizationId, param.outputId,  options).toPromise();
+    }
+
+    /**
+     * List outputs
+     * List configured outputs in organization
+     * @param param the request object
+     */
+    public listOrganizationOutputsWithHttpInfo(param: OrganizationOutputsApiListOrganizationOutputsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutputList>> {
+        return this.api.listOrganizationOutputsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List outputs
+     * List configured outputs in organization
+     * @param param the request object
+     */
+    public listOrganizationOutputs(param: OrganizationOutputsApiListOrganizationOutputsRequest, options?: ConfigurationOptions): Promise<ModelsOutputList> {
+        return this.api.listOrganizationOutputs(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param param the request object
+     */
+    public replaceOutputWithHttpInfo(param: OrganizationOutputsApiReplaceOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        return this.api.replaceOutputWithHttpInfo(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param param the request object
+     */
+    public replaceOutput(param: OrganizationOutputsApiReplaceOutputRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
+        return this.api.replaceOutput(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3632,8 +3648,8 @@ export class ObjectOrganizationOutputsApi {
      * Test output connection
      * @param param the request object
      */
-    public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        return this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
+    public testOutputConnectionWithHttpInfo(param: OrganizationOutputsApiTestOutputConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+        return this.api.testOutputConnectionWithHttpInfo(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3641,8 +3657,26 @@ export class ObjectOrganizationOutputsApi {
      * Test output connection
      * @param param the request object
      */
-    public v2OrganizationIdOutputsTestConnectionPost(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
-        return this.api.v2OrganizationIdOutputsTestConnectionPost(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
+    public testOutputConnection(param: OrganizationOutputsApiTestOutputConnectionRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
+        return this.api.testOutputConnection(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
+    }
+
+    /**
+     * Update an existing output with new configuration including secrets handling
+     * Update output
+     * @param param the request object
+     */
+    public updateOutputWithHttpInfo(param: OrganizationOutputsApiUpdateOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        return this.api.updateOutputWithHttpInfo(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Update an existing output with new configuration including secrets handling
+     * Update output
+     * @param param the request object
+     */
+    public updateOutput(param: OrganizationOutputsApiUpdateOutputRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
+        return this.api.updateOutput(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
     }
 
 }
@@ -3650,32 +3684,32 @@ export class ObjectOrganizationOutputsApi {
 import { ObservableOrganizationQuotasApi } from "./ObservableAPI";
 import { OrganizationQuotasApiRequestFactory, OrganizationQuotasApiResponseProcessor} from "../apis/OrganizationQuotasApi";
 
-export interface OrganizationQuotasApiV2OrganizationIdQuotasGetRequest {
+export interface OrganizationQuotasApiGetQuotasByOrganizationIDRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationQuotasApiv2OrganizationIdQuotasGet
+     * @memberof OrganizationQuotasApigetQuotasByOrganizationID
      */
     organizationId: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationQuotasApiv2OrganizationIdQuotasGet
+     * @memberof OrganizationQuotasApigetQuotasByOrganizationID
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationQuotasApiv2OrganizationIdQuotasGet
+     * @memberof OrganizationQuotasApigetQuotasByOrganizationID
      */
     offset?: number
     /**
      * 
      * @type any
-     * @memberof OrganizationQuotasApiv2OrganizationIdQuotasGet
+     * @memberof OrganizationQuotasApigetQuotasByOrganizationID
      */
     body?: any
 }
@@ -3692,8 +3726,8 @@ export class ObjectOrganizationQuotasApi {
      * Get Organization Quotas
      * @param param the request object
      */
-    public v2OrganizationIdQuotasGetWithHttpInfo(param: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
-        return this.api.v2OrganizationIdQuotasGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
+    public getQuotasByOrganizationIDWithHttpInfo(param: OrganizationQuotasApiGetQuotasByOrganizationIDRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
+        return this.api.getQuotasByOrganizationIDWithHttpInfo(param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
     }
 
     /**
@@ -3701,8 +3735,8 @@ export class ObjectOrganizationQuotasApi {
      * Get Organization Quotas
      * @param param the request object
      */
-    public v2OrganizationIdQuotasGet(param: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest, options?: ConfigurationOptions): Promise<ModelsQuotaList> {
-        return this.api.v2OrganizationIdQuotasGet(param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
+    public getQuotasByOrganizationID(param: OrganizationQuotasApiGetQuotasByOrganizationIDRequest, options?: ConfigurationOptions): Promise<ModelsQuotaList> {
+        return this.api.getQuotasByOrganizationID(param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
     }
 
 }
@@ -3710,99 +3744,99 @@ export class ObjectOrganizationQuotasApi {
 import { ObservableOrganizationTransformsApi } from "./ObservableAPI";
 import { OrganizationTransformsApiRequestFactory, OrganizationTransformsApiResponseProcessor} from "../apis/OrganizationTransformsApi";
 
-export interface OrganizationTransformsApiV1OrganizationIdTransformsGetRequest {
+export interface OrganizationTransformsApiCreateTransformRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsGet
+     * @memberof OrganizationTransformsApicreateTransform
+     */
+    organizationId: string
+    /**
+     * Request body for creating a transform
+     * @type RoutesCreateTransformRequest
+     * @memberof OrganizationTransformsApicreateTransform
+     */
+    routesCreateTransformRequest: RoutesCreateTransformRequest
+}
+
+export interface OrganizationTransformsApiDeleteOrganizationTransformRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationTransformsApideleteOrganizationTransform
+     */
+    organizationId: string
+    /**
+     * Transform ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationTransformsApideleteOrganizationTransform
+     */
+    transformId: string
+}
+
+export interface OrganizationTransformsApiGetOrganizationTransformRequest {
+    /**
+     * Transform ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationTransformsApigetOrganizationTransform
+     */
+    transformId: string
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationTransformsApigetOrganizationTransform
+     */
+    organizationId: string
+}
+
+export interface OrganizationTransformsApiListOrganizationTransformsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationTransformsApilistOrganizationTransforms
      */
     organizationId: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsGet
+     * @memberof OrganizationTransformsApilistOrganizationTransforms
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsGet
+     * @memberof OrganizationTransformsApilistOrganizationTransforms
      */
     offset?: number
 }
 
-export interface OrganizationTransformsApiV1OrganizationIdTransformsPostRequest {
+export interface OrganizationTransformsApiUpdateOrganizationTransformRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsPost
-     */
-    organizationId: string
-    /**
-     * Request body for creating a transform
-     * @type RoutesCreateTransformRequest
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsPost
-     */
-    routesCreateTransformRequest: RoutesCreateTransformRequest
-}
-
-export interface OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsTransformIdDelete
+     * @memberof OrganizationTransformsApiupdateOrganizationTransform
      */
     organizationId: string
     /**
      * Transform ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsTransformIdDelete
-     */
-    transformId: string
-}
-
-export interface OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest {
-    /**
-     * Transform ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsTransformIdGet
-     */
-    transformId: string
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsTransformIdGet
-     */
-    organizationId: string
-}
-
-export interface OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsTransformIdPatch
-     */
-    organizationId: string
-    /**
-     * Transform ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsTransformIdPatch
+     * @memberof OrganizationTransformsApiupdateOrganizationTransform
      */
     transformId: string
     /**
      * Request body for updating a transform
      * @type RoutesUpdateTransformRequest
-     * @memberof OrganizationTransformsApiv1OrganizationIdTransformsTransformIdPatch
+     * @memberof OrganizationTransformsApiupdateOrganizationTransform
      */
     routesUpdateTransformRequest: RoutesUpdateTransformRequest
 }
@@ -3815,21 +3849,12 @@ export class ObjectOrganizationTransformsApi {
     }
 
     /**
-     * List transforms
-     * List transforms
+     * Create transform
+     * Create transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsGetWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformList>> {
-        return this.api.v1OrganizationIdTransformsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List transforms
-     * List transforms
-     * @param param the request object
-     */
-    public v1OrganizationIdTransformsGet(param: OrganizationTransformsApiV1OrganizationIdTransformsGetRequest, options?: ConfigurationOptions): Promise<ModelsTransformList> {
-        return this.api.v1OrganizationIdTransformsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public createTransformWithHttpInfo(param: OrganizationTransformsApiCreateTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
+        return this.api.createTransformWithHttpInfo(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
     }
 
     /**
@@ -3837,17 +3862,8 @@ export class ObjectOrganizationTransformsApi {
      * Create transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsPostWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
-        return this.api.v1OrganizationIdTransformsPostWithHttpInfo(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
-    }
-
-    /**
-     * Create transform
-     * Create transform
-     * @param param the request object
-     */
-    public v1OrganizationIdTransformsPost(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: ConfigurationOptions): Promise<ModelsTransform> {
-        return this.api.v1OrganizationIdTransformsPost(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
+    public createTransform(param: OrganizationTransformsApiCreateTransformRequest, options?: ConfigurationOptions): Promise<ModelsTransform> {
+        return this.api.createTransform(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
     }
 
     /**
@@ -3855,8 +3871,8 @@ export class ObjectOrganizationTransformsApi {
      * Delete transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(param.organizationId, param.transformId,  options).toPromise();
+    public deleteOrganizationTransformWithHttpInfo(param: OrganizationTransformsApiDeleteOrganizationTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.deleteOrganizationTransformWithHttpInfo(param.organizationId, param.transformId,  options).toPromise();
     }
 
     /**
@@ -3864,8 +3880,8 @@ export class ObjectOrganizationTransformsApi {
      * Delete transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdDelete(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OrganizationIdTransformsTransformIdDelete(param.organizationId, param.transformId,  options).toPromise();
+    public deleteOrganizationTransform(param: OrganizationTransformsApiDeleteOrganizationTransformRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.deleteOrganizationTransform(param.organizationId, param.transformId,  options).toPromise();
     }
 
     /**
@@ -3873,8 +3889,8 @@ export class ObjectOrganizationTransformsApi {
      * Get transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdGetWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetTransformResponse>> {
-        return this.api.v1OrganizationIdTransformsTransformIdGetWithHttpInfo(param.transformId, param.organizationId,  options).toPromise();
+    public getOrganizationTransformWithHttpInfo(param: OrganizationTransformsApiGetOrganizationTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetTransformResponse>> {
+        return this.api.getOrganizationTransformWithHttpInfo(param.transformId, param.organizationId,  options).toPromise();
     }
 
     /**
@@ -3882,8 +3898,26 @@ export class ObjectOrganizationTransformsApi {
      * Get transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdGet(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetTransformResponse> {
-        return this.api.v1OrganizationIdTransformsTransformIdGet(param.transformId, param.organizationId,  options).toPromise();
+    public getOrganizationTransform(param: OrganizationTransformsApiGetOrganizationTransformRequest, options?: ConfigurationOptions): Promise<RoutesGetTransformResponse> {
+        return this.api.getOrganizationTransform(param.transformId, param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * List transforms
+     * List configured transforms in a transform
+     * @param param the request object
+     */
+    public listOrganizationTransformsWithHttpInfo(param: OrganizationTransformsApiListOrganizationTransformsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformList>> {
+        return this.api.listOrganizationTransformsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List transforms
+     * List configured transforms in a transform
+     * @param param the request object
+     */
+    public listOrganizationTransforms(param: OrganizationTransformsApiListOrganizationTransformsRequest, options?: ConfigurationOptions): Promise<ModelsTransformList> {
+        return this.api.listOrganizationTransforms(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -3891,8 +3925,8 @@ export class ObjectOrganizationTransformsApi {
      * Update transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
-        return this.api.v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(param.organizationId, param.transformId, param.routesUpdateTransformRequest,  options).toPromise();
+    public updateOrganizationTransformWithHttpInfo(param: OrganizationTransformsApiUpdateOrganizationTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
+        return this.api.updateOrganizationTransformWithHttpInfo(param.organizationId, param.transformId, param.routesUpdateTransformRequest,  options).toPromise();
     }
 
     /**
@@ -3900,8 +3934,8 @@ export class ObjectOrganizationTransformsApi {
      * Update transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdPatch(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsTransform> {
-        return this.api.v1OrganizationIdTransformsTransformIdPatch(param.organizationId, param.transformId, param.routesUpdateTransformRequest,  options).toPromise();
+    public updateOrganizationTransform(param: OrganizationTransformsApiUpdateOrganizationTransformRequest, options?: ConfigurationOptions): Promise<ModelsTransform> {
+        return this.api.updateOrganizationTransform(param.organizationId, param.transformId, param.routesUpdateTransformRequest,  options).toPromise();
     }
 
 }
@@ -3909,28 +3943,91 @@ export class ObjectOrganizationTransformsApi {
 import { ObservableOrganizationUsersApi } from "./ObservableAPI";
 import { OrganizationUsersApiRequestFactory, OrganizationUsersApiResponseProcessor} from "../apis/OrganizationUsersApi";
 
-export interface OrganizationUsersApiV1OrganizationIdUsersGetRequest {
+export interface OrganizationUsersApiAddUserRequest {
+    /**
+     * organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiaddUser
+     */
+    organizationId: string
+    /**
+     * Request body for adding a user to an organization
+     * @type RoutesAddUserToOrganizationRequest
+     * @memberof OrganizationUsersApiaddUser
+     */
+    routesAddUserToOrganizationRequest: RoutesAddUserToOrganizationRequest
+}
+
+export interface OrganizationUsersApiListUsersRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersGet
+     * @memberof OrganizationUsersApilistUsers
      */
     organizationId: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersGet
+     * @memberof OrganizationUsersApilistUsers
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersGet
+     * @memberof OrganizationUsersApilistUsers
      */
     offset?: number
+}
+
+export interface OrganizationUsersApiRemoveUserRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiremoveUser
+     */
+    organizationId: string
+    /**
+     * User ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiremoveUser
+     */
+    userId: string
+    /**
+     * User Auth Provider ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiremoveUser
+     */
+    userAuthProviderId: string
+}
+
+export interface OrganizationUsersApiUpdateUserRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiupdateUser
+     */
+    organizationId: string
+    /**
+     * User ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiupdateUser
+     */
+    userId: string
+    /**
+     * Request body for updating a user in an organization
+     * @type RoutesUpdateUserInOrganizationRequest
+     * @memberof OrganizationUsersApiupdateUser
+     */
+    routesUpdateUserInOrganizationRequest: RoutesUpdateUserInOrganizationRequest
 }
 
 export interface OrganizationUsersApiV1OrganizationIdUsersLeavePostRequest {
@@ -3943,69 +4040,6 @@ export interface OrganizationUsersApiV1OrganizationIdUsersLeavePostRequest {
     organizationId: string
 }
 
-export interface OrganizationUsersApiV1OrganizationIdUsersPostRequest {
-    /**
-     * organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersPost
-     */
-    organizationId: string
-    /**
-     * Request body for adding a user to an organization
-     * @type RoutesAddUserToOrganizationRequest
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersPost
-     */
-    routesAddUserToOrganizationRequest: RoutesAddUserToOrganizationRequest
-}
-
-export interface OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdDelete
-     */
-    organizationId: string
-    /**
-     * User ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdDelete
-     */
-    userId: string
-    /**
-     * User Auth Provider ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdDelete
-     */
-    userAuthProviderId: string
-}
-
-export interface OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdPatch
-     */
-    organizationId: string
-    /**
-     * User ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdPatch
-     */
-    userId: string
-    /**
-     * Request body for updating a user in an organization
-     * @type RoutesUpdateUserInOrganizationRequest
-     * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdPatch
-     */
-    routesUpdateUserInOrganizationRequest: RoutesUpdateUserInOrganizationRequest
-}
-
 export class ObjectOrganizationUsersApi {
     private api: ObservableOrganizationUsersApi
 
@@ -4014,12 +4048,21 @@ export class ObjectOrganizationUsersApi {
     }
 
     /**
-     * List organization users
-     * List organization users
+     * Add user to organization
+     * Add user to organization
      * @param param the request object
      */
-    public v1OrganizationIdUsersGetWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUserList>> {
-        return this.api.v1OrganizationIdUsersGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public addUserWithHttpInfo(param: OrganizationUsersApiAddUserRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
+        return this.api.addUserWithHttpInfo(param.organizationId, param.routesAddUserToOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Add user to organization
+     * Add user to organization
+     * @param param the request object
+     */
+    public addUser(param: OrganizationUsersApiAddUserRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUser> {
+        return this.api.addUser(param.organizationId, param.routesAddUserToOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4027,8 +4070,53 @@ export class ObjectOrganizationUsersApi {
      * List organization users
      * @param param the request object
      */
-    public v1OrganizationIdUsersGet(param: OrganizationUsersApiV1OrganizationIdUsersGetRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUserList> {
-        return this.api.v1OrganizationIdUsersGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public listUsersWithHttpInfo(param: OrganizationUsersApiListUsersRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUserList>> {
+        return this.api.listUsersWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List organization users
+     * List organization users
+     * @param param the request object
+     */
+    public listUsers(param: OrganizationUsersApiListUsersRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUserList> {
+        return this.api.listUsers(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Remove user from organization
+     * Remove user from organization
+     * @param param the request object
+     */
+    public removeUserWithHttpInfo(param: OrganizationUsersApiRemoveUserRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.removeUserWithHttpInfo(param.organizationId, param.userId, param.userAuthProviderId,  options).toPromise();
+    }
+
+    /**
+     * Remove user from organization
+     * Remove user from organization
+     * @param param the request object
+     */
+    public removeUser(param: OrganizationUsersApiRemoveUserRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.removeUser(param.organizationId, param.userId, param.userAuthProviderId,  options).toPromise();
+    }
+
+    /**
+     * Update user in organization
+     * Update user in organization
+     * @param param the request object
+     */
+    public updateUserWithHttpInfo(param: OrganizationUsersApiUpdateUserRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
+        return this.api.updateUserWithHttpInfo(param.organizationId, param.userId, param.routesUpdateUserInOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Update user in organization
+     * Update user in organization
+     * @param param the request object
+     */
+    public updateUser(param: OrganizationUsersApiUpdateUserRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUser> {
+        return this.api.updateUser(param.organizationId, param.userId, param.routesUpdateUserInOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4049,505 +4137,214 @@ export class ObjectOrganizationUsersApi {
         return this.api.v1OrganizationIdUsersLeavePost(param.organizationId,  options).toPromise();
     }
 
-    /**
-     * Add user to organization
-     * Add user to organization
-     * @param param the request object
-     */
-    public v1OrganizationIdUsersPostWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
-        return this.api.v1OrganizationIdUsersPostWithHttpInfo(param.organizationId, param.routesAddUserToOrganizationRequest,  options).toPromise();
-    }
-
-    /**
-     * Add user to organization
-     * Add user to organization
-     * @param param the request object
-     */
-    public v1OrganizationIdUsersPost(param: OrganizationUsersApiV1OrganizationIdUsersPostRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUser> {
-        return this.api.v1OrganizationIdUsersPost(param.organizationId, param.routesAddUserToOrganizationRequest,  options).toPromise();
-    }
-
-    /**
-     * Remove user from organization
-     * Remove user from organization
-     * @param param the request object
-     */
-    public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param.organizationId, param.userId, param.userAuthProviderId,  options).toPromise();
-    }
-
-    /**
-     * Remove user from organization
-     * Remove user from organization
-     * @param param the request object
-     */
-    public v1OrganizationIdUsersUserIdDelete(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OrganizationIdUsersUserIdDelete(param.organizationId, param.userId, param.userAuthProviderId,  options).toPromise();
-    }
-
-    /**
-     * Update user in organization
-     * Update user in organization
-     * @param param the request object
-     */
-    public v1OrganizationIdUsersUserIdPatchWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
-        return this.api.v1OrganizationIdUsersUserIdPatchWithHttpInfo(param.organizationId, param.userId, param.routesUpdateUserInOrganizationRequest,  options).toPromise();
-    }
-
-    /**
-     * Update user in organization
-     * Update user in organization
-     * @param param the request object
-     */
-    public v1OrganizationIdUsersUserIdPatch(param: OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUser> {
-        return this.api.v1OrganizationIdUsersUserIdPatch(param.organizationId, param.userId, param.routesUpdateUserInOrganizationRequest,  options).toPromise();
-    }
-
 }
 
 import { ObservableOrganizationsApi } from "./ObservableAPI";
 import { OrganizationsApiRequestFactory, OrganizationsApiResponseProcessor} from "../apis/OrganizationsApi";
 
-export interface OrganizationsApiV1OrganizationsGetRequest {
+export interface OrganizationsApiCreateChildOrganizationRequest {
+    /**
+     * Parent Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApicreateChildOrganization
+     */
+    organizationId: string
+    /**
+     * Request body
+     * @type RoutesV3CreateChildOrganizationRequest
+     * @memberof OrganizationsApicreateChildOrganization
+     */
+    routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest
+}
+
+export interface OrganizationsApiCreateOrganizationRequest {
+    /**
+     * Request body for creating an organization
+     * @type RoutesCreateOrganizationRequest
+     * @memberof OrganizationsApicreateOrganization
+     */
+    routesCreateOrganizationRequest: RoutesCreateOrganizationRequest
+}
+
+export interface OrganizationsApiDeleteChildOrganizationRequest {
+    /**
+     * Parent Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApideleteChildOrganization
+     */
+    organizationId: string
+    /**
+     * Child Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApideleteChildOrganization
+     */
+    childOrganizationId: string
+}
+
+export interface OrganizationsApiDeleteOrganizationRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApideleteOrganization
+     */
+    organizationId: string
+}
+
+export interface OrganizationsApiGetStorageTypeSummaryByTypeRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApigetStorageTypeSummaryByType
+     */
+    organizationId: string
+    /**
+     * Storage type (e.g., s3, dev-null, bigquery)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApigetStorageTypeSummaryByType
+     */
+    storageType: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApigetStorageTypeSummaryByType
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApigetStorageTypeSummaryByType
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApigetStorageTypeSummaryByType
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApigetStorageTypeSummaryByType
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsApiListChildOrganizationsRequest {
+    /**
+     * Parent Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApilistChildOrganizations
+     */
+    organizationId: string
     /**
      * Limit the number of organizations returned (default: 10)
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationsApiv1OrganizationsGet
+     * @memberof OrganizationsApilistChildOrganizations
      */
     limit?: number
     /**
      * Offset the organizations returned (default: 0)
      * Defaults to: undefined
      * @type number
-     * @memberof OrganizationsApiv1OrganizationsGet
+     * @memberof OrganizationsApilistChildOrganizations
+     */
+    offset?: number
+    /**
+     * If provided, only return organizations with names that contain the search string
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApilistChildOrganizations
+     */
+    nameSearch?: string
+}
+
+export interface OrganizationsApiListUserOrganizationsRequest {
+    /**
+     * Limit the number of organizations returned (default: 10)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationsApilistUserOrganizations
+     */
+    limit?: number
+    /**
+     * Offset the organizations returned (default: 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationsApilistUserOrganizations
      */
     offset?: number
     /**
      * If true, only return organizations that are directly associated with the user, not child organizations (default: false)
      * Defaults to: undefined
      * @type boolean
-     * @memberof OrganizationsApiv1OrganizationsGet
+     * @memberof OrganizationsApilistUserOrganizations
      */
     noChildren?: boolean
     /**
      * If provided, only return organizations that are children of the specified parent organization
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationsApiv1OrganizationsGet
+     * @memberof OrganizationsApilistUserOrganizations
      */
     parentOrganizationId?: string
     /**
      * If provided, only return organizations with names that contain the search string
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationsApiv1OrganizationsGet
+     * @memberof OrganizationsApilistUserOrganizations
      */
     nameSearch?: string
 }
 
-export interface OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv1OrganizationsOrganizationIdDelete
-     */
-    organizationId: string
-}
-
-export interface OrganizationsApiV1OrganizationsOrganizationIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv1OrganizationsOrganizationIdPatch
-     */
-    organizationId: string
-    /**
-     * Request body for updating an organization
-     * @type RoutesUpdateOrganizationRequest
-     * @memberof OrganizationsApiv1OrganizationsOrganizationIdPatch
-     */
-    routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest
-}
-
-export interface OrganizationsApiV1OrganizationsPostRequest {
-    /**
-     * Request body for creating an organization
-     * @type RoutesCreateOrganizationRequest
-     * @memberof OrganizationsApiv1OrganizationsPost
-     */
-    routesCreateOrganizationRequest: RoutesCreateOrganizationRequest
-}
-
-export interface OrganizationsApiV2OrganizationIdMetricsGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
-     */
-    organizationId: string
-    /**
-     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
-     */
-    metric: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
-     */
-    end?: string
-    /**
-     * Resolution of the data, default determined by time window
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
-     */
-    resolution?: string
-}
-
-export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
-     */
-    organizationId: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
-     */
-    end?: string
-    /**
-     * Filter by billing type (billable|non_billable)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
-     */
-    billingType?: string
-    /**
-     * Filter to specific pipeline
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
-     */
-    pipelineId?: string
-}
-
-export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
-     */
-    organizationId: string
-    /**
-     * Metric to retrieve (egress_bytes|egress_records|errors)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
-     */
-    metric: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
-     */
-    end?: string
-    /**
-     * Resolution of the data, default determined by time window
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
-     */
-    resolution?: string
-    /**
-     * Filter by billing type (billable|non_billable)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
-     */
-    billingType?: string
-    /**
-     * Filter to specific pipeline
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
-     */
-    pipelineId?: string
-}
-
-export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
-     */
-    organizationId: string
-    /**
-     * Storage type (e.g., s3, dev-null, bigquery)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
-     */
-    storageType: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
-     */
-    end?: string
-    /**
-     * Filter by billing type (billable|non_billable)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
-     */
-    billingType?: string
-    /**
-     * Filter to specific pipeline
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
-     */
-    pipelineId?: string
-}
-
-export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
-     */
-    organizationId: string
-    /**
-     * Storage type (e.g., s3, dev-null, bigquery)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
-     */
-    storageType: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
-     */
-    end?: string
-    /**
-     * Filter by billing type (billable|non_billable)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
-     */
-    billingType?: string
-    /**
-     * Filter to specific pipeline
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
-     */
-    pipelineId?: string
-}
-
-export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
-     */
-    organizationId: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
-     */
-    end?: string
-    /**
-     * Filter by billing type (billable|non_billable)
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
-     */
-    billingType?: string
-    /**
-     * Filter to specific pipeline
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
-     */
-    pipelineId?: string
-}
-
-export interface OrganizationsApiV2OrganizationIdStorageTypeCostGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdStorageTypeCostGet
-     */
-    organizationId: string
-}
-
-export interface OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv2OrganizationIdStorageTypeCostPut
-     */
-    organizationId: string
-    /**
-     * Cost configuration
-     * @type RoutesV2SetStorageTypeCostRequest
-     * @memberof OrganizationsApiv2OrganizationIdStorageTypeCostPut
-     */
-    routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest
-}
-
-export interface OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest {
+export interface OrganizationsApiUpdateChildOrganizationRequest {
     /**
      * Parent Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdDelete
+     * @memberof OrganizationsApiupdateChildOrganization
      */
     organizationId: string
     /**
      * Child Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdDelete
-     */
-    childOrganizationId: string
-}
-
-export interface OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest {
-    /**
-     * Parent Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdPatch
-     */
-    organizationId: string
-    /**
-     * Child Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdPatch
+     * @memberof OrganizationsApiupdateChildOrganization
      */
     childOrganizationId: string
     /**
      * Request body
      * @type RoutesV3UpdateChildOrganizationRequest
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdPatch
+     * @memberof OrganizationsApiupdateChildOrganization
      */
     routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest
 }
 
-export interface OrganizationsApiV3OrganizationIdOrganizationsGetRequest {
+export interface OrganizationsApiUpdateOrganizationRequest {
     /**
-     * Parent Organization ID
+     * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
+     * @memberof OrganizationsApiupdateOrganization
      */
     organizationId: string
     /**
-     * Limit the number of organizations returned (default: 10)
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
+     * Request body for updating an organization
+     * @type RoutesUpdateOrganizationRequest
+     * @memberof OrganizationsApiupdateOrganization
      */
-    limit?: number
-    /**
-     * Offset the organizations returned (default: 0)
-     * Defaults to: undefined
-     * @type number
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
-     */
-    offset?: number
-    /**
-     * If provided, only return organizations with names that contain the search string
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
-     */
-    nameSearch?: string
-}
-
-export interface OrganizationsApiV3OrganizationIdOrganizationsPostRequest {
-    /**
-     * Parent Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsPost
-     */
-    organizationId: string
-    /**
-     * Request body
-     * @type RoutesV3CreateChildOrganizationRequest
-     * @memberof OrganizationsApiv3OrganizationIdOrganizationsPost
-     */
-    routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest
+    routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest
 }
 
 export class ObjectOrganizationsApi {
@@ -4558,57 +4355,21 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * List organizations for user
-     * List organizations for user
+     * Create a new child organization under the given parent organization
+     * Create child organization
      * @param param the request object
      */
-    public v1OrganizationsGetWithHttpInfo(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
-        return this.api.v1OrganizationsGetWithHttpInfo(param.limit, param.offset, param.noChildren, param.parentOrganizationId, param.nameSearch,  options).toPromise();
+    public createChildOrganizationWithHttpInfo(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        return this.api.createChildOrganizationWithHttpInfo(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
     }
 
     /**
-     * List organizations for user
-     * List organizations for user
+     * Create a new child organization under the given parent organization
+     * Create child organization
      * @param param the request object
      */
-    public v1OrganizationsGet(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsOrganizationList> {
-        return this.api.v1OrganizationsGet(param.limit, param.offset, param.noChildren, param.parentOrganizationId, param.nameSearch,  options).toPromise();
-    }
-
-    /**
-     * Delete organization
-     * Delete organization
-     * @param param the request object
-     */
-    public v1OrganizationsOrganizationIdDeleteWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OrganizationsOrganizationIdDeleteWithHttpInfo(param.organizationId,  options).toPromise();
-    }
-
-    /**
-     * Delete organization
-     * Delete organization
-     * @param param the request object
-     */
-    public v1OrganizationsOrganizationIdDelete(param: OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OrganizationsOrganizationIdDelete(param.organizationId,  options).toPromise();
-    }
-
-    /**
-     * Update organization
-     * Update organization
-     * @param param the request object
-     */
-    public v1OrganizationsOrganizationIdPatchWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
-        return this.api.v1OrganizationsOrganizationIdPatchWithHttpInfo(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
-    }
-
-    /**
-     * Update organization
-     * Update organization
-     * @param param the request object
-     */
-    public v1OrganizationsOrganizationIdPatch(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.api.v1OrganizationsOrganizationIdPatch(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
+    public createChildOrganization(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.api.createChildOrganization(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4616,8 +4377,8 @@ export class ObjectOrganizationsApi {
      * Create organization
      * @param param the request object
      */
-    public v1OrganizationsPostWithHttpInfo(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
-        return this.api.v1OrganizationsPostWithHttpInfo(param.routesCreateOrganizationRequest,  options).toPromise();
+    public createOrganizationWithHttpInfo(param: OrganizationsApiCreateOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        return this.api.createOrganizationWithHttpInfo(param.routesCreateOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4625,8 +4386,184 @@ export class ObjectOrganizationsApi {
      * Create organization
      * @param param the request object
      */
-    public v1OrganizationsPost(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.api.v1OrganizationsPost(param.routesCreateOrganizationRequest,  options).toPromise();
+    public createOrganization(param: OrganizationsApiCreateOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.api.createOrganization(param.routesCreateOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param param the request object
+     */
+    public deleteChildOrganizationWithHttpInfo(param: OrganizationsApiDeleteChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.deleteChildOrganizationWithHttpInfo(param.organizationId, param.childOrganizationId,  options).toPromise();
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param param the request object
+     */
+    public deleteChildOrganization(param: OrganizationsApiDeleteChildOrganizationRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.deleteChildOrganization(param.organizationId, param.childOrganizationId,  options).toPromise();
+    }
+
+    /**
+     * Delete organization
+     * Delete organization
+     * @param param the request object
+     */
+    public deleteOrganizationWithHttpInfo(param: OrganizationsApiDeleteOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.deleteOrganizationWithHttpInfo(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * Delete organization
+     * Delete organization
+     * @param param the request object
+     */
+    public deleteOrganization(param: OrganizationsApiDeleteOrganizationRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.deleteOrganization(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary for a specific storage type
+     * Get storage type cost summary by type
+     * @param param the request object
+     */
+    public getStorageTypeSummaryByTypeWithHttpInfo(param: OrganizationsApiGetStorageTypeSummaryByTypeRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeSummaryResponse>> {
+        return this.api.getStorageTypeSummaryByTypeWithHttpInfo(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary for a specific storage type
+     * Get storage type cost summary by type
+     * @param param the request object
+     */
+    public getStorageTypeSummaryByType(param: OrganizationsApiGetStorageTypeSummaryByTypeRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeSummaryResponse> {
+        return this.api.getStorageTypeSummaryByType(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * List child organizations for the given parent organization
+     * List child organizations
+     * @param param the request object
+     */
+    public listChildOrganizationsWithHttpInfo(param: OrganizationsApiListChildOrganizationsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
+        return this.api.listChildOrganizationsWithHttpInfo(param.organizationId, param.limit, param.offset, param.nameSearch,  options).toPromise();
+    }
+
+    /**
+     * List child organizations for the given parent organization
+     * List child organizations
+     * @param param the request object
+     */
+    public listChildOrganizations(param: OrganizationsApiListChildOrganizationsRequest, options?: ConfigurationOptions): Promise<ModelsUserOrganizationList> {
+        return this.api.listChildOrganizations(param.organizationId, param.limit, param.offset, param.nameSearch,  options).toPromise();
+    }
+
+    /**
+     * List organizations for user
+     * List organizations for user
+     * @param param the request object
+     */
+    public listUserOrganizationsWithHttpInfo(param: OrganizationsApiListUserOrganizationsRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
+        return this.api.listUserOrganizationsWithHttpInfo(param.limit, param.offset, param.noChildren, param.parentOrganizationId, param.nameSearch,  options).toPromise();
+    }
+
+    /**
+     * List organizations for user
+     * List organizations for user
+     * @param param the request object
+     */
+    public listUserOrganizations(param: OrganizationsApiListUserOrganizationsRequest = {}, options?: ConfigurationOptions): Promise<ModelsOrganizationList> {
+        return this.api.listUserOrganizations(param.limit, param.offset, param.noChildren, param.parentOrganizationId, param.nameSearch,  options).toPromise();
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param param the request object
+     */
+    public updateChildOrganizationWithHttpInfo(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        return this.api.updateChildOrganizationWithHttpInfo(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param param the request object
+     */
+    public updateChildOrganization(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.api.updateChildOrganization(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Update organization
+     * Update organization
+     * @param param the request object
+     */
+    public updateOrganizationWithHttpInfo(param: OrganizationsApiUpdateOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        return this.api.updateOrganizationWithHttpInfo(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Update organization
+     * Update organization
+     * @param param the request object
+     */
+    public updateOrganization(param: OrganizationsApiUpdateOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.api.updateOrganization(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
+    }
+
+}
+
+import { ObservableOrganizationsMetricsApi } from "./ObservableAPI";
+import { OrganizationsMetricsApiRequestFactory, OrganizationsMetricsApiResponseProcessor} from "../apis/OrganizationsMetricsApi";
+
+export interface OrganizationsMetricsApiGetOrganizationMetricsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsMetricsApigetOrganizationMetrics
+     */
+    organizationId: string
+    /**
+     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsMetricsApigetOrganizationMetrics
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsMetricsApigetOrganizationMetrics
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsMetricsApigetOrganizationMetrics
+     */
+    end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsMetricsApigetOrganizationMetrics
+     */
+    resolution?: string
+}
+
+export class ObjectOrganizationsMetricsApi {
+    private api: ObservableOrganizationsMetricsApi
+
+    public constructor(configuration: Configuration, requestFactory?: OrganizationsMetricsApiRequestFactory, responseProcessor?: OrganizationsMetricsApiResponseProcessor) {
+        this.api = new ObservableOrganizationsMetricsApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -4634,8 +4571,8 @@ export class ObjectOrganizationsApi {
      * Get organization metrics
      * @param param the request object
      */
-    public v2OrganizationIdMetricsGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
-        return this.api.v2OrganizationIdMetricsGetWithHttpInfo(param.organizationId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    public getOrganizationMetricsWithHttpInfo(param: OrganizationsMetricsApiGetOrganizationMetricsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        return this.api.getOrganizationMetricsWithHttpInfo(param.organizationId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
     }
 
     /**
@@ -4643,8 +4580,237 @@ export class ObjectOrganizationsApi {
      * Get organization metrics
      * @param param the request object
      */
-    public v2OrganizationIdMetricsGet(param: OrganizationsApiV2OrganizationIdMetricsGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
-        return this.api.v2OrganizationIdMetricsGet(param.organizationId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    public getOrganizationMetrics(param: OrganizationsMetricsApiGetOrganizationMetricsRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        return this.api.getOrganizationMetrics(param.organizationId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+}
+
+import { ObservableOrganizationsStorageCostApi } from "./ObservableAPI";
+import { OrganizationsStorageCostApiRequestFactory, OrganizationsStorageCostApiResponseProcessor} from "../apis/OrganizationsStorageCostApi";
+
+export interface OrganizationsStorageCostApiGetStorageTypeCostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeCost
+     */
+    organizationId: string
+}
+
+export interface OrganizationsStorageCostApiGetStorageTypeDetailsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeDetails
+     */
+    organizationId: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeDetails
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeDetails
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeDetails
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeDetails
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsStorageCostApiGetStorageTypeMetricsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeMetrics
+     */
+    organizationId: string
+    /**
+     * Metric to retrieve (egress_bytes|egress_records|errors)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeMetrics
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeMetrics
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeMetrics
+     */
+    end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeMetrics
+     */
+    resolution?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeMetrics
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeMetrics
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsStorageCostApiGetStorageTypeSummaryRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeSummary
+     */
+    organizationId: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeSummary
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeSummary
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeSummary
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApigetStorageTypeSummary
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsStorageCostApiSetStorageTypeCostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApisetStorageTypeCost
+     */
+    organizationId: string
+    /**
+     * Cost configuration
+     * @type RoutesV2SetStorageTypeCostRequest
+     * @memberof OrganizationsStorageCostApisetStorageTypeCost
+     */
+    routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest
+}
+
+export interface OrganizationsStorageCostApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    organizationId: string
+    /**
+     * Storage type (e.g., s3, dev-null, bigquery)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    storageType: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsStorageCostApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    pipelineId?: string
+}
+
+export class ObjectOrganizationsStorageCostApi {
+    private api: ObservableOrganizationsStorageCostApi
+
+    public constructor(configuration: Configuration, requestFactory?: OrganizationsStorageCostApiRequestFactory, responseProcessor?: OrganizationsStorageCostApiResponseProcessor) {
+        this.api = new ObservableOrganizationsStorageCostApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get per-organization cost configuration for storage types
+     * Get storage type cost
+     * @param param the request object
+     */
+    public getStorageTypeCostWithHttpInfo(param: OrganizationsStorageCostApiGetStorageTypeCostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
+        return this.api.getStorageTypeCostWithHttpInfo(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * Get per-organization cost configuration for storage types
+     * Get storage type cost
+     * @param param the request object
+     */
+    public getStorageTypeCost(param: OrganizationsStorageCostApiGetStorageTypeCostRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
+        return this.api.getStorageTypeCost(param.organizationId,  options).toPromise();
     }
 
     /**
@@ -4652,8 +4818,8 @@ export class ObjectOrganizationsApi {
      * Get storage type output details
      * @param param the request object
      */
-    public v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
-        return this.api.v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    public getStorageTypeDetailsWithHttpInfo(param: OrganizationsStorageCostApiGetStorageTypeDetailsRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
+        return this.api.getStorageTypeDetailsWithHttpInfo(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
     }
 
     /**
@@ -4661,8 +4827,8 @@ export class ObjectOrganizationsApi {
      * Get storage type output details
      * @param param the request object
      */
-    public v2OrganizationIdMetricsStorageTypesDetailsGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest, options?: ConfigurationOptions): Promise<RoutesV2StorageTypeDetailsResponse> {
-        return this.api.v2OrganizationIdMetricsStorageTypesDetailsGet(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    public getStorageTypeDetails(param: OrganizationsStorageCostApiGetStorageTypeDetailsRequest, options?: ConfigurationOptions): Promise<RoutesV2StorageTypeDetailsResponse> {
+        return this.api.getStorageTypeDetails(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
     }
 
     /**
@@ -4670,8 +4836,8 @@ export class ObjectOrganizationsApi {
      * Get storage type metrics
      * @param param the request object
      */
-    public v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeTimeSeriesResponse>> {
-        return this.api.v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(param.organizationId, param.metric, param.start, param.end, param.resolution, param.billingType, param.pipelineId,  options).toPromise();
+    public getStorageTypeMetricsWithHttpInfo(param: OrganizationsStorageCostApiGetStorageTypeMetricsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeTimeSeriesResponse>> {
+        return this.api.getStorageTypeMetricsWithHttpInfo(param.organizationId, param.metric, param.start, param.end, param.resolution, param.billingType, param.pipelineId,  options).toPromise();
     }
 
     /**
@@ -4679,8 +4845,44 @@ export class ObjectOrganizationsApi {
      * Get storage type metrics
      * @param param the request object
      */
-    public v2OrganizationIdMetricsStorageTypesGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeTimeSeriesResponse> {
-        return this.api.v2OrganizationIdMetricsStorageTypesGet(param.organizationId, param.metric, param.start, param.end, param.resolution, param.billingType, param.pipelineId,  options).toPromise();
+    public getStorageTypeMetrics(param: OrganizationsStorageCostApiGetStorageTypeMetricsRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeTimeSeriesResponse> {
+        return this.api.getStorageTypeMetrics(param.organizationId, param.metric, param.start, param.end, param.resolution, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary by storage type
+     * Get storage type cost summary
+     * @param param the request object
+     */
+    public getStorageTypeSummaryWithHttpInfo(param: OrganizationsStorageCostApiGetStorageTypeSummaryRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeSummaryResponse>> {
+        return this.api.getStorageTypeSummaryWithHttpInfo(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary by storage type
+     * Get storage type cost summary
+     * @param param the request object
+     */
+    public getStorageTypeSummary(param: OrganizationsStorageCostApiGetStorageTypeSummaryRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeSummaryResponse> {
+        return this.api.getStorageTypeSummary(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Update per-organization cost configuration for storage types
+     * Set storage type cost
+     * @param param the request object
+     */
+    public setStorageTypeCostWithHttpInfo(param: OrganizationsStorageCostApiSetStorageTypeCostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
+        return this.api.setStorageTypeCostWithHttpInfo(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
+    }
+
+    /**
+     * Update per-organization cost configuration for storage types
+     * Set storage type cost
+     * @param param the request object
+     */
+    public setStorageTypeCost(param: OrganizationsStorageCostApiSetStorageTypeCostRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
+        return this.api.setStorageTypeCost(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
     }
 
     /**
@@ -4688,7 +4890,7 @@ export class ObjectOrganizationsApi {
      * Get storage type output details by type
      * @param param the request object
      */
-    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
+    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(param: OrganizationsStorageCostApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
         return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
     }
 
@@ -4697,152 +4899,8 @@ export class ObjectOrganizationsApi {
      * Get storage type output details by type
      * @param param the request object
      */
-    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest, options?: ConfigurationOptions): Promise<RoutesV2StorageTypeDetailsResponse> {
+    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(param: OrganizationsStorageCostApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest, options?: ConfigurationOptions): Promise<RoutesV2StorageTypeDetailsResponse> {
         return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Get aggregated cost and usage summary for a specific storage type
-     * Get storage type cost summary by type
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeSummaryResponse>> {
-        return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Get aggregated cost and usage summary for a specific storage type
-     * Get storage type cost summary by type
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeSummaryResponse> {
-        return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Get aggregated cost and usage summary by storage type
-     * Get storage type cost summary
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeSummaryResponse>> {
-        return this.api.v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Get aggregated cost and usage summary by storage type
-     * Get storage type cost summary
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsStorageTypesSummaryGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeSummaryResponse> {
-        return this.api.v2OrganizationIdMetricsStorageTypesSummaryGet(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Get per-organization cost configuration for storage types
-     * Get storage type cost
-     * @param param the request object
-     */
-    public v2OrganizationIdStorageTypeCostGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdStorageTypeCostGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
-        return this.api.v2OrganizationIdStorageTypeCostGetWithHttpInfo(param.organizationId,  options).toPromise();
-    }
-
-    /**
-     * Get per-organization cost configuration for storage types
-     * Get storage type cost
-     * @param param the request object
-     */
-    public v2OrganizationIdStorageTypeCostGet(param: OrganizationsApiV2OrganizationIdStorageTypeCostGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
-        return this.api.v2OrganizationIdStorageTypeCostGet(param.organizationId,  options).toPromise();
-    }
-
-    /**
-     * Update per-organization cost configuration for storage types
-     * Set storage type cost
-     * @param param the request object
-     */
-    public v2OrganizationIdStorageTypeCostPutWithHttpInfo(param: OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
-        return this.api.v2OrganizationIdStorageTypeCostPutWithHttpInfo(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
-    }
-
-    /**
-     * Update per-organization cost configuration for storage types
-     * Set storage type cost
-     * @param param the request object
-     */
-    public v2OrganizationIdStorageTypeCostPut(param: OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
-        return this.api.v2OrganizationIdStorageTypeCostPut(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
-    }
-
-    /**
-     * Delete a child organization under the given parent organization
-     * Delete child organization
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(param.organizationId, param.childOrganizationId,  options).toPromise();
-    }
-
-    /**
-     * Delete a child organization under the given parent organization
-     * Delete child organization
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsChildOrganizationIdDelete(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdDelete(param.organizationId, param.childOrganizationId,  options).toPromise();
-    }
-
-    /**
-     * Update a child organization under the given parent organization
-     * Update child organization
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
-        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
-    }
-
-    /**
-     * Update a child organization under the given parent organization
-     * Update child organization
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsChildOrganizationIdPatch(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdPatch(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
-    }
-
-    /**
-     * List child organizations for the given parent organization
-     * List child organizations
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsGetWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
-        return this.api.v3OrganizationIdOrganizationsGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.nameSearch,  options).toPromise();
-    }
-
-    /**
-     * List child organizations for the given parent organization
-     * List child organizations
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsGet(param: OrganizationsApiV3OrganizationIdOrganizationsGetRequest, options?: ConfigurationOptions): Promise<ModelsUserOrganizationList> {
-        return this.api.v3OrganizationIdOrganizationsGet(param.organizationId, param.limit, param.offset, param.nameSearch,  options).toPromise();
-    }
-
-    /**
-     * Create a new child organization under the given parent organization
-     * Create child organization
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsPostWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
-        return this.api.v3OrganizationIdOrganizationsPostWithHttpInfo(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
-    }
-
-    /**
-     * Create a new child organization under the given parent organization
-     * Create child organization
-     * @param param the request object
-     */
-    public v3OrganizationIdOrganizationsPost(param: OrganizationsApiV3OrganizationIdOrganizationsPostRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.api.v3OrganizationIdOrganizationsPost(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
     }
 
 }
@@ -4850,17 +4908,17 @@ export class ObjectOrganizationsApi {
 import { ObservableOutputsApi } from "./ObservableAPI";
 import { OutputsApiRequestFactory, OutputsApiResponseProcessor} from "../apis/OutputsApi";
 
-export interface OutputsApiV1OutputsGetRequest {
-}
-
-export interface OutputsApiV1OutputsOutputTypeIdGetRequest {
+export interface OutputsApiGetOutputTypeMetaRequest {
     /**
      * Output type ID
      * Defaults to: undefined
      * @type string
-     * @memberof OutputsApiv1OutputsOutputTypeIdGet
+     * @memberof OutputsApigetOutputTypeMeta
      */
     outputTypeId: string
+}
+
+export interface OutputsApiListOutputTypesRequest {
 }
 
 export class ObjectOutputsApi {
@@ -4871,21 +4929,12 @@ export class ObjectOutputsApi {
     }
 
     /**
-     * List outputs
-     * List outputs
+     * Get output config meta
+     * Get output config meta
      * @param param the request object
      */
-    public v1OutputsGetWithHttpInfo(param: OutputsApiV1OutputsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<OutputsConnectorMeta>>> {
-        return this.api.v1OutputsGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * List outputs
-     * List outputs
-     * @param param the request object
-     */
-    public v1OutputsGet(param: OutputsApiV1OutputsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<OutputsConnectorMeta>> {
-        return this.api.v1OutputsGet( options).toPromise();
+    public getOutputTypeMetaWithHttpInfo(param: OutputsApiGetOutputTypeMetaRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
+        return this.api.getOutputTypeMetaWithHttpInfo(param.outputTypeId,  options).toPromise();
     }
 
     /**
@@ -4893,17 +4942,26 @@ export class ObjectOutputsApi {
      * Get output config meta
      * @param param the request object
      */
-    public v1OutputsOutputTypeIdGetWithHttpInfo(param: OutputsApiV1OutputsOutputTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
-        return this.api.v1OutputsOutputTypeIdGetWithHttpInfo(param.outputTypeId,  options).toPromise();
+    public getOutputTypeMeta(param: OutputsApiGetOutputTypeMetaRequest, options?: ConfigurationOptions): Promise<ModelsConnectorMeta> {
+        return this.api.getOutputTypeMeta(param.outputTypeId,  options).toPromise();
     }
 
     /**
-     * Get output config meta
-     * Get output config meta
+     * List outputs
+     * List outputs
      * @param param the request object
      */
-    public v1OutputsOutputTypeIdGet(param: OutputsApiV1OutputsOutputTypeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnectorMeta> {
-        return this.api.v1OutputsOutputTypeIdGet(param.outputTypeId,  options).toPromise();
+    public listOutputTypesWithHttpInfo(param: OutputsApiListOutputTypesRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<OutputsConnectorMeta>>> {
+        return this.api.listOutputTypesWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * List outputs
+     * List outputs
+     * @param param the request object
+     */
+    public listOutputTypes(param: OutputsApiListOutputTypesRequest = {}, options?: ConfigurationOptions): Promise<Array<OutputsConnectorMeta>> {
+        return this.api.listOutputTypes( options).toPromise();
     }
 
 }
@@ -4911,26 +4969,26 @@ export class ObjectOutputsApi {
 import { ObservablePermissionsApi } from "./ObservableAPI";
 import { PermissionsApiRequestFactory, PermissionsApiResponseProcessor} from "../apis/PermissionsApi";
 
-export interface PermissionsApiV2OrganizationIdRolesPermissionsGetRequest {
+export interface PermissionsApiListPermissionsRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PermissionsApiv2OrganizationIdRolesPermissionsGet
+     * @memberof PermissionsApilistPermissions
      */
     organizationId: string
     /**
      * Limit the number of permissions returned (default: 10)
      * Defaults to: undefined
      * @type number
-     * @memberof PermissionsApiv2OrganizationIdRolesPermissionsGet
+     * @memberof PermissionsApilistPermissions
      */
     limit?: number
     /**
      * Offset the permissions returned (default: 0)
      * Defaults to: undefined
      * @type number
-     * @memberof PermissionsApiv2OrganizationIdRolesPermissionsGet
+     * @memberof PermissionsApilistPermissions
      */
     offset?: number
 }
@@ -4947,8 +5005,8 @@ export class ObjectPermissionsApi {
      * List permissions
      * @param param the request object
      */
-    public v2OrganizationIdRolesPermissionsGetWithHttpInfo(param: PermissionsApiV2OrganizationIdRolesPermissionsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPermissionList>> {
-        return this.api.v2OrganizationIdRolesPermissionsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public listPermissionsWithHttpInfo(param: PermissionsApiListPermissionsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPermissionList>> {
+        return this.api.listPermissionsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -4956,8 +5014,8 @@ export class ObjectPermissionsApi {
      * List permissions
      * @param param the request object
      */
-    public v2OrganizationIdRolesPermissionsGet(param: PermissionsApiV2OrganizationIdRolesPermissionsGetRequest, options?: ConfigurationOptions): Promise<ModelsPermissionList> {
-        return this.api.v2OrganizationIdRolesPermissionsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public listPermissions(param: PermissionsApiListPermissionsRequest, options?: ConfigurationOptions): Promise<ModelsPermissionList> {
+        return this.api.listPermissions(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
 }
@@ -4965,567 +5023,567 @@ export class ObjectPermissionsApi {
 import { ObservablePipelinesApi } from "./ObservableAPI";
 import { PipelinesApiRequestFactory, PipelinesApiResponseProcessor} from "../apis/PipelinesApi";
 
-export interface PipelinesApiV1OrganizationIdPipelinesGetRequest {
+export interface PipelinesApiCreatePipelineRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv1OrganizationIdPipelinesGet
+     * @memberof PipelinesApicreatePipeline
      */
     organizationId: string
     /**
-     * Limit
-     * Defaults to: undefined
-     * @type number
-     * @memberof PipelinesApiv1OrganizationIdPipelinesGet
+     * Request body for creating a pipeline
+     * @type RoutesV2CreatePipelineRequest
+     * @memberof PipelinesApicreatePipeline
      */
-    limit?: number
-    /**
-     * Offset
-     * Defaults to: undefined
-     * @type number
-     * @memberof PipelinesApiv1OrganizationIdPipelinesGet
-     */
-    offset?: number
+    routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest
 }
 
-export interface PipelinesApiV1OrganizationIdPipelinesPipelineIdDeleteRequest {
+export interface PipelinesApiDeletePipelineRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv1OrganizationIdPipelinesPipelineIdDelete
+     * @memberof PipelinesApideletePipeline
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv1OrganizationIdPipelinesPipelineIdDelete
+     * @memberof PipelinesApideletePipeline
      */
     pipelineId: string
 }
 
-export interface PipelinesApiV1OrganizationIdPipelinesPipelineIdGetRequest {
+export interface PipelinesApiDeletePipelineV1Request {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv1OrganizationIdPipelinesPipelineIdGet
+     * @memberof PipelinesApideletePipelineV1
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv1OrganizationIdPipelinesPipelineIdGet
+     * @memberof PipelinesApideletePipelineV1
      */
     pipelineId: string
 }
 
-export interface PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest {
+export interface PipelinesApiGetMetricsForPipelinesRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv1OrganizationIdPipelinesPipelineIdPatch
-     */
-    organizationId: string
-    /**
-     * Pipeline ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv1OrganizationIdPipelinesPipelineIdPatch
-     */
-    pipelineId: string
-    /**
-     * Request body for updating a pipeline
-     * @type RoutesUpdatePipelineRequest
-     * @memberof PipelinesApiv1OrganizationIdPipelinesPipelineIdPatch
-     */
-    routesUpdatePipelineRequest: RoutesUpdatePipelineRequest
-}
-
-export interface PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
-     */
-    organizationId: string
-    /**
-     * Pipeline ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
-     */
-    pipelineId: string
-    /**
-     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
-     */
-    metric: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
-     */
-    end?: string
-    /**
-     * Resolution of the data, default determined by time window
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
-     */
-    resolution?: string
-}
-
-export interface PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
-     */
-    organizationId: string
-    /**
-     * Pipeline ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
-     */
-    pipelineId: string
-    /**
-     * Node ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
-     */
-    nodeId: string
-    /**
-     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
-     */
-    metric: string
-    /**
-     * ISO3339 start time, default 6 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
-     */
-    end?: string
-    /**
-     * Resolution of the data, default determined by time window
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
-     */
-    resolution?: string
-}
-
-export interface PipelinesApiV2OrganizationIdPipelineSummaryGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelineSummaryGet
-     */
-    organizationId: string
-    /**
-     * ISO3339 start time, default 24 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelineSummaryGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelineSummaryGet
-     */
-    end?: string
-}
-
-export interface PipelinesApiV2OrganizationIdPipelinesGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesGet
-     */
-    organizationId: string
-    /**
-     * Limit
-     * Defaults to: undefined
-     * @type number
-     * @memberof PipelinesApiv2OrganizationIdPipelinesGet
-     */
-    limit?: number
-    /**
-     * Offset
-     * Defaults to: undefined
-     * @type number
-     * @memberof PipelinesApiv2OrganizationIdPipelinesGet
-     */
-    offset?: number
-    /**
-     * Include the status of the pipeline nodes
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof PipelinesApiv2OrganizationIdPipelinesGet
-     */
-    includeStatus?: boolean
-}
-
-export interface PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesMetricsGet
+     * @memberof PipelinesApigetMetricsForPipelines
      */
     organizationId: string
     /**
      * Comma-separated list of pipeline IDs
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesMetricsGet
+     * @memberof PipelinesApigetMetricsForPipelines
      */
     pipelineIds: string
     /**
      * Resolution for metrics (default: 5m)
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesMetricsGet
+     * @memberof PipelinesApigetMetricsForPipelines
      */
     resolution?: string
 }
 
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest {
+export interface PipelinesApiGetOrganizationSummaryRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdDelete
+     * @memberof PipelinesApigetOrganizationSummary
+     */
+    organizationId: string
+    /**
+     * ISO3339 start time, default 24 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetOrganizationSummary
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetOrganizationSummary
+     */
+    end?: string
+}
+
+export interface PipelinesApiGetPipelineRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipeline
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdDelete
+     * @memberof PipelinesApigetPipeline
      */
     pipelineId: string
 }
 
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest {
+export interface PipelinesApiGetPipelineConfigRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
+     * @memberof PipelinesApigetPipelineConfig
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
-     */
-    pipelineId: string
-    /**
-     * Edge ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
-     */
-    edgeId: string
-    /**
-     * Request body
-     * @type RoutesV2PatchPipelineEdgeRequest
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
-     */
-    routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest
-}
-
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdGet
-     */
-    organizationId: string
-    /**
-     * Pipeline ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdGet
+     * @memberof PipelinesApigetPipelineConfig
      */
     pipelineId: string
     /**
      * Include the status of the pipeline nodes
      * Defaults to: undefined
      * @type boolean
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdGet
+     * @memberof PipelinesApigetPipelineConfig
      */
     includeStatus?: boolean
 }
 
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest {
+export interface PipelinesApiGetPipelineEdgeConditionOperatorTypesRequest {
+}
+
+export interface PipelinesApiGetPipelineEdgeConditionRulesRequest {
+}
+
+export interface PipelinesApiGetPipelineMetricsRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
+     * @memberof PipelinesApigetPipelineMetrics
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
+     * @memberof PipelinesApigetPipelineMetrics
      */
     pipelineId: string
-    /**
-     * Node ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
-     */
-    nodeId: string
     /**
      * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
+     * @memberof PipelinesApigetPipelineMetrics
      */
     metric: string
     /**
      * ISO3339 start time, default 6 hours ago
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
+     * @memberof PipelinesApigetPipelineMetrics
      */
     start?: string
     /**
      * ISO3339 end time, default now
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
+     * @memberof PipelinesApigetPipelineMetrics
      */
     end?: string
     /**
      * Resolution of the data, default determined by time window
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
+     * @memberof PipelinesApigetPipelineMetrics
      */
     resolution?: string
 }
 
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest {
+export interface PipelinesApiGetPipelineNodeMetricsRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdPatch
+     * @memberof PipelinesApigetPipelineNodeMetrics
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdPatch
-     */
-    pipelineId: string
-    /**
-     * Request body for updating a pipeline
-     * @type RoutesV2UpdatePipelineRequest
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdPatch
-     */
-    routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest
-}
-
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusGet
-     */
-    organizationId: string
-    /**
-     * Pipeline ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusGet
-     */
-    pipelineId: string
-    /**
-     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
-     * Defaults to: undefined
-     * @type Array&lt;string&gt;
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusGet
-     */
-    metrics?: Array<string>
-    /**
-     * ISO3339 start time, default 24 hours ago
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusGet
-     */
-    start?: string
-    /**
-     * ISO3339 end time, default now
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusGet
-     */
-    end?: string
-}
-
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusNodeIdGet
-     */
-    organizationId: string
-    /**
-     * Pipeline ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusNodeIdGet
+     * @memberof PipelinesApigetPipelineNodeMetrics
      */
     pipelineId: string
     /**
      * Node ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusNodeIdGet
+     * @memberof PipelinesApigetPipelineNodeMetrics
      */
     nodeId: string
     /**
-     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
-     * Defaults to: undefined
-     * @type Array&lt;string&gt;
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusNodeIdGet
-     */
-    metrics?: Array<string>
-    /**
-     * ISO3339 start time, default 24 hours ago
+     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusNodeIdGet
+     * @memberof PipelinesApigetPipelineNodeMetrics
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeMetrics
      */
     start?: string
     /**
      * ISO3339 end time, default now
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdStatusNodeIdGet
+     * @memberof PipelinesApigetPipelineNodeMetrics
      */
     end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeMetrics
+     */
+    resolution?: string
 }
 
-export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest {
+export interface PipelinesApiGetPipelineNodeMetricsV2Request {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdTriggerPost
+     * @memberof PipelinesApigetPipelineNodeMetricsV2
      */
     organizationId: string
     /**
      * Pipeline ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdTriggerPost
+     * @memberof PipelinesApigetPipelineNodeMetricsV2
      */
     pipelineId: string
+    /**
+     * Node ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeMetricsV2
+     */
+    nodeId: string
+    /**
+     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeMetricsV2
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeMetricsV2
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeMetricsV2
+     */
+    end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeMetricsV2
+     */
+    resolution?: string
 }
 
-export interface PipelinesApiV2OrganizationIdPipelinesPostRequest {
+export interface PipelinesApiGetPipelineNodeStatusRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPost
+     * @memberof PipelinesApigetPipelineNodeStatus
      */
     organizationId: string
     /**
-     * Request body for creating a pipeline
-     * @type RoutesV2CreatePipelineRequest
-     * @memberof PipelinesApiv2OrganizationIdPipelinesPost
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeStatus
      */
-    routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest
+    pipelineId: string
+    /**
+     * Node ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeStatus
+     */
+    nodeId: string
+    /**
+     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * Defaults to: undefined
+     * @type Array&lt;string&gt;
+     * @memberof PipelinesApigetPipelineNodeStatus
+     */
+    metrics?: Array<string>
+    /**
+     * ISO3339 start time, default 24 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeStatus
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineNodeStatus
+     */
+    end?: string
 }
 
-export interface PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest {
+export interface PipelinesApiGetPipelineStatusRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesStatusesGet
+     * @memberof PipelinesApigetPipelineStatus
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineStatus
+     */
+    pipelineId: string
+    /**
+     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * Defaults to: undefined
+     * @type Array&lt;string&gt;
+     * @memberof PipelinesApigetPipelineStatus
+     */
+    metrics?: Array<string>
+    /**
+     * ISO3339 start time, default 24 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineStatus
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelineStatus
+     */
+    end?: string
+}
+
+export interface PipelinesApiGetPipelinesStatusesRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetPipelinesStatuses
      */
     organizationId: string
     /**
      * Maximum number of pipelines to return (default is 10)
      * Defaults to: undefined
      * @type number
-     * @memberof PipelinesApiv2OrganizationIdPipelinesStatusesGet
+     * @memberof PipelinesApigetPipelinesStatuses
      */
     limit?: number
     /**
      * Offset for pagination (default is 0)
      * Defaults to: undefined
      * @type number
-     * @memberof PipelinesApiv2OrganizationIdPipelinesStatusesGet
+     * @memberof PipelinesApigetPipelinesStatuses
      */
     offset?: number
     /**
      * Start time (RFC3339 format) for status metrics (default: 24 hours ago)
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesStatusesGet
+     * @memberof PipelinesApigetPipelinesStatuses
      */
     start?: string
     /**
      * End time (RFC3339 format) for status metrics (default: now)
      * Defaults to: undefined
      * @type string
-     * @memberof PipelinesApiv2OrganizationIdPipelinesStatusesGet
+     * @memberof PipelinesApigetPipelinesStatuses
      */
     end?: string
 }
 
-export interface PipelinesApiV3PipelineEdgesEdgeConditionOperatorTypesGetRequest {
+export interface PipelinesApiListPipelinesRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApilistPipelines
+     */
+    organizationId: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof PipelinesApilistPipelines
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof PipelinesApilistPipelines
+     */
+    offset?: number
+    /**
+     * Include the status of the pipeline nodes
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof PipelinesApilistPipelines
+     */
+    includeStatus?: boolean
 }
 
-export interface PipelinesApiV3PipelineEdgesEdgeConditionRulesGetRequest {
+export interface PipelinesApiListPipelinesV1Request {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApilistPipelinesV1
+     */
+    organizationId: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof PipelinesApilistPipelinesV1
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof PipelinesApilistPipelinesV1
+     */
+    offset?: number
+}
+
+export interface PipelinesApiTriggerPipelineRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApitriggerPipeline
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApitriggerPipeline
+     */
+    pipelineId: string
+}
+
+export interface PipelinesApiUpdatePipelineRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiupdatePipeline
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiupdatePipeline
+     */
+    pipelineId: string
+    /**
+     * Request body for updating a pipeline
+     * @type RoutesV2UpdatePipelineRequest
+     * @memberof PipelinesApiupdatePipeline
+     */
+    routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest
+}
+
+export interface PipelinesApiUpdatePipelineEdgeRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiupdatePipelineEdge
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiupdatePipelineEdge
+     */
+    pipelineId: string
+    /**
+     * Edge ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiupdatePipelineEdge
+     */
+    edgeId: string
+    /**
+     * Request body
+     * @type RoutesV2PatchPipelineEdgeRequest
+     * @memberof PipelinesApiupdatePipelineEdge
+     */
+    routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest
+}
+
+export interface PipelinesApiUpdatePipelineV1Request {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiupdatePipelineV1
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiupdatePipelineV1
+     */
+    pipelineId: string
+    /**
+     * Request body for updating a pipeline
+     * @type RoutesUpdatePipelineRequest
+     * @memberof PipelinesApiupdatePipelineV1
+     */
+    routesUpdatePipelineRequest: RoutesUpdatePipelineRequest
 }
 
 export class ObjectPipelinesApi {
@@ -5536,309 +5594,12 @@ export class ObjectPipelinesApi {
     }
 
     /**
-     * List pipelines
-     * List pipelines
+     * Create a new pipeline with specified configuration
+     * Create pipeline
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesGetWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
-        return this.api.v1OrganizationIdPipelinesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List pipelines
-     * List pipelines
-     * @param param the request object
-     */
-    public v1OrganizationIdPipelinesGet(param: PipelinesApiV1OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
-        return this.api.v1OrganizationIdPipelinesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Delete pipeline
-     * Delete pipeline
-     * @param param the request object
-     */
-    public v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Delete pipeline
-     * Delete pipeline
-     * @param param the request object
-     */
-    public v1OrganizationIdPipelinesPipelineIdDelete(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1OrganizationIdPipelinesPipelineIdDelete(param.organizationId, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline
-     * Get pipeline
-     * @param param the request object
-     */
-    public v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
-        return this.api.v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline
-     * Get pipeline
-     * @param param the request object
-     */
-    public v1OrganizationIdPipelinesPipelineIdGet(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipeline> {
-        return this.api.v1OrganizationIdPipelinesPipelineIdGet(param.organizationId, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Update pipeline
-     * Update pipeline
-     * @param param the request object
-     */
-    public v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
-        return this.api.v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
-    }
-
-    /**
-     * Update pipeline
-     * Update pipeline
-     * @param param the request object
-     */
-    public v1OrganizationIdPipelinesPipelineIdPatch(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsPipeline> {
-        return this.api.v1OrganizationIdPipelinesPipelineIdPatch(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
-    }
-
-    /**
-     * Get time series metrics for a pipeline
-     * Get pipeline metrics
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
-        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Get time series metrics for a pipeline
-     * Get pipeline metrics
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsPipelinesPipelineIdGet(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
-        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdGet(param.organizationId, param.pipelineId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline node metrics
-     * Get pipeline node metrics
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
-        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline node metrics
-     * Get pipeline node metrics
-     * @param param the request object
-     */
-    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
-        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Get status of all pipelines for an organization
-     * Get status of all pipelines for an organization
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelineSummaryGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelineSummaryGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse>> {
-        return this.api.v2OrganizationIdPipelineSummaryGetWithHttpInfo(param.organizationId, param.start, param.end,  options).toPromise();
-    }
-
-    /**
-     * Get status of all pipelines for an organization
-     * Get status of all pipelines for an organization
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelineSummaryGet(param: PipelinesApiV2OrganizationIdPipelineSummaryGetRequest, options?: ConfigurationOptions): Promise<RoutesV2GetOrganizationSummaryResponse> {
-        return this.api.v2OrganizationIdPipelineSummaryGet(param.organizationId, param.start, param.end,  options).toPromise();
-    }
-
-    /**
-     * List pipelines
-     * List pipelines
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
-        return this.api.v2OrganizationIdPipelinesGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.includeStatus,  options).toPromise();
-    }
-
-    /**
-     * List pipelines
-     * List pipelines
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesGet(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
-        return this.api.v2OrganizationIdPipelinesGet(param.organizationId, param.limit, param.offset, param.includeStatus,  options).toPromise();
-    }
-
-    /**
-     * Get aggregated ingress and egress metrics for specific pipelines
-     * Get metrics for specific pipelines
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesMetricsGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2MetricsResponse>> {
-        return this.api.v2OrganizationIdPipelinesMetricsGetWithHttpInfo(param.organizationId, param.pipelineIds, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Get aggregated ingress and egress metrics for specific pipelines
-     * Get metrics for specific pipelines
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesMetricsGet(param: PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest, options?: ConfigurationOptions): Promise<RoutesV2MetricsResponse> {
-        return this.api.v2OrganizationIdPipelinesMetricsGet(param.organizationId, param.pipelineIds, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Delete pipeline
-     * Delete pipeline
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Delete pipeline
-     * Delete pipeline
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdDelete(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdDelete(param.organizationId, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Enable or disable a pipeline edge
-     * Update pipeline edge
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
-    }
-
-    /**
-     * Enable or disable a pipeline edge
-     * Update pipeline edge
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
-    }
-
-    /**
-     * Retrieve a specific pipeline configuration by pipeline ID
-     * Get pipeline configuration
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.includeStatus,  options).toPromise();
-    }
-
-    /**
-     * Retrieve a specific pipeline configuration by pipeline ID
-     * Get pipeline configuration
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdGet(param.organizationId, param.pipelineId, param.includeStatus,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline node metrics
-     * Get pipeline node metrics
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline node metrics
-     * Get pipeline node metrics
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
-    }
-
-    /**
-     * Update an existing pipeline with the specified configuration
-     * Update pipeline
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
-    }
-
-    /**
-     * Update an existing pipeline with the specified configuration
-     * Update pipeline
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdPatch(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdPatch(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline status
-     * Get pipeline status
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineStatus>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(param.organizationId, param.pipelineId, param.metrics, param.start, param.end,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline status
-     * Get pipeline status
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdStatusGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineStatus> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdStatusGet(param.organizationId, param.pipelineId, param.metrics, param.start, param.end,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline node status
-     * Get pipeline node status
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeStatus>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metrics, param.start, param.end,  options).toPromise();
-    }
-
-    /**
-     * Get pipeline node status
-     * Get pipeline node status
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineNodeStatus> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(param.organizationId, param.pipelineId, param.nodeId, param.metrics, param.start, param.end,  options).toPromise();
-    }
-
-    /**
-     * Manually trigger a cron-scheduled pipeline to run
-     * Trigger pipeline manually
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
-    }
-
-    /**
-     * Manually trigger a cron-scheduled pipeline to run
-     * Trigger pipeline manually
-     * @param param the request object
-     */
-    public v2OrganizationIdPipelinesPipelineIdTriggerPost(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2OrganizationIdPipelinesPipelineIdTriggerPost(param.organizationId, param.pipelineId,  options).toPromise();
+    public createPipelineWithHttpInfo(param: PipelinesApiCreatePipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+        return this.api.createPipelineWithHttpInfo(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
     }
 
     /**
@@ -5846,35 +5607,116 @@ export class ObjectPipelinesApi {
      * Create pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPostWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        return this.api.v2OrganizationIdPipelinesPostWithHttpInfo(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
+    public createPipeline(param: PipelinesApiCreatePipelineRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+        return this.api.createPipeline(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
     }
 
     /**
-     * Create a new pipeline with specified configuration
-     * Create pipeline
+     * Delete pipeline
+     * Delete pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPost(param: PipelinesApiV2OrganizationIdPipelinesPostRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
-        return this.api.v2OrganizationIdPipelinesPost(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
+    public deletePipelineWithHttpInfo(param: PipelinesApiDeletePipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.deletePipelineWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
     /**
-     * Retrieve the status of pipelines within an organization for a specified time period.
-     * Get pipeline status
+     * Delete pipeline
+     * Delete pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesStatusesGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus>>> {
-        return this.api.v2OrganizationIdPipelinesStatusesGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
+    public deletePipeline(param: PipelinesApiDeletePipelineRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.deletePipeline(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
     /**
-     * Retrieve the status of pipelines within an organization for a specified time period.
-     * Get pipeline status
+     * Delete pipeline
+     * Delete pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesStatusesGet(param: PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest, options?: ConfigurationOptions): Promise<Array<RoutesV2PipelineWithStatus>> {
-        return this.api.v2OrganizationIdPipelinesStatusesGet(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
+    public deletePipelineV1WithHttpInfo(param: PipelinesApiDeletePipelineV1Request, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.deletePipelineV1WithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Delete pipeline
+     * Delete pipeline
+     * @param param the request object
+     */
+    public deletePipelineV1(param: PipelinesApiDeletePipelineV1Request, options?: ConfigurationOptions): Promise<string> {
+        return this.api.deletePipelineV1(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * Get metrics for specific pipelines
+     * @param param the request object
+     */
+    public getMetricsForPipelinesWithHttpInfo(param: PipelinesApiGetMetricsForPipelinesRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2MetricsResponse>> {
+        return this.api.getMetricsForPipelinesWithHttpInfo(param.organizationId, param.pipelineIds, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * Get metrics for specific pipelines
+     * @param param the request object
+     */
+    public getMetricsForPipelines(param: PipelinesApiGetMetricsForPipelinesRequest, options?: ConfigurationOptions): Promise<RoutesV2MetricsResponse> {
+        return this.api.getMetricsForPipelines(param.organizationId, param.pipelineIds, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get status of all pipelines for an organization
+     * Get status of all pipelines for an organization
+     * @param param the request object
+     */
+    public getOrganizationSummaryWithHttpInfo(param: PipelinesApiGetOrganizationSummaryRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse>> {
+        return this.api.getOrganizationSummaryWithHttpInfo(param.organizationId, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Get status of all pipelines for an organization
+     * Get status of all pipelines for an organization
+     * @param param the request object
+     */
+    public getOrganizationSummary(param: PipelinesApiGetOrganizationSummaryRequest, options?: ConfigurationOptions): Promise<RoutesV2GetOrganizationSummaryResponse> {
+        return this.api.getOrganizationSummary(param.organizationId, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline
+     * Get pipeline
+     * @param param the request object
+     */
+    public getPipelineWithHttpInfo(param: PipelinesApiGetPipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
+        return this.api.getPipelineWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline
+     * Get pipeline
+     * @param param the request object
+     */
+    public getPipeline(param: PipelinesApiGetPipelineRequest, options?: ConfigurationOptions): Promise<ModelsPipeline> {
+        return this.api.getPipeline(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve a specific pipeline configuration by pipeline ID
+     * Get pipeline configuration
+     * @param param the request object
+     */
+    public getPipelineConfigWithHttpInfo(param: PipelinesApiGetPipelineConfigRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+        return this.api.getPipelineConfigWithHttpInfo(param.organizationId, param.pipelineId, param.includeStatus,  options).toPromise();
+    }
+
+    /**
+     * Retrieve a specific pipeline configuration by pipeline ID
+     * Get pipeline configuration
+     * @param param the request object
+     */
+    public getPipelineConfig(param: PipelinesApiGetPipelineConfigRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+        return this.api.getPipelineConfig(param.organizationId, param.pipelineId, param.includeStatus,  options).toPromise();
     }
 
     /**
@@ -5882,8 +5724,8 @@ export class ObjectPipelinesApi {
      * Conditional types for edge conditions
      * @param param the request object
      */
-    public v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo(param: PipelinesApiV3PipelineEdgesEdgeConditionOperatorTypesGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo( options).toPromise();
+    public getPipelineEdgeConditionOperatorTypesWithHttpInfo(param: PipelinesApiGetPipelineEdgeConditionOperatorTypesRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.getPipelineEdgeConditionOperatorTypesWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -5891,8 +5733,8 @@ export class ObjectPipelinesApi {
      * Conditional types for edge conditions
      * @param param the request object
      */
-    public v3PipelineEdgesEdgeConditionOperatorTypesGet(param: PipelinesApiV3PipelineEdgesEdgeConditionOperatorTypesGetRequest = {}, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v3PipelineEdgesEdgeConditionOperatorTypesGet( options).toPromise();
+    public getPipelineEdgeConditionOperatorTypes(param: PipelinesApiGetPipelineEdgeConditionOperatorTypesRequest = {}, options?: ConfigurationOptions): Promise<string> {
+        return this.api.getPipelineEdgeConditionOperatorTypes( options).toPromise();
     }
 
     /**
@@ -5900,8 +5742,8 @@ export class ObjectPipelinesApi {
      * Rules for edge conditions
      * @param param the request object
      */
-    public v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo(param: PipelinesApiV3PipelineEdgesEdgeConditionRulesGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo( options).toPromise();
+    public getPipelineEdgeConditionRulesWithHttpInfo(param: PipelinesApiGetPipelineEdgeConditionRulesRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.getPipelineEdgeConditionRulesWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -5909,8 +5751,224 @@ export class ObjectPipelinesApi {
      * Rules for edge conditions
      * @param param the request object
      */
-    public v3PipelineEdgesEdgeConditionRulesGet(param: PipelinesApiV3PipelineEdgesEdgeConditionRulesGetRequest = {}, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v3PipelineEdgesEdgeConditionRulesGet( options).toPromise();
+    public getPipelineEdgeConditionRules(param: PipelinesApiGetPipelineEdgeConditionRulesRequest = {}, options?: ConfigurationOptions): Promise<string> {
+        return this.api.getPipelineEdgeConditionRules( options).toPromise();
+    }
+
+    /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param param the request object
+     */
+    public getPipelineMetricsWithHttpInfo(param: PipelinesApiGetPipelineMetricsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        return this.api.getPipelineMetricsWithHttpInfo(param.organizationId, param.pipelineId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param param the request object
+     */
+    public getPipelineMetrics(param: PipelinesApiGetPipelineMetricsRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        return this.api.getPipelineMetrics(param.organizationId, param.pipelineId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param param the request object
+     */
+    public getPipelineNodeMetricsWithHttpInfo(param: PipelinesApiGetPipelineNodeMetricsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        return this.api.getPipelineNodeMetricsWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param param the request object
+     */
+    public getPipelineNodeMetrics(param: PipelinesApiGetPipelineNodeMetricsRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        return this.api.getPipelineNodeMetrics(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param param the request object
+     */
+    public getPipelineNodeMetricsV2WithHttpInfo(param: PipelinesApiGetPipelineNodeMetricsV2Request, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        return this.api.getPipelineNodeMetricsV2WithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param param the request object
+     */
+    public getPipelineNodeMetricsV2(param: PipelinesApiGetPipelineNodeMetricsV2Request, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        return this.api.getPipelineNodeMetricsV2(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node status
+     * Get pipeline node status
+     * @param param the request object
+     */
+    public getPipelineNodeStatusWithHttpInfo(param: PipelinesApiGetPipelineNodeStatusRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeStatus>> {
+        return this.api.getPipelineNodeStatusWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metrics, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node status
+     * Get pipeline node status
+     * @param param the request object
+     */
+    public getPipelineNodeStatus(param: PipelinesApiGetPipelineNodeStatusRequest, options?: ConfigurationOptions): Promise<ModelsPipelineNodeStatus> {
+        return this.api.getPipelineNodeStatus(param.organizationId, param.pipelineId, param.nodeId, param.metrics, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline status
+     * Get pipeline status
+     * @param param the request object
+     */
+    public getPipelineStatusWithHttpInfo(param: PipelinesApiGetPipelineStatusRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineStatus>> {
+        return this.api.getPipelineStatusWithHttpInfo(param.organizationId, param.pipelineId, param.metrics, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline status
+     * Get pipeline status
+     * @param param the request object
+     */
+    public getPipelineStatus(param: PipelinesApiGetPipelineStatusRequest, options?: ConfigurationOptions): Promise<ModelsPipelineStatus> {
+        return this.api.getPipelineStatus(param.organizationId, param.pipelineId, param.metrics, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Retrieve the status of pipelines within an organization for a specified time period.
+     * Get pipeline status
+     * @param param the request object
+     */
+    public getPipelinesStatusesWithHttpInfo(param: PipelinesApiGetPipelinesStatusesRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus>>> {
+        return this.api.getPipelinesStatusesWithHttpInfo(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Retrieve the status of pipelines within an organization for a specified time period.
+     * Get pipeline status
+     * @param param the request object
+     */
+    public getPipelinesStatuses(param: PipelinesApiGetPipelinesStatusesRequest, options?: ConfigurationOptions): Promise<Array<RoutesV2PipelineWithStatus>> {
+        return this.api.getPipelinesStatuses(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * List pipelines
+     * List pipelines
+     * @param param the request object
+     */
+    public listPipelinesWithHttpInfo(param: PipelinesApiListPipelinesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
+        return this.api.listPipelinesWithHttpInfo(param.organizationId, param.limit, param.offset, param.includeStatus,  options).toPromise();
+    }
+
+    /**
+     * List pipelines
+     * List pipelines
+     * @param param the request object
+     */
+    public listPipelines(param: PipelinesApiListPipelinesRequest, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
+        return this.api.listPipelines(param.organizationId, param.limit, param.offset, param.includeStatus,  options).toPromise();
+    }
+
+    /**
+     * List pipelines
+     * List pipelines
+     * @param param the request object
+     */
+    public listPipelinesV1WithHttpInfo(param: PipelinesApiListPipelinesV1Request, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
+        return this.api.listPipelinesV1WithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List pipelines
+     * List pipelines
+     * @param param the request object
+     */
+    public listPipelinesV1(param: PipelinesApiListPipelinesV1Request, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
+        return this.api.listPipelinesV1(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param param the request object
+     */
+    public triggerPipelineWithHttpInfo(param: PipelinesApiTriggerPipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.triggerPipelineWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param param the request object
+     */
+    public triggerPipeline(param: PipelinesApiTriggerPipelineRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.triggerPipeline(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Update an existing pipeline with the specified configuration
+     * Update pipeline
+     * @param param the request object
+     */
+    public updatePipelineWithHttpInfo(param: PipelinesApiUpdatePipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+        return this.api.updatePipelineWithHttpInfo(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
+    }
+
+    /**
+     * Update an existing pipeline with the specified configuration
+     * Update pipeline
+     * @param param the request object
+     */
+    public updatePipeline(param: PipelinesApiUpdatePipelineRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+        return this.api.updatePipeline(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param param the request object
+     */
+    public updatePipelineEdgeWithHttpInfo(param: PipelinesApiUpdatePipelineEdgeRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.updatePipelineEdgeWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param param the request object
+     */
+    public updatePipelineEdge(param: PipelinesApiUpdatePipelineEdgeRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.updatePipelineEdge(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
+    }
+
+    /**
+     * Update pipeline
+     * Update pipeline
+     * @param param the request object
+     */
+    public updatePipelineV1WithHttpInfo(param: PipelinesApiUpdatePipelineV1Request, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
+        return this.api.updatePipelineV1WithHttpInfo(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
+    }
+
+    /**
+     * Update pipeline
+     * Update pipeline
+     * @param param the request object
+     */
+    public updatePipelineV1(param: PipelinesApiUpdatePipelineV1Request, options?: ConfigurationOptions): Promise<ModelsPipeline> {
+        return this.api.updatePipelineV1(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
     }
 
 }
@@ -5918,39 +5976,39 @@ export class ObjectPipelinesApi {
 import { ObservableQuotasApi } from "./ObservableAPI";
 import { QuotasApiRequestFactory, QuotasApiResponseProcessor} from "../apis/QuotasApi";
 
-export interface QuotasApiV2QuotasGetRequest {
+export interface QuotasApiListQuotasRequest {
     /**
      * Billing Account ID
      * Defaults to: undefined
      * @type string
-     * @memberof QuotasApiv2QuotasGet
+     * @memberof QuotasApilistQuotas
      */
     billingAccountId?: string
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof QuotasApiv2QuotasGet
+     * @memberof QuotasApilistQuotas
      */
     organizationId?: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof QuotasApiv2QuotasGet
+     * @memberof QuotasApilistQuotas
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof QuotasApiv2QuotasGet
+     * @memberof QuotasApilistQuotas
      */
     offset?: number
     /**
      * 
      * @type any
-     * @memberof QuotasApiv2QuotasGet
+     * @memberof QuotasApilistQuotas
      */
     body?: any
 }
@@ -5967,8 +6025,8 @@ export class ObjectQuotasApi {
      * List quotas
      * @param param the request object
      */
-    public v2QuotasGetWithHttpInfo(param: QuotasApiV2QuotasGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
-        return this.api.v2QuotasGetWithHttpInfo(param.billingAccountId, param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
+    public listQuotasWithHttpInfo(param: QuotasApiListQuotasRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
+        return this.api.listQuotasWithHttpInfo(param.billingAccountId, param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
     }
 
     /**
@@ -5976,8 +6034,8 @@ export class ObjectQuotasApi {
      * List quotas
      * @param param the request object
      */
-    public v2QuotasGet(param: QuotasApiV2QuotasGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsQuotaList> {
-        return this.api.v2QuotasGet(param.billingAccountId, param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
+    public listQuotas(param: QuotasApiListQuotasRequest = {}, options?: ConfigurationOptions): Promise<ModelsQuotaList> {
+        return this.api.listQuotas(param.billingAccountId, param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
     }
 
 }
@@ -5985,99 +6043,99 @@ export class ObjectQuotasApi {
 import { ObservableRolesApi } from "./ObservableAPI";
 import { RolesApiRequestFactory, RolesApiResponseProcessor} from "../apis/RolesApi";
 
-export interface RolesApiV2OrganizationIdRolesGetRequest {
+export interface RolesApiCreateRoleRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof RolesApiv2OrganizationIdRolesGet
+     * @memberof RolesApicreateRole
+     */
+    organizationId: string
+    /**
+     * Request body for creating a role
+     * @type RoutesV2CreateRoleV2Request
+     * @memberof RolesApicreateRole
+     */
+    routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request
+}
+
+export interface RolesApiDeleteRoleRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApideleteRole
+     */
+    organizationId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApideleteRole
+     */
+    roleId: string
+}
+
+export interface RolesApiGetRoleRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApigetRole
+     */
+    organizationId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApigetRole
+     */
+    roleId: string
+}
+
+export interface RolesApiListRolesRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApilistRoles
      */
     organizationId: string
     /**
      * Limit the number of roles returned (default: 10)
      * Defaults to: undefined
      * @type number
-     * @memberof RolesApiv2OrganizationIdRolesGet
+     * @memberof RolesApilistRoles
      */
     limit?: number
     /**
      * Offset the roles returned (default: 0)
      * Defaults to: undefined
      * @type number
-     * @memberof RolesApiv2OrganizationIdRolesGet
+     * @memberof RolesApilistRoles
      */
     offset?: number
 }
 
-export interface RolesApiV2OrganizationIdRolesPostRequest {
+export interface RolesApiUpdateRoleRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof RolesApiv2OrganizationIdRolesPost
-     */
-    organizationId: string
-    /**
-     * Request body for creating a role
-     * @type RoutesV2CreateRoleV2Request
-     * @memberof RolesApiv2OrganizationIdRolesPost
-     */
-    routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request
-}
-
-export interface RolesApiV2OrganizationIdRolesRoleIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv2OrganizationIdRolesRoleIdDelete
+     * @memberof RolesApiupdateRole
      */
     organizationId: string
     /**
      * Role ID
      * Defaults to: undefined
      * @type string
-     * @memberof RolesApiv2OrganizationIdRolesRoleIdDelete
-     */
-    roleId: string
-}
-
-export interface RolesApiV2OrganizationIdRolesRoleIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv2OrganizationIdRolesRoleIdGet
-     */
-    organizationId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv2OrganizationIdRolesRoleIdGet
-     */
-    roleId: string
-}
-
-export interface RolesApiV2OrganizationIdRolesRoleIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv2OrganizationIdRolesRoleIdPatch
-     */
-    organizationId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv2OrganizationIdRolesRoleIdPatch
+     * @memberof RolesApiupdateRole
      */
     roleId: string
     /**
      * Request body for updating a role
      * @type RoutesV2UpdateRoleV2Request
-     * @memberof RolesApiv2OrganizationIdRolesRoleIdPatch
+     * @memberof RolesApiupdateRole
      */
     routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request
 }
@@ -6090,21 +6148,12 @@ export class ObjectRolesApi {
     }
 
     /**
-     * List roles with their associated permissions
-     * List roles
+     * Create a new role with permissions
+     * Create role
      * @param param the request object
      */
-    public v2OrganizationIdRolesGetWithHttpInfo(param: RolesApiV2OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissionsList>> {
-        return this.api.v2OrganizationIdRolesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List roles with their associated permissions
-     * List roles
-     * @param param the request object
-     */
-    public v2OrganizationIdRolesGet(param: RolesApiV2OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissionsList> {
-        return this.api.v2OrganizationIdRolesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public createRoleWithHttpInfo(param: RolesApiCreateRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+        return this.api.createRoleWithHttpInfo(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
     }
 
     /**
@@ -6112,17 +6161,8 @@ export class ObjectRolesApi {
      * Create role
      * @param param the request object
      */
-    public v2OrganizationIdRolesPostWithHttpInfo(param: RolesApiV2OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
-        return this.api.v2OrganizationIdRolesPostWithHttpInfo(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
-    }
-
-    /**
-     * Create a new role with permissions
-     * Create role
-     * @param param the request object
-     */
-    public v2OrganizationIdRolesPost(param: RolesApiV2OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
-        return this.api.v2OrganizationIdRolesPost(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
+    public createRole(param: RolesApiCreateRoleRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+        return this.api.createRole(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
     }
 
     /**
@@ -6130,8 +6170,8 @@ export class ObjectRolesApi {
      * Delete role
      * @param param the request object
      */
-    public v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(param: RolesApiV2OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
+    public deleteRoleWithHttpInfo(param: RolesApiDeleteRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.deleteRoleWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -6139,8 +6179,8 @@ export class ObjectRolesApi {
      * Delete role
      * @param param the request object
      */
-    public v2OrganizationIdRolesRoleIdDelete(param: RolesApiV2OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v2OrganizationIdRolesRoleIdDelete(param.organizationId, param.roleId,  options).toPromise();
+    public deleteRole(param: RolesApiDeleteRoleRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.deleteRole(param.organizationId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -6148,8 +6188,8 @@ export class ObjectRolesApi {
      * Get role
      * @param param the request object
      */
-    public v2OrganizationIdRolesRoleIdGetWithHttpInfo(param: RolesApiV2OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
-        return this.api.v2OrganizationIdRolesRoleIdGetWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
+    public getRoleWithHttpInfo(param: RolesApiGetRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+        return this.api.getRoleWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -6157,8 +6197,26 @@ export class ObjectRolesApi {
      * Get role
      * @param param the request object
      */
-    public v2OrganizationIdRolesRoleIdGet(param: RolesApiV2OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
-        return this.api.v2OrganizationIdRolesRoleIdGet(param.organizationId, param.roleId,  options).toPromise();
+    public getRole(param: RolesApiGetRoleRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+        return this.api.getRole(param.organizationId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * List roles with their associated permissions
+     * List roles
+     * @param param the request object
+     */
+    public listRolesWithHttpInfo(param: RolesApiListRolesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissionsList>> {
+        return this.api.listRolesWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List roles with their associated permissions
+     * List roles
+     * @param param the request object
+     */
+    public listRoles(param: RolesApiListRolesRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissionsList> {
+        return this.api.listRoles(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -6166,8 +6224,8 @@ export class ObjectRolesApi {
      * Update role
      * @param param the request object
      */
-    public v2OrganizationIdRolesRoleIdPatchWithHttpInfo(param: RolesApiV2OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
-        return this.api.v2OrganizationIdRolesRoleIdPatchWithHttpInfo(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
+    public updateRoleWithHttpInfo(param: RolesApiUpdateRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+        return this.api.updateRoleWithHttpInfo(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
     }
 
     /**
@@ -6175,169 +6233,8 @@ export class ObjectRolesApi {
      * Update role
      * @param param the request object
      */
-    public v2OrganizationIdRolesRoleIdPatch(param: RolesApiV2OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
-        return this.api.v2OrganizationIdRolesRoleIdPatch(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
-    }
-
-}
-
-import { ObservableSandboxApi } from "./ObservableAPI";
-import { SandboxApiRequestFactory, SandboxApiResponseProcessor} from "../apis/SandboxApi";
-
-export interface SandboxApiV2OrganizationIdSandboxTransformPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof SandboxApiv2OrganizationIdSandboxTransformPost
-     */
-    organizationId: string
-    /**
-     * Transform configuration and record
-     * @type RoutesV2ApplyTransformationRequest
-     * @memberof SandboxApiv2OrganizationIdSandboxTransformPost
-     */
-    routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
-}
-
-export interface SandboxApiV2SandboxTemplateGetRequest {
-    /**
-     * 
-     * @type any
-     * @memberof SandboxApiv2SandboxTemplateGet
-     */
-    body?: any
-}
-
-export interface SandboxApiV2SandboxTemplatePostRequest {
-    /**
-     * Record generation parameters
-     * @type RoutesV2GenerateRecordRequest
-     * @memberof SandboxApiv2SandboxTemplatePost
-     */
-    routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest
-}
-
-export interface SandboxApiV2SandboxTransformPostRequest {
-    /**
-     * Transform configuration and record
-     * @type RoutesV2ApplyTransformationRequest
-     * @memberof SandboxApiv2SandboxTransformPost
-     */
-    routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
-}
-
-export interface SandboxApiV3OrganizationIdEnrichmentsSandboxPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof SandboxApiv3OrganizationIdEnrichmentsSandboxPost
-     */
-    organizationId: string
-    /**
-     * Enrichment configuration and record
-     * @type RoutesV3EnrichmentSandboxRequest
-     * @memberof SandboxApiv3OrganizationIdEnrichmentsSandboxPost
-     */
-    routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest
-}
-
-export class ObjectSandboxApi {
-    private api: ObservableSandboxApi
-
-    public constructor(configuration: Configuration, requestFactory?: SandboxApiRequestFactory, responseProcessor?: SandboxApiResponseProcessor) {
-        this.api = new ObservableSandboxApi(configuration, requestFactory, responseProcessor);
-    }
-
-    /**
-     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
-     * Apply transformation to record
-     * @param param the request object
-     */
-    public v2OrganizationIdSandboxTransformPostWithHttpInfo(param: SandboxApiV2OrganizationIdSandboxTransformPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
-        return this.api.v2OrganizationIdSandboxTransformPostWithHttpInfo(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
-    }
-
-    /**
-     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
-     * Apply transformation to record
-     * @param param the request object
-     */
-    public v2OrganizationIdSandboxTransformPost(param: SandboxApiV2OrganizationIdSandboxTransformPostRequest, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
-        return this.api.v2OrganizationIdSandboxTransformPost(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
-    }
-
-    /**
-     * Get a list of all valid record type templates
-     * List available templates
-     * @param param the request object
-     */
-    public v2SandboxTemplateGetWithHttpInfo(param: SandboxApiV2SandboxTemplateGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ListTemplatesResponse>> {
-        return this.api.v2SandboxTemplateGetWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * Get a list of all valid record type templates
-     * List available templates
-     * @param param the request object
-     */
-    public v2SandboxTemplateGet(param: SandboxApiV2SandboxTemplateGetRequest = {}, options?: ConfigurationOptions): Promise<RoutesV2ListTemplatesResponse> {
-        return this.api.v2SandboxTemplateGet(param.body,  options).toPromise();
-    }
-
-    /**
-     * Generate a sample record using the specified template type
-     * Generate sample record
-     * @param param the request object
-     */
-    public v2SandboxTemplatePostWithHttpInfo(param: SandboxApiV2SandboxTemplatePostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
-        return this.api.v2SandboxTemplatePostWithHttpInfo(param.routesV2GenerateRecordRequest,  options).toPromise();
-    }
-
-    /**
-     * Generate a sample record using the specified template type
-     * Generate sample record
-     * @param param the request object
-     */
-    public v2SandboxTemplatePost(param: SandboxApiV2SandboxTemplatePostRequest, options?: ConfigurationOptions): Promise<RoutesV2GenerateRecordResponse> {
-        return this.api.v2SandboxTemplatePost(param.routesV2GenerateRecordRequest,  options).toPromise();
-    }
-
-    /**
-     * Apply a transformation configuration to a JSON record
-     * Apply transformation to record
-     * @param param the request object
-     */
-    public v2SandboxTransformPostWithHttpInfo(param: SandboxApiV2SandboxTransformPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
-        return this.api.v2SandboxTransformPostWithHttpInfo(param.routesV2ApplyTransformationRequest,  options).toPromise();
-    }
-
-    /**
-     * Apply a transformation configuration to a JSON record
-     * Apply transformation to record
-     * @param param the request object
-     */
-    public v2SandboxTransformPost(param: SandboxApiV2SandboxTransformPostRequest, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
-        return this.api.v2SandboxTransformPost(param.routesV2ApplyTransformationRequest,  options).toPromise();
-    }
-
-    /**
-     * Apply a enrichment configuration to a JSON record
-     * Apply enrichment to record
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(param: SandboxApiV3OrganizationIdEnrichmentsSandboxPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
-        return this.api.v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
-    }
-
-    /**
-     * Apply a enrichment configuration to a JSON record
-     * Apply enrichment to record
-     * @param param the request object
-     */
-    public v3OrganizationIdEnrichmentsSandboxPost(param: SandboxApiV3OrganizationIdEnrichmentsSandboxPostRequest, options?: ConfigurationOptions): Promise<RoutesV3EnrichmentSandboxResponse> {
-        return this.api.v3OrganizationIdEnrichmentsSandboxPost(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
+    public updateRole(param: RolesApiUpdateRoleRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+        return this.api.updateRole(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
     }
 
 }
@@ -6345,99 +6242,99 @@ export class ObjectSandboxApi {
 import { ObservableSecretsApi } from "./ObservableAPI";
 import { SecretsApiRequestFactory, SecretsApiResponseProcessor} from "../apis/SecretsApi";
 
-export interface SecretsApiV2OrganizationIdSecretsGetRequest {
+export interface SecretsApiCreateSecretRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsGet
+     * @memberof SecretsApicreateSecret
+     */
+    organizationId: string
+    /**
+     * Secret to create
+     * @type RoutesV2CreateOrUpdateSecretRequest
+     * @memberof SecretsApicreateSecret
+     */
+    routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest
+}
+
+export interface SecretsApiDeleteSecretRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof SecretsApideleteSecret
+     */
+    organizationId: string
+    /**
+     * Secret ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof SecretsApideleteSecret
+     */
+    secretId: string
+}
+
+export interface SecretsApiGetSecretRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof SecretsApigetSecret
+     */
+    organizationId: string
+    /**
+     * Secret ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof SecretsApigetSecret
+     */
+    secretId: string
+}
+
+export interface SecretsApiListSecretsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof SecretsApilistSecrets
      */
     organizationId: string
     /**
      * Limit number of results
      * Defaults to: undefined
      * @type number
-     * @memberof SecretsApiv2OrganizationIdSecretsGet
+     * @memberof SecretsApilistSecrets
      */
     limit?: number
     /**
      * Offset results
      * Defaults to: undefined
      * @type number
-     * @memberof SecretsApiv2OrganizationIdSecretsGet
+     * @memberof SecretsApilistSecrets
      */
     offset?: number
 }
 
-export interface SecretsApiV2OrganizationIdSecretsPostRequest {
+export interface SecretsApiUpdateSecretRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsPost
-     */
-    organizationId: string
-    /**
-     * Secret to create
-     * @type RoutesV2CreateOrUpdateSecretRequest
-     * @memberof SecretsApiv2OrganizationIdSecretsPost
-     */
-    routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest
-}
-
-export interface SecretsApiV2OrganizationIdSecretsSecretIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsSecretIdDelete
+     * @memberof SecretsApiupdateSecret
      */
     organizationId: string
     /**
      * Secret ID
      * Defaults to: undefined
      * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsSecretIdDelete
-     */
-    secretId: string
-}
-
-export interface SecretsApiV2OrganizationIdSecretsSecretIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsSecretIdGet
-     */
-    organizationId: string
-    /**
-     * Secret ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsSecretIdGet
-     */
-    secretId: string
-}
-
-export interface SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsSecretIdPatch
-     */
-    organizationId: string
-    /**
-     * Secret ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof SecretsApiv2OrganizationIdSecretsSecretIdPatch
+     * @memberof SecretsApiupdateSecret
      */
     secretId: string
     /**
      * Secret updates
      * @type RoutesV2CreateOrUpdateSecretRequest
-     * @memberof SecretsApiv2OrganizationIdSecretsSecretIdPatch
+     * @memberof SecretsApiupdateSecret
      */
     routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest
 }
@@ -6450,21 +6347,12 @@ export class ObjectSecretsApi {
     }
 
     /**
-     * Lists all secrets for the specified organization including inputs and outputs that use them
-     * List secrets with components
+     * Creates a new secret for the specified organization
+     * Create secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
-        return this.api.v2OrganizationIdSecretsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Lists all secrets for the specified organization including inputs and outputs that use them
-     * List secrets with components
-     * @param param the request object
-     */
-    public v2OrganizationIdSecretsGet(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponentsList> {
-        return this.api.v2OrganizationIdSecretsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    public createSecretWithHttpInfo(param: SecretsApiCreateSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+        return this.api.createSecretWithHttpInfo(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
     }
 
     /**
@@ -6472,17 +6360,8 @@ export class ObjectSecretsApi {
      * Create secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsPostWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        return this.api.v2OrganizationIdSecretsPostWithHttpInfo(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
-    }
-
-    /**
-     * Creates a new secret for the specified organization
-     * Create secret
-     * @param param the request object
-     */
-    public v2OrganizationIdSecretsPost(param: SecretsApiV2OrganizationIdSecretsPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
-        return this.api.v2OrganizationIdSecretsPost(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+    public createSecret(param: SecretsApiCreateSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
+        return this.api.createSecret(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
     }
 
     /**
@@ -6490,8 +6369,8 @@ export class ObjectSecretsApi {
      * Delete secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
+    public deleteSecretWithHttpInfo(param: SecretsApiDeleteSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.deleteSecretWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
     }
 
     /**
@@ -6499,8 +6378,8 @@ export class ObjectSecretsApi {
      * Delete secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdDelete(param: SecretsApiV2OrganizationIdSecretsSecretIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v2OrganizationIdSecretsSecretIdDelete(param.organizationId, param.secretId,  options).toPromise();
+    public deleteSecret(param: SecretsApiDeleteSecretRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.deleteSecret(param.organizationId, param.secretId,  options).toPromise();
     }
 
     /**
@@ -6508,8 +6387,8 @@ export class ObjectSecretsApi {
      * Get secret with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponents>> {
-        return this.api.v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
+    public getSecretWithHttpInfo(param: SecretsApiGetSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponents>> {
+        return this.api.getSecretWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
     }
 
     /**
@@ -6517,8 +6396,26 @@ export class ObjectSecretsApi {
      * Get secret with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdGet(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponents> {
-        return this.api.v2OrganizationIdSecretsSecretIdGet(param.organizationId, param.secretId,  options).toPromise();
+    public getSecret(param: SecretsApiGetSecretRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponents> {
+        return this.api.getSecret(param.organizationId, param.secretId,  options).toPromise();
+    }
+
+    /**
+     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * List secrets with components
+     * @param param the request object
+     */
+    public listSecretsWithHttpInfo(param: SecretsApiListSecretsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
+        return this.api.listSecretsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * List secrets with components
+     * @param param the request object
+     */
+    public listSecrets(param: SecretsApiListSecretsRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponentsList> {
+        return this.api.listSecrets(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -6526,8 +6423,8 @@ export class ObjectSecretsApi {
      * Update secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        return this.api.v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+    public updateSecretWithHttpInfo(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+        return this.api.updateSecretWithHttpInfo(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
     }
 
     /**
@@ -6535,8 +6432,135 @@ export class ObjectSecretsApi {
      * Update secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdPatch(param: SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
-        return this.api.v2OrganizationIdSecretsSecretIdPatch(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+    public updateSecret(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
+        return this.api.updateSecret(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+    }
+
+}
+
+import { ObservableTransformSandboxApi } from "./ObservableAPI";
+import { TransformSandboxApiRequestFactory, TransformSandboxApiResponseProcessor} from "../apis/TransformSandboxApi";
+
+export interface TransformSandboxApiApplyTransformationRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformSandboxApiapplyTransformation
+     */
+    organizationId: string
+    /**
+     * Transform configuration and record
+     * @type RoutesV2ApplyTransformationRequest
+     * @memberof TransformSandboxApiapplyTransformation
+     */
+    routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
+}
+
+export interface TransformSandboxApiApplyTransformationV2Request {
+    /**
+     * Transform configuration and record
+     * @type RoutesV2ApplyTransformationRequest
+     * @memberof TransformSandboxApiapplyTransformationV2
+     */
+    routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
+}
+
+export interface TransformSandboxApiGenerateRecordRequest {
+    /**
+     * Record generation parameters
+     * @type RoutesV2GenerateRecordRequest
+     * @memberof TransformSandboxApigenerateRecord
+     */
+    routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest
+}
+
+export interface TransformSandboxApiListTemplatesRequest {
+    /**
+     * 
+     * @type any
+     * @memberof TransformSandboxApilistTemplates
+     */
+    body?: any
+}
+
+export class ObjectTransformSandboxApi {
+    private api: ObservableTransformSandboxApi
+
+    public constructor(configuration: Configuration, requestFactory?: TransformSandboxApiRequestFactory, responseProcessor?: TransformSandboxApiResponseProcessor) {
+        this.api = new ObservableTransformSandboxApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param param the request object
+     */
+    public applyTransformationWithHttpInfo(param: TransformSandboxApiApplyTransformationRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+        return this.api.applyTransformationWithHttpInfo(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record, resolving secret references from the organization
+     * Apply transformation to record
+     * @param param the request object
+     */
+    public applyTransformation(param: TransformSandboxApiApplyTransformationRequest, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
+        return this.api.applyTransformation(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record
+     * Apply transformation to record
+     * @param param the request object
+     */
+    public applyTransformationV2WithHttpInfo(param: TransformSandboxApiApplyTransformationV2Request, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+        return this.api.applyTransformationV2WithHttpInfo(param.routesV2ApplyTransformationRequest,  options).toPromise();
+    }
+
+    /**
+     * Apply a transformation configuration to a JSON record
+     * Apply transformation to record
+     * @param param the request object
+     */
+    public applyTransformationV2(param: TransformSandboxApiApplyTransformationV2Request, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
+        return this.api.applyTransformationV2(param.routesV2ApplyTransformationRequest,  options).toPromise();
+    }
+
+    /**
+     * Generate a sample record using the specified template type
+     * Generate sample record
+     * @param param the request object
+     */
+    public generateRecordWithHttpInfo(param: TransformSandboxApiGenerateRecordRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
+        return this.api.generateRecordWithHttpInfo(param.routesV2GenerateRecordRequest,  options).toPromise();
+    }
+
+    /**
+     * Generate a sample record using the specified template type
+     * Generate sample record
+     * @param param the request object
+     */
+    public generateRecord(param: TransformSandboxApiGenerateRecordRequest, options?: ConfigurationOptions): Promise<RoutesV2GenerateRecordResponse> {
+        return this.api.generateRecord(param.routesV2GenerateRecordRequest,  options).toPromise();
+    }
+
+    /**
+     * Get a list of all valid record type templates
+     * List available templates
+     * @param param the request object
+     */
+    public listTemplatesWithHttpInfo(param: TransformSandboxApiListTemplatesRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ListTemplatesResponse>> {
+        return this.api.listTemplatesWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Get a list of all valid record type templates
+     * List available templates
+     * @param param the request object
+     */
+    public listTemplates(param: TransformSandboxApiListTemplatesRequest = {}, options?: ConfigurationOptions): Promise<RoutesV2ListTemplatesResponse> {
+        return this.api.listTemplates(param.body,  options).toPromise();
     }
 
 }
@@ -6544,27 +6568,27 @@ export class ObjectSecretsApi {
 import { ObservableTransformsApi } from "./ObservableAPI";
 import { TransformsApiRequestFactory, TransformsApiResponseProcessor} from "../apis/TransformsApi";
 
-export interface TransformsApiV1TransformsGetRequest {
-    /**
-     * 
-     * @type any
-     * @memberof TransformsApiv1TransformsGet
-     */
-    body?: any
-}
-
-export interface TransformsApiV1TransformsTransformTypeIdGetRequest {
+export interface TransformsApiGetTransformTypeMetaRequest {
     /**
      * Transform type ID
      * Defaults to: undefined
      * @type string
-     * @memberof TransformsApiv1TransformsTransformTypeIdGet
+     * @memberof TransformsApigetTransformTypeMeta
      */
     transformTypeId: string
     /**
      * 
      * @type any
-     * @memberof TransformsApiv1TransformsTransformTypeIdGet
+     * @memberof TransformsApigetTransformTypeMeta
+     */
+    body?: any
+}
+
+export interface TransformsApiListTransformTypesRequest {
+    /**
+     * 
+     * @type any
+     * @memberof TransformsApilistTransformTypes
      */
     body?: any
 }
@@ -6577,21 +6601,12 @@ export class ObjectTransformsApi {
     }
 
     /**
-     * List transforms
-     * List transforms
+     * Get transform metadata
+     * Get transform metadata
      * @param param the request object
      */
-    public v1TransformsGetWithHttpInfo(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<OperationInformation>>> {
-        return this.api.v1TransformsGetWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * List transforms
-     * List transforms
-     * @param param the request object
-     */
-    public v1TransformsGet(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<OperationInformation>> {
-        return this.api.v1TransformsGet(param.body,  options).toPromise();
+    public getTransformTypeMetaWithHttpInfo(param: TransformsApiGetTransformTypeMetaRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.getTransformTypeMetaWithHttpInfo(param.transformTypeId, param.body,  options).toPromise();
     }
 
     /**
@@ -6599,17 +6614,26 @@ export class ObjectTransformsApi {
      * Get transform metadata
      * @param param the request object
      */
-    public v1TransformsTransformTypeIdGetWithHttpInfo(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1TransformsTransformTypeIdGetWithHttpInfo(param.transformTypeId, param.body,  options).toPromise();
+    public getTransformTypeMeta(param: TransformsApiGetTransformTypeMetaRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.getTransformTypeMeta(param.transformTypeId, param.body,  options).toPromise();
     }
 
     /**
-     * Get transform metadata
-     * Get transform metadata
+     * List transforms
+     * List transforms
      * @param param the request object
      */
-    public v1TransformsTransformTypeIdGet(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1TransformsTransformTypeIdGet(param.transformTypeId, param.body,  options).toPromise();
+    public listTransformTypesWithHttpInfo(param: TransformsApiListTransformTypesRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<OperationInformation>>> {
+        return this.api.listTransformTypesWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * List transforms
+     * List transforms
+     * @param param the request object
+     */
+    public listTransformTypes(param: TransformsApiListTransformTypesRequest = {}, options?: ConfigurationOptions): Promise<Array<OperationInformation>> {
+        return this.api.listTransformTypes(param.body,  options).toPromise();
     }
 
 }
@@ -6617,30 +6641,30 @@ export class ObjectTransformsApi {
 import { ObservableTransformsRecommendationsApi } from "./ObservableAPI";
 import { TransformsRecommendationsApiRequestFactory, TransformsRecommendationsApiResponseProcessor} from "../apis/TransformsRecommendationsApi";
 
-export interface TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsOptimizersGetRequest {
+export interface TransformsRecommendationsApiCreateTransformRecommendationRequest {
     /**
      * Organization ID
      * Defaults to: undefined
      * @type string
-     * @memberof TransformsRecommendationsApiv3OrganizationIdTransformRecommendationsOptimizersGet
-     */
-    organizationId: string
-}
-
-export interface TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof TransformsRecommendationsApiv3OrganizationIdTransformRecommendationsPost
+     * @memberof TransformsRecommendationsApicreateTransformRecommendation
      */
     organizationId: string
     /**
      * Security data to analyze
      * @type RoutesV3TransformRecommendationRequest
-     * @memberof TransformsRecommendationsApiv3OrganizationIdTransformRecommendationsPost
+     * @memberof TransformsRecommendationsApicreateTransformRecommendation
      */
     routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest
+}
+
+export interface TransformsRecommendationsApiListAvailableOptimizersRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformsRecommendationsApilistAvailableOptimizers
+     */
+    organizationId: string
 }
 
 export class ObjectTransformsRecommendationsApi {
@@ -6651,21 +6675,12 @@ export class ObjectTransformsRecommendationsApi {
     }
 
     /**
-     * List available transform optimizers
-     * List available transform optimizers
+     * Analyze security data and provide transformation recommendations
+     * Create transform recommendation
      * @param param the request object
      */
-    public v3OrganizationIdTransformRecommendationsOptimizersGetWithHttpInfo(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsOptimizersGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV3OptimizerType>>> {
-        return this.api.v3OrganizationIdTransformRecommendationsOptimizersGetWithHttpInfo(param.organizationId,  options).toPromise();
-    }
-
-    /**
-     * List available transform optimizers
-     * List available transform optimizers
-     * @param param the request object
-     */
-    public v3OrganizationIdTransformRecommendationsOptimizersGet(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsOptimizersGetRequest, options?: ConfigurationOptions): Promise<Array<RoutesV3OptimizerType>> {
-        return this.api.v3OrganizationIdTransformRecommendationsOptimizersGet(param.organizationId,  options).toPromise();
+    public createTransformRecommendationWithHttpInfo(param: TransformsRecommendationsApiCreateTransformRecommendationRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SecurityDataAnalysis>> {
+        return this.api.createTransformRecommendationWithHttpInfo(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
     }
 
     /**
@@ -6673,17 +6688,26 @@ export class ObjectTransformsRecommendationsApi {
      * Create transform recommendation
      * @param param the request object
      */
-    public v3OrganizationIdTransformRecommendationsPostWithHttpInfo(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SecurityDataAnalysis>> {
-        return this.api.v3OrganizationIdTransformRecommendationsPostWithHttpInfo(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
+    public createTransformRecommendation(param: TransformsRecommendationsApiCreateTransformRecommendationRequest, options?: ConfigurationOptions): Promise<RoutesV3SecurityDataAnalysis> {
+        return this.api.createTransformRecommendation(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
     }
 
     /**
-     * Analyze security data and provide transformation recommendations
-     * Create transform recommendation
+     * List available transform optimizers
+     * List available transform optimizers
      * @param param the request object
      */
-    public v3OrganizationIdTransformRecommendationsPost(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsPostRequest, options?: ConfigurationOptions): Promise<RoutesV3SecurityDataAnalysis> {
-        return this.api.v3OrganizationIdTransformRecommendationsPost(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
+    public listAvailableOptimizersWithHttpInfo(param: TransformsRecommendationsApiListAvailableOptimizersRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV3OptimizerType>>> {
+        return this.api.listAvailableOptimizersWithHttpInfo(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * List available transform optimizers
+     * List available transform optimizers
+     * @param param the request object
+     */
+    public listAvailableOptimizers(param: TransformsRecommendationsApiListAvailableOptimizersRequest, options?: ConfigurationOptions): Promise<Array<RoutesV3OptimizerType>> {
+        return this.api.listAvailableOptimizers(param.organizationId,  options).toPromise();
     }
 
 }
@@ -6691,62 +6715,62 @@ export class ObjectTransformsRecommendationsApi {
 import { ObservableTransformsRepositoryApi } from "./ObservableAPI";
 import { TransformsRepositoryApiRequestFactory, TransformsRepositoryApiResponseProcessor} from "../apis/TransformsRepositoryApi";
 
-export interface TransformsRepositoryApiV2TransformsRepositoryGetRequest {
+export interface TransformsRepositoryApiExportTransformRequest {
+    /**
+     * Transform to export and optional metadata
+     * @type CommunityTransformsInternalTransformConfig
+     * @memberof TransformsRepositoryApiexportTransform
+     */
+    communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig
+}
+
+export interface TransformsRepositoryApiGetTransformDetailsFromRepositoryRequest {
+    /**
+     * Transform ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformsRepositoryApigetTransformDetailsFromRepository
+     */
+    transformId: string
+}
+
+export interface TransformsRepositoryApiGetTransformRepositoryDetailsRequest {
+    /**
+     * Transform ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformsRepositoryApigetTransformRepositoryDetails
+     */
+    transformId: string
+}
+
+export interface TransformsRepositoryApiImportTransformRequest {
+    /**
+     * YAML transform definition
+     * @type string
+     * @memberof TransformsRepositoryApiimportTransform
+     */
+    body: string
+}
+
+export interface TransformsRepositoryApiListCommunityTransformsRequest {
+}
+
+export interface TransformsRepositoryApiListTransformRepositoryRequest {
     /**
      * Number of items to return (default: 10)
      * Defaults to: undefined
      * @type number
-     * @memberof TransformsRepositoryApiv2TransformsRepositoryGet
+     * @memberof TransformsRepositoryApilistTransformRepository
      */
     limit?: number
     /**
      * Number of items to skip (default: 0)
      * Defaults to: undefined
      * @type number
-     * @memberof TransformsRepositoryApiv2TransformsRepositoryGet
+     * @memberof TransformsRepositoryApilistTransformRepository
      */
     offset?: number
-}
-
-export interface TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequest {
-    /**
-     * Transform ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof TransformsRepositoryApiv2TransformsRepositoryTransformIdGet
-     */
-    transformId: string
-}
-
-export interface TransformsRepositoryApiV3TransformsRepositoryExportPostRequest {
-    /**
-     * Transform to export and optional metadata
-     * @type CommunityTransformsInternalTransformConfig
-     * @memberof TransformsRepositoryApiv3TransformsRepositoryExportPost
-     */
-    communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig
-}
-
-export interface TransformsRepositoryApiV3TransformsRepositoryGetRequest {
-}
-
-export interface TransformsRepositoryApiV3TransformsRepositoryImportPostRequest {
-    /**
-     * YAML transform definition
-     * @type string
-     * @memberof TransformsRepositoryApiv3TransformsRepositoryImportPost
-     */
-    body: string
-}
-
-export interface TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest {
-    /**
-     * Transform ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof TransformsRepositoryApiv3TransformsRepositoryTransformIdGet
-     */
-    transformId: string
 }
 
 export class ObjectTransformsRepositoryApi {
@@ -6757,39 +6781,12 @@ export class ObjectTransformsRepositoryApi {
     }
 
     /**
-     * List transforms from repository with pagination
-     * List transforms
+     * Export transform to YAML format
+     * Export transform to YAML
      * @param param the request object
      */
-    public v2TransformsRepositoryGetWithHttpInfo(param: TransformsRepositoryApiV2TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryList>> {
-        return this.api.v2TransformsRepositoryGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List transforms from repository with pagination
-     * List transforms
-     * @param param the request object
-     */
-    public v2TransformsRepositoryGet(param: TransformsRepositoryApiV2TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsTransformsRepositoryList> {
-        return this.api.v2TransformsRepositoryGet(param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Get detailed information about a specific transform from repository
-     * Get transform details
-     * @param param the request object
-     */
-    public v2TransformsRepositoryTransformIdGetWithHttpInfo(param: TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryTransform>> {
-        return this.api.v2TransformsRepositoryTransformIdGetWithHttpInfo(param.transformId,  options).toPromise();
-    }
-
-    /**
-     * Get detailed information about a specific transform from repository
-     * Get transform details
-     * @param param the request object
-     */
-    public v2TransformsRepositoryTransformIdGet(param: TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<ModelsTransformsRepositoryTransform> {
-        return this.api.v2TransformsRepositoryTransformIdGet(param.transformId,  options).toPromise();
+    public exportTransformWithHttpInfo(param: TransformsRepositoryApiExportTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.exportTransformWithHttpInfo(param.communityTransformsInternalTransformConfig,  options).toPromise();
     }
 
     /**
@@ -6797,53 +6794,8 @@ export class ObjectTransformsRepositoryApi {
      * Export transform to YAML
      * @param param the request object
      */
-    public v3TransformsRepositoryExportPostWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryExportPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v3TransformsRepositoryExportPostWithHttpInfo(param.communityTransformsInternalTransformConfig,  options).toPromise();
-    }
-
-    /**
-     * Export transform to YAML format
-     * Export transform to YAML
-     * @param param the request object
-     */
-    public v3TransformsRepositoryExportPost(param: TransformsRepositoryApiV3TransformsRepositoryExportPostRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v3TransformsRepositoryExportPost(param.communityTransformsInternalTransformConfig,  options).toPromise();
-    }
-
-    /**
-     * List transforms from repository index
-     * List community transforms
-     * @param param the request object
-     */
-    public v3TransformsRepositoryGetWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformsIndex>> {
-        return this.api.v3TransformsRepositoryGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * List transforms from repository index
-     * List community transforms
-     * @param param the request object
-     */
-    public v3TransformsRepositoryGet(param: TransformsRepositoryApiV3TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<CommunityTransformsInternalTransformsIndex> {
-        return this.api.v3TransformsRepositoryGet( options).toPromise();
-    }
-
-    /**
-     * Import transform from YAML file
-     * Import transform from YAML
-     * @param param the request object
-     */
-    public v3TransformsRepositoryImportPostWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryImportPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3ImportTransformResponse>> {
-        return this.api.v3TransformsRepositoryImportPostWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * Import transform from YAML file
-     * Import transform from YAML
-     * @param param the request object
-     */
-    public v3TransformsRepositoryImportPost(param: TransformsRepositoryApiV3TransformsRepositoryImportPostRequest, options?: ConfigurationOptions): Promise<RoutesV3ImportTransformResponse> {
-        return this.api.v3TransformsRepositoryImportPost(param.body,  options).toPromise();
+    public exportTransform(param: TransformsRepositoryApiExportTransformRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.exportTransform(param.communityTransformsInternalTransformConfig,  options).toPromise();
     }
 
     /**
@@ -6851,8 +6803,8 @@ export class ObjectTransformsRepositoryApi {
      * Get transform details
      * @param param the request object
      */
-    public v3TransformsRepositoryTransformIdGetWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformConfig>> {
-        return this.api.v3TransformsRepositoryTransformIdGetWithHttpInfo(param.transformId,  options).toPromise();
+    public getTransformDetailsFromRepositoryWithHttpInfo(param: TransformsRepositoryApiGetTransformDetailsFromRepositoryRequest, options?: ConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformConfig>> {
+        return this.api.getTransformDetailsFromRepositoryWithHttpInfo(param.transformId,  options).toPromise();
     }
 
     /**
@@ -6860,8 +6812,80 @@ export class ObjectTransformsRepositoryApi {
      * Get transform details
      * @param param the request object
      */
-    public v3TransformsRepositoryTransformIdGet(param: TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<CommunityTransformsInternalTransformConfig> {
-        return this.api.v3TransformsRepositoryTransformIdGet(param.transformId,  options).toPromise();
+    public getTransformDetailsFromRepository(param: TransformsRepositoryApiGetTransformDetailsFromRepositoryRequest, options?: ConfigurationOptions): Promise<CommunityTransformsInternalTransformConfig> {
+        return this.api.getTransformDetailsFromRepository(param.transformId,  options).toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param param the request object
+     */
+    public getTransformRepositoryDetailsWithHttpInfo(param: TransformsRepositoryApiGetTransformRepositoryDetailsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryTransform>> {
+        return this.api.getTransformRepositoryDetailsWithHttpInfo(param.transformId,  options).toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param param the request object
+     */
+    public getTransformRepositoryDetails(param: TransformsRepositoryApiGetTransformRepositoryDetailsRequest, options?: ConfigurationOptions): Promise<ModelsTransformsRepositoryTransform> {
+        return this.api.getTransformRepositoryDetails(param.transformId,  options).toPromise();
+    }
+
+    /**
+     * Import transform from YAML file
+     * Import transform from YAML
+     * @param param the request object
+     */
+    public importTransformWithHttpInfo(param: TransformsRepositoryApiImportTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3ImportTransformResponse>> {
+        return this.api.importTransformWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Import transform from YAML file
+     * Import transform from YAML
+     * @param param the request object
+     */
+    public importTransform(param: TransformsRepositoryApiImportTransformRequest, options?: ConfigurationOptions): Promise<RoutesV3ImportTransformResponse> {
+        return this.api.importTransform(param.body,  options).toPromise();
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     * @param param the request object
+     */
+    public listCommunityTransformsWithHttpInfo(param: TransformsRepositoryApiListCommunityTransformsRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformsIndex>> {
+        return this.api.listCommunityTransformsWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     * @param param the request object
+     */
+    public listCommunityTransforms(param: TransformsRepositoryApiListCommunityTransformsRequest = {}, options?: ConfigurationOptions): Promise<CommunityTransformsInternalTransformsIndex> {
+        return this.api.listCommunityTransforms( options).toPromise();
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param param the request object
+     */
+    public listTransformRepositoryWithHttpInfo(param: TransformsRepositoryApiListTransformRepositoryRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryList>> {
+        return this.api.listTransformRepositoryWithHttpInfo(param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param param the request object
+     */
+    public listTransformRepository(param: TransformsRepositoryApiListTransformRepositoryRequest = {}, options?: ConfigurationOptions): Promise<ModelsTransformsRepositoryList> {
+        return this.api.listTransformRepository(param.limit, param.offset,  options).toPromise();
     }
 
 }
@@ -6869,22 +6893,22 @@ export class ObjectTransformsRepositoryApi {
 import { ObservableUsersApi } from "./ObservableAPI";
 import { UsersApiRequestFactory, UsersApiResponseProcessor} from "../apis/UsersApi";
 
-export interface UsersApiV1UsersGetRequest {
-}
-
-export interface UsersApiV1UsersPostRequest {
+export interface UsersApiCreateUserRequest {
     /**
      * 
      * @type any
-     * @memberof UsersApiv1UsersPost
+     * @memberof UsersApicreateUser
      */
     body?: any
 }
 
-export interface UsersApiV3UsersMfaGetRequest {
+export interface UsersApiEnableMFARequest {
 }
 
-export interface UsersApiV3UsersMfaPostRequest {
+export interface UsersApiGetActiveUserRequest {
+}
+
+export interface UsersApiGetMFAStatusRequest {
 }
 
 export class ObjectUsersApi {
@@ -6895,21 +6919,12 @@ export class ObjectUsersApi {
     }
 
     /**
-     * Get your current user
-     * Get your current user
+     * Create user
+     * Create user
      * @param param the request object
      */
-    public v1UsersGetWithHttpInfo(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
-        return this.api.v1UsersGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * Get your current user
-     * Get your current user
-     * @param param the request object
-     */
-    public v1UsersGet(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<RoutesUserWithRoles> {
-        return this.api.v1UsersGet( options).toPromise();
+    public createUserWithHttpInfo(param: UsersApiCreateUserRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsUser>> {
+        return this.api.createUserWithHttpInfo(param.body,  options).toPromise();
     }
 
     /**
@@ -6917,35 +6932,8 @@ export class ObjectUsersApi {
      * Create user
      * @param param the request object
      */
-    public v1UsersPostWithHttpInfo(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsUser>> {
-        return this.api.v1UsersPostWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * Create user
-     * Create user
-     * @param param the request object
-     */
-    public v1UsersPost(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsUser> {
-        return this.api.v1UsersPost(param.body,  options).toPromise();
-    }
-
-    /**
-     * Get MFA enrollment status and methods for a user
-     * Get MFA status
-     * @param param the request object
-     */
-    public v3UsersMfaGetWithHttpInfo(param: UsersApiV3UsersMfaGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3MFAStatusResponse>> {
-        return this.api.v3UsersMfaGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * Get MFA enrollment status and methods for a user
-     * Get MFA status
-     * @param param the request object
-     */
-    public v3UsersMfaGet(param: UsersApiV3UsersMfaGetRequest = {}, options?: ConfigurationOptions): Promise<RoutesV3MFAStatusResponse> {
-        return this.api.v3UsersMfaGet( options).toPromise();
+    public createUser(param: UsersApiCreateUserRequest = {}, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsUser> {
+        return this.api.createUser(param.body,  options).toPromise();
     }
 
     /**
@@ -6953,8 +6941,8 @@ export class ObjectUsersApi {
      * Enable MFA
      * @param param the request object
      */
-    public v3UsersMfaPostWithHttpInfo(param: UsersApiV3UsersMfaPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<AuthenticationtypesMFAEnrollmentTicket>> {
-        return this.api.v3UsersMfaPostWithHttpInfo( options).toPromise();
+    public enableMFAWithHttpInfo(param: UsersApiEnableMFARequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<AuthenticationtypesMFAEnrollmentTicket>> {
+        return this.api.enableMFAWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -6962,8 +6950,44 @@ export class ObjectUsersApi {
      * Enable MFA
      * @param param the request object
      */
-    public v3UsersMfaPost(param: UsersApiV3UsersMfaPostRequest = {}, options?: ConfigurationOptions): Promise<AuthenticationtypesMFAEnrollmentTicket> {
-        return this.api.v3UsersMfaPost( options).toPromise();
+    public enableMFA(param: UsersApiEnableMFARequest = {}, options?: ConfigurationOptions): Promise<AuthenticationtypesMFAEnrollmentTicket> {
+        return this.api.enableMFA( options).toPromise();
+    }
+
+    /**
+     * Get your current user
+     * Get your current user
+     * @param param the request object
+     */
+    public getActiveUserWithHttpInfo(param: UsersApiGetActiveUserRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
+        return this.api.getActiveUserWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Get your current user
+     * Get your current user
+     * @param param the request object
+     */
+    public getActiveUser(param: UsersApiGetActiveUserRequest = {}, options?: ConfigurationOptions): Promise<RoutesUserWithRoles> {
+        return this.api.getActiveUser( options).toPromise();
+    }
+
+    /**
+     * Get MFA enrollment status and methods for a user
+     * Get MFA status
+     * @param param the request object
+     */
+    public getMFAStatusWithHttpInfo(param: UsersApiGetMFAStatusRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3MFAStatusResponse>> {
+        return this.api.getMFAStatusWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Get MFA enrollment status and methods for a user
+     * Get MFA status
+     * @param param the request object
+     */
+    public getMFAStatus(param: UsersApiGetMFAStatusRequest = {}, options?: ConfigurationOptions): Promise<RoutesV3MFAStatusResponse> {
+        return this.api.getMFAStatus( options).toPromise();
     }
 
 }

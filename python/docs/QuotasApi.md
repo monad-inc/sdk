@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2_quotas_get**](QuotasApi.md#v2_quotas_get) | **GET** /v2/quotas | List quotas
+[**list_quotas**](QuotasApi.md#list_quotas) | **GET** /v2/quotas | List quotas
 
 
-# **v2_quotas_get**
-> ModelsQuotaList v2_quotas_get(billing_account_id=billing_account_id, organization_id=organization_id, limit=limit, offset=offset, body=body)
+# **list_quotas**
+> ModelsQuotaList list_quotas(billing_account_id=billing_account_id, organization_id=organization_id, limit=limit, offset=offset, body=body)
 
 List quotas
 
@@ -53,11 +53,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # List quotas
-        api_response = api_instance.v2_quotas_get(billing_account_id=billing_account_id, organization_id=organization_id, limit=limit, offset=offset, body=body)
-        print("The response of QuotasApi->v2_quotas_get:\n")
+        api_response = api_instance.list_quotas(billing_account_id=billing_account_id, organization_id=organization_id, limit=limit, offset=offset, body=body)
+        print("The response of QuotasApi->list_quotas:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling QuotasApi->v2_quotas_get: %s\n" % e)
+        print("Exception when calling QuotasApi->list_quotas: %s\n" % e)
 ```
 
 

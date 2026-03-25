@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V3FeatureFlagsGet**](FeatureFlagsAPI.md#V3FeatureFlagsGet) | **Get** /v3/feature_flags | Get feature flags
+[**GetFeatureFlags**](FeatureFlagsAPI.md#GetFeatureFlags) | **Get** /v3/feature_flags | Get feature flags
 
 
 
-## V3FeatureFlagsGet
+## GetFeatureFlags
 
-> RoutesV3GetFeatureFlagResponse V3FeatureFlagsGet(ctx).Execute()
+> RoutesV3GetFeatureFlagResponse GetFeatureFlags(ctx).Execute()
 
 Get feature flags
 
@@ -32,13 +32,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FeatureFlagsAPI.V3FeatureFlagsGet(context.Background()).Execute()
+	resp, r, err := apiClient.FeatureFlagsAPI.GetFeatureFlags(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FeatureFlagsAPI.V3FeatureFlagsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FeatureFlagsAPI.GetFeatureFlags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3FeatureFlagsGet`: RoutesV3GetFeatureFlagResponse
-	fmt.Fprintf(os.Stdout, "Response from `FeatureFlagsAPI.V3FeatureFlagsGet`: %v\n", resp)
+	// response from `GetFeatureFlags`: RoutesV3GetFeatureFlagResponse
+	fmt.Fprintf(os.Stdout, "Response from `FeatureFlagsAPI.GetFeatureFlags`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV3FeatureFlagsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetFeatureFlagsRequest struct via the builder pattern
 
 
 ### Return type

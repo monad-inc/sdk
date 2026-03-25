@@ -22,12 +22,12 @@ export class PermissionsApiRequestFactory extends BaseAPIRequestFactory {
      * @param limit Limit the number of permissions returned (default: 10)
      * @param offset Offset the permissions returned (default: 0)
      */
-    public async v2OrganizationIdRolesPermissionsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async listPermissions(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PermissionsApi", "v2OrganizationIdRolesPermissionsGet", "organizationId");
+            throw new RequiredError("PermissionsApi", "listPermissions", "organizationId");
         }
 
 
@@ -80,10 +80,10 @@ export class PermissionsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdRolesPermissionsGet
+     * @params response Response returned by the server for a request to listPermissions
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdRolesPermissionsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPermissionList >> {
+     public async listPermissionsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPermissionList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsPermissionList = ObjectSerializer.deserialize(

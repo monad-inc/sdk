@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2OrganizationIdRolesPermissionsGet**](PermissionsApi.md#v2OrganizationIdRolesPermissionsGet) | **GET** /v2/{organization_id}/roles/permissions | List permissions
+[**listPermissions**](PermissionsApi.md#listPermissions) | **GET** /v2/{organization_id}/roles/permissions | List permissions
 
 
-# **v2OrganizationIdRolesPermissionsGet**
-> ModelsPermissionList v2OrganizationIdRolesPermissionsGet()
+# **listPermissions**
+> ModelsPermissionList listPermissions()
 
 List all available permissions in the system
 
@@ -17,12 +17,12 @@ List all available permissions in the system
 
 ```typescript
 import { createConfiguration, PermissionsApi } from '';
-import type { PermissionsApiV2OrganizationIdRolesPermissionsGetRequest } from '';
+import type { PermissionsApiListPermissionsRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new PermissionsApi(configuration);
 
-const request: PermissionsApiV2OrganizationIdRolesPermissionsGetRequest = {
+const request: PermissionsApiListPermissionsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Limit the number of permissions returned (default: 10) (optional)
@@ -31,7 +31,7 @@ const request: PermissionsApiV2OrganizationIdRolesPermissionsGetRequest = {
   offset: 1,
 };
 
-const data = await apiInstance.v2OrganizationIdRolesPermissionsGet(request);
+const data = await apiInstance.listPermissions(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

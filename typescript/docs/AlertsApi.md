@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3OrganizationIdAlertsGet**](AlertsApi.md#v3OrganizationIdAlertsGet) | **GET** /v3/{organization_id}/alerts | List alerts with pagination
-[**v3OrganizationIdAlertsStreamGet**](AlertsApi.md#v3OrganizationIdAlertsStreamGet) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
+[**listAlerts**](AlertsApi.md#listAlerts) | **GET** /v3/{organization_id}/alerts | List alerts with pagination
+[**streamAlerts**](AlertsApi.md#streamAlerts) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
 
 
-# **v3OrganizationIdAlertsGet**
-> RoutesV3AlertList v3OrganizationIdAlertsGet()
+# **listAlerts**
+> RoutesV3AlertList listAlerts()
 
 Get list of recent historical alerts for an organization
 
@@ -18,12 +18,12 @@ Get list of recent historical alerts for an organization
 
 ```typescript
 import { createConfiguration, AlertsApi } from '';
-import type { AlertsApiV3OrganizationIdAlertsGetRequest } from '';
+import type { AlertsApiListAlertsRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertsApi(configuration);
 
-const request: AlertsApiV3OrganizationIdAlertsGetRequest = {
+const request: AlertsApiListAlertsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Comma-separated alert rule IDs (optional)
@@ -42,7 +42,7 @@ const request: AlertsApiV3OrganizationIdAlertsGetRequest = {
   until: "until_example",
 };
 
-const data = await apiInstance.v3OrganizationIdAlertsGet(request);
+const data = await apiInstance.listAlerts(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -84,8 +84,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdAlertsStreamGet**
-> string v3OrganizationIdAlertsStreamGet()
+# **streamAlerts**
+> string streamAlerts()
 
 Stream alerts for an organization using Server-Sent Events
 
@@ -94,12 +94,12 @@ Stream alerts for an organization using Server-Sent Events
 
 ```typescript
 import { createConfiguration, AlertsApi } from '';
-import type { AlertsApiV3OrganizationIdAlertsStreamGetRequest } from '';
+import type { AlertsApiStreamAlertsRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertsApi(configuration);
 
-const request: AlertsApiV3OrganizationIdAlertsStreamGetRequest = {
+const request: AlertsApiStreamAlertsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // RFC3339 timestamp to start streaming from (optional)
@@ -116,7 +116,7 @@ const request: AlertsApiV3OrganizationIdAlertsStreamGetRequest = {
   resourceType: "resource_type_example",
 };
 
-const data = await apiInstance.v3OrganizationIdAlertsStreamGet(request);
+const data = await apiInstance.streamAlerts(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

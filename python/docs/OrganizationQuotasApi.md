@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2_organization_id_quotas_get**](OrganizationQuotasApi.md#v2_organization_id_quotas_get) | **GET** /v2/{organization_id}/quotas | Get Organization Quotas
+[**get_quotas_by_organization_id**](OrganizationQuotasApi.md#get_quotas_by_organization_id) | **GET** /v2/{organization_id}/quotas | Get Organization Quotas
 
 
-# **v2_organization_id_quotas_get**
-> ModelsQuotaList v2_organization_id_quotas_get(organization_id, limit=limit, offset=offset, body=body)
+# **get_quotas_by_organization_id**
+> ModelsQuotaList get_quotas_by_organization_id(organization_id, limit=limit, offset=offset, body=body)
 
 Get Organization Quotas
 
@@ -59,11 +59,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Get Organization Quotas
-        api_response = api_instance.v2_organization_id_quotas_get(organization_id, limit=limit, offset=offset, body=body)
-        print("The response of OrganizationQuotasApi->v2_organization_id_quotas_get:\n")
+        api_response = api_instance.get_quotas_by_organization_id(organization_id, limit=limit, offset=offset, body=body)
+        print("The response of OrganizationQuotasApi->get_quotas_by_organization_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationQuotasApi->v2_organization_id_quotas_get: %s\n" % e)
+        print("Exception when calling OrganizationQuotasApi->get_quotas_by_organization_id: %s\n" % e)
 ```
 
 

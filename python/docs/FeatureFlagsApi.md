@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3_feature_flags_get**](FeatureFlagsApi.md#v3_feature_flags_get) | **GET** /v3/feature_flags | Get feature flags
+[**get_feature_flags**](FeatureFlagsApi.md#get_feature_flags) | **GET** /v3/feature_flags | Get feature flags
 
 
-# **v3_feature_flags_get**
-> RoutesV3GetFeatureFlagResponse v3_feature_flags_get()
+# **get_feature_flags**
+> RoutesV3GetFeatureFlagResponse get_feature_flags()
 
 Get feature flags
 
@@ -55,11 +55,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Get feature flags
-        api_response = api_instance.v3_feature_flags_get()
-        print("The response of FeatureFlagsApi->v3_feature_flags_get:\n")
+        api_response = api_instance.get_feature_flags()
+        print("The response of FeatureFlagsApi->get_feature_flags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FeatureFlagsApi->v3_feature_flags_get: %s\n" % e)
+        print("Exception when calling FeatureFlagsApi->get_feature_flags: %s\n" % e)
 ```
 
 

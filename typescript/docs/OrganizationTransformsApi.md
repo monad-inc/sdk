@@ -4,75 +4,15 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1OrganizationIdTransformsGet**](OrganizationTransformsApi.md#v1OrganizationIdTransformsGet) | **GET** /v1/{organization_id}/transforms | List transforms
-[**v1OrganizationIdTransformsPost**](OrganizationTransformsApi.md#v1OrganizationIdTransformsPost) | **POST** /v1/{organization_id}/transforms | Create transform
-[**v1OrganizationIdTransformsTransformIdDelete**](OrganizationTransformsApi.md#v1OrganizationIdTransformsTransformIdDelete) | **DELETE** /v1/{organization_id}/transforms/{transform_id} | Delete transform
-[**v1OrganizationIdTransformsTransformIdGet**](OrganizationTransformsApi.md#v1OrganizationIdTransformsTransformIdGet) | **GET** /v1/{organization_id}/transforms/{transform_id} | Get transform
-[**v1OrganizationIdTransformsTransformIdPatch**](OrganizationTransformsApi.md#v1OrganizationIdTransformsTransformIdPatch) | **PATCH** /v1/{organization_id}/transforms/{transform_id} | Update transform
+[**createTransform**](OrganizationTransformsApi.md#createTransform) | **POST** /v1/{organization_id}/transforms | Create transform
+[**deleteOrganizationTransform**](OrganizationTransformsApi.md#deleteOrganizationTransform) | **DELETE** /v1/{organization_id}/transforms/{transform_id} | Delete transform
+[**getOrganizationTransform**](OrganizationTransformsApi.md#getOrganizationTransform) | **GET** /v1/{organization_id}/transforms/{transform_id} | Get transform
+[**listOrganizationTransforms**](OrganizationTransformsApi.md#listOrganizationTransforms) | **GET** /v1/{organization_id}/transforms | List configured transforms in a transform
+[**updateOrganizationTransform**](OrganizationTransformsApi.md#updateOrganizationTransform) | **PATCH** /v1/{organization_id}/transforms/{transform_id} | Update transform
 
 
-# **v1OrganizationIdTransformsGet**
-> ModelsTransformList v1OrganizationIdTransformsGet()
-
-List transforms
-
-### Example
-
-
-```typescript
-import { createConfiguration, OrganizationTransformsApi } from '';
-import type { OrganizationTransformsApiV1OrganizationIdTransformsGetRequest } from '';
-
-const configuration = createConfiguration();
-const apiInstance = new OrganizationTransformsApi(configuration);
-
-const request: OrganizationTransformsApiV1OrganizationIdTransformsGetRequest = {
-    // Organization ID
-  organizationId: "organization_id_example",
-    // Limit (optional)
-  limit: 1,
-    // Offset (optional)
-  offset: 1,
-};
-
-const data = await apiInstance.v1OrganizationIdTransformsGet(request);
-console.log('API called successfully. Returned data:', data);
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Limit | (optional) defaults to undefined
- **offset** | [**number**] | Offset | (optional) defaults to undefined
-
-
-### Return type
-
-**ModelsTransformList**
-
-### Authorization
-
-[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List of transforms |  -  |
-**500** | Failed to marshal transforms |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **v1OrganizationIdTransformsPost**
-> ModelsTransform v1OrganizationIdTransformsPost(routesCreateTransformRequest)
+# **createTransform**
+> ModelsTransform createTransform(routesCreateTransformRequest)
 
 Create transform
 
@@ -81,12 +21,12 @@ Create transform
 
 ```typescript
 import { createConfiguration, OrganizationTransformsApi } from '';
-import type { OrganizationTransformsApiV1OrganizationIdTransformsPostRequest } from '';
+import type { OrganizationTransformsApiCreateTransformRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationTransformsApi(configuration);
 
-const request: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest = {
+const request: OrganizationTransformsApiCreateTransformRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating a transform
@@ -123,7 +63,7 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest = 
   },
 };
 
-const data = await apiInstance.v1OrganizationIdTransformsPost(request);
+const data = await apiInstance.createTransform(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -159,8 +99,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v1OrganizationIdTransformsTransformIdDelete**
-> any v1OrganizationIdTransformsTransformIdDelete()
+# **deleteOrganizationTransform**
+> any deleteOrganizationTransform()
 
 Delete transform
 
@@ -169,19 +109,19 @@ Delete transform
 
 ```typescript
 import { createConfiguration, OrganizationTransformsApi } from '';
-import type { OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest } from '';
+import type { OrganizationTransformsApiDeleteOrganizationTransformRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationTransformsApi(configuration);
 
-const request: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest = {
+const request: OrganizationTransformsApiDeleteOrganizationTransformRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Transform ID
   transformId: "transform_id_example",
 };
 
-const data = await apiInstance.v1OrganizationIdTransformsTransformIdDelete(request);
+const data = await apiInstance.deleteOrganizationTransform(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -216,8 +156,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v1OrganizationIdTransformsTransformIdGet**
-> RoutesGetTransformResponse v1OrganizationIdTransformsTransformIdGet()
+# **getOrganizationTransform**
+> RoutesGetTransformResponse getOrganizationTransform()
 
 Get transform
 
@@ -226,19 +166,19 @@ Get transform
 
 ```typescript
 import { createConfiguration, OrganizationTransformsApi } from '';
-import type { OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest } from '';
+import type { OrganizationTransformsApiGetOrganizationTransformRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationTransformsApi(configuration);
 
-const request: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest = {
+const request: OrganizationTransformsApiGetOrganizationTransformRequest = {
     // Transform ID
   transformId: "transform_id_example",
     // Organization ID
   organizationId: "organization_id_example",
 };
 
-const data = await apiInstance.v1OrganizationIdTransformsTransformIdGet(request);
+const data = await apiInstance.getOrganizationTransform(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -273,8 +213,68 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v1OrganizationIdTransformsTransformIdPatch**
-> ModelsTransform v1OrganizationIdTransformsTransformIdPatch(routesUpdateTransformRequest)
+# **listOrganizationTransforms**
+> ModelsTransformList listOrganizationTransforms()
+
+List transforms
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationTransformsApi } from '';
+import type { OrganizationTransformsApiListOrganizationTransformsRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationTransformsApi(configuration);
+
+const request: OrganizationTransformsApiListOrganizationTransformsRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Limit (optional)
+  limit: 1,
+    // Offset (optional)
+  offset: 1,
+};
+
+const data = await apiInstance.listOrganizationTransforms(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **offset** | [**number**] | Offset | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsTransformList**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of transforms |  -  |
+**500** | Failed to marshal transforms |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **updateOrganizationTransform**
+> ModelsTransform updateOrganizationTransform(routesUpdateTransformRequest)
 
 Update transform
 
@@ -283,12 +283,12 @@ Update transform
 
 ```typescript
 import { createConfiguration, OrganizationTransformsApi } from '';
-import type { OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest } from '';
+import type { OrganizationTransformsApiUpdateOrganizationTransformRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationTransformsApi(configuration);
 
-const request: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest = {
+const request: OrganizationTransformsApiUpdateOrganizationTransformRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Transform ID
@@ -327,7 +327,7 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPat
   },
 };
 
-const data = await apiInstance.v1OrganizationIdTransformsTransformIdPatch(request);
+const data = await apiInstance.updateOrganizationTransform(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

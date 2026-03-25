@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v3FeatureFlagsGet**](FeatureFlagsApi.md#v3FeatureFlagsGet) | **GET** /v3/feature_flags | Get feature flags |
+| [**getFeatureFlags**](FeatureFlagsApi.md#getFeatureFlags) | **GET** /v3/feature_flags | Get feature flags |
 
 
-<a id="v3FeatureFlagsGet"></a>
-# **v3FeatureFlagsGet**
-> RoutesV3GetFeatureFlagResponse v3FeatureFlagsGet()
+<a id="getFeatureFlags"></a>
+# **getFeatureFlags**
+> RoutesV3GetFeatureFlagResponse getFeatureFlags()
 
 Get feature flags
 
@@ -44,10 +44,10 @@ public class Example {
 
     FeatureFlagsApi apiInstance = new FeatureFlagsApi(defaultClient);
     try {
-      RoutesV3GetFeatureFlagResponse result = apiInstance.v3FeatureFlagsGet();
+      RoutesV3GetFeatureFlagResponse result = apiInstance.getFeatureFlags();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FeatureFlagsApi#v3FeatureFlagsGet");
+      System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlags");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
-[**v3OrganizationIdEnrichmentsMetaGet**](EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaGet) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
+[**getEnrichmentTypeMeta**](EnrichmentsApi.md#getEnrichmentTypeMeta) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
+[**listEnrichmentTypes**](EnrichmentsApi.md#listEnrichmentTypes) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
 
 
-# **v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**
-> EnrichmentConnectorMeta v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet()
+# **getEnrichmentTypeMeta**
+> EnrichmentConnectorMeta getEnrichmentTypeMeta()
 
 Get enrichment config meta
 
@@ -18,19 +18,19 @@ Get enrichment config meta
 
 ```typescript
 import { createConfiguration, EnrichmentsApi } from '';
-import type { EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest } from '';
+import type { EnrichmentsApiGetEnrichmentTypeMetaRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new EnrichmentsApi(configuration);
 
-const request: EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest = {
+const request: EnrichmentsApiGetEnrichmentTypeMetaRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Enrichment type ID
   enrichmentTypeId: "enrichment_type_id_example",
 };
 
-const data = await apiInstance.v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(request);
+const data = await apiInstance.getEnrichmentTypeMeta(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -65,8 +65,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdEnrichmentsMetaGet**
-> Array<EnrichmentConnectorMeta> v3OrganizationIdEnrichmentsMetaGet()
+# **listEnrichmentTypes**
+> Array<EnrichmentConnectorMeta> listEnrichmentTypes()
 
 List available enrichment types
 
@@ -75,17 +75,17 @@ List available enrichment types
 
 ```typescript
 import { createConfiguration, EnrichmentsApi } from '';
-import type { EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest } from '';
+import type { EnrichmentsApiListEnrichmentTypesRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new EnrichmentsApi(configuration);
 
-const request: EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest = {
+const request: EnrichmentsApiListEnrichmentTypesRequest = {
     // Organization ID
   organizationId: "organization_id_example",
 };
 
-const data = await apiInstance.v3OrganizationIdEnrichmentsMetaGet(request);
+const data = await apiInstance.listEnrichmentTypes(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

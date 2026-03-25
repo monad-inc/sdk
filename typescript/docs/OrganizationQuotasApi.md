@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2OrganizationIdQuotasGet**](OrganizationQuotasApi.md#v2OrganizationIdQuotasGet) | **GET** /v2/{organization_id}/quotas | Get Organization Quotas
+[**getQuotasByOrganizationID**](OrganizationQuotasApi.md#getQuotasByOrganizationID) | **GET** /v2/{organization_id}/quotas | Get Organization Quotas
 
 
-# **v2OrganizationIdQuotasGet**
-> ModelsQuotaList v2OrganizationIdQuotasGet()
+# **getQuotasByOrganizationID**
+> ModelsQuotaList getQuotasByOrganizationID()
 
 Returns a paginated list of quotas with their latest usage for a given organization
 
@@ -17,12 +17,12 @@ Returns a paginated list of quotas with their latest usage for a given organizat
 
 ```typescript
 import { createConfiguration, OrganizationQuotasApi } from '';
-import type { OrganizationQuotasApiV2OrganizationIdQuotasGetRequest } from '';
+import type { OrganizationQuotasApiGetQuotasByOrganizationIDRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationQuotasApi(configuration);
 
-const request: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest = {
+const request: OrganizationQuotasApiGetQuotasByOrganizationIDRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Limit (optional)
@@ -33,7 +33,7 @@ const request: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest = {
   body: {},
 };
 
-const data = await apiInstance.v2OrganizationIdQuotasGet(request);
+const data = await apiInstance.getQuotasByOrganizationID(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

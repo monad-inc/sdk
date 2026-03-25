@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_organization_id_invites_post**](OrganizationInvitesApi.md#v1_organization_id_invites_post) | **POST** /v1/{organization_id}/invites | Invite user to organization
+[**invite_user**](OrganizationInvitesApi.md#invite_user) | **POST** /v1/{organization_id}/invites | Invite user to organization
 
 
-# **v1_organization_id_invites_post**
-> str v1_organization_id_invites_post(organization_id, routes_invite_user_to_organization_request)
+# **invite_user**
+> str invite_user(organization_id, routes_invite_user_to_organization_request)
 
 Invite user to organization
 
@@ -57,11 +57,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Invite user to organization
-        api_response = api_instance.v1_organization_id_invites_post(organization_id, routes_invite_user_to_organization_request)
-        print("The response of OrganizationInvitesApi->v1_organization_id_invites_post:\n")
+        api_response = api_instance.invite_user(organization_id, routes_invite_user_to_organization_request)
+        print("The response of OrganizationInvitesApi->invite_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationInvitesApi->v1_organization_id_invites_post: %s\n" % e)
+        print("Exception when calling OrganizationInvitesApi->invite_user: %s\n" % e)
 ```
 
 

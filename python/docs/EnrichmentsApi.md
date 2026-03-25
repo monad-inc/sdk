@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3_organization_id_enrichments_meta_enrichment_type_id_get**](EnrichmentsApi.md#v3_organization_id_enrichments_meta_enrichment_type_id_get) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
-[**v3_organization_id_enrichments_meta_get**](EnrichmentsApi.md#v3_organization_id_enrichments_meta_get) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
+[**get_enrichment_type_meta**](EnrichmentsApi.md#get_enrichment_type_meta) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
+[**list_enrichment_types**](EnrichmentsApi.md#list_enrichment_types) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
 
 
-# **v3_organization_id_enrichments_meta_enrichment_type_id_get**
-> EnrichmentConnectorMeta v3_organization_id_enrichments_meta_enrichment_type_id_get(organization_id, enrichment_type_id)
+# **get_enrichment_type_meta**
+> EnrichmentConnectorMeta get_enrichment_type_meta(organization_id, enrichment_type_id)
 
 Get enrichment config meta
 
@@ -58,11 +58,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Get enrichment config meta
-        api_response = api_instance.v3_organization_id_enrichments_meta_enrichment_type_id_get(organization_id, enrichment_type_id)
-        print("The response of EnrichmentsApi->v3_organization_id_enrichments_meta_enrichment_type_id_get:\n")
+        api_response = api_instance.get_enrichment_type_meta(organization_id, enrichment_type_id)
+        print("The response of EnrichmentsApi->get_enrichment_type_meta:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EnrichmentsApi->v3_organization_id_enrichments_meta_enrichment_type_id_get: %s\n" % e)
+        print("Exception when calling EnrichmentsApi->get_enrichment_type_meta: %s\n" % e)
 ```
 
 
@@ -97,8 +97,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v3_organization_id_enrichments_meta_get**
-> List[EnrichmentConnectorMeta] v3_organization_id_enrichments_meta_get(organization_id)
+# **list_enrichment_types**
+> List[EnrichmentConnectorMeta] list_enrichment_types(organization_id)
 
 List enrichments
 
@@ -146,11 +146,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # List enrichments
-        api_response = api_instance.v3_organization_id_enrichments_meta_get(organization_id)
-        print("The response of EnrichmentsApi->v3_organization_id_enrichments_meta_get:\n")
+        api_response = api_instance.list_enrichment_types(organization_id)
+        print("The response of EnrichmentsApi->list_enrichment_types:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EnrichmentsApi->v3_organization_id_enrichments_meta_get: %s\n" % e)
+        print("Exception when calling EnrichmentsApi->list_enrichment_types: %s\n" % e)
 ```
 
 

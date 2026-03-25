@@ -4,15 +4,74 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2BillingAccountsBillingAccountIdDelete**](BillingAccountsApi.md#v2BillingAccountsBillingAccountIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id} | Delete Billing Account
-[**v2BillingAccountsBillingAccountIdGet**](BillingAccountsApi.md#v2BillingAccountsBillingAccountIdGet) | **GET** /v2/billing/accounts/{billing_account_id} | Get Billing Account
-[**v2BillingAccountsBillingAccountIdPatch**](BillingAccountsApi.md#v2BillingAccountsBillingAccountIdPatch) | **PATCH** /v2/billing/accounts/{billing_account_id} | Update Billing Account
-[**v2BillingAccountsGet**](BillingAccountsApi.md#v2BillingAccountsGet) | **GET** /v2/billing/accounts | List Billing Accounts
-[**v2BillingAccountsPost**](BillingAccountsApi.md#v2BillingAccountsPost) | **POST** /v2/billing/accounts | Create Billing Account
+[**createBillingAccount**](BillingAccountsApi.md#createBillingAccount) | **POST** /v2/billing/accounts | Create Billing Account
+[**deleteBillingAccount**](BillingAccountsApi.md#deleteBillingAccount) | **DELETE** /v2/billing/accounts/{billing_account_id} | Delete Billing Account
+[**getBillingAccount**](BillingAccountsApi.md#getBillingAccount) | **GET** /v2/billing/accounts/{billing_account_id} | Get Billing Account
+[**getBillingAccounts**](BillingAccountsApi.md#getBillingAccounts) | **GET** /v2/billing/accounts | List Billing Accounts
+[**updateBillingAccount**](BillingAccountsApi.md#updateBillingAccount) | **PATCH** /v2/billing/accounts/{billing_account_id} | Update Billing Account
 
 
-# **v2BillingAccountsBillingAccountIdDelete**
-> void v2BillingAccountsBillingAccountIdDelete()
+# **createBillingAccount**
+> ModelsBillingAccount createBillingAccount(routesV2CreateBillingAccountRequest)
+
+Create Billing Account
+
+### Example
+
+
+```typescript
+import { createConfiguration, BillingAccountsApi } from '';
+import type { BillingAccountsApiCreateBillingAccountRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new BillingAccountsApi(configuration);
+
+const request: BillingAccountsApiCreateBillingAccountRequest = {
+    // Request body for creating a billing account
+  routesV2CreateBillingAccountRequest: {
+    billingEmail: "billingEmail_example",
+    description: "description_example",
+    name: "name_example",
+  },
+};
+
+const data = await apiInstance.createBillingAccount(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV2CreateBillingAccountRequest** | **RoutesV2CreateBillingAccountRequest**| Request body for creating a billing account |
+
+
+### Return type
+
+**ModelsBillingAccount**
+
+### Authorization
+
+[Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | billing account created successfully |  -  |
+**400** | Invalid JSON request body |  -  |
+**500** | Failed to create Billing Account |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **deleteBillingAccount**
+> void deleteBillingAccount()
 
 Delete Billing Account
 
@@ -21,17 +80,17 @@ Delete Billing Account
 
 ```typescript
 import { createConfiguration, BillingAccountsApi } from '';
-import type { BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest } from '';
+import type { BillingAccountsApiDeleteBillingAccountRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingAccountsApi(configuration);
 
-const request: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest = {
+const request: BillingAccountsApiDeleteBillingAccountRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
 };
 
-const data = await apiInstance.v2BillingAccountsBillingAccountIdDelete(request);
+const data = await apiInstance.deleteBillingAccount(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -66,8 +125,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v2BillingAccountsBillingAccountIdGet**
-> ModelsBillingAccount v2BillingAccountsBillingAccountIdGet()
+# **getBillingAccount**
+> ModelsBillingAccount getBillingAccount()
 
 Get Billing Account
 
@@ -76,17 +135,17 @@ Get Billing Account
 
 ```typescript
 import { createConfiguration, BillingAccountsApi } from '';
-import type { BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest } from '';
+import type { BillingAccountsApiGetBillingAccountRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingAccountsApi(configuration);
 
-const request: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest = {
+const request: BillingAccountsApiGetBillingAccountRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
 };
 
-const data = await apiInstance.v2BillingAccountsBillingAccountIdGet(request);
+const data = await apiInstance.getBillingAccount(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -121,70 +180,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v2BillingAccountsBillingAccountIdPatch**
-> ModelsBillingAccount v2BillingAccountsBillingAccountIdPatch(routesV2UpdateBillingAccountRequest)
-
-Update Billing Account
-
-### Example
-
-
-```typescript
-import { createConfiguration, BillingAccountsApi } from '';
-import type { BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest } from '';
-
-const configuration = createConfiguration();
-const apiInstance = new BillingAccountsApi(configuration);
-
-const request: BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest = {
-    // Billing Account ID
-  billingAccountId: "billing_account_id_example",
-    // Request body for updating a billing account
-  routesV2UpdateBillingAccountRequest: {
-    billingEmail: "billingEmail_example",
-    description: "description_example",
-    name: "name_example",
-  },
-};
-
-const data = await apiInstance.v2BillingAccountsBillingAccountIdPatch(request);
-console.log('API called successfully. Returned data:', data);
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **routesV2UpdateBillingAccountRequest** | **RoutesV2UpdateBillingAccountRequest**| Request body for updating a billing account |
- **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
-
-
-### Return type
-
-**ModelsBillingAccount**
-
-### Authorization
-
-[Bearer](README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | billing account updated successfully |  -  |
-**400** | Invalid JSON request body |  -  |
-**500** | Failed to update Billing Account |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **v2BillingAccountsGet**
-> ModelsBillingAccountList v2BillingAccountsGet()
+# **getBillingAccounts**
+> ModelsBillingAccountList getBillingAccounts()
 
 List Billing Accounts
 
@@ -193,19 +190,19 @@ List Billing Accounts
 
 ```typescript
 import { createConfiguration, BillingAccountsApi } from '';
-import type { BillingAccountsApiV2BillingAccountsGetRequest } from '';
+import type { BillingAccountsApiGetBillingAccountsRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingAccountsApi(configuration);
 
-const request: BillingAccountsApiV2BillingAccountsGetRequest = {
+const request: BillingAccountsApiGetBillingAccountsRequest = {
     // Limit (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
 };
 
-const data = await apiInstance.v2BillingAccountsGet(request);
+const data = await apiInstance.getBillingAccounts(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -241,31 +238,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v2BillingAccountsPost**
-> ModelsBillingAccount v2BillingAccountsPost(routesV2CreateBillingAccountRequest)
+# **updateBillingAccount**
+> ModelsBillingAccount updateBillingAccount(routesV2UpdateBillingAccountRequest)
 
-Create Billing Account
+Update Billing Account
 
 ### Example
 
 
 ```typescript
 import { createConfiguration, BillingAccountsApi } from '';
-import type { BillingAccountsApiV2BillingAccountsPostRequest } from '';
+import type { BillingAccountsApiUpdateBillingAccountRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingAccountsApi(configuration);
 
-const request: BillingAccountsApiV2BillingAccountsPostRequest = {
-    // Request body for creating a billing account
-  routesV2CreateBillingAccountRequest: {
+const request: BillingAccountsApiUpdateBillingAccountRequest = {
+    // Billing Account ID
+  billingAccountId: "billing_account_id_example",
+    // Request body for updating a billing account
+  routesV2UpdateBillingAccountRequest: {
     billingEmail: "billingEmail_example",
     description: "description_example",
     name: "name_example",
   },
 };
 
-const data = await apiInstance.v2BillingAccountsPost(request);
+const data = await apiInstance.updateBillingAccount(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -274,7 +273,8 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateBillingAccountRequest** | **RoutesV2CreateBillingAccountRequest**| Request body for creating a billing account |
+ **routesV2UpdateBillingAccountRequest** | **RoutesV2UpdateBillingAccountRequest**| Request body for updating a billing account |
+ **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 
 ### Return type
@@ -294,9 +294,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | billing account created successfully |  -  |
+**200** | billing account updated successfully |  -  |
 **400** | Invalid JSON request body |  -  |
-**500** | Failed to create Billing Account |  -  |
+**500** | Failed to update Billing Account |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

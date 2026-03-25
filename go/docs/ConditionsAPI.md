@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V2ConditionsGet**](ConditionsAPI.md#V2ConditionsGet) | **Get** /v2/conditions | List conditions
+[**ListConditions**](ConditionsAPI.md#ListConditions) | **Get** /v2/conditions | List conditions
 
 
 
-## V2ConditionsGet
+## ListConditions
 
-> []LeafconditionsInfo V2ConditionsGet(ctx).Execute()
+> []LeafconditionsInfo ListConditions(ctx).Execute()
 
 List conditions
 
@@ -32,13 +32,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConditionsAPI.V2ConditionsGet(context.Background()).Execute()
+	resp, r, err := apiClient.ConditionsAPI.ListConditions(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConditionsAPI.V2ConditionsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConditionsAPI.ListConditions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2ConditionsGet`: []LeafconditionsInfo
-	fmt.Fprintf(os.Stdout, "Response from `ConditionsAPI.V2ConditionsGet`: %v\n", resp)
+	// response from `ListConditions`: []LeafconditionsInfo
+	fmt.Fprintf(os.Stdout, "Response from `ConditionsAPI.ListConditions`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2ConditionsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListConditionsRequest struct via the builder pattern
 
 
 ### Return type

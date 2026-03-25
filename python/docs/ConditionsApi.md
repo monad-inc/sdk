@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2_conditions_get**](ConditionsApi.md#v2_conditions_get) | **GET** /v2/conditions | List conditions
+[**list_conditions**](ConditionsApi.md#list_conditions) | **GET** /v2/conditions | List conditions
 
 
-# **v2_conditions_get**
-> List[LeafconditionsInfo] v2_conditions_get()
+# **list_conditions**
+> List[LeafconditionsInfo] list_conditions()
 
 List conditions
 
@@ -55,11 +55,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # List conditions
-        api_response = api_instance.v2_conditions_get()
-        print("The response of ConditionsApi->v2_conditions_get:\n")
+        api_response = api_instance.list_conditions()
+        print("The response of ConditionsApi->list_conditions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConditionsApi->v2_conditions_get: %s\n" % e)
+        print("Exception when calling ConditionsApi->list_conditions: %s\n" % e)
 ```
 
 

@@ -3,9 +3,8 @@ name = "monad"
 version = "1.0.0"
 description = "Monad API"
 authors = [
-  {name = "API Support",email = "support@swagger.io"},
+  {name = "API Support",email = "support@monad.com"},
 ]
-license = { text = "Apache 2.0" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Monad API"]
 requires-python = ">=3.9"

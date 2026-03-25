@@ -4,36 +4,50 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3AlertRulesAlertRuleTypeIdGet**](AlertRulesApi.md#v3AlertRulesAlertRuleTypeIdGet) | **GET** /v3/alert_rules/{alert_rule_type_id} | Get alert rule type config metadata
-[**v3AlertRulesGet**](AlertRulesApi.md#v3AlertRulesGet) | **GET** /v3/alert_rules | List alert rule types
-[**v3OrganizationIdAlertRulesAlertRuleIdDelete**](AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdDelete) | **DELETE** /v3/{organization_id}/alert_rules/{alert_rule_id} | Delete alert rule
-[**v3OrganizationIdAlertRulesAlertRuleIdGet**](AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdGet) | **GET** /v3/{organization_id}/alert_rules/{alert_rule_id} | Get alert rule by ID
-[**v3OrganizationIdAlertRulesAlertRuleIdPut**](AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdPut) | **PUT** /v3/{organization_id}/alert_rules/{alert_rule_id} | Update alert rule
-[**v3OrganizationIdAlertRulesGet**](AlertRulesApi.md#v3OrganizationIdAlertRulesGet) | **GET** /v3/{organization_id}/alert_rules | Get all alert rules
-[**v3OrganizationIdAlertRulesPost**](AlertRulesApi.md#v3OrganizationIdAlertRulesPost) | **POST** /v3/{organization_id}/alert_rules | Create a new alert rule
+[**createAlertRule**](AlertRulesApi.md#createAlertRule) | **POST** /v3/{organization_id}/alert_rules | Create a new alert rule
+[**deleteAlertRule**](AlertRulesApi.md#deleteAlertRule) | **DELETE** /v3/{organization_id}/alert_rules/{alert_rule_id} | Delete alert rule
+[**getAlertRuleByID**](AlertRulesApi.md#getAlertRuleByID) | **GET** /v3/{organization_id}/alert_rules/{alert_rule_id} | Get alert rule by ID
+[**getAlertRuleConfigMeta**](AlertRulesApi.md#getAlertRuleConfigMeta) | **GET** /v3/alert_rules/{alert_rule_type_id} | Get alert rule type config metadata
+[**listAlertRuleTypes**](AlertRulesApi.md#listAlertRuleTypes) | **GET** /v3/alert_rules | List alert rule types
+[**listAlertRules**](AlertRulesApi.md#listAlertRules) | **GET** /v3/{organization_id}/alert_rules | Get all alert rules
+[**updateAlertRule**](AlertRulesApi.md#updateAlertRule) | **PUT** /v3/{organization_id}/alert_rules/{alert_rule_id} | Update alert rule
 
 
-# **v3AlertRulesAlertRuleTypeIdGet**
-> AlertsAlertMeta v3AlertRulesAlertRuleTypeIdGet()
+# **createAlertRule**
+> ModelsAlertRule createAlertRule(routesV3CreateAlertRuleRequest)
 
-Get configuration metadata for a specific alert rule type by its type ID
+Create a new alert rule with the provided details
 
 ### Example
 
 
 ```typescript
 import { createConfiguration, AlertRulesApi } from '';
-import type { AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest } from '';
+import type { AlertRulesApiCreateAlertRuleRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertRulesApi(configuration);
 
-const request: AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest = {
-    // Alert Rule Type ID
-  alertRuleTypeId: "alert_rule_type_id_example",
+const request: AlertRulesApiCreateAlertRuleRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Request body for creating an alert rule
+  routesV3CreateAlertRuleRequest: {
+    active: true,
+    description: "description_example",
+    name: "name_example",
+    pipelineIds: [
+      "pipelineIds_example",
+    ],
+    ruleConfig: {
+      "key": null,
+    },
+    severity: "severity_example",
+    type: "type_example",
+  },
 };
 
-const data = await apiInstance.v3AlertRulesAlertRuleTypeIdGet(request);
+const data = await apiInstance.createAlertRule(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -42,79 +56,35 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **alertRuleTypeId** | [**string**] | Alert Rule Type ID | defaults to undefined
+ **routesV3CreateAlertRuleRequest** | **RoutesV3CreateAlertRuleRequest**| Request body for creating an alert rule |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
 ### Return type
 
-**AlertsAlertMeta**
+**ModelsAlertRule**
 
 ### Authorization
 
-[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+[Bearer](README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Alert rule type config metadata retrieved successfully |  -  |
-**404** | Alert rule type not found |  -  |
+**201** | Alert rule created successfully |  -  |
+**400** | Invalid request body |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3AlertRulesGet**
-> Array<AlertsAlertMeta> v3AlertRulesGet()
-
-List all available alert rule types with their configuration metadata
-
-### Example
-
-
-```typescript
-import { createConfiguration, AlertRulesApi } from '';
-
-const configuration = createConfiguration();
-const apiInstance = new AlertRulesApi(configuration);
-
-const request = {};
-
-const data = await apiInstance.v3AlertRulesGet(request);
-console.log('API called successfully. Returned data:', data);
-```
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**Array<AlertsAlertMeta>**
-
-### Authorization
-
-[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Alert rule types retrieved successfully |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **v3OrganizationIdAlertRulesAlertRuleIdDelete**
-> void v3OrganizationIdAlertRulesAlertRuleIdDelete()
+# **deleteAlertRule**
+> void deleteAlertRule()
 
 Delete an existing alert rule
 
@@ -123,19 +93,19 @@ Delete an existing alert rule
 
 ```typescript
 import { createConfiguration, AlertRulesApi } from '';
-import type { AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest } from '';
+import type { AlertRulesApiDeleteAlertRuleRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertRulesApi(configuration);
 
-const request: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest = {
+const request: AlertRulesApiDeleteAlertRuleRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Alert Rule ID to delete
   alertRuleId: "alert_rule_id_example",
 };
 
-const data = await apiInstance.v3OrganizationIdAlertRulesAlertRuleIdDelete(request);
+const data = await apiInstance.deleteAlertRule(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -172,8 +142,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdAlertRulesAlertRuleIdGet**
-> ModelsAlertRule v3OrganizationIdAlertRulesAlertRuleIdGet()
+# **getAlertRuleByID**
+> ModelsAlertRule getAlertRuleByID()
 
 Retrieve an alert rule by its ID
 
@@ -182,19 +152,19 @@ Retrieve an alert rule by its ID
 
 ```typescript
 import { createConfiguration, AlertRulesApi } from '';
-import type { AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest } from '';
+import type { AlertRulesApiGetAlertRuleByIDRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertRulesApi(configuration);
 
-const request: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest = {
+const request: AlertRulesApiGetAlertRuleByIDRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Alert Rule ID to retrieve
   alertRuleId: "alert_rule_id_example",
 };
 
-const data = await apiInstance.v3OrganizationIdAlertRulesAlertRuleIdGet(request);
+const data = await apiInstance.getAlertRuleByID(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -231,42 +201,27 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdAlertRulesAlertRuleIdPut**
-> ModelsAlertRule v3OrganizationIdAlertRulesAlertRuleIdPut(routesV3UpdateAlertRuleRequest)
+# **getAlertRuleConfigMeta**
+> AlertsAlertMeta getAlertRuleConfigMeta()
 
-Update an existing alert rule
+Get configuration metadata for a specific alert rule type by its type ID
 
 ### Example
 
 
 ```typescript
 import { createConfiguration, AlertRulesApi } from '';
-import type { AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest } from '';
+import type { AlertRulesApiGetAlertRuleConfigMetaRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertRulesApi(configuration);
 
-const request: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest = {
-    // Organization ID
-  organizationId: "organization_id_example",
-    // Alert Rule ID to update
-  alertRuleId: "alert_rule_id_example",
-    // Request body for updating an alert rule
-  routesV3UpdateAlertRuleRequest: {
-    active: true,
-    description: "description_example",
-    name: "name_example",
-    pipelineIds: [
-      "pipelineIds_example",
-    ],
-    ruleConfig: {
-      "key": null,
-    },
-    severity: "severity_example",
-  },
+const request: AlertRulesApiGetAlertRuleConfigMetaRequest = {
+    // Alert Rule Type ID
+  alertRuleTypeId: "alert_rule_type_id_example",
 };
 
-const data = await apiInstance.v3OrganizationIdAlertRulesAlertRuleIdPut(request);
+const data = await apiInstance.getAlertRuleConfigMeta(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -275,36 +230,79 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3UpdateAlertRuleRequest** | **RoutesV3UpdateAlertRuleRequest**| Request body for updating an alert rule |
- **organizationId** | [**string**] | Organization ID | defaults to undefined
- **alertRuleId** | [**string**] | Alert Rule ID to update | defaults to undefined
+ **alertRuleTypeId** | [**string**] | Alert Rule Type ID | defaults to undefined
 
 
 ### Return type
 
-**ModelsAlertRule**
+**AlertsAlertMeta**
 
 ### Authorization
 
-[Bearer](README.md#Bearer)
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Alert rule updated successfully |  -  |
-**400** | Invalid request body |  -  |
-**500** | Internal server error |  -  |
+**200** | Alert rule type config metadata retrieved successfully |  -  |
+**404** | Alert rule type not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdAlertRulesGet**
-> ModelsAlertRuleList v3OrganizationIdAlertRulesGet()
+# **listAlertRuleTypes**
+> Array<AlertsAlertMeta> listAlertRuleTypes()
+
+List all available alert rule types with their configuration metadata
+
+### Example
+
+
+```typescript
+import { createConfiguration, AlertRulesApi } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new AlertRulesApi(configuration);
+
+const request = {};
+
+const data = await apiInstance.listAlertRuleTypes(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**Array<AlertsAlertMeta>**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Alert rule types retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listAlertRules**
+> ModelsAlertRuleList listAlertRules()
 
 Retrieve all alert rules for an organization
 
@@ -313,12 +311,12 @@ Retrieve all alert rules for an organization
 
 ```typescript
 import { createConfiguration, AlertRulesApi } from '';
-import type { AlertRulesApiV3OrganizationIdAlertRulesGetRequest } from '';
+import type { AlertRulesApiListAlertRulesRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertRulesApi(configuration);
 
-const request: AlertRulesApiV3OrganizationIdAlertRulesGetRequest = {
+const request: AlertRulesApiListAlertRulesRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Limit (optional)
@@ -327,7 +325,7 @@ const request: AlertRulesApiV3OrganizationIdAlertRulesGetRequest = {
   offset: 1,
 };
 
-const data = await apiInstance.v3OrganizationIdAlertRulesGet(request);
+const data = await apiInstance.listAlertRules(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -363,26 +361,28 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdAlertRulesPost**
-> ModelsAlertRule v3OrganizationIdAlertRulesPost(routesV3CreateAlertRuleRequest)
+# **updateAlertRule**
+> ModelsAlertRule updateAlertRule(routesV3UpdateAlertRuleRequest)
 
-Create a new alert rule with the provided details
+Update an existing alert rule
 
 ### Example
 
 
 ```typescript
 import { createConfiguration, AlertRulesApi } from '';
-import type { AlertRulesApiV3OrganizationIdAlertRulesPostRequest } from '';
+import type { AlertRulesApiUpdateAlertRuleRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AlertRulesApi(configuration);
 
-const request: AlertRulesApiV3OrganizationIdAlertRulesPostRequest = {
+const request: AlertRulesApiUpdateAlertRuleRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Request body for creating an alert rule
-  routesV3CreateAlertRuleRequest: {
+    // Alert Rule ID to update
+  alertRuleId: "alert_rule_id_example",
+    // Request body for updating an alert rule
+  routesV3UpdateAlertRuleRequest: {
     active: true,
     description: "description_example",
     name: "name_example",
@@ -393,11 +393,10 @@ const request: AlertRulesApiV3OrganizationIdAlertRulesPostRequest = {
       "key": null,
     },
     severity: "severity_example",
-    type: "type_example",
   },
 };
 
-const data = await apiInstance.v3OrganizationIdAlertRulesPost(request);
+const data = await apiInstance.updateAlertRule(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -406,8 +405,9 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3CreateAlertRuleRequest** | **RoutesV3CreateAlertRuleRequest**| Request body for creating an alert rule |
+ **routesV3UpdateAlertRuleRequest** | **RoutesV3UpdateAlertRuleRequest**| Request body for updating an alert rule |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **alertRuleId** | [**string**] | Alert Rule ID to update | defaults to undefined
 
 
 ### Return type
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Alert rule created successfully |  -  |
+**200** | Alert rule updated successfully |  -  |
 **400** | Invalid request body |  -  |
 **500** | Internal server error |  -  |
 

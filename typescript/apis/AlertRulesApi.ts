@@ -21,16 +21,164 @@ import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRul
 export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
+     * Create a new alert rule with the provided details
+     * Create a new alert rule
+     * @param organizationId Organization ID
+     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     */
+    public async createAlertRule(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("AlertRulesApi", "createAlertRule", "organizationId");
+        }
+
+
+        // verify required parameter 'routesV3CreateAlertRuleRequest' is not null or undefined
+        if (routesV3CreateAlertRuleRequest === null || routesV3CreateAlertRuleRequest === undefined) {
+            throw new RequiredError("AlertRulesApi", "createAlertRule", "routesV3CreateAlertRuleRequest");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/alert_rules'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV3CreateAlertRuleRequest, "RoutesV3CreateAlertRuleRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Delete an existing alert rule
+     * Delete alert rule
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to delete
+     */
+    public async deleteAlertRule(organizationId: string, alertRuleId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("AlertRulesApi", "deleteAlertRule", "organizationId");
+        }
+
+
+        // verify required parameter 'alertRuleId' is not null or undefined
+        if (alertRuleId === null || alertRuleId === undefined) {
+            throw new RequiredError("AlertRulesApi", "deleteAlertRule", "alertRuleId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Retrieve an alert rule by its ID
+     * Get alert rule by ID
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to retrieve
+     */
+    public async getAlertRuleByID(organizationId: string, alertRuleId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("AlertRulesApi", "getAlertRuleByID", "organizationId");
+        }
+
+
+        // verify required parameter 'alertRuleId' is not null or undefined
+        if (alertRuleId === null || alertRuleId === undefined) {
+            throw new RequiredError("AlertRulesApi", "getAlertRuleByID", "alertRuleId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Get configuration metadata for a specific alert rule type by its type ID
      * Get alert rule type config metadata
      * @param alertRuleTypeId Alert Rule Type ID
      */
-    public async v3AlertRulesAlertRuleTypeIdGet(alertRuleTypeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getAlertRuleConfigMeta(alertRuleTypeId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'alertRuleTypeId' is not null or undefined
         if (alertRuleTypeId === null || alertRuleTypeId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3AlertRulesAlertRuleTypeIdGet", "alertRuleTypeId");
+            throw new RequiredError("AlertRulesApi", "getAlertRuleConfigMeta", "alertRuleTypeId");
         }
 
 
@@ -67,7 +215,7 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
      * List all available alert rule types with their configuration metadata
      * List alert rule types
      */
-    public async v3AlertRulesGet(_options?: Configuration): Promise<RequestContext> {
+    public async listAlertRuleTypes(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // Path Params
@@ -99,174 +247,18 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Delete an existing alert rule
-     * Delete alert rule
-     * @param organizationId Organization ID
-     * @param alertRuleId Alert Rule ID to delete
-     */
-    public async v3OrganizationIdAlertRulesAlertRuleIdDelete(organizationId: string, alertRuleId: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesAlertRuleIdDelete", "organizationId");
-        }
-
-
-        // verify required parameter 'alertRuleId' is not null or undefined
-        if (alertRuleId === null || alertRuleId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesAlertRuleIdDelete", "alertRuleId");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Retrieve an alert rule by its ID
-     * Get alert rule by ID
-     * @param organizationId Organization ID
-     * @param alertRuleId Alert Rule ID to retrieve
-     */
-    public async v3OrganizationIdAlertRulesAlertRuleIdGet(organizationId: string, alertRuleId: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesAlertRuleIdGet", "organizationId");
-        }
-
-
-        // verify required parameter 'alertRuleId' is not null or undefined
-        if (alertRuleId === null || alertRuleId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesAlertRuleIdGet", "alertRuleId");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Update an existing alert rule
-     * Update alert rule
-     * @param organizationId Organization ID
-     * @param alertRuleId Alert Rule ID to update
-     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
-     */
-    public async v3OrganizationIdAlertRulesAlertRuleIdPut(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesAlertRuleIdPut", "organizationId");
-        }
-
-
-        // verify required parameter 'alertRuleId' is not null or undefined
-        if (alertRuleId === null || alertRuleId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesAlertRuleIdPut", "alertRuleId");
-        }
-
-
-        // verify required parameter 'routesV3UpdateAlertRuleRequest' is not null or undefined
-        if (routesV3UpdateAlertRuleRequest === null || routesV3UpdateAlertRuleRequest === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesAlertRuleIdPut", "routesV3UpdateAlertRuleRequest");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3UpdateAlertRuleRequest, "RoutesV3UpdateAlertRuleRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Retrieve all alert rules for an organization
      * Get all alert rules
      * @param organizationId Organization ID
      * @param limit Limit
      * @param offset Offset
      */
-    public async v3OrganizationIdAlertRulesGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async listAlertRules(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesGet", "organizationId");
+            throw new RequiredError("AlertRulesApi", "listAlertRules", "organizationId");
         }
 
 
@@ -307,32 +299,40 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Create a new alert rule with the provided details
-     * Create a new alert rule
+     * Update an existing alert rule
+     * Update alert rule
      * @param organizationId Organization ID
-     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     * @param alertRuleId Alert Rule ID to update
+     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
      */
-    public async v3OrganizationIdAlertRulesPost(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateAlertRule(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesPost", "organizationId");
+            throw new RequiredError("AlertRulesApi", "updateAlertRule", "organizationId");
         }
 
 
-        // verify required parameter 'routesV3CreateAlertRuleRequest' is not null or undefined
-        if (routesV3CreateAlertRuleRequest === null || routesV3CreateAlertRuleRequest === undefined) {
-            throw new RequiredError("AlertRulesApi", "v3OrganizationIdAlertRulesPost", "routesV3CreateAlertRuleRequest");
+        // verify required parameter 'alertRuleId' is not null or undefined
+        if (alertRuleId === null || alertRuleId === undefined) {
+            throw new RequiredError("AlertRulesApi", "updateAlertRule", "alertRuleId");
+        }
+
+
+        // verify required parameter 'routesV3UpdateAlertRuleRequest' is not null or undefined
+        if (routesV3UpdateAlertRuleRequest === null || routesV3UpdateAlertRuleRequest === undefined) {
+            throw new RequiredError("AlertRulesApi", "updateAlertRule", "routesV3UpdateAlertRuleRequest");
         }
 
 
         // Path Params
-        const localVarPath = '/v3/{organization_id}/alert_rules'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+        const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
 
         // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
@@ -342,7 +342,7 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3CreateAlertRuleRequest, "RoutesV3CreateAlertRuleRequest", ""),
+            ObjectSerializer.serialize(routesV3UpdateAlertRuleRequest, "RoutesV3UpdateAlertRuleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -370,32 +370,39 @@ export class AlertRulesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3AlertRulesAlertRuleTypeIdGet
+     * @params response Response returned by the server for a request to createAlertRule
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<AlertsAlertMeta >> {
+     public async createAlertRuleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRule >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: AlertsAlertMeta = ObjectSerializer.deserialize(
+        if (isCodeInRange("201", response.httpStatusCode)) {
+            const body: ModelsAlertRule = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "AlertsAlertMeta", ""
-            ) as AlertsAlertMeta;
+                "ModelsAlertRule", ""
+            ) as ModelsAlertRule;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Alert rule type not found", body, response.headers);
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: AlertsAlertMeta = ObjectSerializer.deserialize(
+            const body: ModelsAlertRule = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "AlertsAlertMeta", ""
-            ) as AlertsAlertMeta;
+                "ModelsAlertRule", ""
+            ) as ModelsAlertRule;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -406,39 +413,10 @@ export class AlertRulesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3AlertRulesGet
+     * @params response Response returned by the server for a request to deleteAlertRule
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3AlertRulesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<AlertsAlertMeta> >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<AlertsAlertMeta> = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<AlertsAlertMeta>", ""
-            ) as Array<AlertsAlertMeta>;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<AlertsAlertMeta> = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<AlertsAlertMeta>", ""
-            ) as Array<AlertsAlertMeta>;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v3OrganizationIdAlertRulesAlertRuleIdDelete
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
+     public async deleteAlertRuleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("204", response.httpStatusCode)) {
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
@@ -481,10 +459,10 @@ export class AlertRulesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdAlertRulesAlertRuleIdGet
+     * @params response Response returned by the server for a request to getAlertRuleByID
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRule >> {
+     public async getAlertRuleByIDWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRule >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsAlertRule = ObjectSerializer.deserialize(
@@ -531,39 +509,32 @@ export class AlertRulesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdAlertRulesAlertRuleIdPut
+     * @params response Response returned by the server for a request to getAlertRuleConfigMeta
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRule >> {
+     public async getAlertRuleConfigMetaWithHttpInfo(response: ResponseContext): Promise<HttpInfo<AlertsAlertMeta >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsAlertRule = ObjectSerializer.deserialize(
+            const body: AlertsAlertMeta = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsAlertRule", ""
-            ) as ModelsAlertRule;
+                "AlertsAlertMeta", ""
+            ) as AlertsAlertMeta;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Alert rule type not found", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsAlertRule = ObjectSerializer.deserialize(
+            const body: AlertsAlertMeta = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsAlertRule", ""
-            ) as ModelsAlertRule;
+                "AlertsAlertMeta", ""
+            ) as AlertsAlertMeta;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -574,10 +545,39 @@ export class AlertRulesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdAlertRulesGet
+     * @params response Response returned by the server for a request to listAlertRuleTypes
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdAlertRulesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRuleList >> {
+     public async listAlertRuleTypesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<AlertsAlertMeta> >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: Array<AlertsAlertMeta> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<AlertsAlertMeta>", ""
+            ) as Array<AlertsAlertMeta>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: Array<AlertsAlertMeta> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<AlertsAlertMeta>", ""
+            ) as Array<AlertsAlertMeta>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listAlertRules
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async listAlertRulesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRuleList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsAlertRuleList = ObjectSerializer.deserialize(
@@ -610,12 +610,12 @@ export class AlertRulesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdAlertRulesPost
+     * @params response Response returned by the server for a request to updateAlertRule
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdAlertRulesPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRule >> {
+     public async updateAlertRuleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRule >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("201", response.httpStatusCode)) {
+        if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsAlertRule = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsAlertRule", ""

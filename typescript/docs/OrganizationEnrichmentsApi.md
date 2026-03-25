@@ -4,17 +4,90 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3OrganizationIdEnrichmentsEnrichmentIdDelete**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdDelete) | **DELETE** /v3/{organization_id}/enrichments/{enrichment_id} | Delete enrichment
-[**v3OrganizationIdEnrichmentsEnrichmentIdGet**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdGet) | **GET** /v3/{organization_id}/enrichments/{enrichment_id} | Get enrichment
-[**v3OrganizationIdEnrichmentsEnrichmentIdPatch**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdPatch) | **PATCH** /v3/{organization_id}/enrichments/{enrichment_id} | Update enrichment
-[**v3OrganizationIdEnrichmentsEnrichmentIdPut**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdPut) | **PUT** /v3/{organization_id}/enrichments/{enrichment_id} | Replace enrichment
-[**v3OrganizationIdEnrichmentsGet**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsGet) | **GET** /v3/{organization_id}/enrichments | List enrichments
-[**v3OrganizationIdEnrichmentsPost**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsPost) | **POST** /v3/{organization_id}/enrichments | Create enrichment
-[**v3OrganizationIdEnrichmentsTestConnectionPost**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsTestConnectionPost) | **POST** /v3/{organization_id}/enrichments/test-connection | Test enrichment connection
+[**createEnrichment**](OrganizationEnrichmentsApi.md#createEnrichment) | **POST** /v3/{organization_id}/enrichments | Create enrichment
+[**deleteEnrichment**](OrganizationEnrichmentsApi.md#deleteEnrichment) | **DELETE** /v3/{organization_id}/enrichments/{enrichment_id} | Delete enrichment
+[**getEnrichment**](OrganizationEnrichmentsApi.md#getEnrichment) | **GET** /v3/{organization_id}/enrichments/{enrichment_id} | Get enrichment
+[**listEnrichments**](OrganizationEnrichmentsApi.md#listEnrichments) | **GET** /v3/{organization_id}/enrichments | List enrichments
+[**replaceEnrichment**](OrganizationEnrichmentsApi.md#replaceEnrichment) | **PUT** /v3/{organization_id}/enrichments/{enrichment_id} | Replace enrichment
+[**testEnrichmentConnection**](OrganizationEnrichmentsApi.md#testEnrichmentConnection) | **POST** /v3/{organization_id}/enrichments/test-connection | Test enrichment connection
+[**updateEnrichment**](OrganizationEnrichmentsApi.md#updateEnrichment) | **PATCH** /v3/{organization_id}/enrichments/{enrichment_id} | Update enrichment
 
 
-# **v3OrganizationIdEnrichmentsEnrichmentIdDelete**
-> RoutesV3SuccessResponse v3OrganizationIdEnrichmentsEnrichmentIdDelete()
+# **createEnrichment**
+> ModelsEnrichment createEnrichment(routesV3CreateEnrichmentRequest)
+
+Create a new enrichment with configuration including secrets handling
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationEnrichmentsApi } from '';
+import type { OrganizationEnrichmentsApiCreateEnrichmentRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationEnrichmentsApi(configuration);
+
+const request: OrganizationEnrichmentsApiCreateEnrichmentRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Enrichment configuration
+  routesV3CreateEnrichmentRequest: {
+    config: {
+      secrets: 
+        key: null,
+      ,
+      settings: 
+        key: null,
+      ,
+    },
+    description: "description_example",
+    name: "name_example",
+    type: "type_example",
+  },
+    // Test connection before creating the enrichment (optional)
+  testConnection: true,
+};
+
+const data = await apiInstance.createEnrichment(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV3CreateEnrichmentRequest** | **RoutesV3CreateEnrichmentRequest**| Enrichment configuration |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the enrichment | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsEnrichment**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Enrichment created successfully |  -  |
+**400** | Invalid request body, enrichment type, configuration validation error, or secret processing error |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **deleteEnrichment**
+> RoutesV3SuccessResponse deleteEnrichment()
 
 Delete an enrichment by ID
 
@@ -23,19 +96,19 @@ Delete an enrichment by ID
 
 ```typescript
 import { createConfiguration, OrganizationEnrichmentsApi } from '';
-import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdDeleteRequest } from '';
+import type { OrganizationEnrichmentsApiDeleteEnrichmentRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationEnrichmentsApi(configuration);
 
-const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdDeleteRequest = {
+const request: OrganizationEnrichmentsApiDeleteEnrichmentRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Enrichment ID
   enrichmentId: "enrichment_id_example",
 };
 
-const data = await apiInstance.v3OrganizationIdEnrichmentsEnrichmentIdDelete(request);
+const data = await apiInstance.deleteEnrichment(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -71,8 +144,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdEnrichmentsEnrichmentIdGet**
-> RoutesV3GetEnrichmentResponse v3OrganizationIdEnrichmentsEnrichmentIdGet()
+# **getEnrichment**
+> RoutesV3GetEnrichmentResponse getEnrichment()
 
 Get an enrichment by ID
 
@@ -81,19 +154,19 @@ Get an enrichment by ID
 
 ```typescript
 import { createConfiguration, OrganizationEnrichmentsApi } from '';
-import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest } from '';
+import type { OrganizationEnrichmentsApiGetEnrichmentRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationEnrichmentsApi(configuration);
 
-const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest = {
+const request: OrganizationEnrichmentsApiGetEnrichmentRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Enrichment ID
   enrichmentId: "enrichment_id_example",
 };
 
-const data = await apiInstance.v3OrganizationIdEnrichmentsEnrichmentIdGet(request);
+const data = await apiInstance.getEnrichment(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -129,45 +202,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdEnrichmentsEnrichmentIdPatch**
-> ModelsEnrichment v3OrganizationIdEnrichmentsEnrichmentIdPatch(routesV3UpdateEnrichmentRequest)
+# **listEnrichments**
+> ModelsEnrichmentList listEnrichments()
 
-Update an existing enrichment with new configuration including secrets handling
+List all enrichments for an organization
 
 ### Example
 
 
 ```typescript
 import { createConfiguration, OrganizationEnrichmentsApi } from '';
-import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPatchRequest } from '';
+import type { OrganizationEnrichmentsApiListEnrichmentsRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationEnrichmentsApi(configuration);
 
-const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPatchRequest = {
+const request: OrganizationEnrichmentsApiListEnrichmentsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Enrichment ID
-  enrichmentId: "enrichment_id_example",
-    // Enrichment configuration update
-  routesV3UpdateEnrichmentRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    type: "type_example",
-  },
-    // Test connection before updating the enrichment (optional)
-  testConnection: true,
+    // Number of results to return (default 100) (optional)
+  limit: 1,
+    // Number of results to skip (default 0) (optional)
+  offset: 1,
 };
 
-const data = await apiInstance.v3OrganizationIdEnrichmentsEnrichmentIdPatch(request);
+const data = await apiInstance.listEnrichments(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -176,15 +235,14 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3UpdateEnrichmentRequest** | **RoutesV3UpdateEnrichmentRequest**| Enrichment configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **enrichmentId** | [**string**] | Enrichment ID | defaults to undefined
- **testConnection** | [**boolean**] | Test connection before updating the enrichment | (optional) defaults to undefined
+ **limit** | [**number**] | Number of results to return (default 100) | (optional) defaults to undefined
+ **offset** | [**number**] | Number of results to skip (default 0) | (optional) defaults to undefined
 
 
 ### Return type
 
-**ModelsEnrichment**
+**ModelsEnrichmentList**
 
 ### Authorization
 
@@ -192,22 +250,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Enrichment updated successfully |  -  |
-**400** | Invalid request body, enrichment type, configuration validation error, or secret processing error |  -  |
-**404** | Enrichment not found |  -  |
+**200** | List of enrichments |  -  |
+**400** | Invalid request |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdEnrichmentsEnrichmentIdPut**
-> ModelsEnrichment v3OrganizationIdEnrichmentsEnrichmentIdPut(routesV3PutEnrichmentRequest)
+# **replaceEnrichment**
+> ModelsEnrichment replaceEnrichment(routesV3PutEnrichmentRequest)
 
 Replace an existing enrichment with new configuration including secrets handling
 
@@ -216,12 +273,12 @@ Replace an existing enrichment with new configuration including secrets handling
 
 ```typescript
 import { createConfiguration, OrganizationEnrichmentsApi } from '';
-import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest } from '';
+import type { OrganizationEnrichmentsApiReplaceEnrichmentRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationEnrichmentsApi(configuration);
 
-const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest = {
+const request: OrganizationEnrichmentsApiReplaceEnrichmentRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Enrichment ID
@@ -244,7 +301,7 @@ const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentId
   testConnection: true,
 };
 
-const data = await apiInstance.v3OrganizationIdEnrichmentsEnrichmentIdPut(request);
+const data = await apiInstance.replaceEnrichment(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -283,142 +340,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v3OrganizationIdEnrichmentsGet**
-> ModelsEnrichmentList v3OrganizationIdEnrichmentsGet()
-
-List all enrichments for an organization
-
-### Example
-
-
-```typescript
-import { createConfiguration, OrganizationEnrichmentsApi } from '';
-import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsGetRequest } from '';
-
-const configuration = createConfiguration();
-const apiInstance = new OrganizationEnrichmentsApi(configuration);
-
-const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsGetRequest = {
-    // Organization ID
-  organizationId: "organization_id_example",
-    // Number of results to return (default 100) (optional)
-  limit: 1,
-    // Number of results to skip (default 0) (optional)
-  offset: 1,
-};
-
-const data = await apiInstance.v3OrganizationIdEnrichmentsGet(request);
-console.log('API called successfully. Returned data:', data);
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Number of results to return (default 100) | (optional) defaults to undefined
- **offset** | [**number**] | Number of results to skip (default 0) | (optional) defaults to undefined
-
-
-### Return type
-
-**ModelsEnrichmentList**
-
-### Authorization
-
-[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List of enrichments |  -  |
-**400** | Invalid request |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **v3OrganizationIdEnrichmentsPost**
-> ModelsEnrichment v3OrganizationIdEnrichmentsPost(routesV3CreateEnrichmentRequest)
-
-Create a new enrichment with configuration including secrets handling
-
-### Example
-
-
-```typescript
-import { createConfiguration, OrganizationEnrichmentsApi } from '';
-import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsPostRequest } from '';
-
-const configuration = createConfiguration();
-const apiInstance = new OrganizationEnrichmentsApi(configuration);
-
-const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsPostRequest = {
-    // Organization ID
-  organizationId: "organization_id_example",
-    // Enrichment configuration
-  routesV3CreateEnrichmentRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    type: "type_example",
-  },
-    // Test connection before creating the enrichment (optional)
-  testConnection: true,
-};
-
-const data = await apiInstance.v3OrganizationIdEnrichmentsPost(request);
-console.log('API called successfully. Returned data:', data);
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **routesV3CreateEnrichmentRequest** | **RoutesV3CreateEnrichmentRequest**| Enrichment configuration |
- **organizationId** | [**string**] | Organization ID | defaults to undefined
- **testConnection** | [**boolean**] | Test connection before creating the enrichment | (optional) defaults to undefined
-
-
-### Return type
-
-**ModelsEnrichment**
-
-### Authorization
-
-[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Enrichment created successfully |  -  |
-**400** | Invalid request body, enrichment type, configuration validation error, or secret processing error |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **v3OrganizationIdEnrichmentsTestConnectionPost**
-> RoutesV3SuccessResponse v3OrganizationIdEnrichmentsTestConnectionPost(routesV3TestEnrichmentConnectionRequest)
+# **testEnrichmentConnection**
+> RoutesV3SuccessResponse testEnrichmentConnection(routesV3TestEnrichmentConnectionRequest)
 
 Tests the connection for a given enrichment type and configuration
 
@@ -427,12 +350,12 @@ Tests the connection for a given enrichment type and configuration
 
 ```typescript
 import { createConfiguration, OrganizationEnrichmentsApi } from '';
-import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsTestConnectionPostRequest } from '';
+import type { OrganizationEnrichmentsApiTestEnrichmentConnectionRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationEnrichmentsApi(configuration);
 
-const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsTestConnectionPostRequest = {
+const request: OrganizationEnrichmentsApiTestEnrichmentConnectionRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Enrichment configuration to test
@@ -449,7 +372,7 @@ const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsTestConnecti
   },
 };
 
-const data = await apiInstance.v3OrganizationIdEnrichmentsTestConnectionPost(request);
+const data = await apiInstance.testEnrichmentConnection(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -481,6 +404,83 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Connection test successful |  -  |
 **400** | Invalid request body, enrichment type, or configuration |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **updateEnrichment**
+> ModelsEnrichment updateEnrichment(routesV3UpdateEnrichmentRequest)
+
+Update an existing enrichment with new configuration including secrets handling
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationEnrichmentsApi } from '';
+import type { OrganizationEnrichmentsApiUpdateEnrichmentRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationEnrichmentsApi(configuration);
+
+const request: OrganizationEnrichmentsApiUpdateEnrichmentRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Enrichment ID
+  enrichmentId: "enrichment_id_example",
+    // Enrichment configuration update
+  routesV3UpdateEnrichmentRequest: {
+    config: {
+      secrets: 
+        key: null,
+      ,
+      settings: 
+        key: null,
+      ,
+    },
+    description: "description_example",
+    name: "name_example",
+    type: "type_example",
+  },
+    // Test connection before updating the enrichment (optional)
+  testConnection: true,
+};
+
+const data = await apiInstance.updateEnrichment(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV3UpdateEnrichmentRequest** | **RoutesV3UpdateEnrichmentRequest**| Enrichment configuration update |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **enrichmentId** | [**string**] | Enrichment ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before updating the enrichment | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsEnrichment**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Enrichment updated successfully |  -  |
+**400** | Invalid request body, enrichment type, configuration validation error, or secret processing error |  -  |
+**404** | Enrichment not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

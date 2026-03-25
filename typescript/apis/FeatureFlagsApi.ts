@@ -19,7 +19,7 @@ export class FeatureFlagsApiRequestFactory extends BaseAPIRequestFactory {
      * Get feature flags for the authenticated user
      * Get feature flags
      */
-    public async v3FeatureFlagsGet(_options?: Configuration): Promise<RequestContext> {
+    public async getFeatureFlags(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // Path Params
@@ -58,10 +58,10 @@ export class FeatureFlagsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3FeatureFlagsGet
+     * @params response Response returned by the server for a request to getFeatureFlags
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3FeatureFlagsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3GetFeatureFlagResponse >> {
+     public async getFeatureFlagsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3GetFeatureFlagResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesV3GetFeatureFlagResponse = ObjectSerializer.deserialize(

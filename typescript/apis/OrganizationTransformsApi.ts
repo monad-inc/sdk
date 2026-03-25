@@ -20,80 +20,23 @@ import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformReq
 export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * List transforms
-     * List transforms
-     * @param organizationId Organization ID
-     * @param limit Limit
-     * @param offset Offset
-     */
-    public async v1OrganizationIdTransformsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsGet", "organizationId");
-        }
-
-
-
-
-        // Path Params
-        const localVarPath = '/v1/{organization_id}/transforms'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (limit !== undefined) {
-            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
-        }
-
-        // Query Params
-        if (offset !== undefined) {
-            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Create transform
      * Create transform
      * @param organizationId Organization ID
      * @param routesCreateTransformRequest Request body for creating a transform
      */
-    public async v1OrganizationIdTransformsPost(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createTransform(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsPost", "organizationId");
+            throw new RequiredError("OrganizationTransformsApi", "createTransform", "organizationId");
         }
 
 
         // verify required parameter 'routesCreateTransformRequest' is not null or undefined
         if (routesCreateTransformRequest === null || routesCreateTransformRequest === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsPost", "routesCreateTransformRequest");
+            throw new RequiredError("OrganizationTransformsApi", "createTransform", "routesCreateTransformRequest");
         }
 
 
@@ -143,18 +86,18 @@ export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFacto
      * @param organizationId Organization ID
      * @param transformId Transform ID
      */
-    public async v1OrganizationIdTransformsTransformIdDelete(organizationId: string, transformId: string, _options?: Configuration): Promise<RequestContext> {
+    public async deleteOrganizationTransform(organizationId: string, transformId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsTransformIdDelete", "organizationId");
+            throw new RequiredError("OrganizationTransformsApi", "deleteOrganizationTransform", "organizationId");
         }
 
 
         // verify required parameter 'transformId' is not null or undefined
         if (transformId === null || transformId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsTransformIdDelete", "transformId");
+            throw new RequiredError("OrganizationTransformsApi", "deleteOrganizationTransform", "transformId");
         }
 
 
@@ -194,18 +137,18 @@ export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFacto
      * @param transformId Transform ID
      * @param organizationId Organization ID
      */
-    public async v1OrganizationIdTransformsTransformIdGet(transformId: string, organizationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getOrganizationTransform(transformId: string, organizationId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'transformId' is not null or undefined
         if (transformId === null || transformId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsTransformIdGet", "transformId");
+            throw new RequiredError("OrganizationTransformsApi", "getOrganizationTransform", "transformId");
         }
 
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsTransformIdGet", "organizationId");
+            throw new RequiredError("OrganizationTransformsApi", "getOrganizationTransform", "organizationId");
         }
 
 
@@ -240,30 +183,87 @@ export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFacto
     }
 
     /**
+     * List transforms
+     * List configured transforms in a transform
+     * @param organizationId Organization ID
+     * @param limit Limit
+     * @param offset Offset
+     */
+    public async listOrganizationTransforms(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationTransformsApi", "listOrganizationTransforms", "organizationId");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/v1/{organization_id}/transforms'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+        }
+
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Update transform
      * Update transform
      * @param organizationId Organization ID
      * @param transformId Transform ID
      * @param routesUpdateTransformRequest Request body for updating a transform
      */
-    public async v1OrganizationIdTransformsTransformIdPatch(organizationId: string, transformId: string, routesUpdateTransformRequest: RoutesUpdateTransformRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateOrganizationTransform(organizationId: string, transformId: string, routesUpdateTransformRequest: RoutesUpdateTransformRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsTransformIdPatch", "organizationId");
+            throw new RequiredError("OrganizationTransformsApi", "updateOrganizationTransform", "organizationId");
         }
 
 
         // verify required parameter 'transformId' is not null or undefined
         if (transformId === null || transformId === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsTransformIdPatch", "transformId");
+            throw new RequiredError("OrganizationTransformsApi", "updateOrganizationTransform", "transformId");
         }
 
 
         // verify required parameter 'routesUpdateTransformRequest' is not null or undefined
         if (routesUpdateTransformRequest === null || routesUpdateTransformRequest === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsTransformIdPatch", "routesUpdateTransformRequest");
+            throw new RequiredError("OrganizationTransformsApi", "updateOrganizationTransform", "routesUpdateTransformRequest");
         }
 
 
@@ -316,46 +316,10 @@ export class OrganizationTransformsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdTransformsGet
+     * @params response Response returned by the server for a request to createTransform
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdTransformsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsTransformList >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsTransformList = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsTransformList", ""
-            ) as ModelsTransformList;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to marshal transforms", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsTransformList = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsTransformList", ""
-            ) as ModelsTransformList;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v1OrganizationIdTransformsPost
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v1OrganizationIdTransformsPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsTransform >> {
+     public async createTransformWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsTransform >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsTransform = ObjectSerializer.deserialize(
@@ -395,10 +359,10 @@ export class OrganizationTransformsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdTransformsTransformIdDelete
+     * @params response Response returned by the server for a request to deleteOrganizationTransform
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
+     public async deleteOrganizationTransformWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: any = ObjectSerializer.deserialize(
@@ -431,10 +395,10 @@ export class OrganizationTransformsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdTransformsTransformIdGet
+     * @params response Response returned by the server for a request to getOrganizationTransform
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdTransformsTransformIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesGetTransformResponse >> {
+     public async getOrganizationTransformWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesGetTransformResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesGetTransformResponse = ObjectSerializer.deserialize(
@@ -467,10 +431,46 @@ export class OrganizationTransformsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdTransformsTransformIdPatch
+     * @params response Response returned by the server for a request to listOrganizationTransforms
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsTransform >> {
+     public async listOrganizationTransformsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsTransformList >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsTransformList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsTransformList", ""
+            ) as ModelsTransformList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to marshal transforms", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsTransformList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsTransformList", ""
+            ) as ModelsTransformList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to updateOrganizationTransform
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async updateOrganizationTransformWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsTransform >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsTransform = ObjectSerializer.deserialize(

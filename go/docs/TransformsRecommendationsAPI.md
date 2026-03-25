@@ -4,84 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V3OrganizationIdTransformRecommendationsOptimizersGet**](TransformsRecommendationsAPI.md#V3OrganizationIdTransformRecommendationsOptimizersGet) | **Get** /v3/{organization_id}/transform_recommendations/optimizers | List available transform optimizers
-[**V3OrganizationIdTransformRecommendationsPost**](TransformsRecommendationsAPI.md#V3OrganizationIdTransformRecommendationsPost) | **Post** /v3/{organization_id}/transform_recommendations | Create transform recommendation
+[**CreateTransformRecommendation**](TransformsRecommendationsAPI.md#CreateTransformRecommendation) | **Post** /v3/{organization_id}/transform_recommendations | Create transform recommendation
+[**ListAvailableOptimizers**](TransformsRecommendationsAPI.md#ListAvailableOptimizers) | **Get** /v3/{organization_id}/transform_recommendations/optimizers | List available transform optimizers
 
 
 
-## V3OrganizationIdTransformRecommendationsOptimizersGet
+## CreateTransformRecommendation
 
-> []RoutesV3OptimizerType V3OrganizationIdTransformRecommendationsOptimizersGet(ctx, organizationId).Execute()
-
-List available transform optimizers
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/monad-inc/sdk/go"
-)
-
-func main() {
-	organizationId := "organizationId_example" // string | Organization ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformsRecommendationsAPI.V3OrganizationIdTransformRecommendationsOptimizersGet(context.Background(), organizationId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransformsRecommendationsAPI.V3OrganizationIdTransformRecommendationsOptimizersGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V3OrganizationIdTransformRecommendationsOptimizersGet`: []RoutesV3OptimizerType
-	fmt.Fprintf(os.Stdout, "Response from `TransformsRecommendationsAPI.V3OrganizationIdTransformRecommendationsOptimizersGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**organizationId** | **string** | Organization ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV3OrganizationIdTransformRecommendationsOptimizersGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**[]RoutesV3OptimizerType**](RoutesV3OptimizerType.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## V3OrganizationIdTransformRecommendationsPost
-
-> RoutesV3SecurityDataAnalysis V3OrganizationIdTransformRecommendationsPost(ctx, organizationId).RoutesV3TransformRecommendationRequest(routesV3TransformRecommendationRequest).Execute()
+> RoutesV3SecurityDataAnalysis CreateTransformRecommendation(ctx, organizationId).RoutesV3TransformRecommendationRequest(routesV3TransformRecommendationRequest).Execute()
 
 Create transform recommendation
 
@@ -105,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformsRecommendationsAPI.V3OrganizationIdTransformRecommendationsPost(context.Background(), organizationId).RoutesV3TransformRecommendationRequest(routesV3TransformRecommendationRequest).Execute()
+	resp, r, err := apiClient.TransformsRecommendationsAPI.CreateTransformRecommendation(context.Background(), organizationId).RoutesV3TransformRecommendationRequest(routesV3TransformRecommendationRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransformsRecommendationsAPI.V3OrganizationIdTransformRecommendationsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransformsRecommendationsAPI.CreateTransformRecommendation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3OrganizationIdTransformRecommendationsPost`: RoutesV3SecurityDataAnalysis
-	fmt.Fprintf(os.Stdout, "Response from `TransformsRecommendationsAPI.V3OrganizationIdTransformRecommendationsPost`: %v\n", resp)
+	// response from `CreateTransformRecommendation`: RoutesV3SecurityDataAnalysis
+	fmt.Fprintf(os.Stdout, "Response from `TransformsRecommendationsAPI.CreateTransformRecommendation`: %v\n", resp)
 }
 ```
 
@@ -125,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV3OrganizationIdTransformRecommendationsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransformRecommendationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -144,6 +74,76 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAvailableOptimizers
+
+> []RoutesV3OptimizerType ListAvailableOptimizers(ctx, organizationId).Execute()
+
+List available transform optimizers
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransformsRecommendationsAPI.ListAvailableOptimizers(context.Background(), organizationId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransformsRecommendationsAPI.ListAvailableOptimizers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListAvailableOptimizers`: []RoutesV3OptimizerType
+	fmt.Fprintf(os.Stdout, "Response from `TransformsRecommendationsAPI.ListAvailableOptimizers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAvailableOptimizersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]RoutesV3OptimizerType**](RoutesV3OptimizerType.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

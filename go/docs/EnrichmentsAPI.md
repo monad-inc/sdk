@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](EnrichmentsAPI.md#V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet) | **Get** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
-[**V3OrganizationIdEnrichmentsMetaGet**](EnrichmentsAPI.md#V3OrganizationIdEnrichmentsMetaGet) | **Get** /v3/{organization_id}/enrichments_meta | List enrichments
+[**GetEnrichmentTypeMeta**](EnrichmentsAPI.md#GetEnrichmentTypeMeta) | **Get** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
+[**ListEnrichmentTypes**](EnrichmentsAPI.md#ListEnrichmentTypes) | **Get** /v3/{organization_id}/enrichments_meta | List enrichments
 
 
 
-## V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet
+## GetEnrichmentTypeMeta
 
-> EnrichmentConnectorMeta V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(ctx, organizationId, enrichmentTypeId).Execute()
+> EnrichmentConnectorMeta GetEnrichmentTypeMeta(ctx, organizationId, enrichmentTypeId).Execute()
 
 Get enrichment config meta
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EnrichmentsAPI.V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(context.Background(), organizationId, enrichmentTypeId).Execute()
+	resp, r, err := apiClient.EnrichmentsAPI.GetEnrichmentTypeMeta(context.Background(), organizationId, enrichmentTypeId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `EnrichmentsAPI.V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `EnrichmentsAPI.GetEnrichmentTypeMeta``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet`: EnrichmentConnectorMeta
-	fmt.Fprintf(os.Stdout, "Response from `EnrichmentsAPI.V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet`: %v\n", resp)
+	// response from `GetEnrichmentTypeMeta`: EnrichmentConnectorMeta
+	fmt.Fprintf(os.Stdout, "Response from `EnrichmentsAPI.GetEnrichmentTypeMeta`: %v\n", resp)
 }
 ```
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetEnrichmentTypeMetaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V3OrganizationIdEnrichmentsMetaGet
+## ListEnrichmentTypes
 
-> []EnrichmentConnectorMeta V3OrganizationIdEnrichmentsMetaGet(ctx, organizationId).Execute()
+> []EnrichmentConnectorMeta ListEnrichmentTypes(ctx, organizationId).Execute()
 
 List enrichments
 
@@ -107,13 +107,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EnrichmentsAPI.V3OrganizationIdEnrichmentsMetaGet(context.Background(), organizationId).Execute()
+	resp, r, err := apiClient.EnrichmentsAPI.ListEnrichmentTypes(context.Background(), organizationId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `EnrichmentsAPI.V3OrganizationIdEnrichmentsMetaGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `EnrichmentsAPI.ListEnrichmentTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3OrganizationIdEnrichmentsMetaGet`: []EnrichmentConnectorMeta
-	fmt.Fprintf(os.Stdout, "Response from `EnrichmentsAPI.V3OrganizationIdEnrichmentsMetaGet`: %v\n", resp)
+	// response from `ListEnrichmentTypes`: []EnrichmentConnectorMeta
+	fmt.Fprintf(os.Stdout, "Response from `EnrichmentsAPI.ListEnrichmentTypes`: %v\n", resp)
 }
 ```
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV3OrganizationIdEnrichmentsMetaGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListEnrichmentTypesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

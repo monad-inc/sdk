@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v2QuotasGet**](QuotasApi.md#v2QuotasGet) | **GET** /v2/quotas | List quotas |
+| [**listQuotas**](QuotasApi.md#listQuotas) | **GET** /v2/quotas | List quotas |
 
 
-<a id="v2QuotasGet"></a>
-# **v2QuotasGet**
-> ModelsQuotaList v2QuotasGet(billingAccountId, organizationId, limit, offset, body)
+<a id="listQuotas"></a>
+# **listQuotas**
+> ModelsQuotaList listQuotas(billingAccountId, organizationId, limit, offset, body)
 
 List quotas
 
@@ -43,10 +43,10 @@ public class Example {
     Integer offset = 56; // Integer | Offset
     Object body = null; // Object | 
     try {
-      ModelsQuotaList result = apiInstance.v2QuotasGet(billingAccountId, organizationId, limit, offset, body);
+      ModelsQuotaList result = apiInstance.listQuotas(billingAccountId, organizationId, limit, offset, body);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling QuotasApi#v2QuotasGet");
+      System.err.println("Exception when calling QuotasApi#listQuotas");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

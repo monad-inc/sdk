@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2QuotasGet**](QuotasApi.md#v2QuotasGet) | **GET** /v2/quotas | List quotas
+[**listQuotas**](QuotasApi.md#listQuotas) | **GET** /v2/quotas | List quotas
 
 
-# **v2QuotasGet**
-> ModelsQuotaList v2QuotasGet()
+# **listQuotas**
+> ModelsQuotaList listQuotas()
 
 List quotas for a given billing account or organization id.
 
@@ -17,12 +17,12 @@ List quotas for a given billing account or organization id.
 
 ```typescript
 import { createConfiguration, QuotasApi } from '';
-import type { QuotasApiV2QuotasGetRequest } from '';
+import type { QuotasApiListQuotasRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new QuotasApi(configuration);
 
-const request: QuotasApiV2QuotasGetRequest = {
+const request: QuotasApiListQuotasRequest = {
     // Billing Account ID (optional)
   billingAccountId: "billing_account_id_example",
     // Organization ID (optional)
@@ -35,7 +35,7 @@ const request: QuotasApiV2QuotasGetRequest = {
   body: {},
 };
 
-const data = await apiInstance.v2QuotasGet(request);
+const data = await apiInstance.listQuotas(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

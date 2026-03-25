@@ -15,22 +15,30 @@ import {SecurityAuthentication} from '../auth/auth';
 export class OauthApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * Oauth callback
-     * Oauth callback
+     * Get oauth redirect
+     * Get oauth redirect
      * @param typeId component type ID
+     * @param organizationId organization ID
      */
-    public async v1OauthTypeIdCallbackGet(typeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getOAuthRedirect(typeId: string, organizationId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'typeId' is not null or undefined
         if (typeId === null || typeId === undefined) {
-            throw new RequiredError("OauthApi", "v1OauthTypeIdCallbackGet", "typeId");
+            throw new RequiredError("OauthApi", "getOAuthRedirect", "typeId");
+        }
+
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OauthApi", "getOAuthRedirect", "organizationId");
         }
 
 
         // Path Params
-        const localVarPath = '/v1/oauth/{type_id}/callback'
-            .replace('{' + 'type_id' + '}', encodeURIComponent(String(typeId)));
+        const localVarPath = '/v1/oauth/{type_id}/{organization_id}'
+            .replace('{' + 'type_id' + '}', encodeURIComponent(String(typeId)))
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -58,30 +66,22 @@ export class OauthApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Get oauth redirect
-     * Get oauth redirect
+     * Oauth callback
+     * Oauth callback
      * @param typeId component type ID
-     * @param organizationId organization ID
      */
-    public async v1OauthTypeIdOrganizationIdGet(typeId: string, organizationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async oAuthCallback(typeId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'typeId' is not null or undefined
         if (typeId === null || typeId === undefined) {
-            throw new RequiredError("OauthApi", "v1OauthTypeIdOrganizationIdGet", "typeId");
-        }
-
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OauthApi", "v1OauthTypeIdOrganizationIdGet", "organizationId");
+            throw new RequiredError("OauthApi", "oAuthCallback", "typeId");
         }
 
 
         // Path Params
-        const localVarPath = '/v1/oauth/{type_id}/{organization_id}'
-            .replace('{' + 'type_id' + '}', encodeURIComponent(String(typeId)))
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+        const localVarPath = '/v1/oauth/{type_id}/callback'
+            .replace('{' + 'type_id' + '}', encodeURIComponent(String(typeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -116,10 +116,10 @@ export class OauthApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OauthTypeIdCallbackGet
+     * @params response Response returned by the server for a request to getOAuthRedirect
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OauthTypeIdCallbackGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
+     public async getOAuthRedirectWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: any = ObjectSerializer.deserialize(
@@ -152,10 +152,10 @@ export class OauthApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OauthTypeIdOrganizationIdGet
+     * @params response Response returned by the server for a request to oAuthCallback
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OauthTypeIdOrganizationIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
+     public async oAuthCallbackWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: any = ObjectSerializer.deserialize(

@@ -4,75 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1InputsGet**](InputsAPI.md#V1InputsGet) | **Get** /v1/inputs | List inputs
-[**V1InputsInputTypeIdGet**](InputsAPI.md#V1InputsInputTypeIdGet) | **Get** /v1/inputs/{input_type_id} | Get input config meta
+[**GetInputTypeMeta**](InputsAPI.md#GetInputTypeMeta) | **Get** /v1/inputs/{input_type_id} | Get input config meta
+[**ListInputTypes**](InputsAPI.md#ListInputTypes) | **Get** /v1/inputs | List inputs
 
 
 
-## V1InputsGet
+## GetInputTypeMeta
 
-> []InputsConnectorMeta V1InputsGet(ctx).Execute()
-
-List inputs
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/monad-inc/sdk/go"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InputsAPI.V1InputsGet(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InputsAPI.V1InputsGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1InputsGet`: []InputsConnectorMeta
-	fmt.Fprintf(os.Stdout, "Response from `InputsAPI.V1InputsGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1InputsGetRequest struct via the builder pattern
-
-
-### Return type
-
-[**[]InputsConnectorMeta**](InputsConnectorMeta.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## V1InputsInputTypeIdGet
-
-> ModelsConnectorMeta V1InputsInputTypeIdGet(ctx, inputTypeId).Execute()
+> ModelsConnectorMeta GetInputTypeMeta(ctx, inputTypeId).Execute()
 
 Get input config meta
 
@@ -95,13 +34,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InputsAPI.V1InputsInputTypeIdGet(context.Background(), inputTypeId).Execute()
+	resp, r, err := apiClient.InputsAPI.GetInputTypeMeta(context.Background(), inputTypeId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InputsAPI.V1InputsInputTypeIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InputsAPI.GetInputTypeMeta``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1InputsInputTypeIdGet`: ModelsConnectorMeta
-	fmt.Fprintf(os.Stdout, "Response from `InputsAPI.V1InputsInputTypeIdGet`: %v\n", resp)
+	// response from `GetInputTypeMeta`: ModelsConnectorMeta
+	fmt.Fprintf(os.Stdout, "Response from `InputsAPI.GetInputTypeMeta`: %v\n", resp)
 }
 ```
 
@@ -115,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV1InputsInputTypeIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetInputTypeMetaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -125,6 +64,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsConnectorMeta**](ModelsConnectorMeta.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListInputTypes
+
+> []InputsConnectorMeta ListInputTypes(ctx).Execute()
+
+List inputs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InputsAPI.ListInputTypes(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InputsAPI.ListInputTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListInputTypes`: []InputsConnectorMeta
+	fmt.Fprintf(os.Stdout, "Response from `InputsAPI.ListInputTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListInputTypesRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]InputsConnectorMeta**](InputsConnectorMeta.md)
 
 ### Authorization
 

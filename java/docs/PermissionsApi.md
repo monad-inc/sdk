@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v2OrganizationIdRolesPermissionsGet**](PermissionsApi.md#v2OrganizationIdRolesPermissionsGet) | **GET** /v2/{organization_id}/roles/permissions | List permissions |
+| [**listPermissions**](PermissionsApi.md#listPermissions) | **GET** /v2/{organization_id}/roles/permissions | List permissions |
 
 
-<a id="v2OrganizationIdRolesPermissionsGet"></a>
-# **v2OrganizationIdRolesPermissionsGet**
-> ModelsPermissionList v2OrganizationIdRolesPermissionsGet(organizationId, limit, offset)
+<a id="listPermissions"></a>
+# **listPermissions**
+> ModelsPermissionList listPermissions(organizationId, limit, offset)
 
 List permissions
 
@@ -47,10 +47,10 @@ public class Example {
     Integer limit = 56; // Integer | Limit the number of permissions returned (default: 10)
     Integer offset = 56; // Integer | Offset the permissions returned (default: 0)
     try {
-      ModelsPermissionList result = apiInstance.v2OrganizationIdRolesPermissionsGet(organizationId, limit, offset);
+      ModelsPermissionList result = apiInstance.listPermissions(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PermissionsApi#v2OrganizationIdRolesPermissionsGet");
+      System.err.println("Exception when calling PermissionsApi#listPermissions");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

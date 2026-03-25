@@ -4,31 +4,24 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v1OrganizationsGet**](OrganizationsApi.md#v1OrganizationsGet) | **GET** /v1/organizations | List organizations for user |
-| [**v1OrganizationsOrganizationIdDelete**](OrganizationsApi.md#v1OrganizationsOrganizationIdDelete) | **DELETE** /v1/organizations/{organization_id} | Delete organization |
-| [**v1OrganizationsOrganizationIdPatch**](OrganizationsApi.md#v1OrganizationsOrganizationIdPatch) | **PATCH** /v1/organizations/{organization_id} | Update organization |
-| [**v1OrganizationsPost**](OrganizationsApi.md#v1OrganizationsPost) | **POST** /v1/organizations | Create organization |
-| [**v2OrganizationIdMetricsGet**](OrganizationsApi.md#v2OrganizationIdMetricsGet) | **GET** /v2/{organization_id}/metrics | Get organization metrics |
-| [**v2OrganizationIdMetricsStorageTypesDetailsGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesDetailsGet) | **GET** /v2/{organization_id}/metrics/storage-types/details | Get storage type output details |
-| [**v2OrganizationIdMetricsStorageTypesGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesGet) | **GET** /v2/{organization_id}/metrics/storage-types | Get storage type metrics |
-| [**v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/details | Get storage type output details by type |
-| [**v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type |
-| [**v2OrganizationIdMetricsStorageTypesSummaryGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary |
-| [**v2OrganizationIdStorageTypeCostGet**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostGet) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost |
-| [**v2OrganizationIdStorageTypeCostPut**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostPut) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost |
-| [**v3OrganizationIdOrganizationsChildOrganizationIdDelete**](OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdDelete) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization |
-| [**v3OrganizationIdOrganizationsChildOrganizationIdPatch**](OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdPatch) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization |
-| [**v3OrganizationIdOrganizationsGet**](OrganizationsApi.md#v3OrganizationIdOrganizationsGet) | **GET** /v3/{organization_id}/organizations | List child organizations |
-| [**v3OrganizationIdOrganizationsPost**](OrganizationsApi.md#v3OrganizationIdOrganizationsPost) | **POST** /v3/{organization_id}/organizations | Create child organization |
+| [**createChildOrganization**](OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create child organization |
+| [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /v1/organizations | Create organization |
+| [**deleteChildOrganization**](OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization |
+| [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /v1/organizations/{organization_id} | Delete organization |
+| [**getStorageTypeSummaryByType**](OrganizationsApi.md#getStorageTypeSummaryByType) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type |
+| [**listChildOrganizations**](OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List child organizations |
+| [**listUserOrganizations**](OrganizationsApi.md#listUserOrganizations) | **GET** /v1/organizations | List organizations for user |
+| [**updateChildOrganization**](OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization |
+| [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PATCH** /v1/organizations/{organization_id} | Update organization |
 
 
-<a id="v1OrganizationsGet"></a>
-# **v1OrganizationsGet**
-> ModelsOrganizationList v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, nameSearch)
+<a id="createChildOrganization"></a>
+# **createChildOrganization**
+> GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(organizationId, routesV3CreateChildOrganizationRequest)
 
-List organizations for user
+Create child organization
 
-List organizations for user
+Create a new child organization under the given parent organization
 
 ### Example
 ```java
@@ -58,16 +51,13 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
-    Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
-    Boolean noChildren = true; // Boolean | If true, only return organizations that are directly associated with the user, not child organizations (default: false)
-    String parentOrganizationId = "parentOrganizationId_example"; // String | If provided, only return organizations that are children of the specified parent organization
-    String nameSearch = "nameSearch_example"; // String | If provided, only return organizations with names that contain the search string
+    String organizationId = "organizationId_example"; // String | Parent Organization ID
+    RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest = new RoutesV3CreateChildOrganizationRequest(); // RoutesV3CreateChildOrganizationRequest | Request body
     try {
-      ModelsOrganizationList result = apiInstance.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, nameSearch);
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.createChildOrganization(organizationId, routesV3CreateChildOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v1OrganizationsGet");
+      System.err.println("Exception when calling OrganizationsApi#createChildOrganization");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -81,163 +71,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
-| **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
-| **noChildren** | **Boolean**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] |
-| **parentOrganizationId** | **String**| If provided, only return organizations that are children of the specified parent organization | [optional] |
-| **nameSearch** | **String**| If provided, only return organizations with names that contain the search string | [optional] |
-
-### Return type
-
-[**ModelsOrganizationList**](ModelsOrganizationList.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Response body for listing organizations |  -  |
-
-<a id="v1OrganizationsOrganizationIdDelete"></a>
-# **v1OrganizationsOrganizationIdDelete**
-> Object v1OrganizationsOrganizationIdDelete(organizationId)
-
-Delete organization
-
-Delete organization
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    try {
-      Object result = apiInstance.v1OrganizationsOrganizationIdDelete(organizationId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v1OrganizationsOrganizationIdDelete");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-<a id="v1OrganizationsOrganizationIdPatch"></a>
-# **v1OrganizationsOrganizationIdPatch**
-> GithubComMonadIncCorePkgTypesModelsOrganization v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest)
-
-Update organization
-
-Update organization
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest = new RoutesUpdateOrganizationRequest(); // RoutesUpdateOrganizationRequest | Request body for updating an organization
-    try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v1OrganizationsOrganizationIdPatch");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **routesUpdateOrganizationRequest** | [**RoutesUpdateOrganizationRequest**](RoutesUpdateOrganizationRequest.md)| Request body for updating an organization | |
+| **organizationId** | **String**| Parent Organization ID | |
+| **routesV3CreateChildOrganizationRequest** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | |
 
 ### Return type
 
@@ -255,11 +90,13 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Response body for updating an organization |  -  |
+| **200** | Created child organization |  -  |
+| **400** | Invalid request body |  -  |
+| **500** | Internal server error |  -  |
 
-<a id="v1OrganizationsPost"></a>
-# **v1OrganizationsPost**
-> GithubComMonadIncCorePkgTypesModelsOrganization v1OrganizationsPost(routesCreateOrganizationRequest)
+<a id="createOrganization"></a>
+# **createOrganization**
+> GithubComMonadIncCorePkgTypesModelsOrganization createOrganization(routesCreateOrganizationRequest)
 
 Create organization
 
@@ -295,10 +132,10 @@ public class Example {
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     RoutesCreateOrganizationRequest routesCreateOrganizationRequest = new RoutesCreateOrganizationRequest(); // RoutesCreateOrganizationRequest | Request body for creating an organization
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v1OrganizationsPost(routesCreateOrganizationRequest);
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.createOrganization(routesCreateOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v1OrganizationsPost");
+      System.err.println("Exception when calling OrganizationsApi#createOrganization");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -332,13 +169,91 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Response body for creating an organization |  -  |
 
-<a id="v2OrganizationIdMetricsGet"></a>
-# **v2OrganizationIdMetricsGet**
-> ModelsPipelineMetrics v2OrganizationIdMetricsGet(organizationId, metric, start, end, resolution)
+<a id="deleteChildOrganization"></a>
+# **deleteChildOrganization**
+> deleteChildOrganization(organizationId, childOrganizationId)
 
-Get organization metrics
+Delete child organization
 
-Get time series metrics for an organization
+Delete a child organization under the given parent organization
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Parent Organization ID
+    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
+    try {
+      apiInstance.deleteChildOrganization(organizationId, childOrganizationId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#deleteChildOrganization");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Parent Organization ID | |
+| **childOrganizationId** | **String**| Child Organization ID | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Child organization deleted successfully |  -  |
+| **404** | Child organization not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="deleteOrganization"></a>
+# **deleteOrganization**
+> Object deleteOrganization(organizationId)
+
+Delete organization
+
+Delete organization
 
 ### Example
 ```java
@@ -369,15 +284,11 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    String metric = "metric_example"; // String | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
-    String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
-    String end = "end_example"; // String | ISO3339 end time, default now
-    String resolution = "resolution_example"; // String | Resolution of the data, default determined by time window
     try {
-      ModelsPipelineMetrics result = apiInstance.v2OrganizationIdMetricsGet(organizationId, metric, start, end, resolution);
+      Object result = apiInstance.deleteOrganization(organizationId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdMetricsGet");
+      System.err.println("Exception when calling OrganizationsApi#deleteOrganization");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -392,14 +303,10 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **metric** | **String**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | |
-| **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
-| **end** | **String**| ISO3339 end time, default now | [optional] |
-| **resolution** | **String**| Resolution of the data, default determined by time window | [optional] |
 
 ### Return type
 
-[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+**Object**
 
 ### Authorization
 
@@ -413,278 +320,11 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Organization metrics |  -  |
-| **400** | Bad request |  -  |
-| **404** | Organization not found |  -  |
-| **500** | Internal server error |  -  |
+| **200** | OK |  -  |
 
-<a id="v2OrganizationIdMetricsStorageTypesDetailsGet"></a>
-# **v2OrganizationIdMetricsStorageTypesDetailsGet**
-> RoutesV2StorageTypeDetailsResponse v2OrganizationIdMetricsStorageTypesDetailsGet(organizationId, start, end, billingType, pipelineId)
-
-Get storage type output details
-
-Get detailed metrics for each individual output, including egress and associated input
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
-    String end = "end_example"; // String | ISO3339 end time, default now
-    String billingType = "billingType_example"; // String | Filter by billing type (billable|non_billable)
-    String pipelineId = "pipelineId_example"; // String | Filter to specific pipeline
-    try {
-      RoutesV2StorageTypeDetailsResponse result = apiInstance.v2OrganizationIdMetricsStorageTypesDetailsGet(organizationId, start, end, billingType, pipelineId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdMetricsStorageTypesDetailsGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
-| **end** | **String**| ISO3339 end time, default now | [optional] |
-| **billingType** | **String**| Filter by billing type (billable|non_billable) | [optional] |
-| **pipelineId** | **String**| Filter to specific pipeline | [optional] |
-
-### Return type
-
-[**RoutesV2StorageTypeDetailsResponse**](RoutesV2StorageTypeDetailsResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Storage type output details |  -  |
-| **400** | Bad request |  -  |
-| **404** | Organization not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v2OrganizationIdMetricsStorageTypesGet"></a>
-# **v2OrganizationIdMetricsStorageTypesGet**
-> ModelsStorageTypeTimeSeriesResponse v2OrganizationIdMetricsStorageTypesGet(organizationId, metric, start, end, resolution, billingType, pipelineId)
-
-Get storage type metrics
-
-Get time series metrics grouped by storage type for an organization
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    String metric = "metric_example"; // String | Metric to retrieve (egress_bytes|egress_records|errors)
-    String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
-    String end = "end_example"; // String | ISO3339 end time, default now
-    String resolution = "resolution_example"; // String | Resolution of the data, default determined by time window
-    String billingType = "billingType_example"; // String | Filter by billing type (billable|non_billable)
-    String pipelineId = "pipelineId_example"; // String | Filter to specific pipeline
-    try {
-      ModelsStorageTypeTimeSeriesResponse result = apiInstance.v2OrganizationIdMetricsStorageTypesGet(organizationId, metric, start, end, resolution, billingType, pipelineId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdMetricsStorageTypesGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **metric** | **String**| Metric to retrieve (egress_bytes|egress_records|errors) | |
-| **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
-| **end** | **String**| ISO3339 end time, default now | [optional] |
-| **resolution** | **String**| Resolution of the data, default determined by time window | [optional] |
-| **billingType** | **String**| Filter by billing type (billable|non_billable) | [optional] |
-| **pipelineId** | **String**| Filter to specific pipeline | [optional] |
-
-### Return type
-
-[**ModelsStorageTypeTimeSeriesResponse**](ModelsStorageTypeTimeSeriesResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Storage type metrics |  -  |
-| **400** | Bad request |  -  |
-| **404** | Organization not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet"></a>
-# **v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet**
-> RoutesV2StorageTypeDetailsResponse v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(organizationId, storageType, start, end, billingType, pipelineId)
-
-Get storage type output details by type
-
-Get detailed metrics for each individual output of a specific storage type
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    String storageType = "storageType_example"; // String | Storage type (e.g., s3, dev-null, bigquery)
-    String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
-    String end = "end_example"; // String | ISO3339 end time, default now
-    String billingType = "billingType_example"; // String | Filter by billing type (billable|non_billable)
-    String pipelineId = "pipelineId_example"; // String | Filter to specific pipeline
-    try {
-      RoutesV2StorageTypeDetailsResponse result = apiInstance.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(organizationId, storageType, start, end, billingType, pipelineId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **storageType** | **String**| Storage type (e.g., s3, dev-null, bigquery) | |
-| **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
-| **end** | **String**| ISO3339 end time, default now | [optional] |
-| **billingType** | **String**| Filter by billing type (billable|non_billable) | [optional] |
-| **pipelineId** | **String**| Filter to specific pipeline | [optional] |
-
-### Return type
-
-[**RoutesV2StorageTypeDetailsResponse**](RoutesV2StorageTypeDetailsResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Storage type output details |  -  |
-| **400** | Bad request |  -  |
-| **404** | Organization or storage type not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet"></a>
-# **v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet**
-> ModelsStorageTypeSummaryResponse v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(organizationId, storageType, start, end, billingType, pipelineId)
+<a id="getStorageTypeSummaryByType"></a>
+# **getStorageTypeSummaryByType**
+> ModelsStorageTypeSummaryResponse getStorageTypeSummaryByType(organizationId, storageType, start, end, billingType, pipelineId)
 
 Get storage type cost summary by type
 
@@ -725,10 +365,10 @@ public class Example {
     String billingType = "billingType_example"; // String | Filter by billing type (billable|non_billable)
     String pipelineId = "pipelineId_example"; // String | Filter to specific pipeline
     try {
-      ModelsStorageTypeSummaryResponse result = apiInstance.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(organizationId, storageType, start, end, billingType, pipelineId);
+      ModelsStorageTypeSummaryResponse result = apiInstance.getStorageTypeSummaryByType(organizationId, storageType, start, end, billingType, pipelineId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet");
+      System.err.println("Exception when calling OrganizationsApi#getStorageTypeSummaryByType");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -770,412 +410,9 @@ public class Example {
 | **404** | Organization or storage type not found |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v2OrganizationIdMetricsStorageTypesSummaryGet"></a>
-# **v2OrganizationIdMetricsStorageTypesSummaryGet**
-> ModelsStorageTypeSummaryResponse v2OrganizationIdMetricsStorageTypesSummaryGet(organizationId, start, end, billingType, pipelineId)
-
-Get storage type cost summary
-
-Get aggregated cost and usage summary by storage type
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
-    String end = "end_example"; // String | ISO3339 end time, default now
-    String billingType = "billingType_example"; // String | Filter by billing type (billable|non_billable)
-    String pipelineId = "pipelineId_example"; // String | Filter to specific pipeline
-    try {
-      ModelsStorageTypeSummaryResponse result = apiInstance.v2OrganizationIdMetricsStorageTypesSummaryGet(organizationId, start, end, billingType, pipelineId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdMetricsStorageTypesSummaryGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
-| **end** | **String**| ISO3339 end time, default now | [optional] |
-| **billingType** | **String**| Filter by billing type (billable|non_billable) | [optional] |
-| **pipelineId** | **String**| Filter to specific pipeline | [optional] |
-
-### Return type
-
-[**ModelsStorageTypeSummaryResponse**](ModelsStorageTypeSummaryResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Storage type cost summary |  -  |
-| **400** | Bad request |  -  |
-| **404** | Organization not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v2OrganizationIdStorageTypeCostGet"></a>
-# **v2OrganizationIdStorageTypeCostGet**
-> ModelsStorageTypeCostConfig v2OrganizationIdStorageTypeCostGet(organizationId)
-
-Get storage type cost
-
-Get per-organization cost configuration for storage types
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    try {
-      ModelsStorageTypeCostConfig result = apiInstance.v2OrganizationIdStorageTypeCostGet(organizationId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdStorageTypeCostGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-
-### Return type
-
-[**ModelsStorageTypeCostConfig**](ModelsStorageTypeCostConfig.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Storage type cost |  -  |
-| **404** | Organization not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v2OrganizationIdStorageTypeCostPut"></a>
-# **v2OrganizationIdStorageTypeCostPut**
-> ModelsStorageTypeCostConfig v2OrganizationIdStorageTypeCostPut(organizationId, routesV2SetStorageTypeCostRequest)
-
-Set storage type cost
-
-Update per-organization cost configuration for storage types
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest = new RoutesV2SetStorageTypeCostRequest(); // RoutesV2SetStorageTypeCostRequest | Cost configuration
-    try {
-      ModelsStorageTypeCostConfig result = apiInstance.v2OrganizationIdStorageTypeCostPut(organizationId, routesV2SetStorageTypeCostRequest);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v2OrganizationIdStorageTypeCostPut");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **routesV2SetStorageTypeCostRequest** | [**RoutesV2SetStorageTypeCostRequest**](RoutesV2SetStorageTypeCostRequest.md)| Cost configuration | |
-
-### Return type
-
-[**ModelsStorageTypeCostConfig**](ModelsStorageTypeCostConfig.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Updated storage type cost |  -  |
-| **400** | Bad request |  -  |
-| **404** | Organization not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v3OrganizationIdOrganizationsChildOrganizationIdDelete"></a>
-# **v3OrganizationIdOrganizationsChildOrganizationIdDelete**
-> v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId, childOrganizationId)
-
-Delete child organization
-
-Delete a child organization under the given parent organization
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Parent Organization ID
-    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
-    try {
-      apiInstance.v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId, childOrganizationId);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsChildOrganizationIdDelete");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Parent Organization ID | |
-| **childOrganizationId** | **String**| Child Organization ID | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **204** | Child organization deleted successfully |  -  |
-| **404** | Child organization not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v3OrganizationIdOrganizationsChildOrganizationIdPatch"></a>
-# **v3OrganizationIdOrganizationsChildOrganizationIdPatch**
-> GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest)
-
-Update child organization
-
-Update a child organization under the given parent organization
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Parent Organization ID
-    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
-    RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest = new RoutesV3UpdateChildOrganizationRequest(); // RoutesV3UpdateChildOrganizationRequest | Request body
-    try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsChildOrganizationIdPatch");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Parent Organization ID | |
-| **childOrganizationId** | **String**| Child Organization ID | |
-| **routesV3UpdateChildOrganizationRequest** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | |
-
-### Return type
-
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Updated child organization |  -  |
-| **400** | Invalid request body |  -  |
-| **404** | Child organization not found |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="v3OrganizationIdOrganizationsGet"></a>
-# **v3OrganizationIdOrganizationsGet**
-> ModelsUserOrganizationList v3OrganizationIdOrganizationsGet(organizationId, limit, offset, nameSearch)
+<a id="listChildOrganizations"></a>
+# **listChildOrganizations**
+> ModelsUserOrganizationList listChildOrganizations(organizationId, limit, offset, nameSearch)
 
 List child organizations
 
@@ -1214,10 +451,10 @@ public class Example {
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
     String nameSearch = "nameSearch_example"; // String | If provided, only return organizations with names that contain the search string
     try {
-      ModelsUserOrganizationList result = apiInstance.v3OrganizationIdOrganizationsGet(organizationId, limit, offset, nameSearch);
+      ModelsUserOrganizationList result = apiInstance.listChildOrganizations(organizationId, limit, offset, nameSearch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsGet");
+      System.err.println("Exception when calling OrganizationsApi#listChildOrganizations");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1255,13 +492,96 @@ public class Example {
 | **200** | List of child organizations |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3OrganizationIdOrganizationsPost"></a>
-# **v3OrganizationIdOrganizationsPost**
-> GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsPost(organizationId, routesV3CreateChildOrganizationRequest)
+<a id="listUserOrganizations"></a>
+# **listUserOrganizations**
+> ModelsOrganizationList listUserOrganizations(limit, offset, noChildren, parentOrganizationId, nameSearch)
 
-Create child organization
+List organizations for user
 
-Create a new child organization under the given parent organization
+List organizations for user
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
+    Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
+    Boolean noChildren = true; // Boolean | If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+    String parentOrganizationId = "parentOrganizationId_example"; // String | If provided, only return organizations that are children of the specified parent organization
+    String nameSearch = "nameSearch_example"; // String | If provided, only return organizations with names that contain the search string
+    try {
+      ModelsOrganizationList result = apiInstance.listUserOrganizations(limit, offset, noChildren, parentOrganizationId, nameSearch);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#listUserOrganizations");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
+| **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
+| **noChildren** | **Boolean**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] |
+| **parentOrganizationId** | **String**| If provided, only return organizations that are children of the specified parent organization | [optional] |
+| **nameSearch** | **String**| If provided, only return organizations with names that contain the search string | [optional] |
+
+### Return type
+
+[**ModelsOrganizationList**](ModelsOrganizationList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Response body for listing organizations |  -  |
+
+<a id="updateChildOrganization"></a>
+# **updateChildOrganization**
+> GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest)
+
+Update child organization
+
+Update a child organization under the given parent organization
 
 ### Example
 ```java
@@ -1292,12 +612,13 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Parent Organization ID
-    RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest = new RoutesV3CreateChildOrganizationRequest(); // RoutesV3CreateChildOrganizationRequest | Request body
+    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
+    RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest = new RoutesV3UpdateChildOrganizationRequest(); // RoutesV3UpdateChildOrganizationRequest | Request body
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v3OrganizationIdOrganizationsPost(organizationId, routesV3CreateChildOrganizationRequest);
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.updateChildOrganization(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsPost");
+      System.err.println("Exception when calling OrganizationsApi#updateChildOrganization");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1312,7 +633,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Parent Organization ID | |
-| **routesV3CreateChildOrganizationRequest** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | |
+| **childOrganizationId** | **String**| Child Organization ID | |
+| **routesV3UpdateChildOrganizationRequest** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | |
 
 ### Return type
 
@@ -1330,7 +652,85 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Created child organization |  -  |
+| **200** | Updated child organization |  -  |
 | **400** | Invalid request body |  -  |
+| **404** | Child organization not found |  -  |
 | **500** | Internal server error |  -  |
+
+<a id="updateOrganization"></a>
+# **updateOrganization**
+> GithubComMonadIncCorePkgTypesModelsOrganization updateOrganization(organizationId, routesUpdateOrganizationRequest)
+
+Update organization
+
+Update organization
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest = new RoutesUpdateOrganizationRequest(); // RoutesUpdateOrganizationRequest | Request body for updating an organization
+    try {
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.updateOrganization(organizationId, routesUpdateOrganizationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#updateOrganization");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **routesUpdateOrganizationRequest** | [**RoutesUpdateOrganizationRequest**](RoutesUpdateOrganizationRequest.md)| Request body for updating an organization | |
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Response body for updating an organization |  -  |
 

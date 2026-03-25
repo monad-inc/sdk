@@ -4,209 +4,23 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_organizations_get**](OrganizationsApi.md#v1_organizations_get) | **GET** /v1/organizations | List organizations for user
-[**v1_organizations_organization_id_delete**](OrganizationsApi.md#v1_organizations_organization_id_delete) | **DELETE** /v1/organizations/{organization_id} | Delete organization
-[**v1_organizations_organization_id_patch**](OrganizationsApi.md#v1_organizations_organization_id_patch) | **PATCH** /v1/organizations/{organization_id} | Update organization
-[**v1_organizations_post**](OrganizationsApi.md#v1_organizations_post) | **POST** /v1/organizations | Create organization
-[**v2_organization_id_metrics_get**](OrganizationsApi.md#v2_organization_id_metrics_get) | **GET** /v2/{organization_id}/metrics | Get organization metrics
-[**v2_organization_id_metrics_storage_types_details_get**](OrganizationsApi.md#v2_organization_id_metrics_storage_types_details_get) | **GET** /v2/{organization_id}/metrics/storage-types/details | Get storage type output details
-[**v2_organization_id_metrics_storage_types_get**](OrganizationsApi.md#v2_organization_id_metrics_storage_types_get) | **GET** /v2/{organization_id}/metrics/storage-types | Get storage type metrics
-[**v2_organization_id_metrics_storage_types_storage_type_details_get**](OrganizationsApi.md#v2_organization_id_metrics_storage_types_storage_type_details_get) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/details | Get storage type output details by type
-[**v2_organization_id_metrics_storage_types_storage_type_summary_get**](OrganizationsApi.md#v2_organization_id_metrics_storage_types_storage_type_summary_get) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
-[**v2_organization_id_metrics_storage_types_summary_get**](OrganizationsApi.md#v2_organization_id_metrics_storage_types_summary_get) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
-[**v2_organization_id_storage_type_cost_get**](OrganizationsApi.md#v2_organization_id_storage_type_cost_get) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
-[**v2_organization_id_storage_type_cost_put**](OrganizationsApi.md#v2_organization_id_storage_type_cost_put) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
-[**v3_organization_id_organizations_child_organization_id_delete**](OrganizationsApi.md#v3_organization_id_organizations_child_organization_id_delete) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
-[**v3_organization_id_organizations_child_organization_id_patch**](OrganizationsApi.md#v3_organization_id_organizations_child_organization_id_patch) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
-[**v3_organization_id_organizations_get**](OrganizationsApi.md#v3_organization_id_organizations_get) | **GET** /v3/{organization_id}/organizations | List child organizations
-[**v3_organization_id_organizations_post**](OrganizationsApi.md#v3_organization_id_organizations_post) | **POST** /v3/{organization_id}/organizations | Create child organization
+[**create_child_organization**](OrganizationsApi.md#create_child_organization) | **POST** /v3/{organization_id}/organizations | Create child organization
+[**create_organization**](OrganizationsApi.md#create_organization) | **POST** /v1/organizations | Create organization
+[**delete_child_organization**](OrganizationsApi.md#delete_child_organization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+[**delete_organization**](OrganizationsApi.md#delete_organization) | **DELETE** /v1/organizations/{organization_id} | Delete organization
+[**get_storage_type_summary_by_type**](OrganizationsApi.md#get_storage_type_summary_by_type) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
+[**list_child_organizations**](OrganizationsApi.md#list_child_organizations) | **GET** /v3/{organization_id}/organizations | List child organizations
+[**list_user_organizations**](OrganizationsApi.md#list_user_organizations) | **GET** /v1/organizations | List organizations for user
+[**update_child_organization**](OrganizationsApi.md#update_child_organization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
+[**update_organization**](OrganizationsApi.md#update_organization) | **PATCH** /v1/organizations/{organization_id} | Update organization
 
 
-# **v1_organizations_get**
-> ModelsOrganizationList v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id, name_search=name_search)
+# **create_child_organization**
+> GithubComMonadIncCorePkgTypesModelsOrganization create_child_organization(organization_id, routes_v3_create_child_organization_request)
 
-List organizations for user
+Create child organization
 
-List organizations for user
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.models_organization_list import ModelsOrganizationList
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
-    offset = 56 # int | Offset the organizations returned (default: 0) (optional)
-    no_children = True # bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
-    parent_organization_id = 'parent_organization_id_example' # str | If provided, only return organizations that are children of the specified parent organization (optional)
-    name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
-
-    try:
-        # List organizations for user
-        api_response = api_instance.v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id, name_search=name_search)
-        print("The response of OrganizationsApi->v1_organizations_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v1_organizations_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
- **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
- **no_children** | **bool**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] 
- **parent_organization_id** | **str**| If provided, only return organizations that are children of the specified parent organization | [optional] 
- **name_search** | **str**| If provided, only return organizations with names that contain the search string | [optional] 
-
-### Return type
-
-[**ModelsOrganizationList**](ModelsOrganizationList.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Response body for listing organizations |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_organizations_organization_id_delete**
-> object v1_organizations_organization_id_delete(organization_id)
-
-Delete organization
-
-Delete organization
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-
-    try:
-        # Delete organization
-        api_response = api_instance.v1_organizations_organization_id_delete(organization_id)
-        print("The response of OrganizationsApi->v1_organizations_organization_id_delete:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v1_organizations_organization_id_delete: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_organizations_organization_id_patch**
-> GithubComMonadIncCorePkgTypesModelsOrganization v1_organizations_organization_id_patch(organization_id, routes_update_organization_request)
-
-Update organization
-
-Update organization
+Create a new child organization under the given parent organization
 
 ### Example
 
@@ -216,7 +30,7 @@ Update organization
 ```python
 import monad
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
-from monad.models.routes_update_organization_request import RoutesUpdateOrganizationRequest
+from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -247,16 +61,16 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-    routes_update_organization_request = monad.RoutesUpdateOrganizationRequest() # RoutesUpdateOrganizationRequest | Request body for updating an organization
+    organization_id = 'organization_id_example' # str | Parent Organization ID
+    routes_v3_create_child_organization_request = monad.RoutesV3CreateChildOrganizationRequest() # RoutesV3CreateChildOrganizationRequest | Request body
 
     try:
-        # Update organization
-        api_response = api_instance.v1_organizations_organization_id_patch(organization_id, routes_update_organization_request)
-        print("The response of OrganizationsApi->v1_organizations_organization_id_patch:\n")
+        # Create child organization
+        api_response = api_instance.create_child_organization(organization_id, routes_v3_create_child_organization_request)
+        print("The response of OrganizationsApi->create_child_organization:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationsApi->v1_organizations_organization_id_patch: %s\n" % e)
+        print("Exception when calling OrganizationsApi->create_child_organization: %s\n" % e)
 ```
 
 
@@ -266,8 +80,8 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
- **routes_update_organization_request** | [**RoutesUpdateOrganizationRequest**](RoutesUpdateOrganizationRequest.md)| Request body for updating an organization | 
+ **organization_id** | **str**| Parent Organization ID | 
+ **routes_v3_create_child_organization_request** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | 
 
 ### Return type
 
@@ -286,12 +100,14 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Response body for updating an organization |  -  |
+**200** | Created child organization |  -  |
+**400** | Invalid request body |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_organizations_post**
-> GithubComMonadIncCorePkgTypesModelsOrganization v1_organizations_post(routes_create_organization_request)
+# **create_organization**
+> GithubComMonadIncCorePkgTypesModelsOrganization create_organization(routes_create_organization_request)
 
 Create organization
 
@@ -340,11 +156,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Create organization
-        api_response = api_instance.v1_organizations_post(routes_create_organization_request)
-        print("The response of OrganizationsApi->v1_organizations_post:\n")
+        api_response = api_instance.create_organization(routes_create_organization_request)
+        print("The response of OrganizationsApi->create_organization:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationsApi->v1_organizations_post: %s\n" % e)
+        print("Exception when calling OrganizationsApi->create_organization: %s\n" % e)
 ```
 
 
@@ -377,12 +193,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_organization_id_metrics_get**
-> ModelsPipelineMetrics v2_organization_id_metrics_get(organization_id, metric, start=start, end=end, resolution=resolution)
+# **delete_child_organization**
+> delete_child_organization(organization_id, child_organization_id)
 
-Get organization metrics
+Delete child organization
 
-Get time series metrics for an organization
+Delete a child organization under the given parent organization
 
 ### Example
 
@@ -391,7 +207,93 @@ Get time series metrics for an organization
 
 ```python
 import monad
-from monad.models.models_pipeline_metrics import ModelsPipelineMetrics
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Parent Organization ID
+    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
+
+    try:
+        # Delete child organization
+        api_instance.delete_child_organization(organization_id, child_organization_id)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->delete_child_organization: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Parent Organization ID | 
+ **child_organization_id** | **str**| Child Organization ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Child organization deleted successfully |  -  |
+**404** | Child organization not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_organization**
+> object delete_organization(organization_id)
+
+Delete organization
+
+Delete organization
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -423,18 +325,14 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    metric = 'metric_example' # str | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
-    start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
-    end = 'end_example' # str | ISO3339 end time, default now (optional)
-    resolution = 'resolution_example' # str | Resolution of the data, default determined by time window (optional)
 
     try:
-        # Get organization metrics
-        api_response = api_instance.v2_organization_id_metrics_get(organization_id, metric, start=start, end=end, resolution=resolution)
-        print("The response of OrganizationsApi->v2_organization_id_metrics_get:\n")
+        # Delete organization
+        api_response = api_instance.delete_organization(organization_id)
+        print("The response of OrganizationsApi->delete_organization:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_metrics_get: %s\n" % e)
+        print("Exception when calling OrganizationsApi->delete_organization: %s\n" % e)
 ```
 
 
@@ -445,14 +343,10 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **metric** | **str**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | 
- **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
- **end** | **str**| ISO3339 end time, default now | [optional] 
- **resolution** | **str**| Resolution of the data, default determined by time window | [optional] 
 
 ### Return type
 
-[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+**object**
 
 ### Authorization
 
@@ -467,312 +361,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Organization metrics |  -  |
-**400** | Bad request |  -  |
-**404** | Organization not found |  -  |
-**500** | Internal server error |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_organization_id_metrics_storage_types_details_get**
-> RoutesV2StorageTypeDetailsResponse v2_organization_id_metrics_storage_types_details_get(organization_id, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
-
-Get storage type output details
-
-Get detailed metrics for each individual output, including egress and associated input
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.routes_v2_storage_type_details_response import RoutesV2StorageTypeDetailsResponse
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-    start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
-    end = 'end_example' # str | ISO3339 end time, default now (optional)
-    billing_type = 'billing_type_example' # str | Filter by billing type (billable|non_billable) (optional)
-    pipeline_id = 'pipeline_id_example' # str | Filter to specific pipeline (optional)
-
-    try:
-        # Get storage type output details
-        api_response = api_instance.v2_organization_id_metrics_storage_types_details_get(organization_id, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
-        print("The response of OrganizationsApi->v2_organization_id_metrics_storage_types_details_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_metrics_storage_types_details_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
- **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
- **end** | **str**| ISO3339 end time, default now | [optional] 
- **billing_type** | **str**| Filter by billing type (billable|non_billable) | [optional] 
- **pipeline_id** | **str**| Filter to specific pipeline | [optional] 
-
-### Return type
-
-[**RoutesV2StorageTypeDetailsResponse**](RoutesV2StorageTypeDetailsResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Storage type output details |  -  |
-**400** | Bad request |  -  |
-**404** | Organization not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_organization_id_metrics_storage_types_get**
-> ModelsStorageTypeTimeSeriesResponse v2_organization_id_metrics_storage_types_get(organization_id, metric, start=start, end=end, resolution=resolution, billing_type=billing_type, pipeline_id=pipeline_id)
-
-Get storage type metrics
-
-Get time series metrics grouped by storage type for an organization
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.models_storage_type_time_series_response import ModelsStorageTypeTimeSeriesResponse
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-    metric = 'metric_example' # str | Metric to retrieve (egress_bytes|egress_records|errors)
-    start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
-    end = 'end_example' # str | ISO3339 end time, default now (optional)
-    resolution = 'resolution_example' # str | Resolution of the data, default determined by time window (optional)
-    billing_type = 'billing_type_example' # str | Filter by billing type (billable|non_billable) (optional)
-    pipeline_id = 'pipeline_id_example' # str | Filter to specific pipeline (optional)
-
-    try:
-        # Get storage type metrics
-        api_response = api_instance.v2_organization_id_metrics_storage_types_get(organization_id, metric, start=start, end=end, resolution=resolution, billing_type=billing_type, pipeline_id=pipeline_id)
-        print("The response of OrganizationsApi->v2_organization_id_metrics_storage_types_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_metrics_storage_types_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
- **metric** | **str**| Metric to retrieve (egress_bytes|egress_records|errors) | 
- **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
- **end** | **str**| ISO3339 end time, default now | [optional] 
- **resolution** | **str**| Resolution of the data, default determined by time window | [optional] 
- **billing_type** | **str**| Filter by billing type (billable|non_billable) | [optional] 
- **pipeline_id** | **str**| Filter to specific pipeline | [optional] 
-
-### Return type
-
-[**ModelsStorageTypeTimeSeriesResponse**](ModelsStorageTypeTimeSeriesResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Storage type metrics |  -  |
-**400** | Bad request |  -  |
-**404** | Organization not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_organization_id_metrics_storage_types_storage_type_details_get**
-> RoutesV2StorageTypeDetailsResponse v2_organization_id_metrics_storage_types_storage_type_details_get(organization_id, storage_type, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
-
-Get storage type output details by type
-
-Get detailed metrics for each individual output of a specific storage type
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.routes_v2_storage_type_details_response import RoutesV2StorageTypeDetailsResponse
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-    storage_type = 'storage_type_example' # str | Storage type (e.g., s3, dev-null, bigquery)
-    start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
-    end = 'end_example' # str | ISO3339 end time, default now (optional)
-    billing_type = 'billing_type_example' # str | Filter by billing type (billable|non_billable) (optional)
-    pipeline_id = 'pipeline_id_example' # str | Filter to specific pipeline (optional)
-
-    try:
-        # Get storage type output details by type
-        api_response = api_instance.v2_organization_id_metrics_storage_types_storage_type_details_get(organization_id, storage_type, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
-        print("The response of OrganizationsApi->v2_organization_id_metrics_storage_types_storage_type_details_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_metrics_storage_types_storage_type_details_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
- **storage_type** | **str**| Storage type (e.g., s3, dev-null, bigquery) | 
- **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
- **end** | **str**| ISO3339 end time, default now | [optional] 
- **billing_type** | **str**| Filter by billing type (billable|non_billable) | [optional] 
- **pipeline_id** | **str**| Filter to specific pipeline | [optional] 
-
-### Return type
-
-[**RoutesV2StorageTypeDetailsResponse**](RoutesV2StorageTypeDetailsResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Storage type output details |  -  |
-**400** | Bad request |  -  |
-**404** | Organization or storage type not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_organization_id_metrics_storage_types_storage_type_summary_get**
-> ModelsStorageTypeSummaryResponse v2_organization_id_metrics_storage_types_storage_type_summary_get(organization_id, storage_type, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
+# **get_storage_type_summary_by_type**
+> ModelsStorageTypeSummaryResponse get_storage_type_summary_by_type(organization_id, storage_type, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
 
 Get storage type cost summary by type
 
@@ -825,11 +419,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Get storage type cost summary by type
-        api_response = api_instance.v2_organization_id_metrics_storage_types_storage_type_summary_get(organization_id, storage_type, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
-        print("The response of OrganizationsApi->v2_organization_id_metrics_storage_types_storage_type_summary_get:\n")
+        api_response = api_instance.get_storage_type_summary_by_type(organization_id, storage_type, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
+        print("The response of OrganizationsApi->get_storage_type_summary_by_type:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_metrics_storage_types_storage_type_summary_get: %s\n" % e)
+        print("Exception when calling OrganizationsApi->get_storage_type_summary_by_type: %s\n" % e)
 ```
 
 
@@ -870,466 +464,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_organization_id_metrics_storage_types_summary_get**
-> ModelsStorageTypeSummaryResponse v2_organization_id_metrics_storage_types_summary_get(organization_id, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
-
-Get storage type cost summary
-
-Get aggregated cost and usage summary by storage type
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.models_storage_type_summary_response import ModelsStorageTypeSummaryResponse
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-    start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
-    end = 'end_example' # str | ISO3339 end time, default now (optional)
-    billing_type = 'billing_type_example' # str | Filter by billing type (billable|non_billable) (optional)
-    pipeline_id = 'pipeline_id_example' # str | Filter to specific pipeline (optional)
-
-    try:
-        # Get storage type cost summary
-        api_response = api_instance.v2_organization_id_metrics_storage_types_summary_get(organization_id, start=start, end=end, billing_type=billing_type, pipeline_id=pipeline_id)
-        print("The response of OrganizationsApi->v2_organization_id_metrics_storage_types_summary_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_metrics_storage_types_summary_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
- **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
- **end** | **str**| ISO3339 end time, default now | [optional] 
- **billing_type** | **str**| Filter by billing type (billable|non_billable) | [optional] 
- **pipeline_id** | **str**| Filter to specific pipeline | [optional] 
-
-### Return type
-
-[**ModelsStorageTypeSummaryResponse**](ModelsStorageTypeSummaryResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Storage type cost summary |  -  |
-**400** | Bad request |  -  |
-**404** | Organization not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_organization_id_storage_type_cost_get**
-> ModelsStorageTypeCostConfig v2_organization_id_storage_type_cost_get(organization_id)
-
-Get storage type cost
-
-Get per-organization cost configuration for storage types
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-
-    try:
-        # Get storage type cost
-        api_response = api_instance.v2_organization_id_storage_type_cost_get(organization_id)
-        print("The response of OrganizationsApi->v2_organization_id_storage_type_cost_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_storage_type_cost_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
-
-### Return type
-
-[**ModelsStorageTypeCostConfig**](ModelsStorageTypeCostConfig.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Storage type cost |  -  |
-**404** | Organization not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_organization_id_storage_type_cost_put**
-> ModelsStorageTypeCostConfig v2_organization_id_storage_type_cost_put(organization_id, routes_v2_set_storage_type_cost_request)
-
-Set storage type cost
-
-Update per-organization cost configuration for storage types
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig
-from monad.models.routes_v2_set_storage_type_cost_request import RoutesV2SetStorageTypeCostRequest
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_set_storage_type_cost_request = monad.RoutesV2SetStorageTypeCostRequest() # RoutesV2SetStorageTypeCostRequest | Cost configuration
-
-    try:
-        # Set storage type cost
-        api_response = api_instance.v2_organization_id_storage_type_cost_put(organization_id, routes_v2_set_storage_type_cost_request)
-        print("The response of OrganizationsApi->v2_organization_id_storage_type_cost_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v2_organization_id_storage_type_cost_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Organization ID | 
- **routes_v2_set_storage_type_cost_request** | [**RoutesV2SetStorageTypeCostRequest**](RoutesV2SetStorageTypeCostRequest.md)| Cost configuration | 
-
-### Return type
-
-[**ModelsStorageTypeCostConfig**](ModelsStorageTypeCostConfig.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Updated storage type cost |  -  |
-**400** | Bad request |  -  |
-**404** | Organization not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v3_organization_id_organizations_child_organization_id_delete**
-> v3_organization_id_organizations_child_organization_id_delete(organization_id, child_organization_id)
-
-Delete child organization
-
-Delete a child organization under the given parent organization
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Parent Organization ID
-    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
-
-    try:
-        # Delete child organization
-        api_instance.v3_organization_id_organizations_child_organization_id_delete(organization_id, child_organization_id)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_child_organization_id_delete: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Parent Organization ID | 
- **child_organization_id** | **str**| Child Organization ID | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Child organization deleted successfully |  -  |
-**404** | Child organization not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v3_organization_id_organizations_child_organization_id_patch**
-> GithubComMonadIncCorePkgTypesModelsOrganization v3_organization_id_organizations_child_organization_id_patch(organization_id, child_organization_id, routes_v3_update_child_organization_request)
-
-Update child organization
-
-Update a child organization under the given parent organization
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
-from monad.models.routes_v3_update_child_organization_request import RoutesV3UpdateChildOrganizationRequest
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Parent Organization ID
-    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
-    routes_v3_update_child_organization_request = monad.RoutesV3UpdateChildOrganizationRequest() # RoutesV3UpdateChildOrganizationRequest | Request body
-
-    try:
-        # Update child organization
-        api_response = api_instance.v3_organization_id_organizations_child_organization_id_patch(organization_id, child_organization_id, routes_v3_update_child_organization_request)
-        print("The response of OrganizationsApi->v3_organization_id_organizations_child_organization_id_patch:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_child_organization_id_patch: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization_id** | **str**| Parent Organization ID | 
- **child_organization_id** | **str**| Child Organization ID | 
- **routes_v3_update_child_organization_request** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | 
-
-### Return type
-
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Updated child organization |  -  |
-**400** | Invalid request body |  -  |
-**404** | Child organization not found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v3_organization_id_organizations_get**
-> ModelsUserOrganizationList v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset, name_search=name_search)
+# **list_child_organizations**
+> ModelsUserOrganizationList list_child_organizations(organization_id, limit=limit, offset=offset, name_search=name_search)
 
 List child organizations
 
@@ -1380,11 +516,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # List child organizations
-        api_response = api_instance.v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset, name_search=name_search)
-        print("The response of OrganizationsApi->v3_organization_id_organizations_get:\n")
+        api_response = api_instance.list_child_organizations(organization_id, limit=limit, offset=offset, name_search=name_search)
+        print("The response of OrganizationsApi->list_child_organizations:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_get: %s\n" % e)
+        print("Exception when calling OrganizationsApi->list_child_organizations: %s\n" % e)
 ```
 
 
@@ -1421,12 +557,106 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v3_organization_id_organizations_post**
-> GithubComMonadIncCorePkgTypesModelsOrganization v3_organization_id_organizations_post(organization_id, routes_v3_create_child_organization_request)
+# **list_user_organizations**
+> ModelsOrganizationList list_user_organizations(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id, name_search=name_search)
 
-Create child organization
+List organizations for user
 
-Create a new child organization under the given parent organization
+List organizations for user
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_organization_list import ModelsOrganizationList
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationsApi(api_client)
+    limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
+    offset = 56 # int | Offset the organizations returned (default: 0) (optional)
+    no_children = True # bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+    parent_organization_id = 'parent_organization_id_example' # str | If provided, only return organizations that are children of the specified parent organization (optional)
+    name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
+
+    try:
+        # List organizations for user
+        api_response = api_instance.list_user_organizations(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id, name_search=name_search)
+        print("The response of OrganizationsApi->list_user_organizations:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->list_user_organizations: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
+ **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
+ **no_children** | **bool**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] 
+ **parent_organization_id** | **str**| If provided, only return organizations that are children of the specified parent organization | [optional] 
+ **name_search** | **str**| If provided, only return organizations with names that contain the search string | [optional] 
+
+### Return type
+
+[**ModelsOrganizationList**](ModelsOrganizationList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Response body for listing organizations |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_child_organization**
+> GithubComMonadIncCorePkgTypesModelsOrganization update_child_organization(organization_id, child_organization_id, routes_v3_update_child_organization_request)
+
+Update child organization
+
+Update a child organization under the given parent organization
 
 ### Example
 
@@ -1436,7 +666,7 @@ Create a new child organization under the given parent organization
 ```python
 import monad
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
-from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest
+from monad.models.routes_v3_update_child_organization_request import RoutesV3UpdateChildOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -1468,15 +698,16 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
     organization_id = 'organization_id_example' # str | Parent Organization ID
-    routes_v3_create_child_organization_request = monad.RoutesV3CreateChildOrganizationRequest() # RoutesV3CreateChildOrganizationRequest | Request body
+    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
+    routes_v3_update_child_organization_request = monad.RoutesV3UpdateChildOrganizationRequest() # RoutesV3UpdateChildOrganizationRequest | Request body
 
     try:
-        # Create child organization
-        api_response = api_instance.v3_organization_id_organizations_post(organization_id, routes_v3_create_child_organization_request)
-        print("The response of OrganizationsApi->v3_organization_id_organizations_post:\n")
+        # Update child organization
+        api_response = api_instance.update_child_organization(organization_id, child_organization_id, routes_v3_update_child_organization_request)
+        print("The response of OrganizationsApi->update_child_organization:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_post: %s\n" % e)
+        print("Exception when calling OrganizationsApi->update_child_organization: %s\n" % e)
 ```
 
 
@@ -1487,7 +718,8 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Parent Organization ID | 
- **routes_v3_create_child_organization_request** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | 
+ **child_organization_id** | **str**| Child Organization ID | 
+ **routes_v3_update_child_organization_request** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | 
 
 ### Return type
 
@@ -1506,9 +738,99 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Created child organization |  -  |
+**200** | Updated child organization |  -  |
 **400** | Invalid request body |  -  |
+**404** | Child organization not found |  -  |
 **500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_organization**
+> GithubComMonadIncCorePkgTypesModelsOrganization update_organization(organization_id, routes_update_organization_request)
+
+Update organization
+
+Update organization
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.routes_update_organization_request import RoutesUpdateOrganizationRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    routes_update_organization_request = monad.RoutesUpdateOrganizationRequest() # RoutesUpdateOrganizationRequest | Request body for updating an organization
+
+    try:
+        # Update organization
+        api_response = api_instance.update_organization(organization_id, routes_update_organization_request)
+        print("The response of OrganizationsApi->update_organization:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->update_organization: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **routes_update_organization_request** | [**RoutesUpdateOrganizationRequest**](RoutesUpdateOrganizationRequest.md)| Request body for updating an organization | 
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Response body for updating an organization |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

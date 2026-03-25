@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v2ConditionsGet**](ConditionsApi.md#v2ConditionsGet) | **GET** /v2/conditions | List conditions |
+| [**listConditions**](ConditionsApi.md#listConditions) | **GET** /v2/conditions | List conditions |
 
 
-<a id="v2ConditionsGet"></a>
-# **v2ConditionsGet**
-> List&lt;LeafconditionsInfo&gt; v2ConditionsGet()
+<a id="listConditions"></a>
+# **listConditions**
+> List&lt;LeafconditionsInfo&gt; listConditions()
 
 List conditions
 
@@ -44,10 +44,10 @@ public class Example {
 
     ConditionsApi apiInstance = new ConditionsApi(defaultClient);
     try {
-      List<LeafconditionsInfo> result = apiInstance.v2ConditionsGet();
+      List<LeafconditionsInfo> result = apiInstance.listConditions();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ConditionsApi#v2ConditionsGet");
+      System.err.println("Exception when calling ConditionsApi#listConditions");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2ConditionsGet**](ConditionsApi.md#v2ConditionsGet) | **GET** /v2/conditions | List conditions
+[**listConditions**](ConditionsApi.md#listConditions) | **GET** /v2/conditions | List conditions
 
 
-# **v2ConditionsGet**
-> Array<LeafconditionsInfo> v2ConditionsGet()
+# **listConditions**
+> Array<LeafconditionsInfo> listConditions()
 
 List conditions
 
@@ -23,7 +23,7 @@ const apiInstance = new ConditionsApi(configuration);
 
 const request = {};
 
-const data = await apiInstance.v2ConditionsGet(request);
+const data = await apiInstance.listConditions(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

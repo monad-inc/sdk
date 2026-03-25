@@ -17,14 +17,22 @@ import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 export class OutputsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * List outputs
-     * List outputs
+     * Get output config meta
+     * Get output config meta
+     * @param outputTypeId Output type ID
      */
-    public async v1OutputsGet(_options?: Configuration): Promise<RequestContext> {
+    public async getOutputTypeMeta(outputTypeId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
+        // verify required parameter 'outputTypeId' is not null or undefined
+        if (outputTypeId === null || outputTypeId === undefined) {
+            throw new RequiredError("OutputsApi", "getOutputTypeMeta", "outputTypeId");
+        }
+
+
         // Path Params
-        const localVarPath = '/v1/outputs';
+        const localVarPath = '/v1/outputs/{output_type_id}'
+            .replace('{' + 'output_type_id' + '}', encodeURIComponent(String(outputTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -52,22 +60,14 @@ export class OutputsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Get output config meta
-     * Get output config meta
-     * @param outputTypeId Output type ID
+     * List outputs
+     * List outputs
      */
-    public async v1OutputsOutputTypeIdGet(outputTypeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async listOutputTypes(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'outputTypeId' is not null or undefined
-        if (outputTypeId === null || outputTypeId === undefined) {
-            throw new RequiredError("OutputsApi", "v1OutputsOutputTypeIdGet", "outputTypeId");
-        }
-
-
         // Path Params
-        const localVarPath = '/v1/outputs/{output_type_id}'
-            .replace('{' + 'output_type_id' + '}', encodeURIComponent(String(outputTypeId)));
+        const localVarPath = '/v1/outputs';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -102,39 +102,10 @@ export class OutputsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OutputsGet
+     * @params response Response returned by the server for a request to getOutputTypeMeta
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OutputsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<OutputsConnectorMeta> >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<OutputsConnectorMeta> = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<OutputsConnectorMeta>", ""
-            ) as Array<OutputsConnectorMeta>;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<OutputsConnectorMeta> = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<OutputsConnectorMeta>", ""
-            ) as Array<OutputsConnectorMeta>;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v1OutputsOutputTypeIdGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v1OutputsOutputTypeIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnectorMeta >> {
+     public async getOutputTypeMetaWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnectorMeta >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsConnectorMeta = ObjectSerializer.deserialize(
@@ -157,6 +128,35 @@ export class OutputsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsConnectorMeta", ""
             ) as ModelsConnectorMeta;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listOutputTypes
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async listOutputTypesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<OutputsConnectorMeta> >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: Array<OutputsConnectorMeta> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<OutputsConnectorMeta>", ""
+            ) as Array<OutputsConnectorMeta>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: Array<OutputsConnectorMeta> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<OutputsConnectorMeta>", ""
+            ) as Array<OutputsConnectorMeta>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

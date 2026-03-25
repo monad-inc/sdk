@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v3OrganizationIdAlertsGet**](AlertsApi.md#v3OrganizationIdAlertsGet) | **GET** /v3/{organization_id}/alerts | List alerts with pagination |
-| [**v3OrganizationIdAlertsStreamGet**](AlertsApi.md#v3OrganizationIdAlertsStreamGet) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time |
+| [**listAlerts**](AlertsApi.md#listAlerts) | **GET** /v3/{organization_id}/alerts | List alerts with pagination |
+| [**streamAlerts**](AlertsApi.md#streamAlerts) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time |
 
 
-<a id="v3OrganizationIdAlertsGet"></a>
-# **v3OrganizationIdAlertsGet**
-> RoutesV3AlertList v3OrganizationIdAlertsGet(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until)
+<a id="listAlerts"></a>
+# **listAlerts**
+> RoutesV3AlertList listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until)
 
 List alerts with pagination
 
@@ -47,10 +47,10 @@ public class Example {
     String since = "since_example"; // String | RFC3339 timestamp for start time
     String until = "until_example"; // String | RFC3339 timestamp for end time
     try {
-      RoutesV3AlertList result = apiInstance.v3OrganizationIdAlertsGet(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until);
+      RoutesV3AlertList result = apiInstance.listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertsApi#v3OrganizationIdAlertsGet");
+      System.err.println("Exception when calling AlertsApi#listAlerts");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -93,9 +93,9 @@ public class Example {
 | **400** | Invalid parameters |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3OrganizationIdAlertsStreamGet"></a>
-# **v3OrganizationIdAlertsStreamGet**
-> String v3OrganizationIdAlertsStreamGet(organizationId, since, last, ruleIds, severities, resourceIds, resourceType)
+<a id="streamAlerts"></a>
+# **streamAlerts**
+> String streamAlerts(organizationId, since, last, ruleIds, severities, resourceIds, resourceType)
 
 Stream alerts in real-time
 
@@ -131,10 +131,10 @@ public class Example {
     String resourceIds = "resourceIds_example"; // String | Comma-separated resource IDs
     String resourceType = "resourceType_example"; // String | Resource type filter
     try {
-      String result = apiInstance.v3OrganizationIdAlertsStreamGet(organizationId, since, last, ruleIds, severities, resourceIds, resourceType);
+      String result = apiInstance.streamAlerts(organizationId, since, last, ruleIds, severities, resourceIds, resourceType);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertsApi#v3OrganizationIdAlertsStreamGet");
+      System.err.println("Exception when calling AlertsApi#streamAlerts");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

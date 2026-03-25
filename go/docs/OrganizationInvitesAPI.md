@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1OrganizationIdInvitesPost**](OrganizationInvitesAPI.md#V1OrganizationIdInvitesPost) | **Post** /v1/{organization_id}/invites | Invite user to organization
+[**InviteUser**](OrganizationInvitesAPI.md#InviteUser) | **Post** /v1/{organization_id}/invites | Invite user to organization
 
 
 
-## V1OrganizationIdInvitesPost
+## InviteUser
 
-> string V1OrganizationIdInvitesPost(ctx, organizationId).RoutesInviteUserToOrganizationRequest(routesInviteUserToOrganizationRequest).Execute()
+> string InviteUser(ctx, organizationId).RoutesInviteUserToOrganizationRequest(routesInviteUserToOrganizationRequest).Execute()
 
 Invite user to organization
 
@@ -34,13 +34,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInvitesAPI.V1OrganizationIdInvitesPost(context.Background(), organizationId).RoutesInviteUserToOrganizationRequest(routesInviteUserToOrganizationRequest).Execute()
+	resp, r, err := apiClient.OrganizationInvitesAPI.InviteUser(context.Background(), organizationId).RoutesInviteUserToOrganizationRequest(routesInviteUserToOrganizationRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInvitesAPI.V1OrganizationIdInvitesPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInvitesAPI.InviteUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OrganizationIdInvitesPost`: string
-	fmt.Fprintf(os.Stdout, "Response from `OrganizationInvitesAPI.V1OrganizationIdInvitesPost`: %v\n", resp)
+	// response from `InviteUser`: string
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationInvitesAPI.InviteUser`: %v\n", resp)
 }
 ```
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV1OrganizationIdInvitesPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiInviteUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

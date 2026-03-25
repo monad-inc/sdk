@@ -4,98 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_transforms_get**](TransformsApi.md#v1_transforms_get) | **GET** /v1/transforms | List transforms
-[**v1_transforms_transform_type_id_get**](TransformsApi.md#v1_transforms_transform_type_id_get) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
+[**get_transform_type_meta**](TransformsApi.md#get_transform_type_meta) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
+[**list_transform_types**](TransformsApi.md#list_transform_types) | **GET** /v1/transforms | List transforms
 
 
-# **v1_transforms_get**
-> List[OperationInformation] v1_transforms_get(body=body)
-
-List transforms
-
-List transforms
-
-### Example
-
-* Api Key Authentication (ApiKeyAuth):
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.operation_information import OperationInformation
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.TransformsApi(api_client)
-    body = None # object |  (optional)
-
-    try:
-        # List transforms
-        api_response = api_instance.v1_transforms_get(body=body)
-        print("The response of TransformsApi->v1_transforms_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransformsApi->v1_transforms_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **object**|  | [optional] 
-
-### Return type
-
-[**List[OperationInformation]**](OperationInformation.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Operation information |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_transforms_transform_type_id_get**
-> object v1_transforms_transform_type_id_get(transform_type_id, body=body)
+# **get_transform_type_meta**
+> object get_transform_type_meta(transform_type_id, body=body)
 
 Get transform metadata
 
@@ -143,11 +57,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Get transform metadata
-        api_response = api_instance.v1_transforms_transform_type_id_get(transform_type_id, body=body)
-        print("The response of TransformsApi->v1_transforms_transform_type_id_get:\n")
+        api_response = api_instance.get_transform_type_meta(transform_type_id, body=body)
+        print("The response of TransformsApi->get_transform_type_meta:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransformsApi->v1_transforms_transform_type_id_get: %s\n" % e)
+        print("Exception when calling TransformsApi->get_transform_type_meta: %s\n" % e)
 ```
 
 
@@ -179,6 +93,92 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Transform metadata |  -  |
 **404** | Transform not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_transform_types**
+> List[OperationInformation] list_transform_types(body=body)
+
+List transforms
+
+List transforms
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.operation_information import OperationInformation
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.TransformsApi(api_client)
+    body = None # object |  (optional)
+
+    try:
+        # List transforms
+        api_response = api_instance.list_transform_types(body=body)
+        print("The response of TransformsApi->list_transform_types:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransformsApi->list_transform_types: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **object**|  | [optional] 
+
+### Return type
+
+[**List[OperationInformation]**](OperationInformation.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Operation information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

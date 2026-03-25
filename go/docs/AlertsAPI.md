@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V3OrganizationIdAlertsGet**](AlertsAPI.md#V3OrganizationIdAlertsGet) | **Get** /v3/{organization_id}/alerts | List alerts with pagination
-[**V3OrganizationIdAlertsStreamGet**](AlertsAPI.md#V3OrganizationIdAlertsStreamGet) | **Get** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
+[**ListAlerts**](AlertsAPI.md#ListAlerts) | **Get** /v3/{organization_id}/alerts | List alerts with pagination
+[**StreamAlerts**](AlertsAPI.md#StreamAlerts) | **Get** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
 
 
 
-## V3OrganizationIdAlertsGet
+## ListAlerts
 
-> RoutesV3AlertList V3OrganizationIdAlertsGet(ctx, organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceId(resourceId).Since(since).Until(until).Execute()
+> RoutesV3AlertList ListAlerts(ctx, organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceId(resourceId).Since(since).Until(until).Execute()
 
 List alerts with pagination
 
@@ -41,13 +41,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlertsAPI.V3OrganizationIdAlertsGet(context.Background(), organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceId(resourceId).Since(since).Until(until).Execute()
+	resp, r, err := apiClient.AlertsAPI.ListAlerts(context.Background(), organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceId(resourceId).Since(since).Until(until).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AlertsAPI.V3OrganizationIdAlertsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AlertsAPI.ListAlerts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3OrganizationIdAlertsGet`: RoutesV3AlertList
-	fmt.Fprintf(os.Stdout, "Response from `AlertsAPI.V3OrganizationIdAlertsGet`: %v\n", resp)
+	// response from `ListAlerts`: RoutesV3AlertList
+	fmt.Fprintf(os.Stdout, "Response from `AlertsAPI.ListAlerts`: %v\n", resp)
 }
 ```
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV3OrganizationIdAlertsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAlertsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -93,9 +93,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V3OrganizationIdAlertsStreamGet
+## StreamAlerts
 
-> string V3OrganizationIdAlertsStreamGet(ctx, organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
+> string StreamAlerts(ctx, organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
 
 Stream alerts in real-time
 
@@ -124,13 +124,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlertsAPI.V3OrganizationIdAlertsStreamGet(context.Background(), organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
+	resp, r, err := apiClient.AlertsAPI.StreamAlerts(context.Background(), organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AlertsAPI.V3OrganizationIdAlertsStreamGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AlertsAPI.StreamAlerts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3OrganizationIdAlertsStreamGet`: string
-	fmt.Fprintf(os.Stdout, "Response from `AlertsAPI.V3OrganizationIdAlertsStreamGet`: %v\n", resp)
+	// response from `StreamAlerts`: string
+	fmt.Fprintf(os.Stdout, "Response from `AlertsAPI.StreamAlerts`: %v\n", resp)
 }
 ```
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV3OrganizationIdAlertsStreamGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiStreamAlertsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

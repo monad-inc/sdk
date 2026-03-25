@@ -19,7 +19,7 @@ export class ConditionsApiRequestFactory extends BaseAPIRequestFactory {
      * List conditions
      * List conditions
      */
-    public async v2ConditionsGet(_options?: Configuration): Promise<RequestContext> {
+    public async listConditions(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // Path Params
@@ -58,10 +58,10 @@ export class ConditionsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2ConditionsGet
+     * @params response Response returned by the server for a request to listConditions
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2ConditionsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<LeafconditionsInfo> >> {
+     public async listConditionsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<LeafconditionsInfo> >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: Array<LeafconditionsInfo> = ObjectSerializer.deserialize(

@@ -16,16 +16,24 @@ import { OperationInformation } from '../models/OperationInformation';
 export class TransformsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * List transforms
-     * List transforms
+     * Get transform metadata
+     * Get transform metadata
+     * @param transformTypeId Transform type ID
      * @param body 
      */
-    public async v1TransformsGet(body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async getTransformTypeMeta(transformTypeId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'transformTypeId' is not null or undefined
+        if (transformTypeId === null || transformTypeId === undefined) {
+            throw new RequiredError("TransformsApi", "getTransformTypeMeta", "transformTypeId");
+        }
+
 
 
         // Path Params
-        const localVarPath = '/v1/transforms';
+        const localVarPath = '/v1/transforms/{transform_type_id}'
+            .replace('{' + 'transform_type_id' + '}', encodeURIComponent(String(transformTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -64,24 +72,16 @@ export class TransformsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Get transform metadata
-     * Get transform metadata
-     * @param transformTypeId Transform type ID
+     * List transforms
+     * List transforms
      * @param body 
      */
-    public async v1TransformsTransformTypeIdGet(transformTypeId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async listTransformTypes(body?: any, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'transformTypeId' is not null or undefined
-        if (transformTypeId === null || transformTypeId === undefined) {
-            throw new RequiredError("TransformsApi", "v1TransformsTransformTypeIdGet", "transformTypeId");
-        }
-
 
 
         // Path Params
-        const localVarPath = '/v1/transforms/{transform_type_id}'
-            .replace('{' + 'transform_type_id' + '}', encodeURIComponent(String(transformTypeId)));
+        const localVarPath = '/v1/transforms';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -127,39 +127,10 @@ export class TransformsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1TransformsGet
+     * @params response Response returned by the server for a request to getTransformTypeMeta
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1TransformsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<OperationInformation> >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<OperationInformation> = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<OperationInformation>", ""
-            ) as Array<OperationInformation>;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<OperationInformation> = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<OperationInformation>", ""
-            ) as Array<OperationInformation>;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v1TransformsTransformTypeIdGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v1TransformsTransformTypeIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
+     public async getTransformTypeMetaWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: any = ObjectSerializer.deserialize(
@@ -182,6 +153,35 @@ export class TransformsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "any", ""
             ) as any;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listTransformTypes
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async listTransformTypesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<OperationInformation> >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: Array<OperationInformation> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<OperationInformation>", ""
+            ) as Array<OperationInformation>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: Array<OperationInformation> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<OperationInformation>", ""
+            ) as Array<OperationInformation>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

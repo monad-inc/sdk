@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3_organization_id_alerts_get**](AlertsApi.md#v3_organization_id_alerts_get) | **GET** /v3/{organization_id}/alerts | List alerts with pagination
-[**v3_organization_id_alerts_stream_get**](AlertsApi.md#v3_organization_id_alerts_stream_get) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
+[**list_alerts**](AlertsApi.md#list_alerts) | **GET** /v3/{organization_id}/alerts | List alerts with pagination
+[**stream_alerts**](AlertsApi.md#stream_alerts) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
 
 
-# **v3_organization_id_alerts_get**
-> RoutesV3AlertList v3_organization_id_alerts_get(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_id=resource_id, since=since, until=until)
+# **list_alerts**
+> RoutesV3AlertList list_alerts(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_id=resource_id, since=since, until=until)
 
 List alerts with pagination
 
@@ -57,11 +57,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # List alerts with pagination
-        api_response = api_instance.v3_organization_id_alerts_get(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_id=resource_id, since=since, until=until)
-        print("The response of AlertsApi->v3_organization_id_alerts_get:\n")
+        api_response = api_instance.list_alerts(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_id=resource_id, since=since, until=until)
+        print("The response of AlertsApi->list_alerts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AlertsApi->v3_organization_id_alerts_get: %s\n" % e)
+        print("Exception when calling AlertsApi->list_alerts: %s\n" % e)
 ```
 
 
@@ -103,8 +103,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v3_organization_id_alerts_stream_get**
-> str v3_organization_id_alerts_stream_get(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, resource_ids=resource_ids, resource_type=resource_type)
+# **stream_alerts**
+> str stream_alerts(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, resource_ids=resource_ids, resource_type=resource_type)
 
 Stream alerts in real-time
 
@@ -150,11 +150,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Stream alerts in real-time
-        api_response = api_instance.v3_organization_id_alerts_stream_get(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, resource_ids=resource_ids, resource_type=resource_type)
-        print("The response of AlertsApi->v3_organization_id_alerts_stream_get:\n")
+        api_response = api_instance.stream_alerts(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, resource_ids=resource_ids, resource_type=resource_type)
+        print("The response of AlertsApi->stream_alerts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AlertsApi->v3_organization_id_alerts_stream_get: %s\n" % e)
+        print("Exception when calling AlertsApi->stream_alerts: %s\n" % e)
 ```
 
 

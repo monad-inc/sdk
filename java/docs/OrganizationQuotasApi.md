@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v2OrganizationIdQuotasGet**](OrganizationQuotasApi.md#v2OrganizationIdQuotasGet) | **GET** /v2/{organization_id}/quotas | Get Organization Quotas |
+| [**getQuotasByOrganizationID**](OrganizationQuotasApi.md#getQuotasByOrganizationID) | **GET** /v2/{organization_id}/quotas | Get Organization Quotas |
 
 
-<a id="v2OrganizationIdQuotasGet"></a>
-# **v2OrganizationIdQuotasGet**
-> ModelsQuotaList v2OrganizationIdQuotasGet(organizationId, limit, offset, body)
+<a id="getQuotasByOrganizationID"></a>
+# **getQuotasByOrganizationID**
+> ModelsQuotaList getQuotasByOrganizationID(organizationId, limit, offset, body)
 
 Get Organization Quotas
 
@@ -48,10 +48,10 @@ public class Example {
     Integer offset = 56; // Integer | Offset
     Object body = null; // Object | 
     try {
-      ModelsQuotaList result = apiInstance.v2OrganizationIdQuotasGet(organizationId, limit, offset, body);
+      ModelsQuotaList result = apiInstance.getQuotasByOrganizationID(organizationId, limit, offset, body);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationQuotasApi#v2OrganizationIdQuotasGet");
+      System.err.println("Exception when calling OrganizationQuotasApi#getQuotasByOrganizationID");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

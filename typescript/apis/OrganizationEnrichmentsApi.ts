@@ -24,23 +24,91 @@ import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichm
 export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
+     * Create a new enrichment with configuration including secrets handling
+     * Create enrichment
+     * @param organizationId Organization ID
+     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param testConnection Test connection before creating the enrichment
+     */
+    public async createEnrichment(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "createEnrichment", "organizationId");
+        }
+
+
+        // verify required parameter 'routesV3CreateEnrichmentRequest' is not null or undefined
+        if (routesV3CreateEnrichmentRequest === null || routesV3CreateEnrichmentRequest === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "createEnrichment", "routesV3CreateEnrichmentRequest");
+        }
+
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/enrichments'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV3CreateEnrichmentRequest, "RoutesV3CreateEnrichmentRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Delete an enrichment by ID
      * Delete enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
      */
-    public async v3OrganizationIdEnrichmentsEnrichmentIdDelete(organizationId: string, enrichmentId: string, _options?: Configuration): Promise<RequestContext> {
+    public async deleteEnrichment(organizationId: string, enrichmentId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdDelete", "organizationId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "deleteEnrichment", "organizationId");
         }
 
 
         // verify required parameter 'enrichmentId' is not null or undefined
         if (enrichmentId === null || enrichmentId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdDelete", "enrichmentId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "deleteEnrichment", "enrichmentId");
         }
 
 
@@ -80,18 +148,18 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
      */
-    public async v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId: string, enrichmentId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getEnrichment(organizationId: string, enrichmentId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdGet", "organizationId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "getEnrichment", "organizationId");
         }
 
 
         // verify required parameter 'enrichmentId' is not null or undefined
         if (enrichmentId === null || enrichmentId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdGet", "enrichmentId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "getEnrichment", "enrichmentId");
         }
 
 
@@ -126,60 +194,41 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
     }
 
     /**
-     * Update an existing enrichment with new configuration including secrets handling
-     * Update enrichment
+     * List all enrichments for an organization
+     * List enrichments
      * @param organizationId Organization ID
-     * @param enrichmentId Enrichment ID
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
-     * @param testConnection Test connection before updating the enrichment
+     * @param limit Number of results to return (default 100)
+     * @param offset Number of results to skip (default 0)
      */
-    public async v3OrganizationIdEnrichmentsEnrichmentIdPatch(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async listEnrichments(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdPatch", "organizationId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "listEnrichments", "organizationId");
         }
 
-
-        // verify required parameter 'enrichmentId' is not null or undefined
-        if (enrichmentId === null || enrichmentId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdPatch", "enrichmentId");
-        }
-
-
-        // verify required parameter 'routesV3UpdateEnrichmentRequest' is not null or undefined
-        if (routesV3UpdateEnrichmentRequest === null || routesV3UpdateEnrichmentRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdPatch", "routesV3UpdateEnrichmentRequest");
-        }
 
 
 
         // Path Params
-        const localVarPath = '/v3/{organization_id}/enrichments/{enrichment_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'enrichment_id' + '}', encodeURIComponent(String(enrichmentId)));
+        const localVarPath = '/v3/{organization_id}/enrichments'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
         // Query Params
-        if (testConnection !== undefined) {
-            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
         }
 
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
 
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3UpdateEnrichmentRequest, "RoutesV3UpdateEnrichmentRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -209,24 +258,24 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
      * @param routesV3PutEnrichmentRequest Enrichment configuration update
      * @param testConnection Test connection before updating the enrichment
      */
-    public async v3OrganizationIdEnrichmentsEnrichmentIdPut(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async replaceEnrichment(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdPut", "organizationId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "replaceEnrichment", "organizationId");
         }
 
 
         // verify required parameter 'enrichmentId' is not null or undefined
         if (enrichmentId === null || enrichmentId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdPut", "enrichmentId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "replaceEnrichment", "enrichmentId");
         }
 
 
         // verify required parameter 'routesV3PutEnrichmentRequest' is not null or undefined
         if (routesV3PutEnrichmentRequest === null || routesV3PutEnrichmentRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsEnrichmentIdPut", "routesV3PutEnrichmentRequest");
+            throw new RequiredError("OrganizationEnrichmentsApi", "replaceEnrichment", "routesV3PutEnrichmentRequest");
         }
 
 
@@ -278,148 +327,23 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
     }
 
     /**
-     * List all enrichments for an organization
-     * List enrichments
-     * @param organizationId Organization ID
-     * @param limit Number of results to return (default 100)
-     * @param offset Number of results to skip (default 0)
-     */
-    public async v3OrganizationIdEnrichmentsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsGet", "organizationId");
-        }
-
-
-
-
-        // Path Params
-        const localVarPath = '/v3/{organization_id}/enrichments'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (limit !== undefined) {
-            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
-        }
-
-        // Query Params
-        if (offset !== undefined) {
-            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Create a new enrichment with configuration including secrets handling
-     * Create enrichment
-     * @param organizationId Organization ID
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration
-     * @param testConnection Test connection before creating the enrichment
-     */
-    public async v3OrganizationIdEnrichmentsPost(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsPost", "organizationId");
-        }
-
-
-        // verify required parameter 'routesV3CreateEnrichmentRequest' is not null or undefined
-        if (routesV3CreateEnrichmentRequest === null || routesV3CreateEnrichmentRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsPost", "routesV3CreateEnrichmentRequest");
-        }
-
-
-
-        // Path Params
-        const localVarPath = '/v3/{organization_id}/enrichments'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (testConnection !== undefined) {
-            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
-        }
-
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3CreateEnrichmentRequest, "RoutesV3CreateEnrichmentRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Tests the connection for a given enrichment type and configuration
      * Test enrichment connection
      * @param organizationId Organization ID
      * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
      */
-    public async v3OrganizationIdEnrichmentsTestConnectionPost(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async testEnrichmentConnection(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsTestConnectionPost", "organizationId");
+            throw new RequiredError("OrganizationEnrichmentsApi", "testEnrichmentConnection", "organizationId");
         }
 
 
         // verify required parameter 'routesV3TestEnrichmentConnectionRequest' is not null or undefined
         if (routesV3TestEnrichmentConnectionRequest === null || routesV3TestEnrichmentConnectionRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "v3OrganizationIdEnrichmentsTestConnectionPost", "routesV3TestEnrichmentConnectionRequest");
+            throw new RequiredError("OrganizationEnrichmentsApi", "testEnrichmentConnection", "routesV3TestEnrichmentConnectionRequest");
         }
 
 
@@ -463,6 +387,82 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         return requestContext;
     }
 
+    /**
+     * Update an existing enrichment with new configuration including secrets handling
+     * Update enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param testConnection Test connection before updating the enrichment
+     */
+    public async updateEnrichment(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "updateEnrichment", "organizationId");
+        }
+
+
+        // verify required parameter 'enrichmentId' is not null or undefined
+        if (enrichmentId === null || enrichmentId === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "updateEnrichment", "enrichmentId");
+        }
+
+
+        // verify required parameter 'routesV3UpdateEnrichmentRequest' is not null or undefined
+        if (routesV3UpdateEnrichmentRequest === null || routesV3UpdateEnrichmentRequest === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "updateEnrichment", "routesV3UpdateEnrichmentRequest");
+        }
+
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/enrichments/{enrichment_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'enrichment_id' + '}', encodeURIComponent(String(enrichmentId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV3UpdateEnrichmentRequest, "RoutesV3UpdateEnrichmentRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
 }
 
 export class OrganizationEnrichmentsApiResponseProcessor {
@@ -471,10 +471,53 @@ export class OrganizationEnrichmentsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsEnrichmentIdDelete
+     * @params response Response returned by the server for a request to createEnrichment
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdEnrichmentsEnrichmentIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3SuccessResponse >> {
+     public async createEnrichmentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichment >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsEnrichment = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsEnrichment", ""
+            ) as ModelsEnrichment;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, enrichment type, configuration validation error, or secret processing error", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsEnrichment = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsEnrichment", ""
+            ) as ModelsEnrichment;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteEnrichment
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async deleteEnrichmentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3SuccessResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesV3SuccessResponse = ObjectSerializer.deserialize(
@@ -514,10 +557,10 @@ export class OrganizationEnrichmentsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsEnrichmentIdGet
+     * @params response Response returned by the server for a request to getEnrichment
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3GetEnrichmentResponse >> {
+     public async getEnrichmentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3GetEnrichmentResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesV3GetEnrichmentResponse = ObjectSerializer.deserialize(
@@ -557,110 +600,10 @@ export class OrganizationEnrichmentsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsEnrichmentIdPatch
+     * @params response Response returned by the server for a request to listEnrichments
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdEnrichmentsEnrichmentIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichment >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsEnrichment = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsEnrichment", ""
-            ) as ModelsEnrichment;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, enrichment type, configuration validation error, or secret processing error", body, response.headers);
-        }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Enrichment not found", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsEnrichment = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsEnrichment", ""
-            ) as ModelsEnrichment;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsEnrichmentIdPut
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichment >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsEnrichment = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsEnrichment", ""
-            ) as ModelsEnrichment;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, enrichment type, configuration validation error, or secret processing error", body, response.headers);
-        }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Enrichment not found", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsEnrichment = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsEnrichment", ""
-            ) as ModelsEnrichment;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v3OrganizationIdEnrichmentsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichmentList >> {
+     public async listEnrichmentsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichmentList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsEnrichmentList = ObjectSerializer.deserialize(
@@ -700,10 +643,10 @@ export class OrganizationEnrichmentsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsPost
+     * @params response Response returned by the server for a request to replaceEnrichment
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdEnrichmentsPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichment >> {
+     public async replaceEnrichmentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichment >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsEnrichment = ObjectSerializer.deserialize(
@@ -718,6 +661,13 @@ export class OrganizationEnrichmentsApiResponseProcessor {
                 "ResponderErrorResponse", ""
             ) as ResponderErrorResponse;
             throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, enrichment type, configuration validation error, or secret processing error", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Enrichment not found", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(
@@ -743,10 +693,10 @@ export class OrganizationEnrichmentsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsTestConnectionPost
+     * @params response Response returned by the server for a request to testEnrichmentConnection
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdEnrichmentsTestConnectionPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3SuccessResponse >> {
+     public async testEnrichmentConnectionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3SuccessResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesV3SuccessResponse = ObjectSerializer.deserialize(
@@ -776,6 +726,56 @@ export class OrganizationEnrichmentsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "RoutesV3SuccessResponse", ""
             ) as RoutesV3SuccessResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to updateEnrichment
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async updateEnrichmentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichment >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsEnrichment = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsEnrichment", ""
+            ) as ModelsEnrichment;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, enrichment type, configuration validation error, or secret processing error", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Enrichment not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsEnrichment = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsEnrichment", ""
+            ) as ModelsEnrichment;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

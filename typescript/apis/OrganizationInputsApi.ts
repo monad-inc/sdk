@@ -24,18 +24,188 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * List inputs
-     * List inputs
+     * Create a new input with configuration including secrets handling
+     * Create input
      * @param organizationId Organization ID
-     * @param limit Limit the number of organizations returned (default: DefaultLimit)
-     * @param offset Offset the organizations returned (default: 0)
+     * @param routesV2CreateInputRequest Input configuration
+     * @param testConnection Test connection before creating the input
      */
-    public async v1OrganizationIdInputsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async createInput(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v1OrganizationIdInputsGet", "organizationId");
+            throw new RequiredError("OrganizationInputsApi", "createInput", "organizationId");
+        }
+
+
+        // verify required parameter 'routesV2CreateInputRequest' is not null or undefined
+        if (routesV2CreateInputRequest === null || routesV2CreateInputRequest === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "createInput", "routesV2CreateInputRequest");
+        }
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/inputs'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV2CreateInputRequest, "RoutesV2CreateInputRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Delete input
+     * Delete input
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     */
+    public async deleteOrganizationInput(organizationId: string, inputId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "deleteOrganizationInput", "organizationId");
+        }
+
+
+        // verify required parameter 'inputId' is not null or undefined
+        if (inputId === null || inputId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "deleteOrganizationInput", "inputId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v1/{organization_id}/inputs/{input_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'input_id' + '}', encodeURIComponent(String(inputId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Get a configured input in organization
+     * Get organization input
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     */
+    public async getOrganizationInput(organizationId: string, inputId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "getOrganizationInput", "organizationId");
+        }
+
+
+        // verify required parameter 'inputId' is not null or undefined
+        if (inputId === null || inputId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "getOrganizationInput", "inputId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v1/{organization_id}/inputs/{input_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'input_id' + '}', encodeURIComponent(String(inputId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * List configured inputs in organization
+     * List organization inputs
+     * @param organizationId Organization ID
+     * @param limit Limit the number of organizations returned (default: DefaultLimit)
+     * @param offset Offset the organizations returned (default: 0)
+     */
+    public async listOrganizationInputs(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "listOrganizationInputs", "organizationId");
         }
 
 
@@ -81,184 +251,6 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Delete input
-     * Delete input
-     * @param organizationId Organization ID
-     * @param inputId Input ID
-     */
-    public async v1OrganizationIdInputsInputIdDelete(organizationId: string, inputId: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v1OrganizationIdInputsInputIdDelete", "organizationId");
-        }
-
-
-        // verify required parameter 'inputId' is not null or undefined
-        if (inputId === null || inputId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v1OrganizationIdInputsInputIdDelete", "inputId");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v1/{organization_id}/inputs/{input_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'input_id' + '}', encodeURIComponent(String(inputId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Get input
-     * Get input
-     * @param organizationId Organization ID
-     * @param inputId Input ID
-     */
-    public async v1OrganizationIdInputsInputIdGet(organizationId: string, inputId: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v1OrganizationIdInputsInputIdGet", "organizationId");
-        }
-
-
-        // verify required parameter 'inputId' is not null or undefined
-        if (inputId === null || inputId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v1OrganizationIdInputsInputIdGet", "inputId");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v1/{organization_id}/inputs/{input_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'input_id' + '}', encodeURIComponent(String(inputId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Update an existing input with new configuration including secrets handling
-     * Update input
-     * @param organizationId Organization ID
-     * @param inputId Input ID
-     * @param routesV2UpdateInputRequest Input configuration update
-     * @param testConnection Test connection before creating the input
-     */
-    public async v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsInputIdPatch", "organizationId");
-        }
-
-
-        // verify required parameter 'inputId' is not null or undefined
-        if (inputId === null || inputId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsInputIdPatch", "inputId");
-        }
-
-
-        // verify required parameter 'routesV2UpdateInputRequest' is not null or undefined
-        if (routesV2UpdateInputRequest === null || routesV2UpdateInputRequest === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsInputIdPatch", "routesV2UpdateInputRequest");
-        }
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/inputs/{input_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'input_id' + '}', encodeURIComponent(String(inputId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (testConnection !== undefined) {
-            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
-        }
-
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdateInputRequest, "RoutesV2UpdateInputRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Replace an existing input with new configuration including secrets handling
      * Replace input
      * @param organizationId Organization ID
@@ -266,24 +258,24 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * @param routesV2PutInputRequest Input configuration update
      * @param testConnection Test connection before creating the input
      */
-    public async v2OrganizationIdInputsInputIdPut(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async replaceInput(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsInputIdPut", "organizationId");
+            throw new RequiredError("OrganizationInputsApi", "replaceInput", "organizationId");
         }
 
 
         // verify required parameter 'inputId' is not null or undefined
         if (inputId === null || inputId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsInputIdPut", "inputId");
+            throw new RequiredError("OrganizationInputsApi", "replaceInput", "inputId");
         }
 
 
         // verify required parameter 'routesV2PutInputRequest' is not null or undefined
         if (routesV2PutInputRequest === null || routesV2PutInputRequest === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsInputIdPut", "routesV2PutInputRequest");
+            throw new RequiredError("OrganizationInputsApi", "replaceInput", "routesV2PutInputRequest");
         }
 
 
@@ -335,91 +327,23 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Create a new input with configuration including secrets handling
-     * Create input
-     * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
-     * @param testConnection Test connection before creating the input
-     */
-    public async v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsPost", "organizationId");
-        }
-
-
-        // verify required parameter 'routesV2CreateInputRequest' is not null or undefined
-        if (routesV2CreateInputRequest === null || routesV2CreateInputRequest === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsPost", "routesV2CreateInputRequest");
-        }
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/inputs'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (testConnection !== undefined) {
-            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
-        }
-
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateInputRequest, "RoutesV2CreateInputRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Tests the connection for a given input type and configuration
      * Test input connection
      * @param organizationId Organization ID
      * @param routesV2TestInputConnectionRequest Input configuration to test
      */
-    public async v2OrganizationIdInputsTestConnectionPost(organizationId: string, routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async testInputConnection(organizationId: string, routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsTestConnectionPost", "organizationId");
+            throw new RequiredError("OrganizationInputsApi", "testInputConnection", "organizationId");
         }
 
 
         // verify required parameter 'routesV2TestInputConnectionRequest' is not null or undefined
         if (routesV2TestInputConnectionRequest === null || routesV2TestInputConnectionRequest === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsTestConnectionPost", "routesV2TestInputConnectionRequest");
+            throw new RequiredError("OrganizationInputsApi", "testInputConnection", "routesV2TestInputConnectionRequest");
         }
 
 
@@ -463,6 +387,82 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         return requestContext;
     }
 
+    /**
+     * Update an existing input with new configuration including secrets handling
+     * Update input
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param routesV2UpdateInputRequest Input configuration update
+     * @param testConnection Test connection before creating the input
+     */
+    public async updateInput(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "updateInput", "organizationId");
+        }
+
+
+        // verify required parameter 'inputId' is not null or undefined
+        if (inputId === null || inputId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "updateInput", "inputId");
+        }
+
+
+        // verify required parameter 'routesV2UpdateInputRequest' is not null or undefined
+        if (routesV2UpdateInputRequest === null || routesV2UpdateInputRequest === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "updateInput", "routesV2UpdateInputRequest");
+        }
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/inputs/{input_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'input_id' + '}', encodeURIComponent(String(inputId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV2UpdateInputRequest, "RoutesV2UpdateInputRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
 }
 
 export class OrganizationInputsApiResponseProcessor {
@@ -471,25 +471,39 @@ export class OrganizationInputsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdInputsGet
+     * @params response Response returned by the server for a request to createInput
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdInputsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInputList >> {
+     public async createInputWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInput >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsInputList = ObjectSerializer.deserialize(
+            const body: ModelsInput = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInputList", ""
-            ) as ModelsInputList;
+                "ModelsInput", ""
+            ) as ModelsInput;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, input type, configuration validation error, or secret processing error", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsInputList = ObjectSerializer.deserialize(
+            const body: ModelsInput = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInputList", ""
-            ) as ModelsInputList;
+                "ModelsInput", ""
+            ) as ModelsInput;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -500,10 +514,10 @@ export class OrganizationInputsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdInputsInputIdDelete
+     * @params response Response returned by the server for a request to deleteOrganizationInput
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdInputsInputIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
+     public async deleteOrganizationInputWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: any = ObjectSerializer.deserialize(
@@ -536,10 +550,10 @@ export class OrganizationInputsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdInputsInputIdGet
+     * @params response Response returned by the server for a request to getOrganizationInput
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdInputsInputIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesGetInputResponse >> {
+     public async getOrganizationInputWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesGetInputResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesGetInputResponse = ObjectSerializer.deserialize(
@@ -565,10 +579,39 @@ export class OrganizationInputsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdInputsInputIdPatch
+     * @params response Response returned by the server for a request to listOrganizationInputs
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdInputsInputIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInput >> {
+     public async listOrganizationInputsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInputList >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsInputList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsInputList", ""
+            ) as ModelsInputList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsInputList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsInputList", ""
+            ) as ModelsInputList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceInput
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async replaceInputWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInput >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsInput = ObjectSerializer.deserialize(
@@ -615,103 +658,10 @@ export class OrganizationInputsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdInputsInputIdPut
+     * @params response Response returned by the server for a request to testInputConnection
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdInputsInputIdPutWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInput >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsInput = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInput", ""
-            ) as ModelsInput;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, input type, configuration validation error, or secret processing error", body, response.headers);
-        }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Input not found", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsInput = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInput", ""
-            ) as ModelsInput;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdInputsPost
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdInputsPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInput >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsInput = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInput", ""
-            ) as ModelsInput;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, input type, configuration validation error, or secret processing error", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ResponderErrorResponse", ""
-            ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsInput = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInput", ""
-            ) as ModelsInput;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdInputsTestConnectionPost
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdInputsTestConnectionPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2SuccessResponse >> {
+     public async testInputConnectionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2SuccessResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesV2SuccessResponse = ObjectSerializer.deserialize(
@@ -741,6 +691,56 @@ export class OrganizationInputsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "RoutesV2SuccessResponse", ""
             ) as RoutesV2SuccessResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to updateInput
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async updateInputWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInput >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsInput = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsInput", ""
+            ) as ModelsInput;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, input type, configuration validation error, or secret processing error", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Input not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsInput = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsInput", ""
+            ) as ModelsInput;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

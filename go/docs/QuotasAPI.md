@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V2QuotasGet**](QuotasAPI.md#V2QuotasGet) | **Get** /v2/quotas | List quotas
+[**ListQuotas**](QuotasAPI.md#ListQuotas) | **Get** /v2/quotas | List quotas
 
 
 
-## V2QuotasGet
+## ListQuotas
 
-> ModelsQuotaList V2QuotasGet(ctx).BillingAccountId(billingAccountId).OrganizationId(organizationId).Limit(limit).Offset(offset).Body(body).Execute()
+> ModelsQuotaList ListQuotas(ctx).BillingAccountId(billingAccountId).OrganizationId(organizationId).Limit(limit).Offset(offset).Body(body).Execute()
 
 List quotas
 
@@ -37,13 +37,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QuotasAPI.V2QuotasGet(context.Background()).BillingAccountId(billingAccountId).OrganizationId(organizationId).Limit(limit).Offset(offset).Body(body).Execute()
+	resp, r, err := apiClient.QuotasAPI.ListQuotas(context.Background()).BillingAccountId(billingAccountId).OrganizationId(organizationId).Limit(limit).Offset(offset).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `QuotasAPI.V2QuotasGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `QuotasAPI.ListQuotas``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2QuotasGet`: ModelsQuotaList
-	fmt.Fprintf(os.Stdout, "Response from `QuotasAPI.V2QuotasGet`: %v\n", resp)
+	// response from `ListQuotas`: ModelsQuotaList
+	fmt.Fprintf(os.Stdout, "Response from `QuotasAPI.ListQuotas`: %v\n", resp)
 }
 ```
 
@@ -53,7 +53,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2QuotasGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListQuotasRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3FeatureFlagsGet**](FeatureFlagsApi.md#v3FeatureFlagsGet) | **GET** /v3/feature_flags | Get feature flags
+[**getFeatureFlags**](FeatureFlagsApi.md#getFeatureFlags) | **GET** /v3/feature_flags | Get feature flags
 
 
-# **v3FeatureFlagsGet**
-> RoutesV3GetFeatureFlagResponse v3FeatureFlagsGet()
+# **getFeatureFlags**
+> RoutesV3GetFeatureFlagResponse getFeatureFlags()
 
 Get feature flags for the authenticated user
 
@@ -23,7 +23,7 @@ const apiInstance = new FeatureFlagsApi(configuration);
 
 const request = {};
 
-const data = await apiInstance.v3FeatureFlagsGet(request);
+const data = await apiInstance.getFeatureFlags(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

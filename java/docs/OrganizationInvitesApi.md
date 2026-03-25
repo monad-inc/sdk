@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v1OrganizationIdInvitesPost**](OrganizationInvitesApi.md#v1OrganizationIdInvitesPost) | **POST** /v1/{organization_id}/invites | Invite user to organization |
+| [**inviteUser**](OrganizationInvitesApi.md#inviteUser) | **POST** /v1/{organization_id}/invites | Invite user to organization |
 
 
-<a id="v1OrganizationIdInvitesPost"></a>
-# **v1OrganizationIdInvitesPost**
-> String v1OrganizationIdInvitesPost(organizationId, routesInviteUserToOrganizationRequest)
+<a id="inviteUser"></a>
+# **inviteUser**
+> String inviteUser(organizationId, routesInviteUserToOrganizationRequest)
 
 Invite user to organization
 
@@ -46,10 +46,10 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest = new RoutesInviteUserToOrganizationRequest(); // RoutesInviteUserToOrganizationRequest | Request body for inviting a user to an organization
     try {
-      String result = apiInstance.v1OrganizationIdInvitesPost(organizationId, routesInviteUserToOrganizationRequest);
+      String result = apiInstance.inviteUser(organizationId, routesInviteUserToOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationInvitesApi#v1OrganizationIdInvitesPost");
+      System.err.println("Exception when calling OrganizationInvitesApi#inviteUser");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

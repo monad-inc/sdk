@@ -27,12 +27,12 @@ export class AlertsApiRequestFactory extends BaseAPIRequestFactory {
      * @param since RFC3339 timestamp for start time
      * @param until RFC3339 timestamp for end time
      */
-    public async v3OrganizationIdAlertsGet(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: Configuration): Promise<RequestContext> {
+    public async listAlerts(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("AlertsApi", "v3OrganizationIdAlertsGet", "organizationId");
+            throw new RequiredError("AlertsApi", "listAlerts", "organizationId");
         }
 
 
@@ -113,12 +113,12 @@ export class AlertsApiRequestFactory extends BaseAPIRequestFactory {
      * @param resourceIds Comma-separated resource IDs
      * @param resourceType Resource type filter
      */
-    public async v3OrganizationIdAlertsStreamGet(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: Configuration): Promise<RequestContext> {
+    public async streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("AlertsApi", "v3OrganizationIdAlertsStreamGet", "organizationId");
+            throw new RequiredError("AlertsApi", "streamAlerts", "organizationId");
         }
 
 
@@ -190,10 +190,10 @@ export class AlertsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdAlertsGet
+     * @params response Response returned by the server for a request to listAlerts
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdAlertsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3AlertList >> {
+     public async listAlertsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3AlertList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: RoutesV3AlertList = ObjectSerializer.deserialize(
@@ -233,10 +233,10 @@ export class AlertsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdAlertsStreamGet
+     * @params response Response returned by the server for a request to streamAlerts
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdAlertsStreamGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+     public async streamAlertsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

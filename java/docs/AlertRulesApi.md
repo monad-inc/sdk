@@ -4,22 +4,22 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v3AlertRulesAlertRuleTypeIdGet**](AlertRulesApi.md#v3AlertRulesAlertRuleTypeIdGet) | **GET** /v3/alert_rules/{alert_rule_type_id} | Get alert rule type config metadata |
-| [**v3AlertRulesGet**](AlertRulesApi.md#v3AlertRulesGet) | **GET** /v3/alert_rules | List alert rule types |
-| [**v3OrganizationIdAlertRulesAlertRuleIdDelete**](AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdDelete) | **DELETE** /v3/{organization_id}/alert_rules/{alert_rule_id} | Delete alert rule |
-| [**v3OrganizationIdAlertRulesAlertRuleIdGet**](AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdGet) | **GET** /v3/{organization_id}/alert_rules/{alert_rule_id} | Get alert rule by ID |
-| [**v3OrganizationIdAlertRulesAlertRuleIdPut**](AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdPut) | **PUT** /v3/{organization_id}/alert_rules/{alert_rule_id} | Update alert rule |
-| [**v3OrganizationIdAlertRulesGet**](AlertRulesApi.md#v3OrganizationIdAlertRulesGet) | **GET** /v3/{organization_id}/alert_rules | Get all alert rules |
-| [**v3OrganizationIdAlertRulesPost**](AlertRulesApi.md#v3OrganizationIdAlertRulesPost) | **POST** /v3/{organization_id}/alert_rules | Create a new alert rule |
+| [**createAlertRule**](AlertRulesApi.md#createAlertRule) | **POST** /v3/{organization_id}/alert_rules | Create a new alert rule |
+| [**deleteAlertRule**](AlertRulesApi.md#deleteAlertRule) | **DELETE** /v3/{organization_id}/alert_rules/{alert_rule_id} | Delete alert rule |
+| [**getAlertRuleByID**](AlertRulesApi.md#getAlertRuleByID) | **GET** /v3/{organization_id}/alert_rules/{alert_rule_id} | Get alert rule by ID |
+| [**getAlertRuleConfigMeta**](AlertRulesApi.md#getAlertRuleConfigMeta) | **GET** /v3/alert_rules/{alert_rule_type_id} | Get alert rule type config metadata |
+| [**listAlertRuleTypes**](AlertRulesApi.md#listAlertRuleTypes) | **GET** /v3/alert_rules | List alert rule types |
+| [**listAlertRules**](AlertRulesApi.md#listAlertRules) | **GET** /v3/{organization_id}/alert_rules | Get all alert rules |
+| [**updateAlertRule**](AlertRulesApi.md#updateAlertRule) | **PUT** /v3/{organization_id}/alert_rules/{alert_rule_id} | Update alert rule |
 
 
-<a id="v3AlertRulesAlertRuleTypeIdGet"></a>
-# **v3AlertRulesAlertRuleTypeIdGet**
-> AlertsAlertMeta v3AlertRulesAlertRuleTypeIdGet(alertRuleTypeId)
+<a id="createAlertRule"></a>
+# **createAlertRule**
+> ModelsAlertRule createAlertRule(organizationId, routesV3CreateAlertRuleRequest)
 
-Get alert rule type config metadata
+Create a new alert rule
 
-Get configuration metadata for a specific alert rule type by its type ID
+Create a new alert rule with the provided details
 
 ### Example
 ```java
@@ -36,12 +36,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://monad.com/api");
     
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
     // Configure API key authorization: Bearer
     ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
     Bearer.setApiKey("YOUR API KEY");
@@ -49,12 +43,13 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
-    String alertRuleTypeId = "alertRuleTypeId_example"; // String | Alert Rule Type ID
+    String organizationId = "organizationId_example"; // String | Organization ID
+    RoutesV3CreateAlertRuleRequest routesV3CreateAlertRuleRequest = new RoutesV3CreateAlertRuleRequest(); // RoutesV3CreateAlertRuleRequest | Request body for creating an alert rule
     try {
-      AlertsAlertMeta result = apiInstance.v3AlertRulesAlertRuleTypeIdGet(alertRuleTypeId);
+      ModelsAlertRule result = apiInstance.createAlertRule(organizationId, routesV3CreateAlertRuleRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertRulesApi#v3AlertRulesAlertRuleTypeIdGet");
+      System.err.println("Exception when calling AlertRulesApi#createAlertRule");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -68,101 +63,32 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **alertRuleTypeId** | **String**| Alert Rule Type ID | |
+| **organizationId** | **String**| Organization ID | |
+| **routesV3CreateAlertRuleRequest** | [**RoutesV3CreateAlertRuleRequest**](RoutesV3CreateAlertRuleRequest.md)| Request body for creating an alert rule | |
 
 ### Return type
 
-[**AlertsAlertMeta**](AlertsAlertMeta.md)
+[**ModelsAlertRule**](ModelsAlertRule.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Alert rule type config metadata retrieved successfully |  -  |
-| **404** | Alert rule type not found |  -  |
+| **201** | Alert rule created successfully |  -  |
+| **400** | Invalid request body |  -  |
+| **500** | Internal server error |  -  |
 
-<a id="v3AlertRulesGet"></a>
-# **v3AlertRulesGet**
-> List&lt;AlertsAlertMeta&gt; v3AlertRulesGet()
-
-List alert rule types
-
-List all available alert rule types with their configuration metadata
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.AlertRulesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
-    try {
-      List<AlertsAlertMeta> result = apiInstance.v3AlertRulesGet();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AlertRulesApi#v3AlertRulesGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;AlertsAlertMeta&gt;**](AlertsAlertMeta.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Alert rule types retrieved successfully |  -  |
-
-<a id="v3OrganizationIdAlertRulesAlertRuleIdDelete"></a>
-# **v3OrganizationIdAlertRulesAlertRuleIdDelete**
-> v3OrganizationIdAlertRulesAlertRuleIdDelete(organizationId, alertRuleId)
+<a id="deleteAlertRule"></a>
+# **deleteAlertRule**
+> deleteAlertRule(organizationId, alertRuleId)
 
 Delete alert rule
 
@@ -193,9 +119,9 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to delete
     try {
-      apiInstance.v3OrganizationIdAlertRulesAlertRuleIdDelete(organizationId, alertRuleId);
+      apiInstance.deleteAlertRule(organizationId, alertRuleId);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertRulesApi#v3OrganizationIdAlertRulesAlertRuleIdDelete");
+      System.err.println("Exception when calling AlertRulesApi#deleteAlertRule");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -233,9 +159,9 @@ null (empty response body)
 | **404** | Alert rule not found |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3OrganizationIdAlertRulesAlertRuleIdGet"></a>
-# **v3OrganizationIdAlertRulesAlertRuleIdGet**
-> ModelsAlertRule v3OrganizationIdAlertRulesAlertRuleIdGet(organizationId, alertRuleId)
+<a id="getAlertRuleByID"></a>
+# **getAlertRuleByID**
+> ModelsAlertRule getAlertRuleByID(organizationId, alertRuleId)
 
 Get alert rule by ID
 
@@ -266,10 +192,10 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to retrieve
     try {
-      ModelsAlertRule result = apiInstance.v3OrganizationIdAlertRulesAlertRuleIdGet(organizationId, alertRuleId);
+      ModelsAlertRule result = apiInstance.getAlertRuleByID(organizationId, alertRuleId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertRulesApi#v3OrganizationIdAlertRulesAlertRuleIdGet");
+      System.err.println("Exception when calling AlertRulesApi#getAlertRuleByID");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -307,13 +233,13 @@ public class Example {
 | **404** | Alert rule not found |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3OrganizationIdAlertRulesAlertRuleIdPut"></a>
-# **v3OrganizationIdAlertRulesAlertRuleIdPut**
-> ModelsAlertRule v3OrganizationIdAlertRulesAlertRuleIdPut(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest)
+<a id="getAlertRuleConfigMeta"></a>
+# **getAlertRuleConfigMeta**
+> AlertsAlertMeta getAlertRuleConfigMeta(alertRuleTypeId)
 
-Update alert rule
+Get alert rule type config metadata
 
-Update an existing alert rule
+Get configuration metadata for a specific alert rule type by its type ID
 
 ### Example
 ```java
@@ -330,6 +256,12 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://monad.com/api");
     
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
     // Configure API key authorization: Bearer
     ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
     Bearer.setApiKey("YOUR API KEY");
@@ -337,14 +269,12 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to update
-    RoutesV3UpdateAlertRuleRequest routesV3UpdateAlertRuleRequest = new RoutesV3UpdateAlertRuleRequest(); // RoutesV3UpdateAlertRuleRequest | Request body for updating an alert rule
+    String alertRuleTypeId = "alertRuleTypeId_example"; // String | Alert Rule Type ID
     try {
-      ModelsAlertRule result = apiInstance.v3OrganizationIdAlertRulesAlertRuleIdPut(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest);
+      AlertsAlertMeta result = apiInstance.getAlertRuleConfigMeta(alertRuleTypeId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertRulesApi#v3OrganizationIdAlertRulesAlertRuleIdPut");
+      System.err.println("Exception when calling AlertRulesApi#getAlertRuleConfigMeta");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -358,33 +288,101 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **alertRuleId** | **String**| Alert Rule ID to update | |
-| **routesV3UpdateAlertRuleRequest** | [**RoutesV3UpdateAlertRuleRequest**](RoutesV3UpdateAlertRuleRequest.md)| Request body for updating an alert rule | |
+| **alertRuleTypeId** | **String**| Alert Rule Type ID | |
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**AlertsAlertMeta**](AlertsAlertMeta.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Alert rule updated successfully |  -  |
-| **400** | Invalid request body |  -  |
-| **500** | Internal server error |  -  |
+| **200** | Alert rule type config metadata retrieved successfully |  -  |
+| **404** | Alert rule type not found |  -  |
 
-<a id="v3OrganizationIdAlertRulesGet"></a>
-# **v3OrganizationIdAlertRulesGet**
-> ModelsAlertRuleList v3OrganizationIdAlertRulesGet(organizationId, limit, offset)
+<a id="listAlertRuleTypes"></a>
+# **listAlertRuleTypes**
+> List&lt;AlertsAlertMeta&gt; listAlertRuleTypes()
+
+List alert rule types
+
+List all available alert rule types with their configuration metadata
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.AlertRulesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
+    try {
+      List<AlertsAlertMeta> result = apiInstance.listAlertRuleTypes();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AlertRulesApi#listAlertRuleTypes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;AlertsAlertMeta&gt;**](AlertsAlertMeta.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Alert rule types retrieved successfully |  -  |
+
+<a id="listAlertRules"></a>
+# **listAlertRules**
+> ModelsAlertRuleList listAlertRules(organizationId, limit, offset)
 
 Get all alert rules
 
@@ -416,10 +414,10 @@ public class Example {
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
     try {
-      ModelsAlertRuleList result = apiInstance.v3OrganizationIdAlertRulesGet(organizationId, limit, offset);
+      ModelsAlertRuleList result = apiInstance.listAlertRules(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertRulesApi#v3OrganizationIdAlertRulesGet");
+      System.err.println("Exception when calling AlertRulesApi#listAlertRules");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -456,13 +454,13 @@ public class Example {
 | **200** | List of alert rules retrieved successfully |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3OrganizationIdAlertRulesPost"></a>
-# **v3OrganizationIdAlertRulesPost**
-> ModelsAlertRule v3OrganizationIdAlertRulesPost(organizationId, routesV3CreateAlertRuleRequest)
+<a id="updateAlertRule"></a>
+# **updateAlertRule**
+> ModelsAlertRule updateAlertRule(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest)
 
-Create a new alert rule
+Update alert rule
 
-Create a new alert rule with the provided details
+Update an existing alert rule
 
 ### Example
 ```java
@@ -487,12 +485,13 @@ public class Example {
 
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV3CreateAlertRuleRequest routesV3CreateAlertRuleRequest = new RoutesV3CreateAlertRuleRequest(); // RoutesV3CreateAlertRuleRequest | Request body for creating an alert rule
+    String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to update
+    RoutesV3UpdateAlertRuleRequest routesV3UpdateAlertRuleRequest = new RoutesV3UpdateAlertRuleRequest(); // RoutesV3UpdateAlertRuleRequest | Request body for updating an alert rule
     try {
-      ModelsAlertRule result = apiInstance.v3OrganizationIdAlertRulesPost(organizationId, routesV3CreateAlertRuleRequest);
+      ModelsAlertRule result = apiInstance.updateAlertRule(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertRulesApi#v3OrganizationIdAlertRulesPost");
+      System.err.println("Exception when calling AlertRulesApi#updateAlertRule");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -507,7 +506,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV3CreateAlertRuleRequest** | [**RoutesV3CreateAlertRuleRequest**](RoutesV3CreateAlertRuleRequest.md)| Request body for creating an alert rule | |
+| **alertRuleId** | **String**| Alert Rule ID to update | |
+| **routesV3UpdateAlertRuleRequest** | [**RoutesV3UpdateAlertRuleRequest**](RoutesV3UpdateAlertRuleRequest.md)| Request body for updating an alert rule | |
 
 ### Return type
 
@@ -525,7 +525,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Alert rule created successfully |  -  |
+| **200** | Alert rule updated successfully |  -  |
 | **400** | Invalid request body |  -  |
 | **500** | Internal server error |  -  |
 

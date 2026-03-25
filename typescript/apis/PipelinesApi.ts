@@ -28,40 +28,95 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * List pipelines
-     * List pipelines
+     * Create a new pipeline with specified configuration
+     * Create pipeline
      * @param organizationId Organization ID
-     * @param limit Limit
-     * @param offset Offset
+     * @param routesV2CreatePipelineRequest Request body for creating a pipeline
      */
-    public async v1OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async createPipeline(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesGet", "organizationId");
+            throw new RequiredError("PipelinesApi", "createPipeline", "organizationId");
         }
 
 
+        // verify required parameter 'routesV2CreatePipelineRequest' is not null or undefined
+        if (routesV2CreatePipelineRequest === null || routesV2CreatePipelineRequest === undefined) {
+            throw new RequiredError("PipelinesApi", "createPipeline", "routesV2CreatePipelineRequest");
+        }
 
 
         // Path Params
-        const localVarPath = '/v1/{organization_id}/pipelines'
+        const localVarPath = '/v2/{organization_id}/pipelines'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-        // Query Params
-        if (limit !== undefined) {
-            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV2CreatePipelineRequest, "RoutesV2CreatePipelineRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
         }
 
-        // Query Params
-        if (offset !== undefined) {
-            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        return requestContext;
+    }
+
+    /**
+     * Delete pipeline
+     * Delete pipeline
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public async deletePipeline(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "deletePipeline", "organizationId");
         }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "deletePipeline", "pipelineId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
         let authMethod: SecurityAuthentication | undefined;
@@ -90,18 +145,18 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public async v1OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
+    public async deletePipelineV1(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesPipelineIdDelete", "organizationId");
+            throw new RequiredError("PipelinesApi", "deletePipelineV1", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesPipelineIdDelete", "pipelineId");
+            throw new RequiredError("PipelinesApi", "deletePipelineV1", "pipelineId");
         }
 
 
@@ -136,23 +191,144 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * Get metrics for specific pipelines
+     * @param organizationId Organization ID
+     * @param pipelineIds Comma-separated list of pipeline IDs
+     * @param resolution Resolution for metrics (default: 5m)
+     */
+    public async getMetricsForPipelines(organizationId: string, pipelineIds: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "getMetricsForPipelines", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineIds' is not null or undefined
+        if (pipelineIds === null || pipelineIds === undefined) {
+            throw new RequiredError("PipelinesApi", "getMetricsForPipelines", "pipelineIds");
+        }
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/pipelines/metrics'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (pipelineIds !== undefined) {
+            requestContext.setQueryParam("pipeline_ids", ObjectSerializer.serialize(pipelineIds, "string", ""));
+        }
+
+        // Query Params
+        if (resolution !== undefined) {
+            requestContext.setQueryParam("resolution", ObjectSerializer.serialize(resolution, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Get status of all pipelines for an organization
+     * Get status of all pipelines for an organization
+     * @param organizationId Organization ID
+     * @param start ISO3339 start time, default 24 hours ago
+     * @param end ISO3339 end time, default now
+     */
+    public async getOrganizationSummary(organizationId: string, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "getOrganizationSummary", "organizationId");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/pipeline_summary'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (start !== undefined) {
+            requestContext.setQueryParam("start", ObjectSerializer.serialize(start, "string", ""));
+        }
+
+        // Query Params
+        if (end !== undefined) {
+            requestContext.setQueryParam("end", ObjectSerializer.serialize(end, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * @deprecated
+     *
      * Get pipeline
      * Get pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public async v1OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getPipeline(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesPipelineIdGet", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipeline", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesPipelineIdGet", "pipelineId");
+            throw new RequiredError("PipelinesApi", "getPipeline", "pipelineId");
         }
 
 
@@ -187,53 +363,112 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Update pipeline
-     * Update pipeline
+     * Retrieve a specific pipeline configuration by pipeline ID
+     * Get pipeline configuration
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline
+     * @param includeStatus Include the status of the pipeline nodes
      */
-    public async v1OrganizationIdPipelinesPipelineIdPatch(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
+    public async getPipelineConfig(organizationId: string, pipelineId: string, includeStatus?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesPipelineIdPatch", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipelineConfig", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesPipelineIdPatch", "pipelineId");
+            throw new RequiredError("PipelinesApi", "getPipelineConfig", "pipelineId");
         }
 
-
-        // verify required parameter 'routesUpdatePipelineRequest' is not null or undefined
-        if (routesUpdatePipelineRequest === null || routesUpdatePipelineRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "v1OrganizationIdPipelinesPipelineIdPatch", "routesUpdatePipelineRequest");
-        }
 
 
         // Path Params
-        const localVarPath = '/v1/{organization_id}/pipelines/{pipeline_id}'
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
             .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (includeStatus !== undefined) {
+            requestContext.setQueryParam("include_status", ObjectSerializer.serialize(includeStatus, "boolean", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Returns the conditional types for edge conditions
+     * Conditional types for edge conditions
+     */
+    public async getPipelineEdgeConditionOperatorTypes(_options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // Path Params
+        const localVarPath = '/v3/pipeline_edges/edge_condition_operator_types';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesUpdatePipelineRequest, "RoutesUpdatePipelineRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Returns the rules for edge conditions
+     * Rules for edge conditions
+     */
+    public async getPipelineEdgeConditionRules(_options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // Path Params
+        const localVarPath = '/v3/pipeline_edges/edge_condition_rules';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -265,24 +500,24 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param end ISO3339 end time, default now
      * @param resolution Resolution of the data, default determined by time window
      */
-    public async v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId: string, pipelineId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
+    public async getPipelineMetrics(organizationId: string, pipelineId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdGet", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipelineMetrics", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdGet", "pipelineId");
+            throw new RequiredError("PipelinesApi", "getPipelineMetrics", "pipelineId");
         }
 
 
         // verify required parameter 'metric' is not null or undefined
         if (metric === null || metric === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdGet", "metric");
+            throw new RequiredError("PipelinesApi", "getPipelineMetrics", "metric");
         }
 
 
@@ -350,30 +585,30 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param end ISO3339 end time, default now
      * @param resolution Resolution of the data, default determined by time window
      */
-    public async v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
+    public async getPipelineNodeMetrics(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetrics", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "pipelineId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetrics", "pipelineId");
         }
 
 
         // verify required parameter 'nodeId' is not null or undefined
         if (nodeId === null || nodeId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "nodeId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetrics", "nodeId");
         }
 
 
         // verify required parameter 'metric' is not null or undefined
         if (metric === null || metric === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "metric");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetrics", "metric");
         }
 
 
@@ -432,375 +667,6 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Get status of all pipelines for an organization
-     * Get status of all pipelines for an organization
-     * @param organizationId Organization ID
-     * @param start ISO3339 start time, default 24 hours ago
-     * @param end ISO3339 end time, default now
-     */
-    public async v2OrganizationIdPipelineSummaryGet(organizationId: string, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelineSummaryGet", "organizationId");
-        }
-
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipeline_summary'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (start !== undefined) {
-            requestContext.setQueryParam("start", ObjectSerializer.serialize(start, "string", ""));
-        }
-
-        // Query Params
-        if (end !== undefined) {
-            requestContext.setQueryParam("end", ObjectSerializer.serialize(end, "string", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * List pipelines
-     * List pipelines
-     * @param organizationId Organization ID
-     * @param limit Limit
-     * @param offset Offset
-     * @param includeStatus Include the status of the pipeline nodes
-     */
-    public async v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, includeStatus?: boolean, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesGet", "organizationId");
-        }
-
-
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (limit !== undefined) {
-            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
-        }
-
-        // Query Params
-        if (offset !== undefined) {
-            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
-        }
-
-        // Query Params
-        if (includeStatus !== undefined) {
-            requestContext.setQueryParam("include_status", ObjectSerializer.serialize(includeStatus, "boolean", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Get aggregated ingress and egress metrics for specific pipelines
-     * Get metrics for specific pipelines
-     * @param organizationId Organization ID
-     * @param pipelineIds Comma-separated list of pipeline IDs
-     * @param resolution Resolution for metrics (default: 5m)
-     */
-    public async v2OrganizationIdPipelinesMetricsGet(organizationId: string, pipelineIds: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesMetricsGet", "organizationId");
-        }
-
-
-        // verify required parameter 'pipelineIds' is not null or undefined
-        if (pipelineIds === null || pipelineIds === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesMetricsGet", "pipelineIds");
-        }
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines/metrics'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (pipelineIds !== undefined) {
-            requestContext.setQueryParam("pipeline_ids", ObjectSerializer.serialize(pipelineIds, "string", ""));
-        }
-
-        // Query Params
-        if (resolution !== undefined) {
-            requestContext.setQueryParam("resolution", ObjectSerializer.serialize(resolution, "string", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Delete pipeline
-     * Delete pipeline
-     * @param organizationId Organization ID
-     * @param pipelineId Pipeline ID
-     */
-    public async v2OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdDelete", "organizationId");
-        }
-
-
-        // verify required parameter 'pipelineId' is not null or undefined
-        if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdDelete", "pipelineId");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Enable or disable a pipeline edge
-     * Update pipeline edge
-     * @param organizationId Organization ID
-     * @param pipelineId Pipeline ID
-     * @param edgeId Edge ID
-     * @param routesV2PatchPipelineEdgeRequest Request body
-     */
-    public async v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch", "organizationId");
-        }
-
-
-        // verify required parameter 'pipelineId' is not null or undefined
-        if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch", "pipelineId");
-        }
-
-
-        // verify required parameter 'edgeId' is not null or undefined
-        if (edgeId === null || edgeId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch", "edgeId");
-        }
-
-
-        // verify required parameter 'routesV2PatchPipelineEdgeRequest' is not null or undefined
-        if (routesV2PatchPipelineEdgeRequest === null || routesV2PatchPipelineEdgeRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch", "routesV2PatchPipelineEdgeRequest");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
-            .replace('{' + 'edge_id' + '}', encodeURIComponent(String(edgeId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2PatchPipelineEdgeRequest, "RoutesV2PatchPipelineEdgeRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Retrieve a specific pipeline configuration by pipeline ID
-     * Get pipeline configuration
-     * @param organizationId Organization ID
-     * @param pipelineId Pipeline ID
-     * @param includeStatus Include the status of the pipeline nodes
-     */
-    public async v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, includeStatus?: boolean, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdGet", "organizationId");
-        }
-
-
-        // verify required parameter 'pipelineId' is not null or undefined
-        if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdGet", "pipelineId");
-        }
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (includeStatus !== undefined) {
-            requestContext.setQueryParam("include_status", ObjectSerializer.serialize(includeStatus, "boolean", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * @deprecated
      *
      * Get pipeline node metrics
@@ -813,30 +679,30 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param end ISO3339 end time, default now
      * @param resolution Resolution of the data, default determined by time window
      */
-    public async v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
+    public async getPipelineNodeMetricsV2(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetricsV2", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet", "pipelineId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetricsV2", "pipelineId");
         }
 
 
         // verify required parameter 'nodeId' is not null or undefined
         if (nodeId === null || nodeId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet", "nodeId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetricsV2", "nodeId");
         }
 
 
         // verify required parameter 'metric' is not null or undefined
         if (metric === null || metric === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet", "metric");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeMetricsV2", "metric");
         }
 
 
@@ -895,150 +761,6 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Update an existing pipeline with the specified configuration
-     * Update pipeline
-     * @param organizationId Organization ID
-     * @param pipelineId Pipeline ID
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
-     */
-    public async v2OrganizationIdPipelinesPipelineIdPatch(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdPatch", "organizationId");
-        }
-
-
-        // verify required parameter 'pipelineId' is not null or undefined
-        if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdPatch", "pipelineId");
-        }
-
-
-        // verify required parameter 'routesV2UpdatePipelineRequest' is not null or undefined
-        if (routesV2UpdatePipelineRequest === null || routesV2UpdatePipelineRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdPatch", "routesV2UpdatePipelineRequest");
-        }
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdatePipelineRequest, "RoutesV2UpdatePipelineRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
-     * Get pipeline status
-     * Get pipeline status
-     * @param organizationId Organization ID
-     * @param pipelineId Pipeline ID
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
-     * @param start ISO3339 start time, default 24 hours ago
-     * @param end ISO3339 end time, default now
-     */
-    public async v2OrganizationIdPipelinesPipelineIdStatusGet(organizationId: string, pipelineId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdStatusGet", "organizationId");
-        }
-
-
-        // verify required parameter 'pipelineId' is not null or undefined
-        if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdStatusGet", "pipelineId");
-        }
-
-
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/status'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (metrics !== undefined) {
-            const serializedParams = ObjectSerializer.serialize(metrics, "Array<string>", "");
-            for (const serializedParam of serializedParams) {
-                requestContext.appendQueryParam("metrics", serializedParam);
-            }
-        }
-
-        // Query Params
-        if (start !== undefined) {
-            requestContext.setQueryParam("start", ObjectSerializer.serialize(start, "string", ""));
-        }
-
-        // Query Params
-        if (end !== undefined) {
-            requestContext.setQueryParam("end", ObjectSerializer.serialize(end, "string", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Get pipeline node status
      * Get pipeline node status
      * @param organizationId Organization ID
@@ -1048,24 +770,24 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param start ISO3339 start time, default 24 hours ago
      * @param end ISO3339 end time, default now
      */
-    public async v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
+    public async getPipelineNodeStatus(organizationId: string, pipelineId: string, nodeId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeStatus", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet", "pipelineId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeStatus", "pipelineId");
         }
 
 
         // verify required parameter 'nodeId' is not null or undefined
         if (nodeId === null || nodeId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet", "nodeId");
+            throw new RequiredError("PipelinesApi", "getPipelineNodeStatus", "nodeId");
         }
 
 
@@ -1122,96 +844,59 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Manually trigger a cron-scheduled pipeline to run
-     * Trigger pipeline manually
+     * Get pipeline status
+     * Get pipeline status
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param start ISO3339 start time, default 24 hours ago
+     * @param end ISO3339 end time, default now
      */
-    public async v2OrganizationIdPipelinesPipelineIdTriggerPost(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getPipelineStatus(organizationId: string, pipelineId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdTriggerPost", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipelineStatus", "organizationId");
         }
 
 
         // verify required parameter 'pipelineId' is not null or undefined
         if (pipelineId === null || pipelineId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPipelineIdTriggerPost", "pipelineId");
+            throw new RequiredError("PipelinesApi", "getPipelineStatus", "pipelineId");
         }
 
 
+
+
+
         // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/trigger'
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/status'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
             .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
+        // Query Params
+        if (metrics !== undefined) {
+            const serializedParams = ObjectSerializer.serialize(metrics, "Array<string>", "");
+            for (const serializedParam of serializedParams) {
+                requestContext.appendQueryParam("metrics", serializedParam);
+            }
         }
 
-        return requestContext;
-    }
-
-    /**
-     * Create a new pipeline with specified configuration
-     * Create pipeline
-     * @param organizationId Organization ID
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline
-     */
-    public async v2OrganizationIdPipelinesPost(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPost", "organizationId");
+        // Query Params
+        if (start !== undefined) {
+            requestContext.setQueryParam("start", ObjectSerializer.serialize(start, "string", ""));
         }
 
-
-        // verify required parameter 'routesV2CreatePipelineRequest' is not null or undefined
-        if (routesV2CreatePipelineRequest === null || routesV2CreatePipelineRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesPost", "routesV2CreatePipelineRequest");
+        // Query Params
+        if (end !== undefined) {
+            requestContext.setQueryParam("end", ObjectSerializer.serialize(end, "string", ""));
         }
 
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/pipelines'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreatePipelineRequest, "RoutesV2CreatePipelineRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -1242,12 +927,12 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param start Start time (RFC3339 format) for status metrics (default: 24 hours ago)
      * @param end End time (RFC3339 format) for status metrics (default: now)
      */
-    public async v2OrganizationIdPipelinesStatusesGet(organizationId: string, limit?: number, offset?: number, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
+    public async getPipelinesStatuses(organizationId: string, limit?: number, offset?: number, start?: string, end?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("PipelinesApi", "v2OrganizationIdPipelinesStatusesGet", "organizationId");
+            throw new RequiredError("PipelinesApi", "getPipelinesStatuses", "organizationId");
         }
 
 
@@ -1305,17 +990,156 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Returns the conditional types for edge conditions
-     * Conditional types for edge conditions
+     * List pipelines
+     * List pipelines
+     * @param organizationId Organization ID
+     * @param limit Limit
+     * @param offset Offset
+     * @param includeStatus Include the status of the pipeline nodes
      */
-    public async v3PipelineEdgesEdgeConditionOperatorTypesGet(_options?: Configuration): Promise<RequestContext> {
+    public async listPipelines(organizationId: string, limit?: number, offset?: number, includeStatus?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "listPipelines", "organizationId");
+        }
+
+
+
+
+
         // Path Params
-        const localVarPath = '/v3/pipeline_edges/edge_condition_operator_types';
+        const localVarPath = '/v2/{organization_id}/pipelines'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+        }
+
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
+
+        // Query Params
+        if (includeStatus !== undefined) {
+            requestContext.setQueryParam("include_status", ObjectSerializer.serialize(includeStatus, "boolean", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * @deprecated
+     *
+     * List pipelines
+     * List pipelines
+     * @param organizationId Organization ID
+     * @param limit Limit
+     * @param offset Offset
+     */
+    public async listPipelinesV1(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "listPipelinesV1", "organizationId");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/v1/{organization_id}/pipelines'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+        }
+
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public async triggerPipeline(organizationId: string, pipelineId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "triggerPipeline", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "triggerPipeline", "pipelineId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/trigger'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
@@ -1340,19 +1164,201 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Returns the rules for edge conditions
-     * Rules for edge conditions
+     * Update an existing pipeline with the specified configuration
+     * Update pipeline
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
      */
-    public async v3PipelineEdgesEdgeConditionRulesGet(_options?: Configuration): Promise<RequestContext> {
+    public async updatePipeline(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipeline", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipeline", "pipelineId");
+        }
+
+
+        // verify required parameter 'routesV2UpdatePipelineRequest' is not null or undefined
+        if (routesV2UpdatePipelineRequest === null || routesV2UpdatePipelineRequest === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipeline", "routesV2UpdatePipelineRequest");
+        }
+
+
         // Path Params
-        const localVarPath = '/v3/pipeline_edges/edge_condition_rules';
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV2UpdatePipelineRequest, "RoutesV2UpdatePipelineRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     * @param routesV2PatchPipelineEdgeRequest Request body
+     */
+    public async updatePipelineEdge(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineEdge", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineEdge", "pipelineId");
+        }
+
+
+        // verify required parameter 'edgeId' is not null or undefined
+        if (edgeId === null || edgeId === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineEdge", "edgeId");
+        }
+
+
+        // verify required parameter 'routesV2PatchPipelineEdgeRequest' is not null or undefined
+        if (routesV2PatchPipelineEdgeRequest === null || routesV2PatchPipelineEdgeRequest === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineEdge", "routesV2PatchPipelineEdgeRequest");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
+            .replace('{' + 'edge_id' + '}', encodeURIComponent(String(edgeId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV2PatchPipelineEdgeRequest, "RoutesV2PatchPipelineEdgeRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * @deprecated
+     *
+     * Update pipeline
+     * Update pipeline
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param routesUpdatePipelineRequest Request body for updating a pipeline
+     */
+    public async updatePipelineV1(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineV1", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineV1", "pipelineId");
+        }
+
+
+        // verify required parameter 'routesUpdatePipelineRequest' is not null or undefined
+        if (routesUpdatePipelineRequest === null || routesUpdatePipelineRequest === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineV1", "routesUpdatePipelineRequest");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v1/{organization_id}/pipelines/{pipeline_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesUpdatePipelineRequest, "RoutesUpdatePipelineRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -1382,16 +1388,16 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdPipelinesGet
+     * @params response Response returned by the server for a request to createPipeline
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdPipelinesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineList >> {
+     public async createPipelineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineConfigV2 >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipelineList = ObjectSerializer.deserialize(
+        if (isCodeInRange("201", response.httpStatusCode)) {
+            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineList", ""
-            ) as ModelsPipelineList;
+                "ModelsPipelineConfigV2", ""
+            ) as ModelsPipelineConfigV2;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -1399,22 +1405,22 @@ export class PipelinesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid limit or offset", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body or Failed to create pipeline", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to list pipelines", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipelineList = ObjectSerializer.deserialize(
+            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineList", ""
-            ) as ModelsPipelineList;
+                "ModelsPipelineConfigV2", ""
+            ) as ModelsPipelineConfigV2;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1425,10 +1431,10 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdPipelinesPipelineIdDelete
+     * @params response Response returned by the server for a request to deletePipeline
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+     public async deletePipelineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
@@ -1461,10 +1467,125 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdPipelinesPipelineIdGet
+     * @params response Response returned by the server for a request to deletePipelineV1
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipeline >> {
+     public async deletePipelineV1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to delete pipeline", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getMetricsForPipelines
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getMetricsForPipelinesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2MetricsResponse >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: RoutesV2MetricsResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV2MetricsResponse", ""
+            ) as RoutesV2MetricsResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Bad request error", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: RoutesV2MetricsResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV2MetricsResponse", ""
+            ) as RoutesV2MetricsResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getOrganizationSummary
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getOrganizationSummaryWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: RoutesV2GetOrganizationSummaryResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV2GetOrganizationSummaryResponse", ""
+            ) as RoutesV2GetOrganizationSummaryResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipelines for organization", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: RoutesV2GetOrganizationSummaryResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV2GetOrganizationSummaryResponse", ""
+            ) as RoutesV2GetOrganizationSummaryResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getPipeline
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getPipelineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipeline >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsPipeline = ObjectSerializer.deserialize(
@@ -1497,39 +1618,32 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v1OrganizationIdPipelinesPipelineIdPatch
+     * @params response Response returned by the server for a request to getPipelineConfig
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipeline >> {
+     public async getPipelineConfigWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineConfigV2 >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipeline = ObjectSerializer.deserialize(
+            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipeline", ""
-            ) as ModelsPipeline;
+                "ModelsPipelineConfigV2", ""
+            ) as ModelsPipelineConfigV2;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to update pipeline", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipeline", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipeline = ObjectSerializer.deserialize(
+            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipeline", ""
-            ) as ModelsPipeline;
+                "ModelsPipelineConfigV2", ""
+            ) as ModelsPipelineConfigV2;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1540,10 +1654,68 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdMetricsPipelinesPipelineIdGet
+     * @params response Response returned by the server for a request to getPipelineEdgeConditionOperatorTypes
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
+     public async getPipelineEdgeConditionOperatorTypesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getPipelineEdgeConditionRules
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getPipelineEdgeConditionRulesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getPipelineMetrics
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getPipelineMetricsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
@@ -1590,10 +1762,10 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     * @params response Response returned by the server for a request to getPipelineNodeMetrics
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
+     public async getPipelineNodeMetricsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
@@ -1640,32 +1812,46 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelineSummaryGet
+     * @params response Response returned by the server for a request to getPipelineNodeMetricsV2
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdPipelineSummaryGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse >> {
+     public async getPipelineNodeMetricsV2WithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RoutesV2GetOrganizationSummaryResponse = ObjectSerializer.deserialize(
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RoutesV2GetOrganizationSummaryResponse", ""
-            ) as RoutesV2GetOrganizationSummaryResponse;
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Bad request", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Pipeline or node not found", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipelines for organization", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RoutesV2GetOrganizationSummaryResponse = ObjectSerializer.deserialize(
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RoutesV2GetOrganizationSummaryResponse", ""
-            ) as RoutesV2GetOrganizationSummaryResponse;
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1676,10 +1862,125 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesGet
+     * @params response Response returned by the server for a request to getPipelineNodeStatus
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdPipelinesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineList >> {
+     public async getPipelineNodeStatusWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineNodeStatus >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsPipelineNodeStatus = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineNodeStatus", ""
+            ) as ModelsPipelineNodeStatus;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipeline node status", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsPipelineNodeStatus = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineNodeStatus", ""
+            ) as ModelsPipelineNodeStatus;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getPipelineStatus
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getPipelineStatusWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineStatus >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsPipelineStatus = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineStatus", ""
+            ) as ModelsPipelineStatus;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipeline", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsPipelineStatus = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineStatus", ""
+            ) as ModelsPipelineStatus;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getPipelinesStatuses
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getPipelinesStatusesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus> >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: Array<RoutesV2PipelineWithStatus> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<RoutesV2PipelineWithStatus>", ""
+            ) as Array<RoutesV2PipelineWithStatus>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Invalid query parameters or time range", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to retrieve pipeline status", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: Array<RoutesV2PipelineWithStatus> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<RoutesV2PipelineWithStatus>", ""
+            ) as Array<RoutesV2PipelineWithStatus>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listPipelines
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async listPipelinesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsPipelineList = ObjectSerializer.deserialize(
@@ -1719,16 +2020,16 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesMetricsGet
+     * @params response Response returned by the server for a request to listPipelinesV1
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdPipelinesMetricsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2MetricsResponse >> {
+     public async listPipelinesV1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RoutesV2MetricsResponse = ObjectSerializer.deserialize(
+            const body: ModelsPipelineList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RoutesV2MetricsResponse", ""
-            ) as RoutesV2MetricsResponse;
+                "ModelsPipelineList", ""
+            ) as ModelsPipelineList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -1736,22 +2037,22 @@ export class PipelinesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Bad request error", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Invalid limit or offset", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Failed to list pipelines", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RoutesV2MetricsResponse = ObjectSerializer.deserialize(
+            const body: ModelsPipelineList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RoutesV2MetricsResponse", ""
-            ) as RoutesV2MetricsResponse;
+                "ModelsPipelineList", ""
+            ) as ModelsPipelineList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1762,293 +2063,10 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdDelete
+     * @params response Response returned by the server for a request to triggerPipeline
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to delete pipeline", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("204", response.httpStatusCode)) {
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
-        }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Edge not found in pipeline", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to update pipeline edge", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: void = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "void", ""
-            ) as void;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineConfigV2 >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineConfigV2", ""
-            ) as ModelsPipelineConfigV2;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipeline", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineConfigV2", ""
-            ) as ModelsPipelineConfigV2;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineMetrics", ""
-            ) as ModelsPipelineMetrics;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Bad request", body, response.headers);
-        }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Pipeline or node not found", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineMetrics", ""
-            ) as ModelsPipelineMetrics;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdPatch
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineConfigV2 >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineConfigV2", ""
-            ) as ModelsPipelineConfigV2;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to update pipeline", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineConfigV2", ""
-            ) as ModelsPipelineConfigV2;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdStatusGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineStatus >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipelineStatus = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineStatus", ""
-            ) as ModelsPipelineStatus;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipeline", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipelineStatus = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineStatus", ""
-            ) as ModelsPipelineStatus;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineNodeStatus >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipelineNodeStatus = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineNodeStatus", ""
-            ) as ModelsPipelineNodeStatus;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to get pipeline node status", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipelineNodeStatus = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineNodeStatus", ""
-            ) as ModelsPipelineNodeStatus;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdTriggerPost
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+     public async triggerPipelineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
@@ -2102,12 +2120,12 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPost
+     * @params response Response returned by the server for a request to updatePipeline
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdPipelinesPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineConfigV2 >> {
+     public async updatePipelineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineConfigV2 >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("201", response.httpStatusCode)) {
+        if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsPipelineConfigV2 = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsPipelineConfigV2", ""
@@ -2119,14 +2137,14 @@ export class PipelinesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body or Failed to create pipeline", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Failed to update pipeline", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
@@ -2145,16 +2163,62 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdPipelinesStatusesGet
+     * @params response Response returned by the server for a request to updatePipelineEdge
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdPipelinesStatusesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus> >> {
+     public async updatePipelineEdgeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("204", response.httpStatusCode)) {
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Edge not found in pipeline", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to update pipeline edge", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: void = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "void", ""
+            ) as void;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to updatePipelineV1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async updatePipelineV1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipeline >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<RoutesV2PipelineWithStatus> = ObjectSerializer.deserialize(
+            const body: ModelsPipeline = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<RoutesV2PipelineWithStatus>", ""
-            ) as Array<RoutesV2PipelineWithStatus>;
+                "ModelsPipeline", ""
+            ) as ModelsPipeline;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -2162,80 +2226,22 @@ export class PipelinesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid query parameters or time range", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to retrieve pipeline status", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Failed to update pipeline", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<RoutesV2PipelineWithStatus> = ObjectSerializer.deserialize(
+            const body: ModelsPipeline = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<RoutesV2PipelineWithStatus>", ""
-            ) as Array<RoutesV2PipelineWithStatus>;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v3PipelineEdgesEdgeConditionOperatorTypesGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v3PipelineEdgesEdgeConditionRulesGet
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
+                "ModelsPipeline", ""
+            ) as ModelsPipeline;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

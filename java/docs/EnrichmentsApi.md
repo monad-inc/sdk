@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta |
-| [**v3OrganizationIdEnrichmentsMetaGet**](EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaGet) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments |
+| [**getEnrichmentTypeMeta**](EnrichmentsApi.md#getEnrichmentTypeMeta) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta |
+| [**listEnrichmentTypes**](EnrichmentsApi.md#listEnrichmentTypes) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments |
 
 
-<a id="v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet"></a>
-# **v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**
-> EnrichmentConnectorMeta v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(organizationId, enrichmentTypeId)
+<a id="getEnrichmentTypeMeta"></a>
+# **getEnrichmentTypeMeta**
+> EnrichmentConnectorMeta getEnrichmentTypeMeta(organizationId, enrichmentTypeId)
 
 Get enrichment config meta
 
@@ -47,10 +47,10 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String enrichmentTypeId = "enrichmentTypeId_example"; // String | Enrichment type ID
     try {
-      EnrichmentConnectorMeta result = apiInstance.v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(organizationId, enrichmentTypeId);
+      EnrichmentConnectorMeta result = apiInstance.getEnrichmentTypeMeta(organizationId, enrichmentTypeId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling EnrichmentsApi#v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet");
+      System.err.println("Exception when calling EnrichmentsApi#getEnrichmentTypeMeta");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -86,9 +86,9 @@ public class Example {
 | **200** | Enrichment config meta retrieved successfully |  -  |
 | **404** | Enrichment type not found |  -  |
 
-<a id="v3OrganizationIdEnrichmentsMetaGet"></a>
-# **v3OrganizationIdEnrichmentsMetaGet**
-> List&lt;EnrichmentConnectorMeta&gt; v3OrganizationIdEnrichmentsMetaGet(organizationId)
+<a id="listEnrichmentTypes"></a>
+# **listEnrichmentTypes**
+> List&lt;EnrichmentConnectorMeta&gt; listEnrichmentTypes(organizationId)
 
 List enrichments
 
@@ -124,10 +124,10 @@ public class Example {
     EnrichmentsApi apiInstance = new EnrichmentsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     try {
-      List<EnrichmentConnectorMeta> result = apiInstance.v3OrganizationIdEnrichmentsMetaGet(organizationId);
+      List<EnrichmentConnectorMeta> result = apiInstance.listEnrichmentTypes(organizationId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling EnrichmentsApi#v3OrganizationIdEnrichmentsMetaGet");
+      System.err.println("Exception when calling EnrichmentsApi#listEnrichmentTypes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

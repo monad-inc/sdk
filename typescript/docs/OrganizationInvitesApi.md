@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1OrganizationIdInvitesPost**](OrganizationInvitesApi.md#v1OrganizationIdInvitesPost) | **POST** /v1/{organization_id}/invites | Invite user to organization
+[**inviteUser**](OrganizationInvitesApi.md#inviteUser) | **POST** /v1/{organization_id}/invites | Invite user to organization
 
 
-# **v1OrganizationIdInvitesPost**
-> string v1OrganizationIdInvitesPost(routesInviteUserToOrganizationRequest)
+# **inviteUser**
+> string inviteUser(routesInviteUserToOrganizationRequest)
 
 Invite user to organization
 
@@ -17,12 +17,12 @@ Invite user to organization
 
 ```typescript
 import { createConfiguration, OrganizationInvitesApi } from '';
-import type { OrganizationInvitesApiV1OrganizationIdInvitesPostRequest } from '';
+import type { OrganizationInvitesApiInviteUserRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new OrganizationInvitesApi(configuration);
 
-const request: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest = {
+const request: OrganizationInvitesApiInviteUserRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for inviting a user to an organization
@@ -32,7 +32,7 @@ const request: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest = {
   },
 };
 
-const data = await apiInstance.v1OrganizationIdInvitesPost(request);
+const data = await apiInstance.inviteUser(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

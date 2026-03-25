@@ -4,11 +4,11 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2_organization_id_roles_permissions_get**](PermissionsApi.md#v2_organization_id_roles_permissions_get) | **GET** /v2/{organization_id}/roles/permissions | List permissions
+[**list_permissions**](PermissionsApi.md#list_permissions) | **GET** /v2/{organization_id}/roles/permissions | List permissions
 
 
-# **v2_organization_id_roles_permissions_get**
-> ModelsPermissionList v2_organization_id_roles_permissions_get(organization_id, limit=limit, offset=offset)
+# **list_permissions**
+> ModelsPermissionList list_permissions(organization_id, limit=limit, offset=offset)
 
 List permissions
 
@@ -58,11 +58,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # List permissions
-        api_response = api_instance.v2_organization_id_roles_permissions_get(organization_id, limit=limit, offset=offset)
-        print("The response of PermissionsApi->v2_organization_id_roles_permissions_get:\n")
+        api_response = api_instance.list_permissions(organization_id, limit=limit, offset=offset)
+        print("The response of PermissionsApi->list_permissions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PermissionsApi->v2_organization_id_roles_permissions_get: %s\n" % e)
+        print("Exception when calling PermissionsApi->list_permissions: %s\n" % e)
 ```
 
 

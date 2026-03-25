@@ -21,18 +21,18 @@ export class EnrichmentsApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param enrichmentTypeId Enrichment type ID
      */
-    public async v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(organizationId: string, enrichmentTypeId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getEnrichmentTypeMeta(organizationId: string, enrichmentTypeId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("EnrichmentsApi", "v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet", "organizationId");
+            throw new RequiredError("EnrichmentsApi", "getEnrichmentTypeMeta", "organizationId");
         }
 
 
         // verify required parameter 'enrichmentTypeId' is not null or undefined
         if (enrichmentTypeId === null || enrichmentTypeId === undefined) {
-            throw new RequiredError("EnrichmentsApi", "v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet", "enrichmentTypeId");
+            throw new RequiredError("EnrichmentsApi", "getEnrichmentTypeMeta", "enrichmentTypeId");
         }
 
 
@@ -71,12 +71,12 @@ export class EnrichmentsApiRequestFactory extends BaseAPIRequestFactory {
      * List enrichments
      * @param organizationId Organization ID
      */
-    public async v3OrganizationIdEnrichmentsMetaGet(organizationId: string, _options?: Configuration): Promise<RequestContext> {
+    public async listEnrichmentTypes(organizationId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("EnrichmentsApi", "v3OrganizationIdEnrichmentsMetaGet", "organizationId");
+            throw new RequiredError("EnrichmentsApi", "listEnrichmentTypes", "organizationId");
         }
 
 
@@ -117,10 +117,10 @@ export class EnrichmentsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet
+     * @params response Response returned by the server for a request to getEnrichmentTypeMeta
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<EnrichmentConnectorMeta >> {
+     public async getEnrichmentTypeMetaWithHttpInfo(response: ResponseContext): Promise<HttpInfo<EnrichmentConnectorMeta >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: EnrichmentConnectorMeta = ObjectSerializer.deserialize(
@@ -153,10 +153,10 @@ export class EnrichmentsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3OrganizationIdEnrichmentsMetaGet
+     * @params response Response returned by the server for a request to listEnrichmentTypes
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3OrganizationIdEnrichmentsMetaGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<EnrichmentConnectorMeta> >> {
+     public async listEnrichmentTypesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<EnrichmentConnectorMeta> >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: Array<EnrichmentConnectorMeta> = ObjectSerializer.deserialize(

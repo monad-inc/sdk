@@ -19,80 +19,23 @@ import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Reque
 export class RolesApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * List roles with their associated permissions
-     * List roles
-     * @param organizationId Organization ID
-     * @param limit Limit the number of roles returned (default: 10)
-     * @param offset Offset the roles returned (default: 0)
-     */
-    public async v2OrganizationIdRolesGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'organizationId' is not null or undefined
-        if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesGet", "organizationId");
-        }
-
-
-
-
-        // Path Params
-        const localVarPath = '/v2/{organization_id}/roles'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (limit !== undefined) {
-            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
-        }
-
-        // Query Params
-        if (offset !== undefined) {
-            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["Bearer"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Create a new role with permissions
      * Create role
      * @param organizationId Organization ID
      * @param routesV2CreateRoleV2Request Request body for creating a role
      */
-    public async v2OrganizationIdRolesPost(organizationId: string, routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request, _options?: Configuration): Promise<RequestContext> {
+    public async createRole(organizationId: string, routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesPost", "organizationId");
+            throw new RequiredError("RolesApi", "createRole", "organizationId");
         }
 
 
         // verify required parameter 'routesV2CreateRoleV2Request' is not null or undefined
         if (routesV2CreateRoleV2Request === null || routesV2CreateRoleV2Request === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesPost", "routesV2CreateRoleV2Request");
+            throw new RequiredError("RolesApi", "createRole", "routesV2CreateRoleV2Request");
         }
 
 
@@ -142,18 +85,18 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param roleId Role ID
      */
-    public async v2OrganizationIdRolesRoleIdDelete(organizationId: string, roleId: string, _options?: Configuration): Promise<RequestContext> {
+    public async deleteRole(organizationId: string, roleId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesRoleIdDelete", "organizationId");
+            throw new RequiredError("RolesApi", "deleteRole", "organizationId");
         }
 
 
         // verify required parameter 'roleId' is not null or undefined
         if (roleId === null || roleId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesRoleIdDelete", "roleId");
+            throw new RequiredError("RolesApi", "deleteRole", "roleId");
         }
 
 
@@ -193,18 +136,18 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param roleId Role ID
      */
-    public async v2OrganizationIdRolesRoleIdGet(organizationId: string, roleId: string, _options?: Configuration): Promise<RequestContext> {
+    public async getRole(organizationId: string, roleId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesRoleIdGet", "organizationId");
+            throw new RequiredError("RolesApi", "getRole", "organizationId");
         }
 
 
         // verify required parameter 'roleId' is not null or undefined
         if (roleId === null || roleId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesRoleIdGet", "roleId");
+            throw new RequiredError("RolesApi", "getRole", "roleId");
         }
 
 
@@ -239,30 +182,87 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * List roles with their associated permissions
+     * List roles
+     * @param organizationId Organization ID
+     * @param limit Limit the number of roles returned (default: 10)
+     * @param offset Offset the roles returned (default: 0)
+     */
+    public async listRoles(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("RolesApi", "listRoles", "organizationId");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/roles'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+        }
+
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Update a role and its permissions
      * Update role
      * @param organizationId Organization ID
      * @param roleId Role ID
      * @param routesV2UpdateRoleV2Request Request body for updating a role
      */
-    public async v2OrganizationIdRolesRoleIdPatch(organizationId: string, roleId: string, routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request, _options?: Configuration): Promise<RequestContext> {
+    public async updateRole(organizationId: string, roleId: string, routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesRoleIdPatch", "organizationId");
+            throw new RequiredError("RolesApi", "updateRole", "organizationId");
         }
 
 
         // verify required parameter 'roleId' is not null or undefined
         if (roleId === null || roleId === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesRoleIdPatch", "roleId");
+            throw new RequiredError("RolesApi", "updateRole", "roleId");
         }
 
 
         // verify required parameter 'routesV2UpdateRoleV2Request' is not null or undefined
         if (routesV2UpdateRoleV2Request === null || routesV2UpdateRoleV2Request === undefined) {
-            throw new RequiredError("RolesApi", "v2OrganizationIdRolesRoleIdPatch", "routesV2UpdateRoleV2Request");
+            throw new RequiredError("RolesApi", "updateRole", "routesV2UpdateRoleV2Request");
         }
 
 
@@ -315,46 +315,10 @@ export class RolesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdRolesGet
+     * @params response Response returned by the server for a request to createRole
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdRolesGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissionsList >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsRoleWithPermissionsList = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsRoleWithPermissionsList", ""
-            ) as ModelsRoleWithPermissionsList;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Error listing roles", body, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsRoleWithPermissionsList = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsRoleWithPermissionsList", ""
-            ) as ModelsRoleWithPermissionsList;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to v2OrganizationIdRolesPost
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async v2OrganizationIdRolesPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissions >> {
+     public async createRoleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissions >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsRoleWithPermissions = ObjectSerializer.deserialize(
@@ -394,10 +358,10 @@ export class RolesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdRolesRoleIdDelete
+     * @params response Response returned by the server for a request to deleteRole
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
+     public async deleteRoleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: any = ObjectSerializer.deserialize(
@@ -430,10 +394,10 @@ export class RolesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdRolesRoleIdGet
+     * @params response Response returned by the server for a request to getRole
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdRolesRoleIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissions >> {
+     public async getRoleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissions >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsRoleWithPermissions = ObjectSerializer.deserialize(
@@ -466,10 +430,46 @@ export class RolesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdRolesRoleIdPatch
+     * @params response Response returned by the server for a request to listRoles
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdRolesRoleIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissions >> {
+     public async listRolesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissionsList >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsRoleWithPermissionsList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsRoleWithPermissionsList", ""
+            ) as ModelsRoleWithPermissionsList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Error listing roles", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsRoleWithPermissionsList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsRoleWithPermissionsList", ""
+            ) as ModelsRoleWithPermissionsList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to updateRole
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async updateRoleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsRoleWithPermissions >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsRoleWithPermissions = ObjectSerializer.deserialize(

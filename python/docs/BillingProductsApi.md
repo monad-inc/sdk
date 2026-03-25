@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2_billing_accounts_billing_account_id_subscription_delete**](BillingProductsApi.md#v2_billing_accounts_billing_account_id_subscription_delete) | **DELETE** /v2/billing/accounts/{billing_account_id}/subscription | Cancel Billing Account Subscription
-[**v2_billing_accounts_billing_account_id_subscription_get**](BillingProductsApi.md#v2_billing_accounts_billing_account_id_subscription_get) | **GET** /v2/billing/accounts/{billing_account_id}/subscription | Get Billing Account Subscription
-[**v2_billing_accounts_billing_account_id_subscription_post**](BillingProductsApi.md#v2_billing_accounts_billing_account_id_subscription_post) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
-[**v2_billing_products_get**](BillingProductsApi.md#v2_billing_products_get) | **GET** /v2/billing/products | List Billing Products
+[**cancel_billing_account_subscription**](BillingProductsApi.md#cancel_billing_account_subscription) | **DELETE** /v2/billing/accounts/{billing_account_id}/subscription | Cancel Billing Account Subscription
+[**create_billing_account_subscription**](BillingProductsApi.md#create_billing_account_subscription) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
+[**get_billing_account_subscription**](BillingProductsApi.md#get_billing_account_subscription) | **GET** /v2/billing/accounts/{billing_account_id}/subscription | Get Billing Account Subscription
+[**get_billing_products**](BillingProductsApi.md#get_billing_products) | **GET** /v2/billing/products | List Billing Products
 
 
-# **v2_billing_accounts_billing_account_id_subscription_delete**
-> v2_billing_accounts_billing_account_id_subscription_delete(billing_account_id)
+# **cancel_billing_account_subscription**
+> cancel_billing_account_subscription(billing_account_id)
 
 Cancel Billing Account Subscription
 
@@ -51,9 +51,9 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Cancel Billing Account Subscription
-        api_instance.v2_billing_accounts_billing_account_id_subscription_delete(billing_account_id)
+        api_instance.cancel_billing_account_subscription(billing_account_id)
     except Exception as e:
-        print("Exception when calling BillingProductsApi->v2_billing_accounts_billing_account_id_subscription_delete: %s\n" % e)
+        print("Exception when calling BillingProductsApi->cancel_billing_account_subscription: %s\n" % e)
 ```
 
 
@@ -88,89 +88,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_billing_accounts_billing_account_id_subscription_get**
-> ModelsBillingProduct v2_billing_accounts_billing_account_id_subscription_get(billing_account_id)
-
-Get Billing Account Subscription
-
-Get Billing Account Subscription
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import monad
-from monad.models.models_billing_product import ModelsBillingProduct
-from monad.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://monad.com/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = monad.Configuration(
-    host = "https://monad.com/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with monad.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = monad.BillingProductsApi(api_client)
-    billing_account_id = 'billing_account_id_example' # str | Billing Account ID
-
-    try:
-        # Get Billing Account Subscription
-        api_response = api_instance.v2_billing_accounts_billing_account_id_subscription_get(billing_account_id)
-        print("The response of BillingProductsApi->v2_billing_accounts_billing_account_id_subscription_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling BillingProductsApi->v2_billing_accounts_billing_account_id_subscription_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **billing_account_id** | **str**| Billing Account ID | 
-
-### Return type
-
-[**ModelsBillingProduct**](ModelsBillingProduct.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | billing subscription retrieved successfully |  -  |
-**400** | Invalid JSON request body |  -  |
-**500** | Failed to get billing account subscription |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_billing_accounts_billing_account_id_subscription_post**
-> RoutesV2CreateBillingAccountSubscriptionResponse v2_billing_accounts_billing_account_id_subscription_post(billing_account_id, routes_v2_create_billing_account_subscription_request)
+# **create_billing_account_subscription**
+> RoutesV2CreateBillingAccountSubscriptionResponse create_billing_account_subscription(billing_account_id, routes_v2_create_billing_account_subscription_request)
 
 Create Billing Account Subscription
 
@@ -213,11 +132,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # Create Billing Account Subscription
-        api_response = api_instance.v2_billing_accounts_billing_account_id_subscription_post(billing_account_id, routes_v2_create_billing_account_subscription_request)
-        print("The response of BillingProductsApi->v2_billing_accounts_billing_account_id_subscription_post:\n")
+        api_response = api_instance.create_billing_account_subscription(billing_account_id, routes_v2_create_billing_account_subscription_request)
+        print("The response of BillingProductsApi->create_billing_account_subscription:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BillingProductsApi->v2_billing_accounts_billing_account_id_subscription_post: %s\n" % e)
+        print("Exception when calling BillingProductsApi->create_billing_account_subscription: %s\n" % e)
 ```
 
 
@@ -253,8 +172,89 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_billing_products_get**
-> ModelsBillingProductList v2_billing_products_get(show_inactive=show_inactive, limit=limit, offset=offset)
+# **get_billing_account_subscription**
+> ModelsBillingProduct get_billing_account_subscription(billing_account_id)
+
+Get Billing Account Subscription
+
+Get Billing Account Subscription
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_billing_product import ModelsBillingProduct
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.BillingProductsApi(api_client)
+    billing_account_id = 'billing_account_id_example' # str | Billing Account ID
+
+    try:
+        # Get Billing Account Subscription
+        api_response = api_instance.get_billing_account_subscription(billing_account_id)
+        print("The response of BillingProductsApi->get_billing_account_subscription:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingProductsApi->get_billing_account_subscription: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billing_account_id** | **str**| Billing Account ID | 
+
+### Return type
+
+[**ModelsBillingProduct**](ModelsBillingProduct.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | billing subscription retrieved successfully |  -  |
+**400** | Invalid JSON request body |  -  |
+**500** | Failed to get billing account subscription |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_billing_products**
+> ModelsBillingProductList get_billing_products(show_inactive=show_inactive, limit=limit, offset=offset)
 
 List Billing Products
 
@@ -297,11 +297,11 @@ with monad.ApiClient(configuration) as api_client:
 
     try:
         # List Billing Products
-        api_response = api_instance.v2_billing_products_get(show_inactive=show_inactive, limit=limit, offset=offset)
-        print("The response of BillingProductsApi->v2_billing_products_get:\n")
+        api_response = api_instance.get_billing_products(show_inactive=show_inactive, limit=limit, offset=offset)
+        print("The response of BillingProductsApi->get_billing_products:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BillingProductsApi->v2_billing_products_get: %s\n" % e)
+        print("Exception when calling BillingProductsApi->get_billing_products: %s\n" % e)
 ```
 
 

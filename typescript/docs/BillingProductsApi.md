@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2BillingAccountsBillingAccountIdSubscriptionDelete**](BillingProductsApi.md#v2BillingAccountsBillingAccountIdSubscriptionDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/subscription | Cancel Billing Account Subscription
-[**v2BillingAccountsBillingAccountIdSubscriptionGet**](BillingProductsApi.md#v2BillingAccountsBillingAccountIdSubscriptionGet) | **GET** /v2/billing/accounts/{billing_account_id}/subscription | Get Billing Account Subscription
-[**v2BillingAccountsBillingAccountIdSubscriptionPost**](BillingProductsApi.md#v2BillingAccountsBillingAccountIdSubscriptionPost) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
-[**v2BillingProductsGet**](BillingProductsApi.md#v2BillingProductsGet) | **GET** /v2/billing/products | List Billing Products
+[**cancelBillingAccountSubscription**](BillingProductsApi.md#cancelBillingAccountSubscription) | **DELETE** /v2/billing/accounts/{billing_account_id}/subscription | Cancel Billing Account Subscription
+[**createBillingAccountSubscription**](BillingProductsApi.md#createBillingAccountSubscription) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
+[**getBillingAccountSubscription**](BillingProductsApi.md#getBillingAccountSubscription) | **GET** /v2/billing/accounts/{billing_account_id}/subscription | Get Billing Account Subscription
+[**getBillingProducts**](BillingProductsApi.md#getBillingProducts) | **GET** /v2/billing/products | List Billing Products
 
 
-# **v2BillingAccountsBillingAccountIdSubscriptionDelete**
-> void v2BillingAccountsBillingAccountIdSubscriptionDelete()
+# **cancelBillingAccountSubscription**
+> void cancelBillingAccountSubscription()
 
 Cancel Billing Account Subscription
 
@@ -20,17 +20,17 @@ Cancel Billing Account Subscription
 
 ```typescript
 import { createConfiguration, BillingProductsApi } from '';
-import type { BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest } from '';
+import type { BillingProductsApiCancelBillingAccountSubscriptionRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingProductsApi(configuration);
 
-const request: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest = {
+const request: BillingProductsApiCancelBillingAccountSubscriptionRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
 };
 
-const data = await apiInstance.v2BillingAccountsBillingAccountIdSubscriptionDelete(request);
+const data = await apiInstance.cancelBillingAccountSubscription(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -65,63 +65,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v2BillingAccountsBillingAccountIdSubscriptionGet**
-> ModelsBillingProduct v2BillingAccountsBillingAccountIdSubscriptionGet()
-
-Get Billing Account Subscription
-
-### Example
-
-
-```typescript
-import { createConfiguration, BillingProductsApi } from '';
-import type { BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest } from '';
-
-const configuration = createConfiguration();
-const apiInstance = new BillingProductsApi(configuration);
-
-const request: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest = {
-    // Billing Account ID
-  billingAccountId: "billing_account_id_example",
-};
-
-const data = await apiInstance.v2BillingAccountsBillingAccountIdSubscriptionGet(request);
-console.log('API called successfully. Returned data:', data);
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
-
-
-### Return type
-
-**ModelsBillingProduct**
-
-### Authorization
-
-[Bearer](README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | billing subscription retrieved successfully |  -  |
-**400** | Invalid JSON request body |  -  |
-**500** | Failed to get billing account subscription |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **v2BillingAccountsBillingAccountIdSubscriptionPost**
-> RoutesV2CreateBillingAccountSubscriptionResponse v2BillingAccountsBillingAccountIdSubscriptionPost(routesV2CreateBillingAccountSubscriptionRequest)
+# **createBillingAccountSubscription**
+> RoutesV2CreateBillingAccountSubscriptionResponse createBillingAccountSubscription(routesV2CreateBillingAccountSubscriptionRequest)
 
 Create Billing Account Subscription
 
@@ -130,12 +75,12 @@ Create Billing Account Subscription
 
 ```typescript
 import { createConfiguration, BillingProductsApi } from '';
-import type { BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest } from '';
+import type { BillingProductsApiCreateBillingAccountSubscriptionRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingProductsApi(configuration);
 
-const request: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest = {
+const request: BillingProductsApiCreateBillingAccountSubscriptionRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
     // Request body for creating a billing subscription
@@ -144,7 +89,7 @@ const request: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPo
   },
 };
 
-const data = await apiInstance.v2BillingAccountsBillingAccountIdSubscriptionPost(request);
+const data = await apiInstance.createBillingAccountSubscription(request);
 console.log('API called successfully. Returned data:', data);
 ```
 
@@ -180,8 +125,63 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **v2BillingProductsGet**
-> ModelsBillingProductList v2BillingProductsGet()
+# **getBillingAccountSubscription**
+> ModelsBillingProduct getBillingAccountSubscription()
+
+Get Billing Account Subscription
+
+### Example
+
+
+```typescript
+import { createConfiguration, BillingProductsApi } from '';
+import type { BillingProductsApiGetBillingAccountSubscriptionRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new BillingProductsApi(configuration);
+
+const request: BillingProductsApiGetBillingAccountSubscriptionRequest = {
+    // Billing Account ID
+  billingAccountId: "billing_account_id_example",
+};
+
+const data = await apiInstance.getBillingAccountSubscription(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
+
+
+### Return type
+
+**ModelsBillingProduct**
+
+### Authorization
+
+[Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | billing subscription retrieved successfully |  -  |
+**400** | Invalid JSON request body |  -  |
+**500** | Failed to get billing account subscription |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getBillingProducts**
+> ModelsBillingProductList getBillingProducts()
 
 List Billing Products
 
@@ -190,12 +190,12 @@ List Billing Products
 
 ```typescript
 import { createConfiguration, BillingProductsApi } from '';
-import type { BillingProductsApiV2BillingProductsGetRequest } from '';
+import type { BillingProductsApiGetBillingProductsRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingProductsApi(configuration);
 
-const request: BillingProductsApiV2BillingProductsGetRequest = {
+const request: BillingProductsApiGetBillingProductsRequest = {
     // Show inactive products (optional)
   showInactive: true,
     // Limit (optional)
@@ -204,7 +204,7 @@ const request: BillingProductsApiV2BillingProductsGetRequest = {
   offset: 1,
 };
 
-const data = await apiInstance.v2BillingProductsGet(request);
+const data = await apiInstance.getBillingProducts(request);
 console.log('API called successfully. Returned data:', data);
 ```
 

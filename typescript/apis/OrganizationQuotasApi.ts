@@ -23,12 +23,12 @@ export class OrganizationQuotasApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset Offset
      * @param body 
      */
-    public async v2OrganizationIdQuotasGet(organizationId: string, limit?: number, offset?: number, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async getQuotasByOrganizationID(organizationId: string, limit?: number, offset?: number, body?: any, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
-            throw new RequiredError("OrganizationQuotasApi", "v2OrganizationIdQuotasGet", "organizationId");
+            throw new RequiredError("OrganizationQuotasApi", "getQuotasByOrganizationID", "organizationId");
         }
 
 
@@ -93,10 +93,10 @@ export class OrganizationQuotasApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v2OrganizationIdQuotasGet
+     * @params response Response returned by the server for a request to getQuotasByOrganizationID
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdQuotasGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsQuotaList >> {
+     public async getQuotasByOrganizationIDWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsQuotaList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsQuotaList = ObjectSerializer.deserialize(
