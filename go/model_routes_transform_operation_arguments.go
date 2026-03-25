@@ -27,9 +27,11 @@ type RoutesTransformOperationArguments struct {
 	DropKeyWhereValueEqArgumentsConfig *DropKeyWhereValueEqArgumentsConfig
 	DropRecordWhereValueEqArgumentsConfig *DropRecordWhereValueEqArgumentsConfig
 	DuplicateKeyValueToKeyArgumentsConfig *DuplicateKeyValueToKeyArgumentsConfig
+	EncryptArgumentsConfig *EncryptArgumentsConfig
 	FlattenArgumentsConfig *FlattenArgumentsConfig
 	FlattenallArgumentsConfig *FlattenallArgumentsConfig
 	JqArgumentsConfig *JqArgumentsConfig
+	MaskArgumentsConfig *MaskArgumentsConfig
 	MathMultiplyWithValueArgumentsConfig *MathMultiplyWithValueArgumentsConfig
 	MutateTypeArgumentsConfig *MutateTypeArgumentsConfig
 	MutateValueWhereKeyEqAndValueEqArgumentsConfig *MutateValueWhereKeyEqAndValueEqArgumentsConfig
@@ -96,6 +98,13 @@ func DuplicateKeyValueToKeyArgumentsConfigAsRoutesTransformOperationArguments(v 
 	}
 }
 
+// EncryptArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns EncryptArgumentsConfig wrapped in RoutesTransformOperationArguments
+func EncryptArgumentsConfigAsRoutesTransformOperationArguments(v *EncryptArgumentsConfig) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		EncryptArgumentsConfig: v,
+	}
+}
+
 // FlattenArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns FlattenArgumentsConfig wrapped in RoutesTransformOperationArguments
 func FlattenArgumentsConfigAsRoutesTransformOperationArguments(v *FlattenArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
@@ -114,6 +123,13 @@ func FlattenallArgumentsConfigAsRoutesTransformOperationArguments(v *FlattenallA
 func JqArgumentsConfigAsRoutesTransformOperationArguments(v *JqArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		JqArgumentsConfig: v,
+	}
+}
+
+// MaskArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns MaskArgumentsConfig wrapped in RoutesTransformOperationArguments
+func MaskArgumentsConfigAsRoutesTransformOperationArguments(v *MaskArgumentsConfig) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		MaskArgumentsConfig: v,
 	}
 }
 
@@ -314,6 +330,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.DuplicateKeyValueToKeyArgumentsConfig = nil
 	}
 
+	// try to unmarshal data into EncryptArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.EncryptArgumentsConfig)
+	if err == nil {
+		jsonEncryptArgumentsConfig, _ := json.Marshal(dst.EncryptArgumentsConfig)
+		if string(jsonEncryptArgumentsConfig) == "{}" { // empty struct
+			dst.EncryptArgumentsConfig = nil
+		} else {
+			if err = validator.Validate(dst.EncryptArgumentsConfig); err != nil {
+				dst.EncryptArgumentsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.EncryptArgumentsConfig = nil
+	}
+
 	// try to unmarshal data into FlattenArgumentsConfig
 	err = newStrictDecoder(data).Decode(&dst.FlattenArgumentsConfig)
 	if err == nil {
@@ -363,6 +396,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.JqArgumentsConfig = nil
+	}
+
+	// try to unmarshal data into MaskArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.MaskArgumentsConfig)
+	if err == nil {
+		jsonMaskArgumentsConfig, _ := json.Marshal(dst.MaskArgumentsConfig)
+		if string(jsonMaskArgumentsConfig) == "{}" { // empty struct
+			dst.MaskArgumentsConfig = nil
+		} else {
+			if err = validator.Validate(dst.MaskArgumentsConfig); err != nil {
+				dst.MaskArgumentsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MaskArgumentsConfig = nil
 	}
 
 	// try to unmarshal data into MathMultiplyWithValueArgumentsConfig
@@ -511,9 +561,11 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.DropKeyWhereValueEqArgumentsConfig = nil
 		dst.DropRecordWhereValueEqArgumentsConfig = nil
 		dst.DuplicateKeyValueToKeyArgumentsConfig = nil
+		dst.EncryptArgumentsConfig = nil
 		dst.FlattenArgumentsConfig = nil
 		dst.FlattenallArgumentsConfig = nil
 		dst.JqArgumentsConfig = nil
+		dst.MaskArgumentsConfig = nil
 		dst.MathMultiplyWithValueArgumentsConfig = nil
 		dst.MutateTypeArgumentsConfig = nil
 		dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig = nil
@@ -565,6 +617,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DuplicateKeyValueToKeyArgumentsConfig)
 	}
 
+	if src.EncryptArgumentsConfig != nil {
+		return json.Marshal(&src.EncryptArgumentsConfig)
+	}
+
 	if src.FlattenArgumentsConfig != nil {
 		return json.Marshal(&src.FlattenArgumentsConfig)
 	}
@@ -575,6 +631,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 
 	if src.JqArgumentsConfig != nil {
 		return json.Marshal(&src.JqArgumentsConfig)
+	}
+
+	if src.MaskArgumentsConfig != nil {
+		return json.Marshal(&src.MaskArgumentsConfig)
 	}
 
 	if src.MathMultiplyWithValueArgumentsConfig != nil {
@@ -649,6 +709,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 		return obj.DuplicateKeyValueToKeyArgumentsConfig
 	}
 
+	if obj.EncryptArgumentsConfig != nil {
+		return obj.EncryptArgumentsConfig
+	}
+
 	if obj.FlattenArgumentsConfig != nil {
 		return obj.FlattenArgumentsConfig
 	}
@@ -659,6 +723,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 
 	if obj.JqArgumentsConfig != nil {
 		return obj.JqArgumentsConfig
+	}
+
+	if obj.MaskArgumentsConfig != nil {
+		return obj.MaskArgumentsConfig
 	}
 
 	if obj.MathMultiplyWithValueArgumentsConfig != nil {
@@ -731,6 +799,10 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 		return *obj.DuplicateKeyValueToKeyArgumentsConfig
 	}
 
+	if obj.EncryptArgumentsConfig != nil {
+		return *obj.EncryptArgumentsConfig
+	}
+
 	if obj.FlattenArgumentsConfig != nil {
 		return *obj.FlattenArgumentsConfig
 	}
@@ -741,6 +813,10 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 
 	if obj.JqArgumentsConfig != nil {
 		return *obj.JqArgumentsConfig
+	}
+
+	if obj.MaskArgumentsConfig != nil {
+		return *obj.MaskArgumentsConfig
 	}
 
 	if obj.MathMultiplyWithValueArgumentsConfig != nil {

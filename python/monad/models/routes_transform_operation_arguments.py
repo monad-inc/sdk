@@ -26,9 +26,11 @@ from monad.models.drop_key_arguments_config import DropKeyArgumentsConfig
 from monad.models.drop_key_where_value_eq_arguments_config import DropKeyWhereValueEqArgumentsConfig
 from monad.models.drop_record_where_value_eq_arguments_config import DropRecordWhereValueEqArgumentsConfig
 from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig
+from monad.models.encrypt_arguments_config import EncryptArgumentsConfig
 from monad.models.flatten_arguments_config import FlattenArgumentsConfig
 from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig
 from monad.models.jq_arguments_config import JqArgumentsConfig
+from monad.models.mask_arguments_config import MaskArgumentsConfig
 from monad.models.math_multiply_with_value_arguments_config import MathMultiplyWithValueArgumentsConfig
 from monad.models.mutate_type_arguments_config import MutateTypeArgumentsConfig
 from monad.models.mutate_value_where_key_eq_and_value_eq_arguments_config import MutateValueWhereKeyEqAndValueEqArgumentsConfig
@@ -40,7 +42,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-ROUTESTRANSFORMOPERATIONARGUMENTS_ONE_OF_SCHEMAS = ["AddArgumentsConfig", "AddIdArgumentsConfig", "ConvertTimestampArgumentsConfig", "CreateKeyValueIfKeyValueArgumentsConfig", "Dict[str, object]", "DropKeyArgumentsConfig", "DropKeyWhereValueEqArgumentsConfig", "DropRecordWhereValueEqArgumentsConfig", "DuplicateKeyValueToKeyArgumentsConfig", "FlattenArgumentsConfig", "FlattenallArgumentsConfig", "JqArgumentsConfig", "MathMultiplyWithValueArgumentsConfig", "MutateTypeArgumentsConfig", "MutateValueWhereKeyEqAndValueEqArgumentsConfig", "MutateValueWhereKeyEqArgumentsConfig", "RenameKeyArgumentsConfig", "RenameKeyWhereValueEqArgumentsConfig", "UtcTimestampArgumentsConfig"]
+ROUTESTRANSFORMOPERATIONARGUMENTS_ONE_OF_SCHEMAS = ["AddArgumentsConfig", "AddIdArgumentsConfig", "ConvertTimestampArgumentsConfig", "CreateKeyValueIfKeyValueArgumentsConfig", "Dict[str, object]", "DropKeyArgumentsConfig", "DropKeyWhereValueEqArgumentsConfig", "DropRecordWhereValueEqArgumentsConfig", "DuplicateKeyValueToKeyArgumentsConfig", "EncryptArgumentsConfig", "FlattenArgumentsConfig", "FlattenallArgumentsConfig", "JqArgumentsConfig", "MaskArgumentsConfig", "MathMultiplyWithValueArgumentsConfig", "MutateTypeArgumentsConfig", "MutateValueWhereKeyEqAndValueEqArgumentsConfig", "MutateValueWhereKeyEqArgumentsConfig", "RenameKeyArgumentsConfig", "RenameKeyWhereValueEqArgumentsConfig", "UtcTimestampArgumentsConfig"]
 
 class RoutesTransformOperationArguments(BaseModel):
     """
@@ -62,30 +64,34 @@ class RoutesTransformOperationArguments(BaseModel):
     oneof_schema_7_validator: Optional[DropRecordWhereValueEqArgumentsConfig] = None
     # data type: DuplicateKeyValueToKeyArgumentsConfig
     oneof_schema_8_validator: Optional[DuplicateKeyValueToKeyArgumentsConfig] = None
+    # data type: EncryptArgumentsConfig
+    oneof_schema_9_validator: Optional[EncryptArgumentsConfig] = None
     # data type: FlattenArgumentsConfig
-    oneof_schema_9_validator: Optional[FlattenArgumentsConfig] = None
+    oneof_schema_10_validator: Optional[FlattenArgumentsConfig] = None
     # data type: FlattenallArgumentsConfig
-    oneof_schema_10_validator: Optional[FlattenallArgumentsConfig] = None
+    oneof_schema_11_validator: Optional[FlattenallArgumentsConfig] = None
     # data type: JqArgumentsConfig
-    oneof_schema_11_validator: Optional[JqArgumentsConfig] = None
+    oneof_schema_12_validator: Optional[JqArgumentsConfig] = None
+    # data type: MaskArgumentsConfig
+    oneof_schema_13_validator: Optional[MaskArgumentsConfig] = None
     # data type: MathMultiplyWithValueArgumentsConfig
-    oneof_schema_12_validator: Optional[MathMultiplyWithValueArgumentsConfig] = None
+    oneof_schema_14_validator: Optional[MathMultiplyWithValueArgumentsConfig] = None
     # data type: Dict[str, object]
-    oneof_schema_13_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_15_validator: Optional[Dict[str, Any]] = None
     # data type: MutateTypeArgumentsConfig
-    oneof_schema_14_validator: Optional[MutateTypeArgumentsConfig] = None
+    oneof_schema_16_validator: Optional[MutateTypeArgumentsConfig] = None
     # data type: MutateValueWhereKeyEqArgumentsConfig
-    oneof_schema_15_validator: Optional[MutateValueWhereKeyEqArgumentsConfig] = None
+    oneof_schema_17_validator: Optional[MutateValueWhereKeyEqArgumentsConfig] = None
     # data type: MutateValueWhereKeyEqAndValueEqArgumentsConfig
-    oneof_schema_16_validator: Optional[MutateValueWhereKeyEqAndValueEqArgumentsConfig] = None
+    oneof_schema_18_validator: Optional[MutateValueWhereKeyEqAndValueEqArgumentsConfig] = None
     # data type: RenameKeyArgumentsConfig
-    oneof_schema_17_validator: Optional[RenameKeyArgumentsConfig] = None
+    oneof_schema_19_validator: Optional[RenameKeyArgumentsConfig] = None
     # data type: RenameKeyWhereValueEqArgumentsConfig
-    oneof_schema_18_validator: Optional[RenameKeyWhereValueEqArgumentsConfig] = None
+    oneof_schema_20_validator: Optional[RenameKeyWhereValueEqArgumentsConfig] = None
     # data type: UtcTimestampArgumentsConfig
-    oneof_schema_19_validator: Optional[UtcTimestampArgumentsConfig] = None
-    actual_instance: Optional[Union[AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig]] = None
-    one_of_schemas: Set[str] = { "AddArgumentsConfig", "AddIdArgumentsConfig", "ConvertTimestampArgumentsConfig", "CreateKeyValueIfKeyValueArgumentsConfig", "Dict[str, object]", "DropKeyArgumentsConfig", "DropKeyWhereValueEqArgumentsConfig", "DropRecordWhereValueEqArgumentsConfig", "DuplicateKeyValueToKeyArgumentsConfig", "FlattenArgumentsConfig", "FlattenallArgumentsConfig", "JqArgumentsConfig", "MathMultiplyWithValueArgumentsConfig", "MutateTypeArgumentsConfig", "MutateValueWhereKeyEqAndValueEqArgumentsConfig", "MutateValueWhereKeyEqArgumentsConfig", "RenameKeyArgumentsConfig", "RenameKeyWhereValueEqArgumentsConfig", "UtcTimestampArgumentsConfig" }
+    oneof_schema_21_validator: Optional[UtcTimestampArgumentsConfig] = None
+    actual_instance: Optional[Union[AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig]] = None
+    one_of_schemas: Set[str] = { "AddArgumentsConfig", "AddIdArgumentsConfig", "ConvertTimestampArgumentsConfig", "CreateKeyValueIfKeyValueArgumentsConfig", "Dict[str, object]", "DropKeyArgumentsConfig", "DropKeyWhereValueEqArgumentsConfig", "DropRecordWhereValueEqArgumentsConfig", "DuplicateKeyValueToKeyArgumentsConfig", "EncryptArgumentsConfig", "FlattenArgumentsConfig", "FlattenallArgumentsConfig", "JqArgumentsConfig", "MaskArgumentsConfig", "MathMultiplyWithValueArgumentsConfig", "MutateTypeArgumentsConfig", "MutateValueWhereKeyEqAndValueEqArgumentsConfig", "MutateValueWhereKeyEqArgumentsConfig", "RenameKeyArgumentsConfig", "RenameKeyWhereValueEqArgumentsConfig", "UtcTimestampArgumentsConfig" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -148,6 +154,11 @@ class RoutesTransformOperationArguments(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `DuplicateKeyValueToKeyArgumentsConfig`")
         else:
             match += 1
+        # validate data type: EncryptArgumentsConfig
+        if not isinstance(v, EncryptArgumentsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncryptArgumentsConfig`")
+        else:
+            match += 1
         # validate data type: FlattenArgumentsConfig
         if not isinstance(v, FlattenArgumentsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `FlattenArgumentsConfig`")
@@ -163,6 +174,11 @@ class RoutesTransformOperationArguments(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `JqArgumentsConfig`")
         else:
             match += 1
+        # validate data type: MaskArgumentsConfig
+        if not isinstance(v, MaskArgumentsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `MaskArgumentsConfig`")
+        else:
+            match += 1
         # validate data type: MathMultiplyWithValueArgumentsConfig
         if not isinstance(v, MathMultiplyWithValueArgumentsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `MathMultiplyWithValueArgumentsConfig`")
@@ -170,7 +186,7 @@ class RoutesTransformOperationArguments(BaseModel):
             match += 1
         # validate data type: Dict[str, object]
         try:
-            instance.oneof_schema_13_validator = v
+            instance.oneof_schema_15_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -206,10 +222,10 @@ class RoutesTransformOperationArguments(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -272,6 +288,12 @@ class RoutesTransformOperationArguments(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into EncryptArgumentsConfig
+        try:
+            instance.actual_instance = EncryptArgumentsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into FlattenArgumentsConfig
         try:
             instance.actual_instance = FlattenArgumentsConfig.from_json(json_str)
@@ -290,6 +312,12 @@ class RoutesTransformOperationArguments(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into MaskArgumentsConfig
+        try:
+            instance.actual_instance = MaskArgumentsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into MathMultiplyWithValueArgumentsConfig
         try:
             instance.actual_instance = MathMultiplyWithValueArgumentsConfig.from_json(json_str)
@@ -299,9 +327,9 @@ class RoutesTransformOperationArguments(BaseModel):
         # deserialize data into Dict[str, object]
         try:
             # validation
-            instance.oneof_schema_13_validator = json.loads(json_str)
+            instance.oneof_schema_15_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_13_validator
+            instance.actual_instance = instance.oneof_schema_15_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -344,10 +372,10 @@ class RoutesTransformOperationArguments(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -361,7 +389,7 @@ class RoutesTransformOperationArguments(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, Dict[str, object], DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

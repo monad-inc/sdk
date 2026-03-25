@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-25T21:30:26.270887095Z[Etc/UTC]
+  - Build date: 2026-03-25T22:51:09.353692568Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -397,6 +397,10 @@ Class | Method | HTTP request | Description
  - [DuplicateKeyValueToKeyArgumentsConfig](docs/DuplicateKeyValueToKeyArgumentsConfig.md)
  - [ElasticsearchSecretsConfig](docs/ElasticsearchSecretsConfig.md)
  - [ElasticsearchSettingsConfig](docs/ElasticsearchSettingsConfig.md)
+ - [EncryptAESVariant](docs/EncryptAESVariant.md)
+ - [EncryptAgeVariant](docs/EncryptAgeVariant.md)
+ - [EncryptAlgorithmConfig](docs/EncryptAlgorithmConfig.md)
+ - [EncryptArgumentsConfig](docs/EncryptArgumentsConfig.md)
  - [EndorLabsAuditLogsSecretsConfig](docs/EndorLabsAuditLogsSecretsConfig.md)
  - [EndorLabsAuditLogsSettingsConfig](docs/EndorLabsAuditLogsSettingsConfig.md)
  - [EnrichmentConnectorMeta](docs/EnrichmentConnectorMeta.md)
@@ -455,6 +459,9 @@ Class | Method | HTTP request | Description
  - [LeafconditionsInfo](docs/LeafconditionsInfo.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
+ - [MaskArgumentsConfig](docs/MaskArgumentsConfig.md)
+ - [MaskDeterministicVariant](docs/MaskDeterministicVariant.md)
+ - [MaskModeConfig](docs/MaskModeConfig.md)
  - [MathMultiplyWithValueArgumentsConfig](docs/MathMultiplyWithValueArgumentsConfig.md)
  - [MerakiConfigLogsSecretsConfig](docs/MerakiConfigLogsSecretsConfig.md)
  - [MerakiConfigLogsSettingsConfig](docs/MerakiConfigLogsSettingsConfig.md)

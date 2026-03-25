@@ -18,9 +18,11 @@ import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
+import { MaskArgumentsConfig } from '../models/MaskArgumentsConfig';
 import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
 import { MutateTypeArgumentsConfig } from '../models/MutateTypeArgumentsConfig';
 import { MutateValueWhereKeyEqAndValueEqArgumentsConfig } from '../models/MutateValueWhereKeyEqAndValueEqArgumentsConfig';
@@ -35,7 +37,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesTransformOperationArguments = AddArgumentsConfig | AddIdArgumentsConfig | ConvertTimestampArgumentsConfig | CreateKeyValueIfKeyValueArgumentsConfig | DropKeyArgumentsConfig | DropKeyWhereValueEqArgumentsConfig | DropRecordWhereValueEqArgumentsConfig | DuplicateKeyValueToKeyArgumentsConfig | FlattenArgumentsConfig | FlattenallArgumentsConfig | JqArgumentsConfig | MathMultiplyWithValueArgumentsConfig | MutateTypeArgumentsConfig | MutateValueWhereKeyEqAndValueEqArgumentsConfig | MutateValueWhereKeyEqArgumentsConfig | RenameKeyArgumentsConfig | RenameKeyWhereValueEqArgumentsConfig | UtcTimestampArgumentsConfig | { [key: string]: any; };
+export type RoutesTransformOperationArguments = AddArgumentsConfig | AddIdArgumentsConfig | ConvertTimestampArgumentsConfig | CreateKeyValueIfKeyValueArgumentsConfig | DropKeyArgumentsConfig | DropKeyWhereValueEqArgumentsConfig | DropRecordWhereValueEqArgumentsConfig | DuplicateKeyValueToKeyArgumentsConfig | EncryptArgumentsConfig | FlattenArgumentsConfig | FlattenallArgumentsConfig | JqArgumentsConfig | MaskArgumentsConfig | MathMultiplyWithValueArgumentsConfig | MutateTypeArgumentsConfig | MutateValueWhereKeyEqAndValueEqArgumentsConfig | MutateValueWhereKeyEqArgumentsConfig | RenameKeyArgumentsConfig | RenameKeyWhereValueEqArgumentsConfig | UtcTimestampArgumentsConfig | { [key: string]: any; };
 
 /**
 * @type RoutesTransformOperationArgumentsClass
@@ -46,6 +48,8 @@ export class RoutesTransformOperationArgumentsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
 
 
 

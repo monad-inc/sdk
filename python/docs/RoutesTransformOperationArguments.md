@@ -19,8 +19,10 @@ Name | Type | Description | Notes
 **key_to_watch** | **str** | The key to watch for | [optional] 
 **value_to_watch** | **object** |  | [optional] 
 **new_key** | **str** | The new key to rename to | [optional] 
+**algorithm** | [**EncryptAlgorithmConfig**](EncryptAlgorithmConfig.md) |  | [optional] 
 **delimiter** | **str** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **query** | **str** | The raw query string from config | [optional] 
+**mode** | [**MaskModeConfig**](MaskModeConfig.md) |  | [optional] 
 **value_to_set** | **object** |  | [optional] 
 **format** | **str** | The format of the timestamp | [optional] 
 

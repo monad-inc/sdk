@@ -29,9 +29,13 @@ import org.openapitools.client.model.DropKeyArgumentsConfig;
 import org.openapitools.client.model.DropKeyWhereValueEqArgumentsConfig;
 import org.openapitools.client.model.DropRecordWhereValueEqArgumentsConfig;
 import org.openapitools.client.model.DuplicateKeyValueToKeyArgumentsConfig;
+import org.openapitools.client.model.EncryptAlgorithmConfig;
+import org.openapitools.client.model.EncryptArgumentsConfig;
 import org.openapitools.client.model.FlattenArgumentsConfig;
 import org.openapitools.client.model.FlattenallArgumentsConfig;
 import org.openapitools.client.model.JqArgumentsConfig;
+import org.openapitools.client.model.MaskArgumentsConfig;
+import org.openapitools.client.model.MaskModeConfig;
 import org.openapitools.client.model.MathMultiplyWithValueArgumentsConfig;
 import org.openapitools.client.model.MutateTypeArgumentsConfig;
 import org.openapitools.client.model.MutateValueWhereKeyEqAndValueEqArgumentsConfig;
@@ -170,6 +174,14 @@ public class RoutesTransformOperationArgumentsTest {
     }
 
     /**
+     * Test the property 'algorithm'
+     */
+    @Test
+    public void algorithmTest() {
+        // TODO: test algorithm
+    }
+
+    /**
      * Test the property 'delimiter'
      */
     @Test
@@ -183,6 +195,14 @@ public class RoutesTransformOperationArgumentsTest {
     @Test
     public void queryTest() {
         // TODO: test query
+    }
+
+    /**
+     * Test the property 'mode'
+     */
+    @Test
+    public void modeTest() {
+        // TODO: test mode
     }
 
     /**

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2GenerateRecordRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T21:30:26.270887095Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T22:51:09.353692568Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesV2GenerateRecordRequest {
   public static final String SERIALIZED_NAME_RECORD_TYPE = "record_type";
   @SerializedName(SERIALIZED_NAME_RECORD_TYPE)

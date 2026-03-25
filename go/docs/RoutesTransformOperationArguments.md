@@ -18,8 +18,10 @@ Name | Type | Description | Notes
 **KeyToWatch** | Pointer to **string** | The key to watch for | [optional] 
 **ValueToWatch** | Pointer to **interface{}** |  | [optional] 
 **NewKey** | Pointer to **string** | The new key to rename to | [optional] 
+**Algorithm** | Pointer to [**EncryptAlgorithmConfig**](EncryptAlgorithmConfig.md) |  | [optional] 
 **Delimiter** | Pointer to **string** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **Query** | Pointer to **string** | The raw query string from config | [optional] 
+**Mode** | Pointer to [**MaskModeConfig**](MaskModeConfig.md) |  | [optional] 
 **ValueToSet** | Pointer to **interface{}** |  | [optional] 
 **Format** | Pointer to **string** | The format of the timestamp | [optional] 
 
@@ -412,6 +414,31 @@ SetNewKey sets NewKey field to given value.
 
 HasNewKey returns a boolean if a field has been set.
 
+### GetAlgorithm
+
+`func (o *RoutesTransformOperationArguments) GetAlgorithm() EncryptAlgorithmConfig`
+
+GetAlgorithm returns the Algorithm field if non-nil, zero value otherwise.
+
+### GetAlgorithmOk
+
+`func (o *RoutesTransformOperationArguments) GetAlgorithmOk() (*EncryptAlgorithmConfig, bool)`
+
+GetAlgorithmOk returns a tuple with the Algorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlgorithm
+
+`func (o *RoutesTransformOperationArguments) SetAlgorithm(v EncryptAlgorithmConfig)`
+
+SetAlgorithm sets Algorithm field to given value.
+
+### HasAlgorithm
+
+`func (o *RoutesTransformOperationArguments) HasAlgorithm() bool`
+
+HasAlgorithm returns a boolean if a field has been set.
+
 ### GetDelimiter
 
 `func (o *RoutesTransformOperationArguments) GetDelimiter() string`
@@ -461,6 +488,31 @@ SetQuery sets Query field to given value.
 `func (o *RoutesTransformOperationArguments) HasQuery() bool`
 
 HasQuery returns a boolean if a field has been set.
+
+### GetMode
+
+`func (o *RoutesTransformOperationArguments) GetMode() MaskModeConfig`
+
+GetMode returns the Mode field if non-nil, zero value otherwise.
+
+### GetModeOk
+
+`func (o *RoutesTransformOperationArguments) GetModeOk() (*MaskModeConfig, bool)`
+
+GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMode
+
+`func (o *RoutesTransformOperationArguments) SetMode(v MaskModeConfig)`
+
+SetMode sets Mode field to given value.
+
+### HasMode
+
+`func (o *RoutesTransformOperationArguments) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 ### GetValueToSet
 

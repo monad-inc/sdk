@@ -30,9 +30,13 @@ import org.openapitools.client.model.DropKeyArgumentsConfig;
 import org.openapitools.client.model.DropKeyWhereValueEqArgumentsConfig;
 import org.openapitools.client.model.DropRecordWhereValueEqArgumentsConfig;
 import org.openapitools.client.model.DuplicateKeyValueToKeyArgumentsConfig;
+import org.openapitools.client.model.EncryptAlgorithmConfig;
+import org.openapitools.client.model.EncryptArgumentsConfig;
 import org.openapitools.client.model.FlattenArgumentsConfig;
 import org.openapitools.client.model.FlattenallArgumentsConfig;
 import org.openapitools.client.model.JqArgumentsConfig;
+import org.openapitools.client.model.MaskArgumentsConfig;
+import org.openapitools.client.model.MaskModeConfig;
 import org.openapitools.client.model.MathMultiplyWithValueArgumentsConfig;
 import org.openapitools.client.model.MutateTypeArgumentsConfig;
 import org.openapitools.client.model.MutateValueWhereKeyEqAndValueEqArgumentsConfig;
@@ -77,7 +81,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T21:30:26.270887095Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T22:51:09.353692568Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesTransformOperationArguments.class.getName());
 
@@ -97,9 +101,11 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             final TypeAdapter<DropKeyWhereValueEqArgumentsConfig> adapterDropKeyWhereValueEqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DropKeyWhereValueEqArgumentsConfig.class));
             final TypeAdapter<DropRecordWhereValueEqArgumentsConfig> adapterDropRecordWhereValueEqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DropRecordWhereValueEqArgumentsConfig.class));
             final TypeAdapter<DuplicateKeyValueToKeyArgumentsConfig> adapterDuplicateKeyValueToKeyArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DuplicateKeyValueToKeyArgumentsConfig.class));
+            final TypeAdapter<EncryptArgumentsConfig> adapterEncryptArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(EncryptArgumentsConfig.class));
             final TypeAdapter<FlattenArgumentsConfig> adapterFlattenArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(FlattenArgumentsConfig.class));
             final TypeAdapter<FlattenallArgumentsConfig> adapterFlattenallArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(FlattenallArgumentsConfig.class));
             final TypeAdapter<JqArgumentsConfig> adapterJqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(JqArgumentsConfig.class));
+            final TypeAdapter<MaskArgumentsConfig> adapterMaskArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(MaskArgumentsConfig.class));
             final TypeAdapter<MathMultiplyWithValueArgumentsConfig> adapterMathMultiplyWithValueArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(MathMultiplyWithValueArgumentsConfig.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
@@ -166,6 +172,12 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `EncryptArgumentsConfig`
+                    if (value.getActualInstance() instanceof EncryptArgumentsConfig) {
+                        JsonElement element = adapterEncryptArgumentsConfig.toJsonTree((EncryptArgumentsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `FlattenArgumentsConfig`
                     if (value.getActualInstance() instanceof FlattenArgumentsConfig) {
                         JsonElement element = adapterFlattenArgumentsConfig.toJsonTree((FlattenArgumentsConfig)value.getActualInstance());
@@ -181,6 +193,12 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `JqArgumentsConfig`
                     if (value.getActualInstance() instanceof JqArgumentsConfig) {
                         JsonElement element = adapterJqArgumentsConfig.toJsonTree((JqArgumentsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `MaskArgumentsConfig`
+                    if (value.getActualInstance() instanceof MaskArgumentsConfig) {
+                        JsonElement element = adapterMaskArgumentsConfig.toJsonTree((MaskArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -232,7 +250,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
                 }
 
                 @Override
@@ -340,6 +358,18 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyArgumentsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DuplicateKeyValueToKeyArgumentsConfig'", e);
                     }
+                    // deserialize EncryptArgumentsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        EncryptArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterEncryptArgumentsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'EncryptArgumentsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for EncryptArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'EncryptArgumentsConfig'", e);
+                    }
                     // deserialize FlattenArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -375,6 +405,18 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqArgumentsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'JqArgumentsConfig'", e);
+                    }
+                    // deserialize MaskArgumentsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        MaskArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterMaskArgumentsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'MaskArgumentsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MaskArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'MaskArgumentsConfig'", e);
                     }
                     // deserialize MathMultiplyWithValueArgumentsConfig
                     try {
@@ -509,9 +551,11 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
         schemas.put("DropKeyWhereValueEqArgumentsConfig", DropKeyWhereValueEqArgumentsConfig.class);
         schemas.put("DropRecordWhereValueEqArgumentsConfig", DropRecordWhereValueEqArgumentsConfig.class);
         schemas.put("DuplicateKeyValueToKeyArgumentsConfig", DuplicateKeyValueToKeyArgumentsConfig.class);
+        schemas.put("EncryptArgumentsConfig", EncryptArgumentsConfig.class);
         schemas.put("FlattenArgumentsConfig", FlattenArgumentsConfig.class);
         schemas.put("FlattenallArgumentsConfig", FlattenallArgumentsConfig.class);
         schemas.put("JqArgumentsConfig", JqArgumentsConfig.class);
+        schemas.put("MaskArgumentsConfig", MaskArgumentsConfig.class);
         schemas.put("MathMultiplyWithValueArgumentsConfig", MathMultiplyWithValueArgumentsConfig.class);
         schemas.put("Map<String, Object>", Map.class);
         schemas.put("MutateTypeArgumentsConfig", MutateTypeArgumentsConfig.class);
@@ -530,7 +574,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -576,6 +620,11 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             return;
         }
 
+        if (instance instanceof EncryptArgumentsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof FlattenArgumentsConfig) {
             super.setActualInstance(instance);
             return;
@@ -587,6 +636,11 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof JqArgumentsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof MaskArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -631,14 +685,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
-     * @return The actual instance (AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig)
+     * @return The actual instance (AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -735,6 +789,17 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `EncryptArgumentsConfig`. If the actual instance is not `EncryptArgumentsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `EncryptArgumentsConfig`
+     * @throws ClassCastException if the instance is not `EncryptArgumentsConfig`
+     */
+    public EncryptArgumentsConfig getEncryptArgumentsConfig() throws ClassCastException {
+        return (EncryptArgumentsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `FlattenArgumentsConfig`. If the actual instance is not `FlattenArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -765,6 +830,17 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      */
     public JqArgumentsConfig getJqArgumentsConfig() throws ClassCastException {
         return (JqArgumentsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `MaskArgumentsConfig`. If the actual instance is not `MaskArgumentsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `MaskArgumentsConfig`
+     * @throws ClassCastException if the instance is not `MaskArgumentsConfig`
+     */
+    public MaskArgumentsConfig getMaskArgumentsConfig() throws ClassCastException {
+        return (MaskArgumentsConfig)super.getActualInstance();
     }
 
     /**
@@ -929,6 +1005,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with EncryptArgumentsConfig
+        try {
+            EncryptArgumentsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for EncryptArgumentsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with FlattenArgumentsConfig
         try {
             FlattenArgumentsConfig.validateJsonElement(jsonElement);
@@ -951,6 +1035,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqArgumentsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with MaskArgumentsConfig
+        try {
+            MaskArgumentsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MaskArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with MathMultiplyWithValueArgumentsConfig
@@ -1021,7 +1113,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

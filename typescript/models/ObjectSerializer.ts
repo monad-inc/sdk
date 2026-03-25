@@ -107,6 +107,10 @@ export * from '../models/DuoSecurityActivityLogsSettingsConfig';
 export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
+export * from '../models/EncryptAESVariant';
+export * from '../models/EncryptAgeVariant';
+export * from '../models/EncryptAlgorithmConfig';
+export * from '../models/EncryptArgumentsConfig';
 export * from '../models/EndorLabsAuditLogsSecretsConfig';
 export * from '../models/EndorLabsAuditLogsSettingsConfig';
 export * from '../models/EnrichmentConnectorMeta';
@@ -165,6 +169,9 @@ export * from '../models/KvlookupKVEntry';
 export * from '../models/LeafconditionsInfo';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
+export * from '../models/MaskArgumentsConfig';
+export * from '../models/MaskDeterministicVariant';
+export * from '../models/MaskModeConfig';
 export * from '../models/MathMultiplyWithValueArgumentsConfig';
 export * from '../models/MerakiConfigLogsSecretsConfig';
 export * from '../models/MerakiConfigLogsSettingsConfig';
@@ -586,6 +593,10 @@ import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActi
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { EncryptAESVariant } from '../models/EncryptAESVariant';
+import { EncryptAgeVariant } from '../models/EncryptAgeVariant';
+import { EncryptAlgorithmConfig } from '../models/EncryptAlgorithmConfig';
+import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
 import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
@@ -644,6 +655,9 @@ import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
+import { MaskArgumentsConfig } from '../models/MaskArgumentsConfig';
+import { MaskDeterministicVariant } from '../models/MaskDeterministicVariant';
+import { MaskModeConfig } from '../models/MaskModeConfig';
 import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
 import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
 import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettingsConfig';
@@ -1096,6 +1110,10 @@ let typeMap: {[index: string]: any} = {
     "DuplicateKeyValueToKeyArgumentsConfig": DuplicateKeyValueToKeyArgumentsConfig,
     "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
+    "EncryptAESVariant": EncryptAESVariant,
+    "EncryptAgeVariant": EncryptAgeVariant,
+    "EncryptAlgorithmConfig": EncryptAlgorithmConfig,
+    "EncryptArgumentsConfig": EncryptArgumentsConfig,
     "EndorLabsAuditLogsSecretsConfig": EndorLabsAuditLogsSecretsConfig,
     "EndorLabsAuditLogsSettingsConfig": EndorLabsAuditLogsSettingsConfig,
     "EnrichmentConnectorMeta": EnrichmentConnectorMeta,
@@ -1154,6 +1172,9 @@ let typeMap: {[index: string]: any} = {
     "LeafconditionsInfo": LeafconditionsInfo,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
+    "MaskArgumentsConfig": MaskArgumentsConfig,
+    "MaskDeterministicVariant": MaskDeterministicVariant,
+    "MaskModeConfig": MaskModeConfig,
     "MathMultiplyWithValueArgumentsConfig": MathMultiplyWithValueArgumentsConfig,
     "MerakiConfigLogsSecretsConfig": MerakiConfigLogsSecretsConfig,
     "MerakiConfigLogsSettingsConfig": MerakiConfigLogsSettingsConfig,
