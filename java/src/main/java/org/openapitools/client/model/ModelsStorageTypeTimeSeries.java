@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsStorageTypeTimeSeries
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T19:47:16.209776341Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T20:28:06.347312545Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ModelsStorageTypeTimeSeries {
   public static final String SERIALIZED_NAME_STORAGE_TYPE = "storage_type";
   @SerializedName(SERIALIZED_NAME_STORAGE_TYPE)
