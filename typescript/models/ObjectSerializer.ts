@@ -1,7 +1,5 @@
 export * from '../models/AbsSecretsConfig';
 export * from '../models/AbsSettingsConfig';
-export * from '../models/ActorsInfoSecretsConfig';
-export * from '../models/ActorsInfoSettingsConfig';
 export * from '../models/AddArgumentsConfig';
 export * from '../models/AddIdArgumentsConfig';
 export * from '../models/AdminLogsSecretsConfig';
@@ -101,8 +99,6 @@ export * from '../models/DatadogSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
 export * from '../models/DefenderForEndpointAlertsSettingsConfig';
 export * from '../models/DelimitedDelimiterFormatter';
-export * from '../models/DeviceDetailsSecretsConfig';
-export * from '../models/DeviceDetailsSettingsConfig';
 export * from '../models/DropKeyArgumentsConfig';
 export * from '../models/DropKeyWhereValueEqArgumentsConfig';
 export * from '../models/DropRecordWhereValueEqArgumentsConfig';
@@ -169,8 +165,6 @@ export * from '../models/KvlookupKVEntry';
 export * from '../models/LeafconditionsInfo';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
-export * from '../models/LoginSessionsSecretsConfig';
-export * from '../models/LoginSessionsSettingsConfig';
 export * from '../models/MathMultiplyWithValueArgumentsConfig';
 export * from '../models/MerakiConfigLogsSecretsConfig';
 export * from '../models/MerakiConfigLogsSettingsConfig';
@@ -303,8 +297,6 @@ export * from '../models/PubsubSettingsConfig';
 export * from '../models/RenameKeyArgumentsConfig';
 export * from '../models/RenameKeyWhereValueEqArgumentsConfig';
 export * from '../models/ResponderErrorResponse';
-export * from '../models/RolesInfoSecretsConfig';
-export * from '../models/RolesInfoSettingsConfig';
 export * from '../models/RootlyAuditLogsSecretsConfig';
 export * from '../models/RootlyAuditLogsSettingsConfig';
 export * from '../models/RoutesAddUserToOrganizationRequest';
@@ -465,15 +457,11 @@ export * from '../models/TypesStringComparison';
 export * from '../models/TypesStringFilter';
 export * from '../models/UniversalSecretsConfig';
 export * from '../models/UniversalSettingsConfig';
-export * from '../models/UsersInfoSecretsConfig';
-export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/VercelUserEventsSecretsConfig';
 export * from '../models/VercelUserEventsSettingsConfig';
 export * from '../models/VoltioAuditLogsSecretsConfig';
 export * from '../models/VoltioAuditLogsSettingsConfig';
-export * from '../models/VulnerabilitiesCronSecretsConfig';
-export * from '../models/VulnerabilitiesCronSettingsConfig';
 export * from '../models/VulnerabilitiesSecretsConfig';
 export * from '../models/VulnerabilitiesSettingsConfig';
 export * from '../models/VulnerabilityFindingsReportSecretsConfig';
@@ -491,8 +479,6 @@ export * from '../models/ZoomMeetingActivityLogsSettingsConfig';
 
 import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
-import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
-import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
@@ -592,8 +578,6 @@ import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
-import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
-import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
 import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
@@ -660,8 +644,6 @@ import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
-import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
-import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
 import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
 import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
 import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettingsConfig';
@@ -794,8 +776,6 @@ import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
-import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
 import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
 import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
@@ -956,15 +936,11 @@ import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter   } from '../models/TypesStringFilter';
 import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
 import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
-import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
-import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
-import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronSecretsConfig';
-import { VulnerabilitiesCronSettingsConfig } from '../models/VulnerabilitiesCronSettingsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
 import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
 import { VulnerabilityFindingsReportSecretsConfig } from '../models/VulnerabilityFindingsReportSecretsConfig';
@@ -1013,8 +989,6 @@ let enumsMap: Set<string> = new Set<string>([
 let typeMap: {[index: string]: any} = {
     "AbsSecretsConfig": AbsSecretsConfig,
     "AbsSettingsConfig": AbsSettingsConfig,
-    "ActorsInfoSecretsConfig": ActorsInfoSecretsConfig,
-    "ActorsInfoSettingsConfig": ActorsInfoSettingsConfig,
     "AddArgumentsConfig": AddArgumentsConfig,
     "AddIdArgumentsConfig": AddIdArgumentsConfig,
     "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
@@ -1114,8 +1088,6 @@ let typeMap: {[index: string]: any} = {
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,
     "DefenderForEndpointAlertsSettingsConfig": DefenderForEndpointAlertsSettingsConfig,
     "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
-    "DeviceDetailsSecretsConfig": DeviceDetailsSecretsConfig,
-    "DeviceDetailsSettingsConfig": DeviceDetailsSettingsConfig,
     "DropKeyArgumentsConfig": DropKeyArgumentsConfig,
     "DropKeyWhereValueEqArgumentsConfig": DropKeyWhereValueEqArgumentsConfig,
     "DropRecordWhereValueEqArgumentsConfig": DropRecordWhereValueEqArgumentsConfig,
@@ -1182,8 +1154,6 @@ let typeMap: {[index: string]: any} = {
     "LeafconditionsInfo": LeafconditionsInfo,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
-    "LoginSessionsSecretsConfig": LoginSessionsSecretsConfig,
-    "LoginSessionsSettingsConfig": LoginSessionsSettingsConfig,
     "MathMultiplyWithValueArgumentsConfig": MathMultiplyWithValueArgumentsConfig,
     "MerakiConfigLogsSecretsConfig": MerakiConfigLogsSecretsConfig,
     "MerakiConfigLogsSettingsConfig": MerakiConfigLogsSettingsConfig,
@@ -1316,8 +1286,6 @@ let typeMap: {[index: string]: any} = {
     "RenameKeyArgumentsConfig": RenameKeyArgumentsConfig,
     "RenameKeyWhereValueEqArgumentsConfig": RenameKeyWhereValueEqArgumentsConfig,
     "ResponderErrorResponse": ResponderErrorResponse,
-    "RolesInfoSecretsConfig": RolesInfoSecretsConfig,
-    "RolesInfoSettingsConfig": RolesInfoSettingsConfig,
     "RootlyAuditLogsSecretsConfig": RootlyAuditLogsSecretsConfig,
     "RootlyAuditLogsSettingsConfig": RootlyAuditLogsSettingsConfig,
     "RoutesAddUserToOrganizationRequest": RoutesAddUserToOrganizationRequest,
@@ -1477,15 +1445,11 @@ let typeMap: {[index: string]: any} = {
     "TypesStringFilter": TypesStringFilter,
     "UniversalSecretsConfig": UniversalSecretsConfig,
     "UniversalSettingsConfig": UniversalSettingsConfig,
-    "UsersInfoSecretsConfig": UsersInfoSecretsConfig,
-    "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,
     "VoltioAuditLogsSecretsConfig": VoltioAuditLogsSecretsConfig,
     "VoltioAuditLogsSettingsConfig": VoltioAuditLogsSettingsConfig,
-    "VulnerabilitiesCronSecretsConfig": VulnerabilitiesCronSecretsConfig,
-    "VulnerabilitiesCronSettingsConfig": VulnerabilitiesCronSettingsConfig,
     "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,
     "VulnerabilitiesSettingsConfig": VulnerabilitiesSettingsConfig,
     "VulnerabilityFindingsReportSecretsConfig": VulnerabilityFindingsReportSecretsConfig,

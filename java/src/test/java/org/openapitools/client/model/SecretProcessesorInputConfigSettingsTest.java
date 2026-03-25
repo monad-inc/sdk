@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.client.model.ActorsInfoSettingsConfig;
 import org.openapitools.client.model.AdminLogsSettingsConfig;
 import org.openapitools.client.model.AivenServiceLogsSettingsConfig;
 import org.openapitools.client.model.AlertCenterSettingsConfig;
@@ -62,7 +61,6 @@ import org.openapitools.client.model.CodaAuditEventsSettingsConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.CustomerEventDataSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
-import org.openapitools.client.model.DeviceDetailsSettingsConfig;
 import org.openapitools.client.model.DuoSecurityActivityLogsSettingsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
@@ -80,7 +78,6 @@ import org.openapitools.client.model.IssuesReportSettingsConfig;
 import org.openapitools.client.model.IssuesSettingsConfig;
 import org.openapitools.client.model.KoiAuditLogsSettingsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
-import org.openapitools.client.model.LoginSessionsSettingsConfig;
 import org.openapitools.client.model.MerakiConfigLogsSettingsConfig;
 import org.openapitools.client.model.Microsoft365GenericSettingsConfig;
 import org.openapitools.client.model.MonadGraphqlInputVariable;
@@ -99,7 +96,6 @@ import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PolymerSettingsConfig;
 import org.openapitools.client.model.PostmanAuditLogsSettingsConfig;
 import org.openapitools.client.model.PubsubSettingsConfig;
-import org.openapitools.client.model.RolesInfoSettingsConfig;
 import org.openapitools.client.model.RootlyAuditLogsSettingsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
@@ -124,10 +120,8 @@ import org.openapitools.client.model.TwilioEventsSettingsConfig;
 import org.openapitools.client.model.TwilioSendgridEmailActivitySettingsConfig;
 import org.openapitools.client.model.TypesStringFilter;
 import org.openapitools.client.model.UniversalSettingsConfig;
-import org.openapitools.client.model.UsersInfoSettingsConfig;
 import org.openapitools.client.model.VercelUserEventsSettingsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSettingsConfig;
-import org.openapitools.client.model.VulnerabilitiesCronSettingsConfig;
 import org.openapitools.client.model.VulnerabilitiesSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsReportSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
@@ -153,43 +147,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'actorType'
+     * Test the property 'host'
      */
     @Test
-    public void actorTypeTest() {
-        // TODO: test actorType
-    }
-
-    /**
-     * Test the property 'cloudType'
-     */
-    @Test
-    public void cloudTypeTest() {
-        // TODO: test cloudType
-    }
-
-    /**
-     * Test the property 'cron'
-     */
-    @Test
-    public void cronTest() {
-        // TODO: test cron
-    }
-
-    /**
-     * Test the property 'sort'
-     */
-    @Test
-    public void sortTest() {
-        // TODO: test sort
-    }
-
-    /**
-     * Test the property 'targetIndustries'
-     */
-    @Test
-    public void targetIndustriesTest() {
-        // TODO: test targetIndustries
+    public void hostTest() {
+        // TODO: test host
     }
 
     /**
@@ -198,14 +160,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void useSyntheticDataTest() {
         // TODO: test useSyntheticData
-    }
-
-    /**
-     * Test the property 'host'
-     */
-    @Test
-    public void hostTest() {
-        // TODO: test host
     }
 
     /**
@@ -710,6 +664,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void intervalTest() {
         // TODO: test interval
+    }
+
+    /**
+     * Test the property 'cron'
+     */
+    @Test
+    public void cronTest() {
+        // TODO: test cron
     }
 
     /**
@@ -1374,6 +1336,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void customerIdTest() {
         // TODO: test customerId
+    }
+
+    /**
+     * Test the property 'cloudType'
+     */
+    @Test
+    public void cloudTypeTest() {
+        // TODO: test cloudType
     }
 
     /**

@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
-import org.openapitools.client.model.ActorsInfoSecretsConfig;
 import org.openapitools.client.model.AdminLogsSecretsConfig;
 import org.openapitools.client.model.AivenServiceLogsSecretsConfig;
 import org.openapitools.client.model.AlertCenterSecretsConfig;
@@ -57,7 +56,6 @@ import org.openapitools.client.model.CodaAuditEventsSecretsConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSecretsConfig;
 import org.openapitools.client.model.CustomerEventDataSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
-import org.openapitools.client.model.DeviceDetailsSecretsConfig;
 import org.openapitools.client.model.DuoSecurityActivityLogsSecretsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
@@ -74,7 +72,6 @@ import org.openapitools.client.model.IssuesReportSecretsConfig;
 import org.openapitools.client.model.IssuesSecretsConfig;
 import org.openapitools.client.model.KoiAuditLogsSecretsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySecretsConfig;
-import org.openapitools.client.model.LoginSessionsSecretsConfig;
 import org.openapitools.client.model.MerakiConfigLogsSecretsConfig;
 import org.openapitools.client.model.Microsoft365GenericSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
@@ -90,7 +87,6 @@ import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
 import org.openapitools.client.model.PolymerSecretsConfig;
 import org.openapitools.client.model.PostmanAuditLogsSecretsConfig;
 import org.openapitools.client.model.PubsubSecretsConfig;
-import org.openapitools.client.model.RolesInfoSecretsConfig;
 import org.openapitools.client.model.RootlyAuditLogsSecretsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSecretsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig;
@@ -112,10 +108,8 @@ import org.openapitools.client.model.TinesEventsLogsSecretsConfig;
 import org.openapitools.client.model.TwilioEventsSecretsConfig;
 import org.openapitools.client.model.TwilioSendgridEmailActivitySecretsConfig;
 import org.openapitools.client.model.UniversalSecretsConfig;
-import org.openapitools.client.model.UsersInfoSecretsConfig;
 import org.openapitools.client.model.VercelUserEventsSecretsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSecretsConfig;
-import org.openapitools.client.model.VulnerabilitiesCronSecretsConfig;
 import org.openapitools.client.model.VulnerabilitiesSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsReportSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSecretsConfig;
@@ -138,22 +132,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void testSecretProcessesorInputConfigSecrets() {
         // TODO: test SecretProcessesorInputConfigSecrets
-    }
-
-    /**
-     * Test the property 'clientId'
-     */
-    @Test
-    public void clientIdTest() {
-        // TODO: test clientId
-    }
-
-    /**
-     * Test the property 'clientSecret'
-     */
-    @Test
-    public void clientSecretTest() {
-        // TODO: test clientSecret
     }
 
     /**
@@ -218,6 +196,22 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void accessKeyTest() {
         // TODO: test accessKey
+    }
+
+    /**
+     * Test the property 'clientId'
+     */
+    @Test
+    public void clientIdTest() {
+        // TODO: test clientId
+    }
+
+    /**
+     * Test the property 'clientSecret'
+     */
+    @Test
+    public void clientSecretTest() {
+        // TODO: test clientSecret
     }
 
     /**

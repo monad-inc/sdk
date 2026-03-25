@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
 import { AlertCenterSecretsConfig } from '../models/AlertCenterSecretsConfig';
@@ -46,7 +45,6 @@ import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsCo
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
-import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
 import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
@@ -63,7 +61,6 @@ import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
-import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
 import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
 import { Microsoft365GenericSecretsConfig } from '../models/Microsoft365GenericSecretsConfig';
 import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSecretsConfig';
@@ -78,7 +75,6 @@ import { PaloAltoDataSecurityAlertsSecretsConfig } from '../models/PaloAltoDataS
 import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
 import { PostmanAuditLogsSecretsConfig } from '../models/PostmanAuditLogsSecretsConfig';
 import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
-import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
@@ -100,10 +96,8 @@ import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsCo
 import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
 import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';
 import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
-import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
-import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronSecretsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
 import { VulnerabilityFindingsReportSecretsConfig } from '../models/VulnerabilityFindingsReportSecretsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
@@ -118,7 +112,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSecrets = ActorsInfoSecretsConfig | AdminLogsSecretsConfig | AivenServiceLogsSecretsConfig | AlertCenterSecretsConfig | ArizeAuditLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AwsGuarddutySecretsConfig | AwsS3SecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureEventHubsSecretsConfig | AzureVnetFlowLogsSecretsConfig | BackblazeB2SecretsConfig | BigqueryInputSecretsConfig | BitwardenEventsSecretsConfig | BoxEventsSecretsConfig | BrinqaAuditLogsSecretsConfig | BugsnagOrgEventsSecretsConfig | BuildkiteAuditLogsSecretsConfig | BuildkiteGraphqlInputSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventoryReportsSecretsConfig | CloudResourceInventorySecretsConfig | CloudflareDdosAttackAnalyticsSecretsConfig | CloudflareFirewallEventsSecretsConfig | CloudflareHttpRequestsSecretsConfig | CloudflareUrlScannerSecretsConfig | CloudflareZeroTrustAccessRequestsSecretsConfig | ClumioAuditLogsSecretsConfig | ClumioConsolidatedAlertsSecretsConfig | CodaAuditEventsSecretsConfig | CortexXsoarManagementLogsSecretsConfig | CustomerEventDataSecretsConfig | DefenderForEndpointAlertsSecretsConfig | DeviceDetailsSecretsConfig | DuoSecurityActivityLogsSecretsConfig | EndorLabsAuditLogsSecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | FleetdmActivityLogsSecretsConfig | FullScansSecretsConfig | GitlabIssuesSecretsConfig | GoogleCloudStorageSecretsConfig | GoogleWorkspaceSecretsConfig | GreenhouseAuditLogsSecretsConfig | IndividualAlertsSecretsConfig | InspectorSecretsConfig | IssuesReportSecretsConfig | IssuesSecretsConfig | KoiAuditLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginSessionsSecretsConfig | MerakiConfigLogsSecretsConfig | Microsoft365GenericSecretsConfig | ObjectStorageInputSecretsConfig | OfflineenrollmentlogsSecretsConfig | OneloginEventsSecretsConfig | OpalEventsSecretsConfig | OperationLogsSecretsConfig | OrgAuditLogsSecretsConfig | OwnbackupAccountEventsSecretsConfig | PagerdutyAuditRecordsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | PolymerSecretsConfig | PostmanAuditLogsSecretsConfig | PubsubSecretsConfig | RolesInfoSecretsConfig | RootlyAuditLogsSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SentryOrgAuditLogsSecretsConfig | SlackEnterpriseAuditLogsSecretsConfig | SnowflakeInputSecretsConfig | SnykIssuesSecretsConfig | SnykTargetsSecretsConfig | TaniumGraphqlInputSecretsConfig | TeamAccessLogsSecretsConfig | TeamIntegrationLogsSecretsConfig | TelephonyLogsSecretsConfig | TenableAssetsCronSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesCronSecretsConfig | TenableVulnerabilitiesSecretsConfig | TinesAuditLogsSecretsConfig | TinesEventsLogsSecretsConfig | TwilioEventsSecretsConfig | TwilioSendgridEmailActivitySecretsConfig | UniversalSecretsConfig | UsersInfoSecretsConfig | VercelUserEventsSecretsConfig | VoltioAuditLogsSecretsConfig | VulnerabilitiesCronSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsReportSecretsConfig | VulnerabilityFindingsSecretsConfig | WizAuditLogsSecretsConfig | ZendeskAuditLogsSecretsConfig | ZoomActivityLogsSecretsConfig | ZoomMeetingActivityLogsSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSecrets = AdminLogsSecretsConfig | AivenServiceLogsSecretsConfig | AlertCenterSecretsConfig | ArizeAuditLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AwsGuarddutySecretsConfig | AwsS3SecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureEventHubsSecretsConfig | AzureVnetFlowLogsSecretsConfig | BackblazeB2SecretsConfig | BigqueryInputSecretsConfig | BitwardenEventsSecretsConfig | BoxEventsSecretsConfig | BrinqaAuditLogsSecretsConfig | BugsnagOrgEventsSecretsConfig | BuildkiteAuditLogsSecretsConfig | BuildkiteGraphqlInputSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventoryReportsSecretsConfig | CloudResourceInventorySecretsConfig | CloudflareDdosAttackAnalyticsSecretsConfig | CloudflareFirewallEventsSecretsConfig | CloudflareHttpRequestsSecretsConfig | CloudflareUrlScannerSecretsConfig | CloudflareZeroTrustAccessRequestsSecretsConfig | ClumioAuditLogsSecretsConfig | ClumioConsolidatedAlertsSecretsConfig | CodaAuditEventsSecretsConfig | CortexXsoarManagementLogsSecretsConfig | CustomerEventDataSecretsConfig | DefenderForEndpointAlertsSecretsConfig | DuoSecurityActivityLogsSecretsConfig | EndorLabsAuditLogsSecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | FleetdmActivityLogsSecretsConfig | FullScansSecretsConfig | GitlabIssuesSecretsConfig | GoogleCloudStorageSecretsConfig | GoogleWorkspaceSecretsConfig | GreenhouseAuditLogsSecretsConfig | IndividualAlertsSecretsConfig | InspectorSecretsConfig | IssuesReportSecretsConfig | IssuesSecretsConfig | KoiAuditLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | MerakiConfigLogsSecretsConfig | Microsoft365GenericSecretsConfig | ObjectStorageInputSecretsConfig | OfflineenrollmentlogsSecretsConfig | OneloginEventsSecretsConfig | OpalEventsSecretsConfig | OperationLogsSecretsConfig | OrgAuditLogsSecretsConfig | OwnbackupAccountEventsSecretsConfig | PagerdutyAuditRecordsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | PolymerSecretsConfig | PostmanAuditLogsSecretsConfig | PubsubSecretsConfig | RootlyAuditLogsSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SentryOrgAuditLogsSecretsConfig | SlackEnterpriseAuditLogsSecretsConfig | SnowflakeInputSecretsConfig | SnykIssuesSecretsConfig | SnykTargetsSecretsConfig | TaniumGraphqlInputSecretsConfig | TeamAccessLogsSecretsConfig | TeamIntegrationLogsSecretsConfig | TelephonyLogsSecretsConfig | TenableAssetsCronSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesCronSecretsConfig | TenableVulnerabilitiesSecretsConfig | TinesAuditLogsSecretsConfig | TinesEventsLogsSecretsConfig | TwilioEventsSecretsConfig | TwilioSendgridEmailActivitySecretsConfig | UniversalSecretsConfig | VercelUserEventsSecretsConfig | VoltioAuditLogsSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsReportSecretsConfig | VulnerabilityFindingsSecretsConfig | WizAuditLogsSecretsConfig | ZendeskAuditLogsSecretsConfig | ZoomActivityLogsSecretsConfig | ZoomMeetingActivityLogsSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSecretsClass
@@ -129,12 +123,6 @@ export class SecretProcessesorInputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-
-
-
-
-
-
 
 
 

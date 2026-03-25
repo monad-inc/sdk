@@ -19,7 +19,6 @@ import (
 
 // SecretProcessesorInputConfigSecrets - struct for SecretProcessesorInputConfigSecrets
 type SecretProcessesorInputConfigSecrets struct {
-	ActorsInfoSecretsConfig *ActorsInfoSecretsConfig
 	AdminLogsSecretsConfig *AdminLogsSecretsConfig
 	AivenServiceLogsSecretsConfig *AivenServiceLogsSecretsConfig
 	AlertCenterSecretsConfig *AlertCenterSecretsConfig
@@ -55,7 +54,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	CortexXsoarManagementLogsSecretsConfig *CortexXsoarManagementLogsSecretsConfig
 	CustomerEventDataSecretsConfig *CustomerEventDataSecretsConfig
 	DefenderForEndpointAlertsSecretsConfig *DefenderForEndpointAlertsSecretsConfig
-	DeviceDetailsSecretsConfig *DeviceDetailsSecretsConfig
 	DuoSecurityActivityLogsSecretsConfig *DuoSecurityActivityLogsSecretsConfig
 	EndorLabsAuditLogsSecretsConfig *EndorLabsAuditLogsSecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
@@ -72,7 +70,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	IssuesSecretsConfig *IssuesSecretsConfig
 	KoiAuditLogsSecretsConfig *KoiAuditLogsSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
-	LoginSessionsSecretsConfig *LoginSessionsSecretsConfig
 	MerakiConfigLogsSecretsConfig *MerakiConfigLogsSecretsConfig
 	Microsoft365GenericSecretsConfig *Microsoft365GenericSecretsConfig
 	ObjectStorageInputSecretsConfig *ObjectStorageInputSecretsConfig
@@ -87,7 +84,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	PolymerSecretsConfig *PolymerSecretsConfig
 	PostmanAuditLogsSecretsConfig *PostmanAuditLogsSecretsConfig
 	PubsubSecretsConfig *PubsubSecretsConfig
-	RolesInfoSecretsConfig *RolesInfoSecretsConfig
 	RootlyAuditLogsSecretsConfig *RootlyAuditLogsSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
@@ -109,10 +105,8 @@ type SecretProcessesorInputConfigSecrets struct {
 	TwilioEventsSecretsConfig *TwilioEventsSecretsConfig
 	TwilioSendgridEmailActivitySecretsConfig *TwilioSendgridEmailActivitySecretsConfig
 	UniversalSecretsConfig *UniversalSecretsConfig
-	UsersInfoSecretsConfig *UsersInfoSecretsConfig
 	VercelUserEventsSecretsConfig *VercelUserEventsSecretsConfig
 	VoltioAuditLogsSecretsConfig *VoltioAuditLogsSecretsConfig
-	VulnerabilitiesCronSecretsConfig *VulnerabilitiesCronSecretsConfig
 	VulnerabilitiesSecretsConfig *VulnerabilitiesSecretsConfig
 	VulnerabilityFindingsReportSecretsConfig *VulnerabilityFindingsReportSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
@@ -121,13 +115,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	ZoomActivityLogsSecretsConfig *ZoomActivityLogsSecretsConfig
 	ZoomMeetingActivityLogsSecretsConfig *ZoomMeetingActivityLogsSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
-}
-
-// ActorsInfoSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ActorsInfoSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func ActorsInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ActorsInfoSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		ActorsInfoSecretsConfig: v,
-	}
 }
 
 // AdminLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AdminLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
@@ -375,13 +362,6 @@ func DefenderForEndpointAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets
 	}
 }
 
-// DeviceDetailsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DeviceDetailsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func DeviceDetailsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DeviceDetailsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		DeviceDetailsSecretsConfig: v,
-	}
-}
-
 // DuoSecurityActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DuoSecurityActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func DuoSecurityActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DuoSecurityActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -494,13 +474,6 @@ func LogAnalyticsQuerySecretsConfigAsSecretProcessesorInputConfigSecrets(v *LogA
 	}
 }
 
-// LoginSessionsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns LoginSessionsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func LoginSessionsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *LoginSessionsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		LoginSessionsSecretsConfig: v,
-	}
-}
-
 // MerakiConfigLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns MerakiConfigLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func MerakiConfigLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *MerakiConfigLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -596,13 +569,6 @@ func PostmanAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Postm
 func PubsubSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PubsubSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		PubsubSecretsConfig: v,
-	}
-}
-
-// RolesInfoSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns RolesInfoSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func RolesInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *RolesInfoSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		RolesInfoSecretsConfig: v,
 	}
 }
 
@@ -753,13 +719,6 @@ func UniversalSecretsConfigAsSecretProcessesorInputConfigSecrets(v *UniversalSec
 	}
 }
 
-// UsersInfoSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns UsersInfoSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func UsersInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *UsersInfoSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		UsersInfoSecretsConfig: v,
-	}
-}
-
 // VercelUserEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VercelUserEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func VercelUserEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VercelUserEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -771,13 +730,6 @@ func VercelUserEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Verce
 func VoltioAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VoltioAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		VoltioAuditLogsSecretsConfig: v,
-	}
-}
-
-// VulnerabilitiesCronSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VulnerabilitiesCronSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func VulnerabilitiesCronSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VulnerabilitiesCronSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		VulnerabilitiesCronSecretsConfig: v,
 	}
 }
 
@@ -842,23 +794,6 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSecrets(v *map[string]interf
 func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ActorsInfoSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.ActorsInfoSecretsConfig)
-	if err == nil {
-		jsonActorsInfoSecretsConfig, _ := json.Marshal(dst.ActorsInfoSecretsConfig)
-		if string(jsonActorsInfoSecretsConfig) == "{}" { // empty struct
-			dst.ActorsInfoSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ActorsInfoSecretsConfig); err != nil {
-				dst.ActorsInfoSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ActorsInfoSecretsConfig = nil
-	}
-
 	// try to unmarshal data into AdminLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AdminLogsSecretsConfig)
 	if err == nil {
@@ -1454,23 +1389,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into DeviceDetailsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.DeviceDetailsSecretsConfig)
-	if err == nil {
-		jsonDeviceDetailsSecretsConfig, _ := json.Marshal(dst.DeviceDetailsSecretsConfig)
-		if string(jsonDeviceDetailsSecretsConfig) == "{}" { // empty struct
-			dst.DeviceDetailsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DeviceDetailsSecretsConfig); err != nil {
-				dst.DeviceDetailsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DeviceDetailsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into DuoSecurityActivityLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.DuoSecurityActivityLogsSecretsConfig)
 	if err == nil {
@@ -1743,23 +1661,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.LogAnalyticsQuerySecretsConfig = nil
 	}
 
-	// try to unmarshal data into LoginSessionsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.LoginSessionsSecretsConfig)
-	if err == nil {
-		jsonLoginSessionsSecretsConfig, _ := json.Marshal(dst.LoginSessionsSecretsConfig)
-		if string(jsonLoginSessionsSecretsConfig) == "{}" { // empty struct
-			dst.LoginSessionsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.LoginSessionsSecretsConfig); err != nil {
-				dst.LoginSessionsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.LoginSessionsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into MerakiConfigLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.MerakiConfigLogsSecretsConfig)
 	if err == nil {
@@ -1996,23 +1897,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.PubsubSecretsConfig = nil
-	}
-
-	// try to unmarshal data into RolesInfoSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.RolesInfoSecretsConfig)
-	if err == nil {
-		jsonRolesInfoSecretsConfig, _ := json.Marshal(dst.RolesInfoSecretsConfig)
-		if string(jsonRolesInfoSecretsConfig) == "{}" { // empty struct
-			dst.RolesInfoSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.RolesInfoSecretsConfig); err != nil {
-				dst.RolesInfoSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.RolesInfoSecretsConfig = nil
 	}
 
 	// try to unmarshal data into RootlyAuditLogsSecretsConfig
@@ -2372,23 +2256,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.UniversalSecretsConfig = nil
 	}
 
-	// try to unmarshal data into UsersInfoSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.UsersInfoSecretsConfig)
-	if err == nil {
-		jsonUsersInfoSecretsConfig, _ := json.Marshal(dst.UsersInfoSecretsConfig)
-		if string(jsonUsersInfoSecretsConfig) == "{}" { // empty struct
-			dst.UsersInfoSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.UsersInfoSecretsConfig); err != nil {
-				dst.UsersInfoSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.UsersInfoSecretsConfig = nil
-	}
-
 	// try to unmarshal data into VercelUserEventsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSecretsConfig)
 	if err == nil {
@@ -2421,23 +2288,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.VoltioAuditLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into VulnerabilitiesCronSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesCronSecretsConfig)
-	if err == nil {
-		jsonVulnerabilitiesCronSecretsConfig, _ := json.Marshal(dst.VulnerabilitiesCronSecretsConfig)
-		if string(jsonVulnerabilitiesCronSecretsConfig) == "{}" { // empty struct
-			dst.VulnerabilitiesCronSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.VulnerabilitiesCronSecretsConfig); err != nil {
-				dst.VulnerabilitiesCronSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.VulnerabilitiesCronSecretsConfig = nil
 	}
 
 	// try to unmarshal data into VulnerabilitiesSecretsConfig
@@ -2578,7 +2428,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ActorsInfoSecretsConfig = nil
 		dst.AdminLogsSecretsConfig = nil
 		dst.AivenServiceLogsSecretsConfig = nil
 		dst.AlertCenterSecretsConfig = nil
@@ -2614,7 +2463,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CortexXsoarManagementLogsSecretsConfig = nil
 		dst.CustomerEventDataSecretsConfig = nil
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
-		dst.DeviceDetailsSecretsConfig = nil
 		dst.DuoSecurityActivityLogsSecretsConfig = nil
 		dst.EndorLabsAuditLogsSecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
@@ -2631,7 +2479,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.IssuesSecretsConfig = nil
 		dst.KoiAuditLogsSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
-		dst.LoginSessionsSecretsConfig = nil
 		dst.MerakiConfigLogsSecretsConfig = nil
 		dst.Microsoft365GenericSecretsConfig = nil
 		dst.ObjectStorageInputSecretsConfig = nil
@@ -2646,7 +2493,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PolymerSecretsConfig = nil
 		dst.PostmanAuditLogsSecretsConfig = nil
 		dst.PubsubSecretsConfig = nil
-		dst.RolesInfoSecretsConfig = nil
 		dst.RootlyAuditLogsSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
@@ -2668,10 +2514,8 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.TwilioEventsSecretsConfig = nil
 		dst.TwilioSendgridEmailActivitySecretsConfig = nil
 		dst.UniversalSecretsConfig = nil
-		dst.UsersInfoSecretsConfig = nil
 		dst.VercelUserEventsSecretsConfig = nil
 		dst.VoltioAuditLogsSecretsConfig = nil
-		dst.VulnerabilitiesCronSecretsConfig = nil
 		dst.VulnerabilitiesSecretsConfig = nil
 		dst.VulnerabilityFindingsReportSecretsConfig = nil
 		dst.VulnerabilityFindingsSecretsConfig = nil
@@ -2691,10 +2535,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
-	if src.ActorsInfoSecretsConfig != nil {
-		return json.Marshal(&src.ActorsInfoSecretsConfig)
-	}
-
 	if src.AdminLogsSecretsConfig != nil {
 		return json.Marshal(&src.AdminLogsSecretsConfig)
 	}
@@ -2835,10 +2675,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DefenderForEndpointAlertsSecretsConfig)
 	}
 
-	if src.DeviceDetailsSecretsConfig != nil {
-		return json.Marshal(&src.DeviceDetailsSecretsConfig)
-	}
-
 	if src.DuoSecurityActivityLogsSecretsConfig != nil {
 		return json.Marshal(&src.DuoSecurityActivityLogsSecretsConfig)
 	}
@@ -2903,10 +2739,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.LogAnalyticsQuerySecretsConfig)
 	}
 
-	if src.LoginSessionsSecretsConfig != nil {
-		return json.Marshal(&src.LoginSessionsSecretsConfig)
-	}
-
 	if src.MerakiConfigLogsSecretsConfig != nil {
 		return json.Marshal(&src.MerakiConfigLogsSecretsConfig)
 	}
@@ -2961,10 +2793,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.PubsubSecretsConfig != nil {
 		return json.Marshal(&src.PubsubSecretsConfig)
-	}
-
-	if src.RolesInfoSecretsConfig != nil {
-		return json.Marshal(&src.RolesInfoSecretsConfig)
 	}
 
 	if src.RootlyAuditLogsSecretsConfig != nil {
@@ -3051,20 +2879,12 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.UniversalSecretsConfig)
 	}
 
-	if src.UsersInfoSecretsConfig != nil {
-		return json.Marshal(&src.UsersInfoSecretsConfig)
-	}
-
 	if src.VercelUserEventsSecretsConfig != nil {
 		return json.Marshal(&src.VercelUserEventsSecretsConfig)
 	}
 
 	if src.VoltioAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.VoltioAuditLogsSecretsConfig)
-	}
-
-	if src.VulnerabilitiesCronSecretsConfig != nil {
-		return json.Marshal(&src.VulnerabilitiesCronSecretsConfig)
 	}
 
 	if src.VulnerabilitiesSecretsConfig != nil {
@@ -3107,10 +2927,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 	if obj == nil {
 		return nil
 	}
-	if obj.ActorsInfoSecretsConfig != nil {
-		return obj.ActorsInfoSecretsConfig
-	}
-
 	if obj.AdminLogsSecretsConfig != nil {
 		return obj.AdminLogsSecretsConfig
 	}
@@ -3251,10 +3067,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.DefenderForEndpointAlertsSecretsConfig
 	}
 
-	if obj.DeviceDetailsSecretsConfig != nil {
-		return obj.DeviceDetailsSecretsConfig
-	}
-
 	if obj.DuoSecurityActivityLogsSecretsConfig != nil {
 		return obj.DuoSecurityActivityLogsSecretsConfig
 	}
@@ -3319,10 +3131,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.LogAnalyticsQuerySecretsConfig
 	}
 
-	if obj.LoginSessionsSecretsConfig != nil {
-		return obj.LoginSessionsSecretsConfig
-	}
-
 	if obj.MerakiConfigLogsSecretsConfig != nil {
 		return obj.MerakiConfigLogsSecretsConfig
 	}
@@ -3377,10 +3185,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.PubsubSecretsConfig != nil {
 		return obj.PubsubSecretsConfig
-	}
-
-	if obj.RolesInfoSecretsConfig != nil {
-		return obj.RolesInfoSecretsConfig
 	}
 
 	if obj.RootlyAuditLogsSecretsConfig != nil {
@@ -3467,20 +3271,12 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.UniversalSecretsConfig
 	}
 
-	if obj.UsersInfoSecretsConfig != nil {
-		return obj.UsersInfoSecretsConfig
-	}
-
 	if obj.VercelUserEventsSecretsConfig != nil {
 		return obj.VercelUserEventsSecretsConfig
 	}
 
 	if obj.VoltioAuditLogsSecretsConfig != nil {
 		return obj.VoltioAuditLogsSecretsConfig
-	}
-
-	if obj.VulnerabilitiesCronSecretsConfig != nil {
-		return obj.VulnerabilitiesCronSecretsConfig
 	}
 
 	if obj.VulnerabilitiesSecretsConfig != nil {
@@ -3521,10 +3317,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interface{}) {
-	if obj.ActorsInfoSecretsConfig != nil {
-		return *obj.ActorsInfoSecretsConfig
-	}
-
 	if obj.AdminLogsSecretsConfig != nil {
 		return *obj.AdminLogsSecretsConfig
 	}
@@ -3665,10 +3457,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.DefenderForEndpointAlertsSecretsConfig
 	}
 
-	if obj.DeviceDetailsSecretsConfig != nil {
-		return *obj.DeviceDetailsSecretsConfig
-	}
-
 	if obj.DuoSecurityActivityLogsSecretsConfig != nil {
 		return *obj.DuoSecurityActivityLogsSecretsConfig
 	}
@@ -3733,10 +3521,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.LogAnalyticsQuerySecretsConfig
 	}
 
-	if obj.LoginSessionsSecretsConfig != nil {
-		return *obj.LoginSessionsSecretsConfig
-	}
-
 	if obj.MerakiConfigLogsSecretsConfig != nil {
 		return *obj.MerakiConfigLogsSecretsConfig
 	}
@@ -3791,10 +3575,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.PubsubSecretsConfig != nil {
 		return *obj.PubsubSecretsConfig
-	}
-
-	if obj.RolesInfoSecretsConfig != nil {
-		return *obj.RolesInfoSecretsConfig
 	}
 
 	if obj.RootlyAuditLogsSecretsConfig != nil {
@@ -3881,20 +3661,12 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.UniversalSecretsConfig
 	}
 
-	if obj.UsersInfoSecretsConfig != nil {
-		return *obj.UsersInfoSecretsConfig
-	}
-
 	if obj.VercelUserEventsSecretsConfig != nil {
 		return *obj.VercelUserEventsSecretsConfig
 	}
 
 	if obj.VoltioAuditLogsSecretsConfig != nil {
 		return *obj.VoltioAuditLogsSecretsConfig
-	}
-
-	if obj.VulnerabilitiesCronSecretsConfig != nil {
-		return *obj.VulnerabilitiesCronSecretsConfig
 	}
 
 	if obj.VulnerabilitiesSecretsConfig != nil {

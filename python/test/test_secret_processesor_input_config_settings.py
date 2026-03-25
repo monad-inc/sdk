@@ -36,13 +36,8 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
         model = SecretProcessesorInputConfigSettings()
         if include_optional:
             return SecretProcessesorInputConfigSettings(
-                actor_type = '',
-                cloud_type = '',
-                cron = '',
-                sort = '',
-                target_industries = '',
-                use_synthetic_data = True,
                 host = '',
+                use_synthetic_data = True,
                 backfill_start_time = '',
                 project = '',
                 service = '',
@@ -122,6 +117,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 full_snapshot = True,
                 interval = 56,
+                cron = '',
                 account_id = '',
                 include_bot_fields = True,
                 zone_id = '',
@@ -237,6 +233,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 with_payload = True,
                 customer_id = '',
+                cloud_type = '',
                 asset_status = [
                     ''
                     ],

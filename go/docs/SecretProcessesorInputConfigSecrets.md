@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -14,6 +12,8 @@ Name | Type | Description | Notes
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -52,46 +52,6 @@ will change when the set of required properties is changed
 NewSecretProcessesorInputConfigSecretsWithDefaults instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetClientId
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientId() ModelsSecret`
-
-GetClientId returns the ClientId field if non-nil, zero value otherwise.
-
-### GetClientIdOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientIdOk() (*ModelsSecret, bool)`
-
-GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientId
-
-`func (o *SecretProcessesorInputConfigSecrets) SetClientId(v ModelsSecret)`
-
-SetClientId sets ClientId field to given value.
-
-
-### GetClientSecret
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientSecret() ModelsSecret`
-
-GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
-
-### GetClientSecretOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientSecretOk() (*ModelsSecret, bool)`
-
-GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientSecret
-
-`func (o *SecretProcessesorInputConfigSecrets) SetClientSecret(v ModelsSecret)`
-
-SetClientSecret sets ClientSecret field to given value.
-
 
 ### GetIntegrationKey
 
@@ -292,6 +252,46 @@ SetAccessKey sets AccessKey field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasAccessKey() bool`
 
 HasAccessKey returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientId() ModelsSecret`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientIdOk() (*ModelsSecret, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *SecretProcessesorInputConfigSecrets) SetClientId(v ModelsSecret)`
+
+SetClientId sets ClientId field to given value.
+
+
+### GetClientSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientSecret() ModelsSecret`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientSecretOk() (*ModelsSecret, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) SetClientSecret(v ModelsSecret)`
+
+SetClientSecret sets ClientSecret field to given value.
+
 
 ### GetTenantId
 

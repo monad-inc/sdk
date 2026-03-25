@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-25T17:19:40.378140931Z[Etc/UTC]
+  - Build date: 2026-03-25T19:47:16.209776341Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -290,8 +290,6 @@ Class | Method | HTTP request | Description
 
  - [AbsSecretsConfig](docs/AbsSecretsConfig.md)
  - [AbsSettingsConfig](docs/AbsSettingsConfig.md)
- - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
- - [ActorsInfoSettingsConfig](docs/ActorsInfoSettingsConfig.md)
  - [AddArgumentsConfig](docs/AddArgumentsConfig.md)
  - [AddIdArgumentsConfig](docs/AddIdArgumentsConfig.md)
  - [AdminLogsSecretsConfig](docs/AdminLogsSecretsConfig.md)
@@ -391,8 +389,6 @@ Class | Method | HTTP request | Description
  - [DefenderForEndpointAlertsSecretsConfig](docs/DefenderForEndpointAlertsSecretsConfig.md)
  - [DefenderForEndpointAlertsSettingsConfig](docs/DefenderForEndpointAlertsSettingsConfig.md)
  - [DelimitedDelimiterFormatter](docs/DelimitedDelimiterFormatter.md)
- - [DeviceDetailsSecretsConfig](docs/DeviceDetailsSecretsConfig.md)
- - [DeviceDetailsSettingsConfig](docs/DeviceDetailsSettingsConfig.md)
  - [DropKeyArgumentsConfig](docs/DropKeyArgumentsConfig.md)
  - [DropKeyWhereValueEqArgumentsConfig](docs/DropKeyWhereValueEqArgumentsConfig.md)
  - [DropRecordWhereValueEqArgumentsConfig](docs/DropRecordWhereValueEqArgumentsConfig.md)
@@ -459,8 +455,6 @@ Class | Method | HTTP request | Description
  - [LeafconditionsInfo](docs/LeafconditionsInfo.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
- - [LoginSessionsSecretsConfig](docs/LoginSessionsSecretsConfig.md)
- - [LoginSessionsSettingsConfig](docs/LoginSessionsSettingsConfig.md)
  - [MathMultiplyWithValueArgumentsConfig](docs/MathMultiplyWithValueArgumentsConfig.md)
  - [MerakiConfigLogsSecretsConfig](docs/MerakiConfigLogsSecretsConfig.md)
  - [MerakiConfigLogsSettingsConfig](docs/MerakiConfigLogsSettingsConfig.md)
@@ -593,8 +587,6 @@ Class | Method | HTTP request | Description
  - [RenameKeyArgumentsConfig](docs/RenameKeyArgumentsConfig.md)
  - [RenameKeyWhereValueEqArgumentsConfig](docs/RenameKeyWhereValueEqArgumentsConfig.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
- - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
- - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)
  - [RootlyAuditLogsSecretsConfig](docs/RootlyAuditLogsSecretsConfig.md)
  - [RootlyAuditLogsSettingsConfig](docs/RootlyAuditLogsSettingsConfig.md)
  - [RoutesAddUserToOrganizationRequest](docs/RoutesAddUserToOrganizationRequest.md)
@@ -755,15 +747,11 @@ Class | Method | HTTP request | Description
  - [TypesStringFilter](docs/TypesStringFilter.md)
  - [UniversalSecretsConfig](docs/UniversalSecretsConfig.md)
  - [UniversalSettingsConfig](docs/UniversalSettingsConfig.md)
- - [UsersInfoSecretsConfig](docs/UsersInfoSecretsConfig.md)
- - [UsersInfoSettingsConfig](docs/UsersInfoSettingsConfig.md)
  - [UtcTimestampArgumentsConfig](docs/UtcTimestampArgumentsConfig.md)
  - [VercelUserEventsSecretsConfig](docs/VercelUserEventsSecretsConfig.md)
  - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)
  - [VoltioAuditLogsSecretsConfig](docs/VoltioAuditLogsSecretsConfig.md)
  - [VoltioAuditLogsSettingsConfig](docs/VoltioAuditLogsSettingsConfig.md)
- - [VulnerabilitiesCronSecretsConfig](docs/VulnerabilitiesCronSecretsConfig.md)
- - [VulnerabilitiesCronSettingsConfig](docs/VulnerabilitiesCronSettingsConfig.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
  - [VulnerabilitiesSettingsConfig](docs/VulnerabilitiesSettingsConfig.md)
  - [VulnerabilityFindingsReportSecretsConfig](docs/VulnerabilityFindingsReportSecretsConfig.md)

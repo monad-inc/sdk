@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Duo Security Activity Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T17:19:40.378140931Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T19:47:16.209776341Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class DuoSecurityActivityLogsSettingsConfig {
   public static final String SERIALIZED_NAME_HOST = "host";
   @SerializedName(SERIALIZED_NAME_HOST)

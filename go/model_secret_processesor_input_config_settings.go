@@ -19,7 +19,6 @@ import (
 
 // SecretProcessesorInputConfigSettings - struct for SecretProcessesorInputConfigSettings
 type SecretProcessesorInputConfigSettings struct {
-	ActorsInfoSettingsConfig *ActorsInfoSettingsConfig
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
 	AivenServiceLogsSettingsConfig *AivenServiceLogsSettingsConfig
 	AlertCenterSettingsConfig *AlertCenterSettingsConfig
@@ -58,7 +57,6 @@ type SecretProcessesorInputConfigSettings struct {
 	CortexXsoarManagementLogsSettingsConfig *CortexXsoarManagementLogsSettingsConfig
 	CustomerEventDataSettingsConfig *CustomerEventDataSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
-	DeviceDetailsSettingsConfig *DeviceDetailsSettingsConfig
 	DuoSecurityActivityLogsSettingsConfig *DuoSecurityActivityLogsSettingsConfig
 	EndorLabsAuditLogsSettingsConfig *EndorLabsAuditLogsSettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
@@ -76,7 +74,6 @@ type SecretProcessesorInputConfigSettings struct {
 	IssuesSettingsConfig *IssuesSettingsConfig
 	KoiAuditLogsSettingsConfig *KoiAuditLogsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
-	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
 	MerakiConfigLogsSettingsConfig *MerakiConfigLogsSettingsConfig
 	Microsoft365GenericSettingsConfig *Microsoft365GenericSettingsConfig
 	MonadLogSettingsConfig *MonadLogSettingsConfig
@@ -94,7 +91,6 @@ type SecretProcessesorInputConfigSettings struct {
 	PolymerSettingsConfig *PolymerSettingsConfig
 	PostmanAuditLogsSettingsConfig *PostmanAuditLogsSettingsConfig
 	PubsubSettingsConfig *PubsubSettingsConfig
-	RolesInfoSettingsConfig *RolesInfoSettingsConfig
 	RootlyAuditLogsSettingsConfig *RootlyAuditLogsSettingsConfig
 	SemgrepCodeFindingsSettingsConfig *SemgrepCodeFindingsSettingsConfig
 	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
@@ -118,10 +114,8 @@ type SecretProcessesorInputConfigSettings struct {
 	TwilioEventsSettingsConfig *TwilioEventsSettingsConfig
 	TwilioSendgridEmailActivitySettingsConfig *TwilioSendgridEmailActivitySettingsConfig
 	UniversalSettingsConfig *UniversalSettingsConfig
-	UsersInfoSettingsConfig *UsersInfoSettingsConfig
 	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
-	VulnerabilitiesCronSettingsConfig *VulnerabilitiesCronSettingsConfig
 	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
 	VulnerabilityFindingsReportSettingsConfig *VulnerabilityFindingsReportSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
@@ -130,13 +124,6 @@ type SecretProcessesorInputConfigSettings struct {
 	ZoomActivityLogsSettingsConfig *ZoomActivityLogsSettingsConfig
 	ZoomMeetingActivityLogsSettingsConfig *ZoomMeetingActivityLogsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
-}
-
-// ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActorsInfoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActorsInfoSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		ActorsInfoSettingsConfig: v,
-	}
 }
 
 // AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AdminLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
@@ -405,13 +392,6 @@ func DefenderForEndpointAlertsSettingsConfigAsSecretProcessesorInputConfigSettin
 	}
 }
 
-// DeviceDetailsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DeviceDetailsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func DeviceDetailsSettingsConfigAsSecretProcessesorInputConfigSettings(v *DeviceDetailsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		DeviceDetailsSettingsConfig: v,
-	}
-}
-
 // DuoSecurityActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DuoSecurityActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func DuoSecurityActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *DuoSecurityActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -531,13 +511,6 @@ func LogAnalyticsQuerySettingsConfigAsSecretProcessesorInputConfigSettings(v *Lo
 	}
 }
 
-// LoginSessionsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns LoginSessionsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func LoginSessionsSettingsConfigAsSecretProcessesorInputConfigSettings(v *LoginSessionsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		LoginSessionsSettingsConfig: v,
-	}
-}
-
 // MerakiConfigLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns MerakiConfigLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func MerakiConfigLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *MerakiConfigLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -654,13 +627,6 @@ func PostmanAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Pos
 func PubsubSettingsConfigAsSecretProcessesorInputConfigSettings(v *PubsubSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		PubsubSettingsConfig: v,
-	}
-}
-
-// RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns RolesInfoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *RolesInfoSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		RolesInfoSettingsConfig: v,
 	}
 }
 
@@ -825,13 +791,6 @@ func UniversalSettingsConfigAsSecretProcessesorInputConfigSettings(v *UniversalS
 	}
 }
 
-// UsersInfoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns UsersInfoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func UsersInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *UsersInfoSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		UsersInfoSettingsConfig: v,
-	}
-}
-
 // VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VercelUserEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VercelUserEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -843,13 +802,6 @@ func VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Ver
 func VoltioAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VoltioAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		VoltioAuditLogsSettingsConfig: v,
-	}
-}
-
-// VulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VulnerabilitiesCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func VulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *VulnerabilitiesCronSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		VulnerabilitiesCronSettingsConfig: v,
 	}
 }
 
@@ -914,23 +866,6 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSettings(v *map[string]inter
 func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ActorsInfoSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.ActorsInfoSettingsConfig)
-	if err == nil {
-		jsonActorsInfoSettingsConfig, _ := json.Marshal(dst.ActorsInfoSettingsConfig)
-		if string(jsonActorsInfoSettingsConfig) == "{}" { // empty struct
-			dst.ActorsInfoSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ActorsInfoSettingsConfig); err != nil {
-				dst.ActorsInfoSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ActorsInfoSettingsConfig = nil
-	}
-
 	// try to unmarshal data into AdminLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AdminLogsSettingsConfig)
 	if err == nil {
@@ -1577,23 +1512,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into DeviceDetailsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DeviceDetailsSettingsConfig)
-	if err == nil {
-		jsonDeviceDetailsSettingsConfig, _ := json.Marshal(dst.DeviceDetailsSettingsConfig)
-		if string(jsonDeviceDetailsSettingsConfig) == "{}" { // empty struct
-			dst.DeviceDetailsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DeviceDetailsSettingsConfig); err != nil {
-				dst.DeviceDetailsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DeviceDetailsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into DuoSecurityActivityLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.DuoSecurityActivityLogsSettingsConfig)
 	if err == nil {
@@ -1883,23 +1801,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.LogAnalyticsQuerySettingsConfig = nil
 	}
 
-	// try to unmarshal data into LoginSessionsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.LoginSessionsSettingsConfig)
-	if err == nil {
-		jsonLoginSessionsSettingsConfig, _ := json.Marshal(dst.LoginSessionsSettingsConfig)
-		if string(jsonLoginSessionsSettingsConfig) == "{}" { // empty struct
-			dst.LoginSessionsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.LoginSessionsSettingsConfig); err != nil {
-				dst.LoginSessionsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.LoginSessionsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into MerakiConfigLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.MerakiConfigLogsSettingsConfig)
 	if err == nil {
@@ -2187,23 +2088,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.PubsubSettingsConfig = nil
-	}
-
-	// try to unmarshal data into RolesInfoSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.RolesInfoSettingsConfig)
-	if err == nil {
-		jsonRolesInfoSettingsConfig, _ := json.Marshal(dst.RolesInfoSettingsConfig)
-		if string(jsonRolesInfoSettingsConfig) == "{}" { // empty struct
-			dst.RolesInfoSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.RolesInfoSettingsConfig); err != nil {
-				dst.RolesInfoSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.RolesInfoSettingsConfig = nil
 	}
 
 	// try to unmarshal data into RootlyAuditLogsSettingsConfig
@@ -2597,23 +2481,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.UniversalSettingsConfig = nil
 	}
 
-	// try to unmarshal data into UsersInfoSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.UsersInfoSettingsConfig)
-	if err == nil {
-		jsonUsersInfoSettingsConfig, _ := json.Marshal(dst.UsersInfoSettingsConfig)
-		if string(jsonUsersInfoSettingsConfig) == "{}" { // empty struct
-			dst.UsersInfoSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.UsersInfoSettingsConfig); err != nil {
-				dst.UsersInfoSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.UsersInfoSettingsConfig = nil
-	}
-
 	// try to unmarshal data into VercelUserEventsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSettingsConfig)
 	if err == nil {
@@ -2646,23 +2513,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.VoltioAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into VulnerabilitiesCronSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesCronSettingsConfig)
-	if err == nil {
-		jsonVulnerabilitiesCronSettingsConfig, _ := json.Marshal(dst.VulnerabilitiesCronSettingsConfig)
-		if string(jsonVulnerabilitiesCronSettingsConfig) == "{}" { // empty struct
-			dst.VulnerabilitiesCronSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.VulnerabilitiesCronSettingsConfig); err != nil {
-				dst.VulnerabilitiesCronSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.VulnerabilitiesCronSettingsConfig = nil
 	}
 
 	// try to unmarshal data into VulnerabilitiesSettingsConfig
@@ -2803,7 +2653,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ActorsInfoSettingsConfig = nil
 		dst.AdminLogsSettingsConfig = nil
 		dst.AivenServiceLogsSettingsConfig = nil
 		dst.AlertCenterSettingsConfig = nil
@@ -2842,7 +2691,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CortexXsoarManagementLogsSettingsConfig = nil
 		dst.CustomerEventDataSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
-		dst.DeviceDetailsSettingsConfig = nil
 		dst.DuoSecurityActivityLogsSettingsConfig = nil
 		dst.EndorLabsAuditLogsSettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
@@ -2860,7 +2708,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.IssuesSettingsConfig = nil
 		dst.KoiAuditLogsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
-		dst.LoginSessionsSettingsConfig = nil
 		dst.MerakiConfigLogsSettingsConfig = nil
 		dst.Microsoft365GenericSettingsConfig = nil
 		dst.MonadLogSettingsConfig = nil
@@ -2878,7 +2725,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PolymerSettingsConfig = nil
 		dst.PostmanAuditLogsSettingsConfig = nil
 		dst.PubsubSettingsConfig = nil
-		dst.RolesInfoSettingsConfig = nil
 		dst.RootlyAuditLogsSettingsConfig = nil
 		dst.SemgrepCodeFindingsSettingsConfig = nil
 		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
@@ -2902,10 +2748,8 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TwilioEventsSettingsConfig = nil
 		dst.TwilioSendgridEmailActivitySettingsConfig = nil
 		dst.UniversalSettingsConfig = nil
-		dst.UsersInfoSettingsConfig = nil
 		dst.VercelUserEventsSettingsConfig = nil
 		dst.VoltioAuditLogsSettingsConfig = nil
-		dst.VulnerabilitiesCronSettingsConfig = nil
 		dst.VulnerabilitiesSettingsConfig = nil
 		dst.VulnerabilityFindingsReportSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
@@ -2925,10 +2769,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
-	if src.ActorsInfoSettingsConfig != nil {
-		return json.Marshal(&src.ActorsInfoSettingsConfig)
-	}
-
 	if src.AdminLogsSettingsConfig != nil {
 		return json.Marshal(&src.AdminLogsSettingsConfig)
 	}
@@ -3081,10 +2921,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DefenderForEndpointAlertsSettingsConfig)
 	}
 
-	if src.DeviceDetailsSettingsConfig != nil {
-		return json.Marshal(&src.DeviceDetailsSettingsConfig)
-	}
-
 	if src.DuoSecurityActivityLogsSettingsConfig != nil {
 		return json.Marshal(&src.DuoSecurityActivityLogsSettingsConfig)
 	}
@@ -3153,10 +2989,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.LogAnalyticsQuerySettingsConfig)
 	}
 
-	if src.LoginSessionsSettingsConfig != nil {
-		return json.Marshal(&src.LoginSessionsSettingsConfig)
-	}
-
 	if src.MerakiConfigLogsSettingsConfig != nil {
 		return json.Marshal(&src.MerakiConfigLogsSettingsConfig)
 	}
@@ -3223,10 +3055,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.PubsubSettingsConfig != nil {
 		return json.Marshal(&src.PubsubSettingsConfig)
-	}
-
-	if src.RolesInfoSettingsConfig != nil {
-		return json.Marshal(&src.RolesInfoSettingsConfig)
 	}
 
 	if src.RootlyAuditLogsSettingsConfig != nil {
@@ -3321,20 +3149,12 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.UniversalSettingsConfig)
 	}
 
-	if src.UsersInfoSettingsConfig != nil {
-		return json.Marshal(&src.UsersInfoSettingsConfig)
-	}
-
 	if src.VercelUserEventsSettingsConfig != nil {
 		return json.Marshal(&src.VercelUserEventsSettingsConfig)
 	}
 
 	if src.VoltioAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.VoltioAuditLogsSettingsConfig)
-	}
-
-	if src.VulnerabilitiesCronSettingsConfig != nil {
-		return json.Marshal(&src.VulnerabilitiesCronSettingsConfig)
 	}
 
 	if src.VulnerabilitiesSettingsConfig != nil {
@@ -3377,10 +3197,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 	if obj == nil {
 		return nil
 	}
-	if obj.ActorsInfoSettingsConfig != nil {
-		return obj.ActorsInfoSettingsConfig
-	}
-
 	if obj.AdminLogsSettingsConfig != nil {
 		return obj.AdminLogsSettingsConfig
 	}
@@ -3533,10 +3349,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.DefenderForEndpointAlertsSettingsConfig
 	}
 
-	if obj.DeviceDetailsSettingsConfig != nil {
-		return obj.DeviceDetailsSettingsConfig
-	}
-
 	if obj.DuoSecurityActivityLogsSettingsConfig != nil {
 		return obj.DuoSecurityActivityLogsSettingsConfig
 	}
@@ -3605,10 +3417,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.LogAnalyticsQuerySettingsConfig
 	}
 
-	if obj.LoginSessionsSettingsConfig != nil {
-		return obj.LoginSessionsSettingsConfig
-	}
-
 	if obj.MerakiConfigLogsSettingsConfig != nil {
 		return obj.MerakiConfigLogsSettingsConfig
 	}
@@ -3675,10 +3483,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.PubsubSettingsConfig != nil {
 		return obj.PubsubSettingsConfig
-	}
-
-	if obj.RolesInfoSettingsConfig != nil {
-		return obj.RolesInfoSettingsConfig
 	}
 
 	if obj.RootlyAuditLogsSettingsConfig != nil {
@@ -3773,20 +3577,12 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.UniversalSettingsConfig
 	}
 
-	if obj.UsersInfoSettingsConfig != nil {
-		return obj.UsersInfoSettingsConfig
-	}
-
 	if obj.VercelUserEventsSettingsConfig != nil {
 		return obj.VercelUserEventsSettingsConfig
 	}
 
 	if obj.VoltioAuditLogsSettingsConfig != nil {
 		return obj.VoltioAuditLogsSettingsConfig
-	}
-
-	if obj.VulnerabilitiesCronSettingsConfig != nil {
-		return obj.VulnerabilitiesCronSettingsConfig
 	}
 
 	if obj.VulnerabilitiesSettingsConfig != nil {
@@ -3827,10 +3623,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interface{}) {
-	if obj.ActorsInfoSettingsConfig != nil {
-		return *obj.ActorsInfoSettingsConfig
-	}
-
 	if obj.AdminLogsSettingsConfig != nil {
 		return *obj.AdminLogsSettingsConfig
 	}
@@ -3983,10 +3775,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.DefenderForEndpointAlertsSettingsConfig
 	}
 
-	if obj.DeviceDetailsSettingsConfig != nil {
-		return *obj.DeviceDetailsSettingsConfig
-	}
-
 	if obj.DuoSecurityActivityLogsSettingsConfig != nil {
 		return *obj.DuoSecurityActivityLogsSettingsConfig
 	}
@@ -4055,10 +3843,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.LogAnalyticsQuerySettingsConfig
 	}
 
-	if obj.LoginSessionsSettingsConfig != nil {
-		return *obj.LoginSessionsSettingsConfig
-	}
-
 	if obj.MerakiConfigLogsSettingsConfig != nil {
 		return *obj.MerakiConfigLogsSettingsConfig
 	}
@@ -4125,10 +3909,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.PubsubSettingsConfig != nil {
 		return *obj.PubsubSettingsConfig
-	}
-
-	if obj.RolesInfoSettingsConfig != nil {
-		return *obj.RolesInfoSettingsConfig
 	}
 
 	if obj.RootlyAuditLogsSettingsConfig != nil {
@@ -4223,20 +4003,12 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.UniversalSettingsConfig
 	}
 
-	if obj.UsersInfoSettingsConfig != nil {
-		return *obj.UsersInfoSettingsConfig
-	}
-
 	if obj.VercelUserEventsSettingsConfig != nil {
 		return *obj.VercelUserEventsSettingsConfig
 	}
 
 	if obj.VoltioAuditLogsSettingsConfig != nil {
 		return *obj.VoltioAuditLogsSettingsConfig
-	}
-
-	if obj.VulnerabilitiesCronSettingsConfig != nil {
-		return *obj.VulnerabilitiesCronSettingsConfig
 	}
 
 	if obj.VulnerabilitiesSettingsConfig != nil {

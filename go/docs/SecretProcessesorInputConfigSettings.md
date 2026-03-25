@@ -4,13 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ActorType** | Pointer to **string** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
-**CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
-**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
-**Sort** | Pointer to **string** | Order fields in ascending or descending order. Ex: &#39;created_date|asc&#39;, &#39;created_date|desc&#39;. | [optional] 
-**TargetIndustries** | Pointer to **string** | Industries targeted by the actor. Ex: &#39;Financial&#39;, &#39;Healthcare&#39;, &#39;Energy&#39;, &#39;Government&#39;, &#39;Manufacturing&#39;, &#39;Technology&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
-**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **Host** | Pointer to **string** | The API hostname for your Duo Security integration. | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Service** | Pointer to **string** | The Aiven service name | [optional] 
@@ -74,6 +69,7 @@ Name | Type | Description | Notes
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
+**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
@@ -157,6 +153,7 @@ Name | Type | Description | Notes
 **Streams** | Pointer to **[]string** | ServiceNow streams to fetch data from | [optional] 
 **WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 **CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
+**CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetTypes** | Pointer to **[]string** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
@@ -183,130 +180,30 @@ NewSecretProcessesorInputConfigSettingsWithDefaults instantiates a new SecretPro
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetActorType
+### GetHost
 
-`func (o *SecretProcessesorInputConfigSettings) GetActorType() string`
+`func (o *SecretProcessesorInputConfigSettings) GetHost() string`
 
-GetActorType returns the ActorType field if non-nil, zero value otherwise.
+GetHost returns the Host field if non-nil, zero value otherwise.
 
-### GetActorTypeOk
+### GetHostOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetActorTypeOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetHostOk() (*string, bool)`
 
-GetActorTypeOk returns a tuple with the ActorType field if it's non-nil, zero value otherwise
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetActorType
+### SetHost
 
-`func (o *SecretProcessesorInputConfigSettings) SetActorType(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetHost(v string)`
 
-SetActorType sets ActorType field to given value.
+SetHost sets Host field to given value.
 
-### HasActorType
+### HasHost
 
-`func (o *SecretProcessesorInputConfigSettings) HasActorType() bool`
+`func (o *SecretProcessesorInputConfigSettings) HasHost() bool`
 
-HasActorType returns a boolean if a field has been set.
-
-### GetCloudType
-
-`func (o *SecretProcessesorInputConfigSettings) GetCloudType() string`
-
-GetCloudType returns the CloudType field if non-nil, zero value otherwise.
-
-### GetCloudTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCloudTypeOk() (*string, bool)`
-
-GetCloudTypeOk returns a tuple with the CloudType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCloudType
-
-`func (o *SecretProcessesorInputConfigSettings) SetCloudType(v string)`
-
-SetCloudType sets CloudType field to given value.
-
-### HasCloudType
-
-`func (o *SecretProcessesorInputConfigSettings) HasCloudType() bool`
-
-HasCloudType returns a boolean if a field has been set.
-
-### GetCron
-
-`func (o *SecretProcessesorInputConfigSettings) GetCron() string`
-
-GetCron returns the Cron field if non-nil, zero value otherwise.
-
-### GetCronOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCronOk() (*string, bool)`
-
-GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCron
-
-`func (o *SecretProcessesorInputConfigSettings) SetCron(v string)`
-
-SetCron sets Cron field to given value.
-
-### HasCron
-
-`func (o *SecretProcessesorInputConfigSettings) HasCron() bool`
-
-HasCron returns a boolean if a field has been set.
-
-### GetSort
-
-`func (o *SecretProcessesorInputConfigSettings) GetSort() string`
-
-GetSort returns the Sort field if non-nil, zero value otherwise.
-
-### GetSortOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetSortOk() (*string, bool)`
-
-GetSortOk returns a tuple with the Sort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSort
-
-`func (o *SecretProcessesorInputConfigSettings) SetSort(v string)`
-
-SetSort sets Sort field to given value.
-
-### HasSort
-
-`func (o *SecretProcessesorInputConfigSettings) HasSort() bool`
-
-HasSort returns a boolean if a field has been set.
-
-### GetTargetIndustries
-
-`func (o *SecretProcessesorInputConfigSettings) GetTargetIndustries() string`
-
-GetTargetIndustries returns the TargetIndustries field if non-nil, zero value otherwise.
-
-### GetTargetIndustriesOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetTargetIndustriesOk() (*string, bool)`
-
-GetTargetIndustriesOk returns a tuple with the TargetIndustries field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTargetIndustries
-
-`func (o *SecretProcessesorInputConfigSettings) SetTargetIndustries(v string)`
-
-SetTargetIndustries sets TargetIndustries field to given value.
-
-### HasTargetIndustries
-
-`func (o *SecretProcessesorInputConfigSettings) HasTargetIndustries() bool`
-
-HasTargetIndustries returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 
@@ -332,31 +229,6 @@ SetUseSyntheticData sets UseSyntheticData field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
 
 HasUseSyntheticData returns a boolean if a field has been set.
-
-### GetHost
-
-`func (o *SecretProcessesorInputConfigSettings) GetHost() string`
-
-GetHost returns the Host field if non-nil, zero value otherwise.
-
-### GetHostOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetHostOk() (*string, bool)`
-
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHost
-
-`func (o *SecretProcessesorInputConfigSettings) SetHost(v string)`
-
-SetHost sets Host field to given value.
-
-### HasHost
-
-`func (o *SecretProcessesorInputConfigSettings) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetBackfillStartTime
 
@@ -1932,6 +1804,31 @@ SetInterval sets Interval field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
+
+### GetCron
+
+`func (o *SecretProcessesorInputConfigSettings) GetCron() string`
+
+GetCron returns the Cron field if non-nil, zero value otherwise.
+
+### GetCronOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetCronOk() (*string, bool)`
+
+GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCron
+
+`func (o *SecretProcessesorInputConfigSettings) SetCron(v string)`
+
+SetCron sets Cron field to given value.
+
+### HasCron
+
+`func (o *SecretProcessesorInputConfigSettings) HasCron() bool`
+
+HasCron returns a boolean if a field has been set.
 
 ### GetAccountId
 
@@ -4007,6 +3904,31 @@ SetCustomerId sets CustomerId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasCustomerId() bool`
 
 HasCustomerId returns a boolean if a field has been set.
+
+### GetCloudType
+
+`func (o *SecretProcessesorInputConfigSettings) GetCloudType() string`
+
+GetCloudType returns the CloudType field if non-nil, zero value otherwise.
+
+### GetCloudTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetCloudTypeOk() (*string, bool)`
+
+GetCloudTypeOk returns a tuple with the CloudType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCloudType
+
+`func (o *SecretProcessesorInputConfigSettings) SetCloudType(v string)`
+
+SetCloudType sets CloudType field to given value.
+
+### HasCloudType
+
+`func (o *SecretProcessesorInputConfigSettings) HasCloudType() bool`
+
+HasCloudType returns a boolean if a field has been set.
 
 ### GetAssetStatus
 
