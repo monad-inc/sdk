@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Inspector settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T23:33:18.118757475Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T16:42:44.057740999Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class InspectorSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
