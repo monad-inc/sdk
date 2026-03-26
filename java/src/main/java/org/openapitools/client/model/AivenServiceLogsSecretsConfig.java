@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Aiven Service Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T17:15:30.859782081Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T19:08:43.877303481Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AivenServiceLogsSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_TOKEN = "auth_token";
   @SerializedName(SERIALIZED_NAME_AUTH_TOKEN)
