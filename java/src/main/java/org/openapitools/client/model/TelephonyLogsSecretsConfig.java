@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Duo Security Telephony Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:08.524361109Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:26:01.824263584Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class TelephonyLogsSecretsConfig {
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integration_key";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
