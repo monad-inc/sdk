@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Clumio Alerts settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T16:42:44.057740999Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T17:15:30.859782081Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class IndividualAlertsSettingsConfig {
   public static final String SERIALIZED_NAME_ALERT_TYPE = "alert_type";
   @SerializedName(SERIALIZED_NAME_ALERT_TYPE)
