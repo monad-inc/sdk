@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *BillingProductsApi* | [**create_billing_account_subscription**](docs/BillingProductsApi.md#create_billing_account_subscription) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
 *BillingProductsApi* | [**get_billing_account_subscription**](docs/BillingProductsApi.md#get_billing_account_subscription) | **GET** /v2/billing/accounts/{billing_account_id}/subscription | Get Billing Account Subscription
 *BillingProductsApi* | [**get_billing_products**](docs/BillingProductsApi.md#get_billing_products) | **GET** /v2/billing/products | List Billing Products
+*ConditionSandboxApi* | [**apply_condition_v2**](docs/ConditionSandboxApi.md#apply_condition_v2) | **POST** /v2/sandbox/condition | Apply condition to record
 *ConditionsApi* | [**list_conditions**](docs/ConditionsApi.md#list_conditions) | **GET** /v2/conditions | List conditions
 *ConnectionsApi* | [**create_connection**](docs/ConnectionsApi.md#create_connection) | **POST** /v3/{organization_id}/connections | Create a new connection
 *ConnectionsApi* | [**delete_connection**](docs/ConnectionsApi.md#delete_connection) | **DELETE** /v3/{organization_id}/connections/{connection_id} | Delete connection
@@ -586,6 +587,8 @@ Class | Method | HTTP request | Description
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
  - [RoutesUserAuthProvider](docs/RoutesUserAuthProvider.md)
  - [RoutesUserWithRoles](docs/RoutesUserWithRoles.md)
+ - [RoutesV2ApplyConditionRequest](docs/RoutesV2ApplyConditionRequest.md)
+ - [RoutesV2ApplyConditionResponse](docs/RoutesV2ApplyConditionResponse.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)

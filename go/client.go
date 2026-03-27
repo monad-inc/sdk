@@ -62,6 +62,8 @@ type APIClient struct {
 
 	BillingProductsAPI *BillingProductsAPIService
 
+	ConditionSandboxAPI *ConditionSandboxAPIService
+
 	ConditionsAPI *ConditionsAPIService
 
 	ConnectionsAPI *ConnectionsAPIService
@@ -147,6 +149,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingAccountsAPI = (*BillingAccountsAPIService)(&c.common)
 	c.BillingAccountsRBACAPI = (*BillingAccountsRBACAPIService)(&c.common)
 	c.BillingProductsAPI = (*BillingProductsAPIService)(&c.common)
+	c.ConditionSandboxAPI = (*ConditionSandboxAPIService)(&c.common)
 	c.ConditionsAPI = (*ConditionsAPIService)(&c.common)
 	c.ConnectionsAPI = (*ConnectionsAPIService)(&c.common)
 	c.EnrichmentSandboxAPI = (*EnrichmentSandboxAPIService)(&c.common)

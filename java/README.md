@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-27T19:11:20.274251417Z[Etc/UTC]
+  - Build date: 2026-03-27T19:36:31.523229876Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -153,6 +153,7 @@ Class | Method | HTTP request | Description
 *BillingProductsApi* | [**createBillingAccountSubscription**](docs/BillingProductsApi.md#createBillingAccountSubscription) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
 *BillingProductsApi* | [**getBillingAccountSubscription**](docs/BillingProductsApi.md#getBillingAccountSubscription) | **GET** /v2/billing/accounts/{billing_account_id}/subscription | Get Billing Account Subscription
 *BillingProductsApi* | [**getBillingProducts**](docs/BillingProductsApi.md#getBillingProducts) | **GET** /v2/billing/products | List Billing Products
+*ConditionSandboxApi* | [**applyConditionV2**](docs/ConditionSandboxApi.md#applyConditionV2) | **POST** /v2/sandbox/condition | Apply condition to record
 *ConditionsApi* | [**listConditions**](docs/ConditionsApi.md#listConditions) | **GET** /v2/conditions | List conditions
 *ConnectionsApi* | [**createConnection**](docs/ConnectionsApi.md#createConnection) | **POST** /v3/{organization_id}/connections | Create a new connection
 *ConnectionsApi* | [**deleteConnection**](docs/ConnectionsApi.md#deleteConnection) | **DELETE** /v3/{organization_id}/connections/{connection_id} | Delete connection
@@ -613,6 +614,8 @@ Class | Method | HTTP request | Description
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
  - [RoutesUserAuthProvider](docs/RoutesUserAuthProvider.md)
  - [RoutesUserWithRoles](docs/RoutesUserWithRoles.md)
+ - [RoutesV2ApplyConditionRequest](docs/RoutesV2ApplyConditionRequest.md)
+ - [RoutesV2ApplyConditionResponse](docs/RoutesV2ApplyConditionResponse.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)

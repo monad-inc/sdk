@@ -327,6 +327,8 @@ import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformReq
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
 import { RoutesUserAuthProvider } from '../models/RoutesUserAuthProvider';
 import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
+import { RoutesV2ApplyConditionRequest } from '../models/RoutesV2ApplyConditionRequest';
+import { RoutesV2ApplyConditionResponse } from '../models/RoutesV2ApplyConditionResponse';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
@@ -1309,6 +1311,47 @@ export class PromiseBillingProductsApi {
     public getBillingProducts(showInactive?: boolean, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsBillingProductList> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getBillingProducts(showInactive, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableConditionSandboxApi } from './ObservableAPI';
+
+import { ConditionSandboxApiRequestFactory, ConditionSandboxApiResponseProcessor} from "../apis/ConditionSandboxApi";
+export class PromiseConditionSandboxApi {
+    private api: ObservableConditionSandboxApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ConditionSandboxApiRequestFactory,
+        responseProcessor?: ConditionSandboxApiResponseProcessor
+    ) {
+        this.api = new ObservableConditionSandboxApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Apply a condition to a JSON record
+     * Apply condition to record
+     * @param routesV2ApplyConditionRequest Condition and record
+     */
+    public applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyConditionResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Apply a condition to a JSON record
+     * Apply condition to record
+     * @param routesV2ApplyConditionRequest Condition and record
+     */
+    public applyConditionV2(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyConditionResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.applyConditionV2(routesV2ApplyConditionRequest, observableOptions);
         return result.toPromise();
     }
 

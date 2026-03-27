@@ -323,6 +323,8 @@ export * from '../models/RoutesUpdateTransformRequest';
 export * from '../models/RoutesUpdateUserInOrganizationRequest';
 export * from '../models/RoutesUserAuthProvider';
 export * from '../models/RoutesUserWithRoles';
+export * from '../models/RoutesV2ApplyConditionRequest';
+export * from '../models/RoutesV2ApplyConditionResponse';
 export * from '../models/RoutesV2ApplyTransformationRequest';
 export * from '../models/RoutesV2ApplyTransformationResponse';
 export * from '../models/RoutesV2CreateAPIKeyRequest';
@@ -807,6 +809,8 @@ import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformReq
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
 import { RoutesUserAuthProvider } from '../models/RoutesUserAuthProvider';
 import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
+import { RoutesV2ApplyConditionRequest } from '../models/RoutesV2ApplyConditionRequest';
+import { RoutesV2ApplyConditionResponse } from '../models/RoutesV2ApplyConditionResponse';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
@@ -1322,6 +1326,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesUpdateUserInOrganizationRequest": RoutesUpdateUserInOrganizationRequest,
     "RoutesUserAuthProvider": RoutesUserAuthProvider,
     "RoutesUserWithRoles": RoutesUserWithRoles,
+    "RoutesV2ApplyConditionRequest": RoutesV2ApplyConditionRequest,
+    "RoutesV2ApplyConditionResponse": RoutesV2ApplyConditionResponse,
     "RoutesV2ApplyTransformationRequest": RoutesV2ApplyTransformationRequest,
     "RoutesV2ApplyTransformationResponse": RoutesV2ApplyTransformationResponse,
     "RoutesV2CreateAPIKeyRequest": RoutesV2CreateAPIKeyRequest,

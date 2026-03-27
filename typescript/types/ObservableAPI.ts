@@ -328,6 +328,8 @@ import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformReq
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
 import { RoutesUserAuthProvider } from '../models/RoutesUserAuthProvider';
 import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
+import { RoutesV2ApplyConditionRequest } from '../models/RoutesV2ApplyConditionRequest';
+import { RoutesV2ApplyConditionResponse } from '../models/RoutesV2ApplyConditionResponse';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
@@ -1669,6 +1671,58 @@ export class ObservableBillingProductsApi {
      */
     public getBillingProducts(showInactive?: boolean, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingProductList> {
         return this.getBillingProductsWithHttpInfo(showInactive, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingProductList>) => apiResponse.data));
+    }
+
+}
+
+import { ConditionSandboxApiRequestFactory, ConditionSandboxApiResponseProcessor} from "../apis/ConditionSandboxApi";
+export class ObservableConditionSandboxApi {
+    private requestFactory: ConditionSandboxApiRequestFactory;
+    private responseProcessor: ConditionSandboxApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ConditionSandboxApiRequestFactory,
+        responseProcessor?: ConditionSandboxApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new ConditionSandboxApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new ConditionSandboxApiResponseProcessor();
+    }
+
+    /**
+     * Apply a condition to a JSON record
+     * Apply condition to record
+     * @param routesV2ApplyConditionRequest Condition and record
+     */
+    public applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyConditionResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.applyConditionV2(routesV2ApplyConditionRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.applyConditionV2WithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Apply a condition to a JSON record
+     * Apply condition to record
+     * @param routesV2ApplyConditionRequest Condition and record
+     */
+    public applyConditionV2(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: ConfigurationOptions): Observable<RoutesV2ApplyConditionResponse> {
+        return this.applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyConditionResponse>) => apiResponse.data));
     }
 
 }
