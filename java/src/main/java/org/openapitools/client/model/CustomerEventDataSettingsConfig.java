@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Docusign Customer Event Data settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-27T15:53:15.786766649Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-27T16:40:01.812417084Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CustomerEventDataSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
