@@ -14,6 +14,7 @@ AWS SQS S3 settings
 |**recordLocation** | **String** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. |  [optional] |
 |**region** | **String** | The AWS region where the SQS queue is located. |  [optional] |
 |**roleArn** | **String** | The ARN of the IAM role to assume for accessing the SQS queue. |  [optional] |
+|**usesSns** | **Boolean** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. |  [optional] |
 |**withMetadata** | **Boolean** | Whether to include S3 object metadata in the output. |  [optional] |
 
 

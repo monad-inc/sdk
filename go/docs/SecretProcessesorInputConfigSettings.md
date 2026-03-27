@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **RecordLocation** | Pointer to **string** | JSONPath location of the records array in the GraphQL response | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
+**UsesSns** | Pointer to **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 
 **WithMetadata** | Pointer to **bool** | Whether to include S3 object metadata in the output. | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group containing the virtual network | [optional] 
@@ -828,6 +829,31 @@ SetQueueUrl sets QueueUrl field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasQueueUrl() bool`
 
 HasQueueUrl returns a boolean if a field has been set.
+
+### GetUsesSns
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsesSns() bool`
+
+GetUsesSns returns the UsesSns field if non-nil, zero value otherwise.
+
+### GetUsesSnsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsesSnsOk() (*bool, bool)`
+
+GetUsesSnsOk returns a tuple with the UsesSns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsesSns
+
+`func (o *SecretProcessesorInputConfigSettings) SetUsesSns(v bool)`
+
+SetUsesSns sets UsesSns field to given value.
+
+### HasUsesSns
+
+`func (o *SecretProcessesorInputConfigSettings) HasUsesSns() bool`
+
+HasUsesSns returns a boolean if a field has been set.
 
 ### GetWithMetadata
 

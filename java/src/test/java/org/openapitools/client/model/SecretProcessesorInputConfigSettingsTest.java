@@ -354,6 +354,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'usesSns'
+     */
+    @Test
+    public void usesSnsTest() {
+        // TODO: test usesSns
+    }
+
+    /**
      * Test the property 'withMetadata'
      */
     @Test

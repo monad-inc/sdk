@@ -86,6 +86,14 @@ public class Awssqss3SettingsConfigTest {
     }
 
     /**
+     * Test the property 'usesSns'
+     */
+    @Test
+    public void usesSnsTest() {
+        // TODO: test usesSns
+    }
+
+    /**
      * Test the property 'withMetadata'
      */
     @Test

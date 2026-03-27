@@ -41,6 +41,10 @@ export class Awssqss3SettingsConfig {
     */
     'roleArn'?: string;
     /**
+    * Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.
+    */
+    'usesSns'?: boolean;
+    /**
     * Whether to include S3 object metadata in the output.
     */
     'withMetadata'?: boolean;
@@ -84,6 +88,12 @@ export class Awssqss3SettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "usesSns",
+            "baseName": "uses_sns",
+            "type": "boolean",
             "format": ""
         },
         {

@@ -34,8 +34,9 @@ class Awssqss3SettingsConfig(BaseModel):
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. This can be ignored if the record is not in JSON format.")
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where the SQS queue is located.")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the IAM role to assume for accessing the SQS queue.")
+    uses_sns: Optional[StrictBool] = Field(default=None, description="Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.")
     with_metadata: Optional[StrictBool] = Field(default=None, description="Whether to include S3 object metadata in the output.")
-    __properties: ClassVar[List[str]] = ["compression", "format", "queue_url", "record_location", "region", "role_arn", "with_metadata"]
+    __properties: ClassVar[List[str]] = ["compression", "format", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,6 +95,7 @@ class Awssqss3SettingsConfig(BaseModel):
             "record_location": obj.get("record_location"),
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
+            "uses_sns": obj.get("uses_sns"),
             "with_metadata": obj.get("with_metadata")
         })
         return _obj

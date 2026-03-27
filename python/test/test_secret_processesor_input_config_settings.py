@@ -64,6 +64,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 prefix = '',
                 record_location = '',
                 queue_url = '',
+                uses_sns = True,
                 with_metadata = True,
                 correlation_id = '',
                 resource_group_name = '',

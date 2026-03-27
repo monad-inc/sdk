@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **prefix** | **str** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **record_location** | **str** | JSONPath location of the records array in the GraphQL response | [optional] 
 **queue_url** | **str** | The URL of the SQS queue to poll for messages. | [optional] 
+**uses_sns** | **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 
 **with_metadata** | **bool** | Whether to include S3 object metadata in the output. | [optional] 
 **correlation_id** | **str** | The correlation ID of the log | [optional] 
 **resource_group_name** | **str** | The name of the resource group containing the virtual network | [optional] 

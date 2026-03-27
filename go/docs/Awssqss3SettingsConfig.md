@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. | [optional] 
 **Region** | Pointer to **string** | The AWS region where the SQS queue is located. | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 
+**UsesSns** | Pointer to **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 
 **WithMetadata** | Pointer to **bool** | Whether to include S3 object metadata in the output. | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *Awssqss3SettingsConfig) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetUsesSns
+
+`func (o *Awssqss3SettingsConfig) GetUsesSns() bool`
+
+GetUsesSns returns the UsesSns field if non-nil, zero value otherwise.
+
+### GetUsesSnsOk
+
+`func (o *Awssqss3SettingsConfig) GetUsesSnsOk() (*bool, bool)`
+
+GetUsesSnsOk returns a tuple with the UsesSns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsesSns
+
+`func (o *Awssqss3SettingsConfig) SetUsesSns(v bool)`
+
+SetUsesSns sets UsesSns field to given value.
+
+### HasUsesSns
+
+`func (o *Awssqss3SettingsConfig) HasUsesSns() bool`
+
+HasUsesSns returns a boolean if a field has been set.
 
 ### GetWithMetadata
 

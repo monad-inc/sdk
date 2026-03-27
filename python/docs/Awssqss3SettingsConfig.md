@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **record_location** | **str** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. | [optional] 
 **region** | **str** | The AWS region where the SQS queue is located. | [optional] 
 **role_arn** | **str** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 
+**uses_sns** | **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 
 **with_metadata** | **bool** | Whether to include S3 object metadata in the output. | [optional] 
 
 ## Example

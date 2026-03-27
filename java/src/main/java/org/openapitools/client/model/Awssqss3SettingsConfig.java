@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS SQS S3 settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-27T19:36:31.523229876Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-27T20:18:37.622844148Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Awssqss3SettingsConfig {
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
@@ -79,6 +79,11 @@ public class Awssqss3SettingsConfig {
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
   @javax.annotation.Nullable
   private String roleArn;
+
+  public static final String SERIALIZED_NAME_USES_SNS = "uses_sns";
+  @SerializedName(SERIALIZED_NAME_USES_SNS)
+  @javax.annotation.Nullable
+  private Boolean usesSns;
 
   public static final String SERIALIZED_NAME_WITH_METADATA = "with_metadata";
   @SerializedName(SERIALIZED_NAME_WITH_METADATA)
@@ -202,6 +207,25 @@ public class Awssqss3SettingsConfig {
   }
 
 
+  public Awssqss3SettingsConfig usesSns(@javax.annotation.Nullable Boolean usesSns) {
+    this.usesSns = usesSns;
+    return this;
+  }
+
+  /**
+   * Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.
+   * @return usesSns
+   */
+  @javax.annotation.Nullable
+  public Boolean getUsesSns() {
+    return usesSns;
+  }
+
+  public void setUsesSns(@javax.annotation.Nullable Boolean usesSns) {
+    this.usesSns = usesSns;
+  }
+
+
   public Awssqss3SettingsConfig withMetadata(@javax.annotation.Nullable Boolean withMetadata) {
     this.withMetadata = withMetadata;
     return this;
@@ -237,12 +261,13 @@ public class Awssqss3SettingsConfig {
         Objects.equals(this.recordLocation, awssqss3SettingsConfig.recordLocation) &&
         Objects.equals(this.region, awssqss3SettingsConfig.region) &&
         Objects.equals(this.roleArn, awssqss3SettingsConfig.roleArn) &&
+        Objects.equals(this.usesSns, awssqss3SettingsConfig.usesSns) &&
         Objects.equals(this.withMetadata, awssqss3SettingsConfig.withMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(compression, format, queueUrl, recordLocation, region, roleArn, withMetadata);
+    return Objects.hash(compression, format, queueUrl, recordLocation, region, roleArn, usesSns, withMetadata);
   }
 
   @Override
@@ -255,6 +280,7 @@ public class Awssqss3SettingsConfig {
     sb.append("    recordLocation: ").append(toIndentedString(recordLocation)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    usesSns: ").append(toIndentedString(usesSns)).append("\n");
     sb.append("    withMetadata: ").append(toIndentedString(withMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -274,7 +300,7 @@ public class Awssqss3SettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("compression", "format", "queue_url", "record_location", "region", "role_arn", "with_metadata"));
+    openapiFields = new HashSet<String>(Arrays.asList("compression", "format", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

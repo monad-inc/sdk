@@ -32,6 +32,8 @@ type Awssqss3SettingsConfig struct {
 	Region *string `json:"region,omitempty"`
 	// The ARN of the IAM role to assume for accessing the SQS queue.
 	RoleArn *string `json:"role_arn,omitempty"`
+	// Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.
+	UsesSns *bool `json:"uses_sns,omitempty"`
 	// Whether to include S3 object metadata in the output.
 	WithMetadata *bool `json:"with_metadata,omitempty"`
 }
@@ -245,6 +247,38 @@ func (o *Awssqss3SettingsConfig) SetRoleArn(v string) {
 	o.RoleArn = &v
 }
 
+// GetUsesSns returns the UsesSns field value if set, zero value otherwise.
+func (o *Awssqss3SettingsConfig) GetUsesSns() bool {
+	if o == nil || IsNil(o.UsesSns) {
+		var ret bool
+		return ret
+	}
+	return *o.UsesSns
+}
+
+// GetUsesSnsOk returns a tuple with the UsesSns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Awssqss3SettingsConfig) GetUsesSnsOk() (*bool, bool) {
+	if o == nil || IsNil(o.UsesSns) {
+		return nil, false
+	}
+	return o.UsesSns, true
+}
+
+// HasUsesSns returns a boolean if a field has been set.
+func (o *Awssqss3SettingsConfig) HasUsesSns() bool {
+	if o != nil && !IsNil(o.UsesSns) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsesSns gets a reference to the given bool and assigns it to the UsesSns field.
+func (o *Awssqss3SettingsConfig) SetUsesSns(v bool) {
+	o.UsesSns = &v
+}
+
 // GetWithMetadata returns the WithMetadata field value if set, zero value otherwise.
 func (o *Awssqss3SettingsConfig) GetWithMetadata() bool {
 	if o == nil || IsNil(o.WithMetadata) {
@@ -304,6 +338,9 @@ func (o Awssqss3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RoleArn) {
 		toSerialize["role_arn"] = o.RoleArn
+	}
+	if !IsNil(o.UsesSns) {
+		toSerialize["uses_sns"] = o.UsesSns
 	}
 	if !IsNil(o.WithMetadata) {
 		toSerialize["with_metadata"] = o.WithMetadata
