@@ -536,8 +536,6 @@ __all__ = [
     "VercelUserEventsSettingsConfig",
     "VoltioAuditLogsSecretsConfig",
     "VoltioAuditLogsSettingsConfig",
-    "VulnerabilitiesSecretsConfig",
-    "VulnerabilitiesSettingsConfig",
     "VulnerabilityFindingsReportSecretsConfig",
     "VulnerabilityFindingsReportSettingsConfig",
     "VulnerabilityFindingsSecretsConfig",
@@ -1074,8 +1072,6 @@ from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecre
 from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig as VercelUserEventsSettingsConfig
 from monad.models.voltio_audit_logs_secrets_config import VoltioAuditLogsSecretsConfig as VoltioAuditLogsSecretsConfig
 from monad.models.voltio_audit_logs_settings_config import VoltioAuditLogsSettingsConfig as VoltioAuditLogsSettingsConfig
-from monad.models.vulnerabilities_secrets_config import VulnerabilitiesSecretsConfig as VulnerabilitiesSecretsConfig
-from monad.models.vulnerabilities_settings_config import VulnerabilitiesSettingsConfig as VulnerabilitiesSettingsConfig
 from monad.models.vulnerability_findings_report_secrets_config import VulnerabilityFindingsReportSecretsConfig as VulnerabilityFindingsReportSecretsConfig
 from monad.models.vulnerability_findings_report_settings_config import VulnerabilityFindingsReportSettingsConfig as VulnerabilityFindingsReportSettingsConfig
 from monad.models.vulnerability_findings_secrets_config import VulnerabilityFindingsSecretsConfig as VulnerabilityFindingsSecretsConfig

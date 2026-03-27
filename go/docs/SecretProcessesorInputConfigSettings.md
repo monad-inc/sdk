@@ -153,7 +153,6 @@ Name | Type | Description | Notes
 **Streams** | Pointer to **[]string** | ServiceNow streams to fetch data from | [optional] 
 **WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 **CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
-**CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetTypes** | Pointer to **[]string** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
@@ -3904,31 +3903,6 @@ SetCustomerId sets CustomerId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasCustomerId() bool`
 
 HasCustomerId returns a boolean if a field has been set.
-
-### GetCloudType
-
-`func (o *SecretProcessesorInputConfigSettings) GetCloudType() string`
-
-GetCloudType returns the CloudType field if non-nil, zero value otherwise.
-
-### GetCloudTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCloudTypeOk() (*string, bool)`
-
-GetCloudTypeOk returns a tuple with the CloudType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCloudType
-
-`func (o *SecretProcessesorInputConfigSettings) SetCloudType(v string)`
-
-SetCloudType sets CloudType field to given value.
-
-### HasCloudType
-
-`func (o *SecretProcessesorInputConfigSettings) HasCloudType() bool`
-
-HasCloudType returns a boolean if a field has been set.
 
 ### GetAssetStatus
 

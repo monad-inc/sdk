@@ -473,8 +473,6 @@ import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecrets
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
-import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
-import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
 import { VulnerabilityFindingsReportSecretsConfig } from '../models/VulnerabilityFindingsReportSecretsConfig';
 import { VulnerabilityFindingsReportSettingsConfig } from '../models/VulnerabilityFindingsReportSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';

@@ -154,7 +154,6 @@ Name | Type | Description | Notes
 **streams** | **List[str]** | ServiceNow streams to fetch data from | [optional] 
 **with_payload** | **bool** | Whether to include detailed payload information in the events. | [optional] 
 **customer_id** | **str** | Optional: Filter audit logs by specific customer ID | [optional] 
-**cloud_type** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **asset_status** | **List[str]** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **asset_types** | **List[str]** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | [optional] 
 **detection_method** | **List[str]** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 

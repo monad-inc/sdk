@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-27T16:40:01.812417084Z[Etc/UTC]
+  - Build date: 2026-03-27T19:11:20.274251417Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -759,8 +759,6 @@ Class | Method | HTTP request | Description
  - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)
  - [VoltioAuditLogsSecretsConfig](docs/VoltioAuditLogsSecretsConfig.md)
  - [VoltioAuditLogsSettingsConfig](docs/VoltioAuditLogsSettingsConfig.md)
- - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
- - [VulnerabilitiesSettingsConfig](docs/VulnerabilitiesSettingsConfig.md)
  - [VulnerabilityFindingsReportSecretsConfig](docs/VulnerabilityFindingsReportSecretsConfig.md)
  - [VulnerabilityFindingsReportSettingsConfig](docs/VulnerabilityFindingsReportSettingsConfig.md)
  - [VulnerabilityFindingsSecretsConfig](docs/VulnerabilityFindingsSecretsConfig.md)

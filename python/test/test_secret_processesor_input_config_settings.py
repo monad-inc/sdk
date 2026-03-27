@@ -233,7 +233,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 with_payload = True,
                 customer_id = '',
-                cloud_type = '',
                 asset_status = [
                     ''
                     ],

@@ -469,8 +469,6 @@ export * from '../models/VercelUserEventsSecretsConfig';
 export * from '../models/VercelUserEventsSettingsConfig';
 export * from '../models/VoltioAuditLogsSecretsConfig';
 export * from '../models/VoltioAuditLogsSettingsConfig';
-export * from '../models/VulnerabilitiesSecretsConfig';
-export * from '../models/VulnerabilitiesSettingsConfig';
 export * from '../models/VulnerabilityFindingsReportSecretsConfig';
 export * from '../models/VulnerabilityFindingsReportSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
@@ -955,8 +953,6 @@ import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecrets
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
-import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
-import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
 import { VulnerabilityFindingsReportSecretsConfig } from '../models/VulnerabilityFindingsReportSecretsConfig';
 import { VulnerabilityFindingsReportSettingsConfig } from '../models/VulnerabilityFindingsReportSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
@@ -1471,8 +1467,6 @@ let typeMap: {[index: string]: any} = {
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,
     "VoltioAuditLogsSecretsConfig": VoltioAuditLogsSecretsConfig,
     "VoltioAuditLogsSettingsConfig": VoltioAuditLogsSettingsConfig,
-    "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,
-    "VulnerabilitiesSettingsConfig": VulnerabilitiesSettingsConfig,
     "VulnerabilityFindingsReportSecretsConfig": VulnerabilityFindingsReportSecretsConfig,
     "VulnerabilityFindingsReportSettingsConfig": VulnerabilityFindingsReportSettingsConfig,
     "VulnerabilityFindingsSecretsConfig": VulnerabilityFindingsSecretsConfig,

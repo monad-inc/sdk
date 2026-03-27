@@ -110,7 +110,6 @@ import org.openapitools.client.model.TwilioSendgridEmailActivitySecretsConfig;
 import org.openapitools.client.model.UniversalSecretsConfig;
 import org.openapitools.client.model.VercelUserEventsSecretsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSecretsConfig;
-import org.openapitools.client.model.VulnerabilitiesSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsReportSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSecretsConfig;
 import org.openapitools.client.model.WizAuditLogsSecretsConfig;

@@ -707,8 +707,6 @@ Class | Method | HTTP request | Description
  - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)
  - [VoltioAuditLogsSecretsConfig](docs/VoltioAuditLogsSecretsConfig.md)
  - [VoltioAuditLogsSettingsConfig](docs/VoltioAuditLogsSettingsConfig.md)
- - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
- - [VulnerabilitiesSettingsConfig](docs/VulnerabilitiesSettingsConfig.md)
  - [VulnerabilityFindingsReportSecretsConfig](docs/VulnerabilityFindingsReportSecretsConfig.md)
  - [VulnerabilityFindingsReportSettingsConfig](docs/VulnerabilityFindingsReportSettingsConfig.md)
  - [VulnerabilityFindingsSecretsConfig](docs/VulnerabilityFindingsSecretsConfig.md)

@@ -116,7 +116,6 @@ type SecretProcessesorInputConfigSettings struct {
 	UniversalSettingsConfig *UniversalSettingsConfig
 	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
-	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
 	VulnerabilityFindingsReportSettingsConfig *VulnerabilityFindingsReportSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
@@ -802,13 +801,6 @@ func VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Ver
 func VoltioAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VoltioAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		VoltioAuditLogsSettingsConfig: v,
-	}
-}
-
-// VulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VulnerabilitiesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func VulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings(v *VulnerabilitiesSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		VulnerabilitiesSettingsConfig: v,
 	}
 }
 
@@ -2515,23 +2507,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.VoltioAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into VulnerabilitiesSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesSettingsConfig)
-	if err == nil {
-		jsonVulnerabilitiesSettingsConfig, _ := json.Marshal(dst.VulnerabilitiesSettingsConfig)
-		if string(jsonVulnerabilitiesSettingsConfig) == "{}" { // empty struct
-			dst.VulnerabilitiesSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.VulnerabilitiesSettingsConfig); err != nil {
-				dst.VulnerabilitiesSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.VulnerabilitiesSettingsConfig = nil
-	}
-
 	// try to unmarshal data into VulnerabilityFindingsReportSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsReportSettingsConfig)
 	if err == nil {
@@ -2750,7 +2725,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.UniversalSettingsConfig = nil
 		dst.VercelUserEventsSettingsConfig = nil
 		dst.VoltioAuditLogsSettingsConfig = nil
-		dst.VulnerabilitiesSettingsConfig = nil
 		dst.VulnerabilityFindingsReportSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.WizAuditLogsSettingsConfig = nil
@@ -3155,10 +3129,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.VoltioAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.VoltioAuditLogsSettingsConfig)
-	}
-
-	if src.VulnerabilitiesSettingsConfig != nil {
-		return json.Marshal(&src.VulnerabilitiesSettingsConfig)
 	}
 
 	if src.VulnerabilityFindingsReportSettingsConfig != nil {
@@ -3585,10 +3555,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.VoltioAuditLogsSettingsConfig
 	}
 
-	if obj.VulnerabilitiesSettingsConfig != nil {
-		return obj.VulnerabilitiesSettingsConfig
-	}
-
 	if obj.VulnerabilityFindingsReportSettingsConfig != nil {
 		return obj.VulnerabilityFindingsReportSettingsConfig
 	}
@@ -4009,10 +3975,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.VoltioAuditLogsSettingsConfig != nil {
 		return *obj.VoltioAuditLogsSettingsConfig
-	}
-
-	if obj.VulnerabilitiesSettingsConfig != nil {
-		return *obj.VulnerabilitiesSettingsConfig
 	}
 
 	if obj.VulnerabilityFindingsReportSettingsConfig != nil {

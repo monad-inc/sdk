@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateKeyValueIfKeyValueArgumentsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-27T16:40:01.812417084Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-27T19:11:20.274251417Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CreateKeyValueIfKeyValueArgumentsConfig {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

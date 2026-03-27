@@ -122,7 +122,6 @@ import org.openapitools.client.model.TypesStringFilter;
 import org.openapitools.client.model.UniversalSettingsConfig;
 import org.openapitools.client.model.VercelUserEventsSettingsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSettingsConfig;
-import org.openapitools.client.model.VulnerabilitiesSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsReportSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
 import org.openapitools.client.model.WizAuditLogsSettingsConfig;
@@ -1336,14 +1335,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void customerIdTest() {
         // TODO: test customerId
-    }
-
-    /**
-     * Test the property 'cloudType'
-     */
-    @Test
-    public void cloudTypeTest() {
-        // TODO: test cloudType
     }
 
     /**
