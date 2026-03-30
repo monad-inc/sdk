@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncCorePkgTypesModelsAlert
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-27T20:18:37.622844148Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T15:25:29.599975358Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GithubComMonadIncCorePkgTypesModelsAlert {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
