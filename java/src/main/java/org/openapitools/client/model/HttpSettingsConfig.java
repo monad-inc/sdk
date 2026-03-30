@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * HTTP Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T15:25:29.599975358Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T15:46:59.001876868Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class HttpSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
