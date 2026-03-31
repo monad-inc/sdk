@@ -502,7 +502,7 @@ Class | Method | HTTP request | Description
  - [OneloginEventsSettingsConfig](docs/OneloginEventsSettingsConfig.md)
  - [OpalEventsSecretsConfig](docs/OpalEventsSecretsConfig.md)
  - [OpalEventsSettingsConfig](docs/OpalEventsSettingsConfig.md)
- - [OpenaiSettingsConfig](docs/OpenaiSettingsConfig.md)
+ - [OpenaiAuditLogsSettingsConfig](docs/OpenaiAuditLogsSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)

@@ -24,17 +24,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for OpenaiSettingsConfig
+ * Model tests for OpenaiAuditLogsSettingsConfig
  */
-public class OpenaiSettingsConfigTest {
-    private final OpenaiSettingsConfig model = new OpenaiSettingsConfig();
+public class OpenaiAuditLogsSettingsConfigTest {
+    private final OpenaiAuditLogsSettingsConfig model = new OpenaiAuditLogsSettingsConfig();
 
     /**
-     * Model tests for OpenaiSettingsConfig
+     * Model tests for OpenaiAuditLogsSettingsConfig
      */
     @Test
-    public void testOpenaiSettingsConfig() {
-        // TODO: test OpenaiSettingsConfig
+    public void testOpenaiAuditLogsSettingsConfig() {
+        // TODO: test OpenaiAuditLogsSettingsConfig
     }
 
     /**

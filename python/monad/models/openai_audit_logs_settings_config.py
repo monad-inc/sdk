@@ -24,9 +24,9 @@ from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class OpenaiSettingsConfig(BaseModel):
+class OpenaiAuditLogsSettingsConfig(BaseModel):
     """
-    OpenaiSettingsConfig
+    OpenaiAuditLogsSettingsConfig
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
@@ -50,7 +50,7 @@ class OpenaiSettingsConfig(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OpenaiSettingsConfig from a JSON string"""
+        """Create an instance of OpenaiAuditLogsSettingsConfig from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +75,7 @@ class OpenaiSettingsConfig(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OpenaiSettingsConfig from a dict"""
+        """Create an instance of OpenaiAuditLogsSettingsConfig from a dict"""
         if obj is None:
             return None
 

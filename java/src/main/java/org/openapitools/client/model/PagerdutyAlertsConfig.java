@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AlertsConfig contains configuration options that apply only when EventType is set to &#39;alert&#39;
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T16:51:40.736243658Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T20:43:57.617605368Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PagerdutyAlertsConfig {
   public static final String SERIALIZED_NAME_PROPERTY_CLASS = "class";
   @SerializedName(SERIALIZED_NAME_PROPERTY_CLASS)

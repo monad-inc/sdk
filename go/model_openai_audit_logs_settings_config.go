@@ -15,36 +15,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the OpenaiSettingsConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OpenaiSettingsConfig{}
+// checks if the OpenaiAuditLogsSettingsConfig type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OpenaiAuditLogsSettingsConfig{}
 
-// OpenaiSettingsConfig struct for OpenaiSettingsConfig
-type OpenaiSettingsConfig struct {
+// OpenaiAuditLogsSettingsConfig struct for OpenaiAuditLogsSettingsConfig
+type OpenaiAuditLogsSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
 
-// NewOpenaiSettingsConfig instantiates a new OpenaiSettingsConfig object
+// NewOpenaiAuditLogsSettingsConfig instantiates a new OpenaiAuditLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOpenaiSettingsConfig() *OpenaiSettingsConfig {
-	this := OpenaiSettingsConfig{}
+func NewOpenaiAuditLogsSettingsConfig() *OpenaiAuditLogsSettingsConfig {
+	this := OpenaiAuditLogsSettingsConfig{}
 	return &this
 }
 
-// NewOpenaiSettingsConfigWithDefaults instantiates a new OpenaiSettingsConfig object
+// NewOpenaiAuditLogsSettingsConfigWithDefaults instantiates a new OpenaiAuditLogsSettingsConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOpenaiSettingsConfigWithDefaults() *OpenaiSettingsConfig {
-	this := OpenaiSettingsConfig{}
+func NewOpenaiAuditLogsSettingsConfigWithDefaults() *OpenaiAuditLogsSettingsConfig {
+	this := OpenaiAuditLogsSettingsConfig{}
 	return &this
 }
 
 // GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
-func (o *OpenaiSettingsConfig) GetBackfillStartTime() string {
+func (o *OpenaiAuditLogsSettingsConfig) GetBackfillStartTime() string {
 	if o == nil || IsNil(o.BackfillStartTime) {
 		var ret string
 		return ret
@@ -54,7 +54,7 @@ func (o *OpenaiSettingsConfig) GetBackfillStartTime() string {
 
 // GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OpenaiSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+func (o *OpenaiAuditLogsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
 	if o == nil || IsNil(o.BackfillStartTime) {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *OpenaiSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
 }
 
 // HasBackfillStartTime returns a boolean if a field has been set.
-func (o *OpenaiSettingsConfig) HasBackfillStartTime() bool {
+func (o *OpenaiAuditLogsSettingsConfig) HasBackfillStartTime() bool {
 	if o != nil && !IsNil(o.BackfillStartTime) {
 		return true
 	}
@@ -71,12 +71,12 @@ func (o *OpenaiSettingsConfig) HasBackfillStartTime() bool {
 }
 
 // SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
-func (o *OpenaiSettingsConfig) SetBackfillStartTime(v string) {
+func (o *OpenaiAuditLogsSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
-func (o *OpenaiSettingsConfig) GetUseSyntheticData() bool {
+func (o *OpenaiAuditLogsSettingsConfig) GetUseSyntheticData() bool {
 	if o == nil || IsNil(o.UseSyntheticData) {
 		var ret bool
 		return ret
@@ -86,7 +86,7 @@ func (o *OpenaiSettingsConfig) GetUseSyntheticData() bool {
 
 // GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OpenaiSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+func (o *OpenaiAuditLogsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
 	if o == nil || IsNil(o.UseSyntheticData) {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *OpenaiSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
 }
 
 // HasUseSyntheticData returns a boolean if a field has been set.
-func (o *OpenaiSettingsConfig) HasUseSyntheticData() bool {
+func (o *OpenaiAuditLogsSettingsConfig) HasUseSyntheticData() bool {
 	if o != nil && !IsNil(o.UseSyntheticData) {
 		return true
 	}
@@ -103,11 +103,11 @@ func (o *OpenaiSettingsConfig) HasUseSyntheticData() bool {
 }
 
 // SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
-func (o *OpenaiSettingsConfig) SetUseSyntheticData(v bool) {
+func (o *OpenaiAuditLogsSettingsConfig) SetUseSyntheticData(v bool) {
 	o.UseSyntheticData = &v
 }
 
-func (o OpenaiSettingsConfig) MarshalJSON() ([]byte, error) {
+func (o OpenaiAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -115,7 +115,7 @@ func (o OpenaiSettingsConfig) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o OpenaiSettingsConfig) ToMap() (map[string]interface{}, error) {
+func (o OpenaiAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
@@ -126,38 +126,38 @@ func (o OpenaiSettingsConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableOpenaiSettingsConfig struct {
-	value *OpenaiSettingsConfig
+type NullableOpenaiAuditLogsSettingsConfig struct {
+	value *OpenaiAuditLogsSettingsConfig
 	isSet bool
 }
 
-func (v NullableOpenaiSettingsConfig) Get() *OpenaiSettingsConfig {
+func (v NullableOpenaiAuditLogsSettingsConfig) Get() *OpenaiAuditLogsSettingsConfig {
 	return v.value
 }
 
-func (v *NullableOpenaiSettingsConfig) Set(val *OpenaiSettingsConfig) {
+func (v *NullableOpenaiAuditLogsSettingsConfig) Set(val *OpenaiAuditLogsSettingsConfig) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableOpenaiSettingsConfig) IsSet() bool {
+func (v NullableOpenaiAuditLogsSettingsConfig) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableOpenaiSettingsConfig) Unset() {
+func (v *NullableOpenaiAuditLogsSettingsConfig) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableOpenaiSettingsConfig(val *OpenaiSettingsConfig) *NullableOpenaiSettingsConfig {
-	return &NullableOpenaiSettingsConfig{value: val, isSet: true}
+func NewNullableOpenaiAuditLogsSettingsConfig(val *OpenaiAuditLogsSettingsConfig) *NullableOpenaiAuditLogsSettingsConfig {
+	return &NullableOpenaiAuditLogsSettingsConfig{value: val, isSet: true}
 }
 
-func (v NullableOpenaiSettingsConfig) MarshalJSON() ([]byte, error) {
+func (v NullableOpenaiAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableOpenaiSettingsConfig) UnmarshalJSON(src []byte) error {
+func (v *NullableOpenaiAuditLogsSettingsConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

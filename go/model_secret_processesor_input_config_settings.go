@@ -81,7 +81,7 @@ type SecretProcessesorInputConfigSettings struct {
 	OfflineenrollmentlogsSettingsConfig *OfflineenrollmentlogsSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
 	OpalEventsSettingsConfig *OpalEventsSettingsConfig
-	OpenaiSettingsConfig *OpenaiSettingsConfig
+	OpenaiAuditLogsSettingsConfig *OpenaiAuditLogsSettingsConfig
 	OperationLogsSettingsConfig *OperationLogsSettingsConfig
 	OracleSettingsConfig *OracleSettingsConfig
 	OrgAuditLogsSettingsConfig *OrgAuditLogsSettingsConfig
@@ -559,10 +559,10 @@ func OpalEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpalEvent
 	}
 }
 
-// OpenaiSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OpenaiSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OpenaiSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpenaiSettingsConfig) SecretProcessesorInputConfigSettings {
+// OpenaiAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OpenaiAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OpenaiAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpenaiAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
-		OpenaiSettingsConfig: v,
+		OpenaiAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -1912,21 +1912,21 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OpalEventsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into OpenaiSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OpenaiSettingsConfig)
+	// try to unmarshal data into OpenaiAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OpenaiAuditLogsSettingsConfig)
 	if err == nil {
-		jsonOpenaiSettingsConfig, _ := json.Marshal(dst.OpenaiSettingsConfig)
-		if string(jsonOpenaiSettingsConfig) == "{}" { // empty struct
-			dst.OpenaiSettingsConfig = nil
+		jsonOpenaiAuditLogsSettingsConfig, _ := json.Marshal(dst.OpenaiAuditLogsSettingsConfig)
+		if string(jsonOpenaiAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.OpenaiAuditLogsSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.OpenaiSettingsConfig); err != nil {
-				dst.OpenaiSettingsConfig = nil
+			if err = validator.Validate(dst.OpenaiAuditLogsSettingsConfig); err != nil {
+				dst.OpenaiAuditLogsSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.OpenaiSettingsConfig = nil
+		dst.OpenaiAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into OperationLogsSettingsConfig
@@ -2690,7 +2690,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OfflineenrollmentlogsSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
 		dst.OpalEventsSettingsConfig = nil
-		dst.OpenaiSettingsConfig = nil
+		dst.OpenaiAuditLogsSettingsConfig = nil
 		dst.OperationLogsSettingsConfig = nil
 		dst.OracleSettingsConfig = nil
 		dst.OrgAuditLogsSettingsConfig = nil
@@ -2991,8 +2991,8 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.OpalEventsSettingsConfig)
 	}
 
-	if src.OpenaiSettingsConfig != nil {
-		return json.Marshal(&src.OpenaiSettingsConfig)
+	if src.OpenaiAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.OpenaiAuditLogsSettingsConfig)
 	}
 
 	if src.OperationLogsSettingsConfig != nil {
@@ -3415,8 +3415,8 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OpalEventsSettingsConfig
 	}
 
-	if obj.OpenaiSettingsConfig != nil {
-		return obj.OpenaiSettingsConfig
+	if obj.OpenaiAuditLogsSettingsConfig != nil {
+		return obj.OpenaiAuditLogsSettingsConfig
 	}
 
 	if obj.OperationLogsSettingsConfig != nil {
@@ -3837,8 +3837,8 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.OpalEventsSettingsConfig
 	}
 
-	if obj.OpenaiSettingsConfig != nil {
-		return *obj.OpenaiSettingsConfig
+	if obj.OpenaiAuditLogsSettingsConfig != nil {
+		return *obj.OpenaiAuditLogsSettingsConfig
 	}
 
 	if obj.OperationLogsSettingsConfig != nil {

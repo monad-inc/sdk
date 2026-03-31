@@ -263,7 +263,7 @@ export * from '../models/OneloginEventsSecretsConfig';
 export * from '../models/OneloginEventsSettingsConfig';
 export * from '../models/OpalEventsSecretsConfig';
 export * from '../models/OpalEventsSettingsConfig';
-export * from '../models/OpenaiSettingsConfig';
+export * from '../models/OpenaiAuditLogsSettingsConfig';
 export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
@@ -749,7 +749,7 @@ import { OneloginEventsSecretsConfig } from '../models/OneloginEventsSecretsConf
 import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
 import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
 import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
-import { OpenaiSettingsConfig } from '../models/OpenaiSettingsConfig';
+import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
@@ -1266,7 +1266,7 @@ let typeMap: {[index: string]: any} = {
     "OneloginEventsSettingsConfig": OneloginEventsSettingsConfig,
     "OpalEventsSecretsConfig": OpalEventsSecretsConfig,
     "OpalEventsSettingsConfig": OpalEventsSettingsConfig,
-    "OpenaiSettingsConfig": OpenaiSettingsConfig,
+    "OpenaiAuditLogsSettingsConfig": OpenaiAuditLogsSettingsConfig,
     "OpensearchSecretsConfig": OpensearchSecretsConfig,
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,

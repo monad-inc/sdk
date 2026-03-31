@@ -279,7 +279,7 @@ from monad.models.onelogin_events_secrets_config import OneloginEventsSecretsCon
 from monad.models.onelogin_events_settings_config import OneloginEventsSettingsConfig
 from monad.models.opal_events_secrets_config import OpalEventsSecretsConfig
 from monad.models.opal_events_settings_config import OpalEventsSettingsConfig
-from monad.models.openai_settings_config import OpenaiSettingsConfig
+from monad.models.openai_audit_logs_settings_config import OpenaiAuditLogsSettingsConfig
 from monad.models.opensearch_secrets_config import OpensearchSecretsConfig
 from monad.models.opensearch_settings_config import OpensearchSettingsConfig
 from monad.models.operation_information import OperationInformation

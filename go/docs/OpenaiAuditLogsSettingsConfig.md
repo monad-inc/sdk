@@ -1,4 +1,4 @@
-# OpenaiSettingsConfig
+# OpenaiAuditLogsSettingsConfig
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewOpenaiSettingsConfig
+### NewOpenaiAuditLogsSettingsConfig
 
-`func NewOpenaiSettingsConfig() *OpenaiSettingsConfig`
+`func NewOpenaiAuditLogsSettingsConfig() *OpenaiAuditLogsSettingsConfig`
 
-NewOpenaiSettingsConfig instantiates a new OpenaiSettingsConfig object
+NewOpenaiAuditLogsSettingsConfig instantiates a new OpenaiAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOpenaiSettingsConfigWithDefaults
+### NewOpenaiAuditLogsSettingsConfigWithDefaults
 
-`func NewOpenaiSettingsConfigWithDefaults() *OpenaiSettingsConfig`
+`func NewOpenaiAuditLogsSettingsConfigWithDefaults() *OpenaiAuditLogsSettingsConfig`
 
-NewOpenaiSettingsConfigWithDefaults instantiates a new OpenaiSettingsConfig object
+NewOpenaiAuditLogsSettingsConfigWithDefaults instantiates a new OpenaiAuditLogsSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetBackfillStartTime
 
-`func (o *OpenaiSettingsConfig) GetBackfillStartTime() string`
+`func (o *OpenaiAuditLogsSettingsConfig) GetBackfillStartTime() string`
 
 GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
 
 ### GetBackfillStartTimeOk
 
-`func (o *OpenaiSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+`func (o *OpenaiAuditLogsSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
 
 GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBackfillStartTime
 
-`func (o *OpenaiSettingsConfig) SetBackfillStartTime(v string)`
+`func (o *OpenaiAuditLogsSettingsConfig) SetBackfillStartTime(v string)`
 
 SetBackfillStartTime sets BackfillStartTime field to given value.
 
 ### HasBackfillStartTime
 
-`func (o *OpenaiSettingsConfig) HasBackfillStartTime() bool`
+`func (o *OpenaiAuditLogsSettingsConfig) HasBackfillStartTime() bool`
 
 HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 
-`func (o *OpenaiSettingsConfig) GetUseSyntheticData() bool`
+`func (o *OpenaiAuditLogsSettingsConfig) GetUseSyntheticData() bool`
 
 GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
 
 ### GetUseSyntheticDataOk
 
-`func (o *OpenaiSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+`func (o *OpenaiAuditLogsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
 
 GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseSyntheticData
 
-`func (o *OpenaiSettingsConfig) SetUseSyntheticData(v bool)`
+`func (o *OpenaiAuditLogsSettingsConfig) SetUseSyntheticData(v bool)`
 
 SetUseSyntheticData sets UseSyntheticData field to given value.
 
 ### HasUseSyntheticData
 
-`func (o *OpenaiSettingsConfig) HasUseSyntheticData() bool`
+`func (o *OpenaiAuditLogsSettingsConfig) HasUseSyntheticData() bool`
 
 HasUseSyntheticData returns a boolean if a field has been set.
 

@@ -46,10 +46,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * OpenaiSettingsConfig
+ * OpenaiAuditLogsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T16:51:40.736243658Z[Etc/UTC]", comments = "Generator version: 7.21.0")
-public class OpenaiSettingsConfig {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T20:43:57.617605368Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+public class OpenaiAuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
   @javax.annotation.Nullable
@@ -60,10 +60,10 @@ public class OpenaiSettingsConfig {
   @javax.annotation.Nullable
   private Boolean useSyntheticData;
 
-  public OpenaiSettingsConfig() {
+  public OpenaiAuditLogsSettingsConfig() {
   }
 
-  public OpenaiSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+  public OpenaiAuditLogsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
     this.backfillStartTime = backfillStartTime;
     return this;
   }
@@ -82,7 +82,7 @@ public class OpenaiSettingsConfig {
   }
 
 
-  public OpenaiSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+  public OpenaiAuditLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
   }
@@ -110,9 +110,9 @@ public class OpenaiSettingsConfig {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OpenaiSettingsConfig openaiSettingsConfig = (OpenaiSettingsConfig) o;
-    return Objects.equals(this.backfillStartTime, openaiSettingsConfig.backfillStartTime) &&
-        Objects.equals(this.useSyntheticData, openaiSettingsConfig.useSyntheticData);
+    OpenaiAuditLogsSettingsConfig openaiAuditLogsSettingsConfig = (OpenaiAuditLogsSettingsConfig) o;
+    return Objects.equals(this.backfillStartTime, openaiAuditLogsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.useSyntheticData, openaiAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
@@ -123,7 +123,7 @@ public class OpenaiSettingsConfig {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OpenaiSettingsConfig {\n");
+    sb.append("class OpenaiAuditLogsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -154,20 +154,20 @@ public class OpenaiSettingsConfig {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to OpenaiSettingsConfig
+   * @throws IOException if the JSON Element is invalid with respect to OpenaiAuditLogsSettingsConfig
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!OpenaiSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OpenaiSettingsConfig is not found in the empty JSON string", OpenaiSettingsConfig.openapiRequiredFields.toString()));
+        if (!OpenaiAuditLogsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OpenaiAuditLogsSettingsConfig is not found in the empty JSON string", OpenaiAuditLogsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!OpenaiSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OpenaiSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!OpenaiAuditLogsSettingsConfig.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OpenaiAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -180,22 +180,22 @@ public class OpenaiSettingsConfig {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OpenaiSettingsConfig.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OpenaiSettingsConfig' and its subtypes
+       if (!OpenaiAuditLogsSettingsConfig.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'OpenaiAuditLogsSettingsConfig' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OpenaiSettingsConfig> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OpenaiSettingsConfig.class));
+       final TypeAdapter<OpenaiAuditLogsSettingsConfig> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(OpenaiAuditLogsSettingsConfig.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<OpenaiSettingsConfig>() {
+       return (TypeAdapter<T>) new TypeAdapter<OpenaiAuditLogsSettingsConfig>() {
            @Override
-           public void write(JsonWriter out, OpenaiSettingsConfig value) throws IOException {
+           public void write(JsonWriter out, OpenaiAuditLogsSettingsConfig value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public OpenaiSettingsConfig read(JsonReader in) throws IOException {
+           public OpenaiAuditLogsSettingsConfig read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -206,18 +206,18 @@ public class OpenaiSettingsConfig {
   }
 
   /**
-   * Create an instance of OpenaiSettingsConfig given an JSON string
+   * Create an instance of OpenaiAuditLogsSettingsConfig given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of OpenaiSettingsConfig
-   * @throws IOException if the JSON string is invalid with respect to OpenaiSettingsConfig
+   * @return An instance of OpenaiAuditLogsSettingsConfig
+   * @throws IOException if the JSON string is invalid with respect to OpenaiAuditLogsSettingsConfig
    */
-  public static OpenaiSettingsConfig fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OpenaiSettingsConfig.class);
+  public static OpenaiAuditLogsSettingsConfig fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, OpenaiAuditLogsSettingsConfig.class);
   }
 
   /**
-   * Convert an instance of OpenaiSettingsConfig to an JSON string
+   * Convert an instance of OpenaiAuditLogsSettingsConfig to an JSON string
    *
    * @return JSON string
    */

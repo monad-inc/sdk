@@ -86,7 +86,7 @@ import org.openapitools.client.model.ObjectStorageInputSettingsConfig;
 import org.openapitools.client.model.OfflineenrollmentlogsSettingsConfig;
 import org.openapitools.client.model.OneloginEventsSettingsConfig;
 import org.openapitools.client.model.OpalEventsSettingsConfig;
-import org.openapitools.client.model.OpenaiSettingsConfig;
+import org.openapitools.client.model.OpenaiAuditLogsSettingsConfig;
 import org.openapitools.client.model.OperationLogsSettingsConfig;
 import org.openapitools.client.model.OracleSettingsConfig;
 import org.openapitools.client.model.OrgAuditLogsSettingsConfig;

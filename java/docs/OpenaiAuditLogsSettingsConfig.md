@@ -1,6 +1,6 @@
 
 
-# OpenaiSettingsConfig
+# OpenaiAuditLogsSettingsConfig
 
 
 ## Properties
