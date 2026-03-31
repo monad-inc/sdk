@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Cloudflare DDoS Attack Analytics settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T15:46:59.001876868Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T00:00:09.210130654Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CloudflareDdosAttackAnalyticsSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2MetricsValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T15:46:59.001876868Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T00:00:09.210130654Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesV2MetricsValue {
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
