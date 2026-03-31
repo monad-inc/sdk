@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3TransformRecommendationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T22:12:26.061386044Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T23:04:28.511993516Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesV3TransformRecommendationRequest {
   public static final String SERIALIZED_NAME_OPTIMIZER_TYPE = "optimizer_type";
   @SerializedName(SERIALIZED_NAME_OPTIMIZER_TYPE)
