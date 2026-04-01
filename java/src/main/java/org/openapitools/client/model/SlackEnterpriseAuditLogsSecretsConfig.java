@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * SlackEnterpriseAuditLogsSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T18:31:10.781766739Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T19:08:55.717370232Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SlackEnterpriseAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_USER_OAUTH_TOKEN = "user_oauth_token";
   @SerializedName(SERIALIZED_NAME_USER_OAUTH_TOKEN)
