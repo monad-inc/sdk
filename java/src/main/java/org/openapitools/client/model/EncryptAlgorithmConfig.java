@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Encryption algorithm configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-02T14:05:31.169149971Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-02T16:19:14.751960003Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class EncryptAlgorithmConfig {
   public static final String SERIALIZED_NAME_AES = "aes";
   @SerializedName(SERIALIZED_NAME_AES)
