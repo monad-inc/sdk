@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * PrometheusFieldMetricVariant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-06T16:37:21.933634699Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-06T18:32:33.794552845Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PrometheusFieldMetricVariant {
   public static final String SERIALIZED_NAME_FIELD_NAME = "field_name";
   @SerializedName(SERIALIZED_NAME_FIELD_NAME)
