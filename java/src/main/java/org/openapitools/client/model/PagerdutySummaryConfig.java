@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SummaryConfig allows customization of event summary messages displayed in PagerDuty
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-06T15:52:53.666279958Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-06T16:37:21.933634699Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PagerdutySummaryConfig {
   public static final String SERIALIZED_NAME_ALERT_SOURCE = "alert_source";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCE)
