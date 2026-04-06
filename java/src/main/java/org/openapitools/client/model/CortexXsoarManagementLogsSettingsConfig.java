@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Palo Alto Cortex Xsoar Management Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-06T15:17:01.657424811Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-06T15:52:53.666279958Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CortexXsoarManagementLogsSettingsConfig {
   public static final String SERIALIZED_NAME_API_KEY_ID = "api_key_id";
   @SerializedName(SERIALIZED_NAME_API_KEY_ID)
