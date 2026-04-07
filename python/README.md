@@ -385,8 +385,6 @@ Class | Method | HTTP request | Description
  - [FlagsmithFlag](docs/FlagsmithFlag.md)
  - [FlattenArgumentsConfig](docs/FlattenArgumentsConfig.md)
  - [FlattenallArgumentsConfig](docs/FlattenallArgumentsConfig.md)
- - [FleetdmActivityLogsSecretsConfig](docs/FleetdmActivityLogsSecretsConfig.md)
- - [FleetdmActivityLogsSettingsConfig](docs/FleetdmActivityLogsSettingsConfig.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)

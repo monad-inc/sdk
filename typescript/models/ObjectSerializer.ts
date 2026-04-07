@@ -121,8 +121,6 @@ export * from '../models/EventSettingsConfig';
 export * from '../models/FlagsmithFlag';
 export * from '../models/FlattenArgumentsConfig';
 export * from '../models/FlattenallArgumentsConfig';
-export * from '../models/FleetdmActivityLogsSecretsConfig';
-export * from '../models/FleetdmActivityLogsSettingsConfig';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
@@ -607,8 +605,6 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
-import { FleetdmActivityLogsSecretsConfig } from '../models/FleetdmActivityLogsSecretsConfig';
-import { FleetdmActivityLogsSettingsConfig } from '../models/FleetdmActivityLogsSettingsConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
@@ -1124,8 +1120,6 @@ let typeMap: {[index: string]: any} = {
     "FlagsmithFlag": FlagsmithFlag,
     "FlattenArgumentsConfig": FlattenArgumentsConfig,
     "FlattenallArgumentsConfig": FlattenallArgumentsConfig,
-    "FleetdmActivityLogsSecretsConfig": FleetdmActivityLogsSecretsConfig,
-    "FleetdmActivityLogsSettingsConfig": FleetdmActivityLogsSettingsConfig,
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,

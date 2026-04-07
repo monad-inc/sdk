@@ -65,7 +65,6 @@ import org.openapitools.client.model.DuoSecurityActivityLogsSettingsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
 import org.openapitools.client.model.EventSettingsConfig;
-import org.openapitools.client.model.FleetdmActivityLogsSettingsConfig;
 import org.openapitools.client.model.FullScansSettingsConfig;
 import org.openapitools.client.model.GithubAdvisoryUserSettingsConfig;
 import org.openapitools.client.model.GitlabIssuesSettingsConfig;
@@ -823,14 +822,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void memberCidTest() {
         // TODO: test memberCid
-    }
-
-    /**
-     * Test the property 'fleetUrl'
-     */
-    @Test
-    public void fleetUrlTest() {
-        // TODO: test fleetUrl
     }
 
     /**

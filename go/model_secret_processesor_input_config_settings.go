@@ -61,7 +61,6 @@ type SecretProcessesorInputConfigSettings struct {
 	EndorLabsAuditLogsSettingsConfig *EndorLabsAuditLogsSettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
-	FleetdmActivityLogsSettingsConfig *FleetdmActivityLogsSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GithubAdvisoryUserSettingsConfig *GithubAdvisoryUserSettingsConfig
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
@@ -416,13 +415,6 @@ func EntraIdSettingsConfigAsSecretProcessesorInputConfigSettings(v *EntraIdSetti
 func EventSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		EventSettingsConfig: v,
-	}
-}
-
-// FleetdmActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns FleetdmActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func FleetdmActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *FleetdmActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		FleetdmActivityLogsSettingsConfig: v,
 	}
 }
 
@@ -1572,23 +1564,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EventSettingsConfig = nil
 	}
 
-	// try to unmarshal data into FleetdmActivityLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.FleetdmActivityLogsSettingsConfig)
-	if err == nil {
-		jsonFleetdmActivityLogsSettingsConfig, _ := json.Marshal(dst.FleetdmActivityLogsSettingsConfig)
-		if string(jsonFleetdmActivityLogsSettingsConfig) == "{}" { // empty struct
-			dst.FleetdmActivityLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.FleetdmActivityLogsSettingsConfig); err != nil {
-				dst.FleetdmActivityLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.FleetdmActivityLogsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into FullScansSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.FullScansSettingsConfig)
 	if err == nil {
@@ -2670,7 +2645,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EndorLabsAuditLogsSettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
-		dst.FleetdmActivityLogsSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
 		dst.GithubAdvisoryUserSettingsConfig = nil
 		dst.GitlabIssuesSettingsConfig = nil
@@ -2909,10 +2883,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EventSettingsConfig != nil {
 		return json.Marshal(&src.EventSettingsConfig)
-	}
-
-	if src.FleetdmActivityLogsSettingsConfig != nil {
-		return json.Marshal(&src.FleetdmActivityLogsSettingsConfig)
 	}
 
 	if src.FullScansSettingsConfig != nil {
@@ -3335,10 +3305,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.EventSettingsConfig
 	}
 
-	if obj.FleetdmActivityLogsSettingsConfig != nil {
-		return obj.FleetdmActivityLogsSettingsConfig
-	}
-
 	if obj.FullScansSettingsConfig != nil {
 		return obj.FullScansSettingsConfig
 	}
@@ -3755,10 +3721,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.EventSettingsConfig != nil {
 		return *obj.EventSettingsConfig
-	}
-
-	if obj.FleetdmActivityLogsSettingsConfig != nil {
-		return *obj.FleetdmActivityLogsSettingsConfig
 	}
 
 	if obj.FullScansSettingsConfig != nil {

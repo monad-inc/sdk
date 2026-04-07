@@ -58,7 +58,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	EndorLabsAuditLogsSecretsConfig *EndorLabsAuditLogsSecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
 	EventSecretsConfig *EventSecretsConfig
-	FleetdmActivityLogsSecretsConfig *FleetdmActivityLogsSecretsConfig
 	FullScansSecretsConfig *FullScansSecretsConfig
 	GitlabIssuesSecretsConfig *GitlabIssuesSecretsConfig
 	GoogleCloudStorageSecretsConfig *GoogleCloudStorageSecretsConfig
@@ -386,13 +385,6 @@ func EntraIdSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EntraIdSecrets
 func EventSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EventSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		EventSecretsConfig: v,
-	}
-}
-
-// FleetdmActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns FleetdmActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func FleetdmActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *FleetdmActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		FleetdmActivityLogsSecretsConfig: v,
 	}
 }
 
@@ -1449,23 +1441,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.EventSecretsConfig = nil
 	}
 
-	// try to unmarshal data into FleetdmActivityLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.FleetdmActivityLogsSecretsConfig)
-	if err == nil {
-		jsonFleetdmActivityLogsSecretsConfig, _ := json.Marshal(dst.FleetdmActivityLogsSecretsConfig)
-		if string(jsonFleetdmActivityLogsSecretsConfig) == "{}" { // empty struct
-			dst.FleetdmActivityLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.FleetdmActivityLogsSecretsConfig); err != nil {
-				dst.FleetdmActivityLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.FleetdmActivityLogsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into FullScansSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.FullScansSecretsConfig)
 	if err == nil {
@@ -2442,7 +2417,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.EndorLabsAuditLogsSecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
 		dst.EventSecretsConfig = nil
-		dst.FleetdmActivityLogsSecretsConfig = nil
 		dst.FullScansSecretsConfig = nil
 		dst.GitlabIssuesSecretsConfig = nil
 		dst.GoogleCloudStorageSecretsConfig = nil
@@ -2663,10 +2637,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.EventSecretsConfig != nil {
 		return json.Marshal(&src.EventSecretsConfig)
-	}
-
-	if src.FleetdmActivityLogsSecretsConfig != nil {
-		return json.Marshal(&src.FleetdmActivityLogsSecretsConfig)
 	}
 
 	if src.FullScansSecretsConfig != nil {
@@ -3053,10 +3023,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.EventSecretsConfig
 	}
 
-	if obj.FleetdmActivityLogsSecretsConfig != nil {
-		return obj.FleetdmActivityLogsSecretsConfig
-	}
-
 	if obj.FullScansSecretsConfig != nil {
 		return obj.FullScansSecretsConfig
 	}
@@ -3437,10 +3403,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.EventSecretsConfig != nil {
 		return *obj.EventSecretsConfig
-	}
-
-	if obj.FleetdmActivityLogsSecretsConfig != nil {
-		return *obj.FleetdmActivityLogsSecretsConfig
 	}
 
 	if obj.FullScansSecretsConfig != nil {

@@ -125,8 +125,6 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
-import { FleetdmActivityLogsSecretsConfig } from '../models/FleetdmActivityLogsSecretsConfig';
-import { FleetdmActivityLogsSettingsConfig } from '../models/FleetdmActivityLogsSettingsConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-04-06T18:32:33.794552845Z[Etc/UTC]
+  - Build date: 2026-04-07T15:53:34.286745542Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -412,8 +412,6 @@ Class | Method | HTTP request | Description
  - [FlagsmithFlag](docs/FlagsmithFlag.md)
  - [FlattenArgumentsConfig](docs/FlattenArgumentsConfig.md)
  - [FlattenallArgumentsConfig](docs/FlattenallArgumentsConfig.md)
- - [FleetdmActivityLogsSecretsConfig](docs/FleetdmActivityLogsSecretsConfig.md)
- - [FleetdmActivityLogsSettingsConfig](docs/FleetdmActivityLogsSettingsConfig.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)

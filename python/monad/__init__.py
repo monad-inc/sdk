@@ -189,8 +189,6 @@ __all__ = [
     "FlagsmithFlag",
     "FlattenArgumentsConfig",
     "FlattenallArgumentsConfig",
-    "FleetdmActivityLogsSecretsConfig",
-    "FleetdmActivityLogsSettingsConfig",
     "FormatterFormatConfig",
     "FullScansSecretsConfig",
     "FullScansSettingsConfig",
@@ -728,8 +726,6 @@ from monad.models.event_settings_config import EventSettingsConfig as EventSetti
 from monad.models.flagsmith_flag import FlagsmithFlag as FlagsmithFlag
 from monad.models.flatten_arguments_config import FlattenArgumentsConfig as FlattenArgumentsConfig
 from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig as FlattenallArgumentsConfig
-from monad.models.fleetdm_activity_logs_secrets_config import FleetdmActivityLogsSecretsConfig as FleetdmActivityLogsSecretsConfig
-from monad.models.fleetdm_activity_logs_settings_config import FleetdmActivityLogsSettingsConfig as FleetdmActivityLogsSettingsConfig
 from monad.models.formatter_format_config import FormatterFormatConfig as FormatterFormatConfig
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig as FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig as FullScansSettingsConfig

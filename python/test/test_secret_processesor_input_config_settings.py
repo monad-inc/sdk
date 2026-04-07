@@ -139,7 +139,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 app_name = '',
                 cloud = '',
                 member_cid = '',
-                fleet_url = '',
                 repo = '',
                 confidential = True,
                 gitlab_url = '',

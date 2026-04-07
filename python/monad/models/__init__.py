@@ -137,8 +137,6 @@ from monad.models.event_settings_config import EventSettingsConfig
 from monad.models.flagsmith_flag import FlagsmithFlag
 from monad.models.flatten_arguments_config import FlattenArgumentsConfig
 from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig
-from monad.models.fleetdm_activity_logs_secrets_config import FleetdmActivityLogsSecretsConfig
-from monad.models.fleetdm_activity_logs_settings_config import FleetdmActivityLogsSettingsConfig
 from monad.models.formatter_format_config import FormatterFormatConfig
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig

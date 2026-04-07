@@ -60,7 +60,6 @@ import org.openapitools.client.model.DuoSecurityActivityLogsSecretsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
 import org.openapitools.client.model.EventSecretsConfig;
-import org.openapitools.client.model.FleetdmActivityLogsSecretsConfig;
 import org.openapitools.client.model.FullScansSecretsConfig;
 import org.openapitools.client.model.GitlabIssuesSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSecretsConfig;
