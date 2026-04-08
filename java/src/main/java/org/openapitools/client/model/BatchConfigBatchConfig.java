@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-07T15:53:34.286745542Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-08T17:40:33.649444487Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class BatchConfigBatchConfig {
   public static final String SERIALIZED_NAME_BATCH_DATA_SIZE = "batch_data_size";
   @SerializedName(SERIALIZED_NAME_BATCH_DATA_SIZE)
