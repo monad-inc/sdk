@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TaniumGraphqlInputSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T20:15:38.982822099Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T20:49:18.423784873Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class TaniumGraphqlInputSettingsConfig {
   public static final String SERIALIZED_NAME_BASE_URL = "base_url";
   @SerializedName(SERIALIZED_NAME_BASE_URL)
