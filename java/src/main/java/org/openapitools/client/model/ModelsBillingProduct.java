@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingProduct
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T19:42:16.514548534Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T20:15:38.982822099Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ModelsBillingProduct {
   public static final String SERIALIZED_NAME_CONTACT_EMAIL = "contact_email";
   @SerializedName(SERIALIZED_NAME_CONTACT_EMAIL)

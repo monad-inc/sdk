@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Cloudflare Firewall Events settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T19:42:16.514548534Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T20:15:38.982822099Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CloudflareFirewallEventsSettingsConfig {
   public static final String SERIALIZED_NAME_INCLUDE_BOT_FIELDS = "include_bot_fields";
   @SerializedName(SERIALIZED_NAME_INCLUDE_BOT_FIELDS)
