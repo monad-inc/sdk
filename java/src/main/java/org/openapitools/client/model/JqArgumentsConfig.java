@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * JqArgumentsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T18:21:53.262585296Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T19:42:16.514548534Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class JqArgumentsConfig {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
