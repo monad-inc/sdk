@@ -25,6 +25,7 @@ export class ModelsPipelineNodeStatus {
     'ingress'?: ModelsDataUsage;
     'lastIngestedTime'?: string;
     'lastRecordProcessedTime'?: string;
+    'lastUpdatedAt'?: string;
     'nodeId'?: string;
     'nodeSlug'?: string;
     'progress'?: ModelsProgressEntries;
@@ -92,6 +93,12 @@ export class ModelsPipelineNodeStatus {
         {
             "name": "lastRecordProcessedTime",
             "baseName": "last_record_processed_time",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "lastUpdatedAt",
+            "baseName": "last_updated_at",
             "type": "string",
             "format": ""
         },

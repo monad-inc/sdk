@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **expired_messages** | **int** |  | [optional] 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **last_ingested_time** | **str** |  | [optional] 
+**last_updated_at** | **str** |  | [optional] 
 **nodes** | [**List[ModelsPipelineNodeStatus]**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **organization_name** | **str** |  | [optional] 

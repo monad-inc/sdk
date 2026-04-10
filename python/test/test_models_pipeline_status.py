@@ -47,6 +47,7 @@ class TestModelsPipelineStatus(unittest.TestCase):
                     bytes = 56, 
                     records = 56, ),
                 last_ingested_time = '',
+                last_updated_at = '',
                 nodes = [
                     monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                         avg_bytes_per_record_egress = 56, 
@@ -63,6 +64,7 @@ class TestModelsPipelineStatus(unittest.TestCase):
                             records = 56, ), 
                         last_ingested_time = '', 
                         last_record_processed_time = '', 
+                        last_updated_at = '', 
                         node_id = '', 
                         node_slug = '', 
                         progress = monad.models.models/progress_entries.models.ProgressEntries(

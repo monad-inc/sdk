@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **LastIngestedTime** | Pointer to **string** |  | [optional] 
 **LastRecordProcessedTime** | Pointer to **string** |  | [optional] 
+**LastUpdatedAt** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **NodeSlug** | Pointer to **string** |  | [optional] 
 **Progress** | Pointer to [**ModelsProgressEntries**](ModelsProgressEntries.md) |  | [optional] 
@@ -287,6 +288,31 @@ SetLastRecordProcessedTime sets LastRecordProcessedTime field to given value.
 `func (o *ModelsPipelineNodeStatus) HasLastRecordProcessedTime() bool`
 
 HasLastRecordProcessedTime returns a boolean if a field has been set.
+
+### GetLastUpdatedAt
+
+`func (o *ModelsPipelineNodeStatus) GetLastUpdatedAt() string`
+
+GetLastUpdatedAt returns the LastUpdatedAt field if non-nil, zero value otherwise.
+
+### GetLastUpdatedAtOk
+
+`func (o *ModelsPipelineNodeStatus) GetLastUpdatedAtOk() (*string, bool)`
+
+GetLastUpdatedAtOk returns a tuple with the LastUpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastUpdatedAt
+
+`func (o *ModelsPipelineNodeStatus) SetLastUpdatedAt(v string)`
+
+SetLastUpdatedAt sets LastUpdatedAt field to given value.
+
+### HasLastUpdatedAt
+
+`func (o *ModelsPipelineNodeStatus) HasLastUpdatedAt() bool`
+
+HasLastUpdatedAt returns a boolean if a field has been set.
 
 ### GetNodeId
 

@@ -30,6 +30,7 @@ type ModelsPipelineNodeStatus struct {
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
 	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	LastRecordProcessedTime *string `json:"last_record_processed_time,omitempty"`
+	LastUpdatedAt *string `json:"last_updated_at,omitempty"`
 	NodeId *string `json:"node_id,omitempty"`
 	NodeSlug *string `json:"node_slug,omitempty"`
 	Progress *ModelsProgressEntries `json:"progress,omitempty"`
@@ -373,6 +374,38 @@ func (o *ModelsPipelineNodeStatus) SetLastRecordProcessedTime(v string) {
 	o.LastRecordProcessedTime = &v
 }
 
+// GetLastUpdatedAt returns the LastUpdatedAt field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetLastUpdatedAt() string {
+	if o == nil || IsNil(o.LastUpdatedAt) {
+		var ret string
+		return ret
+	}
+	return *o.LastUpdatedAt
+}
+
+// GetLastUpdatedAtOk returns a tuple with the LastUpdatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetLastUpdatedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.LastUpdatedAt) {
+		return nil, false
+	}
+	return o.LastUpdatedAt, true
+}
+
+// HasLastUpdatedAt returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasLastUpdatedAt() bool {
+	if o != nil && !IsNil(o.LastUpdatedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUpdatedAt gets a reference to the given string and assigns it to the LastUpdatedAt field.
+func (o *ModelsPipelineNodeStatus) SetLastUpdatedAt(v string) {
+	o.LastUpdatedAt = &v
+}
+
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *ModelsPipelineNodeStatus) GetNodeId() string {
 	if o == nil || IsNil(o.NodeId) {
@@ -540,6 +573,9 @@ func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LastRecordProcessedTime) {
 		toSerialize["last_record_processed_time"] = o.LastRecordProcessedTime
+	}
+	if !IsNil(o.LastUpdatedAt) {
+		toSerialize["last_updated_at"] = o.LastUpdatedAt
 	}
 	if !IsNil(o.NodeId) {
 		toSerialize["node_id"] = o.NodeId

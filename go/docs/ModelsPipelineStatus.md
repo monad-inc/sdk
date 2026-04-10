@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ExpiredMessages** | Pointer to **int32** |  | [optional] 
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **LastIngestedTime** | Pointer to **string** |  | [optional] 
+**LastUpdatedAt** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
@@ -212,6 +213,31 @@ SetLastIngestedTime sets LastIngestedTime field to given value.
 `func (o *ModelsPipelineStatus) HasLastIngestedTime() bool`
 
 HasLastIngestedTime returns a boolean if a field has been set.
+
+### GetLastUpdatedAt
+
+`func (o *ModelsPipelineStatus) GetLastUpdatedAt() string`
+
+GetLastUpdatedAt returns the LastUpdatedAt field if non-nil, zero value otherwise.
+
+### GetLastUpdatedAtOk
+
+`func (o *ModelsPipelineStatus) GetLastUpdatedAtOk() (*string, bool)`
+
+GetLastUpdatedAtOk returns a tuple with the LastUpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastUpdatedAt
+
+`func (o *ModelsPipelineStatus) SetLastUpdatedAt(v string)`
+
+SetLastUpdatedAt sets LastUpdatedAt field to given value.
+
+### HasLastUpdatedAt
+
+`func (o *ModelsPipelineStatus) HasLastUpdatedAt() bool`
+
+HasLastUpdatedAt returns a boolean if a field has been set.
 
 ### GetNodes
 

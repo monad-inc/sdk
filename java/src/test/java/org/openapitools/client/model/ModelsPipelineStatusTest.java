@@ -99,6 +99,14 @@ public class ModelsPipelineStatusTest {
     }
 
     /**
+     * Test the property 'lastUpdatedAt'
+     */
+    @Test
+    public void lastUpdatedAtTest() {
+        // TODO: test lastUpdatedAt
+    }
+
+    /**
      * Test the property 'nodes'
      */
     @Test

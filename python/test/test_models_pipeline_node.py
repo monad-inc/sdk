@@ -69,6 +69,7 @@ class TestModelsPipelineNode(unittest.TestCase):
                         records = 56, ), 
                     last_ingested_time = '', 
                     last_record_processed_time = '', 
+                    last_updated_at = '', 
                     node_id = '', 
                     node_slug = '', 
                     progress = monad.models.models/progress_entries.models.ProgressEntries(
