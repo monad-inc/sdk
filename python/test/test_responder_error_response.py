@@ -38,7 +38,8 @@ class TestResponderErrorResponse(unittest.TestCase):
             return ResponderErrorResponse(
                 additional_details = None,
                 code = 56,
-                error = ''
+                error = '',
+                error_type = ''
             )
         else:
             return ResponderErrorResponse(

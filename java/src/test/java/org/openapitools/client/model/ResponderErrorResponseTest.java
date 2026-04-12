@@ -62,4 +62,12 @@ public class ResponderErrorResponseTest {
         // TODO: test error
     }
 
+    /**
+     * Test the property 'errorType'
+     */
+    @Test
+    public void errorTypeTest() {
+        // TODO: test errorType
+    }
+
 }

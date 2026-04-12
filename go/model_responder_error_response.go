@@ -23,6 +23,7 @@ type ResponderErrorResponse struct {
 	AdditionalDetails interface{} `json:"additional_details,omitempty"`
 	Code *int32 `json:"code,omitempty"`
 	Error *string `json:"error,omitempty"`
+	ErrorType *string `json:"error_type,omitempty"`
 }
 
 // NewResponderErrorResponse instantiates a new ResponderErrorResponse object
@@ -139,6 +140,38 @@ func (o *ResponderErrorResponse) SetError(v string) {
 	o.Error = &v
 }
 
+// GetErrorType returns the ErrorType field value if set, zero value otherwise.
+func (o *ResponderErrorResponse) GetErrorType() string {
+	if o == nil || IsNil(o.ErrorType) {
+		var ret string
+		return ret
+	}
+	return *o.ErrorType
+}
+
+// GetErrorTypeOk returns a tuple with the ErrorType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResponderErrorResponse) GetErrorTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ErrorType) {
+		return nil, false
+	}
+	return o.ErrorType, true
+}
+
+// HasErrorType returns a boolean if a field has been set.
+func (o *ResponderErrorResponse) HasErrorType() bool {
+	if o != nil && !IsNil(o.ErrorType) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrorType gets a reference to the given string and assigns it to the ErrorType field.
+func (o *ResponderErrorResponse) SetErrorType(v string) {
+	o.ErrorType = &v
+}
+
 func (o ResponderErrorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -157,6 +190,9 @@ func (o ResponderErrorResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
+	}
+	if !IsNil(o.ErrorType) {
+		toSerialize["error_type"] = o.ErrorType
 	}
 	return toSerialize, nil
 }

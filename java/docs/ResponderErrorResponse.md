@@ -10,6 +10,7 @@
 |**additionalDetails** | **Object** |  |  [optional] |
 |**code** | **Integer** |  |  [optional] |
 |**error** | **String** |  |  [optional] |
+|**errorType** | **String** |  |  [optional] |
 
 
 

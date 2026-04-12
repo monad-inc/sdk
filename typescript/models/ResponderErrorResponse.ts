@@ -16,6 +16,7 @@ export class ResponderErrorResponse {
     'additionalDetails'?: any | null;
     'code'?: number;
     'error'?: string;
+    'errorType'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,6 +38,12 @@ export class ResponderErrorResponse {
         {
             "name": "error",
             "baseName": "error",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "errorType",
+            "baseName": "error_type",
             "type": "string",
             "format": ""
         }    ];

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AdditionalDetails** | Pointer to **interface{}** |  | [optional] 
 **Code** | Pointer to **int32** |  | [optional] 
 **Error** | Pointer to **string** |  | [optional] 
+**ErrorType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -111,6 +112,31 @@ SetError sets Error field to given value.
 `func (o *ResponderErrorResponse) HasError() bool`
 
 HasError returns a boolean if a field has been set.
+
+### GetErrorType
+
+`func (o *ResponderErrorResponse) GetErrorType() string`
+
+GetErrorType returns the ErrorType field if non-nil, zero value otherwise.
+
+### GetErrorTypeOk
+
+`func (o *ResponderErrorResponse) GetErrorTypeOk() (*string, bool)`
+
+GetErrorTypeOk returns a tuple with the ErrorType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorType
+
+`func (o *ResponderErrorResponse) SetErrorType(v string)`
+
+SetErrorType sets ErrorType field to given value.
+
+### HasErrorType
+
+`func (o *ResponderErrorResponse) HasErrorType() bool`
+
+HasErrorType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

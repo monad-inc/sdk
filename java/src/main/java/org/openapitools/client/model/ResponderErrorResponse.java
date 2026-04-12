@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ResponderErrorResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-11T00:05:43.831476354Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-12T19:48:49.973794822Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ResponderErrorResponse {
   public static final String SERIALIZED_NAME_ADDITIONAL_DETAILS = "additional_details";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DETAILS)
@@ -65,6 +65,11 @@ public class ResponderErrorResponse {
   @SerializedName(SERIALIZED_NAME_ERROR)
   @javax.annotation.Nullable
   private String error;
+
+  public static final String SERIALIZED_NAME_ERROR_TYPE = "error_type";
+  @SerializedName(SERIALIZED_NAME_ERROR_TYPE)
+  @javax.annotation.Nullable
+  private String errorType;
 
   public ResponderErrorResponse() {
   }
@@ -126,6 +131,25 @@ public class ResponderErrorResponse {
   }
 
 
+  public ResponderErrorResponse errorType(@javax.annotation.Nullable String errorType) {
+    this.errorType = errorType;
+    return this;
+  }
+
+  /**
+   * Get errorType
+   * @return errorType
+   */
+  @javax.annotation.Nullable
+  public String getErrorType() {
+    return errorType;
+  }
+
+  public void setErrorType(@javax.annotation.Nullable String errorType) {
+    this.errorType = errorType;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -138,7 +162,8 @@ public class ResponderErrorResponse {
     ResponderErrorResponse responderErrorResponse = (ResponderErrorResponse) o;
     return Objects.equals(this.additionalDetails, responderErrorResponse.additionalDetails) &&
         Objects.equals(this.code, responderErrorResponse.code) &&
-        Objects.equals(this.error, responderErrorResponse.error);
+        Objects.equals(this.error, responderErrorResponse.error) &&
+        Objects.equals(this.errorType, responderErrorResponse.errorType);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -147,7 +172,7 @@ public class ResponderErrorResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalDetails, code, error);
+    return Objects.hash(additionalDetails, code, error, errorType);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -164,6 +189,7 @@ public class ResponderErrorResponse {
     sb.append("    additionalDetails: ").append(toIndentedString(additionalDetails)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -182,7 +208,7 @@ public class ResponderErrorResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("additional_details", "code", "error"));
+    openapiFields = new HashSet<String>(Arrays.asList("additional_details", "code", "error", "error_type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -211,6 +237,9 @@ public class ResponderErrorResponse {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) && !jsonObj.get("error").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
+      }
+      if ((jsonObj.get("error_type") != null && !jsonObj.get("error_type").isJsonNull()) && !jsonObj.get("error_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error_type").toString()));
       }
   }
 

@@ -31,7 +31,8 @@ class ResponderErrorResponse(BaseModel):
     additional_details: Optional[Any] = None
     code: Optional[StrictInt] = None
     error: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["additional_details", "code", "error"]
+    error_type: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["additional_details", "code", "error", "error_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -91,7 +92,8 @@ class ResponderErrorResponse(BaseModel):
         _obj = cls.model_validate({
             "additional_details": obj.get("additional_details"),
             "code": obj.get("code"),
-            "error": obj.get("error")
+            "error": obj.get("error"),
+            "error_type": obj.get("error_type")
         })
         return _obj
 

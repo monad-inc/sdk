@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * PrometheusBearerVariant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-11T00:05:43.831476354Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-12T19:48:49.973794822Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PrometheusBearerVariant {
   public static final String SERIALIZED_NAME_BEARER_TOKEN = "bearer_token";
   @SerializedName(SERIALIZED_NAME_BEARER_TOKEN)
