@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Event Hubs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T15:39:38.133654659Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T16:08:41.487094205Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AzureEventHubsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
