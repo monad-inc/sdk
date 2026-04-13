@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3EnrichmentSandboxRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T21:03:55.472896069Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T22:19:41.813033456Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesV3EnrichmentSandboxRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
