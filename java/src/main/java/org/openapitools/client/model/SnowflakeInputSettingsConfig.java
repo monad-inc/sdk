@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Input Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T17:25:55.635745018Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T20:24:58.727170986Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SnowflakeInputSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
