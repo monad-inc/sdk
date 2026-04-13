@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T16:08:41.487094205Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T17:25:55.635745018Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ModelsPipelineNodeStatus {
   public static final String SERIALIZED_NAME_AVG_BYTES_PER_RECORD_EGRESS = "avg_bytes_per_record_egress";
   @SerializedName(SERIALIZED_NAME_AVG_BYTES_PER_RECORD_EGRESS)
