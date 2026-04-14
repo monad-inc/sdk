@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Volt.io Audit Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-14T15:06:22.002172371Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-14T15:53:05.100681853Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class VoltioAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
