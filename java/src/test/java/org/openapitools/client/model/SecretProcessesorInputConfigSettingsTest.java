@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 import org.openapitools.client.model.AdminLogsSettingsConfig;
 import org.openapitools.client.model.AivenServiceLogsSettingsConfig;
-import org.openapitools.client.model.AlertCenterSettingsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
 import org.openapitools.client.model.AuditLogsSettingsConfig;
 import org.openapitools.client.model.AuthLogsSettingsConfig;
@@ -125,8 +124,6 @@ import org.openapitools.client.model.VulnerabilityFindingsReportSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
 import org.openapitools.client.model.WizAuditLogsSettingsConfig;
 import org.openapitools.client.model.ZendeskAuditLogsSettingsConfig;
-import org.openapitools.client.model.ZoomActivityLogsSettingsConfig;
-import org.openapitools.client.model.ZoomMeetingActivityLogsSettingsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -182,22 +179,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void serviceTest() {
         // TODO: test service
-    }
-
-    /**
-     * Test the property 'authType'
-     */
-    @Test
-    public void authTypeTest() {
-        // TODO: test authType
-    }
-
-    /**
-     * Test the property 'email'
-     */
-    @Test
-    public void emailTest() {
-        // TODO: test email
     }
 
     /**
@@ -886,6 +867,22 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void bucketNameTest() {
         // TODO: test bucketName
+    }
+
+    /**
+     * Test the property 'authType'
+     */
+    @Test
+    public void authTypeTest() {
+        // TODO: test authType
+    }
+
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    public void emailTest() {
+        // TODO: test email
     }
 
     /**

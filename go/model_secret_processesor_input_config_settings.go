@@ -21,7 +21,6 @@ import (
 type SecretProcessesorInputConfigSettings struct {
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
 	AivenServiceLogsSettingsConfig *AivenServiceLogsSettingsConfig
-	AlertCenterSettingsConfig *AlertCenterSettingsConfig
 	ArizeAuditLogsSettingsConfig *ArizeAuditLogsSettingsConfig
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
@@ -119,8 +118,6 @@ type SecretProcessesorInputConfigSettings struct {
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
 	ZendeskAuditLogsSettingsConfig *ZendeskAuditLogsSettingsConfig
-	ZoomActivityLogsSettingsConfig *ZoomActivityLogsSettingsConfig
-	ZoomMeetingActivityLogsSettingsConfig *ZoomMeetingActivityLogsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
 
@@ -135,13 +132,6 @@ func AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AdminLogsS
 func AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AivenServiceLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AivenServiceLogsSettingsConfig: v,
-	}
-}
-
-// AlertCenterSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AlertCenterSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AlertCenterSettingsConfigAsSecretProcessesorInputConfigSettings(v *AlertCenterSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AlertCenterSettingsConfig: v,
 	}
 }
 
@@ -824,20 +814,6 @@ func ZendeskAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Zen
 	}
 }
 
-// ZoomActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ZoomActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func ZoomActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ZoomActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		ZoomActivityLogsSettingsConfig: v,
-	}
-}
-
-// ZoomMeetingActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ZoomMeetingActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func ZoomMeetingActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ZoomMeetingActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		ZoomMeetingActivityLogsSettingsConfig: v,
-	}
-}
-
 // map[string]interface{}AsSecretProcessesorInputConfigSettings is a convenience function that returns map[string]interface{} wrapped in SecretProcessesorInputConfigSettings
 func MapmapOfStringAnyAsSecretProcessesorInputConfigSettings(v *map[string]interface{}) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -882,23 +858,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AivenServiceLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into AlertCenterSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AlertCenterSettingsConfig)
-	if err == nil {
-		jsonAlertCenterSettingsConfig, _ := json.Marshal(dst.AlertCenterSettingsConfig)
-		if string(jsonAlertCenterSettingsConfig) == "{}" { // empty struct
-			dst.AlertCenterSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AlertCenterSettingsConfig); err != nil {
-				dst.AlertCenterSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AlertCenterSettingsConfig = nil
 	}
 
 	// try to unmarshal data into ArizeAuditLogsSettingsConfig
@@ -2550,40 +2509,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ZendeskAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into ZoomActivityLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.ZoomActivityLogsSettingsConfig)
-	if err == nil {
-		jsonZoomActivityLogsSettingsConfig, _ := json.Marshal(dst.ZoomActivityLogsSettingsConfig)
-		if string(jsonZoomActivityLogsSettingsConfig) == "{}" { // empty struct
-			dst.ZoomActivityLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ZoomActivityLogsSettingsConfig); err != nil {
-				dst.ZoomActivityLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ZoomActivityLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into ZoomMeetingActivityLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.ZoomMeetingActivityLogsSettingsConfig)
-	if err == nil {
-		jsonZoomMeetingActivityLogsSettingsConfig, _ := json.Marshal(dst.ZoomMeetingActivityLogsSettingsConfig)
-		if string(jsonZoomMeetingActivityLogsSettingsConfig) == "{}" { // empty struct
-			dst.ZoomMeetingActivityLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ZoomMeetingActivityLogsSettingsConfig); err != nil {
-				dst.ZoomMeetingActivityLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ZoomMeetingActivityLogsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into MapmapOfStringAny
 	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
 	if err == nil {
@@ -2605,7 +2530,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		// reset to nil
 		dst.AdminLogsSettingsConfig = nil
 		dst.AivenServiceLogsSettingsConfig = nil
-		dst.AlertCenterSettingsConfig = nil
 		dst.ArizeAuditLogsSettingsConfig = nil
 		dst.AuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
@@ -2703,8 +2627,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.WizAuditLogsSettingsConfig = nil
 		dst.ZendeskAuditLogsSettingsConfig = nil
-		dst.ZoomActivityLogsSettingsConfig = nil
-		dst.ZoomMeetingActivityLogsSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorInputConfigSettings)")
@@ -2723,10 +2645,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AivenServiceLogsSettingsConfig != nil {
 		return json.Marshal(&src.AivenServiceLogsSettingsConfig)
-	}
-
-	if src.AlertCenterSettingsConfig != nil {
-		return json.Marshal(&src.AlertCenterSettingsConfig)
 	}
 
 	if src.ArizeAuditLogsSettingsConfig != nil {
@@ -3117,14 +3035,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ZendeskAuditLogsSettingsConfig)
 	}
 
-	if src.ZoomActivityLogsSettingsConfig != nil {
-		return json.Marshal(&src.ZoomActivityLogsSettingsConfig)
-	}
-
-	if src.ZoomMeetingActivityLogsSettingsConfig != nil {
-		return json.Marshal(&src.ZoomMeetingActivityLogsSettingsConfig)
-	}
-
 	if src.MapmapOfStringAny != nil {
 		return json.Marshal(&src.MapmapOfStringAny)
 	}
@@ -3143,10 +3053,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.AivenServiceLogsSettingsConfig != nil {
 		return obj.AivenServiceLogsSettingsConfig
-	}
-
-	if obj.AlertCenterSettingsConfig != nil {
-		return obj.AlertCenterSettingsConfig
 	}
 
 	if obj.ArizeAuditLogsSettingsConfig != nil {
@@ -3537,14 +3443,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.ZendeskAuditLogsSettingsConfig
 	}
 
-	if obj.ZoomActivityLogsSettingsConfig != nil {
-		return obj.ZoomActivityLogsSettingsConfig
-	}
-
-	if obj.ZoomMeetingActivityLogsSettingsConfig != nil {
-		return obj.ZoomMeetingActivityLogsSettingsConfig
-	}
-
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
 	}
@@ -3561,10 +3459,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AivenServiceLogsSettingsConfig != nil {
 		return *obj.AivenServiceLogsSettingsConfig
-	}
-
-	if obj.AlertCenterSettingsConfig != nil {
-		return *obj.AlertCenterSettingsConfig
 	}
 
 	if obj.ArizeAuditLogsSettingsConfig != nil {
@@ -3953,14 +3847,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.ZendeskAuditLogsSettingsConfig != nil {
 		return *obj.ZendeskAuditLogsSettingsConfig
-	}
-
-	if obj.ZoomActivityLogsSettingsConfig != nil {
-		return *obj.ZoomActivityLogsSettingsConfig
-	}
-
-	if obj.ZoomMeetingActivityLogsSettingsConfig != nil {
-		return *obj.ZoomMeetingActivityLogsSettingsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {

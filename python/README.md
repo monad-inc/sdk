@@ -270,8 +270,6 @@ Class | Method | HTTP request | Description
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
  - [AivenServiceLogsSecretsConfig](docs/AivenServiceLogsSecretsConfig.md)
  - [AivenServiceLogsSettingsConfig](docs/AivenServiceLogsSettingsConfig.md)
- - [AlertCenterSecretsConfig](docs/AlertCenterSecretsConfig.md)
- - [AlertCenterSettingsConfig](docs/AlertCenterSettingsConfig.md)
  - [AlertsAlertMeta](docs/AlertsAlertMeta.md)
  - [ArizeAuditLogsSecretsConfig](docs/ArizeAuditLogsSecretsConfig.md)
  - [ArizeAuditLogsSettingsConfig](docs/ArizeAuditLogsSettingsConfig.md)
@@ -742,10 +740,6 @@ Class | Method | HTTP request | Description
  - [WizAuditLogsSettingsConfig](docs/WizAuditLogsSettingsConfig.md)
  - [ZendeskAuditLogsSecretsConfig](docs/ZendeskAuditLogsSecretsConfig.md)
  - [ZendeskAuditLogsSettingsConfig](docs/ZendeskAuditLogsSettingsConfig.md)
- - [ZoomActivityLogsSecretsConfig](docs/ZoomActivityLogsSecretsConfig.md)
- - [ZoomActivityLogsSettingsConfig](docs/ZoomActivityLogsSettingsConfig.md)
- - [ZoomMeetingActivityLogsSecretsConfig](docs/ZoomMeetingActivityLogsSecretsConfig.md)
- - [ZoomMeetingActivityLogsSettingsConfig](docs/ZoomMeetingActivityLogsSettingsConfig.md)
 
 
 <a id="documentation-for-authorization"></a>

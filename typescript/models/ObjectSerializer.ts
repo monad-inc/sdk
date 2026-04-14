@@ -6,8 +6,6 @@ export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
 export * from '../models/AivenServiceLogsSecretsConfig';
 export * from '../models/AivenServiceLogsSettingsConfig';
-export * from '../models/AlertCenterSecretsConfig';
-export * from '../models/AlertCenterSettingsConfig';
 export * from '../models/AlertsAlertMeta';
 export * from '../models/ArizeAuditLogsSecretsConfig';
 export * from '../models/ArizeAuditLogsSettingsConfig';
@@ -478,10 +476,6 @@ export * from '../models/WizAuditLogsSecretsConfig';
 export * from '../models/WizAuditLogsSettingsConfig';
 export * from '../models/ZendeskAuditLogsSecretsConfig';
 export * from '../models/ZendeskAuditLogsSettingsConfig';
-export * from '../models/ZoomActivityLogsSecretsConfig';
-export * from '../models/ZoomActivityLogsSettingsConfig';
-export * from '../models/ZoomMeetingActivityLogsSecretsConfig';
-export * from '../models/ZoomMeetingActivityLogsSettingsConfig';
 
 import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
@@ -491,8 +485,6 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
 import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
-import { AlertCenterSecretsConfig } from '../models/AlertCenterSecretsConfig';
-import { AlertCenterSettingsConfig } from '../models/AlertCenterSettingsConfig';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
@@ -963,10 +955,6 @@ import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
 import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
 import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
 import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
-import { ZoomActivityLogsSecretsConfig } from '../models/ZoomActivityLogsSecretsConfig';
-import { ZoomActivityLogsSettingsConfig } from '../models/ZoomActivityLogsSettingsConfig';
-import { ZoomMeetingActivityLogsSecretsConfig } from '../models/ZoomMeetingActivityLogsSecretsConfig';
-import { ZoomMeetingActivityLogsSettingsConfig } from '../models/ZoomMeetingActivityLogsSettingsConfig';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -1007,8 +995,6 @@ let typeMap: {[index: string]: any} = {
     "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
     "AivenServiceLogsSecretsConfig": AivenServiceLogsSecretsConfig,
     "AivenServiceLogsSettingsConfig": AivenServiceLogsSettingsConfig,
-    "AlertCenterSecretsConfig": AlertCenterSecretsConfig,
-    "AlertCenterSettingsConfig": AlertCenterSettingsConfig,
     "AlertsAlertMeta": AlertsAlertMeta,
     "ArizeAuditLogsSecretsConfig": ArizeAuditLogsSecretsConfig,
     "ArizeAuditLogsSettingsConfig": ArizeAuditLogsSettingsConfig,
@@ -1478,10 +1464,6 @@ let typeMap: {[index: string]: any} = {
     "WizAuditLogsSettingsConfig": WizAuditLogsSettingsConfig,
     "ZendeskAuditLogsSecretsConfig": ZendeskAuditLogsSecretsConfig,
     "ZendeskAuditLogsSettingsConfig": ZendeskAuditLogsSettingsConfig,
-    "ZoomActivityLogsSecretsConfig": ZoomActivityLogsSecretsConfig,
-    "ZoomActivityLogsSettingsConfig": ZoomActivityLogsSettingsConfig,
-    "ZoomMeetingActivityLogsSecretsConfig": ZoomMeetingActivityLogsSecretsConfig,
-    "ZoomMeetingActivityLogsSettingsConfig": ZoomMeetingActivityLogsSettingsConfig,
 }
 
 type MimeTypeDescriptor = {

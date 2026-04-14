@@ -41,8 +41,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 backfill_start_time = '',
                 project = '',
                 service = '',
-                auth_type = '',
-                email = '',
                 interval_seconds = 56,
                 actions = [
                     ''
@@ -147,6 +145,8 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 state = '',
                 with_label_details = True,
                 bucket_name = '',
+                auth_type = '',
+                email = '',
                 alert_type = '',
                 embed = '',
                 primary_entity_type = '',

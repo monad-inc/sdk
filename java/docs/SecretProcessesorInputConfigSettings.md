@@ -9,11 +9,9 @@
 |------------ | ------------- | ------------- | -------------|
 |**host** | **String** | The API hostname for your Duo Security integration. |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
-|**backfillStartTime** | **String** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
+|**backfillStartTime** | **String** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
 |**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
 |**service** | **String** | The Aiven service name |  [optional] |
-|**authType** | **String** | AuthType is the type of authentication used for the input |  [optional] |
-|**email** | **String** | Email address to use for authenticating with Google Cloud (required for service_account auth). |  [optional] |
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
 |**actions** | **List&lt;String&gt;** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) |  [optional] |
 |**actor** | **String** | Filter by the username that initiated the action |  [optional] |
@@ -100,6 +98,8 @@
 |**state** | **String** | State to filter issues by e.g. opened, closed |  [optional] |
 |**withLabelDetails** | **Boolean** | Include label details in the response |  [optional] |
 |**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
+|**authType** | **String** | AuthType is the type of authentication used for the input |  [optional] |
+|**email** | **String** | Email address to use for authenticating with Google Cloud (required for service_account auth). |  [optional] |
 |**alertType** | **String** | Filter by alert type (e.g., policy_violated, tag_conflict) |  [optional] |
 |**embed** | **String** | Embed related resources in the data returned (e.g., read-consolidated-alert) |  [optional] |
 |**primaryEntityType** | **String** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) |  [optional] |

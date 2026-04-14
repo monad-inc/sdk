@@ -6,11 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Host** | Pointer to **string** | The API hostname for your Duo Security integration. | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Service** | Pointer to **string** | The Aiven service name | [optional] 
-**AuthType** | Pointer to **string** | AuthType is the type of authentication used for the input | [optional] 
-**Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **Actions** | Pointer to **[]string** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) | [optional] 
 **Actor** | Pointer to **string** | Filter by the username that initiated the action | [optional] 
@@ -97,6 +95,8 @@ Name | Type | Description | Notes
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
 **BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
+**AuthType** | Pointer to **string** | AuthType is the type of authentication used for the input | [optional] 
+**Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **AlertType** | Pointer to **string** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
@@ -303,56 +303,6 @@ SetService sets Service field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasService() bool`
 
 HasService returns a boolean if a field has been set.
-
-### GetAuthType
-
-`func (o *SecretProcessesorInputConfigSettings) GetAuthType() string`
-
-GetAuthType returns the AuthType field if non-nil, zero value otherwise.
-
-### GetAuthTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAuthTypeOk() (*string, bool)`
-
-GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthType
-
-`func (o *SecretProcessesorInputConfigSettings) SetAuthType(v string)`
-
-SetAuthType sets AuthType field to given value.
-
-### HasAuthType
-
-`func (o *SecretProcessesorInputConfigSettings) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
-
-### GetEmail
-
-`func (o *SecretProcessesorInputConfigSettings) GetEmail() string`
-
-GetEmail returns the Email field if non-nil, zero value otherwise.
-
-### GetEmailOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetEmailOk() (*string, bool)`
-
-GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmail
-
-`func (o *SecretProcessesorInputConfigSettings) SetEmail(v string)`
-
-SetEmail sets Email field to given value.
-
-### HasEmail
-
-`func (o *SecretProcessesorInputConfigSettings) HasEmail() bool`
-
-HasEmail returns a boolean if a field has been set.
 
 ### GetIntervalSeconds
 
@@ -2503,6 +2453,56 @@ SetBucketName sets BucketName field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasBucketName() bool`
 
 HasBucketName returns a boolean if a field has been set.
+
+### GetAuthType
+
+`func (o *SecretProcessesorInputConfigSettings) GetAuthType() string`
+
+GetAuthType returns the AuthType field if non-nil, zero value otherwise.
+
+### GetAuthTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAuthTypeOk() (*string, bool)`
+
+GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthType
+
+`func (o *SecretProcessesorInputConfigSettings) SetAuthType(v string)`
+
+SetAuthType sets AuthType field to given value.
+
+### HasAuthType
+
+`func (o *SecretProcessesorInputConfigSettings) HasAuthType() bool`
+
+HasAuthType returns a boolean if a field has been set.
+
+### GetEmail
+
+`func (o *SecretProcessesorInputConfigSettings) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *SecretProcessesorInputConfigSettings) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *SecretProcessesorInputConfigSettings) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 ### GetAlertType
 

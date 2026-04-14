@@ -23,7 +23,6 @@ import java.util.Arrays;
 import java.util.Map;
 import org.openapitools.client.model.AdminLogsSecretsConfig;
 import org.openapitools.client.model.AivenServiceLogsSecretsConfig;
-import org.openapitools.client.model.AlertCenterSecretsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
 import org.openapitools.client.model.AuditLogsSecretsConfig;
 import org.openapitools.client.model.AuthLogsSecretsConfig;
@@ -113,8 +112,6 @@ import org.openapitools.client.model.VulnerabilityFindingsReportSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSecretsConfig;
 import org.openapitools.client.model.WizAuditLogsSecretsConfig;
 import org.openapitools.client.model.ZendeskAuditLogsSecretsConfig;
-import org.openapitools.client.model.ZoomActivityLogsSecretsConfig;
-import org.openapitools.client.model.ZoomMeetingActivityLogsSecretsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -154,22 +151,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void authTokenTest() {
         // TODO: test authToken
-    }
-
-    /**
-     * Test the property 'credentialsJson'
-     */
-    @Test
-    public void credentialsJsonTest() {
-        // TODO: test credentialsJson
-    }
-
-    /**
-     * Test the property 'oauthToken'
-     */
-    @Test
-    public void oauthTokenTest() {
-        // TODO: test oauthToken
     }
 
     /**
@@ -237,6 +218,14 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
+     * Test the property 'credentialsJson'
+     */
+    @Test
+    public void credentialsJsonTest() {
+        // TODO: test credentialsJson
+    }
+
+    /**
      * Test the property 'enterpriseId'
      */
     @Test
@@ -298,6 +287,14 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void apiSecretTest() {
         // TODO: test apiSecret
+    }
+
+    /**
+     * Test the property 'oauthToken'
+     */
+    @Test
+    public void oauthTokenTest() {
+        // TODO: test oauthToken
     }
 
     /**

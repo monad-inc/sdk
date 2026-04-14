@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-04-14T17:09:41.730000703Z[Etc/UTC]
+  - Build date: 2026-04-14T17:35:15.150299875Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -297,8 +297,6 @@ Class | Method | HTTP request | Description
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
  - [AivenServiceLogsSecretsConfig](docs/AivenServiceLogsSecretsConfig.md)
  - [AivenServiceLogsSettingsConfig](docs/AivenServiceLogsSettingsConfig.md)
- - [AlertCenterSecretsConfig](docs/AlertCenterSecretsConfig.md)
- - [AlertCenterSettingsConfig](docs/AlertCenterSettingsConfig.md)
  - [AlertsAlertMeta](docs/AlertsAlertMeta.md)
  - [ArizeAuditLogsSecretsConfig](docs/ArizeAuditLogsSecretsConfig.md)
  - [ArizeAuditLogsSettingsConfig](docs/ArizeAuditLogsSettingsConfig.md)
@@ -769,10 +767,6 @@ Class | Method | HTTP request | Description
  - [WizAuditLogsSettingsConfig](docs/WizAuditLogsSettingsConfig.md)
  - [ZendeskAuditLogsSecretsConfig](docs/ZendeskAuditLogsSecretsConfig.md)
  - [ZendeskAuditLogsSettingsConfig](docs/ZendeskAuditLogsSettingsConfig.md)
- - [ZoomActivityLogsSecretsConfig](docs/ZoomActivityLogsSecretsConfig.md)
- - [ZoomActivityLogsSettingsConfig](docs/ZoomActivityLogsSettingsConfig.md)
- - [ZoomMeetingActivityLogsSecretsConfig](docs/ZoomMeetingActivityLogsSecretsConfig.md)
- - [ZoomMeetingActivityLogsSettingsConfig](docs/ZoomMeetingActivityLogsSettingsConfig.md)
 
 
 <a id="documentation-for-authorization"></a>

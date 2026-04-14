@@ -74,8 +74,6 @@ __all__ = [
     "AdminLogsSettingsConfig",
     "AivenServiceLogsSecretsConfig",
     "AivenServiceLogsSettingsConfig",
-    "AlertCenterSecretsConfig",
-    "AlertCenterSettingsConfig",
     "AlertsAlertMeta",
     "ArizeAuditLogsSecretsConfig",
     "ArizeAuditLogsSettingsConfig",
@@ -546,10 +544,6 @@ __all__ = [
     "WizAuditLogsSettingsConfig",
     "ZendeskAuditLogsSecretsConfig",
     "ZendeskAuditLogsSettingsConfig",
-    "ZoomActivityLogsSecretsConfig",
-    "ZoomActivityLogsSettingsConfig",
-    "ZoomMeetingActivityLogsSecretsConfig",
-    "ZoomMeetingActivityLogsSettingsConfig",
 ]
 
 # import apis into sdk package
@@ -612,8 +606,6 @@ from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig as Adm
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig as AdminLogsSettingsConfig
 from monad.models.aiven_service_logs_secrets_config import AivenServiceLogsSecretsConfig as AivenServiceLogsSecretsConfig
 from monad.models.aiven_service_logs_settings_config import AivenServiceLogsSettingsConfig as AivenServiceLogsSettingsConfig
-from monad.models.alert_center_secrets_config import AlertCenterSecretsConfig as AlertCenterSecretsConfig
-from monad.models.alert_center_settings_config import AlertCenterSettingsConfig as AlertCenterSettingsConfig
 from monad.models.alerts_alert_meta import AlertsAlertMeta as AlertsAlertMeta
 from monad.models.arize_audit_logs_secrets_config import ArizeAuditLogsSecretsConfig as ArizeAuditLogsSecretsConfig
 from monad.models.arize_audit_logs_settings_config import ArizeAuditLogsSettingsConfig as ArizeAuditLogsSettingsConfig
@@ -1084,8 +1076,4 @@ from monad.models.wiz_audit_logs_secrets_config import WizAuditLogsSecretsConfig
 from monad.models.wiz_audit_logs_settings_config import WizAuditLogsSettingsConfig as WizAuditLogsSettingsConfig
 from monad.models.zendesk_audit_logs_secrets_config import ZendeskAuditLogsSecretsConfig as ZendeskAuditLogsSecretsConfig
 from monad.models.zendesk_audit_logs_settings_config import ZendeskAuditLogsSettingsConfig as ZendeskAuditLogsSettingsConfig
-from monad.models.zoom_activity_logs_secrets_config import ZoomActivityLogsSecretsConfig as ZoomActivityLogsSecretsConfig
-from monad.models.zoom_activity_logs_settings_config import ZoomActivityLogsSettingsConfig as ZoomActivityLogsSettingsConfig
-from monad.models.zoom_meeting_activity_logs_secrets_config import ZoomMeetingActivityLogsSecretsConfig as ZoomMeetingActivityLogsSecretsConfig
-from monad.models.zoom_meeting_activity_logs_settings_config import ZoomMeetingActivityLogsSettingsConfig as ZoomMeetingActivityLogsSettingsConfig
 
