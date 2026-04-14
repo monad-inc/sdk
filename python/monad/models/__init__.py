@@ -207,6 +207,7 @@ from monad.models.models_component_reference import ModelsComponentReference
 from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
 from monad.models.models_connection import ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList
+from monad.models.models_connector_info import ModelsConnectorInfo
 from monad.models.models_connector_meta import ModelsConnectorMeta
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_enrichment import ModelsEnrichment

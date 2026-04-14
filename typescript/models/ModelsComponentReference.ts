@@ -10,9 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { HttpFile } from '../http/http';
 
 export class ModelsComponentReference {
+    'definitionRef'?: ModelsConnectorInfo;
     'id'?: string;
     'kind'?: string;
     'name'?: string;
@@ -23,6 +25,12 @@ export class ModelsComponentReference {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "definitionRef",
+            "baseName": "definition_ref",
+            "type": "ModelsConnectorInfo",
+            "format": ""
+        },
         {
             "name": "id",
             "baseName": "id",

@@ -36,6 +36,9 @@ class TestModelsComponentReference(unittest.TestCase):
         model = ModelsComponentReference()
         if include_optional:
             return ModelsComponentReference(
+                definition_ref = monad.models.models/connector_info.models.ConnectorInfo(
+                    house = '', 
+                    name = '', ),
                 id = '',
                 kind = '',
                 name = '',

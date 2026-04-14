@@ -430,6 +430,7 @@ Class | Method | HTTP request | Description
  - [ModelsConditionEvaluatable](docs/ModelsConditionEvaluatable.md)
  - [ModelsConnection](docs/ModelsConnection.md)
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
+ - [ModelsConnectorInfo](docs/ModelsConnectorInfo.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsEnrichment](docs/ModelsEnrichment.md)

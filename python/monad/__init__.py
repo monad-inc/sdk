@@ -259,6 +259,7 @@ __all__ = [
     "ModelsConditionEvaluatable",
     "ModelsConnection",
     "ModelsConnectionList",
+    "ModelsConnectorInfo",
     "ModelsConnectorMeta",
     "ModelsDataUsage",
     "ModelsEnrichment",
@@ -796,6 +797,7 @@ from monad.models.models_component_reference import ModelsComponentReference as 
 from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable as ModelsConditionEvaluatable
 from monad.models.models_connection import ModelsConnection as ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList as ModelsConnectionList
+from monad.models.models_connector_info import ModelsConnectorInfo as ModelsConnectorInfo
 from monad.models.models_connector_meta import ModelsConnectorMeta as ModelsConnectorMeta
 from monad.models.models_data_usage import ModelsDataUsage as ModelsDataUsage
 from monad.models.models_enrichment import ModelsEnrichment as ModelsEnrichment

@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsConnectorInfo;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -35,6 +36,14 @@ public class ModelsComponentReferenceTest {
     @Test
     public void testModelsComponentReference() {
         // TODO: test ModelsComponentReference
+    }
+
+    /**
+     * Test the property 'definitionRef'
+     */
+    @Test
+    public void definitionRefTest() {
+        // TODO: test definitionRef
     }
 
     /**

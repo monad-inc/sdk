@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-04-13T23:05:55.264945418Z[Etc/UTC]
+  - Build date: 2026-04-14T15:06:22.002172371Z[Etc/UTC]
   - Generator version: 7.21.0
 
 This is the monad API
@@ -482,6 +482,7 @@ Class | Method | HTTP request | Description
  - [ModelsConditionEvaluatable](docs/ModelsConditionEvaluatable.md)
  - [ModelsConnection](docs/ModelsConnection.md)
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
+ - [ModelsConnectorInfo](docs/ModelsConnectorInfo.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsEnrichment](docs/ModelsEnrichment.md)

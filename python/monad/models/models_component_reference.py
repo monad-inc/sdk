@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_connector_info import ModelsConnectorInfo
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,11 +29,12 @@ class ModelsComponentReference(BaseModel):
     """
     ModelsComponentReference
     """ # noqa: E501
+    definition_ref: Optional[ModelsConnectorInfo] = None
     id: Optional[StrictStr] = None
     kind: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "kind", "name", "type"]
+    __properties: ClassVar[List[str]] = ["definition_ref", "id", "kind", "name", "type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -73,6 +75,9 @@ class ModelsComponentReference(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of definition_ref
+        if self.definition_ref:
+            _dict['definition_ref'] = self.definition_ref.to_dict()
         return _dict
 
     @classmethod
@@ -85,6 +90,7 @@ class ModelsComponentReference(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "definition_ref": ModelsConnectorInfo.from_dict(obj["definition_ref"]) if obj.get("definition_ref") is not None else None,
             "id": obj.get("id"),
             "kind": obj.get("kind"),
             "name": obj.get("name"),

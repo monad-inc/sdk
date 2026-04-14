@@ -46,6 +46,9 @@ class TestModelsSecretWithComponentsList(unittest.TestCase):
                         description = '', 
                         enrichments = [
                             monad.models.models/component_reference.models.ComponentReference(
+                                definition_ref = monad.models.models/connector_info.models.ConnectorInfo(
+                                    house = '', 
+                                    name = '', ), 
                                 id = '', 
                                 kind = '', 
                                 name = '', 

@@ -195,6 +195,7 @@ import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
+import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';

@@ -40,6 +40,9 @@ class TestModelsSecretWithComponents(unittest.TestCase):
                 description = '',
                 enrichments = [
                     monad.models.models/component_reference.models.ComponentReference(
+                        definition_ref = monad.models.models/connector_info.models.ConnectorInfo(
+                            house = '', 
+                            name = '', ), 
                         id = '', 
                         kind = '', 
                         name = '', 
@@ -48,6 +51,9 @@ class TestModelsSecretWithComponents(unittest.TestCase):
                 id = '',
                 inputs = [
                     monad.models.models/component_reference.models.ComponentReference(
+                        definition_ref = monad.models.models/connector_info.models.ConnectorInfo(
+                            house = '', 
+                            name = '', ), 
                         id = '', 
                         kind = '', 
                         name = '', 
@@ -57,6 +63,9 @@ class TestModelsSecretWithComponents(unittest.TestCase):
                 organization_id = '',
                 outputs = [
                     monad.models.models/component_reference.models.ComponentReference(
+                        definition_ref = monad.models.models/connector_info.models.ConnectorInfo(
+                            house = '', 
+                            name = '', ), 
                         id = '', 
                         kind = '', 
                         name = '', 
@@ -64,6 +73,9 @@ class TestModelsSecretWithComponents(unittest.TestCase):
                     ],
                 transforms = [
                     monad.models.models/component_reference.models.ComponentReference(
+                        definition_ref = monad.models.models/connector_info.models.ConnectorInfo(
+                            house = '', 
+                            name = '', ), 
                         id = '', 
                         kind = '', 
                         name = '', 

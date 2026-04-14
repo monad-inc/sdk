@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**definition_ref** | [**ModelsConnectorInfo**](ModelsConnectorInfo.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **kind** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 

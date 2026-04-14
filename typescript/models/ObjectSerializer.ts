@@ -191,6 +191,7 @@ export * from '../models/ModelsComponentReference';
 export * from '../models/ModelsConditionEvaluatable';
 export * from '../models/ModelsConnection';
 export * from '../models/ModelsConnectionList';
+export * from '../models/ModelsConnectorInfo';
 export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsDataUsage';
 export * from '../models/ModelsEnrichment';
@@ -675,6 +676,7 @@ import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
+import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
@@ -1190,6 +1192,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsConditionEvaluatable": ModelsConditionEvaluatable,
     "ModelsConnection": ModelsConnection,
     "ModelsConnectionList": ModelsConnectionList,
+    "ModelsConnectorInfo": ModelsConnectorInfo,
     "ModelsConnectorMeta": ModelsConnectorMeta,
     "ModelsDataUsage": ModelsDataUsage,
     "ModelsEnrichment": ModelsEnrichment,

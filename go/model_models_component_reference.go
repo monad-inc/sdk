@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsComponentReference{}
 
 // ModelsComponentReference struct for ModelsComponentReference
 type ModelsComponentReference struct {
+	DefinitionRef *ModelsConnectorInfo `json:"definition_ref,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Kind *string `json:"kind,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -41,6 +42,38 @@ func NewModelsComponentReference() *ModelsComponentReference {
 func NewModelsComponentReferenceWithDefaults() *ModelsComponentReference {
 	this := ModelsComponentReference{}
 	return &this
+}
+
+// GetDefinitionRef returns the DefinitionRef field value if set, zero value otherwise.
+func (o *ModelsComponentReference) GetDefinitionRef() ModelsConnectorInfo {
+	if o == nil || IsNil(o.DefinitionRef) {
+		var ret ModelsConnectorInfo
+		return ret
+	}
+	return *o.DefinitionRef
+}
+
+// GetDefinitionRefOk returns a tuple with the DefinitionRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsComponentReference) GetDefinitionRefOk() (*ModelsConnectorInfo, bool) {
+	if o == nil || IsNil(o.DefinitionRef) {
+		return nil, false
+	}
+	return o.DefinitionRef, true
+}
+
+// HasDefinitionRef returns a boolean if a field has been set.
+func (o *ModelsComponentReference) HasDefinitionRef() bool {
+	if o != nil && !IsNil(o.DefinitionRef) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefinitionRef gets a reference to the given ModelsConnectorInfo and assigns it to the DefinitionRef field.
+func (o *ModelsComponentReference) SetDefinitionRef(v ModelsConnectorInfo) {
+	o.DefinitionRef = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -181,6 +214,9 @@ func (o ModelsComponentReference) MarshalJSON() ([]byte, error) {
 
 func (o ModelsComponentReference) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DefinitionRef) {
+		toSerialize["definition_ref"] = o.DefinitionRef
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}

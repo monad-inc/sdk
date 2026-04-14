@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsConnectorInfo;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,8 +49,13 @@ import org.openapitools.client.JSON;
 /**
  * ModelsComponentReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-13T23:05:55.264945418Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-14T15:06:22.002172371Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ModelsComponentReference {
+  public static final String SERIALIZED_NAME_DEFINITION_REF = "definition_ref";
+  @SerializedName(SERIALIZED_NAME_DEFINITION_REF)
+  @javax.annotation.Nullable
+  private ModelsConnectorInfo definitionRef;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -72,6 +78,25 @@ public class ModelsComponentReference {
 
   public ModelsComponentReference() {
   }
+
+  public ModelsComponentReference definitionRef(@javax.annotation.Nullable ModelsConnectorInfo definitionRef) {
+    this.definitionRef = definitionRef;
+    return this;
+  }
+
+  /**
+   * Get definitionRef
+   * @return definitionRef
+   */
+  @javax.annotation.Nullable
+  public ModelsConnectorInfo getDefinitionRef() {
+    return definitionRef;
+  }
+
+  public void setDefinitionRef(@javax.annotation.Nullable ModelsConnectorInfo definitionRef) {
+    this.definitionRef = definitionRef;
+  }
+
 
   public ModelsComponentReference id(@javax.annotation.Nullable String id) {
     this.id = id;
@@ -159,7 +184,8 @@ public class ModelsComponentReference {
       return false;
     }
     ModelsComponentReference modelsComponentReference = (ModelsComponentReference) o;
-    return Objects.equals(this.id, modelsComponentReference.id) &&
+    return Objects.equals(this.definitionRef, modelsComponentReference.definitionRef) &&
+        Objects.equals(this.id, modelsComponentReference.id) &&
         Objects.equals(this.kind, modelsComponentReference.kind) &&
         Objects.equals(this.name, modelsComponentReference.name) &&
         Objects.equals(this.type, modelsComponentReference.type);
@@ -167,13 +193,14 @@ public class ModelsComponentReference {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, kind, name, type);
+    return Objects.hash(definitionRef, id, kind, name, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsComponentReference {\n");
+    sb.append("    definitionRef: ").append(toIndentedString(definitionRef)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -196,7 +223,7 @@ public class ModelsComponentReference {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "kind", "name", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("definition_ref", "id", "kind", "name", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -223,6 +250,10 @@ public class ModelsComponentReference {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `definition_ref`
+      if (jsonObj.get("definition_ref") != null && !jsonObj.get("definition_ref").isJsonNull()) {
+        ModelsConnectorInfo.validateJsonElement(jsonObj.get("definition_ref"));
+      }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
