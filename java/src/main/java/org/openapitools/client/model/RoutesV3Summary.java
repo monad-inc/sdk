@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3Summary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-14T15:53:05.100681853Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-14T17:09:41.730000703Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesV3Summary {
   public static final String SERIALIZED_NAME_ESTIMATED_SIZE_CHANGE_PERCENT = "estimated_size_change_percent";
   @SerializedName(SERIALIZED_NAME_ESTIMATED_SIZE_CHANGE_PERCENT)
