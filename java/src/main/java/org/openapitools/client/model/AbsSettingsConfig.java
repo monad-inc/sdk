@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * AbsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-15T19:40:09.627164305Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-15T22:52:58.461043275Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AbsSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_URL = "account_url";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_URL)

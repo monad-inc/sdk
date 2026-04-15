@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Masking mode. Simple replaces values with a fixed mask. Deterministic produces a stable, correlatable output using HMAC.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-15T19:40:09.627164305Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-15T22:52:58.461043275Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MaskModeConfig {
   public static final String SERIALIZED_NAME_DETERMINISTIC = "deterministic";
   @SerializedName(SERIALIZED_NAME_DETERMINISTIC)
