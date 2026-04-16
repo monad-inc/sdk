@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz Cloud Resource Inventory Reports secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-15T23:39:10.299128676Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-16T01:58:56.885142625Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CloudResourceInventoryReportsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
