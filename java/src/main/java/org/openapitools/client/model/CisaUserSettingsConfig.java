@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CISA KEV settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:35:48.770198038Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T05:37:22.982093217Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CisaUserSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)

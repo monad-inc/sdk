@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * SlackBotTokenVariant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:35:48.770198038Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T05:37:22.982093217Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SlackBotTokenVariant {
   public static final String SERIALIZED_NAME_BOT_TOKEN = "bot_token";
   @SerializedName(SERIALIZED_NAME_BOT_TOKEN)
