@@ -7,7 +7,7 @@ Cloudflare HTTP Requests settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fields** | **List[str]** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. | [optional] 
-**lookback_duration** | **str** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;7d\&quot;). Respects API retention limits. | [optional] 
+**lookback_duration** | **str** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;168h\&quot;). Respects API retention limits. | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **zone_id** | **str** | Cloudflare Zone ID | [optional] 
 

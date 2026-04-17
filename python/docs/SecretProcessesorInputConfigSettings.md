@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **consumer_group** | **str** | The consumer group name for reading events (default: &#x60;$Default&#x60;) | [optional] 
 **event_hub_name** | **str** | The name of the specific Event Hub to consume from | [optional] 
 **event_hub_namespace** | **str** | The fully qualified namespace URL (e.g., &#x60;your-namespace.servicebus.windows.net&#x60;) | [optional] 
-**lookback_duration** | **str** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;7d\&quot;). Respects API retention limits. | [optional] 
+**lookback_duration** | **str** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;168h\&quot;). Respects API retention limits. | [optional] 
 **storage_account_url** | **str** | The Azure storage account URL where flow logs are stored | [optional] 
 **virtual_network_name** | **str** | The name of the virtual network for which flow logs are being collected | [optional] 
 **dataset** | **str** | The BigQuery dataset ID containing the table | [optional] 

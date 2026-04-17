@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **ConsumerGroup** | Pointer to **string** | The consumer group name for reading events (default: &#x60;$Default&#x60;) | [optional] 
 **EventHubName** | Pointer to **string** | The name of the specific Event Hub to consume from | [optional] 
 **EventHubNamespace** | Pointer to **string** | The fully qualified namespace URL (e.g., &#x60;your-namespace.servicebus.windows.net&#x60;) | [optional] 
-**LookbackDuration** | Pointer to **string** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;7d\&quot;). Respects API retention limits. | [optional] 
+**LookbackDuration** | Pointer to **string** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;168h\&quot;). Respects API retention limits. | [optional] 
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
 **VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 

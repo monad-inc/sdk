@@ -21,7 +21,7 @@ export class CloudflareFirewallEventsSettingsConfig {
     */
     'includeBotFields'?: boolean;
     /**
-    * Initial lookback duration for first sync (e.g., \"24h\", \"7d\"). Respects API retention limits.
+    * Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.
     */
     'lookbackDuration'?: string;
     /**

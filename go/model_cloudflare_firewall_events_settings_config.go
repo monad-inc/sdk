@@ -22,7 +22,7 @@ var _ MappedNullable = &CloudflareFirewallEventsSettingsConfig{}
 type CloudflareFirewallEventsSettingsConfig struct {
 	// Include Bot Management fields (requires Enterprise plan with Bot Management add-on)
 	IncludeBotFields *bool `json:"include_bot_fields,omitempty"`
-	// Initial lookback duration for first sync (e.g., \"24h\", \"7d\"). Respects API retention limits.
+	// Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.
 	LookbackDuration *string `json:"lookback_duration,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`

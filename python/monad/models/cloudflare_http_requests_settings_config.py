@@ -29,7 +29,7 @@ class CloudflareHttpRequestsSettingsConfig(BaseModel):
     Cloudflare HTTP Requests settings
     """ # noqa: E501
     fields: Optional[List[StrictStr]] = Field(default=None, description="Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints.")
-    lookback_duration: Optional[StrictStr] = Field(default=None, description="Initial lookback duration for first sync (e.g., \"24h\", \"7d\"). Respects API retention limits.")
+    lookback_duration: Optional[StrictStr] = Field(default=None, description="Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     zone_id: Optional[StrictStr] = Field(default=None, description="Cloudflare Zone ID")
     __properties: ClassVar[List[str]] = ["fields", "lookback_duration", "use_synthetic_data", "zone_id"]

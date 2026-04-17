@@ -96,7 +96,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:04:28.638833410Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:35:48.770198038Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorOutputConfigSettings.class.getName());
 

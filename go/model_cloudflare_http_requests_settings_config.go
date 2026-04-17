@@ -22,7 +22,7 @@ var _ MappedNullable = &CloudflareHttpRequestsSettingsConfig{}
 type CloudflareHttpRequestsSettingsConfig struct {
 	// Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints.
 	Fields []string `json:"fields,omitempty"`
-	// Initial lookback duration for first sync (e.g., \"24h\", \"7d\"). Respects API retention limits.
+	// Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.
 	LookbackDuration *string `json:"lookback_duration,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`

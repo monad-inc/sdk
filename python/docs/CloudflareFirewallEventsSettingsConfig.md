@@ -7,7 +7,7 @@ Cloudflare Firewall Events settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **include_bot_fields** | **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
-**lookback_duration** | **str** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;7d\&quot;). Respects API retention limits. | [optional] 
+**lookback_duration** | **str** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;168h\&quot;). Respects API retention limits. | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **zone_id** | **str** | Cloudflare Zone ID | [optional] 
 

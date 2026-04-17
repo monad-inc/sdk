@@ -29,7 +29,7 @@ class CloudflareFirewallEventsSettingsConfig(BaseModel):
     Cloudflare Firewall Events settings
     """ # noqa: E501
     include_bot_fields: Optional[StrictBool] = Field(default=None, description="Include Bot Management fields (requires Enterprise plan with Bot Management add-on)")
-    lookback_duration: Optional[StrictStr] = Field(default=None, description="Initial lookback duration for first sync (e.g., \"24h\", \"7d\"). Respects API retention limits.")
+    lookback_duration: Optional[StrictStr] = Field(default=None, description="Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     zone_id: Optional[StrictStr] = Field(default=None, description="Cloudflare Zone ID")
     __properties: ClassVar[List[str]] = ["include_bot_fields", "lookback_duration", "use_synthetic_data", "zone_id"]

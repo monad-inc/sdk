@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Cloudflare HTTP Requests settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:04:28.638833410Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:35:48.770198038Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class CloudflareHttpRequestsSettingsConfig {
   public static final String SERIALIZED_NAME_FIELDS = "fields";
   @SerializedName(SERIALIZED_NAME_FIELDS)
@@ -108,7 +108,7 @@ public class CloudflareHttpRequestsSettingsConfig {
   }
 
   /**
-   * Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;7d\&quot;). Respects API retention limits.
+   * Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;168h\&quot;). Respects API retention limits.
    * @return lookbackDuration
    */
   @javax.annotation.Nullable

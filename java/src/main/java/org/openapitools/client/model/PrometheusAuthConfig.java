@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * PrometheusAuthConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:04:28.638833410Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T01:35:48.770198038Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class PrometheusAuthConfig {
   public static final String SERIALIZED_NAME_BASIC = "basic";
   @SerializedName(SERIALIZED_NAME_BASIC)
