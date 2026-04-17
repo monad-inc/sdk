@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * MaskArgumentsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T05:37:22.982093217Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-17T12:07:19.581502359Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class MaskArgumentsConfig {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
