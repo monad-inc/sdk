@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS SQS S3 settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-18T02:02:31.171683704Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-20T14:12:14.601933170Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class Awssqss3SettingsConfig {
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
@@ -156,7 +156,7 @@ public class Awssqss3SettingsConfig {
   }
 
   /**
-   * Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+   * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
    * @return recordLocation
    */
   @javax.annotation.Nullable

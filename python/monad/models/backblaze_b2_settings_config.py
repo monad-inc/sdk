@@ -34,7 +34,7 @@ class BackblazeB2SettingsConfig(BaseModel):
     format: Optional[StrictStr] = Field(default=None, description="File format of the B2 objects")
     partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the partition format of your B2 bucket")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix of the B2 object keys to read")
-    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object")
+    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
     region: Optional[StrictStr] = Field(default=None, description="B2 Region of your bucket (e.g., us-west-001, us-west-002, eu-central-003)")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket", "compression", "format", "partition_format", "prefix", "record_location", "region"]
 

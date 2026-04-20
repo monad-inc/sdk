@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Object storage settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-18T02:02:31.171683704Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-20T14:12:14.601933170Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ObjectStorageInputSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
@@ -223,7 +223,7 @@ public class ObjectStorageInputSettingsConfig {
   }
 
   /**
-   * Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records.
+   * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
    * @return recordLocation
    */
   @javax.annotation.Nullable

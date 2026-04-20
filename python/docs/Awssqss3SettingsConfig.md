@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **compression** | **str** | Compression format of the S3 objects. | [optional] 
 **format** | **str** | File format of the S3 objects. | [optional] 
 **queue_url** | **str** | The URL of the SQS queue to poll for messages. | [optional] 
-**record_location** | **str** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. | [optional] 
+**record_location** | **str** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 **region** | **str** | The AWS region where the SQS queue is located. | [optional] 
 **role_arn** | **str** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 
 **uses_sns** | **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 

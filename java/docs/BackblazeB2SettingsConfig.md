@@ -14,7 +14,7 @@ Backblaze B2 settings
 |**format** | **String** | File format of the B2 objects |  [optional] |
 |**partitionFormat** | **String** | Specifies the partition format of your B2 bucket |  [optional] |
 |**prefix** | **String** | Prefix of the B2 object keys to read |  [optional] |
-|**recordLocation** | **String** | Location of the record in the JSON object |  [optional] |
+|**recordLocation** | **String** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. |  [optional] |
 |**region** | **String** | B2 Region of your bucket (e.g., us-west-001, us-west-002, eu-central-003) |  [optional] |
 
 

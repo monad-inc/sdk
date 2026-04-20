@@ -31,7 +31,7 @@ class Awssqss3SettingsConfig(BaseModel):
     compression: Optional[StrictStr] = Field(default=None, description="Compression format of the S3 objects.")
     format: Optional[StrictStr] = Field(default=None, description="File format of the S3 objects.")
     queue_url: Optional[StrictStr] = Field(default=None, description="The URL of the SQS queue to poll for messages.")
-    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. This can be ignored if the record is not in JSON format.")
+    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where the SQS queue is located.")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the IAM role to assume for accessing the SQS queue.")
     uses_sns: Optional[StrictBool] = Field(default=None, description="Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.")

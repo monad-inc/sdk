@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Compression** | Pointer to **string** | Compression format of the S3 objects. | [optional] 
 **Format** | Pointer to **string** | File format of the S3 objects. | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
-**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. | [optional] 
+**RecordLocation** | Pointer to **string** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 **Region** | Pointer to **string** | The AWS region where the SQS queue is located. | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 
 **UsesSns** | Pointer to **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 

@@ -26,7 +26,7 @@ type Awssqss3SettingsConfig struct {
 	Format *string `json:"format,omitempty"`
 	// The URL of the SQS queue to poll for messages.
 	QueueUrl *string `json:"queue_url,omitempty"`
-	// Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+	// Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
 	RecordLocation *string `json:"record_location,omitempty"`
 	// The AWS region where the SQS queue is located.
 	Region *string `json:"region,omitempty"`

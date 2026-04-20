@@ -29,7 +29,7 @@ export class Awssqss3SettingsConfig {
     */
     'queueUrl'?: string;
     /**
-    * Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+    * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
     */
     'recordLocation'?: string;
     /**

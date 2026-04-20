@@ -32,7 +32,7 @@ type ObjectStorageInputSettingsConfig struct {
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// Prefix that leads to the start of the expected partition. For example: \"/foobar/year=2024/month=01/day=01/\". The prefix is `foobar`.
 	Prefix *string `json:"prefix,omitempty"`
-	// Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use '@this' to indicate that the file contains the record at the root or an array of records.
+	// Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
 	RecordLocation *string `json:"record_location,omitempty"`
 	// Optional region for the object storage service. This is often required for services like AWS S3.
 	Region *string `json:"region,omitempty"`

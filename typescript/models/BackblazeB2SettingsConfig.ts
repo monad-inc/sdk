@@ -41,7 +41,7 @@ export class BackblazeB2SettingsConfig {
     */
     'prefix'?: string;
     /**
-    * Location of the record in the JSON object
+    * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
     */
     'recordLocation'?: string;
     /**

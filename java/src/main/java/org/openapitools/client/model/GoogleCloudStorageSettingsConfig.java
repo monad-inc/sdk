@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Storage settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-18T02:02:31.171683704Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-20T14:12:14.601933170Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class GoogleCloudStorageSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET_NAME = "bucket_name";
   @SerializedName(SERIALIZED_NAME_BUCKET_NAME)
@@ -208,7 +208,7 @@ public class GoogleCloudStorageSettingsConfig {
   }
 
   /**
-   * Location of the record in the JSON object. Applies only if the format is JSON. Leave empty if you want the entire record.
+   * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
    * @return recordLocation
    */
   @javax.annotation.Nullable

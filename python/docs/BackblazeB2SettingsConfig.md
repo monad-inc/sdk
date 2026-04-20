@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **format** | **str** | File format of the B2 objects | [optional] 
 **partition_format** | **str** | Specifies the partition format of your B2 bucket | [optional] 
 **prefix** | **str** | Prefix of the B2 object keys to read | [optional] 
-**record_location** | **str** | Location of the record in the JSON object | [optional] 
+**record_location** | **str** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 **region** | **str** | B2 Region of your bucket (e.g., us-west-001, us-west-002, eu-central-003) | [optional] 
 
 ## Example

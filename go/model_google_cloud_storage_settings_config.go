@@ -32,7 +32,7 @@ type GoogleCloudStorageSettingsConfig struct {
 	Prefix *string `json:"prefix,omitempty"`
 	// The Google Cloud project ID to use
 	ProjectId *string `json:"project_id,omitempty"`
-	// Location of the record in the JSON object. Applies only if the format is JSON. Leave empty if you want the entire record.
+	// Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
 	RecordLocation *string `json:"record_location,omitempty"`
 }
 

@@ -41,7 +41,7 @@ export class ObjectStorageInputSettingsConfig {
     */
     'prefix'?: string;
     /**
-    * Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use \'@this\' to indicate that the file contains the record at the root or an array of records.
+    * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
     */
     'recordLocation'?: string;
     /**

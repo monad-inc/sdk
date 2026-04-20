@@ -32,7 +32,7 @@ type BackblazeB2SettingsConfig struct {
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// Prefix of the B2 object keys to read
 	Prefix *string `json:"prefix,omitempty"`
-	// Location of the record in the JSON object
+	// Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
 	RecordLocation *string `json:"record_location,omitempty"`
 	// B2 Region of your bucket (e.g., us-west-001, us-west-002, eu-central-003)
 	Region *string `json:"region,omitempty"`
