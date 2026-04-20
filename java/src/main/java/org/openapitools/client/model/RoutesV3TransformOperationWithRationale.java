@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3TransformOperationWithRationale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-20T16:42:52.269455677Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-20T19:18:20.476674678Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class RoutesV3TransformOperationWithRationale {
   public static final String SERIALIZED_NAME_FIELD_UPDATION_RATIONALE = "field_updation_rationale";
   @SerializedName(SERIALIZED_NAME_FIELD_UPDATION_RATIONALE)
