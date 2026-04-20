@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * UniversalSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-20T19:18:20.476674678Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-20T19:49:08.731953334Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class UniversalSettingsConfig {
   public static final String SERIALIZED_NAME_INSTANCE_NAME = "instance_name";
   @SerializedName(SERIALIZED_NAME_INSTANCE_NAME)
