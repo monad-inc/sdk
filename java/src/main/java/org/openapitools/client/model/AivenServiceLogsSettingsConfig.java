@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Aiven Service Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-21T14:19:21.077505064Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-21T17:08:25.740573331Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class AivenServiceLogsSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
