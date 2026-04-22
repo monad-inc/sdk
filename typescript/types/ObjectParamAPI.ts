@@ -96,6 +96,8 @@ import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
 import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
+import { DatabricksSecretsConfig } from '../models/DatabricksSecretsConfig';
+import { DatabricksSettingsConfig } from '../models/DatabricksSettingsConfig';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';

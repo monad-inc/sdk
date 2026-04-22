@@ -160,6 +160,8 @@ __all__ = [
     "CriblHttpSettingsConfig",
     "CustomerEventDataSecretsConfig",
     "CustomerEventDataSettingsConfig",
+    "DatabricksSecretsConfig",
+    "DatabricksSettingsConfig",
     "DatadogSecretsConfig",
     "DatadogSettingsConfig",
     "DefenderForEndpointAlertsSecretsConfig",
@@ -692,6 +694,8 @@ from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig as Cri
 from monad.models.cribl_http_settings_config import CriblHttpSettingsConfig as CriblHttpSettingsConfig
 from monad.models.customer_event_data_secrets_config import CustomerEventDataSecretsConfig as CustomerEventDataSecretsConfig
 from monad.models.customer_event_data_settings_config import CustomerEventDataSettingsConfig as CustomerEventDataSettingsConfig
+from monad.models.databricks_secrets_config import DatabricksSecretsConfig as DatabricksSecretsConfig
+from monad.models.databricks_settings_config import DatabricksSettingsConfig as DatabricksSettingsConfig
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig
 from monad.models.datadog_settings_config import DatadogSettingsConfig as DatadogSettingsConfig
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig

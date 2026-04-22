@@ -69,6 +69,11 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 ingress_address = '',
                 path = '',
                 port = '',
+                catalog = '',
+                http_path = '',
+                var_schema = '',
+                server_hostname = '',
+                volume = '',
                 ddsource = '',
                 ddtags = [
                     ''
@@ -189,7 +194,6 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 account = '',
                 case_insensitivity = True,
                 role = '',
-                var_schema = '',
                 stage = '',
                 warehouse = '',
                 allow_insecure = True,

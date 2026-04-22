@@ -92,6 +92,8 @@ export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
 export * from '../models/CustomerEventDataSecretsConfig';
 export * from '../models/CustomerEventDataSettingsConfig';
+export * from '../models/DatabricksSecretsConfig';
+export * from '../models/DatabricksSettingsConfig';
 export * from '../models/DatadogSecretsConfig';
 export * from '../models/DatadogSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -571,6 +573,8 @@ import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
 import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
+import { DatabricksSecretsConfig } from '../models/DatabricksSecretsConfig';
+import { DatabricksSettingsConfig } from '../models/DatabricksSettingsConfig';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -1081,6 +1085,8 @@ let typeMap: {[index: string]: any} = {
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
     "CustomerEventDataSecretsConfig": CustomerEventDataSecretsConfig,
     "CustomerEventDataSettingsConfig": CustomerEventDataSettingsConfig,
+    "DatabricksSecretsConfig": DatabricksSecretsConfig,
+    "DatabricksSettingsConfig": DatabricksSettingsConfig,
     "DatadogSecretsConfig": DatadogSecretsConfig,
     "DatadogSettingsConfig": DatadogSettingsConfig,
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,

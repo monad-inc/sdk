@@ -23,6 +23,11 @@ Name | Type | Description | Notes
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
+**Catalog** | Pointer to **string** | The Unity Catalog name | [optional] 
+**HttpPath** | Pointer to **string** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | [optional] 
+**Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
+**ServerHostname** | Pointer to **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | [optional] 
+**Volume** | Pointer to **string** | The Unity Catalog Volume used for staging JSONL files before COPY INTO | [optional] 
 **Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **Ddtags** | Pointer to **[]string** | Tags associated with your logs. | [optional] 
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
@@ -75,7 +80,6 @@ Name | Type | Description | Notes
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **CaseInsensitivity** | Pointer to **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
-**Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
 **Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
@@ -575,6 +579,131 @@ SetPort sets Port field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasPort() bool`
 
 HasPort returns a boolean if a field has been set.
+
+### GetCatalog
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCatalog() string`
+
+GetCatalog returns the Catalog field if non-nil, zero value otherwise.
+
+### GetCatalogOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCatalogOk() (*string, bool)`
+
+GetCatalogOk returns a tuple with the Catalog field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCatalog
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCatalog(v string)`
+
+SetCatalog sets Catalog field to given value.
+
+### HasCatalog
+
+`func (o *SecretProcessesorOutputConfigSettings) HasCatalog() bool`
+
+HasCatalog returns a boolean if a field has been set.
+
+### GetHttpPath
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHttpPath() string`
+
+GetHttpPath returns the HttpPath field if non-nil, zero value otherwise.
+
+### GetHttpPathOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHttpPathOk() (*string, bool)`
+
+GetHttpPathOk returns a tuple with the HttpPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpPath
+
+`func (o *SecretProcessesorOutputConfigSettings) SetHttpPath(v string)`
+
+SetHttpPath sets HttpPath field to given value.
+
+### HasHttpPath
+
+`func (o *SecretProcessesorOutputConfigSettings) HasHttpPath() bool`
+
+HasHttpPath returns a boolean if a field has been set.
+
+### GetSchema
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSchema() string`
+
+GetSchema returns the Schema field if non-nil, zero value otherwise.
+
+### GetSchemaOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSchemaOk() (*string, bool)`
+
+GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchema
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSchema(v string)`
+
+SetSchema sets Schema field to given value.
+
+### HasSchema
+
+`func (o *SecretProcessesorOutputConfigSettings) HasSchema() bool`
+
+HasSchema returns a boolean if a field has been set.
+
+### GetServerHostname
+
+`func (o *SecretProcessesorOutputConfigSettings) GetServerHostname() string`
+
+GetServerHostname returns the ServerHostname field if non-nil, zero value otherwise.
+
+### GetServerHostnameOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetServerHostnameOk() (*string, bool)`
+
+GetServerHostnameOk returns a tuple with the ServerHostname field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerHostname
+
+`func (o *SecretProcessesorOutputConfigSettings) SetServerHostname(v string)`
+
+SetServerHostname sets ServerHostname field to given value.
+
+### HasServerHostname
+
+`func (o *SecretProcessesorOutputConfigSettings) HasServerHostname() bool`
+
+HasServerHostname returns a boolean if a field has been set.
+
+### GetVolume
+
+`func (o *SecretProcessesorOutputConfigSettings) GetVolume() string`
+
+GetVolume returns the Volume field if non-nil, zero value otherwise.
+
+### GetVolumeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetVolumeOk() (*string, bool)`
+
+GetVolumeOk returns a tuple with the Volume field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVolume
+
+`func (o *SecretProcessesorOutputConfigSettings) SetVolume(v string)`
+
+SetVolume sets Volume field to given value.
+
+### HasVolume
+
+`func (o *SecretProcessesorOutputConfigSettings) HasVolume() bool`
+
+HasVolume returns a boolean if a field has been set.
 
 ### GetDdsource
 
@@ -1875,31 +2004,6 @@ SetRole sets Role field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
-
-### GetSchema
-
-`func (o *SecretProcessesorOutputConfigSettings) GetSchema() string`
-
-GetSchema returns the Schema field if non-nil, zero value otherwise.
-
-### GetSchemaOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetSchemaOk() (*string, bool)`
-
-GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchema
-
-`func (o *SecretProcessesorOutputConfigSettings) SetSchema(v string)`
-
-SetSchema sets Schema field to given value.
-
-### HasSchema
-
-`func (o *SecretProcessesorOutputConfigSettings) HasSchema() bool`
-
-HasSchema returns a boolean if a field has been set.
 
 ### GetStage
 

@@ -25,6 +25,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	BackblazeSettingsConfig *BackblazeSettingsConfig
 	BigquerySettingsConfig *BigquerySettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
+	DatabricksSettingsConfig *DatabricksSettingsConfig
 	DatadogSettingsConfig *DatadogSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
@@ -86,6 +87,13 @@ func BigquerySettingsConfigAsSecretProcessesorOutputConfigSettings(v *BigquerySe
 func CriblHttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *CriblHttpSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		CriblHttpSettingsConfig: v,
+	}
+}
+
+// DatabricksSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns DatabricksSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func DatabricksSettingsConfigAsSecretProcessesorOutputConfigSettings(v *DatabricksSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		DatabricksSettingsConfig: v,
 	}
 }
 
@@ -334,6 +342,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.CriblHttpSettingsConfig = nil
+	}
+
+	// try to unmarshal data into DatabricksSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.DatabricksSettingsConfig)
+	if err == nil {
+		jsonDatabricksSettingsConfig, _ := json.Marshal(dst.DatabricksSettingsConfig)
+		if string(jsonDatabricksSettingsConfig) == "{}" { // empty struct
+			dst.DatabricksSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DatabricksSettingsConfig); err != nil {
+				dst.DatabricksSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DatabricksSettingsConfig = nil
 	}
 
 	// try to unmarshal data into DatadogSettingsConfig
@@ -684,6 +709,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.BackblazeSettingsConfig = nil
 		dst.BigquerySettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
+		dst.DatabricksSettingsConfig = nil
 		dst.DatadogSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
@@ -737,6 +763,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.CriblHttpSettingsConfig != nil {
 		return json.Marshal(&src.CriblHttpSettingsConfig)
+	}
+
+	if src.DatabricksSettingsConfig != nil {
+		return json.Marshal(&src.DatabricksSettingsConfig)
 	}
 
 	if src.DatadogSettingsConfig != nil {
@@ -851,6 +881,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.CriblHttpSettingsConfig
 	}
 
+	if obj.DatabricksSettingsConfig != nil {
+		return obj.DatabricksSettingsConfig
+	}
+
 	if obj.DatadogSettingsConfig != nil {
 		return obj.DatadogSettingsConfig
 	}
@@ -959,6 +993,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.CriblHttpSettingsConfig != nil {
 		return *obj.CriblHttpSettingsConfig
+	}
+
+	if obj.DatabricksSettingsConfig != nil {
+		return *obj.DatabricksSettingsConfig
 	}
 
 	if obj.DatadogSettingsConfig != nil {

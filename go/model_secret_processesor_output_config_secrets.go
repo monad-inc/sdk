@@ -24,6 +24,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	BackblazeSecretsConfig *BackblazeSecretsConfig
 	BigquerySecretsConfig *BigquerySecretsConfig
 	CriblHttpSecretsConfig *CriblHttpSecretsConfig
+	DatabricksSecretsConfig *DatabricksSecretsConfig
 	DatadogSecretsConfig *DatadogSecretsConfig
 	ElasticsearchSecretsConfig *ElasticsearchSecretsConfig
 	GoogleCloudStorageOutputSecretsConfig *GoogleCloudStorageOutputSecretsConfig
@@ -74,6 +75,13 @@ func BigquerySecretsConfigAsSecretProcessesorOutputConfigSecrets(v *BigquerySecr
 func CriblHttpSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *CriblHttpSecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
 		CriblHttpSecretsConfig: v,
+	}
+}
+
+// DatabricksSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns DatabricksSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func DatabricksSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *DatabricksSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		DatabricksSecretsConfig: v,
 	}
 }
 
@@ -277,6 +285,23 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CriblHttpSecretsConfig = nil
+	}
+
+	// try to unmarshal data into DatabricksSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.DatabricksSecretsConfig)
+	if err == nil {
+		jsonDatabricksSecretsConfig, _ := json.Marshal(dst.DatabricksSecretsConfig)
+		if string(jsonDatabricksSecretsConfig) == "{}" { // empty struct
+			dst.DatabricksSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DatabricksSecretsConfig); err != nil {
+				dst.DatabricksSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DatabricksSecretsConfig = nil
 	}
 
 	// try to unmarshal data into DatadogSecretsConfig
@@ -558,6 +583,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.BackblazeSecretsConfig = nil
 		dst.BigquerySecretsConfig = nil
 		dst.CriblHttpSecretsConfig = nil
+		dst.DatabricksSecretsConfig = nil
 		dst.DatadogSecretsConfig = nil
 		dst.ElasticsearchSecretsConfig = nil
 		dst.GoogleCloudStorageOutputSecretsConfig = nil
@@ -603,6 +629,10 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.CriblHttpSecretsConfig != nil {
 		return json.Marshal(&src.CriblHttpSecretsConfig)
+	}
+
+	if src.DatabricksSecretsConfig != nil {
+		return json.Marshal(&src.DatabricksSecretsConfig)
 	}
 
 	if src.DatadogSecretsConfig != nil {
@@ -697,6 +727,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.CriblHttpSecretsConfig
 	}
 
+	if obj.DatabricksSecretsConfig != nil {
+		return obj.DatabricksSecretsConfig
+	}
+
 	if obj.DatadogSecretsConfig != nil {
 		return obj.DatadogSecretsConfig
 	}
@@ -785,6 +819,10 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 
 	if obj.CriblHttpSecretsConfig != nil {
 		return *obj.CriblHttpSecretsConfig
+	}
+
+	if obj.DatabricksSecretsConfig != nil {
+		return *obj.DatabricksSecretsConfig
 	}
 
 	if obj.DatadogSecretsConfig != nil {

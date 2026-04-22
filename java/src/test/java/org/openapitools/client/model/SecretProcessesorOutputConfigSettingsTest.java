@@ -30,6 +30,7 @@ import org.openapitools.client.model.BackblazeSettingsConfig;
 import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.BigquerySettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
+import org.openapitools.client.model.DatabricksSettingsConfig;
 import org.openapitools.client.model.DatadogSettingsConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
@@ -226,6 +227,46 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void portTest() {
         // TODO: test port
+    }
+
+    /**
+     * Test the property 'catalog'
+     */
+    @Test
+    public void catalogTest() {
+        // TODO: test catalog
+    }
+
+    /**
+     * Test the property 'httpPath'
+     */
+    @Test
+    public void httpPathTest() {
+        // TODO: test httpPath
+    }
+
+    /**
+     * Test the property 'schema'
+     */
+    @Test
+    public void schemaTest() {
+        // TODO: test schema
+    }
+
+    /**
+     * Test the property 'serverHostname'
+     */
+    @Test
+    public void serverHostnameTest() {
+        // TODO: test serverHostname
+    }
+
+    /**
+     * Test the property 'volume'
+     */
+    @Test
+    public void volumeTest() {
+        // TODO: test volume
     }
 
     /**
@@ -642,14 +683,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void roleTest() {
         // TODO: test role
-    }
-
-    /**
-     * Test the property 'schema'
-     */
-    @Test
-    public void schemaTest() {
-        // TODO: test schema
     }
 
     /**

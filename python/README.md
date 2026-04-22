@@ -356,6 +356,8 @@ Class | Method | HTTP request | Description
  - [CriblHttpSettingsConfig](docs/CriblHttpSettingsConfig.md)
  - [CustomerEventDataSecretsConfig](docs/CustomerEventDataSecretsConfig.md)
  - [CustomerEventDataSettingsConfig](docs/CustomerEventDataSettingsConfig.md)
+ - [DatabricksSecretsConfig](docs/DatabricksSecretsConfig.md)
+ - [DatabricksSettingsConfig](docs/DatabricksSettingsConfig.md)
  - [DatadogSecretsConfig](docs/DatadogSecretsConfig.md)
  - [DatadogSettingsConfig](docs/DatadogSettingsConfig.md)
  - [DefenderForEndpointAlertsSecretsConfig](docs/DefenderForEndpointAlertsSecretsConfig.md)
