@@ -193,7 +193,6 @@ __all__ = [
     "FullScansSecretsConfig",
     "FullScansSettingsConfig",
     "GeolocusSettingsConfig",
-    "GithubAdvisoryUserSettingsConfig",
     "GithubComMonadIncCorePkgTypesModelsAlert",
     "GithubComMonadIncCorePkgTypesModelsAlertStatus",
     "GithubComMonadIncCorePkgTypesModelsOrganization",
@@ -727,7 +726,6 @@ from monad.models.formatter_format_config import FormatterFormatConfig as Format
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig as FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig as FullScansSettingsConfig
 from monad.models.geolocus_settings_config import GeolocusSettingsConfig as GeolocusSettingsConfig
-from monad.models.github_advisory_user_settings_config import GithubAdvisoryUserSettingsConfig as GithubAdvisoryUserSettingsConfig
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert as GithubComMonadIncCorePkgTypesModelsAlert
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus as GithubComMonadIncCorePkgTypesModelsAlertStatus
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization as GithubComMonadIncCorePkgTypesModelsOrganization

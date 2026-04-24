@@ -415,7 +415,6 @@ Class | Method | HTTP request | Description
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
  - [GeolocusSettingsConfig](docs/GeolocusSettingsConfig.md)
- - [GithubAdvisoryUserSettingsConfig](docs/GithubAdvisoryUserSettingsConfig.md)
  - [GithubComMonadIncCorePkgTypesModelsAlert](docs/GithubComMonadIncCorePkgTypesModelsAlert.md)
  - [GithubComMonadIncCorePkgTypesModelsAlertStatus](docs/GithubComMonadIncCorePkgTypesModelsAlertStatus.md)
  - [GithubComMonadIncCorePkgTypesModelsOrganization](docs/GithubComMonadIncCorePkgTypesModelsOrganization.md)

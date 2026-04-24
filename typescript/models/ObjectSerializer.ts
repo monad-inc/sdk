@@ -125,7 +125,6 @@ export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
 export * from '../models/GeolocusSettingsConfig';
-export * from '../models/GithubAdvisoryUserSettingsConfig';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -606,7 +605,6 @@ import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
-import { GithubAdvisoryUserSettingsConfig } from '../models/GithubAdvisoryUserSettingsConfig';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -1118,7 +1116,6 @@ let typeMap: {[index: string]: any} = {
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
     "GeolocusSettingsConfig": GeolocusSettingsConfig,
-    "GithubAdvisoryUserSettingsConfig": GithubAdvisoryUserSettingsConfig,
     "GithubComMonadIncCorePkgTypesModelsAlert": GithubComMonadIncCorePkgTypesModelsAlert,
     "GithubComMonadIncCorePkgTypesModelsAlertStatus": GithubComMonadIncCorePkgTypesModelsAlertStatus,
     "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,

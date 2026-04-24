@@ -65,7 +65,6 @@ import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
 import org.openapitools.client.model.EventSettingsConfig;
 import org.openapitools.client.model.FullScansSettingsConfig;
-import org.openapitools.client.model.GithubAdvisoryUserSettingsConfig;
 import org.openapitools.client.model.GitlabIssuesSettingsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
