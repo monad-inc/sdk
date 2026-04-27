@@ -173,6 +173,9 @@ from monad.models.issues_secrets_config import IssuesSecretsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig
 from monad.models.jq_arguments_config import JqArgumentsConfig
 from monad.models.json_json_formatter import JsonJsonFormatter
+from monad.models.kafka_kafka_header import KafkaKafkaHeader
+from monad.models.kafka_secrets_config import KafkaSecretsConfig
+from monad.models.kafka_settings_config import KafkaSettingsConfig
 from monad.models.koi_audit_logs_secrets_config import KoiAuditLogsSecretsConfig
 from monad.models.koi_audit_logs_settings_config import KoiAuditLogsSettingsConfig
 from monad.models.kv_lookup_output_settings_config import KvLookupOutputSettingsConfig

@@ -19,6 +19,9 @@
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**authHeaders** | [**Map&lt;String, ModelsSecret&gt;**](ModelsSecret.md) | Authentication headers |  [optional] |
+|**caCertificate** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientCertificate** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**routingKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

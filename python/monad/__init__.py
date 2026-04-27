@@ -225,6 +225,9 @@ __all__ = [
     "IssuesSettingsConfig",
     "JqArgumentsConfig",
     "JsonJsonFormatter",
+    "KafkaKafkaHeader",
+    "KafkaSecretsConfig",
+    "KafkaSettingsConfig",
     "KoiAuditLogsSecretsConfig",
     "KoiAuditLogsSettingsConfig",
     "KvLookupOutputSettingsConfig",
@@ -758,6 +761,9 @@ from monad.models.issues_secrets_config import IssuesSecretsConfig as IssuesSecr
 from monad.models.issues_settings_config import IssuesSettingsConfig as IssuesSettingsConfig
 from monad.models.jq_arguments_config import JqArgumentsConfig as JqArgumentsConfig
 from monad.models.json_json_formatter import JsonJsonFormatter as JsonJsonFormatter
+from monad.models.kafka_kafka_header import KafkaKafkaHeader as KafkaKafkaHeader
+from monad.models.kafka_secrets_config import KafkaSecretsConfig as KafkaSecretsConfig
+from monad.models.kafka_settings_config import KafkaSettingsConfig as KafkaSettingsConfig
 from monad.models.koi_audit_logs_secrets_config import KoiAuditLogsSecretsConfig as KoiAuditLogsSecretsConfig
 from monad.models.koi_audit_logs_settings_config import KoiAuditLogsSettingsConfig as KoiAuditLogsSettingsConfig
 from monad.models.kv_lookup_output_settings_config import KvLookupOutputSettingsConfig as KvLookupOutputSettingsConfig

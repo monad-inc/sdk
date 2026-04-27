@@ -157,6 +157,9 @@ export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqArgumentsConfig';
 export * from '../models/JsonJsonFormatter';
+export * from '../models/KafkaKafkaHeader';
+export * from '../models/KafkaSecretsConfig';
+export * from '../models/KafkaSettingsConfig';
 export * from '../models/KoiAuditLogsSecretsConfig';
 export * from '../models/KoiAuditLogsSettingsConfig';
 export * from '../models/KvLookupOutputSettingsConfig';
@@ -637,6 +640,9 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig      , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
+import { KafkaSettingsConfig } from '../models/KafkaSettingsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
@@ -1148,6 +1154,9 @@ let typeMap: {[index: string]: any} = {
     "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqArgumentsConfig": JqArgumentsConfig,
     "JsonJsonFormatter": JsonJsonFormatter,
+    "KafkaKafkaHeader": KafkaKafkaHeader,
+    "KafkaSecretsConfig": KafkaSecretsConfig,
+    "KafkaSettingsConfig": KafkaSettingsConfig,
     "KoiAuditLogsSecretsConfig": KoiAuditLogsSecretsConfig,
     "KoiAuditLogsSettingsConfig": KoiAuditLogsSettingsConfig,
     "KvLookupOutputSettingsConfig": KvLookupOutputSettingsConfig,

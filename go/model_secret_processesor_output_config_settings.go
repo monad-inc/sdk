@@ -30,6 +30,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
 	HttpSettingsConfig *HttpSettingsConfig
+	KafkaSettingsConfig *KafkaSettingsConfig
 	KvLookupOutputSettingsConfig *KvLookupOutputSettingsConfig
 	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
 	ObjectStorageSettingsConfig *ObjectStorageSettingsConfig
@@ -122,6 +123,13 @@ func GoogleCloudStorageOutputSettingsConfigAsSecretProcessesorOutputConfigSettin
 func HttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *HttpSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		HttpSettingsConfig: v,
+	}
+}
+
+// KafkaSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns KafkaSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func KafkaSettingsConfigAsSecretProcessesorOutputConfigSettings(v *KafkaSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		KafkaSettingsConfig: v,
 	}
 }
 
@@ -429,6 +437,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.HttpSettingsConfig = nil
 	}
 
+	// try to unmarshal data into KafkaSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.KafkaSettingsConfig)
+	if err == nil {
+		jsonKafkaSettingsConfig, _ := json.Marshal(dst.KafkaSettingsConfig)
+		if string(jsonKafkaSettingsConfig) == "{}" { // empty struct
+			dst.KafkaSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.KafkaSettingsConfig); err != nil {
+				dst.KafkaSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.KafkaSettingsConfig = nil
+	}
+
 	// try to unmarshal data into KvLookupOutputSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.KvLookupOutputSettingsConfig)
 	if err == nil {
@@ -714,6 +739,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.ElasticsearchSettingsConfig = nil
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
 		dst.HttpSettingsConfig = nil
+		dst.KafkaSettingsConfig = nil
 		dst.KvLookupOutputSettingsConfig = nil
 		dst.NextGenSiemSettingsConfig = nil
 		dst.ObjectStorageSettingsConfig = nil
@@ -783,6 +809,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.HttpSettingsConfig != nil {
 		return json.Marshal(&src.HttpSettingsConfig)
+	}
+
+	if src.KafkaSettingsConfig != nil {
+		return json.Marshal(&src.KafkaSettingsConfig)
 	}
 
 	if src.KvLookupOutputSettingsConfig != nil {
@@ -901,6 +931,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.HttpSettingsConfig
 	}
 
+	if obj.KafkaSettingsConfig != nil {
+		return obj.KafkaSettingsConfig
+	}
+
 	if obj.KvLookupOutputSettingsConfig != nil {
 		return obj.KvLookupOutputSettingsConfig
 	}
@@ -1013,6 +1047,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.HttpSettingsConfig != nil {
 		return *obj.HttpSettingsConfig
+	}
+
+	if obj.KafkaSettingsConfig != nil {
+		return *obj.KafkaSettingsConfig
 	}
 
 	if obj.KvLookupOutputSettingsConfig != nil {

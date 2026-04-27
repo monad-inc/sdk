@@ -29,6 +29,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	ElasticsearchSecretsConfig *ElasticsearchSecretsConfig
 	GoogleCloudStorageOutputSecretsConfig *GoogleCloudStorageOutputSecretsConfig
 	HttpSecretsConfig *HttpSecretsConfig
+	KafkaSecretsConfig *KafkaSecretsConfig
 	NextGenSiemSecretsConfig *NextGenSiemSecretsConfig
 	ObjectStorageSecretsConfig *ObjectStorageSecretsConfig
 	OpensearchSecretsConfig *OpensearchSecretsConfig
@@ -110,6 +111,13 @@ func GoogleCloudStorageOutputSecretsConfigAsSecretProcessesorOutputConfigSecrets
 func HttpSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *HttpSecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
 		HttpSecretsConfig: v,
+	}
+}
+
+// KafkaSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns KafkaSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func KafkaSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *KafkaSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		KafkaSecretsConfig: v,
 	}
 }
 
@@ -372,6 +380,23 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.HttpSecretsConfig = nil
 	}
 
+	// try to unmarshal data into KafkaSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.KafkaSecretsConfig)
+	if err == nil {
+		jsonKafkaSecretsConfig, _ := json.Marshal(dst.KafkaSecretsConfig)
+		if string(jsonKafkaSecretsConfig) == "{}" { // empty struct
+			dst.KafkaSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.KafkaSecretsConfig); err != nil {
+				dst.KafkaSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.KafkaSecretsConfig = nil
+	}
+
 	// try to unmarshal data into NextGenSiemSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.NextGenSiemSecretsConfig)
 	if err == nil {
@@ -588,6 +613,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.ElasticsearchSecretsConfig = nil
 		dst.GoogleCloudStorageOutputSecretsConfig = nil
 		dst.HttpSecretsConfig = nil
+		dst.KafkaSecretsConfig = nil
 		dst.NextGenSiemSecretsConfig = nil
 		dst.ObjectStorageSecretsConfig = nil
 		dst.OpensearchSecretsConfig = nil
@@ -649,6 +675,10 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.HttpSecretsConfig != nil {
 		return json.Marshal(&src.HttpSecretsConfig)
+	}
+
+	if src.KafkaSecretsConfig != nil {
+		return json.Marshal(&src.KafkaSecretsConfig)
 	}
 
 	if src.NextGenSiemSecretsConfig != nil {
@@ -747,6 +777,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.HttpSecretsConfig
 	}
 
+	if obj.KafkaSecretsConfig != nil {
+		return obj.KafkaSecretsConfig
+	}
+
 	if obj.NextGenSiemSecretsConfig != nil {
 		return obj.NextGenSiemSecretsConfig
 	}
@@ -839,6 +873,10 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 
 	if obj.HttpSecretsConfig != nil {
 		return *obj.HttpSecretsConfig
+	}
+
+	if obj.KafkaSecretsConfig != nil {
+		return *obj.KafkaSecretsConfig
 	}
 
 	if obj.NextGenSiemSecretsConfig != nil {

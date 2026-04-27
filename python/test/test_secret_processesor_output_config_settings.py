@@ -102,9 +102,9 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                         schema = '', ), ),
                 endpoint = '',
                 headers = [
-                    monad.models.http/headers.http.Headers(
-                        header_key = '', 
-                        header_value = '', )
+                    monad.models.kafka/kafka_header.kafka.kafkaHeader(
+                        key = '', 
+                        value = '', )
                     ],
                 max_batch_data_size = 56,
                 max_batch_record_count = 56,
@@ -113,6 +113,14 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 rate_limit = 56,
                 tls_skip_verify = True,
                 wrapper_key = '',
+                acks = '',
+                bootstrap_servers = '',
+                compression_type = '',
+                message_key_field = '',
+                retries = 56,
+                sasl_mechanism = '',
+                security_protocol = '',
+                topic = '',
                 key_field = '',
                 ttl = 56,
                 value_field = '',

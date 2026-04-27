@@ -20,6 +20,7 @@ import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
+import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
@@ -38,7 +39,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSecretsClass
@@ -49,6 +50,7 @@ export class SecretProcessesorOutputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

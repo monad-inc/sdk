@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthHeaders** | Pointer to [**map[string]ModelsSecret**](ModelsSecret.md) | Authentication headers | [optional] 
+**CaCertificate** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientCertificate** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RoutingKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -343,6 +346,81 @@ SetAuthHeaders sets AuthHeaders field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasAuthHeaders() bool`
 
 HasAuthHeaders returns a boolean if a field has been set.
+
+### GetCaCertificate
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetCaCertificate() ModelsSecret`
+
+GetCaCertificate returns the CaCertificate field if non-nil, zero value otherwise.
+
+### GetCaCertificateOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetCaCertificateOk() (*ModelsSecret, bool)`
+
+GetCaCertificateOk returns a tuple with the CaCertificate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCaCertificate
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetCaCertificate(v ModelsSecret)`
+
+SetCaCertificate sets CaCertificate field to given value.
+
+### HasCaCertificate
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasCaCertificate() bool`
+
+HasCaCertificate returns a boolean if a field has been set.
+
+### GetClientCertificate
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetClientCertificate() ModelsSecret`
+
+GetClientCertificate returns the ClientCertificate field if non-nil, zero value otherwise.
+
+### GetClientCertificateOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetClientCertificateOk() (*ModelsSecret, bool)`
+
+GetClientCertificateOk returns a tuple with the ClientCertificate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientCertificate
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetClientCertificate(v ModelsSecret)`
+
+SetClientCertificate sets ClientCertificate field to given value.
+
+### HasClientCertificate
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasClientCertificate() bool`
+
+HasClientCertificate returns a boolean if a field has been set.
+
+### GetClientKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetClientKey() ModelsSecret`
+
+GetClientKey returns the ClientKey field if non-nil, zero value otherwise.
+
+### GetClientKeyOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetClientKeyOk() (*ModelsSecret, bool)`
+
+GetClientKeyOk returns a tuple with the ClientKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetClientKey(v ModelsSecret)`
+
+SetClientKey sets ClientKey field to given value.
+
+### HasClientKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasClientKey() bool`
+
+HasClientKey returns a boolean if a field has been set.
 
 ### GetAccessKey
 

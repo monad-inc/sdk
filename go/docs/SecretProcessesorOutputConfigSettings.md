@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **Username** | Pointer to **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
 **Format** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
-**Headers** | Pointer to [**[]HttpHeaders**](HttpHeaders.md) | Non secret headers | [optional] 
+**Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **MaxBatchRecordCount** | Pointer to **int32** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
 **Method** | Pointer to **string** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). | [optional] 
@@ -50,6 +50,14 @@ Name | Type | Description | Notes
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** |  | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
+**Acks** | Pointer to **string** | Acknowledgment level (0&#x3D;none, 1&#x3D;leader only, all&#x3D;all replicas) | [optional] 
+**BootstrapServers** | Pointer to **string** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
+**CompressionType** | Pointer to **string** | Compression codec for messages (none, gzip, snappy, lz4, zstd) | [optional] 
+**MessageKeyField** | Pointer to **string** | JSON field path to extract as the Kafka message key (uses gjson syntax) | [optional] 
+**Retries** | Pointer to **int32** | Number of retry attempts for failed writes | [optional] 
+**SaslMechanism** | Pointer to **string** | SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512) | [optional] 
+**SecurityProtocol** | Pointer to **string** | Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL) | [optional] 
+**Topic** | Pointer to **string** | The Kafka topic to publish messages to | [optional] 
 **KeyField** | Pointer to **string** | The field in the incoming record to use as the key | [optional] 
 **Ttl** | Pointer to **int32** | Time-to-live in hours for stored key-value pairs (0 means no expiration) | [optional] 
 **ValueField** | Pointer to **string** |  | [optional] 
@@ -1057,20 +1065,20 @@ HasEndpoint returns a boolean if a field has been set.
 
 ### GetHeaders
 
-`func (o *SecretProcessesorOutputConfigSettings) GetHeaders() []HttpHeaders`
+`func (o *SecretProcessesorOutputConfigSettings) GetHeaders() []KafkaKafkaHeader`
 
 GetHeaders returns the Headers field if non-nil, zero value otherwise.
 
 ### GetHeadersOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetHeadersOk() (*[]HttpHeaders, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetHeadersOk() (*[]KafkaKafkaHeader, bool)`
 
 GetHeadersOk returns a tuple with the Headers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaders
 
-`func (o *SecretProcessesorOutputConfigSettings) SetHeaders(v []HttpHeaders)`
+`func (o *SecretProcessesorOutputConfigSettings) SetHeaders(v []KafkaKafkaHeader)`
 
 SetHeaders sets Headers field to given value.
 
@@ -1254,6 +1262,206 @@ SetWrapperKey sets WrapperKey field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasWrapperKey() bool`
 
 HasWrapperKey returns a boolean if a field has been set.
+
+### GetAcks
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAcks() string`
+
+GetAcks returns the Acks field if non-nil, zero value otherwise.
+
+### GetAcksOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAcksOk() (*string, bool)`
+
+GetAcksOk returns a tuple with the Acks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAcks
+
+`func (o *SecretProcessesorOutputConfigSettings) SetAcks(v string)`
+
+SetAcks sets Acks field to given value.
+
+### HasAcks
+
+`func (o *SecretProcessesorOutputConfigSettings) HasAcks() bool`
+
+HasAcks returns a boolean if a field has been set.
+
+### GetBootstrapServers
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBootstrapServers() string`
+
+GetBootstrapServers returns the BootstrapServers field if non-nil, zero value otherwise.
+
+### GetBootstrapServersOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBootstrapServersOk() (*string, bool)`
+
+GetBootstrapServersOk returns a tuple with the BootstrapServers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBootstrapServers
+
+`func (o *SecretProcessesorOutputConfigSettings) SetBootstrapServers(v string)`
+
+SetBootstrapServers sets BootstrapServers field to given value.
+
+### HasBootstrapServers
+
+`func (o *SecretProcessesorOutputConfigSettings) HasBootstrapServers() bool`
+
+HasBootstrapServers returns a boolean if a field has been set.
+
+### GetCompressionType
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCompressionType() string`
+
+GetCompressionType returns the CompressionType field if non-nil, zero value otherwise.
+
+### GetCompressionTypeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCompressionTypeOk() (*string, bool)`
+
+GetCompressionTypeOk returns a tuple with the CompressionType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompressionType
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCompressionType(v string)`
+
+SetCompressionType sets CompressionType field to given value.
+
+### HasCompressionType
+
+`func (o *SecretProcessesorOutputConfigSettings) HasCompressionType() bool`
+
+HasCompressionType returns a boolean if a field has been set.
+
+### GetMessageKeyField
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMessageKeyField() string`
+
+GetMessageKeyField returns the MessageKeyField field if non-nil, zero value otherwise.
+
+### GetMessageKeyFieldOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMessageKeyFieldOk() (*string, bool)`
+
+GetMessageKeyFieldOk returns a tuple with the MessageKeyField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageKeyField
+
+`func (o *SecretProcessesorOutputConfigSettings) SetMessageKeyField(v string)`
+
+SetMessageKeyField sets MessageKeyField field to given value.
+
+### HasMessageKeyField
+
+`func (o *SecretProcessesorOutputConfigSettings) HasMessageKeyField() bool`
+
+HasMessageKeyField returns a boolean if a field has been set.
+
+### GetRetries
+
+`func (o *SecretProcessesorOutputConfigSettings) GetRetries() int32`
+
+GetRetries returns the Retries field if non-nil, zero value otherwise.
+
+### GetRetriesOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetRetriesOk() (*int32, bool)`
+
+GetRetriesOk returns a tuple with the Retries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetries
+
+`func (o *SecretProcessesorOutputConfigSettings) SetRetries(v int32)`
+
+SetRetries sets Retries field to given value.
+
+### HasRetries
+
+`func (o *SecretProcessesorOutputConfigSettings) HasRetries() bool`
+
+HasRetries returns a boolean if a field has been set.
+
+### GetSaslMechanism
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSaslMechanism() string`
+
+GetSaslMechanism returns the SaslMechanism field if non-nil, zero value otherwise.
+
+### GetSaslMechanismOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSaslMechanismOk() (*string, bool)`
+
+GetSaslMechanismOk returns a tuple with the SaslMechanism field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSaslMechanism
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSaslMechanism(v string)`
+
+SetSaslMechanism sets SaslMechanism field to given value.
+
+### HasSaslMechanism
+
+`func (o *SecretProcessesorOutputConfigSettings) HasSaslMechanism() bool`
+
+HasSaslMechanism returns a boolean if a field has been set.
+
+### GetSecurityProtocol
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSecurityProtocol() string`
+
+GetSecurityProtocol returns the SecurityProtocol field if non-nil, zero value otherwise.
+
+### GetSecurityProtocolOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSecurityProtocolOk() (*string, bool)`
+
+GetSecurityProtocolOk returns a tuple with the SecurityProtocol field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityProtocol
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSecurityProtocol(v string)`
+
+SetSecurityProtocol sets SecurityProtocol field to given value.
+
+### HasSecurityProtocol
+
+`func (o *SecretProcessesorOutputConfigSettings) HasSecurityProtocol() bool`
+
+HasSecurityProtocol returns a boolean if a field has been set.
+
+### GetTopic
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTopic() string`
+
+GetTopic returns the Topic field if non-nil, zero value otherwise.
+
+### GetTopicOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTopicOk() (*string, bool)`
+
+GetTopicOk returns a tuple with the Topic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTopic
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTopic(v string)`
+
+SetTopic sets Topic field to given value.
+
+### HasTopic
+
+`func (o *SecretProcessesorOutputConfigSettings) HasTopic() bool`
+
+HasTopic returns a boolean if a field has been set.
 
 ### GetKeyField
 

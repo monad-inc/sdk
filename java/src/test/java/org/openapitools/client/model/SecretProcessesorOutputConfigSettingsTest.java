@@ -35,8 +35,9 @@ import org.openapitools.client.model.DatadogSettingsConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;
-import org.openapitools.client.model.HttpHeaders;
 import org.openapitools.client.model.HttpSettingsConfig;
+import org.openapitools.client.model.KafkaKafkaHeader;
+import org.openapitools.client.model.KafkaSettingsConfig;
 import org.openapitools.client.model.KvLookupOutputSettingsConfig;
 import org.openapitools.client.model.NextGenSiemSettingsConfig;
 import org.openapitools.client.model.ObjectStorageSettingsConfig;
@@ -443,6 +444,70 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void wrapperKeyTest() {
         // TODO: test wrapperKey
+    }
+
+    /**
+     * Test the property 'acks'
+     */
+    @Test
+    public void acksTest() {
+        // TODO: test acks
+    }
+
+    /**
+     * Test the property 'bootstrapServers'
+     */
+    @Test
+    public void bootstrapServersTest() {
+        // TODO: test bootstrapServers
+    }
+
+    /**
+     * Test the property 'compressionType'
+     */
+    @Test
+    public void compressionTypeTest() {
+        // TODO: test compressionType
+    }
+
+    /**
+     * Test the property 'messageKeyField'
+     */
+    @Test
+    public void messageKeyFieldTest() {
+        // TODO: test messageKeyField
+    }
+
+    /**
+     * Test the property 'retries'
+     */
+    @Test
+    public void retriesTest() {
+        // TODO: test retries
+    }
+
+    /**
+     * Test the property 'saslMechanism'
+     */
+    @Test
+    public void saslMechanismTest() {
+        // TODO: test saslMechanism
+    }
+
+    /**
+     * Test the property 'securityProtocol'
+     */
+    @Test
+    public void securityProtocolTest() {
+        // TODO: test securityProtocol
+    }
+
+    /**
+     * Test the property 'topic'
+     */
+    @Test
+    public void topicTest() {
+        // TODO: test topic
     }
 
     /**

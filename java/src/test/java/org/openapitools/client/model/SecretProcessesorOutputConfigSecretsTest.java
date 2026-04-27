@@ -32,6 +32,7 @@ import org.openapitools.client.model.DatadogSecretsConfig;
 import org.openapitools.client.model.ElasticsearchSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSecretsConfig;
 import org.openapitools.client.model.HttpSecretsConfig;
+import org.openapitools.client.model.KafkaSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.NextGenSiemSecretsConfig;
 import org.openapitools.client.model.ObjectStorageSecretsConfig;
@@ -155,6 +156,30 @@ public class SecretProcessesorOutputConfigSecretsTest {
     @Test
     public void authHeadersTest() {
         // TODO: test authHeaders
+    }
+
+    /**
+     * Test the property 'caCertificate'
+     */
+    @Test
+    public void caCertificateTest() {
+        // TODO: test caCertificate
+    }
+
+    /**
+     * Test the property 'clientCertificate'
+     */
+    @Test
+    public void clientCertificateTest() {
+        // TODO: test clientCertificate
+    }
+
+    /**
+     * Test the property 'clientKey'
+     */
+    @Test
+    public void clientKeyTest() {
+        // TODO: test clientKey
     }
 
     /**
