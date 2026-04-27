@@ -42,9 +42,9 @@ func (r ApiCreateChildOrganizationRequest) Execute() (*GithubComMonadIncCorePkgT
 }
 
 /*
-CreateChildOrganization Create child organization
+CreateChildOrganization Create child organization (team)
 
-Create a new child organization under the given parent organization
+Create a new child organization under the given parent organization. Known as a "team" in the UI.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID
@@ -339,9 +339,9 @@ func (r ApiDeleteChildOrganizationRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteChildOrganization Delete child organization
+DeleteChildOrganization Delete child organization (team)
 
-Delete a child organization under the given parent organization
+Delete a child organization under the given parent organization. Known as a "team" in the UI.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID
@@ -842,9 +842,9 @@ func (r ApiListChildOrganizationsRequest) Execute() (*ModelsUserOrganizationList
 }
 
 /*
-ListChildOrganizations List child organizations
+ListChildOrganizations List child organizations (teams)
 
-List child organizations for the given parent organization
+List child organizations for the given parent organization. These are surfaced as "teams" in the UI.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID
@@ -1177,9 +1177,9 @@ func (r ApiUpdateChildOrganizationRequest) Execute() (*GithubComMonadIncCorePkgT
 }
 
 /*
-UpdateChildOrganization Update child organization
+UpdateChildOrganization Update child organization (team)
 
-Update a child organization under the given parent organization
+Update a child organization under the given parent organization. Known as a "team" in the UI.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID

@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateChildOrganization**](OrganizationsAPI.md#CreateChildOrganization) | **Post** /v3/{organization_id}/organizations | Create child organization
+[**CreateChildOrganization**](OrganizationsAPI.md#CreateChildOrganization) | **Post** /v3/{organization_id}/organizations | Create child organization (team)
 [**CreateOrganization**](OrganizationsAPI.md#CreateOrganization) | **Post** /v1/organizations | Create organization
-[**DeleteChildOrganization**](OrganizationsAPI.md#DeleteChildOrganization) | **Delete** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+[**DeleteChildOrganization**](OrganizationsAPI.md#DeleteChildOrganization) | **Delete** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team)
 [**DeleteOrganization**](OrganizationsAPI.md#DeleteOrganization) | **Delete** /v1/organizations/{organization_id} | Delete organization
 [**GetStorageTypeSummaryByType**](OrganizationsAPI.md#GetStorageTypeSummaryByType) | **Get** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
-[**ListChildOrganizations**](OrganizationsAPI.md#ListChildOrganizations) | **Get** /v3/{organization_id}/organizations | List child organizations
+[**ListChildOrganizations**](OrganizationsAPI.md#ListChildOrganizations) | **Get** /v3/{organization_id}/organizations | List child organizations (teams)
 [**ListUserOrganizations**](OrganizationsAPI.md#ListUserOrganizations) | **Get** /v1/organizations | List organizations for user
-[**UpdateChildOrganization**](OrganizationsAPI.md#UpdateChildOrganization) | **Patch** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
+[**UpdateChildOrganization**](OrganizationsAPI.md#UpdateChildOrganization) | **Patch** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team)
 [**UpdateOrganization**](OrganizationsAPI.md#UpdateOrganization) | **Patch** /v1/organizations/{organization_id} | Update organization
 
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 > GithubComMonadIncCorePkgTypesModelsOrganization CreateChildOrganization(ctx, organizationId).RoutesV3CreateChildOrganizationRequest(routesV3CreateChildOrganizationRequest).Execute()
 
-Create child organization
+Create child organization (team)
 
 
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 > DeleteChildOrganization(ctx, organizationId, childOrganizationId).Execute()
 
-Delete child organization
+Delete child organization (team)
 
 
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 > ModelsUserOrganizationList ListChildOrganizations(ctx, organizationId).Limit(limit).Offset(offset).NameSearch(nameSearch).Execute()
 
-List child organizations
+List child organizations (teams)
 
 
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 > GithubComMonadIncCorePkgTypesModelsOrganization UpdateChildOrganization(ctx, organizationId, childOrganizationId).RoutesV3UpdateChildOrganizationRequest(routesV3UpdateChildOrganizationRequest).Execute()
 
-Update child organization
+Update child organization (team)
 
 
 

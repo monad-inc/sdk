@@ -215,14 +215,14 @@ Class | Method | HTTP request | Description
 *OrganizationUsersApi* | [**removeUser**](docs/OrganizationUsersApi.md#removeUser) | **DELETE** /v1/{organization_id}/users/{user_id} | Remove user from organization
 *OrganizationUsersApi* | [**updateUser**](docs/OrganizationUsersApi.md#updateUser) | **PATCH** /v1/{organization_id}/users/{user_id} | Update user in organization
 *OrganizationUsersApi* | [**v1OrganizationIdUsersLeavePost**](docs/OrganizationUsersApi.md#v1OrganizationIdUsersLeavePost) | **POST** /v1/{organization_id}/users/leave | Leave organization
-*OrganizationsApi* | [**createChildOrganization**](docs/OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create child organization
+*OrganizationsApi* | [**createChildOrganization**](docs/OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create child organization (team)
 *OrganizationsApi* | [**createOrganization**](docs/OrganizationsApi.md#createOrganization) | **POST** /v1/organizations | Create organization
-*OrganizationsApi* | [**deleteChildOrganization**](docs/OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+*OrganizationsApi* | [**deleteChildOrganization**](docs/OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team)
 *OrganizationsApi* | [**deleteOrganization**](docs/OrganizationsApi.md#deleteOrganization) | **DELETE** /v1/organizations/{organization_id} | Delete organization
 *OrganizationsApi* | [**getStorageTypeSummaryByType**](docs/OrganizationsApi.md#getStorageTypeSummaryByType) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
-*OrganizationsApi* | [**listChildOrganizations**](docs/OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List child organizations
+*OrganizationsApi* | [**listChildOrganizations**](docs/OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List child organizations (teams)
 *OrganizationsApi* | [**listUserOrganizations**](docs/OrganizationsApi.md#listUserOrganizations) | **GET** /v1/organizations | List organizations for user
-*OrganizationsApi* | [**updateChildOrganization**](docs/OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
+*OrganizationsApi* | [**updateChildOrganization**](docs/OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team)
 *OrganizationsApi* | [**updateOrganization**](docs/OrganizationsApi.md#updateOrganization) | **PATCH** /v1/organizations/{organization_id} | Update organization
 *OrganizationsMetricsApi* | [**getOrganizationMetrics**](docs/OrganizationsMetricsApi.md#getOrganizationMetrics) | **GET** /v2/{organization_id}/metrics | Get organization metrics
 *OrganizationsStorageCostApi* | [**getStorageTypeCost**](docs/OrganizationsStorageCostApi.md#getStorageTypeCost) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost

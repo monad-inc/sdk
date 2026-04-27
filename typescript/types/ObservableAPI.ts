@@ -4333,8 +4333,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization
-     * Create child organization
+     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Create child organization (team)
      * @param organizationId Parent Organization ID
      * @param routesV3CreateChildOrganizationRequest Request body
      */
@@ -4359,8 +4359,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization
-     * Create child organization
+     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Create child organization (team)
      * @param organizationId Parent Organization ID
      * @param routesV3CreateChildOrganizationRequest Request body
      */
@@ -4403,8 +4403,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization
-     * Delete child organization
+     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Delete child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
      */
@@ -4429,8 +4429,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization
-     * Delete child organization
+     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Delete child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
      */
@@ -4517,8 +4517,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization
-     * List child organizations
+     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+     * List child organizations (teams)
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
@@ -4545,8 +4545,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization
-     * List child organizations
+     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+     * List child organizations (teams)
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
@@ -4599,8 +4599,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization
-     * Update child organization
+     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Update child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
      * @param routesV3UpdateChildOrganizationRequest Request body
@@ -4626,8 +4626,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization
-     * Update child organization
+     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Update child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
      * @param routesV3UpdateChildOrganizationRequest Request body

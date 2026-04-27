@@ -4386,8 +4386,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization
-     * Create child organization
+     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Create child organization (team)
      * @param param the request object
      */
     public createChildOrganizationWithHttpInfo(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
@@ -4395,8 +4395,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization
-     * Create child organization
+     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Create child organization (team)
      * @param param the request object
      */
     public createChildOrganization(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
@@ -4422,8 +4422,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization
-     * Delete child organization
+     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Delete child organization (team)
      * @param param the request object
      */
     public deleteChildOrganizationWithHttpInfo(param: OrganizationsApiDeleteChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
@@ -4431,8 +4431,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization
-     * Delete child organization
+     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Delete child organization (team)
      * @param param the request object
      */
     public deleteChildOrganization(param: OrganizationsApiDeleteChildOrganizationRequest, options?: ConfigurationOptions): Promise<void> {
@@ -4476,8 +4476,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization
-     * List child organizations
+     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+     * List child organizations (teams)
      * @param param the request object
      */
     public listChildOrganizationsWithHttpInfo(param: OrganizationsApiListChildOrganizationsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
@@ -4485,8 +4485,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization
-     * List child organizations
+     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+     * List child organizations (teams)
      * @param param the request object
      */
     public listChildOrganizations(param: OrganizationsApiListChildOrganizationsRequest, options?: ConfigurationOptions): Promise<ModelsUserOrganizationList> {
@@ -4512,8 +4512,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization
-     * Update child organization
+     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Update child organization (team)
      * @param param the request object
      */
     public updateChildOrganizationWithHttpInfo(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
@@ -4521,8 +4521,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization
-     * Update child organization
+     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+     * Update child organization (team)
      * @param param the request object
      */
     public updateChildOrganization(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {

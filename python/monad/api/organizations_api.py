@@ -64,9 +64,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GithubComMonadIncCorePkgTypesModelsOrganization:
-        """Create child organization
+        """Create child organization (team)
 
-        Create a new child organization under the given parent organization
+        Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -137,9 +137,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GithubComMonadIncCorePkgTypesModelsOrganization]:
-        """Create child organization
+        """Create child organization (team)
 
-        Create a new child organization under the given parent organization
+        Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -210,9 +210,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create child organization
+        """Create child organization (team)
 
-        Create a new child organization under the given parent organization
+        Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -635,9 +635,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """Delete child organization
+        """Delete child organization (team)
 
-        Delete a child organization under the given parent organization
+        Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -708,9 +708,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """Delete child organization
+        """Delete child organization (team)
 
-        Delete a child organization under the given parent organization
+        Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -781,9 +781,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete child organization
+        """Delete child organization (team)
 
-        Delete a child organization under the given parent organization
+        Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -1536,9 +1536,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ModelsUserOrganizationList:
-        """List child organizations
+        """List child organizations (teams)
 
-        List child organizations for the given parent organization
+        List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -1616,9 +1616,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ModelsUserOrganizationList]:
-        """List child organizations
+        """List child organizations (teams)
 
-        List child organizations for the given parent organization
+        List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -1696,9 +1696,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List child organizations
+        """List child organizations (teams)
 
-        List child organizations for the given parent organization
+        List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -2183,9 +2183,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GithubComMonadIncCorePkgTypesModelsOrganization:
-        """Update child organization
+        """Update child organization (team)
 
-        Update a child organization under the given parent organization
+        Update a child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -2261,9 +2261,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GithubComMonadIncCorePkgTypesModelsOrganization]:
-        """Update child organization
+        """Update child organization (team)
 
-        Update a child organization under the given parent organization
+        Update a child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -2339,9 +2339,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update child organization
+        """Update child organization (team)
 
-        Update a child organization under the given parent organization
+        Update a child organization under the given parent organization. Known as a \"team\" in the UI.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str

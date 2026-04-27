@@ -159,8 +159,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Create child organization
-     * Create a new child organization under the given parent organization
+     * Create child organization (team)
+     * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param routesV3CreateChildOrganizationRequest Request body (required)
      * @return GithubComMonadIncCorePkgTypesModelsOrganization
@@ -180,8 +180,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Create child organization
-     * Create a new child organization under the given parent organization
+     * Create child organization (team)
+     * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param routesV3CreateChildOrganizationRequest Request body (required)
      * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsOrganization&gt;
@@ -202,8 +202,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Create child organization (asynchronously)
-     * Create a new child organization under the given parent organization
+     * Create child organization (team) (asynchronously)
+     * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param routesV3CreateChildOrganizationRequest Request body (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -431,8 +431,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Delete child organization
-     * Delete a child organization under the given parent organization
+     * Delete child organization (team)
+     * Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -450,8 +450,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Delete child organization
-     * Delete a child organization under the given parent organization
+     * Delete child organization (team)
+     * Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @return ApiResponse&lt;Void&gt;
@@ -471,8 +471,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Delete child organization (asynchronously)
-     * Delete a child organization under the given parent organization
+     * Delete child organization (team) (asynchronously)
+     * Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -887,8 +887,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * List child organizations
-     * List child organizations for the given parent organization
+     * List child organizations (teams)
+     * List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
@@ -909,8 +909,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * List child organizations
-     * List child organizations for the given parent organization
+     * List child organizations (teams)
+     * List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
@@ -932,8 +932,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * List child organizations (asynchronously)
-     * List child organizations for the given parent organization
+     * List child organizations (teams) (asynchronously)
+     * List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
@@ -1200,8 +1200,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Update child organization
-     * Update a child organization under the given parent organization
+     * Update child organization (team)
+     * Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @param routesV3UpdateChildOrganizationRequest Request body (required)
@@ -1223,8 +1223,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Update child organization
-     * Update a child organization under the given parent organization
+     * Update child organization (team)
+     * Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @param routesV3UpdateChildOrganizationRequest Request body (required)
@@ -1247,8 +1247,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Update child organization (asynchronously)
-     * Update a child organization under the given parent organization
+     * Update child organization (team) (asynchronously)
+     * Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @param routesV3UpdateChildOrganizationRequest Request body (required)

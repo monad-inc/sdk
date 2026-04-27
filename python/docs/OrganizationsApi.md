@@ -4,23 +4,23 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_child_organization**](OrganizationsApi.md#create_child_organization) | **POST** /v3/{organization_id}/organizations | Create child organization
+[**create_child_organization**](OrganizationsApi.md#create_child_organization) | **POST** /v3/{organization_id}/organizations | Create child organization (team)
 [**create_organization**](OrganizationsApi.md#create_organization) | **POST** /v1/organizations | Create organization
-[**delete_child_organization**](OrganizationsApi.md#delete_child_organization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+[**delete_child_organization**](OrganizationsApi.md#delete_child_organization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team)
 [**delete_organization**](OrganizationsApi.md#delete_organization) | **DELETE** /v1/organizations/{organization_id} | Delete organization
 [**get_storage_type_summary_by_type**](OrganizationsApi.md#get_storage_type_summary_by_type) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
-[**list_child_organizations**](OrganizationsApi.md#list_child_organizations) | **GET** /v3/{organization_id}/organizations | List child organizations
+[**list_child_organizations**](OrganizationsApi.md#list_child_organizations) | **GET** /v3/{organization_id}/organizations | List child organizations (teams)
 [**list_user_organizations**](OrganizationsApi.md#list_user_organizations) | **GET** /v1/organizations | List organizations for user
-[**update_child_organization**](OrganizationsApi.md#update_child_organization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
+[**update_child_organization**](OrganizationsApi.md#update_child_organization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team)
 [**update_organization**](OrganizationsApi.md#update_organization) | **PATCH** /v1/organizations/{organization_id} | Update organization
 
 
 # **create_child_organization**
 > GithubComMonadIncCorePkgTypesModelsOrganization create_child_organization(organization_id, routes_v3_create_child_organization_request)
 
-Create child organization
+Create child organization (team)
 
-Create a new child organization under the given parent organization
+Create a new child organization under the given parent organization. Known as a "team" in the UI.
 
 ### Example
 
@@ -65,7 +65,7 @@ with monad.ApiClient(configuration) as api_client:
     routes_v3_create_child_organization_request = monad.RoutesV3CreateChildOrganizationRequest() # RoutesV3CreateChildOrganizationRequest | Request body
 
     try:
-        # Create child organization
+        # Create child organization (team)
         api_response = api_instance.create_child_organization(organization_id, routes_v3_create_child_organization_request)
         print("The response of OrganizationsApi->create_child_organization:\n")
         pprint(api_response)
@@ -196,9 +196,9 @@ Name | Type | Description  | Notes
 # **delete_child_organization**
 > delete_child_organization(organization_id, child_organization_id)
 
-Delete child organization
+Delete child organization (team)
 
-Delete a child organization under the given parent organization
+Delete a child organization under the given parent organization. Known as a "team" in the UI.
 
 ### Example
 
@@ -241,7 +241,7 @@ with monad.ApiClient(configuration) as api_client:
     child_organization_id = 'child_organization_id_example' # str | Child Organization ID
 
     try:
-        # Delete child organization
+        # Delete child organization (team)
         api_instance.delete_child_organization(organization_id, child_organization_id)
     except Exception as e:
         print("Exception when calling OrganizationsApi->delete_child_organization: %s\n" % e)
@@ -467,9 +467,9 @@ Name | Type | Description  | Notes
 # **list_child_organizations**
 > ModelsUserOrganizationList list_child_organizations(organization_id, limit=limit, offset=offset, name_search=name_search)
 
-List child organizations
+List child organizations (teams)
 
-List child organizations for the given parent organization
+List child organizations for the given parent organization. These are surfaced as "teams" in the UI.
 
 ### Example
 
@@ -515,7 +515,7 @@ with monad.ApiClient(configuration) as api_client:
     name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
 
     try:
-        # List child organizations
+        # List child organizations (teams)
         api_response = api_instance.list_child_organizations(organization_id, limit=limit, offset=offset, name_search=name_search)
         print("The response of OrganizationsApi->list_child_organizations:\n")
         pprint(api_response)
@@ -654,9 +654,9 @@ Name | Type | Description  | Notes
 # **update_child_organization**
 > GithubComMonadIncCorePkgTypesModelsOrganization update_child_organization(organization_id, child_organization_id, routes_v3_update_child_organization_request)
 
-Update child organization
+Update child organization (team)
 
-Update a child organization under the given parent organization
+Update a child organization under the given parent organization. Known as a "team" in the UI.
 
 ### Example
 
@@ -702,7 +702,7 @@ with monad.ApiClient(configuration) as api_client:
     routes_v3_update_child_organization_request = monad.RoutesV3UpdateChildOrganizationRequest() # RoutesV3UpdateChildOrganizationRequest | Request body
 
     try:
-        # Update child organization
+        # Update child organization (team)
         api_response = api_instance.update_child_organization(organization_id, child_organization_id, routes_v3_update_child_organization_request)
         print("The response of OrganizationsApi->update_child_organization:\n")
         pprint(api_response)

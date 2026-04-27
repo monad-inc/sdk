@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createChildOrganization**](OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create child organization |
+| [**createChildOrganization**](OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create child organization (team) |
 | [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /v1/organizations | Create organization |
-| [**deleteChildOrganization**](OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization |
+| [**deleteChildOrganization**](OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team) |
 | [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /v1/organizations/{organization_id} | Delete organization |
 | [**getStorageTypeSummaryByType**](OrganizationsApi.md#getStorageTypeSummaryByType) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type |
-| [**listChildOrganizations**](OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List child organizations |
+| [**listChildOrganizations**](OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List child organizations (teams) |
 | [**listUserOrganizations**](OrganizationsApi.md#listUserOrganizations) | **GET** /v1/organizations | List organizations for user |
-| [**updateChildOrganization**](OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization |
+| [**updateChildOrganization**](OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team) |
 | [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PATCH** /v1/organizations/{organization_id} | Update organization |
 
 
@@ -19,9 +19,9 @@ All URIs are relative to *https://monad.com/api*
 # **createChildOrganization**
 > GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(organizationId, routesV3CreateChildOrganizationRequest)
 
-Create child organization
+Create child organization (team)
 
-Create a new child organization under the given parent organization
+Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
 
 ### Example
 ```java
@@ -173,9 +173,9 @@ public class Example {
 # **deleteChildOrganization**
 > deleteChildOrganization(organizationId, childOrganizationId)
 
-Delete child organization
+Delete child organization (team)
 
-Delete a child organization under the given parent organization
+Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
 
 ### Example
 ```java
@@ -414,9 +414,9 @@ public class Example {
 # **listChildOrganizations**
 > ModelsUserOrganizationList listChildOrganizations(organizationId, limit, offset, nameSearch)
 
-List child organizations
+List child organizations (teams)
 
-List child organizations for the given parent organization
+List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
 
 ### Example
 ```java
@@ -579,9 +579,9 @@ public class Example {
 # **updateChildOrganization**
 > GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest)
 
-Update child organization
+Update child organization (team)
 
-Update a child organization under the given parent organization
+Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
 
 ### Example
 ```java
