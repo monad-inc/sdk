@@ -42,7 +42,7 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/connections'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -98,8 +98,8 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/connections/{connection_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'connection_id' + '}', encodeURIComponent(String(connectionId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{connection_id}', encodeURIComponent(String(connectionId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -144,8 +144,8 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/connections/{connection_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'connection_id' + '}', encodeURIComponent(String(connectionId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{connection_id}', encodeURIComponent(String(connectionId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -187,7 +187,7 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/connections'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -249,8 +249,8 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/connections/{connection_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'connection_id' + '}', encodeURIComponent(String(connectionId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{connection_id}', encodeURIComponent(String(connectionId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);

@@ -41,7 +41,7 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/roles'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -102,8 +102,8 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/roles/{role_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -153,8 +153,8 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/roles/{role_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -201,7 +201,7 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/roles'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -268,8 +268,8 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/roles/{role_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);

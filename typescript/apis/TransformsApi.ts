@@ -33,7 +33,7 @@ export class TransformsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/transforms/{transform_type_id}'
-            .replace('{' + 'transform_type_id' + '}', encodeURIComponent(String(transformTypeId)));
+            .replace('{transform_type_id}', encodeURIComponent(String(transformTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * KVLookup enrichment settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class KvLookupSettingsConfig {
   public static final String SERIALIZED_NAME_DESTINATION_KEY = "destination_key";
   @SerializedName(SERIALIZED_NAME_DESTINATION_KEY)

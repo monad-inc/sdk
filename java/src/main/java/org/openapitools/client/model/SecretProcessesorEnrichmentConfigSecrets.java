@@ -60,7 +60,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorEnrichmentConfigSecrets.class.getName());
 
@@ -195,7 +195,7 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * CommunityEditionSecretsConfig, Map<String, Object>, Object
+     * CommunityEditionSecretsConfig, Map&lt;String, Object&gt;, Object
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -221,9 +221,9 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
 
     /**
      * Get the actual instance, which can be the following:
-     * CommunityEditionSecretsConfig, Map<String, Object>, Object
+     * CommunityEditionSecretsConfig, Map&lt;String, Object&gt;, Object
      *
-     * @return The actual instance (CommunityEditionSecretsConfig, Map<String, Object>, Object)
+     * @return The actual instance (CommunityEditionSecretsConfig, Map&lt;String, Object&gt;, Object)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -238,6 +238,7 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
      * @return The actual instance of `CommunityEditionSecretsConfig`
      * @throws ClassCastException if the instance is not `CommunityEditionSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CommunityEditionSecretsConfig getCommunityEditionSecretsConfig() throws ClassCastException {
         return (CommunityEditionSecretsConfig)super.getActualInstance();
     }
@@ -249,17 +250,19 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
      * @return The actual instance of `Object`
      * @throws ClassCastException if the instance is not `Object`
      */
+    @SuppressWarnings("unchecked")
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
     }

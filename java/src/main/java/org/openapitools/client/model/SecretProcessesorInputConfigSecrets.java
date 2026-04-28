@@ -149,7 +149,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorInputConfigSecrets.class.getName());
 
@@ -2064,7 +2064,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventoryReportsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesReportSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, Map<String, Object>, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsReportSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig
+     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventoryReportsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesReportSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsReportSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -2535,9 +2535,9 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
 
     /**
      * Get the actual instance, which can be the following:
-     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventoryReportsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesReportSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, Map<String, Object>, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsReportSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig
+     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventoryReportsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesReportSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsReportSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig
      *
-     * @return The actual instance (AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventoryReportsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesReportSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, Map<String, Object>, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsReportSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig)
+     * @return The actual instance (AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventoryReportsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesReportSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsReportSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -2552,6 +2552,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AdminLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `AdminLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AdminLogsSecretsConfig getAdminLogsSecretsConfig() throws ClassCastException {
         return (AdminLogsSecretsConfig)super.getActualInstance();
     }
@@ -2563,6 +2564,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AivenServiceLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `AivenServiceLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AivenServiceLogsSecretsConfig getAivenServiceLogsSecretsConfig() throws ClassCastException {
         return (AivenServiceLogsSecretsConfig)super.getActualInstance();
     }
@@ -2574,6 +2576,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `ArizeAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `ArizeAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ArizeAuditLogsSecretsConfig getArizeAuditLogsSecretsConfig() throws ClassCastException {
         return (ArizeAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -2585,6 +2588,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `AuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AuditLogsSecretsConfig getAuditLogsSecretsConfig() throws ClassCastException {
         return (AuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -2596,6 +2600,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AuthLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `AuthLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AuthLogsSecretsConfig getAuthLogsSecretsConfig() throws ClassCastException {
         return (AuthLogsSecretsConfig)super.getActualInstance();
     }
@@ -2607,6 +2612,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AwsGuarddutySecretsConfig`
      * @throws ClassCastException if the instance is not `AwsGuarddutySecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AwsGuarddutySecretsConfig getAwsGuarddutySecretsConfig() throws ClassCastException {
         return (AwsGuarddutySecretsConfig)super.getActualInstance();
     }
@@ -2618,6 +2624,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AwsS3SecretsConfig`
      * @throws ClassCastException if the instance is not `AwsS3SecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AwsS3SecretsConfig getAwsS3SecretsConfig() throws ClassCastException {
         return (AwsS3SecretsConfig)super.getActualInstance();
     }
@@ -2629,6 +2636,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AzureActivityLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `AzureActivityLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureActivityLogsSecretsConfig getAzureActivityLogsSecretsConfig() throws ClassCastException {
         return (AzureActivityLogsSecretsConfig)super.getActualInstance();
     }
@@ -2640,6 +2648,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AzureBlobStorageSecretsConfig`
      * @throws ClassCastException if the instance is not `AzureBlobStorageSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureBlobStorageSecretsConfig getAzureBlobStorageSecretsConfig() throws ClassCastException {
         return (AzureBlobStorageSecretsConfig)super.getActualInstance();
     }
@@ -2651,6 +2660,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AzureEventHubsSecretsConfig`
      * @throws ClassCastException if the instance is not `AzureEventHubsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureEventHubsSecretsConfig getAzureEventHubsSecretsConfig() throws ClassCastException {
         return (AzureEventHubsSecretsConfig)super.getActualInstance();
     }
@@ -2662,6 +2672,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `AzureVnetFlowLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `AzureVnetFlowLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureVnetFlowLogsSecretsConfig getAzureVnetFlowLogsSecretsConfig() throws ClassCastException {
         return (AzureVnetFlowLogsSecretsConfig)super.getActualInstance();
     }
@@ -2673,6 +2684,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BackblazeB2SecretsConfig`
      * @throws ClassCastException if the instance is not `BackblazeB2SecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BackblazeB2SecretsConfig getBackblazeB2SecretsConfig() throws ClassCastException {
         return (BackblazeB2SecretsConfig)super.getActualInstance();
     }
@@ -2684,6 +2696,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BigqueryInputSecretsConfig`
      * @throws ClassCastException if the instance is not `BigqueryInputSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BigqueryInputSecretsConfig getBigqueryInputSecretsConfig() throws ClassCastException {
         return (BigqueryInputSecretsConfig)super.getActualInstance();
     }
@@ -2695,6 +2708,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BitwardenEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `BitwardenEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BitwardenEventsSecretsConfig getBitwardenEventsSecretsConfig() throws ClassCastException {
         return (BitwardenEventsSecretsConfig)super.getActualInstance();
     }
@@ -2706,6 +2720,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BoxEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `BoxEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BoxEventsSecretsConfig getBoxEventsSecretsConfig() throws ClassCastException {
         return (BoxEventsSecretsConfig)super.getActualInstance();
     }
@@ -2717,6 +2732,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BrinqaAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `BrinqaAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BrinqaAuditLogsSecretsConfig getBrinqaAuditLogsSecretsConfig() throws ClassCastException {
         return (BrinqaAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -2728,6 +2744,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BugsnagOrgEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `BugsnagOrgEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BugsnagOrgEventsSecretsConfig getBugsnagOrgEventsSecretsConfig() throws ClassCastException {
         return (BugsnagOrgEventsSecretsConfig)super.getActualInstance();
     }
@@ -2739,6 +2756,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BuildkiteAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `BuildkiteAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BuildkiteAuditLogsSecretsConfig getBuildkiteAuditLogsSecretsConfig() throws ClassCastException {
         return (BuildkiteAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -2750,6 +2768,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `BuildkiteGraphqlInputSecretsConfig`
      * @throws ClassCastException if the instance is not `BuildkiteGraphqlInputSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BuildkiteGraphqlInputSecretsConfig getBuildkiteGraphqlInputSecretsConfig() throws ClassCastException {
         return (BuildkiteGraphqlInputSecretsConfig)super.getActualInstance();
     }
@@ -2761,6 +2780,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `Object`
      * @throws ClassCastException if the instance is not `Object`
      */
+    @SuppressWarnings("unchecked")
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
     }
@@ -2772,6 +2792,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudConfigurationFindingsSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudConfigurationFindingsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudConfigurationFindingsSecretsConfig getCloudConfigurationFindingsSecretsConfig() throws ClassCastException {
         return (CloudConfigurationFindingsSecretsConfig)super.getActualInstance();
     }
@@ -2783,6 +2804,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudLogsSecretsConfig getCloudLogsSecretsConfig() throws ClassCastException {
         return (CloudLogsSecretsConfig)super.getActualInstance();
     }
@@ -2794,6 +2816,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudResourceInventorySecretsConfig`
      * @throws ClassCastException if the instance is not `CloudResourceInventorySecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudResourceInventorySecretsConfig getCloudResourceInventorySecretsConfig() throws ClassCastException {
         return (CloudResourceInventorySecretsConfig)super.getActualInstance();
     }
@@ -2805,6 +2828,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudResourceInventoryReportsSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudResourceInventoryReportsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudResourceInventoryReportsSecretsConfig getCloudResourceInventoryReportsSecretsConfig() throws ClassCastException {
         return (CloudResourceInventoryReportsSecretsConfig)super.getActualInstance();
     }
@@ -2816,6 +2840,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudflareDdosAttackAnalyticsSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudflareDdosAttackAnalyticsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareDdosAttackAnalyticsSecretsConfig getCloudflareDdosAttackAnalyticsSecretsConfig() throws ClassCastException {
         return (CloudflareDdosAttackAnalyticsSecretsConfig)super.getActualInstance();
     }
@@ -2827,6 +2852,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudflareFirewallEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudflareFirewallEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareFirewallEventsSecretsConfig getCloudflareFirewallEventsSecretsConfig() throws ClassCastException {
         return (CloudflareFirewallEventsSecretsConfig)super.getActualInstance();
     }
@@ -2838,6 +2864,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudflareHttpRequestsSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudflareHttpRequestsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareHttpRequestsSecretsConfig getCloudflareHttpRequestsSecretsConfig() throws ClassCastException {
         return (CloudflareHttpRequestsSecretsConfig)super.getActualInstance();
     }
@@ -2849,6 +2876,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudflareUrlScannerSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudflareUrlScannerSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareUrlScannerSecretsConfig getCloudflareUrlScannerSecretsConfig() throws ClassCastException {
         return (CloudflareUrlScannerSecretsConfig)super.getActualInstance();
     }
@@ -2860,6 +2888,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CloudflareZeroTrustAccessRequestsSecretsConfig`
      * @throws ClassCastException if the instance is not `CloudflareZeroTrustAccessRequestsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareZeroTrustAccessRequestsSecretsConfig getCloudflareZeroTrustAccessRequestsSecretsConfig() throws ClassCastException {
         return (CloudflareZeroTrustAccessRequestsSecretsConfig)super.getActualInstance();
     }
@@ -2871,6 +2900,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `ClumioAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `ClumioAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ClumioAuditLogsSecretsConfig getClumioAuditLogsSecretsConfig() throws ClassCastException {
         return (ClumioAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -2882,6 +2912,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `ClumioConsolidatedAlertsSecretsConfig`
      * @throws ClassCastException if the instance is not `ClumioConsolidatedAlertsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ClumioConsolidatedAlertsSecretsConfig getClumioConsolidatedAlertsSecretsConfig() throws ClassCastException {
         return (ClumioConsolidatedAlertsSecretsConfig)super.getActualInstance();
     }
@@ -2893,6 +2924,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CodaAuditEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `CodaAuditEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CodaAuditEventsSecretsConfig getCodaAuditEventsSecretsConfig() throws ClassCastException {
         return (CodaAuditEventsSecretsConfig)super.getActualInstance();
     }
@@ -2904,6 +2936,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CortexXsoarManagementLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `CortexXsoarManagementLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CortexXsoarManagementLogsSecretsConfig getCortexXsoarManagementLogsSecretsConfig() throws ClassCastException {
         return (CortexXsoarManagementLogsSecretsConfig)super.getActualInstance();
     }
@@ -2915,6 +2948,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `CustomerEventDataSecretsConfig`
      * @throws ClassCastException if the instance is not `CustomerEventDataSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CustomerEventDataSecretsConfig getCustomerEventDataSecretsConfig() throws ClassCastException {
         return (CustomerEventDataSecretsConfig)super.getActualInstance();
     }
@@ -2926,6 +2960,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `DefenderForEndpointAlertsSecretsConfig`
      * @throws ClassCastException if the instance is not `DefenderForEndpointAlertsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DefenderForEndpointAlertsSecretsConfig getDefenderForEndpointAlertsSecretsConfig() throws ClassCastException {
         return (DefenderForEndpointAlertsSecretsConfig)super.getActualInstance();
     }
@@ -2937,6 +2972,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `DuoSecurityActivityLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `DuoSecurityActivityLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DuoSecurityActivityLogsSecretsConfig getDuoSecurityActivityLogsSecretsConfig() throws ClassCastException {
         return (DuoSecurityActivityLogsSecretsConfig)super.getActualInstance();
     }
@@ -2948,6 +2984,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `EndorLabsAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `EndorLabsAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public EndorLabsAuditLogsSecretsConfig getEndorLabsAuditLogsSecretsConfig() throws ClassCastException {
         return (EndorLabsAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -2959,6 +2996,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `EntraIdSecretsConfig`
      * @throws ClassCastException if the instance is not `EntraIdSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public EntraIdSecretsConfig getEntraIdSecretsConfig() throws ClassCastException {
         return (EntraIdSecretsConfig)super.getActualInstance();
     }
@@ -2970,6 +3008,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `EventSecretsConfig`
      * @throws ClassCastException if the instance is not `EventSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public EventSecretsConfig getEventSecretsConfig() throws ClassCastException {
         return (EventSecretsConfig)super.getActualInstance();
     }
@@ -2981,6 +3020,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `FullScansSecretsConfig`
      * @throws ClassCastException if the instance is not `FullScansSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public FullScansSecretsConfig getFullScansSecretsConfig() throws ClassCastException {
         return (FullScansSecretsConfig)super.getActualInstance();
     }
@@ -2992,6 +3032,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `GitlabIssuesSecretsConfig`
      * @throws ClassCastException if the instance is not `GitlabIssuesSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GitlabIssuesSecretsConfig getGitlabIssuesSecretsConfig() throws ClassCastException {
         return (GitlabIssuesSecretsConfig)super.getActualInstance();
     }
@@ -3003,6 +3044,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `GoogleCloudStorageSecretsConfig`
      * @throws ClassCastException if the instance is not `GoogleCloudStorageSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GoogleCloudStorageSecretsConfig getGoogleCloudStorageSecretsConfig() throws ClassCastException {
         return (GoogleCloudStorageSecretsConfig)super.getActualInstance();
     }
@@ -3014,6 +3056,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `GoogleWorkspaceSecretsConfig`
      * @throws ClassCastException if the instance is not `GoogleWorkspaceSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GoogleWorkspaceSecretsConfig getGoogleWorkspaceSecretsConfig() throws ClassCastException {
         return (GoogleWorkspaceSecretsConfig)super.getActualInstance();
     }
@@ -3025,6 +3068,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `GreenhouseAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `GreenhouseAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GreenhouseAuditLogsSecretsConfig getGreenhouseAuditLogsSecretsConfig() throws ClassCastException {
         return (GreenhouseAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3036,6 +3080,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `IndividualAlertsSecretsConfig`
      * @throws ClassCastException if the instance is not `IndividualAlertsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public IndividualAlertsSecretsConfig getIndividualAlertsSecretsConfig() throws ClassCastException {
         return (IndividualAlertsSecretsConfig)super.getActualInstance();
     }
@@ -3047,6 +3092,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `InspectorSecretsConfig`
      * @throws ClassCastException if the instance is not `InspectorSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public InspectorSecretsConfig getInspectorSecretsConfig() throws ClassCastException {
         return (InspectorSecretsConfig)super.getActualInstance();
     }
@@ -3058,6 +3104,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `IssuesSecretsConfig`
      * @throws ClassCastException if the instance is not `IssuesSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public IssuesSecretsConfig getIssuesSecretsConfig() throws ClassCastException {
         return (IssuesSecretsConfig)super.getActualInstance();
     }
@@ -3069,6 +3116,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `IssuesReportSecretsConfig`
      * @throws ClassCastException if the instance is not `IssuesReportSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public IssuesReportSecretsConfig getIssuesReportSecretsConfig() throws ClassCastException {
         return (IssuesReportSecretsConfig)super.getActualInstance();
     }
@@ -3080,6 +3128,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `KoiAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `KoiAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public KoiAuditLogsSecretsConfig getKoiAuditLogsSecretsConfig() throws ClassCastException {
         return (KoiAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3091,6 +3140,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `LogAnalyticsQuerySecretsConfig`
      * @throws ClassCastException if the instance is not `LogAnalyticsQuerySecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public LogAnalyticsQuerySecretsConfig getLogAnalyticsQuerySecretsConfig() throws ClassCastException {
         return (LogAnalyticsQuerySecretsConfig)super.getActualInstance();
     }
@@ -3102,6 +3152,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `MerakiConfigLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `MerakiConfigLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MerakiConfigLogsSecretsConfig getMerakiConfigLogsSecretsConfig() throws ClassCastException {
         return (MerakiConfigLogsSecretsConfig)super.getActualInstance();
     }
@@ -3113,17 +3164,19 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `Microsoft365GenericSecretsConfig`
      * @throws ClassCastException if the instance is not `Microsoft365GenericSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public Microsoft365GenericSecretsConfig getMicrosoft365GenericSecretsConfig() throws ClassCastException {
         return (Microsoft365GenericSecretsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
     }
@@ -3135,6 +3188,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `ObjectStorageInputSecretsConfig`
      * @throws ClassCastException if the instance is not `ObjectStorageInputSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ObjectStorageInputSecretsConfig getObjectStorageInputSecretsConfig() throws ClassCastException {
         return (ObjectStorageInputSecretsConfig)super.getActualInstance();
     }
@@ -3146,6 +3200,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `OfflineenrollmentlogsSecretsConfig`
      * @throws ClassCastException if the instance is not `OfflineenrollmentlogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OfflineenrollmentlogsSecretsConfig getOfflineenrollmentlogsSecretsConfig() throws ClassCastException {
         return (OfflineenrollmentlogsSecretsConfig)super.getActualInstance();
     }
@@ -3157,6 +3212,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `OneloginEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `OneloginEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OneloginEventsSecretsConfig getOneloginEventsSecretsConfig() throws ClassCastException {
         return (OneloginEventsSecretsConfig)super.getActualInstance();
     }
@@ -3168,6 +3224,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `OpalEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `OpalEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OpalEventsSecretsConfig getOpalEventsSecretsConfig() throws ClassCastException {
         return (OpalEventsSecretsConfig)super.getActualInstance();
     }
@@ -3179,6 +3236,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `OperationLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `OperationLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OperationLogsSecretsConfig getOperationLogsSecretsConfig() throws ClassCastException {
         return (OperationLogsSecretsConfig)super.getActualInstance();
     }
@@ -3190,6 +3248,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `OrgAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `OrgAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OrgAuditLogsSecretsConfig getOrgAuditLogsSecretsConfig() throws ClassCastException {
         return (OrgAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3201,6 +3260,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `OwnbackupAccountEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `OwnbackupAccountEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OwnbackupAccountEventsSecretsConfig getOwnbackupAccountEventsSecretsConfig() throws ClassCastException {
         return (OwnbackupAccountEventsSecretsConfig)super.getActualInstance();
     }
@@ -3212,6 +3272,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `PagerdutyAuditRecordsSecretsConfig`
      * @throws ClassCastException if the instance is not `PagerdutyAuditRecordsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PagerdutyAuditRecordsSecretsConfig getPagerdutyAuditRecordsSecretsConfig() throws ClassCastException {
         return (PagerdutyAuditRecordsSecretsConfig)super.getActualInstance();
     }
@@ -3223,6 +3284,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `PaloAltoDataSecurityAlertsSecretsConfig`
      * @throws ClassCastException if the instance is not `PaloAltoDataSecurityAlertsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PaloAltoDataSecurityAlertsSecretsConfig getPaloAltoDataSecurityAlertsSecretsConfig() throws ClassCastException {
         return (PaloAltoDataSecurityAlertsSecretsConfig)super.getActualInstance();
     }
@@ -3234,6 +3296,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `PolymerSecretsConfig`
      * @throws ClassCastException if the instance is not `PolymerSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PolymerSecretsConfig getPolymerSecretsConfig() throws ClassCastException {
         return (PolymerSecretsConfig)super.getActualInstance();
     }
@@ -3245,6 +3308,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `PostmanAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `PostmanAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PostmanAuditLogsSecretsConfig getPostmanAuditLogsSecretsConfig() throws ClassCastException {
         return (PostmanAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3256,6 +3320,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `PubsubSecretsConfig`
      * @throws ClassCastException if the instance is not `PubsubSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PubsubSecretsConfig getPubsubSecretsConfig() throws ClassCastException {
         return (PubsubSecretsConfig)super.getActualInstance();
     }
@@ -3267,6 +3332,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `RootlyAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `RootlyAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public RootlyAuditLogsSecretsConfig getRootlyAuditLogsSecretsConfig() throws ClassCastException {
         return (RootlyAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3278,6 +3344,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `SemgrepCodeFindingsSecretsConfig`
      * @throws ClassCastException if the instance is not `SemgrepCodeFindingsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SemgrepCodeFindingsSecretsConfig getSemgrepCodeFindingsSecretsConfig() throws ClassCastException {
         return (SemgrepCodeFindingsSecretsConfig)super.getActualInstance();
     }
@@ -3289,6 +3356,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `SemgrepSupplyChainFindingsSecretsConfig`
      * @throws ClassCastException if the instance is not `SemgrepSupplyChainFindingsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SemgrepSupplyChainFindingsSecretsConfig getSemgrepSupplyChainFindingsSecretsConfig() throws ClassCastException {
         return (SemgrepSupplyChainFindingsSecretsConfig)super.getActualInstance();
     }
@@ -3300,6 +3368,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `SentryOrgAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `SentryOrgAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SentryOrgAuditLogsSecretsConfig getSentryOrgAuditLogsSecretsConfig() throws ClassCastException {
         return (SentryOrgAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3311,6 +3380,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `SlackEnterpriseAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `SlackEnterpriseAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SlackEnterpriseAuditLogsSecretsConfig getSlackEnterpriseAuditLogsSecretsConfig() throws ClassCastException {
         return (SlackEnterpriseAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3322,6 +3392,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `SnowflakeInputSecretsConfig`
      * @throws ClassCastException if the instance is not `SnowflakeInputSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnowflakeInputSecretsConfig getSnowflakeInputSecretsConfig() throws ClassCastException {
         return (SnowflakeInputSecretsConfig)super.getActualInstance();
     }
@@ -3333,6 +3404,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `SnykIssuesSecretsConfig`
      * @throws ClassCastException if the instance is not `SnykIssuesSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnykIssuesSecretsConfig getSnykIssuesSecretsConfig() throws ClassCastException {
         return (SnykIssuesSecretsConfig)super.getActualInstance();
     }
@@ -3344,6 +3416,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `SnykTargetsSecretsConfig`
      * @throws ClassCastException if the instance is not `SnykTargetsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnykTargetsSecretsConfig getSnykTargetsSecretsConfig() throws ClassCastException {
         return (SnykTargetsSecretsConfig)super.getActualInstance();
     }
@@ -3355,6 +3428,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TaniumGraphqlInputSecretsConfig`
      * @throws ClassCastException if the instance is not `TaniumGraphqlInputSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TaniumGraphqlInputSecretsConfig getTaniumGraphqlInputSecretsConfig() throws ClassCastException {
         return (TaniumGraphqlInputSecretsConfig)super.getActualInstance();
     }
@@ -3366,6 +3440,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TeamAccessLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `TeamAccessLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TeamAccessLogsSecretsConfig getTeamAccessLogsSecretsConfig() throws ClassCastException {
         return (TeamAccessLogsSecretsConfig)super.getActualInstance();
     }
@@ -3377,6 +3452,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TeamIntegrationLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `TeamIntegrationLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TeamIntegrationLogsSecretsConfig getTeamIntegrationLogsSecretsConfig() throws ClassCastException {
         return (TeamIntegrationLogsSecretsConfig)super.getActualInstance();
     }
@@ -3388,6 +3464,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TelephonyLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `TelephonyLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TelephonyLogsSecretsConfig getTelephonyLogsSecretsConfig() throws ClassCastException {
         return (TelephonyLogsSecretsConfig)super.getActualInstance();
     }
@@ -3399,6 +3476,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TenableAssetsSecretsConfig`
      * @throws ClassCastException if the instance is not `TenableAssetsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableAssetsSecretsConfig getTenableAssetsSecretsConfig() throws ClassCastException {
         return (TenableAssetsSecretsConfig)super.getActualInstance();
     }
@@ -3410,6 +3488,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TenableAssetsCronSecretsConfig`
      * @throws ClassCastException if the instance is not `TenableAssetsCronSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableAssetsCronSecretsConfig getTenableAssetsCronSecretsConfig() throws ClassCastException {
         return (TenableAssetsCronSecretsConfig)super.getActualInstance();
     }
@@ -3421,6 +3500,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TenableVulnerabilitiesSecretsConfig`
      * @throws ClassCastException if the instance is not `TenableVulnerabilitiesSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableVulnerabilitiesSecretsConfig getTenableVulnerabilitiesSecretsConfig() throws ClassCastException {
         return (TenableVulnerabilitiesSecretsConfig)super.getActualInstance();
     }
@@ -3432,6 +3512,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TenableVulnerabilitiesCronSecretsConfig`
      * @throws ClassCastException if the instance is not `TenableVulnerabilitiesCronSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableVulnerabilitiesCronSecretsConfig getTenableVulnerabilitiesCronSecretsConfig() throws ClassCastException {
         return (TenableVulnerabilitiesCronSecretsConfig)super.getActualInstance();
     }
@@ -3443,6 +3524,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TinesAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `TinesAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TinesAuditLogsSecretsConfig getTinesAuditLogsSecretsConfig() throws ClassCastException {
         return (TinesAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3454,6 +3536,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TinesEventsLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `TinesEventsLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TinesEventsLogsSecretsConfig getTinesEventsLogsSecretsConfig() throws ClassCastException {
         return (TinesEventsLogsSecretsConfig)super.getActualInstance();
     }
@@ -3465,6 +3548,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TwilioEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `TwilioEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TwilioEventsSecretsConfig getTwilioEventsSecretsConfig() throws ClassCastException {
         return (TwilioEventsSecretsConfig)super.getActualInstance();
     }
@@ -3476,6 +3560,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `TwilioSendgridEmailActivitySecretsConfig`
      * @throws ClassCastException if the instance is not `TwilioSendgridEmailActivitySecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TwilioSendgridEmailActivitySecretsConfig getTwilioSendgridEmailActivitySecretsConfig() throws ClassCastException {
         return (TwilioSendgridEmailActivitySecretsConfig)super.getActualInstance();
     }
@@ -3487,6 +3572,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `UniversalSecretsConfig`
      * @throws ClassCastException if the instance is not `UniversalSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public UniversalSecretsConfig getUniversalSecretsConfig() throws ClassCastException {
         return (UniversalSecretsConfig)super.getActualInstance();
     }
@@ -3498,6 +3584,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `VercelUserEventsSecretsConfig`
      * @throws ClassCastException if the instance is not `VercelUserEventsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VercelUserEventsSecretsConfig getVercelUserEventsSecretsConfig() throws ClassCastException {
         return (VercelUserEventsSecretsConfig)super.getActualInstance();
     }
@@ -3509,6 +3596,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `VoltioAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `VoltioAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VoltioAuditLogsSecretsConfig getVoltioAuditLogsSecretsConfig() throws ClassCastException {
         return (VoltioAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3520,6 +3608,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `VulnerabilityFindingsSecretsConfig`
      * @throws ClassCastException if the instance is not `VulnerabilityFindingsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VulnerabilityFindingsSecretsConfig getVulnerabilityFindingsSecretsConfig() throws ClassCastException {
         return (VulnerabilityFindingsSecretsConfig)super.getActualInstance();
     }
@@ -3531,6 +3620,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `VulnerabilityFindingsReportSecretsConfig`
      * @throws ClassCastException if the instance is not `VulnerabilityFindingsReportSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VulnerabilityFindingsReportSecretsConfig getVulnerabilityFindingsReportSecretsConfig() throws ClassCastException {
         return (VulnerabilityFindingsReportSecretsConfig)super.getActualInstance();
     }
@@ -3542,6 +3632,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `WizAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `WizAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public WizAuditLogsSecretsConfig getWizAuditLogsSecretsConfig() throws ClassCastException {
         return (WizAuditLogsSecretsConfig)super.getActualInstance();
     }
@@ -3553,6 +3644,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
      * @return The actual instance of `ZendeskAuditLogsSecretsConfig`
      * @throws ClassCastException if the instance is not `ZendeskAuditLogsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ZendeskAuditLogsSecretsConfig getZendeskAuditLogsSecretsConfig() throws ClassCastException {
         return (ZendeskAuditLogsSecretsConfig)super.getActualInstance();
     }

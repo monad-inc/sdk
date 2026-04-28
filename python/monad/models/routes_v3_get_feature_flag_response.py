@@ -100,14 +100,12 @@ class RoutesV3GetFeatureFlagResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "organizations": dict(
-                (_k,
-                        [FlagsmithFlag.from_dict(_item) for _item in _v]
-                        if _v is not None
-                        else None
-                )
-                for _k, _v in obj.get("organizations", {}).items()
-            ),
+            "organizations": {
+                _k: [FlagsmithFlag.from_dict(_item) for _item in _v] if _v is not None else None
+                for _k, _v in obj["organizations"].items()
+            }
+            if obj.get("organizations") is not None
+            else None,
             "user": [FlagsmithFlag.from_dict(_item) for _item in obj["user"]] if obj.get("user") is not None else None
         })
         return _obj

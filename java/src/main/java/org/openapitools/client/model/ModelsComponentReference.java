@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsComponentReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class ModelsComponentReference {
   public static final String SERIALIZED_NAME_DEFINITION_REF = "definition_ref";
   @SerializedName(SERIALIZED_NAME_DEFINITION_REF)

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Additional metadata to send with each source.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SumologicSourceMetadata {
   public static final String SERIALIZED_NAME_CUSTOM_SOURCE_CATEGORY = "custom_source_category";
   @SerializedName(SERIALIZED_NAME_CUSTOM_SOURCE_CATEGORY)

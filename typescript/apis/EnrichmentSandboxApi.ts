@@ -40,7 +40,7 @@ export class EnrichmentSandboxApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments/sandbox'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);

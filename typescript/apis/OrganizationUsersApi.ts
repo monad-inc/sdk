@@ -41,7 +41,7 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/users'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -99,7 +99,7 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/users'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -166,8 +166,8 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/users/{user_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'user_id' + '}', encodeURIComponent(String(userId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{user_id}', encodeURIComponent(String(userId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -229,8 +229,8 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/users/{user_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'user_id' + '}', encodeURIComponent(String(userId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{user_id}', encodeURIComponent(String(userId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
@@ -284,7 +284,7 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/users/leave'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);

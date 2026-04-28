@@ -37,8 +37,8 @@ export class OauthApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/oauth/{type_id}/{organization_id}'
-            .replace('{' + 'type_id' + '}', encodeURIComponent(String(typeId)))
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{type_id}', encodeURIComponent(String(typeId)))
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -81,7 +81,7 @@ export class OauthApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/oauth/{type_id}/callback'
-            .replace('{' + 'type_id' + '}', encodeURIComponent(String(typeId)));
+            .replace('{type_id}', encodeURIComponent(String(typeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

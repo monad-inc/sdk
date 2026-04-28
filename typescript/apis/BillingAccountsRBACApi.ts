@@ -42,7 +42,7 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -105,8 +105,8 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}/users'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -162,8 +162,8 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -215,9 +215,9 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}/users/{user_id}'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)))
-            .replace('{' + 'user_id' + '}', encodeURIComponent(String(userId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)))
+            .replace('{user_id}', encodeURIComponent(String(userId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -262,8 +262,8 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -301,7 +301,7 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -383,8 +383,8 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
-            .replace('{' + 'role_id' + '}', encodeURIComponent(String(roleId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)))
+            .replace('{role_id}', encodeURIComponent(String(roleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);

@@ -35,7 +35,7 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/storage-type-cost'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -86,7 +86,7 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/metrics/storage-types/details'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -166,7 +166,7 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/metrics/storage-types'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -247,7 +247,7 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/metrics/storage-types/summary'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -317,7 +317,7 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/storage-type-cost'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
@@ -386,8 +386,8 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/metrics/storage-types/{storage_type}/details'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'storage_type' + '}', encodeURIComponent(String(storageType)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{storage_type}', encodeURIComponent(String(storageType)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

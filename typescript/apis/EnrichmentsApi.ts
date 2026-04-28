@@ -38,8 +38,8 @@ export class EnrichmentsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments_meta/{enrichment_type_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'enrichment_type_id' + '}', encodeURIComponent(String(enrichmentTypeId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{enrichment_type_id}', encodeURIComponent(String(enrichmentTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -82,7 +82,7 @@ export class EnrichmentsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments_meta'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

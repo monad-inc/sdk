@@ -32,7 +32,7 @@ export class OutputsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/outputs/{output_type_id}'
-            .replace('{' + 'output_type_id' + '}', encodeURIComponent(String(outputTypeId)));
+            .replace('{output_type_id}', encodeURIComponent(String(outputTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

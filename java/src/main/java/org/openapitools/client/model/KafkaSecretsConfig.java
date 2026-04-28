@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Kafka Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class KafkaSecretsConfig {
   public static final String SERIALIZED_NAME_CA_CERTIFICATE = "ca_certificate";
   @SerializedName(SERIALIZED_NAME_CA_CERTIFICATE)

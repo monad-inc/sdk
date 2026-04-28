@@ -82,7 +82,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorOutputConfigSecrets.class.getName());
 
@@ -637,7 +637,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map&lt;String, Object&gt;, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -768,9 +768,9 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
 
     /**
      * Get the actual instance, which can be the following:
-     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map&lt;String, Object&gt;, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
-     * @return The actual instance (AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
+     * @return The actual instance (AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map&lt;String, Object&gt;, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -785,6 +785,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `AbsSecretsConfig`
      * @throws ClassCastException if the instance is not `AbsSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AbsSecretsConfig getAbsSecretsConfig() throws ClassCastException {
         return (AbsSecretsConfig)super.getActualInstance();
     }
@@ -796,6 +797,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `AxiomSecretsConfig`
      * @throws ClassCastException if the instance is not `AxiomSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AxiomSecretsConfig getAxiomSecretsConfig() throws ClassCastException {
         return (AxiomSecretsConfig)super.getActualInstance();
     }
@@ -807,6 +809,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `BackblazeSecretsConfig`
      * @throws ClassCastException if the instance is not `BackblazeSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BackblazeSecretsConfig getBackblazeSecretsConfig() throws ClassCastException {
         return (BackblazeSecretsConfig)super.getActualInstance();
     }
@@ -818,6 +821,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `BigquerySecretsConfig`
      * @throws ClassCastException if the instance is not `BigquerySecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BigquerySecretsConfig getBigquerySecretsConfig() throws ClassCastException {
         return (BigquerySecretsConfig)super.getActualInstance();
     }
@@ -829,6 +833,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `CriblHttpSecretsConfig`
      * @throws ClassCastException if the instance is not `CriblHttpSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CriblHttpSecretsConfig getCriblHttpSecretsConfig() throws ClassCastException {
         return (CriblHttpSecretsConfig)super.getActualInstance();
     }
@@ -840,6 +845,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `DatabricksSecretsConfig`
      * @throws ClassCastException if the instance is not `DatabricksSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DatabricksSecretsConfig getDatabricksSecretsConfig() throws ClassCastException {
         return (DatabricksSecretsConfig)super.getActualInstance();
     }
@@ -851,6 +857,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `DatadogSecretsConfig`
      * @throws ClassCastException if the instance is not `DatadogSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DatadogSecretsConfig getDatadogSecretsConfig() throws ClassCastException {
         return (DatadogSecretsConfig)super.getActualInstance();
     }
@@ -862,6 +869,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `ElasticsearchSecretsConfig`
      * @throws ClassCastException if the instance is not `ElasticsearchSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ElasticsearchSecretsConfig getElasticsearchSecretsConfig() throws ClassCastException {
         return (ElasticsearchSecretsConfig)super.getActualInstance();
     }
@@ -873,6 +881,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `GoogleCloudStorageOutputSecretsConfig`
      * @throws ClassCastException if the instance is not `GoogleCloudStorageOutputSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GoogleCloudStorageOutputSecretsConfig getGoogleCloudStorageOutputSecretsConfig() throws ClassCastException {
         return (GoogleCloudStorageOutputSecretsConfig)super.getActualInstance();
     }
@@ -884,6 +893,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `HttpSecretsConfig`
      * @throws ClassCastException if the instance is not `HttpSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public HttpSecretsConfig getHttpSecretsConfig() throws ClassCastException {
         return (HttpSecretsConfig)super.getActualInstance();
     }
@@ -895,6 +905,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `KafkaSecretsConfig`
      * @throws ClassCastException if the instance is not `KafkaSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public KafkaSecretsConfig getKafkaSecretsConfig() throws ClassCastException {
         return (KafkaSecretsConfig)super.getActualInstance();
     }
@@ -906,17 +917,19 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `Object`
      * @throws ClassCastException if the instance is not `Object`
      */
+    @SuppressWarnings("unchecked")
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
     }
@@ -928,6 +941,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `NextGenSiemSecretsConfig`
      * @throws ClassCastException if the instance is not `NextGenSiemSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public NextGenSiemSecretsConfig getNextGenSiemSecretsConfig() throws ClassCastException {
         return (NextGenSiemSecretsConfig)super.getActualInstance();
     }
@@ -939,6 +953,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `ObjectStorageSecretsConfig`
      * @throws ClassCastException if the instance is not `ObjectStorageSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ObjectStorageSecretsConfig getObjectStorageSecretsConfig() throws ClassCastException {
         return (ObjectStorageSecretsConfig)super.getActualInstance();
     }
@@ -950,6 +965,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `OpensearchSecretsConfig`
      * @throws ClassCastException if the instance is not `OpensearchSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OpensearchSecretsConfig getOpensearchSecretsConfig() throws ClassCastException {
         return (OpensearchSecretsConfig)super.getActualInstance();
     }
@@ -961,6 +977,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `PagerdutySecretsConfig`
      * @throws ClassCastException if the instance is not `PagerdutySecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PagerdutySecretsConfig getPagerdutySecretsConfig() throws ClassCastException {
         return (PagerdutySecretsConfig)super.getActualInstance();
     }
@@ -972,6 +989,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `PantherSecretsConfig`
      * @throws ClassCastException if the instance is not `PantherSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PantherSecretsConfig getPantherSecretsConfig() throws ClassCastException {
         return (PantherSecretsConfig)super.getActualInstance();
     }
@@ -983,6 +1001,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `PostgresqlSecretsConfig`
      * @throws ClassCastException if the instance is not `PostgresqlSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PostgresqlSecretsConfig getPostgresqlSecretsConfig() throws ClassCastException {
         return (PostgresqlSecretsConfig)super.getActualInstance();
     }
@@ -994,6 +1013,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `S3SecretsConfig`
      * @throws ClassCastException if the instance is not `S3SecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public S3SecretsConfig getS3SecretsConfig() throws ClassCastException {
         return (S3SecretsConfig)super.getActualInstance();
     }
@@ -1005,6 +1025,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `SentinelSecretsConfig`
      * @throws ClassCastException if the instance is not `SentinelSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SentinelSecretsConfig getSentinelSecretsConfig() throws ClassCastException {
         return (SentinelSecretsConfig)super.getActualInstance();
     }
@@ -1016,6 +1037,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `SnowflakeOutputSecretsConfig`
      * @throws ClassCastException if the instance is not `SnowflakeOutputSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnowflakeOutputSecretsConfig getSnowflakeOutputSecretsConfig() throws ClassCastException {
         return (SnowflakeOutputSecretsConfig)super.getActualInstance();
     }
@@ -1027,6 +1049,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `SplunkSecretsConfig`
      * @throws ClassCastException if the instance is not `SplunkSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SplunkSecretsConfig getSplunkSecretsConfig() throws ClassCastException {
         return (SplunkSecretsConfig)super.getActualInstance();
     }
@@ -1038,6 +1061,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      * @return The actual instance of `SumologicSecretsConfig`
      * @throws ClassCastException if the instance is not `SumologicSecretsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SumologicSecretsConfig getSumologicSecretsConfig() throws ClassCastException {
         return (SumologicSecretsConfig)super.getActualInstance();
     }

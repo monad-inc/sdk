@@ -61,7 +61,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorEnrichmentConfigSettings.class.getName());
 
@@ -214,7 +214,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>
+     * CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map&lt;String, Object&gt;
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -245,9 +245,9 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
 
     /**
      * Get the actual instance, which can be the following:
-     * CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>
+     * CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map&lt;String, Object&gt;
      *
-     * @return The actual instance (CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>)
+     * @return The actual instance (CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map&lt;String, Object&gt;)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -262,6 +262,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
      * @return The actual instance of `CommunityEditionSettingsConfig`
      * @throws ClassCastException if the instance is not `CommunityEditionSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CommunityEditionSettingsConfig getCommunityEditionSettingsConfig() throws ClassCastException {
         return (CommunityEditionSettingsConfig)super.getActualInstance();
     }
@@ -273,6 +274,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
      * @return The actual instance of `GeolocusSettingsConfig`
      * @throws ClassCastException if the instance is not `GeolocusSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GeolocusSettingsConfig getGeolocusSettingsConfig() throws ClassCastException {
         return (GeolocusSettingsConfig)super.getActualInstance();
     }
@@ -284,17 +286,19 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
      * @return The actual instance of `KvLookupSettingsConfig`
      * @throws ClassCastException if the instance is not `KvLookupSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public KvLookupSettingsConfig getKvLookupSettingsConfig() throws ClassCastException {
         return (KvLookupSettingsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
     }

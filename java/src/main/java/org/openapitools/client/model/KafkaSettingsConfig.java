@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Kafka Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class KafkaSettingsConfig {
   public static final String SERIALIZED_NAME_ACKS = "acks";
   @SerializedName(SERIALIZED_NAME_ACKS)

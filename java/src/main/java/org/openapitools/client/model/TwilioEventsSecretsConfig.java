@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Twilio Events secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class TwilioEventsSecretsConfig {
   public static final String SERIALIZED_NAME_TWILIO_ACCOUNT_SID = "twilio_account_sid";
   @SerializedName(SERIALIZED_NAME_TWILIO_ACCOUNT_SID)

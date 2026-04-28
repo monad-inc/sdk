@@ -38,7 +38,7 @@ export class OrganizationInvitesApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/invites'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);

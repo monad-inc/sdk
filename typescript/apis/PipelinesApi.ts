@@ -50,7 +50,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -111,8 +111,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -162,8 +162,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -215,7 +215,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/metrics'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -272,7 +272,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipeline_summary'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -334,8 +334,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -387,8 +387,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -526,8 +526,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/metrics/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -617,9 +617,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
-            .replace('{' + 'node_id' + '}', encodeURIComponent(String(nodeId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{node_id}', encodeURIComponent(String(nodeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -711,9 +711,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
-            .replace('{' + 'node_id' + '}', encodeURIComponent(String(nodeId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{node_id}', encodeURIComponent(String(nodeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -796,9 +796,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
-            .replace('{' + 'node_id' + '}', encodeURIComponent(String(nodeId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{node_id}', encodeURIComponent(String(nodeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -872,8 +872,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/status'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -942,7 +942,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/statuses'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -1011,7 +1011,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -1075,7 +1075,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/pipelines'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -1135,8 +1135,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/trigger'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -1193,8 +1193,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
@@ -1269,9 +1269,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
-            .replace('{' + 'edge_id' + '}', encodeURIComponent(String(edgeId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{edge_id}', encodeURIComponent(String(edgeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
@@ -1341,8 +1341,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);

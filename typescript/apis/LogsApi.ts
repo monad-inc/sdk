@@ -37,8 +37,8 @@ export class LogsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/data/{node_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'node_id' + '}', encodeURIComponent(String(nodeId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{node_id}', encodeURIComponent(String(nodeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -99,9 +99,9 @@ export class LogsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/logs/pipelines/{pipeline_id}/{node_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
-            .replace('{' + 'node_id' + '}', encodeURIComponent(String(nodeId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{node_id}', encodeURIComponent(String(nodeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -156,7 +156,7 @@ export class LogsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/logs/api'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -208,7 +208,7 @@ export class LogsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/logs'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -263,7 +263,7 @@ export class LogsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/logs/pipelines'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -322,8 +322,8 @@ export class LogsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/logs/pipelines/{pipeline_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

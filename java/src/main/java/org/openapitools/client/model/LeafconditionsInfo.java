@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * LeafconditionsInfo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class LeafconditionsInfo {
   public static final String SERIALIZED_NAME_CONFIG_META = "config_meta";
   @SerializedName(SERIALIZED_NAME_CONFIG_META)

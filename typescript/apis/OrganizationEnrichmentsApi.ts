@@ -48,7 +48,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -114,8 +114,8 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments/{enrichment_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'enrichment_id' + '}', encodeURIComponent(String(enrichmentId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{enrichment_id}', encodeURIComponent(String(enrichmentId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -165,8 +165,8 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments/{enrichment_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'enrichment_id' + '}', encodeURIComponent(String(enrichmentId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{enrichment_id}', encodeURIComponent(String(enrichmentId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -213,7 +213,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -282,8 +282,8 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments/{enrichment_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'enrichment_id' + '}', encodeURIComponent(String(enrichmentId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{enrichment_id}', encodeURIComponent(String(enrichmentId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
@@ -349,7 +349,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments/test-connection'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -419,8 +419,8 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/enrichments/{enrichment_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'enrichment_id' + '}', encodeURIComponent(String(enrichmentId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{enrichment_id}', encodeURIComponent(String(enrichmentId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);

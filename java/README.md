@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Generator version: 7.21.0
+  - Generator version: 7.22.0
 
 This is the monad API
 

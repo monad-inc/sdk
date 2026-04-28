@@ -43,7 +43,7 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/alert_rules'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -99,8 +99,8 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{alert_rule_id}', encodeURIComponent(String(alertRuleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -145,8 +145,8 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{alert_rule_id}', encodeURIComponent(String(alertRuleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -184,7 +184,7 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/alert_rules/{alert_rule_type_id}'
-            .replace('{' + 'alert_rule_type_id' + '}', encodeURIComponent(String(alertRuleTypeId)));
+            .replace('{alert_rule_type_id}', encodeURIComponent(String(alertRuleTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -266,7 +266,7 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/alert_rules'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -328,8 +328,8 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/alert_rules/{alert_rule_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'alert_rule_id' + '}', encodeURIComponent(String(alertRuleId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{alert_rule_id}', encodeURIComponent(String(alertRuleId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);

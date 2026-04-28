@@ -48,7 +48,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/outputs'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -114,8 +114,8 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/outputs/{output_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'output_id' + '}', encodeURIComponent(String(outputId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{output_id}', encodeURIComponent(String(outputId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -165,8 +165,8 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/outputs/{output_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'output_id' + '}', encodeURIComponent(String(outputId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{output_id}', encodeURIComponent(String(outputId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -213,7 +213,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v1/{organization_id}/outputs'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -282,8 +282,8 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/outputs/{output_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'output_id' + '}', encodeURIComponent(String(outputId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{output_id}', encodeURIComponent(String(outputId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
@@ -349,7 +349,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/outputs/test-connection'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -419,8 +419,8 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/outputs/{output_id}'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
-            .replace('{' + 'output_id' + '}', encodeURIComponent(String(outputId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{output_id}', encodeURIComponent(String(outputId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);

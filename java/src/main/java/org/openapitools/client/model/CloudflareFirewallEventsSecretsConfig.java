@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Cloudflare Firewall Events secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class CloudflareFirewallEventsSecretsConfig {
   public static final String SERIALIZED_NAME_API_TOKEN = "api_token";
   @SerializedName(SERIALIZED_NAME_API_TOKEN)

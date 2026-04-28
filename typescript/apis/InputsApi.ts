@@ -32,7 +32,7 @@ export class InputsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v1/inputs/{input_type_id}'
-            .replace('{' + 'input_type_id' + '}', encodeURIComponent(String(inputTypeId)));
+            .replace('{input_type_id}', encodeURIComponent(String(inputTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

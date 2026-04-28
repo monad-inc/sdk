@@ -88,7 +88,7 @@ export class TransformsRepositoryApiRequestFactory extends BaseAPIRequestFactory
 
         // Path Params
         const localVarPath = '/v3/transforms/repository/{transform_id}'
-            .replace('{' + 'transform_id' + '}', encodeURIComponent(String(transformId)));
+            .replace('{transform_id}', encodeURIComponent(String(transformId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -131,7 +131,7 @@ export class TransformsRepositoryApiRequestFactory extends BaseAPIRequestFactory
 
         // Path Params
         const localVarPath = '/v2/transforms/repository/{transform_id}'
-            .replace('{' + 'transform_id' + '}', encodeURIComponent(String(transformId)));
+            .replace('{transform_id}', encodeURIComponent(String(transformId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

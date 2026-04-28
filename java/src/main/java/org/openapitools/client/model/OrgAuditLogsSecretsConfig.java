@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * GitHub organization audit logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class OrgAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_GITHUB_APP_PRIVATE_KEY = "github_app_private_key";
   @SerializedName(SERIALIZED_NAME_GITHUB_APP_PRIVATE_KEY)

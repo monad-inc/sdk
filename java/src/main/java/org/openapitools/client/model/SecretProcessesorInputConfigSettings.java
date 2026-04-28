@@ -160,7 +160,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorInputConfigSettings.class.getName());
 
@@ -2213,7 +2213,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AdminLogsSettingsConfig, AivenServiceLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BitwardenEventsSettingsConfig, BoxEventsSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, Map<String, Object>, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpalEventsSettingsConfig, OpenaiAuditLogsSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, RootlyAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig
+     * AdminLogsSettingsConfig, AivenServiceLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BitwardenEventsSettingsConfig, BoxEventsSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpalEventsSettingsConfig, OpenaiAuditLogsSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, RootlyAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -2719,9 +2719,9 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
 
     /**
      * Get the actual instance, which can be the following:
-     * AdminLogsSettingsConfig, AivenServiceLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BitwardenEventsSettingsConfig, BoxEventsSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, Map<String, Object>, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpalEventsSettingsConfig, OpenaiAuditLogsSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, RootlyAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig
+     * AdminLogsSettingsConfig, AivenServiceLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BitwardenEventsSettingsConfig, BoxEventsSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpalEventsSettingsConfig, OpenaiAuditLogsSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, RootlyAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig
      *
-     * @return The actual instance (AdminLogsSettingsConfig, AivenServiceLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BitwardenEventsSettingsConfig, BoxEventsSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, Map<String, Object>, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpalEventsSettingsConfig, OpenaiAuditLogsSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, RootlyAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig)
+     * @return The actual instance (AdminLogsSettingsConfig, AivenServiceLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BitwardenEventsSettingsConfig, BoxEventsSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpalEventsSettingsConfig, OpenaiAuditLogsSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, RootlyAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -2736,6 +2736,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AdminLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `AdminLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AdminLogsSettingsConfig getAdminLogsSettingsConfig() throws ClassCastException {
         return (AdminLogsSettingsConfig)super.getActualInstance();
     }
@@ -2747,6 +2748,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AivenServiceLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `AivenServiceLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AivenServiceLogsSettingsConfig getAivenServiceLogsSettingsConfig() throws ClassCastException {
         return (AivenServiceLogsSettingsConfig)super.getActualInstance();
     }
@@ -2758,6 +2760,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `ArizeAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `ArizeAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ArizeAuditLogsSettingsConfig getArizeAuditLogsSettingsConfig() throws ClassCastException {
         return (ArizeAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -2769,6 +2772,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `AuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AuditLogsSettingsConfig getAuditLogsSettingsConfig() throws ClassCastException {
         return (AuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -2780,6 +2784,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AuthLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `AuthLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AuthLogsSettingsConfig getAuthLogsSettingsConfig() throws ClassCastException {
         return (AuthLogsSettingsConfig)super.getActualInstance();
     }
@@ -2791,6 +2796,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AwsGuarddutySettingsConfig`
      * @throws ClassCastException if the instance is not `AwsGuarddutySettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AwsGuarddutySettingsConfig getAwsGuarddutySettingsConfig() throws ClassCastException {
         return (AwsGuarddutySettingsConfig)super.getActualInstance();
     }
@@ -2802,6 +2808,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AwsS3SettingsConfig`
      * @throws ClassCastException if the instance is not `AwsS3SettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AwsS3SettingsConfig getAwsS3SettingsConfig() throws ClassCastException {
         return (AwsS3SettingsConfig)super.getActualInstance();
     }
@@ -2813,6 +2820,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `Awssqss3SettingsConfig`
      * @throws ClassCastException if the instance is not `Awssqss3SettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public Awssqss3SettingsConfig getAwssqss3SettingsConfig() throws ClassCastException {
         return (Awssqss3SettingsConfig)super.getActualInstance();
     }
@@ -2824,6 +2832,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AzureActivityLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `AzureActivityLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureActivityLogsSettingsConfig getAzureActivityLogsSettingsConfig() throws ClassCastException {
         return (AzureActivityLogsSettingsConfig)super.getActualInstance();
     }
@@ -2835,6 +2844,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AzureBlobStorageSettingsConfig`
      * @throws ClassCastException if the instance is not `AzureBlobStorageSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureBlobStorageSettingsConfig getAzureBlobStorageSettingsConfig() throws ClassCastException {
         return (AzureBlobStorageSettingsConfig)super.getActualInstance();
     }
@@ -2846,6 +2856,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AzureEventHubsSettingsConfig`
      * @throws ClassCastException if the instance is not `AzureEventHubsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureEventHubsSettingsConfig getAzureEventHubsSettingsConfig() throws ClassCastException {
         return (AzureEventHubsSettingsConfig)super.getActualInstance();
     }
@@ -2857,6 +2868,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `AzureVnetFlowLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `AzureVnetFlowLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AzureVnetFlowLogsSettingsConfig getAzureVnetFlowLogsSettingsConfig() throws ClassCastException {
         return (AzureVnetFlowLogsSettingsConfig)super.getActualInstance();
     }
@@ -2868,6 +2880,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BackblazeB2SettingsConfig`
      * @throws ClassCastException if the instance is not `BackblazeB2SettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BackblazeB2SettingsConfig getBackblazeB2SettingsConfig() throws ClassCastException {
         return (BackblazeB2SettingsConfig)super.getActualInstance();
     }
@@ -2879,6 +2892,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BigqueryInputSettingsConfig`
      * @throws ClassCastException if the instance is not `BigqueryInputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BigqueryInputSettingsConfig getBigqueryInputSettingsConfig() throws ClassCastException {
         return (BigqueryInputSettingsConfig)super.getActualInstance();
     }
@@ -2890,6 +2904,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BitwardenEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `BitwardenEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BitwardenEventsSettingsConfig getBitwardenEventsSettingsConfig() throws ClassCastException {
         return (BitwardenEventsSettingsConfig)super.getActualInstance();
     }
@@ -2901,6 +2916,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BoxEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `BoxEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BoxEventsSettingsConfig getBoxEventsSettingsConfig() throws ClassCastException {
         return (BoxEventsSettingsConfig)super.getActualInstance();
     }
@@ -2912,6 +2928,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BrinqaAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `BrinqaAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BrinqaAuditLogsSettingsConfig getBrinqaAuditLogsSettingsConfig() throws ClassCastException {
         return (BrinqaAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -2923,6 +2940,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BugsnagOrgEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `BugsnagOrgEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BugsnagOrgEventsSettingsConfig getBugsnagOrgEventsSettingsConfig() throws ClassCastException {
         return (BugsnagOrgEventsSettingsConfig)super.getActualInstance();
     }
@@ -2934,6 +2952,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BuildkiteAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `BuildkiteAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BuildkiteAuditLogsSettingsConfig getBuildkiteAuditLogsSettingsConfig() throws ClassCastException {
         return (BuildkiteAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -2945,6 +2964,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `BuildkiteGraphqlInputSettingsConfig`
      * @throws ClassCastException if the instance is not `BuildkiteGraphqlInputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BuildkiteGraphqlInputSettingsConfig getBuildkiteGraphqlInputSettingsConfig() throws ClassCastException {
         return (BuildkiteGraphqlInputSettingsConfig)super.getActualInstance();
     }
@@ -2956,6 +2976,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CisaUserSettingsConfig`
      * @throws ClassCastException if the instance is not `CisaUserSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CisaUserSettingsConfig getCisaUserSettingsConfig() throws ClassCastException {
         return (CisaUserSettingsConfig)super.getActualInstance();
     }
@@ -2967,6 +2988,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudConfigurationFindingsSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudConfigurationFindingsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudConfigurationFindingsSettingsConfig getCloudConfigurationFindingsSettingsConfig() throws ClassCastException {
         return (CloudConfigurationFindingsSettingsConfig)super.getActualInstance();
     }
@@ -2978,6 +3000,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudLogsSettingsConfig getCloudLogsSettingsConfig() throws ClassCastException {
         return (CloudLogsSettingsConfig)super.getActualInstance();
     }
@@ -2989,6 +3012,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudResourceInventorySettingsConfig`
      * @throws ClassCastException if the instance is not `CloudResourceInventorySettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudResourceInventorySettingsConfig getCloudResourceInventorySettingsConfig() throws ClassCastException {
         return (CloudResourceInventorySettingsConfig)super.getActualInstance();
     }
@@ -3000,6 +3024,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudResourceInventoryReportsSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudResourceInventoryReportsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudResourceInventoryReportsSettingsConfig getCloudResourceInventoryReportsSettingsConfig() throws ClassCastException {
         return (CloudResourceInventoryReportsSettingsConfig)super.getActualInstance();
     }
@@ -3011,6 +3036,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudflareDdosAttackAnalyticsSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudflareDdosAttackAnalyticsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareDdosAttackAnalyticsSettingsConfig getCloudflareDdosAttackAnalyticsSettingsConfig() throws ClassCastException {
         return (CloudflareDdosAttackAnalyticsSettingsConfig)super.getActualInstance();
     }
@@ -3022,6 +3048,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudflareFirewallEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudflareFirewallEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareFirewallEventsSettingsConfig getCloudflareFirewallEventsSettingsConfig() throws ClassCastException {
         return (CloudflareFirewallEventsSettingsConfig)super.getActualInstance();
     }
@@ -3033,6 +3060,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudflareHttpRequestsSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudflareHttpRequestsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareHttpRequestsSettingsConfig getCloudflareHttpRequestsSettingsConfig() throws ClassCastException {
         return (CloudflareHttpRequestsSettingsConfig)super.getActualInstance();
     }
@@ -3044,6 +3072,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudflareUrlScannerSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudflareUrlScannerSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareUrlScannerSettingsConfig getCloudflareUrlScannerSettingsConfig() throws ClassCastException {
         return (CloudflareUrlScannerSettingsConfig)super.getActualInstance();
     }
@@ -3055,6 +3084,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudflareZeroTrustAccessRequestsSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudflareZeroTrustAccessRequestsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudflareZeroTrustAccessRequestsSettingsConfig getCloudflareZeroTrustAccessRequestsSettingsConfig() throws ClassCastException {
         return (CloudflareZeroTrustAccessRequestsSettingsConfig)super.getActualInstance();
     }
@@ -3066,6 +3096,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CloudtrailSettingsConfig`
      * @throws ClassCastException if the instance is not `CloudtrailSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CloudtrailSettingsConfig getCloudtrailSettingsConfig() throws ClassCastException {
         return (CloudtrailSettingsConfig)super.getActualInstance();
     }
@@ -3077,6 +3108,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `ClumioAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `ClumioAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ClumioAuditLogsSettingsConfig getClumioAuditLogsSettingsConfig() throws ClassCastException {
         return (ClumioAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3088,6 +3120,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `ClumioConsolidatedAlertsSettingsConfig`
      * @throws ClassCastException if the instance is not `ClumioConsolidatedAlertsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ClumioConsolidatedAlertsSettingsConfig getClumioConsolidatedAlertsSettingsConfig() throws ClassCastException {
         return (ClumioConsolidatedAlertsSettingsConfig)super.getActualInstance();
     }
@@ -3099,6 +3132,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CodaAuditEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `CodaAuditEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CodaAuditEventsSettingsConfig getCodaAuditEventsSettingsConfig() throws ClassCastException {
         return (CodaAuditEventsSettingsConfig)super.getActualInstance();
     }
@@ -3110,6 +3144,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CortexXsoarManagementLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `CortexXsoarManagementLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CortexXsoarManagementLogsSettingsConfig getCortexXsoarManagementLogsSettingsConfig() throws ClassCastException {
         return (CortexXsoarManagementLogsSettingsConfig)super.getActualInstance();
     }
@@ -3121,6 +3156,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `CustomerEventDataSettingsConfig`
      * @throws ClassCastException if the instance is not `CustomerEventDataSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CustomerEventDataSettingsConfig getCustomerEventDataSettingsConfig() throws ClassCastException {
         return (CustomerEventDataSettingsConfig)super.getActualInstance();
     }
@@ -3132,6 +3168,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `DefenderForEndpointAlertsSettingsConfig`
      * @throws ClassCastException if the instance is not `DefenderForEndpointAlertsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DefenderForEndpointAlertsSettingsConfig getDefenderForEndpointAlertsSettingsConfig() throws ClassCastException {
         return (DefenderForEndpointAlertsSettingsConfig)super.getActualInstance();
     }
@@ -3143,6 +3180,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `DuoSecurityActivityLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `DuoSecurityActivityLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DuoSecurityActivityLogsSettingsConfig getDuoSecurityActivityLogsSettingsConfig() throws ClassCastException {
         return (DuoSecurityActivityLogsSettingsConfig)super.getActualInstance();
     }
@@ -3154,6 +3192,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `EndorLabsAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `EndorLabsAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public EndorLabsAuditLogsSettingsConfig getEndorLabsAuditLogsSettingsConfig() throws ClassCastException {
         return (EndorLabsAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3165,6 +3204,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `EntraIdSettingsConfig`
      * @throws ClassCastException if the instance is not `EntraIdSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public EntraIdSettingsConfig getEntraIdSettingsConfig() throws ClassCastException {
         return (EntraIdSettingsConfig)super.getActualInstance();
     }
@@ -3176,6 +3216,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `EventSettingsConfig`
      * @throws ClassCastException if the instance is not `EventSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public EventSettingsConfig getEventSettingsConfig() throws ClassCastException {
         return (EventSettingsConfig)super.getActualInstance();
     }
@@ -3187,6 +3228,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `FullScansSettingsConfig`
      * @throws ClassCastException if the instance is not `FullScansSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public FullScansSettingsConfig getFullScansSettingsConfig() throws ClassCastException {
         return (FullScansSettingsConfig)super.getActualInstance();
     }
@@ -3198,6 +3240,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `GitlabIssuesSettingsConfig`
      * @throws ClassCastException if the instance is not `GitlabIssuesSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GitlabIssuesSettingsConfig getGitlabIssuesSettingsConfig() throws ClassCastException {
         return (GitlabIssuesSettingsConfig)super.getActualInstance();
     }
@@ -3209,6 +3252,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `GoogleCloudStorageSettingsConfig`
      * @throws ClassCastException if the instance is not `GoogleCloudStorageSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GoogleCloudStorageSettingsConfig getGoogleCloudStorageSettingsConfig() throws ClassCastException {
         return (GoogleCloudStorageSettingsConfig)super.getActualInstance();
     }
@@ -3220,6 +3264,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `GoogleWorkspaceSettingsConfig`
      * @throws ClassCastException if the instance is not `GoogleWorkspaceSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GoogleWorkspaceSettingsConfig getGoogleWorkspaceSettingsConfig() throws ClassCastException {
         return (GoogleWorkspaceSettingsConfig)super.getActualInstance();
     }
@@ -3231,6 +3276,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `GreenhouseAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `GreenhouseAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GreenhouseAuditLogsSettingsConfig getGreenhouseAuditLogsSettingsConfig() throws ClassCastException {
         return (GreenhouseAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3242,6 +3288,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `IndividualAlertsSettingsConfig`
      * @throws ClassCastException if the instance is not `IndividualAlertsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public IndividualAlertsSettingsConfig getIndividualAlertsSettingsConfig() throws ClassCastException {
         return (IndividualAlertsSettingsConfig)super.getActualInstance();
     }
@@ -3253,6 +3300,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `InspectorSettingsConfig`
      * @throws ClassCastException if the instance is not `InspectorSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public InspectorSettingsConfig getInspectorSettingsConfig() throws ClassCastException {
         return (InspectorSettingsConfig)super.getActualInstance();
     }
@@ -3264,6 +3312,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `IssuesSettingsConfig`
      * @throws ClassCastException if the instance is not `IssuesSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public IssuesSettingsConfig getIssuesSettingsConfig() throws ClassCastException {
         return (IssuesSettingsConfig)super.getActualInstance();
     }
@@ -3275,6 +3324,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `IssuesReportSettingsConfig`
      * @throws ClassCastException if the instance is not `IssuesReportSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public IssuesReportSettingsConfig getIssuesReportSettingsConfig() throws ClassCastException {
         return (IssuesReportSettingsConfig)super.getActualInstance();
     }
@@ -3286,6 +3336,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `KoiAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `KoiAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public KoiAuditLogsSettingsConfig getKoiAuditLogsSettingsConfig() throws ClassCastException {
         return (KoiAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3297,6 +3348,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `LogAnalyticsQuerySettingsConfig`
      * @throws ClassCastException if the instance is not `LogAnalyticsQuerySettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public LogAnalyticsQuerySettingsConfig getLogAnalyticsQuerySettingsConfig() throws ClassCastException {
         return (LogAnalyticsQuerySettingsConfig)super.getActualInstance();
     }
@@ -3308,6 +3360,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `MerakiConfigLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `MerakiConfigLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MerakiConfigLogsSettingsConfig getMerakiConfigLogsSettingsConfig() throws ClassCastException {
         return (MerakiConfigLogsSettingsConfig)super.getActualInstance();
     }
@@ -3319,17 +3372,19 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `Microsoft365GenericSettingsConfig`
      * @throws ClassCastException if the instance is not `Microsoft365GenericSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public Microsoft365GenericSettingsConfig getMicrosoft365GenericSettingsConfig() throws ClassCastException {
         return (Microsoft365GenericSettingsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
     }
@@ -3341,6 +3396,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `MonadLogSettingsConfig`
      * @throws ClassCastException if the instance is not `MonadLogSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MonadLogSettingsConfig getMonadLogSettingsConfig() throws ClassCastException {
         return (MonadLogSettingsConfig)super.getActualInstance();
     }
@@ -3352,6 +3408,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `ObjectStorageInputSettingsConfig`
      * @throws ClassCastException if the instance is not `ObjectStorageInputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ObjectStorageInputSettingsConfig getObjectStorageInputSettingsConfig() throws ClassCastException {
         return (ObjectStorageInputSettingsConfig)super.getActualInstance();
     }
@@ -3363,6 +3420,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OfflineenrollmentlogsSettingsConfig`
      * @throws ClassCastException if the instance is not `OfflineenrollmentlogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OfflineenrollmentlogsSettingsConfig getOfflineenrollmentlogsSettingsConfig() throws ClassCastException {
         return (OfflineenrollmentlogsSettingsConfig)super.getActualInstance();
     }
@@ -3374,6 +3432,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OneloginEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `OneloginEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OneloginEventsSettingsConfig getOneloginEventsSettingsConfig() throws ClassCastException {
         return (OneloginEventsSettingsConfig)super.getActualInstance();
     }
@@ -3385,6 +3444,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OpalEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `OpalEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OpalEventsSettingsConfig getOpalEventsSettingsConfig() throws ClassCastException {
         return (OpalEventsSettingsConfig)super.getActualInstance();
     }
@@ -3396,6 +3456,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OpenaiAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `OpenaiAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OpenaiAuditLogsSettingsConfig getOpenaiAuditLogsSettingsConfig() throws ClassCastException {
         return (OpenaiAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3407,6 +3468,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OperationLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `OperationLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OperationLogsSettingsConfig getOperationLogsSettingsConfig() throws ClassCastException {
         return (OperationLogsSettingsConfig)super.getActualInstance();
     }
@@ -3418,6 +3480,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OracleSettingsConfig`
      * @throws ClassCastException if the instance is not `OracleSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OracleSettingsConfig getOracleSettingsConfig() throws ClassCastException {
         return (OracleSettingsConfig)super.getActualInstance();
     }
@@ -3429,6 +3492,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OrgAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `OrgAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OrgAuditLogsSettingsConfig getOrgAuditLogsSettingsConfig() throws ClassCastException {
         return (OrgAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3440,6 +3504,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `OwnbackupAccountEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `OwnbackupAccountEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OwnbackupAccountEventsSettingsConfig getOwnbackupAccountEventsSettingsConfig() throws ClassCastException {
         return (OwnbackupAccountEventsSettingsConfig)super.getActualInstance();
     }
@@ -3451,6 +3516,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `PagerdutyAuditRecordsSettingsConfig`
      * @throws ClassCastException if the instance is not `PagerdutyAuditRecordsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PagerdutyAuditRecordsSettingsConfig getPagerdutyAuditRecordsSettingsConfig() throws ClassCastException {
         return (PagerdutyAuditRecordsSettingsConfig)super.getActualInstance();
     }
@@ -3462,6 +3528,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `PaloAltoDataSecurityAlertsSettingsConfig`
      * @throws ClassCastException if the instance is not `PaloAltoDataSecurityAlertsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PaloAltoDataSecurityAlertsSettingsConfig getPaloAltoDataSecurityAlertsSettingsConfig() throws ClassCastException {
         return (PaloAltoDataSecurityAlertsSettingsConfig)super.getActualInstance();
     }
@@ -3473,6 +3540,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `PolymerSettingsConfig`
      * @throws ClassCastException if the instance is not `PolymerSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PolymerSettingsConfig getPolymerSettingsConfig() throws ClassCastException {
         return (PolymerSettingsConfig)super.getActualInstance();
     }
@@ -3484,6 +3552,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `PostmanAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `PostmanAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PostmanAuditLogsSettingsConfig getPostmanAuditLogsSettingsConfig() throws ClassCastException {
         return (PostmanAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3495,6 +3564,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `PubsubSettingsConfig`
      * @throws ClassCastException if the instance is not `PubsubSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PubsubSettingsConfig getPubsubSettingsConfig() throws ClassCastException {
         return (PubsubSettingsConfig)super.getActualInstance();
     }
@@ -3506,6 +3576,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `RootlyAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `RootlyAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public RootlyAuditLogsSettingsConfig getRootlyAuditLogsSettingsConfig() throws ClassCastException {
         return (RootlyAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3517,6 +3588,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SemgrepCodeFindingsSettingsConfig`
      * @throws ClassCastException if the instance is not `SemgrepCodeFindingsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SemgrepCodeFindingsSettingsConfig getSemgrepCodeFindingsSettingsConfig() throws ClassCastException {
         return (SemgrepCodeFindingsSettingsConfig)super.getActualInstance();
     }
@@ -3528,6 +3600,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SemgrepSupplyChainFindingsSettingsConfig`
      * @throws ClassCastException if the instance is not `SemgrepSupplyChainFindingsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SemgrepSupplyChainFindingsSettingsConfig getSemgrepSupplyChainFindingsSettingsConfig() throws ClassCastException {
         return (SemgrepSupplyChainFindingsSettingsConfig)super.getActualInstance();
     }
@@ -3539,6 +3612,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SentryOrgAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `SentryOrgAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SentryOrgAuditLogsSettingsConfig getSentryOrgAuditLogsSettingsConfig() throws ClassCastException {
         return (SentryOrgAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3550,6 +3624,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SlackEnterpriseAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `SlackEnterpriseAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SlackEnterpriseAuditLogsSettingsConfig getSlackEnterpriseAuditLogsSettingsConfig() throws ClassCastException {
         return (SlackEnterpriseAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3561,6 +3636,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SnowflakeInputSettingsConfig`
      * @throws ClassCastException if the instance is not `SnowflakeInputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnowflakeInputSettingsConfig getSnowflakeInputSettingsConfig() throws ClassCastException {
         return (SnowflakeInputSettingsConfig)super.getActualInstance();
     }
@@ -3572,6 +3648,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SnykIssuesSettingsConfig`
      * @throws ClassCastException if the instance is not `SnykIssuesSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnykIssuesSettingsConfig getSnykIssuesSettingsConfig() throws ClassCastException {
         return (SnykIssuesSettingsConfig)super.getActualInstance();
     }
@@ -3583,6 +3660,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SnykTargetsSettingsConfig`
      * @throws ClassCastException if the instance is not `SnykTargetsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnykTargetsSettingsConfig getSnykTargetsSettingsConfig() throws ClassCastException {
         return (SnykTargetsSettingsConfig)super.getActualInstance();
     }
@@ -3594,6 +3672,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SyntheticDataSettingsConfig`
      * @throws ClassCastException if the instance is not `SyntheticDataSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SyntheticDataSettingsConfig getSyntheticDataSettingsConfig() throws ClassCastException {
         return (SyntheticDataSettingsConfig)super.getActualInstance();
     }
@@ -3605,6 +3684,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `SyntheticDataCustomSettingsConfig`
      * @throws ClassCastException if the instance is not `SyntheticDataCustomSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SyntheticDataCustomSettingsConfig getSyntheticDataCustomSettingsConfig() throws ClassCastException {
         return (SyntheticDataCustomSettingsConfig)super.getActualInstance();
     }
@@ -3616,6 +3696,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TaniumGraphqlInputSettingsConfig`
      * @throws ClassCastException if the instance is not `TaniumGraphqlInputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TaniumGraphqlInputSettingsConfig getTaniumGraphqlInputSettingsConfig() throws ClassCastException {
         return (TaniumGraphqlInputSettingsConfig)super.getActualInstance();
     }
@@ -3627,6 +3708,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TeamAccessLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `TeamAccessLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TeamAccessLogsSettingsConfig getTeamAccessLogsSettingsConfig() throws ClassCastException {
         return (TeamAccessLogsSettingsConfig)super.getActualInstance();
     }
@@ -3638,6 +3720,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TeamIntegrationLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `TeamIntegrationLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TeamIntegrationLogsSettingsConfig getTeamIntegrationLogsSettingsConfig() throws ClassCastException {
         return (TeamIntegrationLogsSettingsConfig)super.getActualInstance();
     }
@@ -3649,6 +3732,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TelephonyLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `TelephonyLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TelephonyLogsSettingsConfig getTelephonyLogsSettingsConfig() throws ClassCastException {
         return (TelephonyLogsSettingsConfig)super.getActualInstance();
     }
@@ -3660,6 +3744,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TenableAssetsSettingsConfig`
      * @throws ClassCastException if the instance is not `TenableAssetsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableAssetsSettingsConfig getTenableAssetsSettingsConfig() throws ClassCastException {
         return (TenableAssetsSettingsConfig)super.getActualInstance();
     }
@@ -3671,6 +3756,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TenableAssetsCronSettingsConfig`
      * @throws ClassCastException if the instance is not `TenableAssetsCronSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableAssetsCronSettingsConfig getTenableAssetsCronSettingsConfig() throws ClassCastException {
         return (TenableAssetsCronSettingsConfig)super.getActualInstance();
     }
@@ -3682,6 +3768,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TenableVulnerabilitiesSettingsConfig`
      * @throws ClassCastException if the instance is not `TenableVulnerabilitiesSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableVulnerabilitiesSettingsConfig getTenableVulnerabilitiesSettingsConfig() throws ClassCastException {
         return (TenableVulnerabilitiesSettingsConfig)super.getActualInstance();
     }
@@ -3693,6 +3780,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TenableVulnerabilitiesCronSettingsConfig`
      * @throws ClassCastException if the instance is not `TenableVulnerabilitiesCronSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TenableVulnerabilitiesCronSettingsConfig getTenableVulnerabilitiesCronSettingsConfig() throws ClassCastException {
         return (TenableVulnerabilitiesCronSettingsConfig)super.getActualInstance();
     }
@@ -3704,6 +3792,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TinesAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `TinesAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TinesAuditLogsSettingsConfig getTinesAuditLogsSettingsConfig() throws ClassCastException {
         return (TinesAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3715,6 +3804,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TinesEventsLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `TinesEventsLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TinesEventsLogsSettingsConfig getTinesEventsLogsSettingsConfig() throws ClassCastException {
         return (TinesEventsLogsSettingsConfig)super.getActualInstance();
     }
@@ -3726,6 +3816,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TwilioEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `TwilioEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TwilioEventsSettingsConfig getTwilioEventsSettingsConfig() throws ClassCastException {
         return (TwilioEventsSettingsConfig)super.getActualInstance();
     }
@@ -3737,6 +3828,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `TwilioSendgridEmailActivitySettingsConfig`
      * @throws ClassCastException if the instance is not `TwilioSendgridEmailActivitySettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public TwilioSendgridEmailActivitySettingsConfig getTwilioSendgridEmailActivitySettingsConfig() throws ClassCastException {
         return (TwilioSendgridEmailActivitySettingsConfig)super.getActualInstance();
     }
@@ -3748,6 +3840,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `UniversalSettingsConfig`
      * @throws ClassCastException if the instance is not `UniversalSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public UniversalSettingsConfig getUniversalSettingsConfig() throws ClassCastException {
         return (UniversalSettingsConfig)super.getActualInstance();
     }
@@ -3759,6 +3852,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `VercelUserEventsSettingsConfig`
      * @throws ClassCastException if the instance is not `VercelUserEventsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VercelUserEventsSettingsConfig getVercelUserEventsSettingsConfig() throws ClassCastException {
         return (VercelUserEventsSettingsConfig)super.getActualInstance();
     }
@@ -3770,6 +3864,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `VoltioAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `VoltioAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VoltioAuditLogsSettingsConfig getVoltioAuditLogsSettingsConfig() throws ClassCastException {
         return (VoltioAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3781,6 +3876,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `VulnerabilityFindingsSettingsConfig`
      * @throws ClassCastException if the instance is not `VulnerabilityFindingsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VulnerabilityFindingsSettingsConfig getVulnerabilityFindingsSettingsConfig() throws ClassCastException {
         return (VulnerabilityFindingsSettingsConfig)super.getActualInstance();
     }
@@ -3792,6 +3888,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `VulnerabilityFindingsReportSettingsConfig`
      * @throws ClassCastException if the instance is not `VulnerabilityFindingsReportSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public VulnerabilityFindingsReportSettingsConfig getVulnerabilityFindingsReportSettingsConfig() throws ClassCastException {
         return (VulnerabilityFindingsReportSettingsConfig)super.getActualInstance();
     }
@@ -3803,6 +3900,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `WizAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `WizAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public WizAuditLogsSettingsConfig getWizAuditLogsSettingsConfig() throws ClassCastException {
         return (WizAuditLogsSettingsConfig)super.getActualInstance();
     }
@@ -3814,6 +3912,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      * @return The actual instance of `ZendeskAuditLogsSettingsConfig`
      * @throws ClassCastException if the instance is not `ZendeskAuditLogsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ZendeskAuditLogsSettingsConfig getZendeskAuditLogsSettingsConfig() throws ClassCastException {
         return (ZendeskAuditLogsSettingsConfig)super.getActualInstance();
     }

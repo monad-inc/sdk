@@ -82,7 +82,7 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
@@ -120,7 +120,7 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -209,7 +209,7 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
+            .replace('{billing_account_id}', encodeURIComponent(String(billingAccountId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);

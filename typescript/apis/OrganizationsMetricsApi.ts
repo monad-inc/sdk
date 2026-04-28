@@ -44,7 +44,7 @@ export class OrganizationsMetricsApiRequestFactory extends BaseAPIRequestFactory
 
         // Path Params
         const localVarPath = '/v2/{organization_id}/metrics'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

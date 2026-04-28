@@ -98,7 +98,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorOutputConfigSettings.class.getName());
 
@@ -731,7 +731,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -882,9 +882,9 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
 
     /**
      * Get the actual instance, which can be the following:
-     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
-     * @return The actual instance (AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
+     * @return The actual instance (AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -899,6 +899,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `AbsSettingsConfig`
      * @throws ClassCastException if the instance is not `AbsSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AbsSettingsConfig getAbsSettingsConfig() throws ClassCastException {
         return (AbsSettingsConfig)super.getActualInstance();
     }
@@ -910,6 +911,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `AwssqsoutputSettingsConfig`
      * @throws ClassCastException if the instance is not `AwssqsoutputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AwssqsoutputSettingsConfig getAwssqsoutputSettingsConfig() throws ClassCastException {
         return (AwssqsoutputSettingsConfig)super.getActualInstance();
     }
@@ -921,6 +923,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `AxiomSettingsConfig`
      * @throws ClassCastException if the instance is not `AxiomSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AxiomSettingsConfig getAxiomSettingsConfig() throws ClassCastException {
         return (AxiomSettingsConfig)super.getActualInstance();
     }
@@ -932,6 +935,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `BackblazeSettingsConfig`
      * @throws ClassCastException if the instance is not `BackblazeSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BackblazeSettingsConfig getBackblazeSettingsConfig() throws ClassCastException {
         return (BackblazeSettingsConfig)super.getActualInstance();
     }
@@ -943,6 +947,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `BigquerySettingsConfig`
      * @throws ClassCastException if the instance is not `BigquerySettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public BigquerySettingsConfig getBigquerySettingsConfig() throws ClassCastException {
         return (BigquerySettingsConfig)super.getActualInstance();
     }
@@ -954,6 +959,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `CriblHttpSettingsConfig`
      * @throws ClassCastException if the instance is not `CriblHttpSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CriblHttpSettingsConfig getCriblHttpSettingsConfig() throws ClassCastException {
         return (CriblHttpSettingsConfig)super.getActualInstance();
     }
@@ -965,6 +971,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `DatabricksSettingsConfig`
      * @throws ClassCastException if the instance is not `DatabricksSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DatabricksSettingsConfig getDatabricksSettingsConfig() throws ClassCastException {
         return (DatabricksSettingsConfig)super.getActualInstance();
     }
@@ -976,6 +983,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `DatadogSettingsConfig`
      * @throws ClassCastException if the instance is not `DatadogSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DatadogSettingsConfig getDatadogSettingsConfig() throws ClassCastException {
         return (DatadogSettingsConfig)super.getActualInstance();
     }
@@ -987,6 +995,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `ElasticsearchSettingsConfig`
      * @throws ClassCastException if the instance is not `ElasticsearchSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ElasticsearchSettingsConfig getElasticsearchSettingsConfig() throws ClassCastException {
         return (ElasticsearchSettingsConfig)super.getActualInstance();
     }
@@ -998,6 +1007,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `GoogleCloudStorageOutputSettingsConfig`
      * @throws ClassCastException if the instance is not `GoogleCloudStorageOutputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public GoogleCloudStorageOutputSettingsConfig getGoogleCloudStorageOutputSettingsConfig() throws ClassCastException {
         return (GoogleCloudStorageOutputSettingsConfig)super.getActualInstance();
     }
@@ -1009,6 +1019,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `HttpSettingsConfig`
      * @throws ClassCastException if the instance is not `HttpSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public HttpSettingsConfig getHttpSettingsConfig() throws ClassCastException {
         return (HttpSettingsConfig)super.getActualInstance();
     }
@@ -1020,6 +1031,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `KafkaSettingsConfig`
      * @throws ClassCastException if the instance is not `KafkaSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public KafkaSettingsConfig getKafkaSettingsConfig() throws ClassCastException {
         return (KafkaSettingsConfig)super.getActualInstance();
     }
@@ -1031,17 +1043,19 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `KvLookupOutputSettingsConfig`
      * @throws ClassCastException if the instance is not `KvLookupOutputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public KvLookupOutputSettingsConfig getKvLookupOutputSettingsConfig() throws ClassCastException {
         return (KvLookupOutputSettingsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
     }
@@ -1053,6 +1067,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `NextGenSiemSettingsConfig`
      * @throws ClassCastException if the instance is not `NextGenSiemSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public NextGenSiemSettingsConfig getNextGenSiemSettingsConfig() throws ClassCastException {
         return (NextGenSiemSettingsConfig)super.getActualInstance();
     }
@@ -1064,6 +1079,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `ObjectStorageSettingsConfig`
      * @throws ClassCastException if the instance is not `ObjectStorageSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ObjectStorageSettingsConfig getObjectStorageSettingsConfig() throws ClassCastException {
         return (ObjectStorageSettingsConfig)super.getActualInstance();
     }
@@ -1075,6 +1091,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `OpensearchSettingsConfig`
      * @throws ClassCastException if the instance is not `OpensearchSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public OpensearchSettingsConfig getOpensearchSettingsConfig() throws ClassCastException {
         return (OpensearchSettingsConfig)super.getActualInstance();
     }
@@ -1086,6 +1103,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `PagerdutySettingsConfig`
      * @throws ClassCastException if the instance is not `PagerdutySettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PagerdutySettingsConfig getPagerdutySettingsConfig() throws ClassCastException {
         return (PagerdutySettingsConfig)super.getActualInstance();
     }
@@ -1097,6 +1115,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `PantherSettingsConfig`
      * @throws ClassCastException if the instance is not `PantherSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PantherSettingsConfig getPantherSettingsConfig() throws ClassCastException {
         return (PantherSettingsConfig)super.getActualInstance();
     }
@@ -1108,6 +1127,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `PostgresqlSettingsConfig`
      * @throws ClassCastException if the instance is not `PostgresqlSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PostgresqlSettingsConfig getPostgresqlSettingsConfig() throws ClassCastException {
         return (PostgresqlSettingsConfig)super.getActualInstance();
     }
@@ -1119,6 +1139,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `PrometheusSettingsConfig`
      * @throws ClassCastException if the instance is not `PrometheusSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public PrometheusSettingsConfig getPrometheusSettingsConfig() throws ClassCastException {
         return (PrometheusSettingsConfig)super.getActualInstance();
     }
@@ -1130,6 +1151,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `S3SettingsConfig`
      * @throws ClassCastException if the instance is not `S3SettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public S3SettingsConfig getS3SettingsConfig() throws ClassCastException {
         return (S3SettingsConfig)super.getActualInstance();
     }
@@ -1141,6 +1163,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `SecurityLakeSettingsConfig`
      * @throws ClassCastException if the instance is not `SecurityLakeSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SecurityLakeSettingsConfig getSecurityLakeSettingsConfig() throws ClassCastException {
         return (SecurityLakeSettingsConfig)super.getActualInstance();
     }
@@ -1152,6 +1175,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `SentinelSettingsConfig`
      * @throws ClassCastException if the instance is not `SentinelSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SentinelSettingsConfig getSentinelSettingsConfig() throws ClassCastException {
         return (SentinelSettingsConfig)super.getActualInstance();
     }
@@ -1163,6 +1187,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `SlackSettingsConfig`
      * @throws ClassCastException if the instance is not `SlackSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SlackSettingsConfig getSlackSettingsConfig() throws ClassCastException {
         return (SlackSettingsConfig)super.getActualInstance();
     }
@@ -1174,6 +1199,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `SnowflakeOutputSettingsConfig`
      * @throws ClassCastException if the instance is not `SnowflakeOutputSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SnowflakeOutputSettingsConfig getSnowflakeOutputSettingsConfig() throws ClassCastException {
         return (SnowflakeOutputSettingsConfig)super.getActualInstance();
     }
@@ -1185,6 +1211,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `SplunkSettingsConfig`
      * @throws ClassCastException if the instance is not `SplunkSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SplunkSettingsConfig getSplunkSettingsConfig() throws ClassCastException {
         return (SplunkSettingsConfig)super.getActualInstance();
     }
@@ -1196,6 +1223,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      * @return The actual instance of `SumologicSettingsConfig`
      * @throws ClassCastException if the instance is not `SumologicSettingsConfig`
      */
+    @SuppressWarnings("unchecked")
     public SumologicSettingsConfig getSumologicSettingsConfig() throws ClassCastException {
         return (SumologicSettingsConfig)super.getActualInstance();
     }

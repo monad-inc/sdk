@@ -81,7 +81,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesTransformOperationArguments.class.getName());
 
@@ -574,7 +574,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -690,9 +690,9 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
 
     /**
      * Get the actual instance, which can be the following:
-     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
-     * @return The actual instance (AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig)
+     * @return The actual instance (AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -707,6 +707,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `AddArgumentsConfig`
      * @throws ClassCastException if the instance is not `AddArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AddArgumentsConfig getAddArgumentsConfig() throws ClassCastException {
         return (AddArgumentsConfig)super.getActualInstance();
     }
@@ -718,6 +719,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `AddIdArgumentsConfig`
      * @throws ClassCastException if the instance is not `AddIdArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public AddIdArgumentsConfig getAddIdArgumentsConfig() throws ClassCastException {
         return (AddIdArgumentsConfig)super.getActualInstance();
     }
@@ -729,6 +731,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `ConvertTimestampArgumentsConfig`
      * @throws ClassCastException if the instance is not `ConvertTimestampArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public ConvertTimestampArgumentsConfig getConvertTimestampArgumentsConfig() throws ClassCastException {
         return (ConvertTimestampArgumentsConfig)super.getActualInstance();
     }
@@ -740,6 +743,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `CreateKeyValueIfKeyValueArgumentsConfig`
      * @throws ClassCastException if the instance is not `CreateKeyValueIfKeyValueArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public CreateKeyValueIfKeyValueArgumentsConfig getCreateKeyValueIfKeyValueArgumentsConfig() throws ClassCastException {
         return (CreateKeyValueIfKeyValueArgumentsConfig)super.getActualInstance();
     }
@@ -751,6 +755,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `DropKeyArgumentsConfig`
      * @throws ClassCastException if the instance is not `DropKeyArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DropKeyArgumentsConfig getDropKeyArgumentsConfig() throws ClassCastException {
         return (DropKeyArgumentsConfig)super.getActualInstance();
     }
@@ -762,6 +767,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `DropKeyWhereValueEqArgumentsConfig`
      * @throws ClassCastException if the instance is not `DropKeyWhereValueEqArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DropKeyWhereValueEqArgumentsConfig getDropKeyWhereValueEqArgumentsConfig() throws ClassCastException {
         return (DropKeyWhereValueEqArgumentsConfig)super.getActualInstance();
     }
@@ -773,6 +779,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `DropRecordWhereValueEqArgumentsConfig`
      * @throws ClassCastException if the instance is not `DropRecordWhereValueEqArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DropRecordWhereValueEqArgumentsConfig getDropRecordWhereValueEqArgumentsConfig() throws ClassCastException {
         return (DropRecordWhereValueEqArgumentsConfig)super.getActualInstance();
     }
@@ -784,6 +791,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `DuplicateKeyValueToKeyArgumentsConfig`
      * @throws ClassCastException if the instance is not `DuplicateKeyValueToKeyArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public DuplicateKeyValueToKeyArgumentsConfig getDuplicateKeyValueToKeyArgumentsConfig() throws ClassCastException {
         return (DuplicateKeyValueToKeyArgumentsConfig)super.getActualInstance();
     }
@@ -795,6 +803,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `EncryptArgumentsConfig`
      * @throws ClassCastException if the instance is not `EncryptArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public EncryptArgumentsConfig getEncryptArgumentsConfig() throws ClassCastException {
         return (EncryptArgumentsConfig)super.getActualInstance();
     }
@@ -806,6 +815,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `FlattenArgumentsConfig`
      * @throws ClassCastException if the instance is not `FlattenArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public FlattenArgumentsConfig getFlattenArgumentsConfig() throws ClassCastException {
         return (FlattenArgumentsConfig)super.getActualInstance();
     }
@@ -817,6 +827,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `FlattenallArgumentsConfig`
      * @throws ClassCastException if the instance is not `FlattenallArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public FlattenallArgumentsConfig getFlattenallArgumentsConfig() throws ClassCastException {
         return (FlattenallArgumentsConfig)super.getActualInstance();
     }
@@ -828,6 +839,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `JqArgumentsConfig`
      * @throws ClassCastException if the instance is not `JqArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public JqArgumentsConfig getJqArgumentsConfig() throws ClassCastException {
         return (JqArgumentsConfig)super.getActualInstance();
     }
@@ -839,6 +851,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `MaskArgumentsConfig`
      * @throws ClassCastException if the instance is not `MaskArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MaskArgumentsConfig getMaskArgumentsConfig() throws ClassCastException {
         return (MaskArgumentsConfig)super.getActualInstance();
     }
@@ -850,17 +863,19 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `MathMultiplyWithValueArgumentsConfig`
      * @throws ClassCastException if the instance is not `MathMultiplyWithValueArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MathMultiplyWithValueArgumentsConfig getMathMultiplyWithValueArgumentsConfig() throws ClassCastException {
         return (MathMultiplyWithValueArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
     }
@@ -872,6 +887,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `MutateTypeArgumentsConfig`
      * @throws ClassCastException if the instance is not `MutateTypeArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MutateTypeArgumentsConfig getMutateTypeArgumentsConfig() throws ClassCastException {
         return (MutateTypeArgumentsConfig)super.getActualInstance();
     }
@@ -883,6 +899,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `MutateValueWhereKeyEqArgumentsConfig`
      * @throws ClassCastException if the instance is not `MutateValueWhereKeyEqArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MutateValueWhereKeyEqArgumentsConfig getMutateValueWhereKeyEqArgumentsConfig() throws ClassCastException {
         return (MutateValueWhereKeyEqArgumentsConfig)super.getActualInstance();
     }
@@ -894,6 +911,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `MutateValueWhereKeyEqAndValueEqArgumentsConfig`
      * @throws ClassCastException if the instance is not `MutateValueWhereKeyEqAndValueEqArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public MutateValueWhereKeyEqAndValueEqArgumentsConfig getMutateValueWhereKeyEqAndValueEqArgumentsConfig() throws ClassCastException {
         return (MutateValueWhereKeyEqAndValueEqArgumentsConfig)super.getActualInstance();
     }
@@ -905,6 +923,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `RenameKeyArgumentsConfig`
      * @throws ClassCastException if the instance is not `RenameKeyArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public RenameKeyArgumentsConfig getRenameKeyArgumentsConfig() throws ClassCastException {
         return (RenameKeyArgumentsConfig)super.getActualInstance();
     }
@@ -916,6 +935,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `RenameKeyWhereValueEqArgumentsConfig`
      * @throws ClassCastException if the instance is not `RenameKeyWhereValueEqArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public RenameKeyWhereValueEqArgumentsConfig getRenameKeyWhereValueEqArgumentsConfig() throws ClassCastException {
         return (RenameKeyWhereValueEqArgumentsConfig)super.getActualInstance();
     }
@@ -927,6 +947,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      * @return The actual instance of `UtcTimestampArgumentsConfig`
      * @throws ClassCastException if the instance is not `UtcTimestampArgumentsConfig`
      */
+    @SuppressWarnings("unchecked")
     public UtcTimestampArgumentsConfig getUtcTimestampArgumentsConfig() throws ClassCastException {
         return (UtcTimestampArgumentsConfig)super.getActualInstance();
     }

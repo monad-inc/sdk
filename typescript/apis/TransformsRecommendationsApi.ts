@@ -41,7 +41,7 @@ export class TransformsRecommendationsApiRequestFactory extends BaseAPIRequestFa
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/transform_recommendations'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -95,7 +95,7 @@ export class TransformsRecommendationsApiRequestFactory extends BaseAPIRequestFa
 
         // Path Params
         const localVarPath = '/v3/{organization_id}/transform_recommendations/optimizers'
-            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
