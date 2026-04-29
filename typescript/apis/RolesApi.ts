@@ -8,10 +8,10 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
-import { RoutesV2CreateRoleV2Request } from '../models/RoutesV2CreateRoleV2Request';
-import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
 
 /**
  * no description
@@ -22,9 +22,9 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
      * Create a new role with permissions
      * Create role
      * @param organizationId Organization ID
-     * @param routesV2CreateRoleV2Request Request body for creating a role
+     * @param createRoleRequest Request body for creating a role
      */
-    public async createRole(organizationId: string, routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request, _options?: Configuration): Promise<RequestContext> {
+    public async createRole(organizationId: string, createRoleRequest: CreateRoleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -33,9 +33,9 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2CreateRoleV2Request' is not null or undefined
-        if (routesV2CreateRoleV2Request === null || routesV2CreateRoleV2Request === undefined) {
-            throw new RequiredError("RolesApi", "createRole", "routesV2CreateRoleV2Request");
+        // verify required parameter 'createRoleRequest' is not null or undefined
+        if (createRoleRequest === null || createRoleRequest === undefined) {
+            throw new RequiredError("RolesApi", "createRole", "createRoleRequest");
         }
 
 
@@ -54,7 +54,7 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateRoleV2Request, "RoutesV2CreateRoleV2Request", ""),
+            ObjectSerializer.serialize(createRoleRequest, "CreateRoleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -243,9 +243,9 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
      * Update role
      * @param organizationId Organization ID
      * @param roleId Role ID
-     * @param routesV2UpdateRoleV2Request Request body for updating a role
+     * @param updateRoleRequest Request body for updating a role
      */
-    public async updateRole(organizationId: string, roleId: string, routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request, _options?: Configuration): Promise<RequestContext> {
+    public async updateRole(organizationId: string, roleId: string, updateRoleRequest: UpdateRoleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -260,9 +260,9 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2UpdateRoleV2Request' is not null or undefined
-        if (routesV2UpdateRoleV2Request === null || routesV2UpdateRoleV2Request === undefined) {
-            throw new RequiredError("RolesApi", "updateRole", "routesV2UpdateRoleV2Request");
+        // verify required parameter 'updateRoleRequest' is not null or undefined
+        if (updateRoleRequest === null || updateRoleRequest === undefined) {
+            throw new RequiredError("RolesApi", "updateRole", "updateRoleRequest");
         }
 
 
@@ -282,7 +282,7 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdateRoleV2Request, "RoutesV2UpdateRoleV2Request", ""),
+            ObjectSerializer.serialize(updateRoleRequest, "UpdateRoleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

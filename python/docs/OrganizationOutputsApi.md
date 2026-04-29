@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_output**
-> ModelsOutput create_output(organization_id, routes_v2_create_output_request, test_connection=test_connection)
+> ModelsOutput create_output(organization_id, create_output_request, test_connection=test_connection)
 
 Create output
 
@@ -27,8 +27,8 @@ Create a new output with configuration including secrets handling
 
 ```python
 import monad
+from monad.models.create_output_request import CreateOutputRequest
 from monad.models.models_output import ModelsOutput
-from monad.models.routes_v2_create_output_request import RoutesV2CreateOutputRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -60,12 +60,12 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationOutputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_create_output_request = monad.RoutesV2CreateOutputRequest() # RoutesV2CreateOutputRequest | Output configuration
+    create_output_request = monad.CreateOutputRequest() # CreateOutputRequest | Output configuration
     test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Create output
-        api_response = api_instance.create_output(organization_id, routes_v2_create_output_request, test_connection=test_connection)
+        api_response = api_instance.create_output(organization_id, create_output_request, test_connection=test_connection)
         print("The response of OrganizationOutputsApi->create_output:\n")
         pprint(api_response)
     except Exception as e:
@@ -80,7 +80,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_create_output_request** | [**RoutesV2CreateOutputRequest**](RoutesV2CreateOutputRequest.md)| Output configuration | 
+ **create_output_request** | [**CreateOutputRequest**](CreateOutputRequest.md)| Output configuration | 
  **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_output**
-> ModelsOutput replace_output(organization_id, output_id, routes_v2_put_output_request, test_connection=test_connection)
+> ModelsOutput replace_output(organization_id, output_id, replace_output_request, test_connection=test_connection)
 
 Replace output
 
@@ -389,7 +389,7 @@ Replace an existing output with new configuration including secrets handling
 ```python
 import monad
 from monad.models.models_output import ModelsOutput
-from monad.models.routes_v2_put_output_request import RoutesV2PutOutputRequest
+from monad.models.replace_output_request import ReplaceOutputRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -422,12 +422,12 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationOutputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     output_id = 'output_id_example' # str | Output ID
-    routes_v2_put_output_request = monad.RoutesV2PutOutputRequest() # RoutesV2PutOutputRequest | Output configuration update
+    replace_output_request = monad.ReplaceOutputRequest() # ReplaceOutputRequest | Output configuration update
     test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Replace output
-        api_response = api_instance.replace_output(organization_id, output_id, routes_v2_put_output_request, test_connection=test_connection)
+        api_response = api_instance.replace_output(organization_id, output_id, replace_output_request, test_connection=test_connection)
         print("The response of OrganizationOutputsApi->replace_output:\n")
         pprint(api_response)
     except Exception as e:
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **output_id** | **str**| Output ID | 
- **routes_v2_put_output_request** | [**RoutesV2PutOutputRequest**](RoutesV2PutOutputRequest.md)| Output configuration update | 
+ **replace_output_request** | [**ReplaceOutputRequest**](ReplaceOutputRequest.md)| Output configuration update | 
  **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_output_connection**
-> RoutesV2SuccessResponse test_output_connection(organization_id, routes_v2_test_output_connection_request)
+> RoutesV2SuccessResponse test_output_connection(organization_id, test_output_connection_request)
 
 Test output connection
 
@@ -485,7 +485,7 @@ Tests the connection for a given output type and configuration
 ```python
 import monad
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
-from monad.models.routes_v2_test_output_connection_request import RoutesV2TestOutputConnectionRequest
+from monad.models.test_output_connection_request import TestOutputConnectionRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -517,11 +517,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationOutputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_test_output_connection_request = monad.RoutesV2TestOutputConnectionRequest() # RoutesV2TestOutputConnectionRequest | Output configuration to test
+    test_output_connection_request = monad.TestOutputConnectionRequest() # TestOutputConnectionRequest | Output configuration to test
 
     try:
         # Test output connection
-        api_response = api_instance.test_output_connection(organization_id, routes_v2_test_output_connection_request)
+        api_response = api_instance.test_output_connection(organization_id, test_output_connection_request)
         print("The response of OrganizationOutputsApi->test_output_connection:\n")
         pprint(api_response)
     except Exception as e:
@@ -536,7 +536,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_test_output_connection_request** | [**RoutesV2TestOutputConnectionRequest**](RoutesV2TestOutputConnectionRequest.md)| Output configuration to test | 
+ **test_output_connection_request** | [**TestOutputConnectionRequest**](TestOutputConnectionRequest.md)| Output configuration to test | 
 
 ### Return type
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_output**
-> ModelsOutput update_output(organization_id, output_id, routes_v2_update_output_request, test_connection=test_connection)
+> ModelsOutput update_output(organization_id, output_id, update_output_request, test_connection=test_connection)
 
 Update output
 
@@ -576,7 +576,7 @@ Update an existing output with new configuration including secrets handling
 ```python
 import monad
 from monad.models.models_output import ModelsOutput
-from monad.models.routes_v2_update_output_request import RoutesV2UpdateOutputRequest
+from monad.models.update_output_request import UpdateOutputRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -609,12 +609,12 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationOutputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     output_id = 'output_id_example' # str | Output ID
-    routes_v2_update_output_request = monad.RoutesV2UpdateOutputRequest() # RoutesV2UpdateOutputRequest | Output configuration update
+    update_output_request = monad.UpdateOutputRequest() # UpdateOutputRequest | Output configuration update
     test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Update output
-        api_response = api_instance.update_output(organization_id, output_id, routes_v2_update_output_request, test_connection=test_connection)
+        api_response = api_instance.update_output(organization_id, output_id, update_output_request, test_connection=test_connection)
         print("The response of OrganizationOutputsApi->update_output:\n")
         pprint(api_response)
     except Exception as e:
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **output_id** | **str**| Output ID | 
- **routes_v2_update_output_request** | [**RoutesV2UpdateOutputRequest**](RoutesV2UpdateOutputRequest.md)| Output configuration update | 
+ **update_output_request** | [**UpdateOutputRequest**](UpdateOutputRequest.md)| Output configuration update | 
  **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type

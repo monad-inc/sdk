@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **apply_transformation**
-> RoutesV2ApplyTransformationResponse apply_transformation(organization_id, routes_v2_apply_transformation_request)
+> RoutesV2ApplyTransformationResponse apply_transformation(organization_id, apply_transformation_v2_request)
 
 Apply transformation to record
 
@@ -24,7 +24,7 @@ Apply a transformation configuration to a JSON record, resolving secret referenc
 
 ```python
 import monad
-from monad.models.routes_v2_apply_transformation_request import RoutesV2ApplyTransformationRequest
+from monad.models.apply_transformation_v2_request import ApplyTransformationV2Request
 from monad.models.routes_v2_apply_transformation_response import RoutesV2ApplyTransformationResponse
 from monad.rest import ApiException
 from pprint import pprint
@@ -57,11 +57,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformSandboxApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_apply_transformation_request = monad.RoutesV2ApplyTransformationRequest() # RoutesV2ApplyTransformationRequest | Transform configuration and record
+    apply_transformation_v2_request = monad.ApplyTransformationV2Request() # ApplyTransformationV2Request | Transform configuration and record
 
     try:
         # Apply transformation to record
-        api_response = api_instance.apply_transformation(organization_id, routes_v2_apply_transformation_request)
+        api_response = api_instance.apply_transformation(organization_id, apply_transformation_v2_request)
         print("The response of TransformSandboxApi->apply_transformation:\n")
         pprint(api_response)
     except Exception as e:
@@ -76,7 +76,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_apply_transformation_request** | [**RoutesV2ApplyTransformationRequest**](RoutesV2ApplyTransformationRequest.md)| Transform configuration and record | 
+ **apply_transformation_v2_request** | [**ApplyTransformationV2Request**](ApplyTransformationV2Request.md)| Transform configuration and record | 
 
 ### Return type
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apply_transformation_v2**
-> RoutesV2ApplyTransformationResponse apply_transformation_v2(routes_v2_apply_transformation_request)
+> RoutesV2ApplyTransformationResponse apply_transformation_v2(apply_transformation_v2_request)
 
 Apply transformation to record
 
@@ -115,7 +115,7 @@ Apply a transformation configuration to a JSON record
 
 ```python
 import monad
-from monad.models.routes_v2_apply_transformation_request import RoutesV2ApplyTransformationRequest
+from monad.models.apply_transformation_v2_request import ApplyTransformationV2Request
 from monad.models.routes_v2_apply_transformation_response import RoutesV2ApplyTransformationResponse
 from monad.rest import ApiException
 from pprint import pprint
@@ -147,11 +147,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformSandboxApi(api_client)
-    routes_v2_apply_transformation_request = monad.RoutesV2ApplyTransformationRequest() # RoutesV2ApplyTransformationRequest | Transform configuration and record
+    apply_transformation_v2_request = monad.ApplyTransformationV2Request() # ApplyTransformationV2Request | Transform configuration and record
 
     try:
         # Apply transformation to record
-        api_response = api_instance.apply_transformation_v2(routes_v2_apply_transformation_request)
+        api_response = api_instance.apply_transformation_v2(apply_transformation_v2_request)
         print("The response of TransformSandboxApi->apply_transformation_v2:\n")
         pprint(api_response)
     except Exception as e:
@@ -165,7 +165,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routes_v2_apply_transformation_request** | [**RoutesV2ApplyTransformationRequest**](RoutesV2ApplyTransformationRequest.md)| Transform configuration and record | 
+ **apply_transformation_v2_request** | [**ApplyTransformationV2Request**](ApplyTransformationV2Request.md)| Transform configuration and record | 
 
 ### Return type
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_record**
-> RoutesV2GenerateRecordResponse generate_record(routes_v2_generate_record_request)
+> RoutesV2GenerateRecordResponse generate_record(generate_record_request)
 
 Generate sample record
 
@@ -204,7 +204,7 @@ Generate a sample record using the specified template type
 
 ```python
 import monad
-from monad.models.routes_v2_generate_record_request import RoutesV2GenerateRecordRequest
+from monad.models.generate_record_request import GenerateRecordRequest
 from monad.models.routes_v2_generate_record_response import RoutesV2GenerateRecordResponse
 from monad.rest import ApiException
 from pprint import pprint
@@ -236,11 +236,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformSandboxApi(api_client)
-    routes_v2_generate_record_request = monad.RoutesV2GenerateRecordRequest() # RoutesV2GenerateRecordRequest | Record generation parameters
+    generate_record_request = monad.GenerateRecordRequest() # GenerateRecordRequest | Record generation parameters
 
     try:
         # Generate sample record
-        api_response = api_instance.generate_record(routes_v2_generate_record_request)
+        api_response = api_instance.generate_record(generate_record_request)
         print("The response of TransformSandboxApi->generate_record:\n")
         pprint(api_response)
     except Exception as e:
@@ -254,7 +254,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routes_v2_generate_record_request** | [**RoutesV2GenerateRecordRequest**](RoutesV2GenerateRecordRequest.md)| Record generation parameters | 
+ **generate_record_request** | [**GenerateRecordRequest**](GenerateRecordRequest.md)| Record generation parameters | 
 
 ### Return type
 

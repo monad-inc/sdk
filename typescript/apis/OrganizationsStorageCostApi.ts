@@ -11,8 +11,8 @@ import {SecurityAuthentication} from '../auth/auth';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
-import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
 import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
+import { SetStorageTypeCostRequest } from '../models/SetStorageTypeCostRequest';
 
 /**
  * no description
@@ -298,9 +298,9 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
      * Update per-organization cost configuration for storage types
      * Set storage type cost
      * @param organizationId Organization ID
-     * @param routesV2SetStorageTypeCostRequest Cost configuration
+     * @param setStorageTypeCostRequest Cost configuration
      */
-    public async setStorageTypeCost(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: Configuration): Promise<RequestContext> {
+    public async setStorageTypeCost(organizationId: string, setStorageTypeCostRequest: SetStorageTypeCostRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -309,9 +309,9 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
         }
 
 
-        // verify required parameter 'routesV2SetStorageTypeCostRequest' is not null or undefined
-        if (routesV2SetStorageTypeCostRequest === null || routesV2SetStorageTypeCostRequest === undefined) {
-            throw new RequiredError("OrganizationsStorageCostApi", "setStorageTypeCost", "routesV2SetStorageTypeCostRequest");
+        // verify required parameter 'setStorageTypeCostRequest' is not null or undefined
+        if (setStorageTypeCostRequest === null || setStorageTypeCostRequest === undefined) {
+            throw new RequiredError("OrganizationsStorageCostApi", "setStorageTypeCost", "setStorageTypeCostRequest");
         }
 
 
@@ -330,7 +330,7 @@ export class OrganizationsStorageCostApiRequestFactory extends BaseAPIRequestFac
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2SetStorageTypeCostRequest, "RoutesV2SetStorageTypeCostRequest", ""),
+            ObjectSerializer.serialize(setStorageTypeCostRequest, "SetStorageTypeCostRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import org.openapitools.client.model.CommunityTransformsInternalTransformConfig;
 import org.openapitools.client.model.CommunityTransformsInternalTransformsIndex;
+import org.openapitools.client.model.ExportTransformRequest;
 import org.openapitools.client.model.ModelsTransformsRepositoryList;
 import org.openapitools.client.model.ModelsTransformsRepositoryTransform;
 import org.openapitools.client.model.RoutesV3ImportTransformResponse;
@@ -78,7 +79,7 @@ public class TransformsRepositoryApi {
 
     /**
      * Build call for exportTransform
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @param exportTransformRequest Transform to export and optional metadata (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -91,7 +92,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call exportTransformCall(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call exportTransformCall(@javax.annotation.Nonnull ExportTransformRequest exportTransformRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -105,7 +106,7 @@ public class TransformsRepositoryApi {
             basePath = null;
         }
 
-        Object localVarPostBody = communityTransformsInternalTransformConfig;
+        Object localVarPostBody = exportTransformRequest;
 
         // create path and map variables
         String localVarPath = "/v3/transforms/repository/export";
@@ -137,20 +138,20 @@ public class TransformsRepositoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call exportTransformValidateBeforeCall(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'communityTransformsInternalTransformConfig' is set
-        if (communityTransformsInternalTransformConfig == null) {
-            throw new ApiException("Missing the required parameter 'communityTransformsInternalTransformConfig' when calling exportTransform(Async)");
+    private okhttp3.Call exportTransformValidateBeforeCall(@javax.annotation.Nonnull ExportTransformRequest exportTransformRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'exportTransformRequest' is set
+        if (exportTransformRequest == null) {
+            throw new ApiException("Missing the required parameter 'exportTransformRequest' when calling exportTransform(Async)");
         }
 
-        return exportTransformCall(communityTransformsInternalTransformConfig, _callback);
+        return exportTransformCall(exportTransformRequest, _callback);
 
     }
 
     /**
      * Export transform to YAML
      * Export transform to YAML format
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @param exportTransformRequest Transform to export and optional metadata (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -162,15 +163,15 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
      </table>
      */
-    public String exportTransform(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig) throws ApiException {
-        ApiResponse<String> localVarResp = exportTransformWithHttpInfo(communityTransformsInternalTransformConfig);
+    public String exportTransform(@javax.annotation.Nonnull ExportTransformRequest exportTransformRequest) throws ApiException {
+        ApiResponse<String> localVarResp = exportTransformWithHttpInfo(exportTransformRequest);
         return localVarResp.getData();
     }
 
     /**
      * Export transform to YAML
      * Export transform to YAML format
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @param exportTransformRequest Transform to export and optional metadata (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -182,8 +183,8 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> exportTransformWithHttpInfo(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig) throws ApiException {
-        okhttp3.Call localVarCall = exportTransformValidateBeforeCall(communityTransformsInternalTransformConfig, null);
+    public ApiResponse<String> exportTransformWithHttpInfo(@javax.annotation.Nonnull ExportTransformRequest exportTransformRequest) throws ApiException {
+        okhttp3.Call localVarCall = exportTransformValidateBeforeCall(exportTransformRequest, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -191,7 +192,7 @@ public class TransformsRepositoryApi {
     /**
      * Export transform to YAML (asynchronously)
      * Export transform to YAML format
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @param exportTransformRequest Transform to export and optional metadata (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -204,9 +205,9 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call exportTransformAsync(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call exportTransformAsync(@javax.annotation.Nonnull ExportTransformRequest exportTransformRequest, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = exportTransformValidateBeforeCall(communityTransformsInternalTransformConfig, _callback);
+        okhttp3.Call localVarCall = exportTransformValidateBeforeCall(exportTransformRequest, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -492,7 +493,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call importTransformCall(@javax.annotation.Nonnull String body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call importTransformCall(@javax.annotation.Nonnull Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -526,7 +527,8 @@ public class TransformsRepositoryApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json",
+            "text/plain"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -538,7 +540,7 @@ public class TransformsRepositoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call importTransformValidateBeforeCall(@javax.annotation.Nonnull String body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call importTransformValidateBeforeCall(@javax.annotation.Nonnull Object body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling importTransform(Async)");
@@ -563,7 +565,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV3ImportTransformResponse importTransform(@javax.annotation.Nonnull String body) throws ApiException {
+    public RoutesV3ImportTransformResponse importTransform(@javax.annotation.Nonnull Object body) throws ApiException {
         ApiResponse<RoutesV3ImportTransformResponse> localVarResp = importTransformWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -583,7 +585,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV3ImportTransformResponse> importTransformWithHttpInfo(@javax.annotation.Nonnull String body) throws ApiException {
+    public ApiResponse<RoutesV3ImportTransformResponse> importTransformWithHttpInfo(@javax.annotation.Nonnull Object body) throws ApiException {
         okhttp3.Call localVarCall = importTransformValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<RoutesV3ImportTransformResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -605,7 +607,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call importTransformAsync(@javax.annotation.Nonnull String body, final ApiCallback<RoutesV3ImportTransformResponse> _callback) throws ApiException {
+    public okhttp3.Call importTransformAsync(@javax.annotation.Nonnull Object body, final ApiCallback<RoutesV3ImportTransformResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = importTransformValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<RoutesV3ImportTransformResponse>(){}.getType();

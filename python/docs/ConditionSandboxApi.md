@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **apply_condition_v2**
-> RoutesV2ApplyConditionResponse apply_condition_v2(routes_v2_apply_condition_request)
+> RoutesV2ApplyConditionResponse apply_condition_v2(apply_condition_v2_request)
 
 Apply condition to record
 
@@ -21,7 +21,7 @@ Apply a condition to a JSON record
 
 ```python
 import monad
-from monad.models.routes_v2_apply_condition_request import RoutesV2ApplyConditionRequest
+from monad.models.apply_condition_v2_request import ApplyConditionV2Request
 from monad.models.routes_v2_apply_condition_response import RoutesV2ApplyConditionResponse
 from monad.rest import ApiException
 from pprint import pprint
@@ -53,11 +53,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConditionSandboxApi(api_client)
-    routes_v2_apply_condition_request = monad.RoutesV2ApplyConditionRequest() # RoutesV2ApplyConditionRequest | Condition and record
+    apply_condition_v2_request = monad.ApplyConditionV2Request() # ApplyConditionV2Request | Condition and record
 
     try:
         # Apply condition to record
-        api_response = api_instance.apply_condition_v2(routes_v2_apply_condition_request)
+        api_response = api_instance.apply_condition_v2(apply_condition_v2_request)
         print("The response of ConditionSandboxApi->apply_condition_v2:\n")
         pprint(api_response)
     except Exception as e:
@@ -71,7 +71,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routes_v2_apply_condition_request** | [**RoutesV2ApplyConditionRequest**](RoutesV2ApplyConditionRequest.md)| Condition and record | 
+ **apply_condition_v2_request** | [**ApplyConditionV2Request**](ApplyConditionV2Request.md)| Condition and record | 
 
 ### Return type
 

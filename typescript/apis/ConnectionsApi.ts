@@ -8,11 +8,11 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateConnectionRequest } from '../models/CreateConnectionRequest';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
-import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
+import { UpdateConnectionRequest } from '../models/UpdateConnectionRequest';
 
 /**
  * no description
@@ -23,9 +23,9 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
      * Create a new connection with the provided details
      * Create a new connection
      * @param organizationId Organization ID
-     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     * @param createConnectionRequest Request body for creating a connection
      */
-    public async createConnection(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createConnection(organizationId: string, createConnectionRequest: CreateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -34,9 +34,9 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV3CreateConnectionRequest' is not null or undefined
-        if (routesV3CreateConnectionRequest === null || routesV3CreateConnectionRequest === undefined) {
-            throw new RequiredError("ConnectionsApi", "createConnection", "routesV3CreateConnectionRequest");
+        // verify required parameter 'createConnectionRequest' is not null or undefined
+        if (createConnectionRequest === null || createConnectionRequest === undefined) {
+            throw new RequiredError("ConnectionsApi", "createConnection", "createConnectionRequest");
         }
 
 
@@ -55,7 +55,7 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3CreateConnectionRequest, "RoutesV3CreateConnectionRequest", ""),
+            ObjectSerializer.serialize(createConnectionRequest, "CreateConnectionRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -224,9 +224,9 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
      * Update connection
      * @param organizationId Organization ID
      * @param connectionId Connection ID to update
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     * @param updateConnectionRequest Request body for updating a connection
      */
-    public async updateConnection(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateConnection(organizationId: string, connectionId: string, updateConnectionRequest: UpdateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -241,9 +241,9 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV3UpdateConnectionRequest' is not null or undefined
-        if (routesV3UpdateConnectionRequest === null || routesV3UpdateConnectionRequest === undefined) {
-            throw new RequiredError("ConnectionsApi", "updateConnection", "routesV3UpdateConnectionRequest");
+        // verify required parameter 'updateConnectionRequest' is not null or undefined
+        if (updateConnectionRequest === null || updateConnectionRequest === undefined) {
+            throw new RequiredError("ConnectionsApi", "updateConnection", "updateConnectionRequest");
         }
 
 
@@ -263,7 +263,7 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3UpdateConnectionRequest, "RoutesV3UpdateConnectionRequest", ""),
+            ObjectSerializer.serialize(updateConnectionRequest, "UpdateConnectionRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

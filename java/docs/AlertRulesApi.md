@@ -15,7 +15,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createAlertRule"></a>
 # **createAlertRule**
-> ModelsAlertRule createAlertRule(organizationId, routesV3CreateAlertRuleRequest)
+> ModelsAlertRule createAlertRule(organizationId, createAlertRuleRequest)
 
 Create a new alert rule
 
@@ -44,9 +44,9 @@ public class Example {
 
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV3CreateAlertRuleRequest routesV3CreateAlertRuleRequest = new RoutesV3CreateAlertRuleRequest(); // RoutesV3CreateAlertRuleRequest | Request body for creating an alert rule
+    CreateAlertRuleRequest createAlertRuleRequest = new CreateAlertRuleRequest(); // CreateAlertRuleRequest | Request body for creating an alert rule
     try {
-      ModelsAlertRule result = apiInstance.createAlertRule(organizationId, routesV3CreateAlertRuleRequest);
+      ModelsAlertRule result = apiInstance.createAlertRule(organizationId, createAlertRuleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#createAlertRule");
@@ -64,7 +64,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV3CreateAlertRuleRequest** | [**RoutesV3CreateAlertRuleRequest**](RoutesV3CreateAlertRuleRequest.md)| Request body for creating an alert rule | |
+| **createAlertRuleRequest** | [**CreateAlertRuleRequest**](CreateAlertRuleRequest.md)| Request body for creating an alert rule | |
 
 ### Return type
 
@@ -456,7 +456,7 @@ public class Example {
 
 <a id="updateAlertRule"></a>
 # **updateAlertRule**
-> ModelsAlertRule updateAlertRule(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest)
+> ModelsAlertRule updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest)
 
 Update alert rule
 
@@ -486,9 +486,9 @@ public class Example {
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to update
-    RoutesV3UpdateAlertRuleRequest routesV3UpdateAlertRuleRequest = new RoutesV3UpdateAlertRuleRequest(); // RoutesV3UpdateAlertRuleRequest | Request body for updating an alert rule
+    UpdateAlertRuleRequest updateAlertRuleRequest = new UpdateAlertRuleRequest(); // UpdateAlertRuleRequest | Request body for updating an alert rule
     try {
-      ModelsAlertRule result = apiInstance.updateAlertRule(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest);
+      ModelsAlertRule result = apiInstance.updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#updateAlertRule");
@@ -507,7 +507,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **alertRuleId** | **String**| Alert Rule ID to update | |
-| **routesV3UpdateAlertRuleRequest** | [**RoutesV3UpdateAlertRuleRequest**](RoutesV3UpdateAlertRuleRequest.md)| Request body for updating an alert rule | |
+| **updateAlertRuleRequest** | [**UpdateAlertRuleRequest**](UpdateAlertRuleRequest.md)| Request body for updating an alert rule | |
 
 ### Return type
 

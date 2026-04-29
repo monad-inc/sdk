@@ -13,7 +13,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createBillingAccount"></a>
 # **createBillingAccount**
-> ModelsBillingAccount createBillingAccount(routesV2CreateBillingAccountRequest)
+> ModelsBillingAccount createBillingAccount(createBillingAccountRequest)
 
 Create Billing Account
 
@@ -41,9 +41,9 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
-    RoutesV2CreateBillingAccountRequest routesV2CreateBillingAccountRequest = new RoutesV2CreateBillingAccountRequest(); // RoutesV2CreateBillingAccountRequest | Request body for creating a billing account
+    CreateBillingAccountRequest createBillingAccountRequest = new CreateBillingAccountRequest(); // CreateBillingAccountRequest | Request body for creating a billing account
     try {
-      ModelsBillingAccount result = apiInstance.createBillingAccount(routesV2CreateBillingAccountRequest);
+      ModelsBillingAccount result = apiInstance.createBillingAccount(createBillingAccountRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#createBillingAccount");
@@ -60,7 +60,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **routesV2CreateBillingAccountRequest** | [**RoutesV2CreateBillingAccountRequest**](RoutesV2CreateBillingAccountRequest.md)| Request body for creating a billing account | |
+| **createBillingAccountRequest** | [**CreateBillingAccountRequest**](CreateBillingAccountRequest.md)| Request body for creating a billing account | |
 
 ### Return type
 
@@ -298,7 +298,7 @@ public class Example {
 
 <a id="updateBillingAccount"></a>
 # **updateBillingAccount**
-> ModelsBillingAccount updateBillingAccount(billingAccountId, routesV2UpdateBillingAccountRequest)
+> ModelsBillingAccount updateBillingAccount(billingAccountId, updateBillingAccountRequest)
 
 Update Billing Account
 
@@ -327,9 +327,9 @@ public class Example {
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
-    RoutesV2UpdateBillingAccountRequest routesV2UpdateBillingAccountRequest = new RoutesV2UpdateBillingAccountRequest(); // RoutesV2UpdateBillingAccountRequest | Request body for updating a billing account
+    UpdateBillingAccountRequest updateBillingAccountRequest = new UpdateBillingAccountRequest(); // UpdateBillingAccountRequest | Request body for updating a billing account
     try {
-      ModelsBillingAccount result = apiInstance.updateBillingAccount(billingAccountId, routesV2UpdateBillingAccountRequest);
+      ModelsBillingAccount result = apiInstance.updateBillingAccount(billingAccountId, updateBillingAccountRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#updateBillingAccount");
@@ -347,7 +347,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
-| **routesV2UpdateBillingAccountRequest** | [**RoutesV2UpdateBillingAccountRequest**](RoutesV2UpdateBillingAccountRequest.md)| Request body for updating a billing account | |
+| **updateBillingAccountRequest** | [**UpdateBillingAccountRequest**](UpdateBillingAccountRequest.md)| Request body for updating a billing account | |
 
 ### Return type
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateConnection
 
-> ModelsConnection CreateConnection(ctx, organizationId).RoutesV3CreateConnectionRequest(routesV3CreateConnectionRequest).Execute()
+> ModelsConnection CreateConnection(ctx, organizationId).CreateConnectionRequest(createConnectionRequest).Execute()
 
 Create a new connection
 
@@ -34,11 +34,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV3CreateConnectionRequest := *openapiclient.NewRoutesV3CreateConnectionRequest() // RoutesV3CreateConnectionRequest | Request body for creating a connection
+	createConnectionRequest := openapiclient.CreateConnection_request{RoutesV3CreateConnectionRequest: openapiclient.NewRoutesV3CreateConnectionRequest()} // CreateConnectionRequest | Request body for creating a connection
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.CreateConnection(context.Background(), organizationId).RoutesV3CreateConnectionRequest(routesV3CreateConnectionRequest).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.CreateConnection(context.Background(), organizationId).CreateConnectionRequest(createConnectionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.CreateConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreateConnectionRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV3CreateConnectionRequest** | [**RoutesV3CreateConnectionRequest**](RoutesV3CreateConnectionRequest.md) | Request body for creating a connection | 
+ **createConnectionRequest** | [**CreateConnectionRequest**](CreateConnectionRequest.md) | Request body for creating a connection | 
 
 ### Return type
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ## UpdateConnection
 
-> ModelsConnection UpdateConnection(ctx, organizationId, connectionId).RoutesV3UpdateConnectionRequest(routesV3UpdateConnectionRequest).Execute()
+> ModelsConnection UpdateConnection(ctx, organizationId, connectionId).UpdateConnectionRequest(updateConnectionRequest).Execute()
 
 Update connection
 
@@ -325,11 +325,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	connectionId := "connectionId_example" // string | Connection ID to update
-	routesV3UpdateConnectionRequest := *openapiclient.NewRoutesV3UpdateConnectionRequest() // RoutesV3UpdateConnectionRequest | Request body for updating a connection
+	updateConnectionRequest := openapiclient.UpdateConnection_request{RoutesV3UpdateConnectionRequest: openapiclient.NewRoutesV3UpdateConnectionRequest()} // UpdateConnectionRequest | Request body for updating a connection
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.UpdateConnection(context.Background(), organizationId, connectionId).RoutesV3UpdateConnectionRequest(routesV3UpdateConnectionRequest).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.UpdateConnection(context.Background(), organizationId, connectionId).UpdateConnectionRequest(updateConnectionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.UpdateConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV3UpdateConnectionRequest** | [**RoutesV3UpdateConnectionRequest**](RoutesV3UpdateConnectionRequest.md) | Request body for updating a connection | 
+ **updateConnectionRequest** | [**UpdateConnectionRequest**](UpdateConnectionRequest.md) | Request body for updating a connection | 
 
 ### Return type
 

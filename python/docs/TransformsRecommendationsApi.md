@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **create_transform_recommendation**
-> RoutesV3SecurityDataAnalysis create_transform_recommendation(organization_id, routes_v3_transform_recommendation_request)
+> RoutesV3SecurityDataAnalysis create_transform_recommendation(organization_id, create_transform_recommendation_request)
 
 Create transform recommendation
 
@@ -22,8 +22,8 @@ Analyze security data and provide transformation recommendations
 
 ```python
 import monad
+from monad.models.create_transform_recommendation_request import CreateTransformRecommendationRequest
 from monad.models.routes_v3_security_data_analysis import RoutesV3SecurityDataAnalysis
-from monad.models.routes_v3_transform_recommendation_request import RoutesV3TransformRecommendationRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -55,11 +55,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformsRecommendationsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v3_transform_recommendation_request = monad.RoutesV3TransformRecommendationRequest() # RoutesV3TransformRecommendationRequest | Security data to analyze
+    create_transform_recommendation_request = monad.CreateTransformRecommendationRequest() # CreateTransformRecommendationRequest | Security data to analyze
 
     try:
         # Create transform recommendation
-        api_response = api_instance.create_transform_recommendation(organization_id, routes_v3_transform_recommendation_request)
+        api_response = api_instance.create_transform_recommendation(organization_id, create_transform_recommendation_request)
         print("The response of TransformsRecommendationsApi->create_transform_recommendation:\n")
         pprint(api_response)
     except Exception as e:
@@ -74,7 +74,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v3_transform_recommendation_request** | [**RoutesV3TransformRecommendationRequest**](RoutesV3TransformRecommendationRequest.md)| Security data to analyze | 
+ **create_transform_recommendation_request** | [**CreateTransformRecommendationRequest**](CreateTransformRecommendationRequest.md)| Security data to analyze | 
 
 ### Return type
 

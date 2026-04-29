@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **str** |  | [optional] 
-**type** | **str** |  | 
+**type** | [**JsonFormatType**](JsonFormatType.md) |  | 
 
 ## Example
 

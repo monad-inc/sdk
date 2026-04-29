@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Key** | Pointer to **string** | The key to store the timestamp in | [optional] 
 **Value** | Pointer to **interface{}** |  | [optional] 
 **Type** | Pointer to **string** | The new type of the key | [optional] 
-**SourceFormat** | Pointer to **string** | Required: Format of source timestamp | [optional] 
+**SourceFormat** | Pointer to [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **SourceFormatCustom** | Pointer to **string** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **SourceKey** | Pointer to **string** | Required: JSONPath to source timestamp field | [optional] 
 **SourceTimezone** | Pointer to **string** | Optional: Source timezone (default: UTC) | [optional] 
-**TargetFormat** | Pointer to **string** | Required: Format of source timestamp | [optional] 
+**TargetFormat** | Pointer to [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **TargetFormatCustom** | Pointer to **string** | Optional: Custom target format (only if TargetFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **TargetKey** | Pointer to **string** | Optional: Target field (if empty, overwrites SourceKey) | [optional] 
 **TargetTimezone** | Pointer to **string** | Optional: Target timezone (default: UTC) | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **Query** | Pointer to **string** | The raw query string from config | [optional] 
 **Mode** | Pointer to [**MaskModeConfig**](MaskModeConfig.md) |  | [optional] 
 **ValueToSet** | Pointer to **interface{}** |  | [optional] 
-**Format** | Pointer to **string** | The format of the timestamp | [optional] 
+**Format** | Pointer to [**UtcTimestampTimestampFormat**](UtcTimestampTimestampFormat.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetSourceFormat
 
-`func (o *RoutesTransformOperationArguments) GetSourceFormat() string`
+`func (o *RoutesTransformOperationArguments) GetSourceFormat() ConvertTimestampTimestampFormat`
 
 GetSourceFormat returns the SourceFormat field if non-nil, zero value otherwise.
 
 ### GetSourceFormatOk
 
-`func (o *RoutesTransformOperationArguments) GetSourceFormatOk() (*string, bool)`
+`func (o *RoutesTransformOperationArguments) GetSourceFormatOk() (*ConvertTimestampTimestampFormat, bool)`
 
 GetSourceFormatOk returns a tuple with the SourceFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceFormat
 
-`func (o *RoutesTransformOperationArguments) SetSourceFormat(v string)`
+`func (o *RoutesTransformOperationArguments) SetSourceFormat(v ConvertTimestampTimestampFormat)`
 
 SetSourceFormat sets SourceFormat field to given value.
 
@@ -231,20 +231,20 @@ HasSourceTimezone returns a boolean if a field has been set.
 
 ### GetTargetFormat
 
-`func (o *RoutesTransformOperationArguments) GetTargetFormat() string`
+`func (o *RoutesTransformOperationArguments) GetTargetFormat() ConvertTimestampTimestampFormat`
 
 GetTargetFormat returns the TargetFormat field if non-nil, zero value otherwise.
 
 ### GetTargetFormatOk
 
-`func (o *RoutesTransformOperationArguments) GetTargetFormatOk() (*string, bool)`
+`func (o *RoutesTransformOperationArguments) GetTargetFormatOk() (*ConvertTimestampTimestampFormat, bool)`
 
 GetTargetFormatOk returns a tuple with the TargetFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTargetFormat
 
-`func (o *RoutesTransformOperationArguments) SetTargetFormat(v string)`
+`func (o *RoutesTransformOperationArguments) SetTargetFormat(v ConvertTimestampTimestampFormat)`
 
 SetTargetFormat sets TargetFormat field to given value.
 
@@ -551,20 +551,20 @@ HasValueToSet returns a boolean if a field has been set.
 UnsetValueToSet ensures that no value is present for ValueToSet, not even an explicit nil
 ### GetFormat
 
-`func (o *RoutesTransformOperationArguments) GetFormat() string`
+`func (o *RoutesTransformOperationArguments) GetFormat() UtcTimestampTimestampFormat`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *RoutesTransformOperationArguments) GetFormatOk() (*string, bool)`
+`func (o *RoutesTransformOperationArguments) GetFormatOk() (*UtcTimestampTimestampFormat, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *RoutesTransformOperationArguments) SetFormat(v string)`
+`func (o *RoutesTransformOperationArguments) SetFormat(v UtcTimestampTimestampFormat)`
 
 SetFormat sets Format field to given value.
 

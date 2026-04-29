@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,19 +27,19 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreatePipelineRequest;
 import org.openapitools.client.model.ModelsPipeline;
 import org.openapitools.client.model.ModelsPipelineConfigV2;
 import org.openapitools.client.model.ModelsPipelineList;
 import org.openapitools.client.model.ModelsPipelineMetrics;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
 import org.openapitools.client.model.ModelsPipelineStatus;
-import org.openapitools.client.model.RoutesUpdatePipelineRequest;
-import org.openapitools.client.model.RoutesV2CreatePipelineRequest;
 import org.openapitools.client.model.RoutesV2GetOrganizationSummaryResponse;
 import org.openapitools.client.model.RoutesV2MetricsResponse;
-import org.openapitools.client.model.RoutesV2PatchPipelineEdgeRequest;
 import org.openapitools.client.model.RoutesV2PipelineWithStatus;
-import org.openapitools.client.model.RoutesV2UpdatePipelineRequest;
+import org.openapitools.client.model.UpdatePipelineEdgeRequest;
+import org.openapitools.client.model.UpdatePipelineRequest;
+import org.openapitools.client.model.UpdatePipelineV1Request;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -87,7 +87,7 @@ public class PipelinesApi {
     /**
      * Build call for createPipeline
      * @param organizationId Organization ID (required)
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline (required)
+     * @param createPipelineRequest Request body for creating a pipeline (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -100,7 +100,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPipelineCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPipelineCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreatePipelineRequest createPipelineRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -114,7 +114,7 @@ public class PipelinesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreatePipelineRequest;
+        Object localVarPostBody = createPipelineRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/pipelines"
@@ -147,18 +147,18 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPipelineValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPipelineValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreatePipelineRequest createPipelineRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createPipeline(Async)");
         }
 
-        // verify the required parameter 'routesV2CreatePipelineRequest' is set
-        if (routesV2CreatePipelineRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreatePipelineRequest' when calling createPipeline(Async)");
+        // verify the required parameter 'createPipelineRequest' is set
+        if (createPipelineRequest == null) {
+            throw new ApiException("Missing the required parameter 'createPipelineRequest' when calling createPipeline(Async)");
         }
 
-        return createPipelineCall(organizationId, routesV2CreatePipelineRequest, _callback);
+        return createPipelineCall(organizationId, createPipelineRequest, _callback);
 
     }
 
@@ -166,7 +166,7 @@ public class PipelinesApi {
      * Create pipeline
      * Create a new pipeline with specified configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline (required)
+     * @param createPipelineRequest Request body for creating a pipeline (required)
      * @return ModelsPipelineConfigV2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -178,8 +178,8 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineConfigV2 createPipeline(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest) throws ApiException {
-        ApiResponse<ModelsPipelineConfigV2> localVarResp = createPipelineWithHttpInfo(organizationId, routesV2CreatePipelineRequest);
+    public ModelsPipelineConfigV2 createPipeline(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreatePipelineRequest createPipelineRequest) throws ApiException {
+        ApiResponse<ModelsPipelineConfigV2> localVarResp = createPipelineWithHttpInfo(organizationId, createPipelineRequest);
         return localVarResp.getData();
     }
 
@@ -187,7 +187,7 @@ public class PipelinesApi {
      * Create pipeline
      * Create a new pipeline with specified configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline (required)
+     * @param createPipelineRequest Request body for creating a pipeline (required)
      * @return ApiResponse&lt;ModelsPipelineConfigV2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -199,8 +199,8 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineConfigV2> createPipelineWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest) throws ApiException {
-        okhttp3.Call localVarCall = createPipelineValidateBeforeCall(organizationId, routesV2CreatePipelineRequest, null);
+    public ApiResponse<ModelsPipelineConfigV2> createPipelineWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreatePipelineRequest createPipelineRequest) throws ApiException {
+        okhttp3.Call localVarCall = createPipelineValidateBeforeCall(organizationId, createPipelineRequest, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -209,7 +209,7 @@ public class PipelinesApi {
      * Create pipeline (asynchronously)
      * Create a new pipeline with specified configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline (required)
+     * @param createPipelineRequest Request body for creating a pipeline (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -222,9 +222,9 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPipelineAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
+    public okhttp3.Call createPipelineAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreatePipelineRequest createPipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createPipelineValidateBeforeCall(organizationId, routesV2CreatePipelineRequest, _callback);
+        okhttp3.Call localVarCall = createPipelineValidateBeforeCall(organizationId, createPipelineRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2917,7 +2917,7 @@ public class PipelinesApi {
      * Build call for updatePipeline
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineRequest Request body for updating a pipeline (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2930,7 +2930,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePipelineCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePipelineCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineRequest updatePipelineRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2944,7 +2944,7 @@ public class PipelinesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2UpdatePipelineRequest;
+        Object localVarPostBody = updatePipelineRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/pipelines/{pipeline_id}"
@@ -2978,7 +2978,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePipelineValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePipelineValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineRequest updatePipelineRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updatePipeline(Async)");
@@ -2989,12 +2989,12 @@ public class PipelinesApi {
             throw new ApiException("Missing the required parameter 'pipelineId' when calling updatePipeline(Async)");
         }
 
-        // verify the required parameter 'routesV2UpdatePipelineRequest' is set
-        if (routesV2UpdatePipelineRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2UpdatePipelineRequest' when calling updatePipeline(Async)");
+        // verify the required parameter 'updatePipelineRequest' is set
+        if (updatePipelineRequest == null) {
+            throw new ApiException("Missing the required parameter 'updatePipelineRequest' when calling updatePipeline(Async)");
         }
 
-        return updatePipelineCall(organizationId, pipelineId, routesV2UpdatePipelineRequest, _callback);
+        return updatePipelineCall(organizationId, pipelineId, updatePipelineRequest, _callback);
 
     }
 
@@ -3003,7 +3003,7 @@ public class PipelinesApi {
      * Update an existing pipeline with the specified configuration
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineRequest Request body for updating a pipeline (required)
      * @return ModelsPipelineConfigV2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3015,8 +3015,8 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineConfigV2 updatePipeline(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest) throws ApiException {
-        ApiResponse<ModelsPipelineConfigV2> localVarResp = updatePipelineWithHttpInfo(organizationId, pipelineId, routesV2UpdatePipelineRequest);
+    public ModelsPipelineConfigV2 updatePipeline(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineRequest updatePipelineRequest) throws ApiException {
+        ApiResponse<ModelsPipelineConfigV2> localVarResp = updatePipelineWithHttpInfo(organizationId, pipelineId, updatePipelineRequest);
         return localVarResp.getData();
     }
 
@@ -3025,7 +3025,7 @@ public class PipelinesApi {
      * Update an existing pipeline with the specified configuration
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineRequest Request body for updating a pipeline (required)
      * @return ApiResponse&lt;ModelsPipelineConfigV2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3037,8 +3037,8 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineConfigV2> updatePipelineWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest) throws ApiException {
-        okhttp3.Call localVarCall = updatePipelineValidateBeforeCall(organizationId, pipelineId, routesV2UpdatePipelineRequest, null);
+    public ApiResponse<ModelsPipelineConfigV2> updatePipelineWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineRequest updatePipelineRequest) throws ApiException {
+        okhttp3.Call localVarCall = updatePipelineValidateBeforeCall(organizationId, pipelineId, updatePipelineRequest, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3048,7 +3048,7 @@ public class PipelinesApi {
      * Update an existing pipeline with the specified configuration
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineRequest Request body for updating a pipeline (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3061,9 +3061,9 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePipelineAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
+    public okhttp3.Call updatePipelineAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineRequest updatePipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePipelineValidateBeforeCall(organizationId, pipelineId, routesV2UpdatePipelineRequest, _callback);
+        okhttp3.Call localVarCall = updatePipelineValidateBeforeCall(organizationId, pipelineId, updatePipelineRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -3073,7 +3073,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param edgeId Edge ID (required)
-     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @param updatePipelineEdgeRequest Request body (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3087,7 +3087,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePipelineEdgeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePipelineEdgeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull UpdatePipelineEdgeRequest updatePipelineEdgeRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3101,7 +3101,7 @@ public class PipelinesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2PatchPipelineEdgeRequest;
+        Object localVarPostBody = updatePipelineEdgeRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}"
@@ -3136,7 +3136,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePipelineEdgeValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePipelineEdgeValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull UpdatePipelineEdgeRequest updatePipelineEdgeRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updatePipelineEdge(Async)");
@@ -3152,12 +3152,12 @@ public class PipelinesApi {
             throw new ApiException("Missing the required parameter 'edgeId' when calling updatePipelineEdge(Async)");
         }
 
-        // verify the required parameter 'routesV2PatchPipelineEdgeRequest' is set
-        if (routesV2PatchPipelineEdgeRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2PatchPipelineEdgeRequest' when calling updatePipelineEdge(Async)");
+        // verify the required parameter 'updatePipelineEdgeRequest' is set
+        if (updatePipelineEdgeRequest == null) {
+            throw new ApiException("Missing the required parameter 'updatePipelineEdgeRequest' when calling updatePipelineEdge(Async)");
         }
 
-        return updatePipelineEdgeCall(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _callback);
+        return updatePipelineEdgeCall(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest, _callback);
 
     }
 
@@ -3167,7 +3167,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param edgeId Edge ID (required)
-     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @param updatePipelineEdgeRequest Request body (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -3179,8 +3179,8 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
      </table>
      */
-    public void updatePipelineEdge(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest) throws ApiException {
-        updatePipelineEdgeWithHttpInfo(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest);
+    public void updatePipelineEdge(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull UpdatePipelineEdgeRequest updatePipelineEdgeRequest) throws ApiException {
+        updatePipelineEdgeWithHttpInfo(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest);
     }
 
     /**
@@ -3189,7 +3189,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param edgeId Edge ID (required)
-     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @param updatePipelineEdgeRequest Request body (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3202,8 +3202,8 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updatePipelineEdgeWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest) throws ApiException {
-        okhttp3.Call localVarCall = updatePipelineEdgeValidateBeforeCall(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, null);
+    public ApiResponse<Void> updatePipelineEdgeWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull UpdatePipelineEdgeRequest updatePipelineEdgeRequest) throws ApiException {
+        okhttp3.Call localVarCall = updatePipelineEdgeValidateBeforeCall(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -3213,7 +3213,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param edgeId Edge ID (required)
-     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @param updatePipelineEdgeRequest Request body (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3227,9 +3227,9 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePipelineEdgeAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updatePipelineEdgeAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull UpdatePipelineEdgeRequest updatePipelineEdgeRequest, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePipelineEdgeValidateBeforeCall(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _callback);
+        okhttp3.Call localVarCall = updatePipelineEdgeValidateBeforeCall(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -3237,7 +3237,7 @@ public class PipelinesApi {
      * Build call for updatePipelineV1
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineV1Request Request body for updating a pipeline (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3252,7 +3252,7 @@ public class PipelinesApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updatePipelineV1Call(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePipelineV1Call(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineV1Request updatePipelineV1Request, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3266,7 +3266,7 @@ public class PipelinesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesUpdatePipelineRequest;
+        Object localVarPostBody = updatePipelineV1Request;
 
         // create path and map variables
         String localVarPath = "/v1/{organization_id}/pipelines/{pipeline_id}"
@@ -3301,7 +3301,7 @@ public class PipelinesApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePipelineV1ValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePipelineV1ValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineV1Request updatePipelineV1Request, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updatePipelineV1(Async)");
@@ -3312,12 +3312,12 @@ public class PipelinesApi {
             throw new ApiException("Missing the required parameter 'pipelineId' when calling updatePipelineV1(Async)");
         }
 
-        // verify the required parameter 'routesUpdatePipelineRequest' is set
-        if (routesUpdatePipelineRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesUpdatePipelineRequest' when calling updatePipelineV1(Async)");
+        // verify the required parameter 'updatePipelineV1Request' is set
+        if (updatePipelineV1Request == null) {
+            throw new ApiException("Missing the required parameter 'updatePipelineV1Request' when calling updatePipelineV1(Async)");
         }
 
-        return updatePipelineV1Call(organizationId, pipelineId, routesUpdatePipelineRequest, _callback);
+        return updatePipelineV1Call(organizationId, pipelineId, updatePipelineV1Request, _callback);
 
     }
 
@@ -3326,7 +3326,7 @@ public class PipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineV1Request Request body for updating a pipeline (required)
      * @return ModelsPipeline
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3340,8 +3340,8 @@ public class PipelinesApi {
      * @deprecated
      */
     @Deprecated
-    public ModelsPipeline updatePipelineV1(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest) throws ApiException {
-        ApiResponse<ModelsPipeline> localVarResp = updatePipelineV1WithHttpInfo(organizationId, pipelineId, routesUpdatePipelineRequest);
+    public ModelsPipeline updatePipelineV1(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineV1Request updatePipelineV1Request) throws ApiException {
+        ApiResponse<ModelsPipeline> localVarResp = updatePipelineV1WithHttpInfo(organizationId, pipelineId, updatePipelineV1Request);
         return localVarResp.getData();
     }
 
@@ -3350,7 +3350,7 @@ public class PipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineV1Request Request body for updating a pipeline (required)
      * @return ApiResponse&lt;ModelsPipeline&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3364,8 +3364,8 @@ public class PipelinesApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<ModelsPipeline> updatePipelineV1WithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest) throws ApiException {
-        okhttp3.Call localVarCall = updatePipelineV1ValidateBeforeCall(organizationId, pipelineId, routesUpdatePipelineRequest, null);
+    public ApiResponse<ModelsPipeline> updatePipelineV1WithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineV1Request updatePipelineV1Request) throws ApiException {
+        okhttp3.Call localVarCall = updatePipelineV1ValidateBeforeCall(organizationId, pipelineId, updatePipelineV1Request, null);
         Type localVarReturnType = new TypeToken<ModelsPipeline>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3375,7 +3375,7 @@ public class PipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline (required)
+     * @param updatePipelineV1Request Request body for updating a pipeline (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3390,9 +3390,9 @@ public class PipelinesApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updatePipelineV1Async(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback<ModelsPipeline> _callback) throws ApiException {
+    public okhttp3.Call updatePipelineV1Async(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull UpdatePipelineV1Request updatePipelineV1Request, final ApiCallback<ModelsPipeline> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePipelineV1ValidateBeforeCall(organizationId, pipelineId, routesUpdatePipelineRequest, _callback);
+        okhttp3.Call localVarCall = updatePipelineV1ValidateBeforeCall(organizationId, pipelineId, updatePipelineV1Request, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipeline>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

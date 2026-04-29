@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
 **LastIngestedTime** | Pointer to **string** |  | [optional] 
-**Status** | **string** |  | 
+**Status** | [**ModelsPipelineStatusValue**](ModelsPipelineStatusValue.md) |  | 
 
 ## Methods
 
 ### NewRoutesV2PipelineWithStatus
 
-`func NewRoutesV2PipelineWithStatus(id string, status string, ) *RoutesV2PipelineWithStatus`
+`func NewRoutesV2PipelineWithStatus(id string, status ModelsPipelineStatusValue, ) *RoutesV2PipelineWithStatus`
 
 NewRoutesV2PipelineWithStatus instantiates a new RoutesV2PipelineWithStatus object
 This constructor will assign default values to properties that have it defined,
@@ -74,20 +74,20 @@ HasLastIngestedTime returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *RoutesV2PipelineWithStatus) GetStatus() string`
+`func (o *RoutesV2PipelineWithStatus) GetStatus() ModelsPipelineStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *RoutesV2PipelineWithStatus) GetStatusOk() (*string, bool)`
+`func (o *RoutesV2PipelineWithStatus) GetStatusOk() (*ModelsPipelineStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *RoutesV2PipelineWithStatus) SetStatus(v string)`
+`func (o *RoutesV2PipelineWithStatus) SetStatus(v ModelsPipelineStatusValue)`
 
 SetStatus sets Status field to given value.
 

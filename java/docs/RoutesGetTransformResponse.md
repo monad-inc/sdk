@@ -12,7 +12,7 @@
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
-|**managedBy** | **String** |  |  [optional] |
+|**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |

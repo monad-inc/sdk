@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthType** | Pointer to **string** |  | [optional] 
-**BillingType** | Pointer to **int32** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**BillingType** | Pointer to [**InputsBillingType**](InputsBillingType.md) |  | [optional] 
+**Category** | Pointer to [**ModelsInputConnectorCategory**](ModelsInputConnectorCategory.md) |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
@@ -64,20 +64,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetBillingType
 
-`func (o *InputsConnectorMeta) GetBillingType() int32`
+`func (o *InputsConnectorMeta) GetBillingType() InputsBillingType`
 
 GetBillingType returns the BillingType field if non-nil, zero value otherwise.
 
 ### GetBillingTypeOk
 
-`func (o *InputsConnectorMeta) GetBillingTypeOk() (*int32, bool)`
+`func (o *InputsConnectorMeta) GetBillingTypeOk() (*InputsBillingType, bool)`
 
 GetBillingTypeOk returns a tuple with the BillingType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingType
 
-`func (o *InputsConnectorMeta) SetBillingType(v int32)`
+`func (o *InputsConnectorMeta) SetBillingType(v InputsBillingType)`
 
 SetBillingType sets BillingType field to given value.
 
@@ -89,20 +89,20 @@ HasBillingType returns a boolean if a field has been set.
 
 ### GetCategory
 
-`func (o *InputsConnectorMeta) GetCategory() string`
+`func (o *InputsConnectorMeta) GetCategory() ModelsInputConnectorCategory`
 
 GetCategory returns the Category field if non-nil, zero value otherwise.
 
 ### GetCategoryOk
 
-`func (o *InputsConnectorMeta) GetCategoryOk() (*string, bool)`
+`func (o *InputsConnectorMeta) GetCategoryOk() (*ModelsInputConnectorCategory, bool)`
 
 GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategory
 
-`func (o *InputsConnectorMeta) SetCategory(v string)`
+`func (o *InputsConnectorMeta) SetCategory(v ModelsInputConnectorCategory)`
 
 SetCategory sets Category field to given value.
 

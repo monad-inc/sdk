@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,10 +19,10 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from monad.models.create_billing_account_request import CreateBillingAccountRequest
 from monad.models.models_billing_account import ModelsBillingAccount
 from monad.models.models_billing_account_list import ModelsBillingAccountList
-from monad.models.routes_v2_create_billing_account_request import RoutesV2CreateBillingAccountRequest
-from monad.models.routes_v2_update_billing_account_request import RoutesV2UpdateBillingAccountRequest
+from monad.models.update_billing_account_request import UpdateBillingAccountRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -45,7 +45,7 @@ class BillingAccountsApi:
     @validate_call
     def create_billing_account(
         self,
-        routes_v2_create_billing_account_request: Annotated[RoutesV2CreateBillingAccountRequest, Field(description="Request body for creating a billing account")],
+        create_billing_account_request: Annotated[CreateBillingAccountRequest, Field(description="Request body for creating a billing account")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -63,8 +63,8 @@ class BillingAccountsApi:
 
         Create Billing Account
 
-        :param routes_v2_create_billing_account_request: Request body for creating a billing account (required)
-        :type routes_v2_create_billing_account_request: RoutesV2CreateBillingAccountRequest
+        :param create_billing_account_request: Request body for creating a billing account (required)
+        :type create_billing_account_request: CreateBillingAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,7 +88,7 @@ class BillingAccountsApi:
         """ # noqa: E501
 
         _param = self._create_billing_account_serialize(
-            routes_v2_create_billing_account_request=routes_v2_create_billing_account_request,
+            create_billing_account_request=create_billing_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -114,7 +114,7 @@ class BillingAccountsApi:
     @validate_call
     def create_billing_account_with_http_info(
         self,
-        routes_v2_create_billing_account_request: Annotated[RoutesV2CreateBillingAccountRequest, Field(description="Request body for creating a billing account")],
+        create_billing_account_request: Annotated[CreateBillingAccountRequest, Field(description="Request body for creating a billing account")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -132,8 +132,8 @@ class BillingAccountsApi:
 
         Create Billing Account
 
-        :param routes_v2_create_billing_account_request: Request body for creating a billing account (required)
-        :type routes_v2_create_billing_account_request: RoutesV2CreateBillingAccountRequest
+        :param create_billing_account_request: Request body for creating a billing account (required)
+        :type create_billing_account_request: CreateBillingAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -157,7 +157,7 @@ class BillingAccountsApi:
         """ # noqa: E501
 
         _param = self._create_billing_account_serialize(
-            routes_v2_create_billing_account_request=routes_v2_create_billing_account_request,
+            create_billing_account_request=create_billing_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -183,7 +183,7 @@ class BillingAccountsApi:
     @validate_call
     def create_billing_account_without_preload_content(
         self,
-        routes_v2_create_billing_account_request: Annotated[RoutesV2CreateBillingAccountRequest, Field(description="Request body for creating a billing account")],
+        create_billing_account_request: Annotated[CreateBillingAccountRequest, Field(description="Request body for creating a billing account")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -201,8 +201,8 @@ class BillingAccountsApi:
 
         Create Billing Account
 
-        :param routes_v2_create_billing_account_request: Request body for creating a billing account (required)
-        :type routes_v2_create_billing_account_request: RoutesV2CreateBillingAccountRequest
+        :param create_billing_account_request: Request body for creating a billing account (required)
+        :type create_billing_account_request: CreateBillingAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -226,7 +226,7 @@ class BillingAccountsApi:
         """ # noqa: E501
 
         _param = self._create_billing_account_serialize(
-            routes_v2_create_billing_account_request=routes_v2_create_billing_account_request,
+            create_billing_account_request=create_billing_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -247,7 +247,7 @@ class BillingAccountsApi:
 
     def _create_billing_account_serialize(
         self,
-        routes_v2_create_billing_account_request,
+        create_billing_account_request,
         _request_auth,
         _content_type,
         _headers,
@@ -273,8 +273,8 @@ class BillingAccountsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_billing_account_request is not None:
-            _body_params = routes_v2_create_billing_account_request
+        if create_billing_account_request is not None:
+            _body_params = create_billing_account_request
 
 
         # set the HTTP header `Accept`
@@ -1146,7 +1146,7 @@ class BillingAccountsApi:
     def update_billing_account(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        routes_v2_update_billing_account_request: Annotated[RoutesV2UpdateBillingAccountRequest, Field(description="Request body for updating a billing account")],
+        update_billing_account_request: Annotated[UpdateBillingAccountRequest, Field(description="Request body for updating a billing account")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1166,8 +1166,8 @@ class BillingAccountsApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param routes_v2_update_billing_account_request: Request body for updating a billing account (required)
-        :type routes_v2_update_billing_account_request: RoutesV2UpdateBillingAccountRequest
+        :param update_billing_account_request: Request body for updating a billing account (required)
+        :type update_billing_account_request: UpdateBillingAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1192,7 +1192,7 @@ class BillingAccountsApi:
 
         _param = self._update_billing_account_serialize(
             billing_account_id=billing_account_id,
-            routes_v2_update_billing_account_request=routes_v2_update_billing_account_request,
+            update_billing_account_request=update_billing_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1219,7 +1219,7 @@ class BillingAccountsApi:
     def update_billing_account_with_http_info(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        routes_v2_update_billing_account_request: Annotated[RoutesV2UpdateBillingAccountRequest, Field(description="Request body for updating a billing account")],
+        update_billing_account_request: Annotated[UpdateBillingAccountRequest, Field(description="Request body for updating a billing account")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1239,8 +1239,8 @@ class BillingAccountsApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param routes_v2_update_billing_account_request: Request body for updating a billing account (required)
-        :type routes_v2_update_billing_account_request: RoutesV2UpdateBillingAccountRequest
+        :param update_billing_account_request: Request body for updating a billing account (required)
+        :type update_billing_account_request: UpdateBillingAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1265,7 +1265,7 @@ class BillingAccountsApi:
 
         _param = self._update_billing_account_serialize(
             billing_account_id=billing_account_id,
-            routes_v2_update_billing_account_request=routes_v2_update_billing_account_request,
+            update_billing_account_request=update_billing_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1292,7 +1292,7 @@ class BillingAccountsApi:
     def update_billing_account_without_preload_content(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        routes_v2_update_billing_account_request: Annotated[RoutesV2UpdateBillingAccountRequest, Field(description="Request body for updating a billing account")],
+        update_billing_account_request: Annotated[UpdateBillingAccountRequest, Field(description="Request body for updating a billing account")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1312,8 +1312,8 @@ class BillingAccountsApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param routes_v2_update_billing_account_request: Request body for updating a billing account (required)
-        :type routes_v2_update_billing_account_request: RoutesV2UpdateBillingAccountRequest
+        :param update_billing_account_request: Request body for updating a billing account (required)
+        :type update_billing_account_request: UpdateBillingAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1338,7 +1338,7 @@ class BillingAccountsApi:
 
         _param = self._update_billing_account_serialize(
             billing_account_id=billing_account_id,
-            routes_v2_update_billing_account_request=routes_v2_update_billing_account_request,
+            update_billing_account_request=update_billing_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1360,7 +1360,7 @@ class BillingAccountsApi:
     def _update_billing_account_serialize(
         self,
         billing_account_id,
-        routes_v2_update_billing_account_request,
+        update_billing_account_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1388,8 +1388,8 @@ class BillingAccountsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_update_billing_account_request is not None:
-            _body_params = routes_v2_update_billing_account_request
+        if update_billing_account_request is not None:
+            _body_params = update_billing_account_request
 
 
         # set the HTTP header `Accept`

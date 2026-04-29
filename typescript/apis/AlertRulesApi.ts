@@ -9,11 +9,11 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
+import { CreateAlertRuleRequest } from '../models/CreateAlertRuleRequest';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
-import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
+import { UpdateAlertRuleRequest } from '../models/UpdateAlertRuleRequest';
 
 /**
  * no description
@@ -24,9 +24,9 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
      * Create a new alert rule with the provided details
      * Create a new alert rule
      * @param organizationId Organization ID
-     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public async createAlertRule(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createAlertRule(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -35,9 +35,9 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV3CreateAlertRuleRequest' is not null or undefined
-        if (routesV3CreateAlertRuleRequest === null || routesV3CreateAlertRuleRequest === undefined) {
-            throw new RequiredError("AlertRulesApi", "createAlertRule", "routesV3CreateAlertRuleRequest");
+        // verify required parameter 'createAlertRuleRequest' is not null or undefined
+        if (createAlertRuleRequest === null || createAlertRuleRequest === undefined) {
+            throw new RequiredError("AlertRulesApi", "createAlertRule", "createAlertRuleRequest");
         }
 
 
@@ -56,7 +56,7 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3CreateAlertRuleRequest, "RoutesV3CreateAlertRuleRequest", ""),
+            ObjectSerializer.serialize(createAlertRuleRequest, "CreateAlertRuleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -303,9 +303,9 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
      * Update alert rule
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to update
-     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
+     * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public async updateAlertRule(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateAlertRule(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -320,9 +320,9 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV3UpdateAlertRuleRequest' is not null or undefined
-        if (routesV3UpdateAlertRuleRequest === null || routesV3UpdateAlertRuleRequest === undefined) {
-            throw new RequiredError("AlertRulesApi", "updateAlertRule", "routesV3UpdateAlertRuleRequest");
+        // verify required parameter 'updateAlertRuleRequest' is not null or undefined
+        if (updateAlertRuleRequest === null || updateAlertRuleRequest === undefined) {
+            throw new RequiredError("AlertRulesApi", "updateAlertRule", "updateAlertRuleRequest");
         }
 
 
@@ -342,7 +342,7 @@ export class AlertRulesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3UpdateAlertRuleRequest, "RoutesV3UpdateAlertRuleRequest", ""),
+            ObjectSerializer.serialize(updateAlertRuleRequest, "UpdateAlertRuleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

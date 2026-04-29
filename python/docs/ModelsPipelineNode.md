@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **component_house** | **str** |  | [optional] 
 **component_id** | **str** |  | [optional] 
 **component_sub_type** | **str** |  | [optional] 
-**component_type** | **str** |  | [optional] 
+**component_type** | [**ModelsComponentType**](ModelsComponentType.md) |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 

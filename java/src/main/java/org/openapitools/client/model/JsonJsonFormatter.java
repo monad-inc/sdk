@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.JsonFormatType;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,7 +59,7 @@ public class JsonJsonFormatter {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
-  private String type;
+  private JsonFormatType type;
 
   public JsonJsonFormatter() {
   }
@@ -82,7 +83,7 @@ public class JsonJsonFormatter {
   }
 
 
-  public JsonJsonFormatter type(@javax.annotation.Nonnull String type) {
+  public JsonJsonFormatter type(@javax.annotation.Nonnull JsonFormatType type) {
     this.type = type;
     return this;
   }
@@ -92,11 +93,11 @@ public class JsonJsonFormatter {
    * @return type
    */
   @javax.annotation.Nonnull
-  public String getType() {
+  public JsonFormatType getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull String type) {
+  public void setType(@javax.annotation.Nonnull JsonFormatType type) {
     this.type = type;
   }
 
@@ -181,9 +182,8 @@ public class JsonJsonFormatter {
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
-      if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
+      // validate the required field `type`
+      JsonFormatType.validateJsonElement(jsonObj.get("type"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

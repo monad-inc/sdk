@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -28,13 +28,13 @@ type ApiCreateEnrichmentRequest struct {
 	ctx context.Context
 	ApiService *OrganizationEnrichmentsAPIService
 	organizationId string
-	routesV3CreateEnrichmentRequest *RoutesV3CreateEnrichmentRequest
+	createEnrichmentRequest *CreateEnrichmentRequest
 	testConnection *bool
 }
 
 // Enrichment configuration
-func (r ApiCreateEnrichmentRequest) RoutesV3CreateEnrichmentRequest(routesV3CreateEnrichmentRequest RoutesV3CreateEnrichmentRequest) ApiCreateEnrichmentRequest {
-	r.routesV3CreateEnrichmentRequest = &routesV3CreateEnrichmentRequest
+func (r ApiCreateEnrichmentRequest) CreateEnrichmentRequest(createEnrichmentRequest CreateEnrichmentRequest) ApiCreateEnrichmentRequest {
+	r.createEnrichmentRequest = &createEnrichmentRequest
 	return r
 }
 
@@ -86,8 +86,8 @@ func (a *OrganizationEnrichmentsAPIService) CreateEnrichmentExecute(r ApiCreateE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV3CreateEnrichmentRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV3CreateEnrichmentRequest is required and must be specified")
+	if r.createEnrichmentRequest == nil {
+		return localVarReturnValue, nil, reportError("createEnrichmentRequest is required and must be specified")
 	}
 
 	if r.testConnection != nil {
@@ -111,7 +111,7 @@ func (a *OrganizationEnrichmentsAPIService) CreateEnrichmentExecute(r ApiCreateE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV3CreateEnrichmentRequest
+	localVarPostBody = r.createEnrichmentRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -687,13 +687,13 @@ type ApiReplaceEnrichmentRequest struct {
 	ApiService *OrganizationEnrichmentsAPIService
 	organizationId string
 	enrichmentId string
-	routesV3PutEnrichmentRequest *RoutesV3PutEnrichmentRequest
+	replaceEnrichmentRequest *ReplaceEnrichmentRequest
 	testConnection *bool
 }
 
 // Enrichment configuration update
-func (r ApiReplaceEnrichmentRequest) RoutesV3PutEnrichmentRequest(routesV3PutEnrichmentRequest RoutesV3PutEnrichmentRequest) ApiReplaceEnrichmentRequest {
-	r.routesV3PutEnrichmentRequest = &routesV3PutEnrichmentRequest
+func (r ApiReplaceEnrichmentRequest) ReplaceEnrichmentRequest(replaceEnrichmentRequest ReplaceEnrichmentRequest) ApiReplaceEnrichmentRequest {
+	r.replaceEnrichmentRequest = &replaceEnrichmentRequest
 	return r
 }
 
@@ -748,8 +748,8 @@ func (a *OrganizationEnrichmentsAPIService) ReplaceEnrichmentExecute(r ApiReplac
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV3PutEnrichmentRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV3PutEnrichmentRequest is required and must be specified")
+	if r.replaceEnrichmentRequest == nil {
+		return localVarReturnValue, nil, reportError("replaceEnrichmentRequest is required and must be specified")
 	}
 
 	if r.testConnection != nil {
@@ -773,7 +773,7 @@ func (a *OrganizationEnrichmentsAPIService) ReplaceEnrichmentExecute(r ApiReplac
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV3PutEnrichmentRequest
+	localVarPostBody = r.replaceEnrichmentRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -875,12 +875,12 @@ type ApiTestEnrichmentConnectionRequest struct {
 	ctx context.Context
 	ApiService *OrganizationEnrichmentsAPIService
 	organizationId string
-	routesV3TestEnrichmentConnectionRequest *RoutesV3TestEnrichmentConnectionRequest
+	testEnrichmentConnectionRequest *TestEnrichmentConnectionRequest
 }
 
 // Enrichment configuration to test
-func (r ApiTestEnrichmentConnectionRequest) RoutesV3TestEnrichmentConnectionRequest(routesV3TestEnrichmentConnectionRequest RoutesV3TestEnrichmentConnectionRequest) ApiTestEnrichmentConnectionRequest {
-	r.routesV3TestEnrichmentConnectionRequest = &routesV3TestEnrichmentConnectionRequest
+func (r ApiTestEnrichmentConnectionRequest) TestEnrichmentConnectionRequest(testEnrichmentConnectionRequest TestEnrichmentConnectionRequest) ApiTestEnrichmentConnectionRequest {
+	r.testEnrichmentConnectionRequest = &testEnrichmentConnectionRequest
 	return r
 }
 
@@ -926,8 +926,8 @@ func (a *OrganizationEnrichmentsAPIService) TestEnrichmentConnectionExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV3TestEnrichmentConnectionRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV3TestEnrichmentConnectionRequest is required and must be specified")
+	if r.testEnrichmentConnectionRequest == nil {
+		return localVarReturnValue, nil, reportError("testEnrichmentConnectionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -948,7 +948,7 @@ func (a *OrganizationEnrichmentsAPIService) TestEnrichmentConnectionExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV3TestEnrichmentConnectionRequest
+	localVarPostBody = r.testEnrichmentConnectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1040,13 +1040,13 @@ type ApiUpdateEnrichmentRequest struct {
 	ApiService *OrganizationEnrichmentsAPIService
 	organizationId string
 	enrichmentId string
-	routesV3UpdateEnrichmentRequest *RoutesV3UpdateEnrichmentRequest
+	updateEnrichmentRequest *UpdateEnrichmentRequest
 	testConnection *bool
 }
 
 // Enrichment configuration update
-func (r ApiUpdateEnrichmentRequest) RoutesV3UpdateEnrichmentRequest(routesV3UpdateEnrichmentRequest RoutesV3UpdateEnrichmentRequest) ApiUpdateEnrichmentRequest {
-	r.routesV3UpdateEnrichmentRequest = &routesV3UpdateEnrichmentRequest
+func (r ApiUpdateEnrichmentRequest) UpdateEnrichmentRequest(updateEnrichmentRequest UpdateEnrichmentRequest) ApiUpdateEnrichmentRequest {
+	r.updateEnrichmentRequest = &updateEnrichmentRequest
 	return r
 }
 
@@ -1101,8 +1101,8 @@ func (a *OrganizationEnrichmentsAPIService) UpdateEnrichmentExecute(r ApiUpdateE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV3UpdateEnrichmentRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV3UpdateEnrichmentRequest is required and must be specified")
+	if r.updateEnrichmentRequest == nil {
+		return localVarReturnValue, nil, reportError("updateEnrichmentRequest is required and must be specified")
 	}
 
 	if r.testConnection != nil {
@@ -1126,7 +1126,7 @@ func (a *OrganizationEnrichmentsAPIService) UpdateEnrichmentExecute(r ApiUpdateE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV3UpdateEnrichmentRequest
+	localVarPostBody = r.updateEnrichmentRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -16,7 +16,7 @@
 |**enabled** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**isSynthetic** | **Boolean** |  |  [optional] |
-|**managedBy** | **String** |  |  [optional] |
+|**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**nextCronRunAt** | **String** |  |  [optional] |
 |**nodes** | [**List&lt;ModelsPipelineNode&gt;**](ModelsPipelineNode.md) |  |  [optional] |

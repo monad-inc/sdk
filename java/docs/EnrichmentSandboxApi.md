@@ -9,7 +9,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="enrichmentSandbox"></a>
 # **enrichmentSandbox**
-> RoutesV3EnrichmentSandboxResponse enrichmentSandbox(organizationId, routesV3EnrichmentSandboxRequest)
+> RoutesV3EnrichmentSandboxResponse enrichmentSandbox(organizationId, enrichmentSandboxRequest)
 
 Apply enrichment to record
 
@@ -44,9 +44,9 @@ public class Example {
 
     EnrichmentSandboxApi apiInstance = new EnrichmentSandboxApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest = new RoutesV3EnrichmentSandboxRequest(); // RoutesV3EnrichmentSandboxRequest | Enrichment configuration and record
+    EnrichmentSandboxRequest enrichmentSandboxRequest = new EnrichmentSandboxRequest(); // EnrichmentSandboxRequest | Enrichment configuration and record
     try {
-      RoutesV3EnrichmentSandboxResponse result = apiInstance.enrichmentSandbox(organizationId, routesV3EnrichmentSandboxRequest);
+      RoutesV3EnrichmentSandboxResponse result = apiInstance.enrichmentSandbox(organizationId, enrichmentSandboxRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EnrichmentSandboxApi#enrichmentSandbox");
@@ -64,7 +64,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV3EnrichmentSandboxRequest** | [**RoutesV3EnrichmentSandboxRequest**](RoutesV3EnrichmentSandboxRequest.md)| Enrichment configuration and record | |
+| **enrichmentSandboxRequest** | [**EnrichmentSandboxRequest**](EnrichmentSandboxRequest.md)| Enrichment configuration and record | |
 
 ### Return type
 

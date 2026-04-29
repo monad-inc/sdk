@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to **string** | Authentication type to use | [optional] 
+**AuthType** | Pointer to [**CommonAuthType**](CommonAuthType.md) |  | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **GithubAppInstallationId** | Pointer to **string** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
 **GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAuthType
 
-`func (o *OrgAuditLogsSettingsConfig) GetAuthType() string`
+`func (o *OrgAuditLogsSettingsConfig) GetAuthType() CommonAuthType`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *OrgAuditLogsSettingsConfig) GetAuthTypeOk() (*string, bool)`
+`func (o *OrgAuditLogsSettingsConfig) GetAuthTypeOk() (*CommonAuthType, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *OrgAuditLogsSettingsConfig) SetAuthType(v string)`
+`func (o *OrgAuditLogsSettingsConfig) SetAuthType(v CommonAuthType)`
 
 SetAuthType sets AuthType field to given value.
 

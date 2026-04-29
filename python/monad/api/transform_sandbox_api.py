@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,9 +19,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
-from monad.models.routes_v2_apply_transformation_request import RoutesV2ApplyTransformationRequest
+from monad.models.apply_transformation_v2_request import ApplyTransformationV2Request
+from monad.models.generate_record_request import GenerateRecordRequest
 from monad.models.routes_v2_apply_transformation_response import RoutesV2ApplyTransformationResponse
-from monad.models.routes_v2_generate_record_request import RoutesV2GenerateRecordRequest
 from monad.models.routes_v2_generate_record_response import RoutesV2GenerateRecordResponse
 from monad.models.routes_v2_list_templates_response import RoutesV2ListTemplatesResponse
 
@@ -47,7 +47,7 @@ class TransformSandboxApi:
     def apply_transformation(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_apply_transformation_request: Annotated[RoutesV2ApplyTransformationRequest, Field(description="Transform configuration and record")],
+        apply_transformation_v2_request: Annotated[ApplyTransformationV2Request, Field(description="Transform configuration and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,8 +67,8 @@ class TransformSandboxApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_apply_transformation_request: Transform configuration and record (required)
-        :type routes_v2_apply_transformation_request: RoutesV2ApplyTransformationRequest
+        :param apply_transformation_v2_request: Transform configuration and record (required)
+        :type apply_transformation_v2_request: ApplyTransformationV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class TransformSandboxApi:
 
         _param = self._apply_transformation_serialize(
             organization_id=organization_id,
-            routes_v2_apply_transformation_request=routes_v2_apply_transformation_request,
+            apply_transformation_v2_request=apply_transformation_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -120,7 +120,7 @@ class TransformSandboxApi:
     def apply_transformation_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_apply_transformation_request: Annotated[RoutesV2ApplyTransformationRequest, Field(description="Transform configuration and record")],
+        apply_transformation_v2_request: Annotated[ApplyTransformationV2Request, Field(description="Transform configuration and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -140,8 +140,8 @@ class TransformSandboxApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_apply_transformation_request: Transform configuration and record (required)
-        :type routes_v2_apply_transformation_request: RoutesV2ApplyTransformationRequest
+        :param apply_transformation_v2_request: Transform configuration and record (required)
+        :type apply_transformation_v2_request: ApplyTransformationV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -166,7 +166,7 @@ class TransformSandboxApi:
 
         _param = self._apply_transformation_serialize(
             organization_id=organization_id,
-            routes_v2_apply_transformation_request=routes_v2_apply_transformation_request,
+            apply_transformation_v2_request=apply_transformation_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -193,7 +193,7 @@ class TransformSandboxApi:
     def apply_transformation_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_apply_transformation_request: Annotated[RoutesV2ApplyTransformationRequest, Field(description="Transform configuration and record")],
+        apply_transformation_v2_request: Annotated[ApplyTransformationV2Request, Field(description="Transform configuration and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -213,8 +213,8 @@ class TransformSandboxApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_apply_transformation_request: Transform configuration and record (required)
-        :type routes_v2_apply_transformation_request: RoutesV2ApplyTransformationRequest
+        :param apply_transformation_v2_request: Transform configuration and record (required)
+        :type apply_transformation_v2_request: ApplyTransformationV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -239,7 +239,7 @@ class TransformSandboxApi:
 
         _param = self._apply_transformation_serialize(
             organization_id=organization_id,
-            routes_v2_apply_transformation_request=routes_v2_apply_transformation_request,
+            apply_transformation_v2_request=apply_transformation_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -261,7 +261,7 @@ class TransformSandboxApi:
     def _apply_transformation_serialize(
         self,
         organization_id,
-        routes_v2_apply_transformation_request,
+        apply_transformation_v2_request,
         _request_auth,
         _content_type,
         _headers,
@@ -289,8 +289,8 @@ class TransformSandboxApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_apply_transformation_request is not None:
-            _body_params = routes_v2_apply_transformation_request
+        if apply_transformation_v2_request is not None:
+            _body_params = apply_transformation_v2_request
 
 
         # set the HTTP header `Accept`
@@ -342,7 +342,7 @@ class TransformSandboxApi:
     @validate_call
     def apply_transformation_v2(
         self,
-        routes_v2_apply_transformation_request: Annotated[RoutesV2ApplyTransformationRequest, Field(description="Transform configuration and record")],
+        apply_transformation_v2_request: Annotated[ApplyTransformationV2Request, Field(description="Transform configuration and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -360,8 +360,8 @@ class TransformSandboxApi:
 
         Apply a transformation configuration to a JSON record
 
-        :param routes_v2_apply_transformation_request: Transform configuration and record (required)
-        :type routes_v2_apply_transformation_request: RoutesV2ApplyTransformationRequest
+        :param apply_transformation_v2_request: Transform configuration and record (required)
+        :type apply_transformation_v2_request: ApplyTransformationV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -385,7 +385,7 @@ class TransformSandboxApi:
         """ # noqa: E501
 
         _param = self._apply_transformation_v2_serialize(
-            routes_v2_apply_transformation_request=routes_v2_apply_transformation_request,
+            apply_transformation_v2_request=apply_transformation_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -411,7 +411,7 @@ class TransformSandboxApi:
     @validate_call
     def apply_transformation_v2_with_http_info(
         self,
-        routes_v2_apply_transformation_request: Annotated[RoutesV2ApplyTransformationRequest, Field(description="Transform configuration and record")],
+        apply_transformation_v2_request: Annotated[ApplyTransformationV2Request, Field(description="Transform configuration and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -429,8 +429,8 @@ class TransformSandboxApi:
 
         Apply a transformation configuration to a JSON record
 
-        :param routes_v2_apply_transformation_request: Transform configuration and record (required)
-        :type routes_v2_apply_transformation_request: RoutesV2ApplyTransformationRequest
+        :param apply_transformation_v2_request: Transform configuration and record (required)
+        :type apply_transformation_v2_request: ApplyTransformationV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -454,7 +454,7 @@ class TransformSandboxApi:
         """ # noqa: E501
 
         _param = self._apply_transformation_v2_serialize(
-            routes_v2_apply_transformation_request=routes_v2_apply_transformation_request,
+            apply_transformation_v2_request=apply_transformation_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -480,7 +480,7 @@ class TransformSandboxApi:
     @validate_call
     def apply_transformation_v2_without_preload_content(
         self,
-        routes_v2_apply_transformation_request: Annotated[RoutesV2ApplyTransformationRequest, Field(description="Transform configuration and record")],
+        apply_transformation_v2_request: Annotated[ApplyTransformationV2Request, Field(description="Transform configuration and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -498,8 +498,8 @@ class TransformSandboxApi:
 
         Apply a transformation configuration to a JSON record
 
-        :param routes_v2_apply_transformation_request: Transform configuration and record (required)
-        :type routes_v2_apply_transformation_request: RoutesV2ApplyTransformationRequest
+        :param apply_transformation_v2_request: Transform configuration and record (required)
+        :type apply_transformation_v2_request: ApplyTransformationV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -523,7 +523,7 @@ class TransformSandboxApi:
         """ # noqa: E501
 
         _param = self._apply_transformation_v2_serialize(
-            routes_v2_apply_transformation_request=routes_v2_apply_transformation_request,
+            apply_transformation_v2_request=apply_transformation_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -544,7 +544,7 @@ class TransformSandboxApi:
 
     def _apply_transformation_v2_serialize(
         self,
-        routes_v2_apply_transformation_request,
+        apply_transformation_v2_request,
         _request_auth,
         _content_type,
         _headers,
@@ -570,8 +570,8 @@ class TransformSandboxApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_apply_transformation_request is not None:
-            _body_params = routes_v2_apply_transformation_request
+        if apply_transformation_v2_request is not None:
+            _body_params = apply_transformation_v2_request
 
 
         # set the HTTP header `Accept`
@@ -623,7 +623,7 @@ class TransformSandboxApi:
     @validate_call
     def generate_record(
         self,
-        routes_v2_generate_record_request: Annotated[RoutesV2GenerateRecordRequest, Field(description="Record generation parameters")],
+        generate_record_request: Annotated[GenerateRecordRequest, Field(description="Record generation parameters")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -641,8 +641,8 @@ class TransformSandboxApi:
 
         Generate a sample record using the specified template type
 
-        :param routes_v2_generate_record_request: Record generation parameters (required)
-        :type routes_v2_generate_record_request: RoutesV2GenerateRecordRequest
+        :param generate_record_request: Record generation parameters (required)
+        :type generate_record_request: GenerateRecordRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -666,7 +666,7 @@ class TransformSandboxApi:
         """ # noqa: E501
 
         _param = self._generate_record_serialize(
-            routes_v2_generate_record_request=routes_v2_generate_record_request,
+            generate_record_request=generate_record_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -691,7 +691,7 @@ class TransformSandboxApi:
     @validate_call
     def generate_record_with_http_info(
         self,
-        routes_v2_generate_record_request: Annotated[RoutesV2GenerateRecordRequest, Field(description="Record generation parameters")],
+        generate_record_request: Annotated[GenerateRecordRequest, Field(description="Record generation parameters")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -709,8 +709,8 @@ class TransformSandboxApi:
 
         Generate a sample record using the specified template type
 
-        :param routes_v2_generate_record_request: Record generation parameters (required)
-        :type routes_v2_generate_record_request: RoutesV2GenerateRecordRequest
+        :param generate_record_request: Record generation parameters (required)
+        :type generate_record_request: GenerateRecordRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -734,7 +734,7 @@ class TransformSandboxApi:
         """ # noqa: E501
 
         _param = self._generate_record_serialize(
-            routes_v2_generate_record_request=routes_v2_generate_record_request,
+            generate_record_request=generate_record_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -759,7 +759,7 @@ class TransformSandboxApi:
     @validate_call
     def generate_record_without_preload_content(
         self,
-        routes_v2_generate_record_request: Annotated[RoutesV2GenerateRecordRequest, Field(description="Record generation parameters")],
+        generate_record_request: Annotated[GenerateRecordRequest, Field(description="Record generation parameters")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -777,8 +777,8 @@ class TransformSandboxApi:
 
         Generate a sample record using the specified template type
 
-        :param routes_v2_generate_record_request: Record generation parameters (required)
-        :type routes_v2_generate_record_request: RoutesV2GenerateRecordRequest
+        :param generate_record_request: Record generation parameters (required)
+        :type generate_record_request: GenerateRecordRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -802,7 +802,7 @@ class TransformSandboxApi:
         """ # noqa: E501
 
         _param = self._generate_record_serialize(
-            routes_v2_generate_record_request=routes_v2_generate_record_request,
+            generate_record_request=generate_record_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -822,7 +822,7 @@ class TransformSandboxApi:
 
     def _generate_record_serialize(
         self,
-        routes_v2_generate_record_request,
+        generate_record_request,
         _request_auth,
         _content_type,
         _headers,
@@ -848,8 +848,8 @@ class TransformSandboxApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_generate_record_request is not None:
-            _body_params = routes_v2_generate_record_request
+        if generate_record_request is not None:
+            _body_params = generate_record_request
 
 
         # set the HTTP header `Accept`

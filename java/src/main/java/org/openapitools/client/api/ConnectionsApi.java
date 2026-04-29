@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateConnectionRequest;
 import org.openapitools.client.model.ModelsConnection;
 import org.openapitools.client.model.ModelsConnectionList;
 import org.openapitools.client.model.ResponderErrorResponse;
-import org.openapitools.client.model.RoutesV3CreateConnectionRequest;
-import org.openapitools.client.model.RoutesV3UpdateConnectionRequest;
+import org.openapitools.client.model.UpdateConnectionRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -79,7 +79,7 @@ public class ConnectionsApi {
     /**
      * Build call for createConnection
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateConnectionRequest Request body for creating a connection (required)
+     * @param createConnectionRequest Request body for creating a connection (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,7 +92,7 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateConnectionRequest createConnectionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,7 +106,7 @@ public class ConnectionsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3CreateConnectionRequest;
+        Object localVarPostBody = createConnectionRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/connections"
@@ -139,18 +139,18 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateConnectionRequest createConnectionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createConnection(Async)");
         }
 
-        // verify the required parameter 'routesV3CreateConnectionRequest' is set
-        if (routesV3CreateConnectionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3CreateConnectionRequest' when calling createConnection(Async)");
+        // verify the required parameter 'createConnectionRequest' is set
+        if (createConnectionRequest == null) {
+            throw new ApiException("Missing the required parameter 'createConnectionRequest' when calling createConnection(Async)");
         }
 
-        return createConnectionCall(organizationId, routesV3CreateConnectionRequest, _callback);
+        return createConnectionCall(organizationId, createConnectionRequest, _callback);
 
     }
 
@@ -158,7 +158,7 @@ public class ConnectionsApi {
      * Create a new connection
      * Create a new connection with the provided details
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateConnectionRequest Request body for creating a connection (required)
+     * @param createConnectionRequest Request body for creating a connection (required)
      * @return ModelsConnection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -170,8 +170,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsConnection createConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest) throws ApiException {
-        ApiResponse<ModelsConnection> localVarResp = createConnectionWithHttpInfo(organizationId, routesV3CreateConnectionRequest);
+    public ModelsConnection createConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateConnectionRequest createConnectionRequest) throws ApiException {
+        ApiResponse<ModelsConnection> localVarResp = createConnectionWithHttpInfo(organizationId, createConnectionRequest);
         return localVarResp.getData();
     }
 
@@ -179,7 +179,7 @@ public class ConnectionsApi {
      * Create a new connection
      * Create a new connection with the provided details
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateConnectionRequest Request body for creating a connection (required)
+     * @param createConnectionRequest Request body for creating a connection (required)
      * @return ApiResponse&lt;ModelsConnection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -191,8 +191,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsConnection> createConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest) throws ApiException {
-        okhttp3.Call localVarCall = createConnectionValidateBeforeCall(organizationId, routesV3CreateConnectionRequest, null);
+    public ApiResponse<ModelsConnection> createConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateConnectionRequest createConnectionRequest) throws ApiException {
+        okhttp3.Call localVarCall = createConnectionValidateBeforeCall(organizationId, createConnectionRequest, null);
         Type localVarReturnType = new TypeToken<ModelsConnection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -201,7 +201,7 @@ public class ConnectionsApi {
      * Create a new connection (asynchronously)
      * Create a new connection with the provided details
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateConnectionRequest Request body for creating a connection (required)
+     * @param createConnectionRequest Request body for creating a connection (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -214,9 +214,9 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest, final ApiCallback<ModelsConnection> _callback) throws ApiException {
+    public okhttp3.Call createConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateConnectionRequest createConnectionRequest, final ApiCallback<ModelsConnection> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createConnectionValidateBeforeCall(organizationId, routesV3CreateConnectionRequest, _callback);
+        okhttp3.Call localVarCall = createConnectionValidateBeforeCall(organizationId, createConnectionRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsConnection>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -662,7 +662,7 @@ public class ConnectionsApi {
      * Build call for updateConnection
      * @param organizationId Organization ID (required)
      * @param connectionId Connection ID to update (required)
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection (required)
+     * @param updateConnectionRequest Request body for updating a connection (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -675,7 +675,7 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UpdateConnectionRequest updateConnectionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -689,7 +689,7 @@ public class ConnectionsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3UpdateConnectionRequest;
+        Object localVarPostBody = updateConnectionRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/connections/{connection_id}"
@@ -723,7 +723,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UpdateConnectionRequest updateConnectionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateConnection(Async)");
@@ -734,12 +734,12 @@ public class ConnectionsApi {
             throw new ApiException("Missing the required parameter 'connectionId' when calling updateConnection(Async)");
         }
 
-        // verify the required parameter 'routesV3UpdateConnectionRequest' is set
-        if (routesV3UpdateConnectionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3UpdateConnectionRequest' when calling updateConnection(Async)");
+        // verify the required parameter 'updateConnectionRequest' is set
+        if (updateConnectionRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateConnectionRequest' when calling updateConnection(Async)");
         }
 
-        return updateConnectionCall(organizationId, connectionId, routesV3UpdateConnectionRequest, _callback);
+        return updateConnectionCall(organizationId, connectionId, updateConnectionRequest, _callback);
 
     }
 
@@ -748,7 +748,7 @@ public class ConnectionsApi {
      * Update an existing connection
      * @param organizationId Organization ID (required)
      * @param connectionId Connection ID to update (required)
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection (required)
+     * @param updateConnectionRequest Request body for updating a connection (required)
      * @return ModelsConnection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -760,8 +760,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsConnection updateConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest) throws ApiException {
-        ApiResponse<ModelsConnection> localVarResp = updateConnectionWithHttpInfo(organizationId, connectionId, routesV3UpdateConnectionRequest);
+    public ModelsConnection updateConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UpdateConnectionRequest updateConnectionRequest) throws ApiException {
+        ApiResponse<ModelsConnection> localVarResp = updateConnectionWithHttpInfo(organizationId, connectionId, updateConnectionRequest);
         return localVarResp.getData();
     }
 
@@ -770,7 +770,7 @@ public class ConnectionsApi {
      * Update an existing connection
      * @param organizationId Organization ID (required)
      * @param connectionId Connection ID to update (required)
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection (required)
+     * @param updateConnectionRequest Request body for updating a connection (required)
      * @return ApiResponse&lt;ModelsConnection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -782,8 +782,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsConnection> updateConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateConnectionValidateBeforeCall(organizationId, connectionId, routesV3UpdateConnectionRequest, null);
+    public ApiResponse<ModelsConnection> updateConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UpdateConnectionRequest updateConnectionRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateConnectionValidateBeforeCall(organizationId, connectionId, updateConnectionRequest, null);
         Type localVarReturnType = new TypeToken<ModelsConnection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -793,7 +793,7 @@ public class ConnectionsApi {
      * Update an existing connection
      * @param organizationId Organization ID (required)
      * @param connectionId Connection ID to update (required)
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection (required)
+     * @param updateConnectionRequest Request body for updating a connection (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -806,9 +806,9 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest, final ApiCallback<ModelsConnection> _callback) throws ApiException {
+    public okhttp3.Call updateConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UpdateConnectionRequest updateConnectionRequest, final ApiCallback<ModelsConnection> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateConnectionValidateBeforeCall(organizationId, connectionId, routesV3UpdateConnectionRequest, _callback);
+        okhttp3.Call localVarCall = updateConnectionValidateBeforeCall(organizationId, connectionId, updateConnectionRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsConnection>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

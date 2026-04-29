@@ -14,7 +14,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createAPIKey"></a>
 # **createAPIKey**
-> ModelsAPIKeyWithToken createAPIKey(organizationId, routesV2CreateAPIKeyRequest)
+> ModelsAPIKeyWithToken createAPIKey(organizationId, createAPIKeyRequest)
 
 Create API key
 
@@ -49,9 +49,9 @@ public class Example {
 
     OrganizationApiKeysApi apiInstance = new OrganizationApiKeysApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest = new RoutesV2CreateAPIKeyRequest(); // RoutesV2CreateAPIKeyRequest | Request body for creating an API key
+    CreateAPIKeyRequest createAPIKeyRequest = new CreateAPIKeyRequest(); // CreateAPIKeyRequest | Request body for creating an API key
     try {
-      ModelsAPIKeyWithToken result = apiInstance.createAPIKey(organizationId, routesV2CreateAPIKeyRequest);
+      ModelsAPIKeyWithToken result = apiInstance.createAPIKey(organizationId, createAPIKeyRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationApiKeysApi#createAPIKey");
@@ -69,7 +69,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2CreateAPIKeyRequest** | [**RoutesV2CreateAPIKeyRequest**](RoutesV2CreateAPIKeyRequest.md)| Request body for creating an API key | |
+| **createAPIKeyRequest** | [**CreateAPIKeyRequest**](CreateAPIKeyRequest.md)| Request body for creating an API key | |
 
 ### Return type
 
@@ -410,7 +410,7 @@ public class Example {
 
 <a id="updateAPIKey"></a>
 # **updateAPIKey**
-> ModelsAPIKey updateAPIKey(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest)
+> ModelsAPIKey updateAPIKey(organizationId, apiKeyId, updateAPIKeyRequest)
 
 Update API key
 
@@ -446,9 +446,9 @@ public class Example {
     OrganizationApiKeysApi apiInstance = new OrganizationApiKeysApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String apiKeyId = "apiKeyId_example"; // String | API Key ID
-    RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest = new RoutesV2UpdateAPIKeyRequest(); // RoutesV2UpdateAPIKeyRequest | Request body for updating an API key
+    UpdateAPIKeyRequest updateAPIKeyRequest = new UpdateAPIKeyRequest(); // UpdateAPIKeyRequest | Request body for updating an API key
     try {
-      ModelsAPIKey result = apiInstance.updateAPIKey(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest);
+      ModelsAPIKey result = apiInstance.updateAPIKey(organizationId, apiKeyId, updateAPIKeyRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationApiKeysApi#updateAPIKey");
@@ -467,7 +467,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **apiKeyId** | **String**| API Key ID | |
-| **routesV2UpdateAPIKeyRequest** | [**RoutesV2UpdateAPIKeyRequest**](RoutesV2UpdateAPIKeyRequest.md)| Request body for updating an API key | |
+| **updateAPIKeyRequest** | [**UpdateAPIKeyRequest**](UpdateAPIKeyRequest.md)| Request body for updating an API key | |
 
 ### Return type
 

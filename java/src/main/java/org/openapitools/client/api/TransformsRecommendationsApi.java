@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateTransformRecommendationRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3OptimizerType;
 import org.openapitools.client.model.RoutesV3SecurityDataAnalysis;
-import org.openapitools.client.model.RoutesV3TransformRecommendationRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -78,7 +78,7 @@ public class TransformsRecommendationsApi {
     /**
      * Build call for createTransformRecommendation
      * @param organizationId Organization ID (required)
-     * @param routesV3TransformRecommendationRequest Security data to analyze (required)
+     * @param createTransformRecommendationRequest Security data to analyze (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,7 +92,7 @@ public class TransformsRecommendationsApi {
         <tr><td> 503 </td><td> Service unavailable (API key not configured) </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformRecommendationCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TransformRecommendationRequest routesV3TransformRecommendationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTransformRecommendationCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRecommendationRequest createTransformRecommendationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,7 +106,7 @@ public class TransformsRecommendationsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3TransformRecommendationRequest;
+        Object localVarPostBody = createTransformRecommendationRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/transform_recommendations"
@@ -139,18 +139,18 @@ public class TransformsRecommendationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTransformRecommendationValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TransformRecommendationRequest routesV3TransformRecommendationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTransformRecommendationValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRecommendationRequest createTransformRecommendationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createTransformRecommendation(Async)");
         }
 
-        // verify the required parameter 'routesV3TransformRecommendationRequest' is set
-        if (routesV3TransformRecommendationRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3TransformRecommendationRequest' when calling createTransformRecommendation(Async)");
+        // verify the required parameter 'createTransformRecommendationRequest' is set
+        if (createTransformRecommendationRequest == null) {
+            throw new ApiException("Missing the required parameter 'createTransformRecommendationRequest' when calling createTransformRecommendation(Async)");
         }
 
-        return createTransformRecommendationCall(organizationId, routesV3TransformRecommendationRequest, _callback);
+        return createTransformRecommendationCall(organizationId, createTransformRecommendationRequest, _callback);
 
     }
 
@@ -158,7 +158,7 @@ public class TransformsRecommendationsApi {
      * Create transform recommendation
      * Analyze security data and provide transformation recommendations
      * @param organizationId Organization ID (required)
-     * @param routesV3TransformRecommendationRequest Security data to analyze (required)
+     * @param createTransformRecommendationRequest Security data to analyze (required)
      * @return RoutesV3SecurityDataAnalysis
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -171,8 +171,8 @@ public class TransformsRecommendationsApi {
         <tr><td> 503 </td><td> Service unavailable (API key not configured) </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV3SecurityDataAnalysis createTransformRecommendation(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TransformRecommendationRequest routesV3TransformRecommendationRequest) throws ApiException {
-        ApiResponse<RoutesV3SecurityDataAnalysis> localVarResp = createTransformRecommendationWithHttpInfo(organizationId, routesV3TransformRecommendationRequest);
+    public RoutesV3SecurityDataAnalysis createTransformRecommendation(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRecommendationRequest createTransformRecommendationRequest) throws ApiException {
+        ApiResponse<RoutesV3SecurityDataAnalysis> localVarResp = createTransformRecommendationWithHttpInfo(organizationId, createTransformRecommendationRequest);
         return localVarResp.getData();
     }
 
@@ -180,7 +180,7 @@ public class TransformsRecommendationsApi {
      * Create transform recommendation
      * Analyze security data and provide transformation recommendations
      * @param organizationId Organization ID (required)
-     * @param routesV3TransformRecommendationRequest Security data to analyze (required)
+     * @param createTransformRecommendationRequest Security data to analyze (required)
      * @return ApiResponse&lt;RoutesV3SecurityDataAnalysis&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -193,8 +193,8 @@ public class TransformsRecommendationsApi {
         <tr><td> 503 </td><td> Service unavailable (API key not configured) </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV3SecurityDataAnalysis> createTransformRecommendationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TransformRecommendationRequest routesV3TransformRecommendationRequest) throws ApiException {
-        okhttp3.Call localVarCall = createTransformRecommendationValidateBeforeCall(organizationId, routesV3TransformRecommendationRequest, null);
+    public ApiResponse<RoutesV3SecurityDataAnalysis> createTransformRecommendationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRecommendationRequest createTransformRecommendationRequest) throws ApiException {
+        okhttp3.Call localVarCall = createTransformRecommendationValidateBeforeCall(organizationId, createTransformRecommendationRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV3SecurityDataAnalysis>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -203,7 +203,7 @@ public class TransformsRecommendationsApi {
      * Create transform recommendation (asynchronously)
      * Analyze security data and provide transformation recommendations
      * @param organizationId Organization ID (required)
-     * @param routesV3TransformRecommendationRequest Security data to analyze (required)
+     * @param createTransformRecommendationRequest Security data to analyze (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -217,9 +217,9 @@ public class TransformsRecommendationsApi {
         <tr><td> 503 </td><td> Service unavailable (API key not configured) </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformRecommendationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TransformRecommendationRequest routesV3TransformRecommendationRequest, final ApiCallback<RoutesV3SecurityDataAnalysis> _callback) throws ApiException {
+    public okhttp3.Call createTransformRecommendationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRecommendationRequest createTransformRecommendationRequest, final ApiCallback<RoutesV3SecurityDataAnalysis> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createTransformRecommendationValidateBeforeCall(organizationId, routesV3TransformRecommendationRequest, _callback);
+        okhttp3.Call localVarCall = createTransformRecommendationValidateBeforeCall(organizationId, createTransformRecommendationRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV3SecurityDataAnalysis>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

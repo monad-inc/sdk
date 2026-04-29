@@ -9,7 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
-import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { GetTokenRequest } from '../models/GetTokenRequest';
 
 /**
  * no description
@@ -19,14 +19,14 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param routesLoginRequest Login request
+     * @param getTokenRequest Login request
      */
-    public async getToken(routesLoginRequest: RoutesLoginRequest, _options?: Configuration): Promise<RequestContext> {
+    public async getToken(getTokenRequest: GetTokenRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'routesLoginRequest' is not null or undefined
-        if (routesLoginRequest === null || routesLoginRequest === undefined) {
-            throw new RequiredError("AuthenticationApi", "getToken", "routesLoginRequest");
+        // verify required parameter 'getTokenRequest' is not null or undefined
+        if (getTokenRequest === null || getTokenRequest === undefined) {
+            throw new RequiredError("AuthenticationApi", "getToken", "getTokenRequest");
         }
 
 
@@ -44,7 +44,7 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesLoginRequest, "RoutesLoginRequest", ""),
+            ObjectSerializer.serialize(getTokenRequest, "GetTokenRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

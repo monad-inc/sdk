@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**clearingStartedAt** | **Integer** | When clearing began |  [optional] |
 |**resolvedAt** | **Integer** | Unix timestamp when resolved |  [optional] |
-|**state** | **String** |  |  [optional] |
+|**state** | **ModelsAlertState** |  |  [optional] |
 
 
 

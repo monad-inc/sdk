@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **applyConditionV2**
-> RoutesV2ApplyConditionResponse applyConditionV2(routesV2ApplyConditionRequest)
+> RoutesV2ApplyConditionResponse applyConditionV2(applyConditionV2Request)
 
 Apply a condition to a JSON record
 
@@ -24,21 +24,7 @@ const apiInstance = new ConditionSandboxApi(configuration);
 
 const request: ConditionSandboxApiApplyConditionV2Request = {
     // Condition and record
-  routesV2ApplyConditionRequest: {
-    condition: {
-      conditions: [
-        ,
-      ],
-      config: {
-        "key": null,
-      },
-      operator: "operator_example",
-      typeId: "typeId_example",
-    },
-    record: [
-      1,
-    ],
-  },
+  applyConditionV2Request: null,
 };
 
 const data = await apiInstance.applyConditionV2(request);
@@ -50,7 +36,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2ApplyConditionRequest** | **RoutesV2ApplyConditionRequest**| Condition and record |
+ **applyConditionV2Request** | **ApplyConditionV2Request**| Condition and record |
 
 
 ### Return type

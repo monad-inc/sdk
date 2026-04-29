@@ -13,7 +13,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createRole"></a>
 # **createRole**
-> ModelsRoleWithPermissions createRole(organizationId, routesV2CreateRoleV2Request)
+> ModelsRoleWithPermissions createRole(organizationId, createRoleRequest)
 
 Create role
 
@@ -48,9 +48,9 @@ public class Example {
 
     RolesApi apiInstance = new RolesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request = new RoutesV2CreateRoleV2Request(); // RoutesV2CreateRoleV2Request | Request body for creating a role
+    CreateRoleRequest createRoleRequest = new CreateRoleRequest(); // CreateRoleRequest | Request body for creating a role
     try {
-      ModelsRoleWithPermissions result = apiInstance.createRole(organizationId, routesV2CreateRoleV2Request);
+      ModelsRoleWithPermissions result = apiInstance.createRole(organizationId, createRoleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RolesApi#createRole");
@@ -68,7 +68,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2CreateRoleV2Request** | [**RoutesV2CreateRoleV2Request**](RoutesV2CreateRoleV2Request.md)| Request body for creating a role | |
+| **createRoleRequest** | [**CreateRoleRequest**](CreateRoleRequest.md)| Request body for creating a role | |
 
 ### Return type
 
@@ -328,7 +328,7 @@ public class Example {
 
 <a id="updateRole"></a>
 # **updateRole**
-> ModelsRoleWithPermissions updateRole(organizationId, roleId, routesV2UpdateRoleV2Request)
+> ModelsRoleWithPermissions updateRole(organizationId, roleId, updateRoleRequest)
 
 Update role
 
@@ -364,9 +364,9 @@ public class Example {
     RolesApi apiInstance = new RolesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String roleId = "roleId_example"; // String | Role ID
-    RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request = new RoutesV2UpdateRoleV2Request(); // RoutesV2UpdateRoleV2Request | Request body for updating a role
+    UpdateRoleRequest updateRoleRequest = new UpdateRoleRequest(); // UpdateRoleRequest | Request body for updating a role
     try {
-      ModelsRoleWithPermissions result = apiInstance.updateRole(organizationId, roleId, routesV2UpdateRoleV2Request);
+      ModelsRoleWithPermissions result = apiInstance.updateRole(organizationId, roleId, updateRoleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RolesApi#updateRole");
@@ -385,7 +385,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **roleId** | **String**| Role ID | |
-| **routesV2UpdateRoleV2Request** | [**RoutesV2UpdateRoleV2Request**](RoutesV2UpdateRoleV2Request.md)| Request body for updating a role | |
+| **updateRoleRequest** | [**UpdateRoleRequest**](UpdateRoleRequest.md)| Request body for updating a role | |
 
 ### Return type
 

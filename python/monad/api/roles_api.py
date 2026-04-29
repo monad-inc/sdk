@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,10 +19,10 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
+from monad.models.create_role_request import CreateRoleRequest
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList
-from monad.models.routes_v2_create_role_v2_request import RoutesV2CreateRoleV2Request
-from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request
+from monad.models.update_role_request import UpdateRoleRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -46,7 +46,7 @@ class RolesApi:
     def create_role(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_role_v2_request: Annotated[RoutesV2CreateRoleV2Request, Field(description="Request body for creating a role")],
+        create_role_request: Annotated[CreateRoleRequest, Field(description="Request body for creating a role")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -66,8 +66,8 @@ class RolesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_role_v2_request: Request body for creating a role (required)
-        :type routes_v2_create_role_v2_request: RoutesV2CreateRoleV2Request
+        :param create_role_request: Request body for creating a role (required)
+        :type create_role_request: CreateRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -92,7 +92,7 @@ class RolesApi:
 
         _param = self._create_role_serialize(
             organization_id=organization_id,
-            routes_v2_create_role_v2_request=routes_v2_create_role_v2_request,
+            create_role_request=create_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -119,7 +119,7 @@ class RolesApi:
     def create_role_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_role_v2_request: Annotated[RoutesV2CreateRoleV2Request, Field(description="Request body for creating a role")],
+        create_role_request: Annotated[CreateRoleRequest, Field(description="Request body for creating a role")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,8 +139,8 @@ class RolesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_role_v2_request: Request body for creating a role (required)
-        :type routes_v2_create_role_v2_request: RoutesV2CreateRoleV2Request
+        :param create_role_request: Request body for creating a role (required)
+        :type create_role_request: CreateRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,7 +165,7 @@ class RolesApi:
 
         _param = self._create_role_serialize(
             organization_id=organization_id,
-            routes_v2_create_role_v2_request=routes_v2_create_role_v2_request,
+            create_role_request=create_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -192,7 +192,7 @@ class RolesApi:
     def create_role_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_role_v2_request: Annotated[RoutesV2CreateRoleV2Request, Field(description="Request body for creating a role")],
+        create_role_request: Annotated[CreateRoleRequest, Field(description="Request body for creating a role")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -212,8 +212,8 @@ class RolesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_role_v2_request: Request body for creating a role (required)
-        :type routes_v2_create_role_v2_request: RoutesV2CreateRoleV2Request
+        :param create_role_request: Request body for creating a role (required)
+        :type create_role_request: CreateRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -238,7 +238,7 @@ class RolesApi:
 
         _param = self._create_role_serialize(
             organization_id=organization_id,
-            routes_v2_create_role_v2_request=routes_v2_create_role_v2_request,
+            create_role_request=create_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -260,7 +260,7 @@ class RolesApi:
     def _create_role_serialize(
         self,
         organization_id,
-        routes_v2_create_role_v2_request,
+        create_role_request,
         _request_auth,
         _content_type,
         _headers,
@@ -288,8 +288,8 @@ class RolesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_role_v2_request is not None:
-            _body_params = routes_v2_create_role_v2_request
+        if create_role_request is not None:
+            _body_params = create_role_request
 
 
         # set the HTTP header `Accept`
@@ -1202,7 +1202,7 @@ class RolesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_update_role_v2_request: Annotated[RoutesV2UpdateRoleV2Request, Field(description="Request body for updating a role")],
+        update_role_request: Annotated[UpdateRoleRequest, Field(description="Request body for updating a role")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1224,8 +1224,8 @@ class RolesApi:
         :type organization_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_update_role_v2_request: Request body for updating a role (required)
-        :type routes_v2_update_role_v2_request: RoutesV2UpdateRoleV2Request
+        :param update_role_request: Request body for updating a role (required)
+        :type update_role_request: UpdateRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1251,7 +1251,7 @@ class RolesApi:
         _param = self._update_role_serialize(
             organization_id=organization_id,
             role_id=role_id,
-            routes_v2_update_role_v2_request=routes_v2_update_role_v2_request,
+            update_role_request=update_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1279,7 +1279,7 @@ class RolesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_update_role_v2_request: Annotated[RoutesV2UpdateRoleV2Request, Field(description="Request body for updating a role")],
+        update_role_request: Annotated[UpdateRoleRequest, Field(description="Request body for updating a role")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1301,8 +1301,8 @@ class RolesApi:
         :type organization_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_update_role_v2_request: Request body for updating a role (required)
-        :type routes_v2_update_role_v2_request: RoutesV2UpdateRoleV2Request
+        :param update_role_request: Request body for updating a role (required)
+        :type update_role_request: UpdateRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1328,7 +1328,7 @@ class RolesApi:
         _param = self._update_role_serialize(
             organization_id=organization_id,
             role_id=role_id,
-            routes_v2_update_role_v2_request=routes_v2_update_role_v2_request,
+            update_role_request=update_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1356,7 +1356,7 @@ class RolesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_update_role_v2_request: Annotated[RoutesV2UpdateRoleV2Request, Field(description="Request body for updating a role")],
+        update_role_request: Annotated[UpdateRoleRequest, Field(description="Request body for updating a role")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1378,8 +1378,8 @@ class RolesApi:
         :type organization_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_update_role_v2_request: Request body for updating a role (required)
-        :type routes_v2_update_role_v2_request: RoutesV2UpdateRoleV2Request
+        :param update_role_request: Request body for updating a role (required)
+        :type update_role_request: UpdateRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1405,7 +1405,7 @@ class RolesApi:
         _param = self._update_role_serialize(
             organization_id=organization_id,
             role_id=role_id,
-            routes_v2_update_role_v2_request=routes_v2_update_role_v2_request,
+            update_role_request=update_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1428,7 +1428,7 @@ class RolesApi:
         self,
         organization_id,
         role_id,
-        routes_v2_update_role_v2_request,
+        update_role_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1458,8 +1458,8 @@ class RolesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_update_role_v2_request is not None:
-            _body_params = routes_v2_update_role_v2_request
+        if update_role_request is not None:
+            _body_params = update_role_request
 
 
         # set the HTTP header `Accept`

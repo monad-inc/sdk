@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.PagerdutyAlertsConfig;
+import org.openapitools.client.model.PagerdutyEventType;
 import org.openapitools.client.model.PagerdutySummaryConfig;
 
 import com.google.gson.Gson;
@@ -60,7 +61,7 @@ public class PagerdutySettingsConfig {
   public static final String SERIALIZED_NAME_DEFAULT_EVENT_TYPE = "default_event_type";
   @SerializedName(SERIALIZED_NAME_DEFAULT_EVENT_TYPE)
   @javax.annotation.Nullable
-  private String defaultEventType;
+  private PagerdutyEventType defaultEventType;
 
   public static final String SERIALIZED_NAME_SUMMARY_CONFIG = "summary_config";
   @SerializedName(SERIALIZED_NAME_SUMMARY_CONFIG)
@@ -89,21 +90,21 @@ public class PagerdutySettingsConfig {
   }
 
 
-  public PagerdutySettingsConfig defaultEventType(@javax.annotation.Nullable String defaultEventType) {
+  public PagerdutySettingsConfig defaultEventType(@javax.annotation.Nullable PagerdutyEventType defaultEventType) {
     this.defaultEventType = defaultEventType;
     return this;
   }
 
   /**
-   * EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice.
+   * Get defaultEventType
    * @return defaultEventType
    */
   @javax.annotation.Nullable
-  public String getDefaultEventType() {
+  public PagerdutyEventType getDefaultEventType() {
     return defaultEventType;
   }
 
-  public void setDefaultEventType(@javax.annotation.Nullable String defaultEventType) {
+  public void setDefaultEventType(@javax.annotation.Nullable PagerdutyEventType defaultEventType) {
     this.defaultEventType = defaultEventType;
   }
 
@@ -203,8 +204,9 @@ public class PagerdutySettingsConfig {
       if (jsonObj.get("alerts_config") != null && !jsonObj.get("alerts_config").isJsonNull()) {
         PagerdutyAlertsConfig.validateJsonElement(jsonObj.get("alerts_config"));
       }
-      if ((jsonObj.get("default_event_type") != null && !jsonObj.get("default_event_type").isJsonNull()) && !jsonObj.get("default_event_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `default_event_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("default_event_type").toString()));
+      // validate the optional field `default_event_type`
+      if (jsonObj.get("default_event_type") != null && !jsonObj.get("default_event_type").isJsonNull()) {
+        PagerdutyEventType.validateJsonElement(jsonObj.get("default_event_type"));
       }
       // validate the optional field `summary_config`
       if (jsonObj.get("summary_config") != null && !jsonObj.get("summary_config").isJsonNull()) {

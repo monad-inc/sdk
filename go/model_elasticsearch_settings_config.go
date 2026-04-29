@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -20,12 +20,10 @@ var _ MappedNullable = &ElasticsearchSettingsConfig{}
 
 // ElasticsearchSettingsConfig Elasticsearch Output Settings
 type ElasticsearchSettingsConfig struct {
-	// The method of authentication to use with the Elasticsearch cluster. Choose between 'api_key' or 'password'.
-	AuthType *string `json:"auth_type,omitempty"`
+	AuthType *ElasticsearchAuthTypeEnum `json:"auth_type,omitempty"`
 	// The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to 'cloud_id'.
 	CloudId *string `json:"cloud_id,omitempty"`
-	// The type of connection to use with Elasticsearch. Choose between 'cloud_id' for Elastic Cloud or 'url' for direct connection.
-	ConnectionType *string `json:"connection_type,omitempty"`
+	ConnectionType *ElasticsearchConnectionTypeEnum `json:"connection_type,omitempty"`
 	// The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.
 	Index *string `json:"index,omitempty"`
 	// If set to true, it skips verification of the server's TLS certificate. This is insecure and should only be used for testing purposes.
@@ -54,9 +52,9 @@ func NewElasticsearchSettingsConfigWithDefaults() *ElasticsearchSettingsConfig {
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *ElasticsearchSettingsConfig) GetAuthType() string {
+func (o *ElasticsearchSettingsConfig) GetAuthType() ElasticsearchAuthTypeEnum {
 	if o == nil || IsNil(o.AuthType) {
-		var ret string
+		var ret ElasticsearchAuthTypeEnum
 		return ret
 	}
 	return *o.AuthType
@@ -64,7 +62,7 @@ func (o *ElasticsearchSettingsConfig) GetAuthType() string {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*string, bool) {
+func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*ElasticsearchAuthTypeEnum, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -80,8 +78,8 @@ func (o *ElasticsearchSettingsConfig) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *ElasticsearchSettingsConfig) SetAuthType(v string) {
+// SetAuthType gets a reference to the given ElasticsearchAuthTypeEnum and assigns it to the AuthType field.
+func (o *ElasticsearchSettingsConfig) SetAuthType(v ElasticsearchAuthTypeEnum) {
 	o.AuthType = &v
 }
 
@@ -118,9 +116,9 @@ func (o *ElasticsearchSettingsConfig) SetCloudId(v string) {
 }
 
 // GetConnectionType returns the ConnectionType field value if set, zero value otherwise.
-func (o *ElasticsearchSettingsConfig) GetConnectionType() string {
+func (o *ElasticsearchSettingsConfig) GetConnectionType() ElasticsearchConnectionTypeEnum {
 	if o == nil || IsNil(o.ConnectionType) {
-		var ret string
+		var ret ElasticsearchConnectionTypeEnum
 		return ret
 	}
 	return *o.ConnectionType
@@ -128,7 +126,7 @@ func (o *ElasticsearchSettingsConfig) GetConnectionType() string {
 
 // GetConnectionTypeOk returns a tuple with the ConnectionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*string, bool) {
+func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*ElasticsearchConnectionTypeEnum, bool) {
 	if o == nil || IsNil(o.ConnectionType) {
 		return nil, false
 	}
@@ -144,8 +142,8 @@ func (o *ElasticsearchSettingsConfig) HasConnectionType() bool {
 	return false
 }
 
-// SetConnectionType gets a reference to the given string and assigns it to the ConnectionType field.
-func (o *ElasticsearchSettingsConfig) SetConnectionType(v string) {
+// SetConnectionType gets a reference to the given ElasticsearchConnectionTypeEnum and assigns it to the ConnectionType field.
+func (o *ElasticsearchSettingsConfig) SetConnectionType(v ElasticsearchConnectionTypeEnum) {
 	o.ConnectionType = &v
 }
 

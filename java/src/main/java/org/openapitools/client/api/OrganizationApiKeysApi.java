@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateAPIKeyRequest;
 import org.openapitools.client.model.ModelsAPIKey;
 import org.openapitools.client.model.ModelsAPIKeyList;
 import org.openapitools.client.model.ModelsAPIKeyWithToken;
-import org.openapitools.client.model.RoutesV2CreateAPIKeyRequest;
-import org.openapitools.client.model.RoutesV2UpdateAPIKeyRequest;
+import org.openapitools.client.model.UpdateAPIKeyRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -79,7 +79,7 @@ public class OrganizationApiKeysApi {
     /**
      * Build call for createAPIKey
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key (required)
+     * @param createAPIKeyRequest Request body for creating an API key (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,7 +92,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAPIKeyCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAPIKeyCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAPIKeyRequest createAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,7 +106,7 @@ public class OrganizationApiKeysApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreateAPIKeyRequest;
+        Object localVarPostBody = createAPIKeyRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/api_keys"
@@ -139,18 +139,18 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAPIKeyValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAPIKeyValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAPIKeyRequest createAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createAPIKey(Async)");
         }
 
-        // verify the required parameter 'routesV2CreateAPIKeyRequest' is set
-        if (routesV2CreateAPIKeyRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreateAPIKeyRequest' when calling createAPIKey(Async)");
+        // verify the required parameter 'createAPIKeyRequest' is set
+        if (createAPIKeyRequest == null) {
+            throw new ApiException("Missing the required parameter 'createAPIKeyRequest' when calling createAPIKey(Async)");
         }
 
-        return createAPIKeyCall(organizationId, routesV2CreateAPIKeyRequest, _callback);
+        return createAPIKeyCall(organizationId, createAPIKeyRequest, _callback);
 
     }
 
@@ -158,7 +158,7 @@ public class OrganizationApiKeysApi {
      * Create API key
      * Create API key
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key (required)
+     * @param createAPIKeyRequest Request body for creating an API key (required)
      * @return ModelsAPIKeyWithToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -170,8 +170,8 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKeyWithToken createAPIKey(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest) throws ApiException {
-        ApiResponse<ModelsAPIKeyWithToken> localVarResp = createAPIKeyWithHttpInfo(organizationId, routesV2CreateAPIKeyRequest);
+    public ModelsAPIKeyWithToken createAPIKey(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAPIKeyRequest createAPIKeyRequest) throws ApiException {
+        ApiResponse<ModelsAPIKeyWithToken> localVarResp = createAPIKeyWithHttpInfo(organizationId, createAPIKeyRequest);
         return localVarResp.getData();
     }
 
@@ -179,7 +179,7 @@ public class OrganizationApiKeysApi {
      * Create API key
      * Create API key
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key (required)
+     * @param createAPIKeyRequest Request body for creating an API key (required)
      * @return ApiResponse&lt;ModelsAPIKeyWithToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -191,8 +191,8 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKeyWithToken> createAPIKeyWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest) throws ApiException {
-        okhttp3.Call localVarCall = createAPIKeyValidateBeforeCall(organizationId, routesV2CreateAPIKeyRequest, null);
+    public ApiResponse<ModelsAPIKeyWithToken> createAPIKeyWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAPIKeyRequest createAPIKeyRequest) throws ApiException {
+        okhttp3.Call localVarCall = createAPIKeyValidateBeforeCall(organizationId, createAPIKeyRequest, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -201,7 +201,7 @@ public class OrganizationApiKeysApi {
      * Create API key (asynchronously)
      * Create API key
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key (required)
+     * @param createAPIKeyRequest Request body for creating an API key (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -214,9 +214,9 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAPIKeyAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
+    public okhttp3.Call createAPIKeyAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAPIKeyRequest createAPIKeyRequest, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createAPIKeyValidateBeforeCall(organizationId, routesV2CreateAPIKeyRequest, _callback);
+        okhttp3.Call localVarCall = createAPIKeyValidateBeforeCall(organizationId, createAPIKeyRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -807,7 +807,7 @@ public class OrganizationApiKeysApi {
      * Build call for updateAPIKey
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key (required)
+     * @param updateAPIKeyRequest Request body for updating an API key (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -820,7 +820,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAPIKeyCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAPIKeyCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull UpdateAPIKeyRequest updateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -834,7 +834,7 @@ public class OrganizationApiKeysApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2UpdateAPIKeyRequest;
+        Object localVarPostBody = updateAPIKeyRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/api_keys/{api_key_id}"
@@ -868,7 +868,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAPIKeyValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAPIKeyValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull UpdateAPIKeyRequest updateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateAPIKey(Async)");
@@ -879,12 +879,12 @@ public class OrganizationApiKeysApi {
             throw new ApiException("Missing the required parameter 'apiKeyId' when calling updateAPIKey(Async)");
         }
 
-        // verify the required parameter 'routesV2UpdateAPIKeyRequest' is set
-        if (routesV2UpdateAPIKeyRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2UpdateAPIKeyRequest' when calling updateAPIKey(Async)");
+        // verify the required parameter 'updateAPIKeyRequest' is set
+        if (updateAPIKeyRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateAPIKeyRequest' when calling updateAPIKey(Async)");
         }
 
-        return updateAPIKeyCall(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, _callback);
+        return updateAPIKeyCall(organizationId, apiKeyId, updateAPIKeyRequest, _callback);
 
     }
 
@@ -893,7 +893,7 @@ public class OrganizationApiKeysApi {
      * Update API key
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key (required)
+     * @param updateAPIKeyRequest Request body for updating an API key (required)
      * @return ModelsAPIKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -905,8 +905,8 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKey updateAPIKey(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest) throws ApiException {
-        ApiResponse<ModelsAPIKey> localVarResp = updateAPIKeyWithHttpInfo(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest);
+    public ModelsAPIKey updateAPIKey(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull UpdateAPIKeyRequest updateAPIKeyRequest) throws ApiException {
+        ApiResponse<ModelsAPIKey> localVarResp = updateAPIKeyWithHttpInfo(organizationId, apiKeyId, updateAPIKeyRequest);
         return localVarResp.getData();
     }
 
@@ -915,7 +915,7 @@ public class OrganizationApiKeysApi {
      * Update API key
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key (required)
+     * @param updateAPIKeyRequest Request body for updating an API key (required)
      * @return ApiResponse&lt;ModelsAPIKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -927,8 +927,8 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKey> updateAPIKeyWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateAPIKeyValidateBeforeCall(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, null);
+    public ApiResponse<ModelsAPIKey> updateAPIKeyWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull UpdateAPIKeyRequest updateAPIKeyRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateAPIKeyValidateBeforeCall(organizationId, apiKeyId, updateAPIKeyRequest, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -938,7 +938,7 @@ public class OrganizationApiKeysApi {
      * Update API key
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key (required)
+     * @param updateAPIKeyRequest Request body for updating an API key (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -951,9 +951,9 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAPIKeyAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback<ModelsAPIKey> _callback) throws ApiException {
+    public okhttp3.Call updateAPIKeyAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull UpdateAPIKeyRequest updateAPIKeyRequest, final ApiCallback<ModelsAPIKey> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateAPIKeyValidateBeforeCall(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, _callback);
+        okhttp3.Call localVarCall = updateAPIKeyValidateBeforeCall(organizationId, apiKeyId, updateAPIKeyRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKey>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -26,12 +26,12 @@ type ConditionSandboxAPIService service
 type ApiApplyConditionV2Request struct {
 	ctx context.Context
 	ApiService *ConditionSandboxAPIService
-	routesV2ApplyConditionRequest *RoutesV2ApplyConditionRequest
+	applyConditionV2Request *ApplyConditionV2Request
 }
 
 // Condition and record
-func (r ApiApplyConditionV2Request) RoutesV2ApplyConditionRequest(routesV2ApplyConditionRequest RoutesV2ApplyConditionRequest) ApiApplyConditionV2Request {
-	r.routesV2ApplyConditionRequest = &routesV2ApplyConditionRequest
+func (r ApiApplyConditionV2Request) ApplyConditionV2Request(applyConditionV2Request ApplyConditionV2Request) ApiApplyConditionV2Request {
+	r.applyConditionV2Request = &applyConditionV2Request
 	return r
 }
 
@@ -74,8 +74,8 @@ func (a *ConditionSandboxAPIService) ApplyConditionV2Execute(r ApiApplyCondition
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2ApplyConditionRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2ApplyConditionRequest is required and must be specified")
+	if r.applyConditionV2Request == nil {
+		return localVarReturnValue, nil, reportError("applyConditionV2Request is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -96,7 +96,7 @@ func (a *ConditionSandboxAPIService) ApplyConditionV2Execute(r ApiApplyCondition
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2ApplyConditionRequest
+	localVarPostBody = r.applyConditionV2Request
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClearingStartedAt** | Pointer to **int32** | When clearing began | [optional] 
 **ResolvedAt** | Pointer to **int32** | Unix timestamp when resolved | [optional] 
-**State** | Pointer to **string** |  | [optional] 
+**State** | Pointer to [**ModelsAlertState**](ModelsAlertState.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasResolvedAt returns a boolean if a field has been set.
 
 ### GetState
 
-`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetState() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetState() ModelsAlertState`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetStateOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) GetStateOk() (*ModelsAlertState, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetState(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsAlertStatus) SetState(v ModelsAlertState)`
 
 SetState sets State field to given value.
 

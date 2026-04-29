@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,14 +19,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from monad.models.create_enrichment_request import CreateEnrichmentRequest
 from monad.models.models_enrichment import ModelsEnrichment
 from monad.models.models_enrichment_list import ModelsEnrichmentList
-from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest
+from monad.models.replace_enrichment_request import ReplaceEnrichmentRequest
 from monad.models.routes_v3_get_enrichment_response import RoutesV3GetEnrichmentResponse
-from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentRequest
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse
-from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest
-from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest
+from monad.models.test_enrichment_connection_request import TestEnrichmentConnectionRequest
+from monad.models.update_enrichment_request import UpdateEnrichmentRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -50,7 +50,7 @@ class OrganizationEnrichmentsApi:
     def create_enrichment(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_enrichment_request: Annotated[RoutesV3CreateEnrichmentRequest, Field(description="Enrichment configuration")],
+        create_enrichment_request: Annotated[CreateEnrichmentRequest, Field(description="Enrichment configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -71,8 +71,8 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_enrichment_request: Enrichment configuration (required)
-        :type routes_v3_create_enrichment_request: RoutesV3CreateEnrichmentRequest
+        :param create_enrichment_request: Enrichment configuration (required)
+        :type create_enrichment_request: CreateEnrichmentRequest
         :param test_connection: Test connection before creating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -99,7 +99,7 @@ class OrganizationEnrichmentsApi:
 
         _param = self._create_enrichment_serialize(
             organization_id=organization_id,
-            routes_v3_create_enrichment_request=routes_v3_create_enrichment_request,
+            create_enrichment_request=create_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -127,7 +127,7 @@ class OrganizationEnrichmentsApi:
     def create_enrichment_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_enrichment_request: Annotated[RoutesV3CreateEnrichmentRequest, Field(description="Enrichment configuration")],
+        create_enrichment_request: Annotated[CreateEnrichmentRequest, Field(description="Enrichment configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -148,8 +148,8 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_enrichment_request: Enrichment configuration (required)
-        :type routes_v3_create_enrichment_request: RoutesV3CreateEnrichmentRequest
+        :param create_enrichment_request: Enrichment configuration (required)
+        :type create_enrichment_request: CreateEnrichmentRequest
         :param test_connection: Test connection before creating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -176,7 +176,7 @@ class OrganizationEnrichmentsApi:
 
         _param = self._create_enrichment_serialize(
             organization_id=organization_id,
-            routes_v3_create_enrichment_request=routes_v3_create_enrichment_request,
+            create_enrichment_request=create_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -204,7 +204,7 @@ class OrganizationEnrichmentsApi:
     def create_enrichment_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_enrichment_request: Annotated[RoutesV3CreateEnrichmentRequest, Field(description="Enrichment configuration")],
+        create_enrichment_request: Annotated[CreateEnrichmentRequest, Field(description="Enrichment configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -225,8 +225,8 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_enrichment_request: Enrichment configuration (required)
-        :type routes_v3_create_enrichment_request: RoutesV3CreateEnrichmentRequest
+        :param create_enrichment_request: Enrichment configuration (required)
+        :type create_enrichment_request: CreateEnrichmentRequest
         :param test_connection: Test connection before creating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -253,7 +253,7 @@ class OrganizationEnrichmentsApi:
 
         _param = self._create_enrichment_serialize(
             organization_id=organization_id,
-            routes_v3_create_enrichment_request=routes_v3_create_enrichment_request,
+            create_enrichment_request=create_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -276,7 +276,7 @@ class OrganizationEnrichmentsApi:
     def _create_enrichment_serialize(
         self,
         organization_id,
-        routes_v3_create_enrichment_request,
+        create_enrichment_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -309,8 +309,8 @@ class OrganizationEnrichmentsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_create_enrichment_request is not None:
-            _body_params = routes_v3_create_enrichment_request
+        if create_enrichment_request is not None:
+            _body_params = create_enrichment_request
 
 
         # set the HTTP header `Accept`
@@ -1232,7 +1232,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         enrichment_id: Annotated[StrictStr, Field(description="Enrichment ID")],
-        routes_v3_put_enrichment_request: Annotated[RoutesV3PutEnrichmentRequest, Field(description="Enrichment configuration update")],
+        replace_enrichment_request: Annotated[ReplaceEnrichmentRequest, Field(description="Enrichment configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before updating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -1255,8 +1255,8 @@ class OrganizationEnrichmentsApi:
         :type organization_id: str
         :param enrichment_id: Enrichment ID (required)
         :type enrichment_id: str
-        :param routes_v3_put_enrichment_request: Enrichment configuration update (required)
-        :type routes_v3_put_enrichment_request: RoutesV3PutEnrichmentRequest
+        :param replace_enrichment_request: Enrichment configuration update (required)
+        :type replace_enrichment_request: ReplaceEnrichmentRequest
         :param test_connection: Test connection before updating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1284,7 +1284,7 @@ class OrganizationEnrichmentsApi:
         _param = self._replace_enrichment_serialize(
             organization_id=organization_id,
             enrichment_id=enrichment_id,
-            routes_v3_put_enrichment_request=routes_v3_put_enrichment_request,
+            replace_enrichment_request=replace_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1314,7 +1314,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         enrichment_id: Annotated[StrictStr, Field(description="Enrichment ID")],
-        routes_v3_put_enrichment_request: Annotated[RoutesV3PutEnrichmentRequest, Field(description="Enrichment configuration update")],
+        replace_enrichment_request: Annotated[ReplaceEnrichmentRequest, Field(description="Enrichment configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before updating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -1337,8 +1337,8 @@ class OrganizationEnrichmentsApi:
         :type organization_id: str
         :param enrichment_id: Enrichment ID (required)
         :type enrichment_id: str
-        :param routes_v3_put_enrichment_request: Enrichment configuration update (required)
-        :type routes_v3_put_enrichment_request: RoutesV3PutEnrichmentRequest
+        :param replace_enrichment_request: Enrichment configuration update (required)
+        :type replace_enrichment_request: ReplaceEnrichmentRequest
         :param test_connection: Test connection before updating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1366,7 +1366,7 @@ class OrganizationEnrichmentsApi:
         _param = self._replace_enrichment_serialize(
             organization_id=organization_id,
             enrichment_id=enrichment_id,
-            routes_v3_put_enrichment_request=routes_v3_put_enrichment_request,
+            replace_enrichment_request=replace_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1396,7 +1396,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         enrichment_id: Annotated[StrictStr, Field(description="Enrichment ID")],
-        routes_v3_put_enrichment_request: Annotated[RoutesV3PutEnrichmentRequest, Field(description="Enrichment configuration update")],
+        replace_enrichment_request: Annotated[ReplaceEnrichmentRequest, Field(description="Enrichment configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before updating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -1419,8 +1419,8 @@ class OrganizationEnrichmentsApi:
         :type organization_id: str
         :param enrichment_id: Enrichment ID (required)
         :type enrichment_id: str
-        :param routes_v3_put_enrichment_request: Enrichment configuration update (required)
-        :type routes_v3_put_enrichment_request: RoutesV3PutEnrichmentRequest
+        :param replace_enrichment_request: Enrichment configuration update (required)
+        :type replace_enrichment_request: ReplaceEnrichmentRequest
         :param test_connection: Test connection before updating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1448,7 +1448,7 @@ class OrganizationEnrichmentsApi:
         _param = self._replace_enrichment_serialize(
             organization_id=organization_id,
             enrichment_id=enrichment_id,
-            routes_v3_put_enrichment_request=routes_v3_put_enrichment_request,
+            replace_enrichment_request=replace_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1473,7 +1473,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id,
         enrichment_id,
-        routes_v3_put_enrichment_request,
+        replace_enrichment_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -1508,8 +1508,8 @@ class OrganizationEnrichmentsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_put_enrichment_request is not None:
-            _body_params = routes_v3_put_enrichment_request
+        if replace_enrichment_request is not None:
+            _body_params = replace_enrichment_request
 
 
         # set the HTTP header `Accept`
@@ -1562,7 +1562,7 @@ class OrganizationEnrichmentsApi:
     def test_enrichment_connection(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_test_enrichment_connection_request: Annotated[RoutesV3TestEnrichmentConnectionRequest, Field(description="Enrichment configuration to test")],
+        test_enrichment_connection_request: Annotated[TestEnrichmentConnectionRequest, Field(description="Enrichment configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1582,8 +1582,8 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_test_enrichment_connection_request: Enrichment configuration to test (required)
-        :type routes_v3_test_enrichment_connection_request: RoutesV3TestEnrichmentConnectionRequest
+        :param test_enrichment_connection_request: Enrichment configuration to test (required)
+        :type test_enrichment_connection_request: TestEnrichmentConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1608,7 +1608,7 @@ class OrganizationEnrichmentsApi:
 
         _param = self._test_enrichment_connection_serialize(
             organization_id=organization_id,
-            routes_v3_test_enrichment_connection_request=routes_v3_test_enrichment_connection_request,
+            test_enrichment_connection_request=test_enrichment_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1635,7 +1635,7 @@ class OrganizationEnrichmentsApi:
     def test_enrichment_connection_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_test_enrichment_connection_request: Annotated[RoutesV3TestEnrichmentConnectionRequest, Field(description="Enrichment configuration to test")],
+        test_enrichment_connection_request: Annotated[TestEnrichmentConnectionRequest, Field(description="Enrichment configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1655,8 +1655,8 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_test_enrichment_connection_request: Enrichment configuration to test (required)
-        :type routes_v3_test_enrichment_connection_request: RoutesV3TestEnrichmentConnectionRequest
+        :param test_enrichment_connection_request: Enrichment configuration to test (required)
+        :type test_enrichment_connection_request: TestEnrichmentConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1681,7 +1681,7 @@ class OrganizationEnrichmentsApi:
 
         _param = self._test_enrichment_connection_serialize(
             organization_id=organization_id,
-            routes_v3_test_enrichment_connection_request=routes_v3_test_enrichment_connection_request,
+            test_enrichment_connection_request=test_enrichment_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1708,7 +1708,7 @@ class OrganizationEnrichmentsApi:
     def test_enrichment_connection_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_test_enrichment_connection_request: Annotated[RoutesV3TestEnrichmentConnectionRequest, Field(description="Enrichment configuration to test")],
+        test_enrichment_connection_request: Annotated[TestEnrichmentConnectionRequest, Field(description="Enrichment configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1728,8 +1728,8 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_test_enrichment_connection_request: Enrichment configuration to test (required)
-        :type routes_v3_test_enrichment_connection_request: RoutesV3TestEnrichmentConnectionRequest
+        :param test_enrichment_connection_request: Enrichment configuration to test (required)
+        :type test_enrichment_connection_request: TestEnrichmentConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1754,7 +1754,7 @@ class OrganizationEnrichmentsApi:
 
         _param = self._test_enrichment_connection_serialize(
             organization_id=organization_id,
-            routes_v3_test_enrichment_connection_request=routes_v3_test_enrichment_connection_request,
+            test_enrichment_connection_request=test_enrichment_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1776,7 +1776,7 @@ class OrganizationEnrichmentsApi:
     def _test_enrichment_connection_serialize(
         self,
         organization_id,
-        routes_v3_test_enrichment_connection_request,
+        test_enrichment_connection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1804,8 +1804,8 @@ class OrganizationEnrichmentsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_test_enrichment_connection_request is not None:
-            _body_params = routes_v3_test_enrichment_connection_request
+        if test_enrichment_connection_request is not None:
+            _body_params = test_enrichment_connection_request
 
 
         # set the HTTP header `Accept`
@@ -1859,7 +1859,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         enrichment_id: Annotated[StrictStr, Field(description="Enrichment ID")],
-        routes_v3_update_enrichment_request: Annotated[RoutesV3UpdateEnrichmentRequest, Field(description="Enrichment configuration update")],
+        update_enrichment_request: Annotated[UpdateEnrichmentRequest, Field(description="Enrichment configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before updating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -1882,8 +1882,8 @@ class OrganizationEnrichmentsApi:
         :type organization_id: str
         :param enrichment_id: Enrichment ID (required)
         :type enrichment_id: str
-        :param routes_v3_update_enrichment_request: Enrichment configuration update (required)
-        :type routes_v3_update_enrichment_request: RoutesV3UpdateEnrichmentRequest
+        :param update_enrichment_request: Enrichment configuration update (required)
+        :type update_enrichment_request: UpdateEnrichmentRequest
         :param test_connection: Test connection before updating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1911,7 +1911,7 @@ class OrganizationEnrichmentsApi:
         _param = self._update_enrichment_serialize(
             organization_id=organization_id,
             enrichment_id=enrichment_id,
-            routes_v3_update_enrichment_request=routes_v3_update_enrichment_request,
+            update_enrichment_request=update_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1941,7 +1941,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         enrichment_id: Annotated[StrictStr, Field(description="Enrichment ID")],
-        routes_v3_update_enrichment_request: Annotated[RoutesV3UpdateEnrichmentRequest, Field(description="Enrichment configuration update")],
+        update_enrichment_request: Annotated[UpdateEnrichmentRequest, Field(description="Enrichment configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before updating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -1964,8 +1964,8 @@ class OrganizationEnrichmentsApi:
         :type organization_id: str
         :param enrichment_id: Enrichment ID (required)
         :type enrichment_id: str
-        :param routes_v3_update_enrichment_request: Enrichment configuration update (required)
-        :type routes_v3_update_enrichment_request: RoutesV3UpdateEnrichmentRequest
+        :param update_enrichment_request: Enrichment configuration update (required)
+        :type update_enrichment_request: UpdateEnrichmentRequest
         :param test_connection: Test connection before updating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1993,7 +1993,7 @@ class OrganizationEnrichmentsApi:
         _param = self._update_enrichment_serialize(
             organization_id=organization_id,
             enrichment_id=enrichment_id,
-            routes_v3_update_enrichment_request=routes_v3_update_enrichment_request,
+            update_enrichment_request=update_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2023,7 +2023,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         enrichment_id: Annotated[StrictStr, Field(description="Enrichment ID")],
-        routes_v3_update_enrichment_request: Annotated[RoutesV3UpdateEnrichmentRequest, Field(description="Enrichment configuration update")],
+        update_enrichment_request: Annotated[UpdateEnrichmentRequest, Field(description="Enrichment configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before updating the enrichment")] = None,
         _request_timeout: Union[
             None,
@@ -2046,8 +2046,8 @@ class OrganizationEnrichmentsApi:
         :type organization_id: str
         :param enrichment_id: Enrichment ID (required)
         :type enrichment_id: str
-        :param routes_v3_update_enrichment_request: Enrichment configuration update (required)
-        :type routes_v3_update_enrichment_request: RoutesV3UpdateEnrichmentRequest
+        :param update_enrichment_request: Enrichment configuration update (required)
+        :type update_enrichment_request: UpdateEnrichmentRequest
         :param test_connection: Test connection before updating the enrichment
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2075,7 +2075,7 @@ class OrganizationEnrichmentsApi:
         _param = self._update_enrichment_serialize(
             organization_id=organization_id,
             enrichment_id=enrichment_id,
-            routes_v3_update_enrichment_request=routes_v3_update_enrichment_request,
+            update_enrichment_request=update_enrichment_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2100,7 +2100,7 @@ class OrganizationEnrichmentsApi:
         self,
         organization_id,
         enrichment_id,
-        routes_v3_update_enrichment_request,
+        update_enrichment_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -2135,8 +2135,8 @@ class OrganizationEnrichmentsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_update_enrichment_request is not None:
-            _body_params = routes_v3_update_enrichment_request
+        if update_enrichment_request is not None:
+            _body_params = update_enrichment_request
 
 
         # set the HTTP header `Accept`

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
 **MessageGroupId** | Pointer to **string** | The message group ID for FIFO queues. This is required for FIFO queues. | [optional] 
-**QueueType** | Pointer to **string** | The type of SQS queue to use. Can be either \&quot;standard\&quot; or \&quot;fifo\&quot;. | [optional] 
+**QueueType** | Pointer to [**AwssqsoutputQueueType**](AwssqsoutputQueueType.md) |  | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
 **Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **Service** | Pointer to **string** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
 **CloudId** | Pointer to **string** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. | [optional] 
-**ConnectionType** | Pointer to **string** | The type of connection to use with Elasticsearch. Choose between &#39;cloud_id&#39; for Elastic Cloud or &#39;url&#39; for direct connection. | [optional] 
+**ConnectionType** | Pointer to [**ElasticsearchConnectionTypeEnum**](ElasticsearchConnectionTypeEnum.md) |  | [optional] 
 **Index** | Pointer to **string** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **Url** | Pointer to **string** | The URL of the Sumo Logic instance. | [optional] 
@@ -46,26 +46,26 @@ Name | Type | Description | Notes
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **MaxBatchRecordCount** | Pointer to **int32** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
 **Method** | Pointer to **string** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). | [optional] 
-**PayloadStructure** | Pointer to **string** | Determines how the payload is structured. &#39;single&#39; sends each record as a separate request, &#39;array&#39; sends multiple records as an array, &#39;wrapped&#39; sends multiple records within a wrapper object. | [optional] 
+**PayloadStructure** | Pointer to [**HttpPayloadStructure**](HttpPayloadStructure.md) |  | [optional] 
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** |  | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
-**Acks** | Pointer to **string** | Acknowledgment level (0&#x3D;none, 1&#x3D;leader only, all&#x3D;all replicas) | [optional] 
+**Acks** | Pointer to [**KafkaAcks**](KafkaAcks.md) |  | [optional] 
 **BootstrapServers** | Pointer to **string** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
-**CompressionType** | Pointer to **string** | Compression codec for messages (none, gzip, snappy, lz4, zstd) | [optional] 
+**CompressionType** | Pointer to [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
 **MessageKeyField** | Pointer to **string** | JSON field path to extract as the Kafka message key (uses gjson syntax) | [optional] 
 **Retries** | Pointer to **int32** | Number of retry attempts for failed writes | [optional] 
-**SaslMechanism** | Pointer to **string** | SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512) | [optional] 
-**SecurityProtocol** | Pointer to **string** | Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL) | [optional] 
+**SaslMechanism** | Pointer to [**KafkaSaslMechanism**](KafkaSaslMechanism.md) |  | [optional] 
+**SecurityProtocol** | Pointer to [**KafkaSecurityProtocol**](KafkaSecurityProtocol.md) |  | [optional] 
 **Topic** | Pointer to **string** | The Kafka topic to publish messages to | [optional] 
 **KeyField** | Pointer to **string** | The field in the incoming record to use as the key | [optional] 
 **Ttl** | Pointer to **int32** | Time-to-live in hours for stored key-value pairs (0 means no expiration) | [optional] 
 **ValueField** | Pointer to **string** |  | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
-**AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
+**AuthMode** | Pointer to [**OpensearchAuthMode**](OpensearchAuthMode.md) |  | [optional] 
 **AlertsConfig** | Pointer to [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
-**DefaultEventType** | Pointer to **string** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. | [optional] 
+**DefaultEventType** | Pointer to [**PagerdutyEventType**](PagerdutyEventType.md) |  | [optional] 
 **SummaryConfig** | Pointer to [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 **HttpIngestUrl** | Pointer to **string** |  | [optional] 
 **ColumnNames** | Pointer to **[]string** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
@@ -315,20 +315,20 @@ HasMessageGroupId returns a boolean if a field has been set.
 
 ### GetQueueType
 
-`func (o *SecretProcessesorOutputConfigSettings) GetQueueType() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetQueueType() AwssqsoutputQueueType`
 
 GetQueueType returns the QueueType field if non-nil, zero value otherwise.
 
 ### GetQueueTypeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetQueueTypeOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetQueueTypeOk() (*AwssqsoutputQueueType, bool)`
 
 GetQueueTypeOk returns a tuple with the QueueType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueType
 
-`func (o *SecretProcessesorOutputConfigSettings) SetQueueType(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetQueueType(v AwssqsoutputQueueType)`
 
 SetQueueType sets QueueType field to given value.
 
@@ -890,20 +890,20 @@ HasCloudId returns a boolean if a field has been set.
 
 ### GetConnectionType
 
-`func (o *SecretProcessesorOutputConfigSettings) GetConnectionType() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetConnectionType() ElasticsearchConnectionTypeEnum`
 
 GetConnectionType returns the ConnectionType field if non-nil, zero value otherwise.
 
 ### GetConnectionTypeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetConnectionTypeOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetConnectionTypeOk() (*ElasticsearchConnectionTypeEnum, bool)`
 
 GetConnectionTypeOk returns a tuple with the ConnectionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionType
 
-`func (o *SecretProcessesorOutputConfigSettings) SetConnectionType(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetConnectionType(v ElasticsearchConnectionTypeEnum)`
 
 SetConnectionType sets ConnectionType field to given value.
 
@@ -1165,20 +1165,20 @@ HasMethod returns a boolean if a field has been set.
 
 ### GetPayloadStructure
 
-`func (o *SecretProcessesorOutputConfigSettings) GetPayloadStructure() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetPayloadStructure() HttpPayloadStructure`
 
 GetPayloadStructure returns the PayloadStructure field if non-nil, zero value otherwise.
 
 ### GetPayloadStructureOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetPayloadStructureOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetPayloadStructureOk() (*HttpPayloadStructure, bool)`
 
 GetPayloadStructureOk returns a tuple with the PayloadStructure field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayloadStructure
 
-`func (o *SecretProcessesorOutputConfigSettings) SetPayloadStructure(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetPayloadStructure(v HttpPayloadStructure)`
 
 SetPayloadStructure sets PayloadStructure field to given value.
 
@@ -1265,20 +1265,20 @@ HasWrapperKey returns a boolean if a field has been set.
 
 ### GetAcks
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAcks() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetAcks() KafkaAcks`
 
 GetAcks returns the Acks field if non-nil, zero value otherwise.
 
 ### GetAcksOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAcksOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetAcksOk() (*KafkaAcks, bool)`
 
 GetAcksOk returns a tuple with the Acks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAcks
 
-`func (o *SecretProcessesorOutputConfigSettings) SetAcks(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetAcks(v KafkaAcks)`
 
 SetAcks sets Acks field to given value.
 
@@ -1315,20 +1315,20 @@ HasBootstrapServers returns a boolean if a field has been set.
 
 ### GetCompressionType
 
-`func (o *SecretProcessesorOutputConfigSettings) GetCompressionType() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetCompressionType() KafkaCompressionType`
 
 GetCompressionType returns the CompressionType field if non-nil, zero value otherwise.
 
 ### GetCompressionTypeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetCompressionTypeOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetCompressionTypeOk() (*KafkaCompressionType, bool)`
 
 GetCompressionTypeOk returns a tuple with the CompressionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCompressionType
 
-`func (o *SecretProcessesorOutputConfigSettings) SetCompressionType(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetCompressionType(v KafkaCompressionType)`
 
 SetCompressionType sets CompressionType field to given value.
 
@@ -1390,20 +1390,20 @@ HasRetries returns a boolean if a field has been set.
 
 ### GetSaslMechanism
 
-`func (o *SecretProcessesorOutputConfigSettings) GetSaslMechanism() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetSaslMechanism() KafkaSaslMechanism`
 
 GetSaslMechanism returns the SaslMechanism field if non-nil, zero value otherwise.
 
 ### GetSaslMechanismOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetSaslMechanismOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetSaslMechanismOk() (*KafkaSaslMechanism, bool)`
 
 GetSaslMechanismOk returns a tuple with the SaslMechanism field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaslMechanism
 
-`func (o *SecretProcessesorOutputConfigSettings) SetSaslMechanism(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetSaslMechanism(v KafkaSaslMechanism)`
 
 SetSaslMechanism sets SaslMechanism field to given value.
 
@@ -1415,20 +1415,20 @@ HasSaslMechanism returns a boolean if a field has been set.
 
 ### GetSecurityProtocol
 
-`func (o *SecretProcessesorOutputConfigSettings) GetSecurityProtocol() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetSecurityProtocol() KafkaSecurityProtocol`
 
 GetSecurityProtocol returns the SecurityProtocol field if non-nil, zero value otherwise.
 
 ### GetSecurityProtocolOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetSecurityProtocolOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetSecurityProtocolOk() (*KafkaSecurityProtocol, bool)`
 
 GetSecurityProtocolOk returns a tuple with the SecurityProtocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityProtocol
 
-`func (o *SecretProcessesorOutputConfigSettings) SetSecurityProtocol(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetSecurityProtocol(v KafkaSecurityProtocol)`
 
 SetSecurityProtocol sets SecurityProtocol field to given value.
 
@@ -1590,20 +1590,20 @@ HasUsePathStyle returns a boolean if a field has been set.
 
 ### GetAuthMode
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthMode() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthMode() OpensearchAuthMode`
 
 GetAuthMode returns the AuthMode field if non-nil, zero value otherwise.
 
 ### GetAuthModeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthModeOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthModeOk() (*OpensearchAuthMode, bool)`
 
 GetAuthModeOk returns a tuple with the AuthMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthMode
 
-`func (o *SecretProcessesorOutputConfigSettings) SetAuthMode(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetAuthMode(v OpensearchAuthMode)`
 
 SetAuthMode sets AuthMode field to given value.
 
@@ -1640,20 +1640,20 @@ HasAlertsConfig returns a boolean if a field has been set.
 
 ### GetDefaultEventType
 
-`func (o *SecretProcessesorOutputConfigSettings) GetDefaultEventType() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetDefaultEventType() PagerdutyEventType`
 
 GetDefaultEventType returns the DefaultEventType field if non-nil, zero value otherwise.
 
 ### GetDefaultEventTypeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetDefaultEventTypeOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetDefaultEventTypeOk() (*PagerdutyEventType, bool)`
 
 GetDefaultEventTypeOk returns a tuple with the DefaultEventType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultEventType
 
-`func (o *SecretProcessesorOutputConfigSettings) SetDefaultEventType(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetDefaultEventType(v PagerdutyEventType)`
 
 SetDefaultEventType sets DefaultEventType field to given value.
 

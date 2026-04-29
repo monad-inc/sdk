@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsBillingProductType;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -90,7 +91,7 @@ public class ModelsBillingProduct {
   public static final String SERIALIZED_NAME_PRODUCT_TYPE = "product_type";
   @SerializedName(SERIALIZED_NAME_PRODUCT_TYPE)
   @javax.annotation.Nullable
-  private String productType;
+  private ModelsBillingProductType productType;
 
   public static final String SERIALIZED_NAME_RECURRING_COST_CENTS = "recurring_cost_cents";
   @SerializedName(SERIALIZED_NAME_RECURRING_COST_CENTS)
@@ -266,7 +267,7 @@ public class ModelsBillingProduct {
   }
 
 
-  public ModelsBillingProduct productType(@javax.annotation.Nullable String productType) {
+  public ModelsBillingProduct productType(@javax.annotation.Nullable ModelsBillingProductType productType) {
     this.productType = productType;
     return this;
   }
@@ -276,11 +277,11 @@ public class ModelsBillingProduct {
    * @return productType
    */
   @javax.annotation.Nullable
-  public String getProductType() {
+  public ModelsBillingProductType getProductType() {
     return productType;
   }
 
-  public void setProductType(@javax.annotation.Nullable String productType) {
+  public void setProductType(@javax.annotation.Nullable ModelsBillingProductType productType) {
     this.productType = productType;
   }
 
@@ -512,8 +513,9 @@ public class ModelsBillingProduct {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("product_type") != null && !jsonObj.get("product_type").isJsonNull()) && !jsonObj.get("product_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `product_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("product_type").toString()));
+      // validate the optional field `product_type`
+      if (jsonObj.get("product_type") != null && !jsonObj.get("product_type").isJsonNull()) {
+        ModelsBillingProductType.validateJsonElement(jsonObj.get("product_type"));
       }
       if ((jsonObj.get("recurring_frequency") != null && !jsonObj.get("recurring_frequency").isJsonNull()) && !jsonObj.get("recurring_frequency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `recurring_frequency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recurring_frequency").toString()));

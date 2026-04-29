@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **enrichment_sandbox**
-> RoutesV3EnrichmentSandboxResponse enrichment_sandbox(organization_id, routes_v3_enrichment_sandbox_request)
+> RoutesV3EnrichmentSandboxResponse enrichment_sandbox(organization_id, enrichment_sandbox_request)
 
 Apply enrichment to record
 
@@ -21,7 +21,7 @@ Apply a enrichment configuration to a JSON record
 
 ```python
 import monad
-from monad.models.routes_v3_enrichment_sandbox_request import RoutesV3EnrichmentSandboxRequest
+from monad.models.enrichment_sandbox_request import EnrichmentSandboxRequest
 from monad.models.routes_v3_enrichment_sandbox_response import RoutesV3EnrichmentSandboxResponse
 from monad.rest import ApiException
 from pprint import pprint
@@ -54,11 +54,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.EnrichmentSandboxApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v3_enrichment_sandbox_request = monad.RoutesV3EnrichmentSandboxRequest() # RoutesV3EnrichmentSandboxRequest | Enrichment configuration and record
+    enrichment_sandbox_request = monad.EnrichmentSandboxRequest() # EnrichmentSandboxRequest | Enrichment configuration and record
 
     try:
         # Apply enrichment to record
-        api_response = api_instance.enrichment_sandbox(organization_id, routes_v3_enrichment_sandbox_request)
+        api_response = api_instance.enrichment_sandbox(organization_id, enrichment_sandbox_request)
         print("The response of EnrichmentSandboxApi->enrichment_sandbox:\n")
         pprint(api_response)
     except Exception as e:
@@ -73,7 +73,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v3_enrichment_sandbox_request** | [**RoutesV3EnrichmentSandboxRequest**](RoutesV3EnrichmentSandboxRequest.md)| Enrichment configuration and record | 
+ **enrichment_sandbox_request** | [**EnrichmentSandboxRequest**](EnrichmentSandboxRequest.md)| Enrichment configuration and record | 
 
 ### Return type
 

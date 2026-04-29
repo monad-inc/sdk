@@ -8,10 +8,10 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { ApplyTransformationV2Request } from '../models/ApplyTransformationV2Request';
+import { GenerateRecordRequest } from '../models/GenerateRecordRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
-import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
 
@@ -24,9 +24,9 @@ export class TransformSandboxApiRequestFactory extends BaseAPIRequestFactory {
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * Apply transformation to record
      * @param organizationId Organization ID
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public async applyTransformation(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: Configuration): Promise<RequestContext> {
+    public async applyTransformation(organizationId: string, applyTransformationV2Request: ApplyTransformationV2Request, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -35,9 +35,9 @@ export class TransformSandboxApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2ApplyTransformationRequest' is not null or undefined
-        if (routesV2ApplyTransformationRequest === null || routesV2ApplyTransformationRequest === undefined) {
-            throw new RequiredError("TransformSandboxApi", "applyTransformation", "routesV2ApplyTransformationRequest");
+        // verify required parameter 'applyTransformationV2Request' is not null or undefined
+        if (applyTransformationV2Request === null || applyTransformationV2Request === undefined) {
+            throw new RequiredError("TransformSandboxApi", "applyTransformation", "applyTransformationV2Request");
         }
 
 
@@ -56,7 +56,7 @@ export class TransformSandboxApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2ApplyTransformationRequest, "RoutesV2ApplyTransformationRequest", ""),
+            ObjectSerializer.serialize(applyTransformationV2Request, "ApplyTransformationV2Request", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -84,14 +84,14 @@ export class TransformSandboxApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Apply a transformation configuration to a JSON record
      * Apply transformation to record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public async applyTransformationV2(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: Configuration): Promise<RequestContext> {
+    public async applyTransformationV2(applyTransformationV2Request: ApplyTransformationV2Request, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'routesV2ApplyTransformationRequest' is not null or undefined
-        if (routesV2ApplyTransformationRequest === null || routesV2ApplyTransformationRequest === undefined) {
-            throw new RequiredError("TransformSandboxApi", "applyTransformationV2", "routesV2ApplyTransformationRequest");
+        // verify required parameter 'applyTransformationV2Request' is not null or undefined
+        if (applyTransformationV2Request === null || applyTransformationV2Request === undefined) {
+            throw new RequiredError("TransformSandboxApi", "applyTransformationV2", "applyTransformationV2Request");
         }
 
 
@@ -109,7 +109,7 @@ export class TransformSandboxApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2ApplyTransformationRequest, "RoutesV2ApplyTransformationRequest", ""),
+            ObjectSerializer.serialize(applyTransformationV2Request, "ApplyTransformationV2Request", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -137,14 +137,14 @@ export class TransformSandboxApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Generate a sample record using the specified template type
      * Generate sample record
-     * @param routesV2GenerateRecordRequest Record generation parameters
+     * @param generateRecordRequest Record generation parameters
      */
-    public async generateRecord(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: Configuration): Promise<RequestContext> {
+    public async generateRecord(generateRecordRequest: GenerateRecordRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'routesV2GenerateRecordRequest' is not null or undefined
-        if (routesV2GenerateRecordRequest === null || routesV2GenerateRecordRequest === undefined) {
-            throw new RequiredError("TransformSandboxApi", "generateRecord", "routesV2GenerateRecordRequest");
+        // verify required parameter 'generateRecordRequest' is not null or undefined
+        if (generateRecordRequest === null || generateRecordRequest === undefined) {
+            throw new RequiredError("TransformSandboxApi", "generateRecord", "generateRecordRequest");
         }
 
 
@@ -162,7 +162,7 @@ export class TransformSandboxApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2GenerateRecordRequest, "RoutesV2GenerateRecordRequest", ""),
+            ObjectSerializer.serialize(generateRecordRequest, "GenerateRecordRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

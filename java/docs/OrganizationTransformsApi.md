@@ -13,7 +13,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createTransform"></a>
 # **createTransform**
-> ModelsTransform createTransform(organizationId, routesCreateTransformRequest)
+> ModelsTransform createTransform(organizationId, createTransformRequest)
 
 Create transform
 
@@ -48,9 +48,9 @@ public class Example {
 
     OrganizationTransformsApi apiInstance = new OrganizationTransformsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesCreateTransformRequest routesCreateTransformRequest = new RoutesCreateTransformRequest(); // RoutesCreateTransformRequest | Request body for creating a transform
+    CreateTransformRequest createTransformRequest = new CreateTransformRequest(); // CreateTransformRequest | Request body for creating a transform
     try {
-      ModelsTransform result = apiInstance.createTransform(organizationId, routesCreateTransformRequest);
+      ModelsTransform result = apiInstance.createTransform(organizationId, createTransformRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationTransformsApi#createTransform");
@@ -68,7 +68,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesCreateTransformRequest** | [**RoutesCreateTransformRequest**](RoutesCreateTransformRequest.md)| Request body for creating a transform | |
+| **createTransformRequest** | [**CreateTransformRequest**](CreateTransformRequest.md)| Request body for creating a transform | |
 
 ### Return type
 

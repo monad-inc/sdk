@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import Field
 from typing_extensions import Annotated
-from monad.models.routes_v2_apply_condition_request import RoutesV2ApplyConditionRequest
+from monad.models.apply_condition_v2_request import ApplyConditionV2Request
 from monad.models.routes_v2_apply_condition_response import RoutesV2ApplyConditionResponse
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -42,7 +42,7 @@ class ConditionSandboxApi:
     @validate_call
     def apply_condition_v2(
         self,
-        routes_v2_apply_condition_request: Annotated[RoutesV2ApplyConditionRequest, Field(description="Condition and record")],
+        apply_condition_v2_request: Annotated[ApplyConditionV2Request, Field(description="Condition and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -60,8 +60,8 @@ class ConditionSandboxApi:
 
         Apply a condition to a JSON record
 
-        :param routes_v2_apply_condition_request: Condition and record (required)
-        :type routes_v2_apply_condition_request: RoutesV2ApplyConditionRequest
+        :param apply_condition_v2_request: Condition and record (required)
+        :type apply_condition_v2_request: ApplyConditionV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -85,7 +85,7 @@ class ConditionSandboxApi:
         """ # noqa: E501
 
         _param = self._apply_condition_v2_serialize(
-            routes_v2_apply_condition_request=routes_v2_apply_condition_request,
+            apply_condition_v2_request=apply_condition_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -111,7 +111,7 @@ class ConditionSandboxApi:
     @validate_call
     def apply_condition_v2_with_http_info(
         self,
-        routes_v2_apply_condition_request: Annotated[RoutesV2ApplyConditionRequest, Field(description="Condition and record")],
+        apply_condition_v2_request: Annotated[ApplyConditionV2Request, Field(description="Condition and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -129,8 +129,8 @@ class ConditionSandboxApi:
 
         Apply a condition to a JSON record
 
-        :param routes_v2_apply_condition_request: Condition and record (required)
-        :type routes_v2_apply_condition_request: RoutesV2ApplyConditionRequest
+        :param apply_condition_v2_request: Condition and record (required)
+        :type apply_condition_v2_request: ApplyConditionV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -154,7 +154,7 @@ class ConditionSandboxApi:
         """ # noqa: E501
 
         _param = self._apply_condition_v2_serialize(
-            routes_v2_apply_condition_request=routes_v2_apply_condition_request,
+            apply_condition_v2_request=apply_condition_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -180,7 +180,7 @@ class ConditionSandboxApi:
     @validate_call
     def apply_condition_v2_without_preload_content(
         self,
-        routes_v2_apply_condition_request: Annotated[RoutesV2ApplyConditionRequest, Field(description="Condition and record")],
+        apply_condition_v2_request: Annotated[ApplyConditionV2Request, Field(description="Condition and record")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -198,8 +198,8 @@ class ConditionSandboxApi:
 
         Apply a condition to a JSON record
 
-        :param routes_v2_apply_condition_request: Condition and record (required)
-        :type routes_v2_apply_condition_request: RoutesV2ApplyConditionRequest
+        :param apply_condition_v2_request: Condition and record (required)
+        :type apply_condition_v2_request: ApplyConditionV2Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -223,7 +223,7 @@ class ConditionSandboxApi:
         """ # noqa: E501
 
         _param = self._apply_condition_v2_serialize(
-            routes_v2_apply_condition_request=routes_v2_apply_condition_request,
+            apply_condition_v2_request=apply_condition_v2_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -244,7 +244,7 @@ class ConditionSandboxApi:
 
     def _apply_condition_v2_serialize(
         self,
-        routes_v2_apply_condition_request,
+        apply_condition_v2_request,
         _request_auth,
         _content_type,
         _headers,
@@ -270,8 +270,8 @@ class ConditionSandboxApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_apply_condition_request is not None:
-            _body_params = routes_v2_apply_condition_request
+        if apply_condition_v2_request is not None:
+            _body_params = apply_condition_v2_request
 
 
         # set the HTTP header `Accept`

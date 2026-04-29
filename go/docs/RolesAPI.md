@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateRole
 
-> ModelsRoleWithPermissions CreateRole(ctx, organizationId).RoutesV2CreateRoleV2Request(routesV2CreateRoleV2Request).Execute()
+> ModelsRoleWithPermissions CreateRole(ctx, organizationId).CreateRoleRequest(createRoleRequest).Execute()
 
 Create role
 
@@ -34,11 +34,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2CreateRoleV2Request := *openapiclient.NewRoutesV2CreateRoleV2Request("Name_example", []string{"PermissionIds_example"}) // RoutesV2CreateRoleV2Request | Request body for creating a role
+	createRoleRequest := openapiclient.CreateRole_request{RoutesV2CreateRoleV2Request: openapiclient.NewRoutesV2CreateRoleV2Request("Name_example", []string{"PermissionIds_example"})} // CreateRoleRequest | Request body for creating a role
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RolesAPI.CreateRole(context.Background(), organizationId).RoutesV2CreateRoleV2Request(routesV2CreateRoleV2Request).Execute()
+	resp, r, err := apiClient.RolesAPI.CreateRole(context.Background(), organizationId).CreateRoleRequest(createRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RolesAPI.CreateRole``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreateRoleRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2CreateRoleV2Request** | [**RoutesV2CreateRoleV2Request**](RoutesV2CreateRoleV2Request.md) | Request body for creating a role | 
+ **createRoleRequest** | [**CreateRoleRequest**](CreateRoleRequest.md) | Request body for creating a role | 
 
 ### Return type
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRole
 
-> ModelsRoleWithPermissions UpdateRole(ctx, organizationId, roleId).RoutesV2UpdateRoleV2Request(routesV2UpdateRoleV2Request).Execute()
+> ModelsRoleWithPermissions UpdateRole(ctx, organizationId, roleId).UpdateRoleRequest(updateRoleRequest).Execute()
 
 Update role
 
@@ -327,11 +327,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	roleId := "roleId_example" // string | Role ID
-	routesV2UpdateRoleV2Request := *openapiclient.NewRoutesV2UpdateRoleV2Request() // RoutesV2UpdateRoleV2Request | Request body for updating a role
+	updateRoleRequest := openapiclient.UpdateRole_request{RoutesV2UpdateRoleV2Request: openapiclient.NewRoutesV2UpdateRoleV2Request()} // UpdateRoleRequest | Request body for updating a role
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RolesAPI.UpdateRole(context.Background(), organizationId, roleId).RoutesV2UpdateRoleV2Request(routesV2UpdateRoleV2Request).Execute()
+	resp, r, err := apiClient.RolesAPI.UpdateRole(context.Background(), organizationId, roleId).UpdateRoleRequest(updateRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RolesAPI.UpdateRole``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV2UpdateRoleV2Request** | [**RoutesV2UpdateRoleV2Request**](RoutesV2UpdateRoleV2Request.md) | Request body for updating a role | 
+ **updateRoleRequest** | [**UpdateRoleRequest**](UpdateRoleRequest.md) | Request body for updating a role | 
 
 ### Return type
 

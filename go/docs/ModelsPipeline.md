@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **InputId** | Pointer to **string** |  | [optional] 
-**ManagedBy** | Pointer to **string** |  | [optional] 
+**ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
@@ -213,20 +213,20 @@ HasInputId returns a boolean if a field has been set.
 
 ### GetManagedBy
 
-`func (o *ModelsPipeline) GetManagedBy() string`
+`func (o *ModelsPipeline) GetManagedBy() ModelsManagedBy`
 
 GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
 
 ### GetManagedByOk
 
-`func (o *ModelsPipeline) GetManagedByOk() (*string, bool)`
+`func (o *ModelsPipeline) GetManagedByOk() (*ModelsManagedBy, bool)`
 
 GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedBy
 
-`func (o *ModelsPipeline) SetManagedBy(v string)`
+`func (o *ModelsPipeline) SetManagedBy(v ModelsManagedBy)`
 
 SetManagedBy sets ManagedBy field to given value.
 

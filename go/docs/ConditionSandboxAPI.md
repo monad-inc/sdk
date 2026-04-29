@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## ApplyConditionV2
 
-> RoutesV2ApplyConditionResponse ApplyConditionV2(ctx).RoutesV2ApplyConditionRequest(routesV2ApplyConditionRequest).Execute()
+> RoutesV2ApplyConditionResponse ApplyConditionV2(ctx).ApplyConditionV2Request(applyConditionV2Request).Execute()
 
 Apply condition to record
 
@@ -29,11 +29,11 @@ import (
 )
 
 func main() {
-	routesV2ApplyConditionRequest := *openapiclient.NewRoutesV2ApplyConditionRequest() // RoutesV2ApplyConditionRequest | Condition and record
+	applyConditionV2Request := openapiclient.ApplyConditionV2_request{RoutesV2ApplyConditionRequest: openapiclient.NewRoutesV2ApplyConditionRequest()} // ApplyConditionV2Request | Condition and record
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConditionSandboxAPI.ApplyConditionV2(context.Background()).RoutesV2ApplyConditionRequest(routesV2ApplyConditionRequest).Execute()
+	resp, r, err := apiClient.ConditionSandboxAPI.ApplyConditionV2(context.Background()).ApplyConditionV2Request(applyConditionV2Request).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConditionSandboxAPI.ApplyConditionV2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiApplyConditionV2Request st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2ApplyConditionRequest** | [**RoutesV2ApplyConditionRequest**](RoutesV2ApplyConditionRequest.md) | Condition and record | 
+ **applyConditionV2Request** | [**ApplyConditionV2Request**](ApplyConditionV2Request.md) | Condition and record | 
 
 ### Return type
 

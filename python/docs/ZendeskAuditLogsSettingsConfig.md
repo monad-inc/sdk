@@ -6,7 +6,7 @@ Zendesk Audit Logs settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_type** | **str** | AuthType is the type of authentication used for the input | [optional] 
+**auth_type** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | [optional] 
 **email_address** | **str** | This is the email address registered with your Zendesk account | [optional] 
 **sub_domain** | **str** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 

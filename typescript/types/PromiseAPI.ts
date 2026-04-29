@@ -10,7 +10,12 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
 import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
+import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
+import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
+import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
+import { ApplyConditionV2Request } from '../models/ApplyConditionV2Request';
+import { ApplyTransformationV2Request } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
@@ -24,6 +29,7 @@ import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
+import { AwssqsoutputQueueType } from '../models/AwssqsoutputQueueType';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
 import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
@@ -83,15 +89,33 @@ import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolida
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
 import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
+import { CommonAuthType } from '../models/CommonAuthType';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
+import { CreateAPIKeyRequest } from '../models/CreateAPIKeyRequest';
+import { CreateAlertRuleRequest } from '../models/CreateAlertRuleRequest';
+import { CreateBillingAccountRequest } from '../models/CreateBillingAccountRequest';
+import { CreateBillingAccountRoleRequest } from '../models/CreateBillingAccountRoleRequest';
+import { CreateBillingAccountSubscriptionRequest } from '../models/CreateBillingAccountSubscriptionRequest';
+import { CreateBillingAccountUserRoleRequest } from '../models/CreateBillingAccountUserRoleRequest';
+import { CreateChildOrganizationRequest } from '../models/CreateChildOrganizationRequest';
+import { CreateConnectionRequest } from '../models/CreateConnectionRequest';
+import { CreateEnrichmentRequest } from '../models/CreateEnrichmentRequest';
+import { CreateInputRequest } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
+import { CreateOutputRequest } from '../models/CreateOutputRequest';
+import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
+import { CreateRoleRequest } from '../models/CreateRoleRequest';
+import { CreateSecretRequest } from '../models/CreateSecretRequest';
+import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
+import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
@@ -109,6 +133,8 @@ import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhere
 import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
 import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
+import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { EncryptAESVariant } from '../models/EncryptAESVariant';
@@ -118,17 +144,22 @@ import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
 import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
+import { EnrichmentSandboxRequest } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
+import { ExportTransformRequest } from '../models/ExportTransformRequest';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FormatterType } from '../models/FormatterType';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GenerateRecordRequest } from '../models/GenerateRecordRequest';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
+import { GetTokenRequest } from '../models/GetTokenRequest';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -148,10 +179,12 @@ import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettings
 import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
 import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
+import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
+import { InputsBillingType } from '../models/InputsBillingType';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
@@ -160,9 +193,14 @@ import { IssuesReportSettingsConfig } from '../models/IssuesReportSettingsConfig
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
+import { JsonFormatType } from '../models/JsonFormatType';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KafkaAcks } from '../models/KafkaAcks';
+import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
+import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
 import { KafkaSettingsConfig } from '../models/KafkaSettingsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
@@ -186,6 +224,7 @@ import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
+import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -193,25 +232,32 @@ import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRoleUser';
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
+import { ModelsBillingProductType } from '../models/ModelsBillingProductType';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsComponentType } from '../models/ModelsComponentType';
 import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
+import { ModelsConditionOperator } from '../models/ModelsConditionOperator';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsElseAction } from '../models/ModelsElseAction';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
+import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
+import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
 import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
+import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
@@ -225,9 +271,15 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
+import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
+import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
+import { ModelsQuotaAction } from '../models/ModelsQuotaAction';
+import { ModelsQuotaLimitType } from '../models/ModelsQuotaLimitType';
+import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
+import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
@@ -269,6 +321,7 @@ import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsCo
 import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
 import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
 import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
+import { OpensearchAuthMode } from '../models/OpensearchAuthMode';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
@@ -277,12 +330,14 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
+import { OutputsBillingType } from '../models/OutputsBillingType';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
 import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
+import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
@@ -308,6 +363,9 @@ import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
+import { ReplaceEnrichmentRequest } from '../models/ReplaceEnrichmentRequest';
+import { ReplaceInputRequest } from '../models/ReplaceInputRequest';
+import { ReplaceOutputRequest } from '../models/ReplaceOutputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
 import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
@@ -421,6 +479,7 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
+import { SetStorageTypeCostRequest } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
 import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
@@ -459,6 +518,9 @@ import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulner
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { TestEnrichmentConnectionRequest } from '../models/TestEnrichmentConnectionRequest';
+import { TestInputConnectionRequest } from '../models/TestInputConnectionRequest';
+import { TestOutputConnectionRequest } from '../models/TestOutputConnectionRequest';
 import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
@@ -471,7 +533,22 @@ import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter } from '../models/TypesStringFilter';
 import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
 import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
+import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
+import { UpdateAlertRuleRequest } from '../models/UpdateAlertRuleRequest';
+import { UpdateBillingAccountRequest } from '../models/UpdateBillingAccountRequest';
+import { UpdateBillingAccountRoleRequest } from '../models/UpdateBillingAccountRoleRequest';
+import { UpdateChildOrganizationRequest } from '../models/UpdateChildOrganizationRequest';
+import { UpdateConnectionRequest } from '../models/UpdateConnectionRequest';
+import { UpdateEnrichmentRequest } from '../models/UpdateEnrichmentRequest';
+import { UpdateInputRequest } from '../models/UpdateInputRequest';
+import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
+import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
+import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
+import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
+import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
+import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
+import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -482,6 +559,7 @@ import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindi
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
 import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
+import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
 import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
 import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
 import { ObservableAlertRulesApi } from './ObservableAPI';
@@ -502,11 +580,11 @@ export class PromiseAlertRulesApi {
      * Create a new alert rule with the provided details
      * Create a new alert rule
      * @param organizationId Organization ID
-     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRuleWithHttpInfo(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+    public createAlertRuleWithHttpInfo(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createAlertRuleWithHttpInfo(organizationId, routesV3CreateAlertRuleRequest, observableOptions);
+        const result = this.api.createAlertRuleWithHttpInfo(organizationId, createAlertRuleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -514,11 +592,11 @@ export class PromiseAlertRulesApi {
      * Create a new alert rule with the provided details
      * Create a new alert rule
      * @param organizationId Organization ID
-     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRule(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRule> {
+    public createAlertRule(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRule> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createAlertRule(organizationId, routesV3CreateAlertRuleRequest, observableOptions);
+        const result = this.api.createAlertRule(organizationId, createAlertRuleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -643,11 +721,11 @@ export class PromiseAlertRulesApi {
      * Update alert rule
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to update
-     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
+     * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateAlertRuleWithHttpInfo(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest, observableOptions);
+        const result = this.api.updateAlertRuleWithHttpInfo(organizationId, alertRuleId, updateAlertRuleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -656,11 +734,11 @@ export class PromiseAlertRulesApi {
      * Update alert rule
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to update
-     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
+     * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRule(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRule> {
+    public updateAlertRule(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRule> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateAlertRule(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest, observableOptions);
+        const result = this.api.updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -775,22 +853,22 @@ export class PromiseAuthenticationApi {
     /**
      * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param routesLoginRequest Login request
+     * @param getTokenRequest Login request
      */
-    public getTokenWithHttpInfo(routesLoginRequest: RoutesLoginRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<AuthenticationtypesTokenResponse>> {
+    public getTokenWithHttpInfo(getTokenRequest: GetTokenRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<AuthenticationtypesTokenResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.getTokenWithHttpInfo(routesLoginRequest, observableOptions);
+        const result = this.api.getTokenWithHttpInfo(getTokenRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param routesLoginRequest Login request
+     * @param getTokenRequest Login request
      */
-    public getToken(routesLoginRequest: RoutesLoginRequest, _options?: PromiseConfigurationOptions): Promise<AuthenticationtypesTokenResponse> {
+    public getToken(getTokenRequest: GetTokenRequest, _options?: PromiseConfigurationOptions): Promise<AuthenticationtypesTokenResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.getToken(routesLoginRequest, observableOptions);
+        const result = this.api.getToken(getTokenRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -876,22 +954,22 @@ export class PromiseBillingAccountsApi {
     /**
      * Create Billing Account
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     * @param createBillingAccountRequest Request body for creating a billing account
      */
-    public createBillingAccountWithHttpInfo(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+    public createBillingAccountWithHttpInfo(createBillingAccountRequest: CreateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccountWithHttpInfo(routesV2CreateBillingAccountRequest, observableOptions);
+        const result = this.api.createBillingAccountWithHttpInfo(createBillingAccountRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Create Billing Account
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     * @param createBillingAccountRequest Request body for creating a billing account
      */
-    public createBillingAccount(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+    public createBillingAccount(createBillingAccountRequest: CreateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccount(routesV2CreateBillingAccountRequest, observableOptions);
+        const result = this.api.createBillingAccount(createBillingAccountRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -967,11 +1045,11 @@ export class PromiseBillingAccountsApi {
      * Update Billing Account
      * Update Billing Account
      * @param billingAccountId Billing Account ID
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     * @param updateBillingAccountRequest Request body for updating a billing account
      */
-    public updateBillingAccountWithHttpInfo(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+    public updateBillingAccountWithHttpInfo(billingAccountId: string, updateBillingAccountRequest: UpdateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateBillingAccountWithHttpInfo(billingAccountId, routesV2UpdateBillingAccountRequest, observableOptions);
+        const result = this.api.updateBillingAccountWithHttpInfo(billingAccountId, updateBillingAccountRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -979,11 +1057,11 @@ export class PromiseBillingAccountsApi {
      * Update Billing Account
      * Update Billing Account
      * @param billingAccountId Billing Account ID
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     * @param updateBillingAccountRequest Request body for updating a billing account
      */
-    public updateBillingAccount(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+    public updateBillingAccount(billingAccountId: string, updateBillingAccountRequest: UpdateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateBillingAccount(billingAccountId, routesV2UpdateBillingAccountRequest, observableOptions);
+        const result = this.api.updateBillingAccount(billingAccountId, updateBillingAccountRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1010,11 +1088,11 @@ export class PromiseBillingAccountsRBACApi {
      * Create Billing Account Role
      * Create Billing Account Role
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     * @param createBillingAccountRoleRequest Create Billing Account Role Request
      */
-    public createBillingAccountRoleWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+    public createBillingAccountRoleWithHttpInfo(billingAccountId: string, createBillingAccountRoleRequest: CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccountRoleWithHttpInfo(billingAccountId, routesV2CreateBillingAccountRoleRequest, observableOptions);
+        const result = this.api.createBillingAccountRoleWithHttpInfo(billingAccountId, createBillingAccountRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1022,11 +1100,11 @@ export class PromiseBillingAccountsRBACApi {
      * Create Billing Account Role
      * Create Billing Account Role
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     * @param createBillingAccountRoleRequest Create Billing Account Role Request
      */
-    public createBillingAccountRole(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+    public createBillingAccountRole(billingAccountId: string, createBillingAccountRoleRequest: CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccountRole(billingAccountId, routesV2CreateBillingAccountRoleRequest, observableOptions);
+        const result = this.api.createBillingAccountRole(billingAccountId, createBillingAccountRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1035,11 +1113,11 @@ export class PromiseBillingAccountsRBACApi {
      * Create Billing Account User Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     * @param createBillingAccountUserRoleRequest Create Billing Account User Role Request
      */
-    public createBillingAccountUserRoleWithHttpInfo(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public createBillingAccountUserRoleWithHttpInfo(billingAccountId: string, roleId: string, createBillingAccountUserRoleRequest: CreateBillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccountUserRoleWithHttpInfo(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, observableOptions);
+        const result = this.api.createBillingAccountUserRoleWithHttpInfo(billingAccountId, roleId, createBillingAccountUserRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1048,11 +1126,11 @@ export class PromiseBillingAccountsRBACApi {
      * Create Billing Account User Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     * @param createBillingAccountUserRoleRequest Create Billing Account User Role Request
      */
-    public createBillingAccountUserRole(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<string> {
+    public createBillingAccountUserRole(billingAccountId: string, roleId: string, createBillingAccountUserRoleRequest: CreateBillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<string> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccountUserRole(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, observableOptions);
+        const result = this.api.createBillingAccountUserRole(billingAccountId, roleId, createBillingAccountUserRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1177,11 +1255,11 @@ export class PromiseBillingAccountsRBACApi {
      * Update Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     * @param updateBillingAccountRoleRequest Update Billing Account Role Request
      */
-    public updateBillingAccountRoleWithHttpInfo(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+    public updateBillingAccountRoleWithHttpInfo(billingAccountId: string, roleId: string, updateBillingAccountRoleRequest: UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateBillingAccountRoleWithHttpInfo(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, observableOptions);
+        const result = this.api.updateBillingAccountRoleWithHttpInfo(billingAccountId, roleId, updateBillingAccountRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1190,11 +1268,11 @@ export class PromiseBillingAccountsRBACApi {
      * Update Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     * @param updateBillingAccountRoleRequest Update Billing Account Role Request
      */
-    public updateBillingAccountRole(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+    public updateBillingAccountRole(billingAccountId: string, roleId: string, updateBillingAccountRoleRequest: UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateBillingAccountRole(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, observableOptions);
+        const result = this.api.updateBillingAccountRole(billingAccountId, roleId, updateBillingAccountRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1243,11 +1321,11 @@ export class PromiseBillingProductsApi {
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription
      */
-    public createBillingAccountSubscriptionWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
+    public createBillingAccountSubscriptionWithHttpInfo(billingAccountId: string, createBillingAccountSubscriptionRequest: CreateBillingAccountSubscriptionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccountSubscriptionWithHttpInfo(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, observableOptions);
+        const result = this.api.createBillingAccountSubscriptionWithHttpInfo(billingAccountId, createBillingAccountSubscriptionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1255,11 +1333,11 @@ export class PromiseBillingProductsApi {
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription
      */
-    public createBillingAccountSubscription(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2CreateBillingAccountSubscriptionResponse> {
+    public createBillingAccountSubscription(billingAccountId: string, createBillingAccountSubscriptionRequest: CreateBillingAccountSubscriptionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2CreateBillingAccountSubscriptionResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createBillingAccountSubscription(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, observableOptions);
+        const result = this.api.createBillingAccountSubscription(billingAccountId, createBillingAccountSubscriptionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1333,22 +1411,22 @@ export class PromiseConditionSandboxApi {
     /**
      * Apply a condition to a JSON record
      * Apply condition to record
-     * @param routesV2ApplyConditionRequest Condition and record
+     * @param applyConditionV2Request Condition and record
      */
-    public applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyConditionResponse>> {
+    public applyConditionV2WithHttpInfo(applyConditionV2Request: ApplyConditionV2Request, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyConditionResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest, observableOptions);
+        const result = this.api.applyConditionV2WithHttpInfo(applyConditionV2Request, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Apply a condition to a JSON record
      * Apply condition to record
-     * @param routesV2ApplyConditionRequest Condition and record
+     * @param applyConditionV2Request Condition and record
      */
-    public applyConditionV2(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyConditionResponse> {
+    public applyConditionV2(applyConditionV2Request: ApplyConditionV2Request, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyConditionResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.applyConditionV2(routesV2ApplyConditionRequest, observableOptions);
+        const result = this.api.applyConditionV2(applyConditionV2Request, observableOptions);
         return result.toPromise();
     }
 
@@ -1414,11 +1492,11 @@ export class PromiseConnectionsApi {
      * Create a new connection with the provided details
      * Create a new connection
      * @param organizationId Organization ID
-     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     * @param createConnectionRequest Request body for creating a connection
      */
-    public createConnectionWithHttpInfo(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+    public createConnectionWithHttpInfo(organizationId: string, createConnectionRequest: CreateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createConnectionWithHttpInfo(organizationId, routesV3CreateConnectionRequest, observableOptions);
+        const result = this.api.createConnectionWithHttpInfo(organizationId, createConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1426,11 +1504,11 @@ export class PromiseConnectionsApi {
      * Create a new connection with the provided details
      * Create a new connection
      * @param organizationId Organization ID
-     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     * @param createConnectionRequest Request body for creating a connection
      */
-    public createConnection(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
+    public createConnection(organizationId: string, createConnectionRequest: CreateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createConnection(organizationId, routesV3CreateConnectionRequest, observableOptions);
+        const result = this.api.createConnection(organizationId, createConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1513,11 +1591,11 @@ export class PromiseConnectionsApi {
      * Update connection
      * @param organizationId Organization ID
      * @param connectionId Connection ID to update
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     * @param updateConnectionRequest Request body for updating a connection
      */
-    public updateConnectionWithHttpInfo(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+    public updateConnectionWithHttpInfo(organizationId: string, connectionId: string, updateConnectionRequest: UpdateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateConnectionWithHttpInfo(organizationId, connectionId, routesV3UpdateConnectionRequest, observableOptions);
+        const result = this.api.updateConnectionWithHttpInfo(organizationId, connectionId, updateConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1526,11 +1604,11 @@ export class PromiseConnectionsApi {
      * Update connection
      * @param organizationId Organization ID
      * @param connectionId Connection ID to update
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     * @param updateConnectionRequest Request body for updating a connection
      */
-    public updateConnection(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
+    public updateConnection(organizationId: string, connectionId: string, updateConnectionRequest: UpdateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateConnection(organizationId, connectionId, routesV3UpdateConnectionRequest, observableOptions);
+        const result = this.api.updateConnection(organizationId, connectionId, updateConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1557,11 +1635,11 @@ export class PromiseEnrichmentSandboxApi {
      * Apply a enrichment configuration to a JSON record
      * Apply enrichment to record
      * @param organizationId Organization ID
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record
+     * @param enrichmentSandboxRequest Enrichment configuration and record
      */
-    public enrichmentSandboxWithHttpInfo(organizationId: string, routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
+    public enrichmentSandboxWithHttpInfo(organizationId: string, enrichmentSandboxRequest: EnrichmentSandboxRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.enrichmentSandboxWithHttpInfo(organizationId, routesV3EnrichmentSandboxRequest, observableOptions);
+        const result = this.api.enrichmentSandboxWithHttpInfo(organizationId, enrichmentSandboxRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1569,11 +1647,11 @@ export class PromiseEnrichmentSandboxApi {
      * Apply a enrichment configuration to a JSON record
      * Apply enrichment to record
      * @param organizationId Organization ID
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record
+     * @param enrichmentSandboxRequest Enrichment configuration and record
      */
-    public enrichmentSandbox(organizationId: string, routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3EnrichmentSandboxResponse> {
+    public enrichmentSandbox(organizationId: string, enrichmentSandboxRequest: EnrichmentSandboxRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3EnrichmentSandboxResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.enrichmentSandbox(organizationId, routesV3EnrichmentSandboxRequest, observableOptions);
+        const result = this.api.enrichmentSandbox(organizationId, enrichmentSandboxRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2100,11 +2178,11 @@ export class PromiseOrganizationAPIKeysApi {
      * Create API key
      * Create API key
      * @param organizationId Organization ID
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key
+     * @param createAPIKeyRequest Request body for creating an API key
      */
-    public createAPIKeyWithHttpInfo(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+    public createAPIKeyWithHttpInfo(organizationId: string, createAPIKeyRequest: CreateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createAPIKeyWithHttpInfo(organizationId, routesV2CreateAPIKeyRequest, observableOptions);
+        const result = this.api.createAPIKeyWithHttpInfo(organizationId, createAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2112,11 +2190,11 @@ export class PromiseOrganizationAPIKeysApi {
      * Create API key
      * Create API key
      * @param organizationId Organization ID
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key
+     * @param createAPIKeyRequest Request body for creating an API key
      */
-    public createAPIKey(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
+    public createAPIKey(organizationId: string, createAPIKeyRequest: CreateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createAPIKey(organizationId, routesV2CreateAPIKeyRequest, observableOptions);
+        const result = this.api.createAPIKey(organizationId, createAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2223,11 +2301,11 @@ export class PromiseOrganizationAPIKeysApi {
      * Update API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key
+     * @param updateAPIKeyRequest Request body for updating an API key
      */
-    public updateAPIKeyWithHttpInfo(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
+    public updateAPIKeyWithHttpInfo(organizationId: string, apiKeyId: string, updateAPIKeyRequest: UpdateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateAPIKeyWithHttpInfo(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, observableOptions);
+        const result = this.api.updateAPIKeyWithHttpInfo(organizationId, apiKeyId, updateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2236,11 +2314,11 @@ export class PromiseOrganizationAPIKeysApi {
      * Update API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key
+     * @param updateAPIKeyRequest Request body for updating an API key
      */
-    public updateAPIKey(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKey> {
+    public updateAPIKey(organizationId: string, apiKeyId: string, updateAPIKeyRequest: UpdateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKey> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateAPIKey(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, observableOptions);
+        const result = this.api.updateAPIKey(organizationId, apiKeyId, updateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2267,12 +2345,12 @@ export class PromiseOrganizationEnrichmentsApi {
      * Create a new enrichment with configuration including secrets handling
      * Create enrichment
      * @param organizationId Organization ID
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param createEnrichmentRequest Enrichment configuration
      * @param [testConnection] Test connection before creating the enrichment
      */
-    public createEnrichmentWithHttpInfo(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+    public createEnrichmentWithHttpInfo(organizationId: string, createEnrichmentRequest: CreateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createEnrichmentWithHttpInfo(organizationId, routesV3CreateEnrichmentRequest, testConnection, observableOptions);
+        const result = this.api.createEnrichmentWithHttpInfo(organizationId, createEnrichmentRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2280,12 +2358,12 @@ export class PromiseOrganizationEnrichmentsApi {
      * Create a new enrichment with configuration including secrets handling
      * Create enrichment
      * @param organizationId Organization ID
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param createEnrichmentRequest Enrichment configuration
      * @param [testConnection] Test connection before creating the enrichment
      */
-    public createEnrichment(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+    public createEnrichment(organizationId: string, createEnrichmentRequest: CreateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createEnrichment(organizationId, routesV3CreateEnrichmentRequest, testConnection, observableOptions);
+        const result = this.api.createEnrichment(organizationId, createEnrichmentRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2368,12 +2446,12 @@ export class PromiseOrganizationEnrichmentsApi {
      * Replace enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param replaceEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public replaceEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+    public replaceEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, replaceEnrichmentRequest: ReplaceEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.replaceEnrichmentWithHttpInfo(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, observableOptions);
+        const result = this.api.replaceEnrichmentWithHttpInfo(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2382,12 +2460,12 @@ export class PromiseOrganizationEnrichmentsApi {
      * Replace enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param replaceEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public replaceEnrichment(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+    public replaceEnrichment(organizationId: string, enrichmentId: string, replaceEnrichmentRequest: ReplaceEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.replaceEnrichment(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, observableOptions);
+        const result = this.api.replaceEnrichment(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2395,11 +2473,11 @@ export class PromiseOrganizationEnrichmentsApi {
      * Tests the connection for a given enrichment type and configuration
      * Test enrichment connection
      * @param organizationId Organization ID
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test
      */
-    public testEnrichmentConnectionWithHttpInfo(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
+    public testEnrichmentConnectionWithHttpInfo(organizationId: string, testEnrichmentConnectionRequest: TestEnrichmentConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.testEnrichmentConnectionWithHttpInfo(organizationId, routesV3TestEnrichmentConnectionRequest, observableOptions);
+        const result = this.api.testEnrichmentConnectionWithHttpInfo(organizationId, testEnrichmentConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2407,11 +2485,11 @@ export class PromiseOrganizationEnrichmentsApi {
      * Tests the connection for a given enrichment type and configuration
      * Test enrichment connection
      * @param organizationId Organization ID
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test
      */
-    public testEnrichmentConnection(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3SuccessResponse> {
+    public testEnrichmentConnection(organizationId: string, testEnrichmentConnectionRequest: TestEnrichmentConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3SuccessResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.testEnrichmentConnection(organizationId, routesV3TestEnrichmentConnectionRequest, observableOptions);
+        const result = this.api.testEnrichmentConnection(organizationId, testEnrichmentConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2420,12 +2498,12 @@ export class PromiseOrganizationEnrichmentsApi {
      * Update enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param updateEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public updateEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+    public updateEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, updateEnrichmentRequest: UpdateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateEnrichmentWithHttpInfo(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, observableOptions);
+        const result = this.api.updateEnrichmentWithHttpInfo(organizationId, enrichmentId, updateEnrichmentRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2434,12 +2512,12 @@ export class PromiseOrganizationEnrichmentsApi {
      * Update enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param updateEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public updateEnrichment(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+    public updateEnrichment(organizationId: string, enrichmentId: string, updateEnrichmentRequest: UpdateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateEnrichment(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, observableOptions);
+        const result = this.api.updateEnrichment(organizationId, enrichmentId, updateEnrichmentRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2466,12 +2544,12 @@ export class PromiseOrganizationInputsApi {
      * Create a new input with configuration including secrets handling
      * Create input
      * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
+     * @param createInputRequest Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createInputWithHttpInfo(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+    public createInputWithHttpInfo(organizationId: string, createInputRequest: CreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createInputWithHttpInfo(organizationId, routesV2CreateInputRequest, testConnection, observableOptions);
+        const result = this.api.createInputWithHttpInfo(organizationId, createInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2479,12 +2557,12 @@ export class PromiseOrganizationInputsApi {
      * Create a new input with configuration including secrets handling
      * Create input
      * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
+     * @param createInputRequest Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createInput(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+    public createInput(organizationId: string, createInputRequest: CreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createInput(organizationId, routesV2CreateInputRequest, testConnection, observableOptions);
+        const result = this.api.createInput(organizationId, createInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2567,12 +2645,12 @@ export class PromiseOrganizationInputsApi {
      * Replace input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2PutInputRequest Input configuration update
+     * @param replaceInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceInputWithHttpInfo(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+    public replaceInputWithHttpInfo(organizationId: string, inputId: string, replaceInputRequest: ReplaceInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.replaceInputWithHttpInfo(organizationId, inputId, routesV2PutInputRequest, testConnection, observableOptions);
+        const result = this.api.replaceInputWithHttpInfo(organizationId, inputId, replaceInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2581,12 +2659,12 @@ export class PromiseOrganizationInputsApi {
      * Replace input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2PutInputRequest Input configuration update
+     * @param replaceInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceInput(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+    public replaceInput(organizationId: string, inputId: string, replaceInputRequest: ReplaceInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.replaceInput(organizationId, inputId, routesV2PutInputRequest, testConnection, observableOptions);
+        const result = this.api.replaceInput(organizationId, inputId, replaceInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2594,11 +2672,11 @@ export class PromiseOrganizationInputsApi {
      * Tests the connection for a given input type and configuration
      * Test input connection
      * @param organizationId Organization ID
-     * @param routesV2TestInputConnectionRequest Input configuration to test
+     * @param testInputConnectionRequest Input configuration to test
      */
-    public testInputConnectionWithHttpInfo(organizationId: string, routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+    public testInputConnectionWithHttpInfo(organizationId: string, testInputConnectionRequest: TestInputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.testInputConnectionWithHttpInfo(organizationId, routesV2TestInputConnectionRequest, observableOptions);
+        const result = this.api.testInputConnectionWithHttpInfo(organizationId, testInputConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2606,11 +2684,11 @@ export class PromiseOrganizationInputsApi {
      * Tests the connection for a given input type and configuration
      * Test input connection
      * @param organizationId Organization ID
-     * @param routesV2TestInputConnectionRequest Input configuration to test
+     * @param testInputConnectionRequest Input configuration to test
      */
-    public testInputConnection(organizationId: string, routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SuccessResponse> {
+    public testInputConnection(organizationId: string, testInputConnectionRequest: TestInputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SuccessResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.testInputConnection(organizationId, routesV2TestInputConnectionRequest, observableOptions);
+        const result = this.api.testInputConnection(organizationId, testInputConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2619,12 +2697,12 @@ export class PromiseOrganizationInputsApi {
      * Update input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2UpdateInputRequest Input configuration update
+     * @param updateInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateInputWithHttpInfo(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+    public updateInputWithHttpInfo(organizationId: string, inputId: string, updateInputRequest: UpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateInputWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, testConnection, observableOptions);
+        const result = this.api.updateInputWithHttpInfo(organizationId, inputId, updateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2633,12 +2711,12 @@ export class PromiseOrganizationInputsApi {
      * Update input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2UpdateInputRequest Input configuration update
+     * @param updateInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateInput(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+    public updateInput(organizationId: string, inputId: string, updateInputRequest: UpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateInput(organizationId, inputId, routesV2UpdateInputRequest, testConnection, observableOptions);
+        const result = this.api.updateInput(organizationId, inputId, updateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2708,12 +2786,12 @@ export class PromiseOrganizationOutputsApi {
      * Create a new output with configuration including secrets handling
      * Create output
      * @param organizationId Organization ID
-     * @param routesV2CreateOutputRequest Output configuration
+     * @param createOutputRequest Output configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createOutputWithHttpInfo(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+    public createOutputWithHttpInfo(organizationId: string, createOutputRequest: CreateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createOutputWithHttpInfo(organizationId, routesV2CreateOutputRequest, testConnection, observableOptions);
+        const result = this.api.createOutputWithHttpInfo(organizationId, createOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2721,12 +2799,12 @@ export class PromiseOrganizationOutputsApi {
      * Create a new output with configuration including secrets handling
      * Create output
      * @param organizationId Organization ID
-     * @param routesV2CreateOutputRequest Output configuration
+     * @param createOutputRequest Output configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createOutput(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+    public createOutput(organizationId: string, createOutputRequest: CreateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createOutput(organizationId, routesV2CreateOutputRequest, testConnection, observableOptions);
+        const result = this.api.createOutput(organizationId, createOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2809,12 +2887,12 @@ export class PromiseOrganizationOutputsApi {
      * Replace output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2PutOutputRequest Output configuration update
+     * @param replaceOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceOutputWithHttpInfo(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+    public replaceOutputWithHttpInfo(organizationId: string, outputId: string, replaceOutputRequest: ReplaceOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.replaceOutputWithHttpInfo(organizationId, outputId, routesV2PutOutputRequest, testConnection, observableOptions);
+        const result = this.api.replaceOutputWithHttpInfo(organizationId, outputId, replaceOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2823,12 +2901,12 @@ export class PromiseOrganizationOutputsApi {
      * Replace output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2PutOutputRequest Output configuration update
+     * @param replaceOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceOutput(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+    public replaceOutput(organizationId: string, outputId: string, replaceOutputRequest: ReplaceOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.replaceOutput(organizationId, outputId, routesV2PutOutputRequest, testConnection, observableOptions);
+        const result = this.api.replaceOutput(organizationId, outputId, replaceOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2836,11 +2914,11 @@ export class PromiseOrganizationOutputsApi {
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param routesV2TestOutputConnectionRequest Output configuration to test
+     * @param testOutputConnectionRequest Output configuration to test
      */
-    public testOutputConnectionWithHttpInfo(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+    public testOutputConnectionWithHttpInfo(organizationId: string, testOutputConnectionRequest: TestOutputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.testOutputConnectionWithHttpInfo(organizationId, routesV2TestOutputConnectionRequest, observableOptions);
+        const result = this.api.testOutputConnectionWithHttpInfo(organizationId, testOutputConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2848,11 +2926,11 @@ export class PromiseOrganizationOutputsApi {
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param routesV2TestOutputConnectionRequest Output configuration to test
+     * @param testOutputConnectionRequest Output configuration to test
      */
-    public testOutputConnection(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SuccessResponse> {
+    public testOutputConnection(organizationId: string, testOutputConnectionRequest: TestOutputConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SuccessResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.testOutputConnection(organizationId, routesV2TestOutputConnectionRequest, observableOptions);
+        const result = this.api.testOutputConnection(organizationId, testOutputConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2861,12 +2939,12 @@ export class PromiseOrganizationOutputsApi {
      * Update output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2UpdateOutputRequest Output configuration update
+     * @param updateOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateOutputWithHttpInfo(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+    public updateOutputWithHttpInfo(organizationId: string, outputId: string, updateOutputRequest: UpdateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateOutputWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, observableOptions);
+        const result = this.api.updateOutputWithHttpInfo(organizationId, outputId, updateOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2875,12 +2953,12 @@ export class PromiseOrganizationOutputsApi {
      * Update output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2UpdateOutputRequest Output configuration update
+     * @param updateOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateOutput(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+    public updateOutput(organizationId: string, outputId: string, updateOutputRequest: UpdateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateOutput(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, observableOptions);
+        const result = this.api.updateOutput(organizationId, outputId, updateOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -2954,11 +3032,11 @@ export class PromiseOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param createTransformRequest Request body for creating a transform
      */
-    public createTransformWithHttpInfo(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
+    public createTransformWithHttpInfo(organizationId: string, createTransformRequest: CreateTransformRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createTransformWithHttpInfo(organizationId, routesCreateTransformRequest, observableOptions);
+        const result = this.api.createTransformWithHttpInfo(organizationId, createTransformRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2966,11 +3044,11 @@ export class PromiseOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param createTransformRequest Request body for creating a transform
      */
-    public createTransform(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: PromiseConfigurationOptions): Promise<ModelsTransform> {
+    public createTransform(organizationId: string, createTransformRequest: CreateTransformRequest, _options?: PromiseConfigurationOptions): Promise<ModelsTransform> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createTransform(organizationId, routesCreateTransformRequest, observableOptions);
+        const result = this.api.createTransform(organizationId, createTransformRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3240,11 +3318,11 @@ export class PromiseOrganizationsApi {
      * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
      * Create child organization (team)
      * @param organizationId Parent Organization ID
-     * @param routesV3CreateChildOrganizationRequest Request body
+     * @param createChildOrganizationRequest Request body
      */
-    public createChildOrganizationWithHttpInfo(organizationId: string, routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public createChildOrganizationWithHttpInfo(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createChildOrganizationWithHttpInfo(organizationId, routesV3CreateChildOrganizationRequest, observableOptions);
+        const result = this.api.createChildOrganizationWithHttpInfo(organizationId, createChildOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3252,11 +3330,11 @@ export class PromiseOrganizationsApi {
      * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
      * Create child organization (team)
      * @param organizationId Parent Organization ID
-     * @param routesV3CreateChildOrganizationRequest Request body
+     * @param createChildOrganizationRequest Request body
      */
-    public createChildOrganization(organizationId: string, routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+    public createChildOrganization(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createChildOrganization(organizationId, routesV3CreateChildOrganizationRequest, observableOptions);
+        const result = this.api.createChildOrganization(organizationId, createChildOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3423,11 +3501,11 @@ export class PromiseOrganizationsApi {
      * Update child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
-     * @param routesV3UpdateChildOrganizationRequest Request body
+     * @param updateChildOrganizationRequest Request body
      */
-    public updateChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public updateChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateChildOrganizationWithHttpInfo(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, observableOptions);
+        const result = this.api.updateChildOrganizationWithHttpInfo(organizationId, childOrganizationId, updateChildOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3436,11 +3514,11 @@ export class PromiseOrganizationsApi {
      * Update child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
-     * @param routesV3UpdateChildOrganizationRequest Request body
+     * @param updateChildOrganizationRequest Request body
      */
-    public updateChildOrganization(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+    public updateChildOrganization(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateChildOrganization(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, observableOptions);
+        const result = this.api.updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3656,11 +3734,11 @@ export class PromiseOrganizationsStorageCostApi {
      * Update per-organization cost configuration for storage types
      * Set storage type cost
      * @param organizationId Organization ID
-     * @param routesV2SetStorageTypeCostRequest Cost configuration
+     * @param setStorageTypeCostRequest Cost configuration
      */
-    public setStorageTypeCostWithHttpInfo(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
+    public setStorageTypeCostWithHttpInfo(organizationId: string, setStorageTypeCostRequest: SetStorageTypeCostRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.setStorageTypeCostWithHttpInfo(organizationId, routesV2SetStorageTypeCostRequest, observableOptions);
+        const result = this.api.setStorageTypeCostWithHttpInfo(organizationId, setStorageTypeCostRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3668,11 +3746,11 @@ export class PromiseOrganizationsStorageCostApi {
      * Update per-organization cost configuration for storage types
      * Set storage type cost
      * @param organizationId Organization ID
-     * @param routesV2SetStorageTypeCostRequest Cost configuration
+     * @param setStorageTypeCostRequest Cost configuration
      */
-    public setStorageTypeCost(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: PromiseConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
+    public setStorageTypeCost(organizationId: string, setStorageTypeCostRequest: SetStorageTypeCostRequest, _options?: PromiseConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.setStorageTypeCost(organizationId, routesV2SetStorageTypeCostRequest, observableOptions);
+        const result = this.api.setStorageTypeCost(organizationId, setStorageTypeCostRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3837,11 +3915,11 @@ export class PromisePipelinesApi {
      * Create a new pipeline with specified configuration
      * Create pipeline
      * @param organizationId Organization ID
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline
+     * @param createPipelineRequest Request body for creating a pipeline
      */
-    public createPipelineWithHttpInfo(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+    public createPipelineWithHttpInfo(organizationId: string, createPipelineRequest: CreatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createPipelineWithHttpInfo(organizationId, routesV2CreatePipelineRequest, observableOptions);
+        const result = this.api.createPipelineWithHttpInfo(organizationId, createPipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3849,11 +3927,11 @@ export class PromisePipelinesApi {
      * Create a new pipeline with specified configuration
      * Create pipeline
      * @param organizationId Organization ID
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline
+     * @param createPipelineRequest Request body for creating a pipeline
      */
-    public createPipeline(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+    public createPipeline(organizationId: string, createPipelineRequest: CreatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createPipeline(organizationId, routesV2CreatePipelineRequest, observableOptions);
+        const result = this.api.createPipeline(organizationId, createPipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4322,11 +4400,11 @@ export class PromisePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineRequest Request body for updating a pipeline
      */
-    public updatePipelineWithHttpInfo(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+    public updatePipelineWithHttpInfo(organizationId: string, pipelineId: string, updatePipelineRequest: UpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updatePipelineWithHttpInfo(organizationId, pipelineId, routesV2UpdatePipelineRequest, observableOptions);
+        const result = this.api.updatePipelineWithHttpInfo(organizationId, pipelineId, updatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4335,11 +4413,11 @@ export class PromisePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineRequest Request body for updating a pipeline
      */
-    public updatePipeline(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+    public updatePipeline(organizationId: string, pipelineId: string, updatePipelineRequest: UpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updatePipeline(organizationId, pipelineId, routesV2UpdatePipelineRequest, observableOptions);
+        const result = this.api.updatePipeline(organizationId, pipelineId, updatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4349,11 +4427,11 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param edgeId Edge ID
-     * @param routesV2PatchPipelineEdgeRequest Request body
+     * @param updatePipelineEdgeRequest Request body
      */
-    public updatePipelineEdgeWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+    public updatePipelineEdgeWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, updatePipelineEdgeRequest: UpdatePipelineEdgeRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updatePipelineEdgeWithHttpInfo(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, observableOptions);
+        const result = this.api.updatePipelineEdgeWithHttpInfo(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4363,11 +4441,11 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param edgeId Edge ID
-     * @param routesV2PatchPipelineEdgeRequest Request body
+     * @param updatePipelineEdgeRequest Request body
      */
-    public updatePipelineEdge(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: PromiseConfigurationOptions): Promise<void> {
+    public updatePipelineEdge(organizationId: string, pipelineId: string, edgeId: string, updatePipelineEdgeRequest: UpdatePipelineEdgeRequest, _options?: PromiseConfigurationOptions): Promise<void> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updatePipelineEdge(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, observableOptions);
+        const result = this.api.updatePipelineEdge(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4376,11 +4454,11 @@ export class PromisePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineV1Request Request body for updating a pipeline
      */
-    public updatePipelineV1WithHttpInfo(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
+    public updatePipelineV1WithHttpInfo(organizationId: string, pipelineId: string, updatePipelineV1Request: UpdatePipelineV1Request, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updatePipelineV1WithHttpInfo(organizationId, pipelineId, routesUpdatePipelineRequest, observableOptions);
+        const result = this.api.updatePipelineV1WithHttpInfo(organizationId, pipelineId, updatePipelineV1Request, observableOptions);
         return result.toPromise();
     }
 
@@ -4389,11 +4467,11 @@ export class PromisePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineV1Request Request body for updating a pipeline
      */
-    public updatePipelineV1(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipeline> {
+    public updatePipelineV1(organizationId: string, pipelineId: string, updatePipelineV1Request: UpdatePipelineV1Request, _options?: PromiseConfigurationOptions): Promise<ModelsPipeline> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updatePipelineV1(organizationId, pipelineId, routesUpdatePipelineRequest, observableOptions);
+        const result = this.api.updatePipelineV1(organizationId, pipelineId, updatePipelineV1Request, observableOptions);
         return result.toPromise();
     }
 
@@ -4469,11 +4547,11 @@ export class PromiseRolesApi {
      * Create a new role with permissions
      * Create role
      * @param organizationId Organization ID
-     * @param routesV2CreateRoleV2Request Request body for creating a role
+     * @param createRoleRequest Request body for creating a role
      */
-    public createRoleWithHttpInfo(organizationId: string, routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+    public createRoleWithHttpInfo(organizationId: string, createRoleRequest: CreateRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createRoleWithHttpInfo(organizationId, routesV2CreateRoleV2Request, observableOptions);
+        const result = this.api.createRoleWithHttpInfo(organizationId, createRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4481,11 +4559,11 @@ export class PromiseRolesApi {
      * Create a new role with permissions
      * Create role
      * @param organizationId Organization ID
-     * @param routesV2CreateRoleV2Request Request body for creating a role
+     * @param createRoleRequest Request body for creating a role
      */
-    public createRole(organizationId: string, routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request, _options?: PromiseConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+    public createRole(organizationId: string, createRoleRequest: CreateRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsRoleWithPermissions> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createRole(organizationId, routesV2CreateRoleV2Request, observableOptions);
+        const result = this.api.createRole(organizationId, createRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4568,11 +4646,11 @@ export class PromiseRolesApi {
      * Update role
      * @param organizationId Organization ID
      * @param roleId Role ID
-     * @param routesV2UpdateRoleV2Request Request body for updating a role
+     * @param updateRoleRequest Request body for updating a role
      */
-    public updateRoleWithHttpInfo(organizationId: string, roleId: string, routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+    public updateRoleWithHttpInfo(organizationId: string, roleId: string, updateRoleRequest: UpdateRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateRoleWithHttpInfo(organizationId, roleId, routesV2UpdateRoleV2Request, observableOptions);
+        const result = this.api.updateRoleWithHttpInfo(organizationId, roleId, updateRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4581,11 +4659,11 @@ export class PromiseRolesApi {
      * Update role
      * @param organizationId Organization ID
      * @param roleId Role ID
-     * @param routesV2UpdateRoleV2Request Request body for updating a role
+     * @param updateRoleRequest Request body for updating a role
      */
-    public updateRole(organizationId: string, roleId: string, routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request, _options?: PromiseConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+    public updateRole(organizationId: string, roleId: string, updateRoleRequest: UpdateRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsRoleWithPermissions> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateRole(organizationId, roleId, routesV2UpdateRoleV2Request, observableOptions);
+        const result = this.api.updateRole(organizationId, roleId, updateRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4612,11 +4690,11 @@ export class PromiseSecretsApi {
      * Creates a new secret for the specified organization
      * Create secret
      * @param organizationId Organization ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create
+     * @param createSecretRequest Secret to create
      */
-    public createSecretWithHttpInfo(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public createSecretWithHttpInfo(organizationId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createSecretWithHttpInfo(organizationId, routesV2CreateOrUpdateSecretRequest, observableOptions);
+        const result = this.api.createSecretWithHttpInfo(organizationId, createSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4624,11 +4702,11 @@ export class PromiseSecretsApi {
      * Creates a new secret for the specified organization
      * Create secret
      * @param organizationId Organization ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create
+     * @param createSecretRequest Secret to create
      */
-    public createSecret(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
+    public createSecret(organizationId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createSecret(organizationId, routesV2CreateOrUpdateSecretRequest, observableOptions);
+        const result = this.api.createSecret(organizationId, createSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4711,11 +4789,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates
+     * @param updateSecretRequest Secret updates
      */
-    public updateSecretWithHttpInfo(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public updateSecretWithHttpInfo(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, observableOptions);
+        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4724,11 +4802,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates
+     * @param updateSecretRequest Secret updates
      */
-    public updateSecret(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
+    public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecret(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, observableOptions);
+        const result = this.api.updateSecret(organizationId, secretId, updateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4755,11 +4833,11 @@ export class PromiseTransformSandboxApi {
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * Apply transformation to record
      * @param organizationId Organization ID
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformationWithHttpInfo(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+    public applyTransformationWithHttpInfo(organizationId: string, applyTransformationV2Request: ApplyTransformationV2Request, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.applyTransformationWithHttpInfo(organizationId, routesV2ApplyTransformationRequest, observableOptions);
+        const result = this.api.applyTransformationWithHttpInfo(organizationId, applyTransformationV2Request, observableOptions);
         return result.toPromise();
     }
 
@@ -4767,55 +4845,55 @@ export class PromiseTransformSandboxApi {
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * Apply transformation to record
      * @param organizationId Organization ID
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformation(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
+    public applyTransformation(organizationId: string, applyTransformationV2Request: ApplyTransformationV2Request, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.applyTransformation(organizationId, routesV2ApplyTransformationRequest, observableOptions);
+        const result = this.api.applyTransformation(organizationId, applyTransformationV2Request, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Apply a transformation configuration to a JSON record
      * Apply transformation to record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformationV2WithHttpInfo(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+    public applyTransformationV2WithHttpInfo(applyTransformationV2Request: ApplyTransformationV2Request, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.applyTransformationV2WithHttpInfo(routesV2ApplyTransformationRequest, observableOptions);
+        const result = this.api.applyTransformationV2WithHttpInfo(applyTransformationV2Request, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Apply a transformation configuration to a JSON record
      * Apply transformation to record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformationV2(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
+    public applyTransformationV2(applyTransformationV2Request: ApplyTransformationV2Request, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.applyTransformationV2(routesV2ApplyTransformationRequest, observableOptions);
+        const result = this.api.applyTransformationV2(applyTransformationV2Request, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Generate a sample record using the specified template type
      * Generate sample record
-     * @param routesV2GenerateRecordRequest Record generation parameters
+     * @param generateRecordRequest Record generation parameters
      */
-    public generateRecordWithHttpInfo(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
+    public generateRecordWithHttpInfo(generateRecordRequest: GenerateRecordRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.generateRecordWithHttpInfo(routesV2GenerateRecordRequest, observableOptions);
+        const result = this.api.generateRecordWithHttpInfo(generateRecordRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Generate a sample record using the specified template type
      * Generate sample record
-     * @param routesV2GenerateRecordRequest Record generation parameters
+     * @param generateRecordRequest Record generation parameters
      */
-    public generateRecord(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2GenerateRecordResponse> {
+    public generateRecord(generateRecordRequest: GenerateRecordRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2GenerateRecordResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.generateRecord(routesV2GenerateRecordRequest, observableOptions);
+        const result = this.api.generateRecord(generateRecordRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4929,11 +5007,11 @@ export class PromiseTransformsRecommendationsApi {
      * Analyze security data and provide transformation recommendations
      * Create transform recommendation
      * @param organizationId Organization ID
-     * @param routesV3TransformRecommendationRequest Security data to analyze
+     * @param createTransformRecommendationRequest Security data to analyze
      */
-    public createTransformRecommendationWithHttpInfo(organizationId: string, routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SecurityDataAnalysis>> {
+    public createTransformRecommendationWithHttpInfo(organizationId: string, createTransformRecommendationRequest: CreateTransformRecommendationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SecurityDataAnalysis>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createTransformRecommendationWithHttpInfo(organizationId, routesV3TransformRecommendationRequest, observableOptions);
+        const result = this.api.createTransformRecommendationWithHttpInfo(organizationId, createTransformRecommendationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4941,11 +5019,11 @@ export class PromiseTransformsRecommendationsApi {
      * Analyze security data and provide transformation recommendations
      * Create transform recommendation
      * @param organizationId Organization ID
-     * @param routesV3TransformRecommendationRequest Security data to analyze
+     * @param createTransformRecommendationRequest Security data to analyze
      */
-    public createTransformRecommendation(organizationId: string, routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3SecurityDataAnalysis> {
+    public createTransformRecommendation(organizationId: string, createTransformRecommendationRequest: CreateTransformRecommendationRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3SecurityDataAnalysis> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.createTransformRecommendation(organizationId, routesV3TransformRecommendationRequest, observableOptions);
+        const result = this.api.createTransformRecommendation(organizationId, createTransformRecommendationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4993,22 +5071,22 @@ export class PromiseTransformsRepositoryApi {
     /**
      * Export transform to YAML format
      * Export transform to YAML
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata
+     * @param exportTransformRequest Transform to export and optional metadata
      */
-    public exportTransformWithHttpInfo(communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public exportTransformWithHttpInfo(exportTransformRequest: ExportTransformRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.exportTransformWithHttpInfo(communityTransformsInternalTransformConfig, observableOptions);
+        const result = this.api.exportTransformWithHttpInfo(exportTransformRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Export transform to YAML format
      * Export transform to YAML
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata
+     * @param exportTransformRequest Transform to export and optional metadata
      */
-    public exportTransform(communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig, _options?: PromiseConfigurationOptions): Promise<string> {
+    public exportTransform(exportTransformRequest: ExportTransformRequest, _options?: PromiseConfigurationOptions): Promise<string> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.exportTransform(communityTransformsInternalTransformConfig, observableOptions);
+        const result = this.api.exportTransform(exportTransformRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5061,7 +5139,7 @@ export class PromiseTransformsRepositoryApi {
      * Import transform from YAML
      * @param body YAML transform definition
      */
-    public importTransformWithHttpInfo(body: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3ImportTransformResponse>> {
+    public importTransformWithHttpInfo(body: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3ImportTransformResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.importTransformWithHttpInfo(body, observableOptions);
         return result.toPromise();
@@ -5072,7 +5150,7 @@ export class PromiseTransformsRepositoryApi {
      * Import transform from YAML
      * @param body YAML transform definition
      */
-    public importTransform(body: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3ImportTransformResponse> {
+    public importTransform(body: any, _options?: PromiseConfigurationOptions): Promise<RoutesV3ImportTransformResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.importTransform(body, observableOptions);
         return result.toPromise();

@@ -6,7 +6,7 @@ GitHub organization audit logs settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_type** | **str** | Authentication type to use | [optional] 
+**auth_type** | [**CommonAuthType**](CommonAuthType.md) |  | [optional] 
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **github_app_installation_id** | **str** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
 **github_client_id** | **str** | GitHub Client ID (alternative to personal access token) | [optional] 

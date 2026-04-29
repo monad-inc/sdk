@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **create_pipeline**
-> ModelsPipelineConfigV2 create_pipeline(organization_id, routes_v2_create_pipeline_request)
+> ModelsPipelineConfigV2 create_pipeline(organization_id, create_pipeline_request)
 
 Create pipeline
 
@@ -41,8 +41,8 @@ Create a new pipeline with specified configuration
 
 ```python
 import monad
+from monad.models.create_pipeline_request import CreatePipelineRequest
 from monad.models.models_pipeline_config_v2 import ModelsPipelineConfigV2
-from monad.models.routes_v2_create_pipeline_request import RoutesV2CreatePipelineRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -74,11 +74,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_create_pipeline_request = monad.RoutesV2CreatePipelineRequest() # RoutesV2CreatePipelineRequest | Request body for creating a pipeline
+    create_pipeline_request = monad.CreatePipelineRequest() # CreatePipelineRequest | Request body for creating a pipeline
 
     try:
         # Create pipeline
-        api_response = api_instance.create_pipeline(organization_id, routes_v2_create_pipeline_request)
+        api_response = api_instance.create_pipeline(organization_id, create_pipeline_request)
         print("The response of PipelinesApi->create_pipeline:\n")
         pprint(api_response)
     except Exception as e:
@@ -93,7 +93,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_create_pipeline_request** | [**RoutesV2CreatePipelineRequest**](RoutesV2CreatePipelineRequest.md)| Request body for creating a pipeline | 
+ **create_pipeline_request** | [**CreatePipelineRequest**](CreatePipelineRequest.md)| Request body for creating a pipeline | 
 
 ### Return type
 
@@ -1686,7 +1686,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pipeline**
-> ModelsPipelineConfigV2 update_pipeline(organization_id, pipeline_id, routes_v2_update_pipeline_request)
+> ModelsPipelineConfigV2 update_pipeline(organization_id, pipeline_id, update_pipeline_request)
 
 Update pipeline
 
@@ -1700,7 +1700,7 @@ Update an existing pipeline with the specified configuration
 ```python
 import monad
 from monad.models.models_pipeline_config_v2 import ModelsPipelineConfigV2
-from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelineRequest
+from monad.models.update_pipeline_request import UpdatePipelineRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -1733,11 +1733,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     pipeline_id = 'pipeline_id_example' # str | Pipeline ID
-    routes_v2_update_pipeline_request = monad.RoutesV2UpdatePipelineRequest() # RoutesV2UpdatePipelineRequest | Request body for updating a pipeline
+    update_pipeline_request = monad.UpdatePipelineRequest() # UpdatePipelineRequest | Request body for updating a pipeline
 
     try:
         # Update pipeline
-        api_response = api_instance.update_pipeline(organization_id, pipeline_id, routes_v2_update_pipeline_request)
+        api_response = api_instance.update_pipeline(organization_id, pipeline_id, update_pipeline_request)
         print("The response of PipelinesApi->update_pipeline:\n")
         pprint(api_response)
     except Exception as e:
@@ -1753,7 +1753,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **pipeline_id** | **str**| Pipeline ID | 
- **routes_v2_update_pipeline_request** | [**RoutesV2UpdatePipelineRequest**](RoutesV2UpdatePipelineRequest.md)| Request body for updating a pipeline | 
+ **update_pipeline_request** | [**UpdatePipelineRequest**](UpdatePipelineRequest.md)| Request body for updating a pipeline | 
 
 ### Return type
 
@@ -1779,7 +1779,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pipeline_edge**
-> update_pipeline_edge(organization_id, pipeline_id, edge_id, routes_v2_patch_pipeline_edge_request)
+> update_pipeline_edge(organization_id, pipeline_id, edge_id, update_pipeline_edge_request)
 
 Update pipeline edge
 
@@ -1792,7 +1792,7 @@ Enable or disable a pipeline edge
 
 ```python
 import monad
-from monad.models.routes_v2_patch_pipeline_edge_request import RoutesV2PatchPipelineEdgeRequest
+from monad.models.update_pipeline_edge_request import UpdatePipelineEdgeRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -1826,11 +1826,11 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID
     pipeline_id = 'pipeline_id_example' # str | Pipeline ID
     edge_id = 'edge_id_example' # str | Edge ID
-    routes_v2_patch_pipeline_edge_request = monad.RoutesV2PatchPipelineEdgeRequest() # RoutesV2PatchPipelineEdgeRequest | Request body
+    update_pipeline_edge_request = monad.UpdatePipelineEdgeRequest() # UpdatePipelineEdgeRequest | Request body
 
     try:
         # Update pipeline edge
-        api_instance.update_pipeline_edge(organization_id, pipeline_id, edge_id, routes_v2_patch_pipeline_edge_request)
+        api_instance.update_pipeline_edge(organization_id, pipeline_id, edge_id, update_pipeline_edge_request)
     except Exception as e:
         print("Exception when calling PipelinesApi->update_pipeline_edge: %s\n" % e)
 ```
@@ -1845,7 +1845,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **pipeline_id** | **str**| Pipeline ID | 
  **edge_id** | **str**| Edge ID | 
- **routes_v2_patch_pipeline_edge_request** | [**RoutesV2PatchPipelineEdgeRequest**](RoutesV2PatchPipelineEdgeRequest.md)| Request body | 
+ **update_pipeline_edge_request** | [**UpdatePipelineEdgeRequest**](UpdatePipelineEdgeRequest.md)| Request body | 
 
 ### Return type
 
@@ -1872,7 +1872,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pipeline_v1**
-> ModelsPipeline update_pipeline_v1(organization_id, pipeline_id, routes_update_pipeline_request)
+> ModelsPipeline update_pipeline_v1(organization_id, pipeline_id, update_pipeline_v1_request)
 
 Update pipeline
 
@@ -1886,7 +1886,7 @@ Update pipeline
 ```python
 import monad
 from monad.models.models_pipeline import ModelsPipeline
-from monad.models.routes_update_pipeline_request import RoutesUpdatePipelineRequest
+from monad.models.update_pipeline_v1_request import UpdatePipelineV1Request
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -1919,11 +1919,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     pipeline_id = 'pipeline_id_example' # str | Pipeline ID
-    routes_update_pipeline_request = monad.RoutesUpdatePipelineRequest() # RoutesUpdatePipelineRequest | Request body for updating a pipeline
+    update_pipeline_v1_request = monad.UpdatePipelineV1Request() # UpdatePipelineV1Request | Request body for updating a pipeline
 
     try:
         # Update pipeline
-        api_response = api_instance.update_pipeline_v1(organization_id, pipeline_id, routes_update_pipeline_request)
+        api_response = api_instance.update_pipeline_v1(organization_id, pipeline_id, update_pipeline_v1_request)
         print("The response of PipelinesApi->update_pipeline_v1:\n")
         pprint(api_response)
     except Exception as e:
@@ -1939,7 +1939,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **pipeline_id** | **str**| Pipeline ID | 
- **routes_update_pipeline_request** | [**RoutesUpdatePipelineRequest**](RoutesUpdatePipelineRequest.md)| Request body for updating a pipeline | 
+ **update_pipeline_v1_request** | [**UpdatePipelineV1Request**](UpdatePipelineV1Request.md)| Request body for updating a pipeline | 
 
 ### Return type
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **MaxBatchRecordCount** | Pointer to **int32** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
 **Method** | Pointer to **string** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). | [optional] 
-**PayloadStructure** | Pointer to **string** | Determines how the payload is structured. &#39;single&#39; sends each record as a separate request, &#39;array&#39; sends multiple records as an array, &#39;wrapped&#39; sends multiple records within a wrapper object. | [optional] 
+**PayloadStructure** | Pointer to [**HttpPayloadStructure**](HttpPayloadStructure.md) |  | [optional] 
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** | Skip TLS verification. | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
@@ -160,20 +160,20 @@ HasMethod returns a boolean if a field has been set.
 
 ### GetPayloadStructure
 
-`func (o *HttpSettingsConfig) GetPayloadStructure() string`
+`func (o *HttpSettingsConfig) GetPayloadStructure() HttpPayloadStructure`
 
 GetPayloadStructure returns the PayloadStructure field if non-nil, zero value otherwise.
 
 ### GetPayloadStructureOk
 
-`func (o *HttpSettingsConfig) GetPayloadStructureOk() (*string, bool)`
+`func (o *HttpSettingsConfig) GetPayloadStructureOk() (*HttpPayloadStructure, bool)`
 
 GetPayloadStructureOk returns a tuple with the PayloadStructure field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayloadStructure
 
-`func (o *HttpSettingsConfig) SetPayloadStructure(v string)`
+`func (o *HttpSettingsConfig) SetPayloadStructure(v HttpPayloadStructure)`
 
 SetPayloadStructure sets PayloadStructure field to given value.
 

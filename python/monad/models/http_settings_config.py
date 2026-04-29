@@ -3,7 +3,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.http_headers import HttpHeaders
+from monad.models.http_payload_structure import HttpPayloadStructure
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -34,7 +35,7 @@ class HttpSettingsConfig(BaseModel):
     max_batch_data_size: Optional[StrictInt] = Field(default=None, description="The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure.")
     max_batch_record_count: Optional[StrictInt] = Field(default=None, description="The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request.")
     method: Optional[StrictStr] = Field(default=None, description="The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE).")
-    payload_structure: Optional[StrictStr] = Field(default=None, description="Determines how the payload is structured. 'single' sends each record as a separate request, 'array' sends multiple records as an array, 'wrapped' sends multiple records within a wrapper object.")
+    payload_structure: Optional[HttpPayloadStructure] = None
     rate_limit: Optional[StrictInt] = Field(default=None, description="Maximum number of requests per second to send to the endpoint.")
     tls_skip_verify: Optional[StrictBool] = Field(default=None, description="Skip TLS verification.")
     wrapper_key: Optional[StrictStr] = Field(default=None, description="The key to use for wrapping the payload when PayloadStructure is set to 'wrapped'.")

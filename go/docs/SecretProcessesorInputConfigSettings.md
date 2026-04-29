@@ -95,7 +95,7 @@ Name | Type | Description | Notes
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
 **BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
-**AuthType** | Pointer to **string** | AuthType is the type of authentication used for the input | [optional] 
+**AuthType** | Pointer to [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | [optional] 
 **Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **AlertType** | Pointer to **string** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
@@ -2456,20 +2456,20 @@ HasBucketName returns a boolean if a field has been set.
 
 ### GetAuthType
 
-`func (o *SecretProcessesorInputConfigSettings) GetAuthType() string`
+`func (o *SecretProcessesorInputConfigSettings) GetAuthType() ZendeskAuditLogsAuthType`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetAuthTypeOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetAuthTypeOk() (*ZendeskAuditLogsAuthType, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *SecretProcessesorInputConfigSettings) SetAuthType(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetAuthType(v ZendeskAuditLogsAuthType)`
 
 SetAuthType sets AuthType field to given value.
 

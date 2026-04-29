@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to **string** | AuthType is the type of authentication used for the input | [optional] 
+**AuthType** | Pointer to [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | [optional] 
 **EmailAddress** | Pointer to **string** | This is the email address registered with your Zendesk account | [optional] 
 **SubDomain** | Pointer to **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAuthType
 
-`func (o *ZendeskAuditLogsSettingsConfig) GetAuthType() string`
+`func (o *ZendeskAuditLogsSettingsConfig) GetAuthType() ZendeskAuditLogsAuthType`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *ZendeskAuditLogsSettingsConfig) GetAuthTypeOk() (*string, bool)`
+`func (o *ZendeskAuditLogsSettingsConfig) GetAuthTypeOk() (*ZendeskAuditLogsAuthType, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *ZendeskAuditLogsSettingsConfig) SetAuthType(v string)`
+`func (o *ZendeskAuditLogsSettingsConfig) SetAuthType(v ZendeskAuditLogsAuthType)`
 
 SetAuthType sets AuthType field to given value.
 

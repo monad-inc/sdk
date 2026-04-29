@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_billing_account_role**
-> ModelsBillingAccountRole create_billing_account_role(billing_account_id, routes_v2_create_billing_account_role_request)
+> ModelsBillingAccountRole create_billing_account_role(billing_account_id, create_billing_account_role_request)
 
 Create Billing Account Role
 
@@ -27,8 +27,8 @@ Create Billing Account Role
 
 ```python
 import monad
+from monad.models.create_billing_account_role_request import CreateBillingAccountRoleRequest
 from monad.models.models_billing_account_role import ModelsBillingAccountRole
-from monad.models.routes_v2_create_billing_account_role_request import RoutesV2CreateBillingAccountRoleRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -54,11 +54,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsRBACApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
-    routes_v2_create_billing_account_role_request = monad.RoutesV2CreateBillingAccountRoleRequest() # RoutesV2CreateBillingAccountRoleRequest | Create Billing Account Role Request
+    create_billing_account_role_request = monad.CreateBillingAccountRoleRequest() # CreateBillingAccountRoleRequest | Create Billing Account Role Request
 
     try:
         # Create Billing Account Role
-        api_response = api_instance.create_billing_account_role(billing_account_id, routes_v2_create_billing_account_role_request)
+        api_response = api_instance.create_billing_account_role(billing_account_id, create_billing_account_role_request)
         print("The response of BillingAccountsRBACApi->create_billing_account_role:\n")
         pprint(api_response)
     except Exception as e:
@@ -73,7 +73,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
- **routes_v2_create_billing_account_role_request** | [**RoutesV2CreateBillingAccountRoleRequest**](RoutesV2CreateBillingAccountRoleRequest.md)| Create Billing Account Role Request | 
+ **create_billing_account_role_request** | [**CreateBillingAccountRoleRequest**](CreateBillingAccountRoleRequest.md)| Create Billing Account Role Request | 
 
 ### Return type
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_billing_account_user_role**
-> str create_billing_account_user_role(billing_account_id, role_id, routes_v2_createbilling_account_user_role_request)
+> str create_billing_account_user_role(billing_account_id, role_id, create_billing_account_user_role_request)
 
 Create Billing Account User Role
 
@@ -111,7 +111,7 @@ Add a user to a billing account role
 
 ```python
 import monad
-from monad.models.routes_v2_createbilling_account_user_role_request import RoutesV2CreatebillingAccountUserRoleRequest
+from monad.models.create_billing_account_user_role_request import CreateBillingAccountUserRoleRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -138,11 +138,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.BillingAccountsRBACApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
     role_id = 'role_id_example' # str | Role ID
-    routes_v2_createbilling_account_user_role_request = monad.RoutesV2CreatebillingAccountUserRoleRequest() # RoutesV2CreatebillingAccountUserRoleRequest | Create Billing Account User Role Request
+    create_billing_account_user_role_request = monad.CreateBillingAccountUserRoleRequest() # CreateBillingAccountUserRoleRequest | Create Billing Account User Role Request
 
     try:
         # Create Billing Account User Role
-        api_response = api_instance.create_billing_account_user_role(billing_account_id, role_id, routes_v2_createbilling_account_user_role_request)
+        api_response = api_instance.create_billing_account_user_role(billing_account_id, role_id, create_billing_account_user_role_request)
         print("The response of BillingAccountsRBACApi->create_billing_account_user_role:\n")
         pprint(api_response)
     except Exception as e:
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
  **role_id** | **str**| Role ID | 
- **routes_v2_createbilling_account_user_role_request** | [**RoutesV2CreatebillingAccountUserRoleRequest**](RoutesV2CreatebillingAccountUserRoleRequest.md)| Create Billing Account User Role Request | 
+ **create_billing_account_user_role_request** | [**CreateBillingAccountUserRoleRequest**](CreateBillingAccountUserRoleRequest.md)| Create Billing Account User Role Request | 
 
 ### Return type
 
@@ -591,7 +591,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_billing_account_role**
-> ModelsBillingAccountRole update_billing_account_role(billing_account_id, role_id, routes_v2_update_billing_account_role_request)
+> ModelsBillingAccountRole update_billing_account_role(billing_account_id, role_id, update_billing_account_role_request)
 
 Update Billing Account Role
 
@@ -604,7 +604,7 @@ Update Billing Account Role
 ```python
 import monad
 from monad.models.models_billing_account_role import ModelsBillingAccountRole
-from monad.models.routes_v2_update_billing_account_role_request import RoutesV2UpdateBillingAccountRoleRequest
+from monad.models.update_billing_account_role_request import UpdateBillingAccountRoleRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -631,11 +631,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.BillingAccountsRBACApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
     role_id = 'role_id_example' # str | Role ID
-    routes_v2_update_billing_account_role_request = monad.RoutesV2UpdateBillingAccountRoleRequest() # RoutesV2UpdateBillingAccountRoleRequest | Update Billing Account Role Request
+    update_billing_account_role_request = monad.UpdateBillingAccountRoleRequest() # UpdateBillingAccountRoleRequest | Update Billing Account Role Request
 
     try:
         # Update Billing Account Role
-        api_response = api_instance.update_billing_account_role(billing_account_id, role_id, routes_v2_update_billing_account_role_request)
+        api_response = api_instance.update_billing_account_role(billing_account_id, role_id, update_billing_account_role_request)
         print("The response of BillingAccountsRBACApi->update_billing_account_role:\n")
         pprint(api_response)
     except Exception as e:
@@ -651,7 +651,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
  **role_id** | **str**| Role ID | 
- **routes_v2_update_billing_account_role_request** | [**RoutesV2UpdateBillingAccountRoleRequest**](RoutesV2UpdateBillingAccountRoleRequest.md)| Update Billing Account Role Request | 
+ **update_billing_account_role_request** | [**UpdateBillingAccountRoleRequest**](UpdateBillingAccountRoleRequest.md)| Update Billing Account Role Request | 
 
 ### Return type
 

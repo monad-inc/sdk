@@ -3,7 +3,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -36,13 +36,13 @@ class TestKafkaSettingsConfig(unittest.TestCase):
         model = KafkaSettingsConfig()
         if include_optional:
             return KafkaSettingsConfig(
-                acks = '',
+                acks = '0',
                 batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
                     batch_data_size = 56, 
                     batch_record_count = 56, 
                     publish_rate = 56, ),
                 bootstrap_servers = '',
-                compression_type = '',
+                compression_type = 'none',
                 headers = [
                     monad.models.kafka/kafka_header.kafka.kafkaHeader(
                         key = '', 
@@ -50,8 +50,8 @@ class TestKafkaSettingsConfig(unittest.TestCase):
                     ],
                 message_key_field = '',
                 retries = 56,
-                sasl_mechanism = '',
-                security_protocol = '',
+                sasl_mechanism = 'PLAIN',
+                security_protocol = 'NONE',
                 topic = '',
                 username = ''
             )

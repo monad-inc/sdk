@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,14 +19,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
+from monad.models.create_child_organization_request import CreateChildOrganizationRequest
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
 from monad.models.models_organization_list import ModelsOrganizationList
 from monad.models.models_storage_type_summary_response import ModelsStorageTypeSummaryResponse
 from monad.models.models_user_organization_list import ModelsUserOrganizationList
 from monad.models.routes_create_organization_request import RoutesCreateOrganizationRequest
 from monad.models.routes_update_organization_request import RoutesUpdateOrganizationRequest
-from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest
-from monad.models.routes_v3_update_child_organization_request import RoutesV3UpdateChildOrganizationRequest
+from monad.models.update_child_organization_request import UpdateChildOrganizationRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -50,7 +50,7 @@ class OrganizationsApi:
     def create_child_organization(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        routes_v3_create_child_organization_request: Annotated[RoutesV3CreateChildOrganizationRequest, Field(description="Request body")],
+        create_child_organization_request: Annotated[CreateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -70,8 +70,8 @@ class OrganizationsApi:
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_child_organization_request: Request body (required)
-        :type routes_v3_create_child_organization_request: RoutesV3CreateChildOrganizationRequest
+        :param create_child_organization_request: Request body (required)
+        :type create_child_organization_request: CreateChildOrganizationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -96,7 +96,7 @@ class OrganizationsApi:
 
         _param = self._create_child_organization_serialize(
             organization_id=organization_id,
-            routes_v3_create_child_organization_request=routes_v3_create_child_organization_request,
+            create_child_organization_request=create_child_organization_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -123,7 +123,7 @@ class OrganizationsApi:
     def create_child_organization_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        routes_v3_create_child_organization_request: Annotated[RoutesV3CreateChildOrganizationRequest, Field(description="Request body")],
+        create_child_organization_request: Annotated[CreateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -143,8 +143,8 @@ class OrganizationsApi:
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_child_organization_request: Request body (required)
-        :type routes_v3_create_child_organization_request: RoutesV3CreateChildOrganizationRequest
+        :param create_child_organization_request: Request body (required)
+        :type create_child_organization_request: CreateChildOrganizationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -169,7 +169,7 @@ class OrganizationsApi:
 
         _param = self._create_child_organization_serialize(
             organization_id=organization_id,
-            routes_v3_create_child_organization_request=routes_v3_create_child_organization_request,
+            create_child_organization_request=create_child_organization_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -196,7 +196,7 @@ class OrganizationsApi:
     def create_child_organization_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        routes_v3_create_child_organization_request: Annotated[RoutesV3CreateChildOrganizationRequest, Field(description="Request body")],
+        create_child_organization_request: Annotated[CreateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -216,8 +216,8 @@ class OrganizationsApi:
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_child_organization_request: Request body (required)
-        :type routes_v3_create_child_organization_request: RoutesV3CreateChildOrganizationRequest
+        :param create_child_organization_request: Request body (required)
+        :type create_child_organization_request: CreateChildOrganizationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -242,7 +242,7 @@ class OrganizationsApi:
 
         _param = self._create_child_organization_serialize(
             organization_id=organization_id,
-            routes_v3_create_child_organization_request=routes_v3_create_child_organization_request,
+            create_child_organization_request=create_child_organization_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -264,7 +264,7 @@ class OrganizationsApi:
     def _create_child_organization_serialize(
         self,
         organization_id,
-        routes_v3_create_child_organization_request,
+        create_child_organization_request,
         _request_auth,
         _content_type,
         _headers,
@@ -292,8 +292,8 @@ class OrganizationsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_create_child_organization_request is not None:
-            _body_params = routes_v3_create_child_organization_request
+        if create_child_organization_request is not None:
+            _body_params = create_child_organization_request
 
 
         # set the HTTP header `Accept`
@@ -2169,7 +2169,7 @@ class OrganizationsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
         child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
-        routes_v3_update_child_organization_request: Annotated[RoutesV3UpdateChildOrganizationRequest, Field(description="Request body")],
+        update_child_organization_request: Annotated[UpdateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2191,8 +2191,8 @@ class OrganizationsApi:
         :type organization_id: str
         :param child_organization_id: Child Organization ID (required)
         :type child_organization_id: str
-        :param routes_v3_update_child_organization_request: Request body (required)
-        :type routes_v3_update_child_organization_request: RoutesV3UpdateChildOrganizationRequest
+        :param update_child_organization_request: Request body (required)
+        :type update_child_organization_request: UpdateChildOrganizationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2218,7 +2218,7 @@ class OrganizationsApi:
         _param = self._update_child_organization_serialize(
             organization_id=organization_id,
             child_organization_id=child_organization_id,
-            routes_v3_update_child_organization_request=routes_v3_update_child_organization_request,
+            update_child_organization_request=update_child_organization_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2247,7 +2247,7 @@ class OrganizationsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
         child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
-        routes_v3_update_child_organization_request: Annotated[RoutesV3UpdateChildOrganizationRequest, Field(description="Request body")],
+        update_child_organization_request: Annotated[UpdateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2269,8 +2269,8 @@ class OrganizationsApi:
         :type organization_id: str
         :param child_organization_id: Child Organization ID (required)
         :type child_organization_id: str
-        :param routes_v3_update_child_organization_request: Request body (required)
-        :type routes_v3_update_child_organization_request: RoutesV3UpdateChildOrganizationRequest
+        :param update_child_organization_request: Request body (required)
+        :type update_child_organization_request: UpdateChildOrganizationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2296,7 +2296,7 @@ class OrganizationsApi:
         _param = self._update_child_organization_serialize(
             organization_id=organization_id,
             child_organization_id=child_organization_id,
-            routes_v3_update_child_organization_request=routes_v3_update_child_organization_request,
+            update_child_organization_request=update_child_organization_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2325,7 +2325,7 @@ class OrganizationsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
         child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
-        routes_v3_update_child_organization_request: Annotated[RoutesV3UpdateChildOrganizationRequest, Field(description="Request body")],
+        update_child_organization_request: Annotated[UpdateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2347,8 +2347,8 @@ class OrganizationsApi:
         :type organization_id: str
         :param child_organization_id: Child Organization ID (required)
         :type child_organization_id: str
-        :param routes_v3_update_child_organization_request: Request body (required)
-        :type routes_v3_update_child_organization_request: RoutesV3UpdateChildOrganizationRequest
+        :param update_child_organization_request: Request body (required)
+        :type update_child_organization_request: UpdateChildOrganizationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2374,7 +2374,7 @@ class OrganizationsApi:
         _param = self._update_child_organization_serialize(
             organization_id=organization_id,
             child_organization_id=child_organization_id,
-            routes_v3_update_child_organization_request=routes_v3_update_child_organization_request,
+            update_child_organization_request=update_child_organization_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2398,7 +2398,7 @@ class OrganizationsApi:
         self,
         organization_id,
         child_organization_id,
-        routes_v3_update_child_organization_request,
+        update_child_organization_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2428,8 +2428,8 @@ class OrganizationsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_update_child_organization_request is not None:
-            _body_params = routes_v3_update_child_organization_request
+        if update_child_organization_request is not None:
+            _body_params = update_child_organization_request
 
 
         # set the HTTP header `Accept`

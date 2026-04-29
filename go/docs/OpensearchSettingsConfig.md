@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
+**AuthMode** | Pointer to [**OpensearchAuthMode**](OpensearchAuthMode.md) |  | [optional] 
 **Index** | Pointer to **string** | The name of the OpenSearch index to use. | [optional] 
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **Region** | Pointer to **string** | The AWS Region where the OpenSearch domain is located | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAuthMode
 
-`func (o *OpensearchSettingsConfig) GetAuthMode() string`
+`func (o *OpensearchSettingsConfig) GetAuthMode() OpensearchAuthMode`
 
 GetAuthMode returns the AuthMode field if non-nil, zero value otherwise.
 
 ### GetAuthModeOk
 
-`func (o *OpensearchSettingsConfig) GetAuthModeOk() (*string, bool)`
+`func (o *OpensearchSettingsConfig) GetAuthModeOk() (*OpensearchAuthMode, bool)`
 
 GetAuthModeOk returns a tuple with the AuthMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthMode
 
-`func (o *OpensearchSettingsConfig) SetAuthMode(v string)`
+`func (o *OpensearchSettingsConfig) SetAuthMode(v OpensearchAuthMode)`
 
 SetAuthMode sets AuthMode field to given value.
 

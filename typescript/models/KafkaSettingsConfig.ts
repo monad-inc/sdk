@@ -1,6 +1,6 @@
 /**
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d \'{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}\' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you\'ll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn\'t exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * OpenAPI spec version: 1.0
  * Contact: support@monad.com
@@ -11,26 +11,24 @@
  */
 
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
+import { KafkaAcks } from '../models/KafkaAcks';
+import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
+import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
 import { HttpFile } from '../http/http';
 
 /**
 * Kafka Output Settings
 */
 export class KafkaSettingsConfig {
-    /**
-    * Acknowledgment level (0=none, 1=leader only, all=all replicas)
-    */
-    'acks'?: string;
+    'acks'?: KafkaAcks;
     'batchConfig'?: BatchConfigBatchConfig;
     /**
     * Comma-separated list of Kafka broker addresses (host:port)
     */
     'bootstrapServers'?: string;
-    /**
-    * Compression codec for messages (none, gzip, snappy, lz4, zstd)
-    */
-    'compressionType'?: string;
+    'compressionType'?: KafkaCompressionType;
     /**
     * Static headers to add to each Kafka message
     */
@@ -43,14 +41,8 @@ export class KafkaSettingsConfig {
     * Number of retry attempts for failed writes
     */
     'retries'?: number;
-    /**
-    * SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512)
-    */
-    'saslMechanism'?: string;
-    /**
-    * Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL)
-    */
-    'securityProtocol'?: string;
+    'saslMechanism'?: KafkaSaslMechanism;
+    'securityProtocol'?: KafkaSecurityProtocol;
     /**
     * The Kafka topic to publish messages to
     */
@@ -68,7 +60,7 @@ export class KafkaSettingsConfig {
         {
             "name": "acks",
             "baseName": "acks",
-            "type": "string",
+            "type": "KafkaAcks",
             "format": ""
         },
         {
@@ -86,7 +78,7 @@ export class KafkaSettingsConfig {
         {
             "name": "compressionType",
             "baseName": "compression_type",
-            "type": "string",
+            "type": "KafkaCompressionType",
             "format": ""
         },
         {
@@ -110,13 +102,13 @@ export class KafkaSettingsConfig {
         {
             "name": "saslMechanism",
             "baseName": "sasl_mechanism",
-            "type": "string",
+            "type": "KafkaSaslMechanism",
             "format": ""
         },
         {
             "name": "securityProtocol",
             "baseName": "security_protocol",
-            "type": "string",
+            "type": "KafkaSecurityProtocol",
             "format": ""
         },
         {
@@ -139,3 +131,5 @@ export class KafkaSettingsConfig {
     public constructor() {
     }
 }
+
+

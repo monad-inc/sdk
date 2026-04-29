@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApplyConditionV2Request;
 import org.openapitools.client.model.ResponderErrorResponse;
-import org.openapitools.client.model.RoutesV2ApplyConditionRequest;
 import org.openapitools.client.model.RoutesV2ApplyConditionResponse;
 
 import java.lang.reflect.Type;
@@ -76,7 +76,7 @@ public class ConditionSandboxApi {
 
     /**
      * Build call for applyConditionV2
-     * @param routesV2ApplyConditionRequest Condition and record (required)
+     * @param applyConditionV2Request Condition and record (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -89,7 +89,7 @@ public class ConditionSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call applyConditionV2Call(@javax.annotation.Nonnull RoutesV2ApplyConditionRequest routesV2ApplyConditionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call applyConditionV2Call(@javax.annotation.Nonnull ApplyConditionV2Request applyConditionV2Request, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -103,7 +103,7 @@ public class ConditionSandboxApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2ApplyConditionRequest;
+        Object localVarPostBody = applyConditionV2Request;
 
         // create path and map variables
         String localVarPath = "/v2/sandbox/condition";
@@ -135,20 +135,20 @@ public class ConditionSandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call applyConditionV2ValidateBeforeCall(@javax.annotation.Nonnull RoutesV2ApplyConditionRequest routesV2ApplyConditionRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routesV2ApplyConditionRequest' is set
-        if (routesV2ApplyConditionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2ApplyConditionRequest' when calling applyConditionV2(Async)");
+    private okhttp3.Call applyConditionV2ValidateBeforeCall(@javax.annotation.Nonnull ApplyConditionV2Request applyConditionV2Request, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'applyConditionV2Request' is set
+        if (applyConditionV2Request == null) {
+            throw new ApiException("Missing the required parameter 'applyConditionV2Request' when calling applyConditionV2(Async)");
         }
 
-        return applyConditionV2Call(routesV2ApplyConditionRequest, _callback);
+        return applyConditionV2Call(applyConditionV2Request, _callback);
 
     }
 
     /**
      * Apply condition to record
      * Apply a condition to a JSON record
-     * @param routesV2ApplyConditionRequest Condition and record (required)
+     * @param applyConditionV2Request Condition and record (required)
      * @return RoutesV2ApplyConditionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -160,15 +160,15 @@ public class ConditionSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2ApplyConditionResponse applyConditionV2(@javax.annotation.Nonnull RoutesV2ApplyConditionRequest routesV2ApplyConditionRequest) throws ApiException {
-        ApiResponse<RoutesV2ApplyConditionResponse> localVarResp = applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest);
+    public RoutesV2ApplyConditionResponse applyConditionV2(@javax.annotation.Nonnull ApplyConditionV2Request applyConditionV2Request) throws ApiException {
+        ApiResponse<RoutesV2ApplyConditionResponse> localVarResp = applyConditionV2WithHttpInfo(applyConditionV2Request);
         return localVarResp.getData();
     }
 
     /**
      * Apply condition to record
      * Apply a condition to a JSON record
-     * @param routesV2ApplyConditionRequest Condition and record (required)
+     * @param applyConditionV2Request Condition and record (required)
      * @return ApiResponse&lt;RoutesV2ApplyConditionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -180,8 +180,8 @@ public class ConditionSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2ApplyConditionResponse> applyConditionV2WithHttpInfo(@javax.annotation.Nonnull RoutesV2ApplyConditionRequest routesV2ApplyConditionRequest) throws ApiException {
-        okhttp3.Call localVarCall = applyConditionV2ValidateBeforeCall(routesV2ApplyConditionRequest, null);
+    public ApiResponse<RoutesV2ApplyConditionResponse> applyConditionV2WithHttpInfo(@javax.annotation.Nonnull ApplyConditionV2Request applyConditionV2Request) throws ApiException {
+        okhttp3.Call localVarCall = applyConditionV2ValidateBeforeCall(applyConditionV2Request, null);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyConditionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -189,7 +189,7 @@ public class ConditionSandboxApi {
     /**
      * Apply condition to record (asynchronously)
      * Apply a condition to a JSON record
-     * @param routesV2ApplyConditionRequest Condition and record (required)
+     * @param applyConditionV2Request Condition and record (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -202,9 +202,9 @@ public class ConditionSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call applyConditionV2Async(@javax.annotation.Nonnull RoutesV2ApplyConditionRequest routesV2ApplyConditionRequest, final ApiCallback<RoutesV2ApplyConditionResponse> _callback) throws ApiException {
+    public okhttp3.Call applyConditionV2Async(@javax.annotation.Nonnull ApplyConditionV2Request applyConditionV2Request, final ApiCallback<RoutesV2ApplyConditionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = applyConditionV2ValidateBeforeCall(routesV2ApplyConditionRequest, _callback);
+        okhttp3.Call localVarCall = applyConditionV2ValidateBeforeCall(applyConditionV2Request, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyConditionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

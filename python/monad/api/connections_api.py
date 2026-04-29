@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,10 +19,10 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from monad.models.create_connection_request import CreateConnectionRequest
 from monad.models.models_connection import ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList
-from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest
-from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConnectionRequest
+from monad.models.update_connection_request import UpdateConnectionRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -46,7 +46,7 @@ class ConnectionsApi:
     def create_connection(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_connection_request: Annotated[RoutesV3CreateConnectionRequest, Field(description="Request body for creating a connection")],
+        create_connection_request: Annotated[CreateConnectionRequest, Field(description="Request body for creating a connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -66,8 +66,8 @@ class ConnectionsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_connection_request: Request body for creating a connection (required)
-        :type routes_v3_create_connection_request: RoutesV3CreateConnectionRequest
+        :param create_connection_request: Request body for creating a connection (required)
+        :type create_connection_request: CreateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -92,7 +92,7 @@ class ConnectionsApi:
 
         _param = self._create_connection_serialize(
             organization_id=organization_id,
-            routes_v3_create_connection_request=routes_v3_create_connection_request,
+            create_connection_request=create_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -119,7 +119,7 @@ class ConnectionsApi:
     def create_connection_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_connection_request: Annotated[RoutesV3CreateConnectionRequest, Field(description="Request body for creating a connection")],
+        create_connection_request: Annotated[CreateConnectionRequest, Field(description="Request body for creating a connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,8 +139,8 @@ class ConnectionsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_connection_request: Request body for creating a connection (required)
-        :type routes_v3_create_connection_request: RoutesV3CreateConnectionRequest
+        :param create_connection_request: Request body for creating a connection (required)
+        :type create_connection_request: CreateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,7 +165,7 @@ class ConnectionsApi:
 
         _param = self._create_connection_serialize(
             organization_id=organization_id,
-            routes_v3_create_connection_request=routes_v3_create_connection_request,
+            create_connection_request=create_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -192,7 +192,7 @@ class ConnectionsApi:
     def create_connection_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_connection_request: Annotated[RoutesV3CreateConnectionRequest, Field(description="Request body for creating a connection")],
+        create_connection_request: Annotated[CreateConnectionRequest, Field(description="Request body for creating a connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -212,8 +212,8 @@ class ConnectionsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_connection_request: Request body for creating a connection (required)
-        :type routes_v3_create_connection_request: RoutesV3CreateConnectionRequest
+        :param create_connection_request: Request body for creating a connection (required)
+        :type create_connection_request: CreateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -238,7 +238,7 @@ class ConnectionsApi:
 
         _param = self._create_connection_serialize(
             organization_id=organization_id,
-            routes_v3_create_connection_request=routes_v3_create_connection_request,
+            create_connection_request=create_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -260,7 +260,7 @@ class ConnectionsApi:
     def _create_connection_serialize(
         self,
         organization_id,
-        routes_v3_create_connection_request,
+        create_connection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -288,8 +288,8 @@ class ConnectionsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_create_connection_request is not None:
-            _body_params = routes_v3_create_connection_request
+        if create_connection_request is not None:
+            _body_params = create_connection_request
 
 
         # set the HTTP header `Accept`
@@ -1207,7 +1207,7 @@ class ConnectionsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to update")],
-        routes_v3_update_connection_request: Annotated[RoutesV3UpdateConnectionRequest, Field(description="Request body for updating a connection")],
+        update_connection_request: Annotated[UpdateConnectionRequest, Field(description="Request body for updating a connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1229,8 +1229,8 @@ class ConnectionsApi:
         :type organization_id: str
         :param connection_id: Connection ID to update (required)
         :type connection_id: str
-        :param routes_v3_update_connection_request: Request body for updating a connection (required)
-        :type routes_v3_update_connection_request: RoutesV3UpdateConnectionRequest
+        :param update_connection_request: Request body for updating a connection (required)
+        :type update_connection_request: UpdateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1256,7 +1256,7 @@ class ConnectionsApi:
         _param = self._update_connection_serialize(
             organization_id=organization_id,
             connection_id=connection_id,
-            routes_v3_update_connection_request=routes_v3_update_connection_request,
+            update_connection_request=update_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1284,7 +1284,7 @@ class ConnectionsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to update")],
-        routes_v3_update_connection_request: Annotated[RoutesV3UpdateConnectionRequest, Field(description="Request body for updating a connection")],
+        update_connection_request: Annotated[UpdateConnectionRequest, Field(description="Request body for updating a connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1306,8 +1306,8 @@ class ConnectionsApi:
         :type organization_id: str
         :param connection_id: Connection ID to update (required)
         :type connection_id: str
-        :param routes_v3_update_connection_request: Request body for updating a connection (required)
-        :type routes_v3_update_connection_request: RoutesV3UpdateConnectionRequest
+        :param update_connection_request: Request body for updating a connection (required)
+        :type update_connection_request: UpdateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1333,7 +1333,7 @@ class ConnectionsApi:
         _param = self._update_connection_serialize(
             organization_id=organization_id,
             connection_id=connection_id,
-            routes_v3_update_connection_request=routes_v3_update_connection_request,
+            update_connection_request=update_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1361,7 +1361,7 @@ class ConnectionsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to update")],
-        routes_v3_update_connection_request: Annotated[RoutesV3UpdateConnectionRequest, Field(description="Request body for updating a connection")],
+        update_connection_request: Annotated[UpdateConnectionRequest, Field(description="Request body for updating a connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1383,8 +1383,8 @@ class ConnectionsApi:
         :type organization_id: str
         :param connection_id: Connection ID to update (required)
         :type connection_id: str
-        :param routes_v3_update_connection_request: Request body for updating a connection (required)
-        :type routes_v3_update_connection_request: RoutesV3UpdateConnectionRequest
+        :param update_connection_request: Request body for updating a connection (required)
+        :type update_connection_request: UpdateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1410,7 +1410,7 @@ class ConnectionsApi:
         _param = self._update_connection_serialize(
             organization_id=organization_id,
             connection_id=connection_id,
-            routes_v3_update_connection_request=routes_v3_update_connection_request,
+            update_connection_request=update_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1433,7 +1433,7 @@ class ConnectionsApi:
         self,
         organization_id,
         connection_id,
-        routes_v3_update_connection_request,
+        update_connection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1463,8 +1463,8 @@ class ConnectionsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_update_connection_request is not None:
-            _body_params = routes_v3_update_connection_request
+        if update_connection_request is not None:
+            _body_params = update_connection_request
 
 
         # set the HTTP header `Accept`

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateInput
 
-> ModelsInput CreateInput(ctx, organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).TestConnection(testConnection).Execute()
+> ModelsInput CreateInput(ctx, organizationId).CreateInputRequest(createInputRequest).TestConnection(testConnection).Execute()
 
 Create input
 
@@ -36,12 +36,12 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2CreateInputRequest := *openapiclient.NewRoutesV2CreateInputRequest() // RoutesV2CreateInputRequest | Input configuration
+	createInputRequest := openapiclient.CreateInput_request{RoutesV2CreateInputRequest: openapiclient.NewRoutesV2CreateInputRequest()} // CreateInputRequest | Input configuration
 	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.CreateInput(context.Background(), organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).TestConnection(testConnection).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.CreateInput(context.Background(), organizationId).CreateInputRequest(createInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.CreateInput``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +67,7 @@ Other parameters are passed through a pointer to a apiCreateInputRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2CreateInputRequest** | [**RoutesV2CreateInputRequest**](RoutesV2CreateInputRequest.md) | Input configuration | 
+ **createInputRequest** | [**CreateInputRequest**](CreateInputRequest.md) | Input configuration | 
  **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## ReplaceInput
 
-> ModelsInput ReplaceInput(ctx, organizationId, inputId).RoutesV2PutInputRequest(routesV2PutInputRequest).TestConnection(testConnection).Execute()
+> ModelsInput ReplaceInput(ctx, organizationId, inputId).ReplaceInputRequest(replaceInputRequest).TestConnection(testConnection).Execute()
 
 Replace input
 
@@ -331,12 +331,12 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	inputId := "inputId_example" // string | Input ID
-	routesV2PutInputRequest := *openapiclient.NewRoutesV2PutInputRequest() // RoutesV2PutInputRequest | Input configuration update
+	replaceInputRequest := openapiclient.ReplaceInput_request{RoutesV2PutInputRequest: openapiclient.NewRoutesV2PutInputRequest()} // ReplaceInputRequest | Input configuration update
 	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.ReplaceInput(context.Background(), organizationId, inputId).RoutesV2PutInputRequest(routesV2PutInputRequest).TestConnection(testConnection).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.ReplaceInput(context.Background(), organizationId, inputId).ReplaceInputRequest(replaceInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.ReplaceInput``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV2PutInputRequest** | [**RoutesV2PutInputRequest**](RoutesV2PutInputRequest.md) | Input configuration update | 
+ **replaceInputRequest** | [**ReplaceInputRequest**](ReplaceInputRequest.md) | Input configuration update | 
  **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ## TestInputConnection
 
-> RoutesV2SuccessResponse TestInputConnection(ctx, organizationId).RoutesV2TestInputConnectionRequest(routesV2TestInputConnectionRequest).Execute()
+> RoutesV2SuccessResponse TestInputConnection(ctx, organizationId).TestInputConnectionRequest(testInputConnectionRequest).Execute()
 
 Test input connection
 
@@ -407,11 +407,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2TestInputConnectionRequest := *openapiclient.NewRoutesV2TestInputConnectionRequest() // RoutesV2TestInputConnectionRequest | Input configuration to test
+	testInputConnectionRequest := openapiclient.TestInputConnection_request{RoutesV2TestInputConnectionRequest: openapiclient.NewRoutesV2TestInputConnectionRequest()} // TestInputConnectionRequest | Input configuration to test
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.TestInputConnection(context.Background(), organizationId).RoutesV2TestInputConnectionRequest(routesV2TestInputConnectionRequest).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.TestInputConnection(context.Background(), organizationId).TestInputConnectionRequest(testInputConnectionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.TestInputConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -437,7 +437,7 @@ Other parameters are passed through a pointer to a apiTestInputConnectionRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2TestInputConnectionRequest** | [**RoutesV2TestInputConnectionRequest**](RoutesV2TestInputConnectionRequest.md) | Input configuration to test | 
+ **testInputConnectionRequest** | [**TestInputConnectionRequest**](TestInputConnectionRequest.md) | Input configuration to test | 
 
 ### Return type
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ## UpdateInput
 
-> ModelsInput UpdateInput(ctx, organizationId, inputId).RoutesV2UpdateInputRequest(routesV2UpdateInputRequest).TestConnection(testConnection).Execute()
+> ModelsInput UpdateInput(ctx, organizationId, inputId).UpdateInputRequest(updateInputRequest).TestConnection(testConnection).Execute()
 
 Update input
 
@@ -480,12 +480,12 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	inputId := "inputId_example" // string | Input ID
-	routesV2UpdateInputRequest := *openapiclient.NewRoutesV2UpdateInputRequest() // RoutesV2UpdateInputRequest | Input configuration update
+	updateInputRequest := openapiclient.UpdateInput_request{RoutesV2UpdateInputRequest: openapiclient.NewRoutesV2UpdateInputRequest()} // UpdateInputRequest | Input configuration update
 	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.UpdateInput(context.Background(), organizationId, inputId).RoutesV2UpdateInputRequest(routesV2UpdateInputRequest).TestConnection(testConnection).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.UpdateInput(context.Background(), organizationId, inputId).UpdateInputRequest(updateInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.UpdateInput``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV2UpdateInputRequest** | [**RoutesV2UpdateInputRequest**](RoutesV2UpdateInputRequest.md) | Input configuration update | 
+ **updateInputRequest** | [**UpdateInputRequest**](UpdateInputRequest.md) | Input configuration update | 
  **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type

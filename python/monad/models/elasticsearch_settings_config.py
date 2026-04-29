@@ -3,7 +3,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -20,6 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.elasticsearch_auth_type_enum import ElasticsearchAuthTypeEnum
+from monad.models.elasticsearch_connection_type_enum import ElasticsearchConnectionTypeEnum
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,9 +30,9 @@ class ElasticsearchSettingsConfig(BaseModel):
     """
     Elasticsearch Output Settings
     """ # noqa: E501
-    auth_type: Optional[StrictStr] = Field(default=None, description="The method of authentication to use with the Elasticsearch cluster. Choose between 'api_key' or 'password'.")
+    auth_type: Optional[ElasticsearchAuthTypeEnum] = None
     cloud_id: Optional[StrictStr] = Field(default=None, description="The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to 'cloud_id'.")
-    connection_type: Optional[StrictStr] = Field(default=None, description="The type of connection to use with Elasticsearch. Choose between 'cloud_id' for Elastic Cloud or 'url' for direct connection.")
+    connection_type: Optional[ElasticsearchConnectionTypeEnum] = None
     index: Optional[StrictStr] = Field(default=None, description="The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.")
     insecure_skip_verify: Optional[StrictBool] = Field(default=None, description="If set to true, it skips verification of the server's TLS certificate. This is insecure and should only be used for testing purposes.")
     url: Optional[StrictStr] = Field(default=None, description="The URL of the Elasticsearch cluster. Required when connection type is set to 'url'.")

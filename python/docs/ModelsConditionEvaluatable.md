@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **conditions** | [**List[ModelsConditionEvaluatable]**](ModelsConditionEvaluatable.md) |  | [optional] 
 **config** | **Dict[str, object]** | leaf config | [optional] 
-**operator** | **str** | Only set for logical nodes | [optional] 
+**operator** | [**ModelsConditionOperator**](ModelsConditionOperator.md) |  | [optional] 
 **type_id** | **str** | Only set for leaf nodes | [optional] 
 
 ## Example

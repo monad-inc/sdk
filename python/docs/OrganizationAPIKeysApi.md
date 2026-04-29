@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_api_key**
-> ModelsAPIKeyWithToken create_api_key(organization_id, routes_v2_create_api_key_request)
+> ModelsAPIKeyWithToken create_api_key(organization_id, create_api_key_request)
 
 Create API key
 
@@ -26,8 +26,8 @@ Create API key
 
 ```python
 import monad
+from monad.models.create_api_key_request import CreateAPIKeyRequest
 from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken
-from monad.models.routes_v2_create_api_key_request import RoutesV2CreateAPIKeyRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -59,11 +59,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationAPIKeysApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_create_api_key_request = monad.RoutesV2CreateAPIKeyRequest() # RoutesV2CreateAPIKeyRequest | Request body for creating an API key
+    create_api_key_request = monad.CreateAPIKeyRequest() # CreateAPIKeyRequest | Request body for creating an API key
 
     try:
         # Create API key
-        api_response = api_instance.create_api_key(organization_id, routes_v2_create_api_key_request)
+        api_response = api_instance.create_api_key(organization_id, create_api_key_request)
         print("The response of OrganizationAPIKeysApi->create_api_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -78,7 +78,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_create_api_key_request** | [**RoutesV2CreateAPIKeyRequest**](RoutesV2CreateAPIKeyRequest.md)| Request body for creating an API key | 
+ **create_api_key_request** | [**CreateAPIKeyRequest**](CreateAPIKeyRequest.md)| Request body for creating an API key | 
 
 ### Return type
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_api_key**
-> ModelsAPIKey update_api_key(organization_id, api_key_id, routes_v2_update_api_key_request)
+> ModelsAPIKey update_api_key(organization_id, api_key_id, update_api_key_request)
 
 Update API key
 
@@ -478,7 +478,7 @@ Update API key
 ```python
 import monad
 from monad.models.models_api_key import ModelsAPIKey
-from monad.models.routes_v2_update_api_key_request import RoutesV2UpdateAPIKeyRequest
+from monad.models.update_api_key_request import UpdateAPIKeyRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -511,11 +511,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationAPIKeysApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     api_key_id = 'api_key_id_example' # str | API Key ID
-    routes_v2_update_api_key_request = monad.RoutesV2UpdateAPIKeyRequest() # RoutesV2UpdateAPIKeyRequest | Request body for updating an API key
+    update_api_key_request = monad.UpdateAPIKeyRequest() # UpdateAPIKeyRequest | Request body for updating an API key
 
     try:
         # Update API key
-        api_response = api_instance.update_api_key(organization_id, api_key_id, routes_v2_update_api_key_request)
+        api_response = api_instance.update_api_key(organization_id, api_key_id, update_api_key_request)
         print("The response of OrganizationAPIKeysApi->update_api_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **api_key_id** | **str**| API Key ID | 
- **routes_v2_update_api_key_request** | [**RoutesV2UpdateAPIKeyRequest**](RoutesV2UpdateAPIKeyRequest.md)| Request body for updating an API key | 
+ **update_api_key_request** | [**UpdateAPIKeyRequest**](UpdateAPIKeyRequest.md)| Request body for updating an API key | 
 
 ### Return type
 

@@ -8,6 +8,7 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateChildOrganizationRequest } from '../models/CreateChildOrganizationRequest';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
@@ -15,8 +16,7 @@ import { ModelsUserOrganizationList } from '../models/ModelsUserOrganizationList
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
-import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
-import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3UpdateChildOrganizationRequest';
+import { UpdateChildOrganizationRequest } from '../models/UpdateChildOrganizationRequest';
 
 /**
  * no description
@@ -27,9 +27,9 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
      * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
      * Create child organization (team)
      * @param organizationId Parent Organization ID
-     * @param routesV3CreateChildOrganizationRequest Request body
+     * @param createChildOrganizationRequest Request body
      */
-    public async createChildOrganization(organizationId: string, routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createChildOrganization(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -38,9 +38,9 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV3CreateChildOrganizationRequest' is not null or undefined
-        if (routesV3CreateChildOrganizationRequest === null || routesV3CreateChildOrganizationRequest === undefined) {
-            throw new RequiredError("OrganizationsApi", "createChildOrganization", "routesV3CreateChildOrganizationRequest");
+        // verify required parameter 'createChildOrganizationRequest' is not null or undefined
+        if (createChildOrganizationRequest === null || createChildOrganizationRequest === undefined) {
+            throw new RequiredError("OrganizationsApi", "createChildOrganization", "createChildOrganizationRequest");
         }
 
 
@@ -59,7 +59,7 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3CreateChildOrganizationRequest, "RoutesV3CreateChildOrganizationRequest", ""),
+            ObjectSerializer.serialize(createChildOrganizationRequest, "CreateChildOrganizationRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -449,9 +449,9 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
      * Update child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
-     * @param routesV3UpdateChildOrganizationRequest Request body
+     * @param updateChildOrganizationRequest Request body
      */
-    public async updateChildOrganization(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateChildOrganization(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -466,9 +466,9 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV3UpdateChildOrganizationRequest' is not null or undefined
-        if (routesV3UpdateChildOrganizationRequest === null || routesV3UpdateChildOrganizationRequest === undefined) {
-            throw new RequiredError("OrganizationsApi", "updateChildOrganization", "routesV3UpdateChildOrganizationRequest");
+        // verify required parameter 'updateChildOrganizationRequest' is not null or undefined
+        if (updateChildOrganizationRequest === null || updateChildOrganizationRequest === undefined) {
+            throw new RequiredError("OrganizationsApi", "updateChildOrganization", "updateChildOrganizationRequest");
         }
 
 
@@ -488,7 +488,7 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3UpdateChildOrganizationRequest, "RoutesV3UpdateChildOrganizationRequest", ""),
+            ObjectSerializer.serialize(updateChildOrganizationRequest, "UpdateChildOrganizationRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

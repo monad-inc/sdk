@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **definition_ref** | [**ModelsConnectorInfo**](ModelsConnectorInfo.md) |  | [optional] 
 **id** | **str** |  | [optional] 
-**kind** | **str** |  | [optional] 
+**kind** | [**ModelsComponentType**](ModelsComponentType.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 

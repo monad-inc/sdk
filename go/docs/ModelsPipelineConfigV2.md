@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **IsSynthetic** | Pointer to **bool** |  | [optional] 
-**ManagedBy** | Pointer to **string** |  | [optional] 
+**ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NextCronRunAt** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNode**](ModelsPipelineNode.md) |  | [optional] 
@@ -269,20 +269,20 @@ HasIsSynthetic returns a boolean if a field has been set.
 
 ### GetManagedBy
 
-`func (o *ModelsPipelineConfigV2) GetManagedBy() string`
+`func (o *ModelsPipelineConfigV2) GetManagedBy() ModelsManagedBy`
 
 GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
 
 ### GetManagedByOk
 
-`func (o *ModelsPipelineConfigV2) GetManagedByOk() (*string, bool)`
+`func (o *ModelsPipelineConfigV2) GetManagedByOk() (*ModelsManagedBy, bool)`
 
 GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedBy
 
-`func (o *ModelsPipelineConfigV2) SetManagedBy(v string)`
+`func (o *ModelsPipelineConfigV2) SetManagedBy(v ModelsManagedBy)`
 
 SetManagedBy sets ManagedBy field to given value.
 

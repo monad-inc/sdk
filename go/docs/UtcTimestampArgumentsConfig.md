@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** | The format of the timestamp | [optional] 
+**Format** | Pointer to [**UtcTimestampTimestampFormat**](UtcTimestampTimestampFormat.md) |  | [optional] 
 **Key** | Pointer to **string** | The key to store the timestamp in | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetFormat
 
-`func (o *UtcTimestampArgumentsConfig) GetFormat() string`
+`func (o *UtcTimestampArgumentsConfig) GetFormat() UtcTimestampTimestampFormat`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *UtcTimestampArgumentsConfig) GetFormatOk() (*string, bool)`
+`func (o *UtcTimestampArgumentsConfig) GetFormatOk() (*UtcTimestampTimestampFormat, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *UtcTimestampArgumentsConfig) SetFormat(v string)`
+`func (o *UtcTimestampArgumentsConfig) SetFormat(v UtcTimestampTimestampFormat)`
 
 SetFormat sets Format field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ComponentHouse** | Pointer to **string** |  | [optional] 
 **ComponentId** | Pointer to **string** |  | [optional] 
 **ComponentSubType** | Pointer to **string** |  | [optional] 
-**ComponentType** | Pointer to **string** |  | [optional] 
+**ComponentType** | Pointer to [**ModelsComponentType**](ModelsComponentType.md) |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -138,20 +138,20 @@ HasComponentSubType returns a boolean if a field has been set.
 
 ### GetComponentType
 
-`func (o *ModelsPipelineNode) GetComponentType() string`
+`func (o *ModelsPipelineNode) GetComponentType() ModelsComponentType`
 
 GetComponentType returns the ComponentType field if non-nil, zero value otherwise.
 
 ### GetComponentTypeOk
 
-`func (o *ModelsPipelineNode) GetComponentTypeOk() (*string, bool)`
+`func (o *ModelsPipelineNode) GetComponentTypeOk() (*ModelsComponentType, bool)`
 
 GetComponentTypeOk returns a tuple with the ComponentType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComponentType
 
-`func (o *ModelsPipelineNode) SetComponentType(v string)`
+`func (o *ModelsPipelineNode) SetComponentType(v ModelsComponentType)`
 
 SetComponentType sets ComponentType field to given value.
 

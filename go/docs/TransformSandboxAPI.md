@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## ApplyTransformation
 
-> RoutesV2ApplyTransformationResponse ApplyTransformation(ctx, organizationId).RoutesV2ApplyTransformationRequest(routesV2ApplyTransformationRequest).Execute()
+> RoutesV2ApplyTransformationResponse ApplyTransformation(ctx, organizationId).ApplyTransformationV2Request(applyTransformationV2Request).Execute()
 
 Apply transformation to record
 
@@ -33,11 +33,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2ApplyTransformationRequest := *openapiclient.NewRoutesV2ApplyTransformationRequest() // RoutesV2ApplyTransformationRequest | Transform configuration and record
+	applyTransformationV2Request := openapiclient.ApplyTransformationV2_request{RoutesV2ApplyTransformationRequest: openapiclient.NewRoutesV2ApplyTransformationRequest()} // ApplyTransformationV2Request | Transform configuration and record
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformSandboxAPI.ApplyTransformation(context.Background(), organizationId).RoutesV2ApplyTransformationRequest(routesV2ApplyTransformationRequest).Execute()
+	resp, r, err := apiClient.TransformSandboxAPI.ApplyTransformation(context.Background(), organizationId).ApplyTransformationV2Request(applyTransformationV2Request).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TransformSandboxAPI.ApplyTransformation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,7 +63,7 @@ Other parameters are passed through a pointer to a apiApplyTransformationRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2ApplyTransformationRequest** | [**RoutesV2ApplyTransformationRequest**](RoutesV2ApplyTransformationRequest.md) | Transform configuration and record | 
+ **applyTransformationV2Request** | [**ApplyTransformationV2Request**](ApplyTransformationV2Request.md) | Transform configuration and record | 
 
 ### Return type
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## ApplyTransformationV2
 
-> RoutesV2ApplyTransformationResponse ApplyTransformationV2(ctx).RoutesV2ApplyTransformationRequest(routesV2ApplyTransformationRequest).Execute()
+> RoutesV2ApplyTransformationResponse ApplyTransformationV2(ctx).ApplyTransformationV2Request(applyTransformationV2Request).Execute()
 
 Apply transformation to record
 
@@ -104,11 +104,11 @@ import (
 )
 
 func main() {
-	routesV2ApplyTransformationRequest := *openapiclient.NewRoutesV2ApplyTransformationRequest() // RoutesV2ApplyTransformationRequest | Transform configuration and record
+	applyTransformationV2Request := openapiclient.ApplyTransformationV2_request{RoutesV2ApplyTransformationRequest: openapiclient.NewRoutesV2ApplyTransformationRequest()} // ApplyTransformationV2Request | Transform configuration and record
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformSandboxAPI.ApplyTransformationV2(context.Background()).RoutesV2ApplyTransformationRequest(routesV2ApplyTransformationRequest).Execute()
+	resp, r, err := apiClient.TransformSandboxAPI.ApplyTransformationV2(context.Background()).ApplyTransformationV2Request(applyTransformationV2Request).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TransformSandboxAPI.ApplyTransformationV2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,7 +129,7 @@ Other parameters are passed through a pointer to a apiApplyTransformationV2Reque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2ApplyTransformationRequest** | [**RoutesV2ApplyTransformationRequest**](RoutesV2ApplyTransformationRequest.md) | Transform configuration and record | 
+ **applyTransformationV2Request** | [**ApplyTransformationV2Request**](ApplyTransformationV2Request.md) | Transform configuration and record | 
 
 ### Return type
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GenerateRecord
 
-> RoutesV2GenerateRecordResponse GenerateRecord(ctx).RoutesV2GenerateRecordRequest(routesV2GenerateRecordRequest).Execute()
+> RoutesV2GenerateRecordResponse GenerateRecord(ctx).GenerateRecordRequest(generateRecordRequest).Execute()
 
 Generate sample record
 
@@ -170,11 +170,11 @@ import (
 )
 
 func main() {
-	routesV2GenerateRecordRequest := *openapiclient.NewRoutesV2GenerateRecordRequest() // RoutesV2GenerateRecordRequest | Record generation parameters
+	generateRecordRequest := openapiclient.GenerateRecord_request{RoutesV2GenerateRecordRequest: openapiclient.NewRoutesV2GenerateRecordRequest()} // GenerateRecordRequest | Record generation parameters
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformSandboxAPI.GenerateRecord(context.Background()).RoutesV2GenerateRecordRequest(routesV2GenerateRecordRequest).Execute()
+	resp, r, err := apiClient.TransformSandboxAPI.GenerateRecord(context.Background()).GenerateRecordRequest(generateRecordRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TransformSandboxAPI.GenerateRecord``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -195,7 +195,7 @@ Other parameters are passed through a pointer to a apiGenerateRecordRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2GenerateRecordRequest** | [**RoutesV2GenerateRecordRequest**](RoutesV2GenerateRecordRequest.md) | Record generation parameters | 
+ **generateRecordRequest** | [**GenerateRecordRequest**](GenerateRecordRequest.md) | Record generation parameters | 
 
 ### Return type
 

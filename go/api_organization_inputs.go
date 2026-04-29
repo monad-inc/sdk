@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -28,13 +28,13 @@ type ApiCreateInputRequest struct {
 	ctx context.Context
 	ApiService *OrganizationInputsAPIService
 	organizationId string
-	routesV2CreateInputRequest *RoutesV2CreateInputRequest
+	createInputRequest *CreateInputRequest
 	testConnection *bool
 }
 
 // Input configuration
-func (r ApiCreateInputRequest) RoutesV2CreateInputRequest(routesV2CreateInputRequest RoutesV2CreateInputRequest) ApiCreateInputRequest {
-	r.routesV2CreateInputRequest = &routesV2CreateInputRequest
+func (r ApiCreateInputRequest) CreateInputRequest(createInputRequest CreateInputRequest) ApiCreateInputRequest {
+	r.createInputRequest = &createInputRequest
 	return r
 }
 
@@ -86,8 +86,8 @@ func (a *OrganizationInputsAPIService) CreateInputExecute(r ApiCreateInputReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2CreateInputRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2CreateInputRequest is required and must be specified")
+	if r.createInputRequest == nil {
+		return localVarReturnValue, nil, reportError("createInputRequest is required and must be specified")
 	}
 
 	if r.testConnection != nil {
@@ -111,7 +111,7 @@ func (a *OrganizationInputsAPIService) CreateInputExecute(r ApiCreateInputReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2CreateInputRequest
+	localVarPostBody = r.createInputRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -634,13 +634,13 @@ type ApiReplaceInputRequest struct {
 	ApiService *OrganizationInputsAPIService
 	organizationId string
 	inputId string
-	routesV2PutInputRequest *RoutesV2PutInputRequest
+	replaceInputRequest *ReplaceInputRequest
 	testConnection *bool
 }
 
 // Input configuration update
-func (r ApiReplaceInputRequest) RoutesV2PutInputRequest(routesV2PutInputRequest RoutesV2PutInputRequest) ApiReplaceInputRequest {
-	r.routesV2PutInputRequest = &routesV2PutInputRequest
+func (r ApiReplaceInputRequest) ReplaceInputRequest(replaceInputRequest ReplaceInputRequest) ApiReplaceInputRequest {
+	r.replaceInputRequest = &replaceInputRequest
 	return r
 }
 
@@ -695,8 +695,8 @@ func (a *OrganizationInputsAPIService) ReplaceInputExecute(r ApiReplaceInputRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2PutInputRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2PutInputRequest is required and must be specified")
+	if r.replaceInputRequest == nil {
+		return localVarReturnValue, nil, reportError("replaceInputRequest is required and must be specified")
 	}
 
 	if r.testConnection != nil {
@@ -720,7 +720,7 @@ func (a *OrganizationInputsAPIService) ReplaceInputExecute(r ApiReplaceInputRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2PutInputRequest
+	localVarPostBody = r.replaceInputRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -822,12 +822,12 @@ type ApiTestInputConnectionRequest struct {
 	ctx context.Context
 	ApiService *OrganizationInputsAPIService
 	organizationId string
-	routesV2TestInputConnectionRequest *RoutesV2TestInputConnectionRequest
+	testInputConnectionRequest *TestInputConnectionRequest
 }
 
 // Input configuration to test
-func (r ApiTestInputConnectionRequest) RoutesV2TestInputConnectionRequest(routesV2TestInputConnectionRequest RoutesV2TestInputConnectionRequest) ApiTestInputConnectionRequest {
-	r.routesV2TestInputConnectionRequest = &routesV2TestInputConnectionRequest
+func (r ApiTestInputConnectionRequest) TestInputConnectionRequest(testInputConnectionRequest TestInputConnectionRequest) ApiTestInputConnectionRequest {
+	r.testInputConnectionRequest = &testInputConnectionRequest
 	return r
 }
 
@@ -873,8 +873,8 @@ func (a *OrganizationInputsAPIService) TestInputConnectionExecute(r ApiTestInput
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2TestInputConnectionRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2TestInputConnectionRequest is required and must be specified")
+	if r.testInputConnectionRequest == nil {
+		return localVarReturnValue, nil, reportError("testInputConnectionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -895,7 +895,7 @@ func (a *OrganizationInputsAPIService) TestInputConnectionExecute(r ApiTestInput
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2TestInputConnectionRequest
+	localVarPostBody = r.testInputConnectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -987,13 +987,13 @@ type ApiUpdateInputRequest struct {
 	ApiService *OrganizationInputsAPIService
 	organizationId string
 	inputId string
-	routesV2UpdateInputRequest *RoutesV2UpdateInputRequest
+	updateInputRequest *UpdateInputRequest
 	testConnection *bool
 }
 
 // Input configuration update
-func (r ApiUpdateInputRequest) RoutesV2UpdateInputRequest(routesV2UpdateInputRequest RoutesV2UpdateInputRequest) ApiUpdateInputRequest {
-	r.routesV2UpdateInputRequest = &routesV2UpdateInputRequest
+func (r ApiUpdateInputRequest) UpdateInputRequest(updateInputRequest UpdateInputRequest) ApiUpdateInputRequest {
+	r.updateInputRequest = &updateInputRequest
 	return r
 }
 
@@ -1048,8 +1048,8 @@ func (a *OrganizationInputsAPIService) UpdateInputExecute(r ApiUpdateInputReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2UpdateInputRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2UpdateInputRequest is required and must be specified")
+	if r.updateInputRequest == nil {
+		return localVarReturnValue, nil, reportError("updateInputRequest is required and must be specified")
 	}
 
 	if r.testConnection != nil {
@@ -1073,7 +1073,7 @@ func (a *OrganizationInputsAPIService) UpdateInputExecute(r ApiUpdateInputReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2UpdateInputRequest
+	localVarPostBody = r.updateInputRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

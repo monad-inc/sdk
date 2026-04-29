@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**componentId** | **String** |  |  |
-|**componentType** | **String** |  |  |
+|**componentType** | **ModelsComponentType** |  |  |
 |**enabled** | **Boolean** |  |  |
 |**id** | **String** |  |  [optional] |
 |**slug** | **String** |  |  [optional] |

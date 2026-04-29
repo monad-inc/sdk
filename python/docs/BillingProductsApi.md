@@ -89,7 +89,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_billing_account_subscription**
-> RoutesV2CreateBillingAccountSubscriptionResponse create_billing_account_subscription(billing_account_id, routes_v2_create_billing_account_subscription_request)
+> RoutesV2CreateBillingAccountSubscriptionResponse create_billing_account_subscription(billing_account_id, create_billing_account_subscription_request)
 
 Create Billing Account Subscription
 
@@ -101,7 +101,7 @@ Create Billing Account Subscription
 
 ```python
 import monad
-from monad.models.routes_v2_create_billing_account_subscription_request import RoutesV2CreateBillingAccountSubscriptionRequest
+from monad.models.create_billing_account_subscription_request import CreateBillingAccountSubscriptionRequest
 from monad.models.routes_v2_create_billing_account_subscription_response import RoutesV2CreateBillingAccountSubscriptionResponse
 from monad.rest import ApiException
 from pprint import pprint
@@ -128,11 +128,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingProductsApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
-    routes_v2_create_billing_account_subscription_request = monad.RoutesV2CreateBillingAccountSubscriptionRequest() # RoutesV2CreateBillingAccountSubscriptionRequest | Request body for creating a billing subscription
+    create_billing_account_subscription_request = monad.CreateBillingAccountSubscriptionRequest() # CreateBillingAccountSubscriptionRequest | Request body for creating a billing subscription
 
     try:
         # Create Billing Account Subscription
-        api_response = api_instance.create_billing_account_subscription(billing_account_id, routes_v2_create_billing_account_subscription_request)
+        api_response = api_instance.create_billing_account_subscription(billing_account_id, create_billing_account_subscription_request)
         print("The response of BillingProductsApi->create_billing_account_subscription:\n")
         pprint(api_response)
     except Exception as e:
@@ -147,7 +147,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
- **routes_v2_create_billing_account_subscription_request** | [**RoutesV2CreateBillingAccountSubscriptionRequest**](RoutesV2CreateBillingAccountSubscriptionRequest.md)| Request body for creating a billing subscription | 
+ **create_billing_account_subscription_request** | [**CreateBillingAccountSubscriptionRequest**](CreateBillingAccountSubscriptionRequest.md)| Request body for creating a billing subscription | 
 
 ### Return type
 

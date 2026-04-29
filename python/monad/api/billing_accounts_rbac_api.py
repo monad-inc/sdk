@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List
 from typing_extensions import Annotated
+from monad.models.create_billing_account_role_request import CreateBillingAccountRoleRequest
+from monad.models.create_billing_account_user_role_request import CreateBillingAccountUserRoleRequest
 from monad.models.models_billing_account_permission import ModelsBillingAccountPermission
 from monad.models.models_billing_account_role import ModelsBillingAccountRole
-from monad.models.routes_v2_create_billing_account_role_request import RoutesV2CreateBillingAccountRoleRequest
-from monad.models.routes_v2_createbilling_account_user_role_request import RoutesV2CreatebillingAccountUserRoleRequest
-from monad.models.routes_v2_update_billing_account_role_request import RoutesV2UpdateBillingAccountRoleRequest
+from monad.models.update_billing_account_role_request import UpdateBillingAccountRoleRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -47,7 +47,7 @@ class BillingAccountsRBACApi:
     def create_billing_account_role(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        routes_v2_create_billing_account_role_request: Annotated[RoutesV2CreateBillingAccountRoleRequest, Field(description="Create Billing Account Role Request")],
+        create_billing_account_role_request: Annotated[CreateBillingAccountRoleRequest, Field(description="Create Billing Account Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,8 +67,8 @@ class BillingAccountsRBACApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param routes_v2_create_billing_account_role_request: Create Billing Account Role Request (required)
-        :type routes_v2_create_billing_account_role_request: RoutesV2CreateBillingAccountRoleRequest
+        :param create_billing_account_role_request: Create Billing Account Role Request (required)
+        :type create_billing_account_role_request: CreateBillingAccountRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class BillingAccountsRBACApi:
 
         _param = self._create_billing_account_role_serialize(
             billing_account_id=billing_account_id,
-            routes_v2_create_billing_account_role_request=routes_v2_create_billing_account_role_request,
+            create_billing_account_role_request=create_billing_account_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -120,7 +120,7 @@ class BillingAccountsRBACApi:
     def create_billing_account_role_with_http_info(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        routes_v2_create_billing_account_role_request: Annotated[RoutesV2CreateBillingAccountRoleRequest, Field(description="Create Billing Account Role Request")],
+        create_billing_account_role_request: Annotated[CreateBillingAccountRoleRequest, Field(description="Create Billing Account Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -140,8 +140,8 @@ class BillingAccountsRBACApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param routes_v2_create_billing_account_role_request: Create Billing Account Role Request (required)
-        :type routes_v2_create_billing_account_role_request: RoutesV2CreateBillingAccountRoleRequest
+        :param create_billing_account_role_request: Create Billing Account Role Request (required)
+        :type create_billing_account_role_request: CreateBillingAccountRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -166,7 +166,7 @@ class BillingAccountsRBACApi:
 
         _param = self._create_billing_account_role_serialize(
             billing_account_id=billing_account_id,
-            routes_v2_create_billing_account_role_request=routes_v2_create_billing_account_role_request,
+            create_billing_account_role_request=create_billing_account_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -193,7 +193,7 @@ class BillingAccountsRBACApi:
     def create_billing_account_role_without_preload_content(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        routes_v2_create_billing_account_role_request: Annotated[RoutesV2CreateBillingAccountRoleRequest, Field(description="Create Billing Account Role Request")],
+        create_billing_account_role_request: Annotated[CreateBillingAccountRoleRequest, Field(description="Create Billing Account Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -213,8 +213,8 @@ class BillingAccountsRBACApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param routes_v2_create_billing_account_role_request: Create Billing Account Role Request (required)
-        :type routes_v2_create_billing_account_role_request: RoutesV2CreateBillingAccountRoleRequest
+        :param create_billing_account_role_request: Create Billing Account Role Request (required)
+        :type create_billing_account_role_request: CreateBillingAccountRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -239,7 +239,7 @@ class BillingAccountsRBACApi:
 
         _param = self._create_billing_account_role_serialize(
             billing_account_id=billing_account_id,
-            routes_v2_create_billing_account_role_request=routes_v2_create_billing_account_role_request,
+            create_billing_account_role_request=create_billing_account_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -261,7 +261,7 @@ class BillingAccountsRBACApi:
     def _create_billing_account_role_serialize(
         self,
         billing_account_id,
-        routes_v2_create_billing_account_role_request,
+        create_billing_account_role_request,
         _request_auth,
         _content_type,
         _headers,
@@ -289,8 +289,8 @@ class BillingAccountsRBACApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_billing_account_role_request is not None:
-            _body_params = routes_v2_create_billing_account_role_request
+        if create_billing_account_role_request is not None:
+            _body_params = create_billing_account_role_request
 
 
         # set the HTTP header `Accept`
@@ -343,7 +343,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_createbilling_account_user_role_request: Annotated[RoutesV2CreatebillingAccountUserRoleRequest, Field(description="Create Billing Account User Role Request")],
+        create_billing_account_user_role_request: Annotated[CreateBillingAccountUserRoleRequest, Field(description="Create Billing Account User Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -365,8 +365,8 @@ class BillingAccountsRBACApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_createbilling_account_user_role_request: Create Billing Account User Role Request (required)
-        :type routes_v2_createbilling_account_user_role_request: RoutesV2CreatebillingAccountUserRoleRequest
+        :param create_billing_account_user_role_request: Create Billing Account User Role Request (required)
+        :type create_billing_account_user_role_request: CreateBillingAccountUserRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -392,7 +392,7 @@ class BillingAccountsRBACApi:
         _param = self._create_billing_account_user_role_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            routes_v2_createbilling_account_user_role_request=routes_v2_createbilling_account_user_role_request,
+            create_billing_account_user_role_request=create_billing_account_user_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -420,7 +420,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_createbilling_account_user_role_request: Annotated[RoutesV2CreatebillingAccountUserRoleRequest, Field(description="Create Billing Account User Role Request")],
+        create_billing_account_user_role_request: Annotated[CreateBillingAccountUserRoleRequest, Field(description="Create Billing Account User Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -442,8 +442,8 @@ class BillingAccountsRBACApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_createbilling_account_user_role_request: Create Billing Account User Role Request (required)
-        :type routes_v2_createbilling_account_user_role_request: RoutesV2CreatebillingAccountUserRoleRequest
+        :param create_billing_account_user_role_request: Create Billing Account User Role Request (required)
+        :type create_billing_account_user_role_request: CreateBillingAccountUserRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -469,7 +469,7 @@ class BillingAccountsRBACApi:
         _param = self._create_billing_account_user_role_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            routes_v2_createbilling_account_user_role_request=routes_v2_createbilling_account_user_role_request,
+            create_billing_account_user_role_request=create_billing_account_user_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -497,7 +497,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_createbilling_account_user_role_request: Annotated[RoutesV2CreatebillingAccountUserRoleRequest, Field(description="Create Billing Account User Role Request")],
+        create_billing_account_user_role_request: Annotated[CreateBillingAccountUserRoleRequest, Field(description="Create Billing Account User Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -519,8 +519,8 @@ class BillingAccountsRBACApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_createbilling_account_user_role_request: Create Billing Account User Role Request (required)
-        :type routes_v2_createbilling_account_user_role_request: RoutesV2CreatebillingAccountUserRoleRequest
+        :param create_billing_account_user_role_request: Create Billing Account User Role Request (required)
+        :type create_billing_account_user_role_request: CreateBillingAccountUserRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -546,7 +546,7 @@ class BillingAccountsRBACApi:
         _param = self._create_billing_account_user_role_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            routes_v2_createbilling_account_user_role_request=routes_v2_createbilling_account_user_role_request,
+            create_billing_account_user_role_request=create_billing_account_user_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -569,7 +569,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id,
         role_id,
-        routes_v2_createbilling_account_user_role_request,
+        create_billing_account_user_role_request,
         _request_auth,
         _content_type,
         _headers,
@@ -599,8 +599,8 @@ class BillingAccountsRBACApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_createbilling_account_user_role_request is not None:
-            _body_params = routes_v2_createbilling_account_user_role_request
+        if create_billing_account_user_role_request is not None:
+            _body_params = create_billing_account_user_role_request
 
 
         # set the HTTP header `Accept`
@@ -2033,7 +2033,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_update_billing_account_role_request: Annotated[RoutesV2UpdateBillingAccountRoleRequest, Field(description="Update Billing Account Role Request")],
+        update_billing_account_role_request: Annotated[UpdateBillingAccountRoleRequest, Field(description="Update Billing Account Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2055,8 +2055,8 @@ class BillingAccountsRBACApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_update_billing_account_role_request: Update Billing Account Role Request (required)
-        :type routes_v2_update_billing_account_role_request: RoutesV2UpdateBillingAccountRoleRequest
+        :param update_billing_account_role_request: Update Billing Account Role Request (required)
+        :type update_billing_account_role_request: UpdateBillingAccountRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2082,7 +2082,7 @@ class BillingAccountsRBACApi:
         _param = self._update_billing_account_role_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            routes_v2_update_billing_account_role_request=routes_v2_update_billing_account_role_request,
+            update_billing_account_role_request=update_billing_account_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2110,7 +2110,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_update_billing_account_role_request: Annotated[RoutesV2UpdateBillingAccountRoleRequest, Field(description="Update Billing Account Role Request")],
+        update_billing_account_role_request: Annotated[UpdateBillingAccountRoleRequest, Field(description="Update Billing Account Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2132,8 +2132,8 @@ class BillingAccountsRBACApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_update_billing_account_role_request: Update Billing Account Role Request (required)
-        :type routes_v2_update_billing_account_role_request: RoutesV2UpdateBillingAccountRoleRequest
+        :param update_billing_account_role_request: Update Billing Account Role Request (required)
+        :type update_billing_account_role_request: UpdateBillingAccountRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2159,7 +2159,7 @@ class BillingAccountsRBACApi:
         _param = self._update_billing_account_role_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            routes_v2_update_billing_account_role_request=routes_v2_update_billing_account_role_request,
+            update_billing_account_role_request=update_billing_account_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2187,7 +2187,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        routes_v2_update_billing_account_role_request: Annotated[RoutesV2UpdateBillingAccountRoleRequest, Field(description="Update Billing Account Role Request")],
+        update_billing_account_role_request: Annotated[UpdateBillingAccountRoleRequest, Field(description="Update Billing Account Role Request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2209,8 +2209,8 @@ class BillingAccountsRBACApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param routes_v2_update_billing_account_role_request: Update Billing Account Role Request (required)
-        :type routes_v2_update_billing_account_role_request: RoutesV2UpdateBillingAccountRoleRequest
+        :param update_billing_account_role_request: Update Billing Account Role Request (required)
+        :type update_billing_account_role_request: UpdateBillingAccountRoleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2236,7 +2236,7 @@ class BillingAccountsRBACApi:
         _param = self._update_billing_account_role_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            routes_v2_update_billing_account_role_request=routes_v2_update_billing_account_role_request,
+            update_billing_account_role_request=update_billing_account_role_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2259,7 +2259,7 @@ class BillingAccountsRBACApi:
         self,
         billing_account_id,
         role_id,
-        routes_v2_update_billing_account_role_request,
+        update_billing_account_role_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2289,8 +2289,8 @@ class BillingAccountsRBACApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_update_billing_account_role_request is not None:
-            _body_params = routes_v2_update_billing_account_role_request
+        if update_billing_account_role_request is not None:
+            _body_params = update_billing_account_role_request
 
 
         # set the HTTP header `Accept`

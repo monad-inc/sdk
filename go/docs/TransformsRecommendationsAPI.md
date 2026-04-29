@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## CreateTransformRecommendation
 
-> RoutesV3SecurityDataAnalysis CreateTransformRecommendation(ctx, organizationId).RoutesV3TransformRecommendationRequest(routesV3TransformRecommendationRequest).Execute()
+> RoutesV3SecurityDataAnalysis CreateTransformRecommendation(ctx, organizationId).CreateTransformRecommendationRequest(createTransformRecommendationRequest).Execute()
 
 Create transform recommendation
 
@@ -31,11 +31,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV3TransformRecommendationRequest := *openapiclient.NewRoutesV3TransformRecommendationRequest() // RoutesV3TransformRecommendationRequest | Security data to analyze
+	createTransformRecommendationRequest := openapiclient.CreateTransformRecommendation_request{RoutesV3TransformRecommendationRequest: openapiclient.NewRoutesV3TransformRecommendationRequest()} // CreateTransformRecommendationRequest | Security data to analyze
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformsRecommendationsAPI.CreateTransformRecommendation(context.Background(), organizationId).RoutesV3TransformRecommendationRequest(routesV3TransformRecommendationRequest).Execute()
+	resp, r, err := apiClient.TransformsRecommendationsAPI.CreateTransformRecommendation(context.Background(), organizationId).CreateTransformRecommendationRequest(createTransformRecommendationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TransformsRecommendationsAPI.CreateTransformRecommendation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,7 +61,7 @@ Other parameters are passed through a pointer to a apiCreateTransformRecommendat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV3TransformRecommendationRequest** | [**RoutesV3TransformRecommendationRequest**](RoutesV3TransformRecommendationRequest.md) | Security data to analyze | 
+ **createTransformRecommendationRequest** | [**CreateTransformRecommendationRequest**](CreateTransformRecommendationRequest.md) | Security data to analyze | 
 
 ### Return type
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **last_ingested_time** | **str** |  | [optional] 
-**status** | **str** |  | 
+**status** | [**ModelsPipelineStatusValue**](ModelsPipelineStatusValue.md) |  | 
 
 ## Example
 

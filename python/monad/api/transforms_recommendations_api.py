@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,9 +19,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List
 from typing_extensions import Annotated
+from monad.models.create_transform_recommendation_request import CreateTransformRecommendationRequest
 from monad.models.routes_v3_optimizer_type import RoutesV3OptimizerType
 from monad.models.routes_v3_security_data_analysis import RoutesV3SecurityDataAnalysis
-from monad.models.routes_v3_transform_recommendation_request import RoutesV3TransformRecommendationRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -45,7 +45,7 @@ class TransformsRecommendationsApi:
     def create_transform_recommendation(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_transform_recommendation_request: Annotated[RoutesV3TransformRecommendationRequest, Field(description="Security data to analyze")],
+        create_transform_recommendation_request: Annotated[CreateTransformRecommendationRequest, Field(description="Security data to analyze")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -65,8 +65,8 @@ class TransformsRecommendationsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_transform_recommendation_request: Security data to analyze (required)
-        :type routes_v3_transform_recommendation_request: RoutesV3TransformRecommendationRequest
+        :param create_transform_recommendation_request: Security data to analyze (required)
+        :type create_transform_recommendation_request: CreateTransformRecommendationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -91,7 +91,7 @@ class TransformsRecommendationsApi:
 
         _param = self._create_transform_recommendation_serialize(
             organization_id=organization_id,
-            routes_v3_transform_recommendation_request=routes_v3_transform_recommendation_request,
+            create_transform_recommendation_request=create_transform_recommendation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -119,7 +119,7 @@ class TransformsRecommendationsApi:
     def create_transform_recommendation_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_transform_recommendation_request: Annotated[RoutesV3TransformRecommendationRequest, Field(description="Security data to analyze")],
+        create_transform_recommendation_request: Annotated[CreateTransformRecommendationRequest, Field(description="Security data to analyze")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,8 +139,8 @@ class TransformsRecommendationsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_transform_recommendation_request: Security data to analyze (required)
-        :type routes_v3_transform_recommendation_request: RoutesV3TransformRecommendationRequest
+        :param create_transform_recommendation_request: Security data to analyze (required)
+        :type create_transform_recommendation_request: CreateTransformRecommendationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,7 +165,7 @@ class TransformsRecommendationsApi:
 
         _param = self._create_transform_recommendation_serialize(
             organization_id=organization_id,
-            routes_v3_transform_recommendation_request=routes_v3_transform_recommendation_request,
+            create_transform_recommendation_request=create_transform_recommendation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -193,7 +193,7 @@ class TransformsRecommendationsApi:
     def create_transform_recommendation_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_transform_recommendation_request: Annotated[RoutesV3TransformRecommendationRequest, Field(description="Security data to analyze")],
+        create_transform_recommendation_request: Annotated[CreateTransformRecommendationRequest, Field(description="Security data to analyze")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -213,8 +213,8 @@ class TransformsRecommendationsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_transform_recommendation_request: Security data to analyze (required)
-        :type routes_v3_transform_recommendation_request: RoutesV3TransformRecommendationRequest
+        :param create_transform_recommendation_request: Security data to analyze (required)
+        :type create_transform_recommendation_request: CreateTransformRecommendationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -239,7 +239,7 @@ class TransformsRecommendationsApi:
 
         _param = self._create_transform_recommendation_serialize(
             organization_id=organization_id,
-            routes_v3_transform_recommendation_request=routes_v3_transform_recommendation_request,
+            create_transform_recommendation_request=create_transform_recommendation_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -262,7 +262,7 @@ class TransformsRecommendationsApi:
     def _create_transform_recommendation_serialize(
         self,
         organization_id,
-        routes_v3_transform_recommendation_request,
+        create_transform_recommendation_request,
         _request_auth,
         _content_type,
         _headers,
@@ -290,8 +290,8 @@ class TransformsRecommendationsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_transform_recommendation_request is not None:
-            _body_params = routes_v3_transform_recommendation_request
+        if create_transform_recommendation_request is not None:
+            _body_params = create_transform_recommendation_request
 
 
         # set the HTTP header `Accept`

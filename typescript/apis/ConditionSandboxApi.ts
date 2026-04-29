@@ -8,8 +8,8 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { ApplyConditionV2Request } from '../models/ApplyConditionV2Request';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RoutesV2ApplyConditionRequest } from '../models/RoutesV2ApplyConditionRequest';
 import { RoutesV2ApplyConditionResponse } from '../models/RoutesV2ApplyConditionResponse';
 
 /**
@@ -20,14 +20,14 @@ export class ConditionSandboxApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Apply a condition to a JSON record
      * Apply condition to record
-     * @param routesV2ApplyConditionRequest Condition and record
+     * @param applyConditionV2Request Condition and record
      */
-    public async applyConditionV2(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async applyConditionV2(applyConditionV2Request: ApplyConditionV2Request, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'routesV2ApplyConditionRequest' is not null or undefined
-        if (routesV2ApplyConditionRequest === null || routesV2ApplyConditionRequest === undefined) {
-            throw new RequiredError("ConditionSandboxApi", "applyConditionV2", "routesV2ApplyConditionRequest");
+        // verify required parameter 'applyConditionV2Request' is not null or undefined
+        if (applyConditionV2Request === null || applyConditionV2Request === undefined) {
+            throw new RequiredError("ConditionSandboxApi", "applyConditionV2", "applyConditionV2Request");
         }
 
 
@@ -45,7 +45,7 @@ export class ConditionSandboxApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2ApplyConditionRequest, "RoutesV2ApplyConditionRequest", ""),
+            ObjectSerializer.serialize(applyConditionV2Request, "ApplyConditionV2Request", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

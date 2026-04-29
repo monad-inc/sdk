@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ComponentId** | **string** |  | 
-**ComponentType** | **string** |  | 
+**ComponentType** | [**ModelsComponentType**](ModelsComponentType.md) |  | 
 **Enabled** | **bool** |  | 
 **Id** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewRoutesV2PipelineRequestNode
 
-`func NewRoutesV2PipelineRequestNode(componentId string, componentType string, enabled bool, ) *RoutesV2PipelineRequestNode`
+`func NewRoutesV2PipelineRequestNode(componentId string, componentType ModelsComponentType, enabled bool, ) *RoutesV2PipelineRequestNode`
 
 NewRoutesV2PipelineRequestNode instantiates a new RoutesV2PipelineRequestNode object
 This constructor will assign default values to properties that have it defined,
@@ -51,20 +51,20 @@ SetComponentId sets ComponentId field to given value.
 
 ### GetComponentType
 
-`func (o *RoutesV2PipelineRequestNode) GetComponentType() string`
+`func (o *RoutesV2PipelineRequestNode) GetComponentType() ModelsComponentType`
 
 GetComponentType returns the ComponentType field if non-nil, zero value otherwise.
 
 ### GetComponentTypeOk
 
-`func (o *RoutesV2PipelineRequestNode) GetComponentTypeOk() (*string, bool)`
+`func (o *RoutesV2PipelineRequestNode) GetComponentTypeOk() (*ModelsComponentType, bool)`
 
 GetComponentTypeOk returns a tuple with the ComponentType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComponentType
 
-`func (o *RoutesV2PipelineRequestNode) SetComponentType(v string)`
+`func (o *RoutesV2PipelineRequestNode) SetComponentType(v ModelsComponentType)`
 
 SetComponentType sets ComponentType field to given value.
 

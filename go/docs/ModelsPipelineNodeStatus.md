@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **NodeId** | Pointer to **string** |  | [optional] 
 **NodeSlug** | Pointer to **string** |  | [optional] 
 **Progress** | Pointer to [**ModelsProgressEntries**](ModelsProgressEntries.md) |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**ModelsPipelineStatusValue**](ModelsPipelineStatusValue.md) |  | [optional] 
 
 ## Methods
 
@@ -391,20 +391,20 @@ HasProgress returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *ModelsPipelineNodeStatus) GetStatus() string`
+`func (o *ModelsPipelineNodeStatus) GetStatus() ModelsPipelineStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ModelsPipelineNodeStatus) GetStatusOk() (*string, bool)`
+`func (o *ModelsPipelineNodeStatus) GetStatusOk() (*ModelsPipelineStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ModelsPipelineNodeStatus) SetStatus(v string)`
+`func (o *ModelsPipelineNodeStatus) SetStatus(v ModelsPipelineStatusValue)`
 
 SetStatus sets Status field to given value.
 

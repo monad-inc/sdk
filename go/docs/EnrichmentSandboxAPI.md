@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## EnrichmentSandbox
 
-> RoutesV3EnrichmentSandboxResponse EnrichmentSandbox(ctx, organizationId).RoutesV3EnrichmentSandboxRequest(routesV3EnrichmentSandboxRequest).Execute()
+> RoutesV3EnrichmentSandboxResponse EnrichmentSandbox(ctx, organizationId).EnrichmentSandboxRequest(enrichmentSandboxRequest).Execute()
 
 Apply enrichment to record
 
@@ -30,11 +30,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV3EnrichmentSandboxRequest := *openapiclient.NewRoutesV3EnrichmentSandboxRequest() // RoutesV3EnrichmentSandboxRequest | Enrichment configuration and record
+	enrichmentSandboxRequest := openapiclient.EnrichmentSandbox_request{RoutesV3EnrichmentSandboxRequest: openapiclient.NewRoutesV3EnrichmentSandboxRequest()} // EnrichmentSandboxRequest | Enrichment configuration and record
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EnrichmentSandboxAPI.EnrichmentSandbox(context.Background(), organizationId).RoutesV3EnrichmentSandboxRequest(routesV3EnrichmentSandboxRequest).Execute()
+	resp, r, err := apiClient.EnrichmentSandboxAPI.EnrichmentSandbox(context.Background(), organizationId).EnrichmentSandboxRequest(enrichmentSandboxRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EnrichmentSandboxAPI.EnrichmentSandbox``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiEnrichmentSandboxRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV3EnrichmentSandboxRequest** | [**RoutesV3EnrichmentSandboxRequest**](RoutesV3EnrichmentSandboxRequest.md) | Enrichment configuration and record | 
+ **enrichmentSandboxRequest** | [**EnrichmentSandboxRequest**](EnrichmentSandboxRequest.md) | Enrichment configuration and record | 
 
 ### Return type
 

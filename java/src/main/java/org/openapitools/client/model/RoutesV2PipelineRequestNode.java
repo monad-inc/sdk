@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsComponentType;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,7 +59,7 @@ public class RoutesV2PipelineRequestNode {
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
   @javax.annotation.Nonnull
-  private String componentType;
+  private ModelsComponentType componentType;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -97,7 +98,7 @@ public class RoutesV2PipelineRequestNode {
   }
 
 
-  public RoutesV2PipelineRequestNode componentType(@javax.annotation.Nonnull String componentType) {
+  public RoutesV2PipelineRequestNode componentType(@javax.annotation.Nonnull ModelsComponentType componentType) {
     this.componentType = componentType;
     return this;
   }
@@ -107,11 +108,11 @@ public class RoutesV2PipelineRequestNode {
    * @return componentType
    */
   @javax.annotation.Nonnull
-  public String getComponentType() {
+  public ModelsComponentType getComponentType() {
     return componentType;
   }
 
-  public void setComponentType(@javax.annotation.Nonnull String componentType) {
+  public void setComponentType(@javax.annotation.Nonnull ModelsComponentType componentType) {
     this.componentType = componentType;
   }
 
@@ -259,9 +260,8 @@ public class RoutesV2PipelineRequestNode {
       if (!jsonObj.get("component_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `component_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_id").toString()));
       }
-      if (!jsonObj.get("component_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `component_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type").toString()));
-      }
+      // validate the required field `component_type`
+      ModelsComponentType.validateJsonElement(jsonObj.get("component_type"));
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }

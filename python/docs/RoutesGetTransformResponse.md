@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**managed_by** | **str** |  | [optional] 
+**managed_by** | [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**authType** | **String** |  |  [optional] |
 |**config** | **Object** |  |  [optional] |
-|**connectorCategory** | **String** |  |  [optional] |
+|**connectorCategory** | **ModelsInputConnectorCategory** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**house** | **String** |  |  [optional] |
 |**inBeta** | **Boolean** |  |  [optional] |

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Acks** | Pointer to **string** | Acknowledgment level (0&#x3D;none, 1&#x3D;leader only, all&#x3D;all replicas) | [optional] 
+**Acks** | Pointer to [**KafkaAcks**](KafkaAcks.md) |  | [optional] 
 **BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **BootstrapServers** | Pointer to **string** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
-**CompressionType** | Pointer to **string** | Compression codec for messages (none, gzip, snappy, lz4, zstd) | [optional] 
+**CompressionType** | Pointer to [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
 **Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **MessageKeyField** | Pointer to **string** | JSON field path to extract as the Kafka message key (uses gjson syntax) | [optional] 
 **Retries** | Pointer to **int32** | Number of retry attempts for failed writes | [optional] 
-**SaslMechanism** | Pointer to **string** | SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512) | [optional] 
-**SecurityProtocol** | Pointer to **string** | Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL) | [optional] 
+**SaslMechanism** | Pointer to [**KafkaSaslMechanism**](KafkaSaslMechanism.md) |  | [optional] 
+**SecurityProtocol** | Pointer to [**KafkaSecurityProtocol**](KafkaSecurityProtocol.md) |  | [optional] 
 **Topic** | Pointer to **string** | The Kafka topic to publish messages to | [optional] 
 **Username** | Pointer to **string** | Username for SASL authentication | [optional] 
 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAcks
 
-`func (o *KafkaSettingsConfig) GetAcks() string`
+`func (o *KafkaSettingsConfig) GetAcks() KafkaAcks`
 
 GetAcks returns the Acks field if non-nil, zero value otherwise.
 
 ### GetAcksOk
 
-`func (o *KafkaSettingsConfig) GetAcksOk() (*string, bool)`
+`func (o *KafkaSettingsConfig) GetAcksOk() (*KafkaAcks, bool)`
 
 GetAcksOk returns a tuple with the Acks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAcks
 
-`func (o *KafkaSettingsConfig) SetAcks(v string)`
+`func (o *KafkaSettingsConfig) SetAcks(v KafkaAcks)`
 
 SetAcks sets Acks field to given value.
 
@@ -112,20 +112,20 @@ HasBootstrapServers returns a boolean if a field has been set.
 
 ### GetCompressionType
 
-`func (o *KafkaSettingsConfig) GetCompressionType() string`
+`func (o *KafkaSettingsConfig) GetCompressionType() KafkaCompressionType`
 
 GetCompressionType returns the CompressionType field if non-nil, zero value otherwise.
 
 ### GetCompressionTypeOk
 
-`func (o *KafkaSettingsConfig) GetCompressionTypeOk() (*string, bool)`
+`func (o *KafkaSettingsConfig) GetCompressionTypeOk() (*KafkaCompressionType, bool)`
 
 GetCompressionTypeOk returns a tuple with the CompressionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCompressionType
 
-`func (o *KafkaSettingsConfig) SetCompressionType(v string)`
+`func (o *KafkaSettingsConfig) SetCompressionType(v KafkaCompressionType)`
 
 SetCompressionType sets CompressionType field to given value.
 
@@ -212,20 +212,20 @@ HasRetries returns a boolean if a field has been set.
 
 ### GetSaslMechanism
 
-`func (o *KafkaSettingsConfig) GetSaslMechanism() string`
+`func (o *KafkaSettingsConfig) GetSaslMechanism() KafkaSaslMechanism`
 
 GetSaslMechanism returns the SaslMechanism field if non-nil, zero value otherwise.
 
 ### GetSaslMechanismOk
 
-`func (o *KafkaSettingsConfig) GetSaslMechanismOk() (*string, bool)`
+`func (o *KafkaSettingsConfig) GetSaslMechanismOk() (*KafkaSaslMechanism, bool)`
 
 GetSaslMechanismOk returns a tuple with the SaslMechanism field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaslMechanism
 
-`func (o *KafkaSettingsConfig) SetSaslMechanism(v string)`
+`func (o *KafkaSettingsConfig) SetSaslMechanism(v KafkaSaslMechanism)`
 
 SetSaslMechanism sets SaslMechanism field to given value.
 
@@ -237,20 +237,20 @@ HasSaslMechanism returns a boolean if a field has been set.
 
 ### GetSecurityProtocol
 
-`func (o *KafkaSettingsConfig) GetSecurityProtocol() string`
+`func (o *KafkaSettingsConfig) GetSecurityProtocol() KafkaSecurityProtocol`
 
 GetSecurityProtocol returns the SecurityProtocol field if non-nil, zero value otherwise.
 
 ### GetSecurityProtocolOk
 
-`func (o *KafkaSettingsConfig) GetSecurityProtocolOk() (*string, bool)`
+`func (o *KafkaSettingsConfig) GetSecurityProtocolOk() (*KafkaSecurityProtocol, bool)`
 
 GetSecurityProtocolOk returns a tuple with the SecurityProtocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityProtocol
 
-`func (o *KafkaSettingsConfig) SetSecurityProtocol(v string)`
+`func (o *KafkaSettingsConfig) SetSecurityProtocol(v KafkaSecurityProtocol)`
 
 SetSecurityProtocol sets SecurityProtocol field to given value.
 

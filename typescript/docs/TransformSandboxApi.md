@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **applyTransformation**
-> RoutesV2ApplyTransformationResponse applyTransformation(routesV2ApplyTransformationRequest)
+> RoutesV2ApplyTransformationResponse applyTransformation(applyTransformationV2Request)
 
 Apply a transformation configuration to a JSON record, resolving secret references from the organization
 
@@ -29,35 +29,7 @@ const request: TransformSandboxApiApplyTransformationRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Transform configuration and record
-  routesV2ApplyTransformationRequest: {
-    config: {
-      conditional: {
-        conditions: {
-          conditions: [
-            ,
-          ],
-          config: {
-            "key": null,
-          },
-          operator: "operator_example",
-          typeId: "typeId_example",
-        },
-        _else: "_else_example",
-      },
-      operations: [
-        {
-          arguments: {
-            "key": null,
-          },
-          description: "description_example",
-          operation: "operation_example",
-        },
-      ],
-    },
-    record: [
-      1,
-    ],
-  },
+  applyTransformationV2Request: null,
 };
 
 const data = await apiInstance.applyTransformation(request);
@@ -69,7 +41,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2ApplyTransformationRequest** | **RoutesV2ApplyTransformationRequest**| Transform configuration and record |
+ **applyTransformationV2Request** | **ApplyTransformationV2Request**| Transform configuration and record |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -97,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **applyTransformationV2**
-> RoutesV2ApplyTransformationResponse applyTransformationV2(routesV2ApplyTransformationRequest)
+> RoutesV2ApplyTransformationResponse applyTransformationV2(applyTransformationV2Request)
 
 Apply a transformation configuration to a JSON record
 
@@ -113,35 +85,7 @@ const apiInstance = new TransformSandboxApi(configuration);
 
 const request: TransformSandboxApiApplyTransformationV2Request = {
     // Transform configuration and record
-  routesV2ApplyTransformationRequest: {
-    config: {
-      conditional: {
-        conditions: {
-          conditions: [
-            ,
-          ],
-          config: {
-            "key": null,
-          },
-          operator: "operator_example",
-          typeId: "typeId_example",
-        },
-        _else: "_else_example",
-      },
-      operations: [
-        {
-          arguments: {
-            "key": null,
-          },
-          description: "description_example",
-          operation: "operation_example",
-        },
-      ],
-    },
-    record: [
-      1,
-    ],
-  },
+  applyTransformationV2Request: null,
 };
 
 const data = await apiInstance.applyTransformationV2(request);
@@ -153,7 +97,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2ApplyTransformationRequest** | **RoutesV2ApplyTransformationRequest**| Transform configuration and record |
+ **applyTransformationV2Request** | **ApplyTransformationV2Request**| Transform configuration and record |
 
 
 ### Return type
@@ -180,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **generateRecord**
-> RoutesV2GenerateRecordResponse generateRecord(routesV2GenerateRecordRequest)
+> RoutesV2GenerateRecordResponse generateRecord(generateRecordRequest)
 
 Generate a sample record using the specified template type
 
@@ -196,9 +140,7 @@ const apiInstance = new TransformSandboxApi(configuration);
 
 const request: TransformSandboxApiGenerateRecordRequest = {
     // Record generation parameters
-  routesV2GenerateRecordRequest: {
-    recordType: "recordType_example",
-  },
+  generateRecordRequest: null,
 };
 
 const data = await apiInstance.generateRecord(request);
@@ -210,7 +152,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2GenerateRecordRequest** | **RoutesV2GenerateRecordRequest**| Record generation parameters |
+ **generateRecordRequest** | **GenerateRecordRequest**| Record generation parameters |
 
 
 ### Return type

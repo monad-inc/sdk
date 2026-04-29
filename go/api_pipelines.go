@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -29,12 +29,12 @@ type ApiCreatePipelineRequest struct {
 	ctx context.Context
 	ApiService *PipelinesAPIService
 	organizationId string
-	routesV2CreatePipelineRequest *RoutesV2CreatePipelineRequest
+	createPipelineRequest *CreatePipelineRequest
 }
 
 // Request body for creating a pipeline
-func (r ApiCreatePipelineRequest) RoutesV2CreatePipelineRequest(routesV2CreatePipelineRequest RoutesV2CreatePipelineRequest) ApiCreatePipelineRequest {
-	r.routesV2CreatePipelineRequest = &routesV2CreatePipelineRequest
+func (r ApiCreatePipelineRequest) CreatePipelineRequest(createPipelineRequest CreatePipelineRequest) ApiCreatePipelineRequest {
+	r.createPipelineRequest = &createPipelineRequest
 	return r
 }
 
@@ -80,8 +80,8 @@ func (a *PipelinesAPIService) CreatePipelineExecute(r ApiCreatePipelineRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2CreatePipelineRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2CreatePipelineRequest is required and must be specified")
+	if r.createPipelineRequest == nil {
+		return localVarReturnValue, nil, reportError("createPipelineRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -102,7 +102,7 @@ func (a *PipelinesAPIService) CreatePipelineExecute(r ApiCreatePipelineRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2CreatePipelineRequest
+	localVarPostBody = r.createPipelineRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3107,12 +3107,12 @@ type ApiUpdatePipelineRequest struct {
 	ApiService *PipelinesAPIService
 	organizationId string
 	pipelineId string
-	routesV2UpdatePipelineRequest *RoutesV2UpdatePipelineRequest
+	updatePipelineRequest *UpdatePipelineRequest
 }
 
 // Request body for updating a pipeline
-func (r ApiUpdatePipelineRequest) RoutesV2UpdatePipelineRequest(routesV2UpdatePipelineRequest RoutesV2UpdatePipelineRequest) ApiUpdatePipelineRequest {
-	r.routesV2UpdatePipelineRequest = &routesV2UpdatePipelineRequest
+func (r ApiUpdatePipelineRequest) UpdatePipelineRequest(updatePipelineRequest UpdatePipelineRequest) ApiUpdatePipelineRequest {
+	r.updatePipelineRequest = &updatePipelineRequest
 	return r
 }
 
@@ -3161,8 +3161,8 @@ func (a *PipelinesAPIService) UpdatePipelineExecute(r ApiUpdatePipelineRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2UpdatePipelineRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2UpdatePipelineRequest is required and must be specified")
+	if r.updatePipelineRequest == nil {
+		return localVarReturnValue, nil, reportError("updatePipelineRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -3183,7 +3183,7 @@ func (a *PipelinesAPIService) UpdatePipelineExecute(r ApiUpdatePipelineRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2UpdatePipelineRequest
+	localVarPostBody = r.updatePipelineRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3276,12 +3276,12 @@ type ApiUpdatePipelineEdgeRequest struct {
 	organizationId string
 	pipelineId string
 	edgeId string
-	routesV2PatchPipelineEdgeRequest *RoutesV2PatchPipelineEdgeRequest
+	updatePipelineEdgeRequest *UpdatePipelineEdgeRequest
 }
 
 // Request body
-func (r ApiUpdatePipelineEdgeRequest) RoutesV2PatchPipelineEdgeRequest(routesV2PatchPipelineEdgeRequest RoutesV2PatchPipelineEdgeRequest) ApiUpdatePipelineEdgeRequest {
-	r.routesV2PatchPipelineEdgeRequest = &routesV2PatchPipelineEdgeRequest
+func (r ApiUpdatePipelineEdgeRequest) UpdatePipelineEdgeRequest(updatePipelineEdgeRequest UpdatePipelineEdgeRequest) ApiUpdatePipelineEdgeRequest {
+	r.updatePipelineEdgeRequest = &updatePipelineEdgeRequest
 	return r
 }
 
@@ -3331,8 +3331,8 @@ func (a *PipelinesAPIService) UpdatePipelineEdgeExecute(r ApiUpdatePipelineEdgeR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2PatchPipelineEdgeRequest == nil {
-		return nil, reportError("routesV2PatchPipelineEdgeRequest is required and must be specified")
+	if r.updatePipelineEdgeRequest == nil {
+		return nil, reportError("updatePipelineEdgeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -3353,7 +3353,7 @@ func (a *PipelinesAPIService) UpdatePipelineEdgeExecute(r ApiUpdatePipelineEdgeR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2PatchPipelineEdgeRequest
+	localVarPostBody = r.updatePipelineEdgeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3447,12 +3447,12 @@ type ApiUpdatePipelineV1Request struct {
 	ApiService *PipelinesAPIService
 	organizationId string
 	pipelineId string
-	routesUpdatePipelineRequest *RoutesUpdatePipelineRequest
+	updatePipelineV1Request *UpdatePipelineV1Request
 }
 
 // Request body for updating a pipeline
-func (r ApiUpdatePipelineV1Request) RoutesUpdatePipelineRequest(routesUpdatePipelineRequest RoutesUpdatePipelineRequest) ApiUpdatePipelineV1Request {
-	r.routesUpdatePipelineRequest = &routesUpdatePipelineRequest
+func (r ApiUpdatePipelineV1Request) UpdatePipelineV1Request(updatePipelineV1Request UpdatePipelineV1Request) ApiUpdatePipelineV1Request {
+	r.updatePipelineV1Request = &updatePipelineV1Request
 	return r
 }
 
@@ -3504,8 +3504,8 @@ func (a *PipelinesAPIService) UpdatePipelineV1Execute(r ApiUpdatePipelineV1Reque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesUpdatePipelineRequest == nil {
-		return localVarReturnValue, nil, reportError("routesUpdatePipelineRequest is required and must be specified")
+	if r.updatePipelineV1Request == nil {
+		return localVarReturnValue, nil, reportError("updatePipelineV1Request is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -3526,7 +3526,7 @@ func (a *PipelinesAPIService) UpdatePipelineV1Execute(r ApiUpdatePipelineV1Reque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesUpdatePipelineRequest
+	localVarPostBody = r.updatePipelineV1Request
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

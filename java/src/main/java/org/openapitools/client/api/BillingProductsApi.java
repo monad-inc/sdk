@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,9 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateBillingAccountSubscriptionRequest;
 import org.openapitools.client.model.ModelsBillingProduct;
 import org.openapitools.client.model.ModelsBillingProductList;
-import org.openapitools.client.model.RoutesV2CreateBillingAccountSubscriptionRequest;
 import org.openapitools.client.model.RoutesV2CreateBillingAccountSubscriptionResponse;
 
 import java.lang.reflect.Type;
@@ -209,7 +209,7 @@ public class BillingProductsApi {
     /**
      * Build call for createBillingAccountSubscription
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -222,7 +222,7 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to created billing account subscription </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBillingAccountSubscriptionCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountSubscriptionRequest routesV2CreateBillingAccountSubscriptionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBillingAccountSubscriptionCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull CreateBillingAccountSubscriptionRequest createBillingAccountSubscriptionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -236,7 +236,7 @@ public class BillingProductsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreateBillingAccountSubscriptionRequest;
+        Object localVarPostBody = createBillingAccountSubscriptionRequest;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}/subscription"
@@ -269,18 +269,18 @@ public class BillingProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBillingAccountSubscriptionValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountSubscriptionRequest routesV2CreateBillingAccountSubscriptionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createBillingAccountSubscriptionValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull CreateBillingAccountSubscriptionRequest createBillingAccountSubscriptionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling createBillingAccountSubscription(Async)");
         }
 
-        // verify the required parameter 'routesV2CreateBillingAccountSubscriptionRequest' is set
-        if (routesV2CreateBillingAccountSubscriptionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreateBillingAccountSubscriptionRequest' when calling createBillingAccountSubscription(Async)");
+        // verify the required parameter 'createBillingAccountSubscriptionRequest' is set
+        if (createBillingAccountSubscriptionRequest == null) {
+            throw new ApiException("Missing the required parameter 'createBillingAccountSubscriptionRequest' when calling createBillingAccountSubscription(Async)");
         }
 
-        return createBillingAccountSubscriptionCall(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, _callback);
+        return createBillingAccountSubscriptionCall(billingAccountId, createBillingAccountSubscriptionRequest, _callback);
 
     }
 
@@ -288,7 +288,7 @@ public class BillingProductsApi {
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
      * @return RoutesV2CreateBillingAccountSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -300,8 +300,8 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to created billing account subscription </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2CreateBillingAccountSubscriptionResponse createBillingAccountSubscription(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountSubscriptionRequest routesV2CreateBillingAccountSubscriptionRequest) throws ApiException {
-        ApiResponse<RoutesV2CreateBillingAccountSubscriptionResponse> localVarResp = createBillingAccountSubscriptionWithHttpInfo(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest);
+    public RoutesV2CreateBillingAccountSubscriptionResponse createBillingAccountSubscription(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull CreateBillingAccountSubscriptionRequest createBillingAccountSubscriptionRequest) throws ApiException {
+        ApiResponse<RoutesV2CreateBillingAccountSubscriptionResponse> localVarResp = createBillingAccountSubscriptionWithHttpInfo(billingAccountId, createBillingAccountSubscriptionRequest);
         return localVarResp.getData();
     }
 
@@ -309,7 +309,7 @@ public class BillingProductsApi {
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
      * @return ApiResponse&lt;RoutesV2CreateBillingAccountSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -321,8 +321,8 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to created billing account subscription </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2CreateBillingAccountSubscriptionResponse> createBillingAccountSubscriptionWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountSubscriptionRequest routesV2CreateBillingAccountSubscriptionRequest) throws ApiException {
-        okhttp3.Call localVarCall = createBillingAccountSubscriptionValidateBeforeCall(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, null);
+    public ApiResponse<RoutesV2CreateBillingAccountSubscriptionResponse> createBillingAccountSubscriptionWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull CreateBillingAccountSubscriptionRequest createBillingAccountSubscriptionRequest) throws ApiException {
+        okhttp3.Call localVarCall = createBillingAccountSubscriptionValidateBeforeCall(billingAccountId, createBillingAccountSubscriptionRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2CreateBillingAccountSubscriptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -331,7 +331,7 @@ public class BillingProductsApi {
      * Create Billing Account Subscription (asynchronously)
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -344,9 +344,9 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to created billing account subscription </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBillingAccountSubscriptionAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountSubscriptionRequest routesV2CreateBillingAccountSubscriptionRequest, final ApiCallback<RoutesV2CreateBillingAccountSubscriptionResponse> _callback) throws ApiException {
+    public okhttp3.Call createBillingAccountSubscriptionAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull CreateBillingAccountSubscriptionRequest createBillingAccountSubscriptionRequest, final ApiCallback<RoutesV2CreateBillingAccountSubscriptionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createBillingAccountSubscriptionValidateBeforeCall(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, _callback);
+        okhttp3.Call localVarCall = createBillingAccountSubscriptionValidateBeforeCall(billingAccountId, createBillingAccountSubscriptionRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2CreateBillingAccountSubscriptionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

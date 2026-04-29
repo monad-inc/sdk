@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreateBillingAccountRole
 
-> ModelsBillingAccountRole CreateBillingAccountRole(ctx, billingAccountId).RoutesV2CreateBillingAccountRoleRequest(routesV2CreateBillingAccountRoleRequest).Execute()
+> ModelsBillingAccountRole CreateBillingAccountRole(ctx, billingAccountId).CreateBillingAccountRoleRequest(createBillingAccountRoleRequest).Execute()
 
 Create Billing Account Role
 
@@ -37,11 +37,11 @@ import (
 
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
-	routesV2CreateBillingAccountRoleRequest := *openapiclient.NewRoutesV2CreateBillingAccountRoleRequest("Name_example", []string{"Permissions_example"}) // RoutesV2CreateBillingAccountRoleRequest | Create Billing Account Role Request
+	createBillingAccountRoleRequest := openapiclient.CreateBillingAccountRole_request{RoutesV2CreateBillingAccountRoleRequest: openapiclient.NewRoutesV2CreateBillingAccountRoleRequest("Name_example", []string{"Permissions_example"})} // CreateBillingAccountRoleRequest | Create Billing Account Role Request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRBACAPI.CreateBillingAccountRole(context.Background(), billingAccountId).RoutesV2CreateBillingAccountRoleRequest(routesV2CreateBillingAccountRoleRequest).Execute()
+	resp, r, err := apiClient.BillingAccountsRBACAPI.CreateBillingAccountRole(context.Background(), billingAccountId).CreateBillingAccountRoleRequest(createBillingAccountRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRBACAPI.CreateBillingAccountRole``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +67,7 @@ Other parameters are passed through a pointer to a apiCreateBillingAccountRoleRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2CreateBillingAccountRoleRequest** | [**RoutesV2CreateBillingAccountRoleRequest**](RoutesV2CreateBillingAccountRoleRequest.md) | Create Billing Account Role Request | 
+ **createBillingAccountRoleRequest** | [**CreateBillingAccountRoleRequest**](CreateBillingAccountRoleRequest.md) | Create Billing Account Role Request | 
 
 ### Return type
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ## CreateBillingAccountUserRole
 
-> string CreateBillingAccountUserRole(ctx, billingAccountId, roleId).RoutesV2CreatebillingAccountUserRoleRequest(routesV2CreatebillingAccountUserRoleRequest).Execute()
+> string CreateBillingAccountUserRole(ctx, billingAccountId, roleId).CreateBillingAccountUserRoleRequest(createBillingAccountUserRoleRequest).Execute()
 
 Create Billing Account User Role
 
@@ -110,11 +110,11 @@ import (
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
 	roleId := "roleId_example" // string | Role ID
-	routesV2CreatebillingAccountUserRoleRequest := *openapiclient.NewRoutesV2CreatebillingAccountUserRoleRequest("UserEmail_example") // RoutesV2CreatebillingAccountUserRoleRequest | Create Billing Account User Role Request
+	createBillingAccountUserRoleRequest := openapiclient.CreateBillingAccountUserRole_request{RoutesV2CreatebillingAccountUserRoleRequest: openapiclient.NewRoutesV2CreatebillingAccountUserRoleRequest("UserEmail_example")} // CreateBillingAccountUserRoleRequest | Create Billing Account User Role Request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRBACAPI.CreateBillingAccountUserRole(context.Background(), billingAccountId, roleId).RoutesV2CreatebillingAccountUserRoleRequest(routesV2CreatebillingAccountUserRoleRequest).Execute()
+	resp, r, err := apiClient.BillingAccountsRBACAPI.CreateBillingAccountUserRole(context.Background(), billingAccountId, roleId).CreateBillingAccountUserRoleRequest(createBillingAccountUserRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRBACAPI.CreateBillingAccountUserRole``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV2CreatebillingAccountUserRoleRequest** | [**RoutesV2CreatebillingAccountUserRoleRequest**](RoutesV2CreatebillingAccountUserRoleRequest.md) | Create Billing Account User Role Request | 
+ **createBillingAccountUserRoleRequest** | [**CreateBillingAccountUserRoleRequest**](CreateBillingAccountUserRoleRequest.md) | Create Billing Account User Role Request | 
 
 ### Return type
 
@@ -517,7 +517,7 @@ Other parameters are passed through a pointer to a apiGetBillingPermissionsReque
 
 ## UpdateBillingAccountRole
 
-> ModelsBillingAccountRole UpdateBillingAccountRole(ctx, billingAccountId, roleId).RoutesV2UpdateBillingAccountRoleRequest(routesV2UpdateBillingAccountRoleRequest).Execute()
+> ModelsBillingAccountRole UpdateBillingAccountRole(ctx, billingAccountId, roleId).UpdateBillingAccountRoleRequest(updateBillingAccountRoleRequest).Execute()
 
 Update Billing Account Role
 
@@ -538,11 +538,11 @@ import (
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
 	roleId := "roleId_example" // string | Role ID
-	routesV2UpdateBillingAccountRoleRequest := *openapiclient.NewRoutesV2UpdateBillingAccountRoleRequest() // RoutesV2UpdateBillingAccountRoleRequest | Update Billing Account Role Request
+	updateBillingAccountRoleRequest := openapiclient.UpdateBillingAccountRole_request{RoutesV2UpdateBillingAccountRoleRequest: openapiclient.NewRoutesV2UpdateBillingAccountRoleRequest()} // UpdateBillingAccountRoleRequest | Update Billing Account Role Request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRBACAPI.UpdateBillingAccountRole(context.Background(), billingAccountId, roleId).RoutesV2UpdateBillingAccountRoleRequest(routesV2UpdateBillingAccountRoleRequest).Execute()
+	resp, r, err := apiClient.BillingAccountsRBACAPI.UpdateBillingAccountRole(context.Background(), billingAccountId, roleId).UpdateBillingAccountRoleRequest(updateBillingAccountRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRBACAPI.UpdateBillingAccountRole``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV2UpdateBillingAccountRoleRequest** | [**RoutesV2UpdateBillingAccountRoleRequest**](RoutesV2UpdateBillingAccountRoleRequest.md) | Update Billing Account Role Request | 
+ **updateBillingAccountRoleRequest** | [**UpdateBillingAccountRoleRequest**](UpdateBillingAccountRoleRequest.md) | Update Billing Account Role Request | 
 
 ### Return type
 

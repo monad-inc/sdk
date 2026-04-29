@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**format** | **String** | The format of the timestamp |  [optional] |
+|**format** | **UtcTimestampTimestampFormat** |  |  [optional] |
 |**key** | **String** | The key to store the timestamp in |  [optional] |
 
 

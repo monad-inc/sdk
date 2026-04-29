@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,11 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateSecretRequest;
 import org.openapitools.client.model.ModelsSecretWithComponents;
 import org.openapitools.client.model.ModelsSecretWithComponentsList;
 import org.openapitools.client.model.ResponderErrorResponse;
-import org.openapitools.client.model.RoutesV2CreateOrUpdateSecretRequest;
 import org.openapitools.client.model.RoutesV2SecretResponse;
+import org.openapitools.client.model.UpdateSecretRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -79,7 +80,7 @@ public class SecretsApi {
     /**
      * Build call for createSecret
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create (required)
+     * @param createSecretRequest Secret to create (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,7 +93,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSecretCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSecretCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateSecretRequest createSecretRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,7 +107,7 @@ public class SecretsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreateOrUpdateSecretRequest;
+        Object localVarPostBody = createSecretRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/secrets"
@@ -139,18 +140,18 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSecretValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSecretValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateSecretRequest createSecretRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createSecret(Async)");
         }
 
-        // verify the required parameter 'routesV2CreateOrUpdateSecretRequest' is set
-        if (routesV2CreateOrUpdateSecretRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreateOrUpdateSecretRequest' when calling createSecret(Async)");
+        // verify the required parameter 'createSecretRequest' is set
+        if (createSecretRequest == null) {
+            throw new ApiException("Missing the required parameter 'createSecretRequest' when calling createSecret(Async)");
         }
 
-        return createSecretCall(organizationId, routesV2CreateOrUpdateSecretRequest, _callback);
+        return createSecretCall(organizationId, createSecretRequest, _callback);
 
     }
 
@@ -158,7 +159,7 @@ public class SecretsApi {
      * Create secret
      * Creates a new secret for the specified organization
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create (required)
+     * @param createSecretRequest Secret to create (required)
      * @return RoutesV2SecretResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -170,8 +171,8 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SecretResponse createSecret(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
-        ApiResponse<RoutesV2SecretResponse> localVarResp = createSecretWithHttpInfo(organizationId, routesV2CreateOrUpdateSecretRequest);
+    public RoutesV2SecretResponse createSecret(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateSecretRequest createSecretRequest) throws ApiException {
+        ApiResponse<RoutesV2SecretResponse> localVarResp = createSecretWithHttpInfo(organizationId, createSecretRequest);
         return localVarResp.getData();
     }
 
@@ -179,7 +180,7 @@ public class SecretsApi {
      * Create secret
      * Creates a new secret for the specified organization
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create (required)
+     * @param createSecretRequest Secret to create (required)
      * @return ApiResponse&lt;RoutesV2SecretResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -191,8 +192,8 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SecretResponse> createSecretWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
-        okhttp3.Call localVarCall = createSecretValidateBeforeCall(organizationId, routesV2CreateOrUpdateSecretRequest, null);
+    public ApiResponse<RoutesV2SecretResponse> createSecretWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateSecretRequest createSecretRequest) throws ApiException {
+        okhttp3.Call localVarCall = createSecretValidateBeforeCall(organizationId, createSecretRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -201,7 +202,7 @@ public class SecretsApi {
      * Create secret (asynchronously)
      * Creates a new secret for the specified organization
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create (required)
+     * @param createSecretRequest Secret to create (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -214,9 +215,9 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSecretAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call createSecretAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateSecretRequest createSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createSecretValidateBeforeCall(organizationId, routesV2CreateOrUpdateSecretRequest, _callback);
+        okhttp3.Call localVarCall = createSecretValidateBeforeCall(organizationId, createSecretRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -658,7 +659,7 @@ public class SecretsApi {
      * Build call for updateSecret
      * @param organizationId Organization ID (required)
      * @param secretId Secret ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates (required)
+     * @param updateSecretRequest Secret updates (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -672,7 +673,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSecretCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSecretCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull UpdateSecretRequest updateSecretRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -686,7 +687,7 @@ public class SecretsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreateOrUpdateSecretRequest;
+        Object localVarPostBody = updateSecretRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/secrets/{secret_id}"
@@ -720,7 +721,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSecretValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSecretValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull UpdateSecretRequest updateSecretRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateSecret(Async)");
@@ -731,12 +732,12 @@ public class SecretsApi {
             throw new ApiException("Missing the required parameter 'secretId' when calling updateSecret(Async)");
         }
 
-        // verify the required parameter 'routesV2CreateOrUpdateSecretRequest' is set
-        if (routesV2CreateOrUpdateSecretRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreateOrUpdateSecretRequest' when calling updateSecret(Async)");
+        // verify the required parameter 'updateSecretRequest' is set
+        if (updateSecretRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateSecretRequest' when calling updateSecret(Async)");
         }
 
-        return updateSecretCall(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, _callback);
+        return updateSecretCall(organizationId, secretId, updateSecretRequest, _callback);
 
     }
 
@@ -745,7 +746,7 @@ public class SecretsApi {
      * Updates a specific secret by ID
      * @param organizationId Organization ID (required)
      * @param secretId Secret ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates (required)
+     * @param updateSecretRequest Secret updates (required)
      * @return RoutesV2SecretResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -758,8 +759,8 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SecretResponse updateSecret(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
-        ApiResponse<RoutesV2SecretResponse> localVarResp = updateSecretWithHttpInfo(organizationId, secretId, routesV2CreateOrUpdateSecretRequest);
+    public RoutesV2SecretResponse updateSecret(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull UpdateSecretRequest updateSecretRequest) throws ApiException {
+        ApiResponse<RoutesV2SecretResponse> localVarResp = updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest);
         return localVarResp.getData();
     }
 
@@ -768,7 +769,7 @@ public class SecretsApi {
      * Updates a specific secret by ID
      * @param organizationId Organization ID (required)
      * @param secretId Secret ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates (required)
+     * @param updateSecretRequest Secret updates (required)
      * @return ApiResponse&lt;RoutesV2SecretResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -781,8 +782,8 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SecretResponse> updateSecretWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateSecretValidateBeforeCall(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, null);
+    public ApiResponse<RoutesV2SecretResponse> updateSecretWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull UpdateSecretRequest updateSecretRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateSecretValidateBeforeCall(organizationId, secretId, updateSecretRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -792,7 +793,7 @@ public class SecretsApi {
      * Updates a specific secret by ID
      * @param organizationId Organization ID (required)
      * @param secretId Secret ID (required)
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates (required)
+     * @param updateSecretRequest Secret updates (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -806,9 +807,9 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSecretAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call updateSecretAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull UpdateSecretRequest updateSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateSecretValidateBeforeCall(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, _callback);
+        okhttp3.Call localVarCall = updateSecretValidateBeforeCall(organizationId, secretId, updateSecretRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

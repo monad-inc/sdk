@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createSecret**
-> RoutesV2SecretResponse createSecret(routesV2CreateOrUpdateSecretRequest)
+> RoutesV2SecretResponse createSecret(createSecretRequest)
 
 Creates a new secret for the specified organization
 
@@ -30,11 +30,7 @@ const request: SecretsApiCreateSecretRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Secret to create
-  routesV2CreateOrUpdateSecretRequest: {
-    description: "description_example",
-    name: "name_example",
-    value: "value_example",
-  },
+  createSecretRequest: null,
 };
 
 const data = await apiInstance.createSecret(request);
@@ -46,7 +42,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateOrUpdateSecretRequest** | **RoutesV2CreateOrUpdateSecretRequest**| Secret to create |
+ **createSecretRequest** | **CreateSecretRequest**| Secret to create |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -250,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateSecret**
-> RoutesV2SecretResponse updateSecret(routesV2CreateOrUpdateSecretRequest)
+> RoutesV2SecretResponse updateSecret(updateSecretRequest)
 
 Updates a specific secret by ID
 
@@ -270,11 +266,7 @@ const request: SecretsApiUpdateSecretRequest = {
     // Secret ID
   secretId: "secret_id_example",
     // Secret updates
-  routesV2CreateOrUpdateSecretRequest: {
-    description: "description_example",
-    name: "name_example",
-    value: "value_example",
-  },
+  updateSecretRequest: null,
 };
 
 const data = await apiInstance.updateSecret(request);
@@ -286,7 +278,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateOrUpdateSecretRequest** | **RoutesV2CreateOrUpdateSecretRequest**| Secret updates |
+ **updateSecretRequest** | **UpdateSecretRequest**| Secret updates |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **secretId** | [**string**] | Secret ID | defaults to undefined
 

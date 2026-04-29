@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateTransform
 
-> ModelsTransform CreateTransform(ctx, organizationId).RoutesCreateTransformRequest(routesCreateTransformRequest).Execute()
+> ModelsTransform CreateTransform(ctx, organizationId).CreateTransformRequest(createTransformRequest).Execute()
 
 Create transform
 
@@ -34,11 +34,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesCreateTransformRequest := *openapiclient.NewRoutesCreateTransformRequest("Name_example") // RoutesCreateTransformRequest | Request body for creating a transform
+	createTransformRequest := openapiclient.CreateTransform_request{RoutesCreateTransformRequest: openapiclient.NewRoutesCreateTransformRequest("Name_example")} // CreateTransformRequest | Request body for creating a transform
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationTransformsAPI.CreateTransform(context.Background(), organizationId).RoutesCreateTransformRequest(routesCreateTransformRequest).Execute()
+	resp, r, err := apiClient.OrganizationTransformsAPI.CreateTransform(context.Background(), organizationId).CreateTransformRequest(createTransformRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationTransformsAPI.CreateTransform``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreateTransformRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesCreateTransformRequest** | [**RoutesCreateTransformRequest**](RoutesCreateTransformRequest.md) | Request body for creating a transform | 
+ **createTransformRequest** | [**CreateTransformRequest**](CreateTransformRequest.md) | Request body for creating a transform | 
 
 ### Return type
 

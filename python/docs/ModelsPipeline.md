@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 
 **input_id** | **str** |  | [optional] 
-**managed_by** | **str** |  | [optional] 
+**managed_by** | [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 

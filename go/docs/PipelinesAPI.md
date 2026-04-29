@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## CreatePipeline
 
-> ModelsPipelineConfigV2 CreatePipeline(ctx, organizationId).RoutesV2CreatePipelineRequest(routesV2CreatePipelineRequest).Execute()
+> ModelsPipelineConfigV2 CreatePipeline(ctx, organizationId).CreatePipelineRequest(createPipelineRequest).Execute()
 
 Create pipeline
 
@@ -50,11 +50,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2CreatePipelineRequest := *openapiclient.NewRoutesV2CreatePipelineRequest([]openapiclient.RoutesV2PipelineRequestEdge{*openapiclient.NewRoutesV2PipelineRequestEdge("FromNodeInstanceId_example", "ToNodeInstanceId_example")}, false, "Name_example", []openapiclient.RoutesV2PipelineRequestNode{*openapiclient.NewRoutesV2PipelineRequestNode("ComponentId_example", "ComponentType_example", false)}) // RoutesV2CreatePipelineRequest | Request body for creating a pipeline
+	createPipelineRequest := openapiclient.CreatePipeline_request{RoutesV2CreatePipelineRequest: openapiclient.NewRoutesV2CreatePipelineRequest([]openapiclient.RoutesV2PipelineRequestEdge{*openapiclient.NewRoutesV2PipelineRequestEdge("FromNodeInstanceId_example", "ToNodeInstanceId_example")}, false, "Name_example", []openapiclient.RoutesV2PipelineRequestNode{*openapiclient.NewRoutesV2PipelineRequestNode("ComponentId_example", openapiclient.models.ComponentType("transform"), false)})} // CreatePipelineRequest | Request body for creating a pipeline
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PipelinesAPI.CreatePipeline(context.Background(), organizationId).RoutesV2CreatePipelineRequest(routesV2CreatePipelineRequest).Execute()
+	resp, r, err := apiClient.PipelinesAPI.CreatePipeline(context.Background(), organizationId).CreatePipelineRequest(createPipelineRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.CreatePipeline``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -80,7 +80,7 @@ Other parameters are passed through a pointer to a apiCreatePipelineRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2CreatePipelineRequest** | [**RoutesV2CreatePipelineRequest**](RoutesV2CreatePipelineRequest.md) | Request body for creating a pipeline | 
+ **createPipelineRequest** | [**CreatePipelineRequest**](CreatePipelineRequest.md) | Request body for creating a pipeline | 
 
 ### Return type
 
@@ -1377,7 +1377,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePipeline
 
-> ModelsPipelineConfigV2 UpdatePipeline(ctx, organizationId, pipelineId).RoutesV2UpdatePipelineRequest(routesV2UpdatePipelineRequest).Execute()
+> ModelsPipelineConfigV2 UpdatePipeline(ctx, organizationId, pipelineId).UpdatePipelineRequest(updatePipelineRequest).Execute()
 
 Update pipeline
 
@@ -1398,11 +1398,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
-	routesV2UpdatePipelineRequest := *openapiclient.NewRoutesV2UpdatePipelineRequest([]openapiclient.RoutesV2PipelineRequestEdge{*openapiclient.NewRoutesV2PipelineRequestEdge("FromNodeInstanceId_example", "ToNodeInstanceId_example")}, false, "Name_example", []openapiclient.RoutesV2PipelineRequestNode{*openapiclient.NewRoutesV2PipelineRequestNode("ComponentId_example", "ComponentType_example", false)}) // RoutesV2UpdatePipelineRequest | Request body for updating a pipeline
+	updatePipelineRequest := openapiclient.UpdatePipeline_request{RoutesV2UpdatePipelineRequest: openapiclient.NewRoutesV2UpdatePipelineRequest([]openapiclient.RoutesV2PipelineRequestEdge{*openapiclient.NewRoutesV2PipelineRequestEdge("FromNodeInstanceId_example", "ToNodeInstanceId_example")}, false, "Name_example", []openapiclient.RoutesV2PipelineRequestNode{*openapiclient.NewRoutesV2PipelineRequestNode("ComponentId_example", openapiclient.models.ComponentType("transform"), false)})} // UpdatePipelineRequest | Request body for updating a pipeline
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PipelinesAPI.UpdatePipeline(context.Background(), organizationId, pipelineId).RoutesV2UpdatePipelineRequest(routesV2UpdatePipelineRequest).Execute()
+	resp, r, err := apiClient.PipelinesAPI.UpdatePipeline(context.Background(), organizationId, pipelineId).UpdatePipelineRequest(updatePipelineRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.UpdatePipeline``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1430,7 +1430,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV2UpdatePipelineRequest** | [**RoutesV2UpdatePipelineRequest**](RoutesV2UpdatePipelineRequest.md) | Request body for updating a pipeline | 
+ **updatePipelineRequest** | [**UpdatePipelineRequest**](UpdatePipelineRequest.md) | Request body for updating a pipeline | 
 
 ### Return type
 
@@ -1452,7 +1452,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePipelineEdge
 
-> UpdatePipelineEdge(ctx, organizationId, pipelineId, edgeId).RoutesV2PatchPipelineEdgeRequest(routesV2PatchPipelineEdgeRequest).Execute()
+> UpdatePipelineEdge(ctx, organizationId, pipelineId, edgeId).UpdatePipelineEdgeRequest(updatePipelineEdgeRequest).Execute()
 
 Update pipeline edge
 
@@ -1474,11 +1474,11 @@ func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
 	edgeId := "edgeId_example" // string | Edge ID
-	routesV2PatchPipelineEdgeRequest := *openapiclient.NewRoutesV2PatchPipelineEdgeRequest() // RoutesV2PatchPipelineEdgeRequest | Request body
+	updatePipelineEdgeRequest := openapiclient.UpdatePipelineEdge_request{RoutesV2PatchPipelineEdgeRequest: openapiclient.NewRoutesV2PatchPipelineEdgeRequest()} // UpdatePipelineEdgeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PipelinesAPI.UpdatePipelineEdge(context.Background(), organizationId, pipelineId, edgeId).RoutesV2PatchPipelineEdgeRequest(routesV2PatchPipelineEdgeRequest).Execute()
+	r, err := apiClient.PipelinesAPI.UpdatePipelineEdge(context.Background(), organizationId, pipelineId, edgeId).UpdatePipelineEdgeRequest(updatePipelineEdgeRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.UpdatePipelineEdge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1506,7 +1506,7 @@ Name | Type | Description  | Notes
 
 
 
- **routesV2PatchPipelineEdgeRequest** | [**RoutesV2PatchPipelineEdgeRequest**](RoutesV2PatchPipelineEdgeRequest.md) | Request body | 
+ **updatePipelineEdgeRequest** | [**UpdatePipelineEdgeRequest**](UpdatePipelineEdgeRequest.md) | Request body | 
 
 ### Return type
 
@@ -1528,7 +1528,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePipelineV1
 
-> ModelsPipeline UpdatePipelineV1(ctx, organizationId, pipelineId).RoutesUpdatePipelineRequest(routesUpdatePipelineRequest).Execute()
+> ModelsPipeline UpdatePipelineV1(ctx, organizationId, pipelineId).UpdatePipelineV1Request(updatePipelineV1Request).Execute()
 
 Update pipeline
 
@@ -1549,11 +1549,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
-	routesUpdatePipelineRequest := *openapiclient.NewRoutesUpdatePipelineRequest("Name_example") // RoutesUpdatePipelineRequest | Request body for updating a pipeline
+	updatePipelineV1Request := openapiclient.UpdatePipelineV1_request{RoutesUpdatePipelineRequest: openapiclient.NewRoutesUpdatePipelineRequest("Name_example")} // UpdatePipelineV1Request | Request body for updating a pipeline
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PipelinesAPI.UpdatePipelineV1(context.Background(), organizationId, pipelineId).RoutesUpdatePipelineRequest(routesUpdatePipelineRequest).Execute()
+	resp, r, err := apiClient.PipelinesAPI.UpdatePipelineV1(context.Background(), organizationId, pipelineId).UpdatePipelineV1Request(updatePipelineV1Request).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.UpdatePipelineV1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1581,7 +1581,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesUpdatePipelineRequest** | [**RoutesUpdatePipelineRequest**](RoutesUpdatePipelineRequest.md) | Request body for updating a pipeline | 
+ **updatePipelineV1Request** | [**UpdatePipelineV1Request**](UpdatePipelineV1Request.md) | Request body for updating a pipeline | 
 
 ### Return type
 

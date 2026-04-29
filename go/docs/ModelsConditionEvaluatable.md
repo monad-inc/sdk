@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Conditions** | Pointer to [**[]ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** | leaf config | [optional] 
-**Operator** | Pointer to **string** | Only set for logical nodes | [optional] 
+**Operator** | Pointer to [**ModelsConditionOperator**](ModelsConditionOperator.md) |  | [optional] 
 **TypeId** | Pointer to **string** | Only set for leaf nodes | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetOperator
 
-`func (o *ModelsConditionEvaluatable) GetOperator() string`
+`func (o *ModelsConditionEvaluatable) GetOperator() ModelsConditionOperator`
 
 GetOperator returns the Operator field if non-nil, zero value otherwise.
 
 ### GetOperatorOk
 
-`func (o *ModelsConditionEvaluatable) GetOperatorOk() (*string, bool)`
+`func (o *ModelsConditionEvaluatable) GetOperatorOk() (*ModelsConditionOperator, bool)`
 
 GetOperatorOk returns a tuple with the Operator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperator
 
-`func (o *ModelsConditionEvaluatable) SetOperator(v string)`
+`func (o *ModelsConditionEvaluatable) SetOperator(v ModelsConditionOperator)`
 
 SetOperator sets Operator field to given value.
 

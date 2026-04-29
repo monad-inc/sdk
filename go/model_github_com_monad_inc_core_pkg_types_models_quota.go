@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -20,7 +20,7 @@ var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsQuota{}
 
 // GithubComMonadIncCorePkgTypesModelsQuota struct for GithubComMonadIncCorePkgTypesModelsQuota
 type GithubComMonadIncCorePkgTypesModelsQuota struct {
-	Action *string `json:"action,omitempty"`
+	Action *ModelsQuotaAction `json:"action,omitempty"`
 	BillingAccountId *string `json:"billing_account_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	CurrentUsage *int32 `json:"current_usage,omitempty"`
@@ -28,12 +28,12 @@ type GithubComMonadIncCorePkgTypesModelsQuota struct {
 	EndAt *string `json:"end_at,omitempty"`
 	Id *string `json:"id,omitempty"`
 	LimitAmount *int32 `json:"limit_amount,omitempty"`
-	LimitType *string `json:"limit_type,omitempty"`
-	LimitUnit *string `json:"limit_unit,omitempty"`
+	LimitType *ModelsQuotaLimitType `json:"limit_type,omitempty"`
+	LimitUnit *ModelsQuotaLimitUnit `json:"limit_unit,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	StartAt *string `json:"start_at,omitempty"`
-	Timeframe *string `json:"timeframe,omitempty"`
+	Timeframe *ModelsQuotaTimeframe `json:"timeframe,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -55,9 +55,9 @@ func NewGithubComMonadIncCorePkgTypesModelsQuotaWithDefaults() *GithubComMonadIn
 }
 
 // GetAction returns the Action field value if set, zero value otherwise.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetAction() string {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetAction() ModelsQuotaAction {
 	if o == nil || IsNil(o.Action) {
-		var ret string
+		var ret ModelsQuotaAction
 		return ret
 	}
 	return *o.Action
@@ -65,7 +65,7 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetAction() string {
 
 // GetActionOk returns a tuple with the Action field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetActionOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetActionOk() (*ModelsQuotaAction, bool) {
 	if o == nil || IsNil(o.Action) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) HasAction() bool {
 	return false
 }
 
-// SetAction gets a reference to the given string and assigns it to the Action field.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetAction(v string) {
+// SetAction gets a reference to the given ModelsQuotaAction and assigns it to the Action field.
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetAction(v ModelsQuotaAction) {
 	o.Action = &v
 }
 
@@ -311,9 +311,9 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitAmount(v int32) {
 }
 
 // GetLimitType returns the LimitType field value if set, zero value otherwise.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitType() string {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitType() ModelsQuotaLimitType {
 	if o == nil || IsNil(o.LimitType) {
-		var ret string
+		var ret ModelsQuotaLimitType
 		return ret
 	}
 	return *o.LimitType
@@ -321,7 +321,7 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitType() string {
 
 // GetLimitTypeOk returns a tuple with the LimitType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitTypeOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitTypeOk() (*ModelsQuotaLimitType, bool) {
 	if o == nil || IsNil(o.LimitType) {
 		return nil, false
 	}
@@ -337,15 +337,15 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) HasLimitType() bool {
 	return false
 }
 
-// SetLimitType gets a reference to the given string and assigns it to the LimitType field.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitType(v string) {
+// SetLimitType gets a reference to the given ModelsQuotaLimitType and assigns it to the LimitType field.
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitType(v ModelsQuotaLimitType) {
 	o.LimitType = &v
 }
 
 // GetLimitUnit returns the LimitUnit field value if set, zero value otherwise.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnit() string {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnit() ModelsQuotaLimitUnit {
 	if o == nil || IsNil(o.LimitUnit) {
-		var ret string
+		var ret ModelsQuotaLimitUnit
 		return ret
 	}
 	return *o.LimitUnit
@@ -353,7 +353,7 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnit() string {
 
 // GetLimitUnitOk returns a tuple with the LimitUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnitOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnitOk() (*ModelsQuotaLimitUnit, bool) {
 	if o == nil || IsNil(o.LimitUnit) {
 		return nil, false
 	}
@@ -369,8 +369,8 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) HasLimitUnit() bool {
 	return false
 }
 
-// SetLimitUnit gets a reference to the given string and assigns it to the LimitUnit field.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitUnit(v string) {
+// SetLimitUnit gets a reference to the given ModelsQuotaLimitUnit and assigns it to the LimitUnit field.
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitUnit(v ModelsQuotaLimitUnit) {
 	o.LimitUnit = &v
 }
 
@@ -471,9 +471,9 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetStartAt(v string) {
 }
 
 // GetTimeframe returns the Timeframe field value if set, zero value otherwise.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframe() string {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframe() ModelsQuotaTimeframe {
 	if o == nil || IsNil(o.Timeframe) {
-		var ret string
+		var ret ModelsQuotaTimeframe
 		return ret
 	}
 	return *o.Timeframe
@@ -481,7 +481,7 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframe() string {
 
 // GetTimeframeOk returns a tuple with the Timeframe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframeOk() (*string, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframeOk() (*ModelsQuotaTimeframe, bool) {
 	if o == nil || IsNil(o.Timeframe) {
 		return nil, false
 	}
@@ -497,8 +497,8 @@ func (o *GithubComMonadIncCorePkgTypesModelsQuota) HasTimeframe() bool {
 	return false
 }
 
-// SetTimeframe gets a reference to the given string and assigns it to the Timeframe field.
-func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetTimeframe(v string) {
+// SetTimeframe gets a reference to the given ModelsQuotaTimeframe and assigns it to the Timeframe field.
+func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetTimeframe(v ModelsQuotaTimeframe) {
 	o.Timeframe = &v
 }
 

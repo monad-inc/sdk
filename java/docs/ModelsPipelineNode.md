@@ -11,7 +11,7 @@
 |**componentHouse** | **String** |  |  [optional] |
 |**componentId** | **String** |  |  [optional] |
 |**componentSubType** | **String** |  |  [optional] |
-|**componentType** | **String** |  |  [optional] |
+|**componentType** | **ModelsComponentType** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |

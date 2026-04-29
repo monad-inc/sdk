@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateAlertRule
 
-> ModelsAlertRule CreateAlertRule(ctx, organizationId).RoutesV3CreateAlertRuleRequest(routesV3CreateAlertRuleRequest).Execute()
+> ModelsAlertRule CreateAlertRule(ctx, organizationId).CreateAlertRuleRequest(createAlertRuleRequest).Execute()
 
 Create a new alert rule
 
@@ -36,11 +36,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV3CreateAlertRuleRequest := *openapiclient.NewRoutesV3CreateAlertRuleRequest() // RoutesV3CreateAlertRuleRequest | Request body for creating an alert rule
+	createAlertRuleRequest := openapiclient.CreateAlertRule_request{RoutesV3CreateAlertRuleRequest: openapiclient.NewRoutesV3CreateAlertRuleRequest()} // CreateAlertRuleRequest | Request body for creating an alert rule
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlertRulesAPI.CreateAlertRule(context.Background(), organizationId).RoutesV3CreateAlertRuleRequest(routesV3CreateAlertRuleRequest).Execute()
+	resp, r, err := apiClient.AlertRulesAPI.CreateAlertRule(context.Background(), organizationId).CreateAlertRuleRequest(createAlertRuleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertRulesAPI.CreateAlertRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,7 +66,7 @@ Other parameters are passed through a pointer to a apiCreateAlertRuleRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV3CreateAlertRuleRequest** | [**RoutesV3CreateAlertRuleRequest**](RoutesV3CreateAlertRuleRequest.md) | Request body for creating an alert rule | 
+ **createAlertRuleRequest** | [**CreateAlertRuleRequest**](CreateAlertRuleRequest.md) | Request body for creating an alert rule | 
 
 ### Return type
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertRule
 
-> ModelsAlertRule UpdateAlertRule(ctx, organizationId, alertRuleId).RoutesV3UpdateAlertRuleRequest(routesV3UpdateAlertRuleRequest).Execute()
+> ModelsAlertRule UpdateAlertRule(ctx, organizationId, alertRuleId).UpdateAlertRuleRequest(updateAlertRuleRequest).Execute()
 
 Update alert rule
 
@@ -458,11 +458,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	alertRuleId := "alertRuleId_example" // string | Alert Rule ID to update
-	routesV3UpdateAlertRuleRequest := *openapiclient.NewRoutesV3UpdateAlertRuleRequest() // RoutesV3UpdateAlertRuleRequest | Request body for updating an alert rule
+	updateAlertRuleRequest := openapiclient.UpdateAlertRule_request{RoutesV3UpdateAlertRuleRequest: openapiclient.NewRoutesV3UpdateAlertRuleRequest()} // UpdateAlertRuleRequest | Request body for updating an alert rule
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlertRulesAPI.UpdateAlertRule(context.Background(), organizationId, alertRuleId).RoutesV3UpdateAlertRuleRequest(routesV3UpdateAlertRuleRequest).Execute()
+	resp, r, err := apiClient.AlertRulesAPI.UpdateAlertRule(context.Background(), organizationId, alertRuleId).UpdateAlertRuleRequest(updateAlertRuleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertRulesAPI.UpdateAlertRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV3UpdateAlertRuleRequest** | [**RoutesV3UpdateAlertRuleRequest**](RoutesV3UpdateAlertRuleRequest.md) | Request body for updating an alert rule | 
+ **updateAlertRuleRequest** | [**UpdateAlertRuleRequest**](UpdateAlertRuleRequest.md) | Request body for updating an alert rule | 
 
 ### Return type
 

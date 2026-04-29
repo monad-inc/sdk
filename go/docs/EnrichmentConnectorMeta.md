@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthType** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
-**ConnectorCategory** | Pointer to **string** |  | [optional] 
+**ConnectorCategory** | Pointer to [**ModelsInputConnectorCategory**](ModelsInputConnectorCategory.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
 **InBeta** | Pointer to **bool** |  | [optional] 
@@ -96,20 +96,20 @@ HasConfig returns a boolean if a field has been set.
 UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetConnectorCategory
 
-`func (o *EnrichmentConnectorMeta) GetConnectorCategory() string`
+`func (o *EnrichmentConnectorMeta) GetConnectorCategory() ModelsInputConnectorCategory`
 
 GetConnectorCategory returns the ConnectorCategory field if non-nil, zero value otherwise.
 
 ### GetConnectorCategoryOk
 
-`func (o *EnrichmentConnectorMeta) GetConnectorCategoryOk() (*string, bool)`
+`func (o *EnrichmentConnectorMeta) GetConnectorCategoryOk() (*ModelsInputConnectorCategory, bool)`
 
 GetConnectorCategoryOk returns a tuple with the ConnectorCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectorCategory
 
-`func (o *EnrichmentConnectorMeta) SetConnectorCategory(v string)`
+`func (o *EnrichmentConnectorMeta) SetConnectorCategory(v ModelsInputConnectorCategory)`
 
 SetConnectorCategory sets ConnectorCategory field to given value.
 

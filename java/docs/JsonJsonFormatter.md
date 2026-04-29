@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**key** | **String** |  |  [optional] |
-|**type** | **String** |  |  |
+|**type** | **JsonFormatType** |  |  |
 
 
 

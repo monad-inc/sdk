@@ -26,10 +26,7 @@ const request: OrganizationInvitesApiInviteUserRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for inviting a user to an organization
-  routesInviteUserToOrganizationRequest: {
-    email: "email_example",
-    roleId: "roleId_example",
-  },
+  routesInviteUserToOrganizationRequest: null,
 };
 
 const data = await apiInstance.inviteUser(request);

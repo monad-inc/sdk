@@ -9,7 +9,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="applyConditionV2"></a>
 # **applyConditionV2**
-> RoutesV2ApplyConditionResponse applyConditionV2(routesV2ApplyConditionRequest)
+> RoutesV2ApplyConditionResponse applyConditionV2(applyConditionV2Request)
 
 Apply condition to record
 
@@ -43,9 +43,9 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     ConditionSandboxApi apiInstance = new ConditionSandboxApi(defaultClient);
-    RoutesV2ApplyConditionRequest routesV2ApplyConditionRequest = new RoutesV2ApplyConditionRequest(); // RoutesV2ApplyConditionRequest | Condition and record
+    ApplyConditionV2Request applyConditionV2Request = new ApplyConditionV2Request(); // ApplyConditionV2Request | Condition and record
     try {
-      RoutesV2ApplyConditionResponse result = apiInstance.applyConditionV2(routesV2ApplyConditionRequest);
+      RoutesV2ApplyConditionResponse result = apiInstance.applyConditionV2(applyConditionV2Request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConditionSandboxApi#applyConditionV2");
@@ -62,7 +62,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **routesV2ApplyConditionRequest** | [**RoutesV2ApplyConditionRequest**](RoutesV2ApplyConditionRequest.md)| Condition and record | |
+| **applyConditionV2Request** | [**ApplyConditionV2Request**](ApplyConditionV2Request.md)| Condition and record | |
 
 ### Return type
 

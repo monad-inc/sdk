@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Conditions** | Pointer to [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
-**Else** | Pointer to **string** | will default to bypass if left empty on create/update | [optional] 
+**Else** | Pointer to [**ModelsElseAction**](ModelsElseAction.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasConditions returns a boolean if a field has been set.
 
 ### GetElse
 
-`func (o *ModelsTransformConditional) GetElse() string`
+`func (o *ModelsTransformConditional) GetElse() ModelsElseAction`
 
 GetElse returns the Else field if non-nil, zero value otherwise.
 
 ### GetElseOk
 
-`func (o *ModelsTransformConditional) GetElseOk() (*string, bool)`
+`func (o *ModelsTransformConditional) GetElseOk() (*ModelsElseAction, bool)`
 
 GetElseOk returns a tuple with the Else field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElse
 
-`func (o *ModelsTransformConditional) SetElse(v string)`
+`func (o *ModelsTransformConditional) SetElse(v ModelsElseAction)`
 
 SetElse sets Else field to given value.
 

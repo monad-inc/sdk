@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createBillingAccountRole**
-> ModelsBillingAccountRole createBillingAccountRole(routesV2CreateBillingAccountRoleRequest)
+> ModelsBillingAccountRole createBillingAccountRole(createBillingAccountRoleRequest)
 
 Create Billing Account Role
 
@@ -33,13 +33,7 @@ const request: BillingAccountsRBACApiCreateBillingAccountRoleRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
     // Create Billing Account Role Request
-  routesV2CreateBillingAccountRoleRequest: {
-    description: "description_example",
-    name: "name_example",
-    permissions: [
-      "permissions_example",
-    ],
-  },
+  createBillingAccountRoleRequest: null,
 };
 
 const data = await apiInstance.createBillingAccountRole(request);
@@ -51,7 +45,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateBillingAccountRoleRequest** | **RoutesV2CreateBillingAccountRoleRequest**| Create Billing Account Role Request |
+ **createBillingAccountRoleRequest** | **CreateBillingAccountRoleRequest**| Create Billing Account Role Request |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 
@@ -79,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **createBillingAccountUserRole**
-> string createBillingAccountUserRole(routesV2CreatebillingAccountUserRoleRequest)
+> string createBillingAccountUserRole(createBillingAccountUserRoleRequest)
 
 Add a user to a billing account role
 
@@ -99,9 +93,7 @@ const request: BillingAccountsRBACApiCreateBillingAccountUserRoleRequest = {
     // Role ID
   roleId: "role_id_example",
     // Create Billing Account User Role Request
-  routesV2CreatebillingAccountUserRoleRequest: {
-    userEmail: "userEmail_example",
-  },
+  createBillingAccountUserRoleRequest: null,
 };
 
 const data = await apiInstance.createBillingAccountUserRole(request);
@@ -113,7 +105,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreatebillingAccountUserRoleRequest** | **RoutesV2CreatebillingAccountUserRoleRequest**| Create Billing Account User Role Request |
+ **createBillingAccountUserRoleRequest** | **CreateBillingAccountUserRoleRequest**| Create Billing Account User Role Request |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
 
@@ -422,7 +414,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateBillingAccountRole**
-> ModelsBillingAccountRole updateBillingAccountRole(routesV2UpdateBillingAccountRoleRequest)
+> ModelsBillingAccountRole updateBillingAccountRole(updateBillingAccountRoleRequest)
 
 Update Billing Account Role
 
@@ -442,13 +434,7 @@ const request: BillingAccountsRBACApiUpdateBillingAccountRoleRequest = {
     // Role ID
   roleId: "role_id_example",
     // Update Billing Account Role Request
-  routesV2UpdateBillingAccountRoleRequest: {
-    description: "description_example",
-    name: "name_example",
-    permissions: [
-      "permissions_example",
-    ],
-  },
+  updateBillingAccountRoleRequest: null,
 };
 
 const data = await apiInstance.updateBillingAccountRole(request);
@@ -460,7 +446,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2UpdateBillingAccountRoleRequest** | **RoutesV2UpdateBillingAccountRoleRequest**| Update Billing Account Role Request |
+ **updateBillingAccountRoleRequest** | **UpdateBillingAccountRoleRequest**| Update Billing Account Role Request |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
 

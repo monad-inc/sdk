@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ApplyTransformationV2Request;
+import org.openapitools.client.model.GenerateRecordRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
-import org.openapitools.client.model.RoutesV2ApplyTransformationRequest;
 import org.openapitools.client.model.RoutesV2ApplyTransformationResponse;
-import org.openapitools.client.model.RoutesV2GenerateRecordRequest;
 import org.openapitools.client.model.RoutesV2GenerateRecordResponse;
 import org.openapitools.client.model.RoutesV2ListTemplatesResponse;
 
@@ -80,7 +80,7 @@ public class TransformSandboxApi {
     /**
      * Build call for applyTransformation
      * @param organizationId Organization ID (required)
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -93,7 +93,7 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call applyTransformationCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call applyTransformationCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -107,7 +107,7 @@ public class TransformSandboxApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2ApplyTransformationRequest;
+        Object localVarPostBody = applyTransformationV2Request;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/sandbox/transform"
@@ -140,18 +140,18 @@ public class TransformSandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call applyTransformationValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call applyTransformationValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling applyTransformation(Async)");
         }
 
-        // verify the required parameter 'routesV2ApplyTransformationRequest' is set
-        if (routesV2ApplyTransformationRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2ApplyTransformationRequest' when calling applyTransformation(Async)");
+        // verify the required parameter 'applyTransformationV2Request' is set
+        if (applyTransformationV2Request == null) {
+            throw new ApiException("Missing the required parameter 'applyTransformationV2Request' when calling applyTransformation(Async)");
         }
 
-        return applyTransformationCall(organizationId, routesV2ApplyTransformationRequest, _callback);
+        return applyTransformationCall(organizationId, applyTransformationV2Request, _callback);
 
     }
 
@@ -159,7 +159,7 @@ public class TransformSandboxApi {
      * Apply transformation to record
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * @param organizationId Organization ID (required)
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @return RoutesV2ApplyTransformationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -171,8 +171,8 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2ApplyTransformationResponse applyTransformation(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
-        ApiResponse<RoutesV2ApplyTransformationResponse> localVarResp = applyTransformationWithHttpInfo(organizationId, routesV2ApplyTransformationRequest);
+    public RoutesV2ApplyTransformationResponse applyTransformation(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request) throws ApiException {
+        ApiResponse<RoutesV2ApplyTransformationResponse> localVarResp = applyTransformationWithHttpInfo(organizationId, applyTransformationV2Request);
         return localVarResp.getData();
     }
 
@@ -180,7 +180,7 @@ public class TransformSandboxApi {
      * Apply transformation to record
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * @param organizationId Organization ID (required)
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @return ApiResponse&lt;RoutesV2ApplyTransformationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -192,8 +192,8 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2ApplyTransformationResponse> applyTransformationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
-        okhttp3.Call localVarCall = applyTransformationValidateBeforeCall(organizationId, routesV2ApplyTransformationRequest, null);
+    public ApiResponse<RoutesV2ApplyTransformationResponse> applyTransformationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request) throws ApiException {
+        okhttp3.Call localVarCall = applyTransformationValidateBeforeCall(organizationId, applyTransformationV2Request, null);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyTransformationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -202,7 +202,7 @@ public class TransformSandboxApi {
      * Apply transformation to record (asynchronously)
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * @param organizationId Organization ID (required)
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -215,16 +215,16 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call applyTransformationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback<RoutesV2ApplyTransformationResponse> _callback) throws ApiException {
+    public okhttp3.Call applyTransformationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request, final ApiCallback<RoutesV2ApplyTransformationResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = applyTransformationValidateBeforeCall(organizationId, routesV2ApplyTransformationRequest, _callback);
+        okhttp3.Call localVarCall = applyTransformationValidateBeforeCall(organizationId, applyTransformationV2Request, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyTransformationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for applyTransformationV2
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -237,7 +237,7 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call applyTransformationV2Call(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call applyTransformationV2Call(@javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -251,7 +251,7 @@ public class TransformSandboxApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2ApplyTransformationRequest;
+        Object localVarPostBody = applyTransformationV2Request;
 
         // create path and map variables
         String localVarPath = "/v2/sandbox/transform";
@@ -283,20 +283,20 @@ public class TransformSandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call applyTransformationV2ValidateBeforeCall(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routesV2ApplyTransformationRequest' is set
-        if (routesV2ApplyTransformationRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2ApplyTransformationRequest' when calling applyTransformationV2(Async)");
+    private okhttp3.Call applyTransformationV2ValidateBeforeCall(@javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'applyTransformationV2Request' is set
+        if (applyTransformationV2Request == null) {
+            throw new ApiException("Missing the required parameter 'applyTransformationV2Request' when calling applyTransformationV2(Async)");
         }
 
-        return applyTransformationV2Call(routesV2ApplyTransformationRequest, _callback);
+        return applyTransformationV2Call(applyTransformationV2Request, _callback);
 
     }
 
     /**
      * Apply transformation to record
      * Apply a transformation configuration to a JSON record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @return RoutesV2ApplyTransformationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -308,15 +308,15 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2ApplyTransformationResponse applyTransformationV2(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
-        ApiResponse<RoutesV2ApplyTransformationResponse> localVarResp = applyTransformationV2WithHttpInfo(routesV2ApplyTransformationRequest);
+    public RoutesV2ApplyTransformationResponse applyTransformationV2(@javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request) throws ApiException {
+        ApiResponse<RoutesV2ApplyTransformationResponse> localVarResp = applyTransformationV2WithHttpInfo(applyTransformationV2Request);
         return localVarResp.getData();
     }
 
     /**
      * Apply transformation to record
      * Apply a transformation configuration to a JSON record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @return ApiResponse&lt;RoutesV2ApplyTransformationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -328,8 +328,8 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2ApplyTransformationResponse> applyTransformationV2WithHttpInfo(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
-        okhttp3.Call localVarCall = applyTransformationV2ValidateBeforeCall(routesV2ApplyTransformationRequest, null);
+    public ApiResponse<RoutesV2ApplyTransformationResponse> applyTransformationV2WithHttpInfo(@javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request) throws ApiException {
+        okhttp3.Call localVarCall = applyTransformationV2ValidateBeforeCall(applyTransformationV2Request, null);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyTransformationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -337,7 +337,7 @@ public class TransformSandboxApi {
     /**
      * Apply transformation to record (asynchronously)
      * Apply a transformation configuration to a JSON record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record (required)
+     * @param applyTransformationV2Request Transform configuration and record (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -350,16 +350,16 @@ public class TransformSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call applyTransformationV2Async(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback<RoutesV2ApplyTransformationResponse> _callback) throws ApiException {
+    public okhttp3.Call applyTransformationV2Async(@javax.annotation.Nonnull ApplyTransformationV2Request applyTransformationV2Request, final ApiCallback<RoutesV2ApplyTransformationResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = applyTransformationV2ValidateBeforeCall(routesV2ApplyTransformationRequest, _callback);
+        okhttp3.Call localVarCall = applyTransformationV2ValidateBeforeCall(applyTransformationV2Request, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyTransformationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for generateRecord
-     * @param routesV2GenerateRecordRequest Record generation parameters (required)
+     * @param generateRecordRequest Record generation parameters (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -371,7 +371,7 @@ public class TransformSandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateRecordCall(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call generateRecordCall(@javax.annotation.Nonnull GenerateRecordRequest generateRecordRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -385,7 +385,7 @@ public class TransformSandboxApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2GenerateRecordRequest;
+        Object localVarPostBody = generateRecordRequest;
 
         // create path and map variables
         String localVarPath = "/v2/sandbox/template";
@@ -417,20 +417,20 @@ public class TransformSandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call generateRecordValidateBeforeCall(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routesV2GenerateRecordRequest' is set
-        if (routesV2GenerateRecordRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2GenerateRecordRequest' when calling generateRecord(Async)");
+    private okhttp3.Call generateRecordValidateBeforeCall(@javax.annotation.Nonnull GenerateRecordRequest generateRecordRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'generateRecordRequest' is set
+        if (generateRecordRequest == null) {
+            throw new ApiException("Missing the required parameter 'generateRecordRequest' when calling generateRecord(Async)");
         }
 
-        return generateRecordCall(routesV2GenerateRecordRequest, _callback);
+        return generateRecordCall(generateRecordRequest, _callback);
 
     }
 
     /**
      * Generate sample record
      * Generate a sample record using the specified template type
-     * @param routesV2GenerateRecordRequest Record generation parameters (required)
+     * @param generateRecordRequest Record generation parameters (required)
      * @return RoutesV2GenerateRecordResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -441,15 +441,15 @@ public class TransformSandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2GenerateRecordResponse generateRecord(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest) throws ApiException {
-        ApiResponse<RoutesV2GenerateRecordResponse> localVarResp = generateRecordWithHttpInfo(routesV2GenerateRecordRequest);
+    public RoutesV2GenerateRecordResponse generateRecord(@javax.annotation.Nonnull GenerateRecordRequest generateRecordRequest) throws ApiException {
+        ApiResponse<RoutesV2GenerateRecordResponse> localVarResp = generateRecordWithHttpInfo(generateRecordRequest);
         return localVarResp.getData();
     }
 
     /**
      * Generate sample record
      * Generate a sample record using the specified template type
-     * @param routesV2GenerateRecordRequest Record generation parameters (required)
+     * @param generateRecordRequest Record generation parameters (required)
      * @return ApiResponse&lt;RoutesV2GenerateRecordResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -460,8 +460,8 @@ public class TransformSandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2GenerateRecordResponse> generateRecordWithHttpInfo(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest) throws ApiException {
-        okhttp3.Call localVarCall = generateRecordValidateBeforeCall(routesV2GenerateRecordRequest, null);
+    public ApiResponse<RoutesV2GenerateRecordResponse> generateRecordWithHttpInfo(@javax.annotation.Nonnull GenerateRecordRequest generateRecordRequest) throws ApiException {
+        okhttp3.Call localVarCall = generateRecordValidateBeforeCall(generateRecordRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2GenerateRecordResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -469,7 +469,7 @@ public class TransformSandboxApi {
     /**
      * Generate sample record (asynchronously)
      * Generate a sample record using the specified template type
-     * @param routesV2GenerateRecordRequest Record generation parameters (required)
+     * @param generateRecordRequest Record generation parameters (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -481,9 +481,9 @@ public class TransformSandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateRecordAsync(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback<RoutesV2GenerateRecordResponse> _callback) throws ApiException {
+    public okhttp3.Call generateRecordAsync(@javax.annotation.Nonnull GenerateRecordRequest generateRecordRequest, final ApiCallback<RoutesV2GenerateRecordResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = generateRecordValidateBeforeCall(routesV2GenerateRecordRequest, _callback);
+        okhttp3.Call localVarCall = generateRecordValidateBeforeCall(generateRecordRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2GenerateRecordResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

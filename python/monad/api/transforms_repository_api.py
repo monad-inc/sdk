@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -17,10 +17,11 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr
-from typing import Optional
+from typing import Any, Dict, Optional
 from typing_extensions import Annotated
 from monad.models.community_transforms_internal_transform_config import CommunityTransformsInternalTransformConfig
 from monad.models.community_transforms_internal_transforms_index import CommunityTransformsInternalTransformsIndex
+from monad.models.export_transform_request import ExportTransformRequest
 from monad.models.models_transforms_repository_list import ModelsTransformsRepositoryList
 from monad.models.models_transforms_repository_transform import ModelsTransformsRepositoryTransform
 from monad.models.routes_v3_import_transform_response import RoutesV3ImportTransformResponse
@@ -46,7 +47,7 @@ class TransformsRepositoryApi:
     @validate_call
     def export_transform(
         self,
-        community_transforms_internal_transform_config: Annotated[CommunityTransformsInternalTransformConfig, Field(description="Transform to export and optional metadata")],
+        export_transform_request: Annotated[ExportTransformRequest, Field(description="Transform to export and optional metadata")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -64,8 +65,8 @@ class TransformsRepositoryApi:
 
         Export transform to YAML format
 
-        :param community_transforms_internal_transform_config: Transform to export and optional metadata (required)
-        :type community_transforms_internal_transform_config: CommunityTransformsInternalTransformConfig
+        :param export_transform_request: Transform to export and optional metadata (required)
+        :type export_transform_request: ExportTransformRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -89,7 +90,7 @@ class TransformsRepositoryApi:
         """ # noqa: E501
 
         _param = self._export_transform_serialize(
-            community_transforms_internal_transform_config=community_transforms_internal_transform_config,
+            export_transform_request=export_transform_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -115,7 +116,7 @@ class TransformsRepositoryApi:
     @validate_call
     def export_transform_with_http_info(
         self,
-        community_transforms_internal_transform_config: Annotated[CommunityTransformsInternalTransformConfig, Field(description="Transform to export and optional metadata")],
+        export_transform_request: Annotated[ExportTransformRequest, Field(description="Transform to export and optional metadata")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -133,8 +134,8 @@ class TransformsRepositoryApi:
 
         Export transform to YAML format
 
-        :param community_transforms_internal_transform_config: Transform to export and optional metadata (required)
-        :type community_transforms_internal_transform_config: CommunityTransformsInternalTransformConfig
+        :param export_transform_request: Transform to export and optional metadata (required)
+        :type export_transform_request: ExportTransformRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -158,7 +159,7 @@ class TransformsRepositoryApi:
         """ # noqa: E501
 
         _param = self._export_transform_serialize(
-            community_transforms_internal_transform_config=community_transforms_internal_transform_config,
+            export_transform_request=export_transform_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -184,7 +185,7 @@ class TransformsRepositoryApi:
     @validate_call
     def export_transform_without_preload_content(
         self,
-        community_transforms_internal_transform_config: Annotated[CommunityTransformsInternalTransformConfig, Field(description="Transform to export and optional metadata")],
+        export_transform_request: Annotated[ExportTransformRequest, Field(description="Transform to export and optional metadata")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -202,8 +203,8 @@ class TransformsRepositoryApi:
 
         Export transform to YAML format
 
-        :param community_transforms_internal_transform_config: Transform to export and optional metadata (required)
-        :type community_transforms_internal_transform_config: CommunityTransformsInternalTransformConfig
+        :param export_transform_request: Transform to export and optional metadata (required)
+        :type export_transform_request: ExportTransformRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -227,7 +228,7 @@ class TransformsRepositoryApi:
         """ # noqa: E501
 
         _param = self._export_transform_serialize(
-            community_transforms_internal_transform_config=community_transforms_internal_transform_config,
+            export_transform_request=export_transform_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -248,7 +249,7 @@ class TransformsRepositoryApi:
 
     def _export_transform_serialize(
         self,
-        community_transforms_internal_transform_config,
+        export_transform_request,
         _request_auth,
         _content_type,
         _headers,
@@ -274,8 +275,8 @@ class TransformsRepositoryApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if community_transforms_internal_transform_config is not None:
-            _body_params = community_transforms_internal_transform_config
+        if export_transform_request is not None:
+            _body_params = export_transform_request
 
 
         # set the HTTP header `Accept`
@@ -860,7 +861,7 @@ class TransformsRepositoryApi:
     @validate_call
     def import_transform(
         self,
-        body: Annotated[StrictStr, Field(description="YAML transform definition")],
+        body: Annotated[Dict[str, Any], Field(description="YAML transform definition")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -879,7 +880,7 @@ class TransformsRepositoryApi:
         Import transform from YAML file
 
         :param body: YAML transform definition (required)
-        :type body: str
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -929,7 +930,7 @@ class TransformsRepositoryApi:
     @validate_call
     def import_transform_with_http_info(
         self,
-        body: Annotated[StrictStr, Field(description="YAML transform definition")],
+        body: Annotated[Dict[str, Any], Field(description="YAML transform definition")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -948,7 +949,7 @@ class TransformsRepositoryApi:
         Import transform from YAML file
 
         :param body: YAML transform definition (required)
-        :type body: str
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -998,7 +999,7 @@ class TransformsRepositoryApi:
     @validate_call
     def import_transform_without_preload_content(
         self,
-        body: Annotated[StrictStr, Field(description="YAML transform definition")],
+        body: Annotated[Dict[str, Any], Field(description="YAML transform definition")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1017,7 +1018,7 @@ class TransformsRepositoryApi:
         Import transform from YAML file
 
         :param body: YAML transform definition (required)
-        :type body: str
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1107,7 +1108,8 @@ class TransformsRepositoryApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/json'
+                        'application/json', 
+                        'text/plain'
                     ]
                 )
             )

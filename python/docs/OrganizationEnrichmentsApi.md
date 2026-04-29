@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_enrichment**
-> ModelsEnrichment create_enrichment(organization_id, routes_v3_create_enrichment_request, test_connection=test_connection)
+> ModelsEnrichment create_enrichment(organization_id, create_enrichment_request, test_connection=test_connection)
 
 Create enrichment
 
@@ -27,8 +27,8 @@ Create a new enrichment with configuration including secrets handling
 
 ```python
 import monad
+from monad.models.create_enrichment_request import CreateEnrichmentRequest
 from monad.models.models_enrichment import ModelsEnrichment
-from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -60,12 +60,12 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationEnrichmentsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v3_create_enrichment_request = monad.RoutesV3CreateEnrichmentRequest() # RoutesV3CreateEnrichmentRequest | Enrichment configuration
+    create_enrichment_request = monad.CreateEnrichmentRequest() # CreateEnrichmentRequest | Enrichment configuration
     test_connection = True # bool | Test connection before creating the enrichment (optional)
 
     try:
         # Create enrichment
-        api_response = api_instance.create_enrichment(organization_id, routes_v3_create_enrichment_request, test_connection=test_connection)
+        api_response = api_instance.create_enrichment(organization_id, create_enrichment_request, test_connection=test_connection)
         print("The response of OrganizationEnrichmentsApi->create_enrichment:\n")
         pprint(api_response)
     except Exception as e:
@@ -80,7 +80,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v3_create_enrichment_request** | [**RoutesV3CreateEnrichmentRequest**](RoutesV3CreateEnrichmentRequest.md)| Enrichment configuration | 
+ **create_enrichment_request** | [**CreateEnrichmentRequest**](CreateEnrichmentRequest.md)| Enrichment configuration | 
  **test_connection** | **bool**| Test connection before creating the enrichment | [optional] 
 
 ### Return type
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_enrichment**
-> ModelsEnrichment replace_enrichment(organization_id, enrichment_id, routes_v3_put_enrichment_request, test_connection=test_connection)
+> ModelsEnrichment replace_enrichment(organization_id, enrichment_id, replace_enrichment_request, test_connection=test_connection)
 
 Replace enrichment
 
@@ -393,7 +393,7 @@ Replace an existing enrichment with new configuration including secrets handling
 ```python
 import monad
 from monad.models.models_enrichment import ModelsEnrichment
-from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentRequest
+from monad.models.replace_enrichment_request import ReplaceEnrichmentRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -426,12 +426,12 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationEnrichmentsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     enrichment_id = 'enrichment_id_example' # str | Enrichment ID
-    routes_v3_put_enrichment_request = monad.RoutesV3PutEnrichmentRequest() # RoutesV3PutEnrichmentRequest | Enrichment configuration update
+    replace_enrichment_request = monad.ReplaceEnrichmentRequest() # ReplaceEnrichmentRequest | Enrichment configuration update
     test_connection = True # bool | Test connection before updating the enrichment (optional)
 
     try:
         # Replace enrichment
-        api_response = api_instance.replace_enrichment(organization_id, enrichment_id, routes_v3_put_enrichment_request, test_connection=test_connection)
+        api_response = api_instance.replace_enrichment(organization_id, enrichment_id, replace_enrichment_request, test_connection=test_connection)
         print("The response of OrganizationEnrichmentsApi->replace_enrichment:\n")
         pprint(api_response)
     except Exception as e:
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **enrichment_id** | **str**| Enrichment ID | 
- **routes_v3_put_enrichment_request** | [**RoutesV3PutEnrichmentRequest**](RoutesV3PutEnrichmentRequest.md)| Enrichment configuration update | 
+ **replace_enrichment_request** | [**ReplaceEnrichmentRequest**](ReplaceEnrichmentRequest.md)| Enrichment configuration update | 
  **test_connection** | **bool**| Test connection before updating the enrichment | [optional] 
 
 ### Return type
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_enrichment_connection**
-> RoutesV3SuccessResponse test_enrichment_connection(organization_id, routes_v3_test_enrichment_connection_request)
+> RoutesV3SuccessResponse test_enrichment_connection(organization_id, test_enrichment_connection_request)
 
 Test enrichment connection
 
@@ -489,7 +489,7 @@ Tests the connection for a given enrichment type and configuration
 ```python
 import monad
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse
-from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest
+from monad.models.test_enrichment_connection_request import TestEnrichmentConnectionRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -521,11 +521,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationEnrichmentsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v3_test_enrichment_connection_request = monad.RoutesV3TestEnrichmentConnectionRequest() # RoutesV3TestEnrichmentConnectionRequest | Enrichment configuration to test
+    test_enrichment_connection_request = monad.TestEnrichmentConnectionRequest() # TestEnrichmentConnectionRequest | Enrichment configuration to test
 
     try:
         # Test enrichment connection
-        api_response = api_instance.test_enrichment_connection(organization_id, routes_v3_test_enrichment_connection_request)
+        api_response = api_instance.test_enrichment_connection(organization_id, test_enrichment_connection_request)
         print("The response of OrganizationEnrichmentsApi->test_enrichment_connection:\n")
         pprint(api_response)
     except Exception as e:
@@ -540,7 +540,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v3_test_enrichment_connection_request** | [**RoutesV3TestEnrichmentConnectionRequest**](RoutesV3TestEnrichmentConnectionRequest.md)| Enrichment configuration to test | 
+ **test_enrichment_connection_request** | [**TestEnrichmentConnectionRequest**](TestEnrichmentConnectionRequest.md)| Enrichment configuration to test | 
 
 ### Return type
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_enrichment**
-> ModelsEnrichment update_enrichment(organization_id, enrichment_id, routes_v3_update_enrichment_request, test_connection=test_connection)
+> ModelsEnrichment update_enrichment(organization_id, enrichment_id, update_enrichment_request, test_connection=test_connection)
 
 Update enrichment
 
@@ -580,7 +580,7 @@ Update an existing enrichment with new configuration including secrets handling
 ```python
 import monad
 from monad.models.models_enrichment import ModelsEnrichment
-from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest
+from monad.models.update_enrichment_request import UpdateEnrichmentRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -613,12 +613,12 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationEnrichmentsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     enrichment_id = 'enrichment_id_example' # str | Enrichment ID
-    routes_v3_update_enrichment_request = monad.RoutesV3UpdateEnrichmentRequest() # RoutesV3UpdateEnrichmentRequest | Enrichment configuration update
+    update_enrichment_request = monad.UpdateEnrichmentRequest() # UpdateEnrichmentRequest | Enrichment configuration update
     test_connection = True # bool | Test connection before updating the enrichment (optional)
 
     try:
         # Update enrichment
-        api_response = api_instance.update_enrichment(organization_id, enrichment_id, routes_v3_update_enrichment_request, test_connection=test_connection)
+        api_response = api_instance.update_enrichment(organization_id, enrichment_id, update_enrichment_request, test_connection=test_connection)
         print("The response of OrganizationEnrichmentsApi->update_enrichment:\n")
         pprint(api_response)
     except Exception as e:
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **enrichment_id** | **str**| Enrichment ID | 
- **routes_v3_update_enrichment_request** | [**RoutesV3UpdateEnrichmentRequest**](RoutesV3UpdateEnrichmentRequest.md)| Enrichment configuration update | 
+ **update_enrichment_request** | [**UpdateEnrichmentRequest**](UpdateEnrichmentRequest.md)| Enrichment configuration update | 
  **test_connection** | **bool**| Test connection before updating the enrichment | [optional] 
 
 ### Return type

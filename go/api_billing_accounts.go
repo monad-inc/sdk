@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -27,12 +27,12 @@ type BillingAccountsAPIService service
 type ApiCreateBillingAccountRequest struct {
 	ctx context.Context
 	ApiService *BillingAccountsAPIService
-	routesV2CreateBillingAccountRequest *RoutesV2CreateBillingAccountRequest
+	createBillingAccountRequest *CreateBillingAccountRequest
 }
 
 // Request body for creating a billing account
-func (r ApiCreateBillingAccountRequest) RoutesV2CreateBillingAccountRequest(routesV2CreateBillingAccountRequest RoutesV2CreateBillingAccountRequest) ApiCreateBillingAccountRequest {
-	r.routesV2CreateBillingAccountRequest = &routesV2CreateBillingAccountRequest
+func (r ApiCreateBillingAccountRequest) CreateBillingAccountRequest(createBillingAccountRequest CreateBillingAccountRequest) ApiCreateBillingAccountRequest {
+	r.createBillingAccountRequest = &createBillingAccountRequest
 	return r
 }
 
@@ -75,8 +75,8 @@ func (a *BillingAccountsAPIService) CreateBillingAccountExecute(r ApiCreateBilli
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2CreateBillingAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2CreateBillingAccountRequest is required and must be specified")
+	if r.createBillingAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("createBillingAccountRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -97,7 +97,7 @@ func (a *BillingAccountsAPIService) CreateBillingAccountExecute(r ApiCreateBilli
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2CreateBillingAccountRequest
+	localVarPostBody = r.createBillingAccountRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -593,12 +593,12 @@ type ApiUpdateBillingAccountRequest struct {
 	ctx context.Context
 	ApiService *BillingAccountsAPIService
 	billingAccountId string
-	routesV2UpdateBillingAccountRequest *RoutesV2UpdateBillingAccountRequest
+	updateBillingAccountRequest *UpdateBillingAccountRequest
 }
 
 // Request body for updating a billing account
-func (r ApiUpdateBillingAccountRequest) RoutesV2UpdateBillingAccountRequest(routesV2UpdateBillingAccountRequest RoutesV2UpdateBillingAccountRequest) ApiUpdateBillingAccountRequest {
-	r.routesV2UpdateBillingAccountRequest = &routesV2UpdateBillingAccountRequest
+func (r ApiUpdateBillingAccountRequest) UpdateBillingAccountRequest(updateBillingAccountRequest UpdateBillingAccountRequest) ApiUpdateBillingAccountRequest {
+	r.updateBillingAccountRequest = &updateBillingAccountRequest
 	return r
 }
 
@@ -644,8 +644,8 @@ func (a *BillingAccountsAPIService) UpdateBillingAccountExecute(r ApiUpdateBilli
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2UpdateBillingAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2UpdateBillingAccountRequest is required and must be specified")
+	if r.updateBillingAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBillingAccountRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -666,7 +666,7 @@ func (a *BillingAccountsAPIService) UpdateBillingAccountExecute(r ApiUpdateBilli
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2UpdateBillingAccountRequest
+	localVarPostBody = r.updateBillingAccountRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

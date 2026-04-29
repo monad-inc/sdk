@@ -10,7 +10,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createTransformRecommendation"></a>
 # **createTransformRecommendation**
-> RoutesV3SecurityDataAnalysis createTransformRecommendation(organizationId, routesV3TransformRecommendationRequest)
+> RoutesV3SecurityDataAnalysis createTransformRecommendation(organizationId, createTransformRecommendationRequest)
 
 Create transform recommendation
 
@@ -45,9 +45,9 @@ public class Example {
 
     TransformsRecommendationsApi apiInstance = new TransformsRecommendationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV3TransformRecommendationRequest routesV3TransformRecommendationRequest = new RoutesV3TransformRecommendationRequest(); // RoutesV3TransformRecommendationRequest | Security data to analyze
+    CreateTransformRecommendationRequest createTransformRecommendationRequest = new CreateTransformRecommendationRequest(); // CreateTransformRecommendationRequest | Security data to analyze
     try {
-      RoutesV3SecurityDataAnalysis result = apiInstance.createTransformRecommendation(organizationId, routesV3TransformRecommendationRequest);
+      RoutesV3SecurityDataAnalysis result = apiInstance.createTransformRecommendation(organizationId, createTransformRecommendationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransformsRecommendationsApi#createTransformRecommendation");
@@ -65,7 +65,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV3TransformRecommendationRequest** | [**RoutesV3TransformRecommendationRequest**](RoutesV3TransformRecommendationRequest.md)| Security data to analyze | |
+| **createTransformRecommendationRequest** | [**CreateTransformRecommendationRequest**](CreateTransformRecommendationRequest.md)| Security data to analyze | |
 
 ### Return type
 

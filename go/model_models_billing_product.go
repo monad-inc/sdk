@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -27,7 +27,7 @@ type ModelsBillingProduct struct {
 	Id *string `json:"id,omitempty"`
 	IsDefault *bool `json:"is_default,omitempty"`
 	Name *string `json:"name,omitempty"`
-	ProductType *string `json:"product_type,omitempty"`
+	ProductType *ModelsBillingProductType `json:"product_type,omitempty"`
 	RecurringCostCents *int32 `json:"recurring_cost_cents,omitempty"`
 	RecurringFrequency *string `json:"recurring_frequency,omitempty"`
 	Slug *string `json:"slug,omitempty"`
@@ -278,9 +278,9 @@ func (o *ModelsBillingProduct) SetName(v string) {
 }
 
 // GetProductType returns the ProductType field value if set, zero value otherwise.
-func (o *ModelsBillingProduct) GetProductType() string {
+func (o *ModelsBillingProduct) GetProductType() ModelsBillingProductType {
 	if o == nil || IsNil(o.ProductType) {
-		var ret string
+		var ret ModelsBillingProductType
 		return ret
 	}
 	return *o.ProductType
@@ -288,7 +288,7 @@ func (o *ModelsBillingProduct) GetProductType() string {
 
 // GetProductTypeOk returns a tuple with the ProductType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsBillingProduct) GetProductTypeOk() (*string, bool) {
+func (o *ModelsBillingProduct) GetProductTypeOk() (*ModelsBillingProductType, bool) {
 	if o == nil || IsNil(o.ProductType) {
 		return nil, false
 	}
@@ -304,8 +304,8 @@ func (o *ModelsBillingProduct) HasProductType() bool {
 	return false
 }
 
-// SetProductType gets a reference to the given string and assigns it to the ProductType field.
-func (o *ModelsBillingProduct) SetProductType(v string) {
+// SetProductType gets a reference to the given ModelsBillingProductType and assigns it to the ProductType field.
+func (o *ModelsBillingProduct) SetProductType(v ModelsBillingProductType) {
 	o.ProductType = &v
 }
 

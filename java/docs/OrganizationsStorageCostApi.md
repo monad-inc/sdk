@@ -353,7 +353,7 @@ public class Example {
 
 <a id="setStorageTypeCost"></a>
 # **setStorageTypeCost**
-> ModelsStorageTypeCostConfig setStorageTypeCost(organizationId, routesV2SetStorageTypeCostRequest)
+> ModelsStorageTypeCostConfig setStorageTypeCost(organizationId, setStorageTypeCostRequest)
 
 Set storage type cost
 
@@ -388,9 +388,9 @@ public class Example {
 
     OrganizationsStorageCostApi apiInstance = new OrganizationsStorageCostApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest = new RoutesV2SetStorageTypeCostRequest(); // RoutesV2SetStorageTypeCostRequest | Cost configuration
+    SetStorageTypeCostRequest setStorageTypeCostRequest = new SetStorageTypeCostRequest(); // SetStorageTypeCostRequest | Cost configuration
     try {
-      ModelsStorageTypeCostConfig result = apiInstance.setStorageTypeCost(organizationId, routesV2SetStorageTypeCostRequest);
+      ModelsStorageTypeCostConfig result = apiInstance.setStorageTypeCost(organizationId, setStorageTypeCostRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsStorageCostApi#setStorageTypeCost");
@@ -408,7 +408,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2SetStorageTypeCostRequest** | [**RoutesV2SetStorageTypeCostRequest**](RoutesV2SetStorageTypeCostRequest.md)| Cost configuration | |
+| **setStorageTypeCostRequest** | [**SetStorageTypeCostRequest**](SetStorageTypeCostRequest.md)| Cost configuration | |
 
 ### Return type
 

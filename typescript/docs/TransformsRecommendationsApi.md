@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createTransformRecommendation**
-> RoutesV3SecurityDataAnalysis createTransformRecommendation(routesV3TransformRecommendationRequest)
+> RoutesV3SecurityDataAnalysis createTransformRecommendation(createTransformRecommendationRequest)
 
 Analyze security data and provide transformation recommendations
 
@@ -27,12 +27,7 @@ const request: TransformsRecommendationsApiCreateTransformRecommendationRequest 
     // Organization ID
   organizationId: "organization_id_example",
     // Security data to analyze
-  routesV3TransformRecommendationRequest: {
-    optimizerType: "optimizerType_example",
-    securityData: [
-      1,
-    ],
-  },
+  createTransformRecommendationRequest: null,
 };
 
 const data = await apiInstance.createTransformRecommendation(request);
@@ -44,7 +39,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3TransformRecommendationRequest** | **RoutesV3TransformRecommendationRequest**| Security data to analyze |
+ **createTransformRecommendationRequest** | **CreateTransformRecommendationRequest**| Security data to analyze |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 

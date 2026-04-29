@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createInput**
-> ModelsInput createInput(routesV2CreateInputRequest)
+> ModelsInput createInput(createInputRequest)
 
 Create a new input with configuration including secrets handling
 
@@ -32,19 +32,7 @@ const request: OrganizationInputsApiCreateInputRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Input configuration
-  routesV2CreateInputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    type: "type_example",
-  },
+  createInputRequest: null,
     // Test connection before creating the input (optional)
   testConnection: true,
 };
@@ -58,7 +46,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateInputRequest** | **RoutesV2CreateInputRequest**| Input configuration |
+ **createInputRequest** | **CreateInputRequest**| Input configuration |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
@@ -259,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **replaceInput**
-> ModelsInput replaceInput(routesV2PutInputRequest)
+> ModelsInput replaceInput(replaceInputRequest)
 
 Replace an existing input with new configuration including secrets handling
 
@@ -279,19 +267,7 @@ const request: OrganizationInputsApiReplaceInputRequest = {
     // Input ID
   inputId: "input_id_example",
     // Input configuration update
-  routesV2PutInputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    type: "type_example",
-  },
+  replaceInputRequest: null,
     // Test connection before creating the input (optional)
   testConnection: true,
 };
@@ -305,7 +281,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2PutInputRequest** | **RoutesV2PutInputRequest**| Input configuration update |
+ **replaceInputRequest** | **ReplaceInputRequest**| Input configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **inputId** | [**string**] | Input ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
@@ -336,7 +312,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **testInputConnection**
-> RoutesV2SuccessResponse testInputConnection(routesV2TestInputConnectionRequest)
+> RoutesV2SuccessResponse testInputConnection(testInputConnectionRequest)
 
 Tests the connection for a given input type and configuration
 
@@ -354,17 +330,7 @@ const request: OrganizationInputsApiTestInputConnectionRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Input configuration to test
-  routesV2TestInputConnectionRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    type: "type_example",
-  },
+  testInputConnectionRequest: null,
 };
 
 const data = await apiInstance.testInputConnection(request);
@@ -376,7 +342,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2TestInputConnectionRequest** | **RoutesV2TestInputConnectionRequest**| Input configuration to test |
+ **testInputConnectionRequest** | **TestInputConnectionRequest**| Input configuration to test |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -404,7 +370,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateInput**
-> ModelsInput updateInput(routesV2UpdateInputRequest)
+> ModelsInput updateInput(updateInputRequest)
 
 Update an existing input with new configuration including secrets handling
 
@@ -424,19 +390,7 @@ const request: OrganizationInputsApiUpdateInputRequest = {
     // Input ID
   inputId: "input_id_example",
     // Input configuration update
-  routesV2UpdateInputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    type: "type_example",
-  },
+  updateInputRequest: null,
     // Test connection before creating the input (optional)
   testConnection: true,
 };
@@ -450,7 +404,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2UpdateInputRequest** | **RoutesV2UpdateInputRequest**| Input configuration update |
+ **updateInputRequest** | **UpdateInputRequest**| Input configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **inputId** | [**string**] | Input ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined

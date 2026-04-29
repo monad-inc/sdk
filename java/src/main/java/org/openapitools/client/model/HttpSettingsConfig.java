@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.HttpHeaders;
+import org.openapitools.client.model.HttpPayloadStructure;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -81,7 +82,7 @@ public class HttpSettingsConfig {
   public static final String SERIALIZED_NAME_PAYLOAD_STRUCTURE = "payload_structure";
   @SerializedName(SERIALIZED_NAME_PAYLOAD_STRUCTURE)
   @javax.annotation.Nullable
-  private String payloadStructure;
+  private HttpPayloadStructure payloadStructure;
 
   public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
   @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
@@ -204,21 +205,21 @@ public class HttpSettingsConfig {
   }
 
 
-  public HttpSettingsConfig payloadStructure(@javax.annotation.Nullable String payloadStructure) {
+  public HttpSettingsConfig payloadStructure(@javax.annotation.Nullable HttpPayloadStructure payloadStructure) {
     this.payloadStructure = payloadStructure;
     return this;
   }
 
   /**
-   * Determines how the payload is structured. &#39;single&#39; sends each record as a separate request, &#39;array&#39; sends multiple records as an array, &#39;wrapped&#39; sends multiple records within a wrapper object.
+   * Get payloadStructure
    * @return payloadStructure
    */
   @javax.annotation.Nullable
-  public String getPayloadStructure() {
+  public HttpPayloadStructure getPayloadStructure() {
     return payloadStructure;
   }
 
-  public void setPayloadStructure(@javax.annotation.Nullable String payloadStructure) {
+  public void setPayloadStructure(@javax.annotation.Nullable HttpPayloadStructure payloadStructure) {
     this.payloadStructure = payloadStructure;
   }
 
@@ -384,8 +385,9 @@ public class HttpSettingsConfig {
       if ((jsonObj.get("method") != null && !jsonObj.get("method").isJsonNull()) && !jsonObj.get("method").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
       }
-      if ((jsonObj.get("payload_structure") != null && !jsonObj.get("payload_structure").isJsonNull()) && !jsonObj.get("payload_structure").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `payload_structure` to be a primitive type in the JSON string but got `%s`", jsonObj.get("payload_structure").toString()));
+      // validate the optional field `payload_structure`
+      if (jsonObj.get("payload_structure") != null && !jsonObj.get("payload_structure").isJsonNull()) {
+        HttpPayloadStructure.validateJsonElement(jsonObj.get("payload_structure"));
       }
       if ((jsonObj.get("wrapper_key") != null && !jsonObj.get("wrapper_key").isJsonNull()) && !jsonObj.get("wrapper_key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `wrapper_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("wrapper_key").toString()));

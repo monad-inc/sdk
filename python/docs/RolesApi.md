@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_role**
-> ModelsRoleWithPermissions create_role(organization_id, routes_v2_create_role_v2_request)
+> ModelsRoleWithPermissions create_role(organization_id, create_role_request)
 
 Create role
 
@@ -25,8 +25,8 @@ Create a new role with permissions
 
 ```python
 import monad
+from monad.models.create_role_request import CreateRoleRequest
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
-from monad.models.routes_v2_create_role_v2_request import RoutesV2CreateRoleV2Request
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -58,11 +58,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.RolesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_create_role_v2_request = monad.RoutesV2CreateRoleV2Request() # RoutesV2CreateRoleV2Request | Request body for creating a role
+    create_role_request = monad.CreateRoleRequest() # CreateRoleRequest | Request body for creating a role
 
     try:
         # Create role
-        api_response = api_instance.create_role(organization_id, routes_v2_create_role_v2_request)
+        api_response = api_instance.create_role(organization_id, create_role_request)
         print("The response of RolesApi->create_role:\n")
         pprint(api_response)
     except Exception as e:
@@ -77,7 +77,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_create_role_v2_request** | [**RoutesV2CreateRoleV2Request**](RoutesV2CreateRoleV2Request.md)| Request body for creating a role | 
+ **create_role_request** | [**CreateRoleRequest**](CreateRoleRequest.md)| Request body for creating a role | 
 
 ### Return type
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_role**
-> ModelsRoleWithPermissions update_role(organization_id, role_id, routes_v2_update_role_v2_request)
+> ModelsRoleWithPermissions update_role(organization_id, role_id, update_role_request)
 
 Update role
 
@@ -385,7 +385,7 @@ Update a role and its permissions
 ```python
 import monad
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
-from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request
+from monad.models.update_role_request import UpdateRoleRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -418,11 +418,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.RolesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     role_id = 'role_id_example' # str | Role ID
-    routes_v2_update_role_v2_request = monad.RoutesV2UpdateRoleV2Request() # RoutesV2UpdateRoleV2Request | Request body for updating a role
+    update_role_request = monad.UpdateRoleRequest() # UpdateRoleRequest | Request body for updating a role
 
     try:
         # Update role
-        api_response = api_instance.update_role(organization_id, role_id, routes_v2_update_role_v2_request)
+        api_response = api_instance.update_role(organization_id, role_id, update_role_request)
         print("The response of RolesApi->update_role:\n")
         pprint(api_response)
     except Exception as e:
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **role_id** | **str**| Role ID | 
- **routes_v2_update_role_v2_request** | [**RoutesV2UpdateRoleV2Request**](RoutesV2UpdateRoleV2Request.md)| Request body for updating a role | 
+ **update_role_request** | [**UpdateRoleRequest**](UpdateRoleRequest.md)| Request body for updating a role | 
 
 ### Return type
 

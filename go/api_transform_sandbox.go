@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -28,12 +28,12 @@ type ApiApplyTransformationRequest struct {
 	ctx context.Context
 	ApiService *TransformSandboxAPIService
 	organizationId string
-	routesV2ApplyTransformationRequest *RoutesV2ApplyTransformationRequest
+	applyTransformationV2Request *ApplyTransformationV2Request
 }
 
 // Transform configuration and record
-func (r ApiApplyTransformationRequest) RoutesV2ApplyTransformationRequest(routesV2ApplyTransformationRequest RoutesV2ApplyTransformationRequest) ApiApplyTransformationRequest {
-	r.routesV2ApplyTransformationRequest = &routesV2ApplyTransformationRequest
+func (r ApiApplyTransformationRequest) ApplyTransformationV2Request(applyTransformationV2Request ApplyTransformationV2Request) ApiApplyTransformationRequest {
+	r.applyTransformationV2Request = &applyTransformationV2Request
 	return r
 }
 
@@ -79,8 +79,8 @@ func (a *TransformSandboxAPIService) ApplyTransformationExecute(r ApiApplyTransf
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2ApplyTransformationRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2ApplyTransformationRequest is required and must be specified")
+	if r.applyTransformationV2Request == nil {
+		return localVarReturnValue, nil, reportError("applyTransformationV2Request is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -101,7 +101,7 @@ func (a *TransformSandboxAPIService) ApplyTransformationExecute(r ApiApplyTransf
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2ApplyTransformationRequest
+	localVarPostBody = r.applyTransformationV2Request
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -191,12 +191,12 @@ func (a *TransformSandboxAPIService) ApplyTransformationExecute(r ApiApplyTransf
 type ApiApplyTransformationV2Request struct {
 	ctx context.Context
 	ApiService *TransformSandboxAPIService
-	routesV2ApplyTransformationRequest *RoutesV2ApplyTransformationRequest
+	applyTransformationV2Request *ApplyTransformationV2Request
 }
 
 // Transform configuration and record
-func (r ApiApplyTransformationV2Request) RoutesV2ApplyTransformationRequest(routesV2ApplyTransformationRequest RoutesV2ApplyTransformationRequest) ApiApplyTransformationV2Request {
-	r.routesV2ApplyTransformationRequest = &routesV2ApplyTransformationRequest
+func (r ApiApplyTransformationV2Request) ApplyTransformationV2Request(applyTransformationV2Request ApplyTransformationV2Request) ApiApplyTransformationV2Request {
+	r.applyTransformationV2Request = &applyTransformationV2Request
 	return r
 }
 
@@ -239,8 +239,8 @@ func (a *TransformSandboxAPIService) ApplyTransformationV2Execute(r ApiApplyTran
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2ApplyTransformationRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2ApplyTransformationRequest is required and must be specified")
+	if r.applyTransformationV2Request == nil {
+		return localVarReturnValue, nil, reportError("applyTransformationV2Request is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -261,7 +261,7 @@ func (a *TransformSandboxAPIService) ApplyTransformationV2Execute(r ApiApplyTran
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2ApplyTransformationRequest
+	localVarPostBody = r.applyTransformationV2Request
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -351,12 +351,12 @@ func (a *TransformSandboxAPIService) ApplyTransformationV2Execute(r ApiApplyTran
 type ApiGenerateRecordRequest struct {
 	ctx context.Context
 	ApiService *TransformSandboxAPIService
-	routesV2GenerateRecordRequest *RoutesV2GenerateRecordRequest
+	generateRecordRequest *GenerateRecordRequest
 }
 
 // Record generation parameters
-func (r ApiGenerateRecordRequest) RoutesV2GenerateRecordRequest(routesV2GenerateRecordRequest RoutesV2GenerateRecordRequest) ApiGenerateRecordRequest {
-	r.routesV2GenerateRecordRequest = &routesV2GenerateRecordRequest
+func (r ApiGenerateRecordRequest) GenerateRecordRequest(generateRecordRequest GenerateRecordRequest) ApiGenerateRecordRequest {
+	r.generateRecordRequest = &generateRecordRequest
 	return r
 }
 
@@ -399,8 +399,8 @@ func (a *TransformSandboxAPIService) GenerateRecordExecute(r ApiGenerateRecordRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2GenerateRecordRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2GenerateRecordRequest is required and must be specified")
+	if r.generateRecordRequest == nil {
+		return localVarReturnValue, nil, reportError("generateRecordRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -421,7 +421,7 @@ func (a *TransformSandboxAPIService) GenerateRecordExecute(r ApiGenerateRecordRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2GenerateRecordRequest
+	localVarPostBody = r.generateRecordRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

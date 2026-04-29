@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -20,16 +20,14 @@ var _ MappedNullable = &ConvertTimestampArgumentsConfig{}
 
 // ConvertTimestampArgumentsConfig struct for ConvertTimestampArgumentsConfig
 type ConvertTimestampArgumentsConfig struct {
-	// Required: Format of source timestamp
-	SourceFormat *string `json:"source_format,omitempty"`
+	SourceFormat *ConvertTimestampTimestampFormat `json:"source_format,omitempty"`
 	// Optional: Custom Go time layout (only if SourceFormat = \"custom\")
 	SourceFormatCustom *string `json:"source_format_custom,omitempty"`
 	// Required: JSONPath to source timestamp field
 	SourceKey *string `json:"source_key,omitempty"`
 	// Optional: Source timezone (default: UTC)
 	SourceTimezone *string `json:"source_timezone,omitempty"`
-	// Required: Format of source timestamp
-	TargetFormat *string `json:"target_format,omitempty"`
+	TargetFormat *ConvertTimestampTimestampFormat `json:"target_format,omitempty"`
 	// Optional: Custom target format (only if TargetFormat = \"custom\")
 	TargetFormatCustom *string `json:"target_format_custom,omitempty"`
 	// Optional: Target field (if empty, overwrites SourceKey)
@@ -56,9 +54,9 @@ func NewConvertTimestampArgumentsConfigWithDefaults() *ConvertTimestampArguments
 }
 
 // GetSourceFormat returns the SourceFormat field value if set, zero value otherwise.
-func (o *ConvertTimestampArgumentsConfig) GetSourceFormat() string {
+func (o *ConvertTimestampArgumentsConfig) GetSourceFormat() ConvertTimestampTimestampFormat {
 	if o == nil || IsNil(o.SourceFormat) {
-		var ret string
+		var ret ConvertTimestampTimestampFormat
 		return ret
 	}
 	return *o.SourceFormat
@@ -66,7 +64,7 @@ func (o *ConvertTimestampArgumentsConfig) GetSourceFormat() string {
 
 // GetSourceFormatOk returns a tuple with the SourceFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConvertTimestampArgumentsConfig) GetSourceFormatOk() (*string, bool) {
+func (o *ConvertTimestampArgumentsConfig) GetSourceFormatOk() (*ConvertTimestampTimestampFormat, bool) {
 	if o == nil || IsNil(o.SourceFormat) {
 		return nil, false
 	}
@@ -82,8 +80,8 @@ func (o *ConvertTimestampArgumentsConfig) HasSourceFormat() bool {
 	return false
 }
 
-// SetSourceFormat gets a reference to the given string and assigns it to the SourceFormat field.
-func (o *ConvertTimestampArgumentsConfig) SetSourceFormat(v string) {
+// SetSourceFormat gets a reference to the given ConvertTimestampTimestampFormat and assigns it to the SourceFormat field.
+func (o *ConvertTimestampArgumentsConfig) SetSourceFormat(v ConvertTimestampTimestampFormat) {
 	o.SourceFormat = &v
 }
 
@@ -184,9 +182,9 @@ func (o *ConvertTimestampArgumentsConfig) SetSourceTimezone(v string) {
 }
 
 // GetTargetFormat returns the TargetFormat field value if set, zero value otherwise.
-func (o *ConvertTimestampArgumentsConfig) GetTargetFormat() string {
+func (o *ConvertTimestampArgumentsConfig) GetTargetFormat() ConvertTimestampTimestampFormat {
 	if o == nil || IsNil(o.TargetFormat) {
-		var ret string
+		var ret ConvertTimestampTimestampFormat
 		return ret
 	}
 	return *o.TargetFormat
@@ -194,7 +192,7 @@ func (o *ConvertTimestampArgumentsConfig) GetTargetFormat() string {
 
 // GetTargetFormatOk returns a tuple with the TargetFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConvertTimestampArgumentsConfig) GetTargetFormatOk() (*string, bool) {
+func (o *ConvertTimestampArgumentsConfig) GetTargetFormatOk() (*ConvertTimestampTimestampFormat, bool) {
 	if o == nil || IsNil(o.TargetFormat) {
 		return nil, false
 	}
@@ -210,8 +208,8 @@ func (o *ConvertTimestampArgumentsConfig) HasTargetFormat() bool {
 	return false
 }
 
-// SetTargetFormat gets a reference to the given string and assigns it to the TargetFormat field.
-func (o *ConvertTimestampArgumentsConfig) SetTargetFormat(v string) {
+// SetTargetFormat gets a reference to the given ConvertTimestampTimestampFormat and assigns it to the TargetFormat field.
+func (o *ConvertTimestampArgumentsConfig) SetTargetFormat(v ConvertTimestampTimestampFormat) {
 	o.TargetFormat = &v
 }
 

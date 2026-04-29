@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateBillingAccountRequest;
 import org.openapitools.client.model.ModelsBillingAccount;
 import org.openapitools.client.model.ModelsBillingAccountList;
-import org.openapitools.client.model.RoutesV2CreateBillingAccountRequest;
-import org.openapitools.client.model.RoutesV2UpdateBillingAccountRequest;
+import org.openapitools.client.model.UpdateBillingAccountRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -77,7 +77,7 @@ public class BillingAccountsApi {
 
     /**
      * Build call for createBillingAccount
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account (required)
+     * @param createBillingAccountRequest Request body for creating a billing account (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -90,7 +90,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to create Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBillingAccountCall(@javax.annotation.Nonnull RoutesV2CreateBillingAccountRequest routesV2CreateBillingAccountRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBillingAccountCall(@javax.annotation.Nonnull CreateBillingAccountRequest createBillingAccountRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -104,7 +104,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreateBillingAccountRequest;
+        Object localVarPostBody = createBillingAccountRequest;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts";
@@ -136,20 +136,20 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBillingAccountValidateBeforeCall(@javax.annotation.Nonnull RoutesV2CreateBillingAccountRequest routesV2CreateBillingAccountRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routesV2CreateBillingAccountRequest' is set
-        if (routesV2CreateBillingAccountRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreateBillingAccountRequest' when calling createBillingAccount(Async)");
+    private okhttp3.Call createBillingAccountValidateBeforeCall(@javax.annotation.Nonnull CreateBillingAccountRequest createBillingAccountRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'createBillingAccountRequest' is set
+        if (createBillingAccountRequest == null) {
+            throw new ApiException("Missing the required parameter 'createBillingAccountRequest' when calling createBillingAccount(Async)");
         }
 
-        return createBillingAccountCall(routesV2CreateBillingAccountRequest, _callback);
+        return createBillingAccountCall(createBillingAccountRequest, _callback);
 
     }
 
     /**
      * Create Billing Account
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account (required)
+     * @param createBillingAccountRequest Request body for creating a billing account (required)
      * @return ModelsBillingAccount
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -161,15 +161,15 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to create Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccount createBillingAccount(@javax.annotation.Nonnull RoutesV2CreateBillingAccountRequest routesV2CreateBillingAccountRequest) throws ApiException {
-        ApiResponse<ModelsBillingAccount> localVarResp = createBillingAccountWithHttpInfo(routesV2CreateBillingAccountRequest);
+    public ModelsBillingAccount createBillingAccount(@javax.annotation.Nonnull CreateBillingAccountRequest createBillingAccountRequest) throws ApiException {
+        ApiResponse<ModelsBillingAccount> localVarResp = createBillingAccountWithHttpInfo(createBillingAccountRequest);
         return localVarResp.getData();
     }
 
     /**
      * Create Billing Account
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account (required)
+     * @param createBillingAccountRequest Request body for creating a billing account (required)
      * @return ApiResponse&lt;ModelsBillingAccount&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -181,8 +181,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to create Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccount> createBillingAccountWithHttpInfo(@javax.annotation.Nonnull RoutesV2CreateBillingAccountRequest routesV2CreateBillingAccountRequest) throws ApiException {
-        okhttp3.Call localVarCall = createBillingAccountValidateBeforeCall(routesV2CreateBillingAccountRequest, null);
+    public ApiResponse<ModelsBillingAccount> createBillingAccountWithHttpInfo(@javax.annotation.Nonnull CreateBillingAccountRequest createBillingAccountRequest) throws ApiException {
+        okhttp3.Call localVarCall = createBillingAccountValidateBeforeCall(createBillingAccountRequest, null);
         Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -190,7 +190,7 @@ public class BillingAccountsApi {
     /**
      * Create Billing Account (asynchronously)
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account (required)
+     * @param createBillingAccountRequest Request body for creating a billing account (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -203,9 +203,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to create Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBillingAccountAsync(@javax.annotation.Nonnull RoutesV2CreateBillingAccountRequest routesV2CreateBillingAccountRequest, final ApiCallback<ModelsBillingAccount> _callback) throws ApiException {
+    public okhttp3.Call createBillingAccountAsync(@javax.annotation.Nonnull CreateBillingAccountRequest createBillingAccountRequest, final ApiCallback<ModelsBillingAccount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createBillingAccountValidateBeforeCall(routesV2CreateBillingAccountRequest, _callback);
+        okhttp3.Call localVarCall = createBillingAccountValidateBeforeCall(createBillingAccountRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -620,7 +620,7 @@ public class BillingAccountsApi {
     /**
      * Build call for updateBillingAccount
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account (required)
+     * @param updateBillingAccountRequest Request body for updating a billing account (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -633,7 +633,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to update Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBillingAccountCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRequest routesV2UpdateBillingAccountRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateBillingAccountCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull UpdateBillingAccountRequest updateBillingAccountRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -647,7 +647,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2UpdateBillingAccountRequest;
+        Object localVarPostBody = updateBillingAccountRequest;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}"
@@ -680,18 +680,18 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateBillingAccountValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRequest routesV2UpdateBillingAccountRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateBillingAccountValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull UpdateBillingAccountRequest updateBillingAccountRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling updateBillingAccount(Async)");
         }
 
-        // verify the required parameter 'routesV2UpdateBillingAccountRequest' is set
-        if (routesV2UpdateBillingAccountRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2UpdateBillingAccountRequest' when calling updateBillingAccount(Async)");
+        // verify the required parameter 'updateBillingAccountRequest' is set
+        if (updateBillingAccountRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateBillingAccountRequest' when calling updateBillingAccount(Async)");
         }
 
-        return updateBillingAccountCall(billingAccountId, routesV2UpdateBillingAccountRequest, _callback);
+        return updateBillingAccountCall(billingAccountId, updateBillingAccountRequest, _callback);
 
     }
 
@@ -699,7 +699,7 @@ public class BillingAccountsApi {
      * Update Billing Account
      * Update Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account (required)
+     * @param updateBillingAccountRequest Request body for updating a billing account (required)
      * @return ModelsBillingAccount
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -711,8 +711,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to update Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccount updateBillingAccount(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRequest routesV2UpdateBillingAccountRequest) throws ApiException {
-        ApiResponse<ModelsBillingAccount> localVarResp = updateBillingAccountWithHttpInfo(billingAccountId, routesV2UpdateBillingAccountRequest);
+    public ModelsBillingAccount updateBillingAccount(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull UpdateBillingAccountRequest updateBillingAccountRequest) throws ApiException {
+        ApiResponse<ModelsBillingAccount> localVarResp = updateBillingAccountWithHttpInfo(billingAccountId, updateBillingAccountRequest);
         return localVarResp.getData();
     }
 
@@ -720,7 +720,7 @@ public class BillingAccountsApi {
      * Update Billing Account
      * Update Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account (required)
+     * @param updateBillingAccountRequest Request body for updating a billing account (required)
      * @return ApiResponse&lt;ModelsBillingAccount&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -732,8 +732,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to update Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccount> updateBillingAccountWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRequest routesV2UpdateBillingAccountRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateBillingAccountValidateBeforeCall(billingAccountId, routesV2UpdateBillingAccountRequest, null);
+    public ApiResponse<ModelsBillingAccount> updateBillingAccountWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull UpdateBillingAccountRequest updateBillingAccountRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateBillingAccountValidateBeforeCall(billingAccountId, updateBillingAccountRequest, null);
         Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -742,7 +742,7 @@ public class BillingAccountsApi {
      * Update Billing Account (asynchronously)
      * Update Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account (required)
+     * @param updateBillingAccountRequest Request body for updating a billing account (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -755,9 +755,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to update Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBillingAccountAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRequest routesV2UpdateBillingAccountRequest, final ApiCallback<ModelsBillingAccount> _callback) throws ApiException {
+    public okhttp3.Call updateBillingAccountAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull UpdateBillingAccountRequest updateBillingAccountRequest, final ApiCallback<ModelsBillingAccount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateBillingAccountValidateBeforeCall(billingAccountId, routesV2UpdateBillingAccountRequest, _callback);
+        okhttp3.Call localVarCall = updateBillingAccountValidateBeforeCall(billingAccountId, updateBillingAccountRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

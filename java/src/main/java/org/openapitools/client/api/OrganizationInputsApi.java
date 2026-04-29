@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,15 +27,15 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateInputRequest;
 import org.openapitools.client.model.ModelsInput;
 import org.openapitools.client.model.ModelsInputList;
+import org.openapitools.client.model.ReplaceInputRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesGetInputResponse;
-import org.openapitools.client.model.RoutesV2CreateInputRequest;
-import org.openapitools.client.model.RoutesV2PutInputRequest;
 import org.openapitools.client.model.RoutesV2SuccessResponse;
-import org.openapitools.client.model.RoutesV2TestInputConnectionRequest;
-import org.openapitools.client.model.RoutesV2UpdateInputRequest;
+import org.openapitools.client.model.TestInputConnectionRequest;
+import org.openapitools.client.model.UpdateInputRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -83,7 +83,7 @@ public class OrganizationInputsApi {
     /**
      * Build call for createInput
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateInputRequest Input configuration (required)
+     * @param createInputRequest Input configuration (required)
      * @param testConnection Test connection before creating the input (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -97,7 +97,7 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInputCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateInputRequest routesV2CreateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createInputCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateInputRequest createInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -111,7 +111,7 @@ public class OrganizationInputsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreateInputRequest;
+        Object localVarPostBody = createInputRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/inputs"
@@ -148,18 +148,18 @@ public class OrganizationInputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInputValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateInputRequest routesV2CreateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createInputValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateInputRequest createInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createInput(Async)");
         }
 
-        // verify the required parameter 'routesV2CreateInputRequest' is set
-        if (routesV2CreateInputRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreateInputRequest' when calling createInput(Async)");
+        // verify the required parameter 'createInputRequest' is set
+        if (createInputRequest == null) {
+            throw new ApiException("Missing the required parameter 'createInputRequest' when calling createInput(Async)");
         }
 
-        return createInputCall(organizationId, routesV2CreateInputRequest, testConnection, _callback);
+        return createInputCall(organizationId, createInputRequest, testConnection, _callback);
 
     }
 
@@ -167,7 +167,7 @@ public class OrganizationInputsApi {
      * Create input
      * Create a new input with configuration including secrets handling
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateInputRequest Input configuration (required)
+     * @param createInputRequest Input configuration (required)
      * @param testConnection Test connection before creating the input (optional)
      * @return ModelsInput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,8 +180,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsInput createInput(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateInputRequest routesV2CreateInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        ApiResponse<ModelsInput> localVarResp = createInputWithHttpInfo(organizationId, routesV2CreateInputRequest, testConnection);
+    public ModelsInput createInput(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateInputRequest createInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsInput> localVarResp = createInputWithHttpInfo(organizationId, createInputRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -189,7 +189,7 @@ public class OrganizationInputsApi {
      * Create input
      * Create a new input with configuration including secrets handling
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateInputRequest Input configuration (required)
+     * @param createInputRequest Input configuration (required)
      * @param testConnection Test connection before creating the input (optional)
      * @return ApiResponse&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -202,8 +202,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsInput> createInputWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateInputRequest routesV2CreateInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        okhttp3.Call localVarCall = createInputValidateBeforeCall(organizationId, routesV2CreateInputRequest, testConnection, null);
+    public ApiResponse<ModelsInput> createInputWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateInputRequest createInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = createInputValidateBeforeCall(organizationId, createInputRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -212,7 +212,7 @@ public class OrganizationInputsApi {
      * Create input (asynchronously)
      * Create a new input with configuration including secrets handling
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateInputRequest Input configuration (required)
+     * @param createInputRequest Input configuration (required)
      * @param testConnection Test connection before creating the input (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -226,9 +226,9 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInputAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateInputRequest routesV2CreateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
+    public okhttp3.Call createInputAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateInputRequest createInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createInputValidateBeforeCall(organizationId, routesV2CreateInputRequest, testConnection, _callback);
+        okhttp3.Call localVarCall = createInputValidateBeforeCall(organizationId, createInputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -658,7 +658,7 @@ public class OrganizationInputsApi {
      * Build call for replaceInput
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param replaceInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -673,7 +673,7 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceInputCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceInputCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull ReplaceInputRequest replaceInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -687,7 +687,7 @@ public class OrganizationInputsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2PutInputRequest;
+        Object localVarPostBody = replaceInputRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/inputs/{input_id}"
@@ -725,7 +725,7 @@ public class OrganizationInputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceInputValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceInputValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull ReplaceInputRequest replaceInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling replaceInput(Async)");
@@ -736,12 +736,12 @@ public class OrganizationInputsApi {
             throw new ApiException("Missing the required parameter 'inputId' when calling replaceInput(Async)");
         }
 
-        // verify the required parameter 'routesV2PutInputRequest' is set
-        if (routesV2PutInputRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2PutInputRequest' when calling replaceInput(Async)");
+        // verify the required parameter 'replaceInputRequest' is set
+        if (replaceInputRequest == null) {
+            throw new ApiException("Missing the required parameter 'replaceInputRequest' when calling replaceInput(Async)");
         }
 
-        return replaceInputCall(organizationId, inputId, routesV2PutInputRequest, testConnection, _callback);
+        return replaceInputCall(organizationId, inputId, replaceInputRequest, testConnection, _callback);
 
     }
 
@@ -750,7 +750,7 @@ public class OrganizationInputsApi {
      * Replace an existing input with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param replaceInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @return ModelsInput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -764,8 +764,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsInput replaceInput(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        ApiResponse<ModelsInput> localVarResp = replaceInputWithHttpInfo(organizationId, inputId, routesV2PutInputRequest, testConnection);
+    public ModelsInput replaceInput(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull ReplaceInputRequest replaceInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsInput> localVarResp = replaceInputWithHttpInfo(organizationId, inputId, replaceInputRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -774,7 +774,7 @@ public class OrganizationInputsApi {
      * Replace an existing input with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param replaceInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @return ApiResponse&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -788,8 +788,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsInput> replaceInputWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        okhttp3.Call localVarCall = replaceInputValidateBeforeCall(organizationId, inputId, routesV2PutInputRequest, testConnection, null);
+    public ApiResponse<ModelsInput> replaceInputWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull ReplaceInputRequest replaceInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = replaceInputValidateBeforeCall(organizationId, inputId, replaceInputRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -799,7 +799,7 @@ public class OrganizationInputsApi {
      * Replace an existing input with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param replaceInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -814,9 +814,9 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceInputAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
+    public okhttp3.Call replaceInputAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull ReplaceInputRequest replaceInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = replaceInputValidateBeforeCall(organizationId, inputId, routesV2PutInputRequest, testConnection, _callback);
+        okhttp3.Call localVarCall = replaceInputValidateBeforeCall(organizationId, inputId, replaceInputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -824,7 +824,7 @@ public class OrganizationInputsApi {
     /**
      * Build call for testInputConnection
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param testInputConnectionRequest Input configuration to test (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -837,7 +837,7 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call testInputConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call testInputConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestInputConnectionRequest testInputConnectionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -851,7 +851,7 @@ public class OrganizationInputsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2TestInputConnectionRequest;
+        Object localVarPostBody = testInputConnectionRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/inputs/test-connection"
@@ -884,18 +884,18 @@ public class OrganizationInputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call testInputConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call testInputConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestInputConnectionRequest testInputConnectionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling testInputConnection(Async)");
         }
 
-        // verify the required parameter 'routesV2TestInputConnectionRequest' is set
-        if (routesV2TestInputConnectionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2TestInputConnectionRequest' when calling testInputConnection(Async)");
+        // verify the required parameter 'testInputConnectionRequest' is set
+        if (testInputConnectionRequest == null) {
+            throw new ApiException("Missing the required parameter 'testInputConnectionRequest' when calling testInputConnection(Async)");
         }
 
-        return testInputConnectionCall(organizationId, routesV2TestInputConnectionRequest, _callback);
+        return testInputConnectionCall(organizationId, testInputConnectionRequest, _callback);
 
     }
 
@@ -903,7 +903,7 @@ public class OrganizationInputsApi {
      * Test input connection
      * Tests the connection for a given input type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param testInputConnectionRequest Input configuration to test (required)
      * @return RoutesV2SuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -915,8 +915,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SuccessResponse testInputConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest) throws ApiException {
-        ApiResponse<RoutesV2SuccessResponse> localVarResp = testInputConnectionWithHttpInfo(organizationId, routesV2TestInputConnectionRequest);
+    public RoutesV2SuccessResponse testInputConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestInputConnectionRequest testInputConnectionRequest) throws ApiException {
+        ApiResponse<RoutesV2SuccessResponse> localVarResp = testInputConnectionWithHttpInfo(organizationId, testInputConnectionRequest);
         return localVarResp.getData();
     }
 
@@ -924,7 +924,7 @@ public class OrganizationInputsApi {
      * Test input connection
      * Tests the connection for a given input type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param testInputConnectionRequest Input configuration to test (required)
      * @return ApiResponse&lt;RoutesV2SuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -936,8 +936,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SuccessResponse> testInputConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest) throws ApiException {
-        okhttp3.Call localVarCall = testInputConnectionValidateBeforeCall(organizationId, routesV2TestInputConnectionRequest, null);
+    public ApiResponse<RoutesV2SuccessResponse> testInputConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestInputConnectionRequest testInputConnectionRequest) throws ApiException {
+        okhttp3.Call localVarCall = testInputConnectionValidateBeforeCall(organizationId, testInputConnectionRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -946,7 +946,7 @@ public class OrganizationInputsApi {
      * Test input connection (asynchronously)
      * Tests the connection for a given input type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param testInputConnectionRequest Input configuration to test (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -959,9 +959,9 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call testInputConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
+    public okhttp3.Call testInputConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestInputConnectionRequest testInputConnectionRequest, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = testInputConnectionValidateBeforeCall(organizationId, routesV2TestInputConnectionRequest, _callback);
+        okhttp3.Call localVarCall = testInputConnectionValidateBeforeCall(organizationId, testInputConnectionRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -970,7 +970,7 @@ public class OrganizationInputsApi {
      * Build call for updateInput
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2UpdateInputRequest Input configuration update (required)
+     * @param updateInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -985,7 +985,7 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateInputCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2UpdateInputRequest routesV2UpdateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateInputCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull UpdateInputRequest updateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -999,7 +999,7 @@ public class OrganizationInputsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2UpdateInputRequest;
+        Object localVarPostBody = updateInputRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/inputs/{input_id}"
@@ -1037,7 +1037,7 @@ public class OrganizationInputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateInputValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2UpdateInputRequest routesV2UpdateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateInputValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull UpdateInputRequest updateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateInput(Async)");
@@ -1048,12 +1048,12 @@ public class OrganizationInputsApi {
             throw new ApiException("Missing the required parameter 'inputId' when calling updateInput(Async)");
         }
 
-        // verify the required parameter 'routesV2UpdateInputRequest' is set
-        if (routesV2UpdateInputRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2UpdateInputRequest' when calling updateInput(Async)");
+        // verify the required parameter 'updateInputRequest' is set
+        if (updateInputRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateInputRequest' when calling updateInput(Async)");
         }
 
-        return updateInputCall(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _callback);
+        return updateInputCall(organizationId, inputId, updateInputRequest, testConnection, _callback);
 
     }
 
@@ -1062,7 +1062,7 @@ public class OrganizationInputsApi {
      * Update an existing input with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2UpdateInputRequest Input configuration update (required)
+     * @param updateInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @return ModelsInput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1076,8 +1076,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsInput updateInput(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2UpdateInputRequest routesV2UpdateInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        ApiResponse<ModelsInput> localVarResp = updateInputWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, testConnection);
+    public ModelsInput updateInput(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull UpdateInputRequest updateInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsInput> localVarResp = updateInputWithHttpInfo(organizationId, inputId, updateInputRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -1086,7 +1086,7 @@ public class OrganizationInputsApi {
      * Update an existing input with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2UpdateInputRequest Input configuration update (required)
+     * @param updateInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @return ApiResponse&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1100,8 +1100,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsInput> updateInputWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2UpdateInputRequest routesV2UpdateInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        okhttp3.Call localVarCall = updateInputValidateBeforeCall(organizationId, inputId, routesV2UpdateInputRequest, testConnection, null);
+    public ApiResponse<ModelsInput> updateInputWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull UpdateInputRequest updateInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = updateInputValidateBeforeCall(organizationId, inputId, updateInputRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1111,7 +1111,7 @@ public class OrganizationInputsApi {
      * Update an existing input with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param inputId Input ID (required)
-     * @param routesV2UpdateInputRequest Input configuration update (required)
+     * @param updateInputRequest Input configuration update (required)
      * @param testConnection Test connection before creating the input (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1126,9 +1126,9 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateInputAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2UpdateInputRequest routesV2UpdateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
+    public okhttp3.Call updateInputAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull UpdateInputRequest updateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateInputValidateBeforeCall(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _callback);
+        okhttp3.Call localVarCall = updateInputValidateBeforeCall(organizationId, inputId, updateInputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

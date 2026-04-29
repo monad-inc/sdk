@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_input**
-> ModelsInput create_input(organization_id, routes_v2_create_input_request, test_connection=test_connection)
+> ModelsInput create_input(organization_id, create_input_request, test_connection=test_connection)
 
 Create input
 
@@ -27,8 +27,8 @@ Create a new input with configuration including secrets handling
 
 ```python
 import monad
+from monad.models.create_input_request import CreateInputRequest
 from monad.models.models_input import ModelsInput
-from monad.models.routes_v2_create_input_request import RoutesV2CreateInputRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -60,12 +60,12 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_create_input_request = monad.RoutesV2CreateInputRequest() # RoutesV2CreateInputRequest | Input configuration
+    create_input_request = monad.CreateInputRequest() # CreateInputRequest | Input configuration
     test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Create input
-        api_response = api_instance.create_input(organization_id, routes_v2_create_input_request, test_connection=test_connection)
+        api_response = api_instance.create_input(organization_id, create_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->create_input:\n")
         pprint(api_response)
     except Exception as e:
@@ -80,7 +80,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_create_input_request** | [**RoutesV2CreateInputRequest**](RoutesV2CreateInputRequest.md)| Input configuration | 
+ **create_input_request** | [**CreateInputRequest**](CreateInputRequest.md)| Input configuration | 
  **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_input**
-> ModelsInput replace_input(organization_id, input_id, routes_v2_put_input_request, test_connection=test_connection)
+> ModelsInput replace_input(organization_id, input_id, replace_input_request, test_connection=test_connection)
 
 Replace input
 
@@ -387,7 +387,7 @@ Replace an existing input with new configuration including secrets handling
 ```python
 import monad
 from monad.models.models_input import ModelsInput
-from monad.models.routes_v2_put_input_request import RoutesV2PutInputRequest
+from monad.models.replace_input_request import ReplaceInputRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -420,12 +420,12 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     input_id = 'input_id_example' # str | Input ID
-    routes_v2_put_input_request = monad.RoutesV2PutInputRequest() # RoutesV2PutInputRequest | Input configuration update
+    replace_input_request = monad.ReplaceInputRequest() # ReplaceInputRequest | Input configuration update
     test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Replace input
-        api_response = api_instance.replace_input(organization_id, input_id, routes_v2_put_input_request, test_connection=test_connection)
+        api_response = api_instance.replace_input(organization_id, input_id, replace_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->replace_input:\n")
         pprint(api_response)
     except Exception as e:
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **input_id** | **str**| Input ID | 
- **routes_v2_put_input_request** | [**RoutesV2PutInputRequest**](RoutesV2PutInputRequest.md)| Input configuration update | 
+ **replace_input_request** | [**ReplaceInputRequest**](ReplaceInputRequest.md)| Input configuration update | 
  **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_input_connection**
-> RoutesV2SuccessResponse test_input_connection(organization_id, routes_v2_test_input_connection_request)
+> RoutesV2SuccessResponse test_input_connection(organization_id, test_input_connection_request)
 
 Test input connection
 
@@ -483,7 +483,7 @@ Tests the connection for a given input type and configuration
 ```python
 import monad
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
-from monad.models.routes_v2_test_input_connection_request import RoutesV2TestInputConnectionRequest
+from monad.models.test_input_connection_request import TestInputConnectionRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -515,11 +515,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_test_input_connection_request = monad.RoutesV2TestInputConnectionRequest() # RoutesV2TestInputConnectionRequest | Input configuration to test
+    test_input_connection_request = monad.TestInputConnectionRequest() # TestInputConnectionRequest | Input configuration to test
 
     try:
         # Test input connection
-        api_response = api_instance.test_input_connection(organization_id, routes_v2_test_input_connection_request)
+        api_response = api_instance.test_input_connection(organization_id, test_input_connection_request)
         print("The response of OrganizationInputsApi->test_input_connection:\n")
         pprint(api_response)
     except Exception as e:
@@ -534,7 +534,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_test_input_connection_request** | [**RoutesV2TestInputConnectionRequest**](RoutesV2TestInputConnectionRequest.md)| Input configuration to test | 
+ **test_input_connection_request** | [**TestInputConnectionRequest**](TestInputConnectionRequest.md)| Input configuration to test | 
 
 ### Return type
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_input**
-> ModelsInput update_input(organization_id, input_id, routes_v2_update_input_request, test_connection=test_connection)
+> ModelsInput update_input(organization_id, input_id, update_input_request, test_connection=test_connection)
 
 Update input
 
@@ -574,7 +574,7 @@ Update an existing input with new configuration including secrets handling
 ```python
 import monad
 from monad.models.models_input import ModelsInput
-from monad.models.routes_v2_update_input_request import RoutesV2UpdateInputRequest
+from monad.models.update_input_request import UpdateInputRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -607,12 +607,12 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     input_id = 'input_id_example' # str | Input ID
-    routes_v2_update_input_request = monad.RoutesV2UpdateInputRequest() # RoutesV2UpdateInputRequest | Input configuration update
+    update_input_request = monad.UpdateInputRequest() # UpdateInputRequest | Input configuration update
     test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Update input
-        api_response = api_instance.update_input(organization_id, input_id, routes_v2_update_input_request, test_connection=test_connection)
+        api_response = api_instance.update_input(organization_id, input_id, update_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->update_input:\n")
         pprint(api_response)
     except Exception as e:
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **input_id** | **str**| Input ID | 
- **routes_v2_update_input_request** | [**RoutesV2UpdateInputRequest**](RoutesV2UpdateInputRequest.md)| Input configuration update | 
+ **update_input_request** | [**UpdateInputRequest**](UpdateInputRequest.md)| Input configuration update | 
  **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type

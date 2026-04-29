@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## ExportTransform
 
-> string ExportTransform(ctx).CommunityTransformsInternalTransformConfig(communityTransformsInternalTransformConfig).Execute()
+> string ExportTransform(ctx).ExportTransformRequest(exportTransformRequest).Execute()
 
 Export transform to YAML
 
@@ -34,11 +34,11 @@ import (
 )
 
 func main() {
-	communityTransformsInternalTransformConfig := *openapiclient.NewCommunityTransformsInternalTransformConfig() // CommunityTransformsInternalTransformConfig | Transform to export and optional metadata
+	exportTransformRequest := openapiclient.ExportTransform_request{CommunityTransformsInternalTransformConfig: openapiclient.NewCommunityTransformsInternalTransformConfig()} // ExportTransformRequest | Transform to export and optional metadata
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformsRepositoryAPI.ExportTransform(context.Background()).CommunityTransformsInternalTransformConfig(communityTransformsInternalTransformConfig).Execute()
+	resp, r, err := apiClient.TransformsRepositoryAPI.ExportTransform(context.Background()).ExportTransformRequest(exportTransformRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TransformsRepositoryAPI.ExportTransform``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiExportTransformRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **communityTransformsInternalTransformConfig** | [**CommunityTransformsInternalTransformConfig**](CommunityTransformsInternalTransformConfig.md) | Transform to export and optional metadata | 
+ **exportTransformRequest** | [**ExportTransformRequest**](ExportTransformRequest.md) | Transform to export and optional metadata | 
 
 ### Return type
 
@@ -240,7 +240,7 @@ import (
 )
 
 func main() {
-	body := "body_example" // string | YAML transform definition
+	body := map[string]interface{}{ ... } // map[string]interface{} | YAML transform definition
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -265,7 +265,7 @@ Other parameters are passed through a pointer to a apiImportTransformRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string** | YAML transform definition | 
+ **body** | **map[string]interface{}** | YAML transform definition | 
 
 ### Return type
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, text/plain
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

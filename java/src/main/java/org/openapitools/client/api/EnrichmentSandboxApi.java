@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.EnrichmentSandboxRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
-import org.openapitools.client.model.RoutesV3EnrichmentSandboxRequest;
 import org.openapitools.client.model.RoutesV3EnrichmentSandboxResponse;
 
 import java.lang.reflect.Type;
@@ -77,7 +77,7 @@ public class EnrichmentSandboxApi {
     /**
      * Build call for enrichmentSandbox
      * @param organizationId Organization ID (required)
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @param enrichmentSandboxRequest Enrichment configuration and record (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -90,7 +90,7 @@ public class EnrichmentSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call enrichmentSandboxCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call enrichmentSandboxCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull EnrichmentSandboxRequest enrichmentSandboxRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -104,7 +104,7 @@ public class EnrichmentSandboxApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3EnrichmentSandboxRequest;
+        Object localVarPostBody = enrichmentSandboxRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/enrichments/sandbox"
@@ -137,18 +137,18 @@ public class EnrichmentSandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call enrichmentSandboxValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call enrichmentSandboxValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull EnrichmentSandboxRequest enrichmentSandboxRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling enrichmentSandbox(Async)");
         }
 
-        // verify the required parameter 'routesV3EnrichmentSandboxRequest' is set
-        if (routesV3EnrichmentSandboxRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3EnrichmentSandboxRequest' when calling enrichmentSandbox(Async)");
+        // verify the required parameter 'enrichmentSandboxRequest' is set
+        if (enrichmentSandboxRequest == null) {
+            throw new ApiException("Missing the required parameter 'enrichmentSandboxRequest' when calling enrichmentSandbox(Async)");
         }
 
-        return enrichmentSandboxCall(organizationId, routesV3EnrichmentSandboxRequest, _callback);
+        return enrichmentSandboxCall(organizationId, enrichmentSandboxRequest, _callback);
 
     }
 
@@ -156,7 +156,7 @@ public class EnrichmentSandboxApi {
      * Apply enrichment to record
      * Apply a enrichment configuration to a JSON record
      * @param organizationId Organization ID (required)
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @param enrichmentSandboxRequest Enrichment configuration and record (required)
      * @return RoutesV3EnrichmentSandboxResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -168,8 +168,8 @@ public class EnrichmentSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV3EnrichmentSandboxResponse enrichmentSandbox(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest) throws ApiException {
-        ApiResponse<RoutesV3EnrichmentSandboxResponse> localVarResp = enrichmentSandboxWithHttpInfo(organizationId, routesV3EnrichmentSandboxRequest);
+    public RoutesV3EnrichmentSandboxResponse enrichmentSandbox(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull EnrichmentSandboxRequest enrichmentSandboxRequest) throws ApiException {
+        ApiResponse<RoutesV3EnrichmentSandboxResponse> localVarResp = enrichmentSandboxWithHttpInfo(organizationId, enrichmentSandboxRequest);
         return localVarResp.getData();
     }
 
@@ -177,7 +177,7 @@ public class EnrichmentSandboxApi {
      * Apply enrichment to record
      * Apply a enrichment configuration to a JSON record
      * @param organizationId Organization ID (required)
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @param enrichmentSandboxRequest Enrichment configuration and record (required)
      * @return ApiResponse&lt;RoutesV3EnrichmentSandboxResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -189,8 +189,8 @@ public class EnrichmentSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV3EnrichmentSandboxResponse> enrichmentSandboxWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest) throws ApiException {
-        okhttp3.Call localVarCall = enrichmentSandboxValidateBeforeCall(organizationId, routesV3EnrichmentSandboxRequest, null);
+    public ApiResponse<RoutesV3EnrichmentSandboxResponse> enrichmentSandboxWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull EnrichmentSandboxRequest enrichmentSandboxRequest) throws ApiException {
+        okhttp3.Call localVarCall = enrichmentSandboxValidateBeforeCall(organizationId, enrichmentSandboxRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV3EnrichmentSandboxResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -199,7 +199,7 @@ public class EnrichmentSandboxApi {
      * Apply enrichment to record (asynchronously)
      * Apply a enrichment configuration to a JSON record
      * @param organizationId Organization ID (required)
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @param enrichmentSandboxRequest Enrichment configuration and record (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -212,9 +212,9 @@ public class EnrichmentSandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call enrichmentSandboxAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest, final ApiCallback<RoutesV3EnrichmentSandboxResponse> _callback) throws ApiException {
+    public okhttp3.Call enrichmentSandboxAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull EnrichmentSandboxRequest enrichmentSandboxRequest, final ApiCallback<RoutesV3EnrichmentSandboxResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = enrichmentSandboxValidateBeforeCall(organizationId, routesV3EnrichmentSandboxRequest, _callback);
+        okhttp3.Call localVarCall = enrichmentSandboxValidateBeforeCall(organizationId, enrichmentSandboxRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV3EnrichmentSandboxResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

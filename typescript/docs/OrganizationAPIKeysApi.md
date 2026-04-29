@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createAPIKey**
-> ModelsAPIKeyWithToken createAPIKey(routesV2CreateAPIKeyRequest)
+> ModelsAPIKeyWithToken createAPIKey(createAPIKeyRequest)
 
 Create API key
 
@@ -31,12 +31,7 @@ const request: OrganizationAPIKeysApiCreateAPIKeyRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating an API key
-  routesV2CreateAPIKeyRequest: {
-    description: "description_example",
-    expirationTime: "expirationTime_example",
-    name: "name_example",
-    roleId: "roleId_example",
-  },
+  createAPIKeyRequest: null,
 };
 
 const data = await apiInstance.createAPIKey(request);
@@ -48,7 +43,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateAPIKeyRequest** | **RoutesV2CreateAPIKeyRequest**| Request body for creating an API key |
+ **createAPIKeyRequest** | **CreateAPIKeyRequest**| Request body for creating an API key |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -310,7 +305,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateAPIKey**
-> ModelsAPIKey updateAPIKey(routesV2UpdateAPIKeyRequest)
+> ModelsAPIKey updateAPIKey(updateAPIKeyRequest)
 
 Update API key
 
@@ -330,10 +325,7 @@ const request: OrganizationAPIKeysApiUpdateAPIKeyRequest = {
     // API Key ID
   apiKeyId: "api_key_id_example",
     // Request body for updating an API key
-  routesV2UpdateAPIKeyRequest: {
-    description: "description_example",
-    name: "name_example",
-  },
+  updateAPIKeyRequest: null,
 };
 
 const data = await apiInstance.updateAPIKey(request);
@@ -345,7 +337,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2UpdateAPIKeyRequest** | **RoutesV2UpdateAPIKeyRequest**| Request body for updating an API key |
+ **updateAPIKeyRequest** | **UpdateAPIKeyRequest**| Request body for updating an API key |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **apiKeyId** | [**string**] | API Key ID | defaults to undefined
 

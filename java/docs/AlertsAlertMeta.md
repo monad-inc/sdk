@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**category** | **String** |  |  [optional] |
+|**category** | **AlertsAlertCategory** |  |  [optional] |
 |**config** | **Object** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**granularity** | **String** |  |  [optional] |
-|**house** | **String** |  |  [optional] |
+|**granularity** | **AlertsAlertGranularity** |  |  [optional] |
+|**house** | **AlertsAlertHouse** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |

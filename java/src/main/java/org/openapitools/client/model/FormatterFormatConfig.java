@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.DelimitedDelimiterFormatter;
+import org.openapitools.client.model.FormatterType;
 import org.openapitools.client.model.JsonJsonFormatter;
 import org.openapitools.client.model.ParquetParquetFormatter;
 
@@ -56,7 +57,7 @@ public class FormatterFormatConfig {
   public static final String SERIALIZED_NAME_FORMAT = "Format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
   @javax.annotation.Nullable
-  private String format;
+  private FormatterType format;
 
   public static final String SERIALIZED_NAME_DELIMITED_FORMAT = "delimited_format";
   @SerializedName(SERIALIZED_NAME_DELIMITED_FORMAT)
@@ -76,7 +77,7 @@ public class FormatterFormatConfig {
   public FormatterFormatConfig() {
   }
 
-  public FormatterFormatConfig format(@javax.annotation.Nullable String format) {
+  public FormatterFormatConfig format(@javax.annotation.Nullable FormatterType format) {
     this.format = format;
     return this;
   }
@@ -86,11 +87,11 @@ public class FormatterFormatConfig {
    * @return format
    */
   @javax.annotation.Nullable
-  public String getFormat() {
+  public FormatterType getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable String format) {
+  public void setFormat(@javax.annotation.Nullable FormatterType format) {
     this.format = format;
   }
 
@@ -226,8 +227,9 @@ public class FormatterFormatConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("Format") != null && !jsonObj.get("Format").isJsonNull()) && !jsonObj.get("Format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `Format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Format").toString()));
+      // validate the optional field `Format`
+      if (jsonObj.get("Format") != null && !jsonObj.get("Format").isJsonNull()) {
+        FormatterType.validateJsonElement(jsonObj.get("Format"));
       }
       // validate the optional field `delimited_format`
       if (jsonObj.get("delimited_format") != null && !jsonObj.get("delimited_format").isJsonNull()) {

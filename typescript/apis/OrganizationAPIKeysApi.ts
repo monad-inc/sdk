@@ -8,11 +8,11 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateAPIKeyRequest } from '../models/CreateAPIKeyRequest';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
-import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
-import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
+import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
 
 /**
  * no description
@@ -23,9 +23,9 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
      * Create API key
      * Create API key
      * @param organizationId Organization ID
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key
+     * @param createAPIKeyRequest Request body for creating an API key
      */
-    public async createAPIKey(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createAPIKey(organizationId: string, createAPIKeyRequest: CreateAPIKeyRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -34,9 +34,9 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2CreateAPIKeyRequest' is not null or undefined
-        if (routesV2CreateAPIKeyRequest === null || routesV2CreateAPIKeyRequest === undefined) {
-            throw new RequiredError("OrganizationAPIKeysApi", "createAPIKey", "routesV2CreateAPIKeyRequest");
+        // verify required parameter 'createAPIKeyRequest' is not null or undefined
+        if (createAPIKeyRequest === null || createAPIKeyRequest === undefined) {
+            throw new RequiredError("OrganizationAPIKeysApi", "createAPIKey", "createAPIKeyRequest");
         }
 
 
@@ -55,7 +55,7 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateAPIKeyRequest, "RoutesV2CreateAPIKeyRequest", ""),
+            ObjectSerializer.serialize(createAPIKeyRequest, "CreateAPIKeyRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -295,9 +295,9 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
      * Update API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key
+     * @param updateAPIKeyRequest Request body for updating an API key
      */
-    public async updateAPIKey(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateAPIKey(organizationId: string, apiKeyId: string, updateAPIKeyRequest: UpdateAPIKeyRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -312,9 +312,9 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2UpdateAPIKeyRequest' is not null or undefined
-        if (routesV2UpdateAPIKeyRequest === null || routesV2UpdateAPIKeyRequest === undefined) {
-            throw new RequiredError("OrganizationAPIKeysApi", "updateAPIKey", "routesV2UpdateAPIKeyRequest");
+        // verify required parameter 'updateAPIKeyRequest' is not null or undefined
+        if (updateAPIKeyRequest === null || updateAPIKeyRequest === undefined) {
+            throw new RequiredError("OrganizationAPIKeysApi", "updateAPIKey", "updateAPIKeyRequest");
         }
 
 
@@ -334,7 +334,7 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdateAPIKeyRequest, "RoutesV2UpdateAPIKeyRequest", ""),
+            ObjectSerializer.serialize(updateAPIKeyRequest, "UpdateAPIKeyRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

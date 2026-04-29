@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateAPIKey
 
-> ModelsAPIKeyWithToken CreateAPIKey(ctx, organizationId).RoutesV2CreateAPIKeyRequest(routesV2CreateAPIKeyRequest).Execute()
+> ModelsAPIKeyWithToken CreateAPIKey(ctx, organizationId).CreateAPIKeyRequest(createAPIKeyRequest).Execute()
 
 Create API key
 
@@ -35,11 +35,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2CreateAPIKeyRequest := *openapiclient.NewRoutesV2CreateAPIKeyRequest("ExpirationTime_example", "Name_example", "RoleId_example") // RoutesV2CreateAPIKeyRequest | Request body for creating an API key
+	createAPIKeyRequest := openapiclient.CreateAPIKey_request{RoutesV2CreateAPIKeyRequest: openapiclient.NewRoutesV2CreateAPIKeyRequest("ExpirationTime_example", "Name_example", "RoleId_example")} // CreateAPIKeyRequest | Request body for creating an API key
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationAPIKeysAPI.CreateAPIKey(context.Background(), organizationId).RoutesV2CreateAPIKeyRequest(routesV2CreateAPIKeyRequest).Execute()
+	resp, r, err := apiClient.OrganizationAPIKeysAPI.CreateAPIKey(context.Background(), organizationId).CreateAPIKeyRequest(createAPIKeyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationAPIKeysAPI.CreateAPIKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -65,7 +65,7 @@ Other parameters are passed through a pointer to a apiCreateAPIKeyRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2CreateAPIKeyRequest** | [**RoutesV2CreateAPIKeyRequest**](RoutesV2CreateAPIKeyRequest.md) | Request body for creating an API key | 
+ **createAPIKeyRequest** | [**CreateAPIKeyRequest**](CreateAPIKeyRequest.md) | Request body for creating an API key | 
 
 ### Return type
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAPIKey
 
-> ModelsAPIKey UpdateAPIKey(ctx, organizationId, apiKeyId).RoutesV2UpdateAPIKeyRequest(routesV2UpdateAPIKeyRequest).Execute()
+> ModelsAPIKey UpdateAPIKey(ctx, organizationId, apiKeyId).UpdateAPIKeyRequest(updateAPIKeyRequest).Execute()
 
 Update API key
 
@@ -401,11 +401,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	apiKeyId := "apiKeyId_example" // string | API Key ID
-	routesV2UpdateAPIKeyRequest := *openapiclient.NewRoutesV2UpdateAPIKeyRequest("Name_example") // RoutesV2UpdateAPIKeyRequest | Request body for updating an API key
+	updateAPIKeyRequest := openapiclient.UpdateAPIKey_request{RoutesV2UpdateAPIKeyRequest: openapiclient.NewRoutesV2UpdateAPIKeyRequest("Name_example")} // UpdateAPIKeyRequest | Request body for updating an API key
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationAPIKeysAPI.UpdateAPIKey(context.Background(), organizationId, apiKeyId).RoutesV2UpdateAPIKeyRequest(routesV2UpdateAPIKeyRequest).Execute()
+	resp, r, err := apiClient.OrganizationAPIKeysAPI.UpdateAPIKey(context.Background(), organizationId, apiKeyId).UpdateAPIKeyRequest(updateAPIKeyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationAPIKeysAPI.UpdateAPIKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV2UpdateAPIKeyRequest** | [**RoutesV2UpdateAPIKeyRequest**](RoutesV2UpdateAPIKeyRequest.md) | Request body for updating an API key | 
+ **updateAPIKeyRequest** | [**UpdateAPIKeyRequest**](UpdateAPIKeyRequest.md) | Request body for updating an API key | 
 
 ### Return type
 

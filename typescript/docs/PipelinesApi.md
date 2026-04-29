@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **createPipeline**
-> ModelsPipelineConfigV2 createPipeline(routesV2CreatePipelineRequest)
+> ModelsPipelineConfigV2 createPipeline(createPipelineRequest)
 
 Create a new pipeline with specified configuration
 
@@ -46,39 +46,7 @@ const request: PipelinesApiCreatePipelineRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating a pipeline
-  routesV2CreatePipelineRequest: {
-    description: "description_example",
-    edges: [
-      {
-        conditions: {
-          conditions: [
-            ,
-          ],
-          config: {
-            "key": null,
-          },
-          operator: "operator_example",
-          typeId: "typeId_example",
-        },
-        description: "description_example",
-        disabled: true,
-        fromNodeInstanceId: "fromNodeInstanceId_example",
-        name: "name_example",
-        toNodeInstanceId: "toNodeInstanceId_example",
-      },
-    ],
-    enabled: true,
-    name: "name_example",
-    nodes: [
-      {
-        componentId: "componentId_example",
-        componentType: "componentType_example",
-        enabled: true,
-        id: "id_example",
-        slug: "slug_example",
-      },
-    ],
-  },
+  createPipelineRequest: null,
 };
 
 const data = await apiInstance.createPipeline(request);
@@ -90,7 +58,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreatePipelineRequest** | **RoutesV2CreatePipelineRequest**| Request body for creating a pipeline |
+ **createPipelineRequest** | **CreatePipelineRequest**| Request body for creating a pipeline |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -1172,7 +1140,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updatePipeline**
-> ModelsPipelineConfigV2 updatePipeline(routesV2UpdatePipelineRequest)
+> ModelsPipelineConfigV2 updatePipeline(updatePipelineRequest)
 
 Update an existing pipeline with the specified configuration
 
@@ -1192,39 +1160,7 @@ const request: PipelinesApiUpdatePipelineRequest = {
     // Pipeline ID
   pipelineId: "pipeline_id_example",
     // Request body for updating a pipeline
-  routesV2UpdatePipelineRequest: {
-    description: "description_example",
-    edges: [
-      {
-        conditions: {
-          conditions: [
-            ,
-          ],
-          config: {
-            "key": null,
-          },
-          operator: "operator_example",
-          typeId: "typeId_example",
-        },
-        description: "description_example",
-        disabled: true,
-        fromNodeInstanceId: "fromNodeInstanceId_example",
-        name: "name_example",
-        toNodeInstanceId: "toNodeInstanceId_example",
-      },
-    ],
-    enabled: true,
-    name: "name_example",
-    nodes: [
-      {
-        componentId: "componentId_example",
-        componentType: "componentType_example",
-        enabled: true,
-        id: "id_example",
-        slug: "slug_example",
-      },
-    ],
-  },
+  updatePipelineRequest: null,
 };
 
 const data = await apiInstance.updatePipeline(request);
@@ -1236,7 +1172,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2UpdatePipelineRequest** | **RoutesV2UpdatePipelineRequest**| Request body for updating a pipeline |
+ **updatePipelineRequest** | **UpdatePipelineRequest**| Request body for updating a pipeline |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
 
@@ -1265,7 +1201,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updatePipelineEdge**
-> void updatePipelineEdge(routesV2PatchPipelineEdgeRequest)
+> void updatePipelineEdge(updatePipelineEdgeRequest)
 
 Enable or disable a pipeline edge
 
@@ -1287,9 +1223,7 @@ const request: PipelinesApiUpdatePipelineEdgeRequest = {
     // Edge ID
   edgeId: "edge_id_example",
     // Request body
-  routesV2PatchPipelineEdgeRequest: {
-    disabled: true,
-  },
+  updatePipelineEdgeRequest: null,
 };
 
 const data = await apiInstance.updatePipelineEdge(request);
@@ -1301,7 +1235,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2PatchPipelineEdgeRequest** | **RoutesV2PatchPipelineEdgeRequest**| Request body |
+ **updatePipelineEdgeRequest** | **UpdatePipelineEdgeRequest**| Request body |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
  **edgeId** | [**string**] | Edge ID | defaults to undefined
@@ -1332,7 +1266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updatePipelineV1**
-> ModelsPipeline updatePipelineV1(routesUpdatePipelineRequest)
+> ModelsPipeline updatePipelineV1(updatePipelineV1Request)
 
 Update pipeline
 
@@ -1352,11 +1286,7 @@ const request: PipelinesApiUpdatePipelineV1Request = {
     // Pipeline ID
   pipelineId: "pipeline_id_example",
     // Request body for updating a pipeline
-  routesUpdatePipelineRequest: {
-    description: "description_example",
-    enabled: true,
-    name: "name_example",
-  },
+  updatePipelineV1Request: null,
 };
 
 const data = await apiInstance.updatePipelineV1(request);
@@ -1368,7 +1298,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesUpdatePipelineRequest** | **RoutesUpdatePipelineRequest**| Request body for updating a pipeline |
+ **updatePipelineV1Request** | **UpdatePipelineV1Request**| Request body for updating a pipeline |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
 

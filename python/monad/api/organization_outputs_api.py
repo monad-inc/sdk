@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,14 +19,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from monad.models.create_output_request import CreateOutputRequest
 from monad.models.models_output import ModelsOutput
 from monad.models.models_output_list import ModelsOutputList
+from monad.models.replace_output_request import ReplaceOutputRequest
 from monad.models.routes_get_output_response import RoutesGetOutputResponse
-from monad.models.routes_v2_create_output_request import RoutesV2CreateOutputRequest
-from monad.models.routes_v2_put_output_request import RoutesV2PutOutputRequest
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
-from monad.models.routes_v2_test_output_connection_request import RoutesV2TestOutputConnectionRequest
-from monad.models.routes_v2_update_output_request import RoutesV2UpdateOutputRequest
+from monad.models.test_output_connection_request import TestOutputConnectionRequest
+from monad.models.update_output_request import UpdateOutputRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -50,7 +50,7 @@ class OrganizationOutputsApi:
     def create_output(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_output_request: Annotated[RoutesV2CreateOutputRequest, Field(description="Output configuration")],
+        create_output_request: Annotated[CreateOutputRequest, Field(description="Output configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -71,8 +71,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_output_request: Output configuration (required)
-        :type routes_v2_create_output_request: RoutesV2CreateOutputRequest
+        :param create_output_request: Output configuration (required)
+        :type create_output_request: CreateOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -99,7 +99,7 @@ class OrganizationOutputsApi:
 
         _param = self._create_output_serialize(
             organization_id=organization_id,
-            routes_v2_create_output_request=routes_v2_create_output_request,
+            create_output_request=create_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -127,7 +127,7 @@ class OrganizationOutputsApi:
     def create_output_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_output_request: Annotated[RoutesV2CreateOutputRequest, Field(description="Output configuration")],
+        create_output_request: Annotated[CreateOutputRequest, Field(description="Output configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -148,8 +148,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_output_request: Output configuration (required)
-        :type routes_v2_create_output_request: RoutesV2CreateOutputRequest
+        :param create_output_request: Output configuration (required)
+        :type create_output_request: CreateOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -176,7 +176,7 @@ class OrganizationOutputsApi:
 
         _param = self._create_output_serialize(
             organization_id=organization_id,
-            routes_v2_create_output_request=routes_v2_create_output_request,
+            create_output_request=create_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -204,7 +204,7 @@ class OrganizationOutputsApi:
     def create_output_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_output_request: Annotated[RoutesV2CreateOutputRequest, Field(description="Output configuration")],
+        create_output_request: Annotated[CreateOutputRequest, Field(description="Output configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -225,8 +225,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_output_request: Output configuration (required)
-        :type routes_v2_create_output_request: RoutesV2CreateOutputRequest
+        :param create_output_request: Output configuration (required)
+        :type create_output_request: CreateOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -253,7 +253,7 @@ class OrganizationOutputsApi:
 
         _param = self._create_output_serialize(
             organization_id=organization_id,
-            routes_v2_create_output_request=routes_v2_create_output_request,
+            create_output_request=create_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -276,7 +276,7 @@ class OrganizationOutputsApi:
     def _create_output_serialize(
         self,
         organization_id,
-        routes_v2_create_output_request,
+        create_output_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -309,8 +309,8 @@ class OrganizationOutputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_output_request is not None:
-            _body_params = routes_v2_create_output_request
+        if create_output_request is not None:
+            _body_params = create_output_request
 
 
         # set the HTTP header `Accept`
@@ -1223,7 +1223,7 @@ class OrganizationOutputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         output_id: Annotated[StrictStr, Field(description="Output ID")],
-        routes_v2_put_output_request: Annotated[RoutesV2PutOutputRequest, Field(description="Output configuration update")],
+        replace_output_request: Annotated[ReplaceOutputRequest, Field(description="Output configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1246,8 +1246,8 @@ class OrganizationOutputsApi:
         :type organization_id: str
         :param output_id: Output ID (required)
         :type output_id: str
-        :param routes_v2_put_output_request: Output configuration update (required)
-        :type routes_v2_put_output_request: RoutesV2PutOutputRequest
+        :param replace_output_request: Output configuration update (required)
+        :type replace_output_request: ReplaceOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1275,7 +1275,7 @@ class OrganizationOutputsApi:
         _param = self._replace_output_serialize(
             organization_id=organization_id,
             output_id=output_id,
-            routes_v2_put_output_request=routes_v2_put_output_request,
+            replace_output_request=replace_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1305,7 +1305,7 @@ class OrganizationOutputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         output_id: Annotated[StrictStr, Field(description="Output ID")],
-        routes_v2_put_output_request: Annotated[RoutesV2PutOutputRequest, Field(description="Output configuration update")],
+        replace_output_request: Annotated[ReplaceOutputRequest, Field(description="Output configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1328,8 +1328,8 @@ class OrganizationOutputsApi:
         :type organization_id: str
         :param output_id: Output ID (required)
         :type output_id: str
-        :param routes_v2_put_output_request: Output configuration update (required)
-        :type routes_v2_put_output_request: RoutesV2PutOutputRequest
+        :param replace_output_request: Output configuration update (required)
+        :type replace_output_request: ReplaceOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1357,7 +1357,7 @@ class OrganizationOutputsApi:
         _param = self._replace_output_serialize(
             organization_id=organization_id,
             output_id=output_id,
-            routes_v2_put_output_request=routes_v2_put_output_request,
+            replace_output_request=replace_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1387,7 +1387,7 @@ class OrganizationOutputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         output_id: Annotated[StrictStr, Field(description="Output ID")],
-        routes_v2_put_output_request: Annotated[RoutesV2PutOutputRequest, Field(description="Output configuration update")],
+        replace_output_request: Annotated[ReplaceOutputRequest, Field(description="Output configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1410,8 +1410,8 @@ class OrganizationOutputsApi:
         :type organization_id: str
         :param output_id: Output ID (required)
         :type output_id: str
-        :param routes_v2_put_output_request: Output configuration update (required)
-        :type routes_v2_put_output_request: RoutesV2PutOutputRequest
+        :param replace_output_request: Output configuration update (required)
+        :type replace_output_request: ReplaceOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1439,7 +1439,7 @@ class OrganizationOutputsApi:
         _param = self._replace_output_serialize(
             organization_id=organization_id,
             output_id=output_id,
-            routes_v2_put_output_request=routes_v2_put_output_request,
+            replace_output_request=replace_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1464,7 +1464,7 @@ class OrganizationOutputsApi:
         self,
         organization_id,
         output_id,
-        routes_v2_put_output_request,
+        replace_output_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -1499,8 +1499,8 @@ class OrganizationOutputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_put_output_request is not None:
-            _body_params = routes_v2_put_output_request
+        if replace_output_request is not None:
+            _body_params = replace_output_request
 
 
         # set the HTTP header `Accept`
@@ -1553,7 +1553,7 @@ class OrganizationOutputsApi:
     def test_output_connection(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_output_connection_request: Annotated[RoutesV2TestOutputConnectionRequest, Field(description="Output configuration to test")],
+        test_output_connection_request: Annotated[TestOutputConnectionRequest, Field(description="Output configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1573,8 +1573,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_output_connection_request: Output configuration to test (required)
-        :type routes_v2_test_output_connection_request: RoutesV2TestOutputConnectionRequest
+        :param test_output_connection_request: Output configuration to test (required)
+        :type test_output_connection_request: TestOutputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1599,7 +1599,7 @@ class OrganizationOutputsApi:
 
         _param = self._test_output_connection_serialize(
             organization_id=organization_id,
-            routes_v2_test_output_connection_request=routes_v2_test_output_connection_request,
+            test_output_connection_request=test_output_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1626,7 +1626,7 @@ class OrganizationOutputsApi:
     def test_output_connection_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_output_connection_request: Annotated[RoutesV2TestOutputConnectionRequest, Field(description="Output configuration to test")],
+        test_output_connection_request: Annotated[TestOutputConnectionRequest, Field(description="Output configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1646,8 +1646,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_output_connection_request: Output configuration to test (required)
-        :type routes_v2_test_output_connection_request: RoutesV2TestOutputConnectionRequest
+        :param test_output_connection_request: Output configuration to test (required)
+        :type test_output_connection_request: TestOutputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1672,7 +1672,7 @@ class OrganizationOutputsApi:
 
         _param = self._test_output_connection_serialize(
             organization_id=organization_id,
-            routes_v2_test_output_connection_request=routes_v2_test_output_connection_request,
+            test_output_connection_request=test_output_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1699,7 +1699,7 @@ class OrganizationOutputsApi:
     def test_output_connection_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_output_connection_request: Annotated[RoutesV2TestOutputConnectionRequest, Field(description="Output configuration to test")],
+        test_output_connection_request: Annotated[TestOutputConnectionRequest, Field(description="Output configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1719,8 +1719,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_output_connection_request: Output configuration to test (required)
-        :type routes_v2_test_output_connection_request: RoutesV2TestOutputConnectionRequest
+        :param test_output_connection_request: Output configuration to test (required)
+        :type test_output_connection_request: TestOutputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1745,7 +1745,7 @@ class OrganizationOutputsApi:
 
         _param = self._test_output_connection_serialize(
             organization_id=organization_id,
-            routes_v2_test_output_connection_request=routes_v2_test_output_connection_request,
+            test_output_connection_request=test_output_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1767,7 +1767,7 @@ class OrganizationOutputsApi:
     def _test_output_connection_serialize(
         self,
         organization_id,
-        routes_v2_test_output_connection_request,
+        test_output_connection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1795,8 +1795,8 @@ class OrganizationOutputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_test_output_connection_request is not None:
-            _body_params = routes_v2_test_output_connection_request
+        if test_output_connection_request is not None:
+            _body_params = test_output_connection_request
 
 
         # set the HTTP header `Accept`
@@ -1850,7 +1850,7 @@ class OrganizationOutputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         output_id: Annotated[StrictStr, Field(description="Output ID")],
-        routes_v2_update_output_request: Annotated[RoutesV2UpdateOutputRequest, Field(description="Output configuration update")],
+        update_output_request: Annotated[UpdateOutputRequest, Field(description="Output configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1873,8 +1873,8 @@ class OrganizationOutputsApi:
         :type organization_id: str
         :param output_id: Output ID (required)
         :type output_id: str
-        :param routes_v2_update_output_request: Output configuration update (required)
-        :type routes_v2_update_output_request: RoutesV2UpdateOutputRequest
+        :param update_output_request: Output configuration update (required)
+        :type update_output_request: UpdateOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1902,7 +1902,7 @@ class OrganizationOutputsApi:
         _param = self._update_output_serialize(
             organization_id=organization_id,
             output_id=output_id,
-            routes_v2_update_output_request=routes_v2_update_output_request,
+            update_output_request=update_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1932,7 +1932,7 @@ class OrganizationOutputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         output_id: Annotated[StrictStr, Field(description="Output ID")],
-        routes_v2_update_output_request: Annotated[RoutesV2UpdateOutputRequest, Field(description="Output configuration update")],
+        update_output_request: Annotated[UpdateOutputRequest, Field(description="Output configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1955,8 +1955,8 @@ class OrganizationOutputsApi:
         :type organization_id: str
         :param output_id: Output ID (required)
         :type output_id: str
-        :param routes_v2_update_output_request: Output configuration update (required)
-        :type routes_v2_update_output_request: RoutesV2UpdateOutputRequest
+        :param update_output_request: Output configuration update (required)
+        :type update_output_request: UpdateOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1984,7 +1984,7 @@ class OrganizationOutputsApi:
         _param = self._update_output_serialize(
             organization_id=organization_id,
             output_id=output_id,
-            routes_v2_update_output_request=routes_v2_update_output_request,
+            update_output_request=update_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2014,7 +2014,7 @@ class OrganizationOutputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         output_id: Annotated[StrictStr, Field(description="Output ID")],
-        routes_v2_update_output_request: Annotated[RoutesV2UpdateOutputRequest, Field(description="Output configuration update")],
+        update_output_request: Annotated[UpdateOutputRequest, Field(description="Output configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -2037,8 +2037,8 @@ class OrganizationOutputsApi:
         :type organization_id: str
         :param output_id: Output ID (required)
         :type output_id: str
-        :param routes_v2_update_output_request: Output configuration update (required)
-        :type routes_v2_update_output_request: RoutesV2UpdateOutputRequest
+        :param update_output_request: Output configuration update (required)
+        :type update_output_request: UpdateOutputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2066,7 +2066,7 @@ class OrganizationOutputsApi:
         _param = self._update_output_serialize(
             organization_id=organization_id,
             output_id=output_id,
-            routes_v2_update_output_request=routes_v2_update_output_request,
+            update_output_request=update_output_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2091,7 +2091,7 @@ class OrganizationOutputsApi:
         self,
         organization_id,
         output_id,
-        routes_v2_update_output_request,
+        update_output_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -2126,8 +2126,8 @@ class OrganizationOutputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_update_output_request is not None:
-            _body_params = routes_v2_update_output_request
+        if update_output_request is not None:
+            _body_params = update_output_request
 
 
         # set the HTTP header `Accept`

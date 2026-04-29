@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from monad.models.create_api_key_request import CreateAPIKeyRequest
 from monad.models.models_api_key import ModelsAPIKey
 from monad.models.models_api_key_list import ModelsAPIKeyList
 from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken
-from monad.models.routes_v2_create_api_key_request import RoutesV2CreateAPIKeyRequest
-from monad.models.routes_v2_update_api_key_request import RoutesV2UpdateAPIKeyRequest
+from monad.models.update_api_key_request import UpdateAPIKeyRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -47,7 +47,7 @@ class OrganizationAPIKeysApi:
     def create_api_key(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_api_key_request: Annotated[RoutesV2CreateAPIKeyRequest, Field(description="Request body for creating an API key")],
+        create_api_key_request: Annotated[CreateAPIKeyRequest, Field(description="Request body for creating an API key")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,8 +67,8 @@ class OrganizationAPIKeysApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_api_key_request: Request body for creating an API key (required)
-        :type routes_v2_create_api_key_request: RoutesV2CreateAPIKeyRequest
+        :param create_api_key_request: Request body for creating an API key (required)
+        :type create_api_key_request: CreateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class OrganizationAPIKeysApi:
 
         _param = self._create_api_key_serialize(
             organization_id=organization_id,
-            routes_v2_create_api_key_request=routes_v2_create_api_key_request,
+            create_api_key_request=create_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -120,7 +120,7 @@ class OrganizationAPIKeysApi:
     def create_api_key_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_api_key_request: Annotated[RoutesV2CreateAPIKeyRequest, Field(description="Request body for creating an API key")],
+        create_api_key_request: Annotated[CreateAPIKeyRequest, Field(description="Request body for creating an API key")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -140,8 +140,8 @@ class OrganizationAPIKeysApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_api_key_request: Request body for creating an API key (required)
-        :type routes_v2_create_api_key_request: RoutesV2CreateAPIKeyRequest
+        :param create_api_key_request: Request body for creating an API key (required)
+        :type create_api_key_request: CreateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -166,7 +166,7 @@ class OrganizationAPIKeysApi:
 
         _param = self._create_api_key_serialize(
             organization_id=organization_id,
-            routes_v2_create_api_key_request=routes_v2_create_api_key_request,
+            create_api_key_request=create_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -193,7 +193,7 @@ class OrganizationAPIKeysApi:
     def create_api_key_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_api_key_request: Annotated[RoutesV2CreateAPIKeyRequest, Field(description="Request body for creating an API key")],
+        create_api_key_request: Annotated[CreateAPIKeyRequest, Field(description="Request body for creating an API key")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -213,8 +213,8 @@ class OrganizationAPIKeysApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_api_key_request: Request body for creating an API key (required)
-        :type routes_v2_create_api_key_request: RoutesV2CreateAPIKeyRequest
+        :param create_api_key_request: Request body for creating an API key (required)
+        :type create_api_key_request: CreateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -239,7 +239,7 @@ class OrganizationAPIKeysApi:
 
         _param = self._create_api_key_serialize(
             organization_id=organization_id,
-            routes_v2_create_api_key_request=routes_v2_create_api_key_request,
+            create_api_key_request=create_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -261,7 +261,7 @@ class OrganizationAPIKeysApi:
     def _create_api_key_serialize(
         self,
         organization_id,
-        routes_v2_create_api_key_request,
+        create_api_key_request,
         _request_auth,
         _content_type,
         _headers,
@@ -289,8 +289,8 @@ class OrganizationAPIKeysApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_api_key_request is not None:
-            _body_params = routes_v2_create_api_key_request
+        if create_api_key_request is not None:
+            _body_params = create_api_key_request
 
 
         # set the HTTP header `Accept`
@@ -1492,7 +1492,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
-        routes_v2_update_api_key_request: Annotated[RoutesV2UpdateAPIKeyRequest, Field(description="Request body for updating an API key")],
+        update_api_key_request: Annotated[UpdateAPIKeyRequest, Field(description="Request body for updating an API key")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1514,8 +1514,8 @@ class OrganizationAPIKeysApi:
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
-        :param routes_v2_update_api_key_request: Request body for updating an API key (required)
-        :type routes_v2_update_api_key_request: RoutesV2UpdateAPIKeyRequest
+        :param update_api_key_request: Request body for updating an API key (required)
+        :type update_api_key_request: UpdateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1541,7 +1541,7 @@ class OrganizationAPIKeysApi:
         _param = self._update_api_key_serialize(
             organization_id=organization_id,
             api_key_id=api_key_id,
-            routes_v2_update_api_key_request=routes_v2_update_api_key_request,
+            update_api_key_request=update_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1569,7 +1569,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
-        routes_v2_update_api_key_request: Annotated[RoutesV2UpdateAPIKeyRequest, Field(description="Request body for updating an API key")],
+        update_api_key_request: Annotated[UpdateAPIKeyRequest, Field(description="Request body for updating an API key")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1591,8 +1591,8 @@ class OrganizationAPIKeysApi:
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
-        :param routes_v2_update_api_key_request: Request body for updating an API key (required)
-        :type routes_v2_update_api_key_request: RoutesV2UpdateAPIKeyRequest
+        :param update_api_key_request: Request body for updating an API key (required)
+        :type update_api_key_request: UpdateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1618,7 +1618,7 @@ class OrganizationAPIKeysApi:
         _param = self._update_api_key_serialize(
             organization_id=organization_id,
             api_key_id=api_key_id,
-            routes_v2_update_api_key_request=routes_v2_update_api_key_request,
+            update_api_key_request=update_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1646,7 +1646,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
-        routes_v2_update_api_key_request: Annotated[RoutesV2UpdateAPIKeyRequest, Field(description="Request body for updating an API key")],
+        update_api_key_request: Annotated[UpdateAPIKeyRequest, Field(description="Request body for updating an API key")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1668,8 +1668,8 @@ class OrganizationAPIKeysApi:
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
-        :param routes_v2_update_api_key_request: Request body for updating an API key (required)
-        :type routes_v2_update_api_key_request: RoutesV2UpdateAPIKeyRequest
+        :param update_api_key_request: Request body for updating an API key (required)
+        :type update_api_key_request: UpdateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1695,7 +1695,7 @@ class OrganizationAPIKeysApi:
         _param = self._update_api_key_serialize(
             organization_id=organization_id,
             api_key_id=api_key_id,
-            routes_v2_update_api_key_request=routes_v2_update_api_key_request,
+            update_api_key_request=update_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1718,7 +1718,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id,
         api_key_id,
-        routes_v2_update_api_key_request,
+        update_api_key_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1748,8 +1748,8 @@ class OrganizationAPIKeysApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_update_api_key_request is not None:
-            _body_params = routes_v2_update_api_key_request
+        if update_api_key_request is not None:
+            _body_params = update_api_key_request
 
 
         # set the HTTP header `Accept`

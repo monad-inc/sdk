@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **createBillingAccountSubscription**
-> RoutesV2CreateBillingAccountSubscriptionResponse createBillingAccountSubscription(routesV2CreateBillingAccountSubscriptionRequest)
+> RoutesV2CreateBillingAccountSubscriptionResponse createBillingAccountSubscription(createBillingAccountSubscriptionRequest)
 
 Create Billing Account Subscription
 
@@ -84,9 +84,7 @@ const request: BillingProductsApiCreateBillingAccountSubscriptionRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
     // Request body for creating a billing subscription
-  routesV2CreateBillingAccountSubscriptionRequest: {
-    productId: "productId_example",
-  },
+  createBillingAccountSubscriptionRequest: null,
 };
 
 const data = await apiInstance.createBillingAccountSubscription(request);
@@ -98,7 +96,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateBillingAccountSubscriptionRequest** | **RoutesV2CreateBillingAccountSubscriptionRequest**| Request body for creating a billing subscription |
+ **createBillingAccountSubscriptionRequest** | **CreateBillingAccountSubscriptionRequest**| Request body for creating a billing subscription |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 

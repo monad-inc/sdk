@@ -8,19 +8,19 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
-import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
-import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
-import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelineEdgeRequest';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
-import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
+import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
+import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
+import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
 
 /**
  * no description
@@ -31,9 +31,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * Create a new pipeline with specified configuration
      * Create pipeline
      * @param organizationId Organization ID
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline
+     * @param createPipelineRequest Request body for creating a pipeline
      */
-    public async createPipeline(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createPipeline(organizationId: string, createPipelineRequest: CreatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -42,9 +42,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2CreatePipelineRequest' is not null or undefined
-        if (routesV2CreatePipelineRequest === null || routesV2CreatePipelineRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "createPipeline", "routesV2CreatePipelineRequest");
+        // verify required parameter 'createPipelineRequest' is not null or undefined
+        if (createPipelineRequest === null || createPipelineRequest === undefined) {
+            throw new RequiredError("PipelinesApi", "createPipeline", "createPipelineRequest");
         }
 
 
@@ -63,7 +63,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreatePipelineRequest, "RoutesV2CreatePipelineRequest", ""),
+            ObjectSerializer.serialize(createPipelineRequest, "CreatePipelineRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -1168,9 +1168,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineRequest Request body for updating a pipeline
      */
-    public async updatePipeline(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updatePipeline(organizationId: string, pipelineId: string, updatePipelineRequest: UpdatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -1185,9 +1185,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2UpdatePipelineRequest' is not null or undefined
-        if (routesV2UpdatePipelineRequest === null || routesV2UpdatePipelineRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "updatePipeline", "routesV2UpdatePipelineRequest");
+        // verify required parameter 'updatePipelineRequest' is not null or undefined
+        if (updatePipelineRequest === null || updatePipelineRequest === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipeline", "updatePipelineRequest");
         }
 
 
@@ -1207,7 +1207,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdatePipelineRequest, "RoutesV2UpdatePipelineRequest", ""),
+            ObjectSerializer.serialize(updatePipelineRequest, "UpdatePipelineRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -1238,9 +1238,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param edgeId Edge ID
-     * @param routesV2PatchPipelineEdgeRequest Request body
+     * @param updatePipelineEdgeRequest Request body
      */
-    public async updatePipelineEdge(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updatePipelineEdge(organizationId: string, pipelineId: string, edgeId: string, updatePipelineEdgeRequest: UpdatePipelineEdgeRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -1261,9 +1261,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2PatchPipelineEdgeRequest' is not null or undefined
-        if (routesV2PatchPipelineEdgeRequest === null || routesV2PatchPipelineEdgeRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "updatePipelineEdge", "routesV2PatchPipelineEdgeRequest");
+        // verify required parameter 'updatePipelineEdgeRequest' is not null or undefined
+        if (updatePipelineEdgeRequest === null || updatePipelineEdgeRequest === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineEdge", "updatePipelineEdgeRequest");
         }
 
 
@@ -1284,7 +1284,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2PatchPipelineEdgeRequest, "RoutesV2PatchPipelineEdgeRequest", ""),
+            ObjectSerializer.serialize(updatePipelineEdgeRequest, "UpdatePipelineEdgeRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -1316,9 +1316,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineV1Request Request body for updating a pipeline
      */
-    public async updatePipelineV1(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updatePipelineV1(organizationId: string, pipelineId: string, updatePipelineV1Request: UpdatePipelineV1Request, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -1333,9 +1333,9 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesUpdatePipelineRequest' is not null or undefined
-        if (routesUpdatePipelineRequest === null || routesUpdatePipelineRequest === undefined) {
-            throw new RequiredError("PipelinesApi", "updatePipelineV1", "routesUpdatePipelineRequest");
+        // verify required parameter 'updatePipelineV1Request' is not null or undefined
+        if (updatePipelineV1Request === null || updatePipelineV1Request === undefined) {
+            throw new RequiredError("PipelinesApi", "updatePipelineV1", "updatePipelineV1Request");
         }
 
 
@@ -1355,7 +1355,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesUpdatePipelineRequest, "RoutesUpdatePipelineRequest", ""),
+            ObjectSerializer.serialize(updatePipelineV1Request, "UpdatePipelineV1Request", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

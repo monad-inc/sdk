@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -28,12 +28,12 @@ type ApiCreateAlertRuleRequest struct {
 	ctx context.Context
 	ApiService *AlertRulesAPIService
 	organizationId string
-	routesV3CreateAlertRuleRequest *RoutesV3CreateAlertRuleRequest
+	createAlertRuleRequest *CreateAlertRuleRequest
 }
 
 // Request body for creating an alert rule
-func (r ApiCreateAlertRuleRequest) RoutesV3CreateAlertRuleRequest(routesV3CreateAlertRuleRequest RoutesV3CreateAlertRuleRequest) ApiCreateAlertRuleRequest {
-	r.routesV3CreateAlertRuleRequest = &routesV3CreateAlertRuleRequest
+func (r ApiCreateAlertRuleRequest) CreateAlertRuleRequest(createAlertRuleRequest CreateAlertRuleRequest) ApiCreateAlertRuleRequest {
+	r.createAlertRuleRequest = &createAlertRuleRequest
 	return r
 }
 
@@ -79,8 +79,8 @@ func (a *AlertRulesAPIService) CreateAlertRuleExecute(r ApiCreateAlertRuleReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV3CreateAlertRuleRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV3CreateAlertRuleRequest is required and must be specified")
+	if r.createAlertRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("createAlertRuleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -101,7 +101,7 @@ func (a *AlertRulesAPIService) CreateAlertRuleExecute(r ApiCreateAlertRuleReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV3CreateAlertRuleRequest
+	localVarPostBody = r.createAlertRuleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -889,12 +889,12 @@ type ApiUpdateAlertRuleRequest struct {
 	ApiService *AlertRulesAPIService
 	organizationId string
 	alertRuleId string
-	routesV3UpdateAlertRuleRequest *RoutesV3UpdateAlertRuleRequest
+	updateAlertRuleRequest *UpdateAlertRuleRequest
 }
 
 // Request body for updating an alert rule
-func (r ApiUpdateAlertRuleRequest) RoutesV3UpdateAlertRuleRequest(routesV3UpdateAlertRuleRequest RoutesV3UpdateAlertRuleRequest) ApiUpdateAlertRuleRequest {
-	r.routesV3UpdateAlertRuleRequest = &routesV3UpdateAlertRuleRequest
+func (r ApiUpdateAlertRuleRequest) UpdateAlertRuleRequest(updateAlertRuleRequest UpdateAlertRuleRequest) ApiUpdateAlertRuleRequest {
+	r.updateAlertRuleRequest = &updateAlertRuleRequest
 	return r
 }
 
@@ -943,8 +943,8 @@ func (a *AlertRulesAPIService) UpdateAlertRuleExecute(r ApiUpdateAlertRuleReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV3UpdateAlertRuleRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV3UpdateAlertRuleRequest is required and must be specified")
+	if r.updateAlertRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAlertRuleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -965,7 +965,7 @@ func (a *AlertRulesAPIService) UpdateAlertRuleExecute(r ApiUpdateAlertRuleReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV3UpdateAlertRuleRequest
+	localVarPostBody = r.updateAlertRuleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

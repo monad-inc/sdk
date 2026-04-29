@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateChildOrganization
 
-> GithubComMonadIncCorePkgTypesModelsOrganization CreateChildOrganization(ctx, organizationId).RoutesV3CreateChildOrganizationRequest(routesV3CreateChildOrganizationRequest).Execute()
+> GithubComMonadIncCorePkgTypesModelsOrganization CreateChildOrganization(ctx, organizationId).CreateChildOrganizationRequest(createChildOrganizationRequest).Execute()
 
 Create child organization (team)
 
@@ -38,11 +38,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
-	routesV3CreateChildOrganizationRequest := *openapiclient.NewRoutesV3CreateChildOrganizationRequest() // RoutesV3CreateChildOrganizationRequest | Request body
+	createChildOrganizationRequest := openapiclient.CreateChildOrganization_request{RoutesV3CreateChildOrganizationRequest: openapiclient.NewRoutesV3CreateChildOrganizationRequest()} // CreateChildOrganizationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationsAPI.CreateChildOrganization(context.Background(), organizationId).RoutesV3CreateChildOrganizationRequest(routesV3CreateChildOrganizationRequest).Execute()
+	resp, r, err := apiClient.OrganizationsAPI.CreateChildOrganization(context.Background(), organizationId).CreateChildOrganizationRequest(createChildOrganizationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.CreateChildOrganization``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,7 +68,7 @@ Other parameters are passed through a pointer to a apiCreateChildOrganizationReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV3CreateChildOrganizationRequest** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md) | Request body | 
+ **createChildOrganizationRequest** | [**CreateChildOrganizationRequest**](CreateChildOrganizationRequest.md) | Request body | 
 
 ### Return type
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ## UpdateChildOrganization
 
-> GithubComMonadIncCorePkgTypesModelsOrganization UpdateChildOrganization(ctx, organizationId, childOrganizationId).RoutesV3UpdateChildOrganizationRequest(routesV3UpdateChildOrganizationRequest).Execute()
+> GithubComMonadIncCorePkgTypesModelsOrganization UpdateChildOrganization(ctx, organizationId, childOrganizationId).UpdateChildOrganizationRequest(updateChildOrganizationRequest).Execute()
 
 Update child organization (team)
 
@@ -549,11 +549,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
 	childOrganizationId := "childOrganizationId_example" // string | Child Organization ID
-	routesV3UpdateChildOrganizationRequest := *openapiclient.NewRoutesV3UpdateChildOrganizationRequest() // RoutesV3UpdateChildOrganizationRequest | Request body
+	updateChildOrganizationRequest := openapiclient.UpdateChildOrganization_request{RoutesV3UpdateChildOrganizationRequest: openapiclient.NewRoutesV3UpdateChildOrganizationRequest()} // UpdateChildOrganizationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationsAPI.UpdateChildOrganization(context.Background(), organizationId, childOrganizationId).RoutesV3UpdateChildOrganizationRequest(routesV3UpdateChildOrganizationRequest).Execute()
+	resp, r, err := apiClient.OrganizationsAPI.UpdateChildOrganization(context.Background(), organizationId, childOrganizationId).UpdateChildOrganizationRequest(updateChildOrganizationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.UpdateChildOrganization``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV3UpdateChildOrganizationRequest** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md) | Request body | 
+ **updateChildOrganizationRequest** | [**UpdateChildOrganizationRequest**](UpdateChildOrganizationRequest.md) | Request body | 
 
 ### Return type
 

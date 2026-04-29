@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **createChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(routesV3CreateChildOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(createChildOrganizationRequest)
 
 Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
 
@@ -34,10 +34,7 @@ const request: OrganizationsApiCreateChildOrganizationRequest = {
     // Parent Organization ID
   organizationId: "organization_id_example",
     // Request body
-  routesV3CreateChildOrganizationRequest: {
-    description: "description_example",
-    name: "name_example",
-  },
+  createChildOrganizationRequest: null,
 };
 
 const data = await apiInstance.createChildOrganization(request);
@@ -49,7 +46,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3CreateChildOrganizationRequest** | **RoutesV3CreateChildOrganizationRequest**| Request body |
+ **createChildOrganizationRequest** | **CreateChildOrganizationRequest**| Request body |
  **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
 
 
@@ -93,11 +90,7 @@ const apiInstance = new OrganizationsApi(configuration);
 
 const request: OrganizationsApiCreateOrganizationRequest = {
     // Request body for creating an organization
-  routesCreateOrganizationRequest: {
-    billingAccountId: "billingAccountId_example",
-    description: "description_example",
-    name: "name_example",
-  },
+  routesCreateOrganizationRequest: null,
 };
 
 const data = await apiInstance.createOrganization(request);
@@ -444,7 +437,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(routesV3UpdateChildOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(updateChildOrganizationRequest)
 
 Update a child organization under the given parent organization. Known as a \"team\" in the UI.
 
@@ -464,10 +457,7 @@ const request: OrganizationsApiUpdateChildOrganizationRequest = {
     // Child Organization ID
   childOrganizationId: "child_organization_id_example",
     // Request body
-  routesV3UpdateChildOrganizationRequest: {
-    description: "description_example",
-    name: "name_example",
-  },
+  updateChildOrganizationRequest: null,
 };
 
 const data = await apiInstance.updateChildOrganization(request);
@@ -479,7 +469,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3UpdateChildOrganizationRequest** | **RoutesV3UpdateChildOrganizationRequest**| Request body |
+ **updateChildOrganizationRequest** | **UpdateChildOrganizationRequest**| Request body |
  **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
  **childOrganizationId** | [**string**] | Child Organization ID | defaults to undefined
 
@@ -527,10 +517,7 @@ const request: OrganizationsApiUpdateOrganizationRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for updating an organization
-  routesUpdateOrganizationRequest: {
-    description: "description_example",
-    name: "name_example",
-  },
+  routesUpdateOrganizationRequest: null,
 };
 
 const data = await apiInstance.updateOrganization(request);

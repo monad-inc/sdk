@@ -8,8 +8,8 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { EnrichmentSandboxRequest } from '../models/EnrichmentSandboxRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 
 /**
@@ -21,9 +21,9 @@ export class EnrichmentSandboxApiRequestFactory extends BaseAPIRequestFactory {
      * Apply a enrichment configuration to a JSON record
      * Apply enrichment to record
      * @param organizationId Organization ID
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record
+     * @param enrichmentSandboxRequest Enrichment configuration and record
      */
-    public async enrichmentSandbox(organizationId: string, routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest, _options?: Configuration): Promise<RequestContext> {
+    public async enrichmentSandbox(organizationId: string, enrichmentSandboxRequest: EnrichmentSandboxRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -32,9 +32,9 @@ export class EnrichmentSandboxApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV3EnrichmentSandboxRequest' is not null or undefined
-        if (routesV3EnrichmentSandboxRequest === null || routesV3EnrichmentSandboxRequest === undefined) {
-            throw new RequiredError("EnrichmentSandboxApi", "enrichmentSandbox", "routesV3EnrichmentSandboxRequest");
+        // verify required parameter 'enrichmentSandboxRequest' is not null or undefined
+        if (enrichmentSandboxRequest === null || enrichmentSandboxRequest === undefined) {
+            throw new RequiredError("EnrichmentSandboxApi", "enrichmentSandbox", "enrichmentSandboxRequest");
         }
 
 
@@ -53,7 +53,7 @@ export class EnrichmentSandboxApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3EnrichmentSandboxRequest, "RoutesV3EnrichmentSandboxRequest", ""),
+            ObjectSerializer.serialize(enrichmentSandboxRequest, "EnrichmentSandboxRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

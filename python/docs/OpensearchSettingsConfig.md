@@ -6,7 +6,7 @@ OpenSearch Output Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_mode** | **str** | The authentication mode (basic, aws_role) | [optional] 
+**auth_mode** | [**OpensearchAuthMode**](OpensearchAuthMode.md) |  | [optional] 
 **index** | **str** | The name of the OpenSearch index to use. | [optional] 
 **insecure_skip_verify** | **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **region** | **str** | The AWS Region where the OpenSearch domain is located | [optional] 

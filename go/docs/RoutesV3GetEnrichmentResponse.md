@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**ManagedBy** | Pointer to **string** |  | [optional] 
+**ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -161,20 +161,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetManagedBy
 
-`func (o *RoutesV3GetEnrichmentResponse) GetManagedBy() string`
+`func (o *RoutesV3GetEnrichmentResponse) GetManagedBy() ModelsManagedBy`
 
 GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
 
 ### GetManagedByOk
 
-`func (o *RoutesV3GetEnrichmentResponse) GetManagedByOk() (*string, bool)`
+`func (o *RoutesV3GetEnrichmentResponse) GetManagedByOk() (*ModelsManagedBy, bool)`
 
 GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedBy
 
-`func (o *RoutesV3GetEnrichmentResponse) SetManagedBy(v string)`
+`func (o *RoutesV3GetEnrichmentResponse) SetManagedBy(v ModelsManagedBy)`
 
 SetManagedBy sets ManagedBy field to given value.
 

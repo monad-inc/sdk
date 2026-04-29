@@ -12,7 +12,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="getToken"></a>
 # **getToken**
-> AuthenticationtypesTokenResponse getToken(routesLoginRequest)
+> AuthenticationtypesTokenResponse getToken(getTokenRequest)
 
 Get Authentication token
 
@@ -33,9 +33,9 @@ public class Example {
     defaultClient.setBasePath("https://monad.com/api");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    RoutesLoginRequest routesLoginRequest = new RoutesLoginRequest(); // RoutesLoginRequest | Login request
+    GetTokenRequest getTokenRequest = new GetTokenRequest(); // GetTokenRequest | Login request
     try {
-      AuthenticationtypesTokenResponse result = apiInstance.getToken(routesLoginRequest);
+      AuthenticationtypesTokenResponse result = apiInstance.getToken(getTokenRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#getToken");
@@ -52,7 +52,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **routesLoginRequest** | [**RoutesLoginRequest**](RoutesLoginRequest.md)| Login request | |
+| **getTokenRequest** | [**GetTokenRequest**](GetTokenRequest.md)| Login request | |
 
 ### Return type
 
@@ -126,7 +126,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/html
+ - **Accept**: text/html
 
 ### HTTP response details
 | Status code | Description | Response headers |

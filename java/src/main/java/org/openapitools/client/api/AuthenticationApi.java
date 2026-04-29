@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.AuthenticationtypesTokenResponse;
-import org.openapitools.client.model.RoutesLoginRequest;
+import org.openapitools.client.model.GetTokenRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -75,7 +75,7 @@ public class AuthenticationApi {
 
     /**
      * Build call for getToken
-     * @param routesLoginRequest Login request (required)
+     * @param getTokenRequest Login request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -89,7 +89,7 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTokenCall(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTokenCall(@javax.annotation.Nonnull GetTokenRequest getTokenRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -103,7 +103,7 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesLoginRequest;
+        Object localVarPostBody = getTokenRequest;
 
         // create path and map variables
         String localVarPath = "/v1/login/token";
@@ -135,20 +135,20 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTokenValidateBeforeCall(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routesLoginRequest' is set
-        if (routesLoginRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesLoginRequest' when calling getToken(Async)");
+    private okhttp3.Call getTokenValidateBeforeCall(@javax.annotation.Nonnull GetTokenRequest getTokenRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'getTokenRequest' is set
+        if (getTokenRequest == null) {
+            throw new ApiException("Missing the required parameter 'getTokenRequest' when calling getToken(Async)");
         }
 
-        return getTokenCall(routesLoginRequest, _callback);
+        return getTokenCall(getTokenRequest, _callback);
 
     }
 
     /**
      * Get Authentication token
      * Retrieve an authentication token from the authentication service using username and password.
-     * @param routesLoginRequest Login request (required)
+     * @param getTokenRequest Login request (required)
      * @return AuthenticationtypesTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -161,15 +161,15 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public AuthenticationtypesTokenResponse getToken(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest) throws ApiException {
-        ApiResponse<AuthenticationtypesTokenResponse> localVarResp = getTokenWithHttpInfo(routesLoginRequest);
+    public AuthenticationtypesTokenResponse getToken(@javax.annotation.Nonnull GetTokenRequest getTokenRequest) throws ApiException {
+        ApiResponse<AuthenticationtypesTokenResponse> localVarResp = getTokenWithHttpInfo(getTokenRequest);
         return localVarResp.getData();
     }
 
     /**
      * Get Authentication token
      * Retrieve an authentication token from the authentication service using username and password.
-     * @param routesLoginRequest Login request (required)
+     * @param getTokenRequest Login request (required)
      * @return ApiResponse&lt;AuthenticationtypesTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -182,8 +182,8 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthenticationtypesTokenResponse> getTokenWithHttpInfo(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest) throws ApiException {
-        okhttp3.Call localVarCall = getTokenValidateBeforeCall(routesLoginRequest, null);
+    public ApiResponse<AuthenticationtypesTokenResponse> getTokenWithHttpInfo(@javax.annotation.Nonnull GetTokenRequest getTokenRequest) throws ApiException {
+        okhttp3.Call localVarCall = getTokenValidateBeforeCall(getTokenRequest, null);
         Type localVarReturnType = new TypeToken<AuthenticationtypesTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -191,7 +191,7 @@ public class AuthenticationApi {
     /**
      * Get Authentication token (asynchronously)
      * Retrieve an authentication token from the authentication service using username and password.
-     * @param routesLoginRequest Login request (required)
+     * @param getTokenRequest Login request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -205,9 +205,9 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTokenAsync(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest, final ApiCallback<AuthenticationtypesTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call getTokenAsync(@javax.annotation.Nonnull GetTokenRequest getTokenRequest, final ApiCallback<AuthenticationtypesTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTokenValidateBeforeCall(routesLoginRequest, _callback);
+        okhttp3.Call localVarCall = getTokenValidateBeforeCall(getTokenRequest, _callback);
         Type localVarReturnType = new TypeToken<AuthenticationtypesTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -250,7 +250,6 @@ public class AuthenticationApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json",
             "text/html"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);

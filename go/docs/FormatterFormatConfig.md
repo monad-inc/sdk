@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** |  | [optional] 
+**Format** | Pointer to [**FormatterType**](FormatterType.md) |  | [optional] 
 **DelimitedFormat** | Pointer to [**DelimitedDelimiterFormatter**](DelimitedDelimiterFormatter.md) |  | [optional] 
 **JsonFormat** | Pointer to [**JsonJsonFormatter**](JsonJsonFormatter.md) |  | [optional] 
 **ParquetFormat** | Pointer to [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetFormat
 
-`func (o *FormatterFormatConfig) GetFormat() string`
+`func (o *FormatterFormatConfig) GetFormat() FormatterType`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *FormatterFormatConfig) GetFormatOk() (*string, bool)`
+`func (o *FormatterFormatConfig) GetFormatOk() (*FormatterType, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *FormatterFormatConfig) SetFormat(v string)`
+`func (o *FormatterFormatConfig) SetFormat(v FormatterType)`
 
 SetFormat sets Format field to given value.
 

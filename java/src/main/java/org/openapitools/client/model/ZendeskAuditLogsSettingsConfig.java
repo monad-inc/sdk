@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ZendeskAuditLogsAuthType;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +54,7 @@ public class ZendeskAuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
   @javax.annotation.Nullable
-  private String authType;
+  private ZendeskAuditLogsAuthType authType;
 
   public static final String SERIALIZED_NAME_EMAIL_ADDRESS = "email_address";
   @SerializedName(SERIALIZED_NAME_EMAIL_ADDRESS)
@@ -73,21 +74,21 @@ public class ZendeskAuditLogsSettingsConfig {
   public ZendeskAuditLogsSettingsConfig() {
   }
 
-  public ZendeskAuditLogsSettingsConfig authType(@javax.annotation.Nullable String authType) {
+  public ZendeskAuditLogsSettingsConfig authType(@javax.annotation.Nullable ZendeskAuditLogsAuthType authType) {
     this.authType = authType;
     return this;
   }
 
   /**
-   * AuthType is the type of authentication used for the input
+   * Get authType
    * @return authType
    */
   @javax.annotation.Nullable
-  public String getAuthType() {
+  public ZendeskAuditLogsAuthType getAuthType() {
     return authType;
   }
 
-  public void setAuthType(@javax.annotation.Nullable String authType) {
+  public void setAuthType(@javax.annotation.Nullable ZendeskAuditLogsAuthType authType) {
     this.authType = authType;
   }
 
@@ -223,8 +224,9 @@ public class ZendeskAuditLogsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
+      // validate the optional field `auth_type`
+      if (jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) {
+        ZendeskAuditLogsAuthType.validateJsonElement(jsonObj.get("auth_type"));
       }
       if ((jsonObj.get("email_address") != null && !jsonObj.get("email_address").isJsonNull()) && !jsonObj.get("email_address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email_address").toString()));

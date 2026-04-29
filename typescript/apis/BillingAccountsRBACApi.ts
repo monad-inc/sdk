@@ -8,11 +8,11 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateBillingAccountRoleRequest } from '../models/CreateBillingAccountRoleRequest';
+import { CreateBillingAccountUserRoleRequest } from '../models/CreateBillingAccountUserRoleRequest';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
 import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
-import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
-import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
-import { RoutesV2UpdateBillingAccountRoleRequest } from '../models/RoutesV2UpdateBillingAccountRoleRequest';
+import { UpdateBillingAccountRoleRequest } from '../models/UpdateBillingAccountRoleRequest';
 
 /**
  * no description
@@ -23,9 +23,9 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
      * Create Billing Account Role
      * Create Billing Account Role
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     * @param createBillingAccountRoleRequest Create Billing Account Role Request
      */
-    public async createBillingAccountRole(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createBillingAccountRole(billingAccountId: string, createBillingAccountRoleRequest: CreateBillingAccountRoleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -34,9 +34,9 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2CreateBillingAccountRoleRequest' is not null or undefined
-        if (routesV2CreateBillingAccountRoleRequest === null || routesV2CreateBillingAccountRoleRequest === undefined) {
-            throw new RequiredError("BillingAccountsRBACApi", "createBillingAccountRole", "routesV2CreateBillingAccountRoleRequest");
+        // verify required parameter 'createBillingAccountRoleRequest' is not null or undefined
+        if (createBillingAccountRoleRequest === null || createBillingAccountRoleRequest === undefined) {
+            throw new RequiredError("BillingAccountsRBACApi", "createBillingAccountRole", "createBillingAccountRoleRequest");
         }
 
 
@@ -55,7 +55,7 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateBillingAccountRoleRequest, "RoutesV2CreateBillingAccountRoleRequest", ""),
+            ObjectSerializer.serialize(createBillingAccountRoleRequest, "CreateBillingAccountRoleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -80,9 +80,9 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
      * Create Billing Account User Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     * @param createBillingAccountUserRoleRequest Create Billing Account User Role Request
      */
-    public async createBillingAccountUserRole(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createBillingAccountUserRole(billingAccountId: string, roleId: string, createBillingAccountUserRoleRequest: CreateBillingAccountUserRoleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -97,9 +97,9 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2CreatebillingAccountUserRoleRequest' is not null or undefined
-        if (routesV2CreatebillingAccountUserRoleRequest === null || routesV2CreatebillingAccountUserRoleRequest === undefined) {
-            throw new RequiredError("BillingAccountsRBACApi", "createBillingAccountUserRole", "routesV2CreatebillingAccountUserRoleRequest");
+        // verify required parameter 'createBillingAccountUserRoleRequest' is not null or undefined
+        if (createBillingAccountUserRoleRequest === null || createBillingAccountUserRoleRequest === undefined) {
+            throw new RequiredError("BillingAccountsRBACApi", "createBillingAccountUserRole", "createBillingAccountUserRoleRequest");
         }
 
 
@@ -119,7 +119,7 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreatebillingAccountUserRoleRequest, "RoutesV2CreatebillingAccountUserRoleRequest", ""),
+            ObjectSerializer.serialize(createBillingAccountUserRoleRequest, "CreateBillingAccountUserRoleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -358,9 +358,9 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
      * Update Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     * @param updateBillingAccountRoleRequest Update Billing Account Role Request
      */
-    public async updateBillingAccountRole(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateBillingAccountRole(billingAccountId: string, roleId: string, updateBillingAccountRoleRequest: UpdateBillingAccountRoleRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -375,9 +375,9 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2UpdateBillingAccountRoleRequest' is not null or undefined
-        if (routesV2UpdateBillingAccountRoleRequest === null || routesV2UpdateBillingAccountRoleRequest === undefined) {
-            throw new RequiredError("BillingAccountsRBACApi", "updateBillingAccountRole", "routesV2UpdateBillingAccountRoleRequest");
+        // verify required parameter 'updateBillingAccountRoleRequest' is not null or undefined
+        if (updateBillingAccountRoleRequest === null || updateBillingAccountRoleRequest === undefined) {
+            throw new RequiredError("BillingAccountsRBACApi", "updateBillingAccountRole", "updateBillingAccountRoleRequest");
         }
 
 
@@ -397,7 +397,7 @@ export class BillingAccountsRBACApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdateBillingAccountRoleRequest, "RoutesV2UpdateBillingAccountRoleRequest", ""),
+            ObjectSerializer.serialize(updateBillingAccountRoleRequest, "UpdateBillingAccountRoleRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

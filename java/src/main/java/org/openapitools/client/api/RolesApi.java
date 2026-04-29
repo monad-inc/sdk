@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateRoleRequest;
 import org.openapitools.client.model.ModelsRoleWithPermissions;
 import org.openapitools.client.model.ModelsRoleWithPermissionsList;
-import org.openapitools.client.model.RoutesV2CreateRoleV2Request;
-import org.openapitools.client.model.RoutesV2UpdateRoleV2Request;
+import org.openapitools.client.model.UpdateRoleRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -78,7 +78,7 @@ public class RolesApi {
     /**
      * Build call for createRole
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @param createRoleRequest Request body for creating a role (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -91,7 +91,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRoleCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRoleCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateRoleRequest createRoleRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -105,7 +105,7 @@ public class RolesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2CreateRoleV2Request;
+        Object localVarPostBody = createRoleRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/roles"
@@ -138,18 +138,18 @@ public class RolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRoleValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRoleValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateRoleRequest createRoleRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createRole(Async)");
         }
 
-        // verify the required parameter 'routesV2CreateRoleV2Request' is set
-        if (routesV2CreateRoleV2Request == null) {
-            throw new ApiException("Missing the required parameter 'routesV2CreateRoleV2Request' when calling createRole(Async)");
+        // verify the required parameter 'createRoleRequest' is set
+        if (createRoleRequest == null) {
+            throw new ApiException("Missing the required parameter 'createRoleRequest' when calling createRole(Async)");
         }
 
-        return createRoleCall(organizationId, routesV2CreateRoleV2Request, _callback);
+        return createRoleCall(organizationId, createRoleRequest, _callback);
 
     }
 
@@ -157,7 +157,7 @@ public class RolesApi {
      * Create role
      * Create a new role with permissions
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @param createRoleRequest Request body for creating a role (required)
      * @return ModelsRoleWithPermissions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -169,8 +169,8 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsRoleWithPermissions createRole(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
-        ApiResponse<ModelsRoleWithPermissions> localVarResp = createRoleWithHttpInfo(organizationId, routesV2CreateRoleV2Request);
+    public ModelsRoleWithPermissions createRole(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateRoleRequest createRoleRequest) throws ApiException {
+        ApiResponse<ModelsRoleWithPermissions> localVarResp = createRoleWithHttpInfo(organizationId, createRoleRequest);
         return localVarResp.getData();
     }
 
@@ -178,7 +178,7 @@ public class RolesApi {
      * Create role
      * Create a new role with permissions
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @param createRoleRequest Request body for creating a role (required)
      * @return ApiResponse&lt;ModelsRoleWithPermissions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -190,8 +190,8 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsRoleWithPermissions> createRoleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
-        okhttp3.Call localVarCall = createRoleValidateBeforeCall(organizationId, routesV2CreateRoleV2Request, null);
+    public ApiResponse<ModelsRoleWithPermissions> createRoleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateRoleRequest createRoleRequest) throws ApiException {
+        okhttp3.Call localVarCall = createRoleValidateBeforeCall(organizationId, createRoleRequest, null);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -200,7 +200,7 @@ public class RolesApi {
      * Create role (asynchronously)
      * Create a new role with permissions
      * @param organizationId Organization ID (required)
-     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @param createRoleRequest Request body for creating a role (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -213,9 +213,9 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRoleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+    public okhttp3.Call createRoleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateRoleRequest createRoleRequest, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createRoleValidateBeforeCall(organizationId, routesV2CreateRoleV2Request, _callback);
+        okhttp3.Call localVarCall = createRoleValidateBeforeCall(organizationId, createRoleRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -653,7 +653,7 @@ public class RolesApi {
      * Build call for updateRole
      * @param organizationId Organization ID (required)
      * @param roleId Role ID (required)
-     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @param updateRoleRequest Request body for updating a role (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -666,7 +666,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRoleCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateRoleCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull UpdateRoleRequest updateRoleRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -680,7 +680,7 @@ public class RolesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2UpdateRoleV2Request;
+        Object localVarPostBody = updateRoleRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/roles/{role_id}"
@@ -714,7 +714,7 @@ public class RolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateRoleValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateRoleValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull UpdateRoleRequest updateRoleRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateRole(Async)");
@@ -725,12 +725,12 @@ public class RolesApi {
             throw new ApiException("Missing the required parameter 'roleId' when calling updateRole(Async)");
         }
 
-        // verify the required parameter 'routesV2UpdateRoleV2Request' is set
-        if (routesV2UpdateRoleV2Request == null) {
-            throw new ApiException("Missing the required parameter 'routesV2UpdateRoleV2Request' when calling updateRole(Async)");
+        // verify the required parameter 'updateRoleRequest' is set
+        if (updateRoleRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateRoleRequest' when calling updateRole(Async)");
         }
 
-        return updateRoleCall(organizationId, roleId, routesV2UpdateRoleV2Request, _callback);
+        return updateRoleCall(organizationId, roleId, updateRoleRequest, _callback);
 
     }
 
@@ -739,7 +739,7 @@ public class RolesApi {
      * Update a role and its permissions
      * @param organizationId Organization ID (required)
      * @param roleId Role ID (required)
-     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @param updateRoleRequest Request body for updating a role (required)
      * @return ModelsRoleWithPermissions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -751,8 +751,8 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsRoleWithPermissions updateRole(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
-        ApiResponse<ModelsRoleWithPermissions> localVarResp = updateRoleWithHttpInfo(organizationId, roleId, routesV2UpdateRoleV2Request);
+    public ModelsRoleWithPermissions updateRole(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull UpdateRoleRequest updateRoleRequest) throws ApiException {
+        ApiResponse<ModelsRoleWithPermissions> localVarResp = updateRoleWithHttpInfo(organizationId, roleId, updateRoleRequest);
         return localVarResp.getData();
     }
 
@@ -761,7 +761,7 @@ public class RolesApi {
      * Update a role and its permissions
      * @param organizationId Organization ID (required)
      * @param roleId Role ID (required)
-     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @param updateRoleRequest Request body for updating a role (required)
      * @return ApiResponse&lt;ModelsRoleWithPermissions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -773,8 +773,8 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsRoleWithPermissions> updateRoleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
-        okhttp3.Call localVarCall = updateRoleValidateBeforeCall(organizationId, roleId, routesV2UpdateRoleV2Request, null);
+    public ApiResponse<ModelsRoleWithPermissions> updateRoleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull UpdateRoleRequest updateRoleRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateRoleValidateBeforeCall(organizationId, roleId, updateRoleRequest, null);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -784,7 +784,7 @@ public class RolesApi {
      * Update a role and its permissions
      * @param organizationId Organization ID (required)
      * @param roleId Role ID (required)
-     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @param updateRoleRequest Request body for updating a role (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -797,9 +797,9 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRoleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+    public okhttp3.Call updateRoleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull UpdateRoleRequest updateRoleRequest, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateRoleValidateBeforeCall(organizationId, roleId, routesV2UpdateRoleV2Request, _callback);
+        okhttp3.Call localVarCall = updateRoleValidateBeforeCall(organizationId, roleId, updateRoleRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

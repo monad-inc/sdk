@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -20,10 +20,10 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from monad.models.alerts_alert_meta import AlertsAlertMeta
+from monad.models.create_alert_rule_request import CreateAlertRuleRequest
 from monad.models.models_alert_rule import ModelsAlertRule
 from monad.models.models_alert_rule_list import ModelsAlertRuleList
-from monad.models.routes_v3_create_alert_rule_request import RoutesV3CreateAlertRuleRequest
-from monad.models.routes_v3_update_alert_rule_request import RoutesV3UpdateAlertRuleRequest
+from monad.models.update_alert_rule_request import UpdateAlertRuleRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -47,7 +47,7 @@ class AlertRulesApi:
     def create_alert_rule(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_alert_rule_request: Annotated[RoutesV3CreateAlertRuleRequest, Field(description="Request body for creating an alert rule")],
+        create_alert_rule_request: Annotated[CreateAlertRuleRequest, Field(description="Request body for creating an alert rule")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,8 +67,8 @@ class AlertRulesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_alert_rule_request: Request body for creating an alert rule (required)
-        :type routes_v3_create_alert_rule_request: RoutesV3CreateAlertRuleRequest
+        :param create_alert_rule_request: Request body for creating an alert rule (required)
+        :type create_alert_rule_request: CreateAlertRuleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class AlertRulesApi:
 
         _param = self._create_alert_rule_serialize(
             organization_id=organization_id,
-            routes_v3_create_alert_rule_request=routes_v3_create_alert_rule_request,
+            create_alert_rule_request=create_alert_rule_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -120,7 +120,7 @@ class AlertRulesApi:
     def create_alert_rule_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_alert_rule_request: Annotated[RoutesV3CreateAlertRuleRequest, Field(description="Request body for creating an alert rule")],
+        create_alert_rule_request: Annotated[CreateAlertRuleRequest, Field(description="Request body for creating an alert rule")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -140,8 +140,8 @@ class AlertRulesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_alert_rule_request: Request body for creating an alert rule (required)
-        :type routes_v3_create_alert_rule_request: RoutesV3CreateAlertRuleRequest
+        :param create_alert_rule_request: Request body for creating an alert rule (required)
+        :type create_alert_rule_request: CreateAlertRuleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -166,7 +166,7 @@ class AlertRulesApi:
 
         _param = self._create_alert_rule_serialize(
             organization_id=organization_id,
-            routes_v3_create_alert_rule_request=routes_v3_create_alert_rule_request,
+            create_alert_rule_request=create_alert_rule_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -193,7 +193,7 @@ class AlertRulesApi:
     def create_alert_rule_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v3_create_alert_rule_request: Annotated[RoutesV3CreateAlertRuleRequest, Field(description="Request body for creating an alert rule")],
+        create_alert_rule_request: Annotated[CreateAlertRuleRequest, Field(description="Request body for creating an alert rule")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -213,8 +213,8 @@ class AlertRulesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v3_create_alert_rule_request: Request body for creating an alert rule (required)
-        :type routes_v3_create_alert_rule_request: RoutesV3CreateAlertRuleRequest
+        :param create_alert_rule_request: Request body for creating an alert rule (required)
+        :type create_alert_rule_request: CreateAlertRuleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -239,7 +239,7 @@ class AlertRulesApi:
 
         _param = self._create_alert_rule_serialize(
             organization_id=organization_id,
-            routes_v3_create_alert_rule_request=routes_v3_create_alert_rule_request,
+            create_alert_rule_request=create_alert_rule_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -261,7 +261,7 @@ class AlertRulesApi:
     def _create_alert_rule_serialize(
         self,
         organization_id,
-        routes_v3_create_alert_rule_request,
+        create_alert_rule_request,
         _request_auth,
         _content_type,
         _headers,
@@ -289,8 +289,8 @@ class AlertRulesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_create_alert_rule_request is not None:
-            _body_params = routes_v3_create_alert_rule_request
+        if create_alert_rule_request is not None:
+            _body_params = create_alert_rule_request
 
 
         # set the HTTP header `Accept`
@@ -1723,7 +1723,7 @@ class AlertRulesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         alert_rule_id: Annotated[StrictStr, Field(description="Alert Rule ID to update")],
-        routes_v3_update_alert_rule_request: Annotated[RoutesV3UpdateAlertRuleRequest, Field(description="Request body for updating an alert rule")],
+        update_alert_rule_request: Annotated[UpdateAlertRuleRequest, Field(description="Request body for updating an alert rule")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1745,8 +1745,8 @@ class AlertRulesApi:
         :type organization_id: str
         :param alert_rule_id: Alert Rule ID to update (required)
         :type alert_rule_id: str
-        :param routes_v3_update_alert_rule_request: Request body for updating an alert rule (required)
-        :type routes_v3_update_alert_rule_request: RoutesV3UpdateAlertRuleRequest
+        :param update_alert_rule_request: Request body for updating an alert rule (required)
+        :type update_alert_rule_request: UpdateAlertRuleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1772,7 +1772,7 @@ class AlertRulesApi:
         _param = self._update_alert_rule_serialize(
             organization_id=organization_id,
             alert_rule_id=alert_rule_id,
-            routes_v3_update_alert_rule_request=routes_v3_update_alert_rule_request,
+            update_alert_rule_request=update_alert_rule_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1800,7 +1800,7 @@ class AlertRulesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         alert_rule_id: Annotated[StrictStr, Field(description="Alert Rule ID to update")],
-        routes_v3_update_alert_rule_request: Annotated[RoutesV3UpdateAlertRuleRequest, Field(description="Request body for updating an alert rule")],
+        update_alert_rule_request: Annotated[UpdateAlertRuleRequest, Field(description="Request body for updating an alert rule")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1822,8 +1822,8 @@ class AlertRulesApi:
         :type organization_id: str
         :param alert_rule_id: Alert Rule ID to update (required)
         :type alert_rule_id: str
-        :param routes_v3_update_alert_rule_request: Request body for updating an alert rule (required)
-        :type routes_v3_update_alert_rule_request: RoutesV3UpdateAlertRuleRequest
+        :param update_alert_rule_request: Request body for updating an alert rule (required)
+        :type update_alert_rule_request: UpdateAlertRuleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1849,7 +1849,7 @@ class AlertRulesApi:
         _param = self._update_alert_rule_serialize(
             organization_id=organization_id,
             alert_rule_id=alert_rule_id,
-            routes_v3_update_alert_rule_request=routes_v3_update_alert_rule_request,
+            update_alert_rule_request=update_alert_rule_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1877,7 +1877,7 @@ class AlertRulesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         alert_rule_id: Annotated[StrictStr, Field(description="Alert Rule ID to update")],
-        routes_v3_update_alert_rule_request: Annotated[RoutesV3UpdateAlertRuleRequest, Field(description="Request body for updating an alert rule")],
+        update_alert_rule_request: Annotated[UpdateAlertRuleRequest, Field(description="Request body for updating an alert rule")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1899,8 +1899,8 @@ class AlertRulesApi:
         :type organization_id: str
         :param alert_rule_id: Alert Rule ID to update (required)
         :type alert_rule_id: str
-        :param routes_v3_update_alert_rule_request: Request body for updating an alert rule (required)
-        :type routes_v3_update_alert_rule_request: RoutesV3UpdateAlertRuleRequest
+        :param update_alert_rule_request: Request body for updating an alert rule (required)
+        :type update_alert_rule_request: UpdateAlertRuleRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1926,7 +1926,7 @@ class AlertRulesApi:
         _param = self._update_alert_rule_serialize(
             organization_id=organization_id,
             alert_rule_id=alert_rule_id,
-            routes_v3_update_alert_rule_request=routes_v3_update_alert_rule_request,
+            update_alert_rule_request=update_alert_rule_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1949,7 +1949,7 @@ class AlertRulesApi:
         self,
         organization_id,
         alert_rule_id,
-        routes_v3_update_alert_rule_request,
+        update_alert_rule_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1979,8 +1979,8 @@ class AlertRulesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v3_update_alert_rule_request is not None:
-            _body_params = routes_v3_update_alert_rule_request
+        if update_alert_rule_request is not None:
+            _body_params = update_alert_rule_request
 
 
         # set the HTTP header `Accept`

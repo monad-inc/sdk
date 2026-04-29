@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ## SetStorageTypeCost
 
-> ModelsStorageTypeCostConfig SetStorageTypeCost(ctx, organizationId).RoutesV2SetStorageTypeCostRequest(routesV2SetStorageTypeCostRequest).Execute()
+> ModelsStorageTypeCostConfig SetStorageTypeCost(ctx, organizationId).SetStorageTypeCostRequest(setStorageTypeCostRequest).Execute()
 
 Set storage type cost
 
@@ -343,11 +343,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2SetStorageTypeCostRequest := *openapiclient.NewRoutesV2SetStorageTypeCostRequest() // RoutesV2SetStorageTypeCostRequest | Cost configuration
+	setStorageTypeCostRequest := openapiclient.SetStorageTypeCost_request{RoutesV2SetStorageTypeCostRequest: openapiclient.NewRoutesV2SetStorageTypeCostRequest()} // SetStorageTypeCostRequest | Cost configuration
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationsStorageCostAPI.SetStorageTypeCost(context.Background(), organizationId).RoutesV2SetStorageTypeCostRequest(routesV2SetStorageTypeCostRequest).Execute()
+	resp, r, err := apiClient.OrganizationsStorageCostAPI.SetStorageTypeCost(context.Background(), organizationId).SetStorageTypeCostRequest(setStorageTypeCostRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsStorageCostAPI.SetStorageTypeCost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -373,7 +373,7 @@ Other parameters are passed through a pointer to a apiSetStorageTypeCostRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2SetStorageTypeCostRequest** | [**RoutesV2SetStorageTypeCostRequest**](RoutesV2SetStorageTypeCostRequest.md) | Cost configuration | 
+ **setStorageTypeCostRequest** | [**SetStorageTypeCostRequest**](SetStorageTypeCostRequest.md) | Cost configuration | 
 
 ### Return type
 

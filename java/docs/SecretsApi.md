@@ -13,7 +13,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createSecret"></a>
 # **createSecret**
-> RoutesV2SecretResponse createSecret(organizationId, routesV2CreateOrUpdateSecretRequest)
+> RoutesV2SecretResponse createSecret(organizationId, createSecretRequest)
 
 Create secret
 
@@ -48,9 +48,9 @@ public class Example {
 
     SecretsApi apiInstance = new SecretsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest = new RoutesV2CreateOrUpdateSecretRequest(); // RoutesV2CreateOrUpdateSecretRequest | Secret to create
+    CreateSecretRequest createSecretRequest = new CreateSecretRequest(); // CreateSecretRequest | Secret to create
     try {
-      RoutesV2SecretResponse result = apiInstance.createSecret(organizationId, routesV2CreateOrUpdateSecretRequest);
+      RoutesV2SecretResponse result = apiInstance.createSecret(organizationId, createSecretRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SecretsApi#createSecret");
@@ -68,7 +68,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2CreateOrUpdateSecretRequest** | [**RoutesV2CreateOrUpdateSecretRequest**](RoutesV2CreateOrUpdateSecretRequest.md)| Secret to create | |
+| **createSecretRequest** | [**CreateSecretRequest**](CreateSecretRequest.md)| Secret to create | |
 
 ### Return type
 
@@ -329,7 +329,7 @@ public class Example {
 
 <a id="updateSecret"></a>
 # **updateSecret**
-> RoutesV2SecretResponse updateSecret(organizationId, secretId, routesV2CreateOrUpdateSecretRequest)
+> RoutesV2SecretResponse updateSecret(organizationId, secretId, updateSecretRequest)
 
 Update secret
 
@@ -365,9 +365,9 @@ public class Example {
     SecretsApi apiInstance = new SecretsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String secretId = "secretId_example"; // String | Secret ID
-    RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest = new RoutesV2CreateOrUpdateSecretRequest(); // RoutesV2CreateOrUpdateSecretRequest | Secret updates
+    UpdateSecretRequest updateSecretRequest = new UpdateSecretRequest(); // UpdateSecretRequest | Secret updates
     try {
-      RoutesV2SecretResponse result = apiInstance.updateSecret(organizationId, secretId, routesV2CreateOrUpdateSecretRequest);
+      RoutesV2SecretResponse result = apiInstance.updateSecret(organizationId, secretId, updateSecretRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SecretsApi#updateSecret");
@@ -386,7 +386,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **secretId** | **String**| Secret ID | |
-| **routesV2CreateOrUpdateSecretRequest** | [**RoutesV2CreateOrUpdateSecretRequest**](RoutesV2CreateOrUpdateSecretRequest.md)| Secret updates | |
+| **updateSecretRequest** | [**UpdateSecretRequest**](UpdateSecretRequest.md)| Secret updates | |
 
 ### Return type
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createOutput**
-> ModelsOutput createOutput(routesV2CreateOutputRequest)
+> ModelsOutput createOutput(createOutputRequest)
 
 Create a new output with configuration including secrets handling
 
@@ -32,20 +32,7 @@ const request: OrganizationOutputsApiCreateOutputRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Output configuration
-  routesV2CreateOutputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    outputType: "outputType_example",
-    promiseId: "promiseId_example",
-  },
+  createOutputRequest: null,
     // Test connection before creating the input (optional)
   testConnection: true,
 };
@@ -59,7 +46,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateOutputRequest** | **RoutesV2CreateOutputRequest**| Output configuration |
+ **createOutputRequest** | **CreateOutputRequest**| Output configuration |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
@@ -262,7 +249,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **replaceOutput**
-> ModelsOutput replaceOutput(routesV2PutOutputRequest)
+> ModelsOutput replaceOutput(replaceOutputRequest)
 
 Replace an existing output with new configuration including secrets handling
 
@@ -282,19 +269,7 @@ const request: OrganizationOutputsApiReplaceOutputRequest = {
     // Output ID
   outputId: "output_id_example",
     // Output configuration update
-  routesV2PutOutputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    outputType: "outputType_example",
-  },
+  replaceOutputRequest: null,
     // Test connection before creating the input (optional)
   testConnection: true,
 };
@@ -308,7 +283,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2PutOutputRequest** | **RoutesV2PutOutputRequest**| Output configuration update |
+ **replaceOutputRequest** | **ReplaceOutputRequest**| Output configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **outputId** | [**string**] | Output ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
@@ -339,7 +314,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **testOutputConnection**
-> RoutesV2SuccessResponse testOutputConnection(routesV2TestOutputConnectionRequest)
+> RoutesV2SuccessResponse testOutputConnection(testOutputConnectionRequest)
 
 Tests the connection for a given output type and configuration
 
@@ -357,17 +332,7 @@ const request: OrganizationOutputsApiTestOutputConnectionRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Output configuration to test
-  routesV2TestOutputConnectionRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    type: "type_example",
-  },
+  testOutputConnectionRequest: null,
 };
 
 const data = await apiInstance.testOutputConnection(request);
@@ -379,7 +344,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2TestOutputConnectionRequest** | **RoutesV2TestOutputConnectionRequest**| Output configuration to test |
+ **testOutputConnectionRequest** | **TestOutputConnectionRequest**| Output configuration to test |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -407,7 +372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateOutput**
-> ModelsOutput updateOutput(routesV2UpdateOutputRequest)
+> ModelsOutput updateOutput(updateOutputRequest)
 
 Update an existing output with new configuration including secrets handling
 
@@ -427,19 +392,7 @@ const request: OrganizationOutputsApiUpdateOutputRequest = {
     // Output ID
   outputId: "output_id_example",
     // Output configuration update
-  routesV2UpdateOutputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    description: "description_example",
-    name: "name_example",
-    outputType: "outputType_example",
-  },
+  updateOutputRequest: null,
     // Test connection before creating the input (optional)
   testConnection: true,
 };
@@ -453,7 +406,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2UpdateOutputRequest** | **RoutesV2UpdateOutputRequest**| Output configuration update |
+ **updateOutputRequest** | **UpdateOutputRequest**| Output configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **outputId** | [**string**] | Output ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined

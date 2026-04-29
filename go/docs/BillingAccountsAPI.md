@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateBillingAccount
 
-> ModelsBillingAccount CreateBillingAccount(ctx).RoutesV2CreateBillingAccountRequest(routesV2CreateBillingAccountRequest).Execute()
+> ModelsBillingAccount CreateBillingAccount(ctx).CreateBillingAccountRequest(createBillingAccountRequest).Execute()
 
 Create Billing Account
 
@@ -33,11 +33,11 @@ import (
 )
 
 func main() {
-	routesV2CreateBillingAccountRequest := *openapiclient.NewRoutesV2CreateBillingAccountRequest("BillingEmail_example", "Name_example") // RoutesV2CreateBillingAccountRequest | Request body for creating a billing account
+	createBillingAccountRequest := openapiclient.CreateBillingAccount_request{RoutesV2CreateBillingAccountRequest: openapiclient.NewRoutesV2CreateBillingAccountRequest("BillingEmail_example", "Name_example")} // CreateBillingAccountRequest | Request body for creating a billing account
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsAPI.CreateBillingAccount(context.Background()).RoutesV2CreateBillingAccountRequest(routesV2CreateBillingAccountRequest).Execute()
+	resp, r, err := apiClient.BillingAccountsAPI.CreateBillingAccount(context.Background()).CreateBillingAccountRequest(createBillingAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsAPI.CreateBillingAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +58,7 @@ Other parameters are passed through a pointer to a apiCreateBillingAccountReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateBillingAccountRequest** | [**RoutesV2CreateBillingAccountRequest**](RoutesV2CreateBillingAccountRequest.md) | Request body for creating a billing account | 
+ **createBillingAccountRequest** | [**CreateBillingAccountRequest**](CreateBillingAccountRequest.md) | Request body for creating a billing account | 
 
 ### Return type
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ## UpdateBillingAccount
 
-> ModelsBillingAccount UpdateBillingAccount(ctx, billingAccountId).RoutesV2UpdateBillingAccountRequest(routesV2UpdateBillingAccountRequest).Execute()
+> ModelsBillingAccount UpdateBillingAccount(ctx, billingAccountId).UpdateBillingAccountRequest(updateBillingAccountRequest).Execute()
 
 Update Billing Account
 
@@ -306,11 +306,11 @@ import (
 
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
-	routesV2UpdateBillingAccountRequest := *openapiclient.NewRoutesV2UpdateBillingAccountRequest() // RoutesV2UpdateBillingAccountRequest | Request body for updating a billing account
+	updateBillingAccountRequest := openapiclient.UpdateBillingAccount_request{RoutesV2UpdateBillingAccountRequest: openapiclient.NewRoutesV2UpdateBillingAccountRequest()} // UpdateBillingAccountRequest | Request body for updating a billing account
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsAPI.UpdateBillingAccount(context.Background(), billingAccountId).RoutesV2UpdateBillingAccountRequest(routesV2UpdateBillingAccountRequest).Execute()
+	resp, r, err := apiClient.BillingAccountsAPI.UpdateBillingAccount(context.Background(), billingAccountId).UpdateBillingAccountRequest(updateBillingAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsAPI.UpdateBillingAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -336,7 +336,7 @@ Other parameters are passed through a pointer to a apiUpdateBillingAccountReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2UpdateBillingAccountRequest** | [**RoutesV2UpdateBillingAccountRequest**](RoutesV2UpdateBillingAccountRequest.md) | Request body for updating a billing account | 
+ **updateBillingAccountRequest** | [**UpdateBillingAccountRequest**](UpdateBillingAccountRequest.md) | Request body for updating a billing account | 
 
 ### Return type
 

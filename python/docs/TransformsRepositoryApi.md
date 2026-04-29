@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **export_transform**
-> str export_transform(community_transforms_internal_transform_config)
+> str export_transform(export_transform_request)
 
 Export transform to YAML
 
@@ -26,7 +26,7 @@ Export transform to YAML format
 
 ```python
 import monad
-from monad.models.community_transforms_internal_transform_config import CommunityTransformsInternalTransformConfig
+from monad.models.export_transform_request import ExportTransformRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -57,11 +57,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformsRepositoryApi(api_client)
-    community_transforms_internal_transform_config = monad.CommunityTransformsInternalTransformConfig() # CommunityTransformsInternalTransformConfig | Transform to export and optional metadata
+    export_transform_request = monad.ExportTransformRequest() # ExportTransformRequest | Transform to export and optional metadata
 
     try:
         # Export transform to YAML
-        api_response = api_instance.export_transform(community_transforms_internal_transform_config)
+        api_response = api_instance.export_transform(export_transform_request)
         print("The response of TransformsRepositoryApi->export_transform:\n")
         pprint(api_response)
     except Exception as e:
@@ -75,7 +75,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **community_transforms_internal_transform_config** | [**CommunityTransformsInternalTransformConfig**](CommunityTransformsInternalTransformConfig.md)| Transform to export and optional metadata | 
+ **export_transform_request** | [**ExportTransformRequest**](ExportTransformRequest.md)| Transform to export and optional metadata | 
 
 ### Return type
 
@@ -320,7 +320,7 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformsRepositoryApi(api_client)
-    body = 'body_example' # str | YAML transform definition
+    body = None # object | YAML transform definition
 
     try:
         # Import transform from YAML
@@ -338,7 +338,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **str**| YAML transform definition | 
+ **body** | **object**| YAML transform definition | 
 
 ### Return type
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, text/plain
  - **Accept**: application/json
 
 ### HTTP response details

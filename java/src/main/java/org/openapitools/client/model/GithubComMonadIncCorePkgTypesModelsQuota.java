@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -21,6 +21,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsQuotaAction;
+import org.openapitools.client.model.ModelsQuotaLimitType;
+import org.openapitools.client.model.ModelsQuotaLimitUnit;
+import org.openapitools.client.model.ModelsQuotaTimeframe;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +57,7 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
   @javax.annotation.Nullable
-  private String action;
+  private ModelsQuotaAction action;
 
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -93,12 +97,12 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
   public static final String SERIALIZED_NAME_LIMIT_TYPE = "limit_type";
   @SerializedName(SERIALIZED_NAME_LIMIT_TYPE)
   @javax.annotation.Nullable
-  private String limitType;
+  private ModelsQuotaLimitType limitType;
 
   public static final String SERIALIZED_NAME_LIMIT_UNIT = "limit_unit";
   @SerializedName(SERIALIZED_NAME_LIMIT_UNIT)
   @javax.annotation.Nullable
-  private String limitUnit;
+  private ModelsQuotaLimitUnit limitUnit;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -118,7 +122,7 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
   public static final String SERIALIZED_NAME_TIMEFRAME = "timeframe";
   @SerializedName(SERIALIZED_NAME_TIMEFRAME)
   @javax.annotation.Nullable
-  private String timeframe;
+  private ModelsQuotaTimeframe timeframe;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -128,7 +132,7 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
   public GithubComMonadIncCorePkgTypesModelsQuota() {
   }
 
-  public GithubComMonadIncCorePkgTypesModelsQuota action(@javax.annotation.Nullable String action) {
+  public GithubComMonadIncCorePkgTypesModelsQuota action(@javax.annotation.Nullable ModelsQuotaAction action) {
     this.action = action;
     return this;
   }
@@ -138,11 +142,11 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
    * @return action
    */
   @javax.annotation.Nullable
-  public String getAction() {
+  public ModelsQuotaAction getAction() {
     return action;
   }
 
-  public void setAction(@javax.annotation.Nullable String action) {
+  public void setAction(@javax.annotation.Nullable ModelsQuotaAction action) {
     this.action = action;
   }
 
@@ -280,7 +284,7 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
   }
 
 
-  public GithubComMonadIncCorePkgTypesModelsQuota limitType(@javax.annotation.Nullable String limitType) {
+  public GithubComMonadIncCorePkgTypesModelsQuota limitType(@javax.annotation.Nullable ModelsQuotaLimitType limitType) {
     this.limitType = limitType;
     return this;
   }
@@ -290,16 +294,16 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
    * @return limitType
    */
   @javax.annotation.Nullable
-  public String getLimitType() {
+  public ModelsQuotaLimitType getLimitType() {
     return limitType;
   }
 
-  public void setLimitType(@javax.annotation.Nullable String limitType) {
+  public void setLimitType(@javax.annotation.Nullable ModelsQuotaLimitType limitType) {
     this.limitType = limitType;
   }
 
 
-  public GithubComMonadIncCorePkgTypesModelsQuota limitUnit(@javax.annotation.Nullable String limitUnit) {
+  public GithubComMonadIncCorePkgTypesModelsQuota limitUnit(@javax.annotation.Nullable ModelsQuotaLimitUnit limitUnit) {
     this.limitUnit = limitUnit;
     return this;
   }
@@ -309,11 +313,11 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
    * @return limitUnit
    */
   @javax.annotation.Nullable
-  public String getLimitUnit() {
+  public ModelsQuotaLimitUnit getLimitUnit() {
     return limitUnit;
   }
 
-  public void setLimitUnit(@javax.annotation.Nullable String limitUnit) {
+  public void setLimitUnit(@javax.annotation.Nullable ModelsQuotaLimitUnit limitUnit) {
     this.limitUnit = limitUnit;
   }
 
@@ -375,7 +379,7 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
   }
 
 
-  public GithubComMonadIncCorePkgTypesModelsQuota timeframe(@javax.annotation.Nullable String timeframe) {
+  public GithubComMonadIncCorePkgTypesModelsQuota timeframe(@javax.annotation.Nullable ModelsQuotaTimeframe timeframe) {
     this.timeframe = timeframe;
     return this;
   }
@@ -385,11 +389,11 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
    * @return timeframe
    */
   @javax.annotation.Nullable
-  public String getTimeframe() {
+  public ModelsQuotaTimeframe getTimeframe() {
     return timeframe;
   }
 
-  public void setTimeframe(@javax.annotation.Nullable String timeframe) {
+  public void setTimeframe(@javax.annotation.Nullable ModelsQuotaTimeframe timeframe) {
     this.timeframe = timeframe;
   }
 
@@ -509,8 +513,9 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) && !jsonObj.get("action").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
+      // validate the optional field `action`
+      if (jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) {
+        ModelsQuotaAction.validateJsonElement(jsonObj.get("action"));
       }
       if ((jsonObj.get("billing_account_id") != null && !jsonObj.get("billing_account_id").isJsonNull()) && !jsonObj.get("billing_account_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `billing_account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("billing_account_id").toString()));
@@ -527,11 +532,13 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if ((jsonObj.get("limit_type") != null && !jsonObj.get("limit_type").isJsonNull()) && !jsonObj.get("limit_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `limit_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("limit_type").toString()));
+      // validate the optional field `limit_type`
+      if (jsonObj.get("limit_type") != null && !jsonObj.get("limit_type").isJsonNull()) {
+        ModelsQuotaLimitType.validateJsonElement(jsonObj.get("limit_type"));
       }
-      if ((jsonObj.get("limit_unit") != null && !jsonObj.get("limit_unit").isJsonNull()) && !jsonObj.get("limit_unit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `limit_unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("limit_unit").toString()));
+      // validate the optional field `limit_unit`
+      if (jsonObj.get("limit_unit") != null && !jsonObj.get("limit_unit").isJsonNull()) {
+        ModelsQuotaLimitUnit.validateJsonElement(jsonObj.get("limit_unit"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
@@ -542,8 +549,9 @@ public class GithubComMonadIncCorePkgTypesModelsQuota {
       if ((jsonObj.get("start_at") != null && !jsonObj.get("start_at").isJsonNull()) && !jsonObj.get("start_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `start_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("start_at").toString()));
       }
-      if ((jsonObj.get("timeframe") != null && !jsonObj.get("timeframe").isJsonNull()) && !jsonObj.get("timeframe").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `timeframe` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeframe").toString()));
+      // validate the optional field `timeframe`
+      if (jsonObj.get("timeframe") != null && !jsonObj.get("timeframe").isJsonNull()) {
+        ModelsQuotaTimeframe.validateJsonElement(jsonObj.get("timeframe"));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

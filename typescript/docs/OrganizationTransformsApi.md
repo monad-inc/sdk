@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createTransform**
-> ModelsTransform createTransform(routesCreateTransformRequest)
+> ModelsTransform createTransform(createTransformRequest)
 
 Create transform
 
@@ -30,37 +30,7 @@ const request: OrganizationTransformsApiCreateTransformRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating a transform
-  routesCreateTransformRequest: {
-    config: {
-      conditional: {
-        conditions: {
-          conditions: [
-            ,
-          ],
-          config: {
-            "key": null,
-          },
-          operator: "operator_example",
-          typeId: "typeId_example",
-        },
-        _else: "_else_example",
-      },
-      operations: [
-        {
-          arguments: 
-            key: null,
-          ,
-          description: "description_example",
-          operation: "operation_example",
-          secrets: {
-            "key": null,
-          },
-        },
-      ],
-    },
-    description: "description_example",
-    name: "name_example",
-  },
+  createTransformRequest: null,
 };
 
 const data = await apiInstance.createTransform(request);
@@ -72,7 +42,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesCreateTransformRequest** | **RoutesCreateTransformRequest**| Request body for creating a transform |
+ **createTransformRequest** | **CreateTransformRequest**| Request body for creating a transform |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -294,37 +264,7 @@ const request: OrganizationTransformsApiUpdateOrganizationTransformRequest = {
     // Transform ID
   transformId: "transform_id_example",
     // Request body for updating a transform
-  routesUpdateTransformRequest: {
-    config: {
-      conditional: {
-        conditions: {
-          conditions: [
-            ,
-          ],
-          config: {
-            "key": null,
-          },
-          operator: "operator_example",
-          typeId: "typeId_example",
-        },
-        _else: "_else_example",
-      },
-      operations: [
-        {
-          arguments: 
-            key: null,
-          ,
-          description: "description_example",
-          operation: "operation_example",
-          secrets: {
-            "key": null,
-          },
-        },
-      ],
-    },
-    description: "description_example",
-    name: "name_example",
-  },
+  routesUpdateTransformRequest: null,
 };
 
 const data = await apiInstance.updateOrganizationTransform(request);

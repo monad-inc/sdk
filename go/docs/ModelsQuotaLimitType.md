@@ -1,0 +1,13 @@
+# ModelsQuotaLimitType
+
+## Enum
+
+
+* `QuotaLimitTypeEgressBytes` (value: `"egress_bytes"`)
+
+* `QuotaLimitTypeIngressBytes` (value: `"ingress_bytes"`)
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

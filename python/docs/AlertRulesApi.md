@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_alert_rule**
-> ModelsAlertRule create_alert_rule(organization_id, routes_v3_create_alert_rule_request)
+> ModelsAlertRule create_alert_rule(organization_id, create_alert_rule_request)
 
 Create a new alert rule
 
@@ -26,8 +26,8 @@ Create a new alert rule with the provided details
 
 ```python
 import monad
+from monad.models.create_alert_rule_request import CreateAlertRuleRequest
 from monad.models.models_alert_rule import ModelsAlertRule
-from monad.models.routes_v3_create_alert_rule_request import RoutesV3CreateAlertRuleRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -53,11 +53,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.AlertRulesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v3_create_alert_rule_request = monad.RoutesV3CreateAlertRuleRequest() # RoutesV3CreateAlertRuleRequest | Request body for creating an alert rule
+    create_alert_rule_request = monad.CreateAlertRuleRequest() # CreateAlertRuleRequest | Request body for creating an alert rule
 
     try:
         # Create a new alert rule
-        api_response = api_instance.create_alert_rule(organization_id, routes_v3_create_alert_rule_request)
+        api_response = api_instance.create_alert_rule(organization_id, create_alert_rule_request)
         print("The response of AlertRulesApi->create_alert_rule:\n")
         pprint(api_response)
     except Exception as e:
@@ -72,7 +72,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v3_create_alert_rule_request** | [**RoutesV3CreateAlertRuleRequest**](RoutesV3CreateAlertRuleRequest.md)| Request body for creating an alert rule | 
+ **create_alert_rule_request** | [**CreateAlertRuleRequest**](CreateAlertRuleRequest.md)| Request body for creating an alert rule | 
 
 ### Return type
 
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_alert_rule**
-> ModelsAlertRule update_alert_rule(organization_id, alert_rule_id, routes_v3_update_alert_rule_request)
+> ModelsAlertRule update_alert_rule(organization_id, alert_rule_id, update_alert_rule_request)
 
 Update alert rule
 
@@ -529,7 +529,7 @@ Update an existing alert rule
 ```python
 import monad
 from monad.models.models_alert_rule import ModelsAlertRule
-from monad.models.routes_v3_update_alert_rule_request import RoutesV3UpdateAlertRuleRequest
+from monad.models.update_alert_rule_request import UpdateAlertRuleRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -556,11 +556,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.AlertRulesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     alert_rule_id = 'alert_rule_id_example' # str | Alert Rule ID to update
-    routes_v3_update_alert_rule_request = monad.RoutesV3UpdateAlertRuleRequest() # RoutesV3UpdateAlertRuleRequest | Request body for updating an alert rule
+    update_alert_rule_request = monad.UpdateAlertRuleRequest() # UpdateAlertRuleRequest | Request body for updating an alert rule
 
     try:
         # Update alert rule
-        api_response = api_instance.update_alert_rule(organization_id, alert_rule_id, routes_v3_update_alert_rule_request)
+        api_response = api_instance.update_alert_rule(organization_id, alert_rule_id, update_alert_rule_request)
         print("The response of AlertRulesApi->update_alert_rule:\n")
         pprint(api_response)
     except Exception as e:
@@ -576,7 +576,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **alert_rule_id** | **str**| Alert Rule ID to update | 
- **routes_v3_update_alert_rule_request** | [**RoutesV3UpdateAlertRuleRequest**](RoutesV3UpdateAlertRuleRequest.md)| Request body for updating an alert rule | 
+ **update_alert_rule_request** | [**UpdateAlertRuleRequest**](UpdateAlertRuleRequest.md)| Request body for updating an alert rule | 
 
 ### Return type
 

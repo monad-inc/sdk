@@ -3,7 +3,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -44,7 +44,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 compression = '',
                 container = '',
                 format_config = monad.models.formatter/format_config.formatter.FormatConfig(
-                    format = '', 
+                    format = 'delimited', 
                     delimited_format = monad.models.delimited/delimiter_formatter.delimited.DelimiterFormatter(
                         delimiter = '', 
                         headers = [
@@ -52,13 +52,13 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             ], ), 
                     json_format = monad.models.json/json_formatter.json.JsonFormatter(
                         key = '', 
-                        type = '', ), 
+                        type = 'nested', ), 
                     parquet_format = monad.models.parquet/parquet_formatter.parquet.ParquetFormatter(
                         schema = '', ), ),
                 partition_format = '',
                 prefix = '',
                 message_group_id = '',
-                queue_type = '',
+                queue_type = 'standard',
                 queue_url = '',
                 region = '',
                 role_arn = '',
@@ -83,13 +83,13 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 service = '',
                 auth_type = '',
                 cloud_id = '',
-                connection_type = '',
+                connection_type = 'cloud_id',
                 index = '',
                 insecure_skip_verify = True,
                 url = '',
                 username = '',
                 format = monad.models.formatter/format_config.formatter.FormatConfig(
-                    format = '', 
+                    format = 'delimited', 
                     delimited_format = monad.models.delimited/delimiter_formatter.delimited.DelimiterFormatter(
                         delimiter = '', 
                         headers = [
@@ -97,7 +97,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             ], ), 
                     json_format = monad.models.json/json_formatter.json.JsonFormatter(
                         key = '', 
-                        type = '', ), 
+                        type = 'nested', ), 
                     parquet_format = monad.models.parquet/parquet_formatter.parquet.ParquetFormatter(
                         schema = '', ), ),
                 endpoint = '',
@@ -109,29 +109,29 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 max_batch_data_size = 56,
                 max_batch_record_count = 56,
                 method = '',
-                payload_structure = '',
+                payload_structure = 'single',
                 rate_limit = 56,
                 tls_skip_verify = True,
                 wrapper_key = '',
-                acks = '',
+                acks = '0',
                 bootstrap_servers = '',
-                compression_type = '',
+                compression_type = 'none',
                 message_key_field = '',
                 retries = 56,
-                sasl_mechanism = '',
-                security_protocol = '',
+                sasl_mechanism = 'PLAIN',
+                security_protocol = 'NONE',
                 topic = '',
                 key_field = '',
                 ttl = 56,
                 value_field = '',
                 skip_ssl_verification = True,
                 use_path_style = True,
-                auth_mode = '',
+                auth_mode = 'basic',
                 alerts_config = monad.models.pagerduty/alerts_config.pagerduty.alertsConfig(
                     class = '', 
                     group = '', 
                     severity = '', ),
-                default_event_type = '',
+                default_event_type = 'alert',
                 summary_config = monad.models.pagerduty/summary_config.pagerduty.summaryConfig(
                     alert_source = '', 
                     alert_summary = '', 

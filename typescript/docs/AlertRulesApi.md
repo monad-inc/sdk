@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createAlertRule**
-> ModelsAlertRule createAlertRule(routesV3CreateAlertRuleRequest)
+> ModelsAlertRule createAlertRule(createAlertRuleRequest)
 
 Create a new alert rule with the provided details
 
@@ -32,19 +32,7 @@ const request: AlertRulesApiCreateAlertRuleRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating an alert rule
-  routesV3CreateAlertRuleRequest: {
-    active: true,
-    description: "description_example",
-    name: "name_example",
-    pipelineIds: [
-      "pipelineIds_example",
-    ],
-    ruleConfig: {
-      "key": null,
-    },
-    severity: "severity_example",
-    type: "type_example",
-  },
+  createAlertRuleRequest: null,
 };
 
 const data = await apiInstance.createAlertRule(request);
@@ -56,7 +44,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3CreateAlertRuleRequest** | **RoutesV3CreateAlertRuleRequest**| Request body for creating an alert rule |
+ **createAlertRuleRequest** | **CreateAlertRuleRequest**| Request body for creating an alert rule |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -362,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateAlertRule**
-> ModelsAlertRule updateAlertRule(routesV3UpdateAlertRuleRequest)
+> ModelsAlertRule updateAlertRule(updateAlertRuleRequest)
 
 Update an existing alert rule
 
@@ -382,18 +370,7 @@ const request: AlertRulesApiUpdateAlertRuleRequest = {
     // Alert Rule ID to update
   alertRuleId: "alert_rule_id_example",
     // Request body for updating an alert rule
-  routesV3UpdateAlertRuleRequest: {
-    active: true,
-    description: "description_example",
-    name: "name_example",
-    pipelineIds: [
-      "pipelineIds_example",
-    ],
-    ruleConfig: {
-      "key": null,
-    },
-    severity: "severity_example",
-  },
+  updateAlertRuleRequest: null,
 };
 
 const data = await apiInstance.updateAlertRule(request);
@@ -405,7 +382,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3UpdateAlertRuleRequest** | **RoutesV3UpdateAlertRuleRequest**| Request body for updating an alert rule |
+ **updateAlertRuleRequest** | **UpdateAlertRuleRequest**| Request body for updating an alert rule |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **alertRuleId** | [**string**] | Alert Rule ID to update | defaults to undefined
 

@@ -30,10 +30,7 @@ const request: OrganizationUsersApiAddUserRequest = {
     // organization ID
   organizationId: "organization_id_example",
     // Request body for adding a user to an organization
-  routesAddUserToOrganizationRequest: {
-    roleId: "roleId_example",
-    userId: "userId_example",
-  },
+  routesAddUserToOrganizationRequest: null,
 };
 
 const data = await apiInstance.addUser(request);
@@ -213,10 +210,7 @@ const request: OrganizationUsersApiUpdateUserRequest = {
     // User ID
   userId: "user_id_example",
     // Request body for updating a user in an organization
-  routesUpdateUserInOrganizationRequest: {
-    roleId: "roleId_example",
-    userAuthProviderId: "userAuthProviderId_example",
-  },
+  routesUpdateUserInOrganizationRequest: null,
 };
 
 const data = await apiInstance.updateUser(request);

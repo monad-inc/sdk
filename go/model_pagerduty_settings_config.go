@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -21,8 +21,7 @@ var _ MappedNullable = &PagerdutySettingsConfig{}
 // PagerdutySettingsConfig PagerDuty Output Settings
 type PagerdutySettingsConfig struct {
 	AlertsConfig *PagerdutyAlertsConfig `json:"alerts_config,omitempty"`
-	// EventType determines whether events are sent as 'change' or 'alert' events. We recommend reading the docs for this output before making this choice.
-	DefaultEventType *string `json:"default_event_type,omitempty"`
+	DefaultEventType *PagerdutyEventType `json:"default_event_type,omitempty"`
 	SummaryConfig *PagerdutySummaryConfig `json:"summary_config,omitempty"`
 }
 
@@ -76,9 +75,9 @@ func (o *PagerdutySettingsConfig) SetAlertsConfig(v PagerdutyAlertsConfig) {
 }
 
 // GetDefaultEventType returns the DefaultEventType field value if set, zero value otherwise.
-func (o *PagerdutySettingsConfig) GetDefaultEventType() string {
+func (o *PagerdutySettingsConfig) GetDefaultEventType() PagerdutyEventType {
 	if o == nil || IsNil(o.DefaultEventType) {
-		var ret string
+		var ret PagerdutyEventType
 		return ret
 	}
 	return *o.DefaultEventType
@@ -86,7 +85,7 @@ func (o *PagerdutySettingsConfig) GetDefaultEventType() string {
 
 // GetDefaultEventTypeOk returns a tuple with the DefaultEventType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PagerdutySettingsConfig) GetDefaultEventTypeOk() (*string, bool) {
+func (o *PagerdutySettingsConfig) GetDefaultEventTypeOk() (*PagerdutyEventType, bool) {
 	if o == nil || IsNil(o.DefaultEventType) {
 		return nil, false
 	}
@@ -102,8 +101,8 @@ func (o *PagerdutySettingsConfig) HasDefaultEventType() bool {
 	return false
 }
 
-// SetDefaultEventType gets a reference to the given string and assigns it to the DefaultEventType field.
-func (o *PagerdutySettingsConfig) SetDefaultEventType(v string) {
+// SetDefaultEventType gets a reference to the given PagerdutyEventType and assigns it to the DefaultEventType field.
+func (o *PagerdutySettingsConfig) SetDefaultEventType(v PagerdutyEventType) {
 	o.DefaultEventType = &v
 }
 

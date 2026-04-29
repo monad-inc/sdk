@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_storage_type_cost**
-> ModelsStorageTypeCostConfig set_storage_type_cost(organization_id, routes_v2_set_storage_type_cost_request)
+> ModelsStorageTypeCostConfig set_storage_type_cost(organization_id, set_storage_type_cost_request)
 
 Set storage type cost
 
@@ -410,7 +410,7 @@ Update per-organization cost configuration for storage types
 ```python
 import monad
 from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig
-from monad.models.routes_v2_set_storage_type_cost_request import RoutesV2SetStorageTypeCostRequest
+from monad.models.set_storage_type_cost_request import SetStorageTypeCostRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -442,11 +442,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsStorageCostApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_set_storage_type_cost_request = monad.RoutesV2SetStorageTypeCostRequest() # RoutesV2SetStorageTypeCostRequest | Cost configuration
+    set_storage_type_cost_request = monad.SetStorageTypeCostRequest() # SetStorageTypeCostRequest | Cost configuration
 
     try:
         # Set storage type cost
-        api_response = api_instance.set_storage_type_cost(organization_id, routes_v2_set_storage_type_cost_request)
+        api_response = api_instance.set_storage_type_cost(organization_id, set_storage_type_cost_request)
         print("The response of OrganizationsStorageCostApi->set_storage_type_cost:\n")
         pprint(api_response)
     except Exception as e:
@@ -461,7 +461,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_set_storage_type_cost_request** | [**RoutesV2SetStorageTypeCostRequest**](RoutesV2SetStorageTypeCostRequest.md)| Cost configuration | 
+ **set_storage_type_cost_request** | [**SetStorageTypeCostRequest**](SetStorageTypeCostRequest.md)| Cost configuration | 
 
 ### Return type
 

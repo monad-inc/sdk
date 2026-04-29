@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -28,12 +28,12 @@ type ApiCreateBillingAccountRoleRequest struct {
 	ctx context.Context
 	ApiService *BillingAccountsRBACAPIService
 	billingAccountId string
-	routesV2CreateBillingAccountRoleRequest *RoutesV2CreateBillingAccountRoleRequest
+	createBillingAccountRoleRequest *CreateBillingAccountRoleRequest
 }
 
 // Create Billing Account Role Request
-func (r ApiCreateBillingAccountRoleRequest) RoutesV2CreateBillingAccountRoleRequest(routesV2CreateBillingAccountRoleRequest RoutesV2CreateBillingAccountRoleRequest) ApiCreateBillingAccountRoleRequest {
-	r.routesV2CreateBillingAccountRoleRequest = &routesV2CreateBillingAccountRoleRequest
+func (r ApiCreateBillingAccountRoleRequest) CreateBillingAccountRoleRequest(createBillingAccountRoleRequest CreateBillingAccountRoleRequest) ApiCreateBillingAccountRoleRequest {
+	r.createBillingAccountRoleRequest = &createBillingAccountRoleRequest
 	return r
 }
 
@@ -79,8 +79,8 @@ func (a *BillingAccountsRBACAPIService) CreateBillingAccountRoleExecute(r ApiCre
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2CreateBillingAccountRoleRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2CreateBillingAccountRoleRequest is required and must be specified")
+	if r.createBillingAccountRoleRequest == nil {
+		return localVarReturnValue, nil, reportError("createBillingAccountRoleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -101,7 +101,7 @@ func (a *BillingAccountsRBACAPIService) CreateBillingAccountRoleExecute(r ApiCre
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2CreateBillingAccountRoleRequest
+	localVarPostBody = r.createBillingAccountRoleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -179,12 +179,12 @@ type ApiCreateBillingAccountUserRoleRequest struct {
 	ApiService *BillingAccountsRBACAPIService
 	billingAccountId string
 	roleId string
-	routesV2CreatebillingAccountUserRoleRequest *RoutesV2CreatebillingAccountUserRoleRequest
+	createBillingAccountUserRoleRequest *CreateBillingAccountUserRoleRequest
 }
 
 // Create Billing Account User Role Request
-func (r ApiCreateBillingAccountUserRoleRequest) RoutesV2CreatebillingAccountUserRoleRequest(routesV2CreatebillingAccountUserRoleRequest RoutesV2CreatebillingAccountUserRoleRequest) ApiCreateBillingAccountUserRoleRequest {
-	r.routesV2CreatebillingAccountUserRoleRequest = &routesV2CreatebillingAccountUserRoleRequest
+func (r ApiCreateBillingAccountUserRoleRequest) CreateBillingAccountUserRoleRequest(createBillingAccountUserRoleRequest CreateBillingAccountUserRoleRequest) ApiCreateBillingAccountUserRoleRequest {
+	r.createBillingAccountUserRoleRequest = &createBillingAccountUserRoleRequest
 	return r
 }
 
@@ -233,8 +233,8 @@ func (a *BillingAccountsRBACAPIService) CreateBillingAccountUserRoleExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2CreatebillingAccountUserRoleRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2CreatebillingAccountUserRoleRequest is required and must be specified")
+	if r.createBillingAccountUserRoleRequest == nil {
+		return localVarReturnValue, nil, reportError("createBillingAccountUserRoleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -255,7 +255,7 @@ func (a *BillingAccountsRBACAPIService) CreateBillingAccountUserRoleExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2CreatebillingAccountUserRoleRequest
+	localVarPostBody = r.createBillingAccountUserRoleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1035,12 +1035,12 @@ type ApiUpdateBillingAccountRoleRequest struct {
 	ApiService *BillingAccountsRBACAPIService
 	billingAccountId string
 	roleId string
-	routesV2UpdateBillingAccountRoleRequest *RoutesV2UpdateBillingAccountRoleRequest
+	updateBillingAccountRoleRequest *UpdateBillingAccountRoleRequest
 }
 
 // Update Billing Account Role Request
-func (r ApiUpdateBillingAccountRoleRequest) RoutesV2UpdateBillingAccountRoleRequest(routesV2UpdateBillingAccountRoleRequest RoutesV2UpdateBillingAccountRoleRequest) ApiUpdateBillingAccountRoleRequest {
-	r.routesV2UpdateBillingAccountRoleRequest = &routesV2UpdateBillingAccountRoleRequest
+func (r ApiUpdateBillingAccountRoleRequest) UpdateBillingAccountRoleRequest(updateBillingAccountRoleRequest UpdateBillingAccountRoleRequest) ApiUpdateBillingAccountRoleRequest {
+	r.updateBillingAccountRoleRequest = &updateBillingAccountRoleRequest
 	return r
 }
 
@@ -1089,8 +1089,8 @@ func (a *BillingAccountsRBACAPIService) UpdateBillingAccountRoleExecute(r ApiUpd
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2UpdateBillingAccountRoleRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2UpdateBillingAccountRoleRequest is required and must be specified")
+	if r.updateBillingAccountRoleRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBillingAccountRoleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1111,7 +1111,7 @@ func (a *BillingAccountsRBACAPIService) UpdateBillingAccountRoleExecute(r ApiUpd
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2UpdateBillingAccountRoleRequest
+	localVarPostBody = r.updateBillingAccountRoleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

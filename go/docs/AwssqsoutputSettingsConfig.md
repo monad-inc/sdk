@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MessageGroupId** | Pointer to **string** | The message group ID for FIFO queues. This is required for FIFO queues. | [optional] 
-**QueueType** | Pointer to **string** | The type of SQS queue to use. Can be either \&quot;standard\&quot; or \&quot;fifo\&quot;. | [optional] 
+**QueueType** | Pointer to [**AwssqsoutputQueueType**](AwssqsoutputQueueType.md) |  | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
 **Region** | Pointer to **string** | The AWS region where the SQS queue is located. | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 
@@ -56,20 +56,20 @@ HasMessageGroupId returns a boolean if a field has been set.
 
 ### GetQueueType
 
-`func (o *AwssqsoutputSettingsConfig) GetQueueType() string`
+`func (o *AwssqsoutputSettingsConfig) GetQueueType() AwssqsoutputQueueType`
 
 GetQueueType returns the QueueType field if non-nil, zero value otherwise.
 
 ### GetQueueTypeOk
 
-`func (o *AwssqsoutputSettingsConfig) GetQueueTypeOk() (*string, bool)`
+`func (o *AwssqsoutputSettingsConfig) GetQueueTypeOk() (*AwssqsoutputQueueType, bool)`
 
 GetQueueTypeOk returns a tuple with the QueueType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueType
 
-`func (o *AwssqsoutputSettingsConfig) SetQueueType(v string)`
+`func (o *AwssqsoutputSettingsConfig) SetQueueType(v AwssqsoutputQueueType)`
 
 SetQueueType sets QueueType field to given value.
 

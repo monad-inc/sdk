@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -20,11 +20,11 @@ var _ MappedNullable = &AlertsAlertMeta{}
 
 // AlertsAlertMeta struct for AlertsAlertMeta
 type AlertsAlertMeta struct {
-	Category *string `json:"category,omitempty"`
+	Category *AlertsAlertCategory `json:"category,omitempty"`
 	Config interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Granularity *string `json:"granularity,omitempty"`
-	House *string `json:"house,omitempty"`
+	Granularity *AlertsAlertGranularity `json:"granularity,omitempty"`
+	House *AlertsAlertHouse `json:"house,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
@@ -49,9 +49,9 @@ func NewAlertsAlertMetaWithDefaults() *AlertsAlertMeta {
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
-func (o *AlertsAlertMeta) GetCategory() string {
+func (o *AlertsAlertMeta) GetCategory() AlertsAlertCategory {
 	if o == nil || IsNil(o.Category) {
-		var ret string
+		var ret AlertsAlertCategory
 		return ret
 	}
 	return *o.Category
@@ -59,7 +59,7 @@ func (o *AlertsAlertMeta) GetCategory() string {
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsAlertMeta) GetCategoryOk() (*string, bool) {
+func (o *AlertsAlertMeta) GetCategoryOk() (*AlertsAlertCategory, bool) {
 	if o == nil || IsNil(o.Category) {
 		return nil, false
 	}
@@ -75,8 +75,8 @@ func (o *AlertsAlertMeta) HasCategory() bool {
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *AlertsAlertMeta) SetCategory(v string) {
+// SetCategory gets a reference to the given AlertsAlertCategory and assigns it to the Category field.
+func (o *AlertsAlertMeta) SetCategory(v AlertsAlertCategory) {
 	o.Category = &v
 }
 
@@ -146,9 +146,9 @@ func (o *AlertsAlertMeta) SetDescription(v string) {
 }
 
 // GetGranularity returns the Granularity field value if set, zero value otherwise.
-func (o *AlertsAlertMeta) GetGranularity() string {
+func (o *AlertsAlertMeta) GetGranularity() AlertsAlertGranularity {
 	if o == nil || IsNil(o.Granularity) {
-		var ret string
+		var ret AlertsAlertGranularity
 		return ret
 	}
 	return *o.Granularity
@@ -156,7 +156,7 @@ func (o *AlertsAlertMeta) GetGranularity() string {
 
 // GetGranularityOk returns a tuple with the Granularity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsAlertMeta) GetGranularityOk() (*string, bool) {
+func (o *AlertsAlertMeta) GetGranularityOk() (*AlertsAlertGranularity, bool) {
 	if o == nil || IsNil(o.Granularity) {
 		return nil, false
 	}
@@ -172,15 +172,15 @@ func (o *AlertsAlertMeta) HasGranularity() bool {
 	return false
 }
 
-// SetGranularity gets a reference to the given string and assigns it to the Granularity field.
-func (o *AlertsAlertMeta) SetGranularity(v string) {
+// SetGranularity gets a reference to the given AlertsAlertGranularity and assigns it to the Granularity field.
+func (o *AlertsAlertMeta) SetGranularity(v AlertsAlertGranularity) {
 	o.Granularity = &v
 }
 
 // GetHouse returns the House field value if set, zero value otherwise.
-func (o *AlertsAlertMeta) GetHouse() string {
+func (o *AlertsAlertMeta) GetHouse() AlertsAlertHouse {
 	if o == nil || IsNil(o.House) {
-		var ret string
+		var ret AlertsAlertHouse
 		return ret
 	}
 	return *o.House
@@ -188,7 +188,7 @@ func (o *AlertsAlertMeta) GetHouse() string {
 
 // GetHouseOk returns a tuple with the House field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertsAlertMeta) GetHouseOk() (*string, bool) {
+func (o *AlertsAlertMeta) GetHouseOk() (*AlertsAlertHouse, bool) {
 	if o == nil || IsNil(o.House) {
 		return nil, false
 	}
@@ -204,8 +204,8 @@ func (o *AlertsAlertMeta) HasHouse() bool {
 	return false
 }
 
-// SetHouse gets a reference to the given string and assigns it to the House field.
-func (o *AlertsAlertMeta) SetHouse(v string) {
+// SetHouse gets a reference to the given AlertsAlertHouse and assigns it to the House field.
+func (o *AlertsAlertMeta) SetHouse(v AlertsAlertHouse) {
 	o.House = &v
 }
 

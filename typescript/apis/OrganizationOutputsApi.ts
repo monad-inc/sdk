@@ -8,15 +8,15 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateOutputRequest } from '../models/CreateOutputRequest';
 import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputList } from '../models/ModelsOutputList';
+import { ReplaceOutputRequest } from '../models/ReplaceOutputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
-import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
-import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
-import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
-import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
+import { TestOutputConnectionRequest } from '../models/TestOutputConnectionRequest';
+import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
 
 /**
  * no description
@@ -27,10 +27,10 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
      * Create a new output with configuration including secrets handling
      * Create output
      * @param organizationId Organization ID
-     * @param routesV2CreateOutputRequest Output configuration
+     * @param createOutputRequest Output configuration
      * @param testConnection Test connection before creating the input
      */
-    public async createOutput(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async createOutput(organizationId: string, createOutputRequest: CreateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -39,9 +39,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2CreateOutputRequest' is not null or undefined
-        if (routesV2CreateOutputRequest === null || routesV2CreateOutputRequest === undefined) {
-            throw new RequiredError("OrganizationOutputsApi", "createOutput", "routesV2CreateOutputRequest");
+        // verify required parameter 'createOutputRequest' is not null or undefined
+        if (createOutputRequest === null || createOutputRequest === undefined) {
+            throw new RequiredError("OrganizationOutputsApi", "createOutput", "createOutputRequest");
         }
 
 
@@ -66,7 +66,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateOutputRequest, "RoutesV2CreateOutputRequest", ""),
+            ObjectSerializer.serialize(createOutputRequest, "CreateOutputRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -255,10 +255,10 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
      * Replace output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2PutOutputRequest Output configuration update
+     * @param replaceOutputRequest Output configuration update
      * @param testConnection Test connection before creating the input
      */
-    public async replaceOutput(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async replaceOutput(organizationId: string, outputId: string, replaceOutputRequest: ReplaceOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -273,9 +273,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2PutOutputRequest' is not null or undefined
-        if (routesV2PutOutputRequest === null || routesV2PutOutputRequest === undefined) {
-            throw new RequiredError("OrganizationOutputsApi", "replaceOutput", "routesV2PutOutputRequest");
+        // verify required parameter 'replaceOutputRequest' is not null or undefined
+        if (replaceOutputRequest === null || replaceOutputRequest === undefined) {
+            throw new RequiredError("OrganizationOutputsApi", "replaceOutput", "replaceOutputRequest");
         }
 
 
@@ -301,7 +301,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2PutOutputRequest, "RoutesV2PutOutputRequest", ""),
+            ObjectSerializer.serialize(replaceOutputRequest, "ReplaceOutputRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -330,9 +330,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param routesV2TestOutputConnectionRequest Output configuration to test
+     * @param testOutputConnectionRequest Output configuration to test
      */
-    public async testOutputConnection(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async testOutputConnection(organizationId: string, testOutputConnectionRequest: TestOutputConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -341,9 +341,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2TestOutputConnectionRequest' is not null or undefined
-        if (routesV2TestOutputConnectionRequest === null || routesV2TestOutputConnectionRequest === undefined) {
-            throw new RequiredError("OrganizationOutputsApi", "testOutputConnection", "routesV2TestOutputConnectionRequest");
+        // verify required parameter 'testOutputConnectionRequest' is not null or undefined
+        if (testOutputConnectionRequest === null || testOutputConnectionRequest === undefined) {
+            throw new RequiredError("OrganizationOutputsApi", "testOutputConnection", "testOutputConnectionRequest");
         }
 
 
@@ -362,7 +362,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2TestOutputConnectionRequest, "RoutesV2TestOutputConnectionRequest", ""),
+            ObjectSerializer.serialize(testOutputConnectionRequest, "TestOutputConnectionRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -392,10 +392,10 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
      * Update output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2UpdateOutputRequest Output configuration update
+     * @param updateOutputRequest Output configuration update
      * @param testConnection Test connection before creating the input
      */
-    public async updateOutput(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async updateOutput(organizationId: string, outputId: string, updateOutputRequest: UpdateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -410,9 +410,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'routesV2UpdateOutputRequest' is not null or undefined
-        if (routesV2UpdateOutputRequest === null || routesV2UpdateOutputRequest === undefined) {
-            throw new RequiredError("OrganizationOutputsApi", "updateOutput", "routesV2UpdateOutputRequest");
+        // verify required parameter 'updateOutputRequest' is not null or undefined
+        if (updateOutputRequest === null || updateOutputRequest === undefined) {
+            throw new RequiredError("OrganizationOutputsApi", "updateOutput", "updateOutputRequest");
         }
 
 
@@ -438,7 +438,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdateOutputRequest, "RoutesV2UpdateOutputRequest", ""),
+            ObjectSerializer.serialize(updateOutputRequest, "UpdateOutputRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

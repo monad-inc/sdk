@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_child_organization**
-> GithubComMonadIncCorePkgTypesModelsOrganization create_child_organization(organization_id, routes_v3_create_child_organization_request)
+> GithubComMonadIncCorePkgTypesModelsOrganization create_child_organization(organization_id, create_child_organization_request)
 
 Create child organization (team)
 
@@ -29,8 +29,8 @@ Create a new child organization under the given parent organization. Known as a 
 
 ```python
 import monad
+from monad.models.create_child_organization_request import CreateChildOrganizationRequest
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
-from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -62,11 +62,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
     organization_id = 'organization_id_example' # str | Parent Organization ID
-    routes_v3_create_child_organization_request = monad.RoutesV3CreateChildOrganizationRequest() # RoutesV3CreateChildOrganizationRequest | Request body
+    create_child_organization_request = monad.CreateChildOrganizationRequest() # CreateChildOrganizationRequest | Request body
 
     try:
         # Create child organization (team)
-        api_response = api_instance.create_child_organization(organization_id, routes_v3_create_child_organization_request)
+        api_response = api_instance.create_child_organization(organization_id, create_child_organization_request)
         print("The response of OrganizationsApi->create_child_organization:\n")
         pprint(api_response)
     except Exception as e:
@@ -81,7 +81,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Parent Organization ID | 
- **routes_v3_create_child_organization_request** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | 
+ **create_child_organization_request** | [**CreateChildOrganizationRequest**](CreateChildOrganizationRequest.md)| Request body | 
 
 ### Return type
 
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_child_organization**
-> GithubComMonadIncCorePkgTypesModelsOrganization update_child_organization(organization_id, child_organization_id, routes_v3_update_child_organization_request)
+> GithubComMonadIncCorePkgTypesModelsOrganization update_child_organization(organization_id, child_organization_id, update_child_organization_request)
 
 Update child organization (team)
 
@@ -666,7 +666,7 @@ Update a child organization under the given parent organization. Known as a "tea
 ```python
 import monad
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
-from monad.models.routes_v3_update_child_organization_request import RoutesV3UpdateChildOrganizationRequest
+from monad.models.update_child_organization_request import UpdateChildOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -699,11 +699,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationsApi(api_client)
     organization_id = 'organization_id_example' # str | Parent Organization ID
     child_organization_id = 'child_organization_id_example' # str | Child Organization ID
-    routes_v3_update_child_organization_request = monad.RoutesV3UpdateChildOrganizationRequest() # RoutesV3UpdateChildOrganizationRequest | Request body
+    update_child_organization_request = monad.UpdateChildOrganizationRequest() # UpdateChildOrganizationRequest | Request body
 
     try:
         # Update child organization (team)
-        api_response = api_instance.update_child_organization(organization_id, child_organization_id, routes_v3_update_child_organization_request)
+        api_response = api_instance.update_child_organization(organization_id, child_organization_id, update_child_organization_request)
         print("The response of OrganizationsApi->update_child_organization:\n")
         pprint(api_response)
     except Exception as e:
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Parent Organization ID | 
  **child_organization_id** | **str**| Child Organization ID | 
- **routes_v3_update_child_organization_request** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | 
+ **update_child_organization_request** | [**UpdateChildOrganizationRequest**](UpdateChildOrganizationRequest.md)| Request body | 
 
 ### Return type
 

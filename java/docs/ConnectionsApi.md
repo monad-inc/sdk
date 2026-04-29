@@ -13,7 +13,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createConnection"></a>
 # **createConnection**
-> ModelsConnection createConnection(organizationId, routesV3CreateConnectionRequest)
+> ModelsConnection createConnection(organizationId, createConnectionRequest)
 
 Create a new connection
 
@@ -42,9 +42,9 @@ public class Example {
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest = new RoutesV3CreateConnectionRequest(); // RoutesV3CreateConnectionRequest | Request body for creating a connection
+    CreateConnectionRequest createConnectionRequest = new CreateConnectionRequest(); // CreateConnectionRequest | Request body for creating a connection
     try {
-      ModelsConnection result = apiInstance.createConnection(organizationId, routesV3CreateConnectionRequest);
+      ModelsConnection result = apiInstance.createConnection(organizationId, createConnectionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConnectionsApi#createConnection");
@@ -62,7 +62,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV3CreateConnectionRequest** | [**RoutesV3CreateConnectionRequest**](RoutesV3CreateConnectionRequest.md)| Request body for creating a connection | |
+| **createConnectionRequest** | [**CreateConnectionRequest**](CreateConnectionRequest.md)| Request body for creating a connection | |
 
 ### Return type
 
@@ -306,7 +306,7 @@ public class Example {
 
 <a id="updateConnection"></a>
 # **updateConnection**
-> ModelsConnection updateConnection(organizationId, connectionId, routesV3UpdateConnectionRequest)
+> ModelsConnection updateConnection(organizationId, connectionId, updateConnectionRequest)
 
 Update connection
 
@@ -336,9 +336,9 @@ public class Example {
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String connectionId = "connectionId_example"; // String | Connection ID to update
-    RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest = new RoutesV3UpdateConnectionRequest(); // RoutesV3UpdateConnectionRequest | Request body for updating a connection
+    UpdateConnectionRequest updateConnectionRequest = new UpdateConnectionRequest(); // UpdateConnectionRequest | Request body for updating a connection
     try {
-      ModelsConnection result = apiInstance.updateConnection(organizationId, connectionId, routesV3UpdateConnectionRequest);
+      ModelsConnection result = apiInstance.updateConnection(organizationId, connectionId, updateConnectionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConnectionsApi#updateConnection");
@@ -357,7 +357,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **connectionId** | **String**| Connection ID to update | |
-| **routesV3UpdateConnectionRequest** | [**RoutesV3UpdateConnectionRequest**](RoutesV3UpdateConnectionRequest.md)| Request body for updating a connection | |
+| **updateConnectionRequest** | [**UpdateConnectionRequest**](UpdateConnectionRequest.md)| Request body for updating a connection | |
 
 ### Return type
 

@@ -11,7 +11,12 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
 import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
+import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
+import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
+import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
+import { ApplyConditionV2Request } from '../models/ApplyConditionV2Request';
+import { ApplyTransformationV2Request } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
@@ -25,6 +30,7 @@ import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
+import { AwssqsoutputQueueType } from '../models/AwssqsoutputQueueType';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
 import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
@@ -84,15 +90,33 @@ import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolida
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
 import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
+import { CommonAuthType } from '../models/CommonAuthType';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
+import { CreateAPIKeyRequest } from '../models/CreateAPIKeyRequest';
+import { CreateAlertRuleRequest } from '../models/CreateAlertRuleRequest';
+import { CreateBillingAccountRequest } from '../models/CreateBillingAccountRequest';
+import { CreateBillingAccountRoleRequest } from '../models/CreateBillingAccountRoleRequest';
+import { CreateBillingAccountSubscriptionRequest } from '../models/CreateBillingAccountSubscriptionRequest';
+import { CreateBillingAccountUserRoleRequest } from '../models/CreateBillingAccountUserRoleRequest';
+import { CreateChildOrganizationRequest } from '../models/CreateChildOrganizationRequest';
+import { CreateConnectionRequest } from '../models/CreateConnectionRequest';
+import { CreateEnrichmentRequest } from '../models/CreateEnrichmentRequest';
+import { CreateInputRequest } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
+import { CreateOutputRequest } from '../models/CreateOutputRequest';
+import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
+import { CreateRoleRequest } from '../models/CreateRoleRequest';
+import { CreateSecretRequest } from '../models/CreateSecretRequest';
+import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
+import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
@@ -110,6 +134,8 @@ import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhere
 import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
 import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
+import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { EncryptAESVariant } from '../models/EncryptAESVariant';
@@ -119,17 +145,22 @@ import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
 import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
+import { EnrichmentSandboxRequest } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
+import { ExportTransformRequest } from '../models/ExportTransformRequest';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FormatterType } from '../models/FormatterType';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GenerateRecordRequest } from '../models/GenerateRecordRequest';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
+import { GetTokenRequest } from '../models/GetTokenRequest';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -149,10 +180,12 @@ import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettings
 import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
 import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
+import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
+import { InputsBillingType } from '../models/InputsBillingType';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
@@ -161,9 +194,14 @@ import { IssuesReportSettingsConfig } from '../models/IssuesReportSettingsConfig
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
+import { JsonFormatType } from '../models/JsonFormatType';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KafkaAcks } from '../models/KafkaAcks';
+import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
+import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
 import { KafkaSettingsConfig } from '../models/KafkaSettingsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
@@ -187,6 +225,7 @@ import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
+import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -194,25 +233,32 @@ import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRoleUser';
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
+import { ModelsBillingProductType } from '../models/ModelsBillingProductType';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsComponentType } from '../models/ModelsComponentType';
 import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
+import { ModelsConditionOperator } from '../models/ModelsConditionOperator';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsElseAction } from '../models/ModelsElseAction';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
+import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
+import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
 import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
+import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
@@ -226,9 +272,15 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
+import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
+import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
+import { ModelsQuotaAction } from '../models/ModelsQuotaAction';
+import { ModelsQuotaLimitType } from '../models/ModelsQuotaLimitType';
+import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
+import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
@@ -270,6 +322,7 @@ import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsCo
 import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
 import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
 import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
+import { OpensearchAuthMode } from '../models/OpensearchAuthMode';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
@@ -278,12 +331,14 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
+import { OutputsBillingType } from '../models/OutputsBillingType';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
 import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
+import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
@@ -309,6 +364,9 @@ import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
+import { ReplaceEnrichmentRequest } from '../models/ReplaceEnrichmentRequest';
+import { ReplaceInputRequest } from '../models/ReplaceInputRequest';
+import { ReplaceOutputRequest } from '../models/ReplaceOutputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
 import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
@@ -422,6 +480,7 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
+import { SetStorageTypeCostRequest } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
 import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
@@ -460,6 +519,9 @@ import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulner
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { TestEnrichmentConnectionRequest } from '../models/TestEnrichmentConnectionRequest';
+import { TestInputConnectionRequest } from '../models/TestInputConnectionRequest';
+import { TestOutputConnectionRequest } from '../models/TestOutputConnectionRequest';
 import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
@@ -472,7 +534,22 @@ import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter } from '../models/TypesStringFilter';
 import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
 import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
+import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
+import { UpdateAlertRuleRequest } from '../models/UpdateAlertRuleRequest';
+import { UpdateBillingAccountRequest } from '../models/UpdateBillingAccountRequest';
+import { UpdateBillingAccountRoleRequest } from '../models/UpdateBillingAccountRoleRequest';
+import { UpdateChildOrganizationRequest } from '../models/UpdateChildOrganizationRequest';
+import { UpdateConnectionRequest } from '../models/UpdateConnectionRequest';
+import { UpdateEnrichmentRequest } from '../models/UpdateEnrichmentRequest';
+import { UpdateInputRequest } from '../models/UpdateInputRequest';
+import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
+import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
+import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
+import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
+import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
+import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
+import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -483,6 +560,7 @@ import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindi
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
 import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
+import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
 import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
 import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
 
@@ -506,12 +584,12 @@ export class ObservableAlertRulesApi {
      * Create a new alert rule with the provided details
      * Create a new alert rule
      * @param organizationId Organization ID
-     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRuleWithHttpInfo(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
+    public createAlertRuleWithHttpInfo(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createAlertRule(organizationId, routesV3CreateAlertRuleRequest, _config);
+        const requestContextPromise = this.requestFactory.createAlertRule(organizationId, createAlertRuleRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -532,10 +610,10 @@ export class ObservableAlertRulesApi {
      * Create a new alert rule with the provided details
      * Create a new alert rule
      * @param organizationId Organization ID
-     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRule(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
-        return this.createAlertRuleWithHttpInfo(organizationId, routesV3CreateAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
+    public createAlertRule(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
+        return this.createAlertRuleWithHttpInfo(organizationId, createAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
     }
 
     /**
@@ -719,12 +797,12 @@ export class ObservableAlertRulesApi {
      * Update alert rule
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to update
-     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
+     * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
+    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateAlertRule(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest, _config);
+        const requestContextPromise = this.requestFactory.updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -746,10 +824,10 @@ export class ObservableAlertRulesApi {
      * Update alert rule
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to update
-     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
+     * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRule(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
-        return this.updateAlertRuleWithHttpInfo(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
+    public updateAlertRule(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
+        return this.updateAlertRuleWithHttpInfo(organizationId, alertRuleId, updateAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
     }
 
 }
@@ -885,12 +963,12 @@ export class ObservableAuthenticationApi {
     /**
      * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param routesLoginRequest Login request
+     * @param getTokenRequest Login request
      */
-    public getTokenWithHttpInfo(routesLoginRequest: RoutesLoginRequest, _options?: ConfigurationOptions): Observable<HttpInfo<AuthenticationtypesTokenResponse>> {
+    public getTokenWithHttpInfo(getTokenRequest: GetTokenRequest, _options?: ConfigurationOptions): Observable<HttpInfo<AuthenticationtypesTokenResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.getToken(routesLoginRequest, _config);
+        const requestContextPromise = this.requestFactory.getToken(getTokenRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -910,10 +988,10 @@ export class ObservableAuthenticationApi {
     /**
      * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param routesLoginRequest Login request
+     * @param getTokenRequest Login request
      */
-    public getToken(routesLoginRequest: RoutesLoginRequest, _options?: ConfigurationOptions): Observable<AuthenticationtypesTokenResponse> {
-        return this.getTokenWithHttpInfo(routesLoginRequest, _options).pipe(map((apiResponse: HttpInfo<AuthenticationtypesTokenResponse>) => apiResponse.data));
+    public getToken(getTokenRequest: GetTokenRequest, _options?: ConfigurationOptions): Observable<AuthenticationtypesTokenResponse> {
+        return this.getTokenWithHttpInfo(getTokenRequest, _options).pipe(map((apiResponse: HttpInfo<AuthenticationtypesTokenResponse>) => apiResponse.data));
     }
 
     /**
@@ -1033,12 +1111,12 @@ export class ObservableBillingAccountsApi {
     /**
      * Create Billing Account
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     * @param createBillingAccountRequest Request body for creating a billing account
      */
-    public createBillingAccountWithHttpInfo(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    public createBillingAccountWithHttpInfo(createBillingAccountRequest: CreateBillingAccountRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createBillingAccount(routesV2CreateBillingAccountRequest, _config);
+        const requestContextPromise = this.requestFactory.createBillingAccount(createBillingAccountRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1058,10 +1136,10 @@ export class ObservableBillingAccountsApi {
     /**
      * Create Billing Account
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     * @param createBillingAccountRequest Request body for creating a billing account
      */
-    public createBillingAccount(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
-        return this.createBillingAccountWithHttpInfo(routesV2CreateBillingAccountRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    public createBillingAccount(createBillingAccountRequest: CreateBillingAccountRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
+        return this.createBillingAccountWithHttpInfo(createBillingAccountRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
     }
 
     /**
@@ -1172,12 +1250,12 @@ export class ObservableBillingAccountsApi {
      * Update Billing Account
      * Update Billing Account
      * @param billingAccountId Billing Account ID
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     * @param updateBillingAccountRequest Request body for updating a billing account
      */
-    public updateBillingAccountWithHttpInfo(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    public updateBillingAccountWithHttpInfo(billingAccountId: string, updateBillingAccountRequest: UpdateBillingAccountRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateBillingAccount(billingAccountId, routesV2UpdateBillingAccountRequest, _config);
+        const requestContextPromise = this.requestFactory.updateBillingAccount(billingAccountId, updateBillingAccountRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1198,10 +1276,10 @@ export class ObservableBillingAccountsApi {
      * Update Billing Account
      * Update Billing Account
      * @param billingAccountId Billing Account ID
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     * @param updateBillingAccountRequest Request body for updating a billing account
      */
-    public updateBillingAccount(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
-        return this.updateBillingAccountWithHttpInfo(billingAccountId, routesV2UpdateBillingAccountRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    public updateBillingAccount(billingAccountId: string, updateBillingAccountRequest: UpdateBillingAccountRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
+        return this.updateBillingAccountWithHttpInfo(billingAccountId, updateBillingAccountRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
     }
 
 }
@@ -1226,12 +1304,12 @@ export class ObservableBillingAccountsRBACApi {
      * Create Billing Account Role
      * Create Billing Account Role
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     * @param createBillingAccountRoleRequest Create Billing Account Role Request
      */
-    public createBillingAccountRoleWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    public createBillingAccountRoleWithHttpInfo(billingAccountId: string, createBillingAccountRoleRequest: CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createBillingAccountRole(billingAccountId, routesV2CreateBillingAccountRoleRequest, _config);
+        const requestContextPromise = this.requestFactory.createBillingAccountRole(billingAccountId, createBillingAccountRoleRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1252,10 +1330,10 @@ export class ObservableBillingAccountsRBACApi {
      * Create Billing Account Role
      * Create Billing Account Role
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     * @param createBillingAccountRoleRequest Create Billing Account Role Request
      */
-    public createBillingAccountRole(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
-        return this.createBillingAccountRoleWithHttpInfo(billingAccountId, routesV2CreateBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    public createBillingAccountRole(billingAccountId: string, createBillingAccountRoleRequest: CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.createBillingAccountRoleWithHttpInfo(billingAccountId, createBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
     }
 
     /**
@@ -1263,12 +1341,12 @@ export class ObservableBillingAccountsRBACApi {
      * Create Billing Account User Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     * @param createBillingAccountUserRoleRequest Create Billing Account User Role Request
      */
-    public createBillingAccountUserRoleWithHttpInfo(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public createBillingAccountUserRoleWithHttpInfo(billingAccountId: string, roleId: string, createBillingAccountUserRoleRequest: CreateBillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createBillingAccountUserRole(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, _config);
+        const requestContextPromise = this.requestFactory.createBillingAccountUserRole(billingAccountId, roleId, createBillingAccountUserRoleRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1290,10 +1368,10 @@ export class ObservableBillingAccountsRBACApi {
      * Create Billing Account User Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     * @param createBillingAccountUserRoleRequest Create Billing Account User Role Request
      */
-    public createBillingAccountUserRole(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<string> {
-        return this.createBillingAccountUserRoleWithHttpInfo(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public createBillingAccountUserRole(billingAccountId: string, roleId: string, createBillingAccountUserRoleRequest: CreateBillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<string> {
+        return this.createBillingAccountUserRoleWithHttpInfo(billingAccountId, roleId, createBillingAccountUserRoleRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
@@ -1477,12 +1555,12 @@ export class ObservableBillingAccountsRBACApi {
      * Update Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     * @param updateBillingAccountRoleRequest Update Billing Account Role Request
      */
-    public updateBillingAccountRoleWithHttpInfo(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    public updateBillingAccountRoleWithHttpInfo(billingAccountId: string, roleId: string, updateBillingAccountRoleRequest: UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateBillingAccountRole(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, _config);
+        const requestContextPromise = this.requestFactory.updateBillingAccountRole(billingAccountId, roleId, updateBillingAccountRoleRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1504,10 +1582,10 @@ export class ObservableBillingAccountsRBACApi {
      * Update Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     * @param updateBillingAccountRoleRequest Update Billing Account Role Request
      */
-    public updateBillingAccountRole(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
-        return this.updateBillingAccountRoleWithHttpInfo(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    public updateBillingAccountRole(billingAccountId: string, roleId: string, updateBillingAccountRoleRequest: UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.updateBillingAccountRoleWithHttpInfo(billingAccountId, roleId, updateBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
     }
 
 }
@@ -1566,12 +1644,12 @@ export class ObservableBillingProductsApi {
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription
      */
-    public createBillingAccountSubscriptionWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
+    public createBillingAccountSubscriptionWithHttpInfo(billingAccountId: string, createBillingAccountSubscriptionRequest: CreateBillingAccountSubscriptionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createBillingAccountSubscription(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, _config);
+        const requestContextPromise = this.requestFactory.createBillingAccountSubscription(billingAccountId, createBillingAccountSubscriptionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1592,10 +1670,10 @@ export class ObservableBillingProductsApi {
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription
      */
-    public createBillingAccountSubscription(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: ConfigurationOptions): Observable<RoutesV2CreateBillingAccountSubscriptionResponse> {
-        return this.createBillingAccountSubscriptionWithHttpInfo(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>) => apiResponse.data));
+    public createBillingAccountSubscription(billingAccountId: string, createBillingAccountSubscriptionRequest: CreateBillingAccountSubscriptionRequest, _options?: ConfigurationOptions): Observable<RoutesV2CreateBillingAccountSubscriptionResponse> {
+        return this.createBillingAccountSubscriptionWithHttpInfo(billingAccountId, createBillingAccountSubscriptionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>) => apiResponse.data));
     }
 
     /**
@@ -1691,12 +1769,12 @@ export class ObservableConditionSandboxApi {
     /**
      * Apply a condition to a JSON record
      * Apply condition to record
-     * @param routesV2ApplyConditionRequest Condition and record
+     * @param applyConditionV2Request Condition and record
      */
-    public applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyConditionResponse>> {
+    public applyConditionV2WithHttpInfo(applyConditionV2Request: ApplyConditionV2Request, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyConditionResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.applyConditionV2(routesV2ApplyConditionRequest, _config);
+        const requestContextPromise = this.requestFactory.applyConditionV2(applyConditionV2Request, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1716,10 +1794,10 @@ export class ObservableConditionSandboxApi {
     /**
      * Apply a condition to a JSON record
      * Apply condition to record
-     * @param routesV2ApplyConditionRequest Condition and record
+     * @param applyConditionV2Request Condition and record
      */
-    public applyConditionV2(routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest, _options?: ConfigurationOptions): Observable<RoutesV2ApplyConditionResponse> {
-        return this.applyConditionV2WithHttpInfo(routesV2ApplyConditionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyConditionResponse>) => apiResponse.data));
+    public applyConditionV2(applyConditionV2Request: ApplyConditionV2Request, _options?: ConfigurationOptions): Observable<RoutesV2ApplyConditionResponse> {
+        return this.applyConditionV2WithHttpInfo(applyConditionV2Request, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyConditionResponse>) => apiResponse.data));
     }
 
 }
@@ -1794,12 +1872,12 @@ export class ObservableConnectionsApi {
      * Create a new connection with the provided details
      * Create a new connection
      * @param organizationId Organization ID
-     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     * @param createConnectionRequest Request body for creating a connection
      */
-    public createConnectionWithHttpInfo(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+    public createConnectionWithHttpInfo(organizationId: string, createConnectionRequest: CreateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createConnection(organizationId, routesV3CreateConnectionRequest, _config);
+        const requestContextPromise = this.requestFactory.createConnection(organizationId, createConnectionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1820,10 +1898,10 @@ export class ObservableConnectionsApi {
      * Create a new connection with the provided details
      * Create a new connection
      * @param organizationId Organization ID
-     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     * @param createConnectionRequest Request body for creating a connection
      */
-    public createConnection(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
-        return this.createConnectionWithHttpInfo(organizationId, routesV3CreateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    public createConnection(organizationId: string, createConnectionRequest: CreateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.createConnectionWithHttpInfo(organizationId, createConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
     }
 
     /**
@@ -1941,12 +2019,12 @@ export class ObservableConnectionsApi {
      * Update connection
      * @param organizationId Organization ID
      * @param connectionId Connection ID to update
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     * @param updateConnectionRequest Request body for updating a connection
      */
-    public updateConnectionWithHttpInfo(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+    public updateConnectionWithHttpInfo(organizationId: string, connectionId: string, updateConnectionRequest: UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateConnection(organizationId, connectionId, routesV3UpdateConnectionRequest, _config);
+        const requestContextPromise = this.requestFactory.updateConnection(organizationId, connectionId, updateConnectionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1968,10 +2046,10 @@ export class ObservableConnectionsApi {
      * Update connection
      * @param organizationId Organization ID
      * @param connectionId Connection ID to update
-     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     * @param updateConnectionRequest Request body for updating a connection
      */
-    public updateConnection(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
-        return this.updateConnectionWithHttpInfo(organizationId, connectionId, routesV3UpdateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    public updateConnection(organizationId: string, connectionId: string, updateConnectionRequest: UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.updateConnectionWithHttpInfo(organizationId, connectionId, updateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
     }
 
 }
@@ -1996,12 +2074,12 @@ export class ObservableEnrichmentSandboxApi {
      * Apply a enrichment configuration to a JSON record
      * Apply enrichment to record
      * @param organizationId Organization ID
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record
+     * @param enrichmentSandboxRequest Enrichment configuration and record
      */
-    public enrichmentSandboxWithHttpInfo(organizationId: string, routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
+    public enrichmentSandboxWithHttpInfo(organizationId: string, enrichmentSandboxRequest: EnrichmentSandboxRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.enrichmentSandbox(organizationId, routesV3EnrichmentSandboxRequest, _config);
+        const requestContextPromise = this.requestFactory.enrichmentSandbox(organizationId, enrichmentSandboxRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -2022,10 +2100,10 @@ export class ObservableEnrichmentSandboxApi {
      * Apply a enrichment configuration to a JSON record
      * Apply enrichment to record
      * @param organizationId Organization ID
-     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record
+     * @param enrichmentSandboxRequest Enrichment configuration and record
      */
-    public enrichmentSandbox(organizationId: string, routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest, _options?: ConfigurationOptions): Observable<RoutesV3EnrichmentSandboxResponse> {
-        return this.enrichmentSandboxWithHttpInfo(organizationId, routesV3EnrichmentSandboxRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3EnrichmentSandboxResponse>) => apiResponse.data));
+    public enrichmentSandbox(organizationId: string, enrichmentSandboxRequest: EnrichmentSandboxRequest, _options?: ConfigurationOptions): Observable<RoutesV3EnrichmentSandboxResponse> {
+        return this.enrichmentSandboxWithHttpInfo(organizationId, enrichmentSandboxRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3EnrichmentSandboxResponse>) => apiResponse.data));
     }
 
 }
@@ -2736,12 +2814,12 @@ export class ObservableOrganizationAPIKeysApi {
      * Create API key
      * Create API key
      * @param organizationId Organization ID
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key
+     * @param createAPIKeyRequest Request body for creating an API key
      */
-    public createAPIKeyWithHttpInfo(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAPIKeyWithToken>> {
+    public createAPIKeyWithHttpInfo(organizationId: string, createAPIKeyRequest: CreateAPIKeyRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAPIKeyWithToken>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createAPIKey(organizationId, routesV2CreateAPIKeyRequest, _config);
+        const requestContextPromise = this.requestFactory.createAPIKey(organizationId, createAPIKeyRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -2762,10 +2840,10 @@ export class ObservableOrganizationAPIKeysApi {
      * Create API key
      * Create API key
      * @param organizationId Organization ID
-     * @param routesV2CreateAPIKeyRequest Request body for creating an API key
+     * @param createAPIKeyRequest Request body for creating an API key
      */
-    public createAPIKey(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: ConfigurationOptions): Observable<ModelsAPIKeyWithToken> {
-        return this.createAPIKeyWithHttpInfo(organizationId, routesV2CreateAPIKeyRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAPIKeyWithToken>) => apiResponse.data));
+    public createAPIKey(organizationId: string, createAPIKeyRequest: CreateAPIKeyRequest, _options?: ConfigurationOptions): Observable<ModelsAPIKeyWithToken> {
+        return this.createAPIKeyWithHttpInfo(organizationId, createAPIKeyRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAPIKeyWithToken>) => apiResponse.data));
     }
 
     /**
@@ -2919,12 +2997,12 @@ export class ObservableOrganizationAPIKeysApi {
      * Update API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key
+     * @param updateAPIKeyRequest Request body for updating an API key
      */
-    public updateAPIKeyWithHttpInfo(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAPIKey>> {
+    public updateAPIKeyWithHttpInfo(organizationId: string, apiKeyId: string, updateAPIKeyRequest: UpdateAPIKeyRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAPIKey>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateAPIKey(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, _config);
+        const requestContextPromise = this.requestFactory.updateAPIKey(organizationId, apiKeyId, updateAPIKeyRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -2946,10 +3024,10 @@ export class ObservableOrganizationAPIKeysApi {
      * Update API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
-     * @param routesV2UpdateAPIKeyRequest Request body for updating an API key
+     * @param updateAPIKeyRequest Request body for updating an API key
      */
-    public updateAPIKey(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: ConfigurationOptions): Observable<ModelsAPIKey> {
-        return this.updateAPIKeyWithHttpInfo(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAPIKey>) => apiResponse.data));
+    public updateAPIKey(organizationId: string, apiKeyId: string, updateAPIKeyRequest: UpdateAPIKeyRequest, _options?: ConfigurationOptions): Observable<ModelsAPIKey> {
+        return this.updateAPIKeyWithHttpInfo(organizationId, apiKeyId, updateAPIKeyRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAPIKey>) => apiResponse.data));
     }
 
 }
@@ -2974,13 +3052,13 @@ export class ObservableOrganizationEnrichmentsApi {
      * Create a new enrichment with configuration including secrets handling
      * Create enrichment
      * @param organizationId Organization ID
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param createEnrichmentRequest Enrichment configuration
      * @param [testConnection] Test connection before creating the enrichment
      */
-    public createEnrichmentWithHttpInfo(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
+    public createEnrichmentWithHttpInfo(organizationId: string, createEnrichmentRequest: CreateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createEnrichment(organizationId, routesV3CreateEnrichmentRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.createEnrichment(organizationId, createEnrichmentRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3001,11 +3079,11 @@ export class ObservableOrganizationEnrichmentsApi {
      * Create a new enrichment with configuration including secrets handling
      * Create enrichment
      * @param organizationId Organization ID
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param createEnrichmentRequest Enrichment configuration
      * @param [testConnection] Test connection before creating the enrichment
      */
-    public createEnrichment(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
-        return this.createEnrichmentWithHttpInfo(organizationId, routesV3CreateEnrichmentRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
+    public createEnrichment(organizationId: string, createEnrichmentRequest: CreateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
+        return this.createEnrichmentWithHttpInfo(organizationId, createEnrichmentRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
     }
 
     /**
@@ -3123,13 +3201,13 @@ export class ObservableOrganizationEnrichmentsApi {
      * Replace enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param replaceEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public replaceEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
+    public replaceEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, replaceEnrichmentRequest: ReplaceEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.replaceEnrichment(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.replaceEnrichment(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3151,23 +3229,23 @@ export class ObservableOrganizationEnrichmentsApi {
      * Replace enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param replaceEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public replaceEnrichment(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
-        return this.replaceEnrichmentWithHttpInfo(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
+    public replaceEnrichment(organizationId: string, enrichmentId: string, replaceEnrichmentRequest: ReplaceEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
+        return this.replaceEnrichmentWithHttpInfo(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
     }
 
     /**
      * Tests the connection for a given enrichment type and configuration
      * Test enrichment connection
      * @param organizationId Organization ID
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test
      */
-    public testEnrichmentConnectionWithHttpInfo(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3SuccessResponse>> {
+    public testEnrichmentConnectionWithHttpInfo(organizationId: string, testEnrichmentConnectionRequest: TestEnrichmentConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3SuccessResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.testEnrichmentConnection(organizationId, routesV3TestEnrichmentConnectionRequest, _config);
+        const requestContextPromise = this.requestFactory.testEnrichmentConnection(organizationId, testEnrichmentConnectionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3188,10 +3266,10 @@ export class ObservableOrganizationEnrichmentsApi {
      * Tests the connection for a given enrichment type and configuration
      * Test enrichment connection
      * @param organizationId Organization ID
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test
      */
-    public testEnrichmentConnection(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: ConfigurationOptions): Observable<RoutesV3SuccessResponse> {
-        return this.testEnrichmentConnectionWithHttpInfo(organizationId, routesV3TestEnrichmentConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3SuccessResponse>) => apiResponse.data));
+    public testEnrichmentConnection(organizationId: string, testEnrichmentConnectionRequest: TestEnrichmentConnectionRequest, _options?: ConfigurationOptions): Observable<RoutesV3SuccessResponse> {
+        return this.testEnrichmentConnectionWithHttpInfo(organizationId, testEnrichmentConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3SuccessResponse>) => apiResponse.data));
     }
 
     /**
@@ -3199,13 +3277,13 @@ export class ObservableOrganizationEnrichmentsApi {
      * Update enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param updateEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public updateEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
+    public updateEnrichmentWithHttpInfo(organizationId: string, enrichmentId: string, updateEnrichmentRequest: UpdateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateEnrichment(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.updateEnrichment(organizationId, enrichmentId, updateEnrichmentRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3227,11 +3305,11 @@ export class ObservableOrganizationEnrichmentsApi {
      * Update enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param updateEnrichmentRequest Enrichment configuration update
      * @param [testConnection] Test connection before updating the enrichment
      */
-    public updateEnrichment(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
-        return this.updateEnrichmentWithHttpInfo(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
+    public updateEnrichment(organizationId: string, enrichmentId: string, updateEnrichmentRequest: UpdateEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
+        return this.updateEnrichmentWithHttpInfo(organizationId, enrichmentId, updateEnrichmentRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
     }
 
 }
@@ -3256,13 +3334,13 @@ export class ObservableOrganizationInputsApi {
      * Create a new input with configuration including secrets handling
      * Create input
      * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
+     * @param createInputRequest Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createInputWithHttpInfo(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
+    public createInputWithHttpInfo(organizationId: string, createInputRequest: CreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createInput(organizationId, routesV2CreateInputRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.createInput(organizationId, createInputRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3283,11 +3361,11 @@ export class ObservableOrganizationInputsApi {
      * Create a new input with configuration including secrets handling
      * Create input
      * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
+     * @param createInputRequest Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createInput(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
-        return this.createInputWithHttpInfo(organizationId, routesV2CreateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
+    public createInput(organizationId: string, createInputRequest: CreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
+        return this.createInputWithHttpInfo(organizationId, createInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
     }
 
     /**
@@ -3405,13 +3483,13 @@ export class ObservableOrganizationInputsApi {
      * Replace input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2PutInputRequest Input configuration update
+     * @param replaceInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceInputWithHttpInfo(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
+    public replaceInputWithHttpInfo(organizationId: string, inputId: string, replaceInputRequest: ReplaceInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.replaceInput(organizationId, inputId, routesV2PutInputRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.replaceInput(organizationId, inputId, replaceInputRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3433,23 +3511,23 @@ export class ObservableOrganizationInputsApi {
      * Replace input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2PutInputRequest Input configuration update
+     * @param replaceInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceInput(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
-        return this.replaceInputWithHttpInfo(organizationId, inputId, routesV2PutInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
+    public replaceInput(organizationId: string, inputId: string, replaceInputRequest: ReplaceInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
+        return this.replaceInputWithHttpInfo(organizationId, inputId, replaceInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
     }
 
     /**
      * Tests the connection for a given input type and configuration
      * Test input connection
      * @param organizationId Organization ID
-     * @param routesV2TestInputConnectionRequest Input configuration to test
+     * @param testInputConnectionRequest Input configuration to test
      */
-    public testInputConnectionWithHttpInfo(organizationId: string, routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SuccessResponse>> {
+    public testInputConnectionWithHttpInfo(organizationId: string, testInputConnectionRequest: TestInputConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SuccessResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.testInputConnection(organizationId, routesV2TestInputConnectionRequest, _config);
+        const requestContextPromise = this.requestFactory.testInputConnection(organizationId, testInputConnectionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3470,10 +3548,10 @@ export class ObservableOrganizationInputsApi {
      * Tests the connection for a given input type and configuration
      * Test input connection
      * @param organizationId Organization ID
-     * @param routesV2TestInputConnectionRequest Input configuration to test
+     * @param testInputConnectionRequest Input configuration to test
      */
-    public testInputConnection(organizationId: string, routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest, _options?: ConfigurationOptions): Observable<RoutesV2SuccessResponse> {
-        return this.testInputConnectionWithHttpInfo(organizationId, routesV2TestInputConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SuccessResponse>) => apiResponse.data));
+    public testInputConnection(organizationId: string, testInputConnectionRequest: TestInputConnectionRequest, _options?: ConfigurationOptions): Observable<RoutesV2SuccessResponse> {
+        return this.testInputConnectionWithHttpInfo(organizationId, testInputConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SuccessResponse>) => apiResponse.data));
     }
 
     /**
@@ -3481,13 +3559,13 @@ export class ObservableOrganizationInputsApi {
      * Update input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2UpdateInputRequest Input configuration update
+     * @param updateInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateInputWithHttpInfo(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
+    public updateInputWithHttpInfo(organizationId: string, inputId: string, updateInputRequest: UpdateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateInput(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.updateInput(organizationId, inputId, updateInputRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3509,11 +3587,11 @@ export class ObservableOrganizationInputsApi {
      * Update input
      * @param organizationId Organization ID
      * @param inputId Input ID
-     * @param routesV2UpdateInputRequest Input configuration update
+     * @param updateInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateInput(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
-        return this.updateInputWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
+    public updateInput(organizationId: string, inputId: string, updateInputRequest: UpdateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
+        return this.updateInputWithHttpInfo(organizationId, inputId, updateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
     }
 
 }
@@ -3592,13 +3670,13 @@ export class ObservableOrganizationOutputsApi {
      * Create a new output with configuration including secrets handling
      * Create output
      * @param organizationId Organization ID
-     * @param routesV2CreateOutputRequest Output configuration
+     * @param createOutputRequest Output configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createOutputWithHttpInfo(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
+    public createOutputWithHttpInfo(organizationId: string, createOutputRequest: CreateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createOutput(organizationId, routesV2CreateOutputRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.createOutput(organizationId, createOutputRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3619,11 +3697,11 @@ export class ObservableOrganizationOutputsApi {
      * Create a new output with configuration including secrets handling
      * Create output
      * @param organizationId Organization ID
-     * @param routesV2CreateOutputRequest Output configuration
+     * @param createOutputRequest Output configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public createOutput(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
-        return this.createOutputWithHttpInfo(organizationId, routesV2CreateOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
+    public createOutput(organizationId: string, createOutputRequest: CreateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
+        return this.createOutputWithHttpInfo(organizationId, createOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
     }
 
     /**
@@ -3741,13 +3819,13 @@ export class ObservableOrganizationOutputsApi {
      * Replace output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2PutOutputRequest Output configuration update
+     * @param replaceOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceOutputWithHttpInfo(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
+    public replaceOutputWithHttpInfo(organizationId: string, outputId: string, replaceOutputRequest: ReplaceOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.replaceOutput(organizationId, outputId, routesV2PutOutputRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.replaceOutput(organizationId, outputId, replaceOutputRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3769,23 +3847,23 @@ export class ObservableOrganizationOutputsApi {
      * Replace output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2PutOutputRequest Output configuration update
+     * @param replaceOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public replaceOutput(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
-        return this.replaceOutputWithHttpInfo(organizationId, outputId, routesV2PutOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
+    public replaceOutput(organizationId: string, outputId: string, replaceOutputRequest: ReplaceOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
+        return this.replaceOutputWithHttpInfo(organizationId, outputId, replaceOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
     }
 
     /**
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param routesV2TestOutputConnectionRequest Output configuration to test
+     * @param testOutputConnectionRequest Output configuration to test
      */
-    public testOutputConnectionWithHttpInfo(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SuccessResponse>> {
+    public testOutputConnectionWithHttpInfo(organizationId: string, testOutputConnectionRequest: TestOutputConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SuccessResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.testOutputConnection(organizationId, routesV2TestOutputConnectionRequest, _config);
+        const requestContextPromise = this.requestFactory.testOutputConnection(organizationId, testOutputConnectionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3806,10 +3884,10 @@ export class ObservableOrganizationOutputsApi {
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param routesV2TestOutputConnectionRequest Output configuration to test
+     * @param testOutputConnectionRequest Output configuration to test
      */
-    public testOutputConnection(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: ConfigurationOptions): Observable<RoutesV2SuccessResponse> {
-        return this.testOutputConnectionWithHttpInfo(organizationId, routesV2TestOutputConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SuccessResponse>) => apiResponse.data));
+    public testOutputConnection(organizationId: string, testOutputConnectionRequest: TestOutputConnectionRequest, _options?: ConfigurationOptions): Observable<RoutesV2SuccessResponse> {
+        return this.testOutputConnectionWithHttpInfo(organizationId, testOutputConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SuccessResponse>) => apiResponse.data));
     }
 
     /**
@@ -3817,13 +3895,13 @@ export class ObservableOrganizationOutputsApi {
      * Update output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2UpdateOutputRequest Output configuration update
+     * @param updateOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateOutputWithHttpInfo(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
+    public updateOutputWithHttpInfo(organizationId: string, outputId: string, updateOutputRequest: UpdateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateOutput(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _config);
+        const requestContextPromise = this.requestFactory.updateOutput(organizationId, outputId, updateOutputRequest, testConnection, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3845,11 +3923,11 @@ export class ObservableOrganizationOutputsApi {
      * Update output
      * @param organizationId Organization ID
      * @param outputId Output ID
-     * @param routesV2UpdateOutputRequest Output configuration update
+     * @param updateOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public updateOutput(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
-        return this.updateOutputWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
+    public updateOutput(organizationId: string, outputId: string, updateOutputRequest: UpdateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
+        return this.updateOutputWithHttpInfo(organizationId, outputId, updateOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
     }
 
 }
@@ -3932,12 +4010,12 @@ export class ObservableOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param createTransformRequest Request body for creating a transform
      */
-    public createTransformWithHttpInfo(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsTransform>> {
+    public createTransformWithHttpInfo(organizationId: string, createTransformRequest: CreateTransformRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsTransform>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createTransform(organizationId, routesCreateTransformRequest, _config);
+        const requestContextPromise = this.requestFactory.createTransform(organizationId, createTransformRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3958,10 +4036,10 @@ export class ObservableOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param createTransformRequest Request body for creating a transform
      */
-    public createTransform(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: ConfigurationOptions): Observable<ModelsTransform> {
-        return this.createTransformWithHttpInfo(organizationId, routesCreateTransformRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsTransform>) => apiResponse.data));
+    public createTransform(organizationId: string, createTransformRequest: CreateTransformRequest, _options?: ConfigurationOptions): Observable<ModelsTransform> {
+        return this.createTransformWithHttpInfo(organizationId, createTransformRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsTransform>) => apiResponse.data));
     }
 
     /**
@@ -4336,12 +4414,12 @@ export class ObservableOrganizationsApi {
      * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
      * Create child organization (team)
      * @param organizationId Parent Organization ID
-     * @param routesV3CreateChildOrganizationRequest Request body
+     * @param createChildOrganizationRequest Request body
      */
-    public createChildOrganizationWithHttpInfo(organizationId: string, routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public createChildOrganizationWithHttpInfo(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createChildOrganization(organizationId, routesV3CreateChildOrganizationRequest, _config);
+        const requestContextPromise = this.requestFactory.createChildOrganization(organizationId, createChildOrganizationRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -4362,10 +4440,10 @@ export class ObservableOrganizationsApi {
      * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
      * Create child organization (team)
      * @param organizationId Parent Organization ID
-     * @param routesV3CreateChildOrganizationRequest Request body
+     * @param createChildOrganizationRequest Request body
      */
-    public createChildOrganization(organizationId: string, routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.createChildOrganizationWithHttpInfo(organizationId, routesV3CreateChildOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
+    public createChildOrganization(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.createChildOrganizationWithHttpInfo(organizationId, createChildOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
     }
 
     /**
@@ -4603,12 +4681,12 @@ export class ObservableOrganizationsApi {
      * Update child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
-     * @param routesV3UpdateChildOrganizationRequest Request body
+     * @param updateChildOrganizationRequest Request body
      */
-    public updateChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public updateChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateChildOrganization(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, _config);
+        const requestContextPromise = this.requestFactory.updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -4630,10 +4708,10 @@ export class ObservableOrganizationsApi {
      * Update child organization (team)
      * @param organizationId Parent Organization ID
      * @param childOrganizationId Child Organization ID
-     * @param routesV3UpdateChildOrganizationRequest Request body
+     * @param updateChildOrganizationRequest Request body
      */
-    public updateChildOrganization(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.updateChildOrganizationWithHttpInfo(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
+    public updateChildOrganization(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.updateChildOrganizationWithHttpInfo(organizationId, childOrganizationId, updateChildOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
     }
 
     /**
@@ -4918,12 +4996,12 @@ export class ObservableOrganizationsStorageCostApi {
      * Update per-organization cost configuration for storage types
      * Set storage type cost
      * @param organizationId Organization ID
-     * @param routesV2SetStorageTypeCostRequest Cost configuration
+     * @param setStorageTypeCostRequest Cost configuration
      */
-    public setStorageTypeCostWithHttpInfo(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsStorageTypeCostConfig>> {
+    public setStorageTypeCostWithHttpInfo(organizationId: string, setStorageTypeCostRequest: SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsStorageTypeCostConfig>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.setStorageTypeCost(organizationId, routesV2SetStorageTypeCostRequest, _config);
+        const requestContextPromise = this.requestFactory.setStorageTypeCost(organizationId, setStorageTypeCostRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -4944,10 +5022,10 @@ export class ObservableOrganizationsStorageCostApi {
      * Update per-organization cost configuration for storage types
      * Set storage type cost
      * @param organizationId Organization ID
-     * @param routesV2SetStorageTypeCostRequest Cost configuration
+     * @param setStorageTypeCostRequest Cost configuration
      */
-    public setStorageTypeCost(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<ModelsStorageTypeCostConfig> {
-        return this.setStorageTypeCostWithHttpInfo(organizationId, routesV2SetStorageTypeCostRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeCostConfig>) => apiResponse.data));
+    public setStorageTypeCost(organizationId: string, setStorageTypeCostRequest: SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<ModelsStorageTypeCostConfig> {
+        return this.setStorageTypeCostWithHttpInfo(organizationId, setStorageTypeCostRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeCostConfig>) => apiResponse.data));
     }
 
     /**
@@ -5156,12 +5234,12 @@ export class ObservablePipelinesApi {
      * Create a new pipeline with specified configuration
      * Create pipeline
      * @param organizationId Organization ID
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline
+     * @param createPipelineRequest Request body for creating a pipeline
      */
-    public createPipelineWithHttpInfo(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineConfigV2>> {
+    public createPipelineWithHttpInfo(organizationId: string, createPipelineRequest: CreatePipelineRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineConfigV2>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createPipeline(organizationId, routesV2CreatePipelineRequest, _config);
+        const requestContextPromise = this.requestFactory.createPipeline(organizationId, createPipelineRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -5182,10 +5260,10 @@ export class ObservablePipelinesApi {
      * Create a new pipeline with specified configuration
      * Create pipeline
      * @param organizationId Organization ID
-     * @param routesV2CreatePipelineRequest Request body for creating a pipeline
+     * @param createPipelineRequest Request body for creating a pipeline
      */
-    public createPipeline(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: ConfigurationOptions): Observable<ModelsPipelineConfigV2> {
-        return this.createPipelineWithHttpInfo(organizationId, routesV2CreatePipelineRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineConfigV2>) => apiResponse.data));
+    public createPipeline(organizationId: string, createPipelineRequest: CreatePipelineRequest, _options?: ConfigurationOptions): Observable<ModelsPipelineConfigV2> {
+        return this.createPipelineWithHttpInfo(organizationId, createPipelineRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineConfigV2>) => apiResponse.data));
     }
 
     /**
@@ -5857,12 +5935,12 @@ export class ObservablePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineRequest Request body for updating a pipeline
      */
-    public updatePipelineWithHttpInfo(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineConfigV2>> {
+    public updatePipelineWithHttpInfo(organizationId: string, pipelineId: string, updatePipelineRequest: UpdatePipelineRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineConfigV2>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updatePipeline(organizationId, pipelineId, routesV2UpdatePipelineRequest, _config);
+        const requestContextPromise = this.requestFactory.updatePipeline(organizationId, pipelineId, updatePipelineRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -5884,10 +5962,10 @@ export class ObservablePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineRequest Request body for updating a pipeline
      */
-    public updatePipeline(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: ConfigurationOptions): Observable<ModelsPipelineConfigV2> {
-        return this.updatePipelineWithHttpInfo(organizationId, pipelineId, routesV2UpdatePipelineRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineConfigV2>) => apiResponse.data));
+    public updatePipeline(organizationId: string, pipelineId: string, updatePipelineRequest: UpdatePipelineRequest, _options?: ConfigurationOptions): Observable<ModelsPipelineConfigV2> {
+        return this.updatePipelineWithHttpInfo(organizationId, pipelineId, updatePipelineRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineConfigV2>) => apiResponse.data));
     }
 
     /**
@@ -5896,12 +5974,12 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param edgeId Edge ID
-     * @param routesV2PatchPipelineEdgeRequest Request body
+     * @param updatePipelineEdgeRequest Request body
      */
-    public updatePipelineEdgeWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+    public updatePipelineEdgeWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, updatePipelineEdgeRequest: UpdatePipelineEdgeRequest, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updatePipelineEdge(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _config);
+        const requestContextPromise = this.requestFactory.updatePipelineEdge(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -5924,10 +6002,10 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param edgeId Edge ID
-     * @param routesV2PatchPipelineEdgeRequest Request body
+     * @param updatePipelineEdgeRequest Request body
      */
-    public updatePipelineEdge(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: ConfigurationOptions): Observable<void> {
-        return this.updatePipelineEdgeWithHttpInfo(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    public updatePipelineEdge(organizationId: string, pipelineId: string, edgeId: string, updatePipelineEdgeRequest: UpdatePipelineEdgeRequest, _options?: ConfigurationOptions): Observable<void> {
+        return this.updatePipelineEdgeWithHttpInfo(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
     /**
@@ -5935,12 +6013,12 @@ export class ObservablePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineV1Request Request body for updating a pipeline
      */
-    public updatePipelineV1WithHttpInfo(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipeline>> {
+    public updatePipelineV1WithHttpInfo(organizationId: string, pipelineId: string, updatePipelineV1Request: UpdatePipelineV1Request, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipeline>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updatePipelineV1(organizationId, pipelineId, routesUpdatePipelineRequest, _config);
+        const requestContextPromise = this.requestFactory.updatePipelineV1(organizationId, pipelineId, updatePipelineV1Request, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -5962,10 +6040,10 @@ export class ObservablePipelinesApi {
      * Update pipeline
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param routesUpdatePipelineRequest Request body for updating a pipeline
+     * @param updatePipelineV1Request Request body for updating a pipeline
      */
-    public updatePipelineV1(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: ConfigurationOptions): Observable<ModelsPipeline> {
-        return this.updatePipelineV1WithHttpInfo(organizationId, pipelineId, routesUpdatePipelineRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsPipeline>) => apiResponse.data));
+    public updatePipelineV1(organizationId: string, pipelineId: string, updatePipelineV1Request: UpdatePipelineV1Request, _options?: ConfigurationOptions): Observable<ModelsPipeline> {
+        return this.updatePipelineV1WithHttpInfo(organizationId, pipelineId, updatePipelineV1Request, _options).pipe(map((apiResponse: HttpInfo<ModelsPipeline>) => apiResponse.data));
     }
 
 }
@@ -6050,12 +6128,12 @@ export class ObservableRolesApi {
      * Create a new role with permissions
      * Create role
      * @param organizationId Organization ID
-     * @param routesV2CreateRoleV2Request Request body for creating a role
+     * @param createRoleRequest Request body for creating a role
      */
-    public createRoleWithHttpInfo(organizationId: string, routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRoleWithPermissions>> {
+    public createRoleWithHttpInfo(organizationId: string, createRoleRequest: CreateRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRoleWithPermissions>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createRole(organizationId, routesV2CreateRoleV2Request, _config);
+        const requestContextPromise = this.requestFactory.createRole(organizationId, createRoleRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6076,10 +6154,10 @@ export class ObservableRolesApi {
      * Create a new role with permissions
      * Create role
      * @param organizationId Organization ID
-     * @param routesV2CreateRoleV2Request Request body for creating a role
+     * @param createRoleRequest Request body for creating a role
      */
-    public createRole(organizationId: string, routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request, _options?: ConfigurationOptions): Observable<ModelsRoleWithPermissions> {
-        return this.createRoleWithHttpInfo(organizationId, routesV2CreateRoleV2Request, _options).pipe(map((apiResponse: HttpInfo<ModelsRoleWithPermissions>) => apiResponse.data));
+    public createRole(organizationId: string, createRoleRequest: CreateRoleRequest, _options?: ConfigurationOptions): Observable<ModelsRoleWithPermissions> {
+        return this.createRoleWithHttpInfo(organizationId, createRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsRoleWithPermissions>) => apiResponse.data));
     }
 
     /**
@@ -6197,12 +6275,12 @@ export class ObservableRolesApi {
      * Update role
      * @param organizationId Organization ID
      * @param roleId Role ID
-     * @param routesV2UpdateRoleV2Request Request body for updating a role
+     * @param updateRoleRequest Request body for updating a role
      */
-    public updateRoleWithHttpInfo(organizationId: string, roleId: string, routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRoleWithPermissions>> {
+    public updateRoleWithHttpInfo(organizationId: string, roleId: string, updateRoleRequest: UpdateRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRoleWithPermissions>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateRole(organizationId, roleId, routesV2UpdateRoleV2Request, _config);
+        const requestContextPromise = this.requestFactory.updateRole(organizationId, roleId, updateRoleRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6224,10 +6302,10 @@ export class ObservableRolesApi {
      * Update role
      * @param organizationId Organization ID
      * @param roleId Role ID
-     * @param routesV2UpdateRoleV2Request Request body for updating a role
+     * @param updateRoleRequest Request body for updating a role
      */
-    public updateRole(organizationId: string, roleId: string, routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request, _options?: ConfigurationOptions): Observable<ModelsRoleWithPermissions> {
-        return this.updateRoleWithHttpInfo(organizationId, roleId, routesV2UpdateRoleV2Request, _options).pipe(map((apiResponse: HttpInfo<ModelsRoleWithPermissions>) => apiResponse.data));
+    public updateRole(organizationId: string, roleId: string, updateRoleRequest: UpdateRoleRequest, _options?: ConfigurationOptions): Observable<ModelsRoleWithPermissions> {
+        return this.updateRoleWithHttpInfo(organizationId, roleId, updateRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsRoleWithPermissions>) => apiResponse.data));
     }
 
 }
@@ -6252,12 +6330,12 @@ export class ObservableSecretsApi {
      * Creates a new secret for the specified organization
      * Create secret
      * @param organizationId Organization ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create
+     * @param createSecretRequest Secret to create
      */
-    public createSecretWithHttpInfo(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
+    public createSecretWithHttpInfo(organizationId: string, createSecretRequest: CreateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createSecret(organizationId, routesV2CreateOrUpdateSecretRequest, _config);
+        const requestContextPromise = this.requestFactory.createSecret(organizationId, createSecretRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6278,10 +6356,10 @@ export class ObservableSecretsApi {
      * Creates a new secret for the specified organization
      * Create secret
      * @param organizationId Organization ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create
+     * @param createSecretRequest Secret to create
      */
-    public createSecret(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
-        return this.createSecretWithHttpInfo(organizationId, routesV2CreateOrUpdateSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
+    public createSecret(organizationId: string, createSecretRequest: CreateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
+        return this.createSecretWithHttpInfo(organizationId, createSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
     }
 
     /**
@@ -6399,12 +6477,12 @@ export class ObservableSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates
+     * @param updateSecretRequest Secret updates
      */
-    public updateSecretWithHttpInfo(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
+    public updateSecretWithHttpInfo(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateSecret(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, _config);
+        const requestContextPromise = this.requestFactory.updateSecret(organizationId, secretId, updateSecretRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6426,10 +6504,10 @@ export class ObservableSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates
+     * @param updateSecretRequest Secret updates
      */
-    public updateSecret(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
-        return this.updateSecretWithHttpInfo(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
+    public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
+        return this.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
     }
 
 }
@@ -6454,12 +6532,12 @@ export class ObservableTransformSandboxApi {
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * Apply transformation to record
      * @param organizationId Organization ID
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformationWithHttpInfo(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+    public applyTransformationWithHttpInfo(organizationId: string, applyTransformationV2Request: ApplyTransformationV2Request, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyTransformationResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.applyTransformation(organizationId, routesV2ApplyTransformationRequest, _config);
+        const requestContextPromise = this.requestFactory.applyTransformation(organizationId, applyTransformationV2Request, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6480,21 +6558,21 @@ export class ObservableTransformSandboxApi {
      * Apply a transformation configuration to a JSON record, resolving secret references from the organization
      * Apply transformation to record
      * @param organizationId Organization ID
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformation(organizationId: string, routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: ConfigurationOptions): Observable<RoutesV2ApplyTransformationResponse> {
-        return this.applyTransformationWithHttpInfo(organizationId, routesV2ApplyTransformationRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyTransformationResponse>) => apiResponse.data));
+    public applyTransformation(organizationId: string, applyTransformationV2Request: ApplyTransformationV2Request, _options?: ConfigurationOptions): Observable<RoutesV2ApplyTransformationResponse> {
+        return this.applyTransformationWithHttpInfo(organizationId, applyTransformationV2Request, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyTransformationResponse>) => apiResponse.data));
     }
 
     /**
      * Apply a transformation configuration to a JSON record
      * Apply transformation to record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformationV2WithHttpInfo(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+    public applyTransformationV2WithHttpInfo(applyTransformationV2Request: ApplyTransformationV2Request, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2ApplyTransformationResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.applyTransformationV2(routesV2ApplyTransformationRequest, _config);
+        const requestContextPromise = this.requestFactory.applyTransformationV2(applyTransformationV2Request, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6514,21 +6592,21 @@ export class ObservableTransformSandboxApi {
     /**
      * Apply a transformation configuration to a JSON record
      * Apply transformation to record
-     * @param routesV2ApplyTransformationRequest Transform configuration and record
+     * @param applyTransformationV2Request Transform configuration and record
      */
-    public applyTransformationV2(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: ConfigurationOptions): Observable<RoutesV2ApplyTransformationResponse> {
-        return this.applyTransformationV2WithHttpInfo(routesV2ApplyTransformationRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyTransformationResponse>) => apiResponse.data));
+    public applyTransformationV2(applyTransformationV2Request: ApplyTransformationV2Request, _options?: ConfigurationOptions): Observable<RoutesV2ApplyTransformationResponse> {
+        return this.applyTransformationV2WithHttpInfo(applyTransformationV2Request, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyTransformationResponse>) => apiResponse.data));
     }
 
     /**
      * Generate a sample record using the specified template type
      * Generate sample record
-     * @param routesV2GenerateRecordRequest Record generation parameters
+     * @param generateRecordRequest Record generation parameters
      */
-    public generateRecordWithHttpInfo(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2GenerateRecordResponse>> {
+    public generateRecordWithHttpInfo(generateRecordRequest: GenerateRecordRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2GenerateRecordResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.generateRecord(routesV2GenerateRecordRequest, _config);
+        const requestContextPromise = this.requestFactory.generateRecord(generateRecordRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6548,10 +6626,10 @@ export class ObservableTransformSandboxApi {
     /**
      * Generate a sample record using the specified template type
      * Generate sample record
-     * @param routesV2GenerateRecordRequest Record generation parameters
+     * @param generateRecordRequest Record generation parameters
      */
-    public generateRecord(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: ConfigurationOptions): Observable<RoutesV2GenerateRecordResponse> {
-        return this.generateRecordWithHttpInfo(routesV2GenerateRecordRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2GenerateRecordResponse>) => apiResponse.data));
+    public generateRecord(generateRecordRequest: GenerateRecordRequest, _options?: ConfigurationOptions): Observable<RoutesV2GenerateRecordResponse> {
+        return this.generateRecordWithHttpInfo(generateRecordRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2GenerateRecordResponse>) => apiResponse.data));
     }
 
     /**
@@ -6698,12 +6776,12 @@ export class ObservableTransformsRecommendationsApi {
      * Analyze security data and provide transformation recommendations
      * Create transform recommendation
      * @param organizationId Organization ID
-     * @param routesV3TransformRecommendationRequest Security data to analyze
+     * @param createTransformRecommendationRequest Security data to analyze
      */
-    public createTransformRecommendationWithHttpInfo(organizationId: string, routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3SecurityDataAnalysis>> {
+    public createTransformRecommendationWithHttpInfo(organizationId: string, createTransformRecommendationRequest: CreateTransformRecommendationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3SecurityDataAnalysis>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.createTransformRecommendation(organizationId, routesV3TransformRecommendationRequest, _config);
+        const requestContextPromise = this.requestFactory.createTransformRecommendation(organizationId, createTransformRecommendationRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6724,10 +6802,10 @@ export class ObservableTransformsRecommendationsApi {
      * Analyze security data and provide transformation recommendations
      * Create transform recommendation
      * @param organizationId Organization ID
-     * @param routesV3TransformRecommendationRequest Security data to analyze
+     * @param createTransformRecommendationRequest Security data to analyze
      */
-    public createTransformRecommendation(organizationId: string, routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest, _options?: ConfigurationOptions): Observable<RoutesV3SecurityDataAnalysis> {
-        return this.createTransformRecommendationWithHttpInfo(organizationId, routesV3TransformRecommendationRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3SecurityDataAnalysis>) => apiResponse.data));
+    public createTransformRecommendation(organizationId: string, createTransformRecommendationRequest: CreateTransformRecommendationRequest, _options?: ConfigurationOptions): Observable<RoutesV3SecurityDataAnalysis> {
+        return this.createTransformRecommendationWithHttpInfo(organizationId, createTransformRecommendationRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3SecurityDataAnalysis>) => apiResponse.data));
     }
 
     /**
@@ -6785,12 +6863,12 @@ export class ObservableTransformsRepositoryApi {
     /**
      * Export transform to YAML format
      * Export transform to YAML
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata
+     * @param exportTransformRequest Transform to export and optional metadata
      */
-    public exportTransformWithHttpInfo(communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public exportTransformWithHttpInfo(exportTransformRequest: ExportTransformRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.exportTransform(communityTransformsInternalTransformConfig, _config);
+        const requestContextPromise = this.requestFactory.exportTransform(exportTransformRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6810,10 +6888,10 @@ export class ObservableTransformsRepositoryApi {
     /**
      * Export transform to YAML format
      * Export transform to YAML
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata
+     * @param exportTransformRequest Transform to export and optional metadata
      */
-    public exportTransform(communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig, _options?: ConfigurationOptions): Observable<string> {
-        return this.exportTransformWithHttpInfo(communityTransformsInternalTransformConfig, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public exportTransform(exportTransformRequest: ExportTransformRequest, _options?: ConfigurationOptions): Observable<string> {
+        return this.exportTransformWithHttpInfo(exportTransformRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
@@ -6889,7 +6967,7 @@ export class ObservableTransformsRepositoryApi {
      * Import transform from YAML
      * @param body YAML transform definition
      */
-    public importTransformWithHttpInfo(body: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3ImportTransformResponse>> {
+    public importTransformWithHttpInfo(body: any, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3ImportTransformResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.importTransform(body, _config);
@@ -6914,7 +6992,7 @@ export class ObservableTransformsRepositoryApi {
      * Import transform from YAML
      * @param body YAML transform definition
      */
-    public importTransform(body: string, _options?: ConfigurationOptions): Observable<RoutesV3ImportTransformResponse> {
+    public importTransform(body: any, _options?: ConfigurationOptions): Observable<RoutesV3ImportTransformResponse> {
         return this.importTransformWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<RoutesV3ImportTransformResponse>) => apiResponse.data));
     }
 

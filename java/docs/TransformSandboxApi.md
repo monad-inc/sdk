@@ -12,7 +12,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="applyTransformation"></a>
 # **applyTransformation**
-> RoutesV2ApplyTransformationResponse applyTransformation(organizationId, routesV2ApplyTransformationRequest)
+> RoutesV2ApplyTransformationResponse applyTransformation(organizationId, applyTransformationV2Request)
 
 Apply transformation to record
 
@@ -47,9 +47,9 @@ public class Example {
 
     TransformSandboxApi apiInstance = new TransformSandboxApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest = new RoutesV2ApplyTransformationRequest(); // RoutesV2ApplyTransformationRequest | Transform configuration and record
+    ApplyTransformationV2Request applyTransformationV2Request = new ApplyTransformationV2Request(); // ApplyTransformationV2Request | Transform configuration and record
     try {
-      RoutesV2ApplyTransformationResponse result = apiInstance.applyTransformation(organizationId, routesV2ApplyTransformationRequest);
+      RoutesV2ApplyTransformationResponse result = apiInstance.applyTransformation(organizationId, applyTransformationV2Request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransformSandboxApi#applyTransformation");
@@ -67,7 +67,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2ApplyTransformationRequest** | [**RoutesV2ApplyTransformationRequest**](RoutesV2ApplyTransformationRequest.md)| Transform configuration and record | |
+| **applyTransformationV2Request** | [**ApplyTransformationV2Request**](ApplyTransformationV2Request.md)| Transform configuration and record | |
 
 ### Return type
 
@@ -91,7 +91,7 @@ public class Example {
 
 <a id="applyTransformationV2"></a>
 # **applyTransformationV2**
-> RoutesV2ApplyTransformationResponse applyTransformationV2(routesV2ApplyTransformationRequest)
+> RoutesV2ApplyTransformationResponse applyTransformationV2(applyTransformationV2Request)
 
 Apply transformation to record
 
@@ -125,9 +125,9 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     TransformSandboxApi apiInstance = new TransformSandboxApi(defaultClient);
-    RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest = new RoutesV2ApplyTransformationRequest(); // RoutesV2ApplyTransformationRequest | Transform configuration and record
+    ApplyTransformationV2Request applyTransformationV2Request = new ApplyTransformationV2Request(); // ApplyTransformationV2Request | Transform configuration and record
     try {
-      RoutesV2ApplyTransformationResponse result = apiInstance.applyTransformationV2(routesV2ApplyTransformationRequest);
+      RoutesV2ApplyTransformationResponse result = apiInstance.applyTransformationV2(applyTransformationV2Request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransformSandboxApi#applyTransformationV2");
@@ -144,7 +144,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **routesV2ApplyTransformationRequest** | [**RoutesV2ApplyTransformationRequest**](RoutesV2ApplyTransformationRequest.md)| Transform configuration and record | |
+| **applyTransformationV2Request** | [**ApplyTransformationV2Request**](ApplyTransformationV2Request.md)| Transform configuration and record | |
 
 ### Return type
 
@@ -168,7 +168,7 @@ public class Example {
 
 <a id="generateRecord"></a>
 # **generateRecord**
-> RoutesV2GenerateRecordResponse generateRecord(routesV2GenerateRecordRequest)
+> RoutesV2GenerateRecordResponse generateRecord(generateRecordRequest)
 
 Generate sample record
 
@@ -202,9 +202,9 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     TransformSandboxApi apiInstance = new TransformSandboxApi(defaultClient);
-    RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest = new RoutesV2GenerateRecordRequest(); // RoutesV2GenerateRecordRequest | Record generation parameters
+    GenerateRecordRequest generateRecordRequest = new GenerateRecordRequest(); // GenerateRecordRequest | Record generation parameters
     try {
-      RoutesV2GenerateRecordResponse result = apiInstance.generateRecord(routesV2GenerateRecordRequest);
+      RoutesV2GenerateRecordResponse result = apiInstance.generateRecord(generateRecordRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransformSandboxApi#generateRecord");
@@ -221,7 +221,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **routesV2GenerateRecordRequest** | [**RoutesV2GenerateRecordRequest**](RoutesV2GenerateRecordRequest.md)| Record generation parameters | |
+| **generateRecordRequest** | [**GenerateRecordRequest**](GenerateRecordRequest.md)| Record generation parameters | |
 
 ### Return type
 

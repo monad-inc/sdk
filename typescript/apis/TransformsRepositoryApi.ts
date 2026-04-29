@@ -10,6 +10,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
+import { ExportTransformRequest } from '../models/ExportTransformRequest';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
@@ -22,14 +23,14 @@ export class TransformsRepositoryApiRequestFactory extends BaseAPIRequestFactory
     /**
      * Export transform to YAML format
      * Export transform to YAML
-     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata
+     * @param exportTransformRequest Transform to export and optional metadata
      */
-    public async exportTransform(communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig, _options?: Configuration): Promise<RequestContext> {
+    public async exportTransform(exportTransformRequest: ExportTransformRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'communityTransformsInternalTransformConfig' is not null or undefined
-        if (communityTransformsInternalTransformConfig === null || communityTransformsInternalTransformConfig === undefined) {
-            throw new RequiredError("TransformsRepositoryApi", "exportTransform", "communityTransformsInternalTransformConfig");
+        // verify required parameter 'exportTransformRequest' is not null or undefined
+        if (exportTransformRequest === null || exportTransformRequest === undefined) {
+            throw new RequiredError("TransformsRepositoryApi", "exportTransform", "exportTransformRequest");
         }
 
 
@@ -47,7 +48,7 @@ export class TransformsRepositoryApiRequestFactory extends BaseAPIRequestFactory
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(communityTransformsInternalTransformConfig, "CommunityTransformsInternalTransformConfig", ""),
+            ObjectSerializer.serialize(exportTransformRequest, "ExportTransformRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -163,7 +164,7 @@ export class TransformsRepositoryApiRequestFactory extends BaseAPIRequestFactory
      * Import transform from YAML
      * @param body YAML transform definition
      */
-    public async importTransform(body: string, _options?: Configuration): Promise<RequestContext> {
+    public async importTransform(body: any, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'body' is not null or undefined
@@ -182,11 +183,13 @@ export class TransformsRepositoryApiRequestFactory extends BaseAPIRequestFactory
 
         // Body Params
         const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
+            "application/json",
+        
+            "text/plain"
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "string", ""),
+            ObjectSerializer.serialize(body, "any", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

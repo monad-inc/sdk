@@ -14,7 +14,7 @@
 |**enabled** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**inputId** | **String** |  |  [optional] |
-|**managedBy** | **String** |  |  [optional] |
+|**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  |  [optional] |

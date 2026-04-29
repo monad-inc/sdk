@@ -8,11 +8,12 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateSecretRequest } from '../models/CreateSecretRequest';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
+import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 
 /**
  * no description
@@ -23,9 +24,9 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
      * Creates a new secret for the specified organization
      * Create secret
      * @param organizationId Organization ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret to create
+     * @param createSecretRequest Secret to create
      */
-    public async createSecret(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createSecret(organizationId: string, createSecretRequest: CreateSecretRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -34,9 +35,9 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2CreateOrUpdateSecretRequest' is not null or undefined
-        if (routesV2CreateOrUpdateSecretRequest === null || routesV2CreateOrUpdateSecretRequest === undefined) {
-            throw new RequiredError("SecretsApi", "createSecret", "routesV2CreateOrUpdateSecretRequest");
+        // verify required parameter 'createSecretRequest' is not null or undefined
+        if (createSecretRequest === null || createSecretRequest === undefined) {
+            throw new RequiredError("SecretsApi", "createSecret", "createSecretRequest");
         }
 
 
@@ -55,7 +56,7 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateOrUpdateSecretRequest, "RoutesV2CreateOrUpdateSecretRequest", ""),
+            ObjectSerializer.serialize(createSecretRequest, "CreateSecretRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -244,9 +245,9 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param routesV2CreateOrUpdateSecretRequest Secret updates
+     * @param updateSecretRequest Secret updates
      */
-    public async updateSecret(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -261,9 +262,9 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2CreateOrUpdateSecretRequest' is not null or undefined
-        if (routesV2CreateOrUpdateSecretRequest === null || routesV2CreateOrUpdateSecretRequest === undefined) {
-            throw new RequiredError("SecretsApi", "updateSecret", "routesV2CreateOrUpdateSecretRequest");
+        // verify required parameter 'updateSecretRequest' is not null or undefined
+        if (updateSecretRequest === null || updateSecretRequest === undefined) {
+            throw new RequiredError("SecretsApi", "updateSecret", "updateSecretRequest");
         }
 
 
@@ -283,7 +284,7 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateOrUpdateSecretRequest, "RoutesV2CreateOrUpdateSecretRequest", ""),
+            ObjectSerializer.serialize(updateSecretRequest, "UpdateSecretRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

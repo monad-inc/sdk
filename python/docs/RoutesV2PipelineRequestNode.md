@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component_id** | **str** |  | 
-**component_type** | **str** |  | 
+**component_type** | [**ModelsComponentType**](ModelsComponentType.md) |  | 
 **enabled** | **bool** |  | 
 **id** | **str** |  | [optional] 
 **slug** | **str** |  | [optional] 

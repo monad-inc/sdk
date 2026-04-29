@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,10 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from monad.models.create_secret_request import CreateSecretRequest
 from monad.models.models_secret_with_components import ModelsSecretWithComponents
 from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
-from monad.models.routes_v2_create_or_update_secret_request import RoutesV2CreateOrUpdateSecretRequest
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse
+from monad.models.update_secret_request import UpdateSecretRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -46,7 +47,7 @@ class SecretsApi:
     def create_secret(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_or_update_secret_request: Annotated[RoutesV2CreateOrUpdateSecretRequest, Field(description="Secret to create")],
+        create_secret_request: Annotated[CreateSecretRequest, Field(description="Secret to create")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -66,8 +67,8 @@ class SecretsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_or_update_secret_request: Secret to create (required)
-        :type routes_v2_create_or_update_secret_request: RoutesV2CreateOrUpdateSecretRequest
+        :param create_secret_request: Secret to create (required)
+        :type create_secret_request: CreateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -92,7 +93,7 @@ class SecretsApi:
 
         _param = self._create_secret_serialize(
             organization_id=organization_id,
-            routes_v2_create_or_update_secret_request=routes_v2_create_or_update_secret_request,
+            create_secret_request=create_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -119,7 +120,7 @@ class SecretsApi:
     def create_secret_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_or_update_secret_request: Annotated[RoutesV2CreateOrUpdateSecretRequest, Field(description="Secret to create")],
+        create_secret_request: Annotated[CreateSecretRequest, Field(description="Secret to create")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,8 +140,8 @@ class SecretsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_or_update_secret_request: Secret to create (required)
-        :type routes_v2_create_or_update_secret_request: RoutesV2CreateOrUpdateSecretRequest
+        :param create_secret_request: Secret to create (required)
+        :type create_secret_request: CreateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,7 +166,7 @@ class SecretsApi:
 
         _param = self._create_secret_serialize(
             organization_id=organization_id,
-            routes_v2_create_or_update_secret_request=routes_v2_create_or_update_secret_request,
+            create_secret_request=create_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -192,7 +193,7 @@ class SecretsApi:
     def create_secret_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_or_update_secret_request: Annotated[RoutesV2CreateOrUpdateSecretRequest, Field(description="Secret to create")],
+        create_secret_request: Annotated[CreateSecretRequest, Field(description="Secret to create")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -212,8 +213,8 @@ class SecretsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_or_update_secret_request: Secret to create (required)
-        :type routes_v2_create_or_update_secret_request: RoutesV2CreateOrUpdateSecretRequest
+        :param create_secret_request: Secret to create (required)
+        :type create_secret_request: CreateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -238,7 +239,7 @@ class SecretsApi:
 
         _param = self._create_secret_serialize(
             organization_id=organization_id,
-            routes_v2_create_or_update_secret_request=routes_v2_create_or_update_secret_request,
+            create_secret_request=create_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -260,7 +261,7 @@ class SecretsApi:
     def _create_secret_serialize(
         self,
         organization_id,
-        routes_v2_create_or_update_secret_request,
+        create_secret_request,
         _request_auth,
         _content_type,
         _headers,
@@ -288,8 +289,8 @@ class SecretsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_or_update_secret_request is not None:
-            _body_params = routes_v2_create_or_update_secret_request
+        if create_secret_request is not None:
+            _body_params = create_secret_request
 
 
         # set the HTTP header `Accept`
@@ -1208,7 +1209,7 @@ class SecretsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         secret_id: Annotated[StrictStr, Field(description="Secret ID")],
-        routes_v2_create_or_update_secret_request: Annotated[RoutesV2CreateOrUpdateSecretRequest, Field(description="Secret updates")],
+        update_secret_request: Annotated[UpdateSecretRequest, Field(description="Secret updates")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1230,8 +1231,8 @@ class SecretsApi:
         :type organization_id: str
         :param secret_id: Secret ID (required)
         :type secret_id: str
-        :param routes_v2_create_or_update_secret_request: Secret updates (required)
-        :type routes_v2_create_or_update_secret_request: RoutesV2CreateOrUpdateSecretRequest
+        :param update_secret_request: Secret updates (required)
+        :type update_secret_request: UpdateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1257,7 +1258,7 @@ class SecretsApi:
         _param = self._update_secret_serialize(
             organization_id=organization_id,
             secret_id=secret_id,
-            routes_v2_create_or_update_secret_request=routes_v2_create_or_update_secret_request,
+            update_secret_request=update_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1286,7 +1287,7 @@ class SecretsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         secret_id: Annotated[StrictStr, Field(description="Secret ID")],
-        routes_v2_create_or_update_secret_request: Annotated[RoutesV2CreateOrUpdateSecretRequest, Field(description="Secret updates")],
+        update_secret_request: Annotated[UpdateSecretRequest, Field(description="Secret updates")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1308,8 +1309,8 @@ class SecretsApi:
         :type organization_id: str
         :param secret_id: Secret ID (required)
         :type secret_id: str
-        :param routes_v2_create_or_update_secret_request: Secret updates (required)
-        :type routes_v2_create_or_update_secret_request: RoutesV2CreateOrUpdateSecretRequest
+        :param update_secret_request: Secret updates (required)
+        :type update_secret_request: UpdateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1335,7 +1336,7 @@ class SecretsApi:
         _param = self._update_secret_serialize(
             organization_id=organization_id,
             secret_id=secret_id,
-            routes_v2_create_or_update_secret_request=routes_v2_create_or_update_secret_request,
+            update_secret_request=update_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1364,7 +1365,7 @@ class SecretsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         secret_id: Annotated[StrictStr, Field(description="Secret ID")],
-        routes_v2_create_or_update_secret_request: Annotated[RoutesV2CreateOrUpdateSecretRequest, Field(description="Secret updates")],
+        update_secret_request: Annotated[UpdateSecretRequest, Field(description="Secret updates")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1386,8 +1387,8 @@ class SecretsApi:
         :type organization_id: str
         :param secret_id: Secret ID (required)
         :type secret_id: str
-        :param routes_v2_create_or_update_secret_request: Secret updates (required)
-        :type routes_v2_create_or_update_secret_request: RoutesV2CreateOrUpdateSecretRequest
+        :param update_secret_request: Secret updates (required)
+        :type update_secret_request: UpdateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1413,7 +1414,7 @@ class SecretsApi:
         _param = self._update_secret_serialize(
             organization_id=organization_id,
             secret_id=secret_id,
-            routes_v2_create_or_update_secret_request=routes_v2_create_or_update_secret_request,
+            update_secret_request=update_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1437,7 +1438,7 @@ class SecretsApi:
         self,
         organization_id,
         secret_id,
-        routes_v2_create_or_update_secret_request,
+        update_secret_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1467,8 +1468,8 @@ class SecretsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_or_update_secret_request is not None:
-            _body_params = routes_v2_create_or_update_secret_request
+        if update_secret_request is not None:
+            _body_params = update_secret_request
 
 
         # set the HTTP header `Accept`

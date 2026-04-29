@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetToken
 
-> AuthenticationtypesTokenResponse GetToken(ctx).RoutesLoginRequest(routesLoginRequest).Execute()
+> AuthenticationtypesTokenResponse GetToken(ctx).GetTokenRequest(getTokenRequest).Execute()
 
 Get Authentication token
 
@@ -32,11 +32,11 @@ import (
 )
 
 func main() {
-	routesLoginRequest := *openapiclient.NewRoutesLoginRequest() // RoutesLoginRequest | Login request
+	getTokenRequest := openapiclient.GetToken_request{RoutesLoginRequest: openapiclient.NewRoutesLoginRequest()} // GetTokenRequest | Login request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AuthenticationAPI.GetToken(context.Background()).RoutesLoginRequest(routesLoginRequest).Execute()
+	resp, r, err := apiClient.AuthenticationAPI.GetToken(context.Background()).GetTokenRequest(getTokenRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationAPI.GetToken``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiGetTokenRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesLoginRequest** | [**RoutesLoginRequest**](RoutesLoginRequest.md) | Login request | 
+ **getTokenRequest** | [**GetTokenRequest**](GetTokenRequest.md) | Login request | 
 
 ### Return type
 
@@ -131,7 +131,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/html
+- **Accept**: text/html
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

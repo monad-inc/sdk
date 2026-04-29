@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -21,8 +21,8 @@ var _ MappedNullable = &OutputsConnectorMeta{}
 // OutputsConnectorMeta struct for OutputsConnectorMeta
 type OutputsConnectorMeta struct {
 	AuthType *string `json:"auth_type,omitempty"`
-	BillingType *int32 `json:"billing_type,omitempty"`
-	Category *string `json:"category,omitempty"`
+	BillingType *OutputsBillingType `json:"billing_type,omitempty"`
+	Category *ModelsOutputConnectorCategory `json:"category,omitempty"`
 	Config interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	House *string `json:"house,omitempty"`
@@ -84,9 +84,9 @@ func (o *OutputsConnectorMeta) SetAuthType(v string) {
 }
 
 // GetBillingType returns the BillingType field value if set, zero value otherwise.
-func (o *OutputsConnectorMeta) GetBillingType() int32 {
+func (o *OutputsConnectorMeta) GetBillingType() OutputsBillingType {
 	if o == nil || IsNil(o.BillingType) {
-		var ret int32
+		var ret OutputsBillingType
 		return ret
 	}
 	return *o.BillingType
@@ -94,7 +94,7 @@ func (o *OutputsConnectorMeta) GetBillingType() int32 {
 
 // GetBillingTypeOk returns a tuple with the BillingType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OutputsConnectorMeta) GetBillingTypeOk() (*int32, bool) {
+func (o *OutputsConnectorMeta) GetBillingTypeOk() (*OutputsBillingType, bool) {
 	if o == nil || IsNil(o.BillingType) {
 		return nil, false
 	}
@@ -110,15 +110,15 @@ func (o *OutputsConnectorMeta) HasBillingType() bool {
 	return false
 }
 
-// SetBillingType gets a reference to the given int32 and assigns it to the BillingType field.
-func (o *OutputsConnectorMeta) SetBillingType(v int32) {
+// SetBillingType gets a reference to the given OutputsBillingType and assigns it to the BillingType field.
+func (o *OutputsConnectorMeta) SetBillingType(v OutputsBillingType) {
 	o.BillingType = &v
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
-func (o *OutputsConnectorMeta) GetCategory() string {
+func (o *OutputsConnectorMeta) GetCategory() ModelsOutputConnectorCategory {
 	if o == nil || IsNil(o.Category) {
-		var ret string
+		var ret ModelsOutputConnectorCategory
 		return ret
 	}
 	return *o.Category
@@ -126,7 +126,7 @@ func (o *OutputsConnectorMeta) GetCategory() string {
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OutputsConnectorMeta) GetCategoryOk() (*string, bool) {
+func (o *OutputsConnectorMeta) GetCategoryOk() (*ModelsOutputConnectorCategory, bool) {
 	if o == nil || IsNil(o.Category) {
 		return nil, false
 	}
@@ -142,8 +142,8 @@ func (o *OutputsConnectorMeta) HasCategory() bool {
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *OutputsConnectorMeta) SetCategory(v string) {
+// SetCategory gets a reference to the given ModelsOutputConnectorCategory and assigns it to the Category field.
+func (o *OutputsConnectorMeta) SetCategory(v ModelsOutputConnectorCategory) {
 	o.Category = &v
 }
 

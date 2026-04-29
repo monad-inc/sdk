@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_connection**
-> ModelsConnection create_connection(organization_id, routes_v3_create_connection_request)
+> ModelsConnection create_connection(organization_id, create_connection_request)
 
 Create a new connection
 
@@ -24,8 +24,8 @@ Create a new connection with the provided details
 
 ```python
 import monad
+from monad.models.create_connection_request import CreateConnectionRequest
 from monad.models.models_connection import ModelsConnection
-from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -51,11 +51,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v3_create_connection_request = monad.RoutesV3CreateConnectionRequest() # RoutesV3CreateConnectionRequest | Request body for creating a connection
+    create_connection_request = monad.CreateConnectionRequest() # CreateConnectionRequest | Request body for creating a connection
 
     try:
         # Create a new connection
-        api_response = api_instance.create_connection(organization_id, routes_v3_create_connection_request)
+        api_response = api_instance.create_connection(organization_id, create_connection_request)
         print("The response of ConnectionsApi->create_connection:\n")
         pprint(api_response)
     except Exception as e:
@@ -70,7 +70,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v3_create_connection_request** | [**RoutesV3CreateConnectionRequest**](RoutesV3CreateConnectionRequest.md)| Request body for creating a connection | 
+ **create_connection_request** | [**CreateConnectionRequest**](CreateConnectionRequest.md)| Request body for creating a connection | 
 
 ### Return type
 
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_connection**
-> ModelsConnection update_connection(organization_id, connection_id, routes_v3_update_connection_request)
+> ModelsConnection update_connection(organization_id, connection_id, update_connection_request)
 
 Update connection
 
@@ -357,7 +357,7 @@ Update an existing connection
 ```python
 import monad
 from monad.models.models_connection import ModelsConnection
-from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConnectionRequest
+from monad.models.update_connection_request import UpdateConnectionRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -384,11 +384,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.ConnectionsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     connection_id = 'connection_id_example' # str | Connection ID to update
-    routes_v3_update_connection_request = monad.RoutesV3UpdateConnectionRequest() # RoutesV3UpdateConnectionRequest | Request body for updating a connection
+    update_connection_request = monad.UpdateConnectionRequest() # UpdateConnectionRequest | Request body for updating a connection
 
     try:
         # Update connection
-        api_response = api_instance.update_connection(organization_id, connection_id, routes_v3_update_connection_request)
+        api_response = api_instance.update_connection(organization_id, connection_id, update_connection_request)
         print("The response of ConnectionsApi->update_connection:\n")
         pprint(api_response)
     except Exception as e:
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **connection_id** | **str**| Connection ID to update | 
- **routes_v3_update_connection_request** | [**RoutesV3UpdateConnectionRequest**](RoutesV3UpdateConnectionRequest.md)| Request body for updating a connection | 
+ **update_connection_request** | [**UpdateConnectionRequest**](UpdateConnectionRequest.md)| Request body for updating a connection | 
 
 ### Return type
 

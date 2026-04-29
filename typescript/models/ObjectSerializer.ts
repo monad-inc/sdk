@@ -6,7 +6,12 @@ export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
 export * from '../models/AivenServiceLogsSecretsConfig';
 export * from '../models/AivenServiceLogsSettingsConfig';
+export * from '../models/AlertsAlertCategory';
+export * from '../models/AlertsAlertGranularity';
+export * from '../models/AlertsAlertHouse';
 export * from '../models/AlertsAlertMeta';
+export * from '../models/ApplyConditionV2Request';
+export * from '../models/ApplyTransformationV2Request';
 export * from '../models/ArizeAuditLogsSecretsConfig';
 export * from '../models/ArizeAuditLogsSettingsConfig';
 export * from '../models/AuditLogsSecretsConfig';
@@ -20,6 +25,7 @@ export * from '../models/AwsGuarddutySecretsConfig';
 export * from '../models/AwsGuarddutySettingsConfig';
 export * from '../models/AwsS3SecretsConfig';
 export * from '../models/AwsS3SettingsConfig';
+export * from '../models/AwssqsoutputQueueType';
 export * from '../models/AwssqsoutputSettingsConfig';
 export * from '../models/Awssqss3SettingsConfig';
 export * from '../models/AxiomSecretsConfig';
@@ -79,15 +85,33 @@ export * from '../models/ClumioConsolidatedAlertsSecretsConfig';
 export * from '../models/ClumioConsolidatedAlertsSettingsConfig';
 export * from '../models/CodaAuditEventsSecretsConfig';
 export * from '../models/CodaAuditEventsSettingsConfig';
+export * from '../models/CommonAuthType';
 export * from '../models/CommunityEditionSecretsConfig';
 export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
 export * from '../models/ConvertTimestampArgumentsConfig';
+export * from '../models/ConvertTimestampTimestampFormat';
 export * from '../models/CortexXsoarManagementLogsSecretsConfig';
 export * from '../models/CortexXsoarManagementLogsSettingsConfig';
+export * from '../models/CreateAPIKeyRequest';
+export * from '../models/CreateAlertRuleRequest';
+export * from '../models/CreateBillingAccountRequest';
+export * from '../models/CreateBillingAccountRoleRequest';
+export * from '../models/CreateBillingAccountSubscriptionRequest';
+export * from '../models/CreateBillingAccountUserRoleRequest';
+export * from '../models/CreateChildOrganizationRequest';
+export * from '../models/CreateConnectionRequest';
+export * from '../models/CreateEnrichmentRequest';
+export * from '../models/CreateInputRequest';
 export * from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
+export * from '../models/CreateOutputRequest';
+export * from '../models/CreatePipelineRequest';
+export * from '../models/CreateRoleRequest';
+export * from '../models/CreateSecretRequest';
+export * from '../models/CreateTransformRecommendationRequest';
+export * from '../models/CreateTransformRequest';
 export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
 export * from '../models/CustomerEventDataSecretsConfig';
@@ -105,6 +129,8 @@ export * from '../models/DropRecordWhereValueEqArgumentsConfig';
 export * from '../models/DuoSecurityActivityLogsSecretsConfig';
 export * from '../models/DuoSecurityActivityLogsSettingsConfig';
 export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+export * from '../models/ElasticsearchAuthTypeEnum';
+export * from '../models/ElasticsearchConnectionTypeEnum';
 export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
 export * from '../models/EncryptAESVariant';
@@ -114,17 +140,22 @@ export * from '../models/EncryptArgumentsConfig';
 export * from '../models/EndorLabsAuditLogsSecretsConfig';
 export * from '../models/EndorLabsAuditLogsSettingsConfig';
 export * from '../models/EnrichmentConnectorMeta';
+export * from '../models/EnrichmentSandboxRequest';
 export * from '../models/EntraIdSecretsConfig';
 export * from '../models/EntraIdSettingsConfig';
 export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
+export * from '../models/ExportTransformRequest';
 export * from '../models/FlagsmithFlag';
 export * from '../models/FlattenArgumentsConfig';
 export * from '../models/FlattenallArgumentsConfig';
 export * from '../models/FormatterFormatConfig';
+export * from '../models/FormatterType';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
+export * from '../models/GenerateRecordRequest';
 export * from '../models/GeolocusSettingsConfig';
+export * from '../models/GetTokenRequest';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -144,10 +175,12 @@ export * from '../models/GoogleWorkspaceSettingsConfig';
 export * from '../models/GreenhouseAuditLogsSecretsConfig';
 export * from '../models/GreenhouseAuditLogsSettingsConfig';
 export * from '../models/HttpHeaders';
+export * from '../models/HttpPayloadStructure';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/IndividualAlertsSecretsConfig';
 export * from '../models/IndividualAlertsSettingsConfig';
+export * from '../models/InputsBillingType';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/InspectorSecretsConfig';
 export * from '../models/InspectorSettingsConfig';
@@ -156,9 +189,14 @@ export * from '../models/IssuesReportSettingsConfig';
 export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqArgumentsConfig';
+export * from '../models/JsonFormatType';
 export * from '../models/JsonJsonFormatter';
+export * from '../models/KafkaAcks';
+export * from '../models/KafkaCompressionType';
 export * from '../models/KafkaKafkaHeader';
+export * from '../models/KafkaSaslMechanism';
 export * from '../models/KafkaSecretsConfig';
+export * from '../models/KafkaSecurityProtocol';
 export * from '../models/KafkaSettingsConfig';
 export * from '../models/KoiAuditLogsSecretsConfig';
 export * from '../models/KoiAuditLogsSettingsConfig';
@@ -182,6 +220,7 @@ export * from '../models/ModelsAPIKeyList';
 export * from '../models/ModelsAPIKeyWithToken';
 export * from '../models/ModelsAlertRule';
 export * from '../models/ModelsAlertRuleList';
+export * from '../models/ModelsAlertState';
 export * from '../models/ModelsBillingAccount';
 export * from '../models/ModelsBillingAccountList';
 export * from '../models/ModelsBillingAccountPermission';
@@ -189,25 +228,32 @@ export * from '../models/ModelsBillingAccountRole';
 export * from '../models/ModelsBillingAccountRoleUser';
 export * from '../models/ModelsBillingProduct';
 export * from '../models/ModelsBillingProductList';
+export * from '../models/ModelsBillingProductType';
 export * from '../models/ModelsComponentReference';
+export * from '../models/ModelsComponentType';
 export * from '../models/ModelsConditionEvaluatable';
+export * from '../models/ModelsConditionOperator';
 export * from '../models/ModelsConnection';
 export * from '../models/ModelsConnectionList';
 export * from '../models/ModelsConnectorInfo';
 export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsDataUsage';
+export * from '../models/ModelsElseAction';
 export * from '../models/ModelsEnrichment';
 export * from '../models/ModelsEnrichmentConfig';
 export * from '../models/ModelsEnrichmentList';
 export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
+export * from '../models/ModelsInputConnectorCategory';
 export * from '../models/ModelsInputList';
+export * from '../models/ModelsManagedBy';
 export * from '../models/ModelsNodeComponent';
 export * from '../models/ModelsOrganizationList';
 export * from '../models/ModelsOrganizationUser';
 export * from '../models/ModelsOrganizationUserList';
 export * from '../models/ModelsOutput';
 export * from '../models/ModelsOutputConfig';
+export * from '../models/ModelsOutputConnectorCategory';
 export * from '../models/ModelsOutputList';
 export * from '../models/ModelsPagination';
 export * from '../models/ModelsPermissionList';
@@ -221,9 +267,15 @@ export * from '../models/ModelsPipelineNode';
 export * from '../models/ModelsPipelineNodeStatus';
 export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
+export * from '../models/ModelsPipelineStatusValue';
 export * from '../models/ModelsProgressEntries';
 export * from '../models/ModelsProgressEntry';
+export * from '../models/ModelsProgressLabel';
+export * from '../models/ModelsQuotaAction';
+export * from '../models/ModelsQuotaLimitType';
+export * from '../models/ModelsQuotaLimitUnit';
 export * from '../models/ModelsQuotaList';
+export * from '../models/ModelsQuotaTimeframe';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSecret';
@@ -265,6 +317,7 @@ export * from '../models/OneloginEventsSettingsConfig';
 export * from '../models/OpalEventsSecretsConfig';
 export * from '../models/OpalEventsSettingsConfig';
 export * from '../models/OpenaiAuditLogsSettingsConfig';
+export * from '../models/OpensearchAuthMode';
 export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
@@ -273,12 +326,14 @@ export * from '../models/OperationLogsSettingsConfig';
 export * from '../models/OracleSettingsConfig';
 export * from '../models/OrgAuditLogsSecretsConfig';
 export * from '../models/OrgAuditLogsSettingsConfig';
+export * from '../models/OutputsBillingType';
 export * from '../models/OutputsConnectorMeta';
 export * from '../models/OwnbackupAccountEventsSecretsConfig';
 export * from '../models/OwnbackupAccountEventsSettingsConfig';
 export * from '../models/PagerdutyAlertsConfig';
 export * from '../models/PagerdutyAuditRecordsSecretsConfig';
 export * from '../models/PagerdutyAuditRecordsSettingsConfig';
+export * from '../models/PagerdutyEventType';
 export * from '../models/PagerdutySecretsConfig';
 export * from '../models/PagerdutySettingsConfig';
 export * from '../models/PagerdutySummaryConfig';
@@ -304,6 +359,9 @@ export * from '../models/PubsubSecretsConfig';
 export * from '../models/PubsubSettingsConfig';
 export * from '../models/RenameKeyArgumentsConfig';
 export * from '../models/RenameKeyWhereValueEqArgumentsConfig';
+export * from '../models/ReplaceEnrichmentRequest';
+export * from '../models/ReplaceInputRequest';
+export * from '../models/ReplaceOutputRequest';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RootlyAuditLogsSecretsConfig';
 export * from '../models/RootlyAuditLogsSettingsConfig';
@@ -417,6 +475,7 @@ export * from '../models/SentinelSecretsConfig';
 export * from '../models/SentinelSettingsConfig';
 export * from '../models/SentryOrgAuditLogsSecretsConfig';
 export * from '../models/SentryOrgAuditLogsSettingsConfig';
+export * from '../models/SetStorageTypeCostRequest';
 export * from '../models/SlackAuthConfig';
 export * from '../models/SlackBotTokenVariant';
 export * from '../models/SlackEnterpriseAuditLogsSecretsConfig';
@@ -455,6 +514,9 @@ export * from '../models/TenableVulnerabilitiesCronSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSettingsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
 export * from '../models/TenableVulnerabilitiesSettingsConfig';
+export * from '../models/TestEnrichmentConnectionRequest';
+export * from '../models/TestInputConnectionRequest';
+export * from '../models/TestOutputConnectionRequest';
 export * from '../models/TinesAuditLogsSecretsConfig';
 export * from '../models/TinesAuditLogsSettingsConfig';
 export * from '../models/TinesEventsLogsSecretsConfig';
@@ -467,7 +529,22 @@ export * from '../models/TypesStringComparison';
 export * from '../models/TypesStringFilter';
 export * from '../models/UniversalSecretsConfig';
 export * from '../models/UniversalSettingsConfig';
+export * from '../models/UpdateAPIKeyRequest';
+export * from '../models/UpdateAlertRuleRequest';
+export * from '../models/UpdateBillingAccountRequest';
+export * from '../models/UpdateBillingAccountRoleRequest';
+export * from '../models/UpdateChildOrganizationRequest';
+export * from '../models/UpdateConnectionRequest';
+export * from '../models/UpdateEnrichmentRequest';
+export * from '../models/UpdateInputRequest';
+export * from '../models/UpdateOutputRequest';
+export * from '../models/UpdatePipelineEdgeRequest';
+export * from '../models/UpdatePipelineRequest';
+export * from '../models/UpdatePipelineV1Request';
+export * from '../models/UpdateRoleRequest';
+export * from '../models/UpdateSecretRequest';
 export * from '../models/UtcTimestampArgumentsConfig';
+export * from '../models/UtcTimestampTimestampFormat';
 export * from '../models/VercelUserEventsSecretsConfig';
 export * from '../models/VercelUserEventsSettingsConfig';
 export * from '../models/VoltioAuditLogsSecretsConfig';
@@ -478,6 +555,7 @@ export * from '../models/VulnerabilityFindingsSecretsConfig';
 export * from '../models/VulnerabilityFindingsSettingsConfig';
 export * from '../models/WizAuditLogsSecretsConfig';
 export * from '../models/WizAuditLogsSettingsConfig';
+export * from '../models/ZendeskAuditLogsAuthType';
 export * from '../models/ZendeskAuditLogsSecretsConfig';
 export * from '../models/ZendeskAuditLogsSettingsConfig';
 
@@ -489,7 +567,12 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
 import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
-import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
+import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
+import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
+import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
+import { AlertsAlertMeta          } from '../models/AlertsAlertMeta';
+import { ApplyConditionV2RequestClass } from '../models/ApplyConditionV2Request';
+import { ApplyTransformationV2RequestClass } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
@@ -503,7 +586,8 @@ import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
-import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
+import { AwssqsoutputQueueType } from '../models/AwssqsoutputQueueType';
+import { AwssqsoutputSettingsConfig      } from '../models/AwssqsoutputSettingsConfig';
 import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
 import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
 import { AxiomSettingsConfig } from '../models/AxiomSettingsConfig';
@@ -562,15 +646,33 @@ import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolida
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
 import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
+import { CommonAuthType } from '../models/CommonAuthType';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
-import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampArgumentsConfig         } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
+import { CreateAPIKeyRequestClass } from '../models/CreateAPIKeyRequest';
+import { CreateAlertRuleRequestClass } from '../models/CreateAlertRuleRequest';
+import { CreateBillingAccountRequestClass } from '../models/CreateBillingAccountRequest';
+import { CreateBillingAccountRoleRequestClass } from '../models/CreateBillingAccountRoleRequest';
+import { CreateBillingAccountSubscriptionRequestClass } from '../models/CreateBillingAccountSubscriptionRequest';
+import { CreateBillingAccountUserRoleRequestClass } from '../models/CreateBillingAccountUserRoleRequest';
+import { CreateChildOrganizationRequestClass } from '../models/CreateChildOrganizationRequest';
+import { CreateConnectionRequestClass } from '../models/CreateConnectionRequest';
+import { CreateEnrichmentRequestClass } from '../models/CreateEnrichmentRequest';
+import { CreateInputRequestClass } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
+import { CreateOutputRequestClass } from '../models/CreateOutputRequest';
+import { CreatePipelineRequestClass } from '../models/CreatePipelineRequest';
+import { CreateRoleRequestClass } from '../models/CreateRoleRequest';
+import { CreateSecretRequestClass } from '../models/CreateSecretRequest';
+import { CreateTransformRecommendationRequestClass } from '../models/CreateTransformRecommendationRequest';
+import { CreateTransformRequestClass } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
@@ -588,31 +690,38 @@ import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhere
 import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
 import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
+import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
-import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { ElasticsearchSettingsConfig        } from '../models/ElasticsearchSettingsConfig';
 import { EncryptAESVariant } from '../models/EncryptAESVariant';
 import { EncryptAgeVariant } from '../models/EncryptAgeVariant';
 import { EncryptAlgorithmConfig } from '../models/EncryptAlgorithmConfig';
 import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
-import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
+import { EnrichmentConnectorMeta           } from '../models/EnrichmentConnectorMeta';
+import { EnrichmentSandboxRequestClass } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
+import { ExportTransformRequestClass } from '../models/ExportTransformRequest';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
-import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FormatterFormatConfig     } from '../models/FormatterFormatConfig';
+import { FormatterType } from '../models/FormatterType';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GenerateRecordRequestClass } from '../models/GenerateRecordRequest';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
+import { GetTokenRequestClass } from '../models/GetTokenRequest';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
-import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
+import { GithubComMonadIncCorePkgTypesModelsAlertStatus    } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
-import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
+import { GithubComMonadIncCorePkgTypesModelsQuota                } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
 import { GithubComMonadIncCorePkgTypesModelsResourceReference } from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
 import { GithubComMonadIncCorePkgTypesModelsTimeRange } from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
 import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
@@ -627,11 +736,13 @@ import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettings
 import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
 import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
+import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
-import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
+import { HttpSettingsConfig          } from '../models/HttpSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
-import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { InputsBillingType } from '../models/InputsBillingType';
+import { InputsConnectorMeta              } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
@@ -639,10 +750,15 @@ import { IssuesReportSettingsConfig       , IssuesReportSettingsConfigIssueTypes
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig      , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
-import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { JsonFormatType } from '../models/JsonFormatType';
+import { JsonJsonFormatter   } from '../models/JsonJsonFormatter';
+import { KafkaAcks } from '../models/KafkaAcks';
+import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
-import { KafkaSettingsConfig } from '../models/KafkaSettingsConfig';
+import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
+import { KafkaSettingsConfig            } from '../models/KafkaSettingsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
@@ -665,48 +781,62 @@ import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
+import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
 import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRoleUser';
-import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
+import { ModelsBillingProduct               } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
-import { ModelsComponentReference } from '../models/ModelsComponentReference';
-import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
+import { ModelsBillingProductType } from '../models/ModelsBillingProductType';
+import { ModelsComponentReference      } from '../models/ModelsComponentReference';
+import { ModelsComponentType } from '../models/ModelsComponentType';
+import { ModelsConditionEvaluatable     } from '../models/ModelsConditionEvaluatable';
+import { ModelsConditionOperator } from '../models/ModelsConditionOperator';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
-import { ModelsEnrichment } from '../models/ModelsEnrichment';
+import { ModelsElseAction } from '../models/ModelsElseAction';
+import { ModelsEnrichment          } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
-import { ModelsInput } from '../models/ModelsInput';
+import { ModelsInput          } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
+import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
+import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
-import { ModelsOutput } from '../models/ModelsOutput';
+import { ModelsOutput          } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
+import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
-import { ModelsPipeline } from '../models/ModelsPipeline';
-import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
+import { ModelsPipeline             } from '../models/ModelsPipeline';
+import { ModelsPipelineConfigV2                   } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
-import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
-import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelineNode             } from '../models/ModelsPipelineNode';
+import { ModelsPipelineNodeStatus                } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
-import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
+import { ModelsPipelineStatus                } from '../models/ModelsPipelineStatus';
+import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
-import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
+import { ModelsProgressEntry    } from '../models/ModelsProgressEntry';
+import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
+import { ModelsQuotaAction } from '../models/ModelsQuotaAction';
+import { ModelsQuotaLimitType } from '../models/ModelsQuotaLimitType';
+import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
+import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
@@ -719,8 +849,8 @@ import { ModelsStorageTypeOutputDetail } from '../models/ModelsStorageTypeOutput
 import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
-import { ModelsTransform } from '../models/ModelsTransform';
-import { ModelsTransformConditional } from '../models/ModelsTransformConditional';
+import { ModelsTransform         } from '../models/ModelsTransform';
+import { ModelsTransformConditional   } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
@@ -748,22 +878,25 @@ import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsCo
 import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
 import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
 import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
+import { OpensearchAuthMode } from '../models/OpensearchAuthMode';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
-import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
+import { OpensearchSettingsConfig        } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig';
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
-import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
-import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
+import { OrgAuditLogsSettingsConfig        } from '../models/OrgAuditLogsSettingsConfig';
+import { OutputsBillingType } from '../models/OutputsBillingType';
+import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
 import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
+import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
-import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
+import { PagerdutySettingsConfig    } from '../models/PagerdutySettingsConfig';
 import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
 import { PaloAltoDataSecurityAlertsSecretsConfig } from '../models/PaloAltoDataSecurityAlertsSecretsConfig';
 import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
@@ -787,15 +920,18 @@ import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
+import { ReplaceEnrichmentRequestClass } from '../models/ReplaceEnrichmentRequest';
+import { ReplaceInputRequestClass } from '../models/ReplaceInputRequest';
+import { ReplaceOutputRequestClass } from '../models/ReplaceOutputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
 import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
-import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
-import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
-import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
+import { RoutesGetInputResponse           } from '../models/RoutesGetInputResponse';
+import { RoutesGetOutputResponse           } from '../models/RoutesGetOutputResponse';
+import { RoutesGetTransformResponse          } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
@@ -832,9 +968,9 @@ import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOver
 import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelineEdgeRequest';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
-import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
+import { RoutesV2PipelineRequestNode      } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
-import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
+import { RoutesV2PipelineWithStatus    } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
@@ -861,7 +997,7 @@ import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichm
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
-import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetEnrichmentResponse           } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
@@ -900,6 +1036,7 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
+import { SetStorageTypeCostRequestClass } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
 import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
@@ -938,6 +1075,9 @@ import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulner
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { TestEnrichmentConnectionRequestClass } from '../models/TestEnrichmentConnectionRequest';
+import { TestInputConnectionRequestClass } from '../models/TestInputConnectionRequest';
+import { TestOutputConnectionRequestClass } from '../models/TestOutputConnectionRequest';
 import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
@@ -950,7 +1090,22 @@ import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter   } from '../models/TypesStringFilter';
 import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
 import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
-import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
+import { UpdateAPIKeyRequestClass } from '../models/UpdateAPIKeyRequest';
+import { UpdateAlertRuleRequestClass } from '../models/UpdateAlertRuleRequest';
+import { UpdateBillingAccountRequestClass } from '../models/UpdateBillingAccountRequest';
+import { UpdateBillingAccountRoleRequestClass } from '../models/UpdateBillingAccountRoleRequest';
+import { UpdateChildOrganizationRequestClass } from '../models/UpdateChildOrganizationRequest';
+import { UpdateConnectionRequestClass } from '../models/UpdateConnectionRequest';
+import { UpdateEnrichmentRequestClass } from '../models/UpdateEnrichmentRequest';
+import { UpdateInputRequestClass } from '../models/UpdateInputRequest';
+import { UpdateOutputRequestClass } from '../models/UpdateOutputRequest';
+import { UpdatePipelineEdgeRequestClass } from '../models/UpdatePipelineEdgeRequest';
+import { UpdatePipelineRequestClass } from '../models/UpdatePipelineRequest';
+import { UpdatePipelineV1RequestClass } from '../models/UpdatePipelineV1Request';
+import { UpdateRoleRequestClass } from '../models/UpdateRoleRequest';
+import { UpdateSecretRequestClass } from '../models/UpdateSecretRequest';
+import { UtcTimestampArgumentsConfig   } from '../models/UtcTimestampArgumentsConfig';
+import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -961,8 +1116,9 @@ import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindi
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
 import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
+import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
 import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
-import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
+import { ZendeskAuditLogsSettingsConfig     } from '../models/ZendeskAuditLogsSettingsConfig';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -977,6 +1133,17 @@ let primitives = [
                  ];
 
 let enumsMap: Set<string> = new Set<string>([
+    "AlertsAlertCategory",
+    "AlertsAlertGranularity",
+    "AlertsAlertHouse",
+    "AwssqsoutputQueueType",
+    "CommonAuthType",
+    "ConvertTimestampTimestampFormat",
+    "ElasticsearchAuthTypeEnum",
+    "ElasticsearchConnectionTypeEnum",
+    "FormatterType",
+    "HttpPayloadStructure",
+    "InputsBillingType",
     "IssuesReportSettingsConfigIssueTypesEnum",
     "IssuesReportSettingsConfigResolutionReasonsEnum",
     "IssuesReportSettingsConfigSeveritiesEnum",
@@ -987,11 +1154,35 @@ let enumsMap: Set<string> = new Set<string>([
     "IssuesSettingsConfigSeveritiesEnum",
     "IssuesSettingsConfigStackLayersEnum",
     "IssuesSettingsConfigStatusEnum",
+    "JsonFormatType",
+    "KafkaAcks",
+    "KafkaCompressionType",
+    "KafkaSaslMechanism",
+    "KafkaSecurityProtocol",
+    "ModelsAlertState",
+    "ModelsBillingProductType",
+    "ModelsComponentType",
+    "ModelsConditionOperator",
+    "ModelsElseAction",
+    "ModelsInputConnectorCategory",
+    "ModelsManagedBy",
+    "ModelsOutputConnectorCategory",
+    "ModelsPipelineStatusValue",
+    "ModelsProgressLabel",
+    "ModelsQuotaAction",
+    "ModelsQuotaLimitType",
+    "ModelsQuotaLimitUnit",
+    "ModelsQuotaTimeframe",
+    "OpensearchAuthMode",
+    "OutputsBillingType",
+    "PagerdutyEventType",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
     "SecretProcessesorInputConfigSettingsIssueTypesEnum",
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsStackLayersEnum",
     "TypesStringComparison",
+    "UtcTimestampTimestampFormat",
+    "ZendeskAuditLogsAuthType",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -1004,6 +1195,8 @@ let typeMap: {[index: string]: any} = {
     "AivenServiceLogsSecretsConfig": AivenServiceLogsSecretsConfig,
     "AivenServiceLogsSettingsConfig": AivenServiceLogsSettingsConfig,
     "AlertsAlertMeta": AlertsAlertMeta,
+    "ApplyConditionV2Request": ApplyConditionV2RequestClass,
+    "ApplyTransformationV2Request": ApplyTransformationV2RequestClass,
     "ArizeAuditLogsSecretsConfig": ArizeAuditLogsSecretsConfig,
     "ArizeAuditLogsSettingsConfig": ArizeAuditLogsSettingsConfig,
     "AuditLogsSecretsConfig": AuditLogsSecretsConfig,
@@ -1084,7 +1277,23 @@ let typeMap: {[index: string]: any} = {
     "ConvertTimestampArgumentsConfig": ConvertTimestampArgumentsConfig,
     "CortexXsoarManagementLogsSecretsConfig": CortexXsoarManagementLogsSecretsConfig,
     "CortexXsoarManagementLogsSettingsConfig": CortexXsoarManagementLogsSettingsConfig,
+    "CreateAPIKeyRequest": CreateAPIKeyRequestClass,
+    "CreateAlertRuleRequest": CreateAlertRuleRequestClass,
+    "CreateBillingAccountRequest": CreateBillingAccountRequestClass,
+    "CreateBillingAccountRoleRequest": CreateBillingAccountRoleRequestClass,
+    "CreateBillingAccountSubscriptionRequest": CreateBillingAccountSubscriptionRequestClass,
+    "CreateBillingAccountUserRoleRequest": CreateBillingAccountUserRoleRequestClass,
+    "CreateChildOrganizationRequest": CreateChildOrganizationRequestClass,
+    "CreateConnectionRequest": CreateConnectionRequestClass,
+    "CreateEnrichmentRequest": CreateEnrichmentRequestClass,
+    "CreateInputRequest": CreateInputRequestClass,
     "CreateKeyValueIfKeyValueArgumentsConfig": CreateKeyValueIfKeyValueArgumentsConfig,
+    "CreateOutputRequest": CreateOutputRequestClass,
+    "CreatePipelineRequest": CreatePipelineRequestClass,
+    "CreateRoleRequest": CreateRoleRequestClass,
+    "CreateSecretRequest": CreateSecretRequestClass,
+    "CreateTransformRecommendationRequest": CreateTransformRecommendationRequestClass,
+    "CreateTransformRequest": CreateTransformRequestClass,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
     "CustomerEventDataSecretsConfig": CustomerEventDataSecretsConfig,
@@ -1111,17 +1320,21 @@ let typeMap: {[index: string]: any} = {
     "EndorLabsAuditLogsSecretsConfig": EndorLabsAuditLogsSecretsConfig,
     "EndorLabsAuditLogsSettingsConfig": EndorLabsAuditLogsSettingsConfig,
     "EnrichmentConnectorMeta": EnrichmentConnectorMeta,
+    "EnrichmentSandboxRequest": EnrichmentSandboxRequestClass,
     "EntraIdSecretsConfig": EntraIdSecretsConfig,
     "EntraIdSettingsConfig": EntraIdSettingsConfig,
     "EventSecretsConfig": EventSecretsConfig,
     "EventSettingsConfig": EventSettingsConfig,
+    "ExportTransformRequest": ExportTransformRequestClass,
     "FlagsmithFlag": FlagsmithFlag,
     "FlattenArgumentsConfig": FlattenArgumentsConfig,
     "FlattenallArgumentsConfig": FlattenallArgumentsConfig,
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
+    "GenerateRecordRequest": GenerateRecordRequestClass,
     "GeolocusSettingsConfig": GeolocusSettingsConfig,
+    "GetTokenRequest": GetTokenRequestClass,
     "GithubComMonadIncCorePkgTypesModelsAlert": GithubComMonadIncCorePkgTypesModelsAlert,
     "GithubComMonadIncCorePkgTypesModelsAlertStatus": GithubComMonadIncCorePkgTypesModelsAlertStatus,
     "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,
@@ -1301,6 +1514,9 @@ let typeMap: {[index: string]: any} = {
     "PubsubSettingsConfig": PubsubSettingsConfig,
     "RenameKeyArgumentsConfig": RenameKeyArgumentsConfig,
     "RenameKeyWhereValueEqArgumentsConfig": RenameKeyWhereValueEqArgumentsConfig,
+    "ReplaceEnrichmentRequest": ReplaceEnrichmentRequestClass,
+    "ReplaceInputRequest": ReplaceInputRequestClass,
+    "ReplaceOutputRequest": ReplaceOutputRequestClass,
     "ResponderErrorResponse": ResponderErrorResponse,
     "RootlyAuditLogsSecretsConfig": RootlyAuditLogsSecretsConfig,
     "RootlyAuditLogsSettingsConfig": RootlyAuditLogsSettingsConfig,
@@ -1414,6 +1630,7 @@ let typeMap: {[index: string]: any} = {
     "SentinelSettingsConfig": SentinelSettingsConfig,
     "SentryOrgAuditLogsSecretsConfig": SentryOrgAuditLogsSecretsConfig,
     "SentryOrgAuditLogsSettingsConfig": SentryOrgAuditLogsSettingsConfig,
+    "SetStorageTypeCostRequest": SetStorageTypeCostRequestClass,
     "SlackAuthConfig": SlackAuthConfig,
     "SlackBotTokenVariant": SlackBotTokenVariant,
     "SlackEnterpriseAuditLogsSecretsConfig": SlackEnterpriseAuditLogsSecretsConfig,
@@ -1452,6 +1669,9 @@ let typeMap: {[index: string]: any} = {
     "TenableVulnerabilitiesCronSettingsConfig": TenableVulnerabilitiesCronSettingsConfig,
     "TenableVulnerabilitiesSecretsConfig": TenableVulnerabilitiesSecretsConfig,
     "TenableVulnerabilitiesSettingsConfig": TenableVulnerabilitiesSettingsConfig,
+    "TestEnrichmentConnectionRequest": TestEnrichmentConnectionRequestClass,
+    "TestInputConnectionRequest": TestInputConnectionRequestClass,
+    "TestOutputConnectionRequest": TestOutputConnectionRequestClass,
     "TinesAuditLogsSecretsConfig": TinesAuditLogsSecretsConfig,
     "TinesAuditLogsSettingsConfig": TinesAuditLogsSettingsConfig,
     "TinesEventsLogsSecretsConfig": TinesEventsLogsSecretsConfig,
@@ -1463,6 +1683,20 @@ let typeMap: {[index: string]: any} = {
     "TypesStringFilter": TypesStringFilter,
     "UniversalSecretsConfig": UniversalSecretsConfig,
     "UniversalSettingsConfig": UniversalSettingsConfig,
+    "UpdateAPIKeyRequest": UpdateAPIKeyRequestClass,
+    "UpdateAlertRuleRequest": UpdateAlertRuleRequestClass,
+    "UpdateBillingAccountRequest": UpdateBillingAccountRequestClass,
+    "UpdateBillingAccountRoleRequest": UpdateBillingAccountRoleRequestClass,
+    "UpdateChildOrganizationRequest": UpdateChildOrganizationRequestClass,
+    "UpdateConnectionRequest": UpdateConnectionRequestClass,
+    "UpdateEnrichmentRequest": UpdateEnrichmentRequestClass,
+    "UpdateInputRequest": UpdateInputRequestClass,
+    "UpdateOutputRequest": UpdateOutputRequestClass,
+    "UpdatePipelineEdgeRequest": UpdatePipelineEdgeRequestClass,
+    "UpdatePipelineRequest": UpdatePipelineRequestClass,
+    "UpdatePipelineV1Request": UpdatePipelineV1RequestClass,
+    "UpdateRoleRequest": UpdateRoleRequestClass,
+    "UpdateSecretRequest": UpdateSecretRequestClass,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,

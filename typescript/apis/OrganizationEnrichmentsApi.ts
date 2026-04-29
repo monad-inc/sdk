@@ -8,15 +8,15 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateEnrichmentRequest } from '../models/CreateEnrichmentRequest';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
+import { ReplaceEnrichmentRequest } from '../models/ReplaceEnrichmentRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
-import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
-import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
-import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { TestEnrichmentConnectionRequest } from '../models/TestEnrichmentConnectionRequest';
+import { UpdateEnrichmentRequest } from '../models/UpdateEnrichmentRequest';
 
 /**
  * no description
@@ -27,10 +27,10 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
      * Create a new enrichment with configuration including secrets handling
      * Create enrichment
      * @param organizationId Organization ID
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param createEnrichmentRequest Enrichment configuration
      * @param testConnection Test connection before creating the enrichment
      */
-    public async createEnrichment(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async createEnrichment(organizationId: string, createEnrichmentRequest: CreateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -39,9 +39,9 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         }
 
 
-        // verify required parameter 'routesV3CreateEnrichmentRequest' is not null or undefined
-        if (routesV3CreateEnrichmentRequest === null || routesV3CreateEnrichmentRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "createEnrichment", "routesV3CreateEnrichmentRequest");
+        // verify required parameter 'createEnrichmentRequest' is not null or undefined
+        if (createEnrichmentRequest === null || createEnrichmentRequest === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "createEnrichment", "createEnrichmentRequest");
         }
 
 
@@ -66,7 +66,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3CreateEnrichmentRequest, "RoutesV3CreateEnrichmentRequest", ""),
+            ObjectSerializer.serialize(createEnrichmentRequest, "CreateEnrichmentRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -255,10 +255,10 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
      * Replace enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param replaceEnrichmentRequest Enrichment configuration update
      * @param testConnection Test connection before updating the enrichment
      */
-    public async replaceEnrichment(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async replaceEnrichment(organizationId: string, enrichmentId: string, replaceEnrichmentRequest: ReplaceEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -273,9 +273,9 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         }
 
 
-        // verify required parameter 'routesV3PutEnrichmentRequest' is not null or undefined
-        if (routesV3PutEnrichmentRequest === null || routesV3PutEnrichmentRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "replaceEnrichment", "routesV3PutEnrichmentRequest");
+        // verify required parameter 'replaceEnrichmentRequest' is not null or undefined
+        if (replaceEnrichmentRequest === null || replaceEnrichmentRequest === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "replaceEnrichment", "replaceEnrichmentRequest");
         }
 
 
@@ -301,7 +301,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3PutEnrichmentRequest, "RoutesV3PutEnrichmentRequest", ""),
+            ObjectSerializer.serialize(replaceEnrichmentRequest, "ReplaceEnrichmentRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -330,9 +330,9 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
      * Tests the connection for a given enrichment type and configuration
      * Test enrichment connection
      * @param organizationId Organization ID
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test
      */
-    public async testEnrichmentConnection(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async testEnrichmentConnection(organizationId: string, testEnrichmentConnectionRequest: TestEnrichmentConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -341,9 +341,9 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         }
 
 
-        // verify required parameter 'routesV3TestEnrichmentConnectionRequest' is not null or undefined
-        if (routesV3TestEnrichmentConnectionRequest === null || routesV3TestEnrichmentConnectionRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "testEnrichmentConnection", "routesV3TestEnrichmentConnectionRequest");
+        // verify required parameter 'testEnrichmentConnectionRequest' is not null or undefined
+        if (testEnrichmentConnectionRequest === null || testEnrichmentConnectionRequest === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "testEnrichmentConnection", "testEnrichmentConnectionRequest");
         }
 
 
@@ -362,7 +362,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3TestEnrichmentConnectionRequest, "RoutesV3TestEnrichmentConnectionRequest", ""),
+            ObjectSerializer.serialize(testEnrichmentConnectionRequest, "TestEnrichmentConnectionRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -392,10 +392,10 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
      * Update enrichment
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param updateEnrichmentRequest Enrichment configuration update
      * @param testConnection Test connection before updating the enrichment
      */
-    public async updateEnrichment(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async updateEnrichment(organizationId: string, enrichmentId: string, updateEnrichmentRequest: UpdateEnrichmentRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -410,9 +410,9 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         }
 
 
-        // verify required parameter 'routesV3UpdateEnrichmentRequest' is not null or undefined
-        if (routesV3UpdateEnrichmentRequest === null || routesV3UpdateEnrichmentRequest === undefined) {
-            throw new RequiredError("OrganizationEnrichmentsApi", "updateEnrichment", "routesV3UpdateEnrichmentRequest");
+        // verify required parameter 'updateEnrichmentRequest' is not null or undefined
+        if (updateEnrichmentRequest === null || updateEnrichmentRequest === undefined) {
+            throw new RequiredError("OrganizationEnrichmentsApi", "updateEnrichment", "updateEnrichmentRequest");
         }
 
 
@@ -438,7 +438,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3UpdateEnrichmentRequest, "RoutesV3UpdateEnrichmentRequest", ""),
+            ObjectSerializer.serialize(updateEnrichmentRequest, "UpdateEnrichmentRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**format** | **str** | The format of the timestamp | [optional] 
+**format** | [**UtcTimestampTimestampFormat**](UtcTimestampTimestampFormat.md) |  | [optional] 
 **key** | **str** | The key to store the timestamp in | [optional] 
 
 ## Example

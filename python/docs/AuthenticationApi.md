@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_token**
-> AuthenticationtypesTokenResponse get_token(routes_login_request)
+> AuthenticationtypesTokenResponse get_token(get_token_request)
 
 Get Authentication token
 
@@ -23,7 +23,7 @@ Retrieve an authentication token from the authentication service using username 
 ```python
 import monad
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse
-from monad.models.routes_login_request import RoutesLoginRequest
+from monad.models.get_token_request import GetTokenRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -38,11 +38,11 @@ configuration = monad.Configuration(
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.AuthenticationApi(api_client)
-    routes_login_request = monad.RoutesLoginRequest() # RoutesLoginRequest | Login request
+    get_token_request = monad.GetTokenRequest() # GetTokenRequest | Login request
 
     try:
         # Get Authentication token
-        api_response = api_instance.get_token(routes_login_request)
+        api_response = api_instance.get_token(get_token_request)
         print("The response of AuthenticationApi->get_token:\n")
         pprint(api_response)
     except Exception as e:
@@ -56,7 +56,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routes_login_request** | [**RoutesLoginRequest**](RoutesLoginRequest.md)| Login request | 
+ **get_token_request** | [**GetTokenRequest**](GetTokenRequest.md)| Login request | 
 
 ### Return type
 
@@ -135,7 +135,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/html
+ - **Accept**: text/html
 
 ### HTTP response details
 

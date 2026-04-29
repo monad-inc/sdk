@@ -14,7 +14,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="exportTransform"></a>
 # **exportTransform**
-> String exportTransform(communityTransformsInternalTransformConfig)
+> String exportTransform(exportTransformRequest)
 
 Export transform to YAML
 
@@ -48,9 +48,9 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     TransformsRepositoryApi apiInstance = new TransformsRepositoryApi(defaultClient);
-    CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig = new CommunityTransformsInternalTransformConfig(); // CommunityTransformsInternalTransformConfig | Transform to export and optional metadata
+    ExportTransformRequest exportTransformRequest = new ExportTransformRequest(); // ExportTransformRequest | Transform to export and optional metadata
     try {
-      String result = apiInstance.exportTransform(communityTransformsInternalTransformConfig);
+      String result = apiInstance.exportTransform(exportTransformRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransformsRepositoryApi#exportTransform");
@@ -67,7 +67,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **communityTransformsInternalTransformConfig** | [**CommunityTransformsInternalTransformConfig**](CommunityTransformsInternalTransformConfig.md)| Transform to export and optional metadata | |
+| **exportTransformRequest** | [**ExportTransformRequest**](ExportTransformRequest.md)| Transform to export and optional metadata | |
 
 ### Return type
 
@@ -278,7 +278,7 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     TransformsRepositoryApi apiInstance = new TransformsRepositoryApi(defaultClient);
-    String body = "body_example"; // String | YAML transform definition
+    Object body = null; // Object | YAML transform definition
     try {
       RoutesV3ImportTransformResponse result = apiInstance.importTransform(body);
       System.out.println(result);
@@ -297,7 +297,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **String**| YAML transform definition | |
+| **body** | **Object**| YAML transform definition | |
 
 ### Return type
 
@@ -309,7 +309,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, text/plain
  - **Accept**: application/json
 
 ### HTTP response details

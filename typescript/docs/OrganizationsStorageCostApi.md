@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **setStorageTypeCost**
-> ModelsStorageTypeCostConfig setStorageTypeCost(routesV2SetStorageTypeCostRequest)
+> ModelsStorageTypeCostConfig setStorageTypeCost(setStorageTypeCostRequest)
 
 Update per-organization cost configuration for storage types
 
@@ -296,13 +296,7 @@ const request: OrganizationsStorageCostApiSetStorageTypeCostRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Cost configuration
-  routesV2SetStorageTypeCostRequest: {
-    costs: {
-      "key": {
-        costPerGb: 3.14,
-      },
-    },
-  },
+  setStorageTypeCostRequest: null,
 };
 
 const data = await apiInstance.setStorageTypeCost(request);
@@ -314,7 +308,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2SetStorageTypeCostRequest** | **RoutesV2SetStorageTypeCostRequest**| Cost configuration |
+ **setStorageTypeCostRequest** | **SetStorageTypeCostRequest**| Cost configuration |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 

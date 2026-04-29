@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_billing_account**
-> ModelsBillingAccount create_billing_account(routes_v2_create_billing_account_request)
+> ModelsBillingAccount create_billing_account(create_billing_account_request)
 
 Create Billing Account
 
@@ -24,8 +24,8 @@ Create Billing Account
 
 ```python
 import monad
+from monad.models.create_billing_account_request import CreateBillingAccountRequest
 from monad.models.models_billing_account import ModelsBillingAccount
-from monad.models.routes_v2_create_billing_account_request import RoutesV2CreateBillingAccountRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -50,11 +50,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsApi(api_client)
-    routes_v2_create_billing_account_request = monad.RoutesV2CreateBillingAccountRequest() # RoutesV2CreateBillingAccountRequest | Request body for creating a billing account
+    create_billing_account_request = monad.CreateBillingAccountRequest() # CreateBillingAccountRequest | Request body for creating a billing account
 
     try:
         # Create Billing Account
-        api_response = api_instance.create_billing_account(routes_v2_create_billing_account_request)
+        api_response = api_instance.create_billing_account(create_billing_account_request)
         print("The response of BillingAccountsApi->create_billing_account:\n")
         pprint(api_response)
     except Exception as e:
@@ -68,7 +68,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routes_v2_create_billing_account_request** | [**RoutesV2CreateBillingAccountRequest**](RoutesV2CreateBillingAccountRequest.md)| Request body for creating a billing account | 
+ **create_billing_account_request** | [**CreateBillingAccountRequest**](CreateBillingAccountRequest.md)| Request body for creating a billing account | 
 
 ### Return type
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_billing_account**
-> ModelsBillingAccount update_billing_account(billing_account_id, routes_v2_update_billing_account_request)
+> ModelsBillingAccount update_billing_account(billing_account_id, update_billing_account_request)
 
 Update Billing Account
 
@@ -349,7 +349,7 @@ Update Billing Account
 ```python
 import monad
 from monad.models.models_billing_account import ModelsBillingAccount
-from monad.models.routes_v2_update_billing_account_request import RoutesV2UpdateBillingAccountRequest
+from monad.models.update_billing_account_request import UpdateBillingAccountRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -375,11 +375,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
-    routes_v2_update_billing_account_request = monad.RoutesV2UpdateBillingAccountRequest() # RoutesV2UpdateBillingAccountRequest | Request body for updating a billing account
+    update_billing_account_request = monad.UpdateBillingAccountRequest() # UpdateBillingAccountRequest | Request body for updating a billing account
 
     try:
         # Update Billing Account
-        api_response = api_instance.update_billing_account(billing_account_id, routes_v2_update_billing_account_request)
+        api_response = api_instance.update_billing_account(billing_account_id, update_billing_account_request)
         print("The response of BillingAccountsApi->update_billing_account:\n")
         pprint(api_response)
     except Exception as e:
@@ -394,7 +394,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
- **routes_v2_update_billing_account_request** | [**RoutesV2UpdateBillingAccountRequest**](RoutesV2UpdateBillingAccountRequest.md)| Request body for updating a billing account | 
+ **update_billing_account_request** | [**UpdateBillingAccountRequest**](UpdateBillingAccountRequest.md)| Request body for updating a billing account | 
 
 ### Return type
 

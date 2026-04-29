@@ -15,7 +15,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createInput"></a>
 # **createInput**
-> ModelsInput createInput(organizationId, routesV2CreateInputRequest, testConnection)
+> ModelsInput createInput(organizationId, createInputRequest, testConnection)
 
 Create input
 
@@ -50,10 +50,10 @@ public class Example {
 
     OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2CreateInputRequest routesV2CreateInputRequest = new RoutesV2CreateInputRequest(); // RoutesV2CreateInputRequest | Input configuration
+    CreateInputRequest createInputRequest = new CreateInputRequest(); // CreateInputRequest | Input configuration
     Boolean testConnection = true; // Boolean | Test connection before creating the input
     try {
-      ModelsInput result = apiInstance.createInput(organizationId, routesV2CreateInputRequest, testConnection);
+      ModelsInput result = apiInstance.createInput(organizationId, createInputRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationInputsApi#createInput");
@@ -71,7 +71,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2CreateInputRequest** | [**RoutesV2CreateInputRequest**](RoutesV2CreateInputRequest.md)| Input configuration | |
+| **createInputRequest** | [**CreateInputRequest**](CreateInputRequest.md)| Input configuration | |
 | **testConnection** | **Boolean**| Test connection before creating the input | [optional] |
 
 ### Return type
@@ -330,7 +330,7 @@ public class Example {
 
 <a id="replaceInput"></a>
 # **replaceInput**
-> ModelsInput replaceInput(organizationId, inputId, routesV2PutInputRequest, testConnection)
+> ModelsInput replaceInput(organizationId, inputId, replaceInputRequest, testConnection)
 
 Replace input
 
@@ -366,10 +366,10 @@ public class Example {
     OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String inputId = "inputId_example"; // String | Input ID
-    RoutesV2PutInputRequest routesV2PutInputRequest = new RoutesV2PutInputRequest(); // RoutesV2PutInputRequest | Input configuration update
+    ReplaceInputRequest replaceInputRequest = new ReplaceInputRequest(); // ReplaceInputRequest | Input configuration update
     Boolean testConnection = true; // Boolean | Test connection before creating the input
     try {
-      ModelsInput result = apiInstance.replaceInput(organizationId, inputId, routesV2PutInputRequest, testConnection);
+      ModelsInput result = apiInstance.replaceInput(organizationId, inputId, replaceInputRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationInputsApi#replaceInput");
@@ -388,7 +388,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **inputId** | **String**| Input ID | |
-| **routesV2PutInputRequest** | [**RoutesV2PutInputRequest**](RoutesV2PutInputRequest.md)| Input configuration update | |
+| **replaceInputRequest** | [**ReplaceInputRequest**](ReplaceInputRequest.md)| Input configuration update | |
 | **testConnection** | **Boolean**| Test connection before creating the input | [optional] |
 
 ### Return type
@@ -414,7 +414,7 @@ public class Example {
 
 <a id="testInputConnection"></a>
 # **testInputConnection**
-> RoutesV2SuccessResponse testInputConnection(organizationId, routesV2TestInputConnectionRequest)
+> RoutesV2SuccessResponse testInputConnection(organizationId, testInputConnectionRequest)
 
 Test input connection
 
@@ -449,9 +449,9 @@ public class Example {
 
     OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest = new RoutesV2TestInputConnectionRequest(); // RoutesV2TestInputConnectionRequest | Input configuration to test
+    TestInputConnectionRequest testInputConnectionRequest = new TestInputConnectionRequest(); // TestInputConnectionRequest | Input configuration to test
     try {
-      RoutesV2SuccessResponse result = apiInstance.testInputConnection(organizationId, routesV2TestInputConnectionRequest);
+      RoutesV2SuccessResponse result = apiInstance.testInputConnection(organizationId, testInputConnectionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationInputsApi#testInputConnection");
@@ -469,7 +469,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2TestInputConnectionRequest** | [**RoutesV2TestInputConnectionRequest**](RoutesV2TestInputConnectionRequest.md)| Input configuration to test | |
+| **testInputConnectionRequest** | [**TestInputConnectionRequest**](TestInputConnectionRequest.md)| Input configuration to test | |
 
 ### Return type
 
@@ -493,7 +493,7 @@ public class Example {
 
 <a id="updateInput"></a>
 # **updateInput**
-> ModelsInput updateInput(organizationId, inputId, routesV2UpdateInputRequest, testConnection)
+> ModelsInput updateInput(organizationId, inputId, updateInputRequest, testConnection)
 
 Update input
 
@@ -529,10 +529,10 @@ public class Example {
     OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String inputId = "inputId_example"; // String | Input ID
-    RoutesV2UpdateInputRequest routesV2UpdateInputRequest = new RoutesV2UpdateInputRequest(); // RoutesV2UpdateInputRequest | Input configuration update
+    UpdateInputRequest updateInputRequest = new UpdateInputRequest(); // UpdateInputRequest | Input configuration update
     Boolean testConnection = true; // Boolean | Test connection before creating the input
     try {
-      ModelsInput result = apiInstance.updateInput(organizationId, inputId, routesV2UpdateInputRequest, testConnection);
+      ModelsInput result = apiInstance.updateInput(organizationId, inputId, updateInputRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationInputsApi#updateInput");
@@ -551,7 +551,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **inputId** | **String**| Input ID | |
-| **routesV2UpdateInputRequest** | [**RoutesV2UpdateInputRequest**](RoutesV2UpdateInputRequest.md)| Input configuration update | |
+| **updateInputRequest** | [**UpdateInputRequest**](UpdateInputRequest.md)| Input configuration update | |
 | **testConnection** | **Boolean**| Test connection before creating the input | [optional] |
 
 ### Return type

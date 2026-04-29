@@ -3,7 +3,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
+from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue
 from monad.models.models_progress_entries import ModelsProgressEntries
 from typing import Optional, Set
 from typing_extensions import Self
@@ -45,7 +46,7 @@ class ModelsPipelineStatus(BaseModel):
     pipeline_id: Optional[StrictStr] = None
     pipeline_name: Optional[StrictStr] = None
     progress: Optional[ModelsProgressEntries] = None
-    status: Optional[StrictStr] = None
+    status: Optional[ModelsPipelineStatusValue] = None
     __properties: ClassVar[List[str]] = ["average_size_egressed", "average_size_ingested", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
 
     model_config = ConfigDict(

@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -20,8 +20,7 @@ var _ MappedNullable = &OrgAuditLogsSettingsConfig{}
 
 // OrgAuditLogsSettingsConfig GitHub organization audit logs settings
 type OrgAuditLogsSettingsConfig struct {
-	// Authentication type to use
-	AuthType *string `json:"auth_type,omitempty"`
+	AuthType *CommonAuthType `json:"auth_type,omitempty"`
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// GitHub App Installation ID (required when using GitHub App authentication)
@@ -54,9 +53,9 @@ func NewOrgAuditLogsSettingsConfigWithDefaults() *OrgAuditLogsSettingsConfig {
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *OrgAuditLogsSettingsConfig) GetAuthType() string {
+func (o *OrgAuditLogsSettingsConfig) GetAuthType() CommonAuthType {
 	if o == nil || IsNil(o.AuthType) {
-		var ret string
+		var ret CommonAuthType
 		return ret
 	}
 	return *o.AuthType
@@ -64,7 +63,7 @@ func (o *OrgAuditLogsSettingsConfig) GetAuthType() string {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrgAuditLogsSettingsConfig) GetAuthTypeOk() (*string, bool) {
+func (o *OrgAuditLogsSettingsConfig) GetAuthTypeOk() (*CommonAuthType, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -80,8 +79,8 @@ func (o *OrgAuditLogsSettingsConfig) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *OrgAuditLogsSettingsConfig) SetAuthType(v string) {
+// SetAuthType gets a reference to the given CommonAuthType and assigns it to the AuthType field.
+func (o *OrgAuditLogsSettingsConfig) SetAuthType(v CommonAuthType) {
 	o.AuthType = &v
 }
 

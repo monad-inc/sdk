@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/event-stream
+ - **Accept**: text/event-stream
 
 ### HTTP response details
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/event-stream
+ - **Accept**: text/event-stream
 
 ### HTTP response details
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/event-stream
+ - **Accept**: text/event-stream
 
 ### HTTP response details
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/event-stream
+ - **Accept**: text/event-stream
 
 ### HTTP response details
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/event-stream
+ - **Accept**: text/event-stream
 
 ### HTTP response details
 
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/event-stream
+ - **Accept**: text/event-stream
 
 ### HTTP response details
 

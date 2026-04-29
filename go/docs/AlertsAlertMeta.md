@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Category** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to [**AlertsAlertCategory**](AlertsAlertCategory.md) |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Granularity** | Pointer to **string** |  | [optional] 
-**House** | Pointer to **string** |  | [optional] 
+**Granularity** | Pointer to [**AlertsAlertGranularity**](AlertsAlertGranularity.md) |  | [optional] 
+**House** | Pointer to [**AlertsAlertHouse**](AlertsAlertHouse.md) |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCategory
 
-`func (o *AlertsAlertMeta) GetCategory() string`
+`func (o *AlertsAlertMeta) GetCategory() AlertsAlertCategory`
 
 GetCategory returns the Category field if non-nil, zero value otherwise.
 
 ### GetCategoryOk
 
-`func (o *AlertsAlertMeta) GetCategoryOk() (*string, bool)`
+`func (o *AlertsAlertMeta) GetCategoryOk() (*AlertsAlertCategory, bool)`
 
 GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategory
 
-`func (o *AlertsAlertMeta) SetCategory(v string)`
+`func (o *AlertsAlertMeta) SetCategory(v AlertsAlertCategory)`
 
 SetCategory sets Category field to given value.
 
@@ -120,20 +120,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetGranularity
 
-`func (o *AlertsAlertMeta) GetGranularity() string`
+`func (o *AlertsAlertMeta) GetGranularity() AlertsAlertGranularity`
 
 GetGranularity returns the Granularity field if non-nil, zero value otherwise.
 
 ### GetGranularityOk
 
-`func (o *AlertsAlertMeta) GetGranularityOk() (*string, bool)`
+`func (o *AlertsAlertMeta) GetGranularityOk() (*AlertsAlertGranularity, bool)`
 
 GetGranularityOk returns a tuple with the Granularity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGranularity
 
-`func (o *AlertsAlertMeta) SetGranularity(v string)`
+`func (o *AlertsAlertMeta) SetGranularity(v AlertsAlertGranularity)`
 
 SetGranularity sets Granularity field to given value.
 
@@ -145,20 +145,20 @@ HasGranularity returns a boolean if a field has been set.
 
 ### GetHouse
 
-`func (o *AlertsAlertMeta) GetHouse() string`
+`func (o *AlertsAlertMeta) GetHouse() AlertsAlertHouse`
 
 GetHouse returns the House field if non-nil, zero value otherwise.
 
 ### GetHouseOk
 
-`func (o *AlertsAlertMeta) GetHouseOk() (*string, bool)`
+`func (o *AlertsAlertMeta) GetHouseOk() (*AlertsAlertHouse, bool)`
 
 GetHouseOk returns a tuple with the House field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHouse
 
-`func (o *AlertsAlertMeta) SetHouse(v string)`
+`func (o *AlertsAlertMeta) SetHouse(v AlertsAlertHouse)`
 
 SetHouse sets House field to given value.
 

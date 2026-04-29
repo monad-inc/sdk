@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,19 +19,19 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from monad.models.create_pipeline_request import CreatePipelineRequest
 from monad.models.models_pipeline import ModelsPipeline
 from monad.models.models_pipeline_config_v2 import ModelsPipelineConfigV2
 from monad.models.models_pipeline_list import ModelsPipelineList
 from monad.models.models_pipeline_metrics import ModelsPipelineMetrics
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
 from monad.models.models_pipeline_status import ModelsPipelineStatus
-from monad.models.routes_update_pipeline_request import RoutesUpdatePipelineRequest
-from monad.models.routes_v2_create_pipeline_request import RoutesV2CreatePipelineRequest
 from monad.models.routes_v2_get_organization_summary_response import RoutesV2GetOrganizationSummaryResponse
 from monad.models.routes_v2_metrics_response import RoutesV2MetricsResponse
-from monad.models.routes_v2_patch_pipeline_edge_request import RoutesV2PatchPipelineEdgeRequest
 from monad.models.routes_v2_pipeline_with_status import RoutesV2PipelineWithStatus
-from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelineRequest
+from monad.models.update_pipeline_edge_request import UpdatePipelineEdgeRequest
+from monad.models.update_pipeline_request import UpdatePipelineRequest
+from monad.models.update_pipeline_v1_request import UpdatePipelineV1Request
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -55,7 +55,7 @@ class PipelinesApi:
     def create_pipeline(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_pipeline_request: Annotated[RoutesV2CreatePipelineRequest, Field(description="Request body for creating a pipeline")],
+        create_pipeline_request: Annotated[CreatePipelineRequest, Field(description="Request body for creating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -75,8 +75,8 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_pipeline_request: Request body for creating a pipeline (required)
-        :type routes_v2_create_pipeline_request: RoutesV2CreatePipelineRequest
+        :param create_pipeline_request: Request body for creating a pipeline (required)
+        :type create_pipeline_request: CreatePipelineRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -101,7 +101,7 @@ class PipelinesApi:
 
         _param = self._create_pipeline_serialize(
             organization_id=organization_id,
-            routes_v2_create_pipeline_request=routes_v2_create_pipeline_request,
+            create_pipeline_request=create_pipeline_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -128,7 +128,7 @@ class PipelinesApi:
     def create_pipeline_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_pipeline_request: Annotated[RoutesV2CreatePipelineRequest, Field(description="Request body for creating a pipeline")],
+        create_pipeline_request: Annotated[CreatePipelineRequest, Field(description="Request body for creating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -148,8 +148,8 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_pipeline_request: Request body for creating a pipeline (required)
-        :type routes_v2_create_pipeline_request: RoutesV2CreatePipelineRequest
+        :param create_pipeline_request: Request body for creating a pipeline (required)
+        :type create_pipeline_request: CreatePipelineRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -174,7 +174,7 @@ class PipelinesApi:
 
         _param = self._create_pipeline_serialize(
             organization_id=organization_id,
-            routes_v2_create_pipeline_request=routes_v2_create_pipeline_request,
+            create_pipeline_request=create_pipeline_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -201,7 +201,7 @@ class PipelinesApi:
     def create_pipeline_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_pipeline_request: Annotated[RoutesV2CreatePipelineRequest, Field(description="Request body for creating a pipeline")],
+        create_pipeline_request: Annotated[CreatePipelineRequest, Field(description="Request body for creating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -221,8 +221,8 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_pipeline_request: Request body for creating a pipeline (required)
-        :type routes_v2_create_pipeline_request: RoutesV2CreatePipelineRequest
+        :param create_pipeline_request: Request body for creating a pipeline (required)
+        :type create_pipeline_request: CreatePipelineRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -247,7 +247,7 @@ class PipelinesApi:
 
         _param = self._create_pipeline_serialize(
             organization_id=organization_id,
-            routes_v2_create_pipeline_request=routes_v2_create_pipeline_request,
+            create_pipeline_request=create_pipeline_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -269,7 +269,7 @@ class PipelinesApi:
     def _create_pipeline_serialize(
         self,
         organization_id,
-        routes_v2_create_pipeline_request,
+        create_pipeline_request,
         _request_auth,
         _content_type,
         _headers,
@@ -297,8 +297,8 @@ class PipelinesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_pipeline_request is not None:
-            _body_params = routes_v2_create_pipeline_request
+        if create_pipeline_request is not None:
+            _body_params = create_pipeline_request
 
 
         # set the HTTP header `Accept`
@@ -5610,7 +5610,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        routes_v2_update_pipeline_request: Annotated[RoutesV2UpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
+        update_pipeline_request: Annotated[UpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5632,8 +5632,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param routes_v2_update_pipeline_request: Request body for updating a pipeline (required)
-        :type routes_v2_update_pipeline_request: RoutesV2UpdatePipelineRequest
+        :param update_pipeline_request: Request body for updating a pipeline (required)
+        :type update_pipeline_request: UpdatePipelineRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5659,7 +5659,7 @@ class PipelinesApi:
         _param = self._update_pipeline_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
-            routes_v2_update_pipeline_request=routes_v2_update_pipeline_request,
+            update_pipeline_request=update_pipeline_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5687,7 +5687,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        routes_v2_update_pipeline_request: Annotated[RoutesV2UpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
+        update_pipeline_request: Annotated[UpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5709,8 +5709,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param routes_v2_update_pipeline_request: Request body for updating a pipeline (required)
-        :type routes_v2_update_pipeline_request: RoutesV2UpdatePipelineRequest
+        :param update_pipeline_request: Request body for updating a pipeline (required)
+        :type update_pipeline_request: UpdatePipelineRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5736,7 +5736,7 @@ class PipelinesApi:
         _param = self._update_pipeline_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
-            routes_v2_update_pipeline_request=routes_v2_update_pipeline_request,
+            update_pipeline_request=update_pipeline_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5764,7 +5764,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        routes_v2_update_pipeline_request: Annotated[RoutesV2UpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
+        update_pipeline_request: Annotated[UpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5786,8 +5786,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param routes_v2_update_pipeline_request: Request body for updating a pipeline (required)
-        :type routes_v2_update_pipeline_request: RoutesV2UpdatePipelineRequest
+        :param update_pipeline_request: Request body for updating a pipeline (required)
+        :type update_pipeline_request: UpdatePipelineRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5813,7 +5813,7 @@ class PipelinesApi:
         _param = self._update_pipeline_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
-            routes_v2_update_pipeline_request=routes_v2_update_pipeline_request,
+            update_pipeline_request=update_pipeline_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5836,7 +5836,7 @@ class PipelinesApi:
         self,
         organization_id,
         pipeline_id,
-        routes_v2_update_pipeline_request,
+        update_pipeline_request,
         _request_auth,
         _content_type,
         _headers,
@@ -5866,8 +5866,8 @@ class PipelinesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_update_pipeline_request is not None:
-            _body_params = routes_v2_update_pipeline_request
+        if update_pipeline_request is not None:
+            _body_params = update_pipeline_request
 
 
         # set the HTTP header `Accept`
@@ -5922,7 +5922,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
         edge_id: Annotated[StrictStr, Field(description="Edge ID")],
-        routes_v2_patch_pipeline_edge_request: Annotated[RoutesV2PatchPipelineEdgeRequest, Field(description="Request body")],
+        update_pipeline_edge_request: Annotated[UpdatePipelineEdgeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5946,8 +5946,8 @@ class PipelinesApi:
         :type pipeline_id: str
         :param edge_id: Edge ID (required)
         :type edge_id: str
-        :param routes_v2_patch_pipeline_edge_request: Request body (required)
-        :type routes_v2_patch_pipeline_edge_request: RoutesV2PatchPipelineEdgeRequest
+        :param update_pipeline_edge_request: Request body (required)
+        :type update_pipeline_edge_request: UpdatePipelineEdgeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5974,7 +5974,7 @@ class PipelinesApi:
             organization_id=organization_id,
             pipeline_id=pipeline_id,
             edge_id=edge_id,
-            routes_v2_patch_pipeline_edge_request=routes_v2_patch_pipeline_edge_request,
+            update_pipeline_edge_request=update_pipeline_edge_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6004,7 +6004,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
         edge_id: Annotated[StrictStr, Field(description="Edge ID")],
-        routes_v2_patch_pipeline_edge_request: Annotated[RoutesV2PatchPipelineEdgeRequest, Field(description="Request body")],
+        update_pipeline_edge_request: Annotated[UpdatePipelineEdgeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6028,8 +6028,8 @@ class PipelinesApi:
         :type pipeline_id: str
         :param edge_id: Edge ID (required)
         :type edge_id: str
-        :param routes_v2_patch_pipeline_edge_request: Request body (required)
-        :type routes_v2_patch_pipeline_edge_request: RoutesV2PatchPipelineEdgeRequest
+        :param update_pipeline_edge_request: Request body (required)
+        :type update_pipeline_edge_request: UpdatePipelineEdgeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6056,7 +6056,7 @@ class PipelinesApi:
             organization_id=organization_id,
             pipeline_id=pipeline_id,
             edge_id=edge_id,
-            routes_v2_patch_pipeline_edge_request=routes_v2_patch_pipeline_edge_request,
+            update_pipeline_edge_request=update_pipeline_edge_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6086,7 +6086,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
         edge_id: Annotated[StrictStr, Field(description="Edge ID")],
-        routes_v2_patch_pipeline_edge_request: Annotated[RoutesV2PatchPipelineEdgeRequest, Field(description="Request body")],
+        update_pipeline_edge_request: Annotated[UpdatePipelineEdgeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6110,8 +6110,8 @@ class PipelinesApi:
         :type pipeline_id: str
         :param edge_id: Edge ID (required)
         :type edge_id: str
-        :param routes_v2_patch_pipeline_edge_request: Request body (required)
-        :type routes_v2_patch_pipeline_edge_request: RoutesV2PatchPipelineEdgeRequest
+        :param update_pipeline_edge_request: Request body (required)
+        :type update_pipeline_edge_request: UpdatePipelineEdgeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6138,7 +6138,7 @@ class PipelinesApi:
             organization_id=organization_id,
             pipeline_id=pipeline_id,
             edge_id=edge_id,
-            routes_v2_patch_pipeline_edge_request=routes_v2_patch_pipeline_edge_request,
+            update_pipeline_edge_request=update_pipeline_edge_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6163,7 +6163,7 @@ class PipelinesApi:
         organization_id,
         pipeline_id,
         edge_id,
-        routes_v2_patch_pipeline_edge_request,
+        update_pipeline_edge_request,
         _request_auth,
         _content_type,
         _headers,
@@ -6195,8 +6195,8 @@ class PipelinesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_patch_pipeline_edge_request is not None:
-            _body_params = routes_v2_patch_pipeline_edge_request
+        if update_pipeline_edge_request is not None:
+            _body_params = update_pipeline_edge_request
 
 
         # set the HTTP header `Accept`
@@ -6250,7 +6250,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        routes_update_pipeline_request: Annotated[RoutesUpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
+        update_pipeline_v1_request: Annotated[UpdatePipelineV1Request, Field(description="Request body for updating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6272,8 +6272,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param routes_update_pipeline_request: Request body for updating a pipeline (required)
-        :type routes_update_pipeline_request: RoutesUpdatePipelineRequest
+        :param update_pipeline_v1_request: Request body for updating a pipeline (required)
+        :type update_pipeline_v1_request: UpdatePipelineV1Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6300,7 +6300,7 @@ class PipelinesApi:
         _param = self._update_pipeline_v1_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
-            routes_update_pipeline_request=routes_update_pipeline_request,
+            update_pipeline_v1_request=update_pipeline_v1_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6328,7 +6328,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        routes_update_pipeline_request: Annotated[RoutesUpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
+        update_pipeline_v1_request: Annotated[UpdatePipelineV1Request, Field(description="Request body for updating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6350,8 +6350,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param routes_update_pipeline_request: Request body for updating a pipeline (required)
-        :type routes_update_pipeline_request: RoutesUpdatePipelineRequest
+        :param update_pipeline_v1_request: Request body for updating a pipeline (required)
+        :type update_pipeline_v1_request: UpdatePipelineV1Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6378,7 +6378,7 @@ class PipelinesApi:
         _param = self._update_pipeline_v1_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
-            routes_update_pipeline_request=routes_update_pipeline_request,
+            update_pipeline_v1_request=update_pipeline_v1_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6406,7 +6406,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        routes_update_pipeline_request: Annotated[RoutesUpdatePipelineRequest, Field(description="Request body for updating a pipeline")],
+        update_pipeline_v1_request: Annotated[UpdatePipelineV1Request, Field(description="Request body for updating a pipeline")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6428,8 +6428,8 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param routes_update_pipeline_request: Request body for updating a pipeline (required)
-        :type routes_update_pipeline_request: RoutesUpdatePipelineRequest
+        :param update_pipeline_v1_request: Request body for updating a pipeline (required)
+        :type update_pipeline_v1_request: UpdatePipelineV1Request
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6456,7 +6456,7 @@ class PipelinesApi:
         _param = self._update_pipeline_v1_serialize(
             organization_id=organization_id,
             pipeline_id=pipeline_id,
-            routes_update_pipeline_request=routes_update_pipeline_request,
+            update_pipeline_v1_request=update_pipeline_v1_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6479,7 +6479,7 @@ class PipelinesApi:
         self,
         organization_id,
         pipeline_id,
-        routes_update_pipeline_request,
+        update_pipeline_v1_request,
         _request_auth,
         _content_type,
         _headers,
@@ -6509,8 +6509,8 @@ class PipelinesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_update_pipeline_request is not None:
-            _body_params = routes_update_pipeline_request
+        if update_pipeline_v1_request is not None:
+            _body_params = update_pipeline_v1_request
 
 
         # set the HTTP header `Accept`

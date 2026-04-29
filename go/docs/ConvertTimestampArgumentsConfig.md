@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SourceFormat** | Pointer to **string** | Required: Format of source timestamp | [optional] 
+**SourceFormat** | Pointer to [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **SourceFormatCustom** | Pointer to **string** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **SourceKey** | Pointer to **string** | Required: JSONPath to source timestamp field | [optional] 
 **SourceTimezone** | Pointer to **string** | Optional: Source timezone (default: UTC) | [optional] 
-**TargetFormat** | Pointer to **string** | Required: Format of source timestamp | [optional] 
+**TargetFormat** | Pointer to [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **TargetFormatCustom** | Pointer to **string** | Optional: Custom target format (only if TargetFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **TargetKey** | Pointer to **string** | Optional: Target field (if empty, overwrites SourceKey) | [optional] 
 **TargetTimezone** | Pointer to **string** | Optional: Target timezone (default: UTC) | [optional] 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSourceFormat
 
-`func (o *ConvertTimestampArgumentsConfig) GetSourceFormat() string`
+`func (o *ConvertTimestampArgumentsConfig) GetSourceFormat() ConvertTimestampTimestampFormat`
 
 GetSourceFormat returns the SourceFormat field if non-nil, zero value otherwise.
 
 ### GetSourceFormatOk
 
-`func (o *ConvertTimestampArgumentsConfig) GetSourceFormatOk() (*string, bool)`
+`func (o *ConvertTimestampArgumentsConfig) GetSourceFormatOk() (*ConvertTimestampTimestampFormat, bool)`
 
 GetSourceFormatOk returns a tuple with the SourceFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceFormat
 
-`func (o *ConvertTimestampArgumentsConfig) SetSourceFormat(v string)`
+`func (o *ConvertTimestampArgumentsConfig) SetSourceFormat(v ConvertTimestampTimestampFormat)`
 
 SetSourceFormat sets SourceFormat field to given value.
 
@@ -134,20 +134,20 @@ HasSourceTimezone returns a boolean if a field has been set.
 
 ### GetTargetFormat
 
-`func (o *ConvertTimestampArgumentsConfig) GetTargetFormat() string`
+`func (o *ConvertTimestampArgumentsConfig) GetTargetFormat() ConvertTimestampTimestampFormat`
 
 GetTargetFormat returns the TargetFormat field if non-nil, zero value otherwise.
 
 ### GetTargetFormatOk
 
-`func (o *ConvertTimestampArgumentsConfig) GetTargetFormatOk() (*string, bool)`
+`func (o *ConvertTimestampArgumentsConfig) GetTargetFormatOk() (*ConvertTimestampTimestampFormat, bool)`
 
 GetTargetFormatOk returns a tuple with the TargetFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTargetFormat
 
-`func (o *ConvertTimestampArgumentsConfig) SetTargetFormat(v string)`
+`func (o *ConvertTimestampArgumentsConfig) SetTargetFormat(v ConvertTimestampTimestampFormat)`
 
 SetTargetFormat sets TargetFormat field to given value.
 

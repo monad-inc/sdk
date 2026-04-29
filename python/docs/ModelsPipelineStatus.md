@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **pipeline_id** | **str** |  | [optional] 
 **pipeline_name** | **str** |  | [optional] 
 **progress** | [**ModelsProgressEntries**](ModelsProgressEntries.md) |  | [optional] 
-**status** | **str** |  | [optional] 
+**status** | [**ModelsPipelineStatusValue**](ModelsPipelineStatusValue.md) |  | [optional] 
 
 ## Example
 

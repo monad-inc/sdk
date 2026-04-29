@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.client.model.ModelsConditionOperator;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -67,7 +68,7 @@ public class ModelsConditionEvaluatable {
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
   @javax.annotation.Nullable
-  private String operator;
+  private ModelsConditionOperator operator;
 
   public static final String SERIALIZED_NAME_TYPE_ID = "type_id";
   @SerializedName(SERIALIZED_NAME_TYPE_ID)
@@ -131,21 +132,21 @@ public class ModelsConditionEvaluatable {
   }
 
 
-  public ModelsConditionEvaluatable operator(@javax.annotation.Nullable String operator) {
+  public ModelsConditionEvaluatable operator(@javax.annotation.Nullable ModelsConditionOperator operator) {
     this.operator = operator;
     return this;
   }
 
   /**
-   * Only set for logical nodes
+   * Get operator
    * @return operator
    */
   @javax.annotation.Nullable
-  public String getOperator() {
+  public ModelsConditionOperator getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nullable String operator) {
+  public void setOperator(@javax.annotation.Nullable ModelsConditionOperator operator) {
     this.operator = operator;
   }
 
@@ -257,8 +258,9 @@ public class ModelsConditionEvaluatable {
           };
         }
       }
-      if ((jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) && !jsonObj.get("operator").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
+      // validate the optional field `operator`
+      if (jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) {
+        ModelsConditionOperator.validateJsonElement(jsonObj.get("operator"));
       }
       if ((jsonObj.get("type_id") != null && !jsonObj.get("type_id").isJsonNull()) && !jsonObj.get("type_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type_id").toString()));

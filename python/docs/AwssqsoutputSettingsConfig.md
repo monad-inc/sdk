@@ -7,7 +7,7 @@ SQS Output Settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_group_id** | **str** | The message group ID for FIFO queues. This is required for FIFO queues. | [optional] 
-**queue_type** | **str** | The type of SQS queue to use. Can be either \&quot;standard\&quot; or \&quot;fifo\&quot;. | [optional] 
+**queue_type** | [**AwssqsoutputQueueType**](AwssqsoutputQueueType.md) |  | [optional] 
 **queue_url** | **str** | The URL of the SQS queue to poll for messages. | [optional] 
 **region** | **str** | The AWS region where the SQS queue is located. | [optional] 
 **role_arn** | **str** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 

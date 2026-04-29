@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -20,23 +20,19 @@ var _ MappedNullable = &KafkaSettingsConfig{}
 
 // KafkaSettingsConfig Kafka Output Settings
 type KafkaSettingsConfig struct {
-	// Acknowledgment level (0=none, 1=leader only, all=all replicas)
-	Acks *string `json:"acks,omitempty"`
+	Acks *KafkaAcks `json:"acks,omitempty"`
 	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	// Comma-separated list of Kafka broker addresses (host:port)
 	BootstrapServers *string `json:"bootstrap_servers,omitempty"`
-	// Compression codec for messages (none, gzip, snappy, lz4, zstd)
-	CompressionType *string `json:"compression_type,omitempty"`
+	CompressionType *KafkaCompressionType `json:"compression_type,omitempty"`
 	// Static headers to add to each Kafka message
 	Headers []KafkaKafkaHeader `json:"headers,omitempty"`
 	// JSON field path to extract as the Kafka message key (uses gjson syntax)
 	MessageKeyField *string `json:"message_key_field,omitempty"`
 	// Number of retry attempts for failed writes
 	Retries *int32 `json:"retries,omitempty"`
-	// SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512)
-	SaslMechanism *string `json:"sasl_mechanism,omitempty"`
-	// Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL)
-	SecurityProtocol *string `json:"security_protocol,omitempty"`
+	SaslMechanism *KafkaSaslMechanism `json:"sasl_mechanism,omitempty"`
+	SecurityProtocol *KafkaSecurityProtocol `json:"security_protocol,omitempty"`
 	// The Kafka topic to publish messages to
 	Topic *string `json:"topic,omitempty"`
 	// Username for SASL authentication
@@ -61,9 +57,9 @@ func NewKafkaSettingsConfigWithDefaults() *KafkaSettingsConfig {
 }
 
 // GetAcks returns the Acks field value if set, zero value otherwise.
-func (o *KafkaSettingsConfig) GetAcks() string {
+func (o *KafkaSettingsConfig) GetAcks() KafkaAcks {
 	if o == nil || IsNil(o.Acks) {
-		var ret string
+		var ret KafkaAcks
 		return ret
 	}
 	return *o.Acks
@@ -71,7 +67,7 @@ func (o *KafkaSettingsConfig) GetAcks() string {
 
 // GetAcksOk returns a tuple with the Acks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaSettingsConfig) GetAcksOk() (*string, bool) {
+func (o *KafkaSettingsConfig) GetAcksOk() (*KafkaAcks, bool) {
 	if o == nil || IsNil(o.Acks) {
 		return nil, false
 	}
@@ -87,8 +83,8 @@ func (o *KafkaSettingsConfig) HasAcks() bool {
 	return false
 }
 
-// SetAcks gets a reference to the given string and assigns it to the Acks field.
-func (o *KafkaSettingsConfig) SetAcks(v string) {
+// SetAcks gets a reference to the given KafkaAcks and assigns it to the Acks field.
+func (o *KafkaSettingsConfig) SetAcks(v KafkaAcks) {
 	o.Acks = &v
 }
 
@@ -157,9 +153,9 @@ func (o *KafkaSettingsConfig) SetBootstrapServers(v string) {
 }
 
 // GetCompressionType returns the CompressionType field value if set, zero value otherwise.
-func (o *KafkaSettingsConfig) GetCompressionType() string {
+func (o *KafkaSettingsConfig) GetCompressionType() KafkaCompressionType {
 	if o == nil || IsNil(o.CompressionType) {
-		var ret string
+		var ret KafkaCompressionType
 		return ret
 	}
 	return *o.CompressionType
@@ -167,7 +163,7 @@ func (o *KafkaSettingsConfig) GetCompressionType() string {
 
 // GetCompressionTypeOk returns a tuple with the CompressionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaSettingsConfig) GetCompressionTypeOk() (*string, bool) {
+func (o *KafkaSettingsConfig) GetCompressionTypeOk() (*KafkaCompressionType, bool) {
 	if o == nil || IsNil(o.CompressionType) {
 		return nil, false
 	}
@@ -183,8 +179,8 @@ func (o *KafkaSettingsConfig) HasCompressionType() bool {
 	return false
 }
 
-// SetCompressionType gets a reference to the given string and assigns it to the CompressionType field.
-func (o *KafkaSettingsConfig) SetCompressionType(v string) {
+// SetCompressionType gets a reference to the given KafkaCompressionType and assigns it to the CompressionType field.
+func (o *KafkaSettingsConfig) SetCompressionType(v KafkaCompressionType) {
 	o.CompressionType = &v
 }
 
@@ -285,9 +281,9 @@ func (o *KafkaSettingsConfig) SetRetries(v int32) {
 }
 
 // GetSaslMechanism returns the SaslMechanism field value if set, zero value otherwise.
-func (o *KafkaSettingsConfig) GetSaslMechanism() string {
+func (o *KafkaSettingsConfig) GetSaslMechanism() KafkaSaslMechanism {
 	if o == nil || IsNil(o.SaslMechanism) {
-		var ret string
+		var ret KafkaSaslMechanism
 		return ret
 	}
 	return *o.SaslMechanism
@@ -295,7 +291,7 @@ func (o *KafkaSettingsConfig) GetSaslMechanism() string {
 
 // GetSaslMechanismOk returns a tuple with the SaslMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaSettingsConfig) GetSaslMechanismOk() (*string, bool) {
+func (o *KafkaSettingsConfig) GetSaslMechanismOk() (*KafkaSaslMechanism, bool) {
 	if o == nil || IsNil(o.SaslMechanism) {
 		return nil, false
 	}
@@ -311,15 +307,15 @@ func (o *KafkaSettingsConfig) HasSaslMechanism() bool {
 	return false
 }
 
-// SetSaslMechanism gets a reference to the given string and assigns it to the SaslMechanism field.
-func (o *KafkaSettingsConfig) SetSaslMechanism(v string) {
+// SetSaslMechanism gets a reference to the given KafkaSaslMechanism and assigns it to the SaslMechanism field.
+func (o *KafkaSettingsConfig) SetSaslMechanism(v KafkaSaslMechanism) {
 	o.SaslMechanism = &v
 }
 
 // GetSecurityProtocol returns the SecurityProtocol field value if set, zero value otherwise.
-func (o *KafkaSettingsConfig) GetSecurityProtocol() string {
+func (o *KafkaSettingsConfig) GetSecurityProtocol() KafkaSecurityProtocol {
 	if o == nil || IsNil(o.SecurityProtocol) {
-		var ret string
+		var ret KafkaSecurityProtocol
 		return ret
 	}
 	return *o.SecurityProtocol
@@ -327,7 +323,7 @@ func (o *KafkaSettingsConfig) GetSecurityProtocol() string {
 
 // GetSecurityProtocolOk returns a tuple with the SecurityProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaSettingsConfig) GetSecurityProtocolOk() (*string, bool) {
+func (o *KafkaSettingsConfig) GetSecurityProtocolOk() (*KafkaSecurityProtocol, bool) {
 	if o == nil || IsNil(o.SecurityProtocol) {
 		return nil, false
 	}
@@ -343,8 +339,8 @@ func (o *KafkaSettingsConfig) HasSecurityProtocol() bool {
 	return false
 }
 
-// SetSecurityProtocol gets a reference to the given string and assigns it to the SecurityProtocol field.
-func (o *KafkaSettingsConfig) SetSecurityProtocol(v string) {
+// SetSecurityProtocol gets a reference to the given KafkaSecurityProtocol and assigns it to the SecurityProtocol field.
+func (o *KafkaSettingsConfig) SetSecurityProtocol(v KafkaSecurityProtocol) {
 	o.SecurityProtocol = &v
 }
 

@@ -3,7 +3,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -21,7 +21,11 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig
+from monad.models.kafka_acks import KafkaAcks
+from monad.models.kafka_compression_type import KafkaCompressionType
 from monad.models.kafka_kafka_header import KafkaKafkaHeader
+from monad.models.kafka_sasl_mechanism import KafkaSaslMechanism
+from monad.models.kafka_security_protocol import KafkaSecurityProtocol
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,15 +34,15 @@ class KafkaSettingsConfig(BaseModel):
     """
     Kafka Output Settings
     """ # noqa: E501
-    acks: Optional[StrictStr] = Field(default=None, description="Acknowledgment level (0=none, 1=leader only, all=all replicas)")
+    acks: Optional[KafkaAcks] = None
     batch_config: Optional[BatchConfigBatchConfig] = None
     bootstrap_servers: Optional[StrictStr] = Field(default=None, description="Comma-separated list of Kafka broker addresses (host:port)")
-    compression_type: Optional[StrictStr] = Field(default=None, description="Compression codec for messages (none, gzip, snappy, lz4, zstd)")
+    compression_type: Optional[KafkaCompressionType] = None
     headers: Optional[List[KafkaKafkaHeader]] = Field(default=None, description="Static headers to add to each Kafka message")
     message_key_field: Optional[StrictStr] = Field(default=None, description="JSON field path to extract as the Kafka message key (uses gjson syntax)")
     retries: Optional[StrictInt] = Field(default=None, description="Number of retry attempts for failed writes")
-    sasl_mechanism: Optional[StrictStr] = Field(default=None, description="SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512)")
-    security_protocol: Optional[StrictStr] = Field(default=None, description="Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL)")
+    sasl_mechanism: Optional[KafkaSaslMechanism] = None
+    security_protocol: Optional[KafkaSecurityProtocol] = None
     topic: Optional[StrictStr] = Field(default=None, description="The Kafka topic to publish messages to")
     username: Optional[StrictStr] = Field(default=None, description="Username for SASL authentication")
     __properties: ClassVar[List[str]] = ["acks", "batch_config", "bootstrap_servers", "compression_type", "headers", "message_key_field", "retries", "sasl_mechanism", "security_protocol", "topic", "username"]

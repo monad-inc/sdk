@@ -15,7 +15,7 @@
 |**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
 |**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
 |**messageGroupId** | **String** | The message group ID for FIFO queues. This is required for FIFO queues. |  [optional] |
-|**queueType** | **String** | The type of SQS queue to use. Can be either \&quot;standard\&quot; or \&quot;fifo\&quot;. |  [optional] |
+|**queueType** | **AwssqsoutputQueueType** |  |  [optional] |
 |**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
 |**region** | **String** | The AWS region where the S3 bucket is located |  [optional] |
 |**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
@@ -38,7 +38,7 @@
 |**service** | **String** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. |  [optional] |
 |**authType** | **String** |  |  [optional] |
 |**cloudId** | **String** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. |  [optional] |
-|**connectionType** | **String** | The type of connection to use with Elasticsearch. Choose between &#39;cloud_id&#39; for Elastic Cloud or &#39;url&#39; for direct connection. |  [optional] |
+|**connectionType** | **ElasticsearchConnectionTypeEnum** |  |  [optional] |
 |**index** | **String** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. |  [optional] |
 |**insecureSkipVerify** | **Boolean** | Whether to skip TLS certificate verification (not recommended for production). |  [optional] |
 |**url** | **String** | The URL of the Sumo Logic instance. |  [optional] |
@@ -49,26 +49,26 @@
 |**maxBatchDataSize** | **Integer** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. |  [optional] |
 |**maxBatchRecordCount** | **Integer** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. |  [optional] |
 |**method** | **String** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). |  [optional] |
-|**payloadStructure** | **String** | Determines how the payload is structured. &#39;single&#39; sends each record as a separate request, &#39;array&#39; sends multiple records as an array, &#39;wrapped&#39; sends multiple records within a wrapper object. |  [optional] |
+|**payloadStructure** | **HttpPayloadStructure** |  |  [optional] |
 |**rateLimit** | **Integer** | Maximum number of requests per second to send to the endpoint. |  [optional] |
 |**tlsSkipVerify** | **Boolean** |  |  [optional] |
 |**wrapperKey** | **String** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. |  [optional] |
-|**acks** | **String** | Acknowledgment level (0&#x3D;none, 1&#x3D;leader only, all&#x3D;all replicas) |  [optional] |
+|**acks** | **KafkaAcks** |  |  [optional] |
 |**bootstrapServers** | **String** | Comma-separated list of Kafka broker addresses (host:port) |  [optional] |
-|**compressionType** | **String** | Compression codec for messages (none, gzip, snappy, lz4, zstd) |  [optional] |
+|**compressionType** | **KafkaCompressionType** |  |  [optional] |
 |**messageKeyField** | **String** | JSON field path to extract as the Kafka message key (uses gjson syntax) |  [optional] |
 |**retries** | **Integer** | Number of retry attempts for failed writes |  [optional] |
-|**saslMechanism** | **String** | SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512) |  [optional] |
-|**securityProtocol** | **String** | Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL) |  [optional] |
+|**saslMechanism** | **KafkaSaslMechanism** |  |  [optional] |
+|**securityProtocol** | **KafkaSecurityProtocol** |  |  [optional] |
 |**topic** | **String** | The Kafka topic to publish messages to |  [optional] |
 |**keyField** | **String** | The field in the incoming record to use as the key |  [optional] |
 |**ttl** | **Integer** | Time-to-live in hours for stored key-value pairs (0 means no expiration) |  [optional] |
 |**valueField** | **String** |  |  [optional] |
 |**skipSslVerification** | **Boolean** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
-|**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |
+|**authMode** | **OpensearchAuthMode** |  |  [optional] |
 |**alertsConfig** | [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  |  [optional] |
-|**defaultEventType** | **String** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. |  [optional] |
+|**defaultEventType** | **PagerdutyEventType** |  |  [optional] |
 |**summaryConfig** | [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  |  [optional] |
 |**httpIngestUrl** | **String** |  |  [optional] |
 |**columnNames** | **List&lt;String&gt;** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used |  [optional] |

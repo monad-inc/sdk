@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AlertsConfig** | Pointer to [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
-**DefaultEventType** | Pointer to **string** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. | [optional] 
+**DefaultEventType** | Pointer to [**PagerdutyEventType**](PagerdutyEventType.md) |  | [optional] 
 **SummaryConfig** | Pointer to [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasAlertsConfig returns a boolean if a field has been set.
 
 ### GetDefaultEventType
 
-`func (o *PagerdutySettingsConfig) GetDefaultEventType() string`
+`func (o *PagerdutySettingsConfig) GetDefaultEventType() PagerdutyEventType`
 
 GetDefaultEventType returns the DefaultEventType field if non-nil, zero value otherwise.
 
 ### GetDefaultEventTypeOk
 
-`func (o *PagerdutySettingsConfig) GetDefaultEventTypeOk() (*string, bool)`
+`func (o *PagerdutySettingsConfig) GetDefaultEventTypeOk() (*PagerdutyEventType, bool)`
 
 GetDefaultEventTypeOk returns a tuple with the DefaultEventType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultEventType
 
-`func (o *PagerdutySettingsConfig) SetDefaultEventType(v string)`
+`func (o *PagerdutySettingsConfig) SetDefaultEventType(v PagerdutyEventType)`
 
 SetDefaultEventType sets DefaultEventType field to given value.
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getToken**
-> AuthenticationtypesTokenResponse getToken(routesLoginRequest)
+> AuthenticationtypesTokenResponse getToken(getTokenRequest)
 
 Retrieve an authentication token from the authentication service using username and password.
 
@@ -27,10 +27,7 @@ const apiInstance = new AuthenticationApi(configuration);
 
 const request: AuthenticationApiGetTokenRequest = {
     // Login request
-  routesLoginRequest: {
-    password: "password_example",
-    username: "username_example",
-  },
+  getTokenRequest: null,
 };
 
 const data = await apiInstance.getToken(request);
@@ -42,7 +39,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesLoginRequest** | **RoutesLoginRequest**| Login request |
+ **getTokenRequest** | **GetTokenRequest**| Login request |
 
 
 ### Return type
@@ -105,7 +102,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/html
+ - **Accept**: text/html
 
 
 ### HTTP response details

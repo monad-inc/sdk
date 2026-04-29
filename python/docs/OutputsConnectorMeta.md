@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auth_type** | **str** |  | [optional] 
-**billing_type** | **int** |  | [optional] 
-**category** | **str** |  | [optional] 
+**billing_type** | [**OutputsBillingType**](OutputsBillingType.md) |  | [optional] 
+**category** | [**ModelsOutputConnectorCategory**](ModelsOutputConnectorCategory.md) |  | [optional] 
 **config** | **object** |  | [optional] 
 **description** | **str** |  | [optional] 
 **house** | **str** |  | [optional] 

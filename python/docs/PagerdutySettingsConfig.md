@@ -7,7 +7,7 @@ PagerDuty Output Settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alerts_config** | [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
-**default_event_type** | **str** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. | [optional] 
+**default_event_type** | [**PagerdutyEventType**](PagerdutyEventType.md) |  | [optional] 
 **summary_config** | [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 
 ## Example

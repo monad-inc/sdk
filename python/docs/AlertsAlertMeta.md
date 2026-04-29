@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **str** |  | [optional] 
+**category** | [**AlertsAlertCategory**](AlertsAlertCategory.md) |  | [optional] 
 **config** | **object** |  | [optional] 
 **description** | **str** |  | [optional] 
-**granularity** | **str** |  | [optional] 
-**house** | **str** |  | [optional] 
+**granularity** | [**AlertsAlertGranularity**](AlertsAlertGranularity.md) |  | [optional] 
+**house** | [**AlertsAlertHouse**](AlertsAlertHouse.md) |  | [optional] 
 **internal** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **tier** | **int** |  | [optional] 

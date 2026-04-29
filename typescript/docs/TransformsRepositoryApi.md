@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **exportTransform**
-> string exportTransform(communityTransformsInternalTransformConfig)
+> string exportTransform(exportTransformRequest)
 
 Export transform to YAML format
 
@@ -29,23 +29,7 @@ const apiInstance = new TransformsRepositoryApi(configuration);
 
 const request: TransformsRepositoryApiExportTransformRequest = {
     // Transform to export and optional metadata
-  communityTransformsInternalTransformConfig: {
-    author: "author_example",
-    config: {
-      "key": null,
-    },
-    contributors: [
-      "contributors_example",
-    ],
-    description: "description_example",
-    inputs: [
-      "inputs_example",
-    ],
-    name: "name_example",
-    tags: [
-      "tags_example",
-    ],
-  },
+  exportTransformRequest: null,
 };
 
 const data = await apiInstance.exportTransform(request);
@@ -57,7 +41,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **communityTransformsInternalTransformConfig** | **CommunityTransformsInternalTransformConfig**| Transform to export and optional metadata |
+ **exportTransformRequest** | **ExportTransformRequest**| Transform to export and optional metadata |
 
 
 ### Return type
@@ -209,7 +193,7 @@ const apiInstance = new TransformsRepositoryApi(configuration);
 
 const request: TransformsRepositoryApiImportTransformRequest = {
     // YAML transform definition
-  body: "body_example",
+  body: {},
 };
 
 const data = await apiInstance.importTransform(request);
@@ -221,7 +205,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**| YAML transform definition |
+ **body** | **any**| YAML transform definition |
 
 
 ### Return type
@@ -234,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, text/plain
  - **Accept**: application/json
 
 

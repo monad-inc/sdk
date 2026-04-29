@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to **string** | The method of authentication to use with the Elasticsearch cluster. Choose between &#39;api_key&#39; or &#39;password&#39;. | [optional] 
+**AuthType** | Pointer to [**ElasticsearchAuthTypeEnum**](ElasticsearchAuthTypeEnum.md) |  | [optional] 
 **CloudId** | Pointer to **string** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. | [optional] 
-**ConnectionType** | Pointer to **string** | The type of connection to use with Elasticsearch. Choose between &#39;cloud_id&#39; for Elastic Cloud or &#39;url&#39; for direct connection. | [optional] 
+**ConnectionType** | Pointer to [**ElasticsearchConnectionTypeEnum**](ElasticsearchConnectionTypeEnum.md) |  | [optional] 
 **Index** | Pointer to **string** | The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically. | [optional] 
 **InsecureSkipVerify** | Pointer to **bool** | If set to true, it skips verification of the server&#39;s TLS certificate. This is insecure and should only be used for testing purposes. | [optional] 
 **Url** | Pointer to **string** | The URL of the Elasticsearch cluster. Required when connection type is set to &#39;url&#39;. | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAuthType
 
-`func (o *ElasticsearchSettingsConfig) GetAuthType() string`
+`func (o *ElasticsearchSettingsConfig) GetAuthType() ElasticsearchAuthTypeEnum`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*string, bool)`
+`func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*ElasticsearchAuthTypeEnum, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *ElasticsearchSettingsConfig) SetAuthType(v string)`
+`func (o *ElasticsearchSettingsConfig) SetAuthType(v ElasticsearchAuthTypeEnum)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -83,20 +83,20 @@ HasCloudId returns a boolean if a field has been set.
 
 ### GetConnectionType
 
-`func (o *ElasticsearchSettingsConfig) GetConnectionType() string`
+`func (o *ElasticsearchSettingsConfig) GetConnectionType() ElasticsearchConnectionTypeEnum`
 
 GetConnectionType returns the ConnectionType field if non-nil, zero value otherwise.
 
 ### GetConnectionTypeOk
 
-`func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*string, bool)`
+`func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*ElasticsearchConnectionTypeEnum, bool)`
 
 GetConnectionTypeOk returns a tuple with the ConnectionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionType
 
-`func (o *ElasticsearchSettingsConfig) SetConnectionType(v string)`
+`func (o *ElasticsearchSettingsConfig) SetConnectionType(v ElasticsearchConnectionTypeEnum)`
 
 SetConnectionType sets ConnectionType field to given value.
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateEnrichment
 
-> ModelsEnrichment CreateEnrichment(ctx, organizationId).RoutesV3CreateEnrichmentRequest(routesV3CreateEnrichmentRequest).TestConnection(testConnection).Execute()
+> ModelsEnrichment CreateEnrichment(ctx, organizationId).CreateEnrichmentRequest(createEnrichmentRequest).TestConnection(testConnection).Execute()
 
 Create enrichment
 
@@ -36,12 +36,12 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV3CreateEnrichmentRequest := *openapiclient.NewRoutesV3CreateEnrichmentRequest() // RoutesV3CreateEnrichmentRequest | Enrichment configuration
+	createEnrichmentRequest := openapiclient.CreateEnrichment_request{RoutesV3CreateEnrichmentRequest: openapiclient.NewRoutesV3CreateEnrichmentRequest()} // CreateEnrichmentRequest | Enrichment configuration
 	testConnection := true // bool | Test connection before creating the enrichment (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationEnrichmentsAPI.CreateEnrichment(context.Background(), organizationId).RoutesV3CreateEnrichmentRequest(routesV3CreateEnrichmentRequest).TestConnection(testConnection).Execute()
+	resp, r, err := apiClient.OrganizationEnrichmentsAPI.CreateEnrichment(context.Background(), organizationId).CreateEnrichmentRequest(createEnrichmentRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationEnrichmentsAPI.CreateEnrichment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +67,7 @@ Other parameters are passed through a pointer to a apiCreateEnrichmentRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV3CreateEnrichmentRequest** | [**RoutesV3CreateEnrichmentRequest**](RoutesV3CreateEnrichmentRequest.md) | Enrichment configuration | 
+ **createEnrichmentRequest** | [**CreateEnrichmentRequest**](CreateEnrichmentRequest.md) | Enrichment configuration | 
  **testConnection** | **bool** | Test connection before creating the enrichment | 
 
 ### Return type
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## ReplaceEnrichment
 
-> ModelsEnrichment ReplaceEnrichment(ctx, organizationId, enrichmentId).RoutesV3PutEnrichmentRequest(routesV3PutEnrichmentRequest).TestConnection(testConnection).Execute()
+> ModelsEnrichment ReplaceEnrichment(ctx, organizationId, enrichmentId).ReplaceEnrichmentRequest(replaceEnrichmentRequest).TestConnection(testConnection).Execute()
 
 Replace enrichment
 
@@ -331,12 +331,12 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	enrichmentId := "enrichmentId_example" // string | Enrichment ID
-	routesV3PutEnrichmentRequest := *openapiclient.NewRoutesV3PutEnrichmentRequest() // RoutesV3PutEnrichmentRequest | Enrichment configuration update
+	replaceEnrichmentRequest := openapiclient.ReplaceEnrichment_request{RoutesV3PutEnrichmentRequest: openapiclient.NewRoutesV3PutEnrichmentRequest()} // ReplaceEnrichmentRequest | Enrichment configuration update
 	testConnection := true // bool | Test connection before updating the enrichment (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationEnrichmentsAPI.ReplaceEnrichment(context.Background(), organizationId, enrichmentId).RoutesV3PutEnrichmentRequest(routesV3PutEnrichmentRequest).TestConnection(testConnection).Execute()
+	resp, r, err := apiClient.OrganizationEnrichmentsAPI.ReplaceEnrichment(context.Background(), organizationId, enrichmentId).ReplaceEnrichmentRequest(replaceEnrichmentRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationEnrichmentsAPI.ReplaceEnrichment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV3PutEnrichmentRequest** | [**RoutesV3PutEnrichmentRequest**](RoutesV3PutEnrichmentRequest.md) | Enrichment configuration update | 
+ **replaceEnrichmentRequest** | [**ReplaceEnrichmentRequest**](ReplaceEnrichmentRequest.md) | Enrichment configuration update | 
  **testConnection** | **bool** | Test connection before updating the enrichment | 
 
 ### Return type
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ## TestEnrichmentConnection
 
-> RoutesV3SuccessResponse TestEnrichmentConnection(ctx, organizationId).RoutesV3TestEnrichmentConnectionRequest(routesV3TestEnrichmentConnectionRequest).Execute()
+> RoutesV3SuccessResponse TestEnrichmentConnection(ctx, organizationId).TestEnrichmentConnectionRequest(testEnrichmentConnectionRequest).Execute()
 
 Test enrichment connection
 
@@ -407,11 +407,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV3TestEnrichmentConnectionRequest := *openapiclient.NewRoutesV3TestEnrichmentConnectionRequest() // RoutesV3TestEnrichmentConnectionRequest | Enrichment configuration to test
+	testEnrichmentConnectionRequest := openapiclient.TestEnrichmentConnection_request{RoutesV3TestEnrichmentConnectionRequest: openapiclient.NewRoutesV3TestEnrichmentConnectionRequest()} // TestEnrichmentConnectionRequest | Enrichment configuration to test
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationEnrichmentsAPI.TestEnrichmentConnection(context.Background(), organizationId).RoutesV3TestEnrichmentConnectionRequest(routesV3TestEnrichmentConnectionRequest).Execute()
+	resp, r, err := apiClient.OrganizationEnrichmentsAPI.TestEnrichmentConnection(context.Background(), organizationId).TestEnrichmentConnectionRequest(testEnrichmentConnectionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationEnrichmentsAPI.TestEnrichmentConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -437,7 +437,7 @@ Other parameters are passed through a pointer to a apiTestEnrichmentConnectionRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV3TestEnrichmentConnectionRequest** | [**RoutesV3TestEnrichmentConnectionRequest**](RoutesV3TestEnrichmentConnectionRequest.md) | Enrichment configuration to test | 
+ **testEnrichmentConnectionRequest** | [**TestEnrichmentConnectionRequest**](TestEnrichmentConnectionRequest.md) | Enrichment configuration to test | 
 
 ### Return type
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ## UpdateEnrichment
 
-> ModelsEnrichment UpdateEnrichment(ctx, organizationId, enrichmentId).RoutesV3UpdateEnrichmentRequest(routesV3UpdateEnrichmentRequest).TestConnection(testConnection).Execute()
+> ModelsEnrichment UpdateEnrichment(ctx, organizationId, enrichmentId).UpdateEnrichmentRequest(updateEnrichmentRequest).TestConnection(testConnection).Execute()
 
 Update enrichment
 
@@ -480,12 +480,12 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	enrichmentId := "enrichmentId_example" // string | Enrichment ID
-	routesV3UpdateEnrichmentRequest := *openapiclient.NewRoutesV3UpdateEnrichmentRequest() // RoutesV3UpdateEnrichmentRequest | Enrichment configuration update
+	updateEnrichmentRequest := openapiclient.UpdateEnrichment_request{RoutesV3UpdateEnrichmentRequest: openapiclient.NewRoutesV3UpdateEnrichmentRequest()} // UpdateEnrichmentRequest | Enrichment configuration update
 	testConnection := true // bool | Test connection before updating the enrichment (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationEnrichmentsAPI.UpdateEnrichment(context.Background(), organizationId, enrichmentId).RoutesV3UpdateEnrichmentRequest(routesV3UpdateEnrichmentRequest).TestConnection(testConnection).Execute()
+	resp, r, err := apiClient.OrganizationEnrichmentsAPI.UpdateEnrichment(context.Background(), organizationId, enrichmentId).UpdateEnrichmentRequest(updateEnrichmentRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationEnrichmentsAPI.UpdateEnrichment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **routesV3UpdateEnrichmentRequest** | [**RoutesV3UpdateEnrichmentRequest**](RoutesV3UpdateEnrichmentRequest.md) | Enrichment configuration update | 
+ **updateEnrichmentRequest** | [**UpdateEnrichmentRequest**](UpdateEnrichmentRequest.md) | Enrichment configuration update | 
  **testConnection** | **bool** | Test connection before updating the enrichment | 
 
 ### Return type

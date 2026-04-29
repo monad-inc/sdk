@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputConnectorCategory;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -64,7 +65,7 @@ public class EnrichmentConnectorMeta {
   public static final String SERIALIZED_NAME_CONNECTOR_CATEGORY = "connector_category";
   @SerializedName(SERIALIZED_NAME_CONNECTOR_CATEGORY)
   @javax.annotation.Nullable
-  private String connectorCategory;
+  private ModelsInputConnectorCategory connectorCategory;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -142,7 +143,7 @@ public class EnrichmentConnectorMeta {
   }
 
 
-  public EnrichmentConnectorMeta connectorCategory(@javax.annotation.Nullable String connectorCategory) {
+  public EnrichmentConnectorMeta connectorCategory(@javax.annotation.Nullable ModelsInputConnectorCategory connectorCategory) {
     this.connectorCategory = connectorCategory;
     return this;
   }
@@ -152,11 +153,11 @@ public class EnrichmentConnectorMeta {
    * @return connectorCategory
    */
   @javax.annotation.Nullable
-  public String getConnectorCategory() {
+  public ModelsInputConnectorCategory getConnectorCategory() {
     return connectorCategory;
   }
 
-  public void setConnectorCategory(@javax.annotation.Nullable String connectorCategory) {
+  public void setConnectorCategory(@javax.annotation.Nullable ModelsInputConnectorCategory connectorCategory) {
     this.connectorCategory = connectorCategory;
   }
 
@@ -394,8 +395,9 @@ public class EnrichmentConnectorMeta {
       if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
       }
-      if ((jsonObj.get("connector_category") != null && !jsonObj.get("connector_category").isJsonNull()) && !jsonObj.get("connector_category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `connector_category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connector_category").toString()));
+      // validate the optional field `connector_category`
+      if (jsonObj.get("connector_category") != null && !jsonObj.get("connector_category").isJsonNull()) {
+        ModelsInputConnectorCategory.validateJsonElement(jsonObj.get("connector_category"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

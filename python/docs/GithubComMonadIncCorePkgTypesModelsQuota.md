@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | **str** |  | [optional] 
+**action** | [**ModelsQuotaAction**](ModelsQuotaAction.md) |  | [optional] 
 **billing_account_id** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **current_usage** | **int** |  | [optional] 
@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **end_at** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **limit_amount** | **int** |  | [optional] 
-**limit_type** | **str** |  | [optional] 
-**limit_unit** | **str** |  | [optional] 
+**limit_type** | [**ModelsQuotaLimitType**](ModelsQuotaLimitType.md) |  | [optional] 
+**limit_unit** | [**ModelsQuotaLimitUnit**](ModelsQuotaLimitUnit.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **start_at** | **str** |  | [optional] 
-**timeframe** | **str** |  | [optional] 
+**timeframe** | [**ModelsQuotaTimeframe**](ModelsQuotaTimeframe.md) |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

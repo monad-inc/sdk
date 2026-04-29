@@ -17,7 +17,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createChildOrganization"></a>
 # **createChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(organizationId, routesV3CreateChildOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(organizationId, createChildOrganizationRequest)
 
 Create child organization (team)
 
@@ -52,9 +52,9 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Parent Organization ID
-    RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest = new RoutesV3CreateChildOrganizationRequest(); // RoutesV3CreateChildOrganizationRequest | Request body
+    CreateChildOrganizationRequest createChildOrganizationRequest = new CreateChildOrganizationRequest(); // CreateChildOrganizationRequest | Request body
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.createChildOrganization(organizationId, routesV3CreateChildOrganizationRequest);
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.createChildOrganization(organizationId, createChildOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#createChildOrganization");
@@ -72,7 +72,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Parent Organization ID | |
-| **routesV3CreateChildOrganizationRequest** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | |
+| **createChildOrganizationRequest** | [**CreateChildOrganizationRequest**](CreateChildOrganizationRequest.md)| Request body | |
 
 ### Return type
 
@@ -577,7 +577,7 @@ public class Example {
 
 <a id="updateChildOrganization"></a>
 # **updateChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest)
 
 Update child organization (team)
 
@@ -613,9 +613,9 @@ public class Example {
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Parent Organization ID
     String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
-    RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest = new RoutesV3UpdateChildOrganizationRequest(); // RoutesV3UpdateChildOrganizationRequest | Request body
+    UpdateChildOrganizationRequest updateChildOrganizationRequest = new UpdateChildOrganizationRequest(); // UpdateChildOrganizationRequest | Request body
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.updateChildOrganization(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest);
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#updateChildOrganization");
@@ -634,7 +634,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Parent Organization ID | |
 | **childOrganizationId** | **String**| Child Organization ID | |
-| **routesV3UpdateChildOrganizationRequest** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | |
+| **updateChildOrganizationRequest** | [**UpdateChildOrganizationRequest**](UpdateChildOrganizationRequest.md)| Request body | |
 
 ### Return type
 

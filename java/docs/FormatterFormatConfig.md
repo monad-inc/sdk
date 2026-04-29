@@ -8,7 +8,7 @@ The format config to use
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**format** | **String** |  |  [optional] |
+|**format** | **FormatterType** |  |  [optional] |
 |**delimitedFormat** | [**DelimitedDelimiterFormatter**](DelimitedDelimiterFormatter.md) |  |  [optional] |
 |**jsonFormat** | [**JsonJsonFormatter**](JsonJsonFormatter.md) |  |  [optional] |
 |**parquetFormat** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  |  [optional] |

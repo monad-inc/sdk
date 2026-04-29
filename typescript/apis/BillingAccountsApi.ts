@@ -8,10 +8,10 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateBillingAccountRequest } from '../models/CreateBillingAccountRequest';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
-import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
-import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
+import { UpdateBillingAccountRequest } from '../models/UpdateBillingAccountRequest';
 
 /**
  * no description
@@ -21,14 +21,14 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Create Billing Account
      * Create Billing Account
-     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     * @param createBillingAccountRequest Request body for creating a billing account
      */
-    public async createBillingAccount(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createBillingAccount(createBillingAccountRequest: CreateBillingAccountRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'routesV2CreateBillingAccountRequest' is not null or undefined
-        if (routesV2CreateBillingAccountRequest === null || routesV2CreateBillingAccountRequest === undefined) {
-            throw new RequiredError("BillingAccountsApi", "createBillingAccount", "routesV2CreateBillingAccountRequest");
+        // verify required parameter 'createBillingAccountRequest' is not null or undefined
+        if (createBillingAccountRequest === null || createBillingAccountRequest === undefined) {
+            throw new RequiredError("BillingAccountsApi", "createBillingAccount", "createBillingAccountRequest");
         }
 
 
@@ -46,7 +46,7 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateBillingAccountRequest, "RoutesV2CreateBillingAccountRequest", ""),
+            ObjectSerializer.serialize(createBillingAccountRequest, "CreateBillingAccountRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -190,9 +190,9 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
      * Update Billing Account
      * Update Billing Account
      * @param billingAccountId Billing Account ID
-     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     * @param updateBillingAccountRequest Request body for updating a billing account
      */
-    public async updateBillingAccount(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateBillingAccount(billingAccountId: string, updateBillingAccountRequest: UpdateBillingAccountRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -201,9 +201,9 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2UpdateBillingAccountRequest' is not null or undefined
-        if (routesV2UpdateBillingAccountRequest === null || routesV2UpdateBillingAccountRequest === undefined) {
-            throw new RequiredError("BillingAccountsApi", "updateBillingAccount", "routesV2UpdateBillingAccountRequest");
+        // verify required parameter 'updateBillingAccountRequest' is not null or undefined
+        if (updateBillingAccountRequest === null || updateBillingAccountRequest === undefined) {
+            throw new RequiredError("BillingAccountsApi", "updateBillingAccount", "updateBillingAccountRequest");
         }
 
 
@@ -222,7 +222,7 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2UpdateBillingAccountRequest, "RoutesV2UpdateBillingAccountRequest", ""),
+            ObjectSerializer.serialize(updateBillingAccountRequest, "UpdateBillingAccountRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createBillingAccount**
-> ModelsBillingAccount createBillingAccount(routesV2CreateBillingAccountRequest)
+> ModelsBillingAccount createBillingAccount(createBillingAccountRequest)
 
 Create Billing Account
 
@@ -28,11 +28,7 @@ const apiInstance = new BillingAccountsApi(configuration);
 
 const request: BillingAccountsApiCreateBillingAccountRequest = {
     // Request body for creating a billing account
-  routesV2CreateBillingAccountRequest: {
-    billingEmail: "billingEmail_example",
-    description: "description_example",
-    name: "name_example",
-  },
+  createBillingAccountRequest: null,
 };
 
 const data = await apiInstance.createBillingAccount(request);
@@ -44,7 +40,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateBillingAccountRequest** | **RoutesV2CreateBillingAccountRequest**| Request body for creating a billing account |
+ **createBillingAccountRequest** | **CreateBillingAccountRequest**| Request body for creating a billing account |
 
 
 ### Return type
@@ -239,7 +235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateBillingAccount**
-> ModelsBillingAccount updateBillingAccount(routesV2UpdateBillingAccountRequest)
+> ModelsBillingAccount updateBillingAccount(updateBillingAccountRequest)
 
 Update Billing Account
 
@@ -257,11 +253,7 @@ const request: BillingAccountsApiUpdateBillingAccountRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
     // Request body for updating a billing account
-  routesV2UpdateBillingAccountRequest: {
-    billingEmail: "billingEmail_example",
-    description: "description_example",
-    name: "name_example",
-  },
+  updateBillingAccountRequest: null,
 };
 
 const data = await apiInstance.updateBillingAccount(request);
@@ -273,7 +265,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2UpdateBillingAccountRequest** | **RoutesV2UpdateBillingAccountRequest**| Request body for updating a billing account |
+ **updateBillingAccountRequest** | **UpdateBillingAccountRequest**| Request body for updating a billing account |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 

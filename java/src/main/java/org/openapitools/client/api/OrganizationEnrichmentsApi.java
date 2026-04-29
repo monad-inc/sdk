@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,15 +27,15 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateEnrichmentRequest;
 import org.openapitools.client.model.ModelsEnrichment;
 import org.openapitools.client.model.ModelsEnrichmentList;
+import org.openapitools.client.model.ReplaceEnrichmentRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
-import org.openapitools.client.model.RoutesV3CreateEnrichmentRequest;
 import org.openapitools.client.model.RoutesV3GetEnrichmentResponse;
-import org.openapitools.client.model.RoutesV3PutEnrichmentRequest;
 import org.openapitools.client.model.RoutesV3SuccessResponse;
-import org.openapitools.client.model.RoutesV3TestEnrichmentConnectionRequest;
-import org.openapitools.client.model.RoutesV3UpdateEnrichmentRequest;
+import org.openapitools.client.model.TestEnrichmentConnectionRequest;
+import org.openapitools.client.model.UpdateEnrichmentRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -83,7 +83,7 @@ public class OrganizationEnrichmentsApi {
     /**
      * Build call for createEnrichment
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration (required)
+     * @param createEnrichmentRequest Enrichment configuration (required)
      * @param testConnection Test connection before creating the enrichment (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -97,7 +97,7 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createEnrichmentCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateEnrichmentRequest routesV3CreateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createEnrichmentCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateEnrichmentRequest createEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -111,7 +111,7 @@ public class OrganizationEnrichmentsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3CreateEnrichmentRequest;
+        Object localVarPostBody = createEnrichmentRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/enrichments"
@@ -148,18 +148,18 @@ public class OrganizationEnrichmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createEnrichmentValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateEnrichmentRequest routesV3CreateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createEnrichmentValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateEnrichmentRequest createEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createEnrichment(Async)");
         }
 
-        // verify the required parameter 'routesV3CreateEnrichmentRequest' is set
-        if (routesV3CreateEnrichmentRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3CreateEnrichmentRequest' when calling createEnrichment(Async)");
+        // verify the required parameter 'createEnrichmentRequest' is set
+        if (createEnrichmentRequest == null) {
+            throw new ApiException("Missing the required parameter 'createEnrichmentRequest' when calling createEnrichment(Async)");
         }
 
-        return createEnrichmentCall(organizationId, routesV3CreateEnrichmentRequest, testConnection, _callback);
+        return createEnrichmentCall(organizationId, createEnrichmentRequest, testConnection, _callback);
 
     }
 
@@ -167,7 +167,7 @@ public class OrganizationEnrichmentsApi {
      * Create enrichment
      * Create a new enrichment with configuration including secrets handling
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration (required)
+     * @param createEnrichmentRequest Enrichment configuration (required)
      * @param testConnection Test connection before creating the enrichment (optional)
      * @return ModelsEnrichment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,8 +180,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsEnrichment createEnrichment(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateEnrichmentRequest routesV3CreateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        ApiResponse<ModelsEnrichment> localVarResp = createEnrichmentWithHttpInfo(organizationId, routesV3CreateEnrichmentRequest, testConnection);
+    public ModelsEnrichment createEnrichment(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateEnrichmentRequest createEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsEnrichment> localVarResp = createEnrichmentWithHttpInfo(organizationId, createEnrichmentRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -189,7 +189,7 @@ public class OrganizationEnrichmentsApi {
      * Create enrichment
      * Create a new enrichment with configuration including secrets handling
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration (required)
+     * @param createEnrichmentRequest Enrichment configuration (required)
      * @param testConnection Test connection before creating the enrichment (optional)
      * @return ApiResponse&lt;ModelsEnrichment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -202,8 +202,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsEnrichment> createEnrichmentWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateEnrichmentRequest routesV3CreateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        okhttp3.Call localVarCall = createEnrichmentValidateBeforeCall(organizationId, routesV3CreateEnrichmentRequest, testConnection, null);
+    public ApiResponse<ModelsEnrichment> createEnrichmentWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateEnrichmentRequest createEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = createEnrichmentValidateBeforeCall(organizationId, createEnrichmentRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -212,7 +212,7 @@ public class OrganizationEnrichmentsApi {
      * Create enrichment (asynchronously)
      * Create a new enrichment with configuration including secrets handling
      * @param organizationId Organization ID (required)
-     * @param routesV3CreateEnrichmentRequest Enrichment configuration (required)
+     * @param createEnrichmentRequest Enrichment configuration (required)
      * @param testConnection Test connection before creating the enrichment (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -226,9 +226,9 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createEnrichmentAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateEnrichmentRequest routesV3CreateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsEnrichment> _callback) throws ApiException {
+    public okhttp3.Call createEnrichmentAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateEnrichmentRequest createEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsEnrichment> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createEnrichmentValidateBeforeCall(organizationId, routesV3CreateEnrichmentRequest, testConnection, _callback);
+        okhttp3.Call localVarCall = createEnrichmentValidateBeforeCall(organizationId, createEnrichmentRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -678,7 +678,7 @@ public class OrganizationEnrichmentsApi {
      * Build call for replaceEnrichment
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update (required)
+     * @param replaceEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -693,7 +693,7 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceEnrichmentCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3PutEnrichmentRequest routesV3PutEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceEnrichmentCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull ReplaceEnrichmentRequest replaceEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -707,7 +707,7 @@ public class OrganizationEnrichmentsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3PutEnrichmentRequest;
+        Object localVarPostBody = replaceEnrichmentRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/enrichments/{enrichment_id}"
@@ -745,7 +745,7 @@ public class OrganizationEnrichmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceEnrichmentValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3PutEnrichmentRequest routesV3PutEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceEnrichmentValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull ReplaceEnrichmentRequest replaceEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling replaceEnrichment(Async)");
@@ -756,12 +756,12 @@ public class OrganizationEnrichmentsApi {
             throw new ApiException("Missing the required parameter 'enrichmentId' when calling replaceEnrichment(Async)");
         }
 
-        // verify the required parameter 'routesV3PutEnrichmentRequest' is set
-        if (routesV3PutEnrichmentRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3PutEnrichmentRequest' when calling replaceEnrichment(Async)");
+        // verify the required parameter 'replaceEnrichmentRequest' is set
+        if (replaceEnrichmentRequest == null) {
+            throw new ApiException("Missing the required parameter 'replaceEnrichmentRequest' when calling replaceEnrichment(Async)");
         }
 
-        return replaceEnrichmentCall(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, _callback);
+        return replaceEnrichmentCall(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection, _callback);
 
     }
 
@@ -770,7 +770,7 @@ public class OrganizationEnrichmentsApi {
      * Replace an existing enrichment with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update (required)
+     * @param replaceEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @return ModelsEnrichment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -784,8 +784,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsEnrichment replaceEnrichment(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3PutEnrichmentRequest routesV3PutEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        ApiResponse<ModelsEnrichment> localVarResp = replaceEnrichmentWithHttpInfo(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection);
+    public ModelsEnrichment replaceEnrichment(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull ReplaceEnrichmentRequest replaceEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsEnrichment> localVarResp = replaceEnrichmentWithHttpInfo(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -794,7 +794,7 @@ public class OrganizationEnrichmentsApi {
      * Replace an existing enrichment with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update (required)
+     * @param replaceEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @return ApiResponse&lt;ModelsEnrichment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -808,8 +808,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsEnrichment> replaceEnrichmentWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3PutEnrichmentRequest routesV3PutEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        okhttp3.Call localVarCall = replaceEnrichmentValidateBeforeCall(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, null);
+    public ApiResponse<ModelsEnrichment> replaceEnrichmentWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull ReplaceEnrichmentRequest replaceEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = replaceEnrichmentValidateBeforeCall(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -819,7 +819,7 @@ public class OrganizationEnrichmentsApi {
      * Replace an existing enrichment with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3PutEnrichmentRequest Enrichment configuration update (required)
+     * @param replaceEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -834,9 +834,9 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceEnrichmentAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3PutEnrichmentRequest routesV3PutEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsEnrichment> _callback) throws ApiException {
+    public okhttp3.Call replaceEnrichmentAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull ReplaceEnrichmentRequest replaceEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsEnrichment> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = replaceEnrichmentValidateBeforeCall(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, _callback);
+        okhttp3.Call localVarCall = replaceEnrichmentValidateBeforeCall(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -844,7 +844,7 @@ public class OrganizationEnrichmentsApi {
     /**
      * Build call for testEnrichmentConnection
      * @param organizationId Organization ID (required)
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test (required)
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -857,7 +857,7 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call testEnrichmentConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TestEnrichmentConnectionRequest routesV3TestEnrichmentConnectionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call testEnrichmentConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestEnrichmentConnectionRequest testEnrichmentConnectionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -871,7 +871,7 @@ public class OrganizationEnrichmentsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3TestEnrichmentConnectionRequest;
+        Object localVarPostBody = testEnrichmentConnectionRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/enrichments/test-connection"
@@ -904,18 +904,18 @@ public class OrganizationEnrichmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call testEnrichmentConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TestEnrichmentConnectionRequest routesV3TestEnrichmentConnectionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call testEnrichmentConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestEnrichmentConnectionRequest testEnrichmentConnectionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling testEnrichmentConnection(Async)");
         }
 
-        // verify the required parameter 'routesV3TestEnrichmentConnectionRequest' is set
-        if (routesV3TestEnrichmentConnectionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3TestEnrichmentConnectionRequest' when calling testEnrichmentConnection(Async)");
+        // verify the required parameter 'testEnrichmentConnectionRequest' is set
+        if (testEnrichmentConnectionRequest == null) {
+            throw new ApiException("Missing the required parameter 'testEnrichmentConnectionRequest' when calling testEnrichmentConnection(Async)");
         }
 
-        return testEnrichmentConnectionCall(organizationId, routesV3TestEnrichmentConnectionRequest, _callback);
+        return testEnrichmentConnectionCall(organizationId, testEnrichmentConnectionRequest, _callback);
 
     }
 
@@ -923,7 +923,7 @@ public class OrganizationEnrichmentsApi {
      * Test enrichment connection
      * Tests the connection for a given enrichment type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test (required)
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test (required)
      * @return RoutesV3SuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -935,8 +935,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV3SuccessResponse testEnrichmentConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TestEnrichmentConnectionRequest routesV3TestEnrichmentConnectionRequest) throws ApiException {
-        ApiResponse<RoutesV3SuccessResponse> localVarResp = testEnrichmentConnectionWithHttpInfo(organizationId, routesV3TestEnrichmentConnectionRequest);
+    public RoutesV3SuccessResponse testEnrichmentConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestEnrichmentConnectionRequest testEnrichmentConnectionRequest) throws ApiException {
+        ApiResponse<RoutesV3SuccessResponse> localVarResp = testEnrichmentConnectionWithHttpInfo(organizationId, testEnrichmentConnectionRequest);
         return localVarResp.getData();
     }
 
@@ -944,7 +944,7 @@ public class OrganizationEnrichmentsApi {
      * Test enrichment connection
      * Tests the connection for a given enrichment type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test (required)
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test (required)
      * @return ApiResponse&lt;RoutesV3SuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -956,8 +956,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV3SuccessResponse> testEnrichmentConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TestEnrichmentConnectionRequest routesV3TestEnrichmentConnectionRequest) throws ApiException {
-        okhttp3.Call localVarCall = testEnrichmentConnectionValidateBeforeCall(organizationId, routesV3TestEnrichmentConnectionRequest, null);
+    public ApiResponse<RoutesV3SuccessResponse> testEnrichmentConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestEnrichmentConnectionRequest testEnrichmentConnectionRequest) throws ApiException {
+        okhttp3.Call localVarCall = testEnrichmentConnectionValidateBeforeCall(organizationId, testEnrichmentConnectionRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV3SuccessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -966,7 +966,7 @@ public class OrganizationEnrichmentsApi {
      * Test enrichment connection (asynchronously)
      * Tests the connection for a given enrichment type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test (required)
+     * @param testEnrichmentConnectionRequest Enrichment configuration to test (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -979,9 +979,9 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call testEnrichmentConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3TestEnrichmentConnectionRequest routesV3TestEnrichmentConnectionRequest, final ApiCallback<RoutesV3SuccessResponse> _callback) throws ApiException {
+    public okhttp3.Call testEnrichmentConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull TestEnrichmentConnectionRequest testEnrichmentConnectionRequest, final ApiCallback<RoutesV3SuccessResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = testEnrichmentConnectionValidateBeforeCall(organizationId, routesV3TestEnrichmentConnectionRequest, _callback);
+        okhttp3.Call localVarCall = testEnrichmentConnectionValidateBeforeCall(organizationId, testEnrichmentConnectionRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV3SuccessResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -990,7 +990,7 @@ public class OrganizationEnrichmentsApi {
      * Build call for updateEnrichment
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update (required)
+     * @param updateEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1005,7 +1005,7 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEnrichmentCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3UpdateEnrichmentRequest routesV3UpdateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateEnrichmentCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull UpdateEnrichmentRequest updateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1019,7 +1019,7 @@ public class OrganizationEnrichmentsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV3UpdateEnrichmentRequest;
+        Object localVarPostBody = updateEnrichmentRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/enrichments/{enrichment_id}"
@@ -1057,7 +1057,7 @@ public class OrganizationEnrichmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateEnrichmentValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3UpdateEnrichmentRequest routesV3UpdateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateEnrichmentValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull UpdateEnrichmentRequest updateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateEnrichment(Async)");
@@ -1068,12 +1068,12 @@ public class OrganizationEnrichmentsApi {
             throw new ApiException("Missing the required parameter 'enrichmentId' when calling updateEnrichment(Async)");
         }
 
-        // verify the required parameter 'routesV3UpdateEnrichmentRequest' is set
-        if (routesV3UpdateEnrichmentRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV3UpdateEnrichmentRequest' when calling updateEnrichment(Async)");
+        // verify the required parameter 'updateEnrichmentRequest' is set
+        if (updateEnrichmentRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateEnrichmentRequest' when calling updateEnrichment(Async)");
         }
 
-        return updateEnrichmentCall(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, _callback);
+        return updateEnrichmentCall(organizationId, enrichmentId, updateEnrichmentRequest, testConnection, _callback);
 
     }
 
@@ -1082,7 +1082,7 @@ public class OrganizationEnrichmentsApi {
      * Update an existing enrichment with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update (required)
+     * @param updateEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @return ModelsEnrichment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1096,8 +1096,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsEnrichment updateEnrichment(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3UpdateEnrichmentRequest routesV3UpdateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        ApiResponse<ModelsEnrichment> localVarResp = updateEnrichmentWithHttpInfo(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection);
+    public ModelsEnrichment updateEnrichment(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull UpdateEnrichmentRequest updateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsEnrichment> localVarResp = updateEnrichmentWithHttpInfo(organizationId, enrichmentId, updateEnrichmentRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -1106,7 +1106,7 @@ public class OrganizationEnrichmentsApi {
      * Update an existing enrichment with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update (required)
+     * @param updateEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @return ApiResponse&lt;ModelsEnrichment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1120,8 +1120,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsEnrichment> updateEnrichmentWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3UpdateEnrichmentRequest routesV3UpdateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
-        okhttp3.Call localVarCall = updateEnrichmentValidateBeforeCall(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, null);
+    public ApiResponse<ModelsEnrichment> updateEnrichmentWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull UpdateEnrichmentRequest updateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = updateEnrichmentValidateBeforeCall(organizationId, enrichmentId, updateEnrichmentRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1131,7 +1131,7 @@ public class OrganizationEnrichmentsApi {
      * Update an existing enrichment with new configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update (required)
+     * @param updateEnrichmentRequest Enrichment configuration update (required)
      * @param testConnection Test connection before updating the enrichment (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1146,9 +1146,9 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEnrichmentAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull RoutesV3UpdateEnrichmentRequest routesV3UpdateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsEnrichment> _callback) throws ApiException {
+    public okhttp3.Call updateEnrichmentAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, @javax.annotation.Nonnull UpdateEnrichmentRequest updateEnrichmentRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsEnrichment> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateEnrichmentValidateBeforeCall(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, _callback);
+        okhttp3.Call localVarCall = updateEnrichmentValidateBeforeCall(organizationId, enrichmentId, updateEnrichmentRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

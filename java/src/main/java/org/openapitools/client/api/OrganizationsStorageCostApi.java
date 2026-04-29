@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -30,8 +30,8 @@ import java.io.IOException;
 import org.openapitools.client.model.ModelsStorageTypeCostConfig;
 import org.openapitools.client.model.ModelsStorageTypeSummaryResponse;
 import org.openapitools.client.model.ModelsStorageTypeTimeSeriesResponse;
-import org.openapitools.client.model.RoutesV2SetStorageTypeCostRequest;
 import org.openapitools.client.model.RoutesV2StorageTypeDetailsResponse;
+import org.openapitools.client.model.SetStorageTypeCostRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -748,7 +748,7 @@ public class OrganizationsStorageCostApi {
     /**
      * Build call for setStorageTypeCost
      * @param organizationId Organization ID (required)
-     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @param setStorageTypeCostRequest Cost configuration (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -762,7 +762,7 @@ public class OrganizationsStorageCostApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call setStorageTypeCostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call setStorageTypeCostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull SetStorageTypeCostRequest setStorageTypeCostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -776,7 +776,7 @@ public class OrganizationsStorageCostApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2SetStorageTypeCostRequest;
+        Object localVarPostBody = setStorageTypeCostRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/storage-type-cost"
@@ -809,18 +809,18 @@ public class OrganizationsStorageCostApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call setStorageTypeCostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call setStorageTypeCostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull SetStorageTypeCostRequest setStorageTypeCostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling setStorageTypeCost(Async)");
         }
 
-        // verify the required parameter 'routesV2SetStorageTypeCostRequest' is set
-        if (routesV2SetStorageTypeCostRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2SetStorageTypeCostRequest' when calling setStorageTypeCost(Async)");
+        // verify the required parameter 'setStorageTypeCostRequest' is set
+        if (setStorageTypeCostRequest == null) {
+            throw new ApiException("Missing the required parameter 'setStorageTypeCostRequest' when calling setStorageTypeCost(Async)");
         }
 
-        return setStorageTypeCostCall(organizationId, routesV2SetStorageTypeCostRequest, _callback);
+        return setStorageTypeCostCall(organizationId, setStorageTypeCostRequest, _callback);
 
     }
 
@@ -828,7 +828,7 @@ public class OrganizationsStorageCostApi {
      * Set storage type cost
      * Update per-organization cost configuration for storage types
      * @param organizationId Organization ID (required)
-     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @param setStorageTypeCostRequest Cost configuration (required)
      * @return ModelsStorageTypeCostConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -841,8 +841,8 @@ public class OrganizationsStorageCostApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsStorageTypeCostConfig setStorageTypeCost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest) throws ApiException {
-        ApiResponse<ModelsStorageTypeCostConfig> localVarResp = setStorageTypeCostWithHttpInfo(organizationId, routesV2SetStorageTypeCostRequest);
+    public ModelsStorageTypeCostConfig setStorageTypeCost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull SetStorageTypeCostRequest setStorageTypeCostRequest) throws ApiException {
+        ApiResponse<ModelsStorageTypeCostConfig> localVarResp = setStorageTypeCostWithHttpInfo(organizationId, setStorageTypeCostRequest);
         return localVarResp.getData();
     }
 
@@ -850,7 +850,7 @@ public class OrganizationsStorageCostApi {
      * Set storage type cost
      * Update per-organization cost configuration for storage types
      * @param organizationId Organization ID (required)
-     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @param setStorageTypeCostRequest Cost configuration (required)
      * @return ApiResponse&lt;ModelsStorageTypeCostConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -863,8 +863,8 @@ public class OrganizationsStorageCostApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsStorageTypeCostConfig> setStorageTypeCostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest) throws ApiException {
-        okhttp3.Call localVarCall = setStorageTypeCostValidateBeforeCall(organizationId, routesV2SetStorageTypeCostRequest, null);
+    public ApiResponse<ModelsStorageTypeCostConfig> setStorageTypeCostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull SetStorageTypeCostRequest setStorageTypeCostRequest) throws ApiException {
+        okhttp3.Call localVarCall = setStorageTypeCostValidateBeforeCall(organizationId, setStorageTypeCostRequest, null);
         Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -873,7 +873,7 @@ public class OrganizationsStorageCostApi {
      * Set storage type cost (asynchronously)
      * Update per-organization cost configuration for storage types
      * @param organizationId Organization ID (required)
-     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @param setStorageTypeCostRequest Cost configuration (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -887,9 +887,9 @@ public class OrganizationsStorageCostApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call setStorageTypeCostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest, final ApiCallback<ModelsStorageTypeCostConfig> _callback) throws ApiException {
+    public okhttp3.Call setStorageTypeCostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull SetStorageTypeCostRequest setStorageTypeCostRequest, final ApiCallback<ModelsStorageTypeCostConfig> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = setStorageTypeCostValidateBeforeCall(organizationId, routesV2SetStorageTypeCostRequest, _callback);
+        okhttp3.Call localVarCall = setStorageTypeCostValidateBeforeCall(organizationId, setStorageTypeCostRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

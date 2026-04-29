@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## CreateBillingAccountSubscription
 
-> RoutesV2CreateBillingAccountSubscriptionResponse CreateBillingAccountSubscription(ctx, billingAccountId).RoutesV2CreateBillingAccountSubscriptionRequest(routesV2CreateBillingAccountSubscriptionRequest).Execute()
+> RoutesV2CreateBillingAccountSubscriptionResponse CreateBillingAccountSubscription(ctx, billingAccountId).CreateBillingAccountSubscriptionRequest(createBillingAccountSubscriptionRequest).Execute()
 
 Create Billing Account Subscription
 
@@ -101,11 +101,11 @@ import (
 
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
-	routesV2CreateBillingAccountSubscriptionRequest := *openapiclient.NewRoutesV2CreateBillingAccountSubscriptionRequest("ProductId_example") // RoutesV2CreateBillingAccountSubscriptionRequest | Request body for creating a billing subscription
+	createBillingAccountSubscriptionRequest := openapiclient.CreateBillingAccountSubscription_request{RoutesV2CreateBillingAccountSubscriptionRequest: openapiclient.NewRoutesV2CreateBillingAccountSubscriptionRequest("ProductId_example")} // CreateBillingAccountSubscriptionRequest | Request body for creating a billing subscription
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingProductsAPI.CreateBillingAccountSubscription(context.Background(), billingAccountId).RoutesV2CreateBillingAccountSubscriptionRequest(routesV2CreateBillingAccountSubscriptionRequest).Execute()
+	resp, r, err := apiClient.BillingProductsAPI.CreateBillingAccountSubscription(context.Background(), billingAccountId).CreateBillingAccountSubscriptionRequest(createBillingAccountSubscriptionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingProductsAPI.CreateBillingAccountSubscription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,7 +131,7 @@ Other parameters are passed through a pointer to a apiCreateBillingAccountSubscr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2CreateBillingAccountSubscriptionRequest** | [**RoutesV2CreateBillingAccountSubscriptionRequest**](RoutesV2CreateBillingAccountSubscriptionRequest.md) | Request body for creating a billing subscription | 
+ **createBillingAccountSubscriptionRequest** | [**CreateBillingAccountSubscriptionRequest**](CreateBillingAccountSubscriptionRequest.md) | Request body for creating a billing subscription | 
 
 ### Return type
 

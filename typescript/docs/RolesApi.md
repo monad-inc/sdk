@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createRole**
-> ModelsRoleWithPermissions createRole(routesV2CreateRoleV2Request)
+> ModelsRoleWithPermissions createRole(createRoleRequest)
 
 Create a new role with permissions
 
@@ -30,13 +30,7 @@ const request: RolesApiCreateRoleRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating a role
-  routesV2CreateRoleV2Request: {
-    description: "description_example",
-    name: "name_example",
-    permissionIds: [
-      "permissionIds_example",
-    ],
-  },
+  createRoleRequest: null,
 };
 
 const data = await apiInstance.createRole(request);
@@ -48,7 +42,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2CreateRoleV2Request** | **RoutesV2CreateRoleV2Request**| Request body for creating a role |
+ **createRoleRequest** | **CreateRoleRequest**| Request body for creating a role |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -250,7 +244,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateRole**
-> ModelsRoleWithPermissions updateRole(routesV2UpdateRoleV2Request)
+> ModelsRoleWithPermissions updateRole(updateRoleRequest)
 
 Update a role and its permissions
 
@@ -270,13 +264,7 @@ const request: RolesApiUpdateRoleRequest = {
     // Role ID
   roleId: "role_id_example",
     // Request body for updating a role
-  routesV2UpdateRoleV2Request: {
-    description: "description_example",
-    name: "name_example",
-    permissionIds: [
-      "permissionIds_example",
-    ],
-  },
+  updateRoleRequest: null,
 };
 
 const data = await apiInstance.updateRole(request);
@@ -288,7 +276,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2UpdateRoleV2Request** | **RoutesV2UpdateRoleV2Request**| Request body for updating a role |
+ **updateRoleRequest** | **UpdateRoleRequest**| Request body for updating a role |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
 

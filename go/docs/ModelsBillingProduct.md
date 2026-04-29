@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **IsDefault** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ProductType** | Pointer to **string** |  | [optional] 
+**ProductType** | Pointer to [**ModelsBillingProductType**](ModelsBillingProductType.md) |  | [optional] 
 **RecurringCostCents** | Pointer to **int32** |  | [optional] 
 **RecurringFrequency** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
@@ -215,20 +215,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetProductType
 
-`func (o *ModelsBillingProduct) GetProductType() string`
+`func (o *ModelsBillingProduct) GetProductType() ModelsBillingProductType`
 
 GetProductType returns the ProductType field if non-nil, zero value otherwise.
 
 ### GetProductTypeOk
 
-`func (o *ModelsBillingProduct) GetProductTypeOk() (*string, bool)`
+`func (o *ModelsBillingProduct) GetProductTypeOk() (*ModelsBillingProductType, bool)`
 
 GetProductTypeOk returns a tuple with the ProductType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProductType
 
-`func (o *ModelsBillingProduct) SetProductType(v string)`
+`func (o *ModelsBillingProduct) SetProductType(v ModelsBillingProductType)`
 
 SetProductType sets ProductType field to given value.
 

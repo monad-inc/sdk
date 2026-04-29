@@ -8,9 +8,9 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateBillingAccountSubscriptionRequest } from '../models/CreateBillingAccountSubscriptionRequest';
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
-import { RoutesV2CreateBillingAccountSubscriptionRequest } from '../models/RoutesV2CreateBillingAccountSubscriptionRequest';
 import { RoutesV2CreateBillingAccountSubscriptionResponse } from '../models/RoutesV2CreateBillingAccountSubscriptionResponse';
 
 /**
@@ -60,9 +60,9 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
      * Create Billing Account Subscription
      * Create Billing Account Subscription
      * @param billingAccountId Billing Account ID
-     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     * @param createBillingAccountSubscriptionRequest Request body for creating a billing subscription
      */
-    public async createBillingAccountSubscription(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createBillingAccountSubscription(billingAccountId: string, createBillingAccountSubscriptionRequest: CreateBillingAccountSubscriptionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -71,9 +71,9 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2CreateBillingAccountSubscriptionRequest' is not null or undefined
-        if (routesV2CreateBillingAccountSubscriptionRequest === null || routesV2CreateBillingAccountSubscriptionRequest === undefined) {
-            throw new RequiredError("BillingProductsApi", "createBillingAccountSubscription", "routesV2CreateBillingAccountSubscriptionRequest");
+        // verify required parameter 'createBillingAccountSubscriptionRequest' is not null or undefined
+        if (createBillingAccountSubscriptionRequest === null || createBillingAccountSubscriptionRequest === undefined) {
+            throw new RequiredError("BillingProductsApi", "createBillingAccountSubscription", "createBillingAccountSubscriptionRequest");
         }
 
 
@@ -92,7 +92,7 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateBillingAccountSubscriptionRequest, "RoutesV2CreateBillingAccountSubscriptionRequest", ""),
+            ObjectSerializer.serialize(createBillingAccountSubscriptionRequest, "CreateBillingAccountSubscriptionRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

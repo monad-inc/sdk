@@ -15,7 +15,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createEnrichment"></a>
 # **createEnrichment**
-> ModelsEnrichment createEnrichment(organizationId, routesV3CreateEnrichmentRequest, testConnection)
+> ModelsEnrichment createEnrichment(organizationId, createEnrichmentRequest, testConnection)
 
 Create enrichment
 
@@ -50,10 +50,10 @@ public class Example {
 
     OrganizationEnrichmentsApi apiInstance = new OrganizationEnrichmentsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV3CreateEnrichmentRequest routesV3CreateEnrichmentRequest = new RoutesV3CreateEnrichmentRequest(); // RoutesV3CreateEnrichmentRequest | Enrichment configuration
+    CreateEnrichmentRequest createEnrichmentRequest = new CreateEnrichmentRequest(); // CreateEnrichmentRequest | Enrichment configuration
     Boolean testConnection = true; // Boolean | Test connection before creating the enrichment
     try {
-      ModelsEnrichment result = apiInstance.createEnrichment(organizationId, routesV3CreateEnrichmentRequest, testConnection);
+      ModelsEnrichment result = apiInstance.createEnrichment(organizationId, createEnrichmentRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationEnrichmentsApi#createEnrichment");
@@ -71,7 +71,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV3CreateEnrichmentRequest** | [**RoutesV3CreateEnrichmentRequest**](RoutesV3CreateEnrichmentRequest.md)| Enrichment configuration | |
+| **createEnrichmentRequest** | [**CreateEnrichmentRequest**](CreateEnrichmentRequest.md)| Enrichment configuration | |
 | **testConnection** | **Boolean**| Test connection before creating the enrichment | [optional] |
 
 ### Return type
@@ -335,7 +335,7 @@ public class Example {
 
 <a id="replaceEnrichment"></a>
 # **replaceEnrichment**
-> ModelsEnrichment replaceEnrichment(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection)
+> ModelsEnrichment replaceEnrichment(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection)
 
 Replace enrichment
 
@@ -371,10 +371,10 @@ public class Example {
     OrganizationEnrichmentsApi apiInstance = new OrganizationEnrichmentsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String enrichmentId = "enrichmentId_example"; // String | Enrichment ID
-    RoutesV3PutEnrichmentRequest routesV3PutEnrichmentRequest = new RoutesV3PutEnrichmentRequest(); // RoutesV3PutEnrichmentRequest | Enrichment configuration update
+    ReplaceEnrichmentRequest replaceEnrichmentRequest = new ReplaceEnrichmentRequest(); // ReplaceEnrichmentRequest | Enrichment configuration update
     Boolean testConnection = true; // Boolean | Test connection before updating the enrichment
     try {
-      ModelsEnrichment result = apiInstance.replaceEnrichment(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection);
+      ModelsEnrichment result = apiInstance.replaceEnrichment(organizationId, enrichmentId, replaceEnrichmentRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationEnrichmentsApi#replaceEnrichment");
@@ -393,7 +393,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **enrichmentId** | **String**| Enrichment ID | |
-| **routesV3PutEnrichmentRequest** | [**RoutesV3PutEnrichmentRequest**](RoutesV3PutEnrichmentRequest.md)| Enrichment configuration update | |
+| **replaceEnrichmentRequest** | [**ReplaceEnrichmentRequest**](ReplaceEnrichmentRequest.md)| Enrichment configuration update | |
 | **testConnection** | **Boolean**| Test connection before updating the enrichment | [optional] |
 
 ### Return type
@@ -419,7 +419,7 @@ public class Example {
 
 <a id="testEnrichmentConnection"></a>
 # **testEnrichmentConnection**
-> RoutesV3SuccessResponse testEnrichmentConnection(organizationId, routesV3TestEnrichmentConnectionRequest)
+> RoutesV3SuccessResponse testEnrichmentConnection(organizationId, testEnrichmentConnectionRequest)
 
 Test enrichment connection
 
@@ -454,9 +454,9 @@ public class Example {
 
     OrganizationEnrichmentsApi apiInstance = new OrganizationEnrichmentsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV3TestEnrichmentConnectionRequest routesV3TestEnrichmentConnectionRequest = new RoutesV3TestEnrichmentConnectionRequest(); // RoutesV3TestEnrichmentConnectionRequest | Enrichment configuration to test
+    TestEnrichmentConnectionRequest testEnrichmentConnectionRequest = new TestEnrichmentConnectionRequest(); // TestEnrichmentConnectionRequest | Enrichment configuration to test
     try {
-      RoutesV3SuccessResponse result = apiInstance.testEnrichmentConnection(organizationId, routesV3TestEnrichmentConnectionRequest);
+      RoutesV3SuccessResponse result = apiInstance.testEnrichmentConnection(organizationId, testEnrichmentConnectionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationEnrichmentsApi#testEnrichmentConnection");
@@ -474,7 +474,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV3TestEnrichmentConnectionRequest** | [**RoutesV3TestEnrichmentConnectionRequest**](RoutesV3TestEnrichmentConnectionRequest.md)| Enrichment configuration to test | |
+| **testEnrichmentConnectionRequest** | [**TestEnrichmentConnectionRequest**](TestEnrichmentConnectionRequest.md)| Enrichment configuration to test | |
 
 ### Return type
 
@@ -498,7 +498,7 @@ public class Example {
 
 <a id="updateEnrichment"></a>
 # **updateEnrichment**
-> ModelsEnrichment updateEnrichment(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection)
+> ModelsEnrichment updateEnrichment(organizationId, enrichmentId, updateEnrichmentRequest, testConnection)
 
 Update enrichment
 
@@ -534,10 +534,10 @@ public class Example {
     OrganizationEnrichmentsApi apiInstance = new OrganizationEnrichmentsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String enrichmentId = "enrichmentId_example"; // String | Enrichment ID
-    RoutesV3UpdateEnrichmentRequest routesV3UpdateEnrichmentRequest = new RoutesV3UpdateEnrichmentRequest(); // RoutesV3UpdateEnrichmentRequest | Enrichment configuration update
+    UpdateEnrichmentRequest updateEnrichmentRequest = new UpdateEnrichmentRequest(); // UpdateEnrichmentRequest | Enrichment configuration update
     Boolean testConnection = true; // Boolean | Test connection before updating the enrichment
     try {
-      ModelsEnrichment result = apiInstance.updateEnrichment(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection);
+      ModelsEnrichment result = apiInstance.updateEnrichment(organizationId, enrichmentId, updateEnrichmentRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationEnrichmentsApi#updateEnrichment");
@@ -556,7 +556,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **enrichmentId** | **String**| Enrichment ID | |
-| **routesV3UpdateEnrichmentRequest** | [**RoutesV3UpdateEnrichmentRequest**](RoutesV3UpdateEnrichmentRequest.md)| Enrichment configuration update | |
+| **updateEnrichmentRequest** | [**UpdateEnrichmentRequest**](UpdateEnrichmentRequest.md)| Enrichment configuration update | |
 | **testConnection** | **Boolean**| Test connection before updating the enrichment | [optional] |
 
 ### Return type

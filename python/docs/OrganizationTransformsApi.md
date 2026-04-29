@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_transform**
-> ModelsTransform create_transform(organization_id, routes_create_transform_request)
+> ModelsTransform create_transform(organization_id, create_transform_request)
 
 Create transform
 
@@ -25,8 +25,8 @@ Create transform
 
 ```python
 import monad
+from monad.models.create_transform_request import CreateTransformRequest
 from monad.models.models_transform import ModelsTransform
-from monad.models.routes_create_transform_request import RoutesCreateTransformRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -58,11 +58,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationTransformsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_create_transform_request = monad.RoutesCreateTransformRequest() # RoutesCreateTransformRequest | Request body for creating a transform
+    create_transform_request = monad.CreateTransformRequest() # CreateTransformRequest | Request body for creating a transform
 
     try:
         # Create transform
-        api_response = api_instance.create_transform(organization_id, routes_create_transform_request)
+        api_response = api_instance.create_transform(organization_id, create_transform_request)
         print("The response of OrganizationTransformsApi->create_transform:\n")
         pprint(api_response)
     except Exception as e:
@@ -77,7 +77,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_create_transform_request** | [**RoutesCreateTransformRequest**](RoutesCreateTransformRequest.md)| Request body for creating a transform | 
+ **create_transform_request** | [**CreateTransformRequest**](CreateTransformRequest.md)| Request body for creating a transform | 
 
 ### Return type
 

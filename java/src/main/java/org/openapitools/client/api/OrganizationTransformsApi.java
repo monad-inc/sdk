@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -27,9 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateTransformRequest;
 import org.openapitools.client.model.ModelsTransform;
 import org.openapitools.client.model.ModelsTransformList;
-import org.openapitools.client.model.RoutesCreateTransformRequest;
 import org.openapitools.client.model.RoutesGetTransformResponse;
 import org.openapitools.client.model.RoutesUpdateTransformRequest;
 
@@ -79,7 +79,7 @@ public class OrganizationTransformsApi {
     /**
      * Build call for createTransform
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param createTransformRequest Request body for creating a transform (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,7 +92,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTransformCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRequest createTransformRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,7 +106,7 @@ public class OrganizationTransformsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesCreateTransformRequest;
+        Object localVarPostBody = createTransformRequest;
 
         // create path and map variables
         String localVarPath = "/v1/{organization_id}/transforms"
@@ -139,18 +139,18 @@ public class OrganizationTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTransformValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTransformValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRequest createTransformRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createTransform(Async)");
         }
 
-        // verify the required parameter 'routesCreateTransformRequest' is set
-        if (routesCreateTransformRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesCreateTransformRequest' when calling createTransform(Async)");
+        // verify the required parameter 'createTransformRequest' is set
+        if (createTransformRequest == null) {
+            throw new ApiException("Missing the required parameter 'createTransformRequest' when calling createTransform(Async)");
         }
 
-        return createTransformCall(organizationId, routesCreateTransformRequest, _callback);
+        return createTransformCall(organizationId, createTransformRequest, _callback);
 
     }
 
@@ -158,7 +158,7 @@ public class OrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param createTransformRequest Request body for creating a transform (required)
      * @return ModelsTransform
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -170,8 +170,8 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsTransform createTransform(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
-        ApiResponse<ModelsTransform> localVarResp = createTransformWithHttpInfo(organizationId, routesCreateTransformRequest);
+    public ModelsTransform createTransform(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRequest createTransformRequest) throws ApiException {
+        ApiResponse<ModelsTransform> localVarResp = createTransformWithHttpInfo(organizationId, createTransformRequest);
         return localVarResp.getData();
     }
 
@@ -179,7 +179,7 @@ public class OrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param createTransformRequest Request body for creating a transform (required)
      * @return ApiResponse&lt;ModelsTransform&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -191,8 +191,8 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsTransform> createTransformWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
-        okhttp3.Call localVarCall = createTransformValidateBeforeCall(organizationId, routesCreateTransformRequest, null);
+    public ApiResponse<ModelsTransform> createTransformWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRequest createTransformRequest) throws ApiException {
+        okhttp3.Call localVarCall = createTransformValidateBeforeCall(organizationId, createTransformRequest, null);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -201,7 +201,7 @@ public class OrganizationTransformsApi {
      * Create transform (asynchronously)
      * Create transform
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param createTransformRequest Request body for creating a transform (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -214,9 +214,9 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback<ModelsTransform> _callback) throws ApiException {
+    public okhttp3.Call createTransformAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateTransformRequest createTransformRequest, final ApiCallback<ModelsTransform> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createTransformValidateBeforeCall(organizationId, routesCreateTransformRequest, _callback);
+        okhttp3.Call localVarCall = createTransformValidateBeforeCall(organizationId, createTransformRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

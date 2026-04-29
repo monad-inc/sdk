@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -24,7 +24,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.BatchConfigBatchConfig;
+import org.openapitools.client.model.KafkaAcks;
+import org.openapitools.client.model.KafkaCompressionType;
 import org.openapitools.client.model.KafkaKafkaHeader;
+import org.openapitools.client.model.KafkaSaslMechanism;
+import org.openapitools.client.model.KafkaSecurityProtocol;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,7 +61,7 @@ public class KafkaSettingsConfig {
   public static final String SERIALIZED_NAME_ACKS = "acks";
   @SerializedName(SERIALIZED_NAME_ACKS)
   @javax.annotation.Nullable
-  private String acks;
+  private KafkaAcks acks;
 
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
@@ -72,7 +76,7 @@ public class KafkaSettingsConfig {
   public static final String SERIALIZED_NAME_COMPRESSION_TYPE = "compression_type";
   @SerializedName(SERIALIZED_NAME_COMPRESSION_TYPE)
   @javax.annotation.Nullable
-  private String compressionType;
+  private KafkaCompressionType compressionType;
 
   public static final String SERIALIZED_NAME_HEADERS = "headers";
   @SerializedName(SERIALIZED_NAME_HEADERS)
@@ -92,12 +96,12 @@ public class KafkaSettingsConfig {
   public static final String SERIALIZED_NAME_SASL_MECHANISM = "sasl_mechanism";
   @SerializedName(SERIALIZED_NAME_SASL_MECHANISM)
   @javax.annotation.Nullable
-  private String saslMechanism;
+  private KafkaSaslMechanism saslMechanism;
 
   public static final String SERIALIZED_NAME_SECURITY_PROTOCOL = "security_protocol";
   @SerializedName(SERIALIZED_NAME_SECURITY_PROTOCOL)
   @javax.annotation.Nullable
-  private String securityProtocol;
+  private KafkaSecurityProtocol securityProtocol;
 
   public static final String SERIALIZED_NAME_TOPIC = "topic";
   @SerializedName(SERIALIZED_NAME_TOPIC)
@@ -112,21 +116,21 @@ public class KafkaSettingsConfig {
   public KafkaSettingsConfig() {
   }
 
-  public KafkaSettingsConfig acks(@javax.annotation.Nullable String acks) {
+  public KafkaSettingsConfig acks(@javax.annotation.Nullable KafkaAcks acks) {
     this.acks = acks;
     return this;
   }
 
   /**
-   * Acknowledgment level (0&#x3D;none, 1&#x3D;leader only, all&#x3D;all replicas)
+   * Get acks
    * @return acks
    */
   @javax.annotation.Nullable
-  public String getAcks() {
+  public KafkaAcks getAcks() {
     return acks;
   }
 
-  public void setAcks(@javax.annotation.Nullable String acks) {
+  public void setAcks(@javax.annotation.Nullable KafkaAcks acks) {
     this.acks = acks;
   }
 
@@ -169,21 +173,21 @@ public class KafkaSettingsConfig {
   }
 
 
-  public KafkaSettingsConfig compressionType(@javax.annotation.Nullable String compressionType) {
+  public KafkaSettingsConfig compressionType(@javax.annotation.Nullable KafkaCompressionType compressionType) {
     this.compressionType = compressionType;
     return this;
   }
 
   /**
-   * Compression codec for messages (none, gzip, snappy, lz4, zstd)
+   * Get compressionType
    * @return compressionType
    */
   @javax.annotation.Nullable
-  public String getCompressionType() {
+  public KafkaCompressionType getCompressionType() {
     return compressionType;
   }
 
-  public void setCompressionType(@javax.annotation.Nullable String compressionType) {
+  public void setCompressionType(@javax.annotation.Nullable KafkaCompressionType compressionType) {
     this.compressionType = compressionType;
   }
 
@@ -253,40 +257,40 @@ public class KafkaSettingsConfig {
   }
 
 
-  public KafkaSettingsConfig saslMechanism(@javax.annotation.Nullable String saslMechanism) {
+  public KafkaSettingsConfig saslMechanism(@javax.annotation.Nullable KafkaSaslMechanism saslMechanism) {
     this.saslMechanism = saslMechanism;
     return this;
   }
 
   /**
-   * SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512)
+   * Get saslMechanism
    * @return saslMechanism
    */
   @javax.annotation.Nullable
-  public String getSaslMechanism() {
+  public KafkaSaslMechanism getSaslMechanism() {
     return saslMechanism;
   }
 
-  public void setSaslMechanism(@javax.annotation.Nullable String saslMechanism) {
+  public void setSaslMechanism(@javax.annotation.Nullable KafkaSaslMechanism saslMechanism) {
     this.saslMechanism = saslMechanism;
   }
 
 
-  public KafkaSettingsConfig securityProtocol(@javax.annotation.Nullable String securityProtocol) {
+  public KafkaSettingsConfig securityProtocol(@javax.annotation.Nullable KafkaSecurityProtocol securityProtocol) {
     this.securityProtocol = securityProtocol;
     return this;
   }
 
   /**
-   * Security protocol for broker connections (NONE, SASL_PLAINTEXT, SASL_SSL, SSL)
+   * Get securityProtocol
    * @return securityProtocol
    */
   @javax.annotation.Nullable
-  public String getSecurityProtocol() {
+  public KafkaSecurityProtocol getSecurityProtocol() {
     return securityProtocol;
   }
 
-  public void setSecurityProtocol(@javax.annotation.Nullable String securityProtocol) {
+  public void setSecurityProtocol(@javax.annotation.Nullable KafkaSecurityProtocol securityProtocol) {
     this.securityProtocol = securityProtocol;
   }
 
@@ -417,8 +421,9 @@ public class KafkaSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("acks") != null && !jsonObj.get("acks").isJsonNull()) && !jsonObj.get("acks").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `acks` to be a primitive type in the JSON string but got `%s`", jsonObj.get("acks").toString()));
+      // validate the optional field `acks`
+      if (jsonObj.get("acks") != null && !jsonObj.get("acks").isJsonNull()) {
+        KafkaAcks.validateJsonElement(jsonObj.get("acks"));
       }
       // validate the optional field `batch_config`
       if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
@@ -427,8 +432,9 @@ public class KafkaSettingsConfig {
       if ((jsonObj.get("bootstrap_servers") != null && !jsonObj.get("bootstrap_servers").isJsonNull()) && !jsonObj.get("bootstrap_servers").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bootstrap_servers` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bootstrap_servers").toString()));
       }
-      if ((jsonObj.get("compression_type") != null && !jsonObj.get("compression_type").isJsonNull()) && !jsonObj.get("compression_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression_type").toString()));
+      // validate the optional field `compression_type`
+      if (jsonObj.get("compression_type") != null && !jsonObj.get("compression_type").isJsonNull()) {
+        KafkaCompressionType.validateJsonElement(jsonObj.get("compression_type"));
       }
       if (jsonObj.get("headers") != null && !jsonObj.get("headers").isJsonNull()) {
         JsonArray jsonArrayheaders = jsonObj.getAsJsonArray("headers");
@@ -447,11 +453,13 @@ public class KafkaSettingsConfig {
       if ((jsonObj.get("message_key_field") != null && !jsonObj.get("message_key_field").isJsonNull()) && !jsonObj.get("message_key_field").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `message_key_field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message_key_field").toString()));
       }
-      if ((jsonObj.get("sasl_mechanism") != null && !jsonObj.get("sasl_mechanism").isJsonNull()) && !jsonObj.get("sasl_mechanism").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sasl_mechanism` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sasl_mechanism").toString()));
+      // validate the optional field `sasl_mechanism`
+      if (jsonObj.get("sasl_mechanism") != null && !jsonObj.get("sasl_mechanism").isJsonNull()) {
+        KafkaSaslMechanism.validateJsonElement(jsonObj.get("sasl_mechanism"));
       }
-      if ((jsonObj.get("security_protocol") != null && !jsonObj.get("security_protocol").isJsonNull()) && !jsonObj.get("security_protocol").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `security_protocol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("security_protocol").toString()));
+      // validate the optional field `security_protocol`
+      if (jsonObj.get("security_protocol") != null && !jsonObj.get("security_protocol").isJsonNull()) {
+        KafkaSecurityProtocol.validateJsonElement(jsonObj.get("security_protocol"));
       }
       if ((jsonObj.get("topic") != null && !jsonObj.get("topic").isJsonNull()) && !jsonObj.get("topic").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `topic` to be a primitive type in the JSON string but got `%s`", jsonObj.get("topic").toString()));

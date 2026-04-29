@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -27,7 +27,7 @@ type ModelsPipeline struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
 	InputId *string `json:"input_id,omitempty"`
-	ManagedBy *string `json:"managed_by,omitempty"`
+	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Status *ModelsPipelineStatus `json:"status,omitempty"`
@@ -276,9 +276,9 @@ func (o *ModelsPipeline) SetInputId(v string) {
 }
 
 // GetManagedBy returns the ManagedBy field value if set, zero value otherwise.
-func (o *ModelsPipeline) GetManagedBy() string {
+func (o *ModelsPipeline) GetManagedBy() ModelsManagedBy {
 	if o == nil || IsNil(o.ManagedBy) {
-		var ret string
+		var ret ModelsManagedBy
 		return ret
 	}
 	return *o.ManagedBy
@@ -286,7 +286,7 @@ func (o *ModelsPipeline) GetManagedBy() string {
 
 // GetManagedByOk returns a tuple with the ManagedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipeline) GetManagedByOk() (*string, bool) {
+func (o *ModelsPipeline) GetManagedByOk() (*ModelsManagedBy, bool) {
 	if o == nil || IsNil(o.ManagedBy) {
 		return nil, false
 	}
@@ -302,8 +302,8 @@ func (o *ModelsPipeline) HasManagedBy() bool {
 	return false
 }
 
-// SetManagedBy gets a reference to the given string and assigns it to the ManagedBy field.
-func (o *ModelsPipeline) SetManagedBy(v string) {
+// SetManagedBy gets a reference to the given ModelsManagedBy and assigns it to the ManagedBy field.
+func (o *ModelsPipeline) SetManagedBy(v ModelsManagedBy) {
 	o.ManagedBy = &v
 }
 

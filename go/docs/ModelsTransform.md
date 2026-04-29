@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**ManagedBy** | Pointer to **string** |  | [optional] 
+**ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
@@ -134,20 +134,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetManagedBy
 
-`func (o *ModelsTransform) GetManagedBy() string`
+`func (o *ModelsTransform) GetManagedBy() ModelsManagedBy`
 
 GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
 
 ### GetManagedByOk
 
-`func (o *ModelsTransform) GetManagedByOk() (*string, bool)`
+`func (o *ModelsTransform) GetManagedByOk() (*ModelsManagedBy, bool)`
 
 GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedBy
 
-`func (o *ModelsTransform) SetManagedBy(v string)`
+`func (o *ModelsTransform) SetManagedBy(v ModelsManagedBy)`
 
 SetManagedBy sets ManagedBy field to given value.
 

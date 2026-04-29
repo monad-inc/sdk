@@ -16,7 +16,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createBillingAccountRole"></a>
 # **createBillingAccountRole**
-> ModelsBillingAccountRole createBillingAccountRole(billingAccountId, routesV2CreateBillingAccountRoleRequest)
+> ModelsBillingAccountRole createBillingAccountRole(billingAccountId, createBillingAccountRoleRequest)
 
 Create Billing Account Role
 
@@ -45,9 +45,9 @@ public class Example {
 
     BillingAccountsRbacApi apiInstance = new BillingAccountsRbacApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
-    RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest = new RoutesV2CreateBillingAccountRoleRequest(); // RoutesV2CreateBillingAccountRoleRequest | Create Billing Account Role Request
+    CreateBillingAccountRoleRequest createBillingAccountRoleRequest = new CreateBillingAccountRoleRequest(); // CreateBillingAccountRoleRequest | Create Billing Account Role Request
     try {
-      ModelsBillingAccountRole result = apiInstance.createBillingAccountRole(billingAccountId, routesV2CreateBillingAccountRoleRequest);
+      ModelsBillingAccountRole result = apiInstance.createBillingAccountRole(billingAccountId, createBillingAccountRoleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsRbacApi#createBillingAccountRole");
@@ -65,7 +65,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
-| **routesV2CreateBillingAccountRoleRequest** | [**RoutesV2CreateBillingAccountRoleRequest**](RoutesV2CreateBillingAccountRoleRequest.md)| Create Billing Account Role Request | |
+| **createBillingAccountRoleRequest** | [**CreateBillingAccountRoleRequest**](CreateBillingAccountRoleRequest.md)| Create Billing Account Role Request | |
 
 ### Return type
 
@@ -89,7 +89,7 @@ public class Example {
 
 <a id="createBillingAccountUserRole"></a>
 # **createBillingAccountUserRole**
-> String createBillingAccountUserRole(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest)
+> String createBillingAccountUserRole(billingAccountId, roleId, createBillingAccountUserRoleRequest)
 
 Create Billing Account User Role
 
@@ -119,9 +119,9 @@ public class Example {
     BillingAccountsRbacApi apiInstance = new BillingAccountsRbacApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
     String roleId = "roleId_example"; // String | Role ID
-    RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest = new RoutesV2CreatebillingAccountUserRoleRequest(); // RoutesV2CreatebillingAccountUserRoleRequest | Create Billing Account User Role Request
+    CreateBillingAccountUserRoleRequest createBillingAccountUserRoleRequest = new CreateBillingAccountUserRoleRequest(); // CreateBillingAccountUserRoleRequest | Create Billing Account User Role Request
     try {
-      String result = apiInstance.createBillingAccountUserRole(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest);
+      String result = apiInstance.createBillingAccountUserRole(billingAccountId, roleId, createBillingAccountUserRoleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsRbacApi#createBillingAccountUserRole");
@@ -140,7 +140,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
 | **roleId** | **String**| Role ID | |
-| **routesV2CreatebillingAccountUserRoleRequest** | [**RoutesV2CreatebillingAccountUserRoleRequest**](RoutesV2CreatebillingAccountUserRoleRequest.md)| Create Billing Account User Role Request | |
+| **createBillingAccountUserRoleRequest** | [**CreateBillingAccountUserRoleRequest**](CreateBillingAccountUserRoleRequest.md)| Create Billing Account User Role Request | |
 
 ### Return type
 
@@ -523,7 +523,7 @@ This endpoint does not need any parameter.
 
 <a id="updateBillingAccountRole"></a>
 # **updateBillingAccountRole**
-> ModelsBillingAccountRole updateBillingAccountRole(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest)
+> ModelsBillingAccountRole updateBillingAccountRole(billingAccountId, roleId, updateBillingAccountRoleRequest)
 
 Update Billing Account Role
 
@@ -553,9 +553,9 @@ public class Example {
     BillingAccountsRbacApi apiInstance = new BillingAccountsRbacApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
     String roleId = "roleId_example"; // String | Role ID
-    RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest = new RoutesV2UpdateBillingAccountRoleRequest(); // RoutesV2UpdateBillingAccountRoleRequest | Update Billing Account Role Request
+    UpdateBillingAccountRoleRequest updateBillingAccountRoleRequest = new UpdateBillingAccountRoleRequest(); // UpdateBillingAccountRoleRequest | Update Billing Account Role Request
     try {
-      ModelsBillingAccountRole result = apiInstance.updateBillingAccountRole(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest);
+      ModelsBillingAccountRole result = apiInstance.updateBillingAccountRole(billingAccountId, roleId, updateBillingAccountRoleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsRbacApi#updateBillingAccountRole");
@@ -574,7 +574,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
 | **roleId** | **String**| Role ID | |
-| **routesV2UpdateBillingAccountRoleRequest** | [**RoutesV2UpdateBillingAccountRoleRequest**](RoutesV2UpdateBillingAccountRoleRequest.md)| Update Billing Account Role Request | |
+| **updateBillingAccountRoleRequest** | [**UpdateBillingAccountRoleRequest**](UpdateBillingAccountRoleRequest.md)| Update Billing Account Role Request | |
 
 ### Return type
 

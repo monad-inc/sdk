@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **conditions** | [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
-**var_else** | **str** | will default to bypass if left empty on create/update | [optional] 
+**var_else** | [**ModelsElseAction**](ModelsElseAction.md) |  | [optional] 
 
 ## Example
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clearing_started_at** | **int** | When clearing began | [optional] 
 **resolved_at** | **int** | Unix timestamp when resolved | [optional] 
-**state** | **str** |  | [optional] 
+**state** | [**ModelsAlertState**](ModelsAlertState.md) |  | [optional] 
 
 ## Example
 

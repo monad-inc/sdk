@@ -82,7 +82,7 @@ null (empty response body)
 
 <a id="createBillingAccountSubscription"></a>
 # **createBillingAccountSubscription**
-> RoutesV2CreateBillingAccountSubscriptionResponse createBillingAccountSubscription(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest)
+> RoutesV2CreateBillingAccountSubscriptionResponse createBillingAccountSubscription(billingAccountId, createBillingAccountSubscriptionRequest)
 
 Create Billing Account Subscription
 
@@ -111,9 +111,9 @@ public class Example {
 
     BillingProductsApi apiInstance = new BillingProductsApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
-    RoutesV2CreateBillingAccountSubscriptionRequest routesV2CreateBillingAccountSubscriptionRequest = new RoutesV2CreateBillingAccountSubscriptionRequest(); // RoutesV2CreateBillingAccountSubscriptionRequest | Request body for creating a billing subscription
+    CreateBillingAccountSubscriptionRequest createBillingAccountSubscriptionRequest = new CreateBillingAccountSubscriptionRequest(); // CreateBillingAccountSubscriptionRequest | Request body for creating a billing subscription
     try {
-      RoutesV2CreateBillingAccountSubscriptionResponse result = apiInstance.createBillingAccountSubscription(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest);
+      RoutesV2CreateBillingAccountSubscriptionResponse result = apiInstance.createBillingAccountSubscription(billingAccountId, createBillingAccountSubscriptionRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingProductsApi#createBillingAccountSubscription");
@@ -131,7 +131,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
-| **routesV2CreateBillingAccountSubscriptionRequest** | [**RoutesV2CreateBillingAccountSubscriptionRequest**](RoutesV2CreateBillingAccountSubscriptionRequest.md)| Request body for creating a billing subscription | |
+| **createBillingAccountSubscriptionRequest** | [**CreateBillingAccountSubscriptionRequest**](CreateBillingAccountSubscriptionRequest.md)| Request body for creating a billing subscription | |
 
 ### Return type
 

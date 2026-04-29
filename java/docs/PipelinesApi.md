@@ -29,7 +29,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createPipeline"></a>
 # **createPipeline**
-> ModelsPipelineConfigV2 createPipeline(organizationId, routesV2CreatePipelineRequest)
+> ModelsPipelineConfigV2 createPipeline(organizationId, createPipelineRequest)
 
 Create pipeline
 
@@ -64,9 +64,9 @@ public class Example {
 
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest = new RoutesV2CreatePipelineRequest(); // RoutesV2CreatePipelineRequest | Request body for creating a pipeline
+    CreatePipelineRequest createPipelineRequest = new CreatePipelineRequest(); // CreatePipelineRequest | Request body for creating a pipeline
     try {
-      ModelsPipelineConfigV2 result = apiInstance.createPipeline(organizationId, routesV2CreatePipelineRequest);
+      ModelsPipelineConfigV2 result = apiInstance.createPipeline(organizationId, createPipelineRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PipelinesApi#createPipeline");
@@ -84,7 +84,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2CreatePipelineRequest** | [**RoutesV2CreatePipelineRequest**](RoutesV2CreatePipelineRequest.md)| Request body for creating a pipeline | |
+| **createPipelineRequest** | [**CreatePipelineRequest**](CreatePipelineRequest.md)| Request body for creating a pipeline | |
 
 ### Return type
 
@@ -1493,7 +1493,7 @@ public class Example {
 
 <a id="updatePipeline"></a>
 # **updatePipeline**
-> ModelsPipelineConfigV2 updatePipeline(organizationId, pipelineId, routesV2UpdatePipelineRequest)
+> ModelsPipelineConfigV2 updatePipeline(organizationId, pipelineId, updatePipelineRequest)
 
 Update pipeline
 
@@ -1529,9 +1529,9 @@ public class Example {
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String pipelineId = "pipelineId_example"; // String | Pipeline ID
-    RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest = new RoutesV2UpdatePipelineRequest(); // RoutesV2UpdatePipelineRequest | Request body for updating a pipeline
+    UpdatePipelineRequest updatePipelineRequest = new UpdatePipelineRequest(); // UpdatePipelineRequest | Request body for updating a pipeline
     try {
-      ModelsPipelineConfigV2 result = apiInstance.updatePipeline(organizationId, pipelineId, routesV2UpdatePipelineRequest);
+      ModelsPipelineConfigV2 result = apiInstance.updatePipeline(organizationId, pipelineId, updatePipelineRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PipelinesApi#updatePipeline");
@@ -1550,7 +1550,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **pipelineId** | **String**| Pipeline ID | |
-| **routesV2UpdatePipelineRequest** | [**RoutesV2UpdatePipelineRequest**](RoutesV2UpdatePipelineRequest.md)| Request body for updating a pipeline | |
+| **updatePipelineRequest** | [**UpdatePipelineRequest**](UpdatePipelineRequest.md)| Request body for updating a pipeline | |
 
 ### Return type
 
@@ -1574,7 +1574,7 @@ public class Example {
 
 <a id="updatePipelineEdge"></a>
 # **updatePipelineEdge**
-> updatePipelineEdge(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest)
+> updatePipelineEdge(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest)
 
 Update pipeline edge
 
@@ -1611,9 +1611,9 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String pipelineId = "pipelineId_example"; // String | Pipeline ID
     String edgeId = "edgeId_example"; // String | Edge ID
-    RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest = new RoutesV2PatchPipelineEdgeRequest(); // RoutesV2PatchPipelineEdgeRequest | Request body
+    UpdatePipelineEdgeRequest updatePipelineEdgeRequest = new UpdatePipelineEdgeRequest(); // UpdatePipelineEdgeRequest | Request body
     try {
-      apiInstance.updatePipelineEdge(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest);
+      apiInstance.updatePipelineEdge(organizationId, pipelineId, edgeId, updatePipelineEdgeRequest);
     } catch (ApiException e) {
       System.err.println("Exception when calling PipelinesApi#updatePipelineEdge");
       System.err.println("Status code: " + e.getCode());
@@ -1632,7 +1632,7 @@ public class Example {
 | **organizationId** | **String**| Organization ID | |
 | **pipelineId** | **String**| Pipeline ID | |
 | **edgeId** | **String**| Edge ID | |
-| **routesV2PatchPipelineEdgeRequest** | [**RoutesV2PatchPipelineEdgeRequest**](RoutesV2PatchPipelineEdgeRequest.md)| Request body | |
+| **updatePipelineEdgeRequest** | [**UpdatePipelineEdgeRequest**](UpdatePipelineEdgeRequest.md)| Request body | |
 
 ### Return type
 
@@ -1657,7 +1657,7 @@ null (empty response body)
 
 <a id="updatePipelineV1"></a>
 # **updatePipelineV1**
-> ModelsPipeline updatePipelineV1(organizationId, pipelineId, routesUpdatePipelineRequest)
+> ModelsPipeline updatePipelineV1(organizationId, pipelineId, updatePipelineV1Request)
 
 Update pipeline
 
@@ -1693,9 +1693,9 @@ public class Example {
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String pipelineId = "pipelineId_example"; // String | Pipeline ID
-    RoutesUpdatePipelineRequest routesUpdatePipelineRequest = new RoutesUpdatePipelineRequest(); // RoutesUpdatePipelineRequest | Request body for updating a pipeline
+    UpdatePipelineV1Request updatePipelineV1Request = new UpdatePipelineV1Request(); // UpdatePipelineV1Request | Request body for updating a pipeline
     try {
-      ModelsPipeline result = apiInstance.updatePipelineV1(organizationId, pipelineId, routesUpdatePipelineRequest);
+      ModelsPipeline result = apiInstance.updatePipelineV1(organizationId, pipelineId, updatePipelineV1Request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PipelinesApi#updatePipelineV1");
@@ -1714,7 +1714,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **pipelineId** | **String**| Pipeline ID | |
-| **routesUpdatePipelineRequest** | [**RoutesUpdatePipelineRequest**](RoutesUpdatePipelineRequest.md)| Request body for updating a pipeline | |
+| **updatePipelineV1Request** | [**UpdatePipelineV1Request**](UpdatePipelineV1Request.md)| Request body for updating a pipeline | |
 
 ### Return type
 

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  |
 |**lastIngestedTime** | **String** |  |  [optional] |
-|**status** | **String** |  |  |
+|**status** | **ModelsPipelineStatusValue** |  |  |
 
 
 

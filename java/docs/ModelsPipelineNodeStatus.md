@@ -21,7 +21,7 @@
 |**nodeId** | **String** |  |  [optional] |
 |**nodeSlug** | **String** |  |  [optional] |
 |**progress** | [**ModelsProgressEntries**](ModelsProgressEntries.md) |  |  [optional] |
-|**status** | **String** |  |  [optional] |
+|**status** | **ModelsPipelineStatusValue** |  |  [optional] |
 
 
 

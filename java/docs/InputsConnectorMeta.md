@@ -8,8 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**authType** | **String** |  |  [optional] |
-|**billingType** | **Integer** |  |  [optional] |
-|**category** | **String** |  |  [optional] |
+|**billingType** | **InputsBillingType** |  |  [optional] |
+|**category** | **ModelsInputConnectorCategory** |  |  [optional] |
 |**config** | **Object** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**house** | **String** |  |  [optional] |

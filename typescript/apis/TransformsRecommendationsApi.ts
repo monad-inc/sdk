@@ -8,10 +8,10 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
-import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3TransformRecommendationRequest';
 
 /**
  * no description
@@ -22,9 +22,9 @@ export class TransformsRecommendationsApiRequestFactory extends BaseAPIRequestFa
      * Analyze security data and provide transformation recommendations
      * Create transform recommendation
      * @param organizationId Organization ID
-     * @param routesV3TransformRecommendationRequest Security data to analyze
+     * @param createTransformRecommendationRequest Security data to analyze
      */
-    public async createTransformRecommendation(organizationId: string, routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest, _options?: Configuration): Promise<RequestContext> {
+    public async createTransformRecommendation(organizationId: string, createTransformRecommendationRequest: CreateTransformRecommendationRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -33,9 +33,9 @@ export class TransformsRecommendationsApiRequestFactory extends BaseAPIRequestFa
         }
 
 
-        // verify required parameter 'routesV3TransformRecommendationRequest' is not null or undefined
-        if (routesV3TransformRecommendationRequest === null || routesV3TransformRecommendationRequest === undefined) {
-            throw new RequiredError("TransformsRecommendationsApi", "createTransformRecommendation", "routesV3TransformRecommendationRequest");
+        // verify required parameter 'createTransformRecommendationRequest' is not null or undefined
+        if (createTransformRecommendationRequest === null || createTransformRecommendationRequest === undefined) {
+            throw new RequiredError("TransformsRecommendationsApi", "createTransformRecommendation", "createTransformRecommendationRequest");
         }
 
 
@@ -54,7 +54,7 @@ export class TransformsRecommendationsApiRequestFactory extends BaseAPIRequestFa
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV3TransformRecommendationRequest, "RoutesV3TransformRecommendationRequest", ""),
+            ObjectSerializer.serialize(createTransformRecommendationRequest, "CreateTransformRecommendationRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createConnection**
-> ModelsConnection createConnection(routesV3CreateConnectionRequest)
+> ModelsConnection createConnection(createConnectionRequest)
 
 Create a new connection with the provided details
 
@@ -30,14 +30,7 @@ const request: ConnectionsApiCreateConnectionRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating a connection
-  routesV3CreateConnectionRequest: {
-    description: "description_example",
-    name: "name_example",
-    saml: {
-      entityId: "entityId_example",
-      metadataUrl: "metadataUrl_example",
-    },
-  },
+  createConnectionRequest: null,
 };
 
 const data = await apiInstance.createConnection(request);
@@ -49,7 +42,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3CreateConnectionRequest** | **RoutesV3CreateConnectionRequest**| Request body for creating a connection |
+ **createConnectionRequest** | **CreateConnectionRequest**| Request body for creating a connection |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -254,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateConnection**
-> ModelsConnection updateConnection(routesV3UpdateConnectionRequest)
+> ModelsConnection updateConnection(updateConnectionRequest)
 
 Update an existing connection
 
@@ -274,10 +267,7 @@ const request: ConnectionsApiUpdateConnectionRequest = {
     // Connection ID to update
   connectionId: "connection_id_example",
     // Request body for updating a connection
-  routesV3UpdateConnectionRequest: {
-    description: "description_example",
-    name: "name_example",
-  },
+  updateConnectionRequest: null,
 };
 
 const data = await apiInstance.updateConnection(request);
@@ -289,7 +279,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3UpdateConnectionRequest** | **RoutesV3UpdateConnectionRequest**| Request body for updating a connection |
+ **updateConnectionRequest** | **UpdateConnectionRequest**| Request body for updating a connection |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **connectionId** | [**string**] | Connection ID to update | defaults to undefined
 

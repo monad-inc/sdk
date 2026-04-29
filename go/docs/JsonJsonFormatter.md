@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | Pointer to **string** |  | [optional] 
-**Type** | **string** |  | 
+**Type** | [**JsonFormatType**](JsonFormatType.md) |  | 
 
 ## Methods
 
 ### NewJsonJsonFormatter
 
-`func NewJsonJsonFormatter(type_ string, ) *JsonJsonFormatter`
+`func NewJsonJsonFormatter(type_ JsonFormatType, ) *JsonJsonFormatter`
 
 NewJsonJsonFormatter instantiates a new JsonJsonFormatter object
 This constructor will assign default values to properties that have it defined,
@@ -53,20 +53,20 @@ HasKey returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *JsonJsonFormatter) GetType() string`
+`func (o *JsonJsonFormatter) GetType() JsonFormatType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *JsonJsonFormatter) GetTypeOk() (*string, bool)`
+`func (o *JsonJsonFormatter) GetTypeOk() (*JsonFormatType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *JsonJsonFormatter) SetType(v string)`
+`func (o *JsonJsonFormatter) SetType(v JsonFormatType)`
 
 SetType sets Type field to given value.
 

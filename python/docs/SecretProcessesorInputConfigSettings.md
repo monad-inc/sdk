@@ -96,7 +96,7 @@ Name | Type | Description | Notes
 **state** | **str** | State to filter issues by e.g. opened, closed | [optional] 
 **with_label_details** | **bool** | Include label details in the response | [optional] 
 **bucket_name** | **str** | The name of the Google Cloud Storage bucket to use | [optional] 
-**auth_type** | **str** | AuthType is the type of authentication used for the input | [optional] 
+**auth_type** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | [optional] 
 **email** | **str** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **alert_type** | **str** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **embed** | **str** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 

@@ -1,7 +1,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -19,14 +19,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
+from monad.models.create_input_request import CreateInputRequest
 from monad.models.models_input import ModelsInput
 from monad.models.models_input_list import ModelsInputList
+from monad.models.replace_input_request import ReplaceInputRequest
 from monad.models.routes_get_input_response import RoutesGetInputResponse
-from monad.models.routes_v2_create_input_request import RoutesV2CreateInputRequest
-from monad.models.routes_v2_put_input_request import RoutesV2PutInputRequest
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
-from monad.models.routes_v2_test_input_connection_request import RoutesV2TestInputConnectionRequest
-from monad.models.routes_v2_update_input_request import RoutesV2UpdateInputRequest
+from monad.models.test_input_connection_request import TestInputConnectionRequest
+from monad.models.update_input_request import UpdateInputRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -50,7 +50,7 @@ class OrganizationInputsApi:
     def create_input(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_input_request: Annotated[RoutesV2CreateInputRequest, Field(description="Input configuration")],
+        create_input_request: Annotated[CreateInputRequest, Field(description="Input configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -71,8 +71,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_input_request: Input configuration (required)
-        :type routes_v2_create_input_request: RoutesV2CreateInputRequest
+        :param create_input_request: Input configuration (required)
+        :type create_input_request: CreateInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -99,7 +99,7 @@ class OrganizationInputsApi:
 
         _param = self._create_input_serialize(
             organization_id=organization_id,
-            routes_v2_create_input_request=routes_v2_create_input_request,
+            create_input_request=create_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -127,7 +127,7 @@ class OrganizationInputsApi:
     def create_input_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_input_request: Annotated[RoutesV2CreateInputRequest, Field(description="Input configuration")],
+        create_input_request: Annotated[CreateInputRequest, Field(description="Input configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -148,8 +148,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_input_request: Input configuration (required)
-        :type routes_v2_create_input_request: RoutesV2CreateInputRequest
+        :param create_input_request: Input configuration (required)
+        :type create_input_request: CreateInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -176,7 +176,7 @@ class OrganizationInputsApi:
 
         _param = self._create_input_serialize(
             organization_id=organization_id,
-            routes_v2_create_input_request=routes_v2_create_input_request,
+            create_input_request=create_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -204,7 +204,7 @@ class OrganizationInputsApi:
     def create_input_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_create_input_request: Annotated[RoutesV2CreateInputRequest, Field(description="Input configuration")],
+        create_input_request: Annotated[CreateInputRequest, Field(description="Input configuration")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -225,8 +225,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_create_input_request: Input configuration (required)
-        :type routes_v2_create_input_request: RoutesV2CreateInputRequest
+        :param create_input_request: Input configuration (required)
+        :type create_input_request: CreateInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -253,7 +253,7 @@ class OrganizationInputsApi:
 
         _param = self._create_input_serialize(
             organization_id=organization_id,
-            routes_v2_create_input_request=routes_v2_create_input_request,
+            create_input_request=create_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -276,7 +276,7 @@ class OrganizationInputsApi:
     def _create_input_serialize(
         self,
         organization_id,
-        routes_v2_create_input_request,
+        create_input_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -309,8 +309,8 @@ class OrganizationInputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_create_input_request is not None:
-            _body_params = routes_v2_create_input_request
+        if create_input_request is not None:
+            _body_params = create_input_request
 
 
         # set the HTTP header `Accept`
@@ -1217,7 +1217,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
-        routes_v2_put_input_request: Annotated[RoutesV2PutInputRequest, Field(description="Input configuration update")],
+        replace_input_request: Annotated[ReplaceInputRequest, Field(description="Input configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1240,8 +1240,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param input_id: Input ID (required)
         :type input_id: str
-        :param routes_v2_put_input_request: Input configuration update (required)
-        :type routes_v2_put_input_request: RoutesV2PutInputRequest
+        :param replace_input_request: Input configuration update (required)
+        :type replace_input_request: ReplaceInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1269,7 +1269,7 @@ class OrganizationInputsApi:
         _param = self._replace_input_serialize(
             organization_id=organization_id,
             input_id=input_id,
-            routes_v2_put_input_request=routes_v2_put_input_request,
+            replace_input_request=replace_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1299,7 +1299,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
-        routes_v2_put_input_request: Annotated[RoutesV2PutInputRequest, Field(description="Input configuration update")],
+        replace_input_request: Annotated[ReplaceInputRequest, Field(description="Input configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1322,8 +1322,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param input_id: Input ID (required)
         :type input_id: str
-        :param routes_v2_put_input_request: Input configuration update (required)
-        :type routes_v2_put_input_request: RoutesV2PutInputRequest
+        :param replace_input_request: Input configuration update (required)
+        :type replace_input_request: ReplaceInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1351,7 +1351,7 @@ class OrganizationInputsApi:
         _param = self._replace_input_serialize(
             organization_id=organization_id,
             input_id=input_id,
-            routes_v2_put_input_request=routes_v2_put_input_request,
+            replace_input_request=replace_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1381,7 +1381,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
-        routes_v2_put_input_request: Annotated[RoutesV2PutInputRequest, Field(description="Input configuration update")],
+        replace_input_request: Annotated[ReplaceInputRequest, Field(description="Input configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1404,8 +1404,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param input_id: Input ID (required)
         :type input_id: str
-        :param routes_v2_put_input_request: Input configuration update (required)
-        :type routes_v2_put_input_request: RoutesV2PutInputRequest
+        :param replace_input_request: Input configuration update (required)
+        :type replace_input_request: ReplaceInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1433,7 +1433,7 @@ class OrganizationInputsApi:
         _param = self._replace_input_serialize(
             organization_id=organization_id,
             input_id=input_id,
-            routes_v2_put_input_request=routes_v2_put_input_request,
+            replace_input_request=replace_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1458,7 +1458,7 @@ class OrganizationInputsApi:
         self,
         organization_id,
         input_id,
-        routes_v2_put_input_request,
+        replace_input_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -1493,8 +1493,8 @@ class OrganizationInputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_put_input_request is not None:
-            _body_params = routes_v2_put_input_request
+        if replace_input_request is not None:
+            _body_params = replace_input_request
 
 
         # set the HTTP header `Accept`
@@ -1547,7 +1547,7 @@ class OrganizationInputsApi:
     def test_input_connection(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_input_connection_request: Annotated[RoutesV2TestInputConnectionRequest, Field(description="Input configuration to test")],
+        test_input_connection_request: Annotated[TestInputConnectionRequest, Field(description="Input configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1567,8 +1567,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_input_connection_request: Input configuration to test (required)
-        :type routes_v2_test_input_connection_request: RoutesV2TestInputConnectionRequest
+        :param test_input_connection_request: Input configuration to test (required)
+        :type test_input_connection_request: TestInputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1593,7 +1593,7 @@ class OrganizationInputsApi:
 
         _param = self._test_input_connection_serialize(
             organization_id=organization_id,
-            routes_v2_test_input_connection_request=routes_v2_test_input_connection_request,
+            test_input_connection_request=test_input_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1620,7 +1620,7 @@ class OrganizationInputsApi:
     def test_input_connection_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_input_connection_request: Annotated[RoutesV2TestInputConnectionRequest, Field(description="Input configuration to test")],
+        test_input_connection_request: Annotated[TestInputConnectionRequest, Field(description="Input configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1640,8 +1640,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_input_connection_request: Input configuration to test (required)
-        :type routes_v2_test_input_connection_request: RoutesV2TestInputConnectionRequest
+        :param test_input_connection_request: Input configuration to test (required)
+        :type test_input_connection_request: TestInputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1666,7 +1666,7 @@ class OrganizationInputsApi:
 
         _param = self._test_input_connection_serialize(
             organization_id=organization_id,
-            routes_v2_test_input_connection_request=routes_v2_test_input_connection_request,
+            test_input_connection_request=test_input_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1693,7 +1693,7 @@ class OrganizationInputsApi:
     def test_input_connection_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_input_connection_request: Annotated[RoutesV2TestInputConnectionRequest, Field(description="Input configuration to test")],
+        test_input_connection_request: Annotated[TestInputConnectionRequest, Field(description="Input configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1713,8 +1713,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_input_connection_request: Input configuration to test (required)
-        :type routes_v2_test_input_connection_request: RoutesV2TestInputConnectionRequest
+        :param test_input_connection_request: Input configuration to test (required)
+        :type test_input_connection_request: TestInputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1739,7 +1739,7 @@ class OrganizationInputsApi:
 
         _param = self._test_input_connection_serialize(
             organization_id=organization_id,
-            routes_v2_test_input_connection_request=routes_v2_test_input_connection_request,
+            test_input_connection_request=test_input_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1761,7 +1761,7 @@ class OrganizationInputsApi:
     def _test_input_connection_serialize(
         self,
         organization_id,
-        routes_v2_test_input_connection_request,
+        test_input_connection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1789,8 +1789,8 @@ class OrganizationInputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_test_input_connection_request is not None:
-            _body_params = routes_v2_test_input_connection_request
+        if test_input_connection_request is not None:
+            _body_params = test_input_connection_request
 
 
         # set the HTTP header `Accept`
@@ -1844,7 +1844,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
-        routes_v2_update_input_request: Annotated[RoutesV2UpdateInputRequest, Field(description="Input configuration update")],
+        update_input_request: Annotated[UpdateInputRequest, Field(description="Input configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1867,8 +1867,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param input_id: Input ID (required)
         :type input_id: str
-        :param routes_v2_update_input_request: Input configuration update (required)
-        :type routes_v2_update_input_request: RoutesV2UpdateInputRequest
+        :param update_input_request: Input configuration update (required)
+        :type update_input_request: UpdateInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1896,7 +1896,7 @@ class OrganizationInputsApi:
         _param = self._update_input_serialize(
             organization_id=organization_id,
             input_id=input_id,
-            routes_v2_update_input_request=routes_v2_update_input_request,
+            update_input_request=update_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1926,7 +1926,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
-        routes_v2_update_input_request: Annotated[RoutesV2UpdateInputRequest, Field(description="Input configuration update")],
+        update_input_request: Annotated[UpdateInputRequest, Field(description="Input configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -1949,8 +1949,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param input_id: Input ID (required)
         :type input_id: str
-        :param routes_v2_update_input_request: Input configuration update (required)
-        :type routes_v2_update_input_request: RoutesV2UpdateInputRequest
+        :param update_input_request: Input configuration update (required)
+        :type update_input_request: UpdateInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1978,7 +1978,7 @@ class OrganizationInputsApi:
         _param = self._update_input_serialize(
             organization_id=organization_id,
             input_id=input_id,
-            routes_v2_update_input_request=routes_v2_update_input_request,
+            update_input_request=update_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2008,7 +2008,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
-        routes_v2_update_input_request: Annotated[RoutesV2UpdateInputRequest, Field(description="Input configuration update")],
+        update_input_request: Annotated[UpdateInputRequest, Field(description="Input configuration update")],
         test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
@@ -2031,8 +2031,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param input_id: Input ID (required)
         :type input_id: str
-        :param routes_v2_update_input_request: Input configuration update (required)
-        :type routes_v2_update_input_request: RoutesV2UpdateInputRequest
+        :param update_input_request: Input configuration update (required)
+        :type update_input_request: UpdateInputRequest
         :param test_connection: Test connection before creating the input
         :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -2060,7 +2060,7 @@ class OrganizationInputsApi:
         _param = self._update_input_serialize(
             organization_id=organization_id,
             input_id=input_id,
-            routes_v2_update_input_request=routes_v2_update_input_request,
+            update_input_request=update_input_request,
             test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2085,7 +2085,7 @@ class OrganizationInputsApi:
         self,
         organization_id,
         input_id,
-        routes_v2_update_input_request,
+        update_input_request,
         test_connection,
         _request_auth,
         _content_type,
@@ -2120,8 +2120,8 @@ class OrganizationInputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_update_input_request is not None:
-            _body_params = routes_v2_update_input_request
+        if update_input_request is not None:
+            _body_params = update_input_request
 
 
         # set the HTTP header `Accept`

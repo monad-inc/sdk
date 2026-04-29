@@ -1,7 +1,7 @@
 /*
 Monad API
 
-This is the monad API
+Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
 API version: 1.0
 Contact: support@monad.com
@@ -20,8 +20,7 @@ var _ MappedNullable = &ZendeskAuditLogsSettingsConfig{}
 
 // ZendeskAuditLogsSettingsConfig Zendesk Audit Logs settings
 type ZendeskAuditLogsSettingsConfig struct {
-	// AuthType is the type of authentication used for the input
-	AuthType *string `json:"auth_type,omitempty"`
+	AuthType *ZendeskAuditLogsAuthType `json:"auth_type,omitempty"`
 	// This is the email address registered with your Zendesk account
 	EmailAddress *string `json:"email_address,omitempty"`
 	// This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo
@@ -48,9 +47,9 @@ func NewZendeskAuditLogsSettingsConfigWithDefaults() *ZendeskAuditLogsSettingsCo
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *ZendeskAuditLogsSettingsConfig) GetAuthType() string {
+func (o *ZendeskAuditLogsSettingsConfig) GetAuthType() ZendeskAuditLogsAuthType {
 	if o == nil || IsNil(o.AuthType) {
-		var ret string
+		var ret ZendeskAuditLogsAuthType
 		return ret
 	}
 	return *o.AuthType
@@ -58,7 +57,7 @@ func (o *ZendeskAuditLogsSettingsConfig) GetAuthType() string {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZendeskAuditLogsSettingsConfig) GetAuthTypeOk() (*string, bool) {
+func (o *ZendeskAuditLogsSettingsConfig) GetAuthTypeOk() (*ZendeskAuditLogsAuthType, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -74,8 +73,8 @@ func (o *ZendeskAuditLogsSettingsConfig) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *ZendeskAuditLogsSettingsConfig) SetAuthType(v string) {
+// SetAuthType gets a reference to the given ZendeskAuditLogsAuthType and assigns it to the AuthType field.
+func (o *ZendeskAuditLogsSettingsConfig) SetAuthType(v ZendeskAuditLogsAuthType) {
 	o.AuthType = &v
 }
 

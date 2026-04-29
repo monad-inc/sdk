@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Action** | Pointer to **string** |  | [optional] 
+**Action** | Pointer to [**ModelsQuotaAction**](ModelsQuotaAction.md) |  | [optional] 
 **BillingAccountId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **CurrentUsage** | Pointer to **int32** |  | [optional] 
@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **EndAt** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **LimitAmount** | Pointer to **int32** |  | [optional] 
-**LimitType** | Pointer to **string** |  | [optional] 
-**LimitUnit** | Pointer to **string** |  | [optional] 
+**LimitType** | Pointer to [**ModelsQuotaLimitType**](ModelsQuotaLimitType.md) |  | [optional] 
+**LimitUnit** | Pointer to [**ModelsQuotaLimitUnit**](ModelsQuotaLimitUnit.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **StartAt** | Pointer to **string** |  | [optional] 
-**Timeframe** | Pointer to **string** |  | [optional] 
+**Timeframe** | Pointer to [**ModelsQuotaTimeframe**](ModelsQuotaTimeframe.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAction
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetAction() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetAction() ModelsQuotaAction`
 
 GetAction returns the Action field if non-nil, zero value otherwise.
 
 ### GetActionOk
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetActionOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetActionOk() (*ModelsQuotaAction, bool)`
 
 GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAction
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetAction(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetAction(v ModelsQuotaAction)`
 
 SetAction sets Action field to given value.
 
@@ -241,20 +241,20 @@ HasLimitAmount returns a boolean if a field has been set.
 
 ### GetLimitType
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitType() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitType() ModelsQuotaLimitType`
 
 GetLimitType returns the LimitType field if non-nil, zero value otherwise.
 
 ### GetLimitTypeOk
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitTypeOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitTypeOk() (*ModelsQuotaLimitType, bool)`
 
 GetLimitTypeOk returns a tuple with the LimitType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLimitType
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitType(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitType(v ModelsQuotaLimitType)`
 
 SetLimitType sets LimitType field to given value.
 
@@ -266,20 +266,20 @@ HasLimitType returns a boolean if a field has been set.
 
 ### GetLimitUnit
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnit() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnit() ModelsQuotaLimitUnit`
 
 GetLimitUnit returns the LimitUnit field if non-nil, zero value otherwise.
 
 ### GetLimitUnitOk
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnitOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetLimitUnitOk() (*ModelsQuotaLimitUnit, bool)`
 
 GetLimitUnitOk returns a tuple with the LimitUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLimitUnit
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitUnit(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetLimitUnit(v ModelsQuotaLimitUnit)`
 
 SetLimitUnit sets LimitUnit field to given value.
 
@@ -366,20 +366,20 @@ HasStartAt returns a boolean if a field has been set.
 
 ### GetTimeframe
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframe() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframe() ModelsQuotaTimeframe`
 
 GetTimeframe returns the Timeframe field if non-nil, zero value otherwise.
 
 ### GetTimeframeOk
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframeOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) GetTimeframeOk() (*ModelsQuotaTimeframe, bool)`
 
 GetTimeframeOk returns a tuple with the Timeframe field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimeframe
 
-`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetTimeframe(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsQuota) SetTimeframe(v ModelsQuotaTimeframe)`
 
 SetTimeframe sets Timeframe field to given value.
 

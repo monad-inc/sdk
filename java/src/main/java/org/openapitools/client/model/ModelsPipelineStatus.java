@@ -1,6 +1,6 @@
 /*
  * Monad API
- * This is the monad API
+ * Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@monad.com
@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsDataUsage;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
+import org.openapitools.client.model.ModelsPipelineStatusValue;
 import org.openapitools.client.model.ModelsProgressEntries;
 
 import com.google.gson.Gson;
@@ -128,7 +129,7 @@ public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
-  private String status;
+  private ModelsPipelineStatusValue status;
 
   public ModelsPipelineStatus() {
   }
@@ -407,7 +408,7 @@ public class ModelsPipelineStatus {
   }
 
 
-  public ModelsPipelineStatus status(@javax.annotation.Nullable String status) {
+  public ModelsPipelineStatus status(@javax.annotation.Nullable ModelsPipelineStatusValue status) {
     this.status = status;
     return this;
   }
@@ -417,11 +418,11 @@ public class ModelsPipelineStatus {
    * @return status
    */
   @javax.annotation.Nullable
-  public String getStatus() {
+  public ModelsPipelineStatusValue getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable String status) {
+  public void setStatus(@javax.annotation.Nullable ModelsPipelineStatusValue status) {
     this.status = status;
   }
 
@@ -566,8 +567,9 @@ public class ModelsPipelineStatus {
       if (jsonObj.get("progress") != null && !jsonObj.get("progress").isJsonNull()) {
         ModelsProgressEntries.validateJsonElement(jsonObj.get("progress"));
       }
-      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        ModelsPipelineStatusValue.validateJsonElement(jsonObj.get("status"));
       }
   }
 

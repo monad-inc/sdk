@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**definitionRef** | [**ModelsConnectorInfo**](ModelsConnectorInfo.md) |  |  [optional] |
 |**id** | **String** |  |  [optional] |
-|**kind** | **String** |  |  [optional] |
+|**kind** | **ModelsComponentType** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 

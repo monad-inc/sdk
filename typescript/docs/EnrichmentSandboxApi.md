@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **enrichmentSandbox**
-> RoutesV3EnrichmentSandboxResponse enrichmentSandbox(routesV3EnrichmentSandboxRequest)
+> RoutesV3EnrichmentSandboxResponse enrichmentSandbox(enrichmentSandboxRequest)
 
 Apply a enrichment configuration to a JSON record
 
@@ -26,21 +26,7 @@ const request: EnrichmentSandboxApiEnrichmentSandboxRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Enrichment configuration and record
-  routesV3EnrichmentSandboxRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    record: [
-      1,
-    ],
-    typeId: "typeId_example",
-    useMockedData: true,
-  },
+  enrichmentSandboxRequest: null,
 };
 
 const data = await apiInstance.enrichmentSandbox(request);
@@ -52,7 +38,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV3EnrichmentSandboxRequest** | **RoutesV3EnrichmentSandboxRequest**| Enrichment configuration and record |
+ **enrichmentSandboxRequest** | **EnrichmentSandboxRequest**| Enrichment configuration and record |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 

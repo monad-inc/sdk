@@ -10,7 +10,12 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
 import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
+import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
+import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
+import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
+import { ApplyConditionV2Request } from '../models/ApplyConditionV2Request';
+import { ApplyTransformationV2Request } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
@@ -24,6 +29,7 @@ import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
+import { AwssqsoutputQueueType } from '../models/AwssqsoutputQueueType';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
 import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
@@ -83,15 +89,33 @@ import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolida
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
 import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
+import { CommonAuthType } from '../models/CommonAuthType';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
+import { CreateAPIKeyRequest } from '../models/CreateAPIKeyRequest';
+import { CreateAlertRuleRequest } from '../models/CreateAlertRuleRequest';
+import { CreateBillingAccountRequest } from '../models/CreateBillingAccountRequest';
+import { CreateBillingAccountRoleRequest } from '../models/CreateBillingAccountRoleRequest';
+import { CreateBillingAccountSubscriptionRequest } from '../models/CreateBillingAccountSubscriptionRequest';
+import { CreateBillingAccountUserRoleRequest } from '../models/CreateBillingAccountUserRoleRequest';
+import { CreateChildOrganizationRequest } from '../models/CreateChildOrganizationRequest';
+import { CreateConnectionRequest } from '../models/CreateConnectionRequest';
+import { CreateEnrichmentRequest } from '../models/CreateEnrichmentRequest';
+import { CreateInputRequest } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
+import { CreateOutputRequest } from '../models/CreateOutputRequest';
+import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
+import { CreateRoleRequest } from '../models/CreateRoleRequest';
+import { CreateSecretRequest } from '../models/CreateSecretRequest';
+import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
+import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
@@ -109,6 +133,8 @@ import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhere
 import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
 import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
+import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { EncryptAESVariant } from '../models/EncryptAESVariant';
@@ -118,17 +144,22 @@ import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
 import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
+import { EnrichmentSandboxRequest } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
+import { ExportTransformRequest } from '../models/ExportTransformRequest';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FormatterType } from '../models/FormatterType';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GenerateRecordRequest } from '../models/GenerateRecordRequest';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
+import { GetTokenRequest } from '../models/GetTokenRequest';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -148,10 +179,12 @@ import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettings
 import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
 import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
+import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
+import { InputsBillingType } from '../models/InputsBillingType';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
@@ -160,9 +193,14 @@ import { IssuesReportSettingsConfig } from '../models/IssuesReportSettingsConfig
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
+import { JsonFormatType } from '../models/JsonFormatType';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KafkaAcks } from '../models/KafkaAcks';
+import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
+import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
 import { KafkaSettingsConfig } from '../models/KafkaSettingsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
@@ -186,6 +224,7 @@ import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
+import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -193,25 +232,32 @@ import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRoleUser';
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
+import { ModelsBillingProductType } from '../models/ModelsBillingProductType';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsComponentType } from '../models/ModelsComponentType';
 import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
+import { ModelsConditionOperator } from '../models/ModelsConditionOperator';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsElseAction } from '../models/ModelsElseAction';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
+import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
+import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
 import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
+import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
@@ -225,9 +271,15 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
+import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
+import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
+import { ModelsQuotaAction } from '../models/ModelsQuotaAction';
+import { ModelsQuotaLimitType } from '../models/ModelsQuotaLimitType';
+import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
+import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
@@ -269,6 +321,7 @@ import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsCo
 import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
 import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
 import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
+import { OpensearchAuthMode } from '../models/OpensearchAuthMode';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
@@ -277,12 +330,14 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
+import { OutputsBillingType } from '../models/OutputsBillingType';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
 import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
+import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
@@ -308,6 +363,9 @@ import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
+import { ReplaceEnrichmentRequest } from '../models/ReplaceEnrichmentRequest';
+import { ReplaceInputRequest } from '../models/ReplaceInputRequest';
+import { ReplaceOutputRequest } from '../models/ReplaceOutputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
 import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
@@ -421,6 +479,7 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
+import { SetStorageTypeCostRequest } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
 import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
@@ -459,6 +518,9 @@ import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulner
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { TestEnrichmentConnectionRequest } from '../models/TestEnrichmentConnectionRequest';
+import { TestInputConnectionRequest } from '../models/TestInputConnectionRequest';
+import { TestOutputConnectionRequest } from '../models/TestOutputConnectionRequest';
 import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
@@ -471,7 +533,22 @@ import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter } from '../models/TypesStringFilter';
 import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
 import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
+import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
+import { UpdateAlertRuleRequest } from '../models/UpdateAlertRuleRequest';
+import { UpdateBillingAccountRequest } from '../models/UpdateBillingAccountRequest';
+import { UpdateBillingAccountRoleRequest } from '../models/UpdateBillingAccountRoleRequest';
+import { UpdateChildOrganizationRequest } from '../models/UpdateChildOrganizationRequest';
+import { UpdateConnectionRequest } from '../models/UpdateConnectionRequest';
+import { UpdateEnrichmentRequest } from '../models/UpdateEnrichmentRequest';
+import { UpdateInputRequest } from '../models/UpdateInputRequest';
+import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
+import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
+import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
+import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
+import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
+import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
+import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -482,6 +559,7 @@ import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindi
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
 import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
+import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
 import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
 import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
 
@@ -498,10 +576,10 @@ export interface AlertRulesApiCreateAlertRuleRequest {
     organizationId: string
     /**
      * Request body for creating an alert rule
-     * @type RoutesV3CreateAlertRuleRequest
+     * @type CreateAlertRuleRequest
      * @memberof AlertRulesApicreateAlertRule
      */
-    routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest
+    createAlertRuleRequest: CreateAlertRuleRequest
 }
 
 export interface AlertRulesApiDeleteAlertRuleRequest {
@@ -592,10 +670,10 @@ export interface AlertRulesApiUpdateAlertRuleRequest {
     alertRuleId: string
     /**
      * Request body for updating an alert rule
-     * @type RoutesV3UpdateAlertRuleRequest
+     * @type UpdateAlertRuleRequest
      * @memberof AlertRulesApiupdateAlertRule
      */
-    routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest
+    updateAlertRuleRequest: UpdateAlertRuleRequest
 }
 
 export class ObjectAlertRulesApi {
@@ -611,7 +689,7 @@ export class ObjectAlertRulesApi {
      * @param param the request object
      */
     public createAlertRuleWithHttpInfo(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
-        return this.api.createAlertRuleWithHttpInfo(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
+        return this.api.createAlertRuleWithHttpInfo(param.organizationId, param.createAlertRuleRequest,  options).toPromise();
     }
 
     /**
@@ -620,7 +698,7 @@ export class ObjectAlertRulesApi {
      * @param param the request object
      */
     public createAlertRule(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
-        return this.api.createAlertRule(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
+        return this.api.createAlertRule(param.organizationId, param.createAlertRuleRequest,  options).toPromise();
     }
 
     /**
@@ -719,7 +797,7 @@ export class ObjectAlertRulesApi {
      * @param param the request object
      */
     public updateAlertRuleWithHttpInfo(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
-        return this.api.updateAlertRuleWithHttpInfo(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
+        return this.api.updateAlertRuleWithHttpInfo(param.organizationId, param.alertRuleId, param.updateAlertRuleRequest,  options).toPromise();
     }
 
     /**
@@ -728,7 +806,7 @@ export class ObjectAlertRulesApi {
      * @param param the request object
      */
     public updateAlertRule(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
-        return this.api.updateAlertRule(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
+        return this.api.updateAlertRule(param.organizationId, param.alertRuleId, param.updateAlertRuleRequest,  options).toPromise();
     }
 
 }
@@ -898,10 +976,10 @@ import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} fr
 export interface AuthenticationApiGetTokenRequest {
     /**
      * Login request
-     * @type RoutesLoginRequest
+     * @type GetTokenRequest
      * @memberof AuthenticationApigetToken
      */
-    routesLoginRequest: RoutesLoginRequest
+    getTokenRequest: GetTokenRequest
 }
 
 export interface AuthenticationApiLoginCallbackHandlerRequest {
@@ -926,7 +1004,7 @@ export class ObjectAuthenticationApi {
      * @param param the request object
      */
     public getTokenWithHttpInfo(param: AuthenticationApiGetTokenRequest, options?: ConfigurationOptions): Promise<HttpInfo<AuthenticationtypesTokenResponse>> {
-        return this.api.getTokenWithHttpInfo(param.routesLoginRequest,  options).toPromise();
+        return this.api.getTokenWithHttpInfo(param.getTokenRequest,  options).toPromise();
     }
 
     /**
@@ -935,7 +1013,7 @@ export class ObjectAuthenticationApi {
      * @param param the request object
      */
     public getToken(param: AuthenticationApiGetTokenRequest, options?: ConfigurationOptions): Promise<AuthenticationtypesTokenResponse> {
-        return this.api.getToken(param.routesLoginRequest,  options).toPromise();
+        return this.api.getToken(param.getTokenRequest,  options).toPromise();
     }
 
     /**
@@ -1000,10 +1078,10 @@ import { BillingAccountsApiRequestFactory, BillingAccountsApiResponseProcessor} 
 export interface BillingAccountsApiCreateBillingAccountRequest {
     /**
      * Request body for creating a billing account
-     * @type RoutesV2CreateBillingAccountRequest
+     * @type CreateBillingAccountRequest
      * @memberof BillingAccountsApicreateBillingAccount
      */
-    routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest
+    createBillingAccountRequest: CreateBillingAccountRequest
 }
 
 export interface BillingAccountsApiDeleteBillingAccountRequest {
@@ -1053,10 +1131,10 @@ export interface BillingAccountsApiUpdateBillingAccountRequest {
     billingAccountId: string
     /**
      * Request body for updating a billing account
-     * @type RoutesV2UpdateBillingAccountRequest
+     * @type UpdateBillingAccountRequest
      * @memberof BillingAccountsApiupdateBillingAccount
      */
-    routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest
+    updateBillingAccountRequest: UpdateBillingAccountRequest
 }
 
 export class ObjectBillingAccountsApi {
@@ -1072,7 +1150,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public createBillingAccountWithHttpInfo(param: BillingAccountsApiCreateBillingAccountRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
-        return this.api.createBillingAccountWithHttpInfo(param.routesV2CreateBillingAccountRequest,  options).toPromise();
+        return this.api.createBillingAccountWithHttpInfo(param.createBillingAccountRequest,  options).toPromise();
     }
 
     /**
@@ -1081,7 +1159,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public createBillingAccount(param: BillingAccountsApiCreateBillingAccountRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
-        return this.api.createBillingAccount(param.routesV2CreateBillingAccountRequest,  options).toPromise();
+        return this.api.createBillingAccount(param.createBillingAccountRequest,  options).toPromise();
     }
 
     /**
@@ -1144,7 +1222,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public updateBillingAccountWithHttpInfo(param: BillingAccountsApiUpdateBillingAccountRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
-        return this.api.updateBillingAccountWithHttpInfo(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
+        return this.api.updateBillingAccountWithHttpInfo(param.billingAccountId, param.updateBillingAccountRequest,  options).toPromise();
     }
 
     /**
@@ -1153,7 +1231,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public updateBillingAccount(param: BillingAccountsApiUpdateBillingAccountRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
-        return this.api.updateBillingAccount(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
+        return this.api.updateBillingAccount(param.billingAccountId, param.updateBillingAccountRequest,  options).toPromise();
     }
 
 }
@@ -1171,10 +1249,10 @@ export interface BillingAccountsRBACApiCreateBillingAccountRoleRequest {
     billingAccountId: string
     /**
      * Create Billing Account Role Request
-     * @type RoutesV2CreateBillingAccountRoleRequest
+     * @type CreateBillingAccountRoleRequest
      * @memberof BillingAccountsRBACApicreateBillingAccountRole
      */
-    routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest
+    createBillingAccountRoleRequest: CreateBillingAccountRoleRequest
 }
 
 export interface BillingAccountsRBACApiCreateBillingAccountUserRoleRequest {
@@ -1194,10 +1272,10 @@ export interface BillingAccountsRBACApiCreateBillingAccountUserRoleRequest {
     roleId: string
     /**
      * Create Billing Account User Role Request
-     * @type RoutesV2CreatebillingAccountUserRoleRequest
+     * @type CreateBillingAccountUserRoleRequest
      * @memberof BillingAccountsRBACApicreateBillingAccountUserRole
      */
-    routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest
+    createBillingAccountUserRoleRequest: CreateBillingAccountUserRoleRequest
 }
 
 export interface BillingAccountsRBACApiDeleteBillingAccountRoleRequest {
@@ -1288,10 +1366,10 @@ export interface BillingAccountsRBACApiUpdateBillingAccountRoleRequest {
     roleId: string
     /**
      * Update Billing Account Role Request
-     * @type RoutesV2UpdateBillingAccountRoleRequest
+     * @type UpdateBillingAccountRoleRequest
      * @memberof BillingAccountsRBACApiupdateBillingAccountRole
      */
-    routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest
+    updateBillingAccountRoleRequest: UpdateBillingAccountRoleRequest
 }
 
 export class ObjectBillingAccountsRBACApi {
@@ -1307,7 +1385,7 @@ export class ObjectBillingAccountsRBACApi {
      * @param param the request object
      */
     public createBillingAccountRoleWithHttpInfo(param: BillingAccountsRBACApiCreateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
-        return this.api.createBillingAccountRoleWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
+        return this.api.createBillingAccountRoleWithHttpInfo(param.billingAccountId, param.createBillingAccountRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1316,7 +1394,7 @@ export class ObjectBillingAccountsRBACApi {
      * @param param the request object
      */
     public createBillingAccountRole(param: BillingAccountsRBACApiCreateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
-        return this.api.createBillingAccountRole(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
+        return this.api.createBillingAccountRole(param.billingAccountId, param.createBillingAccountRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1325,7 +1403,7 @@ export class ObjectBillingAccountsRBACApi {
      * @param param the request object
      */
     public createBillingAccountUserRoleWithHttpInfo(param: BillingAccountsRBACApiCreateBillingAccountUserRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.createBillingAccountUserRoleWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+        return this.api.createBillingAccountUserRoleWithHttpInfo(param.billingAccountId, param.roleId, param.createBillingAccountUserRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1334,7 +1412,7 @@ export class ObjectBillingAccountsRBACApi {
      * @param param the request object
      */
     public createBillingAccountUserRole(param: BillingAccountsRBACApiCreateBillingAccountUserRoleRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.createBillingAccountUserRole(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+        return this.api.createBillingAccountUserRole(param.billingAccountId, param.roleId, param.createBillingAccountUserRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1433,7 +1511,7 @@ export class ObjectBillingAccountsRBACApi {
      * @param param the request object
      */
     public updateBillingAccountRoleWithHttpInfo(param: BillingAccountsRBACApiUpdateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
-        return this.api.updateBillingAccountRoleWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+        return this.api.updateBillingAccountRoleWithHttpInfo(param.billingAccountId, param.roleId, param.updateBillingAccountRoleRequest,  options).toPromise();
     }
 
     /**
@@ -1442,7 +1520,7 @@ export class ObjectBillingAccountsRBACApi {
      * @param param the request object
      */
     public updateBillingAccountRole(param: BillingAccountsRBACApiUpdateBillingAccountRoleRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
-        return this.api.updateBillingAccountRole(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+        return this.api.updateBillingAccountRole(param.billingAccountId, param.roleId, param.updateBillingAccountRoleRequest,  options).toPromise();
     }
 
 }
@@ -1470,10 +1548,10 @@ export interface BillingProductsApiCreateBillingAccountSubscriptionRequest {
     billingAccountId: string
     /**
      * Request body for creating a billing subscription
-     * @type RoutesV2CreateBillingAccountSubscriptionRequest
+     * @type CreateBillingAccountSubscriptionRequest
      * @memberof BillingProductsApicreateBillingAccountSubscription
      */
-    routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest
+    createBillingAccountSubscriptionRequest: CreateBillingAccountSubscriptionRequest
 }
 
 export interface BillingProductsApiGetBillingAccountSubscriptionRequest {
@@ -1541,7 +1619,7 @@ export class ObjectBillingProductsApi {
      * @param param the request object
      */
     public createBillingAccountSubscriptionWithHttpInfo(param: BillingProductsApiCreateBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
-        return this.api.createBillingAccountSubscriptionWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
+        return this.api.createBillingAccountSubscriptionWithHttpInfo(param.billingAccountId, param.createBillingAccountSubscriptionRequest,  options).toPromise();
     }
 
     /**
@@ -1550,7 +1628,7 @@ export class ObjectBillingProductsApi {
      * @param param the request object
      */
     public createBillingAccountSubscription(param: BillingProductsApiCreateBillingAccountSubscriptionRequest, options?: ConfigurationOptions): Promise<RoutesV2CreateBillingAccountSubscriptionResponse> {
-        return this.api.createBillingAccountSubscription(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
+        return this.api.createBillingAccountSubscription(param.billingAccountId, param.createBillingAccountSubscriptionRequest,  options).toPromise();
     }
 
     /**
@@ -1597,10 +1675,10 @@ import { ConditionSandboxApiRequestFactory, ConditionSandboxApiResponseProcessor
 export interface ConditionSandboxApiApplyConditionV2Request {
     /**
      * Condition and record
-     * @type RoutesV2ApplyConditionRequest
+     * @type ApplyConditionV2Request
      * @memberof ConditionSandboxApiapplyConditionV2
      */
-    routesV2ApplyConditionRequest: RoutesV2ApplyConditionRequest
+    applyConditionV2Request: ApplyConditionV2Request
 }
 
 export class ObjectConditionSandboxApi {
@@ -1616,7 +1694,7 @@ export class ObjectConditionSandboxApi {
      * @param param the request object
      */
     public applyConditionV2WithHttpInfo(param: ConditionSandboxApiApplyConditionV2Request, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyConditionResponse>> {
-        return this.api.applyConditionV2WithHttpInfo(param.routesV2ApplyConditionRequest,  options).toPromise();
+        return this.api.applyConditionV2WithHttpInfo(param.applyConditionV2Request,  options).toPromise();
     }
 
     /**
@@ -1625,7 +1703,7 @@ export class ObjectConditionSandboxApi {
      * @param param the request object
      */
     public applyConditionV2(param: ConditionSandboxApiApplyConditionV2Request, options?: ConfigurationOptions): Promise<RoutesV2ApplyConditionResponse> {
-        return this.api.applyConditionV2(param.routesV2ApplyConditionRequest,  options).toPromise();
+        return this.api.applyConditionV2(param.applyConditionV2Request,  options).toPromise();
     }
 
 }
@@ -1676,10 +1754,10 @@ export interface ConnectionsApiCreateConnectionRequest {
     organizationId: string
     /**
      * Request body for creating a connection
-     * @type RoutesV3CreateConnectionRequest
+     * @type CreateConnectionRequest
      * @memberof ConnectionsApicreateConnection
      */
-    routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest
+    createConnectionRequest: CreateConnectionRequest
 }
 
 export interface ConnectionsApiDeleteConnectionRequest {
@@ -1757,10 +1835,10 @@ export interface ConnectionsApiUpdateConnectionRequest {
     connectionId: string
     /**
      * Request body for updating a connection
-     * @type RoutesV3UpdateConnectionRequest
+     * @type UpdateConnectionRequest
      * @memberof ConnectionsApiupdateConnection
      */
-    routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest
+    updateConnectionRequest: UpdateConnectionRequest
 }
 
 export class ObjectConnectionsApi {
@@ -1776,7 +1854,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public createConnectionWithHttpInfo(param: ConnectionsApiCreateConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.createConnectionWithHttpInfo(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
+        return this.api.createConnectionWithHttpInfo(param.organizationId, param.createConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1785,7 +1863,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public createConnection(param: ConnectionsApiCreateConnectionRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.createConnection(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
+        return this.api.createConnection(param.organizationId, param.createConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1848,7 +1926,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public updateConnectionWithHttpInfo(param: ConnectionsApiUpdateConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.updateConnectionWithHttpInfo(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
+        return this.api.updateConnectionWithHttpInfo(param.organizationId, param.connectionId, param.updateConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1857,7 +1935,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public updateConnection(param: ConnectionsApiUpdateConnectionRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.updateConnection(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
+        return this.api.updateConnection(param.organizationId, param.connectionId, param.updateConnectionRequest,  options).toPromise();
     }
 
 }
@@ -1875,10 +1953,10 @@ export interface EnrichmentSandboxApiEnrichmentSandboxRequest {
     organizationId: string
     /**
      * Enrichment configuration and record
-     * @type RoutesV3EnrichmentSandboxRequest
+     * @type EnrichmentSandboxRequest
      * @memberof EnrichmentSandboxApienrichmentSandbox
      */
-    routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest
+    enrichmentSandboxRequest: EnrichmentSandboxRequest
 }
 
 export class ObjectEnrichmentSandboxApi {
@@ -1894,7 +1972,7 @@ export class ObjectEnrichmentSandboxApi {
      * @param param the request object
      */
     public enrichmentSandboxWithHttpInfo(param: EnrichmentSandboxApiEnrichmentSandboxRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
-        return this.api.enrichmentSandboxWithHttpInfo(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
+        return this.api.enrichmentSandboxWithHttpInfo(param.organizationId, param.enrichmentSandboxRequest,  options).toPromise();
     }
 
     /**
@@ -1903,7 +1981,7 @@ export class ObjectEnrichmentSandboxApi {
      * @param param the request object
      */
     public enrichmentSandbox(param: EnrichmentSandboxApiEnrichmentSandboxRequest, options?: ConfigurationOptions): Promise<RoutesV3EnrichmentSandboxResponse> {
-        return this.api.enrichmentSandbox(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
+        return this.api.enrichmentSandbox(param.organizationId, param.enrichmentSandboxRequest,  options).toPromise();
     }
 
 }
@@ -2560,10 +2638,10 @@ export interface OrganizationAPIKeysApiCreateAPIKeyRequest {
     organizationId: string
     /**
      * Request body for creating an API key
-     * @type RoutesV2CreateAPIKeyRequest
+     * @type CreateAPIKeyRequest
      * @memberof OrganizationAPIKeysApicreateAPIKey
      */
-    routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest
+    createAPIKeyRequest: CreateAPIKeyRequest
 }
 
 export interface OrganizationAPIKeysApiDeleteAPIKeyRequest {
@@ -2658,10 +2736,10 @@ export interface OrganizationAPIKeysApiUpdateAPIKeyRequest {
     apiKeyId: string
     /**
      * Request body for updating an API key
-     * @type RoutesV2UpdateAPIKeyRequest
+     * @type UpdateAPIKeyRequest
      * @memberof OrganizationAPIKeysApiupdateAPIKey
      */
-    routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest
+    updateAPIKeyRequest: UpdateAPIKeyRequest
 }
 
 export class ObjectOrganizationAPIKeysApi {
@@ -2677,7 +2755,7 @@ export class ObjectOrganizationAPIKeysApi {
      * @param param the request object
      */
     public createAPIKeyWithHttpInfo(param: OrganizationAPIKeysApiCreateAPIKeyRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
-        return this.api.createAPIKeyWithHttpInfo(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
+        return this.api.createAPIKeyWithHttpInfo(param.organizationId, param.createAPIKeyRequest,  options).toPromise();
     }
 
     /**
@@ -2686,7 +2764,7 @@ export class ObjectOrganizationAPIKeysApi {
      * @param param the request object
      */
     public createAPIKey(param: OrganizationAPIKeysApiCreateAPIKeyRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
-        return this.api.createAPIKey(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
+        return this.api.createAPIKey(param.organizationId, param.createAPIKeyRequest,  options).toPromise();
     }
 
     /**
@@ -2767,7 +2845,7 @@ export class ObjectOrganizationAPIKeysApi {
      * @param param the request object
      */
     public updateAPIKeyWithHttpInfo(param: OrganizationAPIKeysApiUpdateAPIKeyRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
-        return this.api.updateAPIKeyWithHttpInfo(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
+        return this.api.updateAPIKeyWithHttpInfo(param.organizationId, param.apiKeyId, param.updateAPIKeyRequest,  options).toPromise();
     }
 
     /**
@@ -2776,7 +2854,7 @@ export class ObjectOrganizationAPIKeysApi {
      * @param param the request object
      */
     public updateAPIKey(param: OrganizationAPIKeysApiUpdateAPIKeyRequest, options?: ConfigurationOptions): Promise<ModelsAPIKey> {
-        return this.api.updateAPIKey(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
+        return this.api.updateAPIKey(param.organizationId, param.apiKeyId, param.updateAPIKeyRequest,  options).toPromise();
     }
 
 }
@@ -2794,10 +2872,10 @@ export interface OrganizationEnrichmentsApiCreateEnrichmentRequest {
     organizationId: string
     /**
      * Enrichment configuration
-     * @type RoutesV3CreateEnrichmentRequest
+     * @type CreateEnrichmentRequest
      * @memberof OrganizationEnrichmentsApicreateEnrichment
      */
-    routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest
+    createEnrichmentRequest: CreateEnrichmentRequest
     /**
      * Test connection before creating the enrichment
      * Defaults to: undefined
@@ -2882,10 +2960,10 @@ export interface OrganizationEnrichmentsApiReplaceEnrichmentRequest {
     enrichmentId: string
     /**
      * Enrichment configuration update
-     * @type RoutesV3PutEnrichmentRequest
+     * @type ReplaceEnrichmentRequest
      * @memberof OrganizationEnrichmentsApireplaceEnrichment
      */
-    routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest
+    replaceEnrichmentRequest: ReplaceEnrichmentRequest
     /**
      * Test connection before updating the enrichment
      * Defaults to: undefined
@@ -2905,10 +2983,10 @@ export interface OrganizationEnrichmentsApiTestEnrichmentConnectionRequest {
     organizationId: string
     /**
      * Enrichment configuration to test
-     * @type RoutesV3TestEnrichmentConnectionRequest
+     * @type TestEnrichmentConnectionRequest
      * @memberof OrganizationEnrichmentsApitestEnrichmentConnection
      */
-    routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest
+    testEnrichmentConnectionRequest: TestEnrichmentConnectionRequest
 }
 
 export interface OrganizationEnrichmentsApiUpdateEnrichmentRequest {
@@ -2928,10 +3006,10 @@ export interface OrganizationEnrichmentsApiUpdateEnrichmentRequest {
     enrichmentId: string
     /**
      * Enrichment configuration update
-     * @type RoutesV3UpdateEnrichmentRequest
+     * @type UpdateEnrichmentRequest
      * @memberof OrganizationEnrichmentsApiupdateEnrichment
      */
-    routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest
+    updateEnrichmentRequest: UpdateEnrichmentRequest
     /**
      * Test connection before updating the enrichment
      * Defaults to: undefined
@@ -2954,7 +3032,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public createEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiCreateEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
-        return this.api.createEnrichmentWithHttpInfo(param.organizationId, param.routesV3CreateEnrichmentRequest, param.testConnection,  options).toPromise();
+        return this.api.createEnrichmentWithHttpInfo(param.organizationId, param.createEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -2963,7 +3041,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public createEnrichment(param: OrganizationEnrichmentsApiCreateEnrichmentRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
-        return this.api.createEnrichment(param.organizationId, param.routesV3CreateEnrichmentRequest, param.testConnection,  options).toPromise();
+        return this.api.createEnrichment(param.organizationId, param.createEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3026,7 +3104,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public replaceEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiReplaceEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
-        return this.api.replaceEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
+        return this.api.replaceEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId, param.replaceEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3035,7 +3113,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public replaceEnrichment(param: OrganizationEnrichmentsApiReplaceEnrichmentRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
-        return this.api.replaceEnrichment(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
+        return this.api.replaceEnrichment(param.organizationId, param.enrichmentId, param.replaceEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3044,7 +3122,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public testEnrichmentConnectionWithHttpInfo(param: OrganizationEnrichmentsApiTestEnrichmentConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
-        return this.api.testEnrichmentConnectionWithHttpInfo(param.organizationId, param.routesV3TestEnrichmentConnectionRequest,  options).toPromise();
+        return this.api.testEnrichmentConnectionWithHttpInfo(param.organizationId, param.testEnrichmentConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3053,7 +3131,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public testEnrichmentConnection(param: OrganizationEnrichmentsApiTestEnrichmentConnectionRequest, options?: ConfigurationOptions): Promise<RoutesV3SuccessResponse> {
-        return this.api.testEnrichmentConnection(param.organizationId, param.routesV3TestEnrichmentConnectionRequest,  options).toPromise();
+        return this.api.testEnrichmentConnection(param.organizationId, param.testEnrichmentConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3062,7 +3140,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public updateEnrichmentWithHttpInfo(param: OrganizationEnrichmentsApiUpdateEnrichmentRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
-        return this.api.updateEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId, param.routesV3UpdateEnrichmentRequest, param.testConnection,  options).toPromise();
+        return this.api.updateEnrichmentWithHttpInfo(param.organizationId, param.enrichmentId, param.updateEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3071,7 +3149,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * @param param the request object
      */
     public updateEnrichment(param: OrganizationEnrichmentsApiUpdateEnrichmentRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
-        return this.api.updateEnrichment(param.organizationId, param.enrichmentId, param.routesV3UpdateEnrichmentRequest, param.testConnection,  options).toPromise();
+        return this.api.updateEnrichment(param.organizationId, param.enrichmentId, param.updateEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
 }
@@ -3089,10 +3167,10 @@ export interface OrganizationInputsApiCreateInputRequest {
     organizationId: string
     /**
      * Input configuration
-     * @type RoutesV2CreateInputRequest
+     * @type CreateInputRequest
      * @memberof OrganizationInputsApicreateInput
      */
-    routesV2CreateInputRequest: RoutesV2CreateInputRequest
+    createInputRequest: CreateInputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
@@ -3177,10 +3255,10 @@ export interface OrganizationInputsApiReplaceInputRequest {
     inputId: string
     /**
      * Input configuration update
-     * @type RoutesV2PutInputRequest
+     * @type ReplaceInputRequest
      * @memberof OrganizationInputsApireplaceInput
      */
-    routesV2PutInputRequest: RoutesV2PutInputRequest
+    replaceInputRequest: ReplaceInputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
@@ -3200,10 +3278,10 @@ export interface OrganizationInputsApiTestInputConnectionRequest {
     organizationId: string
     /**
      * Input configuration to test
-     * @type RoutesV2TestInputConnectionRequest
+     * @type TestInputConnectionRequest
      * @memberof OrganizationInputsApitestInputConnection
      */
-    routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest
+    testInputConnectionRequest: TestInputConnectionRequest
 }
 
 export interface OrganizationInputsApiUpdateInputRequest {
@@ -3223,10 +3301,10 @@ export interface OrganizationInputsApiUpdateInputRequest {
     inputId: string
     /**
      * Input configuration update
-     * @type RoutesV2UpdateInputRequest
+     * @type UpdateInputRequest
      * @memberof OrganizationInputsApiupdateInput
      */
-    routesV2UpdateInputRequest: RoutesV2UpdateInputRequest
+    updateInputRequest: UpdateInputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
@@ -3249,7 +3327,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public createInputWithHttpInfo(param: OrganizationInputsApiCreateInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.createInputWithHttpInfo(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
+        return this.api.createInputWithHttpInfo(param.organizationId, param.createInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3258,7 +3336,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public createInput(param: OrganizationInputsApiCreateInputRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.createInput(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
+        return this.api.createInput(param.organizationId, param.createInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3321,7 +3399,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public replaceInputWithHttpInfo(param: OrganizationInputsApiReplaceInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.replaceInputWithHttpInfo(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
+        return this.api.replaceInputWithHttpInfo(param.organizationId, param.inputId, param.replaceInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3330,7 +3408,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public replaceInput(param: OrganizationInputsApiReplaceInputRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.replaceInput(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
+        return this.api.replaceInput(param.organizationId, param.inputId, param.replaceInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3339,7 +3417,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public testInputConnectionWithHttpInfo(param: OrganizationInputsApiTestInputConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        return this.api.testInputConnectionWithHttpInfo(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
+        return this.api.testInputConnectionWithHttpInfo(param.organizationId, param.testInputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3348,7 +3426,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public testInputConnection(param: OrganizationInputsApiTestInputConnectionRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
-        return this.api.testInputConnection(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
+        return this.api.testInputConnection(param.organizationId, param.testInputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3357,7 +3435,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public updateInputWithHttpInfo(param: OrganizationInputsApiUpdateInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.updateInputWithHttpInfo(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
+        return this.api.updateInputWithHttpInfo(param.organizationId, param.inputId, param.updateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3366,7 +3444,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public updateInput(param: OrganizationInputsApiUpdateInputRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.updateInput(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
+        return this.api.updateInput(param.organizationId, param.inputId, param.updateInputRequest, param.testConnection,  options).toPromise();
     }
 
 }
@@ -3430,10 +3508,10 @@ export interface OrganizationOutputsApiCreateOutputRequest {
     organizationId: string
     /**
      * Output configuration
-     * @type RoutesV2CreateOutputRequest
+     * @type CreateOutputRequest
      * @memberof OrganizationOutputsApicreateOutput
      */
-    routesV2CreateOutputRequest: RoutesV2CreateOutputRequest
+    createOutputRequest: CreateOutputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
@@ -3518,10 +3596,10 @@ export interface OrganizationOutputsApiReplaceOutputRequest {
     outputId: string
     /**
      * Output configuration update
-     * @type RoutesV2PutOutputRequest
+     * @type ReplaceOutputRequest
      * @memberof OrganizationOutputsApireplaceOutput
      */
-    routesV2PutOutputRequest: RoutesV2PutOutputRequest
+    replaceOutputRequest: ReplaceOutputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
@@ -3541,10 +3619,10 @@ export interface OrganizationOutputsApiTestOutputConnectionRequest {
     organizationId: string
     /**
      * Output configuration to test
-     * @type RoutesV2TestOutputConnectionRequest
+     * @type TestOutputConnectionRequest
      * @memberof OrganizationOutputsApitestOutputConnection
      */
-    routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest
+    testOutputConnectionRequest: TestOutputConnectionRequest
 }
 
 export interface OrganizationOutputsApiUpdateOutputRequest {
@@ -3564,10 +3642,10 @@ export interface OrganizationOutputsApiUpdateOutputRequest {
     outputId: string
     /**
      * Output configuration update
-     * @type RoutesV2UpdateOutputRequest
+     * @type UpdateOutputRequest
      * @memberof OrganizationOutputsApiupdateOutput
      */
-    routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest
+    updateOutputRequest: UpdateOutputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
@@ -3590,7 +3668,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public createOutputWithHttpInfo(param: OrganizationOutputsApiCreateOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.createOutputWithHttpInfo(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
+        return this.api.createOutputWithHttpInfo(param.organizationId, param.createOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3599,7 +3677,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public createOutput(param: OrganizationOutputsApiCreateOutputRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.createOutput(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
+        return this.api.createOutput(param.organizationId, param.createOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3662,7 +3740,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public replaceOutputWithHttpInfo(param: OrganizationOutputsApiReplaceOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.replaceOutputWithHttpInfo(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
+        return this.api.replaceOutputWithHttpInfo(param.organizationId, param.outputId, param.replaceOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3671,7 +3749,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public replaceOutput(param: OrganizationOutputsApiReplaceOutputRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.replaceOutput(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
+        return this.api.replaceOutput(param.organizationId, param.outputId, param.replaceOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3680,7 +3758,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public testOutputConnectionWithHttpInfo(param: OrganizationOutputsApiTestOutputConnectionRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        return this.api.testOutputConnectionWithHttpInfo(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
+        return this.api.testOutputConnectionWithHttpInfo(param.organizationId, param.testOutputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3689,7 +3767,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public testOutputConnection(param: OrganizationOutputsApiTestOutputConnectionRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
-        return this.api.testOutputConnection(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
+        return this.api.testOutputConnection(param.organizationId, param.testOutputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -3698,7 +3776,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public updateOutputWithHttpInfo(param: OrganizationOutputsApiUpdateOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.updateOutputWithHttpInfo(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
+        return this.api.updateOutputWithHttpInfo(param.organizationId, param.outputId, param.updateOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -3707,7 +3785,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public updateOutput(param: OrganizationOutputsApiUpdateOutputRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.updateOutput(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
+        return this.api.updateOutput(param.organizationId, param.outputId, param.updateOutputRequest, param.testConnection,  options).toPromise();
     }
 
 }
@@ -3785,10 +3863,10 @@ export interface OrganizationTransformsApiCreateTransformRequest {
     organizationId: string
     /**
      * Request body for creating a transform
-     * @type RoutesCreateTransformRequest
+     * @type CreateTransformRequest
      * @memberof OrganizationTransformsApicreateTransform
      */
-    routesCreateTransformRequest: RoutesCreateTransformRequest
+    createTransformRequest: CreateTransformRequest
 }
 
 export interface OrganizationTransformsApiDeleteOrganizationTransformRequest {
@@ -3885,7 +3963,7 @@ export class ObjectOrganizationTransformsApi {
      * @param param the request object
      */
     public createTransformWithHttpInfo(param: OrganizationTransformsApiCreateTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
-        return this.api.createTransformWithHttpInfo(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
+        return this.api.createTransformWithHttpInfo(param.organizationId, param.createTransformRequest,  options).toPromise();
     }
 
     /**
@@ -3894,7 +3972,7 @@ export class ObjectOrganizationTransformsApi {
      * @param param the request object
      */
     public createTransform(param: OrganizationTransformsApiCreateTransformRequest, options?: ConfigurationOptions): Promise<ModelsTransform> {
-        return this.api.createTransform(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
+        return this.api.createTransform(param.organizationId, param.createTransformRequest,  options).toPromise();
     }
 
     /**
@@ -4183,10 +4261,10 @@ export interface OrganizationsApiCreateChildOrganizationRequest {
     organizationId: string
     /**
      * Request body
-     * @type RoutesV3CreateChildOrganizationRequest
+     * @type CreateChildOrganizationRequest
      * @memberof OrganizationsApicreateChildOrganization
      */
-    routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest
+    createChildOrganizationRequest: CreateChildOrganizationRequest
 }
 
 export interface OrganizationsApiCreateOrganizationRequest {
@@ -4356,10 +4434,10 @@ export interface OrganizationsApiUpdateChildOrganizationRequest {
     childOrganizationId: string
     /**
      * Request body
-     * @type RoutesV3UpdateChildOrganizationRequest
+     * @type UpdateChildOrganizationRequest
      * @memberof OrganizationsApiupdateChildOrganization
      */
-    routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest
+    updateChildOrganizationRequest: UpdateChildOrganizationRequest
 }
 
 export interface OrganizationsApiUpdateOrganizationRequest {
@@ -4391,7 +4469,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public createChildOrganizationWithHttpInfo(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
-        return this.api.createChildOrganizationWithHttpInfo(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
+        return this.api.createChildOrganizationWithHttpInfo(param.organizationId, param.createChildOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4400,7 +4478,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public createChildOrganization(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.api.createChildOrganization(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
+        return this.api.createChildOrganization(param.organizationId, param.createChildOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4517,7 +4595,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public updateChildOrganizationWithHttpInfo(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
-        return this.api.updateChildOrganizationWithHttpInfo(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
+        return this.api.updateChildOrganizationWithHttpInfo(param.organizationId, param.childOrganizationId, param.updateChildOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4526,7 +4604,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public updateChildOrganization(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
-        return this.api.updateChildOrganization(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
+        return this.api.updateChildOrganization(param.organizationId, param.childOrganizationId, param.updateChildOrganizationRequest,  options).toPromise();
     }
 
     /**
@@ -4768,10 +4846,10 @@ export interface OrganizationsStorageCostApiSetStorageTypeCostRequest {
     organizationId: string
     /**
      * Cost configuration
-     * @type RoutesV2SetStorageTypeCostRequest
+     * @type SetStorageTypeCostRequest
      * @memberof OrganizationsStorageCostApisetStorageTypeCost
      */
-    routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest
+    setStorageTypeCostRequest: SetStorageTypeCostRequest
 }
 
 export interface OrganizationsStorageCostApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
@@ -4904,7 +4982,7 @@ export class ObjectOrganizationsStorageCostApi {
      * @param param the request object
      */
     public setStorageTypeCostWithHttpInfo(param: OrganizationsStorageCostApiSetStorageTypeCostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
-        return this.api.setStorageTypeCostWithHttpInfo(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
+        return this.api.setStorageTypeCostWithHttpInfo(param.organizationId, param.setStorageTypeCostRequest,  options).toPromise();
     }
 
     /**
@@ -4913,7 +4991,7 @@ export class ObjectOrganizationsStorageCostApi {
      * @param param the request object
      */
     public setStorageTypeCost(param: OrganizationsStorageCostApiSetStorageTypeCostRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
-        return this.api.setStorageTypeCost(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
+        return this.api.setStorageTypeCost(param.organizationId, param.setStorageTypeCostRequest,  options).toPromise();
     }
 
     /**
@@ -5064,10 +5142,10 @@ export interface PipelinesApiCreatePipelineRequest {
     organizationId: string
     /**
      * Request body for creating a pipeline
-     * @type RoutesV2CreatePipelineRequest
+     * @type CreatePipelineRequest
      * @memberof PipelinesApicreatePipeline
      */
-    routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest
+    createPipelineRequest: CreatePipelineRequest
 }
 
 export interface PipelinesApiDeletePipelineRequest {
@@ -5558,10 +5636,10 @@ export interface PipelinesApiUpdatePipelineRequest {
     pipelineId: string
     /**
      * Request body for updating a pipeline
-     * @type RoutesV2UpdatePipelineRequest
+     * @type UpdatePipelineRequest
      * @memberof PipelinesApiupdatePipeline
      */
-    routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest
+    updatePipelineRequest: UpdatePipelineRequest
 }
 
 export interface PipelinesApiUpdatePipelineEdgeRequest {
@@ -5588,10 +5666,10 @@ export interface PipelinesApiUpdatePipelineEdgeRequest {
     edgeId: string
     /**
      * Request body
-     * @type RoutesV2PatchPipelineEdgeRequest
+     * @type UpdatePipelineEdgeRequest
      * @memberof PipelinesApiupdatePipelineEdge
      */
-    routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest
+    updatePipelineEdgeRequest: UpdatePipelineEdgeRequest
 }
 
 export interface PipelinesApiUpdatePipelineV1Request {
@@ -5611,10 +5689,10 @@ export interface PipelinesApiUpdatePipelineV1Request {
     pipelineId: string
     /**
      * Request body for updating a pipeline
-     * @type RoutesUpdatePipelineRequest
+     * @type UpdatePipelineV1Request
      * @memberof PipelinesApiupdatePipelineV1
      */
-    routesUpdatePipelineRequest: RoutesUpdatePipelineRequest
+    updatePipelineV1Request: UpdatePipelineV1Request
 }
 
 export class ObjectPipelinesApi {
@@ -5630,7 +5708,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public createPipelineWithHttpInfo(param: PipelinesApiCreatePipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        return this.api.createPipelineWithHttpInfo(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
+        return this.api.createPipelineWithHttpInfo(param.organizationId, param.createPipelineRequest,  options).toPromise();
     }
 
     /**
@@ -5639,7 +5717,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public createPipeline(param: PipelinesApiCreatePipelineRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
-        return this.api.createPipeline(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
+        return this.api.createPipeline(param.organizationId, param.createPipelineRequest,  options).toPromise();
     }
 
     /**
@@ -5954,7 +6032,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public updatePipelineWithHttpInfo(param: PipelinesApiUpdatePipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        return this.api.updatePipelineWithHttpInfo(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
+        return this.api.updatePipelineWithHttpInfo(param.organizationId, param.pipelineId, param.updatePipelineRequest,  options).toPromise();
     }
 
     /**
@@ -5963,7 +6041,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public updatePipeline(param: PipelinesApiUpdatePipelineRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
-        return this.api.updatePipeline(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
+        return this.api.updatePipeline(param.organizationId, param.pipelineId, param.updatePipelineRequest,  options).toPromise();
     }
 
     /**
@@ -5972,7 +6050,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public updatePipelineEdgeWithHttpInfo(param: PipelinesApiUpdatePipelineEdgeRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.updatePipelineEdgeWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
+        return this.api.updatePipelineEdgeWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId, param.updatePipelineEdgeRequest,  options).toPromise();
     }
 
     /**
@@ -5981,7 +6059,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public updatePipelineEdge(param: PipelinesApiUpdatePipelineEdgeRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.updatePipelineEdge(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
+        return this.api.updatePipelineEdge(param.organizationId, param.pipelineId, param.edgeId, param.updatePipelineEdgeRequest,  options).toPromise();
     }
 
     /**
@@ -5990,7 +6068,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public updatePipelineV1WithHttpInfo(param: PipelinesApiUpdatePipelineV1Request, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
-        return this.api.updatePipelineV1WithHttpInfo(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
+        return this.api.updatePipelineV1WithHttpInfo(param.organizationId, param.pipelineId, param.updatePipelineV1Request,  options).toPromise();
     }
 
     /**
@@ -5999,7 +6077,7 @@ export class ObjectPipelinesApi {
      * @param param the request object
      */
     public updatePipelineV1(param: PipelinesApiUpdatePipelineV1Request, options?: ConfigurationOptions): Promise<ModelsPipeline> {
-        return this.api.updatePipelineV1(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
+        return this.api.updatePipelineV1(param.organizationId, param.pipelineId, param.updatePipelineV1Request,  options).toPromise();
     }
 
 }
@@ -6084,10 +6162,10 @@ export interface RolesApiCreateRoleRequest {
     organizationId: string
     /**
      * Request body for creating a role
-     * @type RoutesV2CreateRoleV2Request
+     * @type CreateRoleRequest
      * @memberof RolesApicreateRole
      */
-    routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request
+    createRoleRequest: CreateRoleRequest
 }
 
 export interface RolesApiDeleteRoleRequest {
@@ -6165,10 +6243,10 @@ export interface RolesApiUpdateRoleRequest {
     roleId: string
     /**
      * Request body for updating a role
-     * @type RoutesV2UpdateRoleV2Request
+     * @type UpdateRoleRequest
      * @memberof RolesApiupdateRole
      */
-    routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request
+    updateRoleRequest: UpdateRoleRequest
 }
 
 export class ObjectRolesApi {
@@ -6184,7 +6262,7 @@ export class ObjectRolesApi {
      * @param param the request object
      */
     public createRoleWithHttpInfo(param: RolesApiCreateRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
-        return this.api.createRoleWithHttpInfo(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
+        return this.api.createRoleWithHttpInfo(param.organizationId, param.createRoleRequest,  options).toPromise();
     }
 
     /**
@@ -6193,7 +6271,7 @@ export class ObjectRolesApi {
      * @param param the request object
      */
     public createRole(param: RolesApiCreateRoleRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
-        return this.api.createRole(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
+        return this.api.createRole(param.organizationId, param.createRoleRequest,  options).toPromise();
     }
 
     /**
@@ -6256,7 +6334,7 @@ export class ObjectRolesApi {
      * @param param the request object
      */
     public updateRoleWithHttpInfo(param: RolesApiUpdateRoleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
-        return this.api.updateRoleWithHttpInfo(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
+        return this.api.updateRoleWithHttpInfo(param.organizationId, param.roleId, param.updateRoleRequest,  options).toPromise();
     }
 
     /**
@@ -6265,7 +6343,7 @@ export class ObjectRolesApi {
      * @param param the request object
      */
     public updateRole(param: RolesApiUpdateRoleRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
-        return this.api.updateRole(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
+        return this.api.updateRole(param.organizationId, param.roleId, param.updateRoleRequest,  options).toPromise();
     }
 
 }
@@ -6283,10 +6361,10 @@ export interface SecretsApiCreateSecretRequest {
     organizationId: string
     /**
      * Secret to create
-     * @type RoutesV2CreateOrUpdateSecretRequest
+     * @type CreateSecretRequest
      * @memberof SecretsApicreateSecret
      */
-    routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest
+    createSecretRequest: CreateSecretRequest
 }
 
 export interface SecretsApiDeleteSecretRequest {
@@ -6364,10 +6442,10 @@ export interface SecretsApiUpdateSecretRequest {
     secretId: string
     /**
      * Secret updates
-     * @type RoutesV2CreateOrUpdateSecretRequest
+     * @type UpdateSecretRequest
      * @memberof SecretsApiupdateSecret
      */
-    routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest
+    updateSecretRequest: UpdateSecretRequest
 }
 
 export class ObjectSecretsApi {
@@ -6383,7 +6461,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public createSecretWithHttpInfo(param: SecretsApiCreateSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        return this.api.createSecretWithHttpInfo(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+        return this.api.createSecretWithHttpInfo(param.organizationId, param.createSecretRequest,  options).toPromise();
     }
 
     /**
@@ -6392,7 +6470,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public createSecret(param: SecretsApiCreateSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
-        return this.api.createSecret(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+        return this.api.createSecret(param.organizationId, param.createSecretRequest,  options).toPromise();
     }
 
     /**
@@ -6455,7 +6533,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public updateSecretWithHttpInfo(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        return this.api.updateSecretWithHttpInfo(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+        return this.api.updateSecretWithHttpInfo(param.organizationId, param.secretId, param.updateSecretRequest,  options).toPromise();
     }
 
     /**
@@ -6464,7 +6542,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public updateSecret(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
-        return this.api.updateSecret(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
+        return this.api.updateSecret(param.organizationId, param.secretId, param.updateSecretRequest,  options).toPromise();
     }
 
 }
@@ -6482,28 +6560,28 @@ export interface TransformSandboxApiApplyTransformationRequest {
     organizationId: string
     /**
      * Transform configuration and record
-     * @type RoutesV2ApplyTransformationRequest
+     * @type ApplyTransformationV2Request
      * @memberof TransformSandboxApiapplyTransformation
      */
-    routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
+    applyTransformationV2Request: ApplyTransformationV2Request
 }
 
 export interface TransformSandboxApiApplyTransformationV2Request {
     /**
      * Transform configuration and record
-     * @type RoutesV2ApplyTransformationRequest
+     * @type ApplyTransformationV2Request
      * @memberof TransformSandboxApiapplyTransformationV2
      */
-    routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
+    applyTransformationV2Request: ApplyTransformationV2Request
 }
 
 export interface TransformSandboxApiGenerateRecordRequest {
     /**
      * Record generation parameters
-     * @type RoutesV2GenerateRecordRequest
+     * @type GenerateRecordRequest
      * @memberof TransformSandboxApigenerateRecord
      */
-    routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest
+    generateRecordRequest: GenerateRecordRequest
 }
 
 export interface TransformSandboxApiListTemplatesRequest {
@@ -6528,7 +6606,7 @@ export class ObjectTransformSandboxApi {
      * @param param the request object
      */
     public applyTransformationWithHttpInfo(param: TransformSandboxApiApplyTransformationRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
-        return this.api.applyTransformationWithHttpInfo(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
+        return this.api.applyTransformationWithHttpInfo(param.organizationId, param.applyTransformationV2Request,  options).toPromise();
     }
 
     /**
@@ -6537,7 +6615,7 @@ export class ObjectTransformSandboxApi {
      * @param param the request object
      */
     public applyTransformation(param: TransformSandboxApiApplyTransformationRequest, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
-        return this.api.applyTransformation(param.organizationId, param.routesV2ApplyTransformationRequest,  options).toPromise();
+        return this.api.applyTransformation(param.organizationId, param.applyTransformationV2Request,  options).toPromise();
     }
 
     /**
@@ -6546,7 +6624,7 @@ export class ObjectTransformSandboxApi {
      * @param param the request object
      */
     public applyTransformationV2WithHttpInfo(param: TransformSandboxApiApplyTransformationV2Request, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
-        return this.api.applyTransformationV2WithHttpInfo(param.routesV2ApplyTransformationRequest,  options).toPromise();
+        return this.api.applyTransformationV2WithHttpInfo(param.applyTransformationV2Request,  options).toPromise();
     }
 
     /**
@@ -6555,7 +6633,7 @@ export class ObjectTransformSandboxApi {
      * @param param the request object
      */
     public applyTransformationV2(param: TransformSandboxApiApplyTransformationV2Request, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
-        return this.api.applyTransformationV2(param.routesV2ApplyTransformationRequest,  options).toPromise();
+        return this.api.applyTransformationV2(param.applyTransformationV2Request,  options).toPromise();
     }
 
     /**
@@ -6564,7 +6642,7 @@ export class ObjectTransformSandboxApi {
      * @param param the request object
      */
     public generateRecordWithHttpInfo(param: TransformSandboxApiGenerateRecordRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
-        return this.api.generateRecordWithHttpInfo(param.routesV2GenerateRecordRequest,  options).toPromise();
+        return this.api.generateRecordWithHttpInfo(param.generateRecordRequest,  options).toPromise();
     }
 
     /**
@@ -6573,7 +6651,7 @@ export class ObjectTransformSandboxApi {
      * @param param the request object
      */
     public generateRecord(param: TransformSandboxApiGenerateRecordRequest, options?: ConfigurationOptions): Promise<RoutesV2GenerateRecordResponse> {
-        return this.api.generateRecord(param.routesV2GenerateRecordRequest,  options).toPromise();
+        return this.api.generateRecord(param.generateRecordRequest,  options).toPromise();
     }
 
     /**
@@ -6682,10 +6760,10 @@ export interface TransformsRecommendationsApiCreateTransformRecommendationReques
     organizationId: string
     /**
      * Security data to analyze
-     * @type RoutesV3TransformRecommendationRequest
+     * @type CreateTransformRecommendationRequest
      * @memberof TransformsRecommendationsApicreateTransformRecommendation
      */
-    routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest
+    createTransformRecommendationRequest: CreateTransformRecommendationRequest
 }
 
 export interface TransformsRecommendationsApiListAvailableOptimizersRequest {
@@ -6711,7 +6789,7 @@ export class ObjectTransformsRecommendationsApi {
      * @param param the request object
      */
     public createTransformRecommendationWithHttpInfo(param: TransformsRecommendationsApiCreateTransformRecommendationRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SecurityDataAnalysis>> {
-        return this.api.createTransformRecommendationWithHttpInfo(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
+        return this.api.createTransformRecommendationWithHttpInfo(param.organizationId, param.createTransformRecommendationRequest,  options).toPromise();
     }
 
     /**
@@ -6720,7 +6798,7 @@ export class ObjectTransformsRecommendationsApi {
      * @param param the request object
      */
     public createTransformRecommendation(param: TransformsRecommendationsApiCreateTransformRecommendationRequest, options?: ConfigurationOptions): Promise<RoutesV3SecurityDataAnalysis> {
-        return this.api.createTransformRecommendation(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
+        return this.api.createTransformRecommendation(param.organizationId, param.createTransformRecommendationRequest,  options).toPromise();
     }
 
     /**
@@ -6749,10 +6827,10 @@ import { TransformsRepositoryApiRequestFactory, TransformsRepositoryApiResponseP
 export interface TransformsRepositoryApiExportTransformRequest {
     /**
      * Transform to export and optional metadata
-     * @type CommunityTransformsInternalTransformConfig
+     * @type ExportTransformRequest
      * @memberof TransformsRepositoryApiexportTransform
      */
-    communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig
+    exportTransformRequest: ExportTransformRequest
 }
 
 export interface TransformsRepositoryApiGetTransformDetailsFromRepositoryRequest {
@@ -6778,10 +6856,10 @@ export interface TransformsRepositoryApiGetTransformRepositoryDetailsRequest {
 export interface TransformsRepositoryApiImportTransformRequest {
     /**
      * YAML transform definition
-     * @type string
+     * @type any
      * @memberof TransformsRepositoryApiimportTransform
      */
-    body: string
+    body: any
 }
 
 export interface TransformsRepositoryApiListCommunityTransformsRequest {
@@ -6817,7 +6895,7 @@ export class ObjectTransformsRepositoryApi {
      * @param param the request object
      */
     public exportTransformWithHttpInfo(param: TransformsRepositoryApiExportTransformRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.exportTransformWithHttpInfo(param.communityTransformsInternalTransformConfig,  options).toPromise();
+        return this.api.exportTransformWithHttpInfo(param.exportTransformRequest,  options).toPromise();
     }
 
     /**
@@ -6826,7 +6904,7 @@ export class ObjectTransformsRepositoryApi {
      * @param param the request object
      */
     public exportTransform(param: TransformsRepositoryApiExportTransformRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.exportTransform(param.communityTransformsInternalTransformConfig,  options).toPromise();
+        return this.api.exportTransform(param.exportTransformRequest,  options).toPromise();
     }
 
     /**

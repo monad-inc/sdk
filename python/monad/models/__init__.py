@@ -4,7 +4,7 @@
 """
     Monad API
 
-    This is the monad API
+    Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.  ## Base URL  ``` {{BASE_URL}}/api ```  ## Authentication  The Monad API supports two authentication methods:  ### API Key  Include your API key in the `x-api-key` header:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ### JWT Bearer Token  Include your JWT token in the `Authorization` header:  ```bash curl -H \"Authorization: Bearer YOUR_JWT_TOKEN\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Quick Start  List your pipelines:  ```bash curl -H \"x-api-key: YOUR_API_KEY\" \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  Create a new pipeline:  ```bash curl -X POST \\   -H \"x-api-key: YOUR_API_KEY\" \\   -H \"Content-Type: application/json\" \\   -d '{\"name\": \"My Pipeline\", \"description\": \"Pipeline description\"}' \\   {{BASE_URL}}/api/v2/organizations/{org_id}/pipelines ```  ## Rate Limits  API requests are subject to rate limiting. If you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff in your applications to handle rate limiting gracefully.  ## Errors  The API uses standard HTTP status codes:  | Status Code | Description                                      | | ----------- | ------------------------------------------------ | | `200`       | Success                                          | | `201`       | Created                                          | | `400`       | Bad Request - Invalid parameters                 | | `401`       | Unauthorized - Invalid or missing authentication | | `403`       | Forbidden - Insufficient permissions             | | `404`       | Not Found - Resource doesn't exist               | | `429`       | Too Many Requests - Rate limit exceeded          | | `500`       | Internal Server Error                            | 
 
     The version of the OpenAPI document: 1.0
     Contact: support@monad.com
@@ -22,7 +22,12 @@ from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig
 from monad.models.aiven_service_logs_secrets_config import AivenServiceLogsSecretsConfig
 from monad.models.aiven_service_logs_settings_config import AivenServiceLogsSettingsConfig
+from monad.models.alerts_alert_category import AlertsAlertCategory
+from monad.models.alerts_alert_granularity import AlertsAlertGranularity
+from monad.models.alerts_alert_house import AlertsAlertHouse
 from monad.models.alerts_alert_meta import AlertsAlertMeta
+from monad.models.apply_condition_v2_request import ApplyConditionV2Request
+from monad.models.apply_transformation_v2_request import ApplyTransformationV2Request
 from monad.models.arize_audit_logs_secrets_config import ArizeAuditLogsSecretsConfig
 from monad.models.arize_audit_logs_settings_config import ArizeAuditLogsSettingsConfig
 from monad.models.audit_logs_secrets_config import AuditLogsSecretsConfig
@@ -36,6 +41,7 @@ from monad.models.aws_guardduty_secrets_config import AwsGuarddutySecretsConfig
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig
 from monad.models.aws_s3_secrets_config import AwsS3SecretsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig
+from monad.models.awssqsoutput_queue_type import AwssqsoutputQueueType
 from monad.models.awssqsoutput_settings_config import AwssqsoutputSettingsConfig
 from monad.models.awssqss3_settings_config import Awssqss3SettingsConfig
 from monad.models.axiom_secrets_config import AxiomSecretsConfig
@@ -95,15 +101,33 @@ from monad.models.clumio_consolidated_alerts_secrets_config import ClumioConsoli
 from monad.models.clumio_consolidated_alerts_settings_config import ClumioConsolidatedAlertsSettingsConfig
 from monad.models.coda_audit_events_secrets_config import CodaAuditEventsSecretsConfig
 from monad.models.coda_audit_events_settings_config import CodaAuditEventsSettingsConfig
+from monad.models.common_auth_type import CommonAuthType
 from monad.models.community_edition_secrets_config import CommunityEditionSecretsConfig
 from monad.models.community_edition_settings_config import CommunityEditionSettingsConfig
 from monad.models.community_transforms_internal_transform_config import CommunityTransformsInternalTransformConfig
 from monad.models.community_transforms_internal_transform_metadata import CommunityTransformsInternalTransformMetadata
 from monad.models.community_transforms_internal_transforms_index import CommunityTransformsInternalTransformsIndex
 from monad.models.convert_timestamp_arguments_config import ConvertTimestampArgumentsConfig
+from monad.models.convert_timestamp_timestamp_format import ConvertTimestampTimestampFormat
 from monad.models.cortex_xsoar_management_logs_secrets_config import CortexXsoarManagementLogsSecretsConfig
 from monad.models.cortex_xsoar_management_logs_settings_config import CortexXsoarManagementLogsSettingsConfig
+from monad.models.create_api_key_request import CreateAPIKeyRequest
+from monad.models.create_alert_rule_request import CreateAlertRuleRequest
+from monad.models.create_billing_account_request import CreateBillingAccountRequest
+from monad.models.create_billing_account_role_request import CreateBillingAccountRoleRequest
+from monad.models.create_billing_account_subscription_request import CreateBillingAccountSubscriptionRequest
+from monad.models.create_billing_account_user_role_request import CreateBillingAccountUserRoleRequest
+from monad.models.create_child_organization_request import CreateChildOrganizationRequest
+from monad.models.create_connection_request import CreateConnectionRequest
+from monad.models.create_enrichment_request import CreateEnrichmentRequest
+from monad.models.create_input_request import CreateInputRequest
 from monad.models.create_key_value_if_key_value_arguments_config import CreateKeyValueIfKeyValueArgumentsConfig
+from monad.models.create_output_request import CreateOutputRequest
+from monad.models.create_pipeline_request import CreatePipelineRequest
+from monad.models.create_role_request import CreateRoleRequest
+from monad.models.create_secret_request import CreateSecretRequest
+from monad.models.create_transform_recommendation_request import CreateTransformRecommendationRequest
+from monad.models.create_transform_request import CreateTransformRequest
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig
 from monad.models.cribl_http_settings_config import CriblHttpSettingsConfig
 from monad.models.customer_event_data_secrets_config import CustomerEventDataSecretsConfig
@@ -121,6 +145,8 @@ from monad.models.drop_record_where_value_eq_arguments_config import DropRecordW
 from monad.models.duo_security_activity_logs_secrets_config import DuoSecurityActivityLogsSecretsConfig
 from monad.models.duo_security_activity_logs_settings_config import DuoSecurityActivityLogsSettingsConfig
 from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig
+from monad.models.elasticsearch_auth_type_enum import ElasticsearchAuthTypeEnum
+from monad.models.elasticsearch_connection_type_enum import ElasticsearchConnectionTypeEnum
 from monad.models.elasticsearch_secrets_config import ElasticsearchSecretsConfig
 from monad.models.elasticsearch_settings_config import ElasticsearchSettingsConfig
 from monad.models.encrypt_aes_variant import EncryptAESVariant
@@ -130,17 +156,22 @@ from monad.models.encrypt_arguments_config import EncryptArgumentsConfig
 from monad.models.endor_labs_audit_logs_secrets_config import EndorLabsAuditLogsSecretsConfig
 from monad.models.endor_labs_audit_logs_settings_config import EndorLabsAuditLogsSettingsConfig
 from monad.models.enrichment_connector_meta import EnrichmentConnectorMeta
+from monad.models.enrichment_sandbox_request import EnrichmentSandboxRequest
 from monad.models.entra_id_secrets_config import EntraIdSecretsConfig
 from monad.models.entra_id_settings_config import EntraIdSettingsConfig
 from monad.models.event_secrets_config import EventSecretsConfig
 from monad.models.event_settings_config import EventSettingsConfig
+from monad.models.export_transform_request import ExportTransformRequest
 from monad.models.flagsmith_flag import FlagsmithFlag
 from monad.models.flatten_arguments_config import FlattenArgumentsConfig
 from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig
 from monad.models.formatter_format_config import FormatterFormatConfig
+from monad.models.formatter_type import FormatterType
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig
+from monad.models.generate_record_request import GenerateRecordRequest
 from monad.models.geolocus_settings_config import GeolocusSettingsConfig
+from monad.models.get_token_request import GetTokenRequest
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
@@ -160,10 +191,12 @@ from monad.models.google_workspace_settings_config import GoogleWorkspaceSetting
 from monad.models.greenhouse_audit_logs_secrets_config import GreenhouseAuditLogsSecretsConfig
 from monad.models.greenhouse_audit_logs_settings_config import GreenhouseAuditLogsSettingsConfig
 from monad.models.http_headers import HttpHeaders
+from monad.models.http_payload_structure import HttpPayloadStructure
 from monad.models.http_secrets_config import HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
 from monad.models.individual_alerts_secrets_config import IndividualAlertsSecretsConfig
 from monad.models.individual_alerts_settings_config import IndividualAlertsSettingsConfig
+from monad.models.inputs_billing_type import InputsBillingType
 from monad.models.inputs_connector_meta import InputsConnectorMeta
 from monad.models.inspector_secrets_config import InspectorSecretsConfig
 from monad.models.inspector_settings_config import InspectorSettingsConfig
@@ -172,9 +205,14 @@ from monad.models.issues_report_settings_config import IssuesReportSettingsConfi
 from monad.models.issues_secrets_config import IssuesSecretsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig
 from monad.models.jq_arguments_config import JqArgumentsConfig
+from monad.models.json_format_type import JsonFormatType
 from monad.models.json_json_formatter import JsonJsonFormatter
+from monad.models.kafka_acks import KafkaAcks
+from monad.models.kafka_compression_type import KafkaCompressionType
 from monad.models.kafka_kafka_header import KafkaKafkaHeader
+from monad.models.kafka_sasl_mechanism import KafkaSaslMechanism
 from monad.models.kafka_secrets_config import KafkaSecretsConfig
+from monad.models.kafka_security_protocol import KafkaSecurityProtocol
 from monad.models.kafka_settings_config import KafkaSettingsConfig
 from monad.models.koi_audit_logs_secrets_config import KoiAuditLogsSecretsConfig
 from monad.models.koi_audit_logs_settings_config import KoiAuditLogsSettingsConfig
@@ -198,6 +236,7 @@ from monad.models.models_api_key_list import ModelsAPIKeyList
 from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken
 from monad.models.models_alert_rule import ModelsAlertRule
 from monad.models.models_alert_rule_list import ModelsAlertRuleList
+from monad.models.models_alert_state import ModelsAlertState
 from monad.models.models_billing_account import ModelsBillingAccount
 from monad.models.models_billing_account_list import ModelsBillingAccountList
 from monad.models.models_billing_account_permission import ModelsBillingAccountPermission
@@ -205,25 +244,32 @@ from monad.models.models_billing_account_role import ModelsBillingAccountRole
 from monad.models.models_billing_account_role_user import ModelsBillingAccountRoleUser
 from monad.models.models_billing_product import ModelsBillingProduct
 from monad.models.models_billing_product_list import ModelsBillingProductList
+from monad.models.models_billing_product_type import ModelsBillingProductType
 from monad.models.models_component_reference import ModelsComponentReference
+from monad.models.models_component_type import ModelsComponentType
 from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
+from monad.models.models_condition_operator import ModelsConditionOperator
 from monad.models.models_connection import ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList
 from monad.models.models_connector_info import ModelsConnectorInfo
 from monad.models.models_connector_meta import ModelsConnectorMeta
 from monad.models.models_data_usage import ModelsDataUsage
+from monad.models.models_else_action import ModelsElseAction
 from monad.models.models_enrichment import ModelsEnrichment
 from monad.models.models_enrichment_config import ModelsEnrichmentConfig
 from monad.models.models_enrichment_list import ModelsEnrichmentList
 from monad.models.models_input import ModelsInput
 from monad.models.models_input_config import ModelsInputConfig
+from monad.models.models_input_connector_category import ModelsInputConnectorCategory
 from monad.models.models_input_list import ModelsInputList
+from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_node_component import ModelsNodeComponent
 from monad.models.models_organization_list import ModelsOrganizationList
 from monad.models.models_organization_user import ModelsOrganizationUser
 from monad.models.models_organization_user_list import ModelsOrganizationUserList
 from monad.models.models_output import ModelsOutput
 from monad.models.models_output_config import ModelsOutputConfig
+from monad.models.models_output_connector_category import ModelsOutputConnectorCategory
 from monad.models.models_output_list import ModelsOutputList
 from monad.models.models_pagination import ModelsPagination
 from monad.models.models_permission_list import ModelsPermissionList
@@ -237,9 +283,15 @@ from monad.models.models_pipeline_node import ModelsPipelineNode
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy
 from monad.models.models_pipeline_status import ModelsPipelineStatus
+from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue
 from monad.models.models_progress_entries import ModelsProgressEntries
 from monad.models.models_progress_entry import ModelsProgressEntry
+from monad.models.models_progress_label import ModelsProgressLabel
+from monad.models.models_quota_action import ModelsQuotaAction
+from monad.models.models_quota_limit_type import ModelsQuotaLimitType
+from monad.models.models_quota_limit_unit import ModelsQuotaLimitUnit
 from monad.models.models_quota_list import ModelsQuotaList
+from monad.models.models_quota_timeframe import ModelsQuotaTimeframe
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList
 from monad.models.models_secret import ModelsSecret
@@ -281,6 +333,7 @@ from monad.models.onelogin_events_settings_config import OneloginEventsSettingsC
 from monad.models.opal_events_secrets_config import OpalEventsSecretsConfig
 from monad.models.opal_events_settings_config import OpalEventsSettingsConfig
 from monad.models.openai_audit_logs_settings_config import OpenaiAuditLogsSettingsConfig
+from monad.models.opensearch_auth_mode import OpensearchAuthMode
 from monad.models.opensearch_secrets_config import OpensearchSecretsConfig
 from monad.models.opensearch_settings_config import OpensearchSettingsConfig
 from monad.models.operation_information import OperationInformation
@@ -289,12 +342,14 @@ from monad.models.operation_logs_settings_config import OperationLogsSettingsCon
 from monad.models.oracle_settings_config import OracleSettingsConfig
 from monad.models.org_audit_logs_secrets_config import OrgAuditLogsSecretsConfig
 from monad.models.org_audit_logs_settings_config import OrgAuditLogsSettingsConfig
+from monad.models.outputs_billing_type import OutputsBillingType
 from monad.models.outputs_connector_meta import OutputsConnectorMeta
 from monad.models.ownbackup_account_events_secrets_config import OwnbackupAccountEventsSecretsConfig
 from monad.models.ownbackup_account_events_settings_config import OwnbackupAccountEventsSettingsConfig
 from monad.models.pagerduty_alerts_config import PagerdutyAlertsConfig
 from monad.models.pagerduty_audit_records_secrets_config import PagerdutyAuditRecordsSecretsConfig
 from monad.models.pagerduty_audit_records_settings_config import PagerdutyAuditRecordsSettingsConfig
+from monad.models.pagerduty_event_type import PagerdutyEventType
 from monad.models.pagerduty_secrets_config import PagerdutySecretsConfig
 from monad.models.pagerduty_settings_config import PagerdutySettingsConfig
 from monad.models.pagerduty_summary_config import PagerdutySummaryConfig
@@ -320,6 +375,9 @@ from monad.models.pubsub_secrets_config import PubsubSecretsConfig
 from monad.models.pubsub_settings_config import PubsubSettingsConfig
 from monad.models.rename_key_arguments_config import RenameKeyArgumentsConfig
 from monad.models.rename_key_where_value_eq_arguments_config import RenameKeyWhereValueEqArgumentsConfig
+from monad.models.replace_enrichment_request import ReplaceEnrichmentRequest
+from monad.models.replace_input_request import ReplaceInputRequest
+from monad.models.replace_output_request import ReplaceOutputRequest
 from monad.models.responder_error_response import ResponderErrorResponse
 from monad.models.rootly_audit_logs_secrets_config import RootlyAuditLogsSecretsConfig
 from monad.models.rootly_audit_logs_settings_config import RootlyAuditLogsSettingsConfig
@@ -433,6 +491,7 @@ from monad.models.sentinel_secrets_config import SentinelSecretsConfig
 from monad.models.sentinel_settings_config import SentinelSettingsConfig
 from monad.models.sentry_org_audit_logs_secrets_config import SentryOrgAuditLogsSecretsConfig
 from monad.models.sentry_org_audit_logs_settings_config import SentryOrgAuditLogsSettingsConfig
+from monad.models.set_storage_type_cost_request import SetStorageTypeCostRequest
 from monad.models.slack_auth_config import SlackAuthConfig
 from monad.models.slack_bot_token_variant import SlackBotTokenVariant
 from monad.models.slack_enterprise_audit_logs_secrets_config import SlackEnterpriseAuditLogsSecretsConfig
@@ -471,6 +530,9 @@ from monad.models.tenable_vulnerabilities_cron_secrets_config import TenableVuln
 from monad.models.tenable_vulnerabilities_cron_settings_config import TenableVulnerabilitiesCronSettingsConfig
 from monad.models.tenable_vulnerabilities_secrets_config import TenableVulnerabilitiesSecretsConfig
 from monad.models.tenable_vulnerabilities_settings_config import TenableVulnerabilitiesSettingsConfig
+from monad.models.test_enrichment_connection_request import TestEnrichmentConnectionRequest
+from monad.models.test_input_connection_request import TestInputConnectionRequest
+from monad.models.test_output_connection_request import TestOutputConnectionRequest
 from monad.models.tines_audit_logs_secrets_config import TinesAuditLogsSecretsConfig
 from monad.models.tines_audit_logs_settings_config import TinesAuditLogsSettingsConfig
 from monad.models.tines_events_logs_secrets_config import TinesEventsLogsSecretsConfig
@@ -483,7 +545,22 @@ from monad.models.types_string_comparison import TypesStringComparison
 from monad.models.types_string_filter import TypesStringFilter
 from monad.models.universal_secrets_config import UniversalSecretsConfig
 from monad.models.universal_settings_config import UniversalSettingsConfig
+from monad.models.update_api_key_request import UpdateAPIKeyRequest
+from monad.models.update_alert_rule_request import UpdateAlertRuleRequest
+from monad.models.update_billing_account_request import UpdateBillingAccountRequest
+from monad.models.update_billing_account_role_request import UpdateBillingAccountRoleRequest
+from monad.models.update_child_organization_request import UpdateChildOrganizationRequest
+from monad.models.update_connection_request import UpdateConnectionRequest
+from monad.models.update_enrichment_request import UpdateEnrichmentRequest
+from monad.models.update_input_request import UpdateInputRequest
+from monad.models.update_output_request import UpdateOutputRequest
+from monad.models.update_pipeline_edge_request import UpdatePipelineEdgeRequest
+from monad.models.update_pipeline_request import UpdatePipelineRequest
+from monad.models.update_pipeline_v1_request import UpdatePipelineV1Request
+from monad.models.update_role_request import UpdateRoleRequest
+from monad.models.update_secret_request import UpdateSecretRequest
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig
+from monad.models.utc_timestamp_timestamp_format import UtcTimestampTimestampFormat
 from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecretsConfig
 from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig
 from monad.models.voltio_audit_logs_secrets_config import VoltioAuditLogsSecretsConfig
@@ -494,6 +571,7 @@ from monad.models.vulnerability_findings_secrets_config import VulnerabilityFind
 from monad.models.vulnerability_findings_settings_config import VulnerabilityFindingsSettingsConfig
 from monad.models.wiz_audit_logs_secrets_config import WizAuditLogsSecretsConfig
 from monad.models.wiz_audit_logs_settings_config import WizAuditLogsSettingsConfig
+from monad.models.zendesk_audit_logs_auth_type import ZendeskAuditLogsAuthType
 from monad.models.zendesk_audit_logs_secrets_config import ZendeskAuditLogsSecretsConfig
 from monad.models.zendesk_audit_logs_settings_config import ZendeskAuditLogsSettingsConfig
 
