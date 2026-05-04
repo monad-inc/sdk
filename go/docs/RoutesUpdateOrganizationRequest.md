@@ -5,13 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**Name** | **string** |  | 
+**FriendlyName** | Pointer to **string** | FriendlyName, when non-empty, replaces the display label. Omit to leave the existing friendly name unchanged. | [optional] 
+**Name** | Pointer to **string** | Name, when non-empty, regenerates the immutable slug as &#x60;&lt;name&gt;-&lt;4hex&gt;&#x60;. Omit it to leave the slug unchanged. | [optional] 
 
 ## Methods
 
 ### NewRoutesUpdateOrganizationRequest
 
-`func NewRoutesUpdateOrganizationRequest(name string, ) *RoutesUpdateOrganizationRequest`
+`func NewRoutesUpdateOrganizationRequest() *RoutesUpdateOrganizationRequest`
 
 NewRoutesUpdateOrganizationRequest instantiates a new RoutesUpdateOrganizationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -51,6 +52,31 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetFriendlyName
+
+`func (o *RoutesUpdateOrganizationRequest) GetFriendlyName() string`
+
+GetFriendlyName returns the FriendlyName field if non-nil, zero value otherwise.
+
+### GetFriendlyNameOk
+
+`func (o *RoutesUpdateOrganizationRequest) GetFriendlyNameOk() (*string, bool)`
+
+GetFriendlyNameOk returns a tuple with the FriendlyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFriendlyName
+
+`func (o *RoutesUpdateOrganizationRequest) SetFriendlyName(v string)`
+
+SetFriendlyName sets FriendlyName field to given value.
+
+### HasFriendlyName
+
+`func (o *RoutesUpdateOrganizationRequest) HasFriendlyName() bool`
+
+HasFriendlyName returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *RoutesUpdateOrganizationRequest) GetName() string`
@@ -70,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RoutesUpdateOrganizationRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

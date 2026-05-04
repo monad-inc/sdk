@@ -32,11 +32,12 @@ class GithubComMonadIncCorePkgTypesModelsOrganization(BaseModel):
     connection_id: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    friendly_name: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     parent_organization_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_account_id", "connection_id", "created_at", "description", "id", "name", "parent_organization_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["billing_account_id", "connection_id", "created_at", "description", "friendly_name", "id", "name", "parent_organization_id", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -93,6 +94,7 @@ class GithubComMonadIncCorePkgTypesModelsOrganization(BaseModel):
             "connection_id": obj.get("connection_id"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
+            "friendly_name": obj.get("friendly_name"),
             "id": obj.get("id"),
             "name": obj.get("name"),
             "parent_organization_id": obj.get("parent_organization_id"),

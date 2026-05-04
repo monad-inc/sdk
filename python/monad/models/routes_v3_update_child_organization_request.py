@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,9 @@ class RoutesV3UpdateChildOrganizationRequest(BaseModel):
     RoutesV3UpdateChildOrganizationRequest
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["description", "name"]
+    friendly_name: Optional[StrictStr] = None
+    name: Optional[StrictStr] = Field(default=None, description="Name, when non-empty, regenerates the immutable slug as `<name>-<4hex>`.")
+    __properties: ClassVar[List[str]] = ["description", "friendly_name", "name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +85,7 @@ class RoutesV3UpdateChildOrganizationRequest(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
+            "friendly_name": obj.get("friendly_name"),
             "name": obj.get("name")
         })
         return _obj

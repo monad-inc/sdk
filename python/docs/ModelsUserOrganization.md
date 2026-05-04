@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **billing_account_id** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**friendly_name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **inherited** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 

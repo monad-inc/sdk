@@ -16,6 +16,7 @@ export class ModelsUserOrganization {
     'billingAccountId'?: string;
     'createdAt'?: string;
     'description'?: string;
+    'friendlyName'?: string;
     'id'?: string;
     'inherited'?: boolean;
     'name'?: string;
@@ -44,6 +45,12 @@ export class ModelsUserOrganization {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "friendlyName",
+            "baseName": "friendly_name",
             "type": "string",
             "format": ""
         },

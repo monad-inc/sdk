@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ConnectionId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**FriendlyName** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ParentOrganizationId** | Pointer to **string** |  | [optional] 
@@ -131,6 +132,31 @@ SetDescription sets Description field to given value.
 `func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetFriendlyName
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetFriendlyName() string`
+
+GetFriendlyName returns the FriendlyName field if non-nil, zero value otherwise.
+
+### GetFriendlyNameOk
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetFriendlyNameOk() (*string, bool)`
+
+GetFriendlyNameOk returns a tuple with the FriendlyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFriendlyName
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetFriendlyName(v string)`
+
+SetFriendlyName sets FriendlyName field to given value.
+
+### HasFriendlyName
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasFriendlyName() bool`
+
+HasFriendlyName returns a boolean if a field has been set.
 
 ### GetId
 

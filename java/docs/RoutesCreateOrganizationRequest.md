@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**billingAccountId** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**friendlyName** | **String** |  |  [optional] |
 |**name** | **String** |  |  |
 
 

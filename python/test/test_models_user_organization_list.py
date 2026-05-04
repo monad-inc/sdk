@@ -41,6 +41,7 @@ class TestModelsUserOrganizationList(unittest.TestCase):
                         billing_account_id = '', 
                         created_at = '', 
                         description = '', 
+                        friendly_name = '', 
                         id = '', 
                         inherited = True, 
                         name = '', 

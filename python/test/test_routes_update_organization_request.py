@@ -37,11 +37,11 @@ class TestRoutesUpdateOrganizationRequest(unittest.TestCase):
         if include_optional:
             return RoutesUpdateOrganizationRequest(
                 description = '',
+                friendly_name = '',
                 name = ''
             )
         else:
             return RoutesUpdateOrganizationRequest(
-                name = '',
         )
         """
 

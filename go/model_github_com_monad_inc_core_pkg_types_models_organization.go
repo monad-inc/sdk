@@ -24,6 +24,7 @@ type GithubComMonadIncCorePkgTypesModelsOrganization struct {
 	ConnectionId *string `json:"connection_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
+	FriendlyName *string `json:"friendly_name,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	ParentOrganizationId *string `json:"parent_organization_id,omitempty"`
@@ -175,6 +176,38 @@ func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetDescription(v strin
 	o.Description = &v
 }
 
+// GetFriendlyName returns the FriendlyName field value if set, zero value otherwise.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetFriendlyName() string {
+	if o == nil || IsNil(o.FriendlyName) {
+		var ret string
+		return ret
+	}
+	return *o.FriendlyName
+}
+
+// GetFriendlyNameOk returns a tuple with the FriendlyName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetFriendlyNameOk() (*string, bool) {
+	if o == nil || IsNil(o.FriendlyName) {
+		return nil, false
+	}
+	return o.FriendlyName, true
+}
+
+// HasFriendlyName returns a boolean if a field has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasFriendlyName() bool {
+	if o != nil && !IsNil(o.FriendlyName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFriendlyName gets a reference to the given string and assigns it to the FriendlyName field.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetFriendlyName(v string) {
+	o.FriendlyName = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetId() string {
 	if o == nil || IsNil(o.Id) {
@@ -324,6 +357,9 @@ func (o GithubComMonadIncCorePkgTypesModelsOrganization) ToMap() (map[string]int
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.FriendlyName) {
+		toSerialize["friendly_name"] = o.FriendlyName
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

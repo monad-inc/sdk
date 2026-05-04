@@ -31,6 +31,7 @@ class ModelsUserOrganization(BaseModel):
     billing_account_id: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    friendly_name: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     inherited: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
@@ -38,7 +39,7 @@ class ModelsUserOrganization(BaseModel):
     source_organization_id: Optional[StrictStr] = None
     source_organization_name: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_account_id", "created_at", "description", "id", "inherited", "name", "parent_organization_id", "source_organization_id", "source_organization_name", "updated_at"]
+    __properties: ClassVar[List[str]] = ["billing_account_id", "created_at", "description", "friendly_name", "id", "inherited", "name", "parent_organization_id", "source_organization_id", "source_organization_name", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,6 +95,7 @@ class ModelsUserOrganization(BaseModel):
             "billing_account_id": obj.get("billing_account_id"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
+            "friendly_name": obj.get("friendly_name"),
             "id": obj.get("id"),
             "inherited": obj.get("inherited"),
             "name": obj.get("name"),

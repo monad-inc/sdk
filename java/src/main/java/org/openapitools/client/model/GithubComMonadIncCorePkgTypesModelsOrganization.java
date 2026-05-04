@@ -70,6 +70,11 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_FRIENDLY_NAME = "friendly_name";
+  @SerializedName(SERIALIZED_NAME_FRIENDLY_NAME)
+  @javax.annotation.Nullable
+  private String friendlyName;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -169,6 +174,25 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
   }
 
 
+  public GithubComMonadIncCorePkgTypesModelsOrganization friendlyName(@javax.annotation.Nullable String friendlyName) {
+    this.friendlyName = friendlyName;
+    return this;
+  }
+
+  /**
+   * Get friendlyName
+   * @return friendlyName
+   */
+  @javax.annotation.Nullable
+  public String getFriendlyName() {
+    return friendlyName;
+  }
+
+  public void setFriendlyName(@javax.annotation.Nullable String friendlyName) {
+    this.friendlyName = friendlyName;
+  }
+
+
   public GithubComMonadIncCorePkgTypesModelsOrganization id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
@@ -259,6 +283,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
         Objects.equals(this.connectionId, githubComMonadIncCorePkgTypesModelsOrganization.connectionId) &&
         Objects.equals(this.createdAt, githubComMonadIncCorePkgTypesModelsOrganization.createdAt) &&
         Objects.equals(this.description, githubComMonadIncCorePkgTypesModelsOrganization.description) &&
+        Objects.equals(this.friendlyName, githubComMonadIncCorePkgTypesModelsOrganization.friendlyName) &&
         Objects.equals(this.id, githubComMonadIncCorePkgTypesModelsOrganization.id) &&
         Objects.equals(this.name, githubComMonadIncCorePkgTypesModelsOrganization.name) &&
         Objects.equals(this.parentOrganizationId, githubComMonadIncCorePkgTypesModelsOrganization.parentOrganizationId) &&
@@ -267,7 +292,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, connectionId, createdAt, description, id, name, parentOrganizationId, updatedAt);
+    return Objects.hash(billingAccountId, connectionId, createdAt, description, friendlyName, id, name, parentOrganizationId, updatedAt);
   }
 
   @Override
@@ -278,6 +303,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
     sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    parentOrganizationId: ").append(toIndentedString(parentOrganizationId)).append("\n");
@@ -300,7 +326,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "connection_id", "created_at", "description", "id", "name", "parent_organization_id", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "connection_id", "created_at", "description", "friendly_name", "id", "name", "parent_organization_id", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -338,6 +364,9 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("friendly_name") != null && !jsonObj.get("friendly_name").isJsonNull()) && !jsonObj.get("friendly_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friendly_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendly_name").toString()));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));

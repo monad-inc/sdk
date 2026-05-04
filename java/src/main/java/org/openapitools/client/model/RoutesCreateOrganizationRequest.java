@@ -60,6 +60,11 @@ public class RoutesCreateOrganizationRequest {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_FRIENDLY_NAME = "friendly_name";
+  @SerializedName(SERIALIZED_NAME_FRIENDLY_NAME)
+  @javax.annotation.Nullable
+  private String friendlyName;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nonnull
@@ -106,6 +111,25 @@ public class RoutesCreateOrganizationRequest {
   }
 
 
+  public RoutesCreateOrganizationRequest friendlyName(@javax.annotation.Nullable String friendlyName) {
+    this.friendlyName = friendlyName;
+    return this;
+  }
+
+  /**
+   * Get friendlyName
+   * @return friendlyName
+   */
+  @javax.annotation.Nullable
+  public String getFriendlyName() {
+    return friendlyName;
+  }
+
+  public void setFriendlyName(@javax.annotation.Nullable String friendlyName) {
+    this.friendlyName = friendlyName;
+  }
+
+
   public RoutesCreateOrganizationRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -137,12 +161,13 @@ public class RoutesCreateOrganizationRequest {
     RoutesCreateOrganizationRequest routesCreateOrganizationRequest = (RoutesCreateOrganizationRequest) o;
     return Objects.equals(this.billingAccountId, routesCreateOrganizationRequest.billingAccountId) &&
         Objects.equals(this.description, routesCreateOrganizationRequest.description) &&
+        Objects.equals(this.friendlyName, routesCreateOrganizationRequest.friendlyName) &&
         Objects.equals(this.name, routesCreateOrganizationRequest.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, description, name);
+    return Objects.hash(billingAccountId, description, friendlyName, name);
   }
 
   @Override
@@ -151,6 +176,7 @@ public class RoutesCreateOrganizationRequest {
     sb.append("class RoutesCreateOrganizationRequest {\n");
     sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -170,7 +196,7 @@ public class RoutesCreateOrganizationRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "description", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "description", "friendly_name", "name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
@@ -209,6 +235,9 @@ public class RoutesCreateOrganizationRequest {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("friendly_name") != null && !jsonObj.get("friendly_name").isJsonNull()) && !jsonObj.get("friendly_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friendly_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendly_name").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

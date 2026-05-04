@@ -42,6 +42,7 @@ class TestModelsOrganizationList(unittest.TestCase):
                         connection_id = '', 
                         created_at = '', 
                         description = '', 
+                        friendly_name = '', 
                         id = '', 
                         name = '', 
                         parent_organization_id = '', 

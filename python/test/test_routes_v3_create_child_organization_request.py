@@ -37,6 +37,7 @@ class TestRoutesV3CreateChildOrganizationRequest(unittest.TestCase):
         if include_optional:
             return RoutesV3CreateChildOrganizationRequest(
                 description = '',
+                friendly_name = '',
                 name = ''
             )
         else:

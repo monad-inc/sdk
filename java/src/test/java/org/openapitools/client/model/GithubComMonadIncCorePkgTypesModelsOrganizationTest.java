@@ -70,6 +70,14 @@ public class GithubComMonadIncCorePkgTypesModelsOrganizationTest {
     }
 
     /**
+     * Test the property 'friendlyName'
+     */
+    @Test
+    public void friendlyNameTest() {
+        // TODO: test friendlyName
+    }
+
+    /**
      * Test the property 'id'
      */
     @Test

@@ -65,6 +65,11 @@ public class ModelsUserOrganization {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_FRIENDLY_NAME = "friendly_name";
+  @SerializedName(SERIALIZED_NAME_FRIENDLY_NAME)
+  @javax.annotation.Nullable
+  private String friendlyName;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -157,6 +162,25 @@ public class ModelsUserOrganization {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public ModelsUserOrganization friendlyName(@javax.annotation.Nullable String friendlyName) {
+    this.friendlyName = friendlyName;
+    return this;
+  }
+
+  /**
+   * Get friendlyName
+   * @return friendlyName
+   */
+  @javax.annotation.Nullable
+  public String getFriendlyName() {
+    return friendlyName;
+  }
+
+  public void setFriendlyName(@javax.annotation.Nullable String friendlyName) {
+    this.friendlyName = friendlyName;
   }
 
 
@@ -306,6 +330,7 @@ public class ModelsUserOrganization {
     return Objects.equals(this.billingAccountId, modelsUserOrganization.billingAccountId) &&
         Objects.equals(this.createdAt, modelsUserOrganization.createdAt) &&
         Objects.equals(this.description, modelsUserOrganization.description) &&
+        Objects.equals(this.friendlyName, modelsUserOrganization.friendlyName) &&
         Objects.equals(this.id, modelsUserOrganization.id) &&
         Objects.equals(this.inherited, modelsUserOrganization.inherited) &&
         Objects.equals(this.name, modelsUserOrganization.name) &&
@@ -317,7 +342,7 @@ public class ModelsUserOrganization {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, createdAt, description, id, inherited, name, parentOrganizationId, sourceOrganizationId, sourceOrganizationName, updatedAt);
+    return Objects.hash(billingAccountId, createdAt, description, friendlyName, id, inherited, name, parentOrganizationId, sourceOrganizationId, sourceOrganizationName, updatedAt);
   }
 
   @Override
@@ -327,6 +352,7 @@ public class ModelsUserOrganization {
     sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    inherited: ").append(toIndentedString(inherited)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -352,7 +378,7 @@ public class ModelsUserOrganization {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "created_at", "description", "id", "inherited", "name", "parent_organization_id", "source_organization_id", "source_organization_name", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "created_at", "description", "friendly_name", "id", "inherited", "name", "parent_organization_id", "source_organization_id", "source_organization_name", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -387,6 +413,9 @@ public class ModelsUserOrganization {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("friendly_name") != null && !jsonObj.get("friendly_name").isJsonNull()) && !jsonObj.get("friendly_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friendly_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendly_name").toString()));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));

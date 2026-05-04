@@ -38,6 +38,7 @@ class TestRoutesCreateOrganizationRequest(unittest.TestCase):
             return RoutesCreateOrganizationRequest(
                 billing_account_id = '',
                 description = '',
+                friendly_name = '',
                 name = ''
             )
         else:

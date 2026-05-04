@@ -2571,6 +2571,9 @@
                     "description": {
                         "type": "string"
                     },
+                    "friendly_name": {
+                        "type": "string"
+                    },
                     "id": {
                         "type": "string"
                     },
@@ -5870,6 +5873,9 @@
                     "description": {
                         "type": "string"
                     },
+                    "friendly_name": {
+                        "type": "string"
+                    },
                     "id": {
                         "type": "string"
                     },
@@ -6917,6 +6923,9 @@
                     "description": {
                         "type": "string"
                     },
+                    "friendly_name": {
+                        "type": "string"
+                    },
                     "name": {
                         "type": "string"
                     }
@@ -7192,13 +7201,15 @@
                     "description": {
                         "type": "string"
                     },
+                    "friendly_name": {
+                        "description": "FriendlyName, when non-empty, replaces the display label. Omit to leave\nthe existing friendly name unchanged.",
+                        "type": "string"
+                    },
                     "name": {
+                        "description": "Name, when non-empty, regenerates the immutable slug as `\u003cname\u003e-\u003c4hex\u003e`.\nOmit it to leave the slug unchanged.",
                         "type": "string"
                     }
                 },
-                "required": [
-                    "name"
-                ],
                 "type": "object"
             },
             "routes.UpdatePipelineRequest": {
@@ -8166,6 +8177,9 @@
                     "description": {
                         "type": "string"
                     },
+                    "friendly_name": {
+                        "type": "string"
+                    },
                     "name": {
                         "type": "string"
                     }
@@ -8512,7 +8526,11 @@
                     "description": {
                         "type": "string"
                     },
+                    "friendly_name": {
+                        "type": "string"
+                    },
                     "name": {
+                        "description": "Name, when non-empty, regenerates the immutable slug as `\u003cname\u003e-\u003c4hex\u003e`.",
                         "type": "string"
                     }
                 },

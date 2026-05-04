@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**FriendlyName** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name, when non-empty, regenerates the immutable slug as &#x60;&lt;name&gt;-&lt;4hex&gt;&#x60;. | [optional] 
 
 ## Methods
 
@@ -50,6 +51,31 @@ SetDescription sets Description field to given value.
 `func (o *RoutesV3UpdateChildOrganizationRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetFriendlyName
+
+`func (o *RoutesV3UpdateChildOrganizationRequest) GetFriendlyName() string`
+
+GetFriendlyName returns the FriendlyName field if non-nil, zero value otherwise.
+
+### GetFriendlyNameOk
+
+`func (o *RoutesV3UpdateChildOrganizationRequest) GetFriendlyNameOk() (*string, bool)`
+
+GetFriendlyNameOk returns a tuple with the FriendlyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFriendlyName
+
+`func (o *RoutesV3UpdateChildOrganizationRequest) SetFriendlyName(v string)`
+
+SetFriendlyName sets FriendlyName field to given value.
+
+### HasFriendlyName
+
+`func (o *RoutesV3UpdateChildOrganizationRequest) HasFriendlyName() bool`
+
+HasFriendlyName returns a boolean if a field has been set.
 
 ### GetName
 

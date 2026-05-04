@@ -29,8 +29,9 @@ class RoutesV3CreateChildOrganizationRequest(BaseModel):
     RoutesV3CreateChildOrganizationRequest
     """ # noqa: E501
     description: Optional[StrictStr] = None
+    friendly_name: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["description", "name"]
+    __properties: ClassVar[List[str]] = ["description", "friendly_name", "name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +85,7 @@ class RoutesV3CreateChildOrganizationRequest(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
+            "friendly_name": obj.get("friendly_name"),
             "name": obj.get("name")
         })
         return _obj

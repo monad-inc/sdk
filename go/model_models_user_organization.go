@@ -23,6 +23,7 @@ type ModelsUserOrganization struct {
 	BillingAccountId *string `json:"billing_account_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
+	FriendlyName *string `json:"friendly_name,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Inherited *bool `json:"inherited,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -143,6 +144,38 @@ func (o *ModelsUserOrganization) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ModelsUserOrganization) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetFriendlyName returns the FriendlyName field value if set, zero value otherwise.
+func (o *ModelsUserOrganization) GetFriendlyName() string {
+	if o == nil || IsNil(o.FriendlyName) {
+		var ret string
+		return ret
+	}
+	return *o.FriendlyName
+}
+
+// GetFriendlyNameOk returns a tuple with the FriendlyName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsUserOrganization) GetFriendlyNameOk() (*string, bool) {
+	if o == nil || IsNil(o.FriendlyName) {
+		return nil, false
+	}
+	return o.FriendlyName, true
+}
+
+// HasFriendlyName returns a boolean if a field has been set.
+func (o *ModelsUserOrganization) HasFriendlyName() bool {
+	if o != nil && !IsNil(o.FriendlyName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFriendlyName gets a reference to the given string and assigns it to the FriendlyName field.
+func (o *ModelsUserOrganization) SetFriendlyName(v string) {
+	o.FriendlyName = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -387,6 +420,9 @@ func (o ModelsUserOrganization) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.FriendlyName) {
+		toSerialize["friendly_name"] = o.FriendlyName
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

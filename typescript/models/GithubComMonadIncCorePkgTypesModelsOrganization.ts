@@ -17,6 +17,7 @@ export class GithubComMonadIncCorePkgTypesModelsOrganization {
     'connectionId'?: string;
     'createdAt'?: string;
     'description'?: string;
+    'friendlyName'?: string;
     'id'?: string;
     'name'?: string;
     'parentOrganizationId'?: string;
@@ -48,6 +49,12 @@ export class GithubComMonadIncCorePkgTypesModelsOrganization {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "friendlyName",
+            "baseName": "friendly_name",
             "type": "string",
             "format": ""
         },

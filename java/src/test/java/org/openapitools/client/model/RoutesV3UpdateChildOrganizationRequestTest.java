@@ -46,6 +46,14 @@ public class RoutesV3UpdateChildOrganizationRequestTest {
     }
 
     /**
+     * Test the property 'friendlyName'
+     */
+    @Test
+    public void friendlyNameTest() {
+        // TODO: test friendlyName
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

@@ -15,6 +15,7 @@ import { HttpFile } from '../http/http';
 export class RoutesCreateOrganizationRequest {
     'billingAccountId'?: string;
     'description'?: string;
+    'friendlyName'?: string;
     'name': string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -31,6 +32,12 @@ export class RoutesCreateOrganizationRequest {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "friendlyName",
+            "baseName": "friendly_name",
             "type": "string",
             "format": ""
         },

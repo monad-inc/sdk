@@ -37,6 +37,7 @@ class TestCreateChildOrganizationRequest(unittest.TestCase):
         if include_optional:
             return CreateChildOrganizationRequest(
                 description = '',
+                friendly_name = '',
                 name = ''
             )
         else:

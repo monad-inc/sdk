@@ -10,6 +10,7 @@
 |**billingAccountId** | **String** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**friendlyName** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**inherited** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |

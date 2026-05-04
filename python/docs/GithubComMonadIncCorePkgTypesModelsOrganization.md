@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **connection_id** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**friendly_name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **parent_organization_id** | **str** |  | [optional] 

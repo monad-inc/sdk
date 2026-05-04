@@ -30,8 +30,9 @@ class RoutesCreateOrganizationRequest(BaseModel):
     """ # noqa: E501
     billing_account_id: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    friendly_name: Optional[StrictStr] = None
     name: StrictStr
-    __properties: ClassVar[List[str]] = ["billing_account_id", "description", "name"]
+    __properties: ClassVar[List[str]] = ["billing_account_id", "description", "friendly_name", "name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -86,6 +87,7 @@ class RoutesCreateOrganizationRequest(BaseModel):
         _obj = cls.model_validate({
             "billing_account_id": obj.get("billing_account_id"),
             "description": obj.get("description"),
+            "friendly_name": obj.get("friendly_name"),
             "name": obj.get("name")
         })
         return _obj

@@ -21,6 +21,8 @@ var _ MappedNullable = &RoutesV3UpdateChildOrganizationRequest{}
 // RoutesV3UpdateChildOrganizationRequest struct for RoutesV3UpdateChildOrganizationRequest
 type RoutesV3UpdateChildOrganizationRequest struct {
 	Description *string `json:"description,omitempty"`
+	FriendlyName *string `json:"friendly_name,omitempty"`
+	// Name, when non-empty, regenerates the immutable slug as `<name>-<4hex>`.
 	Name *string `json:"name,omitempty"`
 }
 
@@ -73,6 +75,38 @@ func (o *RoutesV3UpdateChildOrganizationRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetFriendlyName returns the FriendlyName field value if set, zero value otherwise.
+func (o *RoutesV3UpdateChildOrganizationRequest) GetFriendlyName() string {
+	if o == nil || IsNil(o.FriendlyName) {
+		var ret string
+		return ret
+	}
+	return *o.FriendlyName
+}
+
+// GetFriendlyNameOk returns a tuple with the FriendlyName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3UpdateChildOrganizationRequest) GetFriendlyNameOk() (*string, bool) {
+	if o == nil || IsNil(o.FriendlyName) {
+		return nil, false
+	}
+	return o.FriendlyName, true
+}
+
+// HasFriendlyName returns a boolean if a field has been set.
+func (o *RoutesV3UpdateChildOrganizationRequest) HasFriendlyName() bool {
+	if o != nil && !IsNil(o.FriendlyName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFriendlyName gets a reference to the given string and assigns it to the FriendlyName field.
+func (o *RoutesV3UpdateChildOrganizationRequest) SetFriendlyName(v string) {
+	o.FriendlyName = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *RoutesV3UpdateChildOrganizationRequest) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -117,6 +151,9 @@ func (o RoutesV3UpdateChildOrganizationRequest) ToMap() (map[string]interface{},
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.FriendlyName) {
+		toSerialize["friendly_name"] = o.FriendlyName
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

@@ -11,6 +11,7 @@
 |**connectionId** | **String** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**friendlyName** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**parentOrganizationId** | **String** |  |  [optional] |
