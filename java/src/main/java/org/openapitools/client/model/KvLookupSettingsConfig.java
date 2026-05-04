@@ -75,6 +75,11 @@ public class KvLookupSettingsConfig {
   @javax.annotation.Nullable
   private String noMatchResponse;
 
+  public static final String SERIALIZED_NAME_OMIT_METADATA = "omit_metadata";
+  @SerializedName(SERIALIZED_NAME_OMIT_METADATA)
+  @javax.annotation.Nullable
+  private Boolean omitMetadata;
+
   public KvLookupSettingsConfig() {
   }
 
@@ -173,6 +178,25 @@ public class KvLookupSettingsConfig {
   }
 
 
+  public KvLookupSettingsConfig omitMetadata(@javax.annotation.Nullable Boolean omitMetadata) {
+    this.omitMetadata = omitMetadata;
+    return this;
+  }
+
+  /**
+   * Get omitMetadata
+   * @return omitMetadata
+   */
+  @javax.annotation.Nullable
+  public Boolean getOmitMetadata() {
+    return omitMetadata;
+  }
+
+  public void setOmitMetadata(@javax.annotation.Nullable Boolean omitMetadata) {
+    this.omitMetadata = omitMetadata;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -187,12 +211,13 @@ public class KvLookupSettingsConfig {
         Objects.equals(this.errorOnMissingKey, kvLookupSettingsConfig.errorOnMissingKey) &&
         Objects.equals(this.joinPath, kvLookupSettingsConfig.joinPath) &&
         Objects.equals(this.kvLookupOutputId, kvLookupSettingsConfig.kvLookupOutputId) &&
-        Objects.equals(this.noMatchResponse, kvLookupSettingsConfig.noMatchResponse);
+        Objects.equals(this.noMatchResponse, kvLookupSettingsConfig.noMatchResponse) &&
+        Objects.equals(this.omitMetadata, kvLookupSettingsConfig.omitMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationKey, errorOnMissingKey, joinPath, kvLookupOutputId, noMatchResponse);
+    return Objects.hash(destinationKey, errorOnMissingKey, joinPath, kvLookupOutputId, noMatchResponse, omitMetadata);
   }
 
   @Override
@@ -204,6 +229,7 @@ public class KvLookupSettingsConfig {
     sb.append("    joinPath: ").append(toIndentedString(joinPath)).append("\n");
     sb.append("    kvLookupOutputId: ").append(toIndentedString(kvLookupOutputId)).append("\n");
     sb.append("    noMatchResponse: ").append(toIndentedString(noMatchResponse)).append("\n");
+    sb.append("    omitMetadata: ").append(toIndentedString(omitMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -222,7 +248,7 @@ public class KvLookupSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("destination_key", "error_on_missing_key", "join_path", "kv_lookup_output_id", "no_match_response"));
+    openapiFields = new HashSet<String>(Arrays.asList("destination_key", "error_on_missing_key", "join_path", "kv_lookup_output_id", "no_match_response", "omit_metadata"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

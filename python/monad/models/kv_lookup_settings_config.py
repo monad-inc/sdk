@@ -33,7 +33,8 @@ class KvLookupSettingsConfig(BaseModel):
     join_path: Optional[StrictStr] = Field(default=None, description="JoinPath is the path to a field whose values will be used as the lookup keys")
     kv_lookup_output_id: Optional[StrictStr] = Field(default=None, description="KVLookupOutputID is the id of the KV lookup output to join with")
     no_match_response: Optional[StrictStr] = Field(default=None, description="NoMatchResponse is the value to add to the record when no match is found")
-    __properties: ClassVar[List[str]] = ["destination_key", "error_on_missing_key", "join_path", "kv_lookup_output_id", "no_match_response"]
+    omit_metadata: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["destination_key", "error_on_missing_key", "join_path", "kv_lookup_output_id", "no_match_response", "omit_metadata"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -90,7 +91,8 @@ class KvLookupSettingsConfig(BaseModel):
             "error_on_missing_key": obj.get("error_on_missing_key"),
             "join_path": obj.get("join_path"),
             "kv_lookup_output_id": obj.get("kv_lookup_output_id"),
-            "no_match_response": obj.get("no_match_response")
+            "no_match_response": obj.get("no_match_response"),
+            "omit_metadata": obj.get("omit_metadata")
         })
         return _obj
 

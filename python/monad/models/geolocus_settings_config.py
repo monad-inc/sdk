@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,8 @@ class GeolocusSettingsConfig(BaseModel):
     destination_path: Optional[StrictStr] = Field(default=None, description="DestinationPath is the path where Geolocus results will be added to each record")
     ip_address_path: Optional[StrictStr] = Field(default=None, description="IPAddressPath is the path to a field containing an IP address to look up")
     no_match_response: Optional[StrictStr] = Field(default=None, description="NoMatchResponse is the value to add when no match is found")
-    __properties: ClassVar[List[str]] = ["destination_path", "ip_address_path", "no_match_response"]
+    omit_metadata: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["destination_path", "ip_address_path", "no_match_response", "omit_metadata"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -86,7 +87,8 @@ class GeolocusSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "destination_path": obj.get("destination_path"),
             "ip_address_path": obj.get("ip_address_path"),
-            "no_match_response": obj.get("no_match_response")
+            "no_match_response": obj.get("no_match_response"),
+            "omit_metadata": obj.get("omit_metadata")
         })
         return _obj
 

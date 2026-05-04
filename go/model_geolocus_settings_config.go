@@ -26,6 +26,7 @@ type GeolocusSettingsConfig struct {
 	IpAddressPath *string `json:"ip_address_path,omitempty"`
 	// NoMatchResponse is the value to add when no match is found
 	NoMatchResponse *string `json:"no_match_response,omitempty"`
+	OmitMetadata *bool `json:"omit_metadata,omitempty"`
 }
 
 // NewGeolocusSettingsConfig instantiates a new GeolocusSettingsConfig object
@@ -141,6 +142,38 @@ func (o *GeolocusSettingsConfig) SetNoMatchResponse(v string) {
 	o.NoMatchResponse = &v
 }
 
+// GetOmitMetadata returns the OmitMetadata field value if set, zero value otherwise.
+func (o *GeolocusSettingsConfig) GetOmitMetadata() bool {
+	if o == nil || IsNil(o.OmitMetadata) {
+		var ret bool
+		return ret
+	}
+	return *o.OmitMetadata
+}
+
+// GetOmitMetadataOk returns a tuple with the OmitMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GeolocusSettingsConfig) GetOmitMetadataOk() (*bool, bool) {
+	if o == nil || IsNil(o.OmitMetadata) {
+		return nil, false
+	}
+	return o.OmitMetadata, true
+}
+
+// HasOmitMetadata returns a boolean if a field has been set.
+func (o *GeolocusSettingsConfig) HasOmitMetadata() bool {
+	if o != nil && !IsNil(o.OmitMetadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetOmitMetadata gets a reference to the given bool and assigns it to the OmitMetadata field.
+func (o *GeolocusSettingsConfig) SetOmitMetadata(v bool) {
+	o.OmitMetadata = &v
+}
+
 func (o GeolocusSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -159,6 +192,9 @@ func (o GeolocusSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NoMatchResponse) {
 		toSerialize["no_match_response"] = o.NoMatchResponse
+	}
+	if !IsNil(o.OmitMetadata) {
+		toSerialize["omit_metadata"] = o.OmitMetadata
 	}
 	return toSerialize, nil
 }

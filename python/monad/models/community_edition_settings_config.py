@@ -32,8 +32,9 @@ class CommunityEditionSettingsConfig(BaseModel):
     error_on_rate_limit: Optional[StrictBool] = Field(default=None, description="ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false)")
     ip_address_path: Optional[StrictStr] = Field(default=None, description="IPAddressPath is the path to a field containing an IP address to look up")
     no_match_response: Optional[StrictStr] = Field(default=None, description="NoMatchResponse is the value to add when no match is found")
+    omit_metadata: Optional[StrictBool] = None
     rate_limit_response: Optional[StrictStr] = Field(default=None, description="RateLimitResponse is the value to add when rate limited")
-    __properties: ClassVar[List[str]] = ["destination_path", "error_on_rate_limit", "ip_address_path", "no_match_response", "rate_limit_response"]
+    __properties: ClassVar[List[str]] = ["destination_path", "error_on_rate_limit", "ip_address_path", "no_match_response", "omit_metadata", "rate_limit_response"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -90,6 +91,7 @@ class CommunityEditionSettingsConfig(BaseModel):
             "error_on_rate_limit": obj.get("error_on_rate_limit"),
             "ip_address_path": obj.get("ip_address_path"),
             "no_match_response": obj.get("no_match_response"),
+            "omit_metadata": obj.get("omit_metadata"),
             "rate_limit_response": obj.get("rate_limit_response")
         })
         return _obj

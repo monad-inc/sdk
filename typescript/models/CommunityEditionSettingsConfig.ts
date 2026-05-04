@@ -32,6 +32,7 @@ export class CommunityEditionSettingsConfig {
     * NoMatchResponse is the value to add when no match is found
     */
     'noMatchResponse'?: string;
+    'omitMetadata'?: boolean;
     /**
     * RateLimitResponse is the value to add when rate limited
     */
@@ -64,6 +65,12 @@ export class CommunityEditionSettingsConfig {
             "name": "noMatchResponse",
             "baseName": "no_match_response",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "omitMetadata",
+            "baseName": "omit_metadata",
+            "type": "boolean",
             "format": ""
         },
         {

@@ -12,6 +12,7 @@ GreyNoise Community Edition settings
 |**errorOnRateLimit** | **Boolean** | ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false) |  [optional] |
 |**ipAddressPath** | **String** | IPAddressPath is the path to a field containing an IP address to look up |  [optional] |
 |**noMatchResponse** | **String** | NoMatchResponse is the value to add when no match is found |  [optional] |
+|**omitMetadata** | **Boolean** |  |  [optional] |
 |**rateLimitResponse** | **String** | RateLimitResponse is the value to add when rate limited |  [optional] |
 
 

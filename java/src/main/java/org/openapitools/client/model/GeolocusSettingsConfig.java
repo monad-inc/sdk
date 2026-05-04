@@ -65,6 +65,11 @@ public class GeolocusSettingsConfig {
   @javax.annotation.Nullable
   private String noMatchResponse;
 
+  public static final String SERIALIZED_NAME_OMIT_METADATA = "omit_metadata";
+  @SerializedName(SERIALIZED_NAME_OMIT_METADATA)
+  @javax.annotation.Nullable
+  private Boolean omitMetadata;
+
   public GeolocusSettingsConfig() {
   }
 
@@ -125,6 +130,25 @@ public class GeolocusSettingsConfig {
   }
 
 
+  public GeolocusSettingsConfig omitMetadata(@javax.annotation.Nullable Boolean omitMetadata) {
+    this.omitMetadata = omitMetadata;
+    return this;
+  }
+
+  /**
+   * Get omitMetadata
+   * @return omitMetadata
+   */
+  @javax.annotation.Nullable
+  public Boolean getOmitMetadata() {
+    return omitMetadata;
+  }
+
+  public void setOmitMetadata(@javax.annotation.Nullable Boolean omitMetadata) {
+    this.omitMetadata = omitMetadata;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class GeolocusSettingsConfig {
     GeolocusSettingsConfig geolocusSettingsConfig = (GeolocusSettingsConfig) o;
     return Objects.equals(this.destinationPath, geolocusSettingsConfig.destinationPath) &&
         Objects.equals(this.ipAddressPath, geolocusSettingsConfig.ipAddressPath) &&
-        Objects.equals(this.noMatchResponse, geolocusSettingsConfig.noMatchResponse);
+        Objects.equals(this.noMatchResponse, geolocusSettingsConfig.noMatchResponse) &&
+        Objects.equals(this.omitMetadata, geolocusSettingsConfig.omitMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationPath, ipAddressPath, noMatchResponse);
+    return Objects.hash(destinationPath, ipAddressPath, noMatchResponse, omitMetadata);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class GeolocusSettingsConfig {
     sb.append("    destinationPath: ").append(toIndentedString(destinationPath)).append("\n");
     sb.append("    ipAddressPath: ").append(toIndentedString(ipAddressPath)).append("\n");
     sb.append("    noMatchResponse: ").append(toIndentedString(noMatchResponse)).append("\n");
+    sb.append("    omitMetadata: ").append(toIndentedString(omitMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,7 +196,7 @@ public class GeolocusSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("destination_path", "ip_address_path", "no_match_response"));
+    openapiFields = new HashSet<String>(Arrays.asList("destination_path", "ip_address_path", "no_match_response", "omit_metadata"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **error_on_rate_limit** | **bool** | ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false) | [optional] 
 **ip_address_path** | **str** | IPAddressPath is the path to a field containing an IP address to look up | [optional] 
 **no_match_response** | **str** | NoMatchResponse is the value to add to the record when no match is found | [optional] 
+**omit_metadata** | **bool** |  | [optional] 
 **rate_limit_response** | **str** | RateLimitResponse is the value to add when rate limited | [optional] 
 **destination_key** | **str** | DestinationKey is the path where the result will be stored in the record | [optional] 
 **error_on_missing_key** | **bool** | ErrorOnMissingKey If true, throw an error when key is not found in the KV store | [optional] 

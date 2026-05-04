@@ -61,4 +61,12 @@ public class GeolocusSettingsConfigTest {
         // TODO: test noMatchResponse
     }
 
+    /**
+     * Test the property 'omitMetadata'
+     */
+    @Test
+    public void omitMetadataTest() {
+        // TODO: test omitMetadata
+    }
+
 }

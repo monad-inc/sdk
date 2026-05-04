@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **destination_path** | **str** | DestinationPath is the path where Geolocus results will be added to each record | [optional] 
 **ip_address_path** | **str** | IPAddressPath is the path to a field containing an IP address to look up | [optional] 
 **no_match_response** | **str** | NoMatchResponse is the value to add when no match is found | [optional] 
+**omit_metadata** | **bool** |  | [optional] 
 
 ## Example
 

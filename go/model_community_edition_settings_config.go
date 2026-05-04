@@ -28,6 +28,7 @@ type CommunityEditionSettingsConfig struct {
 	IpAddressPath *string `json:"ip_address_path,omitempty"`
 	// NoMatchResponse is the value to add when no match is found
 	NoMatchResponse *string `json:"no_match_response,omitempty"`
+	OmitMetadata *bool `json:"omit_metadata,omitempty"`
 	// RateLimitResponse is the value to add when rate limited
 	RateLimitResponse *string `json:"rate_limit_response,omitempty"`
 }
@@ -177,6 +178,38 @@ func (o *CommunityEditionSettingsConfig) SetNoMatchResponse(v string) {
 	o.NoMatchResponse = &v
 }
 
+// GetOmitMetadata returns the OmitMetadata field value if set, zero value otherwise.
+func (o *CommunityEditionSettingsConfig) GetOmitMetadata() bool {
+	if o == nil || IsNil(o.OmitMetadata) {
+		var ret bool
+		return ret
+	}
+	return *o.OmitMetadata
+}
+
+// GetOmitMetadataOk returns a tuple with the OmitMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CommunityEditionSettingsConfig) GetOmitMetadataOk() (*bool, bool) {
+	if o == nil || IsNil(o.OmitMetadata) {
+		return nil, false
+	}
+	return o.OmitMetadata, true
+}
+
+// HasOmitMetadata returns a boolean if a field has been set.
+func (o *CommunityEditionSettingsConfig) HasOmitMetadata() bool {
+	if o != nil && !IsNil(o.OmitMetadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetOmitMetadata gets a reference to the given bool and assigns it to the OmitMetadata field.
+func (o *CommunityEditionSettingsConfig) SetOmitMetadata(v bool) {
+	o.OmitMetadata = &v
+}
+
 // GetRateLimitResponse returns the RateLimitResponse field value if set, zero value otherwise.
 func (o *CommunityEditionSettingsConfig) GetRateLimitResponse() string {
 	if o == nil || IsNil(o.RateLimitResponse) {
@@ -230,6 +263,9 @@ func (o CommunityEditionSettingsConfig) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.NoMatchResponse) {
 		toSerialize["no_match_response"] = o.NoMatchResponse
+	}
+	if !IsNil(o.OmitMetadata) {
+		toSerialize["omit_metadata"] = o.OmitMetadata
 	}
 	if !IsNil(o.RateLimitResponse) {
 		toSerialize["rate_limit_response"] = o.RateLimitResponse

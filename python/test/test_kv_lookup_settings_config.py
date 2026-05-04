@@ -40,7 +40,8 @@ class TestKvLookupSettingsConfig(unittest.TestCase):
                 error_on_missing_key = True,
                 join_path = '',
                 kv_lookup_output_id = '',
-                no_match_response = ''
+                no_match_response = '',
+                omit_metadata = True
             )
         else:
             return KvLookupSettingsConfig(

@@ -36,6 +36,7 @@ export class KvLookupSettingsConfig {
     * NoMatchResponse is the value to add to the record when no match is found
     */
     'noMatchResponse'?: string;
+    'omitMetadata'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -70,6 +71,12 @@ export class KvLookupSettingsConfig {
             "name": "noMatchResponse",
             "baseName": "no_match_response",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "omitMetadata",
+            "baseName": "omit_metadata",
+            "type": "boolean",
             "format": ""
         }    ];
 

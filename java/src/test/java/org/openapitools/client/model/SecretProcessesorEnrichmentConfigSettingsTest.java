@@ -74,6 +74,14 @@ public class SecretProcessesorEnrichmentConfigSettingsTest {
     }
 
     /**
+     * Test the property 'omitMetadata'
+     */
+    @Test
+    public void omitMetadataTest() {
+        // TODO: test omitMetadata
+    }
+
+    /**
      * Test the property 'rateLimitResponse'
      */
     @Test

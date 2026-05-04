@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ErrorOnRateLimit** | Pointer to **bool** | ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false) | [optional] 
 **IpAddressPath** | Pointer to **string** | IPAddressPath is the path to a field containing an IP address to look up | [optional] 
 **NoMatchResponse** | Pointer to **string** | NoMatchResponse is the value to add to the record when no match is found | [optional] 
+**OmitMetadata** | Pointer to **bool** |  | [optional] 
 **RateLimitResponse** | Pointer to **string** | RateLimitResponse is the value to add when rate limited | [optional] 
 **DestinationKey** | Pointer to **string** | DestinationKey is the path where the result will be stored in the record | [optional] 
 **ErrorOnMissingKey** | Pointer to **bool** | ErrorOnMissingKey If true, throw an error when key is not found in the KV store | [optional] 
@@ -132,6 +133,31 @@ SetNoMatchResponse sets NoMatchResponse field to given value.
 `func (o *SecretProcessesorEnrichmentConfigSettings) HasNoMatchResponse() bool`
 
 HasNoMatchResponse returns a boolean if a field has been set.
+
+### GetOmitMetadata
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetOmitMetadata() bool`
+
+GetOmitMetadata returns the OmitMetadata field if non-nil, zero value otherwise.
+
+### GetOmitMetadataOk
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetOmitMetadataOk() (*bool, bool)`
+
+GetOmitMetadataOk returns a tuple with the OmitMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOmitMetadata
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) SetOmitMetadata(v bool)`
+
+SetOmitMetadata sets OmitMetadata field to given value.
+
+### HasOmitMetadata
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) HasOmitMetadata() bool`
+
+HasOmitMetadata returns a boolean if a field has been set.
 
 ### GetRateLimitResponse
 

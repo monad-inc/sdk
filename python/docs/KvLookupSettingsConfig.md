@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **join_path** | **str** | JoinPath is the path to a field whose values will be used as the lookup keys | [optional] 
 **kv_lookup_output_id** | **str** | KVLookupOutputID is the id of the KV lookup output to join with | [optional] 
 **no_match_response** | **str** | NoMatchResponse is the value to add to the record when no match is found | [optional] 
+**omit_metadata** | **bool** |  | [optional] 
 
 ## Example
 

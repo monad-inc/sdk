@@ -1642,6 +1642,9 @@
                         "description": "NoMatchResponse is the value to add when no match is found",
                         "type": "string"
                     },
+                    "omit_metadata": {
+                        "type": "boolean"
+                    },
                     "rate_limit_response": {
                         "description": "RateLimitResponse is the value to add when rate limited",
                         "type": "string"
@@ -2495,6 +2498,9 @@
                     "no_match_response": {
                         "description": "NoMatchResponse is the value to add when no match is found",
                         "type": "string"
+                    },
+                    "omit_metadata": {
+                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -3734,6 +3740,9 @@
                     "no_match_response": {
                         "description": "NoMatchResponse is the value to add to the record when no match is found",
                         "type": "string"
+                    },
+                    "omit_metadata": {
+                        "type": "boolean"
                     }
                 },
                 "type": "object"

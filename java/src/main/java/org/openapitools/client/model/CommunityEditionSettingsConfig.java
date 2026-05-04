@@ -70,6 +70,11 @@ public class CommunityEditionSettingsConfig {
   @javax.annotation.Nullable
   private String noMatchResponse;
 
+  public static final String SERIALIZED_NAME_OMIT_METADATA = "omit_metadata";
+  @SerializedName(SERIALIZED_NAME_OMIT_METADATA)
+  @javax.annotation.Nullable
+  private Boolean omitMetadata;
+
   public static final String SERIALIZED_NAME_RATE_LIMIT_RESPONSE = "rate_limit_response";
   @SerializedName(SERIALIZED_NAME_RATE_LIMIT_RESPONSE)
   @javax.annotation.Nullable
@@ -154,6 +159,25 @@ public class CommunityEditionSettingsConfig {
   }
 
 
+  public CommunityEditionSettingsConfig omitMetadata(@javax.annotation.Nullable Boolean omitMetadata) {
+    this.omitMetadata = omitMetadata;
+    return this;
+  }
+
+  /**
+   * Get omitMetadata
+   * @return omitMetadata
+   */
+  @javax.annotation.Nullable
+  public Boolean getOmitMetadata() {
+    return omitMetadata;
+  }
+
+  public void setOmitMetadata(@javax.annotation.Nullable Boolean omitMetadata) {
+    this.omitMetadata = omitMetadata;
+  }
+
+
   public CommunityEditionSettingsConfig rateLimitResponse(@javax.annotation.Nullable String rateLimitResponse) {
     this.rateLimitResponse = rateLimitResponse;
     return this;
@@ -187,12 +211,13 @@ public class CommunityEditionSettingsConfig {
         Objects.equals(this.errorOnRateLimit, communityEditionSettingsConfig.errorOnRateLimit) &&
         Objects.equals(this.ipAddressPath, communityEditionSettingsConfig.ipAddressPath) &&
         Objects.equals(this.noMatchResponse, communityEditionSettingsConfig.noMatchResponse) &&
+        Objects.equals(this.omitMetadata, communityEditionSettingsConfig.omitMetadata) &&
         Objects.equals(this.rateLimitResponse, communityEditionSettingsConfig.rateLimitResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationPath, errorOnRateLimit, ipAddressPath, noMatchResponse, rateLimitResponse);
+    return Objects.hash(destinationPath, errorOnRateLimit, ipAddressPath, noMatchResponse, omitMetadata, rateLimitResponse);
   }
 
   @Override
@@ -203,6 +228,7 @@ public class CommunityEditionSettingsConfig {
     sb.append("    errorOnRateLimit: ").append(toIndentedString(errorOnRateLimit)).append("\n");
     sb.append("    ipAddressPath: ").append(toIndentedString(ipAddressPath)).append("\n");
     sb.append("    noMatchResponse: ").append(toIndentedString(noMatchResponse)).append("\n");
+    sb.append("    omitMetadata: ").append(toIndentedString(omitMetadata)).append("\n");
     sb.append("    rateLimitResponse: ").append(toIndentedString(rateLimitResponse)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -222,7 +248,7 @@ public class CommunityEditionSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("destination_path", "error_on_rate_limit", "ip_address_path", "no_match_response", "rate_limit_response"));
+    openapiFields = new HashSet<String>(Arrays.asList("destination_path", "error_on_rate_limit", "ip_address_path", "no_match_response", "omit_metadata", "rate_limit_response"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

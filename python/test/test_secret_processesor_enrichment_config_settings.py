@@ -40,6 +40,7 @@ class TestSecretProcessesorEnrichmentConfigSettings(unittest.TestCase):
                 error_on_rate_limit = True,
                 ip_address_path = '',
                 no_match_response = '',
+                omit_metadata = True,
                 rate_limit_response = '',
                 destination_key = '',
                 error_on_missing_key = True,

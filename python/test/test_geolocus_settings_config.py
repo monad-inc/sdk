@@ -38,7 +38,8 @@ class TestGeolocusSettingsConfig(unittest.TestCase):
             return GeolocusSettingsConfig(
                 destination_path = '',
                 ip_address_path = '',
-                no_match_response = ''
+                no_match_response = '',
+                omit_metadata = True
             )
         else:
             return GeolocusSettingsConfig(
