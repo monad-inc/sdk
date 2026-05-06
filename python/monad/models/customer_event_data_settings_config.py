@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,9 +29,16 @@ class CustomerEventDataSettingsConfig(BaseModel):
     Docusign Customer Event Data settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from in RFC3339 format. If not specified, a full sync of data upto now would be performed on the first sync (since the previous 7 days). You must specify a backfill time to query for data for a time before 7 days. All syncs thereafter will be incremental.")
-    environment: Optional[StrictStr] = Field(default=None, description="Determines the URI {environment}.docusign.com")
-    user_id: Optional[StrictStr] = Field(default=None, description="User id of the Docusign admin")
+    environment: StrictStr = Field(description="Determines the URI {environment}.docusign.com")
+    user_id: StrictStr = Field(description="User id of the Docusign admin")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "environment", "user_id"]
+
+    @field_validator('environment')
+    def environment_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['production', 'development']):
+            raise ValueError("must be one of enum values ('production', 'development')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,

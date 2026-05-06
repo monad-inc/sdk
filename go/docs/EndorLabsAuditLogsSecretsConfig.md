@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ApiSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewEndorLabsAuditLogsSecretsConfig
 
-`func NewEndorLabsAuditLogsSecretsConfig() *EndorLabsAuditLogsSecretsConfig`
+`func NewEndorLabsAuditLogsSecretsConfig(apiKey ModelsSecret, apiSecret ModelsSecret, ) *EndorLabsAuditLogsSecretsConfig`
 
 NewEndorLabsAuditLogsSecretsConfig instantiates a new EndorLabsAuditLogsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetApiKey sets ApiKey field to given value.
 
-### HasApiKey
-
-`func (o *EndorLabsAuditLogsSecretsConfig) HasApiKey() bool`
-
-HasApiKey returns a boolean if a field has been set.
 
 ### GetApiSecret
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetApiSecret sets ApiSecret field to given value.
 
-### HasApiSecret
-
-`func (o *EndorLabsAuditLogsSecretsConfig) HasApiSecret() bool`
-
-HasApiSecret returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -41,6 +41,7 @@ class TestOfflineenrollmentlogsSettingsConfig(unittest.TestCase):
             )
         else:
             return OfflineenrollmentlogsSettingsConfig(
+                host = '',
         )
         """
 

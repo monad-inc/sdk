@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**RsaPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**IntegrationKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**RsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewCustomerEventDataSecretsConfig
 
-`func NewCustomerEventDataSecretsConfig() *CustomerEventDataSecretsConfig`
+`func NewCustomerEventDataSecretsConfig(integrationKey ModelsSecret, rsaPrivateKey ModelsSecret, ) *CustomerEventDataSecretsConfig`
 
 NewCustomerEventDataSecretsConfig instantiates a new CustomerEventDataSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetIntegrationKey sets IntegrationKey field to given value.
 
-### HasIntegrationKey
-
-`func (o *CustomerEventDataSecretsConfig) HasIntegrationKey() bool`
-
-HasIntegrationKey returns a boolean if a field has been set.
 
 ### GetRsaPrivateKey
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetRsaPrivateKey sets RsaPrivateKey field to given value.
 
-### HasRsaPrivateKey
-
-`func (o *CustomerEventDataSecretsConfig) HasRsaPrivateKey() bool`
-
-HasRsaPrivateKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

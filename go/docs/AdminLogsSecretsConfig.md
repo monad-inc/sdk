@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**IntegrationKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewAdminLogsSecretsConfig
 
-`func NewAdminLogsSecretsConfig() *AdminLogsSecretsConfig`
+`func NewAdminLogsSecretsConfig(integrationKey ModelsSecret, secretKey ModelsSecret, ) *AdminLogsSecretsConfig`
 
 NewAdminLogsSecretsConfig instantiates a new AdminLogsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetIntegrationKey sets IntegrationKey field to given value.
 
-### HasIntegrationKey
-
-`func (o *AdminLogsSecretsConfig) HasIntegrationKey() bool`
-
-HasIntegrationKey returns a boolean if a field has been set.
 
 ### GetSecretKey
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
-### HasSecretKey
-
-`func (o *AdminLogsSecretsConfig) HasSecretKey() bool`
-
-HasSecretKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

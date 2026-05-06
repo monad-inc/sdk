@@ -29,7 +29,7 @@ class EndorLabsAuditLogsSettingsConfig(BaseModel):
     Endor Labs Audit Logs settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
-    namespace: Optional[StrictStr] = Field(default=None, description="Your Endor Labs organization namespace (e.g., \"your-org\")")
+    namespace: StrictStr = Field(description="Your Endor Labs organization namespace (e.g., \"your-org\")")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "namespace", "use_synthetic_data"]
 

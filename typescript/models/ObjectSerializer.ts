@@ -676,7 +676,7 @@ import { CreateTransformRequestClass } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
-import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
+import { CustomerEventDataSettingsConfig , CustomerEventDataSettingsConfigEnvironmentEnum    } from '../models/CustomerEventDataSettingsConfig';
 import { DatabricksSecretsConfig } from '../models/DatabricksSecretsConfig';
 import { DatabricksSettingsConfig } from '../models/DatabricksSettingsConfig';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
@@ -1139,6 +1139,7 @@ let enumsMap: Set<string> = new Set<string>([
     "AwssqsoutputQueueType",
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
+    "CustomerEventDataSettingsConfigEnvironmentEnum",
     "ElasticsearchAuthTypeEnum",
     "ElasticsearchConnectionTypeEnum",
     "FormatterType",
@@ -1176,6 +1177,7 @@ let enumsMap: Set<string> = new Set<string>([
     "OpensearchAuthMode",
     "OutputsBillingType",
     "PagerdutyEventType",
+    "SecretProcessesorInputConfigSettingsEnvironmentEnum",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
     "SecretProcessesorInputConfigSettingsIssueTypesEnum",
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",

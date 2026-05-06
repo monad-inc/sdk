@@ -8,8 +8,8 @@ Duo Security Offline Enrollment Logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

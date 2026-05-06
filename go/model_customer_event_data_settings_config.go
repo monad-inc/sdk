@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the CustomerEventDataSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,17 +25,21 @@ type CustomerEventDataSettingsConfig struct {
 	// Date to start fetching data from in RFC3339 format. If not specified, a full sync of data upto now would be performed on the first sync (since the previous 7 days). You must specify a backfill time to query for data for a time before 7 days. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Determines the URI {environment}.docusign.com
-	Environment *string `json:"environment,omitempty"`
+	Environment string `json:"environment"`
 	// User id of the Docusign admin
-	UserId *string `json:"user_id,omitempty"`
+	UserId string `json:"user_id"`
 }
+
+type _CustomerEventDataSettingsConfig CustomerEventDataSettingsConfig
 
 // NewCustomerEventDataSettingsConfig instantiates a new CustomerEventDataSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerEventDataSettingsConfig() *CustomerEventDataSettingsConfig {
+func NewCustomerEventDataSettingsConfig(environment string, userId string) *CustomerEventDataSettingsConfig {
 	this := CustomerEventDataSettingsConfig{}
+	this.Environment = environment
+	this.UserId = userId
 	return &this
 }
 
@@ -77,68 +83,52 @@ func (o *CustomerEventDataSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
-// GetEnvironment returns the Environment field value if set, zero value otherwise.
+// GetEnvironment returns the Environment field value
 func (o *CustomerEventDataSettingsConfig) GetEnvironment() string {
-	if o == nil || IsNil(o.Environment) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Environment
+
+	return o.Environment
 }
 
-// GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
+// GetEnvironmentOk returns a tuple with the Environment field value
 // and a boolean to check if the value has been set.
 func (o *CustomerEventDataSettingsConfig) GetEnvironmentOk() (*string, bool) {
-	if o == nil || IsNil(o.Environment) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Environment, true
+	return &o.Environment, true
 }
 
-// HasEnvironment returns a boolean if a field has been set.
-func (o *CustomerEventDataSettingsConfig) HasEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnvironment gets a reference to the given string and assigns it to the Environment field.
+// SetEnvironment sets field value
 func (o *CustomerEventDataSettingsConfig) SetEnvironment(v string) {
-	o.Environment = &v
+	o.Environment = v
 }
 
-// GetUserId returns the UserId field value if set, zero value otherwise.
+// GetUserId returns the UserId field value
 func (o *CustomerEventDataSettingsConfig) GetUserId() string {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserId
+
+	return o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
+// GetUserIdOk returns a tuple with the UserId field value
 // and a boolean to check if the value has been set.
 func (o *CustomerEventDataSettingsConfig) GetUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserId, true
+	return &o.UserId, true
 }
 
-// HasUserId returns a boolean if a field has been set.
-func (o *CustomerEventDataSettingsConfig) HasUserId() bool {
-	if o != nil && !IsNil(o.UserId) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserId gets a reference to the given string and assigns it to the UserId field.
+// SetUserId sets field value
 func (o *CustomerEventDataSettingsConfig) SetUserId(v string) {
-	o.UserId = &v
+	o.UserId = v
 }
 
 func (o CustomerEventDataSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -154,13 +144,47 @@ func (o CustomerEventDataSettingsConfig) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.Environment) {
-		toSerialize["environment"] = o.Environment
-	}
-	if !IsNil(o.UserId) {
-		toSerialize["user_id"] = o.UserId
-	}
+	toSerialize["environment"] = o.Environment
+	toSerialize["user_id"] = o.UserId
 	return toSerialize, nil
+}
+
+func (o *CustomerEventDataSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"environment",
+		"user_id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCustomerEventDataSettingsConfig := _CustomerEventDataSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varCustomerEventDataSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CustomerEventDataSettingsConfig(varCustomerEventDataSettingsConfig)
+
+	return err
 }
 
 type NullableCustomerEventDataSettingsConfig struct {

@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
@@ -25,8 +25,8 @@
 |**personalAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**rsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**rsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

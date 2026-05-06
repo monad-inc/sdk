@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the CustomerEventDataSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,16 +22,20 @@ var _ MappedNullable = &CustomerEventDataSecretsConfig{}
 
 // CustomerEventDataSecretsConfig Docusign Customer Event Data secrets
 type CustomerEventDataSecretsConfig struct {
-	IntegrationKey *ModelsSecret `json:"integration_key,omitempty"`
-	RsaPrivateKey *ModelsSecret `json:"rsa_private_key,omitempty"`
+	IntegrationKey ModelsSecret `json:"integration_key"`
+	RsaPrivateKey ModelsSecret `json:"rsa_private_key"`
 }
+
+type _CustomerEventDataSecretsConfig CustomerEventDataSecretsConfig
 
 // NewCustomerEventDataSecretsConfig instantiates a new CustomerEventDataSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerEventDataSecretsConfig() *CustomerEventDataSecretsConfig {
+func NewCustomerEventDataSecretsConfig(integrationKey ModelsSecret, rsaPrivateKey ModelsSecret) *CustomerEventDataSecretsConfig {
 	this := CustomerEventDataSecretsConfig{}
+	this.IntegrationKey = integrationKey
+	this.RsaPrivateKey = rsaPrivateKey
 	return &this
 }
 
@@ -41,68 +47,52 @@ func NewCustomerEventDataSecretsConfigWithDefaults() *CustomerEventDataSecretsCo
 	return &this
 }
 
-// GetIntegrationKey returns the IntegrationKey field value if set, zero value otherwise.
+// GetIntegrationKey returns the IntegrationKey field value
 func (o *CustomerEventDataSecretsConfig) GetIntegrationKey() ModelsSecret {
-	if o == nil || IsNil(o.IntegrationKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.IntegrationKey
+
+	return o.IntegrationKey
 }
 
-// GetIntegrationKeyOk returns a tuple with the IntegrationKey field value if set, nil otherwise
+// GetIntegrationKeyOk returns a tuple with the IntegrationKey field value
 // and a boolean to check if the value has been set.
 func (o *CustomerEventDataSecretsConfig) GetIntegrationKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.IntegrationKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IntegrationKey, true
+	return &o.IntegrationKey, true
 }
 
-// HasIntegrationKey returns a boolean if a field has been set.
-func (o *CustomerEventDataSecretsConfig) HasIntegrationKey() bool {
-	if o != nil && !IsNil(o.IntegrationKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetIntegrationKey gets a reference to the given ModelsSecret and assigns it to the IntegrationKey field.
+// SetIntegrationKey sets field value
 func (o *CustomerEventDataSecretsConfig) SetIntegrationKey(v ModelsSecret) {
-	o.IntegrationKey = &v
+	o.IntegrationKey = v
 }
 
-// GetRsaPrivateKey returns the RsaPrivateKey field value if set, zero value otherwise.
+// GetRsaPrivateKey returns the RsaPrivateKey field value
 func (o *CustomerEventDataSecretsConfig) GetRsaPrivateKey() ModelsSecret {
-	if o == nil || IsNil(o.RsaPrivateKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.RsaPrivateKey
+
+	return o.RsaPrivateKey
 }
 
-// GetRsaPrivateKeyOk returns a tuple with the RsaPrivateKey field value if set, nil otherwise
+// GetRsaPrivateKeyOk returns a tuple with the RsaPrivateKey field value
 // and a boolean to check if the value has been set.
 func (o *CustomerEventDataSecretsConfig) GetRsaPrivateKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.RsaPrivateKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RsaPrivateKey, true
+	return &o.RsaPrivateKey, true
 }
 
-// HasRsaPrivateKey returns a boolean if a field has been set.
-func (o *CustomerEventDataSecretsConfig) HasRsaPrivateKey() bool {
-	if o != nil && !IsNil(o.RsaPrivateKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetRsaPrivateKey gets a reference to the given ModelsSecret and assigns it to the RsaPrivateKey field.
+// SetRsaPrivateKey sets field value
 func (o *CustomerEventDataSecretsConfig) SetRsaPrivateKey(v ModelsSecret) {
-	o.RsaPrivateKey = &v
+	o.RsaPrivateKey = v
 }
 
 func (o CustomerEventDataSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -115,13 +105,47 @@ func (o CustomerEventDataSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o CustomerEventDataSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IntegrationKey) {
-		toSerialize["integration_key"] = o.IntegrationKey
-	}
-	if !IsNil(o.RsaPrivateKey) {
-		toSerialize["rsa_private_key"] = o.RsaPrivateKey
-	}
+	toSerialize["integration_key"] = o.IntegrationKey
+	toSerialize["rsa_private_key"] = o.RsaPrivateKey
 	return toSerialize, nil
+}
+
+func (o *CustomerEventDataSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"integration_key",
+		"rsa_private_key",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCustomerEventDataSecretsConfig := _CustomerEventDataSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varCustomerEventDataSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CustomerEventDataSecretsConfig(varCustomerEventDataSecretsConfig)
+
+	return err
 }
 
 type NullableCustomerEventDataSecretsConfig struct {

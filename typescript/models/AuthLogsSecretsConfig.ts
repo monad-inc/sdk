@@ -14,8 +14,8 @@ import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 export class AuthLogsSecretsConfig {
-    'integrationKey'?: ModelsSecret;
-    'secretKey'?: ModelsSecret;
+    'integrationKey': ModelsSecret;
+    'secretKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

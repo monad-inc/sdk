@@ -53,18 +53,18 @@ import org.openapitools.client.JSON;
 public class CustomerEventDataSecretsConfig {
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integration_key";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret integrationKey;
 
   public static final String SERIALIZED_NAME_RSA_PRIVATE_KEY = "rsa_private_key";
   @SerializedName(SERIALIZED_NAME_RSA_PRIVATE_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret rsaPrivateKey;
 
   public CustomerEventDataSecretsConfig() {
   }
 
-  public CustomerEventDataSecretsConfig integrationKey(@javax.annotation.Nullable ModelsSecret integrationKey) {
+  public CustomerEventDataSecretsConfig integrationKey(@javax.annotation.Nonnull ModelsSecret integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
@@ -73,17 +73,17 @@ public class CustomerEventDataSecretsConfig {
    * Get integrationKey
    * @return integrationKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(@javax.annotation.Nullable ModelsSecret integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nonnull ModelsSecret integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public CustomerEventDataSecretsConfig rsaPrivateKey(@javax.annotation.Nullable ModelsSecret rsaPrivateKey) {
+  public CustomerEventDataSecretsConfig rsaPrivateKey(@javax.annotation.Nonnull ModelsSecret rsaPrivateKey) {
     this.rsaPrivateKey = rsaPrivateKey;
     return this;
   }
@@ -92,12 +92,12 @@ public class CustomerEventDataSecretsConfig {
    * Get rsaPrivateKey
    * @return rsaPrivateKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getRsaPrivateKey() {
     return rsaPrivateKey;
   }
 
-  public void setRsaPrivateKey(@javax.annotation.Nullable ModelsSecret rsaPrivateKey) {
+  public void setRsaPrivateKey(@javax.annotation.Nonnull ModelsSecret rsaPrivateKey) {
     this.rsaPrivateKey = rsaPrivateKey;
   }
 
@@ -148,7 +148,7 @@ public class CustomerEventDataSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("integration_key", "rsa_private_key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("integration_key", "rsa_private_key"));
   }
 
   /**
@@ -171,15 +171,18 @@ public class CustomerEventDataSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CustomerEventDataSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CustomerEventDataSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `integration_key`
-      if (jsonObj.get("integration_key") != null && !jsonObj.get("integration_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("integration_key"));
-      }
-      // validate the optional field `rsa_private_key`
-      if (jsonObj.get("rsa_private_key") != null && !jsonObj.get("rsa_private_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("rsa_private_key"));
-      }
+      // validate the required field `integration_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("integration_key"));
+      // validate the required field `rsa_private_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("rsa_private_key"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

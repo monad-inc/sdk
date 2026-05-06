@@ -53,18 +53,18 @@ import org.openapitools.client.JSON;
 public class EndorLabsAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret apiKey;
 
   public static final String SERIALIZED_NAME_API_SECRET = "api_secret";
   @SerializedName(SERIALIZED_NAME_API_SECRET)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret apiSecret;
 
   public EndorLabsAuditLogsSecretsConfig() {
   }
 
-  public EndorLabsAuditLogsSecretsConfig apiKey(@javax.annotation.Nullable ModelsSecret apiKey) {
+  public EndorLabsAuditLogsSecretsConfig apiKey(@javax.annotation.Nonnull ModelsSecret apiKey) {
     this.apiKey = apiKey;
     return this;
   }
@@ -73,17 +73,17 @@ public class EndorLabsAuditLogsSecretsConfig {
    * Get apiKey
    * @return apiKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getApiKey() {
     return apiKey;
   }
 
-  public void setApiKey(@javax.annotation.Nullable ModelsSecret apiKey) {
+  public void setApiKey(@javax.annotation.Nonnull ModelsSecret apiKey) {
     this.apiKey = apiKey;
   }
 
 
-  public EndorLabsAuditLogsSecretsConfig apiSecret(@javax.annotation.Nullable ModelsSecret apiSecret) {
+  public EndorLabsAuditLogsSecretsConfig apiSecret(@javax.annotation.Nonnull ModelsSecret apiSecret) {
     this.apiSecret = apiSecret;
     return this;
   }
@@ -92,12 +92,12 @@ public class EndorLabsAuditLogsSecretsConfig {
    * Get apiSecret
    * @return apiSecret
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getApiSecret() {
     return apiSecret;
   }
 
-  public void setApiSecret(@javax.annotation.Nullable ModelsSecret apiSecret) {
+  public void setApiSecret(@javax.annotation.Nonnull ModelsSecret apiSecret) {
     this.apiSecret = apiSecret;
   }
 
@@ -148,7 +148,7 @@ public class EndorLabsAuditLogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("api_key", "api_secret"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("api_key", "api_secret"));
   }
 
   /**
@@ -171,15 +171,18 @@ public class EndorLabsAuditLogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EndorLabsAuditLogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EndorLabsAuditLogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `api_key`
-      if (jsonObj.get("api_key") != null && !jsonObj.get("api_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("api_key"));
-      }
-      // validate the optional field `api_secret`
-      if (jsonObj.get("api_secret") != null && !jsonObj.get("api_secret").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("api_secret"));
-      }
+      // validate the required field `api_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("api_key"));
+      // validate the required field `api_secret`
+      ModelsSecret.validateJsonElement(jsonObj.get("api_secret"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

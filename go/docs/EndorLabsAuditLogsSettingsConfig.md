@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**Namespace** | Pointer to **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | [optional] 
+**Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewEndorLabsAuditLogsSettingsConfig
 
-`func NewEndorLabsAuditLogsSettingsConfig() *EndorLabsAuditLogsSettingsConfig`
+`func NewEndorLabsAuditLogsSettingsConfig(namespace string, ) *EndorLabsAuditLogsSettingsConfig`
 
 NewEndorLabsAuditLogsSettingsConfig instantiates a new EndorLabsAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
-### HasNamespace
-
-`func (o *EndorLabsAuditLogsSettingsConfig) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

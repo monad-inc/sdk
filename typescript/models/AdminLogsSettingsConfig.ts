@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class AdminLogsSettingsConfig {
-    'host'?: string;
+    'host': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

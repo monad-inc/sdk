@@ -6,8 +6,8 @@ Duo Security Activity Logs secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

@@ -129,7 +129,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 org_id = '',
                 api_key_id = '',
                 domain_name = '',
-                environment = '',
+                environment = 'production',
                 user_id = '',
                 category = '',
                 namespace = '',
@@ -250,6 +250,10 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
             )
         else:
             return SecretProcessesorInputConfigSettings(
+                host = '',
+                environment = 'production',
+                user_id = '',
+                namespace = '',
         )
         """
 

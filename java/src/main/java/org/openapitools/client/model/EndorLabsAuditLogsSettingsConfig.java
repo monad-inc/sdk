@@ -57,7 +57,7 @@ public class EndorLabsAuditLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_NAMESPACE = "namespace";
   @SerializedName(SERIALIZED_NAME_NAMESPACE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String namespace;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -87,7 +87,7 @@ public class EndorLabsAuditLogsSettingsConfig {
   }
 
 
-  public EndorLabsAuditLogsSettingsConfig namespace(@javax.annotation.Nullable String namespace) {
+  public EndorLabsAuditLogsSettingsConfig namespace(@javax.annotation.Nonnull String namespace) {
     this.namespace = namespace;
     return this;
   }
@@ -96,12 +96,12 @@ public class EndorLabsAuditLogsSettingsConfig {
    * Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;)
    * @return namespace
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getNamespace() {
     return namespace;
   }
 
-  public void setNamespace(@javax.annotation.Nullable String namespace) {
+  public void setNamespace(@javax.annotation.Nonnull String namespace) {
     this.namespace = namespace;
   }
 
@@ -173,7 +173,7 @@ public class EndorLabsAuditLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "namespace", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("namespace"));
   }
 
   /**
@@ -196,11 +196,18 @@ public class EndorLabsAuditLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EndorLabsAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EndorLabsAuditLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("namespace") != null && !jsonObj.get("namespace").isJsonNull()) && !jsonObj.get("namespace").isJsonPrimitive()) {
+      if (!jsonObj.get("namespace").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `namespace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("namespace").toString()));
       }
   }

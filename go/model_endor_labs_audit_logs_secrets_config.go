@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the EndorLabsAuditLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,16 +22,20 @@ var _ MappedNullable = &EndorLabsAuditLogsSecretsConfig{}
 
 // EndorLabsAuditLogsSecretsConfig Endor Labs Audit Logs secrets
 type EndorLabsAuditLogsSecretsConfig struct {
-	ApiKey *ModelsSecret `json:"api_key,omitempty"`
-	ApiSecret *ModelsSecret `json:"api_secret,omitempty"`
+	ApiKey ModelsSecret `json:"api_key"`
+	ApiSecret ModelsSecret `json:"api_secret"`
 }
+
+type _EndorLabsAuditLogsSecretsConfig EndorLabsAuditLogsSecretsConfig
 
 // NewEndorLabsAuditLogsSecretsConfig instantiates a new EndorLabsAuditLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEndorLabsAuditLogsSecretsConfig() *EndorLabsAuditLogsSecretsConfig {
+func NewEndorLabsAuditLogsSecretsConfig(apiKey ModelsSecret, apiSecret ModelsSecret) *EndorLabsAuditLogsSecretsConfig {
 	this := EndorLabsAuditLogsSecretsConfig{}
+	this.ApiKey = apiKey
+	this.ApiSecret = apiSecret
 	return &this
 }
 
@@ -41,68 +47,52 @@ func NewEndorLabsAuditLogsSecretsConfigWithDefaults() *EndorLabsAuditLogsSecrets
 	return &this
 }
 
-// GetApiKey returns the ApiKey field value if set, zero value otherwise.
+// GetApiKey returns the ApiKey field value
 func (o *EndorLabsAuditLogsSecretsConfig) GetApiKey() ModelsSecret {
-	if o == nil || IsNil(o.ApiKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ApiKey
+
+	return o.ApiKey
 }
 
-// GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
+// GetApiKeyOk returns a tuple with the ApiKey field value
 // and a boolean to check if the value has been set.
 func (o *EndorLabsAuditLogsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ApiKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiKey, true
+	return &o.ApiKey, true
 }
 
-// HasApiKey returns a boolean if a field has been set.
-func (o *EndorLabsAuditLogsSecretsConfig) HasApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetApiKey gets a reference to the given ModelsSecret and assigns it to the ApiKey field.
+// SetApiKey sets field value
 func (o *EndorLabsAuditLogsSecretsConfig) SetApiKey(v ModelsSecret) {
-	o.ApiKey = &v
+	o.ApiKey = v
 }
 
-// GetApiSecret returns the ApiSecret field value if set, zero value otherwise.
+// GetApiSecret returns the ApiSecret field value
 func (o *EndorLabsAuditLogsSecretsConfig) GetApiSecret() ModelsSecret {
-	if o == nil || IsNil(o.ApiSecret) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ApiSecret
+
+	return o.ApiSecret
 }
 
-// GetApiSecretOk returns a tuple with the ApiSecret field value if set, nil otherwise
+// GetApiSecretOk returns a tuple with the ApiSecret field value
 // and a boolean to check if the value has been set.
 func (o *EndorLabsAuditLogsSecretsConfig) GetApiSecretOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ApiSecret) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiSecret, true
+	return &o.ApiSecret, true
 }
 
-// HasApiSecret returns a boolean if a field has been set.
-func (o *EndorLabsAuditLogsSecretsConfig) HasApiSecret() bool {
-	if o != nil && !IsNil(o.ApiSecret) {
-		return true
-	}
-
-	return false
-}
-
-// SetApiSecret gets a reference to the given ModelsSecret and assigns it to the ApiSecret field.
+// SetApiSecret sets field value
 func (o *EndorLabsAuditLogsSecretsConfig) SetApiSecret(v ModelsSecret) {
-	o.ApiSecret = &v
+	o.ApiSecret = v
 }
 
 func (o EndorLabsAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -115,13 +105,47 @@ func (o EndorLabsAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o EndorLabsAuditLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiKey) {
-		toSerialize["api_key"] = o.ApiKey
-	}
-	if !IsNil(o.ApiSecret) {
-		toSerialize["api_secret"] = o.ApiSecret
-	}
+	toSerialize["api_key"] = o.ApiKey
+	toSerialize["api_secret"] = o.ApiSecret
 	return toSerialize, nil
+}
+
+func (o *EndorLabsAuditLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"api_key",
+		"api_secret",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varEndorLabsAuditLogsSecretsConfig := _EndorLabsAuditLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varEndorLabsAuditLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EndorLabsAuditLogsSecretsConfig(varEndorLabsAuditLogsSecretsConfig)
+
+	return err
 }
 
 type NullableEndorLabsAuditLogsSecretsConfig struct {

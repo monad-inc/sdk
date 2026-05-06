@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Host** | Pointer to **string** |  | [optional] 
+**Host** | **string** |  | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewAuthLogsSettingsConfig
 
-`func NewAuthLogsSettingsConfig() *AuthLogsSettingsConfig`
+`func NewAuthLogsSettingsConfig(host string, ) *AuthLogsSettingsConfig`
 
 NewAuthLogsSettingsConfig instantiates a new AuthLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetHost sets Host field to given value.
 
-### HasHost
-
-`func (o *AuthLogsSettingsConfig) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

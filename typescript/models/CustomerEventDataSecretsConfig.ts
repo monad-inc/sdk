@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Docusign Customer Event Data secrets
 */
 export class CustomerEventDataSecretsConfig {
-    'integrationKey'?: ModelsSecret;
-    'rsaPrivateKey'?: ModelsSecret;
+    'integrationKey': ModelsSecret;
+    'rsaPrivateKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

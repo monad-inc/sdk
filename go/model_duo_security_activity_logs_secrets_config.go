@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the DuoSecurityActivityLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,16 +22,20 @@ var _ MappedNullable = &DuoSecurityActivityLogsSecretsConfig{}
 
 // DuoSecurityActivityLogsSecretsConfig Duo Security Activity Logs secrets
 type DuoSecurityActivityLogsSecretsConfig struct {
-	IntegrationKey *ModelsSecret `json:"integration_key,omitempty"`
-	SecretKey *ModelsSecret `json:"secret_key,omitempty"`
+	IntegrationKey ModelsSecret `json:"integration_key"`
+	SecretKey ModelsSecret `json:"secret_key"`
 }
+
+type _DuoSecurityActivityLogsSecretsConfig DuoSecurityActivityLogsSecretsConfig
 
 // NewDuoSecurityActivityLogsSecretsConfig instantiates a new DuoSecurityActivityLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDuoSecurityActivityLogsSecretsConfig() *DuoSecurityActivityLogsSecretsConfig {
+func NewDuoSecurityActivityLogsSecretsConfig(integrationKey ModelsSecret, secretKey ModelsSecret) *DuoSecurityActivityLogsSecretsConfig {
 	this := DuoSecurityActivityLogsSecretsConfig{}
+	this.IntegrationKey = integrationKey
+	this.SecretKey = secretKey
 	return &this
 }
 
@@ -41,68 +47,52 @@ func NewDuoSecurityActivityLogsSecretsConfigWithDefaults() *DuoSecurityActivityL
 	return &this
 }
 
-// GetIntegrationKey returns the IntegrationKey field value if set, zero value otherwise.
+// GetIntegrationKey returns the IntegrationKey field value
 func (o *DuoSecurityActivityLogsSecretsConfig) GetIntegrationKey() ModelsSecret {
-	if o == nil || IsNil(o.IntegrationKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.IntegrationKey
+
+	return o.IntegrationKey
 }
 
-// GetIntegrationKeyOk returns a tuple with the IntegrationKey field value if set, nil otherwise
+// GetIntegrationKeyOk returns a tuple with the IntegrationKey field value
 // and a boolean to check if the value has been set.
 func (o *DuoSecurityActivityLogsSecretsConfig) GetIntegrationKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.IntegrationKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IntegrationKey, true
+	return &o.IntegrationKey, true
 }
 
-// HasIntegrationKey returns a boolean if a field has been set.
-func (o *DuoSecurityActivityLogsSecretsConfig) HasIntegrationKey() bool {
-	if o != nil && !IsNil(o.IntegrationKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetIntegrationKey gets a reference to the given ModelsSecret and assigns it to the IntegrationKey field.
+// SetIntegrationKey sets field value
 func (o *DuoSecurityActivityLogsSecretsConfig) SetIntegrationKey(v ModelsSecret) {
-	o.IntegrationKey = &v
+	o.IntegrationKey = v
 }
 
-// GetSecretKey returns the SecretKey field value if set, zero value otherwise.
+// GetSecretKey returns the SecretKey field value
 func (o *DuoSecurityActivityLogsSecretsConfig) GetSecretKey() ModelsSecret {
-	if o == nil || IsNil(o.SecretKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.SecretKey
+
+	return o.SecretKey
 }
 
-// GetSecretKeyOk returns a tuple with the SecretKey field value if set, nil otherwise
+// GetSecretKeyOk returns a tuple with the SecretKey field value
 // and a boolean to check if the value has been set.
 func (o *DuoSecurityActivityLogsSecretsConfig) GetSecretKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.SecretKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecretKey, true
+	return &o.SecretKey, true
 }
 
-// HasSecretKey returns a boolean if a field has been set.
-func (o *DuoSecurityActivityLogsSecretsConfig) HasSecretKey() bool {
-	if o != nil && !IsNil(o.SecretKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetSecretKey gets a reference to the given ModelsSecret and assigns it to the SecretKey field.
+// SetSecretKey sets field value
 func (o *DuoSecurityActivityLogsSecretsConfig) SetSecretKey(v ModelsSecret) {
-	o.SecretKey = &v
+	o.SecretKey = v
 }
 
 func (o DuoSecurityActivityLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -115,13 +105,47 @@ func (o DuoSecurityActivityLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o DuoSecurityActivityLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IntegrationKey) {
-		toSerialize["integration_key"] = o.IntegrationKey
-	}
-	if !IsNil(o.SecretKey) {
-		toSerialize["secret_key"] = o.SecretKey
-	}
+	toSerialize["integration_key"] = o.IntegrationKey
+	toSerialize["secret_key"] = o.SecretKey
 	return toSerialize, nil
+}
+
+func (o *DuoSecurityActivityLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"integration_key",
+		"secret_key",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDuoSecurityActivityLogsSecretsConfig := _DuoSecurityActivityLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varDuoSecurityActivityLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DuoSecurityActivityLogsSecretsConfig(varDuoSecurityActivityLogsSecretsConfig)
+
+	return err
 }
 
 type NullableDuoSecurityActivityLogsSecretsConfig struct {

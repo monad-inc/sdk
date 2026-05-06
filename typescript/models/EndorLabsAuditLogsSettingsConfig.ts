@@ -23,7 +23,7 @@ export class EndorLabsAuditLogsSettingsConfig {
     /**
     * Your Endor Labs organization namespace (e.g., \"your-org\")
     */
-    'namespace'?: string;
+    'namespace': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

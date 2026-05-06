@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**host** | **str** | The API hostname for your Duo Security integration. | [optional] 
+**host** | **str** | The API hostname for your Duo Security integration. | 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **backfill_start_time** | **str** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **project** | **str** | The GCP project ID containing the BigQuery dataset | [optional] 
@@ -80,10 +80,10 @@ Name | Type | Description | Notes
 **org_id** | **str** | URL of the organization | [optional] 
 **api_key_id** | **str** | API Key ID for authentication | [optional] 
 **domain_name** | **str** | TODO: Name of domain added on Polymer Hub portal | [optional] 
-**environment** | **str** | Determines the URI {environment}.docusign.com | [optional] 
-**user_id** | **str** | ID of the user to harvest audit logs for | [optional] 
+**environment** | **str** | Determines the URI {environment}.docusign.com | 
+**user_id** | **str** | ID of the user to harvest audit logs for | 
 **category** | **str** | The Category of logs to query | [optional] 
-**namespace** | **str** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | [optional] 
+**namespace** | **str** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **workspace_id** | **str** | The workspace ID of the Log Analytics workspace | [optional] 
 **app_name** | **str** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **cloud** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 

@@ -42,6 +42,7 @@ class TestEndorLabsAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return EndorLabsAuditLogsSettingsConfig(
+                namespace = '',
         )
         """
 

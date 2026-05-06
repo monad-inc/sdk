@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**IntegrationKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**RsaPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ApiSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**RsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **HarvestApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(clientId ModelsSecret, clientSecret ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetIntegrationKey sets IntegrationKey field to given value.
 
-### HasIntegrationKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasIntegrationKey() bool`
-
-HasIntegrationKey returns a boolean if a field has been set.
 
 ### GetSecretKey
 
@@ -97,11 +92,6 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
-### HasSecretKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasSecretKey() bool`
-
-HasSecretKey returns a boolean if a field has been set.
 
 ### GetAuthToken
 
@@ -147,11 +137,6 @@ and a boolean to check if the value has been set.
 
 SetApiKey sets ApiKey field to given value.
 
-### HasApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasApiKey() bool`
-
-HasApiKey returns a boolean if a field has been set.
 
 ### GetPersonalAccessToken
 
@@ -512,11 +497,6 @@ and a boolean to check if the value has been set.
 
 SetRsaPrivateKey sets RsaPrivateKey field to given value.
 
-### HasRsaPrivateKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasRsaPrivateKey() bool`
-
-HasRsaPrivateKey returns a boolean if a field has been set.
 
 ### GetApiSecret
 
@@ -537,11 +517,6 @@ and a boolean to check if the value has been set.
 
 SetApiSecret sets ApiSecret field to given value.
 
-### HasApiSecret
-
-`func (o *SecretProcessesorInputConfigSecrets) HasApiSecret() bool`
-
-HasApiSecret returns a boolean if a field has been set.
 
 ### GetOauthToken
 

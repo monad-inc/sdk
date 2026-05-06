@@ -37,11 +37,13 @@ class TestCustomerEventDataSettingsConfig(unittest.TestCase):
         if include_optional:
             return CustomerEventDataSettingsConfig(
                 backfill_start_time = '',
-                environment = '',
+                environment = 'production',
                 user_id = ''
             )
         else:
             return CustomerEventDataSettingsConfig(
+                environment = 'production',
+                user_id = '',
         )
         """
 

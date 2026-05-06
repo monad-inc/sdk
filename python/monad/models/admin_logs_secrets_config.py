@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,8 @@ class AdminLogsSecretsConfig(BaseModel):
     """
     AdminLogsSecretsConfig
     """ # noqa: E501
-    integration_key: Optional[ModelsSecret] = None
-    secret_key: Optional[ModelsSecret] = None
+    integration_key: ModelsSecret
+    secret_key: ModelsSecret
     __properties: ClassVar[List[str]] = ["integration_key", "secret_key"]
 
     model_config = ConfigDict(

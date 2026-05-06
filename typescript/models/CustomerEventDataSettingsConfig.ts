@@ -23,11 +23,11 @@ export class CustomerEventDataSettingsConfig {
     /**
     * Determines the URI {environment}.docusign.com
     */
-    'environment'?: string;
+    'environment': CustomerEventDataSettingsConfigEnvironmentEnum;
     /**
     * User id of the Docusign admin
     */
-    'userId'?: string;
+    'userId': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -43,7 +43,7 @@ export class CustomerEventDataSettingsConfig {
         {
             "name": "environment",
             "baseName": "environment",
-            "type": "string",
+            "type": "CustomerEventDataSettingsConfigEnvironmentEnum",
             "format": ""
         },
         {
@@ -60,3 +60,9 @@ export class CustomerEventDataSettingsConfig {
     public constructor() {
     }
 }
+
+export enum CustomerEventDataSettingsConfigEnvironmentEnum {
+    Production = 'production',
+    Development = 'development'
+}
+

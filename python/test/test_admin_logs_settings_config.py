@@ -41,6 +41,7 @@ class TestAdminLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return AdminLogsSettingsConfig(
+                host = '',
         )
         """
 

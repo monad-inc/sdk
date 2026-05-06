@@ -81,6 +81,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "integration_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "admin_logs.SettingsConfig": {
@@ -93,6 +97,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "host"
+                ],
                 "type": "object"
             },
             "aiven_service_logs.SecretsConfig": {
@@ -292,6 +299,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "integration_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "auth_logs.SettingsConfig": {
@@ -304,6 +315,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "host"
+                ],
                 "type": "object"
             },
             "authenticationtypes.AuthenticationMethod": {
@@ -1912,6 +1926,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "integration_key",
+                    "rsa_private_key"
+                ],
                 "type": "object"
             },
             "customer_event_data.SettingsConfig": {
@@ -1923,6 +1941,10 @@
                     },
                     "environment": {
                         "description": "Determines the URI {environment}.docusign.com",
+                        "enum": [
+                            "production",
+                            "development"
+                        ],
                         "type": "string"
                     },
                     "user_id": {
@@ -1930,6 +1952,10 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "environment",
+                    "user_id"
+                ],
                 "type": "object"
             },
             "databricks.SecretsConfig": {
@@ -2106,6 +2132,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "integration_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "duo_security_activity_logs.SettingsConfig": {
@@ -2120,6 +2150,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "host"
+                ],
                 "type": "object"
             },
             "duplicate_key_value_to_key.ArgumentsConfig": {
@@ -2257,6 +2290,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key",
+                    "api_secret"
+                ],
                 "type": "object"
             },
             "endor_labs_audit_logs.SettingsConfig": {
@@ -2275,6 +2312,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "namespace"
+                ],
                 "type": "object"
             },
             "enrichment.ConnectorMeta": {
@@ -6150,6 +6190,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "integration_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "offlineenrollmentlogs.SettingsConfig": {
@@ -6164,6 +6208,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "host"
+                ],
                 "type": "object"
             },
             "onelogin_events.SecretsConfig": {
@@ -10235,6 +10282,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "integration_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "telephony_logs.SettingsConfig": {
@@ -10249,6 +10300,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "host"
+                ],
                 "type": "object"
             },
             "tenable_assets.SecretsConfig": {

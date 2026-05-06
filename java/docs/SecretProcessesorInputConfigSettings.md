@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**host** | **String** | The API hostname for your Duo Security integration. |  [optional] |
+|**host** | **String** | The API hostname for your Duo Security integration. |  |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**backfillStartTime** | **String** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
 |**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
@@ -82,10 +82,10 @@
 |**orgId** | **String** | URL of the organization |  [optional] |
 |**apiKeyId** | **String** | API Key ID for authentication |  [optional] |
 |**domainName** | **String** | TODO: Name of domain added on Polymer Hub portal |  [optional] |
-|**environment** | **String** | Determines the URI {environment}.docusign.com |  [optional] |
-|**userId** | **String** | ID of the user to harvest audit logs for |  [optional] |
+|**environment** | [**EnvironmentEnum**](#EnvironmentEnum) | Determines the URI {environment}.docusign.com |  |
+|**userId** | **String** | ID of the user to harvest audit logs for |  |
 |**category** | **String** | The Category of logs to query |  [optional] |
-|**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  [optional] |
+|**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  |
 |**workspaceId** | **String** | The workspace ID of the Log Analytics workspace |  [optional] |
 |**appName** | **String** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. |  [optional] |
 |**cloud** | **String** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. |  [optional] |
@@ -162,6 +162,15 @@
 |**vendorSeverity** | **List&lt;String&gt;** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. |  [optional] |
 |**emailAddress** | **String** | This is the email address registered with your Zendesk account |  [optional] |
 |**subDomain** | **String** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo |  [optional] |
+
+
+
+## Enum: EnvironmentEnum
+
+| Name | Value |
+|---- | -----|
+| PRODUCTION | &quot;production&quot; |
+| DEVELOPMENT | &quot;development&quot; |
 
 
 

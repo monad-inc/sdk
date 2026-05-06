@@ -28,7 +28,7 @@ class AdminLogsSettingsConfig(BaseModel):
     """
     AdminLogsSettingsConfig
     """ # noqa: E501
-    host: Optional[StrictStr] = None
+    host: StrictStr
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["host", "use_synthetic_data"]
 

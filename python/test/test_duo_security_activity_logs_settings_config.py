@@ -41,6 +41,7 @@ class TestDuoSecurityActivityLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return DuoSecurityActivityLogsSettingsConfig(
+                host = '',
         )
         """
 

@@ -55,6 +55,22 @@ class TestEndorLabsAuditLogsSecretsConfig(unittest.TestCase):
             )
         else:
             return EndorLabsAuditLogsSecretsConfig(
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                api_secret = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

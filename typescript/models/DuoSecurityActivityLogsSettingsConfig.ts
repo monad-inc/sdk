@@ -19,7 +19,7 @@ export class DuoSecurityActivityLogsSettingsConfig {
     /**
     * The API hostname for your Duo Security integration.
     */
-    'host'?: string;
+    'host': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

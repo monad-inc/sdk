@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Duo Security Activity Logs secrets
 */
 export class DuoSecurityActivityLogsSecretsConfig {
-    'integrationKey'?: ModelsSecret;
-    'secretKey'?: ModelsSecret;
+    'integrationKey': ModelsSecret;
+    'secretKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

@@ -6,8 +6,8 @@ Docusign Customer Event Data secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**rsa_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**rsa_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

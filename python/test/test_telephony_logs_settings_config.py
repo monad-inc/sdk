@@ -41,6 +41,7 @@ class TestTelephonyLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return TelephonyLogsSettingsConfig(
+                host = '',
         )
         """
 

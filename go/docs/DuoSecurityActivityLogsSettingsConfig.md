@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Host** | Pointer to **string** | The API hostname for your Duo Security integration. | [optional] 
+**Host** | **string** | The API hostname for your Duo Security integration. | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewDuoSecurityActivityLogsSettingsConfig
 
-`func NewDuoSecurityActivityLogsSettingsConfig() *DuoSecurityActivityLogsSettingsConfig`
+`func NewDuoSecurityActivityLogsSettingsConfig(host string, ) *DuoSecurityActivityLogsSettingsConfig`
 
 NewDuoSecurityActivityLogsSettingsConfig instantiates a new DuoSecurityActivityLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetHost sets Host field to given value.
 
-### HasHost
-
-`func (o *DuoSecurityActivityLogsSettingsConfig) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

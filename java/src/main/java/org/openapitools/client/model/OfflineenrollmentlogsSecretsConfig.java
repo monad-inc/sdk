@@ -53,18 +53,18 @@ import org.openapitools.client.JSON;
 public class OfflineenrollmentlogsSecretsConfig {
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integration_key";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret integrationKey;
 
   public static final String SERIALIZED_NAME_SECRET_KEY = "secret_key";
   @SerializedName(SERIALIZED_NAME_SECRET_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret secretKey;
 
   public OfflineenrollmentlogsSecretsConfig() {
   }
 
-  public OfflineenrollmentlogsSecretsConfig integrationKey(@javax.annotation.Nullable ModelsSecret integrationKey) {
+  public OfflineenrollmentlogsSecretsConfig integrationKey(@javax.annotation.Nonnull ModelsSecret integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
@@ -73,17 +73,17 @@ public class OfflineenrollmentlogsSecretsConfig {
    * Get integrationKey
    * @return integrationKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(@javax.annotation.Nullable ModelsSecret integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nonnull ModelsSecret integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public OfflineenrollmentlogsSecretsConfig secretKey(@javax.annotation.Nullable ModelsSecret secretKey) {
+  public OfflineenrollmentlogsSecretsConfig secretKey(@javax.annotation.Nonnull ModelsSecret secretKey) {
     this.secretKey = secretKey;
     return this;
   }
@@ -92,12 +92,12 @@ public class OfflineenrollmentlogsSecretsConfig {
    * Get secretKey
    * @return secretKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getSecretKey() {
     return secretKey;
   }
 
-  public void setSecretKey(@javax.annotation.Nullable ModelsSecret secretKey) {
+  public void setSecretKey(@javax.annotation.Nonnull ModelsSecret secretKey) {
     this.secretKey = secretKey;
   }
 
@@ -148,7 +148,7 @@ public class OfflineenrollmentlogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("integration_key", "secret_key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("integration_key", "secret_key"));
   }
 
   /**
@@ -171,15 +171,18 @@ public class OfflineenrollmentlogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OfflineenrollmentlogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OfflineenrollmentlogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `integration_key`
-      if (jsonObj.get("integration_key") != null && !jsonObj.get("integration_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("integration_key"));
-      }
-      // validate the optional field `secret_key`
-      if (jsonObj.get("secret_key") != null && !jsonObj.get("secret_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("secret_key"));
-      }
+      // validate the required field `integration_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("integration_key"));
+      // validate the required field `secret_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("secret_key"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

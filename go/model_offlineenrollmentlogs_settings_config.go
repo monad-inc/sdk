@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the OfflineenrollmentlogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -21,17 +23,20 @@ var _ MappedNullable = &OfflineenrollmentlogsSettingsConfig{}
 // OfflineenrollmentlogsSettingsConfig Duo Security Offline Enrollment Logs settings
 type OfflineenrollmentlogsSettingsConfig struct {
 	// The API hostname for your Duo Security integration.
-	Host *string `json:"host,omitempty"`
+	Host string `json:"host"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _OfflineenrollmentlogsSettingsConfig OfflineenrollmentlogsSettingsConfig
 
 // NewOfflineenrollmentlogsSettingsConfig instantiates a new OfflineenrollmentlogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOfflineenrollmentlogsSettingsConfig() *OfflineenrollmentlogsSettingsConfig {
+func NewOfflineenrollmentlogsSettingsConfig(host string) *OfflineenrollmentlogsSettingsConfig {
 	this := OfflineenrollmentlogsSettingsConfig{}
+	this.Host = host
 	return &this
 }
 
@@ -43,36 +48,28 @@ func NewOfflineenrollmentlogsSettingsConfigWithDefaults() *Offlineenrollmentlogs
 	return &this
 }
 
-// GetHost returns the Host field value if set, zero value otherwise.
+// GetHost returns the Host field value
 func (o *OfflineenrollmentlogsSettingsConfig) GetHost() string {
-	if o == nil || IsNil(o.Host) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Host
+
+	return o.Host
 }
 
-// GetHostOk returns a tuple with the Host field value if set, nil otherwise
+// GetHostOk returns a tuple with the Host field value
 // and a boolean to check if the value has been set.
 func (o *OfflineenrollmentlogsSettingsConfig) GetHostOk() (*string, bool) {
-	if o == nil || IsNil(o.Host) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Host, true
+	return &o.Host, true
 }
 
-// HasHost returns a boolean if a field has been set.
-func (o *OfflineenrollmentlogsSettingsConfig) HasHost() bool {
-	if o != nil && !IsNil(o.Host) {
-		return true
-	}
-
-	return false
-}
-
-// SetHost gets a reference to the given string and assigns it to the Host field.
+// SetHost sets field value
 func (o *OfflineenrollmentlogsSettingsConfig) SetHost(v string) {
-	o.Host = &v
+	o.Host = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -117,13 +114,48 @@ func (o OfflineenrollmentlogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OfflineenrollmentlogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Host) {
-		toSerialize["host"] = o.Host
-	}
+	toSerialize["host"] = o.Host
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *OfflineenrollmentlogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"host",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOfflineenrollmentlogsSettingsConfig := _OfflineenrollmentlogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varOfflineenrollmentlogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OfflineenrollmentlogsSettingsConfig(varOfflineenrollmentlogsSettingsConfig)
+
+	return err
 }
 
 type NullableOfflineenrollmentlogsSettingsConfig struct {

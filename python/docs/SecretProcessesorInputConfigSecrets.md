@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **personal_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**rsa_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**rsa_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

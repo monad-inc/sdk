@@ -55,14 +55,66 @@ public class CustomerEventDataSettingsConfig {
   @javax.annotation.Nullable
   private String backfillStartTime;
 
+  /**
+   * Determines the URI {environment}.docusign.com
+   */
+  @JsonAdapter(EnvironmentEnum.Adapter.class)
+  public enum EnvironmentEnum {
+    PRODUCTION("production"),
+    
+    DEVELOPMENT("development");
+
+    private String value;
+
+    EnvironmentEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EnvironmentEnum fromValue(String value) {
+      for (EnvironmentEnum b : EnvironmentEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<EnvironmentEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EnvironmentEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EnvironmentEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EnvironmentEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EnvironmentEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
-  @javax.annotation.Nullable
-  private String environment;
+  @javax.annotation.Nonnull
+  private EnvironmentEnum environment;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String userId;
 
   public CustomerEventDataSettingsConfig() {
@@ -87,7 +139,7 @@ public class CustomerEventDataSettingsConfig {
   }
 
 
-  public CustomerEventDataSettingsConfig environment(@javax.annotation.Nullable String environment) {
+  public CustomerEventDataSettingsConfig environment(@javax.annotation.Nonnull EnvironmentEnum environment) {
     this.environment = environment;
     return this;
   }
@@ -96,17 +148,17 @@ public class CustomerEventDataSettingsConfig {
    * Determines the URI {environment}.docusign.com
    * @return environment
    */
-  @javax.annotation.Nullable
-  public String getEnvironment() {
+  @javax.annotation.Nonnull
+  public EnvironmentEnum getEnvironment() {
     return environment;
   }
 
-  public void setEnvironment(@javax.annotation.Nullable String environment) {
+  public void setEnvironment(@javax.annotation.Nonnull EnvironmentEnum environment) {
     this.environment = environment;
   }
 
 
-  public CustomerEventDataSettingsConfig userId(@javax.annotation.Nullable String userId) {
+  public CustomerEventDataSettingsConfig userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
   }
@@ -115,12 +167,12 @@ public class CustomerEventDataSettingsConfig {
    * User id of the Docusign admin
    * @return userId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable String userId) {
+  public void setUserId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
   }
 
@@ -173,7 +225,7 @@ public class CustomerEventDataSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "environment", "user_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("environment", "user_id"));
   }
 
   /**
@@ -196,14 +248,23 @@ public class CustomerEventDataSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CustomerEventDataSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CustomerEventDataSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) && !jsonObj.get("environment").isJsonPrimitive()) {
+      if (!jsonObj.get("environment").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environment").toString()));
       }
-      if ((jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonNull()) && !jsonObj.get("user_id").isJsonPrimitive()) {
+      // validate the required field `environment`
+      EnvironmentEnum.validateJsonElement(jsonObj.get("environment"));
+      if (!jsonObj.get("user_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
       }
   }

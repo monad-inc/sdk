@@ -8,8 +8,8 @@ Endor Labs Audit Logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the AuthLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,17 +22,20 @@ var _ MappedNullable = &AuthLogsSettingsConfig{}
 
 // AuthLogsSettingsConfig struct for AuthLogsSettingsConfig
 type AuthLogsSettingsConfig struct {
-	Host *string `json:"host,omitempty"`
+	Host string `json:"host"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _AuthLogsSettingsConfig AuthLogsSettingsConfig
 
 // NewAuthLogsSettingsConfig instantiates a new AuthLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthLogsSettingsConfig() *AuthLogsSettingsConfig {
+func NewAuthLogsSettingsConfig(host string) *AuthLogsSettingsConfig {
 	this := AuthLogsSettingsConfig{}
+	this.Host = host
 	return &this
 }
 
@@ -42,36 +47,28 @@ func NewAuthLogsSettingsConfigWithDefaults() *AuthLogsSettingsConfig {
 	return &this
 }
 
-// GetHost returns the Host field value if set, zero value otherwise.
+// GetHost returns the Host field value
 func (o *AuthLogsSettingsConfig) GetHost() string {
-	if o == nil || IsNil(o.Host) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Host
+
+	return o.Host
 }
 
-// GetHostOk returns a tuple with the Host field value if set, nil otherwise
+// GetHostOk returns a tuple with the Host field value
 // and a boolean to check if the value has been set.
 func (o *AuthLogsSettingsConfig) GetHostOk() (*string, bool) {
-	if o == nil || IsNil(o.Host) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Host, true
+	return &o.Host, true
 }
 
-// HasHost returns a boolean if a field has been set.
-func (o *AuthLogsSettingsConfig) HasHost() bool {
-	if o != nil && !IsNil(o.Host) {
-		return true
-	}
-
-	return false
-}
-
-// SetHost gets a reference to the given string and assigns it to the Host field.
+// SetHost sets field value
 func (o *AuthLogsSettingsConfig) SetHost(v string) {
-	o.Host = &v
+	o.Host = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -116,13 +113,48 @@ func (o AuthLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o AuthLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Host) {
-		toSerialize["host"] = o.Host
-	}
+	toSerialize["host"] = o.Host
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *AuthLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"host",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAuthLogsSettingsConfig := _AuthLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAuthLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AuthLogsSettingsConfig(varAuthLogsSettingsConfig)
+
+	return err
 }
 
 type NullableAuthLogsSettingsConfig struct {

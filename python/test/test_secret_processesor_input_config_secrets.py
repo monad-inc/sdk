@@ -271,6 +271,30 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
             )
         else:
             return SecretProcessesorInputConfigSecrets(
+                integration_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                secret_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
                 client_id = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
@@ -280,6 +304,22 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
                     updated_at = '', 
                     value = '', ),
                 client_secret = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                rsa_private_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                api_secret = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
                     id = '', 

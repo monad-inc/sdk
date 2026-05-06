@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 public class AuthLogsSettingsConfig {
   public static final String SERIALIZED_NAME_HOST = "host";
   @SerializedName(SERIALIZED_NAME_HOST)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String host;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -63,7 +63,7 @@ public class AuthLogsSettingsConfig {
   public AuthLogsSettingsConfig() {
   }
 
-  public AuthLogsSettingsConfig host(@javax.annotation.Nullable String host) {
+  public AuthLogsSettingsConfig host(@javax.annotation.Nonnull String host) {
     this.host = host;
     return this;
   }
@@ -72,12 +72,12 @@ public class AuthLogsSettingsConfig {
    * Get host
    * @return host
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getHost() {
     return host;
   }
 
-  public void setHost(@javax.annotation.Nullable String host) {
+  public void setHost(@javax.annotation.Nonnull String host) {
     this.host = host;
   }
 
@@ -147,7 +147,7 @@ public class AuthLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("host", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("host"));
   }
 
   /**
@@ -170,8 +170,15 @@ public class AuthLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AuthLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : AuthLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("host") != null && !jsonObj.get("host").isJsonNull()) && !jsonObj.get("host").isJsonPrimitive()) {
+      if (!jsonObj.get("host").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `host` to be a primitive type in the JSON string but got `%s`", jsonObj.get("host").toString()));
       }
   }

@@ -8,7 +8,7 @@ Duo Security Telephony Logs settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**host** | **String** | The API hostname for your Duo Security integration. |  [optional] |
+|**host** | **String** | The API hostname for your Duo Security integration. |  |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 

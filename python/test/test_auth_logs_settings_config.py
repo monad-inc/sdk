@@ -41,6 +41,7 @@ class TestAuthLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return AuthLogsSettingsConfig(
+                host = '',
         )
         """
 

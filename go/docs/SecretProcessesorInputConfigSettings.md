@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Host** | Pointer to **string** | The API hostname for your Duo Security integration. | [optional] 
+**Host** | **string** | The API hostname for your Duo Security integration. | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
@@ -79,10 +79,10 @@ Name | Type | Description | Notes
 **OrgId** | Pointer to **string** | URL of the organization | [optional] 
 **ApiKeyId** | Pointer to **string** | API Key ID for authentication | [optional] 
 **DomainName** | Pointer to **string** | TODO: Name of domain added on Polymer Hub portal | [optional] 
-**Environment** | Pointer to **string** | Determines the URI {environment}.docusign.com | [optional] 
-**UserId** | Pointer to **string** | ID of the user to harvest audit logs for | [optional] 
+**Environment** | **string** | Determines the URI {environment}.docusign.com | 
+**UserId** | **string** | ID of the user to harvest audit logs for | 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
-**Namespace** | Pointer to **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | [optional] 
+**Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
@@ -164,7 +164,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings() *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, environment string, userId string, namespace string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -198,11 +198,6 @@ and a boolean to check if the value has been set.
 
 SetHost sets Host field to given value.
 
-### HasHost
-
-`func (o *SecretProcessesorInputConfigSettings) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 
@@ -2073,11 +2068,6 @@ and a boolean to check if the value has been set.
 
 SetEnvironment sets Environment field to given value.
 
-### HasEnvironment
-
-`func (o *SecretProcessesorInputConfigSettings) HasEnvironment() bool`
-
-HasEnvironment returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -2098,11 +2088,6 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
-### HasUserId
-
-`func (o *SecretProcessesorInputConfigSettings) HasUserId() bool`
-
-HasUserId returns a boolean if a field has been set.
 
 ### GetCategory
 
@@ -2148,11 +2133,6 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
-### HasNamespace
-
-`func (o *SecretProcessesorInputConfigSettings) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 ### GetWorkspaceId
 

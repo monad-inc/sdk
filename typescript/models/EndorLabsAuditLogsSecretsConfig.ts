@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Endor Labs Audit Logs secrets
 */
 export class EndorLabsAuditLogsSecretsConfig {
-    'apiKey'?: ModelsSecret;
-    'apiSecret'?: ModelsSecret;
+    'apiKey': ModelsSecret;
+    'apiSecret': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
