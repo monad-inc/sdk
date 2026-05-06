@@ -182,7 +182,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_active_user**
-> RoutesUserWithRoles get_active_user()
+> RoutesUserWithRoles get_active_user(organization_id)
 
 Get your current user
 
@@ -219,10 +219,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.UsersApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
 
     try:
         # Get your current user
-        api_response = api_instance.get_active_user()
+        api_response = api_instance.get_active_user(organization_id)
         print("The response of UsersApi->get_active_user:\n")
         pprint(api_response)
     except Exception as e:
@@ -233,7 +234,10 @@ with monad.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
 
 ### Return type
 
@@ -252,9 +256,10 @@ This endpoint does not need any parameter.
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User created successfully |  -  |
-**400** | Invalid JSON request body |  -  |
-**500** | Error creating user |  -  |
+**200** | Get user successful |  -  |
+**400** | Missing organization_id |  -  |
+**403** | Access denied |  -  |
+**500** | Failed to get user |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

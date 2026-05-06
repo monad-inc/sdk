@@ -24,7 +24,7 @@ type RoutesUserWithRoles struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Id *string `json:"id,omitempty"`
-	OrganizationRoles map[string]ModelsUserRoleWithPermissions `json:"organization_roles,omitempty"`
+	OrganizationRole *ModelsUserRoleWithPermissions `json:"organization_role,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 	Username *string `json:"username,omitempty"`
 }
@@ -174,36 +174,36 @@ func (o *RoutesUserWithRoles) SetId(v string) {
 	o.Id = &v
 }
 
-// GetOrganizationRoles returns the OrganizationRoles field value if set, zero value otherwise.
-func (o *RoutesUserWithRoles) GetOrganizationRoles() map[string]ModelsUserRoleWithPermissions {
-	if o == nil || IsNil(o.OrganizationRoles) {
-		var ret map[string]ModelsUserRoleWithPermissions
+// GetOrganizationRole returns the OrganizationRole field value if set, zero value otherwise.
+func (o *RoutesUserWithRoles) GetOrganizationRole() ModelsUserRoleWithPermissions {
+	if o == nil || IsNil(o.OrganizationRole) {
+		var ret ModelsUserRoleWithPermissions
 		return ret
 	}
-	return o.OrganizationRoles
+	return *o.OrganizationRole
 }
 
-// GetOrganizationRolesOk returns a tuple with the OrganizationRoles field value if set, nil otherwise
+// GetOrganizationRoleOk returns a tuple with the OrganizationRole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesUserWithRoles) GetOrganizationRolesOk() (map[string]ModelsUserRoleWithPermissions, bool) {
-	if o == nil || IsNil(o.OrganizationRoles) {
-		return map[string]ModelsUserRoleWithPermissions{}, false
+func (o *RoutesUserWithRoles) GetOrganizationRoleOk() (*ModelsUserRoleWithPermissions, bool) {
+	if o == nil || IsNil(o.OrganizationRole) {
+		return nil, false
 	}
-	return o.OrganizationRoles, true
+	return o.OrganizationRole, true
 }
 
-// HasOrganizationRoles returns a boolean if a field has been set.
-func (o *RoutesUserWithRoles) HasOrganizationRoles() bool {
-	if o != nil && !IsNil(o.OrganizationRoles) {
+// HasOrganizationRole returns a boolean if a field has been set.
+func (o *RoutesUserWithRoles) HasOrganizationRole() bool {
+	if o != nil && !IsNil(o.OrganizationRole) {
 		return true
 	}
 
 	return false
 }
 
-// SetOrganizationRoles gets a reference to the given map[string]ModelsUserRoleWithPermissions and assigns it to the OrganizationRoles field.
-func (o *RoutesUserWithRoles) SetOrganizationRoles(v map[string]ModelsUserRoleWithPermissions) {
-	o.OrganizationRoles = v
+// SetOrganizationRole gets a reference to the given ModelsUserRoleWithPermissions and assigns it to the OrganizationRole field.
+func (o *RoutesUserWithRoles) SetOrganizationRole(v ModelsUserRoleWithPermissions) {
+	o.OrganizationRole = &v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
@@ -292,8 +292,8 @@ func (o RoutesUserWithRoles) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.OrganizationRoles) {
-		toSerialize["organization_roles"] = o.OrganizationRoles
+	if !IsNil(o.OrganizationRole) {
+		toSerialize["organization_role"] = o.OrganizationRole
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

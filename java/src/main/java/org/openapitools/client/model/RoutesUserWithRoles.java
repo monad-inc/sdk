@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.openapitools.client.model.ModelsUserRoleWithPermissions;
 import org.openapitools.client.model.RoutesUserAuthProvider;
 
@@ -74,10 +72,10 @@ public class RoutesUserWithRoles {
   @javax.annotation.Nullable
   private String id;
 
-  public static final String SERIALIZED_NAME_ORGANIZATION_ROLES = "organization_roles";
-  @SerializedName(SERIALIZED_NAME_ORGANIZATION_ROLES)
+  public static final String SERIALIZED_NAME_ORGANIZATION_ROLE = "organization_role";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_ROLE)
   @javax.annotation.Nullable
-  private Map<String, ModelsUserRoleWithPermissions> organizationRoles = new HashMap<>();
+  private ModelsUserRoleWithPermissions organizationRole;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -168,30 +166,22 @@ public class RoutesUserWithRoles {
   }
 
 
-  public RoutesUserWithRoles organizationRoles(@javax.annotation.Nullable Map<String, ModelsUserRoleWithPermissions> organizationRoles) {
-    this.organizationRoles = organizationRoles;
-    return this;
-  }
-
-  public RoutesUserWithRoles putOrganizationRolesItem(String key, ModelsUserRoleWithPermissions organizationRolesItem) {
-    if (this.organizationRoles == null) {
-      this.organizationRoles = new HashMap<>();
-    }
-    this.organizationRoles.put(key, organizationRolesItem);
+  public RoutesUserWithRoles organizationRole(@javax.annotation.Nullable ModelsUserRoleWithPermissions organizationRole) {
+    this.organizationRole = organizationRole;
     return this;
   }
 
   /**
-   * Get organizationRoles
-   * @return organizationRoles
+   * Get organizationRole
+   * @return organizationRole
    */
   @javax.annotation.Nullable
-  public Map<String, ModelsUserRoleWithPermissions> getOrganizationRoles() {
-    return organizationRoles;
+  public ModelsUserRoleWithPermissions getOrganizationRole() {
+    return organizationRole;
   }
 
-  public void setOrganizationRoles(@javax.annotation.Nullable Map<String, ModelsUserRoleWithPermissions> organizationRoles) {
-    this.organizationRoles = organizationRoles;
+  public void setOrganizationRole(@javax.annotation.Nullable ModelsUserRoleWithPermissions organizationRole) {
+    this.organizationRole = organizationRole;
   }
 
 
@@ -247,14 +237,14 @@ public class RoutesUserWithRoles {
         Objects.equals(this.createdAt, routesUserWithRoles.createdAt) &&
         Objects.equals(this.email, routesUserWithRoles.email) &&
         Objects.equals(this.id, routesUserWithRoles.id) &&
-        Objects.equals(this.organizationRoles, routesUserWithRoles.organizationRoles) &&
+        Objects.equals(this.organizationRole, routesUserWithRoles.organizationRole) &&
         Objects.equals(this.updatedAt, routesUserWithRoles.updatedAt) &&
         Objects.equals(this.username, routesUserWithRoles.username);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authProvider, createdAt, email, id, organizationRoles, updatedAt, username);
+    return Objects.hash(authProvider, createdAt, email, id, organizationRole, updatedAt, username);
   }
 
   @Override
@@ -265,7 +255,7 @@ public class RoutesUserWithRoles {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    organizationRoles: ").append(toIndentedString(organizationRoles)).append("\n");
+    sb.append("    organizationRole: ").append(toIndentedString(organizationRole)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
@@ -286,7 +276,7 @@ public class RoutesUserWithRoles {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_provider", "created_at", "email", "id", "organization_roles", "updated_at", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_provider", "created_at", "email", "id", "organization_role", "updated_at", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -325,6 +315,10 @@ public class RoutesUserWithRoles {
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      // validate the optional field `organization_role`
+      if (jsonObj.get("organization_role") != null && !jsonObj.get("organization_role").isJsonNull()) {
+        ModelsUserRoleWithPermissions.validateJsonElement(jsonObj.get("organization_role"));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

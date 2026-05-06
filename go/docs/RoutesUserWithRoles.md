@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**OrganizationRoles** | Pointer to [**map[string]ModelsUserRoleWithPermissions**](ModelsUserRoleWithPermissions.md) |  | [optional] 
+**OrganizationRole** | Pointer to [**ModelsUserRoleWithPermissions**](ModelsUserRoleWithPermissions.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 
@@ -131,30 +131,30 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetOrganizationRoles
+### GetOrganizationRole
 
-`func (o *RoutesUserWithRoles) GetOrganizationRoles() map[string]ModelsUserRoleWithPermissions`
+`func (o *RoutesUserWithRoles) GetOrganizationRole() ModelsUserRoleWithPermissions`
 
-GetOrganizationRoles returns the OrganizationRoles field if non-nil, zero value otherwise.
+GetOrganizationRole returns the OrganizationRole field if non-nil, zero value otherwise.
 
-### GetOrganizationRolesOk
+### GetOrganizationRoleOk
 
-`func (o *RoutesUserWithRoles) GetOrganizationRolesOk() (*map[string]ModelsUserRoleWithPermissions, bool)`
+`func (o *RoutesUserWithRoles) GetOrganizationRoleOk() (*ModelsUserRoleWithPermissions, bool)`
 
-GetOrganizationRolesOk returns a tuple with the OrganizationRoles field if it's non-nil, zero value otherwise
+GetOrganizationRoleOk returns a tuple with the OrganizationRole field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOrganizationRoles
+### SetOrganizationRole
 
-`func (o *RoutesUserWithRoles) SetOrganizationRoles(v map[string]ModelsUserRoleWithPermissions)`
+`func (o *RoutesUserWithRoles) SetOrganizationRole(v ModelsUserRoleWithPermissions)`
 
-SetOrganizationRoles sets OrganizationRoles field to given value.
+SetOrganizationRole sets OrganizationRole field to given value.
 
-### HasOrganizationRoles
+### HasOrganizationRole
 
-`func (o *RoutesUserWithRoles) HasOrganizationRoles() bool`
+`func (o *RoutesUserWithRoles) HasOrganizationRole() bool`
 
-HasOrganizationRoles returns a boolean if a field has been set.
+HasOrganizationRole returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

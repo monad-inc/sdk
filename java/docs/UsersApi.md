@@ -161,7 +161,7 @@ This endpoint does not need any parameter.
 
 <a id="getActiveUser"></a>
 # **getActiveUser**
-> RoutesUserWithRoles getActiveUser()
+> RoutesUserWithRoles getActiveUser(organizationId)
 
 Get your current user
 
@@ -189,8 +189,9 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     UsersApi apiInstance = new UsersApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
     try {
-      RoutesUserWithRoles result = apiInstance.getActiveUser();
+      RoutesUserWithRoles result = apiInstance.getActiveUser(organizationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getActiveUser");
@@ -204,7 +205,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
 
 ### Return type
 
@@ -222,9 +226,10 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | User created successfully |  -  |
-| **400** | Invalid JSON request body |  -  |
-| **500** | Error creating user |  -  |
+| **200** | Get user successful |  -  |
+| **400** | Missing organization_id |  -  |
+| **403** | Access denied |  -  |
+| **500** | Failed to get user |  -  |
 
 <a id="getMFAStatus"></a>
 # **getMFAStatus**

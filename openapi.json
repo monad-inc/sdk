@@ -7285,11 +7285,8 @@
                     "id": {
                         "type": "string"
                     },
-                    "organization_roles": {
-                        "additionalProperties": {
-                            "$ref": "#/components/schemas/models.UserRoleWithPermissions"
-                        },
-                        "type": "object"
+                    "organization_role": {
+                        "$ref": "#/components/schemas/models.UserRoleWithPermissions"
                     },
                     "updated_at": {
                         "type": "string"
@@ -11665,6 +11662,17 @@
             "get": {
                 "description": "Get your current user",
                 "operationId": "GetActiveUser",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "query",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "content": {
@@ -11674,7 +11682,7 @@
                                 }
                             }
                         },
-                        "description": "User created successfully"
+                        "description": "Get user successful"
                     },
                     "400": {
                         "content": {
@@ -11684,7 +11692,17 @@
                                 }
                             }
                         },
-                        "description": "Invalid JSON request body"
+                        "description": "Missing organization_id"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Access denied"
                     },
                     "500": {
                         "content": {
@@ -11694,7 +11712,7 @@
                                 }
                             }
                         },
-                        "description": "Error creating user"
+                        "description": "Failed to get user"
                     }
                 },
                 "security": [

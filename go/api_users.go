@@ -319,6 +319,13 @@ func (a *UsersAPIService) EnableMFAExecute(r ApiEnableMFARequest) (*Authenticati
 type ApiGetActiveUserRequest struct {
 	ctx context.Context
 	ApiService *UsersAPIService
+	organizationId *string
+}
+
+// Organization ID
+func (r ApiGetActiveUserRequest) OrganizationId(organizationId string) ApiGetActiveUserRequest {
+	r.organizationId = &organizationId
+	return r
 }
 
 func (r ApiGetActiveUserRequest) Execute() (*RoutesUserWithRoles, *http.Response, error) {
@@ -360,7 +367,11 @@ func (a *UsersAPIService) GetActiveUserExecute(r ApiGetActiveUserRequest) (*Rout
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.organizationId == nil {
+		return localVarReturnValue, nil, reportError("organizationId is required and must be specified")
+	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "organization_id", r.organizationId, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -415,6 +426,17 @@ func (a *UsersAPIService) GetActiveUserExecute(r ApiGetActiveUserRequest) (*Rout
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
 			var v string
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

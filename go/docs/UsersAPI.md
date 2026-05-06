@@ -140,7 +140,7 @@ Other parameters are passed through a pointer to a apiEnableMFARequest struct vi
 
 ## GetActiveUser
 
-> RoutesUserWithRoles GetActiveUser(ctx).Execute()
+> RoutesUserWithRoles GetActiveUser(ctx).OrganizationId(organizationId).Execute()
 
 Get your current user
 
@@ -159,10 +159,11 @@ import (
 )
 
 func main() {
+	organizationId := "organizationId_example" // string | Organization ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.GetActiveUser(context.Background()).Execute()
+	resp, r, err := apiClient.UsersAPI.GetActiveUser(context.Background()).OrganizationId(organizationId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.GetActiveUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -174,12 +175,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetActiveUserRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string** | Organization ID | 
 
 ### Return type
 

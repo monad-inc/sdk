@@ -328,6 +328,7 @@ public class UsersApi {
     }
     /**
      * Build call for getActiveUser
+     * @param organizationId Organization ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -335,12 +336,13 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Missing organization_id </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get user </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getActiveUserCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getActiveUserCall(@javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -365,6 +367,10 @@ public class UsersApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (organizationId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("organization_id", organizationId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -385,46 +391,55 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getActiveUserValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getActiveUserCall(_callback);
+    private okhttp3.Call getActiveUserValidateBeforeCall(@javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getActiveUser(Async)");
+        }
+
+        return getActiveUserCall(organizationId, _callback);
 
     }
 
     /**
      * Get your current user
      * Get your current user
+     * @param organizationId Organization ID (required)
      * @return RoutesUserWithRoles
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Missing organization_id </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get user </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesUserWithRoles getActiveUser() throws ApiException {
-        ApiResponse<RoutesUserWithRoles> localVarResp = getActiveUserWithHttpInfo();
+    public RoutesUserWithRoles getActiveUser(@javax.annotation.Nonnull String organizationId) throws ApiException {
+        ApiResponse<RoutesUserWithRoles> localVarResp = getActiveUserWithHttpInfo(organizationId);
         return localVarResp.getData();
     }
 
     /**
      * Get your current user
      * Get your current user
+     * @param organizationId Organization ID (required)
      * @return ApiResponse&lt;RoutesUserWithRoles&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Missing organization_id </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get user </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesUserWithRoles> getActiveUserWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getActiveUserValidateBeforeCall(null);
+    public ApiResponse<RoutesUserWithRoles> getActiveUserWithHttpInfo(@javax.annotation.Nonnull String organizationId) throws ApiException {
+        okhttp3.Call localVarCall = getActiveUserValidateBeforeCall(organizationId, null);
         Type localVarReturnType = new TypeToken<RoutesUserWithRoles>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -432,6 +447,7 @@ public class UsersApi {
     /**
      * Get your current user (asynchronously)
      * Get your current user
+     * @param organizationId Organization ID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -439,14 +455,15 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Missing organization_id </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get user </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getActiveUserAsync(final ApiCallback<RoutesUserWithRoles> _callback) throws ApiException {
+    public okhttp3.Call getActiveUserAsync(@javax.annotation.Nonnull String organizationId, final ApiCallback<RoutesUserWithRoles> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getActiveUserValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getActiveUserValidateBeforeCall(organizationId, _callback);
         Type localVarReturnType = new TypeToken<RoutesUserWithRoles>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

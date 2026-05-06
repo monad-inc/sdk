@@ -122,11 +122,15 @@ Get your current user
 
 ```typescript
 import { createConfiguration, UsersApi } from '';
+import type { UsersApiGetActiveUserRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new UsersApi(configuration);
 
-const request = {};
+const request: UsersApiGetActiveUserRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+};
 
 const data = await apiInstance.getActiveUser(request);
 console.log('API called successfully. Returned data:', data);
@@ -134,7 +138,10 @@ console.log('API called successfully. Returned data:', data);
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
 ### Return type
@@ -154,9 +161,10 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User created successfully |  -  |
-**400** | Invalid JSON request body |  -  |
-**500** | Error creating user |  -  |
+**200** | Get user successful |  -  |
+**400** | Missing organization_id |  -  |
+**403** | Access denied |  -  |
+**500** | Failed to get user |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

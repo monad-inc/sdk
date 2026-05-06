@@ -7151,11 +7151,12 @@ export class ObservableUsersApi {
     /**
      * Get your current user
      * Get your current user
+     * @param organizationId Organization ID
      */
-    public getActiveUserWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<RoutesUserWithRoles>> {
+    public getActiveUserWithHttpInfo(organizationId: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesUserWithRoles>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.getActiveUser(_config);
+        const requestContextPromise = this.requestFactory.getActiveUser(organizationId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -7175,9 +7176,10 @@ export class ObservableUsersApi {
     /**
      * Get your current user
      * Get your current user
+     * @param organizationId Organization ID
      */
-    public getActiveUser(_options?: ConfigurationOptions): Observable<RoutesUserWithRoles> {
-        return this.getActiveUserWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<RoutesUserWithRoles>) => apiResponse.data));
+    public getActiveUser(organizationId: string, _options?: ConfigurationOptions): Observable<RoutesUserWithRoles> {
+        return this.getActiveUserWithHttpInfo(organizationId, _options).pipe(map((apiResponse: HttpInfo<RoutesUserWithRoles>) => apiResponse.data));
     }
 
     /**

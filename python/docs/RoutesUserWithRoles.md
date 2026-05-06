@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **created_at** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**organization_roles** | [**Dict[str, ModelsUserRoleWithPermissions]**](ModelsUserRoleWithPermissions.md) |  | [optional] 
+**organization_role** | [**ModelsUserRoleWithPermissions**](ModelsUserRoleWithPermissions.md) |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 

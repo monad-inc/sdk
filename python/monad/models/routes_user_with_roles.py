@@ -34,10 +34,10 @@ class RoutesUserWithRoles(BaseModel):
     created_at: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    organization_roles: Optional[Dict[str, ModelsUserRoleWithPermissions]] = None
+    organization_role: Optional[ModelsUserRoleWithPermissions] = None
     updated_at: Optional[StrictStr] = None
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_provider", "created_at", "email", "id", "organization_roles", "updated_at", "username"]
+    __properties: ClassVar[List[str]] = ["auth_provider", "created_at", "email", "id", "organization_role", "updated_at", "username"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -81,13 +81,9 @@ class RoutesUserWithRoles(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of auth_provider
         if self.auth_provider:
             _dict['auth_provider'] = self.auth_provider.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each value in organization_roles (dict)
-        _field_dict = {}
-        if self.organization_roles:
-            for _key_organization_roles in self.organization_roles:
-                if self.organization_roles[_key_organization_roles]:
-                    _field_dict[_key_organization_roles] = self.organization_roles[_key_organization_roles].to_dict()
-            _dict['organization_roles'] = _field_dict
+        # override the default output from pydantic by calling `to_dict()` of organization_role
+        if self.organization_role:
+            _dict['organization_role'] = self.organization_role.to_dict()
         return _dict
 
     @classmethod
@@ -104,12 +100,7 @@ class RoutesUserWithRoles(BaseModel):
             "created_at": obj.get("created_at"),
             "email": obj.get("email"),
             "id": obj.get("id"),
-            "organization_roles": dict(
-                (_k, ModelsUserRoleWithPermissions.from_dict(_v))
-                for _k, _v in obj["organization_roles"].items()
-            )
-            if obj.get("organization_roles") is not None
-            else None,
+            "organization_role": ModelsUserRoleWithPermissions.from_dict(obj["organization_role"]) if obj.get("organization_role") is not None else None,
             "updated_at": obj.get("updated_at"),
             "username": obj.get("username")
         })

@@ -43,23 +43,21 @@ class TestRoutesUserWithRoles(unittest.TestCase):
                 created_at = '',
                 email = '',
                 id = '',
-                organization_roles = {
-                    'key' : monad.models.models/user_role_with_permissions.models.UserRoleWithPermissions(
-                        inherited = True, 
-                        organization_id = '', 
-                        permissions = [
-                            monad.models.github_com_monad_inc_core_pkg_types_models/permission.github_com_monad-inc_core_pkg_types_models.Permission(
-                                created_at = '', 
-                                description = '', 
-                                id = '', 
-                                name = '', 
-                                slug = '', 
-                                updated_at = '', )
-                            ], 
-                        role_id = '', 
-                        role_name = '', 
-                        source_organization_id = '', )
-                    },
+                organization_role = monad.models.models/user_role_with_permissions.models.UserRoleWithPermissions(
+                    inherited = True, 
+                    organization_id = '', 
+                    permissions = [
+                        monad.models.github_com_monad_inc_core_pkg_types_models/permission.github_com_monad-inc_core_pkg_types_models.Permission(
+                            created_at = '', 
+                            description = '', 
+                            id = '', 
+                            name = '', 
+                            slug = '', 
+                            updated_at = '', )
+                        ], 
+                    role_id = '', 
+                    role_name = '', 
+                    source_organization_id = '', ),
                 updated_at = '',
                 username = ''
             )

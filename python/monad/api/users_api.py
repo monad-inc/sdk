@@ -16,7 +16,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
+from pydantic import Field, StrictStr
 from typing import Any, Dict, Optional
+from typing_extensions import Annotated
 from monad.models.authenticationtypes_mfa_enrollment_ticket import AuthenticationtypesMFAEnrollmentTicket
 from monad.models.github_com_monad_inc_core_pkg_types_models_user import GithubComMonadIncCorePkgTypesModelsUser
 from monad.models.routes_user_with_roles import RoutesUserWithRoles
@@ -574,6 +576,7 @@ class UsersApi:
     @validate_call
     def get_active_user(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -591,6 +594,8 @@ class UsersApi:
 
         Get your current user
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -614,6 +619,7 @@ class UsersApi:
         """ # noqa: E501
 
         _param = self._get_active_user_serialize(
+            organization_id=organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -623,6 +629,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesUserWithRoles",
             '400': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -639,6 +646,7 @@ class UsersApi:
     @validate_call
     def get_active_user_with_http_info(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -656,6 +664,8 @@ class UsersApi:
 
         Get your current user
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -679,6 +689,7 @@ class UsersApi:
         """ # noqa: E501
 
         _param = self._get_active_user_serialize(
+            organization_id=organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -688,6 +699,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesUserWithRoles",
             '400': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -704,6 +716,7 @@ class UsersApi:
     @validate_call
     def get_active_user_without_preload_content(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -721,6 +734,8 @@ class UsersApi:
 
         Get your current user
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -744,6 +759,7 @@ class UsersApi:
         """ # noqa: E501
 
         _param = self._get_active_user_serialize(
+            organization_id=organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -753,6 +769,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesUserWithRoles",
             '400': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -764,6 +781,7 @@ class UsersApi:
 
     def _get_active_user_serialize(
         self,
+        organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -786,6 +804,10 @@ class UsersApi:
 
         # process the path parameters
         # process the query parameters
+        if organization_id is not None:
+            
+            _query_params.append(('organization_id', organization_id))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

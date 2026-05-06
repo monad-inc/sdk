@@ -104,9 +104,16 @@ export class UsersApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Get your current user
      * Get your current user
+     * @param organizationId Organization ID
      */
-    public async getActiveUser(_options?: Configuration): Promise<RequestContext> {
+    public async getActiveUser(organizationId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("UsersApi", "getActiveUser", "organizationId");
+        }
+
 
         // Path Params
         const localVarPath = '/v1/users';
@@ -114,6 +121,11 @@ export class UsersApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (organizationId !== undefined) {
+            requestContext.setQueryParam("organization_id", ObjectSerializer.serialize(organizationId, "string", ""));
+        }
 
 
         let authMethod: SecurityAuthentication | undefined;
@@ -270,14 +282,21 @@ export class UsersApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Missing organization_id", body, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Access denied", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Error creating user", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Failed to get user", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml

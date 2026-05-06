@@ -19,7 +19,7 @@ export class RoutesUserWithRoles {
     'createdAt'?: string;
     'email'?: string;
     'id'?: string;
-    'organizationRoles'?: { [key: string]: ModelsUserRoleWithPermissions; };
+    'organizationRole'?: ModelsUserRoleWithPermissions;
     'updatedAt'?: string;
     'username'?: string;
 
@@ -53,9 +53,9 @@ export class RoutesUserWithRoles {
             "format": ""
         },
         {
-            "name": "organizationRoles",
-            "baseName": "organization_roles",
-            "type": "{ [key: string]: ModelsUserRoleWithPermissions; }",
+            "name": "organizationRole",
+            "baseName": "organization_role",
+            "type": "ModelsUserRoleWithPermissions",
             "format": ""
         },
         {

@@ -20,8 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.openapitools.client.model.ModelsUserRoleWithPermissions;
 import org.openapitools.client.model.RoutesUserAuthProvider;
 import org.junit.jupiter.api.Disabled;
@@ -74,11 +72,11 @@ public class RoutesUserWithRolesTest {
     }
 
     /**
-     * Test the property 'organizationRoles'
+     * Test the property 'organizationRole'
      */
     @Test
-    public void organizationRolesTest() {
-        // TODO: test organizationRoles
+    public void organizationRoleTest() {
+        // TODO: test organizationRole
     }
 
     /**

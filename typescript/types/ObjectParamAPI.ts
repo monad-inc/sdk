@@ -7015,6 +7015,13 @@ export interface UsersApiEnableMFARequest {
 }
 
 export interface UsersApiGetActiveUserRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof UsersApigetActiveUser
+     */
+    organizationId: string
 }
 
 export interface UsersApiGetMFAStatusRequest {
@@ -7068,8 +7075,8 @@ export class ObjectUsersApi {
      * Get your current user
      * @param param the request object
      */
-    public getActiveUserWithHttpInfo(param: UsersApiGetActiveUserRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
-        return this.api.getActiveUserWithHttpInfo( options).toPromise();
+    public getActiveUserWithHttpInfo(param: UsersApiGetActiveUserRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
+        return this.api.getActiveUserWithHttpInfo(param.organizationId,  options).toPromise();
     }
 
     /**
@@ -7077,8 +7084,8 @@ export class ObjectUsersApi {
      * Get your current user
      * @param param the request object
      */
-    public getActiveUser(param: UsersApiGetActiveUserRequest = {}, options?: ConfigurationOptions): Promise<RoutesUserWithRoles> {
-        return this.api.getActiveUser( options).toPromise();
+    public getActiveUser(param: UsersApiGetActiveUserRequest, options?: ConfigurationOptions): Promise<RoutesUserWithRoles> {
+        return this.api.getActiveUser(param.organizationId,  options).toPromise();
     }
 
     /**

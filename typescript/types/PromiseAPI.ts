@@ -5264,20 +5264,22 @@ export class PromiseUsersApi {
     /**
      * Get your current user
      * Get your current user
+     * @param organizationId Organization ID
      */
-    public getActiveUserWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
+    public getActiveUserWithHttpInfo(organizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.getActiveUserWithHttpInfo(observableOptions);
+        const result = this.api.getActiveUserWithHttpInfo(organizationId, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Get your current user
      * Get your current user
+     * @param organizationId Organization ID
      */
-    public getActiveUser(_options?: PromiseConfigurationOptions): Promise<RoutesUserWithRoles> {
+    public getActiveUser(organizationId: string, _options?: PromiseConfigurationOptions): Promise<RoutesUserWithRoles> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.getActiveUser(observableOptions);
+        const result = this.api.getActiveUser(organizationId, observableOptions);
         return result.toPromise();
     }
 
