@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -24,6 +23,7 @@ Name | Type | Description | Notes
 **AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **HarvestApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -137,31 +137,6 @@ and a boolean to check if the value has been set.
 
 SetApiKey sets ApiKey field to given value.
 
-
-### GetPersonalAccessToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessToken() ModelsSecret`
-
-GetPersonalAccessToken returns the PersonalAccessToken field if non-nil, zero value otherwise.
-
-### GetPersonalAccessTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessTokenOk() (*ModelsSecret, bool)`
-
-GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPersonalAccessToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetPersonalAccessToken(v ModelsSecret)`
-
-SetPersonalAccessToken sets PersonalAccessToken field to given value.
-
-### HasPersonalAccessToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasPersonalAccessToken() bool`
-
-HasPersonalAccessToken returns a boolean if a field has been set.
 
 ### GetAccessKey
 
@@ -517,6 +492,31 @@ and a boolean to check if the value has been set.
 
 SetApiSecret sets ApiSecret field to given value.
 
+
+### GetPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessToken() ModelsSecret`
+
+GetPersonalAccessToken returns the PersonalAccessToken field if non-nil, zero value otherwise.
+
+### GetPersonalAccessTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessTokenOk() (*ModelsSecret, bool)`
+
+GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetPersonalAccessToken(v ModelsSecret)`
+
+SetPersonalAccessToken sets PersonalAccessToken field to given value.
+
+### HasPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasPersonalAccessToken() bool`
+
+HasPersonalAccessToken returns a boolean if a field has been set.
 
 ### GetOauthToken
 

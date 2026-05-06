@@ -26,7 +26,6 @@ import java.util.Map;
 import org.openapitools.client.model.AdminLogsSettingsConfig;
 import org.openapitools.client.model.AivenServiceLogsSettingsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
-import org.openapitools.client.model.AuditLogsSettingsConfig;
 import org.openapitools.client.model.AuthLogsSettingsConfig;
 import org.openapitools.client.model.AwsGuarddutySettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
@@ -187,70 +186,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void intervalSecondsTest() {
         // TODO: test intervalSeconds
-    }
-
-    /**
-     * Test the property 'actions'
-     */
-    @Test
-    public void actionsTest() {
-        // TODO: test actions
-    }
-
-    /**
-     * Test the property 'actor'
-     */
-    @Test
-    public void actorTest() {
-        // TODO: test actor
-    }
-
-    /**
-     * Test the property 'country'
-     */
-    @Test
-    public void countryTest() {
-        // TODO: test country
-    }
-
-    /**
-     * Test the property 'enterprise'
-     */
-    @Test
-    public void enterpriseTest() {
-        // TODO: test enterprise
-    }
-
-    /**
-     * Test the property 'include'
-     */
-    @Test
-    public void includeTest() {
-        // TODO: test include
-    }
-
-    /**
-     * Test the property 'organization'
-     */
-    @Test
-    public void organizationTest() {
-        // TODO: test organization
-    }
-
-    /**
-     * Test the property 'repository'
-     */
-    @Test
-    public void repositoryTest() {
-        // TODO: test repository
-    }
-
-    /**
-     * Test the property 'user'
-     */
-    @Test
-    public void userTest() {
-        // TODO: test user
     }
 
     /**
@@ -1142,6 +1077,22 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'include'
+     */
+    @Test
+    public void includeTest() {
+        // TODO: test include
+    }
+
+    /**
+     * Test the property 'organization'
+     */
+    @Test
+    public void organizationTest() {
+        // TODO: test organization
+    }
+
+    /**
      * Test the property 'domainUrl'
      */
     @Test
@@ -1195,6 +1146,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void schemaTest() {
         // TODO: test schema
+    }
+
+    /**
+     * Test the property 'user'
+     */
+    @Test
+    public void userTest() {
+        // TODO: test user
     }
 
     /**

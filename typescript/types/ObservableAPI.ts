@@ -19,8 +19,6 @@ import { ApplyConditionV2Request } from '../models/ApplyConditionV2Request';
 import { ApplyTransformationV2Request } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
-import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
-import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';

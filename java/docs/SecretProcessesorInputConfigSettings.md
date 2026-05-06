@@ -13,14 +13,6 @@
 |**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
 |**service** | **String** | The Aiven service name |  [optional] |
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
-|**actions** | **List&lt;String&gt;** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) |  [optional] |
-|**actor** | **String** | Filter by the username that initiated the action |  [optional] |
-|**country** | **String** | Filter by actor&#39;s country code (e.g., US) |  [optional] |
-|**enterprise** | **String** | Your GitHub enterprise slug or ID |  [optional] |
-|**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
-|**organization** | **String** | Your GitHub organization name |  [optional] |
-|**repository** | **String** | Filter by repository (format: org-name/repo-name) |  [optional] |
-|**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
 |**region** | **String** | Region of the OwnBackup instance |  [optional] |
 |**roleArn** | **String** | The ARN of the IAM role to assume for accessing Inspector. |  [optional] |
 |**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
@@ -132,6 +124,8 @@
 |**username** | **String** | Username of Oracle Cloud service user with permissions to access the resource |  [optional] |
 |**githubAppInstallationId** | **String** | GitHub App Installation ID (required when using GitHub App authentication) |  [optional] |
 |**githubClientId** | **String** | GitHub Client ID (alternative to personal access token) |  [optional] |
+|**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
+|**organization** | **String** | Your GitHub organization name |  [optional] |
 |**domainUrl** | **String** | Domain URL for the Salesforce instance |  [optional] |
 |**topic** | **String** | Pub/Sub topic to subscribe to |  [optional] |
 |**hostName** | **String** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. |  [optional] |
@@ -139,6 +133,7 @@
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
 |**schema** | **String** | The schema within the Snowflake database where the target table resides. |  [optional] |
+|**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
 |**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
 |**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |
 |**recordType** | **String** | The type of record to generate |  [optional] |

@@ -10,14 +10,6 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Service** | Pointer to **string** | The Aiven service name | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
-**Actions** | Pointer to **[]string** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) | [optional] 
-**Actor** | Pointer to **string** | Filter by the username that initiated the action | [optional] 
-**Country** | Pointer to **string** | Filter by actor&#39;s country code (e.g., US) | [optional] 
-**Enterprise** | Pointer to **string** | Your GitHub enterprise slug or ID | [optional] 
-**Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
-**Organization** | Pointer to **string** | Your GitHub organization name | [optional] 
-**Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
-**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Region** | Pointer to **string** | Region of the OwnBackup instance | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the IAM role to assume for accessing Inspector. | [optional] 
 **Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
@@ -129,6 +121,8 @@ Name | Type | Description | Notes
 **Username** | Pointer to **string** | Username of Oracle Cloud service user with permissions to access the resource | [optional] 
 **GithubAppInstallationId** | Pointer to **string** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
 **GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
+**Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
+**Organization** | Pointer to **string** | Your GitHub organization name | [optional] 
 **DomainUrl** | Pointer to **string** | Domain URL for the Salesforce instance | [optional] 
 **Topic** | Pointer to **string** | Pub/Sub topic to subscribe to | [optional] 
 **HostName** | Pointer to **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
@@ -136,6 +130,7 @@ Name | Type | Description | Notes
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
+**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
@@ -323,206 +318,6 @@ SetIntervalSeconds sets IntervalSeconds field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasIntervalSeconds() bool`
 
 HasIntervalSeconds returns a boolean if a field has been set.
-
-### GetActions
-
-`func (o *SecretProcessesorInputConfigSettings) GetActions() []string`
-
-GetActions returns the Actions field if non-nil, zero value otherwise.
-
-### GetActionsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetActionsOk() (*[]string, bool)`
-
-GetActionsOk returns a tuple with the Actions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActions
-
-`func (o *SecretProcessesorInputConfigSettings) SetActions(v []string)`
-
-SetActions sets Actions field to given value.
-
-### HasActions
-
-`func (o *SecretProcessesorInputConfigSettings) HasActions() bool`
-
-HasActions returns a boolean if a field has been set.
-
-### GetActor
-
-`func (o *SecretProcessesorInputConfigSettings) GetActor() string`
-
-GetActor returns the Actor field if non-nil, zero value otherwise.
-
-### GetActorOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetActorOk() (*string, bool)`
-
-GetActorOk returns a tuple with the Actor field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActor
-
-`func (o *SecretProcessesorInputConfigSettings) SetActor(v string)`
-
-SetActor sets Actor field to given value.
-
-### HasActor
-
-`func (o *SecretProcessesorInputConfigSettings) HasActor() bool`
-
-HasActor returns a boolean if a field has been set.
-
-### GetCountry
-
-`func (o *SecretProcessesorInputConfigSettings) GetCountry() string`
-
-GetCountry returns the Country field if non-nil, zero value otherwise.
-
-### GetCountryOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCountryOk() (*string, bool)`
-
-GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCountry
-
-`func (o *SecretProcessesorInputConfigSettings) SetCountry(v string)`
-
-SetCountry sets Country field to given value.
-
-### HasCountry
-
-`func (o *SecretProcessesorInputConfigSettings) HasCountry() bool`
-
-HasCountry returns a boolean if a field has been set.
-
-### GetEnterprise
-
-`func (o *SecretProcessesorInputConfigSettings) GetEnterprise() string`
-
-GetEnterprise returns the Enterprise field if non-nil, zero value otherwise.
-
-### GetEnterpriseOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetEnterpriseOk() (*string, bool)`
-
-GetEnterpriseOk returns a tuple with the Enterprise field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnterprise
-
-`func (o *SecretProcessesorInputConfigSettings) SetEnterprise(v string)`
-
-SetEnterprise sets Enterprise field to given value.
-
-### HasEnterprise
-
-`func (o *SecretProcessesorInputConfigSettings) HasEnterprise() bool`
-
-HasEnterprise returns a boolean if a field has been set.
-
-### GetInclude
-
-`func (o *SecretProcessesorInputConfigSettings) GetInclude() string`
-
-GetInclude returns the Include field if non-nil, zero value otherwise.
-
-### GetIncludeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIncludeOk() (*string, bool)`
-
-GetIncludeOk returns a tuple with the Include field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInclude
-
-`func (o *SecretProcessesorInputConfigSettings) SetInclude(v string)`
-
-SetInclude sets Include field to given value.
-
-### HasInclude
-
-`func (o *SecretProcessesorInputConfigSettings) HasInclude() bool`
-
-HasInclude returns a boolean if a field has been set.
-
-### GetOrganization
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganization() string`
-
-GetOrganization returns the Organization field if non-nil, zero value otherwise.
-
-### GetOrganizationOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganizationOk() (*string, bool)`
-
-GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrganization
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrganization(v string)`
-
-SetOrganization sets Organization field to given value.
-
-### HasOrganization
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrganization() bool`
-
-HasOrganization returns a boolean if a field has been set.
-
-### GetRepository
-
-`func (o *SecretProcessesorInputConfigSettings) GetRepository() string`
-
-GetRepository returns the Repository field if non-nil, zero value otherwise.
-
-### GetRepositoryOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRepositoryOk() (*string, bool)`
-
-GetRepositoryOk returns a tuple with the Repository field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRepository
-
-`func (o *SecretProcessesorInputConfigSettings) SetRepository(v string)`
-
-SetRepository sets Repository field to given value.
-
-### HasRepository
-
-`func (o *SecretProcessesorInputConfigSettings) HasRepository() bool`
-
-HasRepository returns a boolean if a field has been set.
-
-### GetUser
-
-`func (o *SecretProcessesorInputConfigSettings) GetUser() string`
-
-GetUser returns the User field if non-nil, zero value otherwise.
-
-### GetUserOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserOk() (*string, bool)`
-
-GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUser
-
-`func (o *SecretProcessesorInputConfigSettings) SetUser(v string)`
-
-SetUser sets User field to given value.
-
-### HasUser
-
-`func (o *SecretProcessesorInputConfigSettings) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
 
 ### GetRegion
 
@@ -3284,6 +3079,56 @@ SetGithubClientId sets GithubClientId field to given value.
 
 HasGithubClientId returns a boolean if a field has been set.
 
+### GetInclude
+
+`func (o *SecretProcessesorInputConfigSettings) GetInclude() string`
+
+GetInclude returns the Include field if non-nil, zero value otherwise.
+
+### GetIncludeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludeOk() (*string, bool)`
+
+GetIncludeOk returns a tuple with the Include field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInclude
+
+`func (o *SecretProcessesorInputConfigSettings) SetInclude(v string)`
+
+SetInclude sets Include field to given value.
+
+### HasInclude
+
+`func (o *SecretProcessesorInputConfigSettings) HasInclude() bool`
+
+HasInclude returns a boolean if a field has been set.
+
+### GetOrganization
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrganization() string`
+
+GetOrganization returns the Organization field if non-nil, zero value otherwise.
+
+### GetOrganizationOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrganizationOk() (*string, bool)`
+
+GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganization
+
+`func (o *SecretProcessesorInputConfigSettings) SetOrganization(v string)`
+
+SetOrganization sets Organization field to given value.
+
+### HasOrganization
+
+`func (o *SecretProcessesorInputConfigSettings) HasOrganization() bool`
+
+HasOrganization returns a boolean if a field has been set.
+
 ### GetDomainUrl
 
 `func (o *SecretProcessesorInputConfigSettings) GetDomainUrl() string`
@@ -3458,6 +3303,31 @@ SetSchema sets Schema field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSchema() bool`
 
 HasSchema returns a boolean if a field has been set.
+
+### GetUser
+
+`func (o *SecretProcessesorInputConfigSettings) GetUser() string`
+
+GetUser returns the User field if non-nil, zero value otherwise.
+
+### GetUserOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUserOk() (*string, bool)`
+
+GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUser
+
+`func (o *SecretProcessesorInputConfigSettings) SetUser(v string)`
+
+SetUser sets User field to given value.
+
+### HasUser
+
+`func (o *SecretProcessesorInputConfigSettings) HasUser() bool`
+
+HasUser returns a boolean if a field has been set.
 
 ### GetWarehouse
 

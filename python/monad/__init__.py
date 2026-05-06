@@ -82,8 +82,6 @@ __all__ = [
     "ApplyTransformationV2Request",
     "ArizeAuditLogsSecretsConfig",
     "ArizeAuditLogsSettingsConfig",
-    "AuditLogsSecretsConfig",
-    "AuditLogsSettingsConfig",
     "AuthLogsSecretsConfig",
     "AuthLogsSettingsConfig",
     "AuthenticationtypesAuthenticationMethod",
@@ -696,8 +694,6 @@ from monad.models.apply_condition_v2_request import ApplyConditionV2Request as A
 from monad.models.apply_transformation_v2_request import ApplyTransformationV2Request as ApplyTransformationV2Request
 from monad.models.arize_audit_logs_secrets_config import ArizeAuditLogsSecretsConfig as ArizeAuditLogsSecretsConfig
 from monad.models.arize_audit_logs_settings_config import ArizeAuditLogsSettingsConfig as ArizeAuditLogsSettingsConfig
-from monad.models.audit_logs_secrets_config import AuditLogsSecretsConfig as AuditLogsSecretsConfig
-from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig as AuditLogsSettingsConfig
 from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig as AuthLogsSecretsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig as AuthLogsSettingsConfig
 from monad.models.authenticationtypes_authentication_method import AuthenticationtypesAuthenticationMethod as AuthenticationtypesAuthenticationMethod

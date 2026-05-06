@@ -231,65 +231,6 @@
                 },
                 "type": "object"
             },
-            "audit_logs.SecretsConfig": {
-                "description": "GitHub audit logs secrets",
-                "properties": {
-                    "personal_access_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "audit_logs.SettingsConfig": {
-                "description": "GitHub audit logs settings",
-                "properties": {
-                    "actions": {
-                        "description": "Filter by specific actions. Use wildcards for broader matches (e.g., repo.*)",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "actor": {
-                        "description": "Filter by the username that initiated the action",
-                        "type": "string"
-                    },
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "country": {
-                        "description": "Filter by actor's country code (e.g., US)",
-                        "type": "string"
-                    },
-                    "enterprise": {
-                        "description": "Your GitHub enterprise slug or ID",
-                        "type": "string"
-                    },
-                    "include": {
-                        "description": "Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both.",
-                        "type": "string"
-                    },
-                    "organization": {
-                        "description": "Filter by organization name",
-                        "type": "string"
-                    },
-                    "repository": {
-                        "description": "Filter by repository (format: org-name/repo-name)",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    },
-                    "user": {
-                        "description": "Filter by the username that was affected by the action",
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
             "auth_logs.SecretsConfig": {
                 "properties": {
                     "integration_key": {
@@ -8728,9 +8669,6 @@
                                 "$ref": "#/components/schemas/arize_audit_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/audit_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/auth_logs.SecretsConfig"
                             },
                             {
@@ -9098,9 +9036,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/arize_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/auth_logs.SettingsConfig"

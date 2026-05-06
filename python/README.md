@@ -345,8 +345,6 @@ Class | Method | HTTP request | Description
  - [ApplyTransformationV2Request](docs/ApplyTransformationV2Request.md)
  - [ArizeAuditLogsSecretsConfig](docs/ArizeAuditLogsSecretsConfig.md)
  - [ArizeAuditLogsSettingsConfig](docs/ArizeAuditLogsSettingsConfig.md)
- - [AuditLogsSecretsConfig](docs/AuditLogsSecretsConfig.md)
- - [AuditLogsSettingsConfig](docs/AuditLogsSettingsConfig.md)
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
  - [AuthenticationtypesAuthenticationMethod](docs/AuthenticationtypesAuthenticationMethod.md)

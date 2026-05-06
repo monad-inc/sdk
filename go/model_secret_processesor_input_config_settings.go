@@ -22,7 +22,6 @@ type SecretProcessesorInputConfigSettings struct {
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
 	AivenServiceLogsSettingsConfig *AivenServiceLogsSettingsConfig
 	ArizeAuditLogsSettingsConfig *ArizeAuditLogsSettingsConfig
-	AuditLogsSettingsConfig *AuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
@@ -138,13 +137,6 @@ func AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Aiv
 func ArizeAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ArizeAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		ArizeAuditLogsSettingsConfig: v,
-	}
-}
-
-// AuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AuditLogsSettingsConfig: v,
 	}
 }
 
@@ -867,23 +859,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.ArizeAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into AuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AuditLogsSettingsConfig)
-	if err == nil {
-		jsonAuditLogsSettingsConfig, _ := json.Marshal(dst.AuditLogsSettingsConfig)
-		if string(jsonAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.AuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AuditLogsSettingsConfig); err != nil {
-				dst.AuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AuthLogsSettingsConfig
@@ -2506,7 +2481,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AdminLogsSettingsConfig = nil
 		dst.AivenServiceLogsSettingsConfig = nil
 		dst.ArizeAuditLogsSettingsConfig = nil
-		dst.AuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsGuarddutySettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
@@ -2623,10 +2597,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.ArizeAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.ArizeAuditLogsSettingsConfig)
-	}
-
-	if src.AuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.AuditLogsSettingsConfig)
 	}
 
 	if src.AuthLogsSettingsConfig != nil {
@@ -3029,10 +2999,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.ArizeAuditLogsSettingsConfig
 	}
 
-	if obj.AuditLogsSettingsConfig != nil {
-		return obj.AuditLogsSettingsConfig
-	}
-
 	if obj.AuthLogsSettingsConfig != nil {
 		return obj.AuthLogsSettingsConfig
 	}
@@ -3429,10 +3395,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.ArizeAuditLogsSettingsConfig != nil {
 		return *obj.ArizeAuditLogsSettingsConfig
-	}
-
-	if obj.AuditLogsSettingsConfig != nil {
-		return *obj.AuditLogsSettingsConfig
 	}
 
 	if obj.AuthLogsSettingsConfig != nil {

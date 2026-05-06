@@ -14,8 +14,6 @@ export * from '../models/ApplyConditionV2Request';
 export * from '../models/ApplyTransformationV2Request';
 export * from '../models/ArizeAuditLogsSecretsConfig';
 export * from '../models/ArizeAuditLogsSettingsConfig';
-export * from '../models/AuditLogsSecretsConfig';
-export * from '../models/AuditLogsSettingsConfig';
 export * from '../models/AuthLogsSecretsConfig';
 export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AuthenticationtypesAuthenticationMethod';
@@ -575,8 +573,6 @@ import { ApplyConditionV2RequestClass } from '../models/ApplyConditionV2Request'
 import { ApplyTransformationV2RequestClass } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
-import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
-import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
@@ -1201,8 +1197,6 @@ let typeMap: {[index: string]: any} = {
     "ApplyTransformationV2Request": ApplyTransformationV2RequestClass,
     "ArizeAuditLogsSecretsConfig": ArizeAuditLogsSecretsConfig,
     "ArizeAuditLogsSettingsConfig": ArizeAuditLogsSettingsConfig,
-    "AuditLogsSecretsConfig": AuditLogsSecretsConfig,
-    "AuditLogsSettingsConfig": AuditLogsSettingsConfig,
     "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
     "AuthenticationtypesAuthenticationMethod": AuthenticationtypesAuthenticationMethod,

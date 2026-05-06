@@ -24,7 +24,6 @@ import java.util.Map;
 import org.openapitools.client.model.AdminLogsSecretsConfig;
 import org.openapitools.client.model.AivenServiceLogsSecretsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
-import org.openapitools.client.model.AuditLogsSecretsConfig;
 import org.openapitools.client.model.AuthLogsSecretsConfig;
 import org.openapitools.client.model.AwsGuarddutySecretsConfig;
 import org.openapitools.client.model.AwsS3SecretsConfig;
@@ -162,14 +161,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'personalAccessToken'
-     */
-    @Test
-    public void personalAccessTokenTest() {
-        // TODO: test personalAccessToken
-    }
-
-    /**
      * Test the property 'accessKey'
      */
     @Test
@@ -287,6 +278,14 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void apiSecretTest() {
         // TODO: test apiSecret
+    }
+
+    /**
+     * Test the property 'personalAccessToken'
+     */
+    @Test
+    public void personalAccessTokenTest() {
+        // TODO: test personalAccessToken
     }
 
     /**
