@@ -10250,6 +10250,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "access_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "tenable_assets.SettingsConfig": {
@@ -10276,6 +10280,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "access_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "tenable_assets_cron.SettingsConfig": {
@@ -10289,7 +10297,7 @@
                 "type": "object"
             },
             "tenable_vulnerabilities.SecretsConfig": {
-                "description": "Tenable assets secrets",
+                "description": "Tenable vulnerabilities secrets",
                 "properties": {
                     "access_key": {
                         "$ref": "#/components/schemas/models.Secret"
@@ -10298,13 +10306,17 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "access_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "tenable_vulnerabilities.SettingsConfig": {
-                "description": "Tenable assets settings",
+                "description": "Tenable vulnerabilities settings",
                 "properties": {
                     "backfill_start_time": {
-                        "description": "Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.",
+                        "description": "Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.",
                         "type": "string"
                     },
                     "use_synthetic_data": {
@@ -10315,7 +10327,7 @@
                 "type": "object"
             },
             "tenable_vulnerabilities_cron.SecretsConfig": {
-                "description": "Tenable assets secrets",
+                "description": "Tenable vulnerabilities secrets",
                 "properties": {
                     "access_key": {
                         "$ref": "#/components/schemas/models.Secret"
@@ -10324,10 +10336,14 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "access_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "tenable_vulnerabilities_cron.SettingsConfig": {
-                "description": "Tenable assets settings",
+                "description": "Tenable vulnerabilities settings",
                 "properties": {
                     "cron": {
                         "description": "Cron expression to schedule the data collection.",

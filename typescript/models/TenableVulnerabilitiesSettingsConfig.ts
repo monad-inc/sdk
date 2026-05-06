@@ -13,11 +13,11 @@
 import { HttpFile } from '../http/http';
 
 /**
-* Tenable assets settings
+* Tenable vulnerabilities settings
 */
 export class TenableVulnerabilitiesSettingsConfig {
     /**
-    * Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.
+    * Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.
     */
     'backfillStartTime'?: string;
     /**

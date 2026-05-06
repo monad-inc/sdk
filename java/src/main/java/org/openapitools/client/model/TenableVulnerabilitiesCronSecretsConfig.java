@@ -47,24 +47,24 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Tenable assets secrets
+ * Tenable vulnerabilities secrets
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class TenableVulnerabilitiesCronSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret accessKey;
 
   public static final String SERIALIZED_NAME_SECRET_KEY = "secret_key";
   @SerializedName(SERIALIZED_NAME_SECRET_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret secretKey;
 
   public TenableVulnerabilitiesCronSecretsConfig() {
   }
 
-  public TenableVulnerabilitiesCronSecretsConfig accessKey(@javax.annotation.Nullable ModelsSecret accessKey) {
+  public TenableVulnerabilitiesCronSecretsConfig accessKey(@javax.annotation.Nonnull ModelsSecret accessKey) {
     this.accessKey = accessKey;
     return this;
   }
@@ -73,17 +73,17 @@ public class TenableVulnerabilitiesCronSecretsConfig {
    * Get accessKey
    * @return accessKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getAccessKey() {
     return accessKey;
   }
 
-  public void setAccessKey(@javax.annotation.Nullable ModelsSecret accessKey) {
+  public void setAccessKey(@javax.annotation.Nonnull ModelsSecret accessKey) {
     this.accessKey = accessKey;
   }
 
 
-  public TenableVulnerabilitiesCronSecretsConfig secretKey(@javax.annotation.Nullable ModelsSecret secretKey) {
+  public TenableVulnerabilitiesCronSecretsConfig secretKey(@javax.annotation.Nonnull ModelsSecret secretKey) {
     this.secretKey = secretKey;
     return this;
   }
@@ -92,12 +92,12 @@ public class TenableVulnerabilitiesCronSecretsConfig {
    * Get secretKey
    * @return secretKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getSecretKey() {
     return secretKey;
   }
 
-  public void setSecretKey(@javax.annotation.Nullable ModelsSecret secretKey) {
+  public void setSecretKey(@javax.annotation.Nonnull ModelsSecret secretKey) {
     this.secretKey = secretKey;
   }
 
@@ -148,7 +148,7 @@ public class TenableVulnerabilitiesCronSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("access_key", "secret_key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("access_key", "secret_key"));
   }
 
   /**
@@ -171,15 +171,18 @@ public class TenableVulnerabilitiesCronSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TenableVulnerabilitiesCronSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TenableVulnerabilitiesCronSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `access_key`
-      if (jsonObj.get("access_key") != null && !jsonObj.get("access_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("access_key"));
-      }
-      // validate the optional field `secret_key`
-      if (jsonObj.get("secret_key") != null && !jsonObj.get("secret_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("secret_key"));
-      }
+      // validate the required field `access_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("access_key"));
+      // validate the required field `secret_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("secret_key"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

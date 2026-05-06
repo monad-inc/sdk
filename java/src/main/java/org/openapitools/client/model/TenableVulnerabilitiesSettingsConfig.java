@@ -46,7 +46,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Tenable assets settings
+ * Tenable vulnerabilities settings
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class TenableVulnerabilitiesSettingsConfig {
@@ -69,7 +69,7 @@ public class TenableVulnerabilitiesSettingsConfig {
   }
 
   /**
-   * Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.
+   * Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.
    * @return backfillStartTime
    */
   @javax.annotation.Nullable

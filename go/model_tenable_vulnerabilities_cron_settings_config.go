@@ -18,7 +18,7 @@ import (
 // checks if the TenableVulnerabilitiesCronSettingsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TenableVulnerabilitiesCronSettingsConfig{}
 
-// TenableVulnerabilitiesCronSettingsConfig Tenable assets settings
+// TenableVulnerabilitiesCronSettingsConfig Tenable vulnerabilities settings
 type TenableVulnerabilitiesCronSettingsConfig struct {
 	// Cron expression to schedule the data collection.
 	Cron *string `json:"cron,omitempty"`

@@ -18,9 +18,9 @@ import (
 // checks if the TenableVulnerabilitiesSettingsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TenableVulnerabilitiesSettingsConfig{}
 
-// TenableVulnerabilitiesSettingsConfig Tenable assets settings
+// TenableVulnerabilitiesSettingsConfig Tenable vulnerabilities settings
 type TenableVulnerabilitiesSettingsConfig struct {
-	// Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.
+	// Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`

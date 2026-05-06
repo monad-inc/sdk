@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,10 +27,10 @@ from pydantic_core import to_jsonable_python
 
 class TenableVulnerabilitiesSecretsConfig(BaseModel):
     """
-    Tenable assets secrets
+    Tenable vulnerabilities secrets
     """ # noqa: E501
-    access_key: Optional[ModelsSecret] = None
-    secret_key: Optional[ModelsSecret] = None
+    access_key: ModelsSecret
+    secret_key: ModelsSecret
     __properties: ClassVar[List[str]] = ["access_key", "secret_key"]
 
     model_config = ConfigDict(

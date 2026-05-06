@@ -14,11 +14,11 @@ import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
-* Tenable assets secrets
+* Tenable vulnerabilities secrets
 */
 export class TenableVulnerabilitiesSecretsConfig {
-    'accessKey'?: ModelsSecret;
-    'secretKey'?: ModelsSecret;
+    'accessKey': ModelsSecret;
+    'secretKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

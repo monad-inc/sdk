@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AccessKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewTenableVulnerabilitiesCronSecretsConfig
 
-`func NewTenableVulnerabilitiesCronSecretsConfig() *TenableVulnerabilitiesCronSecretsConfig`
+`func NewTenableVulnerabilitiesCronSecretsConfig(accessKey ModelsSecret, secretKey ModelsSecret, ) *TenableVulnerabilitiesCronSecretsConfig`
 
 NewTenableVulnerabilitiesCronSecretsConfig instantiates a new TenableVulnerabilitiesCronSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetAccessKey sets AccessKey field to given value.
 
-### HasAccessKey
-
-`func (o *TenableVulnerabilitiesCronSecretsConfig) HasAccessKey() bool`
-
-HasAccessKey returns a boolean if a field has been set.
 
 ### GetSecretKey
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
-### HasSecretKey
-
-`func (o *TenableVulnerabilitiesCronSecretsConfig) HasSecretKey() bool`
-
-HasSecretKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

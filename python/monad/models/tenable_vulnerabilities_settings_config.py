@@ -26,9 +26,9 @@ from pydantic_core import to_jsonable_python
 
 class TenableVulnerabilitiesSettingsConfig(BaseModel):
     """
-    Tenable assets settings
+    Tenable vulnerabilities settings
     """ # noqa: E501
-    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "use_synthetic_data"]
 

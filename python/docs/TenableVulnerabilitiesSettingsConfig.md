@@ -1,12 +1,12 @@
 # TenableVulnerabilitiesSettingsConfig
 
-Tenable assets settings
+Tenable vulnerabilities settings
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backfill_start_time** | **str** | Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data. | [optional] 
+**backfill_start_time** | **str** | Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data. | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

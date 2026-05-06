@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 /**
-* Tenable assets settings
+* Tenable vulnerabilities settings
 */
 export class TenableVulnerabilitiesCronSettingsConfig {
     /**

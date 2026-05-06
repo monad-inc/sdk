@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Tenable assets secrets
 */
 export class TenableAssetsSecretsConfig {
-    'accessKey'?: ModelsSecret;
-    'secretKey'?: ModelsSecret;
+    'accessKey': ModelsSecret;
+    'secretKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

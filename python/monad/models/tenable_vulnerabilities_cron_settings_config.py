@@ -26,7 +26,7 @@ from pydantic_core import to_jsonable_python
 
 class TenableVulnerabilitiesCronSettingsConfig(BaseModel):
     """
-    Tenable assets settings
+    Tenable vulnerabilities settings
     """ # noqa: E501
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression to schedule the data collection.")
     __properties: ClassVar[List[str]] = ["cron"]

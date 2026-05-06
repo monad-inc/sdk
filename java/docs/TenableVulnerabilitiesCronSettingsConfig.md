@@ -2,7 +2,7 @@
 
 # TenableVulnerabilitiesCronSettingsConfig
 
-Tenable assets settings
+Tenable vulnerabilities settings
 
 ## Properties
 

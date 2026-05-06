@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
