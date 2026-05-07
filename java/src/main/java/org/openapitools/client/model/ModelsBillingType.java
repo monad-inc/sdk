@@ -24,10 +24,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets inputs.BillingType
+ * Gets or Sets models.BillingType
  */
-@JsonAdapter(InputsBillingType.Adapter.class)
-public enum InputsBillingType {
+@JsonAdapter(ModelsBillingType.Adapter.class)
+public enum ModelsBillingType {
   
   BillingTypeBillable(0),
   
@@ -35,7 +35,7 @@ public enum InputsBillingType {
 
   private Integer value;
 
-  InputsBillingType(Integer value) {
+  ModelsBillingType(Integer value) {
     this.value = value;
   }
 
@@ -48,8 +48,8 @@ public enum InputsBillingType {
     return String.valueOf(value);
   }
 
-  public static InputsBillingType fromValue(Integer value) {
-    for (InputsBillingType b : InputsBillingType.values()) {
+  public static ModelsBillingType fromValue(Integer value) {
+    for (ModelsBillingType b : ModelsBillingType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -57,22 +57,22 @@ public enum InputsBillingType {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<InputsBillingType> {
+  public static class Adapter extends TypeAdapter<ModelsBillingType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final InputsBillingType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final ModelsBillingType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public InputsBillingType read(final JsonReader jsonReader) throws IOException {
+    public ModelsBillingType read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return InputsBillingType.fromValue(value);
+      return ModelsBillingType.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     Integer value = jsonElement.getAsInt();
-    InputsBillingType.fromValue(value);
+    ModelsBillingType.fromValue(value);
   }
 }
 

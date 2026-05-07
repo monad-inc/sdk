@@ -13,22 +13,26 @@
 """  # noqa: E501
 
 
-import unittest
+from __future__ import annotations
+import json
+from enum import Enum
+from typing_extensions import Self
 
-from monad.models.outputs_billing_type import OutputsBillingType
 
-class TestOutputsBillingType(unittest.TestCase):
-    """OutputsBillingType unit test stubs"""
+class ModelsBillingType(int, Enum):
+    """
+    ModelsBillingType
+    """
 
-    def setUp(self):
-        pass
+    """
+    allowed enum values
+    """
+    BillingTypeBillable = 0
+    BillingTypeNone = 1
 
-    def tearDown(self):
-        pass
+    @classmethod
+    def from_json(cls, json_str: str) -> Self:
+        """Create an instance of ModelsBillingType from a JSON string"""
+        return cls(json.loads(json_str))
 
-    def testOutputsBillingType(self):
-        """Test OutputsBillingType"""
-        # inst = OutputsBillingType()
 
-if __name__ == '__main__':
-    unittest.main()

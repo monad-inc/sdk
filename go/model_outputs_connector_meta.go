@@ -21,7 +21,7 @@ var _ MappedNullable = &OutputsConnectorMeta{}
 // OutputsConnectorMeta struct for OutputsConnectorMeta
 type OutputsConnectorMeta struct {
 	AuthType *string `json:"auth_type,omitempty"`
-	BillingType *OutputsBillingType `json:"billing_type,omitempty"`
+	BillingType *ModelsBillingType `json:"billing_type,omitempty"`
 	Category *ModelsOutputConnectorCategory `json:"category,omitempty"`
 	Config interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -84,9 +84,9 @@ func (o *OutputsConnectorMeta) SetAuthType(v string) {
 }
 
 // GetBillingType returns the BillingType field value if set, zero value otherwise.
-func (o *OutputsConnectorMeta) GetBillingType() OutputsBillingType {
+func (o *OutputsConnectorMeta) GetBillingType() ModelsBillingType {
 	if o == nil || IsNil(o.BillingType) {
-		var ret OutputsBillingType
+		var ret ModelsBillingType
 		return ret
 	}
 	return *o.BillingType
@@ -94,7 +94,7 @@ func (o *OutputsConnectorMeta) GetBillingType() OutputsBillingType {
 
 // GetBillingTypeOk returns a tuple with the BillingType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OutputsConnectorMeta) GetBillingTypeOk() (*OutputsBillingType, bool) {
+func (o *OutputsConnectorMeta) GetBillingTypeOk() (*ModelsBillingType, bool) {
 	if o == nil || IsNil(o.BillingType) {
 		return nil, false
 	}
@@ -110,8 +110,8 @@ func (o *OutputsConnectorMeta) HasBillingType() bool {
 	return false
 }
 
-// SetBillingType gets a reference to the given OutputsBillingType and assigns it to the BillingType field.
-func (o *OutputsConnectorMeta) SetBillingType(v OutputsBillingType) {
+// SetBillingType gets a reference to the given ModelsBillingType and assigns it to the BillingType field.
+func (o *OutputsConnectorMeta) SetBillingType(v ModelsBillingType) {
 	o.BillingType = &v
 }
 

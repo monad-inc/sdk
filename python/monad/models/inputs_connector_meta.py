@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.inputs_billing_type import InputsBillingType
+from monad.models.models_billing_type import ModelsBillingType
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,7 @@ class InputsConnectorMeta(BaseModel):
     InputsConnectorMeta
     """ # noqa: E501
     auth_type: Optional[StrictStr] = None
-    billing_type: Optional[InputsBillingType] = None
+    billing_type: Optional[ModelsBillingType] = None
     category: Optional[ModelsInputConnectorCategory] = None
     config: Optional[Any] = None
     description: Optional[StrictStr] = None

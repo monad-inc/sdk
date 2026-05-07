@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
+import { ModelsBillingType } from '../models/ModelsBillingType';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
-import { OutputsBillingType } from '../models/OutputsBillingType';
 import { HttpFile } from '../http/http';
 
 export class OutputsConnectorMeta {
     'authType'?: string;
-    'billingType'?: OutputsBillingType;
+    'billingType'?: ModelsBillingType;
     'category'?: ModelsOutputConnectorCategory;
     'config'?: any | null;
     'description'?: string;
@@ -42,7 +42,7 @@ export class OutputsConnectorMeta {
         {
             "name": "billingType",
             "baseName": "billing_type",
-            "type": "OutputsBillingType",
+            "type": "ModelsBillingType",
             "format": ""
         },
         {

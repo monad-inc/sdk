@@ -3049,24 +3049,13 @@
                 },
                 "type": "object"
             },
-            "inputs.BillingType": {
-                "enum": [
-                    0,
-                    1
-                ],
-                "type": "integer",
-                "x-enum-varnames": [
-                    "BillingTypeBillable",
-                    "BillingTypeNone"
-                ]
-            },
             "inputs.ConnectorMeta": {
                 "properties": {
                     "auth_type": {
                         "type": "string"
                     },
                     "billing_type": {
-                        "$ref": "#/components/schemas/inputs.BillingType"
+                        "$ref": "#/components/schemas/models.BillingType"
                     },
                     "category": {
                         "$ref": "#/components/schemas/models.InputConnectorCategory"
@@ -4338,6 +4327,17 @@
                     "BillingProductTypeDefault",
                     "BillingProductTypePremium",
                     "BillingProductTypeCustom"
+                ]
+            },
+            "models.BillingType": {
+                "enum": [
+                    0,
+                    1
+                ],
+                "type": "integer",
+                "x-enum-varnames": [
+                    "BillingTypeBillable",
+                    "BillingTypeNone"
                 ]
             },
             "models.ComponentReference": {
@@ -6452,24 +6452,13 @@
                 },
                 "type": "object"
             },
-            "outputs.BillingType": {
-                "enum": [
-                    0,
-                    1
-                ],
-                "type": "integer",
-                "x-enum-varnames": [
-                    "BillingTypeBillable",
-                    "BillingTypeNone"
-                ]
-            },
             "outputs.ConnectorMeta": {
                 "properties": {
                     "auth_type": {
                         "type": "string"
                     },
                     "billing_type": {
-                        "$ref": "#/components/schemas/outputs.BillingType"
+                        "$ref": "#/components/schemas/models.BillingType"
                     },
                     "category": {
                         "$ref": "#/components/schemas/models.OutputConnectorCategory"

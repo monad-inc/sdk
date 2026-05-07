@@ -178,7 +178,6 @@ export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/IndividualAlertsSecretsConfig';
 export * from '../models/IndividualAlertsSettingsConfig';
-export * from '../models/InputsBillingType';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/InspectorSecretsConfig';
 export * from '../models/InspectorSettingsConfig';
@@ -227,6 +226,7 @@ export * from '../models/ModelsBillingAccountRoleUser';
 export * from '../models/ModelsBillingProduct';
 export * from '../models/ModelsBillingProductList';
 export * from '../models/ModelsBillingProductType';
+export * from '../models/ModelsBillingType';
 export * from '../models/ModelsComponentReference';
 export * from '../models/ModelsComponentType';
 export * from '../models/ModelsConditionEvaluatable';
@@ -324,7 +324,6 @@ export * from '../models/OperationLogsSettingsConfig';
 export * from '../models/OracleSettingsConfig';
 export * from '../models/OrgAuditLogsSecretsConfig';
 export * from '../models/OrgAuditLogsSettingsConfig';
-export * from '../models/OutputsBillingType';
 export * from '../models/OutputsConnectorMeta';
 export * from '../models/OwnbackupAccountEventsSecretsConfig';
 export * from '../models/OwnbackupAccountEventsSettingsConfig';
@@ -737,7 +736,6 @@ import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig          } from '../models/HttpSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
-import { InputsBillingType } from '../models/InputsBillingType';
 import { InputsConnectorMeta              } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
@@ -786,6 +784,7 @@ import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRole
 import { ModelsBillingProduct               } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsBillingProductType } from '../models/ModelsBillingProductType';
+import { ModelsBillingType } from '../models/ModelsBillingType';
 import { ModelsComponentReference      } from '../models/ModelsComponentReference';
 import { ModelsComponentType } from '../models/ModelsComponentType';
 import { ModelsConditionEvaluatable     } from '../models/ModelsConditionEvaluatable';
@@ -883,7 +882,6 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig        } from '../models/OrgAuditLogsSettingsConfig';
-import { OutputsBillingType } from '../models/OutputsBillingType';
 import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig, OwnbackupAccountEventsSettingsConfigRegionEnum    } from '../models/OwnbackupAccountEventsSettingsConfig';
@@ -1140,7 +1138,6 @@ let enumsMap: Set<string> = new Set<string>([
     "ElasticsearchConnectionTypeEnum",
     "FormatterType",
     "HttpPayloadStructure",
-    "InputsBillingType",
     "IssuesReportSettingsConfigIssueTypesEnum",
     "IssuesReportSettingsConfigResolutionReasonsEnum",
     "IssuesReportSettingsConfigSeveritiesEnum",
@@ -1158,6 +1155,7 @@ let enumsMap: Set<string> = new Set<string>([
     "KafkaSecurityProtocol",
     "ModelsAlertState",
     "ModelsBillingProductType",
+    "ModelsBillingType",
     "ModelsComponentType",
     "ModelsConditionOperator",
     "ModelsElseAction",
@@ -1174,7 +1172,6 @@ let enumsMap: Set<string> = new Set<string>([
     "ObjectStorageInputSettingsConfigFormatEnum",
     "ObjectStorageInputSettingsConfigPartitionFormatEnum",
     "OpensearchAuthMode",
-    "OutputsBillingType",
     "OwnbackupAccountEventsSettingsConfigRegionEnum",
     "PagerdutyEventType",
     "SecretProcessesorInputConfigSettingsRegionEnum",

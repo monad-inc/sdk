@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_billing_type import ModelsBillingType
 from monad.models.models_output_connector_category import ModelsOutputConnectorCategory
-from monad.models.outputs_billing_type import OutputsBillingType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,7 +31,7 @@ class OutputsConnectorMeta(BaseModel):
     OutputsConnectorMeta
     """ # noqa: E501
     auth_type: Optional[StrictStr] = None
-    billing_type: Optional[OutputsBillingType] = None
+    billing_type: Optional[ModelsBillingType] = None
     category: Optional[ModelsOutputConnectorCategory] = None
     config: Optional[Any] = None
     description: Optional[StrictStr] = None

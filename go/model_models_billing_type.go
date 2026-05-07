@@ -16,52 +16,52 @@ import (
 	"fmt"
 )
 
-// OutputsBillingType the model 'OutputsBillingType'
-type OutputsBillingType int32
+// ModelsBillingType the model 'ModelsBillingType'
+type ModelsBillingType int32
 
-// List of outputs.BillingType
+// List of models.BillingType
 const (
-	BillingTypeBillable OutputsBillingType = 0
-	BillingTypeNone OutputsBillingType = 1
+	BillingTypeBillable ModelsBillingType = 0
+	BillingTypeNone ModelsBillingType = 1
 )
 
-// All allowed values of OutputsBillingType enum
-var AllowedOutputsBillingTypeEnumValues = []OutputsBillingType{
+// All allowed values of ModelsBillingType enum
+var AllowedModelsBillingTypeEnumValues = []ModelsBillingType{
 	0,
 	1,
 }
 
-func (v *OutputsBillingType) UnmarshalJSON(src []byte) error {
+func (v *ModelsBillingType) UnmarshalJSON(src []byte) error {
 	var value int32
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := OutputsBillingType(value)
-	for _, existing := range AllowedOutputsBillingTypeEnumValues {
+	enumTypeValue := ModelsBillingType(value)
+	for _, existing := range AllowedModelsBillingTypeEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid OutputsBillingType", value)
+	return fmt.Errorf("%+v is not a valid ModelsBillingType", value)
 }
 
-// NewOutputsBillingTypeFromValue returns a pointer to a valid OutputsBillingType
+// NewModelsBillingTypeFromValue returns a pointer to a valid ModelsBillingType
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewOutputsBillingTypeFromValue(v int32) (*OutputsBillingType, error) {
-	ev := OutputsBillingType(v)
+func NewModelsBillingTypeFromValue(v int32) (*ModelsBillingType, error) {
+	ev := ModelsBillingType(v)
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for OutputsBillingType: valid values are %v", v, AllowedOutputsBillingTypeEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for ModelsBillingType: valid values are %v", v, AllowedModelsBillingTypeEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v OutputsBillingType) IsValid() bool {
-	for _, existing := range AllowedOutputsBillingTypeEnumValues {
+func (v ModelsBillingType) IsValid() bool {
+	for _, existing := range AllowedModelsBillingTypeEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,43 +69,43 @@ func (v OutputsBillingType) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to outputs.BillingType value
-func (v OutputsBillingType) Ptr() *OutputsBillingType {
+// Ptr returns reference to models.BillingType value
+func (v ModelsBillingType) Ptr() *ModelsBillingType {
 	return &v
 }
 
-type NullableOutputsBillingType struct {
-	value *OutputsBillingType
+type NullableModelsBillingType struct {
+	value *ModelsBillingType
 	isSet bool
 }
 
-func (v NullableOutputsBillingType) Get() *OutputsBillingType {
+func (v NullableModelsBillingType) Get() *ModelsBillingType {
 	return v.value
 }
 
-func (v *NullableOutputsBillingType) Set(val *OutputsBillingType) {
+func (v *NullableModelsBillingType) Set(val *ModelsBillingType) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableOutputsBillingType) IsSet() bool {
+func (v NullableModelsBillingType) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableOutputsBillingType) Unset() {
+func (v *NullableModelsBillingType) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableOutputsBillingType(val *OutputsBillingType) *NullableOutputsBillingType {
-	return &NullableOutputsBillingType{value: val, isSet: true}
+func NewNullableModelsBillingType(val *ModelsBillingType) *NullableModelsBillingType {
+	return &NullableModelsBillingType{value: val, isSet: true}
 }
 
-func (v NullableOutputsBillingType) MarshalJSON() ([]byte, error) {
+func (v NullableModelsBillingType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableOutputsBillingType) UnmarshalJSON(src []byte) error {
+func (v *NullableModelsBillingType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

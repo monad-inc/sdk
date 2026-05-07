@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthType** | Pointer to **string** |  | [optional] 
-**BillingType** | Pointer to [**InputsBillingType**](InputsBillingType.md) |  | [optional] 
+**BillingType** | Pointer to [**ModelsBillingType**](ModelsBillingType.md) |  | [optional] 
 **Category** | Pointer to [**ModelsInputConnectorCategory**](ModelsInputConnectorCategory.md) |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -64,20 +64,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetBillingType
 
-`func (o *InputsConnectorMeta) GetBillingType() InputsBillingType`
+`func (o *InputsConnectorMeta) GetBillingType() ModelsBillingType`
 
 GetBillingType returns the BillingType field if non-nil, zero value otherwise.
 
 ### GetBillingTypeOk
 
-`func (o *InputsConnectorMeta) GetBillingTypeOk() (*InputsBillingType, bool)`
+`func (o *InputsConnectorMeta) GetBillingTypeOk() (*ModelsBillingType, bool)`
 
 GetBillingTypeOk returns a tuple with the BillingType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingType
 
-`func (o *InputsConnectorMeta) SetBillingType(v InputsBillingType)`
+`func (o *InputsConnectorMeta) SetBillingType(v ModelsBillingType)`
 
 SetBillingType sets BillingType field to given value.
 

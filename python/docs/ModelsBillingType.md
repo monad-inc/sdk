@@ -1,4 +1,4 @@
-# InputsBillingType
+# ModelsBillingType
 
 
 ## Enum

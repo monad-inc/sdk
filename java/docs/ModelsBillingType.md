@@ -1,6 +1,6 @@
 
 
-# InputsBillingType
+# ModelsBillingType
 
 ## Enum
 

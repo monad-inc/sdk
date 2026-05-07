@@ -12,7 +12,7 @@
 
 import { HttpFile } from '../http/http';
 
-export enum OutputsBillingType {
+export enum ModelsBillingType {
     BillingTypeBillable = 0,
     BillingTypeNone = 1
 }

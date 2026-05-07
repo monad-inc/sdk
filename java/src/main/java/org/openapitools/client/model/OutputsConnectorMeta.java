@@ -21,8 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsBillingType;
 import org.openapitools.client.model.ModelsOutputConnectorCategory;
-import org.openapitools.client.model.OutputsBillingType;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -61,7 +61,7 @@ public class OutputsConnectorMeta {
   public static final String SERIALIZED_NAME_BILLING_TYPE = "billing_type";
   @SerializedName(SERIALIZED_NAME_BILLING_TYPE)
   @javax.annotation.Nullable
-  private OutputsBillingType billingType;
+  private ModelsBillingType billingType;
 
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -135,7 +135,7 @@ public class OutputsConnectorMeta {
   }
 
 
-  public OutputsConnectorMeta billingType(@javax.annotation.Nullable OutputsBillingType billingType) {
+  public OutputsConnectorMeta billingType(@javax.annotation.Nullable ModelsBillingType billingType) {
     this.billingType = billingType;
     return this;
   }
@@ -145,11 +145,11 @@ public class OutputsConnectorMeta {
    * @return billingType
    */
   @javax.annotation.Nullable
-  public OutputsBillingType getBillingType() {
+  public ModelsBillingType getBillingType() {
     return billingType;
   }
 
-  public void setBillingType(@javax.annotation.Nullable OutputsBillingType billingType) {
+  public void setBillingType(@javax.annotation.Nullable ModelsBillingType billingType) {
     this.billingType = billingType;
   }
 
@@ -450,7 +450,7 @@ public class OutputsConnectorMeta {
       }
       // validate the optional field `billing_type`
       if (jsonObj.get("billing_type") != null && !jsonObj.get("billing_type").isJsonNull()) {
-        OutputsBillingType.validateJsonElement(jsonObj.get("billing_type"));
+        ModelsBillingType.validateJsonElement(jsonObj.get("billing_type"));
       }
       // validate the optional field `category`
       if (jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) {

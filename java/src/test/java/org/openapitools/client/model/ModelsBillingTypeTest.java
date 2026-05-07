@@ -13,66 +13,20 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.JsonElement;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * Gets or Sets outputs.BillingType
+ * Model tests for ModelsBillingType
  */
-@JsonAdapter(OutputsBillingType.Adapter.class)
-public enum OutputsBillingType {
-  
-  BillingTypeBillable(0),
-  
-  BillingTypeNone(1);
-
-  private Integer value;
-
-  OutputsBillingType(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static OutputsBillingType fromValue(Integer value) {
-    for (OutputsBillingType b : OutputsBillingType.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<OutputsBillingType> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final OutputsBillingType enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+public class ModelsBillingTypeTest {
+    /**
+     * Model tests for ModelsBillingType
+     */
+    @Test
+    public void testModelsBillingType() {
+        // TODO: test ModelsBillingType
     }
 
-    @Override
-    public OutputsBillingType read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return OutputsBillingType.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    OutputsBillingType.fromValue(value);
-  }
 }
-

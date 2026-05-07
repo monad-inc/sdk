@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { InputsBillingType } from '../models/InputsBillingType';
+import { ModelsBillingType } from '../models/ModelsBillingType';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { HttpFile } from '../http/http';
 
 export class InputsConnectorMeta {
     'authType'?: string;
-    'billingType'?: InputsBillingType;
+    'billingType'?: ModelsBillingType;
     'category'?: ModelsInputConnectorCategory;
     'config'?: any | null;
     'description'?: string;
@@ -43,7 +43,7 @@ export class InputsConnectorMeta {
         {
             "name": "billingType",
             "baseName": "billing_type",
-            "type": "InputsBillingType",
+            "type": "ModelsBillingType",
             "format": ""
         },
         {

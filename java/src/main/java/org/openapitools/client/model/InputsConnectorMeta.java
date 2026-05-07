@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.InputsBillingType;
+import org.openapitools.client.model.ModelsBillingType;
 import org.openapitools.client.model.ModelsInputConnectorCategory;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -61,7 +61,7 @@ public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_BILLING_TYPE = "billing_type";
   @SerializedName(SERIALIZED_NAME_BILLING_TYPE)
   @javax.annotation.Nullable
-  private InputsBillingType billingType;
+  private ModelsBillingType billingType;
 
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -140,7 +140,7 @@ public class InputsConnectorMeta {
   }
 
 
-  public InputsConnectorMeta billingType(@javax.annotation.Nullable InputsBillingType billingType) {
+  public InputsConnectorMeta billingType(@javax.annotation.Nullable ModelsBillingType billingType) {
     this.billingType = billingType;
     return this;
   }
@@ -150,11 +150,11 @@ public class InputsConnectorMeta {
    * @return billingType
    */
   @javax.annotation.Nullable
-  public InputsBillingType getBillingType() {
+  public ModelsBillingType getBillingType() {
     return billingType;
   }
 
-  public void setBillingType(@javax.annotation.Nullable InputsBillingType billingType) {
+  public void setBillingType(@javax.annotation.Nullable ModelsBillingType billingType) {
     this.billingType = billingType;
   }
 
@@ -476,7 +476,7 @@ public class InputsConnectorMeta {
       }
       // validate the optional field `billing_type`
       if (jsonObj.get("billing_type") != null && !jsonObj.get("billing_type").isJsonNull()) {
-        InputsBillingType.validateJsonElement(jsonObj.get("billing_type"));
+        ModelsBillingType.validateJsonElement(jsonObj.get("billing_type"));
       }
       // validate the optional field `category`
       if (jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) {
