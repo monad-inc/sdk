@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Semgrep supply chain findings secrets
 */
 export class SemgrepSupplyChainFindingsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

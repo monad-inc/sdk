@@ -9736,6 +9736,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "semgrep_code_findings.SettingsConfig": {
@@ -9759,6 +9762,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "semgrep_supply_chain_findings.SettingsConfig": {

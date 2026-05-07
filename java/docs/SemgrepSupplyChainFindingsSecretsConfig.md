@@ -8,7 +8,7 @@ Semgrep supply chain findings secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

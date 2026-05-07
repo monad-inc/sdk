@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Semgrep code findings secrets
 */
 export class SemgrepCodeFindingsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
