@@ -43,6 +43,7 @@ class TestFullScansSettingsConfig(unittest.TestCase):
             )
         else:
             return FullScansSettingsConfig(
+                org_slug = '',
         )
         """
 

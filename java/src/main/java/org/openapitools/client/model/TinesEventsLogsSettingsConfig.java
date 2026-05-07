@@ -67,7 +67,7 @@ public class TinesEventsLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_TENANT_URL = "tenant_url";
   @SerializedName(SERIALIZED_NAME_TENANT_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String tenantUrl;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -135,7 +135,7 @@ public class TinesEventsLogsSettingsConfig {
   }
 
 
-  public TinesEventsLogsSettingsConfig tenantUrl(@javax.annotation.Nullable String tenantUrl) {
+  public TinesEventsLogsSettingsConfig tenantUrl(@javax.annotation.Nonnull String tenantUrl) {
     this.tenantUrl = tenantUrl;
     return this;
   }
@@ -144,12 +144,12 @@ public class TinesEventsLogsSettingsConfig {
    * Unique URL for your Tines instance
    * @return tenantUrl
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getTenantUrl() {
     return tenantUrl;
   }
 
-  public void setTenantUrl(@javax.annotation.Nullable String tenantUrl) {
+  public void setTenantUrl(@javax.annotation.Nonnull String tenantUrl) {
     this.tenantUrl = tenantUrl;
   }
 
@@ -225,7 +225,7 @@ public class TinesEventsLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "story_id", "team_id", "tenant_url", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_url"));
   }
 
   /**
@@ -248,6 +248,13 @@ public class TinesEventsLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TinesEventsLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TinesEventsLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
@@ -258,7 +265,7 @@ public class TinesEventsLogsSettingsConfig {
       if ((jsonObj.get("team_id") != null && !jsonObj.get("team_id").isJsonNull()) && !jsonObj.get("team_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `team_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("team_id").toString()));
       }
-      if ((jsonObj.get("tenant_url") != null && !jsonObj.get("tenant_url").isJsonNull()) && !jsonObj.get("tenant_url").isJsonPrimitive()) {
+      if (!jsonObj.get("tenant_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_url").toString()));
       }
   }

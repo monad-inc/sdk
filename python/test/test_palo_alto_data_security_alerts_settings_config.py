@@ -42,6 +42,7 @@ class TestPaloAltoDataSecurityAlertsSettingsConfig(unittest.TestCase):
             )
         else:
             return PaloAltoDataSecurityAlertsSettingsConfig(
+                base_url = '',
         )
         """
 

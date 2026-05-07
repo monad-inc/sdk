@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the OneloginEventsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,16 +22,20 @@ var _ MappedNullable = &OneloginEventsSecretsConfig{}
 
 // OneloginEventsSecretsConfig Onelogin Events secrets
 type OneloginEventsSecretsConfig struct {
-	ClientId *ModelsSecret `json:"client_id,omitempty"`
-	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
+	ClientId ModelsSecret `json:"client_id"`
+	ClientSecret ModelsSecret `json:"client_secret"`
 }
+
+type _OneloginEventsSecretsConfig OneloginEventsSecretsConfig
 
 // NewOneloginEventsSecretsConfig instantiates a new OneloginEventsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOneloginEventsSecretsConfig() *OneloginEventsSecretsConfig {
+func NewOneloginEventsSecretsConfig(clientId ModelsSecret, clientSecret ModelsSecret) *OneloginEventsSecretsConfig {
 	this := OneloginEventsSecretsConfig{}
+	this.ClientId = clientId
+	this.ClientSecret = clientSecret
 	return &this
 }
 
@@ -41,68 +47,52 @@ func NewOneloginEventsSecretsConfigWithDefaults() *OneloginEventsSecretsConfig {
 	return &this
 }
 
-// GetClientId returns the ClientId field value if set, zero value otherwise.
+// GetClientId returns the ClientId field value
 func (o *OneloginEventsSecretsConfig) GetClientId() ModelsSecret {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ClientId
+
+	return o.ClientId
 }
 
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// GetClientIdOk returns a tuple with the ClientId field value
 // and a boolean to check if the value has been set.
 func (o *OneloginEventsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientId, true
+	return &o.ClientId, true
 }
 
-// HasClientId returns a boolean if a field has been set.
-func (o *OneloginEventsSecretsConfig) HasClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+// SetClientId sets field value
 func (o *OneloginEventsSecretsConfig) SetClientId(v ModelsSecret) {
-	o.ClientId = &v
+	o.ClientId = v
 }
 
-// GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
+// GetClientSecret returns the ClientSecret field value
 func (o *OneloginEventsSecretsConfig) GetClientSecret() ModelsSecret {
-	if o == nil || IsNil(o.ClientSecret) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ClientSecret
+
+	return o.ClientSecret
 }
 
-// GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
+// GetClientSecretOk returns a tuple with the ClientSecret field value
 // and a boolean to check if the value has been set.
 func (o *OneloginEventsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ClientSecret) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientSecret, true
+	return &o.ClientSecret, true
 }
 
-// HasClientSecret returns a boolean if a field has been set.
-func (o *OneloginEventsSecretsConfig) HasClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+// SetClientSecret sets field value
 func (o *OneloginEventsSecretsConfig) SetClientSecret(v ModelsSecret) {
-	o.ClientSecret = &v
+	o.ClientSecret = v
 }
 
 func (o OneloginEventsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -115,13 +105,47 @@ func (o OneloginEventsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OneloginEventsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ClientId) {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if !IsNil(o.ClientSecret) {
-		toSerialize["client_secret"] = o.ClientSecret
-	}
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
 	return toSerialize, nil
+}
+
+func (o *OneloginEventsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"client_id",
+		"client_secret",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOneloginEventsSecretsConfig := _OneloginEventsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varOneloginEventsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OneloginEventsSecretsConfig(varOneloginEventsSecretsConfig)
+
+	return err
 }
 
 type NullableOneloginEventsSecretsConfig struct {

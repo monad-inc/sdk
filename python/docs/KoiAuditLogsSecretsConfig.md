@@ -6,7 +6,7 @@ Koi audit logs secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**api_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class TinesAuditLogsSecretsConfig(BaseModel):
     """
     Tines Audit Logs secrets
     """ # noqa: E501
-    api_key: Optional[ModelsSecret] = None
+    api_key: ModelsSecret
     __properties: ClassVar[List[str]] = ["api_key"]
 
     model_config = ConfigDict(

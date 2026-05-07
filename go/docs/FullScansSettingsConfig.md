@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**OrgSlug** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
+**OrgSlug** | **string** | Cron expression for scheduling the input | 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewFullScansSettingsConfig
 
-`func NewFullScansSettingsConfig() *FullScansSettingsConfig`
+`func NewFullScansSettingsConfig(orgSlug string, ) *FullScansSettingsConfig`
 
 NewFullScansSettingsConfig instantiates a new FullScansSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetOrgSlug sets OrgSlug field to given value.
 
-### HasOrgSlug
-
-`func (o *FullScansSettingsConfig) HasOrgSlug() bool`
-
-HasOrgSlug returns a boolean if a field has been set.
 
 ### GetRepo
 

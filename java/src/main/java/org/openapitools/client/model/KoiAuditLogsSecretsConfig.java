@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class KoiAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_API_TOKEN = "api_token";
   @SerializedName(SERIALIZED_NAME_API_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret apiToken;
 
   public KoiAuditLogsSecretsConfig() {
   }
 
-  public KoiAuditLogsSecretsConfig apiToken(@javax.annotation.Nullable ModelsSecret apiToken) {
+  public KoiAuditLogsSecretsConfig apiToken(@javax.annotation.Nonnull ModelsSecret apiToken) {
     this.apiToken = apiToken;
     return this;
   }
@@ -68,12 +68,12 @@ public class KoiAuditLogsSecretsConfig {
    * Get apiToken
    * @return apiToken
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getApiToken() {
     return apiToken;
   }
 
-  public void setApiToken(@javax.annotation.Nullable ModelsSecret apiToken) {
+  public void setApiToken(@javax.annotation.Nonnull ModelsSecret apiToken) {
     this.apiToken = apiToken;
   }
 
@@ -122,7 +122,7 @@ public class KoiAuditLogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("api_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("api_token"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class KoiAuditLogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `KoiAuditLogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `api_token`
-      if (jsonObj.get("api_token") != null && !jsonObj.get("api_token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("api_token"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : KoiAuditLogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `api_token`
+      ModelsSecret.validateJsonElement(jsonObj.get("api_token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -6,7 +6,7 @@ Palo Alto Data Security Alerts secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

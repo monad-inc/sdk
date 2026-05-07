@@ -43,6 +43,8 @@ class TestSentryOrgAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return SentryOrgAuditLogsSettingsConfig(
+                host_name = '',
+                org_slug = '',
         )
         """
 

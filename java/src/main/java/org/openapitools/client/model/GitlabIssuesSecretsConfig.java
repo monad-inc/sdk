@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class GitlabIssuesSecretsConfig {
   public static final String SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN = "personal_access_token";
   @SerializedName(SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret personalAccessToken;
 
   public GitlabIssuesSecretsConfig() {
   }
 
-  public GitlabIssuesSecretsConfig personalAccessToken(@javax.annotation.Nullable ModelsSecret personalAccessToken) {
+  public GitlabIssuesSecretsConfig personalAccessToken(@javax.annotation.Nonnull ModelsSecret personalAccessToken) {
     this.personalAccessToken = personalAccessToken;
     return this;
   }
@@ -68,12 +68,12 @@ public class GitlabIssuesSecretsConfig {
    * Get personalAccessToken
    * @return personalAccessToken
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getPersonalAccessToken() {
     return personalAccessToken;
   }
 
-  public void setPersonalAccessToken(@javax.annotation.Nullable ModelsSecret personalAccessToken) {
+  public void setPersonalAccessToken(@javax.annotation.Nonnull ModelsSecret personalAccessToken) {
     this.personalAccessToken = personalAccessToken;
   }
 
@@ -122,7 +122,7 @@ public class GitlabIssuesSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("personal_access_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("personal_access_token"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class GitlabIssuesSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GitlabIssuesSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `personal_access_token`
-      if (jsonObj.get("personal_access_token") != null && !jsonObj.get("personal_access_token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("personal_access_token"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GitlabIssuesSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `personal_access_token`
+      ModelsSecret.validateJsonElement(jsonObj.get("personal_access_token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

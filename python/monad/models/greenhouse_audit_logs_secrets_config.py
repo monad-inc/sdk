@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class GreenhouseAuditLogsSecretsConfig(BaseModel):
     """
     Greenhouse Audit Log secrets
     """ # noqa: E501
-    harvest_api_key: Optional[ModelsSecret] = None
+    harvest_api_key: ModelsSecret
     __properties: ClassVar[List[str]] = ["harvest_api_key"]
 
     model_config = ConfigDict(

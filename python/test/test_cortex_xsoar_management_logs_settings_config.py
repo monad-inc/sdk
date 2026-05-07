@@ -43,6 +43,8 @@ class TestCortexXsoarManagementLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return CortexXsoarManagementLogsSettingsConfig(
+                api_key_id = '',
+                domain_name = '',
         )
         """
 

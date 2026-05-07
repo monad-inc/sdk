@@ -29,8 +29,8 @@ class SentryOrgAuditLogsSettingsConfig(BaseModel):
     Sentry Organization Audit Logs settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
-    host_name: Optional[StrictStr] = Field(default=None, description="For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.")
-    org_slug: Optional[StrictStr] = Field(default=None, description="The ID or slug of the organization")
+    host_name: StrictStr = Field(description="For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.")
+    org_slug: StrictStr = Field(description="The ID or slug of the organization")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "host_name", "org_slug", "use_synthetic_data"]
 

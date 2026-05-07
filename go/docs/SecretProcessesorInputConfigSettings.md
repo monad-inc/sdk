@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Service** | Pointer to **string** | The Aiven service name | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
-**Region** | Pointer to **string** | Region of the OwnBackup instance | [optional] 
+**Region** | **string** | Region of the OwnBackup instance | 
 **RoleArn** | Pointer to **string** | The ARN of the IAM role to assume for accessing Inspector. | [optional] 
 **Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
-**Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
-**Compression** | Pointer to **string** | Compression format of the objects | [optional] 
-**Format** | Pointer to **string** | File format of the objects | [optional] 
+**Bucket** | **string** | Name of the storage bucket | 
+**Compression** | **string** | Compression format of the objects | 
+**Format** | **string** | File format of the objects | 
 **PartitionFormat** | Pointer to **string** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **RecordLocation** | Pointer to **string** | JSONPath location of the records array in the GraphQL response | [optional] 
@@ -39,12 +39,12 @@ Name | Type | Description | Notes
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
 **Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
-**TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
-**BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
+**TimestampColumn** | **string** | The column containing timestamp values used for incremental loading | 
+**BaseUrl** | **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
 **OrganizationId** | Pointer to **string** | Organization ID for the Salesforce instance | [optional] 
-**OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
+**OrgSlug** | **string** | The ID or slug of the organization | 
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
 **GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
 **HasNextPagePath** | Pointer to **string** | JSONPath location to check if there are more pages | [optional] 
@@ -60,7 +60,7 @@ Name | Type | Description | Notes
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
+**Cron** | **string** | Cron string for scheduling the ingest of your input | 
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
@@ -69,8 +69,8 @@ Name | Type | Description | Notes
 **ParentEntityId** | Pointer to **string** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **ParentEntityType** | Pointer to **string** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **OrgId** | Pointer to **string** | URL of the organization | [optional] 
-**ApiKeyId** | Pointer to **string** | API Key ID for authentication | [optional] 
-**DomainName** | Pointer to **string** | TODO: Name of domain added on Polymer Hub portal | [optional] 
+**ApiKeyId** | **string** | API Key ID for authentication | 
+**DomainName** | **string** | TODO: Name of domain added on Polymer Hub portal | 
 **Environment** | **string** | Determines the URI {environment}.docusign.com | 
 **UserId** | **string** | ID of the user to harvest audit logs for | 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
@@ -81,13 +81,13 @@ Name | Type | Description | Notes
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
-**GitlabUrl** | Pointer to **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
+**GitlabUrl** | **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | 
 **IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
-**ProjectId** | Pointer to **string** | The Google Cloud project ID to use | [optional] 
+**ProjectId** | **string** | The Google Cloud project ID to use | 
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
 **BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
-**AuthType** | Pointer to [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | [optional] 
+**AuthType** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | 
 **Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **AlertType** | Pointer to **string** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
@@ -112,35 +112,35 @@ Name | Type | Description | Notes
 **TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | [optional] 
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
-**Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
+**Endpoint** | **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
-**Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**Subdomain** | **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | 
 **CategoryType** | Pointer to **string** | The category of logs to pull | [optional] 
-**Domain** | Pointer to **string** | Domain name for the Oracle Cloud service | [optional] 
-**Username** | Pointer to **string** | Username of Oracle Cloud service user with permissions to access the resource | [optional] 
+**Domain** | **string** | Domain name for the Oracle Cloud service | 
+**Username** | **string** | Username of Oracle Cloud service user with permissions to access the resource | 
 **GithubAppInstallationId** | Pointer to **string** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
 **GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Your GitHub organization name | [optional] 
 **DomainUrl** | Pointer to **string** | Domain URL for the Salesforce instance | [optional] 
 **Topic** | Pointer to **string** | Pub/Sub topic to subscribe to | [optional] 
-**HostName** | Pointer to **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
-**Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
-**Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
-**Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
-**Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
-**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
-**Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**HostName** | **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
+**Account** | **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | 
+**Database** | **string** | The name of the Snowflake database to connect to and perform operations on | 
+**Role** | **string** | The name of the Role your service account was granted which can access your resources. | 
+**Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
+**User** | **string** | The username of the Snowflake account used to establish the connection. | 
+**Warehouse** | **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
 **CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
 **OperationNames** | Pointer to **[]string** | Filter by specific operation names (optional) | [optional] 
-**TenantDomain** | Pointer to **string** | The Tines tenant domain (e.g., your-org.tines.com) | [optional] 
+**TenantDomain** | **string** | The Tines tenant domain (e.g., your-org.tines.com) | 
 **UserIds** | Pointer to **[]string** | Filter by specific user IDs (optional) | [optional] 
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
 **TeamId** | Pointer to **string** | Filter by the given team. | [optional] 
-**TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
+**TenantUrl** | **string** | Unique URL for your Tines instance | 
 **ActorSid** | Pointer to **string** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. | [optional] 
 **ReplicationStartTime** | Pointer to **string** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
 **ResourceSid** | Pointer to **string** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 
@@ -159,7 +159,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, environment string, userId string, namespace string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, cron string, apiKeyId string, domainName string, environment string, userId string, namespace string, gitlabUrl string, projectId string, authType ZendeskAuditLogsAuthType, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -338,11 +338,6 @@ and a boolean to check if the value has been set.
 
 SetRegion sets Region field to given value.
 
-### HasRegion
-
-`func (o *SecretProcessesorInputConfigSettings) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
 
 ### GetRoleArn
 
@@ -413,11 +408,6 @@ and a boolean to check if the value has been set.
 
 SetBucket sets Bucket field to given value.
 
-### HasBucket
-
-`func (o *SecretProcessesorInputConfigSettings) HasBucket() bool`
-
-HasBucket returns a boolean if a field has been set.
 
 ### GetCompression
 
@@ -438,11 +428,6 @@ and a boolean to check if the value has been set.
 
 SetCompression sets Compression field to given value.
 
-### HasCompression
-
-`func (o *SecretProcessesorInputConfigSettings) HasCompression() bool`
-
-HasCompression returns a boolean if a field has been set.
 
 ### GetFormat
 
@@ -463,11 +448,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *SecretProcessesorInputConfigSettings) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetPartitionFormat
 
@@ -1063,11 +1043,6 @@ and a boolean to check if the value has been set.
 
 SetTimestampColumn sets TimestampColumn field to given value.
 
-### HasTimestampColumn
-
-`func (o *SecretProcessesorInputConfigSettings) HasTimestampColumn() bool`
-
-HasTimestampColumn returns a boolean if a field has been set.
 
 ### GetBaseUrl
 
@@ -1088,11 +1063,6 @@ and a boolean to check if the value has been set.
 
 SetBaseUrl sets BaseUrl field to given value.
 
-### HasBaseUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasBaseUrl() bool`
-
-HasBaseUrl returns a boolean if a field has been set.
 
 ### GetEventType
 
@@ -1188,11 +1158,6 @@ and a boolean to check if the value has been set.
 
 SetOrgSlug sets OrgSlug field to given value.
 
-### HasOrgSlug
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrgSlug() bool`
-
-HasOrgSlug returns a boolean if a field has been set.
 
 ### GetEnablePagination
 
@@ -1588,11 +1553,6 @@ and a boolean to check if the value has been set.
 
 SetCron sets Cron field to given value.
 
-### HasCron
-
-`func (o *SecretProcessesorInputConfigSettings) HasCron() bool`
-
-HasCron returns a boolean if a field has been set.
 
 ### GetAccountId
 
@@ -1813,11 +1773,6 @@ and a boolean to check if the value has been set.
 
 SetApiKeyId sets ApiKeyId field to given value.
 
-### HasApiKeyId
-
-`func (o *SecretProcessesorInputConfigSettings) HasApiKeyId() bool`
-
-HasApiKeyId returns a boolean if a field has been set.
 
 ### GetDomainName
 
@@ -1838,11 +1793,6 @@ and a boolean to check if the value has been set.
 
 SetDomainName sets DomainName field to given value.
 
-### HasDomainName
-
-`func (o *SecretProcessesorInputConfigSettings) HasDomainName() bool`
-
-HasDomainName returns a boolean if a field has been set.
 
 ### GetEnvironment
 
@@ -2098,11 +2048,6 @@ and a boolean to check if the value has been set.
 
 SetGitlabUrl sets GitlabUrl field to given value.
 
-### HasGitlabUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasGitlabUrl() bool`
-
-HasGitlabUrl returns a boolean if a field has been set.
 
 ### GetIssueType
 
@@ -2148,11 +2093,6 @@ and a boolean to check if the value has been set.
 
 SetProjectId sets ProjectId field to given value.
 
-### HasProjectId
-
-`func (o *SecretProcessesorInputConfigSettings) HasProjectId() bool`
-
-HasProjectId returns a boolean if a field has been set.
 
 ### GetState
 
@@ -2248,11 +2188,6 @@ and a boolean to check if the value has been set.
 
 SetAuthType sets AuthType field to given value.
 
-### HasAuthType
-
-`func (o *SecretProcessesorInputConfigSettings) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -2873,11 +2808,6 @@ and a boolean to check if the value has been set.
 
 SetEndpoint sets Endpoint field to given value.
 
-### HasEndpoint
-
-`func (o *SecretProcessesorInputConfigSettings) HasEndpoint() bool`
-
-HasEndpoint returns a boolean if a field has been set.
 
 ### GetSkipSslVerification
 
@@ -2948,11 +2878,6 @@ and a boolean to check if the value has been set.
 
 SetSubdomain sets Subdomain field to given value.
 
-### HasSubdomain
-
-`func (o *SecretProcessesorInputConfigSettings) HasSubdomain() bool`
-
-HasSubdomain returns a boolean if a field has been set.
 
 ### GetCategoryType
 
@@ -2998,11 +2923,6 @@ and a boolean to check if the value has been set.
 
 SetDomain sets Domain field to given value.
 
-### HasDomain
-
-`func (o *SecretProcessesorInputConfigSettings) HasDomain() bool`
-
-HasDomain returns a boolean if a field has been set.
 
 ### GetUsername
 
@@ -3023,11 +2943,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *SecretProcessesorInputConfigSettings) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 ### GetGithubAppInstallationId
 
@@ -3198,11 +3113,6 @@ and a boolean to check if the value has been set.
 
 SetHostName sets HostName field to given value.
 
-### HasHostName
-
-`func (o *SecretProcessesorInputConfigSettings) HasHostName() bool`
-
-HasHostName returns a boolean if a field has been set.
 
 ### GetAccount
 
@@ -3223,11 +3133,6 @@ and a boolean to check if the value has been set.
 
 SetAccount sets Account field to given value.
 
-### HasAccount
-
-`func (o *SecretProcessesorInputConfigSettings) HasAccount() bool`
-
-HasAccount returns a boolean if a field has been set.
 
 ### GetDatabase
 
@@ -3248,11 +3153,6 @@ and a boolean to check if the value has been set.
 
 SetDatabase sets Database field to given value.
 
-### HasDatabase
-
-`func (o *SecretProcessesorInputConfigSettings) HasDatabase() bool`
-
-HasDatabase returns a boolean if a field has been set.
 
 ### GetRole
 
@@ -3273,11 +3173,6 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
-### HasRole
-
-`func (o *SecretProcessesorInputConfigSettings) HasRole() bool`
-
-HasRole returns a boolean if a field has been set.
 
 ### GetSchema
 
@@ -3298,11 +3193,6 @@ and a boolean to check if the value has been set.
 
 SetSchema sets Schema field to given value.
 
-### HasSchema
-
-`func (o *SecretProcessesorInputConfigSettings) HasSchema() bool`
-
-HasSchema returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -3323,11 +3213,6 @@ and a boolean to check if the value has been set.
 
 SetUser sets User field to given value.
 
-### HasUser
-
-`func (o *SecretProcessesorInputConfigSettings) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
 
 ### GetWarehouse
 
@@ -3348,11 +3233,6 @@ and a boolean to check if the value has been set.
 
 SetWarehouse sets Warehouse field to given value.
 
-### HasWarehouse
-
-`func (o *SecretProcessesorInputConfigSettings) HasWarehouse() bool`
-
-HasWarehouse returns a boolean if a field has been set.
 
 ### GetRate
 
@@ -3473,11 +3353,6 @@ and a boolean to check if the value has been set.
 
 SetTenantDomain sets TenantDomain field to given value.
 
-### HasTenantDomain
-
-`func (o *SecretProcessesorInputConfigSettings) HasTenantDomain() bool`
-
-HasTenantDomain returns a boolean if a field has been set.
 
 ### GetUserIds
 
@@ -3573,11 +3448,6 @@ and a boolean to check if the value has been set.
 
 SetTenantUrl sets TenantUrl field to given value.
 
-### HasTenantUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasTenantUrl() bool`
-
-HasTenantUrl returns a boolean if a field has been set.
 
 ### GetActorSid
 

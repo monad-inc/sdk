@@ -8,8 +8,8 @@ Ownbackup Audit Logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**refreshToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**refreshToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

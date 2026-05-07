@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Slack Team Access Logs secrets
 */
 export class TeamAccessLogsSecretsConfig {
-    'token'?: ModelsSecret;
+    'token': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

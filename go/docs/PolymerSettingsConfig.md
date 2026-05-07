@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DomainName** | Pointer to **string** | TODO: Name of domain added on Polymer Hub portal | [optional] 
+**DomainName** | **string** | TODO: Name of domain added on Polymer Hub portal | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewPolymerSettingsConfig
 
-`func NewPolymerSettingsConfig() *PolymerSettingsConfig`
+`func NewPolymerSettingsConfig(domainName string, ) *PolymerSettingsConfig`
 
 NewPolymerSettingsConfig instantiates a new PolymerSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetDomainName sets DomainName field to given value.
 
-### HasDomainName
-
-`func (o *PolymerSettingsConfig) HasDomainName() bool`
-
-HasDomainName returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

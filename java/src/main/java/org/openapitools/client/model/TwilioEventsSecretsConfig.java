@@ -53,18 +53,18 @@ import org.openapitools.client.JSON;
 public class TwilioEventsSecretsConfig {
   public static final String SERIALIZED_NAME_TWILIO_ACCOUNT_SID = "twilio_account_sid";
   @SerializedName(SERIALIZED_NAME_TWILIO_ACCOUNT_SID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret twilioAccountSid;
 
   public static final String SERIALIZED_NAME_TWILIO_AUTH_TOKEN = "twilio_auth_token";
   @SerializedName(SERIALIZED_NAME_TWILIO_AUTH_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret twilioAuthToken;
 
   public TwilioEventsSecretsConfig() {
   }
 
-  public TwilioEventsSecretsConfig twilioAccountSid(@javax.annotation.Nullable ModelsSecret twilioAccountSid) {
+  public TwilioEventsSecretsConfig twilioAccountSid(@javax.annotation.Nonnull ModelsSecret twilioAccountSid) {
     this.twilioAccountSid = twilioAccountSid;
     return this;
   }
@@ -73,17 +73,17 @@ public class TwilioEventsSecretsConfig {
    * Get twilioAccountSid
    * @return twilioAccountSid
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getTwilioAccountSid() {
     return twilioAccountSid;
   }
 
-  public void setTwilioAccountSid(@javax.annotation.Nullable ModelsSecret twilioAccountSid) {
+  public void setTwilioAccountSid(@javax.annotation.Nonnull ModelsSecret twilioAccountSid) {
     this.twilioAccountSid = twilioAccountSid;
   }
 
 
-  public TwilioEventsSecretsConfig twilioAuthToken(@javax.annotation.Nullable ModelsSecret twilioAuthToken) {
+  public TwilioEventsSecretsConfig twilioAuthToken(@javax.annotation.Nonnull ModelsSecret twilioAuthToken) {
     this.twilioAuthToken = twilioAuthToken;
     return this;
   }
@@ -92,12 +92,12 @@ public class TwilioEventsSecretsConfig {
    * Get twilioAuthToken
    * @return twilioAuthToken
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getTwilioAuthToken() {
     return twilioAuthToken;
   }
 
-  public void setTwilioAuthToken(@javax.annotation.Nullable ModelsSecret twilioAuthToken) {
+  public void setTwilioAuthToken(@javax.annotation.Nonnull ModelsSecret twilioAuthToken) {
     this.twilioAuthToken = twilioAuthToken;
   }
 
@@ -148,7 +148,7 @@ public class TwilioEventsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("twilio_account_sid", "twilio_auth_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("twilio_account_sid", "twilio_auth_token"));
   }
 
   /**
@@ -171,15 +171,18 @@ public class TwilioEventsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TwilioEventsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TwilioEventsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `twilio_account_sid`
-      if (jsonObj.get("twilio_account_sid") != null && !jsonObj.get("twilio_account_sid").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("twilio_account_sid"));
-      }
-      // validate the optional field `twilio_auth_token`
-      if (jsonObj.get("twilio_auth_token") != null && !jsonObj.get("twilio_auth_token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("twilio_auth_token"));
-      }
+      // validate the required field `twilio_account_sid`
+      ModelsSecret.validateJsonElement(jsonObj.get("twilio_account_sid"));
+      // validate the required field `twilio_auth_token`
+      ModelsSecret.validateJsonElement(jsonObj.get("twilio_auth_token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

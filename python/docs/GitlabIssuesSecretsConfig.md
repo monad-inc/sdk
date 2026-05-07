@@ -6,7 +6,7 @@ Gitlab Issues secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

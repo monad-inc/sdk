@@ -30,7 +30,7 @@ class GreenhouseAuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    user_id: Optional[StrictStr] = Field(default=None, description="ID of the user to harvest audit logs for")
+    user_id: StrictStr = Field(description="ID of the user to harvest audit logs for")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "use_synthetic_data", "user_id"]
 
     model_config = ConfigDict(

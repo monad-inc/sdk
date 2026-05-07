@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 public class PolymerSettingsConfig {
   public static final String SERIALIZED_NAME_DOMAIN_NAME = "domain_name";
   @SerializedName(SERIALIZED_NAME_DOMAIN_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String domainName;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -63,7 +63,7 @@ public class PolymerSettingsConfig {
   public PolymerSettingsConfig() {
   }
 
-  public PolymerSettingsConfig domainName(@javax.annotation.Nullable String domainName) {
+  public PolymerSettingsConfig domainName(@javax.annotation.Nonnull String domainName) {
     this.domainName = domainName;
     return this;
   }
@@ -72,12 +72,12 @@ public class PolymerSettingsConfig {
    * TODO: Name of domain added on Polymer Hub portal
    * @return domainName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getDomainName() {
     return domainName;
   }
 
-  public void setDomainName(@javax.annotation.Nullable String domainName) {
+  public void setDomainName(@javax.annotation.Nonnull String domainName) {
     this.domainName = domainName;
   }
 
@@ -147,7 +147,7 @@ public class PolymerSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("domain_name", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("domain_name"));
   }
 
   /**
@@ -170,8 +170,15 @@ public class PolymerSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PolymerSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PolymerSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("domain_name") != null && !jsonObj.get("domain_name").isJsonNull()) && !jsonObj.get("domain_name").isJsonPrimitive()) {
+      if (!jsonObj.get("domain_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain_name").toString()));
       }
   }

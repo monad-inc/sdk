@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 public class OneloginEventsSettingsConfig {
   public static final String SERIALIZED_NAME_SUBDOMAIN = "subdomain";
   @SerializedName(SERIALIZED_NAME_SUBDOMAIN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String subdomain;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -63,7 +63,7 @@ public class OneloginEventsSettingsConfig {
   public OneloginEventsSettingsConfig() {
   }
 
-  public OneloginEventsSettingsConfig subdomain(@javax.annotation.Nullable String subdomain) {
+  public OneloginEventsSettingsConfig subdomain(@javax.annotation.Nonnull String subdomain) {
     this.subdomain = subdomain;
     return this;
   }
@@ -72,12 +72,12 @@ public class OneloginEventsSettingsConfig {
    * SubDomain is a placeholder that represents your specific OneLogin subdomain.
    * @return subdomain
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getSubdomain() {
     return subdomain;
   }
 
-  public void setSubdomain(@javax.annotation.Nullable String subdomain) {
+  public void setSubdomain(@javax.annotation.Nonnull String subdomain) {
     this.subdomain = subdomain;
   }
 
@@ -147,7 +147,7 @@ public class OneloginEventsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("subdomain", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("subdomain"));
   }
 
   /**
@@ -170,8 +170,15 @@ public class OneloginEventsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OneloginEventsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OneloginEventsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("subdomain") != null && !jsonObj.get("subdomain").isJsonNull()) && !jsonObj.get("subdomain").isJsonPrimitive()) {
+      if (!jsonObj.get("subdomain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subdomain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subdomain").toString()));
       }
   }

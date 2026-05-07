@@ -37,10 +37,10 @@ class TestObjectStorageInputSettingsConfig(unittest.TestCase):
         if include_optional:
             return ObjectStorageInputSettingsConfig(
                 bucket = '',
-                compression = '',
+                compression = 'auto',
                 endpoint = '',
-                format = '',
-                partition_format = '',
+                format = 'json',
+                partition_format = 'hive compliant',
                 prefix = '',
                 record_location = '',
                 region = '',
@@ -49,6 +49,10 @@ class TestObjectStorageInputSettingsConfig(unittest.TestCase):
             )
         else:
             return ObjectStorageInputSettingsConfig(
+                bucket = '',
+                compression = 'auto',
+                endpoint = '',
+                format = 'json',
         )
         """
 

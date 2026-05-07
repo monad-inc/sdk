@@ -62,7 +62,7 @@ public class GreenhouseAuditLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String userId;
 
   public GreenhouseAuditLogsSettingsConfig() {
@@ -106,7 +106,7 @@ public class GreenhouseAuditLogsSettingsConfig {
   }
 
 
-  public GreenhouseAuditLogsSettingsConfig userId(@javax.annotation.Nullable String userId) {
+  public GreenhouseAuditLogsSettingsConfig userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
   }
@@ -115,12 +115,12 @@ public class GreenhouseAuditLogsSettingsConfig {
    * ID of the user to harvest audit logs for
    * @return userId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable String userId) {
+  public void setUserId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
   }
 
@@ -173,7 +173,7 @@ public class GreenhouseAuditLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "use_synthetic_data", "user_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("user_id"));
   }
 
   /**
@@ -196,11 +196,18 @@ public class GreenhouseAuditLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GreenhouseAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GreenhouseAuditLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonNull()) && !jsonObj.get("user_id").isJsonPrimitive()) {
+      if (!jsonObj.get("user_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
       }
   }

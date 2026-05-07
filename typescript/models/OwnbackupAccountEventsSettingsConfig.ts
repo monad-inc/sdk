@@ -19,7 +19,7 @@ export class OwnbackupAccountEventsSettingsConfig {
     /**
     * Region of the OwnBackup instance
     */
-    'region'?: string;
+    'region': OwnbackupAccountEventsSettingsConfigRegionEnum;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -33,7 +33,7 @@ export class OwnbackupAccountEventsSettingsConfig {
         {
             "name": "region",
             "baseName": "region",
-            "type": "string",
+            "type": "OwnbackupAccountEventsSettingsConfigRegionEnum",
             "format": ""
         },
         {
@@ -50,3 +50,12 @@ export class OwnbackupAccountEventsSettingsConfig {
     public constructor() {
     }
 }
+
+export enum OwnbackupAccountEventsSettingsConfigRegionEnum {
+    App1 = 'app1',
+    Emea1 = 'emea1',
+    Uk1 = 'uk1',
+    Usgov2 = 'usgov2',
+    Hipaa1 = 'hipaa1'
+}
+

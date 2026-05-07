@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the GreenhouseAuditLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &GreenhouseAuditLogsSecretsConfig{}
 
 // GreenhouseAuditLogsSecretsConfig Greenhouse Audit Log secrets
 type GreenhouseAuditLogsSecretsConfig struct {
-	HarvestApiKey *ModelsSecret `json:"harvest_api_key,omitempty"`
+	HarvestApiKey ModelsSecret `json:"harvest_api_key"`
 }
+
+type _GreenhouseAuditLogsSecretsConfig GreenhouseAuditLogsSecretsConfig
 
 // NewGreenhouseAuditLogsSecretsConfig instantiates a new GreenhouseAuditLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGreenhouseAuditLogsSecretsConfig() *GreenhouseAuditLogsSecretsConfig {
+func NewGreenhouseAuditLogsSecretsConfig(harvestApiKey ModelsSecret) *GreenhouseAuditLogsSecretsConfig {
 	this := GreenhouseAuditLogsSecretsConfig{}
+	this.HarvestApiKey = harvestApiKey
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewGreenhouseAuditLogsSecretsConfigWithDefaults() *GreenhouseAuditLogsSecre
 	return &this
 }
 
-// GetHarvestApiKey returns the HarvestApiKey field value if set, zero value otherwise.
+// GetHarvestApiKey returns the HarvestApiKey field value
 func (o *GreenhouseAuditLogsSecretsConfig) GetHarvestApiKey() ModelsSecret {
-	if o == nil || IsNil(o.HarvestApiKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.HarvestApiKey
+
+	return o.HarvestApiKey
 }
 
-// GetHarvestApiKeyOk returns a tuple with the HarvestApiKey field value if set, nil otherwise
+// GetHarvestApiKeyOk returns a tuple with the HarvestApiKey field value
 // and a boolean to check if the value has been set.
 func (o *GreenhouseAuditLogsSecretsConfig) GetHarvestApiKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.HarvestApiKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HarvestApiKey, true
+	return &o.HarvestApiKey, true
 }
 
-// HasHarvestApiKey returns a boolean if a field has been set.
-func (o *GreenhouseAuditLogsSecretsConfig) HasHarvestApiKey() bool {
-	if o != nil && !IsNil(o.HarvestApiKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetHarvestApiKey gets a reference to the given ModelsSecret and assigns it to the HarvestApiKey field.
+// SetHarvestApiKey sets field value
 func (o *GreenhouseAuditLogsSecretsConfig) SetHarvestApiKey(v ModelsSecret) {
-	o.HarvestApiKey = &v
+	o.HarvestApiKey = v
 }
 
 func (o GreenhouseAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o GreenhouseAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o GreenhouseAuditLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.HarvestApiKey) {
-		toSerialize["harvest_api_key"] = o.HarvestApiKey
-	}
+	toSerialize["harvest_api_key"] = o.HarvestApiKey
 	return toSerialize, nil
+}
+
+func (o *GreenhouseAuditLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"harvest_api_key",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGreenhouseAuditLogsSecretsConfig := _GreenhouseAuditLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varGreenhouseAuditLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GreenhouseAuditLogsSecretsConfig(varGreenhouseAuditLogsSecretsConfig)
+
+	return err
 }
 
 type NullableGreenhouseAuditLogsSecretsConfig struct {

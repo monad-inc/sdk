@@ -55,6 +55,22 @@ class TestTwilioEventsSecretsConfig(unittest.TestCase):
             )
         else:
             return TwilioEventsSecretsConfig(
+                twilio_account_sid = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                twilio_auth_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

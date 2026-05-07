@@ -31,7 +31,7 @@ export class TinesEventsLogsSettingsConfig {
     /**
     * Unique URL for your Tines instance
     */
-    'tenantUrl'?: string;
+    'tenantUrl': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

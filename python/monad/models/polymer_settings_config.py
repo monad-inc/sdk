@@ -28,7 +28,7 @@ class PolymerSettingsConfig(BaseModel):
     """
     PolymerSettingsConfig
     """ # noqa: E501
-    domain_name: Optional[StrictStr] = Field(default=None, description="TODO: Name of domain added on Polymer Hub portal")
+    domain_name: StrictStr = Field(description="TODO: Name of domain added on Polymer Hub portal")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["domain_name", "use_synthetic_data"]
 

@@ -27,7 +27,7 @@ export class GreenhouseAuditLogsSettingsConfig {
     /**
     * ID of the user to harvest audit logs for
     */
-    'userId'?: string;
+    'userId': string;
 
     static readonly discriminator: string | undefined = undefined;
 

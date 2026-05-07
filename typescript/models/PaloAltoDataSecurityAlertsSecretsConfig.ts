@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Palo Alto Data Security Alerts secrets
 */
 export class PaloAltoDataSecurityAlertsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

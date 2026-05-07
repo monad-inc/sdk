@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,18 +28,25 @@ class SnowflakeInputSettingsConfig(BaseModel):
     """
     Snowflake Input Settings
     """ # noqa: E501
-    account: Optional[StrictStr] = Field(default=None, description="The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.")
-    auth_type: Optional[StrictStr] = Field(default=None, description="Authentication type: \"password\" or \"private key\"")
-    cron: Optional[StrictStr] = Field(default=None, description="Cron string for scheduling the ingest of your input")
-    database: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake database to connect to and perform operations on")
+    account: StrictStr = Field(description="The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.")
+    auth_type: StrictStr = Field(description="Authentication type: \"password\" or \"private key\"")
+    cron: StrictStr = Field(description="Cron string for scheduling the ingest of your input")
+    database: StrictStr = Field(description="The name of the Snowflake database to connect to and perform operations on")
     query: Optional[StrictStr] = Field(default=None, description="Optional custom query to use instead of table (must include timestamp_column)")
-    role: Optional[StrictStr] = Field(default=None, description="The name of the Role your service account was granted which can access your resources.")
-    var_schema: Optional[StrictStr] = Field(default=None, description="The schema within the Snowflake database where the target table resides.", alias="schema")
+    role: StrictStr = Field(description="The name of the Role your service account was granted which can access your resources.")
+    var_schema: StrictStr = Field(description="The schema within the Snowflake database where the target table resides.", alias="schema")
     table: Optional[StrictStr] = Field(default=None, description="The name of the table in Snowflake to query data from.")
-    timestamp_column: Optional[StrictStr] = Field(default=None, description="The column containing timestamp values used for incremental loading")
-    user: Optional[StrictStr] = Field(default=None, description="The username of the Snowflake account used to establish the connection.")
-    warehouse: Optional[StrictStr] = Field(default=None, description="The Snowflake virtual warehouse to use for executing queries and processing data.")
+    timestamp_column: StrictStr = Field(description="The column containing timestamp values used for incremental loading")
+    user: StrictStr = Field(description="The username of the Snowflake account used to establish the connection.")
+    warehouse: StrictStr = Field(description="The Snowflake virtual warehouse to use for executing queries and processing data.")
     __properties: ClassVar[List[str]] = ["account", "auth_type", "cron", "database", "query", "role", "schema", "table", "timestamp_column", "user", "warehouse"]
+
+    @field_validator('auth_type')
+    def auth_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['password', 'private key']):
+            raise ValueError("must be one of enum values ('password', 'private key')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,

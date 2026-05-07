@@ -8,7 +8,7 @@ Pagerduty Audit Records secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

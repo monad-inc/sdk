@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**Domain** | Pointer to **string** | Domain name for the Oracle Cloud service | [optional] 
+**Domain** | **string** | Domain name for the Oracle Cloud service | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**Username** | Pointer to **string** | Username of Oracle Cloud service user with permissions to access the resource | [optional] 
+**Username** | **string** | Username of Oracle Cloud service user with permissions to access the resource | 
 
 ## Methods
 
 ### NewOracleSettingsConfig
 
-`func NewOracleSettingsConfig() *OracleSettingsConfig`
+`func NewOracleSettingsConfig(domain string, username string, ) *OracleSettingsConfig`
 
 NewOracleSettingsConfig instantiates a new OracleSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetDomain sets Domain field to given value.
 
-### HasDomain
-
-`func (o *OracleSettingsConfig) HasDomain() bool`
-
-HasDomain returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 
@@ -122,11 +117,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *OracleSettingsConfig) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

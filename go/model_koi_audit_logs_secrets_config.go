@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the KoiAuditLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &KoiAuditLogsSecretsConfig{}
 
 // KoiAuditLogsSecretsConfig Koi audit logs secrets
 type KoiAuditLogsSecretsConfig struct {
-	ApiToken *ModelsSecret `json:"api_token,omitempty"`
+	ApiToken ModelsSecret `json:"api_token"`
 }
+
+type _KoiAuditLogsSecretsConfig KoiAuditLogsSecretsConfig
 
 // NewKoiAuditLogsSecretsConfig instantiates a new KoiAuditLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKoiAuditLogsSecretsConfig() *KoiAuditLogsSecretsConfig {
+func NewKoiAuditLogsSecretsConfig(apiToken ModelsSecret) *KoiAuditLogsSecretsConfig {
 	this := KoiAuditLogsSecretsConfig{}
+	this.ApiToken = apiToken
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewKoiAuditLogsSecretsConfigWithDefaults() *KoiAuditLogsSecretsConfig {
 	return &this
 }
 
-// GetApiToken returns the ApiToken field value if set, zero value otherwise.
+// GetApiToken returns the ApiToken field value
 func (o *KoiAuditLogsSecretsConfig) GetApiToken() ModelsSecret {
-	if o == nil || IsNil(o.ApiToken) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ApiToken
+
+	return o.ApiToken
 }
 
-// GetApiTokenOk returns a tuple with the ApiToken field value if set, nil otherwise
+// GetApiTokenOk returns a tuple with the ApiToken field value
 // and a boolean to check if the value has been set.
 func (o *KoiAuditLogsSecretsConfig) GetApiTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ApiToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiToken, true
+	return &o.ApiToken, true
 }
 
-// HasApiToken returns a boolean if a field has been set.
-func (o *KoiAuditLogsSecretsConfig) HasApiToken() bool {
-	if o != nil && !IsNil(o.ApiToken) {
-		return true
-	}
-
-	return false
-}
-
-// SetApiToken gets a reference to the given ModelsSecret and assigns it to the ApiToken field.
+// SetApiToken sets field value
 func (o *KoiAuditLogsSecretsConfig) SetApiToken(v ModelsSecret) {
-	o.ApiToken = &v
+	o.ApiToken = v
 }
 
 func (o KoiAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o KoiAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o KoiAuditLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiToken) {
-		toSerialize["api_token"] = o.ApiToken
-	}
+	toSerialize["api_token"] = o.ApiToken
 	return toSerialize, nil
+}
+
+func (o *KoiAuditLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"api_token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varKoiAuditLogsSecretsConfig := _KoiAuditLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varKoiAuditLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = KoiAuditLogsSecretsConfig(varKoiAuditLogsSecretsConfig)
+
+	return err
 }
 
 type NullableKoiAuditLogsSecretsConfig struct {

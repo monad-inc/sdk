@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Onelogin Events secrets
 */
 export class OneloginEventsSecretsConfig {
-    'clientId'?: ModelsSecret;
-    'clientSecret'?: ModelsSecret;
+    'clientId': ModelsSecret;
+    'clientSecret': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

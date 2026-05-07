@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class KoiAuditLogsSecretsConfig(BaseModel):
     """
     Koi audit logs secrets
     """ # noqa: E501
-    api_token: Optional[ModelsSecret] = None
+    api_token: ModelsSecret
     __properties: ClassVar[List[str]] = ["api_token"]
 
     model_config = ConfigDict(

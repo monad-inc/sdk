@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Palo Alto Cortex Xsoar Management Logs secrets
 */
 export class CortexXsoarManagementLogsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

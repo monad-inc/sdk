@@ -19,7 +19,7 @@ export class OneloginEventsSettingsConfig {
     /**
     * SubDomain is a placeholder that represents your specific OneLogin subdomain.
     */
-    'subdomain'?: string;
+    'subdomain': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

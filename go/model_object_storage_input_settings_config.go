@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the ObjectStorageInputSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -21,13 +23,13 @@ var _ MappedNullable = &ObjectStorageInputSettingsConfig{}
 // ObjectStorageInputSettingsConfig Object storage settings
 type ObjectStorageInputSettingsConfig struct {
 	// Name of the storage bucket
-	Bucket *string `json:"bucket,omitempty"`
+	Bucket string `json:"bucket"`
 	// Compression format of the objects
-	Compression *string `json:"compression,omitempty"`
+	Compression string `json:"compression"`
 	// Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com)
-	Endpoint *string `json:"endpoint,omitempty"`
+	Endpoint string `json:"endpoint"`
 	// File format of the objects
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// Prefix that leads to the start of the expected partition. For example: \"/foobar/year=2024/month=01/day=01/\". The prefix is `foobar`.
@@ -42,12 +44,18 @@ type ObjectStorageInputSettingsConfig struct {
 	UsePathStyle *bool `json:"use_path_style,omitempty"`
 }
 
+type _ObjectStorageInputSettingsConfig ObjectStorageInputSettingsConfig
+
 // NewObjectStorageInputSettingsConfig instantiates a new ObjectStorageInputSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewObjectStorageInputSettingsConfig() *ObjectStorageInputSettingsConfig {
+func NewObjectStorageInputSettingsConfig(bucket string, compression string, endpoint string, format string) *ObjectStorageInputSettingsConfig {
 	this := ObjectStorageInputSettingsConfig{}
+	this.Bucket = bucket
+	this.Compression = compression
+	this.Endpoint = endpoint
+	this.Format = format
 	return &this
 }
 
@@ -59,132 +67,100 @@ func NewObjectStorageInputSettingsConfigWithDefaults() *ObjectStorageInputSettin
 	return &this
 }
 
-// GetBucket returns the Bucket field value if set, zero value otherwise.
+// GetBucket returns the Bucket field value
 func (o *ObjectStorageInputSettingsConfig) GetBucket() string {
-	if o == nil || IsNil(o.Bucket) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Bucket
+
+	return o.Bucket
 }
 
-// GetBucketOk returns a tuple with the Bucket field value if set, nil otherwise
+// GetBucketOk returns a tuple with the Bucket field value
 // and a boolean to check if the value has been set.
 func (o *ObjectStorageInputSettingsConfig) GetBucketOk() (*string, bool) {
-	if o == nil || IsNil(o.Bucket) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Bucket, true
+	return &o.Bucket, true
 }
 
-// HasBucket returns a boolean if a field has been set.
-func (o *ObjectStorageInputSettingsConfig) HasBucket() bool {
-	if o != nil && !IsNil(o.Bucket) {
-		return true
-	}
-
-	return false
-}
-
-// SetBucket gets a reference to the given string and assigns it to the Bucket field.
+// SetBucket sets field value
 func (o *ObjectStorageInputSettingsConfig) SetBucket(v string) {
-	o.Bucket = &v
+	o.Bucket = v
 }
 
-// GetCompression returns the Compression field value if set, zero value otherwise.
+// GetCompression returns the Compression field value
 func (o *ObjectStorageInputSettingsConfig) GetCompression() string {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Compression
+
+	return o.Compression
 }
 
-// GetCompressionOk returns a tuple with the Compression field value if set, nil otherwise
+// GetCompressionOk returns a tuple with the Compression field value
 // and a boolean to check if the value has been set.
 func (o *ObjectStorageInputSettingsConfig) GetCompressionOk() (*string, bool) {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Compression, true
+	return &o.Compression, true
 }
 
-// HasCompression returns a boolean if a field has been set.
-func (o *ObjectStorageInputSettingsConfig) HasCompression() bool {
-	if o != nil && !IsNil(o.Compression) {
-		return true
-	}
-
-	return false
-}
-
-// SetCompression gets a reference to the given string and assigns it to the Compression field.
+// SetCompression sets field value
 func (o *ObjectStorageInputSettingsConfig) SetCompression(v string) {
-	o.Compression = &v
+	o.Compression = v
 }
 
-// GetEndpoint returns the Endpoint field value if set, zero value otherwise.
+// GetEndpoint returns the Endpoint field value
 func (o *ObjectStorageInputSettingsConfig) GetEndpoint() string {
-	if o == nil || IsNil(o.Endpoint) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Endpoint
+
+	return o.Endpoint
 }
 
-// GetEndpointOk returns a tuple with the Endpoint field value if set, nil otherwise
+// GetEndpointOk returns a tuple with the Endpoint field value
 // and a boolean to check if the value has been set.
 func (o *ObjectStorageInputSettingsConfig) GetEndpointOk() (*string, bool) {
-	if o == nil || IsNil(o.Endpoint) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Endpoint, true
+	return &o.Endpoint, true
 }
 
-// HasEndpoint returns a boolean if a field has been set.
-func (o *ObjectStorageInputSettingsConfig) HasEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
-}
-
-// SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
+// SetEndpoint sets field value
 func (o *ObjectStorageInputSettingsConfig) SetEndpoint(v string) {
-	o.Endpoint = &v
+	o.Endpoint = v
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
+// GetFormat returns the Format field value
 func (o *ObjectStorageInputSettingsConfig) GetFormat() string {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Format
+
+	return o.Format
 }
 
-// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// GetFormatOk returns a tuple with the Format field value
 // and a boolean to check if the value has been set.
 func (o *ObjectStorageInputSettingsConfig) GetFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Format, true
+	return &o.Format, true
 }
 
-// HasFormat returns a boolean if a field has been set.
-func (o *ObjectStorageInputSettingsConfig) HasFormat() bool {
-	if o != nil && !IsNil(o.Format) {
-		return true
-	}
-
-	return false
-}
-
-// SetFormat gets a reference to the given string and assigns it to the Format field.
+// SetFormat sets field value
 func (o *ObjectStorageInputSettingsConfig) SetFormat(v string) {
-	o.Format = &v
+	o.Format = v
 }
 
 // GetPartitionFormat returns the PartitionFormat field value if set, zero value otherwise.
@@ -389,18 +365,10 @@ func (o ObjectStorageInputSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ObjectStorageInputSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Bucket) {
-		toSerialize["bucket"] = o.Bucket
-	}
-	if !IsNil(o.Compression) {
-		toSerialize["compression"] = o.Compression
-	}
-	if !IsNil(o.Endpoint) {
-		toSerialize["endpoint"] = o.Endpoint
-	}
-	if !IsNil(o.Format) {
-		toSerialize["format"] = o.Format
-	}
+	toSerialize["bucket"] = o.Bucket
+	toSerialize["compression"] = o.Compression
+	toSerialize["endpoint"] = o.Endpoint
+	toSerialize["format"] = o.Format
 	if !IsNil(o.PartitionFormat) {
 		toSerialize["partition_format"] = o.PartitionFormat
 	}
@@ -420,6 +388,46 @@ func (o ObjectStorageInputSettingsConfig) ToMap() (map[string]interface{}, error
 		toSerialize["use_path_style"] = o.UsePathStyle
 	}
 	return toSerialize, nil
+}
+
+func (o *ObjectStorageInputSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"bucket",
+		"compression",
+		"endpoint",
+		"format",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varObjectStorageInputSettingsConfig := _ObjectStorageInputSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varObjectStorageInputSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ObjectStorageInputSettingsConfig(varObjectStorageInputSettingsConfig)
+
+	return err
 }
 
 type NullableObjectStorageInputSettingsConfig struct {

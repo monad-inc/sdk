@@ -27,7 +27,7 @@ export class GitlabIssuesSettingsConfig {
     /**
     * GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.)
     */
-    'gitlabUrl'?: string;
+    'gitlabUrl': string;
     /**
     * IssueType to filter issues by type e.g. issue, incident, etc.
     */
@@ -35,7 +35,7 @@ export class GitlabIssuesSettingsConfig {
     /**
     * Project ID to get issues for
     */
-    'projectId'?: string;
+    'projectId': string;
     /**
     * State to filter issues by e.g. opened, closed
     */

@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Greenhouse Audit Log secrets
 */
 export class GreenhouseAuditLogsSecretsConfig {
-    'harvestApiKey'?: ModelsSecret;
+    'harvestApiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

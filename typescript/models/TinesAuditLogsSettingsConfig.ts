@@ -27,7 +27,7 @@ export class TinesAuditLogsSettingsConfig {
     /**
     * The Tines tenant domain (e.g., your-org.tines.com)
     */
-    'tenantDomain'?: string;
+    'tenantDomain': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

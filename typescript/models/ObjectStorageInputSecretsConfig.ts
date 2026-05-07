@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Object storage secrets
 */
 export class ObjectStorageInputSecretsConfig {
-    'accessKey'?: ModelsSecret;
-    'secretKey'?: ModelsSecret;
+    'accessKey': ModelsSecret;
+    'secretKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

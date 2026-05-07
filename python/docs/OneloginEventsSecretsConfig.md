@@ -6,8 +6,8 @@ Onelogin Events secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

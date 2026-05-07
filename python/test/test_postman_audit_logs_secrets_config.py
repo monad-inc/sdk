@@ -47,6 +47,14 @@ class TestPostmanAuditLogsSecretsConfig(unittest.TestCase):
             )
         else:
             return PostmanAuditLogsSecretsConfig(
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

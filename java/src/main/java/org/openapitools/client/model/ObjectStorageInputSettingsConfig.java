@@ -52,28 +52,188 @@ import org.openapitools.client.JSON;
 public class ObjectStorageInputSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String bucket;
+
+  /**
+   * Compression format of the objects
+   */
+  @JsonAdapter(CompressionEnum.Adapter.class)
+  public enum CompressionEnum {
+    AUTO("auto"),
+    
+    GZIP("gzip"),
+    
+    NONE("none");
+
+    private String value;
+
+    CompressionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CompressionEnum fromValue(String value) {
+      for (CompressionEnum b : CompressionEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CompressionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CompressionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CompressionEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CompressionEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CompressionEnum.fromValue(value);
+    }
+  }
 
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
-  @javax.annotation.Nullable
-  private String compression;
+  @javax.annotation.Nonnull
+  private CompressionEnum compression;
 
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String endpoint;
+
+  /**
+   * File format of the objects
+   */
+  @JsonAdapter(FormatEnum.Adapter.class)
+  public enum FormatEnum {
+    JSON("json"),
+    
+    JSONL("jsonl"),
+    
+    WSV("wsv");
+
+    private String value;
+
+    FormatEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static FormatEnum fromValue(String value) {
+      for (FormatEnum b : FormatEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<FormatEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FormatEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FormatEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return FormatEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      FormatEnum.fromValue(value);
+    }
+  }
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
-  private String format;
+  @javax.annotation.Nonnull
+  private FormatEnum format;
+
+  /**
+   * Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization.
+   */
+  @JsonAdapter(PartitionFormatEnum.Adapter.class)
+  public enum PartitionFormatEnum {
+    HIVE_COMPLIANT("hive compliant"),
+    
+    SIMPLE_DATE("simple date");
+
+    private String value;
+
+    PartitionFormatEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PartitionFormatEnum fromValue(String value) {
+      for (PartitionFormatEnum b : PartitionFormatEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PartitionFormatEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PartitionFormatEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PartitionFormatEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PartitionFormatEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PartitionFormatEnum.fromValue(value);
+    }
+  }
 
   public static final String SERIALIZED_NAME_PARTITION_FORMAT = "partition_format";
   @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT)
   @javax.annotation.Nullable
-  private String partitionFormat;
+  private PartitionFormatEnum partitionFormat;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
@@ -103,7 +263,7 @@ public class ObjectStorageInputSettingsConfig {
   public ObjectStorageInputSettingsConfig() {
   }
 
-  public ObjectStorageInputSettingsConfig bucket(@javax.annotation.Nullable String bucket) {
+  public ObjectStorageInputSettingsConfig bucket(@javax.annotation.Nonnull String bucket) {
     this.bucket = bucket;
     return this;
   }
@@ -112,17 +272,17 @@ public class ObjectStorageInputSettingsConfig {
    * Name of the storage bucket
    * @return bucket
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getBucket() {
     return bucket;
   }
 
-  public void setBucket(@javax.annotation.Nullable String bucket) {
+  public void setBucket(@javax.annotation.Nonnull String bucket) {
     this.bucket = bucket;
   }
 
 
-  public ObjectStorageInputSettingsConfig compression(@javax.annotation.Nullable String compression) {
+  public ObjectStorageInputSettingsConfig compression(@javax.annotation.Nonnull CompressionEnum compression) {
     this.compression = compression;
     return this;
   }
@@ -131,17 +291,17 @@ public class ObjectStorageInputSettingsConfig {
    * Compression format of the objects
    * @return compression
    */
-  @javax.annotation.Nullable
-  public String getCompression() {
+  @javax.annotation.Nonnull
+  public CompressionEnum getCompression() {
     return compression;
   }
 
-  public void setCompression(@javax.annotation.Nullable String compression) {
+  public void setCompression(@javax.annotation.Nonnull CompressionEnum compression) {
     this.compression = compression;
   }
 
 
-  public ObjectStorageInputSettingsConfig endpoint(@javax.annotation.Nullable String endpoint) {
+  public ObjectStorageInputSettingsConfig endpoint(@javax.annotation.Nonnull String endpoint) {
     this.endpoint = endpoint;
     return this;
   }
@@ -150,17 +310,17 @@ public class ObjectStorageInputSettingsConfig {
    * Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com)
    * @return endpoint
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getEndpoint() {
     return endpoint;
   }
 
-  public void setEndpoint(@javax.annotation.Nullable String endpoint) {
+  public void setEndpoint(@javax.annotation.Nonnull String endpoint) {
     this.endpoint = endpoint;
   }
 
 
-  public ObjectStorageInputSettingsConfig format(@javax.annotation.Nullable String format) {
+  public ObjectStorageInputSettingsConfig format(@javax.annotation.Nonnull FormatEnum format) {
     this.format = format;
     return this;
   }
@@ -169,17 +329,17 @@ public class ObjectStorageInputSettingsConfig {
    * File format of the objects
    * @return format
    */
-  @javax.annotation.Nullable
-  public String getFormat() {
+  @javax.annotation.Nonnull
+  public FormatEnum getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable String format) {
+  public void setFormat(@javax.annotation.Nonnull FormatEnum format) {
     this.format = format;
   }
 
 
-  public ObjectStorageInputSettingsConfig partitionFormat(@javax.annotation.Nullable String partitionFormat) {
+  public ObjectStorageInputSettingsConfig partitionFormat(@javax.annotation.Nullable PartitionFormatEnum partitionFormat) {
     this.partitionFormat = partitionFormat;
     return this;
   }
@@ -189,11 +349,11 @@ public class ObjectStorageInputSettingsConfig {
    * @return partitionFormat
    */
   @javax.annotation.Nullable
-  public String getPartitionFormat() {
+  public PartitionFormatEnum getPartitionFormat() {
     return partitionFormat;
   }
 
-  public void setPartitionFormat(@javax.annotation.Nullable String partitionFormat) {
+  public void setPartitionFormat(@javax.annotation.Nullable PartitionFormatEnum partitionFormat) {
     this.partitionFormat = partitionFormat;
   }
 
@@ -355,7 +515,7 @@ public class ObjectStorageInputSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("bucket", "compression", "endpoint", "format", "partition_format", "prefix", "record_location", "region", "skip_ssl_verification", "use_path_style"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("bucket", "compression", "endpoint", "format"));
   }
 
   /**
@@ -378,21 +538,36 @@ public class ObjectStorageInputSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ObjectStorageInputSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ObjectStorageInputSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("bucket") != null && !jsonObj.get("bucket").isJsonNull()) && !jsonObj.get("bucket").isJsonPrimitive()) {
+      if (!jsonObj.get("bucket").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket").toString()));
       }
-      if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
+      if (!jsonObj.get("compression").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
-      if ((jsonObj.get("endpoint") != null && !jsonObj.get("endpoint").isJsonNull()) && !jsonObj.get("endpoint").isJsonPrimitive()) {
+      // validate the required field `compression`
+      CompressionEnum.validateJsonElement(jsonObj.get("compression"));
+      if (!jsonObj.get("endpoint").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
       }
-      if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
+      if (!jsonObj.get("format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
+      // validate the required field `format`
+      FormatEnum.validateJsonElement(jsonObj.get("format"));
       if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
+      }
+      // validate the optional field `partition_format`
+      if (jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) {
+        PartitionFormatEnum.validateJsonElement(jsonObj.get("partition_format"));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));

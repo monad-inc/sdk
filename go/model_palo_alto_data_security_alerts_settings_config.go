@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the PaloAltoDataSecurityAlertsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,17 +25,20 @@ type PaloAltoDataSecurityAlertsSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// URL of the organization
-	BaseUrl *string `json:"base_url,omitempty"`
+	BaseUrl string `json:"base_url"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _PaloAltoDataSecurityAlertsSettingsConfig PaloAltoDataSecurityAlertsSettingsConfig
 
 // NewPaloAltoDataSecurityAlertsSettingsConfig instantiates a new PaloAltoDataSecurityAlertsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaloAltoDataSecurityAlertsSettingsConfig() *PaloAltoDataSecurityAlertsSettingsConfig {
+func NewPaloAltoDataSecurityAlertsSettingsConfig(baseUrl string) *PaloAltoDataSecurityAlertsSettingsConfig {
 	this := PaloAltoDataSecurityAlertsSettingsConfig{}
+	this.BaseUrl = baseUrl
 	return &this
 }
 
@@ -77,36 +82,28 @@ func (o *PaloAltoDataSecurityAlertsSettingsConfig) SetBackfillStartTime(v string
 	o.BackfillStartTime = &v
 }
 
-// GetBaseUrl returns the BaseUrl field value if set, zero value otherwise.
+// GetBaseUrl returns the BaseUrl field value
 func (o *PaloAltoDataSecurityAlertsSettingsConfig) GetBaseUrl() string {
-	if o == nil || IsNil(o.BaseUrl) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BaseUrl
+
+	return o.BaseUrl
 }
 
-// GetBaseUrlOk returns a tuple with the BaseUrl field value if set, nil otherwise
+// GetBaseUrlOk returns a tuple with the BaseUrl field value
 // and a boolean to check if the value has been set.
 func (o *PaloAltoDataSecurityAlertsSettingsConfig) GetBaseUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.BaseUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BaseUrl, true
+	return &o.BaseUrl, true
 }
 
-// HasBaseUrl returns a boolean if a field has been set.
-func (o *PaloAltoDataSecurityAlertsSettingsConfig) HasBaseUrl() bool {
-	if o != nil && !IsNil(o.BaseUrl) {
-		return true
-	}
-
-	return false
-}
-
-// SetBaseUrl gets a reference to the given string and assigns it to the BaseUrl field.
+// SetBaseUrl sets field value
 func (o *PaloAltoDataSecurityAlertsSettingsConfig) SetBaseUrl(v string) {
-	o.BaseUrl = &v
+	o.BaseUrl = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -154,13 +151,48 @@ func (o PaloAltoDataSecurityAlertsSettingsConfig) ToMap() (map[string]interface{
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.BaseUrl) {
-		toSerialize["base_url"] = o.BaseUrl
-	}
+	toSerialize["base_url"] = o.BaseUrl
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *PaloAltoDataSecurityAlertsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"base_url",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varPaloAltoDataSecurityAlertsSettingsConfig := _PaloAltoDataSecurityAlertsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varPaloAltoDataSecurityAlertsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PaloAltoDataSecurityAlertsSettingsConfig(varPaloAltoDataSecurityAlertsSettingsConfig)
+
+	return err
 }
 
 type NullablePaloAltoDataSecurityAlertsSettingsConfig struct {

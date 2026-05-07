@@ -6,8 +6,8 @@ Ownbackup Audit Logs secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

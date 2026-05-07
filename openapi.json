@@ -1787,6 +1787,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "cortex_xsoar_management_logs.SettingsConfig": {
@@ -1809,6 +1812,10 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "api_key_id",
+                    "domain_name"
+                ],
                 "type": "object"
             },
             "create_key_value_if_key_value.ArgumentsConfig": {
@@ -2437,6 +2444,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "full_scans.SettingsConfig": {
@@ -2459,6 +2469,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "org_slug"
+                ],
                 "type": "object"
             },
             "geolocus.SecretsConfig": {
@@ -2710,6 +2723,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "personal_access_token"
+                ],
                 "type": "object"
             },
             "gitlab_issues.SettingsConfig": {
@@ -2748,6 +2764,10 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "gitlab_url",
+                    "project_id"
+                ],
                 "type": "object"
             },
             "google_cloud_storage.SecretsConfig": {
@@ -2869,6 +2889,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "harvest_api_key"
+                ],
                 "type": "object"
             },
             "greenhouse_audit_logs.SettingsConfig": {
@@ -2887,6 +2910,9 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "user_id"
+                ],
                 "type": "object"
             },
             "http.Headers": {
@@ -3670,6 +3696,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_token"
+                ],
                 "type": "object"
             },
             "koi_audit_logs.SettingsConfig": {
@@ -6073,6 +6102,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "access_key",
+                    "secret_key"
+                ],
                 "type": "object"
             },
             "object_storage_input.SettingsConfig": {
@@ -6084,6 +6117,11 @@
                     },
                     "compression": {
                         "description": "Compression format of the objects",
+                        "enum": [
+                            "auto",
+                            "gzip",
+                            "none"
+                        ],
                         "type": "string"
                     },
                     "endpoint": {
@@ -6092,10 +6130,19 @@
                     },
                     "format": {
                         "description": "File format of the objects",
+                        "enum": [
+                            "json",
+                            "jsonl",
+                            "wsv"
+                        ],
                         "type": "string"
                     },
                     "partition_format": {
                         "description": "Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.",
+                        "enum": [
+                            "hive compliant",
+                            "simple date"
+                        ],
                         "type": "string"
                     },
                     "prefix": {
@@ -6119,6 +6166,12 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "bucket",
+                    "compression",
+                    "endpoint",
+                    "format"
+                ],
                 "type": "object"
             },
             "offlineenrollmentlogs.SecretsConfig": {
@@ -6164,6 +6217,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "onelogin_events.SettingsConfig": {
@@ -6178,6 +6235,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "subdomain"
+                ],
                 "type": "object"
             },
             "opal_events.SecretsConfig": {
@@ -6187,6 +6247,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "opal_events.SettingsConfig": {
@@ -6338,6 +6401,10 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "domain",
+                    "username"
+                ],
                 "type": "object"
             },
             "org_audit_logs.SecretsConfig": {
@@ -6445,6 +6512,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "refresh_token"
+                ],
                 "type": "object"
             },
             "ownbackup_account_events.SettingsConfig": {
@@ -6452,6 +6523,13 @@
                 "properties": {
                     "region": {
                         "description": "Region of the OwnBackup instance",
+                        "enum": [
+                            "app1",
+                            "emea1",
+                            "uk1",
+                            "usgov2",
+                            "hipaa1"
+                        ],
                         "type": "string"
                     },
                     "use_synthetic_data": {
@@ -6459,6 +6537,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "region"
+                ],
                 "type": "object"
             },
             "pagerduty.SecretsConfig": {
@@ -6547,6 +6628,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "auth_token"
+                ],
                 "type": "object"
             },
             "pagerduty_audit_records.SettingsConfig": {
@@ -6566,6 +6650,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "palo_alto_data_security_alerts.SettingsConfig": {
@@ -6584,6 +6671,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "base_url"
+                ],
                 "type": "object"
             },
             "panther.SecretsConfig": {
@@ -6620,6 +6710,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "polymer.SettingsConfig": {
@@ -6633,6 +6726,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "domain_name"
+                ],
                 "type": "object"
             },
             "postgresql.SecretsConfig": {
@@ -6686,6 +6782,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "postman_audit_logs.SettingsConfig": {
@@ -6872,6 +6971,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "rootly_audit_logs.SettingsConfig": {
@@ -9713,6 +9815,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "auth_token"
+                ],
                 "type": "object"
             },
             "sentry_org_audit_logs.SettingsConfig": {
@@ -9735,6 +9840,10 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "host_name",
+                    "org_slug"
+                ],
                 "type": "object"
             },
             "slack.AuthConfig": {
@@ -9788,6 +9897,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "user_oauth_token"
+                ],
                 "type": "object"
             },
             "slack_enterprise_audit_logs.SettingsConfig": {
@@ -9824,6 +9936,10 @@
                     },
                     "auth_type": {
                         "description": "Authentication type: \"password\" or \"private key\"",
+                        "enum": [
+                            "password",
+                            "private key"
+                        ],
                         "type": "string"
                     },
                     "cron": {
@@ -9863,6 +9979,17 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "account",
+                    "auth_type",
+                    "cron",
+                    "database",
+                    "role",
+                    "schema",
+                    "timestamp_column",
+                    "user",
+                    "warehouse"
+                ],
                 "type": "object"
             },
             "snowflake_output.SecretsConfig": {
@@ -9932,6 +10059,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "snyk_issues.SettingsConfig": {
@@ -9955,6 +10085,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "snyk_targets.SettingsConfig": {
@@ -10168,6 +10301,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "token"
+                ],
                 "type": "object"
             },
             "team_access_logs.SettingsConfig": {
@@ -10191,6 +10327,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "token"
+                ],
                 "type": "object"
             },
             "team_integration_logs.SettingsConfig": {
@@ -10359,6 +10498,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "tines_audit_logs.SettingsConfig": {
@@ -10393,6 +10535,9 @@
                         "uniqueItems": false
                     }
                 },
+                "required": [
+                    "tenant_domain"
+                ],
                 "type": "object"
             },
             "tines_events_logs.SecretsConfig": {
@@ -10402,6 +10547,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "tines_events_logs.SettingsConfig": {
@@ -10428,6 +10576,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "tenant_url"
+                ],
                 "type": "object"
             },
             "twilio_events.SecretsConfig": {
@@ -10440,6 +10591,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "twilio_account_sid",
+                    "twilio_auth_token"
+                ],
                 "type": "object"
             },
             "twilio_events.SettingsConfig": {
@@ -10474,6 +10629,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "api_key"
+                ],
                 "type": "object"
             },
             "twilio_sendgrid_email_activity.SettingsConfig": {

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -20,20 +20,20 @@ Name | Type | Description | Notes
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **username** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **personal_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**api_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**api_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **rsa_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**token** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

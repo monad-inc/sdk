@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TwilioAccountSid** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**TwilioAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**TwilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**TwilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewTwilioEventsSecretsConfig
 
-`func NewTwilioEventsSecretsConfig() *TwilioEventsSecretsConfig`
+`func NewTwilioEventsSecretsConfig(twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *TwilioEventsSecretsConfig`
 
 NewTwilioEventsSecretsConfig instantiates a new TwilioEventsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetTwilioAccountSid sets TwilioAccountSid field to given value.
 
-### HasTwilioAccountSid
-
-`func (o *TwilioEventsSecretsConfig) HasTwilioAccountSid() bool`
-
-HasTwilioAccountSid returns a boolean if a field has been set.
 
 ### GetTwilioAuthToken
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetTwilioAuthToken sets TwilioAuthToken field to given value.
 
-### HasTwilioAuthToken
-
-`func (o *TwilioEventsSecretsConfig) HasTwilioAuthToken() bool`
-
-HasTwilioAuthToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

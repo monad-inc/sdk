@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, will fetch from the most recent data available. | [optional] 
 **OperationNames** | Pointer to **[]string** | Filter by specific operation names (optional) | [optional] 
-**TenantDomain** | Pointer to **string** | The Tines tenant domain (e.g., your-org.tines.com) | [optional] 
+**TenantDomain** | **string** | The Tines tenant domain (e.g., your-org.tines.com) | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **UserIds** | Pointer to **[]string** | Filter by specific user IDs (optional) | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewTinesAuditLogsSettingsConfig
 
-`func NewTinesAuditLogsSettingsConfig() *TinesAuditLogsSettingsConfig`
+`func NewTinesAuditLogsSettingsConfig(tenantDomain string, ) *TinesAuditLogsSettingsConfig`
 
 NewTinesAuditLogsSettingsConfig instantiates a new TinesAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -98,11 +98,6 @@ and a boolean to check if the value has been set.
 
 SetTenantDomain sets TenantDomain field to given value.
 
-### HasTenantDomain
-
-`func (o *TinesAuditLogsSettingsConfig) HasTenantDomain() bool`
-
-HasTenantDomain returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

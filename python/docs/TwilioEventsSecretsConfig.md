@@ -6,8 +6,8 @@ Twilio Events secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

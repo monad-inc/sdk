@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class SlackEnterpriseAuditLogsSecretsConfig(BaseModel):
     """
     SlackEnterpriseAuditLogsSecretsConfig
     """ # noqa: E501
-    user_oauth_token: Optional[ModelsSecret] = None
+    user_oauth_token: ModelsSecret
     __properties: ClassVar[List[str]] = ["user_oauth_token"]
 
     model_config = ConfigDict(

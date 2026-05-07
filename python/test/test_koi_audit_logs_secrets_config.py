@@ -47,6 +47,14 @@ class TestKoiAuditLogsSecretsConfig(unittest.TestCase):
             )
         else:
             return KoiAuditLogsSecretsConfig(
+                api_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

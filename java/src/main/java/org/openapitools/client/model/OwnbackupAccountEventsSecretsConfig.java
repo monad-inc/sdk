@@ -53,18 +53,18 @@ import org.openapitools.client.JSON;
 public class OwnbackupAccountEventsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret clientId;
 
   public static final String SERIALIZED_NAME_REFRESH_TOKEN = "refresh_token";
   @SerializedName(SERIALIZED_NAME_REFRESH_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret refreshToken;
 
   public OwnbackupAccountEventsSecretsConfig() {
   }
 
-  public OwnbackupAccountEventsSecretsConfig clientId(@javax.annotation.Nullable ModelsSecret clientId) {
+  public OwnbackupAccountEventsSecretsConfig clientId(@javax.annotation.Nonnull ModelsSecret clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -73,17 +73,17 @@ public class OwnbackupAccountEventsSecretsConfig {
    * Get clientId
    * @return clientId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getClientId() {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nullable ModelsSecret clientId) {
+  public void setClientId(@javax.annotation.Nonnull ModelsSecret clientId) {
     this.clientId = clientId;
   }
 
 
-  public OwnbackupAccountEventsSecretsConfig refreshToken(@javax.annotation.Nullable ModelsSecret refreshToken) {
+  public OwnbackupAccountEventsSecretsConfig refreshToken(@javax.annotation.Nonnull ModelsSecret refreshToken) {
     this.refreshToken = refreshToken;
     return this;
   }
@@ -92,12 +92,12 @@ public class OwnbackupAccountEventsSecretsConfig {
    * Get refreshToken
    * @return refreshToken
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getRefreshToken() {
     return refreshToken;
   }
 
-  public void setRefreshToken(@javax.annotation.Nullable ModelsSecret refreshToken) {
+  public void setRefreshToken(@javax.annotation.Nonnull ModelsSecret refreshToken) {
     this.refreshToken = refreshToken;
   }
 
@@ -148,7 +148,7 @@ public class OwnbackupAccountEventsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("client_id", "refresh_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("client_id", "refresh_token"));
   }
 
   /**
@@ -171,15 +171,18 @@ public class OwnbackupAccountEventsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OwnbackupAccountEventsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OwnbackupAccountEventsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `client_id`
-      if (jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
-      }
-      // validate the optional field `refresh_token`
-      if (jsonObj.get("refresh_token") != null && !jsonObj.get("refresh_token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("refresh_token"));
-      }
+      // validate the required field `client_id`
+      ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
+      // validate the required field `refresh_token`
+      ModelsSecret.validateJsonElement(jsonObj.get("refresh_token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**PersonalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewGitlabIssuesSecretsConfig
 
-`func NewGitlabIssuesSecretsConfig() *GitlabIssuesSecretsConfig`
+`func NewGitlabIssuesSecretsConfig(personalAccessToken ModelsSecret, ) *GitlabIssuesSecretsConfig`
 
 NewGitlabIssuesSecretsConfig instantiates a new GitlabIssuesSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetPersonalAccessToken sets PersonalAccessToken field to given value.
 
-### HasPersonalAccessToken
-
-`func (o *GitlabIssuesSecretsConfig) HasPersonalAccessToken() bool`
-
-HasPersonalAccessToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

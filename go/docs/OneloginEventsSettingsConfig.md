@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**Subdomain** | **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewOneloginEventsSettingsConfig
 
-`func NewOneloginEventsSettingsConfig() *OneloginEventsSettingsConfig`
+`func NewOneloginEventsSettingsConfig(subdomain string, ) *OneloginEventsSettingsConfig`
 
 NewOneloginEventsSettingsConfig instantiates a new OneloginEventsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetSubdomain sets Subdomain field to given value.
 
-### HasSubdomain
-
-`func (o *OneloginEventsSettingsConfig) HasSubdomain() bool`
-
-HasSubdomain returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

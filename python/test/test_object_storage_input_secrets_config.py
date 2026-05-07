@@ -55,6 +55,22 @@ class TestObjectStorageInputSecretsConfig(unittest.TestCase):
             )
         else:
             return ObjectStorageInputSecretsConfig(
+                access_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                secret_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

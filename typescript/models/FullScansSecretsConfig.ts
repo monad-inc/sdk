@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Socket Full Scans secrets
 */
 export class FullScansSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

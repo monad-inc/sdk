@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**BaseUrl** | Pointer to **string** | URL of the organization | [optional] 
+**BaseUrl** | **string** | URL of the organization | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewPaloAltoDataSecurityAlertsSettingsConfig
 
-`func NewPaloAltoDataSecurityAlertsSettingsConfig() *PaloAltoDataSecurityAlertsSettingsConfig`
+`func NewPaloAltoDataSecurityAlertsSettingsConfig(baseUrl string, ) *PaloAltoDataSecurityAlertsSettingsConfig`
 
 NewPaloAltoDataSecurityAlertsSettingsConfig instantiates a new PaloAltoDataSecurityAlertsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetBaseUrl sets BaseUrl field to given value.
 
-### HasBaseUrl
-
-`func (o *PaloAltoDataSecurityAlertsSettingsConfig) HasBaseUrl() bool`
-
-HasBaseUrl returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

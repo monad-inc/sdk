@@ -36,11 +36,12 @@ class TestOwnbackupAccountEventsSettingsConfig(unittest.TestCase):
         model = OwnbackupAccountEventsSettingsConfig()
         if include_optional:
             return OwnbackupAccountEventsSettingsConfig(
-                region = '',
+                region = 'app1',
                 use_synthetic_data = True
             )
         else:
             return OwnbackupAccountEventsSettingsConfig(
+                region = 'app1',
         )
         """
 

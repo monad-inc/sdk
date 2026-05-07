@@ -6,7 +6,7 @@ Pagerduty Audit Records secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

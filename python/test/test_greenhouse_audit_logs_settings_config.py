@@ -42,6 +42,7 @@ class TestGreenhouseAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return GreenhouseAuditLogsSettingsConfig(
+                user_id = '',
         )
         """
 

@@ -7,8 +7,8 @@ Sentry Organization Audit Logs settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**host_name** | **str** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
-**org_slug** | **str** | The ID or slug of the organization | [optional] 
+**host_name** | **str** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
+**org_slug** | **str** | The ID or slug of the organization | 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

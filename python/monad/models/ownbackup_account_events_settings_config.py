@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,16 @@ class OwnbackupAccountEventsSettingsConfig(BaseModel):
     """
     Ownbackup Audit Logs settings
     """ # noqa: E501
-    region: Optional[StrictStr] = Field(default=None, description="Region of the OwnBackup instance")
+    region: StrictStr = Field(description="Region of the OwnBackup instance")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["region", "use_synthetic_data"]
+
+    @field_validator('region')
+    def region_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['app1', 'emea1', 'uk1', 'usgov2', 'hipaa1']):
+            raise ValueError("must be one of enum values ('app1', 'emea1', 'uk1', 'usgov2', 'hipaa1')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,

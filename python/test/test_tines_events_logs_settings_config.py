@@ -44,6 +44,7 @@ class TestTinesEventsLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return TinesEventsLogsSettingsConfig(
+                tenant_url = '',
         )
         """
 

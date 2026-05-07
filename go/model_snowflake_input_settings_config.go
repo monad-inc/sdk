@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the SnowflakeInputSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -21,35 +23,46 @@ var _ MappedNullable = &SnowflakeInputSettingsConfig{}
 // SnowflakeInputSettingsConfig Snowflake Input Settings
 type SnowflakeInputSettingsConfig struct {
 	// The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.
-	Account *string `json:"account,omitempty"`
+	Account string `json:"account"`
 	// Authentication type: \"password\" or \"private key\"
-	AuthType *string `json:"auth_type,omitempty"`
+	AuthType string `json:"auth_type"`
 	// Cron string for scheduling the ingest of your input
-	Cron *string `json:"cron,omitempty"`
+	Cron string `json:"cron"`
 	// The name of the Snowflake database to connect to and perform operations on
-	Database *string `json:"database,omitempty"`
+	Database string `json:"database"`
 	// Optional custom query to use instead of table (must include timestamp_column)
 	Query *string `json:"query,omitempty"`
 	// The name of the Role your service account was granted which can access your resources.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 	// The schema within the Snowflake database where the target table resides.
-	Schema *string `json:"schema,omitempty"`
+	Schema string `json:"schema"`
 	// The name of the table in Snowflake to query data from.
 	Table *string `json:"table,omitempty"`
 	// The column containing timestamp values used for incremental loading
-	TimestampColumn *string `json:"timestamp_column,omitempty"`
+	TimestampColumn string `json:"timestamp_column"`
 	// The username of the Snowflake account used to establish the connection.
-	User *string `json:"user,omitempty"`
+	User string `json:"user"`
 	// The Snowflake virtual warehouse to use for executing queries and processing data.
-	Warehouse *string `json:"warehouse,omitempty"`
+	Warehouse string `json:"warehouse"`
 }
+
+type _SnowflakeInputSettingsConfig SnowflakeInputSettingsConfig
 
 // NewSnowflakeInputSettingsConfig instantiates a new SnowflakeInputSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnowflakeInputSettingsConfig() *SnowflakeInputSettingsConfig {
+func NewSnowflakeInputSettingsConfig(account string, authType string, cron string, database string, role string, schema string, timestampColumn string, user string, warehouse string) *SnowflakeInputSettingsConfig {
 	this := SnowflakeInputSettingsConfig{}
+	this.Account = account
+	this.AuthType = authType
+	this.Cron = cron
+	this.Database = database
+	this.Role = role
+	this.Schema = schema
+	this.TimestampColumn = timestampColumn
+	this.User = user
+	this.Warehouse = warehouse
 	return &this
 }
 
@@ -61,132 +74,100 @@ func NewSnowflakeInputSettingsConfigWithDefaults() *SnowflakeInputSettingsConfig
 	return &this
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// GetAccount returns the Account field value
 func (o *SnowflakeInputSettingsConfig) GetAccount() string {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Account
+
+	return o.Account
 }
 
-// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// GetAccountOk returns a tuple with the Account field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetAccountOk() (*string, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return &o.Account, true
 }
 
-// HasAccount returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccount gets a reference to the given string and assigns it to the Account field.
+// SetAccount sets field value
 func (o *SnowflakeInputSettingsConfig) SetAccount(v string) {
-	o.Account = &v
+	o.Account = v
 }
 
-// GetAuthType returns the AuthType field value if set, zero value otherwise.
+// GetAuthType returns the AuthType field value
 func (o *SnowflakeInputSettingsConfig) GetAuthType() string {
-	if o == nil || IsNil(o.AuthType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.AuthType
+
+	return o.AuthType
 }
 
-// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// GetAuthTypeOk returns a tuple with the AuthType field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetAuthTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AuthType, true
+	return &o.AuthType, true
 }
 
-// HasAuthType returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasAuthType() bool {
-	if o != nil && !IsNil(o.AuthType) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
+// SetAuthType sets field value
 func (o *SnowflakeInputSettingsConfig) SetAuthType(v string) {
-	o.AuthType = &v
+	o.AuthType = v
 }
 
-// GetCron returns the Cron field value if set, zero value otherwise.
+// GetCron returns the Cron field value
 func (o *SnowflakeInputSettingsConfig) GetCron() string {
-	if o == nil || IsNil(o.Cron) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Cron
+
+	return o.Cron
 }
 
-// GetCronOk returns a tuple with the Cron field value if set, nil otherwise
+// GetCronOk returns a tuple with the Cron field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetCronOk() (*string, bool) {
-	if o == nil || IsNil(o.Cron) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Cron, true
+	return &o.Cron, true
 }
 
-// HasCron returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasCron() bool {
-	if o != nil && !IsNil(o.Cron) {
-		return true
-	}
-
-	return false
-}
-
-// SetCron gets a reference to the given string and assigns it to the Cron field.
+// SetCron sets field value
 func (o *SnowflakeInputSettingsConfig) SetCron(v string) {
-	o.Cron = &v
+	o.Cron = v
 }
 
-// GetDatabase returns the Database field value if set, zero value otherwise.
+// GetDatabase returns the Database field value
 func (o *SnowflakeInputSettingsConfig) GetDatabase() string {
-	if o == nil || IsNil(o.Database) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Database
+
+	return o.Database
 }
 
-// GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
+// GetDatabaseOk returns a tuple with the Database field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetDatabaseOk() (*string, bool) {
-	if o == nil || IsNil(o.Database) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Database, true
+	return &o.Database, true
 }
 
-// HasDatabase returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasDatabase() bool {
-	if o != nil && !IsNil(o.Database) {
-		return true
-	}
-
-	return false
-}
-
-// SetDatabase gets a reference to the given string and assigns it to the Database field.
+// SetDatabase sets field value
 func (o *SnowflakeInputSettingsConfig) SetDatabase(v string) {
-	o.Database = &v
+	o.Database = v
 }
 
 // GetQuery returns the Query field value if set, zero value otherwise.
@@ -221,68 +202,52 @@ func (o *SnowflakeInputSettingsConfig) SetQuery(v string) {
 	o.Query = &v
 }
 
-// GetRole returns the Role field value if set, zero value otherwise.
+// GetRole returns the Role field value
 func (o *SnowflakeInputSettingsConfig) GetRole() string {
-	if o == nil || IsNil(o.Role) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Role
+
+	return o.Role
 }
 
-// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
+// GetRoleOk returns a tuple with the Role field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetRoleOk() (*string, bool) {
-	if o == nil || IsNil(o.Role) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Role, true
+	return &o.Role, true
 }
 
-// HasRole returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
-}
-
-// SetRole gets a reference to the given string and assigns it to the Role field.
+// SetRole sets field value
 func (o *SnowflakeInputSettingsConfig) SetRole(v string) {
-	o.Role = &v
+	o.Role = v
 }
 
-// GetSchema returns the Schema field value if set, zero value otherwise.
+// GetSchema returns the Schema field value
 func (o *SnowflakeInputSettingsConfig) GetSchema() string {
-	if o == nil || IsNil(o.Schema) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Schema
+
+	return o.Schema
 }
 
-// GetSchemaOk returns a tuple with the Schema field value if set, nil otherwise
+// GetSchemaOk returns a tuple with the Schema field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetSchemaOk() (*string, bool) {
-	if o == nil || IsNil(o.Schema) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Schema, true
+	return &o.Schema, true
 }
 
-// HasSchema returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasSchema() bool {
-	if o != nil && !IsNil(o.Schema) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchema gets a reference to the given string and assigns it to the Schema field.
+// SetSchema sets field value
 func (o *SnowflakeInputSettingsConfig) SetSchema(v string) {
-	o.Schema = &v
+	o.Schema = v
 }
 
 // GetTable returns the Table field value if set, zero value otherwise.
@@ -317,100 +282,76 @@ func (o *SnowflakeInputSettingsConfig) SetTable(v string) {
 	o.Table = &v
 }
 
-// GetTimestampColumn returns the TimestampColumn field value if set, zero value otherwise.
+// GetTimestampColumn returns the TimestampColumn field value
 func (o *SnowflakeInputSettingsConfig) GetTimestampColumn() string {
-	if o == nil || IsNil(o.TimestampColumn) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.TimestampColumn
+
+	return o.TimestampColumn
 }
 
-// GetTimestampColumnOk returns a tuple with the TimestampColumn field value if set, nil otherwise
+// GetTimestampColumnOk returns a tuple with the TimestampColumn field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetTimestampColumnOk() (*string, bool) {
-	if o == nil || IsNil(o.TimestampColumn) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TimestampColumn, true
+	return &o.TimestampColumn, true
 }
 
-// HasTimestampColumn returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasTimestampColumn() bool {
-	if o != nil && !IsNil(o.TimestampColumn) {
-		return true
-	}
-
-	return false
-}
-
-// SetTimestampColumn gets a reference to the given string and assigns it to the TimestampColumn field.
+// SetTimestampColumn sets field value
 func (o *SnowflakeInputSettingsConfig) SetTimestampColumn(v string) {
-	o.TimestampColumn = &v
+	o.TimestampColumn = v
 }
 
-// GetUser returns the User field value if set, zero value otherwise.
+// GetUser returns the User field value
 func (o *SnowflakeInputSettingsConfig) GetUser() string {
-	if o == nil || IsNil(o.User) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.User
+
+	return o.User
 }
 
-// GetUserOk returns a tuple with the User field value if set, nil otherwise
+// GetUserOk returns a tuple with the User field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetUserOk() (*string, bool) {
-	if o == nil || IsNil(o.User) {
+	if o == nil {
 		return nil, false
 	}
-	return o.User, true
+	return &o.User, true
 }
 
-// HasUser returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
-// SetUser gets a reference to the given string and assigns it to the User field.
+// SetUser sets field value
 func (o *SnowflakeInputSettingsConfig) SetUser(v string) {
-	o.User = &v
+	o.User = v
 }
 
-// GetWarehouse returns the Warehouse field value if set, zero value otherwise.
+// GetWarehouse returns the Warehouse field value
 func (o *SnowflakeInputSettingsConfig) GetWarehouse() string {
-	if o == nil || IsNil(o.Warehouse) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Warehouse
+
+	return o.Warehouse
 }
 
-// GetWarehouseOk returns a tuple with the Warehouse field value if set, nil otherwise
+// GetWarehouseOk returns a tuple with the Warehouse field value
 // and a boolean to check if the value has been set.
 func (o *SnowflakeInputSettingsConfig) GetWarehouseOk() (*string, bool) {
-	if o == nil || IsNil(o.Warehouse) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Warehouse, true
+	return &o.Warehouse, true
 }
 
-// HasWarehouse returns a boolean if a field has been set.
-func (o *SnowflakeInputSettingsConfig) HasWarehouse() bool {
-	if o != nil && !IsNil(o.Warehouse) {
-		return true
-	}
-
-	return false
-}
-
-// SetWarehouse gets a reference to the given string and assigns it to the Warehouse field.
+// SetWarehouse sets field value
 func (o *SnowflakeInputSettingsConfig) SetWarehouse(v string) {
-	o.Warehouse = &v
+	o.Warehouse = v
 }
 
 func (o SnowflakeInputSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -423,40 +364,67 @@ func (o SnowflakeInputSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o SnowflakeInputSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
-	}
-	if !IsNil(o.AuthType) {
-		toSerialize["auth_type"] = o.AuthType
-	}
-	if !IsNil(o.Cron) {
-		toSerialize["cron"] = o.Cron
-	}
-	if !IsNil(o.Database) {
-		toSerialize["database"] = o.Database
-	}
+	toSerialize["account"] = o.Account
+	toSerialize["auth_type"] = o.AuthType
+	toSerialize["cron"] = o.Cron
+	toSerialize["database"] = o.Database
 	if !IsNil(o.Query) {
 		toSerialize["query"] = o.Query
 	}
-	if !IsNil(o.Role) {
-		toSerialize["role"] = o.Role
-	}
-	if !IsNil(o.Schema) {
-		toSerialize["schema"] = o.Schema
-	}
+	toSerialize["role"] = o.Role
+	toSerialize["schema"] = o.Schema
 	if !IsNil(o.Table) {
 		toSerialize["table"] = o.Table
 	}
-	if !IsNil(o.TimestampColumn) {
-		toSerialize["timestamp_column"] = o.TimestampColumn
-	}
-	if !IsNil(o.User) {
-		toSerialize["user"] = o.User
-	}
-	if !IsNil(o.Warehouse) {
-		toSerialize["warehouse"] = o.Warehouse
-	}
+	toSerialize["timestamp_column"] = o.TimestampColumn
+	toSerialize["user"] = o.User
+	toSerialize["warehouse"] = o.Warehouse
 	return toSerialize, nil
+}
+
+func (o *SnowflakeInputSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"account",
+		"auth_type",
+		"cron",
+		"database",
+		"role",
+		"schema",
+		"timestamp_column",
+		"user",
+		"warehouse",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSnowflakeInputSettingsConfig := _SnowflakeInputSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSnowflakeInputSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SnowflakeInputSettingsConfig(varSnowflakeInputSettingsConfig)
+
+	return err
 }
 
 type NullableSnowflakeInputSettingsConfig struct {

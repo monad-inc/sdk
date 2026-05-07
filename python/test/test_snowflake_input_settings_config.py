@@ -37,7 +37,7 @@ class TestSnowflakeInputSettingsConfig(unittest.TestCase):
         if include_optional:
             return SnowflakeInputSettingsConfig(
                 account = '',
-                auth_type = '',
+                auth_type = 'password',
                 cron = '',
                 database = '',
                 query = '',
@@ -50,6 +50,15 @@ class TestSnowflakeInputSettingsConfig(unittest.TestCase):
             )
         else:
             return SnowflakeInputSettingsConfig(
+                account = '',
+                auth_type = 'password',
+                cron = '',
+                database = '',
+                role = '',
+                var_schema = '',
+                timestamp_column = '',
+                user = '',
+                warehouse = '',
         )
         """
 

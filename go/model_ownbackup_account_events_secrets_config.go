@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the OwnbackupAccountEventsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,16 +22,20 @@ var _ MappedNullable = &OwnbackupAccountEventsSecretsConfig{}
 
 // OwnbackupAccountEventsSecretsConfig Ownbackup Audit Logs secrets
 type OwnbackupAccountEventsSecretsConfig struct {
-	ClientId *ModelsSecret `json:"client_id,omitempty"`
-	RefreshToken *ModelsSecret `json:"refresh_token,omitempty"`
+	ClientId ModelsSecret `json:"client_id"`
+	RefreshToken ModelsSecret `json:"refresh_token"`
 }
+
+type _OwnbackupAccountEventsSecretsConfig OwnbackupAccountEventsSecretsConfig
 
 // NewOwnbackupAccountEventsSecretsConfig instantiates a new OwnbackupAccountEventsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOwnbackupAccountEventsSecretsConfig() *OwnbackupAccountEventsSecretsConfig {
+func NewOwnbackupAccountEventsSecretsConfig(clientId ModelsSecret, refreshToken ModelsSecret) *OwnbackupAccountEventsSecretsConfig {
 	this := OwnbackupAccountEventsSecretsConfig{}
+	this.ClientId = clientId
+	this.RefreshToken = refreshToken
 	return &this
 }
 
@@ -41,68 +47,52 @@ func NewOwnbackupAccountEventsSecretsConfigWithDefaults() *OwnbackupAccountEvent
 	return &this
 }
 
-// GetClientId returns the ClientId field value if set, zero value otherwise.
+// GetClientId returns the ClientId field value
 func (o *OwnbackupAccountEventsSecretsConfig) GetClientId() ModelsSecret {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ClientId
+
+	return o.ClientId
 }
 
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// GetClientIdOk returns a tuple with the ClientId field value
 // and a boolean to check if the value has been set.
 func (o *OwnbackupAccountEventsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientId, true
+	return &o.ClientId, true
 }
 
-// HasClientId returns a boolean if a field has been set.
-func (o *OwnbackupAccountEventsSecretsConfig) HasClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+// SetClientId sets field value
 func (o *OwnbackupAccountEventsSecretsConfig) SetClientId(v ModelsSecret) {
-	o.ClientId = &v
+	o.ClientId = v
 }
 
-// GetRefreshToken returns the RefreshToken field value if set, zero value otherwise.
+// GetRefreshToken returns the RefreshToken field value
 func (o *OwnbackupAccountEventsSecretsConfig) GetRefreshToken() ModelsSecret {
-	if o == nil || IsNil(o.RefreshToken) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.RefreshToken
+
+	return o.RefreshToken
 }
 
-// GetRefreshTokenOk returns a tuple with the RefreshToken field value if set, nil otherwise
+// GetRefreshTokenOk returns a tuple with the RefreshToken field value
 // and a boolean to check if the value has been set.
 func (o *OwnbackupAccountEventsSecretsConfig) GetRefreshTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.RefreshToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefreshToken, true
+	return &o.RefreshToken, true
 }
 
-// HasRefreshToken returns a boolean if a field has been set.
-func (o *OwnbackupAccountEventsSecretsConfig) HasRefreshToken() bool {
-	if o != nil && !IsNil(o.RefreshToken) {
-		return true
-	}
-
-	return false
-}
-
-// SetRefreshToken gets a reference to the given ModelsSecret and assigns it to the RefreshToken field.
+// SetRefreshToken sets field value
 func (o *OwnbackupAccountEventsSecretsConfig) SetRefreshToken(v ModelsSecret) {
-	o.RefreshToken = &v
+	o.RefreshToken = v
 }
 
 func (o OwnbackupAccountEventsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -115,13 +105,47 @@ func (o OwnbackupAccountEventsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OwnbackupAccountEventsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ClientId) {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if !IsNil(o.RefreshToken) {
-		toSerialize["refresh_token"] = o.RefreshToken
-	}
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["refresh_token"] = o.RefreshToken
 	return toSerialize, nil
+}
+
+func (o *OwnbackupAccountEventsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"client_id",
+		"refresh_token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOwnbackupAccountEventsSecretsConfig := _OwnbackupAccountEventsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varOwnbackupAccountEventsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OwnbackupAccountEventsSecretsConfig(varOwnbackupAccountEventsSecretsConfig)
+
+	return err
 }
 
 type NullableOwnbackupAccountEventsSecretsConfig struct {

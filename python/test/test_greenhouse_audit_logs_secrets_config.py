@@ -47,6 +47,14 @@ class TestGreenhouseAuditLogsSecretsConfig(unittest.TestCase):
             )
         else:
             return GreenhouseAuditLogsSecretsConfig(
+                harvest_api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

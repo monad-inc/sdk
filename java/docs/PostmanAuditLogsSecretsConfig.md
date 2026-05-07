@@ -8,7 +8,7 @@ Postman Audit Logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

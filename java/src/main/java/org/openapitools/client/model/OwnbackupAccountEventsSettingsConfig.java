@@ -50,10 +50,68 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class OwnbackupAccountEventsSettingsConfig {
+  /**
+   * Region of the OwnBackup instance
+   */
+  @JsonAdapter(RegionEnum.Adapter.class)
+  public enum RegionEnum {
+    APP1("app1"),
+    
+    EMEA1("emea1"),
+    
+    UK1("uk1"),
+    
+    USGOV2("usgov2"),
+    
+    HIPAA1("hipaa1");
+
+    private String value;
+
+    RegionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RegionEnum fromValue(String value) {
+      for (RegionEnum b : RegionEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RegionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RegionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RegionEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return RegionEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RegionEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
-  @javax.annotation.Nullable
-  private String region;
+  @javax.annotation.Nonnull
+  private RegionEnum region;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -63,7 +121,7 @@ public class OwnbackupAccountEventsSettingsConfig {
   public OwnbackupAccountEventsSettingsConfig() {
   }
 
-  public OwnbackupAccountEventsSettingsConfig region(@javax.annotation.Nullable String region) {
+  public OwnbackupAccountEventsSettingsConfig region(@javax.annotation.Nonnull RegionEnum region) {
     this.region = region;
     return this;
   }
@@ -72,12 +130,12 @@ public class OwnbackupAccountEventsSettingsConfig {
    * Region of the OwnBackup instance
    * @return region
    */
-  @javax.annotation.Nullable
-  public String getRegion() {
+  @javax.annotation.Nonnull
+  public RegionEnum getRegion() {
     return region;
   }
 
-  public void setRegion(@javax.annotation.Nullable String region) {
+  public void setRegion(@javax.annotation.Nonnull RegionEnum region) {
     this.region = region;
   }
 
@@ -147,7 +205,7 @@ public class OwnbackupAccountEventsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("region", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("region"));
   }
 
   /**
@@ -170,10 +228,19 @@ public class OwnbackupAccountEventsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OwnbackupAccountEventsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OwnbackupAccountEventsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
+      if (!jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
+      // validate the required field `region`
+      RegionEnum.validateJsonElement(jsonObj.get("region"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

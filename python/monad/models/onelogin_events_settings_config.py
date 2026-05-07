@@ -28,7 +28,7 @@ class OneloginEventsSettingsConfig(BaseModel):
     """
     Onelogin Events settings
     """ # noqa: E501
-    subdomain: Optional[StrictStr] = Field(default=None, description="SubDomain is a placeholder that represents your specific OneLogin subdomain.")
+    subdomain: StrictStr = Field(description="SubDomain is a placeholder that represents your specific OneLogin subdomain.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["subdomain", "use_synthetic_data"]
 

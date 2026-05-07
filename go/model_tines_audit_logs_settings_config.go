@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the TinesAuditLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -25,19 +27,22 @@ type TinesAuditLogsSettingsConfig struct {
 	// Filter by specific operation names (optional)
 	OperationNames []string `json:"operation_names,omitempty"`
 	// The Tines tenant domain (e.g., your-org.tines.com)
-	TenantDomain *string `json:"tenant_domain,omitempty"`
+	TenantDomain string `json:"tenant_domain"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// Filter by specific user IDs (optional)
 	UserIds []string `json:"user_ids,omitempty"`
 }
 
+type _TinesAuditLogsSettingsConfig TinesAuditLogsSettingsConfig
+
 // NewTinesAuditLogsSettingsConfig instantiates a new TinesAuditLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTinesAuditLogsSettingsConfig() *TinesAuditLogsSettingsConfig {
+func NewTinesAuditLogsSettingsConfig(tenantDomain string) *TinesAuditLogsSettingsConfig {
 	this := TinesAuditLogsSettingsConfig{}
+	this.TenantDomain = tenantDomain
 	return &this
 }
 
@@ -113,36 +118,28 @@ func (o *TinesAuditLogsSettingsConfig) SetOperationNames(v []string) {
 	o.OperationNames = v
 }
 
-// GetTenantDomain returns the TenantDomain field value if set, zero value otherwise.
+// GetTenantDomain returns the TenantDomain field value
 func (o *TinesAuditLogsSettingsConfig) GetTenantDomain() string {
-	if o == nil || IsNil(o.TenantDomain) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.TenantDomain
+
+	return o.TenantDomain
 }
 
-// GetTenantDomainOk returns a tuple with the TenantDomain field value if set, nil otherwise
+// GetTenantDomainOk returns a tuple with the TenantDomain field value
 // and a boolean to check if the value has been set.
 func (o *TinesAuditLogsSettingsConfig) GetTenantDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.TenantDomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TenantDomain, true
+	return &o.TenantDomain, true
 }
 
-// HasTenantDomain returns a boolean if a field has been set.
-func (o *TinesAuditLogsSettingsConfig) HasTenantDomain() bool {
-	if o != nil && !IsNil(o.TenantDomain) {
-		return true
-	}
-
-	return false
-}
-
-// SetTenantDomain gets a reference to the given string and assigns it to the TenantDomain field.
+// SetTenantDomain sets field value
 func (o *TinesAuditLogsSettingsConfig) SetTenantDomain(v string) {
-	o.TenantDomain = &v
+	o.TenantDomain = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -225,9 +222,7 @@ func (o TinesAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OperationNames) {
 		toSerialize["operation_names"] = o.OperationNames
 	}
-	if !IsNil(o.TenantDomain) {
-		toSerialize["tenant_domain"] = o.TenantDomain
-	}
+	toSerialize["tenant_domain"] = o.TenantDomain
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
@@ -235,6 +230,43 @@ func (o TinesAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["user_ids"] = o.UserIds
 	}
 	return toSerialize, nil
+}
+
+func (o *TinesAuditLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"tenant_domain",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varTinesAuditLogsSettingsConfig := _TinesAuditLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varTinesAuditLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TinesAuditLogsSettingsConfig(varTinesAuditLogsSettingsConfig)
+
+	return err
 }
 
 type NullableTinesAuditLogsSettingsConfig struct {

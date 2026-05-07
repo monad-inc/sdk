@@ -48,6 +48,7 @@ class TestTinesAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return TinesAuditLogsSettingsConfig(
+                tenant_domain = '',
         )
         """
 

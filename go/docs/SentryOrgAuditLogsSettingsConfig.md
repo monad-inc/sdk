@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**HostName** | Pointer to **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
-**OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
+**HostName** | **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
+**OrgSlug** | **string** | The ID or slug of the organization | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewSentryOrgAuditLogsSettingsConfig
 
-`func NewSentryOrgAuditLogsSettingsConfig() *SentryOrgAuditLogsSettingsConfig`
+`func NewSentryOrgAuditLogsSettingsConfig(hostName string, orgSlug string, ) *SentryOrgAuditLogsSettingsConfig`
 
 NewSentryOrgAuditLogsSettingsConfig instantiates a new SentryOrgAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetHostName sets HostName field to given value.
 
-### HasHostName
-
-`func (o *SentryOrgAuditLogsSettingsConfig) HasHostName() bool`
-
-HasHostName returns a boolean if a field has been set.
 
 ### GetOrgSlug
 
@@ -97,11 +92,6 @@ and a boolean to check if the value has been set.
 
 SetOrgSlug sets OrgSlug field to given value.
 
-### HasOrgSlug
-
-`func (o *SentryOrgAuditLogsSettingsConfig) HasOrgSlug() bool`
-
-HasOrgSlug returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

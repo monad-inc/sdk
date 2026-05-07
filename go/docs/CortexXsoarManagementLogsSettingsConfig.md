@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKeyId** | Pointer to **string** | API Key ID for authentication | [optional] 
+**ApiKeyId** | **string** | API Key ID for authentication | 
 **BackfillStartTime** | Pointer to **string** | Start time for backfilling data | [optional] 
-**DomainName** | Pointer to **string** | Domain name of the Cortex XSOAR instance | [optional] 
+**DomainName** | **string** | Domain name of the Cortex XSOAR instance | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewCortexXsoarManagementLogsSettingsConfig
 
-`func NewCortexXsoarManagementLogsSettingsConfig() *CortexXsoarManagementLogsSettingsConfig`
+`func NewCortexXsoarManagementLogsSettingsConfig(apiKeyId string, domainName string, ) *CortexXsoarManagementLogsSettingsConfig`
 
 NewCortexXsoarManagementLogsSettingsConfig instantiates a new CortexXsoarManagementLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetApiKeyId sets ApiKeyId field to given value.
 
-### HasApiKeyId
-
-`func (o *CortexXsoarManagementLogsSettingsConfig) HasApiKeyId() bool`
-
-HasApiKeyId returns a boolean if a field has been set.
 
 ### GetBackfillStartTime
 
@@ -97,11 +92,6 @@ and a boolean to check if the value has been set.
 
 SetDomainName sets DomainName field to given value.
 
-### HasDomainName
-
-`func (o *CortexXsoarManagementLogsSettingsConfig) HasDomainName() bool`
-
-HasDomainName returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

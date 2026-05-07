@@ -28,9 +28,9 @@ class CortexXsoarManagementLogsSettingsConfig(BaseModel):
     """
     Palo Alto Cortex Xsoar Management Logs settings
     """ # noqa: E501
-    api_key_id: Optional[StrictStr] = Field(default=None, description="API Key ID for authentication")
+    api_key_id: StrictStr = Field(description="API Key ID for authentication")
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Start time for backfilling data")
-    domain_name: Optional[StrictStr] = Field(default=None, description="Domain name of the Cortex XSOAR instance")
+    domain_name: StrictStr = Field(description="Domain name of the Cortex XSOAR instance")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["api_key_id", "backfill_start_time", "domain_name", "use_synthetic_data"]
 

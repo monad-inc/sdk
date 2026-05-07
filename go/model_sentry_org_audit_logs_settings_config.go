@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the SentryOrgAuditLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,19 +25,23 @@ type SentryOrgAuditLogsSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.
-	HostName *string `json:"host_name,omitempty"`
+	HostName string `json:"host_name"`
 	// The ID or slug of the organization
-	OrgSlug *string `json:"org_slug,omitempty"`
+	OrgSlug string `json:"org_slug"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _SentryOrgAuditLogsSettingsConfig SentryOrgAuditLogsSettingsConfig
 
 // NewSentryOrgAuditLogsSettingsConfig instantiates a new SentryOrgAuditLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSentryOrgAuditLogsSettingsConfig() *SentryOrgAuditLogsSettingsConfig {
+func NewSentryOrgAuditLogsSettingsConfig(hostName string, orgSlug string) *SentryOrgAuditLogsSettingsConfig {
 	this := SentryOrgAuditLogsSettingsConfig{}
+	this.HostName = hostName
+	this.OrgSlug = orgSlug
 	return &this
 }
 
@@ -79,68 +85,52 @@ func (o *SentryOrgAuditLogsSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
-// GetHostName returns the HostName field value if set, zero value otherwise.
+// GetHostName returns the HostName field value
 func (o *SentryOrgAuditLogsSettingsConfig) GetHostName() string {
-	if o == nil || IsNil(o.HostName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.HostName
+
+	return o.HostName
 }
 
-// GetHostNameOk returns a tuple with the HostName field value if set, nil otherwise
+// GetHostNameOk returns a tuple with the HostName field value
 // and a boolean to check if the value has been set.
 func (o *SentryOrgAuditLogsSettingsConfig) GetHostNameOk() (*string, bool) {
-	if o == nil || IsNil(o.HostName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HostName, true
+	return &o.HostName, true
 }
 
-// HasHostName returns a boolean if a field has been set.
-func (o *SentryOrgAuditLogsSettingsConfig) HasHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
-}
-
-// SetHostName gets a reference to the given string and assigns it to the HostName field.
+// SetHostName sets field value
 func (o *SentryOrgAuditLogsSettingsConfig) SetHostName(v string) {
-	o.HostName = &v
+	o.HostName = v
 }
 
-// GetOrgSlug returns the OrgSlug field value if set, zero value otherwise.
+// GetOrgSlug returns the OrgSlug field value
 func (o *SentryOrgAuditLogsSettingsConfig) GetOrgSlug() string {
-	if o == nil || IsNil(o.OrgSlug) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.OrgSlug
+
+	return o.OrgSlug
 }
 
-// GetOrgSlugOk returns a tuple with the OrgSlug field value if set, nil otherwise
+// GetOrgSlugOk returns a tuple with the OrgSlug field value
 // and a boolean to check if the value has been set.
 func (o *SentryOrgAuditLogsSettingsConfig) GetOrgSlugOk() (*string, bool) {
-	if o == nil || IsNil(o.OrgSlug) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OrgSlug, true
+	return &o.OrgSlug, true
 }
 
-// HasOrgSlug returns a boolean if a field has been set.
-func (o *SentryOrgAuditLogsSettingsConfig) HasOrgSlug() bool {
-	if o != nil && !IsNil(o.OrgSlug) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrgSlug gets a reference to the given string and assigns it to the OrgSlug field.
+// SetOrgSlug sets field value
 func (o *SentryOrgAuditLogsSettingsConfig) SetOrgSlug(v string) {
-	o.OrgSlug = &v
+	o.OrgSlug = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -188,16 +178,50 @@ func (o SentryOrgAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.HostName) {
-		toSerialize["host_name"] = o.HostName
-	}
-	if !IsNil(o.OrgSlug) {
-		toSerialize["org_slug"] = o.OrgSlug
-	}
+	toSerialize["host_name"] = o.HostName
+	toSerialize["org_slug"] = o.OrgSlug
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *SentryOrgAuditLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"host_name",
+		"org_slug",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSentryOrgAuditLogsSettingsConfig := _SentryOrgAuditLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSentryOrgAuditLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SentryOrgAuditLogsSettingsConfig(varSentryOrgAuditLogsSettingsConfig)
+
+	return err
 }
 
 type NullableSentryOrgAuditLogsSettingsConfig struct {

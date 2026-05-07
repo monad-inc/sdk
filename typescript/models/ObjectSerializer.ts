@@ -864,7 +864,7 @@ import { MutateValueWhereKeyEqArgumentsConfig } from '../models/MutateValueWhere
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
 import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSecretsConfig';
-import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSettingsConfig';
+import { ObjectStorageInputSettingsConfig , ObjectStorageInputSettingsConfigCompressionEnum   , ObjectStorageInputSettingsConfigFormatEnum  , ObjectStorageInputSettingsConfigPartitionFormatEnum        } from '../models/ObjectStorageInputSettingsConfig';
 import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
 import { OfflineenrollmentlogsSecretsConfig } from '../models/OfflineenrollmentlogsSecretsConfig';
@@ -886,7 +886,7 @@ import { OrgAuditLogsSettingsConfig        } from '../models/OrgAuditLogsSetting
 import { OutputsBillingType } from '../models/OutputsBillingType';
 import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
-import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
+import { OwnbackupAccountEventsSettingsConfig, OwnbackupAccountEventsSettingsConfigRegionEnum    } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
 import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
@@ -1040,7 +1040,7 @@ import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpris
 import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
 import { SlackWebhookVariant } from '../models/SlackWebhookVariant';
 import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
-import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
+import { SnowflakeInputSettingsConfig , SnowflakeInputSettingsConfigAuthTypeEnum            } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
@@ -1170,14 +1170,23 @@ let enumsMap: Set<string> = new Set<string>([
     "ModelsQuotaLimitType",
     "ModelsQuotaLimitUnit",
     "ModelsQuotaTimeframe",
+    "ObjectStorageInputSettingsConfigCompressionEnum",
+    "ObjectStorageInputSettingsConfigFormatEnum",
+    "ObjectStorageInputSettingsConfigPartitionFormatEnum",
     "OpensearchAuthMode",
     "OutputsBillingType",
+    "OwnbackupAccountEventsSettingsConfigRegionEnum",
     "PagerdutyEventType",
+    "SecretProcessesorInputConfigSettingsRegionEnum",
+    "SecretProcessesorInputConfigSettingsCompressionEnum",
+    "SecretProcessesorInputConfigSettingsFormatEnum",
+    "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
     "SecretProcessesorInputConfigSettingsEnvironmentEnum",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
     "SecretProcessesorInputConfigSettingsIssueTypesEnum",
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsStackLayersEnum",
+    "SnowflakeInputSettingsConfigAuthTypeEnum",
     "TypesStringComparison",
     "UtcTimestampTimestampFormat",
     "ZendeskAuditLogsAuthType",

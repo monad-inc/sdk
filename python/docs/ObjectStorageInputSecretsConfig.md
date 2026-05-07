@@ -6,8 +6,8 @@ Object storage secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

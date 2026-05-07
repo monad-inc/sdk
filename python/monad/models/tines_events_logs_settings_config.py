@@ -31,7 +31,7 @@ class TinesEventsLogsSettingsConfig(BaseModel):
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     story_id: Optional[StrictStr] = Field(default=None, description="Filter by the given story.")
     team_id: Optional[StrictStr] = Field(default=None, description="Filter by the given team.")
-    tenant_url: Optional[StrictStr] = Field(default=None, description="Unique URL for your Tines instance")
+    tenant_url: StrictStr = Field(description="Unique URL for your Tines instance")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "story_id", "team_id", "tenant_url", "use_synthetic_data"]
 

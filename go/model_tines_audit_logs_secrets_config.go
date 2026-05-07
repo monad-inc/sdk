@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the TinesAuditLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &TinesAuditLogsSecretsConfig{}
 
 // TinesAuditLogsSecretsConfig Tines Audit Logs secrets
 type TinesAuditLogsSecretsConfig struct {
-	ApiKey *ModelsSecret `json:"api_key,omitempty"`
+	ApiKey ModelsSecret `json:"api_key"`
 }
+
+type _TinesAuditLogsSecretsConfig TinesAuditLogsSecretsConfig
 
 // NewTinesAuditLogsSecretsConfig instantiates a new TinesAuditLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTinesAuditLogsSecretsConfig() *TinesAuditLogsSecretsConfig {
+func NewTinesAuditLogsSecretsConfig(apiKey ModelsSecret) *TinesAuditLogsSecretsConfig {
 	this := TinesAuditLogsSecretsConfig{}
+	this.ApiKey = apiKey
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewTinesAuditLogsSecretsConfigWithDefaults() *TinesAuditLogsSecretsConfig {
 	return &this
 }
 
-// GetApiKey returns the ApiKey field value if set, zero value otherwise.
+// GetApiKey returns the ApiKey field value
 func (o *TinesAuditLogsSecretsConfig) GetApiKey() ModelsSecret {
-	if o == nil || IsNil(o.ApiKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ApiKey
+
+	return o.ApiKey
 }
 
-// GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
+// GetApiKeyOk returns a tuple with the ApiKey field value
 // and a boolean to check if the value has been set.
 func (o *TinesAuditLogsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ApiKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiKey, true
+	return &o.ApiKey, true
 }
 
-// HasApiKey returns a boolean if a field has been set.
-func (o *TinesAuditLogsSecretsConfig) HasApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetApiKey gets a reference to the given ModelsSecret and assigns it to the ApiKey field.
+// SetApiKey sets field value
 func (o *TinesAuditLogsSecretsConfig) SetApiKey(v ModelsSecret) {
-	o.ApiKey = &v
+	o.ApiKey = v
 }
 
 func (o TinesAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o TinesAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o TinesAuditLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiKey) {
-		toSerialize["api_key"] = o.ApiKey
-	}
+	toSerialize["api_key"] = o.ApiKey
 	return toSerialize, nil
+}
+
+func (o *TinesAuditLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"api_key",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varTinesAuditLogsSecretsConfig := _TinesAuditLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varTinesAuditLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TinesAuditLogsSecretsConfig(varTinesAuditLogsSecretsConfig)
+
+	return err
 }
 
 type NullableTinesAuditLogsSecretsConfig struct {

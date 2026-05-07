@@ -23,7 +23,7 @@ export class PaloAltoDataSecurityAlertsSettingsConfig {
     /**
     * URL of the organization
     */
-    'baseUrl'?: string;
+    'baseUrl': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

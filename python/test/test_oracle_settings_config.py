@@ -43,6 +43,8 @@ class TestOracleSettingsConfig(unittest.TestCase):
             )
         else:
             return OracleSettingsConfig(
+                domain = '',
+                username = '',
         )
         """
 

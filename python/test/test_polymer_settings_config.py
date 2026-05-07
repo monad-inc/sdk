@@ -41,6 +41,7 @@ class TestPolymerSettingsConfig(unittest.TestCase):
             )
         else:
             return PolymerSettingsConfig(
+                domain_name = '',
         )
         """
 

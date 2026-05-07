@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the CortexXsoarManagementLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -21,21 +23,25 @@ var _ MappedNullable = &CortexXsoarManagementLogsSettingsConfig{}
 // CortexXsoarManagementLogsSettingsConfig Palo Alto Cortex Xsoar Management Logs settings
 type CortexXsoarManagementLogsSettingsConfig struct {
 	// API Key ID for authentication
-	ApiKeyId *string `json:"api_key_id,omitempty"`
+	ApiKeyId string `json:"api_key_id"`
 	// Start time for backfilling data
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Domain name of the Cortex XSOAR instance
-	DomainName *string `json:"domain_name,omitempty"`
+	DomainName string `json:"domain_name"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _CortexXsoarManagementLogsSettingsConfig CortexXsoarManagementLogsSettingsConfig
 
 // NewCortexXsoarManagementLogsSettingsConfig instantiates a new CortexXsoarManagementLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCortexXsoarManagementLogsSettingsConfig() *CortexXsoarManagementLogsSettingsConfig {
+func NewCortexXsoarManagementLogsSettingsConfig(apiKeyId string, domainName string) *CortexXsoarManagementLogsSettingsConfig {
 	this := CortexXsoarManagementLogsSettingsConfig{}
+	this.ApiKeyId = apiKeyId
+	this.DomainName = domainName
 	return &this
 }
 
@@ -47,36 +53,28 @@ func NewCortexXsoarManagementLogsSettingsConfigWithDefaults() *CortexXsoarManage
 	return &this
 }
 
-// GetApiKeyId returns the ApiKeyId field value if set, zero value otherwise.
+// GetApiKeyId returns the ApiKeyId field value
 func (o *CortexXsoarManagementLogsSettingsConfig) GetApiKeyId() string {
-	if o == nil || IsNil(o.ApiKeyId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ApiKeyId
+
+	return o.ApiKeyId
 }
 
-// GetApiKeyIdOk returns a tuple with the ApiKeyId field value if set, nil otherwise
+// GetApiKeyIdOk returns a tuple with the ApiKeyId field value
 // and a boolean to check if the value has been set.
 func (o *CortexXsoarManagementLogsSettingsConfig) GetApiKeyIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiKeyId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiKeyId, true
+	return &o.ApiKeyId, true
 }
 
-// HasApiKeyId returns a boolean if a field has been set.
-func (o *CortexXsoarManagementLogsSettingsConfig) HasApiKeyId() bool {
-	if o != nil && !IsNil(o.ApiKeyId) {
-		return true
-	}
-
-	return false
-}
-
-// SetApiKeyId gets a reference to the given string and assigns it to the ApiKeyId field.
+// SetApiKeyId sets field value
 func (o *CortexXsoarManagementLogsSettingsConfig) SetApiKeyId(v string) {
-	o.ApiKeyId = &v
+	o.ApiKeyId = v
 }
 
 // GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
@@ -111,36 +109,28 @@ func (o *CortexXsoarManagementLogsSettingsConfig) SetBackfillStartTime(v string)
 	o.BackfillStartTime = &v
 }
 
-// GetDomainName returns the DomainName field value if set, zero value otherwise.
+// GetDomainName returns the DomainName field value
 func (o *CortexXsoarManagementLogsSettingsConfig) GetDomainName() string {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DomainName
+
+	return o.DomainName
 }
 
-// GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
+// GetDomainNameOk returns a tuple with the DomainName field value
 // and a boolean to check if the value has been set.
 func (o *CortexXsoarManagementLogsSettingsConfig) GetDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainName, true
+	return &o.DomainName, true
 }
 
-// HasDomainName returns a boolean if a field has been set.
-func (o *CortexXsoarManagementLogsSettingsConfig) HasDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
-		return true
-	}
-
-	return false
-}
-
-// SetDomainName gets a reference to the given string and assigns it to the DomainName field.
+// SetDomainName sets field value
 func (o *CortexXsoarManagementLogsSettingsConfig) SetDomainName(v string) {
-	o.DomainName = &v
+	o.DomainName = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -185,19 +175,53 @@ func (o CortexXsoarManagementLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o CortexXsoarManagementLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiKeyId) {
-		toSerialize["api_key_id"] = o.ApiKeyId
-	}
+	toSerialize["api_key_id"] = o.ApiKeyId
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.DomainName) {
-		toSerialize["domain_name"] = o.DomainName
-	}
+	toSerialize["domain_name"] = o.DomainName
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *CortexXsoarManagementLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"api_key_id",
+		"domain_name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCortexXsoarManagementLogsSettingsConfig := _CortexXsoarManagementLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varCortexXsoarManagementLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CortexXsoarManagementLogsSettingsConfig(varCortexXsoarManagementLogsSettingsConfig)
+
+	return err
 }
 
 type NullableCortexXsoarManagementLogsSettingsConfig struct {

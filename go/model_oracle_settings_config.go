@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the OracleSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,19 +25,23 @@ type OracleSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Domain name for the Oracle Cloud service
-	Domain *string `json:"domain,omitempty"`
+	Domain string `json:"domain"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// Username of Oracle Cloud service user with permissions to access the resource
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 }
+
+type _OracleSettingsConfig OracleSettingsConfig
 
 // NewOracleSettingsConfig instantiates a new OracleSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOracleSettingsConfig() *OracleSettingsConfig {
+func NewOracleSettingsConfig(domain string, username string) *OracleSettingsConfig {
 	this := OracleSettingsConfig{}
+	this.Domain = domain
+	this.Username = username
 	return &this
 }
 
@@ -79,36 +85,28 @@ func (o *OracleSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
-// GetDomain returns the Domain field value if set, zero value otherwise.
+// GetDomain returns the Domain field value
 func (o *OracleSettingsConfig) GetDomain() string {
-	if o == nil || IsNil(o.Domain) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Domain
+
+	return o.Domain
 }
 
-// GetDomainOk returns a tuple with the Domain field value if set, nil otherwise
+// GetDomainOk returns a tuple with the Domain field value
 // and a boolean to check if the value has been set.
 func (o *OracleSettingsConfig) GetDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.Domain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Domain, true
+	return &o.Domain, true
 }
 
-// HasDomain returns a boolean if a field has been set.
-func (o *OracleSettingsConfig) HasDomain() bool {
-	if o != nil && !IsNil(o.Domain) {
-		return true
-	}
-
-	return false
-}
-
-// SetDomain gets a reference to the given string and assigns it to the Domain field.
+// SetDomain sets field value
 func (o *OracleSettingsConfig) SetDomain(v string) {
-	o.Domain = &v
+	o.Domain = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -143,36 +141,28 @@ func (o *OracleSettingsConfig) SetUseSyntheticData(v bool) {
 	o.UseSyntheticData = &v
 }
 
-// GetUsername returns the Username field value if set, zero value otherwise.
+// GetUsername returns the Username field value
 func (o *OracleSettingsConfig) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Username
+
+	return o.Username
 }
 
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
+// GetUsernameOk returns a tuple with the Username field value
 // and a boolean to check if the value has been set.
 func (o *OracleSettingsConfig) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Username, true
+	return &o.Username, true
 }
 
-// HasUsername returns a boolean if a field has been set.
-func (o *OracleSettingsConfig) HasUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
+// SetUsername sets field value
 func (o *OracleSettingsConfig) SetUsername(v string) {
-	o.Username = &v
+	o.Username = v
 }
 
 func (o OracleSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -188,16 +178,50 @@ func (o OracleSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.Domain) {
-		toSerialize["domain"] = o.Domain
-	}
+	toSerialize["domain"] = o.Domain
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
-	}
+	toSerialize["username"] = o.Username
 	return toSerialize, nil
+}
+
+func (o *OracleSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"domain",
+		"username",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOracleSettingsConfig := _OracleSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varOracleSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OracleSettingsConfig(varOracleSettingsConfig)
+
+	return err
 }
 
 type NullableOracleSettingsConfig struct {

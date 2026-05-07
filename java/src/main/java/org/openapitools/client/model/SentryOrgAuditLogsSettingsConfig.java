@@ -57,12 +57,12 @@ public class SentryOrgAuditLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_HOST_NAME = "host_name";
   @SerializedName(SERIALIZED_NAME_HOST_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String hostName;
 
   public static final String SERIALIZED_NAME_ORG_SLUG = "org_slug";
   @SerializedName(SERIALIZED_NAME_ORG_SLUG)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String orgSlug;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -92,7 +92,7 @@ public class SentryOrgAuditLogsSettingsConfig {
   }
 
 
-  public SentryOrgAuditLogsSettingsConfig hostName(@javax.annotation.Nullable String hostName) {
+  public SentryOrgAuditLogsSettingsConfig hostName(@javax.annotation.Nonnull String hostName) {
     this.hostName = hostName;
     return this;
   }
@@ -101,17 +101,17 @@ public class SentryOrgAuditLogsSettingsConfig {
    * For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.
    * @return hostName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getHostName() {
     return hostName;
   }
 
-  public void setHostName(@javax.annotation.Nullable String hostName) {
+  public void setHostName(@javax.annotation.Nonnull String hostName) {
     this.hostName = hostName;
   }
 
 
-  public SentryOrgAuditLogsSettingsConfig orgSlug(@javax.annotation.Nullable String orgSlug) {
+  public SentryOrgAuditLogsSettingsConfig orgSlug(@javax.annotation.Nonnull String orgSlug) {
     this.orgSlug = orgSlug;
     return this;
   }
@@ -120,12 +120,12 @@ public class SentryOrgAuditLogsSettingsConfig {
    * The ID or slug of the organization
    * @return orgSlug
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getOrgSlug() {
     return orgSlug;
   }
 
-  public void setOrgSlug(@javax.annotation.Nullable String orgSlug) {
+  public void setOrgSlug(@javax.annotation.Nonnull String orgSlug) {
     this.orgSlug = orgSlug;
   }
 
@@ -199,7 +199,7 @@ public class SentryOrgAuditLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "host_name", "org_slug", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("host_name", "org_slug"));
   }
 
   /**
@@ -222,14 +222,21 @@ public class SentryOrgAuditLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SentryOrgAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SentryOrgAuditLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("host_name") != null && !jsonObj.get("host_name").isJsonNull()) && !jsonObj.get("host_name").isJsonPrimitive()) {
+      if (!jsonObj.get("host_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `host_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("host_name").toString()));
       }
-      if ((jsonObj.get("org_slug") != null && !jsonObj.get("org_slug").isJsonNull()) && !jsonObj.get("org_slug").isJsonPrimitive()) {
+      if (!jsonObj.get("org_slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `org_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("org_slug").toString()));
       }
   }

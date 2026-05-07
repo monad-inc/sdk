@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the TwilioEventsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,16 +22,20 @@ var _ MappedNullable = &TwilioEventsSecretsConfig{}
 
 // TwilioEventsSecretsConfig Twilio Events secrets
 type TwilioEventsSecretsConfig struct {
-	TwilioAccountSid *ModelsSecret `json:"twilio_account_sid,omitempty"`
-	TwilioAuthToken *ModelsSecret `json:"twilio_auth_token,omitempty"`
+	TwilioAccountSid ModelsSecret `json:"twilio_account_sid"`
+	TwilioAuthToken ModelsSecret `json:"twilio_auth_token"`
 }
+
+type _TwilioEventsSecretsConfig TwilioEventsSecretsConfig
 
 // NewTwilioEventsSecretsConfig instantiates a new TwilioEventsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTwilioEventsSecretsConfig() *TwilioEventsSecretsConfig {
+func NewTwilioEventsSecretsConfig(twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret) *TwilioEventsSecretsConfig {
 	this := TwilioEventsSecretsConfig{}
+	this.TwilioAccountSid = twilioAccountSid
+	this.TwilioAuthToken = twilioAuthToken
 	return &this
 }
 
@@ -41,68 +47,52 @@ func NewTwilioEventsSecretsConfigWithDefaults() *TwilioEventsSecretsConfig {
 	return &this
 }
 
-// GetTwilioAccountSid returns the TwilioAccountSid field value if set, zero value otherwise.
+// GetTwilioAccountSid returns the TwilioAccountSid field value
 func (o *TwilioEventsSecretsConfig) GetTwilioAccountSid() ModelsSecret {
-	if o == nil || IsNil(o.TwilioAccountSid) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.TwilioAccountSid
+
+	return o.TwilioAccountSid
 }
 
-// GetTwilioAccountSidOk returns a tuple with the TwilioAccountSid field value if set, nil otherwise
+// GetTwilioAccountSidOk returns a tuple with the TwilioAccountSid field value
 // and a boolean to check if the value has been set.
 func (o *TwilioEventsSecretsConfig) GetTwilioAccountSidOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.TwilioAccountSid) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TwilioAccountSid, true
+	return &o.TwilioAccountSid, true
 }
 
-// HasTwilioAccountSid returns a boolean if a field has been set.
-func (o *TwilioEventsSecretsConfig) HasTwilioAccountSid() bool {
-	if o != nil && !IsNil(o.TwilioAccountSid) {
-		return true
-	}
-
-	return false
-}
-
-// SetTwilioAccountSid gets a reference to the given ModelsSecret and assigns it to the TwilioAccountSid field.
+// SetTwilioAccountSid sets field value
 func (o *TwilioEventsSecretsConfig) SetTwilioAccountSid(v ModelsSecret) {
-	o.TwilioAccountSid = &v
+	o.TwilioAccountSid = v
 }
 
-// GetTwilioAuthToken returns the TwilioAuthToken field value if set, zero value otherwise.
+// GetTwilioAuthToken returns the TwilioAuthToken field value
 func (o *TwilioEventsSecretsConfig) GetTwilioAuthToken() ModelsSecret {
-	if o == nil || IsNil(o.TwilioAuthToken) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.TwilioAuthToken
+
+	return o.TwilioAuthToken
 }
 
-// GetTwilioAuthTokenOk returns a tuple with the TwilioAuthToken field value if set, nil otherwise
+// GetTwilioAuthTokenOk returns a tuple with the TwilioAuthToken field value
 // and a boolean to check if the value has been set.
 func (o *TwilioEventsSecretsConfig) GetTwilioAuthTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.TwilioAuthToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TwilioAuthToken, true
+	return &o.TwilioAuthToken, true
 }
 
-// HasTwilioAuthToken returns a boolean if a field has been set.
-func (o *TwilioEventsSecretsConfig) HasTwilioAuthToken() bool {
-	if o != nil && !IsNil(o.TwilioAuthToken) {
-		return true
-	}
-
-	return false
-}
-
-// SetTwilioAuthToken gets a reference to the given ModelsSecret and assigns it to the TwilioAuthToken field.
+// SetTwilioAuthToken sets field value
 func (o *TwilioEventsSecretsConfig) SetTwilioAuthToken(v ModelsSecret) {
-	o.TwilioAuthToken = &v
+	o.TwilioAuthToken = v
 }
 
 func (o TwilioEventsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -115,13 +105,47 @@ func (o TwilioEventsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o TwilioEventsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TwilioAccountSid) {
-		toSerialize["twilio_account_sid"] = o.TwilioAccountSid
-	}
-	if !IsNil(o.TwilioAuthToken) {
-		toSerialize["twilio_auth_token"] = o.TwilioAuthToken
-	}
+	toSerialize["twilio_account_sid"] = o.TwilioAccountSid
+	toSerialize["twilio_auth_token"] = o.TwilioAuthToken
 	return toSerialize, nil
+}
+
+func (o *TwilioEventsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"twilio_account_sid",
+		"twilio_auth_token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varTwilioEventsSecretsConfig := _TwilioEventsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varTwilioEventsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TwilioEventsSecretsConfig(varTwilioEventsSecretsConfig)
+
+	return err
 }
 
 type NullableTwilioEventsSecretsConfig struct {

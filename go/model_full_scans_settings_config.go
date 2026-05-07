@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the FullScansSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,19 +25,22 @@ type FullScansSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Cron expression for scheduling the input
-	OrgSlug *string `json:"org_slug,omitempty"`
+	OrgSlug string `json:"org_slug"`
 	// A repository slug to filter full-scans by.
 	Repo *string `json:"repo,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
 
+type _FullScansSettingsConfig FullScansSettingsConfig
+
 // NewFullScansSettingsConfig instantiates a new FullScansSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFullScansSettingsConfig() *FullScansSettingsConfig {
+func NewFullScansSettingsConfig(orgSlug string) *FullScansSettingsConfig {
 	this := FullScansSettingsConfig{}
+	this.OrgSlug = orgSlug
 	return &this
 }
 
@@ -79,36 +84,28 @@ func (o *FullScansSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
-// GetOrgSlug returns the OrgSlug field value if set, zero value otherwise.
+// GetOrgSlug returns the OrgSlug field value
 func (o *FullScansSettingsConfig) GetOrgSlug() string {
-	if o == nil || IsNil(o.OrgSlug) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.OrgSlug
+
+	return o.OrgSlug
 }
 
-// GetOrgSlugOk returns a tuple with the OrgSlug field value if set, nil otherwise
+// GetOrgSlugOk returns a tuple with the OrgSlug field value
 // and a boolean to check if the value has been set.
 func (o *FullScansSettingsConfig) GetOrgSlugOk() (*string, bool) {
-	if o == nil || IsNil(o.OrgSlug) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OrgSlug, true
+	return &o.OrgSlug, true
 }
 
-// HasOrgSlug returns a boolean if a field has been set.
-func (o *FullScansSettingsConfig) HasOrgSlug() bool {
-	if o != nil && !IsNil(o.OrgSlug) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrgSlug gets a reference to the given string and assigns it to the OrgSlug field.
+// SetOrgSlug sets field value
 func (o *FullScansSettingsConfig) SetOrgSlug(v string) {
-	o.OrgSlug = &v
+	o.OrgSlug = v
 }
 
 // GetRepo returns the Repo field value if set, zero value otherwise.
@@ -188,9 +185,7 @@ func (o FullScansSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.OrgSlug) {
-		toSerialize["org_slug"] = o.OrgSlug
-	}
+	toSerialize["org_slug"] = o.OrgSlug
 	if !IsNil(o.Repo) {
 		toSerialize["repo"] = o.Repo
 	}
@@ -198,6 +193,43 @@ func (o FullScansSettingsConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *FullScansSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"org_slug",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varFullScansSettingsConfig := _FullScansSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varFullScansSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = FullScansSettingsConfig(varFullScansSettingsConfig)
+
+	return err
 }
 
 type NullableFullScansSettingsConfig struct {

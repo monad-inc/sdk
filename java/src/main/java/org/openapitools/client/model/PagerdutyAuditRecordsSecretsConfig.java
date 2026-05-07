@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class PagerdutyAuditRecordsSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_TOKEN = "auth_token";
   @SerializedName(SERIALIZED_NAME_AUTH_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret authToken;
 
   public PagerdutyAuditRecordsSecretsConfig() {
   }
 
-  public PagerdutyAuditRecordsSecretsConfig authToken(@javax.annotation.Nullable ModelsSecret authToken) {
+  public PagerdutyAuditRecordsSecretsConfig authToken(@javax.annotation.Nonnull ModelsSecret authToken) {
     this.authToken = authToken;
     return this;
   }
@@ -68,12 +68,12 @@ public class PagerdutyAuditRecordsSecretsConfig {
    * Get authToken
    * @return authToken
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getAuthToken() {
     return authToken;
   }
 
-  public void setAuthToken(@javax.annotation.Nullable ModelsSecret authToken) {
+  public void setAuthToken(@javax.annotation.Nonnull ModelsSecret authToken) {
     this.authToken = authToken;
   }
 
@@ -122,7 +122,7 @@ public class PagerdutyAuditRecordsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("auth_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("auth_token"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class PagerdutyAuditRecordsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PagerdutyAuditRecordsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `auth_token`
-      if (jsonObj.get("auth_token") != null && !jsonObj.get("auth_token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("auth_token"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PagerdutyAuditRecordsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `auth_token`
+      ModelsSecret.validateJsonElement(jsonObj.get("auth_token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

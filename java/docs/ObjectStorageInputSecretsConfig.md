@@ -8,8 +8,8 @@ Object storage secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

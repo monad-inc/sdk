@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Ownbackup Audit Logs secrets
 */
 export class OwnbackupAccountEventsSecretsConfig {
-    'clientId'?: ModelsSecret;
-    'refreshToken'?: ModelsSecret;
+    'clientId': ModelsSecret;
+    'refreshToken': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

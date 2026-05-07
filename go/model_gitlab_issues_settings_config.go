@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the GitlabIssuesSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -25,11 +27,11 @@ type GitlabIssuesSettingsConfig struct {
 	// Confidential to filter issues by confidentiality status. Confidential = true means only show confidential issues.
 	Confidential *bool `json:"confidential,omitempty"`
 	// GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.)
-	GitlabUrl *string `json:"gitlab_url,omitempty"`
+	GitlabUrl string `json:"gitlab_url"`
 	// IssueType to filter issues by type e.g. issue, incident, etc.
 	IssueType *string `json:"issue_type,omitempty"`
 	// Project ID to get issues for
-	ProjectId *string `json:"project_id,omitempty"`
+	ProjectId string `json:"project_id"`
 	// State to filter issues by e.g. opened, closed
 	State *string `json:"state,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -38,12 +40,16 @@ type GitlabIssuesSettingsConfig struct {
 	WithLabelDetails *bool `json:"with_label_details,omitempty"`
 }
 
+type _GitlabIssuesSettingsConfig GitlabIssuesSettingsConfig
+
 // NewGitlabIssuesSettingsConfig instantiates a new GitlabIssuesSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGitlabIssuesSettingsConfig() *GitlabIssuesSettingsConfig {
+func NewGitlabIssuesSettingsConfig(gitlabUrl string, projectId string) *GitlabIssuesSettingsConfig {
 	this := GitlabIssuesSettingsConfig{}
+	this.GitlabUrl = gitlabUrl
+	this.ProjectId = projectId
 	return &this
 }
 
@@ -119,36 +125,28 @@ func (o *GitlabIssuesSettingsConfig) SetConfidential(v bool) {
 	o.Confidential = &v
 }
 
-// GetGitlabUrl returns the GitlabUrl field value if set, zero value otherwise.
+// GetGitlabUrl returns the GitlabUrl field value
 func (o *GitlabIssuesSettingsConfig) GetGitlabUrl() string {
-	if o == nil || IsNil(o.GitlabUrl) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.GitlabUrl
+
+	return o.GitlabUrl
 }
 
-// GetGitlabUrlOk returns a tuple with the GitlabUrl field value if set, nil otherwise
+// GetGitlabUrlOk returns a tuple with the GitlabUrl field value
 // and a boolean to check if the value has been set.
 func (o *GitlabIssuesSettingsConfig) GetGitlabUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.GitlabUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GitlabUrl, true
+	return &o.GitlabUrl, true
 }
 
-// HasGitlabUrl returns a boolean if a field has been set.
-func (o *GitlabIssuesSettingsConfig) HasGitlabUrl() bool {
-	if o != nil && !IsNil(o.GitlabUrl) {
-		return true
-	}
-
-	return false
-}
-
-// SetGitlabUrl gets a reference to the given string and assigns it to the GitlabUrl field.
+// SetGitlabUrl sets field value
 func (o *GitlabIssuesSettingsConfig) SetGitlabUrl(v string) {
-	o.GitlabUrl = &v
+	o.GitlabUrl = v
 }
 
 // GetIssueType returns the IssueType field value if set, zero value otherwise.
@@ -183,36 +181,28 @@ func (o *GitlabIssuesSettingsConfig) SetIssueType(v string) {
 	o.IssueType = &v
 }
 
-// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+// GetProjectId returns the ProjectId field value
 func (o *GitlabIssuesSettingsConfig) GetProjectId() string {
-	if o == nil || IsNil(o.ProjectId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProjectId
+
+	return o.ProjectId
 }
 
-// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
+// GetProjectIdOk returns a tuple with the ProjectId field value
 // and a boolean to check if the value has been set.
 func (o *GitlabIssuesSettingsConfig) GetProjectIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProjectId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProjectId, true
+	return &o.ProjectId, true
 }
 
-// HasProjectId returns a boolean if a field has been set.
-func (o *GitlabIssuesSettingsConfig) HasProjectId() bool {
-	if o != nil && !IsNil(o.ProjectId) {
-		return true
-	}
-
-	return false
-}
-
-// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+// SetProjectId sets field value
 func (o *GitlabIssuesSettingsConfig) SetProjectId(v string) {
-	o.ProjectId = &v
+	o.ProjectId = v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -327,15 +317,11 @@ func (o GitlabIssuesSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Confidential) {
 		toSerialize["confidential"] = o.Confidential
 	}
-	if !IsNil(o.GitlabUrl) {
-		toSerialize["gitlab_url"] = o.GitlabUrl
-	}
+	toSerialize["gitlab_url"] = o.GitlabUrl
 	if !IsNil(o.IssueType) {
 		toSerialize["issue_type"] = o.IssueType
 	}
-	if !IsNil(o.ProjectId) {
-		toSerialize["project_id"] = o.ProjectId
-	}
+	toSerialize["project_id"] = o.ProjectId
 	if !IsNil(o.State) {
 		toSerialize["state"] = o.State
 	}
@@ -346,6 +332,44 @@ func (o GitlabIssuesSettingsConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["with_label_details"] = o.WithLabelDetails
 	}
 	return toSerialize, nil
+}
+
+func (o *GitlabIssuesSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"gitlab_url",
+		"project_id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGitlabIssuesSettingsConfig := _GitlabIssuesSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varGitlabIssuesSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GitlabIssuesSettingsConfig(varGitlabIssuesSettingsConfig)
+
+	return err
 }
 
 type NullableGitlabIssuesSettingsConfig struct {

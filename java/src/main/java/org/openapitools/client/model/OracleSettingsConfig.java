@@ -57,7 +57,7 @@ public class OracleSettingsConfig {
 
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String domain;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -67,7 +67,7 @@ public class OracleSettingsConfig {
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String username;
 
   public OracleSettingsConfig() {
@@ -92,7 +92,7 @@ public class OracleSettingsConfig {
   }
 
 
-  public OracleSettingsConfig domain(@javax.annotation.Nullable String domain) {
+  public OracleSettingsConfig domain(@javax.annotation.Nonnull String domain) {
     this.domain = domain;
     return this;
   }
@@ -101,12 +101,12 @@ public class OracleSettingsConfig {
    * Domain name for the Oracle Cloud service
    * @return domain
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getDomain() {
     return domain;
   }
 
-  public void setDomain(@javax.annotation.Nullable String domain) {
+  public void setDomain(@javax.annotation.Nonnull String domain) {
     this.domain = domain;
   }
 
@@ -130,7 +130,7 @@ public class OracleSettingsConfig {
   }
 
 
-  public OracleSettingsConfig username(@javax.annotation.Nullable String username) {
+  public OracleSettingsConfig username(@javax.annotation.Nonnull String username) {
     this.username = username;
     return this;
   }
@@ -139,12 +139,12 @@ public class OracleSettingsConfig {
    * Username of Oracle Cloud service user with permissions to access the resource
    * @return username
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUsername() {
     return username;
   }
 
-  public void setUsername(@javax.annotation.Nullable String username) {
+  public void setUsername(@javax.annotation.Nonnull String username) {
     this.username = username;
   }
 
@@ -199,7 +199,7 @@ public class OracleSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "domain", "use_synthetic_data", "username"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("domain", "username"));
   }
 
   /**
@@ -222,14 +222,21 @@ public class OracleSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OracleSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OracleSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) && !jsonObj.get("domain").isJsonPrimitive()) {
+      if (!jsonObj.get("domain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
       }
-      if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
+      if (!jsonObj.get("username").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
   }

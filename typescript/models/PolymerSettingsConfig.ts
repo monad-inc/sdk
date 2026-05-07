@@ -16,7 +16,7 @@ export class PolymerSettingsConfig {
     /**
     * TODO: Name of domain added on Polymer Hub portal
     */
-    'domainName'?: string;
+    'domainName': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

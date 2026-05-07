@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewTinesAuditLogsSecretsConfig
 
-`func NewTinesAuditLogsSecretsConfig() *TinesAuditLogsSecretsConfig`
+`func NewTinesAuditLogsSecretsConfig(apiKey ModelsSecret, ) *TinesAuditLogsSecretsConfig`
 
 NewTinesAuditLogsSecretsConfig instantiates a new TinesAuditLogsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetApiKey sets ApiKey field to given value.
 
-### HasApiKey
-
-`func (o *TinesAuditLogsSecretsConfig) HasApiKey() bool`
-
-HasApiKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

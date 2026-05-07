@@ -23,7 +23,7 @@ export class FullScansSettingsConfig {
     /**
     * Cron expression for scheduling the input
     */
-    'orgSlug'?: string;
+    'orgSlug': string;
     /**
     * A repository slug to filter full-scans by.
     */

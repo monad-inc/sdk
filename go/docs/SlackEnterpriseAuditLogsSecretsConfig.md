@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserOauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**UserOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewSlackEnterpriseAuditLogsSecretsConfig
 
-`func NewSlackEnterpriseAuditLogsSecretsConfig() *SlackEnterpriseAuditLogsSecretsConfig`
+`func NewSlackEnterpriseAuditLogsSecretsConfig(userOauthToken ModelsSecret, ) *SlackEnterpriseAuditLogsSecretsConfig`
 
 NewSlackEnterpriseAuditLogsSecretsConfig instantiates a new SlackEnterpriseAuditLogsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetUserOauthToken sets UserOauthToken field to given value.
 
-### HasUserOauthToken
-
-`func (o *SlackEnterpriseAuditLogsSecretsConfig) HasUserOauthToken() bool`
-
-HasUserOauthToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

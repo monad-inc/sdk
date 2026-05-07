@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Sentry Organization Audit Logs secrets
 */
 export class SentryOrgAuditLogsSecretsConfig {
-    'authToken'?: ModelsSecret;
+    'authToken': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

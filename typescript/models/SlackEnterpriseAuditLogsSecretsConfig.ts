@@ -14,7 +14,7 @@ import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 export class SlackEnterpriseAuditLogsSecretsConfig {
-    'userOauthToken'?: ModelsSecret;
+    'userOauthToken': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

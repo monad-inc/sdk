@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,8 @@ class OwnbackupAccountEventsSecretsConfig(BaseModel):
     """
     Ownbackup Audit Logs secrets
     """ # noqa: E501
-    client_id: Optional[ModelsSecret] = None
-    refresh_token: Optional[ModelsSecret] = None
+    client_id: ModelsSecret
+    refresh_token: ModelsSecret
     __properties: ClassVar[List[str]] = ["client_id", "refresh_token"]
 
     model_config = ConfigDict(

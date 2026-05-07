@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
 **TeamId** | Pointer to **string** | Filter by the given team. | [optional] 
-**TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
+**TenantUrl** | **string** | Unique URL for your Tines instance | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewTinesEventsLogsSettingsConfig
 
-`func NewTinesEventsLogsSettingsConfig() *TinesEventsLogsSettingsConfig`
+`func NewTinesEventsLogsSettingsConfig(tenantUrl string, ) *TinesEventsLogsSettingsConfig`
 
 NewTinesEventsLogsSettingsConfig instantiates a new TinesEventsLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -123,11 +123,6 @@ and a boolean to check if the value has been set.
 
 SetTenantUrl sets TenantUrl field to given value.
 
-### HasTenantUrl
-
-`func (o *TinesEventsLogsSettingsConfig) HasTenantUrl() bool`
-
-HasTenantUrl returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

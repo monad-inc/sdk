@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Snyk targets secrets
 */
 export class SnykTargetsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

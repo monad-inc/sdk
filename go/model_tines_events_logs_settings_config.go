@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the TinesEventsLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -27,17 +29,20 @@ type TinesEventsLogsSettingsConfig struct {
 	// Filter by the given team.
 	TeamId *string `json:"team_id,omitempty"`
 	// Unique URL for your Tines instance
-	TenantUrl *string `json:"tenant_url,omitempty"`
+	TenantUrl string `json:"tenant_url"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _TinesEventsLogsSettingsConfig TinesEventsLogsSettingsConfig
 
 // NewTinesEventsLogsSettingsConfig instantiates a new TinesEventsLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTinesEventsLogsSettingsConfig() *TinesEventsLogsSettingsConfig {
+func NewTinesEventsLogsSettingsConfig(tenantUrl string) *TinesEventsLogsSettingsConfig {
 	this := TinesEventsLogsSettingsConfig{}
+	this.TenantUrl = tenantUrl
 	return &this
 }
 
@@ -145,36 +150,28 @@ func (o *TinesEventsLogsSettingsConfig) SetTeamId(v string) {
 	o.TeamId = &v
 }
 
-// GetTenantUrl returns the TenantUrl field value if set, zero value otherwise.
+// GetTenantUrl returns the TenantUrl field value
 func (o *TinesEventsLogsSettingsConfig) GetTenantUrl() string {
-	if o == nil || IsNil(o.TenantUrl) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.TenantUrl
+
+	return o.TenantUrl
 }
 
-// GetTenantUrlOk returns a tuple with the TenantUrl field value if set, nil otherwise
+// GetTenantUrlOk returns a tuple with the TenantUrl field value
 // and a boolean to check if the value has been set.
 func (o *TinesEventsLogsSettingsConfig) GetTenantUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.TenantUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TenantUrl, true
+	return &o.TenantUrl, true
 }
 
-// HasTenantUrl returns a boolean if a field has been set.
-func (o *TinesEventsLogsSettingsConfig) HasTenantUrl() bool {
-	if o != nil && !IsNil(o.TenantUrl) {
-		return true
-	}
-
-	return false
-}
-
-// SetTenantUrl gets a reference to the given string and assigns it to the TenantUrl field.
+// SetTenantUrl sets field value
 func (o *TinesEventsLogsSettingsConfig) SetTenantUrl(v string) {
-	o.TenantUrl = &v
+	o.TenantUrl = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -228,13 +225,48 @@ func (o TinesEventsLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TeamId) {
 		toSerialize["team_id"] = o.TeamId
 	}
-	if !IsNil(o.TenantUrl) {
-		toSerialize["tenant_url"] = o.TenantUrl
-	}
+	toSerialize["tenant_url"] = o.TenantUrl
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *TinesEventsLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"tenant_url",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varTinesEventsLogsSettingsConfig := _TinesEventsLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varTinesEventsLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TinesEventsLogsSettingsConfig(varTinesEventsLogsSettingsConfig)
+
+	return err
 }
 
 type NullableTinesEventsLogsSettingsConfig struct {

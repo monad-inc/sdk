@@ -11,12 +11,12 @@ Name | Type | Description | Notes
 **project** | **str** | The GCP project ID containing the BigQuery dataset | [optional] 
 **service** | **str** | The Aiven service name | [optional] 
 **interval_seconds** | **int** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
-**region** | **str** | Region of the OwnBackup instance | [optional] 
+**region** | **str** | Region of the OwnBackup instance | 
 **role_arn** | **str** | The ARN of the IAM role to assume for accessing Inspector. | [optional] 
 **severity** | **str** | Filter by alert severity (error, warning) | [optional] 
-**bucket** | **str** | Name of the storage bucket | [optional] 
-**compression** | **str** | Compression format of the objects | [optional] 
-**format** | **str** | File format of the objects | [optional] 
+**bucket** | **str** | Name of the storage bucket | 
+**compression** | **str** | Compression format of the objects | 
+**format** | **str** | File format of the objects | 
 **partition_format** | **str** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **prefix** | **str** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **record_location** | **str** | JSONPath location of the records array in the GraphQL response | [optional] 
@@ -40,12 +40,12 @@ Name | Type | Description | Notes
 **dataset** | **str** | The BigQuery dataset ID containing the table | [optional] 
 **query** | **str** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
 **table** | **str** | The name of the table in Snowflake to query data from. | [optional] 
-**timestamp_column** | **str** | The column containing timestamp values used for incremental loading | [optional] 
-**base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
+**timestamp_column** | **str** | The column containing timestamp values used for incremental loading | 
+**base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **event_type** | **str** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **hostname** | **str** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
 **organization_id** | **str** | Organization ID for the Salesforce instance | [optional] 
-**org_slug** | **str** | The ID or slug of the organization | [optional] 
+**org_slug** | **str** | The ID or slug of the organization | 
 **enable_pagination** | **bool** | Enable pagination support | [optional] 
 **graphql_query** | **str** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
 **has_next_page_path** | **str** | JSONPath location to check if there are more pages | [optional] 
@@ -61,7 +61,7 @@ Name | Type | Description | Notes
 **entity_type** | **List[str]** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **full_snapshot** | **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **interval** | **int** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
+**cron** | **str** | Cron string for scheduling the ingest of your input | 
 **account_id** | **str** | Account ID for the input | [optional] 
 **include_bot_fields** | **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **zone_id** | **str** | Cloudflare Zone ID | [optional] 
@@ -70,8 +70,8 @@ Name | Type | Description | Notes
 **parent_entity_id** | **str** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **parent_entity_type** | **str** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **org_id** | **str** | URL of the organization | [optional] 
-**api_key_id** | **str** | API Key ID for authentication | [optional] 
-**domain_name** | **str** | TODO: Name of domain added on Polymer Hub portal | [optional] 
+**api_key_id** | **str** | API Key ID for authentication | 
+**domain_name** | **str** | TODO: Name of domain added on Polymer Hub portal | 
 **environment** | **str** | Determines the URI {environment}.docusign.com | 
 **user_id** | **str** | ID of the user to harvest audit logs for | 
 **category** | **str** | The Category of logs to query | [optional] 
@@ -82,13 +82,13 @@ Name | Type | Description | Notes
 **member_cid** | **str** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
 **repo** | **str** | A repository slug to filter full-scans by. | [optional] 
 **confidential** | **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
-**gitlab_url** | **str** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
+**gitlab_url** | **str** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | 
 **issue_type** | **str** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
-**project_id** | **str** | The Google Cloud project ID to use | [optional] 
+**project_id** | **str** | The Google Cloud project ID to use | 
 **state** | **str** | State to filter issues by e.g. opened, closed | [optional] 
 **with_label_details** | **bool** | Include label details in the response | [optional] 
 **bucket_name** | **str** | The name of the Google Cloud Storage bucket to use | [optional] 
-**auth_type** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | [optional] 
+**auth_type** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | 
 **email** | **str** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **alert_type** | **str** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **embed** | **str** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
@@ -113,35 +113,35 @@ Name | Type | Description | Notes
 **tenant_data_center** | **str** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | [optional] 
 **audit_log_types** | **List[str]** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **log_type** | **str** |  | [optional] 
-**endpoint** | **str** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
+**endpoint** | **str** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
 **skip_ssl_verification** | **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **use_path_style** | **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
-**subdomain** | **str** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**subdomain** | **str** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | 
 **category_type** | **str** | The category of logs to pull | [optional] 
-**domain** | **str** | Domain name for the Oracle Cloud service | [optional] 
-**username** | **str** | Username of Oracle Cloud service user with permissions to access the resource | [optional] 
+**domain** | **str** | Domain name for the Oracle Cloud service | 
+**username** | **str** | Username of Oracle Cloud service user with permissions to access the resource | 
 **github_app_installation_id** | **str** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
 **github_client_id** | **str** | GitHub Client ID (alternative to personal access token) | [optional] 
 **include** | **str** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **organization** | **str** | Your GitHub organization name | [optional] 
 **domain_url** | **str** | Domain URL for the Salesforce instance | [optional] 
 **topic** | **str** | Pub/Sub topic to subscribe to | [optional] 
-**host_name** | **str** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
-**account** | **str** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
-**database** | **str** | The name of the Snowflake database to connect to and perform operations on | [optional] 
-**role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 
-**var_schema** | **str** | The schema within the Snowflake database where the target table resides. | [optional] 
-**user** | **str** | The username of the Snowflake account used to establish the connection. | [optional] 
-**warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**host_name** | **str** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
+**account** | **str** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | 
+**database** | **str** | The name of the Snowflake database to connect to and perform operations on | 
+**role** | **str** | The name of the Role your service account was granted which can access your resources. | 
+**var_schema** | **str** | The schema within the Snowflake database where the target table resides. | 
+**user** | **str** | The username of the Snowflake account used to establish the connection. | 
+**warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | 
 **rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **record_type** | **str** | The type of record to generate | [optional] 
 **custom_template** | **str** | A custom template using the functions we provide to generate demo data | [optional] 
 **operation_names** | **List[str]** | Filter by specific operation names (optional) | [optional] 
-**tenant_domain** | **str** | The Tines tenant domain (e.g., your-org.tines.com) | [optional] 
+**tenant_domain** | **str** | The Tines tenant domain (e.g., your-org.tines.com) | 
 **user_ids** | **List[str]** | Filter by specific user IDs (optional) | [optional] 
 **story_id** | **str** | Filter by the given story. | [optional] 
 **team_id** | **str** | Filter by the given team. | [optional] 
-**tenant_url** | **str** | Unique URL for your Tines instance | [optional] 
+**tenant_url** | **str** | Unique URL for your Tines instance | 
 **actor_sid** | **str** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. | [optional] 
 **replication_start_time** | **str** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
 **resource_sid** | **str** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 

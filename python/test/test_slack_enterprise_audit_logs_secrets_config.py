@@ -47,6 +47,14 @@ class TestSlackEnterpriseAuditLogsSecretsConfig(unittest.TestCase):
             )
         else:
             return SlackEnterpriseAuditLogsSecretsConfig(
+                user_oauth_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IntegrationKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -19,26 +19,26 @@ Name | Type | Description | Notes
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Username** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ApiToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApiToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**PersonalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**HarvestApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**HarvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**RefreshToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**UserOauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**RefreshToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**UserOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**TwilioAccountSid** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**TwilioAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Token** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**TwilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**TwilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, apiToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -112,11 +112,6 @@ and a boolean to check if the value has been set.
 
 SetAuthToken sets AuthToken field to given value.
 
-### HasAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasAuthToken() bool`
-
-HasAuthToken returns a boolean if a field has been set.
 
 ### GetApiKey
 
@@ -417,11 +412,6 @@ and a boolean to check if the value has been set.
 
 SetApiToken sets ApiToken field to given value.
 
-### HasApiToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasApiToken() bool`
-
-HasApiToken returns a boolean if a field has been set.
 
 ### GetAccessToken
 
@@ -507,11 +497,6 @@ and a boolean to check if the value has been set.
 
 SetPersonalAccessToken sets PersonalAccessToken field to given value.
 
-### HasPersonalAccessToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasPersonalAccessToken() bool`
-
-HasPersonalAccessToken returns a boolean if a field has been set.
 
 ### GetOauthToken
 
@@ -557,11 +542,6 @@ and a boolean to check if the value has been set.
 
 SetHarvestApiKey sets HarvestApiKey field to given value.
 
-### HasHarvestApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasHarvestApiKey() bool`
-
-HasHarvestApiKey returns a boolean if a field has been set.
 
 ### GetGithubAppPrivateKey
 
@@ -607,11 +587,6 @@ and a boolean to check if the value has been set.
 
 SetRefreshToken sets RefreshToken field to given value.
 
-### HasRefreshToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasRefreshToken() bool`
-
-HasRefreshToken returns a boolean if a field has been set.
 
 ### GetUserOauthToken
 
@@ -632,11 +607,6 @@ and a boolean to check if the value has been set.
 
 SetUserOauthToken sets UserOauthToken field to given value.
 
-### HasUserOauthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasUserOauthToken() bool`
-
-HasUserOauthToken returns a boolean if a field has been set.
 
 ### GetPrivateKey
 
@@ -682,11 +652,6 @@ and a boolean to check if the value has been set.
 
 SetToken sets Token field to given value.
 
-### HasToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
 
 ### GetTwilioAccountSid
 
@@ -707,11 +672,6 @@ and a boolean to check if the value has been set.
 
 SetTwilioAccountSid sets TwilioAccountSid field to given value.
 
-### HasTwilioAccountSid
-
-`func (o *SecretProcessesorInputConfigSecrets) HasTwilioAccountSid() bool`
-
-HasTwilioAccountSid returns a boolean if a field has been set.
 
 ### GetTwilioAuthToken
 
@@ -732,11 +692,6 @@ and a boolean to check if the value has been set.
 
 SetTwilioAuthToken sets TwilioAuthToken field to given value.
 
-### HasTwilioAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasTwilioAuthToken() bool`
-
-HasTwilioAuthToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

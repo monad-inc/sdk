@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
-**GitlabUrl** | Pointer to **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
+**GitlabUrl** | **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | 
 **IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
-**ProjectId** | Pointer to **string** | Project ID to get issues for | [optional] 
+**ProjectId** | **string** | Project ID to get issues for | 
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewGitlabIssuesSettingsConfig
 
-`func NewGitlabIssuesSettingsConfig() *GitlabIssuesSettingsConfig`
+`func NewGitlabIssuesSettingsConfig(gitlabUrl string, projectId string, ) *GitlabIssuesSettingsConfig`
 
 NewGitlabIssuesSettingsConfig instantiates a new GitlabIssuesSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -101,11 +101,6 @@ and a boolean to check if the value has been set.
 
 SetGitlabUrl sets GitlabUrl field to given value.
 
-### HasGitlabUrl
-
-`func (o *GitlabIssuesSettingsConfig) HasGitlabUrl() bool`
-
-HasGitlabUrl returns a boolean if a field has been set.
 
 ### GetIssueType
 
@@ -151,11 +146,6 @@ and a boolean to check if the value has been set.
 
 SetProjectId sets ProjectId field to given value.
 
-### HasProjectId
-
-`func (o *GitlabIssuesSettingsConfig) HasProjectId() bool`
-
-HasProjectId returns a boolean if a field has been set.
 
 ### GetState
 

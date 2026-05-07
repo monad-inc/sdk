@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **confidential** | **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
-**gitlab_url** | **str** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
+**gitlab_url** | **str** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | 
 **issue_type** | **str** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
-**project_id** | **str** | Project ID to get issues for | [optional] 
+**project_id** | **str** | Project ID to get issues for | 
 **state** | **str** | State to filter issues by e.g. opened, closed | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **with_label_details** | **bool** | Include label details in the response | [optional] 

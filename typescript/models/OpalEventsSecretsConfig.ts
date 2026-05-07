@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Opal Events secrets
 */
 export class OpalEventsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

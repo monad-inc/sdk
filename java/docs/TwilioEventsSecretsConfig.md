@@ -8,8 +8,8 @@ Twilio Events secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

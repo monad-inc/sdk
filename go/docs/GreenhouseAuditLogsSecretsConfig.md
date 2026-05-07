@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HarvestApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**HarvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewGreenhouseAuditLogsSecretsConfig
 
-`func NewGreenhouseAuditLogsSecretsConfig() *GreenhouseAuditLogsSecretsConfig`
+`func NewGreenhouseAuditLogsSecretsConfig(harvestApiKey ModelsSecret, ) *GreenhouseAuditLogsSecretsConfig`
 
 NewGreenhouseAuditLogsSecretsConfig instantiates a new GreenhouseAuditLogsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetHarvestApiKey sets HarvestApiKey field to given value.
 
-### HasHarvestApiKey
-
-`func (o *GreenhouseAuditLogsSecretsConfig) HasHarvestApiKey() bool`
-
-HasHarvestApiKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

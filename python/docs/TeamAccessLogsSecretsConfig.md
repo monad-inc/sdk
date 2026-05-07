@@ -6,7 +6,7 @@ Slack Team Access Logs secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

@@ -29,7 +29,7 @@ class FullScansSettingsConfig(BaseModel):
     Socket Full Scans settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
-    org_slug: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
+    org_slug: StrictStr = Field(description="Cron expression for scheduling the input")
     repo: Optional[StrictStr] = Field(default=None, description="A repository slug to filter full-scans by.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "org_slug", "repo", "use_synthetic_data"]

@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
-**AuthType** | Pointer to **string** | Authentication type: \&quot;password\&quot; or \&quot;private key\&quot; | [optional] 
-**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
-**Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
+**Account** | **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | 
+**AuthType** | **string** | Authentication type: \&quot;password\&quot; or \&quot;private key\&quot; | 
+**Cron** | **string** | Cron string for scheduling the ingest of your input | 
+**Database** | **string** | The name of the Snowflake database to connect to and perform operations on | 
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
-**Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
-**Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
+**Role** | **string** | The name of the Role your service account was granted which can access your resources. | 
+**Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
 **Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
-**TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
-**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
-**Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**TimestampColumn** | **string** | The column containing timestamp values used for incremental loading | 
+**User** | **string** | The username of the Snowflake account used to establish the connection. | 
+**Warehouse** | **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | 
 
 ## Methods
 
 ### NewSnowflakeInputSettingsConfig
 
-`func NewSnowflakeInputSettingsConfig() *SnowflakeInputSettingsConfig`
+`func NewSnowflakeInputSettingsConfig(account string, authType string, cron string, database string, role string, schema string, timestampColumn string, user string, warehouse string, ) *SnowflakeInputSettingsConfig`
 
 NewSnowflakeInputSettingsConfig instantiates a new SnowflakeInputSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -54,11 +54,6 @@ and a boolean to check if the value has been set.
 
 SetAccount sets Account field to given value.
 
-### HasAccount
-
-`func (o *SnowflakeInputSettingsConfig) HasAccount() bool`
-
-HasAccount returns a boolean if a field has been set.
 
 ### GetAuthType
 
@@ -79,11 +74,6 @@ and a boolean to check if the value has been set.
 
 SetAuthType sets AuthType field to given value.
 
-### HasAuthType
-
-`func (o *SnowflakeInputSettingsConfig) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
 
 ### GetCron
 
@@ -104,11 +94,6 @@ and a boolean to check if the value has been set.
 
 SetCron sets Cron field to given value.
 
-### HasCron
-
-`func (o *SnowflakeInputSettingsConfig) HasCron() bool`
-
-HasCron returns a boolean if a field has been set.
 
 ### GetDatabase
 
@@ -129,11 +114,6 @@ and a boolean to check if the value has been set.
 
 SetDatabase sets Database field to given value.
 
-### HasDatabase
-
-`func (o *SnowflakeInputSettingsConfig) HasDatabase() bool`
-
-HasDatabase returns a boolean if a field has been set.
 
 ### GetQuery
 
@@ -179,11 +159,6 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
-### HasRole
-
-`func (o *SnowflakeInputSettingsConfig) HasRole() bool`
-
-HasRole returns a boolean if a field has been set.
 
 ### GetSchema
 
@@ -204,11 +179,6 @@ and a boolean to check if the value has been set.
 
 SetSchema sets Schema field to given value.
 
-### HasSchema
-
-`func (o *SnowflakeInputSettingsConfig) HasSchema() bool`
-
-HasSchema returns a boolean if a field has been set.
 
 ### GetTable
 
@@ -254,11 +224,6 @@ and a boolean to check if the value has been set.
 
 SetTimestampColumn sets TimestampColumn field to given value.
 
-### HasTimestampColumn
-
-`func (o *SnowflakeInputSettingsConfig) HasTimestampColumn() bool`
-
-HasTimestampColumn returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -279,11 +244,6 @@ and a boolean to check if the value has been set.
 
 SetUser sets User field to given value.
 
-### HasUser
-
-`func (o *SnowflakeInputSettingsConfig) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
 
 ### GetWarehouse
 
@@ -304,11 +264,6 @@ and a boolean to check if the value has been set.
 
 SetWarehouse sets Warehouse field to given value.
 
-### HasWarehouse
-
-`func (o *SnowflakeInputSettingsConfig) HasWarehouse() bool`
-
-HasWarehouse returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

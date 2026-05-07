@@ -23,11 +23,11 @@ export class SentryOrgAuditLogsSettingsConfig {
     /**
     * For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.
     */
-    'hostName'?: string;
+    'hostName': string;
     /**
     * The ID or slug of the organization
     */
-    'orgSlug'?: string;
+    'orgSlug': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

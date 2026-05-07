@@ -47,6 +47,8 @@ class TestGitlabIssuesSettingsConfig(unittest.TestCase):
             )
         else:
             return GitlabIssuesSettingsConfig(
+                gitlab_url = '',
+                project_id = '',
         )
         """
 

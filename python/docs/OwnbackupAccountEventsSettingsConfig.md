@@ -6,7 +6,7 @@ Ownbackup Audit Logs settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**region** | **str** | Region of the OwnBackup instance | [optional] 
+**region** | **str** | Region of the OwnBackup instance | 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

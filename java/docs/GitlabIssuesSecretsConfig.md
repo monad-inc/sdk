@@ -8,7 +8,7 @@ Gitlab Issues secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

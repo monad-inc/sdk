@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Tines Audit Logs secrets
 */
 export class TinesAuditLogsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

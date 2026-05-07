@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the PolymerSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -21,17 +23,20 @@ var _ MappedNullable = &PolymerSettingsConfig{}
 // PolymerSettingsConfig struct for PolymerSettingsConfig
 type PolymerSettingsConfig struct {
 	// TODO: Name of domain added on Polymer Hub portal
-	DomainName *string `json:"domain_name,omitempty"`
+	DomainName string `json:"domain_name"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _PolymerSettingsConfig PolymerSettingsConfig
 
 // NewPolymerSettingsConfig instantiates a new PolymerSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPolymerSettingsConfig() *PolymerSettingsConfig {
+func NewPolymerSettingsConfig(domainName string) *PolymerSettingsConfig {
 	this := PolymerSettingsConfig{}
+	this.DomainName = domainName
 	return &this
 }
 
@@ -43,36 +48,28 @@ func NewPolymerSettingsConfigWithDefaults() *PolymerSettingsConfig {
 	return &this
 }
 
-// GetDomainName returns the DomainName field value if set, zero value otherwise.
+// GetDomainName returns the DomainName field value
 func (o *PolymerSettingsConfig) GetDomainName() string {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DomainName
+
+	return o.DomainName
 }
 
-// GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
+// GetDomainNameOk returns a tuple with the DomainName field value
 // and a boolean to check if the value has been set.
 func (o *PolymerSettingsConfig) GetDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainName, true
+	return &o.DomainName, true
 }
 
-// HasDomainName returns a boolean if a field has been set.
-func (o *PolymerSettingsConfig) HasDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
-		return true
-	}
-
-	return false
-}
-
-// SetDomainName gets a reference to the given string and assigns it to the DomainName field.
+// SetDomainName sets field value
 func (o *PolymerSettingsConfig) SetDomainName(v string) {
-	o.DomainName = &v
+	o.DomainName = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -117,13 +114,48 @@ func (o PolymerSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o PolymerSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DomainName) {
-		toSerialize["domain_name"] = o.DomainName
-	}
+	toSerialize["domain_name"] = o.DomainName
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *PolymerSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"domain_name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varPolymerSettingsConfig := _PolymerSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varPolymerSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PolymerSettingsConfig(varPolymerSettingsConfig)
+
+	return err
 }
 
 type NullablePolymerSettingsConfig struct {

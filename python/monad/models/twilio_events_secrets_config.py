@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,8 @@ class TwilioEventsSecretsConfig(BaseModel):
     """
     Twilio Events secrets
     """ # noqa: E501
-    twilio_account_sid: Optional[ModelsSecret] = None
-    twilio_auth_token: Optional[ModelsSecret] = None
+    twilio_account_sid: ModelsSecret
+    twilio_auth_token: ModelsSecret
     __properties: ClassVar[List[str]] = ["twilio_account_sid", "twilio_auth_token"]
 
     model_config = ConfigDict(

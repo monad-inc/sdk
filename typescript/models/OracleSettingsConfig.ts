@@ -20,7 +20,7 @@ export class OracleSettingsConfig {
     /**
     * Domain name for the Oracle Cloud service
     */
-    'domain'?: string;
+    'domain': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -28,7 +28,7 @@ export class OracleSettingsConfig {
     /**
     * Username of Oracle Cloud service user with permissions to access the resource
     */
-    'username'?: string;
+    'username': string;
 
     static readonly discriminator: string | undefined = undefined;
 

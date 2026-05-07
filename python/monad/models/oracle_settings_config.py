@@ -29,9 +29,9 @@ class OracleSettingsConfig(BaseModel):
     OracleSettingsConfig
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
-    domain: Optional[StrictStr] = Field(default=None, description="Domain name for the Oracle Cloud service")
+    domain: StrictStr = Field(description="Domain name for the Oracle Cloud service")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    username: Optional[StrictStr] = Field(default=None, description="Username of Oracle Cloud service user with permissions to access the resource")
+    username: StrictStr = Field(description="Username of Oracle Cloud service user with permissions to access the resource")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "domain", "use_synthetic_data", "username"]
 
     model_config = ConfigDict(

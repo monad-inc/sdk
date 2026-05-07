@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**RefreshToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**RefreshToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewOwnbackupAccountEventsSecretsConfig
 
-`func NewOwnbackupAccountEventsSecretsConfig() *OwnbackupAccountEventsSecretsConfig`
+`func NewOwnbackupAccountEventsSecretsConfig(clientId ModelsSecret, refreshToken ModelsSecret, ) *OwnbackupAccountEventsSecretsConfig`
 
 NewOwnbackupAccountEventsSecretsConfig instantiates a new OwnbackupAccountEventsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
-
-`func (o *OwnbackupAccountEventsSecretsConfig) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
 
 ### GetRefreshToken
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetRefreshToken sets RefreshToken field to given value.
 
-### HasRefreshToken
-
-`func (o *OwnbackupAccountEventsSecretsConfig) HasRefreshToken() bool`
-
-HasRefreshToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 public class CortexXsoarManagementLogsSettingsConfig {
   public static final String SERIALIZED_NAME_API_KEY_ID = "api_key_id";
   @SerializedName(SERIALIZED_NAME_API_KEY_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String apiKeyId;
 
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
@@ -62,7 +62,7 @@ public class CortexXsoarManagementLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_DOMAIN_NAME = "domain_name";
   @SerializedName(SERIALIZED_NAME_DOMAIN_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String domainName;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -73,7 +73,7 @@ public class CortexXsoarManagementLogsSettingsConfig {
   public CortexXsoarManagementLogsSettingsConfig() {
   }
 
-  public CortexXsoarManagementLogsSettingsConfig apiKeyId(@javax.annotation.Nullable String apiKeyId) {
+  public CortexXsoarManagementLogsSettingsConfig apiKeyId(@javax.annotation.Nonnull String apiKeyId) {
     this.apiKeyId = apiKeyId;
     return this;
   }
@@ -82,12 +82,12 @@ public class CortexXsoarManagementLogsSettingsConfig {
    * API Key ID for authentication
    * @return apiKeyId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getApiKeyId() {
     return apiKeyId;
   }
 
-  public void setApiKeyId(@javax.annotation.Nullable String apiKeyId) {
+  public void setApiKeyId(@javax.annotation.Nonnull String apiKeyId) {
     this.apiKeyId = apiKeyId;
   }
 
@@ -111,7 +111,7 @@ public class CortexXsoarManagementLogsSettingsConfig {
   }
 
 
-  public CortexXsoarManagementLogsSettingsConfig domainName(@javax.annotation.Nullable String domainName) {
+  public CortexXsoarManagementLogsSettingsConfig domainName(@javax.annotation.Nonnull String domainName) {
     this.domainName = domainName;
     return this;
   }
@@ -120,12 +120,12 @@ public class CortexXsoarManagementLogsSettingsConfig {
    * Domain name of the Cortex XSOAR instance
    * @return domainName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getDomainName() {
     return domainName;
   }
 
-  public void setDomainName(@javax.annotation.Nullable String domainName) {
+  public void setDomainName(@javax.annotation.Nonnull String domainName) {
     this.domainName = domainName;
   }
 
@@ -199,7 +199,7 @@ public class CortexXsoarManagementLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("api_key_id", "backfill_start_time", "domain_name", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("api_key_id", "domain_name"));
   }
 
   /**
@@ -222,14 +222,21 @@ public class CortexXsoarManagementLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CortexXsoarManagementLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CortexXsoarManagementLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("api_key_id") != null && !jsonObj.get("api_key_id").isJsonNull()) && !jsonObj.get("api_key_id").isJsonPrimitive()) {
+      if (!jsonObj.get("api_key_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `api_key_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_key_id").toString()));
       }
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("domain_name") != null && !jsonObj.get("domain_name").isJsonNull()) && !jsonObj.get("domain_name").isJsonPrimitive()) {
+      if (!jsonObj.get("domain_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain_name").toString()));
       }
   }

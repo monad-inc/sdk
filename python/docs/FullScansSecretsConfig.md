@@ -6,7 +6,7 @@ Socket Full Scans secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

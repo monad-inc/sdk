@@ -8,7 +8,7 @@ Koi audit logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

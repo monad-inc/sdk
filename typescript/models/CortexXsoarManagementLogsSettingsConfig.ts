@@ -19,7 +19,7 @@ export class CortexXsoarManagementLogsSettingsConfig {
     /**
     * API Key ID for authentication
     */
-    'apiKeyId'?: string;
+    'apiKeyId': string;
     /**
     * Start time for backfilling data
     */
@@ -27,7 +27,7 @@ export class CortexXsoarManagementLogsSettingsConfig {
     /**
     * Domain name of the Cortex XSOAR instance
     */
-    'domainName'?: string;
+    'domainName': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

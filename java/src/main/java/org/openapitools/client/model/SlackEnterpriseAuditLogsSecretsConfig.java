@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class SlackEnterpriseAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_USER_OAUTH_TOKEN = "user_oauth_token";
   @SerializedName(SERIALIZED_NAME_USER_OAUTH_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret userOauthToken;
 
   public SlackEnterpriseAuditLogsSecretsConfig() {
   }
 
-  public SlackEnterpriseAuditLogsSecretsConfig userOauthToken(@javax.annotation.Nullable ModelsSecret userOauthToken) {
+  public SlackEnterpriseAuditLogsSecretsConfig userOauthToken(@javax.annotation.Nonnull ModelsSecret userOauthToken) {
     this.userOauthToken = userOauthToken;
     return this;
   }
@@ -68,12 +68,12 @@ public class SlackEnterpriseAuditLogsSecretsConfig {
    * Get userOauthToken
    * @return userOauthToken
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getUserOauthToken() {
     return userOauthToken;
   }
 
-  public void setUserOauthToken(@javax.annotation.Nullable ModelsSecret userOauthToken) {
+  public void setUserOauthToken(@javax.annotation.Nonnull ModelsSecret userOauthToken) {
     this.userOauthToken = userOauthToken;
   }
 
@@ -122,7 +122,7 @@ public class SlackEnterpriseAuditLogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("user_oauth_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("user_oauth_token"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class SlackEnterpriseAuditLogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SlackEnterpriseAuditLogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `user_oauth_token`
-      if (jsonObj.get("user_oauth_token") != null && !jsonObj.get("user_oauth_token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("user_oauth_token"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SlackEnterpriseAuditLogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `user_oauth_token`
+      ModelsSecret.validateJsonElement(jsonObj.get("user_oauth_token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

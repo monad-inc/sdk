@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the GitlabIssuesSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &GitlabIssuesSecretsConfig{}
 
 // GitlabIssuesSecretsConfig Gitlab Issues secrets
 type GitlabIssuesSecretsConfig struct {
-	PersonalAccessToken *ModelsSecret `json:"personal_access_token,omitempty"`
+	PersonalAccessToken ModelsSecret `json:"personal_access_token"`
 }
+
+type _GitlabIssuesSecretsConfig GitlabIssuesSecretsConfig
 
 // NewGitlabIssuesSecretsConfig instantiates a new GitlabIssuesSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGitlabIssuesSecretsConfig() *GitlabIssuesSecretsConfig {
+func NewGitlabIssuesSecretsConfig(personalAccessToken ModelsSecret) *GitlabIssuesSecretsConfig {
 	this := GitlabIssuesSecretsConfig{}
+	this.PersonalAccessToken = personalAccessToken
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewGitlabIssuesSecretsConfigWithDefaults() *GitlabIssuesSecretsConfig {
 	return &this
 }
 
-// GetPersonalAccessToken returns the PersonalAccessToken field value if set, zero value otherwise.
+// GetPersonalAccessToken returns the PersonalAccessToken field value
 func (o *GitlabIssuesSecretsConfig) GetPersonalAccessToken() ModelsSecret {
-	if o == nil || IsNil(o.PersonalAccessToken) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.PersonalAccessToken
+
+	return o.PersonalAccessToken
 }
 
-// GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field value if set, nil otherwise
+// GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field value
 // and a boolean to check if the value has been set.
 func (o *GitlabIssuesSecretsConfig) GetPersonalAccessTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.PersonalAccessToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PersonalAccessToken, true
+	return &o.PersonalAccessToken, true
 }
 
-// HasPersonalAccessToken returns a boolean if a field has been set.
-func (o *GitlabIssuesSecretsConfig) HasPersonalAccessToken() bool {
-	if o != nil && !IsNil(o.PersonalAccessToken) {
-		return true
-	}
-
-	return false
-}
-
-// SetPersonalAccessToken gets a reference to the given ModelsSecret and assigns it to the PersonalAccessToken field.
+// SetPersonalAccessToken sets field value
 func (o *GitlabIssuesSecretsConfig) SetPersonalAccessToken(v ModelsSecret) {
-	o.PersonalAccessToken = &v
+	o.PersonalAccessToken = v
 }
 
 func (o GitlabIssuesSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o GitlabIssuesSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o GitlabIssuesSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PersonalAccessToken) {
-		toSerialize["personal_access_token"] = o.PersonalAccessToken
-	}
+	toSerialize["personal_access_token"] = o.PersonalAccessToken
 	return toSerialize, nil
+}
+
+func (o *GitlabIssuesSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"personal_access_token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGitlabIssuesSecretsConfig := _GitlabIssuesSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varGitlabIssuesSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GitlabIssuesSecretsConfig(varGitlabIssuesSecretsConfig)
+
+	return err
 }
 
 type NullableGitlabIssuesSecretsConfig struct {

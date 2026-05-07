@@ -30,9 +30,9 @@ class GitlabIssuesSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     confidential: Optional[StrictBool] = Field(default=None, description="Confidential to filter issues by confidentiality status. Confidential = true means only show confidential issues.")
-    gitlab_url: Optional[StrictStr] = Field(default=None, description="GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.)")
+    gitlab_url: StrictStr = Field(description="GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.)")
     issue_type: Optional[StrictStr] = Field(default=None, description="IssueType to filter issues by type e.g. issue, incident, etc.")
-    project_id: Optional[StrictStr] = Field(default=None, description="Project ID to get issues for")
+    project_id: StrictStr = Field(description="Project ID to get issues for")
     state: Optional[StrictStr] = Field(default=None, description="State to filter issues by e.g. opened, closed")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     with_label_details: Optional[StrictBool] = Field(default=None, description="Include label details in the response")

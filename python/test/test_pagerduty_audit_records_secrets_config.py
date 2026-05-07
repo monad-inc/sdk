@@ -47,6 +47,14 @@ class TestPagerdutyAuditRecordsSecretsConfig(unittest.TestCase):
             )
         else:
             return PagerdutyAuditRecordsSecretsConfig(
+                auth_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

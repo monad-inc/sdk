@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Rootly Audit Logs secrets
 */
 export class RootlyAuditLogsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

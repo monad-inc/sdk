@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the SlackEnterpriseAuditLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &SlackEnterpriseAuditLogsSecretsConfig{}
 
 // SlackEnterpriseAuditLogsSecretsConfig struct for SlackEnterpriseAuditLogsSecretsConfig
 type SlackEnterpriseAuditLogsSecretsConfig struct {
-	UserOauthToken *ModelsSecret `json:"user_oauth_token,omitempty"`
+	UserOauthToken ModelsSecret `json:"user_oauth_token"`
 }
+
+type _SlackEnterpriseAuditLogsSecretsConfig SlackEnterpriseAuditLogsSecretsConfig
 
 // NewSlackEnterpriseAuditLogsSecretsConfig instantiates a new SlackEnterpriseAuditLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSlackEnterpriseAuditLogsSecretsConfig() *SlackEnterpriseAuditLogsSecretsConfig {
+func NewSlackEnterpriseAuditLogsSecretsConfig(userOauthToken ModelsSecret) *SlackEnterpriseAuditLogsSecretsConfig {
 	this := SlackEnterpriseAuditLogsSecretsConfig{}
+	this.UserOauthToken = userOauthToken
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewSlackEnterpriseAuditLogsSecretsConfigWithDefaults() *SlackEnterpriseAudi
 	return &this
 }
 
-// GetUserOauthToken returns the UserOauthToken field value if set, zero value otherwise.
+// GetUserOauthToken returns the UserOauthToken field value
 func (o *SlackEnterpriseAuditLogsSecretsConfig) GetUserOauthToken() ModelsSecret {
-	if o == nil || IsNil(o.UserOauthToken) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.UserOauthToken
+
+	return o.UserOauthToken
 }
 
-// GetUserOauthTokenOk returns a tuple with the UserOauthToken field value if set, nil otherwise
+// GetUserOauthTokenOk returns a tuple with the UserOauthToken field value
 // and a boolean to check if the value has been set.
 func (o *SlackEnterpriseAuditLogsSecretsConfig) GetUserOauthTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.UserOauthToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserOauthToken, true
+	return &o.UserOauthToken, true
 }
 
-// HasUserOauthToken returns a boolean if a field has been set.
-func (o *SlackEnterpriseAuditLogsSecretsConfig) HasUserOauthToken() bool {
-	if o != nil && !IsNil(o.UserOauthToken) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserOauthToken gets a reference to the given ModelsSecret and assigns it to the UserOauthToken field.
+// SetUserOauthToken sets field value
 func (o *SlackEnterpriseAuditLogsSecretsConfig) SetUserOauthToken(v ModelsSecret) {
-	o.UserOauthToken = &v
+	o.UserOauthToken = v
 }
 
 func (o SlackEnterpriseAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o SlackEnterpriseAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o SlackEnterpriseAuditLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserOauthToken) {
-		toSerialize["user_oauth_token"] = o.UserOauthToken
-	}
+	toSerialize["user_oauth_token"] = o.UserOauthToken
 	return toSerialize, nil
+}
+
+func (o *SlackEnterpriseAuditLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"user_oauth_token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSlackEnterpriseAuditLogsSecretsConfig := _SlackEnterpriseAuditLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSlackEnterpriseAuditLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SlackEnterpriseAuditLogsSecretsConfig(varSlackEnterpriseAuditLogsSecretsConfig)
+
+	return err
 }
 
 type NullableSlackEnterpriseAuditLogsSecretsConfig struct {

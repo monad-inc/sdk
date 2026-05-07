@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

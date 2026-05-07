@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Pagerduty Audit Records secrets
 */
 export class PagerdutyAuditRecordsSecretsConfig {
-    'authToken'?: ModelsSecret;
+    'authToken': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

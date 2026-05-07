@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the OwnbackupAccountEventsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -21,17 +23,20 @@ var _ MappedNullable = &OwnbackupAccountEventsSettingsConfig{}
 // OwnbackupAccountEventsSettingsConfig Ownbackup Audit Logs settings
 type OwnbackupAccountEventsSettingsConfig struct {
 	// Region of the OwnBackup instance
-	Region *string `json:"region,omitempty"`
+	Region string `json:"region"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _OwnbackupAccountEventsSettingsConfig OwnbackupAccountEventsSettingsConfig
 
 // NewOwnbackupAccountEventsSettingsConfig instantiates a new OwnbackupAccountEventsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOwnbackupAccountEventsSettingsConfig() *OwnbackupAccountEventsSettingsConfig {
+func NewOwnbackupAccountEventsSettingsConfig(region string) *OwnbackupAccountEventsSettingsConfig {
 	this := OwnbackupAccountEventsSettingsConfig{}
+	this.Region = region
 	return &this
 }
 
@@ -43,36 +48,28 @@ func NewOwnbackupAccountEventsSettingsConfigWithDefaults() *OwnbackupAccountEven
 	return &this
 }
 
-// GetRegion returns the Region field value if set, zero value otherwise.
+// GetRegion returns the Region field value
 func (o *OwnbackupAccountEventsSettingsConfig) GetRegion() string {
-	if o == nil || IsNil(o.Region) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Region
+
+	return o.Region
 }
 
-// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
+// GetRegionOk returns a tuple with the Region field value
 // and a boolean to check if the value has been set.
 func (o *OwnbackupAccountEventsSettingsConfig) GetRegionOk() (*string, bool) {
-	if o == nil || IsNil(o.Region) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Region, true
+	return &o.Region, true
 }
 
-// HasRegion returns a boolean if a field has been set.
-func (o *OwnbackupAccountEventsSettingsConfig) HasRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
-}
-
-// SetRegion gets a reference to the given string and assigns it to the Region field.
+// SetRegion sets field value
 func (o *OwnbackupAccountEventsSettingsConfig) SetRegion(v string) {
-	o.Region = &v
+	o.Region = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -117,13 +114,48 @@ func (o OwnbackupAccountEventsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OwnbackupAccountEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Region) {
-		toSerialize["region"] = o.Region
-	}
+	toSerialize["region"] = o.Region
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *OwnbackupAccountEventsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"region",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varOwnbackupAccountEventsSettingsConfig := _OwnbackupAccountEventsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varOwnbackupAccountEventsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OwnbackupAccountEventsSettingsConfig(varOwnbackupAccountEventsSettingsConfig)
+
+	return err
 }
 
 type NullableOwnbackupAccountEventsSettingsConfig struct {

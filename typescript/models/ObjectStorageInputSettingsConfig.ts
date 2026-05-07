@@ -19,23 +19,23 @@ export class ObjectStorageInputSettingsConfig {
     /**
     * Name of the storage bucket
     */
-    'bucket'?: string;
+    'bucket': string;
     /**
     * Compression format of the objects
     */
-    'compression'?: string;
+    'compression': ObjectStorageInputSettingsConfigCompressionEnum;
     /**
     * Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com)
     */
-    'endpoint'?: string;
+    'endpoint': string;
     /**
     * File format of the objects
     */
-    'format'?: string;
+    'format': ObjectStorageInputSettingsConfigFormatEnum;
     /**
     * Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (\'year=2024/month=01/day=01\') commonly used in data lake setups, and simple date format (\'2024/01/01\') for basic chronological organization.
     */
-    'partitionFormat'?: string;
+    'partitionFormat'?: ObjectStorageInputSettingsConfigPartitionFormatEnum;
     /**
     * Prefix that leads to the start of the expected partition. For example: \"/foobar/year=2024/month=01/day=01/\". The prefix is `foobar`.
     */
@@ -71,7 +71,7 @@ export class ObjectStorageInputSettingsConfig {
         {
             "name": "compression",
             "baseName": "compression",
-            "type": "string",
+            "type": "ObjectStorageInputSettingsConfigCompressionEnum",
             "format": ""
         },
         {
@@ -83,13 +83,13 @@ export class ObjectStorageInputSettingsConfig {
         {
             "name": "format",
             "baseName": "format",
-            "type": "string",
+            "type": "ObjectStorageInputSettingsConfigFormatEnum",
             "format": ""
         },
         {
             "name": "partitionFormat",
             "baseName": "partition_format",
-            "type": "string",
+            "type": "ObjectStorageInputSettingsConfigPartitionFormatEnum",
             "format": ""
         },
         {
@@ -130,3 +130,19 @@ export class ObjectStorageInputSettingsConfig {
     public constructor() {
     }
 }
+
+export enum ObjectStorageInputSettingsConfigCompressionEnum {
+    Auto = 'auto',
+    Gzip = 'gzip',
+    None = 'none'
+}
+export enum ObjectStorageInputSettingsConfigFormatEnum {
+    Json = 'json',
+    Jsonl = 'jsonl',
+    Wsv = 'wsv'
+}
+export enum ObjectStorageInputSettingsConfigPartitionFormatEnum {
+    HiveCompliant = 'hive compliant',
+    SimpleDate = 'simple date'
+}
+

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

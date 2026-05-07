@@ -19,19 +19,19 @@ export class SnowflakeInputSettingsConfig {
     /**
     * The unique identifier for your Snowflake account, typically in the form of \'organization-account_name\'.
     */
-    'account'?: string;
+    'account': string;
     /**
     * Authentication type: \"password\" or \"private key\"
     */
-    'authType'?: string;
+    'authType': SnowflakeInputSettingsConfigAuthTypeEnum;
     /**
     * Cron string for scheduling the ingest of your input
     */
-    'cron'?: string;
+    'cron': string;
     /**
     * The name of the Snowflake database to connect to and perform operations on
     */
-    'database'?: string;
+    'database': string;
     /**
     * Optional custom query to use instead of table (must include timestamp_column)
     */
@@ -39,11 +39,11 @@ export class SnowflakeInputSettingsConfig {
     /**
     * The name of the Role your service account was granted which can access your resources.
     */
-    'role'?: string;
+    'role': string;
     /**
     * The schema within the Snowflake database where the target table resides.
     */
-    'schema'?: string;
+    'schema': string;
     /**
     * The name of the table in Snowflake to query data from.
     */
@@ -51,15 +51,15 @@ export class SnowflakeInputSettingsConfig {
     /**
     * The column containing timestamp values used for incremental loading
     */
-    'timestampColumn'?: string;
+    'timestampColumn': string;
     /**
     * The username of the Snowflake account used to establish the connection.
     */
-    'user'?: string;
+    'user': string;
     /**
     * The Snowflake virtual warehouse to use for executing queries and processing data.
     */
-    'warehouse'?: string;
+    'warehouse': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -75,7 +75,7 @@ export class SnowflakeInputSettingsConfig {
         {
             "name": "authType",
             "baseName": "auth_type",
-            "type": "string",
+            "type": "SnowflakeInputSettingsConfigAuthTypeEnum",
             "format": ""
         },
         {
@@ -140,3 +140,9 @@ export class SnowflakeInputSettingsConfig {
     public constructor() {
     }
 }
+
+export enum SnowflakeInputSettingsConfigAuthTypeEnum {
+    Password = 'password',
+    PrivateKey = 'private key'
+}
+

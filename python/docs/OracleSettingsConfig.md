@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**domain** | **str** | Domain name for the Oracle Cloud service | [optional] 
+**domain** | **str** | Domain name for the Oracle Cloud service | 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**username** | **str** | Username of Oracle Cloud service user with permissions to access the resource | [optional] 
+**username** | **str** | Username of Oracle Cloud service user with permissions to access the resource | 
 
 ## Example
 

@@ -55,6 +55,22 @@ class TestOwnbackupAccountEventsSecretsConfig(unittest.TestCase):
             )
         else:
             return OwnbackupAccountEventsSecretsConfig(
+                client_id = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                refresh_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

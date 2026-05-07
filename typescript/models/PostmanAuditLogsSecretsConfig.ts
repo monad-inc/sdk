@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Postman Audit Logs secrets
 */
 export class PostmanAuditLogsSecretsConfig {
-    'apiKey'?: ModelsSecret;
+    'apiKey': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

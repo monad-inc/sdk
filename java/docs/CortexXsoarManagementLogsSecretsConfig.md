@@ -8,7 +8,7 @@ Palo Alto Cortex Xsoar Management Logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

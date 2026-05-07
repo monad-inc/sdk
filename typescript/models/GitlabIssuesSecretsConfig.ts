@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Gitlab Issues secrets
 */
 export class GitlabIssuesSecretsConfig {
-    'personalAccessToken'?: ModelsSecret;
+    'personalAccessToken': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the ObjectStorageInputSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,16 +22,20 @@ var _ MappedNullable = &ObjectStorageInputSecretsConfig{}
 
 // ObjectStorageInputSecretsConfig Object storage secrets
 type ObjectStorageInputSecretsConfig struct {
-	AccessKey *ModelsSecret `json:"access_key,omitempty"`
-	SecretKey *ModelsSecret `json:"secret_key,omitempty"`
+	AccessKey ModelsSecret `json:"access_key"`
+	SecretKey ModelsSecret `json:"secret_key"`
 }
+
+type _ObjectStorageInputSecretsConfig ObjectStorageInputSecretsConfig
 
 // NewObjectStorageInputSecretsConfig instantiates a new ObjectStorageInputSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewObjectStorageInputSecretsConfig() *ObjectStorageInputSecretsConfig {
+func NewObjectStorageInputSecretsConfig(accessKey ModelsSecret, secretKey ModelsSecret) *ObjectStorageInputSecretsConfig {
 	this := ObjectStorageInputSecretsConfig{}
+	this.AccessKey = accessKey
+	this.SecretKey = secretKey
 	return &this
 }
 
@@ -41,68 +47,52 @@ func NewObjectStorageInputSecretsConfigWithDefaults() *ObjectStorageInputSecrets
 	return &this
 }
 
-// GetAccessKey returns the AccessKey field value if set, zero value otherwise.
+// GetAccessKey returns the AccessKey field value
 func (o *ObjectStorageInputSecretsConfig) GetAccessKey() ModelsSecret {
-	if o == nil || IsNil(o.AccessKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.AccessKey
+
+	return o.AccessKey
 }
 
-// GetAccessKeyOk returns a tuple with the AccessKey field value if set, nil otherwise
+// GetAccessKeyOk returns a tuple with the AccessKey field value
 // and a boolean to check if the value has been set.
 func (o *ObjectStorageInputSecretsConfig) GetAccessKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.AccessKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AccessKey, true
+	return &o.AccessKey, true
 }
 
-// HasAccessKey returns a boolean if a field has been set.
-func (o *ObjectStorageInputSecretsConfig) HasAccessKey() bool {
-	if o != nil && !IsNil(o.AccessKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccessKey gets a reference to the given ModelsSecret and assigns it to the AccessKey field.
+// SetAccessKey sets field value
 func (o *ObjectStorageInputSecretsConfig) SetAccessKey(v ModelsSecret) {
-	o.AccessKey = &v
+	o.AccessKey = v
 }
 
-// GetSecretKey returns the SecretKey field value if set, zero value otherwise.
+// GetSecretKey returns the SecretKey field value
 func (o *ObjectStorageInputSecretsConfig) GetSecretKey() ModelsSecret {
-	if o == nil || IsNil(o.SecretKey) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.SecretKey
+
+	return o.SecretKey
 }
 
-// GetSecretKeyOk returns a tuple with the SecretKey field value if set, nil otherwise
+// GetSecretKeyOk returns a tuple with the SecretKey field value
 // and a boolean to check if the value has been set.
 func (o *ObjectStorageInputSecretsConfig) GetSecretKeyOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.SecretKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecretKey, true
+	return &o.SecretKey, true
 }
 
-// HasSecretKey returns a boolean if a field has been set.
-func (o *ObjectStorageInputSecretsConfig) HasSecretKey() bool {
-	if o != nil && !IsNil(o.SecretKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetSecretKey gets a reference to the given ModelsSecret and assigns it to the SecretKey field.
+// SetSecretKey sets field value
 func (o *ObjectStorageInputSecretsConfig) SetSecretKey(v ModelsSecret) {
-	o.SecretKey = &v
+	o.SecretKey = v
 }
 
 func (o ObjectStorageInputSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -115,13 +105,47 @@ func (o ObjectStorageInputSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ObjectStorageInputSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccessKey) {
-		toSerialize["access_key"] = o.AccessKey
-	}
-	if !IsNil(o.SecretKey) {
-		toSerialize["secret_key"] = o.SecretKey
-	}
+	toSerialize["access_key"] = o.AccessKey
+	toSerialize["secret_key"] = o.SecretKey
 	return toSerialize, nil
+}
+
+func (o *ObjectStorageInputSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"access_key",
+		"secret_key",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varObjectStorageInputSecretsConfig := _ObjectStorageInputSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varObjectStorageInputSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ObjectStorageInputSecretsConfig(varObjectStorageInputSecretsConfig)
+
+	return err
 }
 
 type NullableObjectStorageInputSecretsConfig struct {

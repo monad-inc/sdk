@@ -6,7 +6,7 @@ Greenhouse Audit Log secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

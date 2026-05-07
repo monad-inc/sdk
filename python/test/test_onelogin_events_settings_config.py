@@ -41,6 +41,7 @@ class TestOneloginEventsSettingsConfig(unittest.TestCase):
             )
         else:
             return OneloginEventsSettingsConfig(
+                subdomain = '',
         )
         """
 

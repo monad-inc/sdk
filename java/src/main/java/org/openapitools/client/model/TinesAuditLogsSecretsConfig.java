@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class TinesAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret apiKey;
 
   public TinesAuditLogsSecretsConfig() {
   }
 
-  public TinesAuditLogsSecretsConfig apiKey(@javax.annotation.Nullable ModelsSecret apiKey) {
+  public TinesAuditLogsSecretsConfig apiKey(@javax.annotation.Nonnull ModelsSecret apiKey) {
     this.apiKey = apiKey;
     return this;
   }
@@ -68,12 +68,12 @@ public class TinesAuditLogsSecretsConfig {
    * Get apiKey
    * @return apiKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getApiKey() {
     return apiKey;
   }
 
-  public void setApiKey(@javax.annotation.Nullable ModelsSecret apiKey) {
+  public void setApiKey(@javax.annotation.Nonnull ModelsSecret apiKey) {
     this.apiKey = apiKey;
   }
 
@@ -122,7 +122,7 @@ public class TinesAuditLogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("api_key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("api_key"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class TinesAuditLogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TinesAuditLogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `api_key`
-      if (jsonObj.get("api_key") != null && !jsonObj.get("api_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("api_key"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TinesAuditLogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `api_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("api_key"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -6,17 +6,17 @@ Snowflake Input Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account** | **str** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
-**auth_type** | **str** | Authentication type: \&quot;password\&quot; or \&quot;private key\&quot; | [optional] 
-**cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
-**database** | **str** | The name of the Snowflake database to connect to and perform operations on | [optional] 
+**account** | **str** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | 
+**auth_type** | **str** | Authentication type: \&quot;password\&quot; or \&quot;private key\&quot; | 
+**cron** | **str** | Cron string for scheduling the ingest of your input | 
+**database** | **str** | The name of the Snowflake database to connect to and perform operations on | 
 **query** | **str** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
-**role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 
-**var_schema** | **str** | The schema within the Snowflake database where the target table resides. | [optional] 
+**role** | **str** | The name of the Role your service account was granted which can access your resources. | 
+**var_schema** | **str** | The schema within the Snowflake database where the target table resides. | 
 **table** | **str** | The name of the table in Snowflake to query data from. | [optional] 
-**timestamp_column** | **str** | The column containing timestamp values used for incremental loading | [optional] 
-**user** | **str** | The username of the Snowflake account used to establish the connection. | [optional] 
-**warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**timestamp_column** | **str** | The column containing timestamp values used for incremental loading | 
+**user** | **str** | The username of the Snowflake account used to establish the connection. | 
+**warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | 
 
 ## Example
 

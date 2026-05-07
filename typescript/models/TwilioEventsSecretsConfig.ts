@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Twilio Events secrets
 */
 export class TwilioEventsSecretsConfig {
-    'twilioAccountSid'?: ModelsSecret;
-    'twilioAuthToken'?: ModelsSecret;
+    'twilioAccountSid': ModelsSecret;
+    'twilioAuthToken': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

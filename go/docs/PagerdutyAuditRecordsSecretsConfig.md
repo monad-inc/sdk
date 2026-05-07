@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewPagerdutyAuditRecordsSecretsConfig
 
-`func NewPagerdutyAuditRecordsSecretsConfig() *PagerdutyAuditRecordsSecretsConfig`
+`func NewPagerdutyAuditRecordsSecretsConfig(authToken ModelsSecret, ) *PagerdutyAuditRecordsSecretsConfig`
 
 NewPagerdutyAuditRecordsSecretsConfig instantiates a new PagerdutyAuditRecordsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetAuthToken sets AuthToken field to given value.
 
-### HasAuthToken
-
-`func (o *PagerdutyAuditRecordsSecretsConfig) HasAuthToken() bool`
-
-HasAuthToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

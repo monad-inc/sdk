@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Koi audit logs secrets
 */
 export class KoiAuditLogsSecretsConfig {
-    'apiToken'?: ModelsSecret;
+    'apiToken': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

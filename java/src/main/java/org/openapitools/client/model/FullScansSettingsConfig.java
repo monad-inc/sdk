@@ -57,7 +57,7 @@ public class FullScansSettingsConfig {
 
   public static final String SERIALIZED_NAME_ORG_SLUG = "org_slug";
   @SerializedName(SERIALIZED_NAME_ORG_SLUG)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String orgSlug;
 
   public static final String SERIALIZED_NAME_REPO = "repo";
@@ -92,7 +92,7 @@ public class FullScansSettingsConfig {
   }
 
 
-  public FullScansSettingsConfig orgSlug(@javax.annotation.Nullable String orgSlug) {
+  public FullScansSettingsConfig orgSlug(@javax.annotation.Nonnull String orgSlug) {
     this.orgSlug = orgSlug;
     return this;
   }
@@ -101,12 +101,12 @@ public class FullScansSettingsConfig {
    * Cron expression for scheduling the input
    * @return orgSlug
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getOrgSlug() {
     return orgSlug;
   }
 
-  public void setOrgSlug(@javax.annotation.Nullable String orgSlug) {
+  public void setOrgSlug(@javax.annotation.Nonnull String orgSlug) {
     this.orgSlug = orgSlug;
   }
 
@@ -199,7 +199,7 @@ public class FullScansSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "org_slug", "repo", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("org_slug"));
   }
 
   /**
@@ -222,11 +222,18 @@ public class FullScansSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `FullScansSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : FullScansSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("org_slug") != null && !jsonObj.get("org_slug").isJsonNull()) && !jsonObj.get("org_slug").isJsonPrimitive()) {
+      if (!jsonObj.get("org_slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `org_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("org_slug").toString()));
       }
       if ((jsonObj.get("repo") != null && !jsonObj.get("repo").isJsonNull()) && !jsonObj.get("repo").isJsonPrimitive()) {

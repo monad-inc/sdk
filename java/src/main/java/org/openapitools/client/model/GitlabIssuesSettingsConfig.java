@@ -62,7 +62,7 @@ public class GitlabIssuesSettingsConfig {
 
   public static final String SERIALIZED_NAME_GITLAB_URL = "gitlab_url";
   @SerializedName(SERIALIZED_NAME_GITLAB_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String gitlabUrl;
 
   public static final String SERIALIZED_NAME_ISSUE_TYPE = "issue_type";
@@ -72,7 +72,7 @@ public class GitlabIssuesSettingsConfig {
 
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String projectId;
 
   public static final String SERIALIZED_NAME_STATE = "state";
@@ -131,7 +131,7 @@ public class GitlabIssuesSettingsConfig {
   }
 
 
-  public GitlabIssuesSettingsConfig gitlabUrl(@javax.annotation.Nullable String gitlabUrl) {
+  public GitlabIssuesSettingsConfig gitlabUrl(@javax.annotation.Nonnull String gitlabUrl) {
     this.gitlabUrl = gitlabUrl;
     return this;
   }
@@ -140,12 +140,12 @@ public class GitlabIssuesSettingsConfig {
    * GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.)
    * @return gitlabUrl
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getGitlabUrl() {
     return gitlabUrl;
   }
 
-  public void setGitlabUrl(@javax.annotation.Nullable String gitlabUrl) {
+  public void setGitlabUrl(@javax.annotation.Nonnull String gitlabUrl) {
     this.gitlabUrl = gitlabUrl;
   }
 
@@ -169,7 +169,7 @@ public class GitlabIssuesSettingsConfig {
   }
 
 
-  public GitlabIssuesSettingsConfig projectId(@javax.annotation.Nullable String projectId) {
+  public GitlabIssuesSettingsConfig projectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
     return this;
   }
@@ -178,12 +178,12 @@ public class GitlabIssuesSettingsConfig {
    * Project ID to get issues for
    * @return projectId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getProjectId() {
     return projectId;
   }
 
-  public void setProjectId(@javax.annotation.Nullable String projectId) {
+  public void setProjectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
   }
 
@@ -303,7 +303,7 @@ public class GitlabIssuesSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "confidential", "gitlab_url", "issue_type", "project_id", "state", "use_synthetic_data", "with_label_details"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("gitlab_url", "project_id"));
   }
 
   /**
@@ -326,17 +326,24 @@ public class GitlabIssuesSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GitlabIssuesSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GitlabIssuesSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("gitlab_url") != null && !jsonObj.get("gitlab_url").isJsonNull()) && !jsonObj.get("gitlab_url").isJsonPrimitive()) {
+      if (!jsonObj.get("gitlab_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `gitlab_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_url").toString()));
       }
       if ((jsonObj.get("issue_type") != null && !jsonObj.get("issue_type").isJsonNull()) && !jsonObj.get("issue_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `issue_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_type").toString()));
       }
-      if ((jsonObj.get("project_id") != null && !jsonObj.get("project_id").isJsonNull()) && !jsonObj.get("project_id").isJsonPrimitive()) {
+      if (!jsonObj.get("project_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `project_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project_id").toString()));
       }
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {

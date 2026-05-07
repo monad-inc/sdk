@@ -29,7 +29,7 @@ class PaloAltoDataSecurityAlertsSettingsConfig(BaseModel):
     Palo Alto Data Security Alerts settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
-    base_url: Optional[StrictStr] = Field(default=None, description="URL of the organization")
+    base_url: StrictStr = Field(description="URL of the organization")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "base_url", "use_synthetic_data"]
 

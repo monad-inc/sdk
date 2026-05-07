@@ -30,7 +30,7 @@ class TinesAuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, will fetch from the most recent data available.")
     operation_names: Optional[List[StrictStr]] = Field(default=None, description="Filter by specific operation names (optional)")
-    tenant_domain: Optional[StrictStr] = Field(default=None, description="The Tines tenant domain (e.g., your-org.tines.com)")
+    tenant_domain: StrictStr = Field(description="The Tines tenant domain (e.g., your-org.tines.com)")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     user_ids: Optional[List[StrictStr]] = Field(default=None, description="Filter by specific user IDs (optional)")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "operation_names", "tenant_domain", "use_synthetic_data", "user_ids"]

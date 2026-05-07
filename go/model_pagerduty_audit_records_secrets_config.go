@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the PagerdutyAuditRecordsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &PagerdutyAuditRecordsSecretsConfig{}
 
 // PagerdutyAuditRecordsSecretsConfig Pagerduty Audit Records secrets
 type PagerdutyAuditRecordsSecretsConfig struct {
-	AuthToken *ModelsSecret `json:"auth_token,omitempty"`
+	AuthToken ModelsSecret `json:"auth_token"`
 }
+
+type _PagerdutyAuditRecordsSecretsConfig PagerdutyAuditRecordsSecretsConfig
 
 // NewPagerdutyAuditRecordsSecretsConfig instantiates a new PagerdutyAuditRecordsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPagerdutyAuditRecordsSecretsConfig() *PagerdutyAuditRecordsSecretsConfig {
+func NewPagerdutyAuditRecordsSecretsConfig(authToken ModelsSecret) *PagerdutyAuditRecordsSecretsConfig {
 	this := PagerdutyAuditRecordsSecretsConfig{}
+	this.AuthToken = authToken
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewPagerdutyAuditRecordsSecretsConfigWithDefaults() *PagerdutyAuditRecordsS
 	return &this
 }
 
-// GetAuthToken returns the AuthToken field value if set, zero value otherwise.
+// GetAuthToken returns the AuthToken field value
 func (o *PagerdutyAuditRecordsSecretsConfig) GetAuthToken() ModelsSecret {
-	if o == nil || IsNil(o.AuthToken) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.AuthToken
+
+	return o.AuthToken
 }
 
-// GetAuthTokenOk returns a tuple with the AuthToken field value if set, nil otherwise
+// GetAuthTokenOk returns a tuple with the AuthToken field value
 // and a boolean to check if the value has been set.
 func (o *PagerdutyAuditRecordsSecretsConfig) GetAuthTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.AuthToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AuthToken, true
+	return &o.AuthToken, true
 }
 
-// HasAuthToken returns a boolean if a field has been set.
-func (o *PagerdutyAuditRecordsSecretsConfig) HasAuthToken() bool {
-	if o != nil && !IsNil(o.AuthToken) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthToken gets a reference to the given ModelsSecret and assigns it to the AuthToken field.
+// SetAuthToken sets field value
 func (o *PagerdutyAuditRecordsSecretsConfig) SetAuthToken(v ModelsSecret) {
-	o.AuthToken = &v
+	o.AuthToken = v
 }
 
 func (o PagerdutyAuditRecordsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o PagerdutyAuditRecordsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o PagerdutyAuditRecordsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthToken) {
-		toSerialize["auth_token"] = o.AuthToken
-	}
+	toSerialize["auth_token"] = o.AuthToken
 	return toSerialize, nil
+}
+
+func (o *PagerdutyAuditRecordsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"auth_token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varPagerdutyAuditRecordsSecretsConfig := _PagerdutyAuditRecordsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varPagerdutyAuditRecordsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PagerdutyAuditRecordsSecretsConfig(varPagerdutyAuditRecordsSecretsConfig)
+
+	return err
 }
 
 type NullablePagerdutyAuditRecordsSecretsConfig struct {

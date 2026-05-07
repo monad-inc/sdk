@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
-**Compression** | Pointer to **string** | Compression format of the objects | [optional] 
-**Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
-**Format** | Pointer to **string** | File format of the objects | [optional] 
+**Bucket** | **string** | Name of the storage bucket | 
+**Compression** | **string** | Compression format of the objects | 
+**Endpoint** | **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
+**Format** | **string** | File format of the objects | 
 **PartitionFormat** | Pointer to **string** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **RecordLocation** | Pointer to **string** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewObjectStorageInputSettingsConfig
 
-`func NewObjectStorageInputSettingsConfig() *ObjectStorageInputSettingsConfig`
+`func NewObjectStorageInputSettingsConfig(bucket string, compression string, endpoint string, format string, ) *ObjectStorageInputSettingsConfig`
 
 NewObjectStorageInputSettingsConfig instantiates a new ObjectStorageInputSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -53,11 +53,6 @@ and a boolean to check if the value has been set.
 
 SetBucket sets Bucket field to given value.
 
-### HasBucket
-
-`func (o *ObjectStorageInputSettingsConfig) HasBucket() bool`
-
-HasBucket returns a boolean if a field has been set.
 
 ### GetCompression
 
@@ -78,11 +73,6 @@ and a boolean to check if the value has been set.
 
 SetCompression sets Compression field to given value.
 
-### HasCompression
-
-`func (o *ObjectStorageInputSettingsConfig) HasCompression() bool`
-
-HasCompression returns a boolean if a field has been set.
 
 ### GetEndpoint
 
@@ -103,11 +93,6 @@ and a boolean to check if the value has been set.
 
 SetEndpoint sets Endpoint field to given value.
 
-### HasEndpoint
-
-`func (o *ObjectStorageInputSettingsConfig) HasEndpoint() bool`
-
-HasEndpoint returns a boolean if a field has been set.
 
 ### GetFormat
 
@@ -128,11 +113,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *ObjectStorageInputSettingsConfig) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetPartitionFormat
 

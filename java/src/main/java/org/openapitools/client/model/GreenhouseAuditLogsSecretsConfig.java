@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class GreenhouseAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_HARVEST_API_KEY = "harvest_api_key";
   @SerializedName(SERIALIZED_NAME_HARVEST_API_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret harvestApiKey;
 
   public GreenhouseAuditLogsSecretsConfig() {
   }
 
-  public GreenhouseAuditLogsSecretsConfig harvestApiKey(@javax.annotation.Nullable ModelsSecret harvestApiKey) {
+  public GreenhouseAuditLogsSecretsConfig harvestApiKey(@javax.annotation.Nonnull ModelsSecret harvestApiKey) {
     this.harvestApiKey = harvestApiKey;
     return this;
   }
@@ -68,12 +68,12 @@ public class GreenhouseAuditLogsSecretsConfig {
    * Get harvestApiKey
    * @return harvestApiKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getHarvestApiKey() {
     return harvestApiKey;
   }
 
-  public void setHarvestApiKey(@javax.annotation.Nullable ModelsSecret harvestApiKey) {
+  public void setHarvestApiKey(@javax.annotation.Nonnull ModelsSecret harvestApiKey) {
     this.harvestApiKey = harvestApiKey;
   }
 
@@ -122,7 +122,7 @@ public class GreenhouseAuditLogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("harvest_api_key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("harvest_api_key"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class GreenhouseAuditLogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GreenhouseAuditLogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `harvest_api_key`
-      if (jsonObj.get("harvest_api_key") != null && !jsonObj.get("harvest_api_key").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("harvest_api_key"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GreenhouseAuditLogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `harvest_api_key`
+      ModelsSecret.validateJsonElement(jsonObj.get("harvest_api_key"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

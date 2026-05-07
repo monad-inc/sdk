@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Region** | Pointer to **string** | Region of the OwnBackup instance | [optional] 
+**Region** | **string** | Region of the OwnBackup instance | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewOwnbackupAccountEventsSettingsConfig
 
-`func NewOwnbackupAccountEventsSettingsConfig() *OwnbackupAccountEventsSettingsConfig`
+`func NewOwnbackupAccountEventsSettingsConfig(region string, ) *OwnbackupAccountEventsSettingsConfig`
 
 NewOwnbackupAccountEventsSettingsConfig instantiates a new OwnbackupAccountEventsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetRegion sets Region field to given value.
 
-### HasRegion
-
-`func (o *OwnbackupAccountEventsSettingsConfig) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

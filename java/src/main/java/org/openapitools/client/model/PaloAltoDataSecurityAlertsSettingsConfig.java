@@ -57,7 +57,7 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
 
   public static final String SERIALIZED_NAME_BASE_URL = "base_url";
   @SerializedName(SERIALIZED_NAME_BASE_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String baseUrl;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -87,7 +87,7 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
   }
 
 
-  public PaloAltoDataSecurityAlertsSettingsConfig baseUrl(@javax.annotation.Nullable String baseUrl) {
+  public PaloAltoDataSecurityAlertsSettingsConfig baseUrl(@javax.annotation.Nonnull String baseUrl) {
     this.baseUrl = baseUrl;
     return this;
   }
@@ -96,12 +96,12 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
    * URL of the organization
    * @return baseUrl
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getBaseUrl() {
     return baseUrl;
   }
 
-  public void setBaseUrl(@javax.annotation.Nullable String baseUrl) {
+  public void setBaseUrl(@javax.annotation.Nonnull String baseUrl) {
     this.baseUrl = baseUrl;
   }
 
@@ -173,7 +173,7 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "base_url", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("base_url"));
   }
 
   /**
@@ -196,11 +196,18 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PaloAltoDataSecurityAlertsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PaloAltoDataSecurityAlertsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("base_url") != null && !jsonObj.get("base_url").isJsonNull()) && !jsonObj.get("base_url").isJsonPrimitive()) {
+      if (!jsonObj.get("base_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `base_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("base_url").toString()));
       }
   }

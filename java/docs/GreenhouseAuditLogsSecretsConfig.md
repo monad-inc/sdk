@@ -8,7 +8,7 @@ Greenhouse Audit Log secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

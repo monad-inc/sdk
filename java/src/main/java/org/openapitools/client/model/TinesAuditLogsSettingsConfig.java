@@ -64,7 +64,7 @@ public class TinesAuditLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_TENANT_DOMAIN = "tenant_domain";
   @SerializedName(SERIALIZED_NAME_TENANT_DOMAIN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String tenantDomain;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -126,7 +126,7 @@ public class TinesAuditLogsSettingsConfig {
   }
 
 
-  public TinesAuditLogsSettingsConfig tenantDomain(@javax.annotation.Nullable String tenantDomain) {
+  public TinesAuditLogsSettingsConfig tenantDomain(@javax.annotation.Nonnull String tenantDomain) {
     this.tenantDomain = tenantDomain;
     return this;
   }
@@ -135,12 +135,12 @@ public class TinesAuditLogsSettingsConfig {
    * The Tines tenant domain (e.g., your-org.tines.com)
    * @return tenantDomain
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getTenantDomain() {
     return tenantDomain;
   }
 
-  public void setTenantDomain(@javax.annotation.Nullable String tenantDomain) {
+  public void setTenantDomain(@javax.annotation.Nonnull String tenantDomain) {
     this.tenantDomain = tenantDomain;
   }
 
@@ -243,7 +243,7 @@ public class TinesAuditLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "operation_names", "tenant_domain", "use_synthetic_data", "user_ids"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_domain"));
   }
 
   /**
@@ -266,6 +266,13 @@ public class TinesAuditLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TinesAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TinesAuditLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
@@ -274,7 +281,7 @@ public class TinesAuditLogsSettingsConfig {
       if (jsonObj.get("operation_names") != null && !jsonObj.get("operation_names").isJsonNull() && !jsonObj.get("operation_names").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `operation_names` to be an array in the JSON string but got `%s`", jsonObj.get("operation_names").toString()));
       }
-      if ((jsonObj.get("tenant_domain") != null && !jsonObj.get("tenant_domain").isJsonNull()) && !jsonObj.get("tenant_domain").isJsonPrimitive()) {
+      if (!jsonObj.get("tenant_domain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_domain").toString()));
       }
       // ensure the optional json data is an array if present

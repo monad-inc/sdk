@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the GreenhouseAuditLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -25,15 +27,18 @@ type GreenhouseAuditLogsSettingsConfig struct {
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// ID of the user to harvest audit logs for
-	UserId *string `json:"user_id,omitempty"`
+	UserId string `json:"user_id"`
 }
+
+type _GreenhouseAuditLogsSettingsConfig GreenhouseAuditLogsSettingsConfig
 
 // NewGreenhouseAuditLogsSettingsConfig instantiates a new GreenhouseAuditLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGreenhouseAuditLogsSettingsConfig() *GreenhouseAuditLogsSettingsConfig {
+func NewGreenhouseAuditLogsSettingsConfig(userId string) *GreenhouseAuditLogsSettingsConfig {
 	this := GreenhouseAuditLogsSettingsConfig{}
+	this.UserId = userId
 	return &this
 }
 
@@ -109,36 +114,28 @@ func (o *GreenhouseAuditLogsSettingsConfig) SetUseSyntheticData(v bool) {
 	o.UseSyntheticData = &v
 }
 
-// GetUserId returns the UserId field value if set, zero value otherwise.
+// GetUserId returns the UserId field value
 func (o *GreenhouseAuditLogsSettingsConfig) GetUserId() string {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserId
+
+	return o.UserId
 }
 
-// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
+// GetUserIdOk returns a tuple with the UserId field value
 // and a boolean to check if the value has been set.
 func (o *GreenhouseAuditLogsSettingsConfig) GetUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserId, true
+	return &o.UserId, true
 }
 
-// HasUserId returns a boolean if a field has been set.
-func (o *GreenhouseAuditLogsSettingsConfig) HasUserId() bool {
-	if o != nil && !IsNil(o.UserId) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserId gets a reference to the given string and assigns it to the UserId field.
+// SetUserId sets field value
 func (o *GreenhouseAuditLogsSettingsConfig) SetUserId(v string) {
-	o.UserId = &v
+	o.UserId = v
 }
 
 func (o GreenhouseAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -157,10 +154,45 @@ func (o GreenhouseAuditLogsSettingsConfig) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
-	if !IsNil(o.UserId) {
-		toSerialize["user_id"] = o.UserId
-	}
+	toSerialize["user_id"] = o.UserId
 	return toSerialize, nil
+}
+
+func (o *GreenhouseAuditLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"user_id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGreenhouseAuditLogsSettingsConfig := _GreenhouseAuditLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varGreenhouseAuditLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GreenhouseAuditLogsSettingsConfig(varGreenhouseAuditLogsSettingsConfig)
+
+	return err
 }
 
 type NullableGreenhouseAuditLogsSettingsConfig struct {
