@@ -50,6 +50,7 @@ class TestFormatterFormatConfig(unittest.TestCase):
             )
         else:
             return FormatterFormatConfig(
+                format = 'delimited',
         )
         """
 

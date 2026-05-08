@@ -33,7 +33,13 @@ public enum FormatterType {
   
   Parquet("parquet"),
   
-  Json("json");
+  Json("json"),
+  
+  DELIMITED2("delimited"),
+  
+  PARQUET2("parquet"),
+  
+  JSON2("json");
 
   private String value;
 

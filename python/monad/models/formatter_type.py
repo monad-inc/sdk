@@ -30,6 +30,9 @@ class FormatterType(str, Enum):
     Delimited = 'delimited'
     Parquet = 'parquet'
     Json = 'json'
+    'delimited'2 = 'delimited'
+    'parquet'2 = 'parquet'
+    'json'2 = 'json'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -24,10 +24,16 @@ const (
 	Delimited FormatterType = "delimited"
 	Parquet FormatterType = "parquet"
 	Json FormatterType = "json"
+	DELIMITED2 FormatterType = "delimited"
+	PARQUET2 FormatterType = "parquet"
+	JSON2 FormatterType = "json"
 )
 
 // All allowed values of FormatterType enum
 var AllowedFormatterTypeEnumValues = []FormatterType{
+	"delimited",
+	"parquet",
+	"json",
 	"delimited",
 	"parquet",
 	"json",

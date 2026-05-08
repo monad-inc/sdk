@@ -56,7 +56,7 @@ import org.openapitools.client.JSON;
 public class FormatterFormatConfig {
   public static final String SERIALIZED_NAME_FORMAT = "Format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private FormatterType format;
 
   public static final String SERIALIZED_NAME_DELIMITED_FORMAT = "delimited_format";
@@ -77,7 +77,7 @@ public class FormatterFormatConfig {
   public FormatterFormatConfig() {
   }
 
-  public FormatterFormatConfig format(@javax.annotation.Nullable FormatterType format) {
+  public FormatterFormatConfig format(@javax.annotation.Nonnull FormatterType format) {
     this.format = format;
     return this;
   }
@@ -86,12 +86,12 @@ public class FormatterFormatConfig {
    * Get format
    * @return format
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public FormatterType getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable FormatterType format) {
+  public void setFormat(@javax.annotation.Nonnull FormatterType format) {
     this.format = format;
   }
 
@@ -203,7 +203,7 @@ public class FormatterFormatConfig {
     openapiFields = new HashSet<String>(Arrays.asList("Format", "delimited_format", "json_format", "parquet_format"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Format"));
   }
 
   /**
@@ -226,11 +226,16 @@ public class FormatterFormatConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `FormatterFormatConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `Format`
-      if (jsonObj.get("Format") != null && !jsonObj.get("Format").isJsonNull()) {
-        FormatterType.validateJsonElement(jsonObj.get("Format"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : FormatterFormatConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `Format`
+      FormatterType.validateJsonElement(jsonObj.get("Format"));
       // validate the optional field `delimited_format`
       if (jsonObj.get("delimited_format") != null && !jsonObj.get("delimited_format").isJsonNull()) {
         DelimitedDelimiterFormatter.validateJsonElement(jsonObj.get("delimited_format"));

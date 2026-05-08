@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to [**FormatterType**](FormatterType.md) |  | [optional] 
+**Format** | [**FormatterType**](FormatterType.md) |  | 
 **DelimitedFormat** | Pointer to [**DelimitedDelimiterFormatter**](DelimitedDelimiterFormatter.md) |  | [optional] 
 **JsonFormat** | Pointer to [**JsonJsonFormatter**](JsonJsonFormatter.md) |  | [optional] 
 **ParquetFormat** | Pointer to [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewFormatterFormatConfig
 
-`func NewFormatterFormatConfig() *FormatterFormatConfig`
+`func NewFormatterFormatConfig(format FormatterType, ) *FormatterFormatConfig`
 
 NewFormatterFormatConfig instantiates a new FormatterFormatConfig object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *FormatterFormatConfig) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetDelimitedFormat
 

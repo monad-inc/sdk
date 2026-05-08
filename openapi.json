@@ -2422,10 +2422,16 @@
                         "$ref": "#/components/schemas/parquet.ParquetFormatter"
                     }
                 },
+                "required": [
+                    "Format"
+                ],
                 "type": "object"
             },
             "formatter.Type": {
                 "enum": [
+                    "delimited",
+                    "parquet",
+                    "json",
                     "delimited",
                     "parquet",
                     "json"

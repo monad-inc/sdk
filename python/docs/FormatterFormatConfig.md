@@ -6,7 +6,7 @@ The format config to use
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**format** | [**FormatterType**](FormatterType.md) |  | [optional] 
+**format** | [**FormatterType**](FormatterType.md) |  | 
 **delimited_format** | [**DelimitedDelimiterFormatter**](DelimitedDelimiterFormatter.md) |  | [optional] 
 **json_format** | [**JsonJsonFormatter**](JsonJsonFormatter.md) |  | [optional] 
 **parquet_format** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 

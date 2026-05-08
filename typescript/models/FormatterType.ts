@@ -15,5 +15,8 @@ import { HttpFile } from '../http/http';
 export enum FormatterType {
     Delimited = 'delimited',
     Parquet = 'parquet',
-    Json = 'json'
+    Json = 'json',
+    Delimited2 = 'delimited',
+    Parquet2 = 'parquet',
+    Json2 = 'json'
 }

@@ -20,7 +20,7 @@ import { HttpFile } from '../http/http';
 * The format config to use
 */
 export class FormatterFormatConfig {
-    'format'?: FormatterType;
+    'format': FormatterType;
     'delimitedFormat'?: DelimitedDelimiterFormatter;
     'jsonFormat'?: JsonJsonFormatter;
     'parquetFormat'?: ParquetParquetFormatter;

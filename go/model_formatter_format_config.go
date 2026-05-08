@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the FormatterFormatConfig type satisfies the MappedNullable interface at compile time
@@ -20,18 +22,21 @@ var _ MappedNullable = &FormatterFormatConfig{}
 
 // FormatterFormatConfig The format config to use
 type FormatterFormatConfig struct {
-	Format *FormatterType `json:"Format,omitempty"`
+	Format FormatterType `json:"Format"`
 	DelimitedFormat *DelimitedDelimiterFormatter `json:"delimited_format,omitempty"`
 	JsonFormat *JsonJsonFormatter `json:"json_format,omitempty"`
 	ParquetFormat *ParquetParquetFormatter `json:"parquet_format,omitempty"`
 }
 
+type _FormatterFormatConfig FormatterFormatConfig
+
 // NewFormatterFormatConfig instantiates a new FormatterFormatConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFormatterFormatConfig() *FormatterFormatConfig {
+func NewFormatterFormatConfig(format FormatterType) *FormatterFormatConfig {
 	this := FormatterFormatConfig{}
+	this.Format = format
 	return &this
 }
 
@@ -43,36 +48,28 @@ func NewFormatterFormatConfigWithDefaults() *FormatterFormatConfig {
 	return &this
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
+// GetFormat returns the Format field value
 func (o *FormatterFormatConfig) GetFormat() FormatterType {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		var ret FormatterType
 		return ret
 	}
-	return *o.Format
+
+	return o.Format
 }
 
-// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// GetFormatOk returns a tuple with the Format field value
 // and a boolean to check if the value has been set.
 func (o *FormatterFormatConfig) GetFormatOk() (*FormatterType, bool) {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Format, true
+	return &o.Format, true
 }
 
-// HasFormat returns a boolean if a field has been set.
-func (o *FormatterFormatConfig) HasFormat() bool {
-	if o != nil && !IsNil(o.Format) {
-		return true
-	}
-
-	return false
-}
-
-// SetFormat gets a reference to the given FormatterType and assigns it to the Format field.
+// SetFormat sets field value
 func (o *FormatterFormatConfig) SetFormat(v FormatterType) {
-	o.Format = &v
+	o.Format = v
 }
 
 // GetDelimitedFormat returns the DelimitedFormat field value if set, zero value otherwise.
@@ -181,9 +178,7 @@ func (o FormatterFormatConfig) MarshalJSON() ([]byte, error) {
 
 func (o FormatterFormatConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Format) {
-		toSerialize["Format"] = o.Format
-	}
+	toSerialize["Format"] = o.Format
 	if !IsNil(o.DelimitedFormat) {
 		toSerialize["delimited_format"] = o.DelimitedFormat
 	}
@@ -194,6 +189,43 @@ func (o FormatterFormatConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["parquet_format"] = o.ParquetFormat
 	}
 	return toSerialize, nil
+}
+
+func (o *FormatterFormatConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"Format",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varFormatterFormatConfig := _FormatterFormatConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varFormatterFormatConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = FormatterFormatConfig(varFormatterFormatConfig)
+
+	return err
 }
 
 type NullableFormatterFormatConfig struct {

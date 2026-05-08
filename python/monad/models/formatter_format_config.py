@@ -32,7 +32,7 @@ class FormatterFormatConfig(BaseModel):
     """
     The format config to use
     """ # noqa: E501
-    format: Optional[FormatterType] = Field(default=None, alias="Format")
+    format: FormatterType = Field(alias="Format")
     delimited_format: Optional[DelimitedDelimiterFormatter] = None
     json_format: Optional[JsonJsonFormatter] = None
     parquet_format: Optional[ParquetParquetFormatter] = None
