@@ -38,7 +38,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
-	createChildOrganizationRequest := openapiclient.CreateChildOrganization_request{RoutesV3CreateChildOrganizationRequest: openapiclient.NewRoutesV3CreateChildOrganizationRequest()} // CreateChildOrganizationRequest | Request body
+	createChildOrganizationRequest := openapiclient.CreateChildOrganization_request{RoutesV3CreateChildOrganizationRequest: openapiclient.NewRoutesV3CreateChildOrganizationRequest("FriendlyName_example", "Name_example")} // CreateChildOrganizationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -109,7 +109,7 @@ import (
 )
 
 func main() {
-	routesCreateOrganizationRequest := *openapiclient.NewRoutesCreateOrganizationRequest("Name_example") // RoutesCreateOrganizationRequest | Request body for creating an organization
+	routesCreateOrganizationRequest := *openapiclient.NewRoutesCreateOrganizationRequest("FriendlyName_example", "Name_example") // RoutesCreateOrganizationRequest | Request body for creating an organization
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -549,7 +549,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
 	childOrganizationId := "childOrganizationId_example" // string | Child Organization ID
-	updateChildOrganizationRequest := openapiclient.UpdateChildOrganization_request{RoutesV3UpdateChildOrganizationRequest: openapiclient.NewRoutesV3UpdateChildOrganizationRequest()} // UpdateChildOrganizationRequest | Request body
+	updateChildOrganizationRequest := openapiclient.UpdateChildOrganization_request{RoutesV3UpdateChildOrganizationRequest: openapiclient.NewRoutesV3UpdateChildOrganizationRequest("FriendlyName_example")} // UpdateChildOrganizationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -623,7 +623,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesUpdateOrganizationRequest := *openapiclient.NewRoutesUpdateOrganizationRequest() // RoutesUpdateOrganizationRequest | Request body for updating an organization
+	routesUpdateOrganizationRequest := *openapiclient.NewRoutesUpdateOrganizationRequest("FriendlyName_example") // RoutesUpdateOrganizationRequest | Request body for updating an organization
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

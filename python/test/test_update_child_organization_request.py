@@ -37,11 +37,11 @@ class TestUpdateChildOrganizationRequest(unittest.TestCase):
         if include_optional:
             return UpdateChildOrganizationRequest(
                 description = '',
-                friendly_name = '',
-                name = ''
+                friendly_name = ''
             )
         else:
             return UpdateChildOrganizationRequest(
+                friendly_name = '',
         )
         """
 

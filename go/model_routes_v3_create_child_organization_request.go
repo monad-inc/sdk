@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the RoutesV3CreateChildOrganizationRequest type satisfies the MappedNullable interface at compile time
@@ -21,16 +23,20 @@ var _ MappedNullable = &RoutesV3CreateChildOrganizationRequest{}
 // RoutesV3CreateChildOrganizationRequest struct for RoutesV3CreateChildOrganizationRequest
 type RoutesV3CreateChildOrganizationRequest struct {
 	Description *string `json:"description,omitempty"`
-	FriendlyName *string `json:"friendly_name,omitempty"`
-	Name *string `json:"name,omitempty"`
+	FriendlyName string `json:"friendly_name"`
+	Name string `json:"name"`
 }
+
+type _RoutesV3CreateChildOrganizationRequest RoutesV3CreateChildOrganizationRequest
 
 // NewRoutesV3CreateChildOrganizationRequest instantiates a new RoutesV3CreateChildOrganizationRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesV3CreateChildOrganizationRequest() *RoutesV3CreateChildOrganizationRequest {
+func NewRoutesV3CreateChildOrganizationRequest(friendlyName string, name string) *RoutesV3CreateChildOrganizationRequest {
 	this := RoutesV3CreateChildOrganizationRequest{}
+	this.FriendlyName = friendlyName
+	this.Name = name
 	return &this
 }
 
@@ -74,68 +80,52 @@ func (o *RoutesV3CreateChildOrganizationRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetFriendlyName returns the FriendlyName field value if set, zero value otherwise.
+// GetFriendlyName returns the FriendlyName field value
 func (o *RoutesV3CreateChildOrganizationRequest) GetFriendlyName() string {
-	if o == nil || IsNil(o.FriendlyName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.FriendlyName
+
+	return o.FriendlyName
 }
 
-// GetFriendlyNameOk returns a tuple with the FriendlyName field value if set, nil otherwise
+// GetFriendlyNameOk returns a tuple with the FriendlyName field value
 // and a boolean to check if the value has been set.
 func (o *RoutesV3CreateChildOrganizationRequest) GetFriendlyNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FriendlyName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FriendlyName, true
+	return &o.FriendlyName, true
 }
 
-// HasFriendlyName returns a boolean if a field has been set.
-func (o *RoutesV3CreateChildOrganizationRequest) HasFriendlyName() bool {
-	if o != nil && !IsNil(o.FriendlyName) {
-		return true
-	}
-
-	return false
-}
-
-// SetFriendlyName gets a reference to the given string and assigns it to the FriendlyName field.
+// SetFriendlyName sets field value
 func (o *RoutesV3CreateChildOrganizationRequest) SetFriendlyName(v string) {
-	o.FriendlyName = &v
+	o.FriendlyName = v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *RoutesV3CreateChildOrganizationRequest) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *RoutesV3CreateChildOrganizationRequest) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *RoutesV3CreateChildOrganizationRequest) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *RoutesV3CreateChildOrganizationRequest) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 func (o RoutesV3CreateChildOrganizationRequest) MarshalJSON() ([]byte, error) {
@@ -151,13 +141,47 @@ func (o RoutesV3CreateChildOrganizationRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.FriendlyName) {
-		toSerialize["friendly_name"] = o.FriendlyName
-	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["friendly_name"] = o.FriendlyName
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
+}
+
+func (o *RoutesV3CreateChildOrganizationRequest) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"friendly_name",
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varRoutesV3CreateChildOrganizationRequest := _RoutesV3CreateChildOrganizationRequest{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varRoutesV3CreateChildOrganizationRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RoutesV3CreateChildOrganizationRequest(varRoutesV3CreateChildOrganizationRequest)
+
+	return err
 }
 
 type NullableRoutesV3CreateChildOrganizationRequest struct {

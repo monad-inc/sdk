@@ -14,14 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesUpdateOrganizationRequest {
     'description'?: string;
-    /**
-    * FriendlyName, when non-empty, replaces the display label. Omit to leave the existing friendly name unchanged.
-    */
-    'friendlyName'?: string;
-    /**
-    * Name, when non-empty, regenerates the immutable slug as `<name>-<4hex>`. Omit it to leave the slug unchanged.
-    */
-    'name'?: string;
+    'friendlyName': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,12 +30,6 @@ export class RoutesUpdateOrganizationRequest {
         {
             "name": "friendlyName",
             "baseName": "friendly_name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
             "type": "string",
             "format": ""
         }    ];

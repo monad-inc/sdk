@@ -57,13 +57,8 @@ public class RoutesV3UpdateChildOrganizationRequest {
 
   public static final String SERIALIZED_NAME_FRIENDLY_NAME = "friendly_name";
   @SerializedName(SERIALIZED_NAME_FRIENDLY_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String friendlyName;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
 
   public RoutesV3UpdateChildOrganizationRequest() {
   }
@@ -87,7 +82,7 @@ public class RoutesV3UpdateChildOrganizationRequest {
   }
 
 
-  public RoutesV3UpdateChildOrganizationRequest friendlyName(@javax.annotation.Nullable String friendlyName) {
+  public RoutesV3UpdateChildOrganizationRequest friendlyName(@javax.annotation.Nonnull String friendlyName) {
     this.friendlyName = friendlyName;
     return this;
   }
@@ -96,32 +91,13 @@ public class RoutesV3UpdateChildOrganizationRequest {
    * Get friendlyName
    * @return friendlyName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getFriendlyName() {
     return friendlyName;
   }
 
-  public void setFriendlyName(@javax.annotation.Nullable String friendlyName) {
+  public void setFriendlyName(@javax.annotation.Nonnull String friendlyName) {
     this.friendlyName = friendlyName;
-  }
-
-
-  public RoutesV3UpdateChildOrganizationRequest name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Name, when non-empty, regenerates the immutable slug as &#x60;&lt;name&gt;-&lt;4hex&gt;&#x60;.
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
   }
 
 
@@ -136,13 +112,12 @@ public class RoutesV3UpdateChildOrganizationRequest {
     }
     RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest = (RoutesV3UpdateChildOrganizationRequest) o;
     return Objects.equals(this.description, routesV3UpdateChildOrganizationRequest.description) &&
-        Objects.equals(this.friendlyName, routesV3UpdateChildOrganizationRequest.friendlyName) &&
-        Objects.equals(this.name, routesV3UpdateChildOrganizationRequest.name);
+        Objects.equals(this.friendlyName, routesV3UpdateChildOrganizationRequest.friendlyName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, friendlyName, name);
+    return Objects.hash(description, friendlyName);
   }
 
   @Override
@@ -151,7 +126,6 @@ public class RoutesV3UpdateChildOrganizationRequest {
     sb.append("class RoutesV3UpdateChildOrganizationRequest {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,10 +144,10 @@ public class RoutesV3UpdateChildOrganizationRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "friendly_name", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "friendly_name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("friendly_name"));
   }
 
   /**
@@ -196,15 +170,19 @@ public class RoutesV3UpdateChildOrganizationRequest {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV3UpdateChildOrganizationRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : RoutesV3UpdateChildOrganizationRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      if ((jsonObj.get("friendly_name") != null && !jsonObj.get("friendly_name").isJsonNull()) && !jsonObj.get("friendly_name").isJsonPrimitive()) {
+      if (!jsonObj.get("friendly_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friendly_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendly_name").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }
 

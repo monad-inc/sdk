@@ -7010,6 +7010,7 @@
                     }
                 },
                 "required": [
+                    "friendly_name",
                     "name"
                 ],
                 "type": "object"
@@ -7281,14 +7282,12 @@
                         "type": "string"
                     },
                     "friendly_name": {
-                        "description": "FriendlyName, when non-empty, replaces the display label. Omit to leave\nthe existing friendly name unchanged.",
-                        "type": "string"
-                    },
-                    "name": {
-                        "description": "Name, when non-empty, regenerates the immutable slug as `\u003cname\u003e-\u003c4hex\u003e`.\nOmit it to leave the slug unchanged.",
                         "type": "string"
                     }
                 },
+                "required": [
+                    "friendly_name"
+                ],
                 "type": "object"
             },
             "routes.UpdatePipelineRequest": {
@@ -8260,6 +8259,10 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "friendly_name",
+                    "name"
+                ],
                 "type": "object"
             },
             "routesV3.CreateConnectionRequest": {
@@ -8604,12 +8607,11 @@
                     },
                     "friendly_name": {
                         "type": "string"
-                    },
-                    "name": {
-                        "description": "Name, when non-empty, regenerates the immutable slug as `\u003cname\u003e-\u003c4hex\u003e`.",
-                        "type": "string"
                     }
                 },
+                "required": [
+                    "friendly_name"
+                ],
                 "type": "object"
             },
             "routesV3.UpdateConnectionRequest": {

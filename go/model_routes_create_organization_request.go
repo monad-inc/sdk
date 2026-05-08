@@ -24,7 +24,7 @@ var _ MappedNullable = &RoutesCreateOrganizationRequest{}
 type RoutesCreateOrganizationRequest struct {
 	BillingAccountId *string `json:"billing_account_id,omitempty"`
 	Description *string `json:"description,omitempty"`
-	FriendlyName *string `json:"friendly_name,omitempty"`
+	FriendlyName string `json:"friendly_name"`
 	Name string `json:"name"`
 }
 
@@ -34,8 +34,9 @@ type _RoutesCreateOrganizationRequest RoutesCreateOrganizationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesCreateOrganizationRequest(name string) *RoutesCreateOrganizationRequest {
+func NewRoutesCreateOrganizationRequest(friendlyName string, name string) *RoutesCreateOrganizationRequest {
 	this := RoutesCreateOrganizationRequest{}
+	this.FriendlyName = friendlyName
 	this.Name = name
 	return &this
 }
@@ -112,36 +113,28 @@ func (o *RoutesCreateOrganizationRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetFriendlyName returns the FriendlyName field value if set, zero value otherwise.
+// GetFriendlyName returns the FriendlyName field value
 func (o *RoutesCreateOrganizationRequest) GetFriendlyName() string {
-	if o == nil || IsNil(o.FriendlyName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.FriendlyName
+
+	return o.FriendlyName
 }
 
-// GetFriendlyNameOk returns a tuple with the FriendlyName field value if set, nil otherwise
+// GetFriendlyNameOk returns a tuple with the FriendlyName field value
 // and a boolean to check if the value has been set.
 func (o *RoutesCreateOrganizationRequest) GetFriendlyNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FriendlyName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FriendlyName, true
+	return &o.FriendlyName, true
 }
 
-// HasFriendlyName returns a boolean if a field has been set.
-func (o *RoutesCreateOrganizationRequest) HasFriendlyName() bool {
-	if o != nil && !IsNil(o.FriendlyName) {
-		return true
-	}
-
-	return false
-}
-
-// SetFriendlyName gets a reference to the given string and assigns it to the FriendlyName field.
+// SetFriendlyName sets field value
 func (o *RoutesCreateOrganizationRequest) SetFriendlyName(v string) {
-	o.FriendlyName = &v
+	o.FriendlyName = v
 }
 
 // GetName returns the Name field value
@@ -184,9 +177,7 @@ func (o RoutesCreateOrganizationRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.FriendlyName) {
-		toSerialize["friendly_name"] = o.FriendlyName
-	}
+	toSerialize["friendly_name"] = o.FriendlyName
 	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
@@ -196,6 +187,7 @@ func (o *RoutesCreateOrganizationRequest) UnmarshalJSON(data []byte) (err error)
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"friendly_name",
 		"name",
 	}
 

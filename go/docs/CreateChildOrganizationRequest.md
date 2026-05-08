@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**FriendlyName** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**FriendlyName** | **string** |  | 
+**Name** | **string** |  | 
 
 ## Methods
 
 ### NewCreateChildOrganizationRequest
 
-`func NewCreateChildOrganizationRequest() *CreateChildOrganizationRequest`
+`func NewCreateChildOrganizationRequest(friendlyName string, name string, ) *CreateChildOrganizationRequest`
 
 NewCreateChildOrganizationRequest instantiates a new CreateChildOrganizationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetFriendlyName sets FriendlyName field to given value.
 
-### HasFriendlyName
-
-`func (o *CreateChildOrganizationRequest) HasFriendlyName() bool`
-
-HasFriendlyName returns a boolean if a field has been set.
 
 ### GetName
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *CreateChildOrganizationRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

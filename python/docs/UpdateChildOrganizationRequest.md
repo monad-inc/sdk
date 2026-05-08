@@ -6,8 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**friendly_name** | **str** |  | [optional] 
-**name** | **str** | Name, when non-empty, regenerates the immutable slug as &#x60;&lt;name&gt;-&lt;4hex&gt;&#x60;. | [optional] 
+**friendly_name** | **str** |  | 
 
 ## Example
 

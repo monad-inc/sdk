@@ -5,14 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**FriendlyName** | Pointer to **string** | FriendlyName, when non-empty, replaces the display label. Omit to leave the existing friendly name unchanged. | [optional] 
-**Name** | Pointer to **string** | Name, when non-empty, regenerates the immutable slug as &#x60;&lt;name&gt;-&lt;4hex&gt;&#x60;. Omit it to leave the slug unchanged. | [optional] 
+**FriendlyName** | **string** |  | 
 
 ## Methods
 
 ### NewRoutesUpdateOrganizationRequest
 
-`func NewRoutesUpdateOrganizationRequest() *RoutesUpdateOrganizationRequest`
+`func NewRoutesUpdateOrganizationRequest(friendlyName string, ) *RoutesUpdateOrganizationRequest`
 
 NewRoutesUpdateOrganizationRequest instantiates a new RoutesUpdateOrganizationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,36 +70,6 @@ and a boolean to check if the value has been set.
 
 SetFriendlyName sets FriendlyName field to given value.
 
-### HasFriendlyName
-
-`func (o *RoutesUpdateOrganizationRequest) HasFriendlyName() bool`
-
-HasFriendlyName returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *RoutesUpdateOrganizationRequest) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *RoutesUpdateOrganizationRequest) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *RoutesUpdateOrganizationRequest) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *RoutesUpdateOrganizationRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

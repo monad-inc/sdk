@@ -14,11 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV3UpdateChildOrganizationRequest {
     'description'?: string;
-    'friendlyName'?: string;
-    /**
-    * Name, when non-empty, regenerates the immutable slug as `<name>-<4hex>`.
-    */
-    'name'?: string;
+    'friendlyName': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -34,12 +30,6 @@ export class RoutesV3UpdateChildOrganizationRequest {
         {
             "name": "friendlyName",
             "baseName": "friendly_name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
             "type": "string",
             "format": ""
         }    ];

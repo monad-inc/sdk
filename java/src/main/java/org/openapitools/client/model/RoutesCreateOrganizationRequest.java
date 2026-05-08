@@ -62,7 +62,7 @@ public class RoutesCreateOrganizationRequest {
 
   public static final String SERIALIZED_NAME_FRIENDLY_NAME = "friendly_name";
   @SerializedName(SERIALIZED_NAME_FRIENDLY_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String friendlyName;
 
   public static final String SERIALIZED_NAME_NAME = "name";
@@ -111,7 +111,7 @@ public class RoutesCreateOrganizationRequest {
   }
 
 
-  public RoutesCreateOrganizationRequest friendlyName(@javax.annotation.Nullable String friendlyName) {
+  public RoutesCreateOrganizationRequest friendlyName(@javax.annotation.Nonnull String friendlyName) {
     this.friendlyName = friendlyName;
     return this;
   }
@@ -120,12 +120,12 @@ public class RoutesCreateOrganizationRequest {
    * Get friendlyName
    * @return friendlyName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getFriendlyName() {
     return friendlyName;
   }
 
-  public void setFriendlyName(@javax.annotation.Nullable String friendlyName) {
+  public void setFriendlyName(@javax.annotation.Nonnull String friendlyName) {
     this.friendlyName = friendlyName;
   }
 
@@ -199,7 +199,7 @@ public class RoutesCreateOrganizationRequest {
     openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "description", "friendly_name", "name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("friendly_name", "name"));
   }
 
   /**
@@ -236,7 +236,7 @@ public class RoutesCreateOrganizationRequest {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      if ((jsonObj.get("friendly_name") != null && !jsonObj.get("friendly_name").isJsonNull()) && !jsonObj.get("friendly_name").isJsonPrimitive()) {
+      if (!jsonObj.get("friendly_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `friendly_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friendly_name").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {

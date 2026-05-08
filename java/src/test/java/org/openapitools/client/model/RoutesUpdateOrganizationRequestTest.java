@@ -53,12 +53,4 @@ public class RoutesUpdateOrganizationRequestTest {
         // TODO: test friendlyName
     }
 
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
 }
