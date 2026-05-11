@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
-from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,7 +29,7 @@ class DelimitedDelimiterFormatter(BaseModel):
     DelimitedDelimiterFormatter
     """ # noqa: E501
     delimiter: StrictStr
-    headers: Annotated[List[StrictStr], Field(min_length=1)]
+    headers: List[StrictStr]
     __properties: ClassVar[List[str]] = ["delimiter", "headers"]
 
     model_config = ConfigDict(
