@@ -42,7 +42,6 @@ class TestCreateChildOrganizationRequest(unittest.TestCase):
             )
         else:
             return CreateChildOrganizationRequest(
-                friendly_name = '',
                 name = '',
         )
         """

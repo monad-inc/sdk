@@ -7016,7 +7016,6 @@
                     }
                 },
                 "required": [
-                    "friendly_name",
                     "name"
                 ],
                 "type": "object"
@@ -8266,7 +8265,6 @@
                     }
                 },
                 "required": [
-                    "friendly_name",
                     "name"
                 ],
                 "type": "object"

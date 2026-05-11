@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingAccountId** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**FriendlyName** | **string** |  | 
+**FriendlyName** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 
 ## Methods
 
 ### NewRoutesCreateOrganizationRequest
 
-`func NewRoutesCreateOrganizationRequest(friendlyName string, name string, ) *RoutesCreateOrganizationRequest`
+`func NewRoutesCreateOrganizationRequest(name string, ) *RoutesCreateOrganizationRequest`
 
 NewRoutesCreateOrganizationRequest instantiates a new RoutesCreateOrganizationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -97,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetFriendlyName sets FriendlyName field to given value.
 
+### HasFriendlyName
+
+`func (o *RoutesCreateOrganizationRequest) HasFriendlyName() bool`
+
+HasFriendlyName returns a boolean if a field has been set.
 
 ### GetName
 

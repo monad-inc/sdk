@@ -29,7 +29,7 @@ class RoutesV3CreateChildOrganizationRequest(BaseModel):
     RoutesV3CreateChildOrganizationRequest
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    friendly_name: StrictStr
+    friendly_name: Optional[StrictStr] = None
     name: StrictStr
     __properties: ClassVar[List[str]] = ["description", "friendly_name", "name"]
 

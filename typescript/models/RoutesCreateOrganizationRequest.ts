@@ -15,7 +15,7 @@ import { HttpFile } from '../http/http';
 export class RoutesCreateOrganizationRequest {
     'billingAccountId'?: string;
     'description'?: string;
-    'friendlyName': string;
+    'friendlyName'?: string;
     'name': string;
 
     static readonly discriminator: string | undefined = undefined;

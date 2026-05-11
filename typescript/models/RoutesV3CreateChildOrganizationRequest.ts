@@ -14,7 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV3CreateChildOrganizationRequest {
     'description'?: string;
-    'friendlyName': string;
+    'friendlyName'?: string;
     'name': string;
 
     static readonly discriminator: string | undefined = undefined;

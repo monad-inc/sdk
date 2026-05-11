@@ -38,7 +38,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
-	createChildOrganizationRequest := openapiclient.CreateChildOrganization_request{RoutesV3CreateChildOrganizationRequest: openapiclient.NewRoutesV3CreateChildOrganizationRequest("FriendlyName_example", "Name_example")} // CreateChildOrganizationRequest | Request body
+	createChildOrganizationRequest := openapiclient.CreateChildOrganization_request{RoutesV3CreateChildOrganizationRequest: openapiclient.NewRoutesV3CreateChildOrganizationRequest("Name_example")} // CreateChildOrganizationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -109,7 +109,7 @@ import (
 )
 
 func main() {
-	routesCreateOrganizationRequest := *openapiclient.NewRoutesCreateOrganizationRequest("FriendlyName_example", "Name_example") // RoutesCreateOrganizationRequest | Request body for creating an organization
+	routesCreateOrganizationRequest := *openapiclient.NewRoutesCreateOrganizationRequest("Name_example") // RoutesCreateOrganizationRequest | Request body for creating an organization
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

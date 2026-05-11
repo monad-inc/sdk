@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_account_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**friendly_name** | **str** |  | 
+**friendly_name** | **str** |  | [optional] 
 **name** | **str** |  | 
 
 ## Example

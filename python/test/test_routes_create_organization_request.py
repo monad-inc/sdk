@@ -43,7 +43,6 @@ class TestRoutesCreateOrganizationRequest(unittest.TestCase):
             )
         else:
             return RoutesCreateOrganizationRequest(
-                friendly_name = '',
                 name = '',
         )
         """

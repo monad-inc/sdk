@@ -30,7 +30,7 @@ class RoutesCreateOrganizationRequest(BaseModel):
     """ # noqa: E501
     billing_account_id: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    friendly_name: StrictStr
+    friendly_name: Optional[StrictStr] = None
     name: StrictStr
     __properties: ClassVar[List[str]] = ["billing_account_id", "description", "friendly_name", "name"]
 

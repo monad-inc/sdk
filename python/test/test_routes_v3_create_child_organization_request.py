@@ -42,7 +42,6 @@ class TestRoutesV3CreateChildOrganizationRequest(unittest.TestCase):
             )
         else:
             return RoutesV3CreateChildOrganizationRequest(
-                friendly_name = '',
                 name = '',
         )
         """
