@@ -28,13 +28,12 @@ class CloudResourceInventoryReportsSettingsConfig(BaseModel):
     """
     Wiz Cloud Resource Inventory Reports settings
     """ # noqa: E501
-    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.")
     cloud_platform: Optional[List[StrictStr]] = Field(default=None, description="Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.", alias="cloudPlatform")
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     endpoint_url: Optional[StrictStr] = Field(default=None, description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
     entity_type: Optional[List[StrictStr]] = Field(default=None, description="Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.", alias="entityType")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "cloudPlatform", "cron", "endpoint_url", "entityType", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["cloudPlatform", "cron", "endpoint_url", "entityType", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -87,7 +86,6 @@ class CloudResourceInventoryReportsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "backfill_start_time": obj.get("backfill_start_time"),
             "cloudPlatform": obj.get("cloudPlatform"),
             "cron": obj.get("cron"),
             "endpoint_url": obj.get("endpoint_url"),

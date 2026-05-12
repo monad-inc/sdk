@@ -17,10 +17,6 @@ import { HttpFile } from '../http/http';
 */
 export class CloudResourceInventoryReportsSettingsConfig {
     /**
-    * Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
-    */
-    'backfillStartTime'?: string;
-    /**
     * Cloud Platform types for Wiz. Ex: \'AWS\', \'AZURE\', \'GCP\'.
     */
     'cloudPlatform'?: Array<string>;
@@ -46,12 +42,6 @@ export class CloudResourceInventoryReportsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "backfillStartTime",
-            "baseName": "backfill_start_time",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "cloudPlatform",
             "baseName": "cloudPlatform",

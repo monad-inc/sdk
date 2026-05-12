@@ -17,10 +17,6 @@ import { HttpFile } from '../http/http';
 */
 export class IssuesReportSettingsConfig {
     /**
-    * Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
-    */
-    'backfillStartTime'?: string;
-    /**
     * @Description Filter Issues created by specific control IDs
     */
     'controlIds'?: Array<string>;
@@ -102,12 +98,6 @@ export class IssuesReportSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "backfillStartTime",
-            "baseName": "backfill_start_time",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "controlIds",
             "baseName": "control_ids",

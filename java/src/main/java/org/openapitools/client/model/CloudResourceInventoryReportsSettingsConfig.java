@@ -52,11 +52,6 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class CloudResourceInventoryReportsSettingsConfig {
-  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
-  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
-  @javax.annotation.Nullable
-  private String backfillStartTime;
-
   public static final String SERIALIZED_NAME_CLOUD_PLATFORM = "cloudPlatform";
   @SerializedName(SERIALIZED_NAME_CLOUD_PLATFORM)
   @javax.annotation.Nullable
@@ -84,25 +79,6 @@ public class CloudResourceInventoryReportsSettingsConfig {
 
   public CloudResourceInventoryReportsSettingsConfig() {
   }
-
-  public CloudResourceInventoryReportsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
-    this.backfillStartTime = backfillStartTime;
-    return this;
-  }
-
-  /**
-   * Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
-   * @return backfillStartTime
-   */
-  @javax.annotation.Nullable
-  public String getBackfillStartTime() {
-    return backfillStartTime;
-  }
-
-  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
-    this.backfillStartTime = backfillStartTime;
-  }
-
 
   public CloudResourceInventoryReportsSettingsConfig cloudPlatform(@javax.annotation.Nullable List<String> cloudPlatform) {
     this.cloudPlatform = cloudPlatform;
@@ -225,8 +201,7 @@ public class CloudResourceInventoryReportsSettingsConfig {
       return false;
     }
     CloudResourceInventoryReportsSettingsConfig cloudResourceInventoryReportsSettingsConfig = (CloudResourceInventoryReportsSettingsConfig) o;
-    return Objects.equals(this.backfillStartTime, cloudResourceInventoryReportsSettingsConfig.backfillStartTime) &&
-        Objects.equals(this.cloudPlatform, cloudResourceInventoryReportsSettingsConfig.cloudPlatform) &&
+    return Objects.equals(this.cloudPlatform, cloudResourceInventoryReportsSettingsConfig.cloudPlatform) &&
         Objects.equals(this.cron, cloudResourceInventoryReportsSettingsConfig.cron) &&
         Objects.equals(this.endpointUrl, cloudResourceInventoryReportsSettingsConfig.endpointUrl) &&
         Objects.equals(this.entityType, cloudResourceInventoryReportsSettingsConfig.entityType) &&
@@ -235,14 +210,13 @@ public class CloudResourceInventoryReportsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, cloudPlatform, cron, endpointUrl, entityType, useSyntheticData);
+    return Objects.hash(cloudPlatform, cron, endpointUrl, entityType, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CloudResourceInventoryReportsSettingsConfig {\n");
-    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    cloudPlatform: ").append(toIndentedString(cloudPlatform)).append("\n");
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    endpointUrl: ").append(toIndentedString(endpointUrl)).append("\n");
@@ -266,7 +240,7 @@ public class CloudResourceInventoryReportsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cloudPlatform", "cron", "endpoint_url", "entityType", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("cloudPlatform", "cron", "endpoint_url", "entityType", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -293,9 +267,6 @@ public class CloudResourceInventoryReportsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
-      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("cloudPlatform") != null && !jsonObj.get("cloudPlatform").isJsonNull() && !jsonObj.get("cloudPlatform").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cloudPlatform` to be an array in the JSON string but got `%s`", jsonObj.get("cloudPlatform").toString()));

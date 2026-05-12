@@ -36,7 +36,6 @@ class TestIssuesReportSettingsConfig(unittest.TestCase):
         model = IssuesReportSettingsConfig()
         if include_optional:
             return IssuesReportSettingsConfig(
-                backfill_start_time = '',
                 control_ids = [
                     ''
                     ],

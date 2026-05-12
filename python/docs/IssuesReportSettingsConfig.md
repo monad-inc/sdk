@@ -6,7 +6,6 @@ Wiz Issues settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backfill_start_time** | **str** | Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data. | [optional] 
 **control_ids** | **List[str]** | @Description Filter Issues created by specific control IDs | [optional] 
 **cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
 **has_note** | **str** | @Description Filter Issues with or without a note | [optional] 

@@ -52,11 +52,6 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class IssuesReportSettingsConfig {
-  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
-  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
-  @javax.annotation.Nullable
-  private String backfillStartTime;
-
   public static final String SERIALIZED_NAME_CONTROL_IDS = "control_ids";
   @SerializedName(SERIALIZED_NAME_CONTROL_IDS)
   @javax.annotation.Nullable
@@ -448,25 +443,6 @@ public class IssuesReportSettingsConfig {
 
   public IssuesReportSettingsConfig() {
   }
-
-  public IssuesReportSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
-    this.backfillStartTime = backfillStartTime;
-    return this;
-  }
-
-  /**
-   * Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
-   * @return backfillStartTime
-   */
-  @javax.annotation.Nullable
-  public String getBackfillStartTime() {
-    return backfillStartTime;
-  }
-
-  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
-    this.backfillStartTime = backfillStartTime;
-  }
-
 
   public IssuesReportSettingsConfig controlIds(@javax.annotation.Nullable List<String> controlIds) {
     this.controlIds = controlIds;
@@ -919,8 +895,7 @@ public class IssuesReportSettingsConfig {
       return false;
     }
     IssuesReportSettingsConfig issuesReportSettingsConfig = (IssuesReportSettingsConfig) o;
-    return Objects.equals(this.backfillStartTime, issuesReportSettingsConfig.backfillStartTime) &&
-        Objects.equals(this.controlIds, issuesReportSettingsConfig.controlIds) &&
+    return Objects.equals(this.controlIds, issuesReportSettingsConfig.controlIds) &&
         Objects.equals(this.cron, issuesReportSettingsConfig.cron) &&
         Objects.equals(this.hasNote, issuesReportSettingsConfig.hasNote) &&
         Objects.equals(this.hasRemediation, issuesReportSettingsConfig.hasRemediation) &&
@@ -943,14 +918,13 @@ public class IssuesReportSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, controlIds, cron, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter, useSyntheticData);
+    return Objects.hash(controlIds, cron, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IssuesReportSettingsConfig {\n");
-    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    controlIds: ").append(toIndentedString(controlIds)).append("\n");
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    hasNote: ").append(toIndentedString(hasNote)).append("\n");
@@ -988,7 +962,7 @@ public class IssuesReportSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1015,9 +989,6 @@ public class IssuesReportSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
-      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("control_ids") != null && !jsonObj.get("control_ids").isJsonNull() && !jsonObj.get("control_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `control_ids` to be an array in the JSON string but got `%s`", jsonObj.get("control_ids").toString()));

@@ -20,8 +20,6 @@ var _ MappedNullable = &IssuesReportSettingsConfig{}
 
 // IssuesReportSettingsConfig Wiz Issues settings
 type IssuesReportSettingsConfig struct {
-	// Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
-	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// @Description Filter Issues created by specific control IDs
 	ControlIds []string `json:"control_ids,omitempty"`
 	// Cron string for scheduling the ingest of your input
@@ -77,38 +75,6 @@ func NewIssuesReportSettingsConfig() *IssuesReportSettingsConfig {
 func NewIssuesReportSettingsConfigWithDefaults() *IssuesReportSettingsConfig {
 	this := IssuesReportSettingsConfig{}
 	return &this
-}
-
-// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
-func (o *IssuesReportSettingsConfig) GetBackfillStartTime() string {
-	if o == nil || IsNil(o.BackfillStartTime) {
-		var ret string
-		return ret
-	}
-	return *o.BackfillStartTime
-}
-
-// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IssuesReportSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
-	if o == nil || IsNil(o.BackfillStartTime) {
-		return nil, false
-	}
-	return o.BackfillStartTime, true
-}
-
-// HasBackfillStartTime returns a boolean if a field has been set.
-func (o *IssuesReportSettingsConfig) HasBackfillStartTime() bool {
-	if o != nil && !IsNil(o.BackfillStartTime) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
-func (o *IssuesReportSettingsConfig) SetBackfillStartTime(v string) {
-	o.BackfillStartTime = &v
 }
 
 // GetControlIds returns the ControlIds field value if set, zero value otherwise.
@@ -729,9 +695,6 @@ func (o IssuesReportSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o IssuesReportSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BackfillStartTime) {
-		toSerialize["backfill_start_time"] = o.BackfillStartTime
-	}
 	if !IsNil(o.ControlIds) {
 		toSerialize["control_ids"] = o.ControlIds
 	}

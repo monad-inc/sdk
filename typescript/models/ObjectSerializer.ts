@@ -740,7 +740,7 @@ import { InputsConnectorMeta              } from '../models/InputsConnectorMeta'
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
-import { IssuesReportSettingsConfig       , IssuesReportSettingsConfigIssueTypesEnum    , IssuesReportSettingsConfigResolutionReasonsEnum      , IssuesReportSettingsConfigSeveritiesEnum  , IssuesReportSettingsConfigStackLayersEnum  , IssuesReportSettingsConfigStatusEnum     } from '../models/IssuesReportSettingsConfig';
+import { IssuesReportSettingsConfig      , IssuesReportSettingsConfigIssueTypesEnum    , IssuesReportSettingsConfigResolutionReasonsEnum      , IssuesReportSettingsConfigSeveritiesEnum  , IssuesReportSettingsConfigStackLayersEnum  , IssuesReportSettingsConfigStatusEnum     } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig      , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';

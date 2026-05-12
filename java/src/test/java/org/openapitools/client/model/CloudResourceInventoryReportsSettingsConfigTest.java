@@ -40,14 +40,6 @@ public class CloudResourceInventoryReportsSettingsConfigTest {
     }
 
     /**
-     * Test the property 'backfillStartTime'
-     */
-    @Test
-    public void backfillStartTimeTest() {
-        // TODO: test backfillStartTime
-    }
-
-    /**
      * Test the property 'cloudPlatform'
      */
     @Test

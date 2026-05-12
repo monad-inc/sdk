@@ -36,7 +36,6 @@ class TestCloudResourceInventoryReportsSettingsConfig(unittest.TestCase):
         model = CloudResourceInventoryReportsSettingsConfig()
         if include_optional:
             return CloudResourceInventoryReportsSettingsConfig(
-                backfill_start_time = '',
                 cloud_platform = [
                     ''
                     ],

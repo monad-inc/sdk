@@ -1252,10 +1252,6 @@
             "cloud_resource_inventory_reports.SettingsConfig": {
                 "description": "Wiz Cloud Resource Inventory Reports settings",
                 "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.",
-                        "type": "string"
-                    },
                     "cloudPlatform": {
                         "description": "Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.",
                         "items": {
@@ -3338,10 +3334,6 @@
             "issues_report.SettingsConfig": {
                 "description": "Wiz Issues settings",
                 "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.",
-                        "type": "string"
-                    },
                     "control_ids": {
                         "description": "@Description Filter Issues created by specific control IDs",
                         "items": {
@@ -10912,10 +10904,6 @@
                         },
                         "type": "array",
                         "uniqueItems": false
-                    },
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.",
-                        "type": "string"
                     },
                     "cron": {
                         "description": "Cron string for scheduling the ingest of your input",

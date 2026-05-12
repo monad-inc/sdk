@@ -40,14 +40,6 @@ public class IssuesReportSettingsConfigTest {
     }
 
     /**
-     * Test the property 'backfillStartTime'
-     */
-    @Test
-    public void backfillStartTimeTest() {
-        // TODO: test backfillStartTime
-    }
-
-    /**
      * Test the property 'controlIds'
      */
     @Test
