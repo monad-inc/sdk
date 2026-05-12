@@ -17,10 +17,10 @@ import { HttpFile } from '../http/http';
 * Volt.io Audit Logs secrets
 */
 export class VoltioAuditLogsSecretsConfig {
-    'clientId'?: ModelsSecret;
-    'clientSecret'?: ModelsSecret;
-    'password'?: ModelsSecret;
-    'username'?: ModelsSecret;
+    'clientId': ModelsSecret;
+    'clientSecret': ModelsSecret;
+    'password': ModelsSecret;
+    'username': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

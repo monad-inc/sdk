@@ -16,11 +16,11 @@ Name | Type | Description | Notes
 **ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Username** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **RsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **PersonalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, apiToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -337,11 +337,6 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
-### HasPassword
-
-`func (o *SecretProcessesorInputConfigSecrets) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
 
 ### GetUsername
 
@@ -362,11 +357,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *SecretProcessesorInputConfigSecrets) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 ### GetPersonalAuthToken
 
@@ -432,11 +422,6 @@ and a boolean to check if the value has been set.
 
 SetAccessToken sets AccessToken field to given value.
 
-### HasAccessToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasAccessToken() bool`
-
-HasAccessToken returns a boolean if a field has been set.
 
 ### GetRsaPrivateKey
 

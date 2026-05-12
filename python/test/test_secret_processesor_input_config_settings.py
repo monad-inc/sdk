@@ -273,6 +273,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 warehouse = '',
                 tenant_domain = '',
                 tenant_url = '',
+                sub_domain = '',
         )
         """
 

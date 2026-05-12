@@ -19,11 +19,11 @@
 |**applicationKeyId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**enterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**username** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**username** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**personalAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**rsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |

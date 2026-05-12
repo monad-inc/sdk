@@ -29,6 +29,8 @@ class ZendeskAuditLogsAuthType(str, Enum):
     """
     AuthTypeAPIAuth = 'api_auth'
     AuthTypeOAuth = 'oauth'
+    'api_auth'2 = 'api_auth'
+    'oauth'2 = 'oauth'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

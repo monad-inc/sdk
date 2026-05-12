@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class ZendeskAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret token;
 
   public ZendeskAuditLogsSecretsConfig() {
   }
 
-  public ZendeskAuditLogsSecretsConfig token(@javax.annotation.Nullable ModelsSecret token) {
+  public ZendeskAuditLogsSecretsConfig token(@javax.annotation.Nonnull ModelsSecret token) {
     this.token = token;
     return this;
   }
@@ -68,12 +68,12 @@ public class ZendeskAuditLogsSecretsConfig {
    * Get token
    * @return token
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getToken() {
     return token;
   }
 
-  public void setToken(@javax.annotation.Nullable ModelsSecret token) {
+  public void setToken(@javax.annotation.Nonnull ModelsSecret token) {
     this.token = token;
   }
 
@@ -122,7 +122,7 @@ public class ZendeskAuditLogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("token"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class ZendeskAuditLogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ZendeskAuditLogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `token`
-      if (jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("token"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ZendeskAuditLogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `token`
+      ModelsSecret.validateJsonElement(jsonObj.get("token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

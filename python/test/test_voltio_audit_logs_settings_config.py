@@ -43,6 +43,7 @@ class TestVoltioAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return VoltioAuditLogsSettingsConfig(
+                base_url = '',
         )
         """
 

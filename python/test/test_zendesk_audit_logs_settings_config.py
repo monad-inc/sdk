@@ -43,6 +43,8 @@ class TestZendeskAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return ZendeskAuditLogsSettingsConfig(
+                auth_type = 'api_auth',
+                sub_domain = '',
         )
         """
 

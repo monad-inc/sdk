@@ -10739,6 +10739,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "access_token"
+                ],
                 "type": "object"
             },
             "vercel_user_events.SettingsConfig": {
@@ -10774,6 +10777,12 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret",
+                    "password",
+                    "username"
+                ],
                 "type": "object"
             },
             "voltio_audit_logs.SettingsConfig": {
@@ -10796,6 +10805,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "base_url"
+                ],
                 "type": "object"
             },
             "vulnerability_findings.SecretsConfig": {
@@ -10982,6 +10994,8 @@
                 "description": "AuthType is the type of authentication used for the input",
                 "enum": [
                     "api_auth",
+                    "oauth",
+                    "api_auth",
                     "oauth"
                 ],
                 "type": "string",
@@ -10997,6 +11011,9 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "token"
+                ],
                 "type": "object"
             },
             "zendesk_audit_logs.SettingsConfig": {
@@ -11018,6 +11035,10 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "auth_type",
+                    "sub_domain"
+                ],
                 "type": "object"
             }
         },

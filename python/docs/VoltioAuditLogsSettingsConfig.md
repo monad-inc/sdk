@@ -7,7 +7,7 @@ Volt.io Audit Logs settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, defaults to 90 days ago. All syncs thereafter will be incremental. | [optional] 
-**base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
+**base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **customer_id** | **str** | Optional: Filter audit logs by specific customer ID | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 

@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the ZendeskAuditLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,21 +22,25 @@ var _ MappedNullable = &ZendeskAuditLogsSettingsConfig{}
 
 // ZendeskAuditLogsSettingsConfig Zendesk Audit Logs settings
 type ZendeskAuditLogsSettingsConfig struct {
-	AuthType *ZendeskAuditLogsAuthType `json:"auth_type,omitempty"`
+	AuthType ZendeskAuditLogsAuthType `json:"auth_type"`
 	// This is the email address registered with your Zendesk account
 	EmailAddress *string `json:"email_address,omitempty"`
 	// This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo
-	SubDomain *string `json:"sub_domain,omitempty"`
+	SubDomain string `json:"sub_domain"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _ZendeskAuditLogsSettingsConfig ZendeskAuditLogsSettingsConfig
 
 // NewZendeskAuditLogsSettingsConfig instantiates a new ZendeskAuditLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewZendeskAuditLogsSettingsConfig() *ZendeskAuditLogsSettingsConfig {
+func NewZendeskAuditLogsSettingsConfig(authType ZendeskAuditLogsAuthType, subDomain string) *ZendeskAuditLogsSettingsConfig {
 	this := ZendeskAuditLogsSettingsConfig{}
+	this.AuthType = authType
+	this.SubDomain = subDomain
 	return &this
 }
 
@@ -46,36 +52,28 @@ func NewZendeskAuditLogsSettingsConfigWithDefaults() *ZendeskAuditLogsSettingsCo
 	return &this
 }
 
-// GetAuthType returns the AuthType field value if set, zero value otherwise.
+// GetAuthType returns the AuthType field value
 func (o *ZendeskAuditLogsSettingsConfig) GetAuthType() ZendeskAuditLogsAuthType {
-	if o == nil || IsNil(o.AuthType) {
+	if o == nil {
 		var ret ZendeskAuditLogsAuthType
 		return ret
 	}
-	return *o.AuthType
+
+	return o.AuthType
 }
 
-// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// GetAuthTypeOk returns a tuple with the AuthType field value
 // and a boolean to check if the value has been set.
 func (o *ZendeskAuditLogsSettingsConfig) GetAuthTypeOk() (*ZendeskAuditLogsAuthType, bool) {
-	if o == nil || IsNil(o.AuthType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AuthType, true
+	return &o.AuthType, true
 }
 
-// HasAuthType returns a boolean if a field has been set.
-func (o *ZendeskAuditLogsSettingsConfig) HasAuthType() bool {
-	if o != nil && !IsNil(o.AuthType) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthType gets a reference to the given ZendeskAuditLogsAuthType and assigns it to the AuthType field.
+// SetAuthType sets field value
 func (o *ZendeskAuditLogsSettingsConfig) SetAuthType(v ZendeskAuditLogsAuthType) {
-	o.AuthType = &v
+	o.AuthType = v
 }
 
 // GetEmailAddress returns the EmailAddress field value if set, zero value otherwise.
@@ -110,36 +108,28 @@ func (o *ZendeskAuditLogsSettingsConfig) SetEmailAddress(v string) {
 	o.EmailAddress = &v
 }
 
-// GetSubDomain returns the SubDomain field value if set, zero value otherwise.
+// GetSubDomain returns the SubDomain field value
 func (o *ZendeskAuditLogsSettingsConfig) GetSubDomain() string {
-	if o == nil || IsNil(o.SubDomain) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.SubDomain
+
+	return o.SubDomain
 }
 
-// GetSubDomainOk returns a tuple with the SubDomain field value if set, nil otherwise
+// GetSubDomainOk returns a tuple with the SubDomain field value
 // and a boolean to check if the value has been set.
 func (o *ZendeskAuditLogsSettingsConfig) GetSubDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.SubDomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubDomain, true
+	return &o.SubDomain, true
 }
 
-// HasSubDomain returns a boolean if a field has been set.
-func (o *ZendeskAuditLogsSettingsConfig) HasSubDomain() bool {
-	if o != nil && !IsNil(o.SubDomain) {
-		return true
-	}
-
-	return false
-}
-
-// SetSubDomain gets a reference to the given string and assigns it to the SubDomain field.
+// SetSubDomain sets field value
 func (o *ZendeskAuditLogsSettingsConfig) SetSubDomain(v string) {
-	o.SubDomain = &v
+	o.SubDomain = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -184,19 +174,53 @@ func (o ZendeskAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ZendeskAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthType) {
-		toSerialize["auth_type"] = o.AuthType
-	}
+	toSerialize["auth_type"] = o.AuthType
 	if !IsNil(o.EmailAddress) {
 		toSerialize["email_address"] = o.EmailAddress
 	}
-	if !IsNil(o.SubDomain) {
-		toSerialize["sub_domain"] = o.SubDomain
-	}
+	toSerialize["sub_domain"] = o.SubDomain
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *ZendeskAuditLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"auth_type",
+		"sub_domain",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varZendeskAuditLogsSettingsConfig := _ZendeskAuditLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varZendeskAuditLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZendeskAuditLogsSettingsConfig(varZendeskAuditLogsSettingsConfig)
+
+	return err
 }
 
 type NullableZendeskAuditLogsSettingsConfig struct {

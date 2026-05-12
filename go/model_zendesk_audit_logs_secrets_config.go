@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the ZendeskAuditLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &ZendeskAuditLogsSecretsConfig{}
 
 // ZendeskAuditLogsSecretsConfig Zendesk Audit Logs secrets
 type ZendeskAuditLogsSecretsConfig struct {
-	Token *ModelsSecret `json:"token,omitempty"`
+	Token ModelsSecret `json:"token"`
 }
+
+type _ZendeskAuditLogsSecretsConfig ZendeskAuditLogsSecretsConfig
 
 // NewZendeskAuditLogsSecretsConfig instantiates a new ZendeskAuditLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewZendeskAuditLogsSecretsConfig() *ZendeskAuditLogsSecretsConfig {
+func NewZendeskAuditLogsSecretsConfig(token ModelsSecret) *ZendeskAuditLogsSecretsConfig {
 	this := ZendeskAuditLogsSecretsConfig{}
+	this.Token = token
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewZendeskAuditLogsSecretsConfigWithDefaults() *ZendeskAuditLogsSecretsConf
 	return &this
 }
 
-// GetToken returns the Token field value if set, zero value otherwise.
+// GetToken returns the Token field value
 func (o *ZendeskAuditLogsSecretsConfig) GetToken() ModelsSecret {
-	if o == nil || IsNil(o.Token) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.Token
+
+	return o.Token
 }
 
-// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
+// GetTokenOk returns a tuple with the Token field value
 // and a boolean to check if the value has been set.
 func (o *ZendeskAuditLogsSecretsConfig) GetTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.Token) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Token, true
+	return &o.Token, true
 }
 
-// HasToken returns a boolean if a field has been set.
-func (o *ZendeskAuditLogsSecretsConfig) HasToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
-// SetToken gets a reference to the given ModelsSecret and assigns it to the Token field.
+// SetToken sets field value
 func (o *ZendeskAuditLogsSecretsConfig) SetToken(v ModelsSecret) {
-	o.Token = &v
+	o.Token = v
 }
 
 func (o ZendeskAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o ZendeskAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ZendeskAuditLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Token) {
-		toSerialize["token"] = o.Token
-	}
+	toSerialize["token"] = o.Token
 	return toSerialize, nil
+}
+
+func (o *ZendeskAuditLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varZendeskAuditLogsSecretsConfig := _ZendeskAuditLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varZendeskAuditLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZendeskAuditLogsSecretsConfig(varZendeskAuditLogsSecretsConfig)
+
+	return err
 }
 
 type NullableZendeskAuditLogsSecretsConfig struct {

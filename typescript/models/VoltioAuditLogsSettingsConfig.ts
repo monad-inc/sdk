@@ -23,7 +23,7 @@ export class VoltioAuditLogsSettingsConfig {
     /**
     * Base URL of your Volt.io API instance (e.g., https://api.volt.io)
     */
-    'baseUrl'?: string;
+    'baseUrl': string;
     /**
     * Optional: Filter audit logs by specific customer ID
     */

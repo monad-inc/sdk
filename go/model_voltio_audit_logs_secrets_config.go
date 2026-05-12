@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the VoltioAuditLogsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,18 +22,24 @@ var _ MappedNullable = &VoltioAuditLogsSecretsConfig{}
 
 // VoltioAuditLogsSecretsConfig Volt.io Audit Logs secrets
 type VoltioAuditLogsSecretsConfig struct {
-	ClientId *ModelsSecret `json:"client_id,omitempty"`
-	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
-	Password *ModelsSecret `json:"password,omitempty"`
-	Username *ModelsSecret `json:"username,omitempty"`
+	ClientId ModelsSecret `json:"client_id"`
+	ClientSecret ModelsSecret `json:"client_secret"`
+	Password ModelsSecret `json:"password"`
+	Username ModelsSecret `json:"username"`
 }
+
+type _VoltioAuditLogsSecretsConfig VoltioAuditLogsSecretsConfig
 
 // NewVoltioAuditLogsSecretsConfig instantiates a new VoltioAuditLogsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVoltioAuditLogsSecretsConfig() *VoltioAuditLogsSecretsConfig {
+func NewVoltioAuditLogsSecretsConfig(clientId ModelsSecret, clientSecret ModelsSecret, password ModelsSecret, username ModelsSecret) *VoltioAuditLogsSecretsConfig {
 	this := VoltioAuditLogsSecretsConfig{}
+	this.ClientId = clientId
+	this.ClientSecret = clientSecret
+	this.Password = password
+	this.Username = username
 	return &this
 }
 
@@ -43,132 +51,100 @@ func NewVoltioAuditLogsSecretsConfigWithDefaults() *VoltioAuditLogsSecretsConfig
 	return &this
 }
 
-// GetClientId returns the ClientId field value if set, zero value otherwise.
+// GetClientId returns the ClientId field value
 func (o *VoltioAuditLogsSecretsConfig) GetClientId() ModelsSecret {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ClientId
+
+	return o.ClientId
 }
 
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// GetClientIdOk returns a tuple with the ClientId field value
 // and a boolean to check if the value has been set.
 func (o *VoltioAuditLogsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientId, true
+	return &o.ClientId, true
 }
 
-// HasClientId returns a boolean if a field has been set.
-func (o *VoltioAuditLogsSecretsConfig) HasClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+// SetClientId sets field value
 func (o *VoltioAuditLogsSecretsConfig) SetClientId(v ModelsSecret) {
-	o.ClientId = &v
+	o.ClientId = v
 }
 
-// GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
+// GetClientSecret returns the ClientSecret field value
 func (o *VoltioAuditLogsSecretsConfig) GetClientSecret() ModelsSecret {
-	if o == nil || IsNil(o.ClientSecret) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ClientSecret
+
+	return o.ClientSecret
 }
 
-// GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
+// GetClientSecretOk returns a tuple with the ClientSecret field value
 // and a boolean to check if the value has been set.
 func (o *VoltioAuditLogsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ClientSecret) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientSecret, true
+	return &o.ClientSecret, true
 }
 
-// HasClientSecret returns a boolean if a field has been set.
-func (o *VoltioAuditLogsSecretsConfig) HasClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+// SetClientSecret sets field value
 func (o *VoltioAuditLogsSecretsConfig) SetClientSecret(v ModelsSecret) {
-	o.ClientSecret = &v
+	o.ClientSecret = v
 }
 
-// GetPassword returns the Password field value if set, zero value otherwise.
+// GetPassword returns the Password field value
 func (o *VoltioAuditLogsSecretsConfig) GetPassword() ModelsSecret {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.Password
+
+	return o.Password
 }
 
-// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
+// GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
 func (o *VoltioAuditLogsSecretsConfig) GetPasswordOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Password, true
+	return &o.Password, true
 }
 
-// HasPassword returns a boolean if a field has been set.
-func (o *VoltioAuditLogsSecretsConfig) HasPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
-}
-
-// SetPassword gets a reference to the given ModelsSecret and assigns it to the Password field.
+// SetPassword sets field value
 func (o *VoltioAuditLogsSecretsConfig) SetPassword(v ModelsSecret) {
-	o.Password = &v
+	o.Password = v
 }
 
-// GetUsername returns the Username field value if set, zero value otherwise.
+// GetUsername returns the Username field value
 func (o *VoltioAuditLogsSecretsConfig) GetUsername() ModelsSecret {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.Username
+
+	return o.Username
 }
 
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
+// GetUsernameOk returns a tuple with the Username field value
 // and a boolean to check if the value has been set.
 func (o *VoltioAuditLogsSecretsConfig) GetUsernameOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Username, true
+	return &o.Username, true
 }
 
-// HasUsername returns a boolean if a field has been set.
-func (o *VoltioAuditLogsSecretsConfig) HasUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsername gets a reference to the given ModelsSecret and assigns it to the Username field.
+// SetUsername sets field value
 func (o *VoltioAuditLogsSecretsConfig) SetUsername(v ModelsSecret) {
-	o.Username = &v
+	o.Username = v
 }
 
 func (o VoltioAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -181,19 +157,51 @@ func (o VoltioAuditLogsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o VoltioAuditLogsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ClientId) {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if !IsNil(o.ClientSecret) {
-		toSerialize["client_secret"] = o.ClientSecret
-	}
-	if !IsNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
-	}
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
+	toSerialize["password"] = o.Password
+	toSerialize["username"] = o.Username
 	return toSerialize, nil
+}
+
+func (o *VoltioAuditLogsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"client_id",
+		"client_secret",
+		"password",
+		"username",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varVoltioAuditLogsSecretsConfig := _VoltioAuditLogsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varVoltioAuditLogsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VoltioAuditLogsSecretsConfig(varVoltioAuditLogsSecretsConfig)
+
+	return err
 }
 
 type NullableVoltioAuditLogsSecretsConfig struct {

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Username** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewVoltioAuditLogsSecretsConfig
 
-`func NewVoltioAuditLogsSecretsConfig() *VoltioAuditLogsSecretsConfig`
+`func NewVoltioAuditLogsSecretsConfig(clientId ModelsSecret, clientSecret ModelsSecret, password ModelsSecret, username ModelsSecret, ) *VoltioAuditLogsSecretsConfig`
 
 NewVoltioAuditLogsSecretsConfig instantiates a new VoltioAuditLogsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
-
-`func (o *VoltioAuditLogsSecretsConfig) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
@@ -72,11 +67,6 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
-### HasClientSecret
-
-`func (o *VoltioAuditLogsSecretsConfig) HasClientSecret() bool`
-
-HasClientSecret returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -97,11 +87,6 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
-### HasPassword
-
-`func (o *VoltioAuditLogsSecretsConfig) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
 
 ### GetUsername
 
@@ -122,11 +107,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *VoltioAuditLogsSecretsConfig) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

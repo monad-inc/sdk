@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Zendesk Audit Logs settings
 */
 export class ZendeskAuditLogsSettingsConfig {
-    'authType'?: ZendeskAuditLogsAuthType;
+    'authType': ZendeskAuditLogsAuthType;
     /**
     * This is the email address registered with your Zendesk account
     */
@@ -25,7 +25,7 @@ export class ZendeskAuditLogsSettingsConfig {
     /**
     * This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo
     */
-    'subDomain'?: string;
+    'subDomain': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

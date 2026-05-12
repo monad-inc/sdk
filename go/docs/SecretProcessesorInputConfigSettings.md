@@ -153,13 +153,13 @@ Name | Type | Description | Notes
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
 **VendorSeverity** | Pointer to **[]string** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
 **EmailAddress** | Pointer to **string** | This is the email address registered with your Zendesk account | [optional] 
-**SubDomain** | Pointer to **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | [optional] 
+**SubDomain** | **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | 
 
 ## Methods
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, cron string, apiKeyId string, domainName string, environment string, userId string, namespace string, gitlabUrl string, projectId string, authType ZendeskAuditLogsAuthType, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, cron string, apiKeyId string, domainName string, environment string, userId string, namespace string, gitlabUrl string, projectId string, authType ZendeskAuditLogsAuthType, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -3768,11 +3768,6 @@ and a boolean to check if the value has been set.
 
 SetSubDomain sets SubDomain field to given value.
 
-### HasSubDomain
-
-`func (o *SecretProcessesorInputConfigSettings) HasSubDomain() bool`
-
-HasSubDomain returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

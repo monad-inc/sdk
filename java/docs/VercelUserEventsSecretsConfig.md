@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

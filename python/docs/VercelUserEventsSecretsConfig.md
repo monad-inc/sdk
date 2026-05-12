@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

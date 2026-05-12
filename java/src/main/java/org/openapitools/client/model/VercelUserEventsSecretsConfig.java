@@ -53,13 +53,13 @@ import org.openapitools.client.JSON;
 public class VercelUserEventsSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_TOKEN = "access_token";
   @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret accessToken;
 
   public VercelUserEventsSecretsConfig() {
   }
 
-  public VercelUserEventsSecretsConfig accessToken(@javax.annotation.Nullable ModelsSecret accessToken) {
+  public VercelUserEventsSecretsConfig accessToken(@javax.annotation.Nonnull ModelsSecret accessToken) {
     this.accessToken = accessToken;
     return this;
   }
@@ -68,12 +68,12 @@ public class VercelUserEventsSecretsConfig {
    * Get accessToken
    * @return accessToken
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getAccessToken() {
     return accessToken;
   }
 
-  public void setAccessToken(@javax.annotation.Nullable ModelsSecret accessToken) {
+  public void setAccessToken(@javax.annotation.Nonnull ModelsSecret accessToken) {
     this.accessToken = accessToken;
   }
 
@@ -122,7 +122,7 @@ public class VercelUserEventsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("access_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("access_token"));
   }
 
   /**
@@ -145,11 +145,16 @@ public class VercelUserEventsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `VercelUserEventsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `access_token`
-      if (jsonObj.get("access_token") != null && !jsonObj.get("access_token").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("access_token"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : VercelUserEventsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `access_token`
+      ModelsSecret.validateJsonElement(jsonObj.get("access_token"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

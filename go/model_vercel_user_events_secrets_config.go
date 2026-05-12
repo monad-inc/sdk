@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the VercelUserEventsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,15 +22,18 @@ var _ MappedNullable = &VercelUserEventsSecretsConfig{}
 
 // VercelUserEventsSecretsConfig struct for VercelUserEventsSecretsConfig
 type VercelUserEventsSecretsConfig struct {
-	AccessToken *ModelsSecret `json:"access_token,omitempty"`
+	AccessToken ModelsSecret `json:"access_token"`
 }
+
+type _VercelUserEventsSecretsConfig VercelUserEventsSecretsConfig
 
 // NewVercelUserEventsSecretsConfig instantiates a new VercelUserEventsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVercelUserEventsSecretsConfig() *VercelUserEventsSecretsConfig {
+func NewVercelUserEventsSecretsConfig(accessToken ModelsSecret) *VercelUserEventsSecretsConfig {
 	this := VercelUserEventsSecretsConfig{}
+	this.AccessToken = accessToken
 	return &this
 }
 
@@ -40,36 +45,28 @@ func NewVercelUserEventsSecretsConfigWithDefaults() *VercelUserEventsSecretsConf
 	return &this
 }
 
-// GetAccessToken returns the AccessToken field value if set, zero value otherwise.
+// GetAccessToken returns the AccessToken field value
 func (o *VercelUserEventsSecretsConfig) GetAccessToken() ModelsSecret {
-	if o == nil || IsNil(o.AccessToken) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.AccessToken
+
+	return o.AccessToken
 }
 
-// GetAccessTokenOk returns a tuple with the AccessToken field value if set, nil otherwise
+// GetAccessTokenOk returns a tuple with the AccessToken field value
 // and a boolean to check if the value has been set.
 func (o *VercelUserEventsSecretsConfig) GetAccessTokenOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.AccessToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AccessToken, true
+	return &o.AccessToken, true
 }
 
-// HasAccessToken returns a boolean if a field has been set.
-func (o *VercelUserEventsSecretsConfig) HasAccessToken() bool {
-	if o != nil && !IsNil(o.AccessToken) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccessToken gets a reference to the given ModelsSecret and assigns it to the AccessToken field.
+// SetAccessToken sets field value
 func (o *VercelUserEventsSecretsConfig) SetAccessToken(v ModelsSecret) {
-	o.AccessToken = &v
+	o.AccessToken = v
 }
 
 func (o VercelUserEventsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -82,10 +79,45 @@ func (o VercelUserEventsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o VercelUserEventsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccessToken) {
-		toSerialize["access_token"] = o.AccessToken
-	}
+	toSerialize["access_token"] = o.AccessToken
 	return toSerialize, nil
+}
+
+func (o *VercelUserEventsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"access_token",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varVercelUserEventsSecretsConfig := _VercelUserEventsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varVercelUserEventsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VercelUserEventsSecretsConfig(varVercelUserEventsSecretsConfig)
+
+	return err
 }
 
 type NullableVercelUserEventsSecretsConfig struct {

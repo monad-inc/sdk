@@ -47,6 +47,14 @@ class TestVercelUserEventsSecretsConfig(unittest.TestCase):
             )
         else:
             return VercelUserEventsSecretsConfig(
+                access_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
 * Zendesk Audit Logs secrets
 */
 export class ZendeskAuditLogsSecretsConfig {
-    'token'?: ModelsSecret;
+    'token': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

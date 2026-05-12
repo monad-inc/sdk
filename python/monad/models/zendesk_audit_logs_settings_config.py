@@ -29,9 +29,9 @@ class ZendeskAuditLogsSettingsConfig(BaseModel):
     """
     Zendesk Audit Logs settings
     """ # noqa: E501
-    auth_type: Optional[ZendeskAuditLogsAuthType] = None
+    auth_type: ZendeskAuditLogsAuthType
     email_address: Optional[StrictStr] = Field(default=None, description="This is the email address registered with your Zendesk account")
-    sub_domain: Optional[StrictStr] = Field(default=None, description="This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo")
+    sub_domain: StrictStr = Field(description="This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["auth_type", "email_address", "sub_domain", "use_synthetic_data"]
 

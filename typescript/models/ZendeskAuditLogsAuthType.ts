@@ -17,5 +17,7 @@ import { HttpFile } from '../http/http';
 */
 export enum ZendeskAuditLogsAuthType {
     AuthTypeAPIAuth = 'api_auth',
-    AuthTypeOAuth = 'oauth'
+    AuthTypeOAuth = 'oauth',
+    ApiAuth2 = 'api_auth',
+    Oauth2 = 'oauth'
 }

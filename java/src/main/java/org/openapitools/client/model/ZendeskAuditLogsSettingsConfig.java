@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 public class ZendeskAuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ZendeskAuditLogsAuthType authType;
 
   public static final String SERIALIZED_NAME_EMAIL_ADDRESS = "email_address";
@@ -63,7 +63,7 @@ public class ZendeskAuditLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_SUB_DOMAIN = "sub_domain";
   @SerializedName(SERIALIZED_NAME_SUB_DOMAIN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String subDomain;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -74,7 +74,7 @@ public class ZendeskAuditLogsSettingsConfig {
   public ZendeskAuditLogsSettingsConfig() {
   }
 
-  public ZendeskAuditLogsSettingsConfig authType(@javax.annotation.Nullable ZendeskAuditLogsAuthType authType) {
+  public ZendeskAuditLogsSettingsConfig authType(@javax.annotation.Nonnull ZendeskAuditLogsAuthType authType) {
     this.authType = authType;
     return this;
   }
@@ -83,12 +83,12 @@ public class ZendeskAuditLogsSettingsConfig {
    * Get authType
    * @return authType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ZendeskAuditLogsAuthType getAuthType() {
     return authType;
   }
 
-  public void setAuthType(@javax.annotation.Nullable ZendeskAuditLogsAuthType authType) {
+  public void setAuthType(@javax.annotation.Nonnull ZendeskAuditLogsAuthType authType) {
     this.authType = authType;
   }
 
@@ -112,7 +112,7 @@ public class ZendeskAuditLogsSettingsConfig {
   }
 
 
-  public ZendeskAuditLogsSettingsConfig subDomain(@javax.annotation.Nullable String subDomain) {
+  public ZendeskAuditLogsSettingsConfig subDomain(@javax.annotation.Nonnull String subDomain) {
     this.subDomain = subDomain;
     return this;
   }
@@ -121,12 +121,12 @@ public class ZendeskAuditLogsSettingsConfig {
    * This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo
    * @return subDomain
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getSubDomain() {
     return subDomain;
   }
 
-  public void setSubDomain(@javax.annotation.Nullable String subDomain) {
+  public void setSubDomain(@javax.annotation.Nonnull String subDomain) {
     this.subDomain = subDomain;
   }
 
@@ -200,7 +200,7 @@ public class ZendeskAuditLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("auth_type", "email_address", "sub_domain", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("auth_type", "sub_domain"));
   }
 
   /**
@@ -223,15 +223,20 @@ public class ZendeskAuditLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ZendeskAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `auth_type`
-      if (jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) {
-        ZendeskAuditLogsAuthType.validateJsonElement(jsonObj.get("auth_type"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ZendeskAuditLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `auth_type`
+      ZendeskAuditLogsAuthType.validateJsonElement(jsonObj.get("auth_type"));
       if ((jsonObj.get("email_address") != null && !jsonObj.get("email_address").isJsonNull()) && !jsonObj.get("email_address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email_address").toString()));
       }
-      if ((jsonObj.get("sub_domain") != null && !jsonObj.get("sub_domain").isJsonNull()) && !jsonObj.get("sub_domain").isJsonPrimitive()) {
+      if (!jsonObj.get("sub_domain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sub_domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_domain").toString()));
       }
   }

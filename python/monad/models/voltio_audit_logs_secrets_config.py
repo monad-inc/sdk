@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,10 +29,10 @@ class VoltioAuditLogsSecretsConfig(BaseModel):
     """
     Volt.io Audit Logs secrets
     """ # noqa: E501
-    client_id: Optional[ModelsSecret] = None
-    client_secret: Optional[ModelsSecret] = None
-    password: Optional[ModelsSecret] = None
-    username: Optional[ModelsSecret] = None
+    client_id: ModelsSecret
+    client_secret: ModelsSecret
+    password: ModelsSecret
+    username: ModelsSecret
     __properties: ClassVar[List[str]] = ["client_id", "client_secret", "password", "username"]
 
     model_config = ConfigDict(

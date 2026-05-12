@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewVercelUserEventsSecretsConfig
 
-`func NewVercelUserEventsSecretsConfig() *VercelUserEventsSecretsConfig`
+`func NewVercelUserEventsSecretsConfig(accessToken ModelsSecret, ) *VercelUserEventsSecretsConfig`
 
 NewVercelUserEventsSecretsConfig instantiates a new VercelUserEventsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetAccessToken sets AccessToken field to given value.
 
-### HasAccessToken
-
-`func (o *VercelUserEventsSecretsConfig) HasAccessToken() bool`
-
-HasAccessToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

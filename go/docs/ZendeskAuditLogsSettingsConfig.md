@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | [optional] 
+**AuthType** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | 
 **EmailAddress** | Pointer to **string** | This is the email address registered with your Zendesk account | [optional] 
-**SubDomain** | Pointer to **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | [optional] 
+**SubDomain** | **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewZendeskAuditLogsSettingsConfig
 
-`func NewZendeskAuditLogsSettingsConfig() *ZendeskAuditLogsSettingsConfig`
+`func NewZendeskAuditLogsSettingsConfig(authType ZendeskAuditLogsAuthType, subDomain string, ) *ZendeskAuditLogsSettingsConfig`
 
 NewZendeskAuditLogsSettingsConfig instantiates a new ZendeskAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetAuthType sets AuthType field to given value.
 
-### HasAuthType
-
-`func (o *ZendeskAuditLogsSettingsConfig) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
 
 ### GetEmailAddress
 
@@ -97,11 +92,6 @@ and a boolean to check if the value has been set.
 
 SetSubDomain sets SubDomain field to given value.
 
-### HasSubDomain
-
-`func (o *ZendeskAuditLogsSettingsConfig) HasSubDomain() bool`
-
-HasSubDomain returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

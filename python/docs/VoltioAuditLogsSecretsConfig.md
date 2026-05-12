@@ -6,10 +6,10 @@ Volt.io Audit Logs secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**username** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**password** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

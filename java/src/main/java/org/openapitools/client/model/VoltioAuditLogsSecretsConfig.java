@@ -53,28 +53,28 @@ import org.openapitools.client.JSON;
 public class VoltioAuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret clientSecret;
 
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret password;
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret username;
 
   public VoltioAuditLogsSecretsConfig() {
   }
 
-  public VoltioAuditLogsSecretsConfig clientId(@javax.annotation.Nullable ModelsSecret clientId) {
+  public VoltioAuditLogsSecretsConfig clientId(@javax.annotation.Nonnull ModelsSecret clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -83,17 +83,17 @@ public class VoltioAuditLogsSecretsConfig {
    * Get clientId
    * @return clientId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getClientId() {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nullable ModelsSecret clientId) {
+  public void setClientId(@javax.annotation.Nonnull ModelsSecret clientId) {
     this.clientId = clientId;
   }
 
 
-  public VoltioAuditLogsSecretsConfig clientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
+  public VoltioAuditLogsSecretsConfig clientSecret(@javax.annotation.Nonnull ModelsSecret clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
@@ -102,17 +102,17 @@ public class VoltioAuditLogsSecretsConfig {
    * Get clientSecret
    * @return clientSecret
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getClientSecret() {
     return clientSecret;
   }
 
-  public void setClientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
+  public void setClientSecret(@javax.annotation.Nonnull ModelsSecret clientSecret) {
     this.clientSecret = clientSecret;
   }
 
 
-  public VoltioAuditLogsSecretsConfig password(@javax.annotation.Nullable ModelsSecret password) {
+  public VoltioAuditLogsSecretsConfig password(@javax.annotation.Nonnull ModelsSecret password) {
     this.password = password;
     return this;
   }
@@ -121,17 +121,17 @@ public class VoltioAuditLogsSecretsConfig {
    * Get password
    * @return password
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getPassword() {
     return password;
   }
 
-  public void setPassword(@javax.annotation.Nullable ModelsSecret password) {
+  public void setPassword(@javax.annotation.Nonnull ModelsSecret password) {
     this.password = password;
   }
 
 
-  public VoltioAuditLogsSecretsConfig username(@javax.annotation.Nullable ModelsSecret username) {
+  public VoltioAuditLogsSecretsConfig username(@javax.annotation.Nonnull ModelsSecret username) {
     this.username = username;
     return this;
   }
@@ -140,12 +140,12 @@ public class VoltioAuditLogsSecretsConfig {
    * Get username
    * @return username
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getUsername() {
     return username;
   }
 
-  public void setUsername(@javax.annotation.Nullable ModelsSecret username) {
+  public void setUsername(@javax.annotation.Nonnull ModelsSecret username) {
     this.username = username;
   }
 
@@ -200,7 +200,7 @@ public class VoltioAuditLogsSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("client_id", "client_secret", "password", "username"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("client_id", "client_secret", "password", "username"));
   }
 
   /**
@@ -223,23 +223,22 @@ public class VoltioAuditLogsSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `VoltioAuditLogsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : VoltioAuditLogsSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `client_id`
-      if (jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
-      }
-      // validate the optional field `client_secret`
-      if (jsonObj.get("client_secret") != null && !jsonObj.get("client_secret").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
-      }
-      // validate the optional field `password`
-      if (jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("password"));
-      }
-      // validate the optional field `username`
-      if (jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("username"));
-      }
+      // validate the required field `client_id`
+      ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
+      // validate the required field `client_secret`
+      ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
+      // validate the required field `password`
+      ModelsSecret.validateJsonElement(jsonObj.get("password"));
+      // validate the required field `username`
+      ModelsSecret.validateJsonElement(jsonObj.get("username"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

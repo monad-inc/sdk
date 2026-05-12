@@ -17,11 +17,11 @@ Name | Type | Description | Notes
 **application_key_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**username** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**password** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **personal_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **rsa_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 

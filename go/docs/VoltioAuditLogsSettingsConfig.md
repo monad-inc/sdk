@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, defaults to 90 days ago. All syncs thereafter will be incremental. | [optional] 
-**BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
+**BaseUrl** | **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewVoltioAuditLogsSettingsConfig
 
-`func NewVoltioAuditLogsSettingsConfig() *VoltioAuditLogsSettingsConfig`
+`func NewVoltioAuditLogsSettingsConfig(baseUrl string, ) *VoltioAuditLogsSettingsConfig`
 
 NewVoltioAuditLogsSettingsConfig instantiates a new VoltioAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetBaseUrl sets BaseUrl field to given value.
 
-### HasBaseUrl
-
-`func (o *VoltioAuditLogsSettingsConfig) HasBaseUrl() bool`
-
-HasBaseUrl returns a boolean if a field has been set.
 
 ### GetCustomerId
 

@@ -29,7 +29,7 @@ class VoltioAuditLogsSettingsConfig(BaseModel):
     Volt.io Audit Logs settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, defaults to 90 days ago. All syncs thereafter will be incremental.")
-    base_url: Optional[StrictStr] = Field(default=None, description="Base URL of your Volt.io API instance (e.g., https://api.volt.io)")
+    base_url: StrictStr = Field(description="Base URL of your Volt.io API instance (e.g., https://api.volt.io)")
     customer_id: Optional[StrictStr] = Field(default=None, description="Optional: Filter audit logs by specific customer ID")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "base_url", "customer_id", "use_synthetic_data"]

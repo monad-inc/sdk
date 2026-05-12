@@ -23,10 +23,14 @@ type ZendeskAuditLogsAuthType string
 const (
 	AuthTypeAPIAuth ZendeskAuditLogsAuthType = "api_auth"
 	AuthTypeOAuth ZendeskAuditLogsAuthType = "oauth"
+	API_AUTH2 ZendeskAuditLogsAuthType = "api_auth"
+	OAUTH2 ZendeskAuditLogsAuthType = "oauth"
 )
 
 // All allowed values of ZendeskAuditLogsAuthType enum
 var AllowedZendeskAuditLogsAuthTypeEnumValues = []ZendeskAuditLogsAuthType{
+	"api_auth",
+	"oauth",
 	"api_auth",
 	"oauth",
 }
