@@ -26,6 +26,7 @@ import java.util.List;
 import org.openapitools.client.model.ModelsDataUsage;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
 import org.openapitools.client.model.ModelsPipelineStatusValue;
+import org.openapitools.client.model.ModelsPipelineStreamInfo;
 import org.openapitools.client.model.ModelsProgressEntries;
 
 import com.google.gson.Gson;
@@ -125,6 +126,11 @@ public class ModelsPipelineStatus {
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
   private ModelsPipelineStatusValue status;
+
+  public static final String SERIALIZED_NAME_STREAM = "stream";
+  @SerializedName(SERIALIZED_NAME_STREAM)
+  @javax.annotation.Nullable
+  private ModelsPipelineStreamInfo stream;
 
   public ModelsPipelineStatus() {
   }
@@ -403,6 +409,25 @@ public class ModelsPipelineStatus {
   }
 
 
+  public ModelsPipelineStatus stream(@javax.annotation.Nullable ModelsPipelineStreamInfo stream) {
+    this.stream = stream;
+    return this;
+  }
+
+  /**
+   * Get stream
+   * @return stream
+   */
+  @javax.annotation.Nullable
+  public ModelsPipelineStreamInfo getStream() {
+    return stream;
+  }
+
+  public void setStream(@javax.annotation.Nullable ModelsPipelineStreamInfo stream) {
+    this.stream = stream;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -426,12 +451,13 @@ public class ModelsPipelineStatus {
         Objects.equals(this.pipelineId, modelsPipelineStatus.pipelineId) &&
         Objects.equals(this.pipelineName, modelsPipelineStatus.pipelineName) &&
         Objects.equals(this.progress, modelsPipelineStatus.progress) &&
-        Objects.equals(this.status, modelsPipelineStatus.status);
+        Objects.equals(this.status, modelsPipelineStatus.status) &&
+        Objects.equals(this.stream, modelsPipelineStatus.stream);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(averageSizeEgressed, averageSizeIngested, egress, errors, ingress, lastIngestedTime, lastUpdatedAt, nodes, organizationId, organizationName, pipelineId, pipelineName, progress, status);
+    return Objects.hash(averageSizeEgressed, averageSizeIngested, egress, errors, ingress, lastIngestedTime, lastUpdatedAt, nodes, organizationId, organizationName, pipelineId, pipelineName, progress, status, stream);
   }
 
   @Override
@@ -452,6 +478,7 @@ public class ModelsPipelineStatus {
     sb.append("    pipelineName: ").append(toIndentedString(pipelineName)).append("\n");
     sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -470,7 +497,7 @@ public class ModelsPipelineStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("average_size_egressed", "average_size_ingested", "egress", "errors", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("average_size_egressed", "average_size_ingested", "egress", "errors", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status", "stream"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -544,6 +571,10 @@ public class ModelsPipelineStatus {
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         ModelsPipelineStatusValue.validateJsonElement(jsonObj.get("status"));
+      }
+      // validate the optional field `stream`
+      if (jsonObj.get("stream") != null && !jsonObj.get("stream").isJsonNull()) {
+        ModelsPipelineStreamInfo.validateJsonElement(jsonObj.get("stream"));
       }
   }
 

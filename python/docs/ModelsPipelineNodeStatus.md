@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **avg_bytes_per_record_egress** | **int** |  | [optional] 
 **avg_bytes_per_record_ingress** | **int** |  | [optional] 
+**backpressure** | [**ModelsNodeBackpressure**](ModelsNodeBackpressure.md) |  | [optional] 
 **component_type** | **str** |  | [optional] 
 **component_type_id** | **str** |  | [optional] 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 

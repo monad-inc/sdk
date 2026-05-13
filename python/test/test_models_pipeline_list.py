@@ -68,6 +68,7 @@ class TestModelsPipelineList(unittest.TestCase):
                                 monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                                     avg_bytes_per_record_egress = 56, 
                                     avg_bytes_per_record_ingress = 56, 
+                                    backpressure = , 
                                     component_type = '', 
                                     component_type_id = '', 
                                     errors = 56, 
@@ -92,7 +93,8 @@ class TestModelsPipelineList(unittest.TestCase):
                             organization_name = '', 
                             pipeline_id = '', 
                             pipeline_name = '', 
-                            progress = monad.models.models/progress_entries.models.ProgressEntries(), ), 
+                            progress = monad.models.models/progress_entries.models.ProgressEntries(), 
+                            stream = , ), 
                         updated_at = '', )
                     ]
             )

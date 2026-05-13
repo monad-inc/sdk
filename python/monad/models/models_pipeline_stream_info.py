@@ -18,36 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_data_usage import ModelsDataUsage
-from monad.models.models_node_backpressure import ModelsNodeBackpressure
-from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue
-from monad.models.models_progress_entries import ModelsProgressEntries
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ModelsPipelineNodeStatus(BaseModel):
+class ModelsPipelineStreamInfo(BaseModel):
     """
-    ModelsPipelineNodeStatus
+    ModelsPipelineStreamInfo
     """ # noqa: E501
-    avg_bytes_per_record_egress: Optional[StrictInt] = None
-    avg_bytes_per_record_ingress: Optional[StrictInt] = None
-    backpressure: Optional[ModelsNodeBackpressure] = None
-    component_type: Optional[StrictStr] = None
-    component_type_id: Optional[StrictStr] = None
-    egress: Optional[ModelsDataUsage] = None
-    errors: Optional[StrictInt] = None
-    ingress: Optional[ModelsDataUsage] = None
-    last_ingested_time: Optional[StrictStr] = None
-    last_record_processed_time: Optional[StrictStr] = None
-    last_updated_at: Optional[StrictStr] = None
-    node_id: Optional[StrictStr] = None
-    node_slug: Optional[StrictStr] = None
-    progress: Optional[ModelsProgressEntries] = None
-    status: Optional[ModelsPipelineStatusValue] = None
-    __properties: ClassVar[List[str]] = ["avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "backpressure", "component_type", "component_type_id", "egress", "errors", "ingress", "last_ingested_time", "last_record_processed_time", "last_updated_at", "node_id", "node_slug", "progress", "status"]
+    bytes: Optional[StrictInt] = None
+    records: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["bytes", "records"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -67,7 +50,7 @@ class ModelsPipelineNodeStatus(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsPipelineNodeStatus from a JSON string"""
+        """Create an instance of ModelsPipelineStreamInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -88,23 +71,11 @@ class ModelsPipelineNodeStatus(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of backpressure
-        if self.backpressure:
-            _dict['backpressure'] = self.backpressure.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of egress
-        if self.egress:
-            _dict['egress'] = self.egress.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of ingress
-        if self.ingress:
-            _dict['ingress'] = self.ingress.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of progress
-        if self.progress:
-            _dict['progress'] = self.progress.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsPipelineNodeStatus from a dict"""
+        """Create an instance of ModelsPipelineStreamInfo from a dict"""
         if obj is None:
             return None
 
@@ -112,21 +83,8 @@ class ModelsPipelineNodeStatus(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "avg_bytes_per_record_egress": obj.get("avg_bytes_per_record_egress"),
-            "avg_bytes_per_record_ingress": obj.get("avg_bytes_per_record_ingress"),
-            "backpressure": ModelsNodeBackpressure.from_dict(obj["backpressure"]) if obj.get("backpressure") is not None else None,
-            "component_type": obj.get("component_type"),
-            "component_type_id": obj.get("component_type_id"),
-            "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
-            "errors": obj.get("errors"),
-            "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
-            "last_ingested_time": obj.get("last_ingested_time"),
-            "last_record_processed_time": obj.get("last_record_processed_time"),
-            "last_updated_at": obj.get("last_updated_at"),
-            "node_id": obj.get("node_id"),
-            "node_slug": obj.get("node_slug"),
-            "progress": ModelsProgressEntries.from_dict(obj["progress"]) if obj.get("progress") is not None else None,
-            "status": obj.get("status")
+            "bytes": obj.get("bytes"),
+            "records": obj.get("records")
         })
         return _obj
 

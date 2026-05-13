@@ -25,6 +25,7 @@ import java.util.List;
 import org.openapitools.client.model.ModelsDataUsage;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
 import org.openapitools.client.model.ModelsPipelineStatusValue;
+import org.openapitools.client.model.ModelsPipelineStreamInfo;
 import org.openapitools.client.model.ModelsProgressEntries;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -153,6 +154,14 @@ public class ModelsPipelineStatusTest {
     @Test
     public void statusTest() {
         // TODO: test status
+    }
+
+    /**
+     * Test the property 'stream'
+     */
+    @Test
+    public void streamTest() {
+        // TODO: test stream
     }
 
 }

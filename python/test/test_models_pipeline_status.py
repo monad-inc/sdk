@@ -51,15 +51,16 @@ class TestModelsPipelineStatus(unittest.TestCase):
                     monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                         avg_bytes_per_record_egress = 56, 
                         avg_bytes_per_record_ingress = 56, 
+                        backpressure = monad.models.models/data_usage.models.DataUsage(
+                            bytes = 56, 
+                            records = 56, ), 
                         component_type = '', 
                         component_type_id = '', 
                         egress = monad.models.models/data_usage.models.DataUsage(
                             bytes = 56, 
                             records = 56, ), 
                         errors = 56, 
-                        ingress = monad.models.models/data_usage.models.DataUsage(
-                            bytes = 56, 
-                            records = 56, ), 
+                        ingress = , 
                         last_ingested_time = '', 
                         last_record_processed_time = '', 
                         last_updated_at = '', 
@@ -93,7 +94,10 @@ class TestModelsPipelineStatus(unittest.TestCase):
                                     start = '', )
                                 ], )
                         ], ),
-                status = 'Unknown'
+                status = 'Unknown',
+                stream = monad.models.models/data_usage.models.DataUsage(
+                    bytes = 56, 
+                    records = 56, )
             )
         else:
             return ModelsPipelineStatus(

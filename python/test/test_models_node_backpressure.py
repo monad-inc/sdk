@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
+from monad.models.models_node_backpressure import ModelsNodeBackpressure
 
-class TestModelsPipelineNodeStatus(unittest.TestCase):
-    """ModelsPipelineNodeStatus unit test stubs"""
+class TestModelsNodeBackpressure(unittest.TestCase):
+    """ModelsNodeBackpressure unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,55 +26,26 @@ class TestModelsPipelineNodeStatus(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsPipelineNodeStatus:
-        """Test ModelsPipelineNodeStatus
+    def make_instance(self, include_optional) -> ModelsNodeBackpressure:
+        """Test ModelsNodeBackpressure
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsPipelineNodeStatus`
+        # uncomment below to create an instance of `ModelsNodeBackpressure`
         """
-        model = ModelsPipelineNodeStatus()
+        model = ModelsNodeBackpressure()
         if include_optional:
-            return ModelsPipelineNodeStatus(
-                avg_bytes_per_record_egress = 56,
-                avg_bytes_per_record_ingress = 56,
-                backpressure = monad.models.models/data_usage.models.DataUsage(
-                    bytes = 56, 
-                    records = 56, ),
-                component_type = '',
-                component_type_id = '',
-                egress = monad.models.models/data_usage.models.DataUsage(
-                    bytes = 56, 
-                    records = 56, ),
-                errors = 56,
-                ingress = monad.models.models/data_usage.models.DataUsage(
-                    bytes = 56, 
-                    records = 56, ),
-                last_ingested_time = '',
-                last_record_processed_time = '',
-                last_updated_at = '',
-                node_id = '',
-                node_slug = '',
-                progress = monad.models.models/progress_entries.models.ProgressEntries(
-                    entries = [
-                        monad.models.models/progress_entry.models.ProgressEntry(
-                            label = 'Last Processed', 
-                            partition_key = '', 
-                            ranges = [
-                                monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
-                                    end = '', 
-                                    start = '', )
-                                ], )
-                        ], ),
-                status = 'Unknown'
+            return ModelsNodeBackpressure(
+                bytes = 56,
+                records = 56
             )
         else:
-            return ModelsPipelineNodeStatus(
+            return ModelsNodeBackpressure(
         )
         """
 
-    def testModelsPipelineNodeStatus(self):
-        """Test ModelsPipelineNodeStatus"""
+    def testModelsNodeBackpressure(self):
+        """Test ModelsNodeBackpressure"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

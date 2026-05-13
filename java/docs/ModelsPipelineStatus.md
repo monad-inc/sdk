@@ -21,6 +21,7 @@
 |**pipelineName** | **String** |  |  [optional] |
 |**progress** | [**ModelsProgressEntries**](ModelsProgressEntries.md) |  |  [optional] |
 |**status** | **ModelsPipelineStatusValue** |  |  [optional] |
+|**stream** | [**ModelsPipelineStreamInfo**](ModelsPipelineStreamInfo.md) |  |  [optional] |
 
 
 

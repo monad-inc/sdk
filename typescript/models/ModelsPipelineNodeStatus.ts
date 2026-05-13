@@ -11,6 +11,7 @@
  */
 
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { HttpFile } from '../http/http';
@@ -18,6 +19,7 @@ import { HttpFile } from '../http/http';
 export class ModelsPipelineNodeStatus {
     'avgBytesPerRecordEgress'?: number;
     'avgBytesPerRecordIngress'?: number;
+    'backpressure'?: ModelsNodeBackpressure;
     'componentType'?: string;
     'componentTypeId'?: string;
     'egress'?: ModelsDataUsage;
@@ -46,6 +48,12 @@ export class ModelsPipelineNodeStatus {
             "name": "avgBytesPerRecordIngress",
             "baseName": "avg_bytes_per_record_ingress",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "backpressure",
+            "baseName": "backpressure",
+            "type": "ModelsNodeBackpressure",
             "format": ""
         },
         {

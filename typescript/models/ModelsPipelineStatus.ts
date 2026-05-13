@@ -13,6 +13,7 @@
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
+import { ModelsPipelineStreamInfo } from '../models/ModelsPipelineStreamInfo';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { HttpFile } from '../http/http';
 
@@ -31,6 +32,7 @@ export class ModelsPipelineStatus {
     'pipelineName'?: string;
     'progress'?: ModelsProgressEntries;
     'status'?: ModelsPipelineStatusValue;
+    'stream'?: ModelsPipelineStreamInfo;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -119,6 +121,12 @@ export class ModelsPipelineStatus {
             "name": "status",
             "baseName": "status",
             "type": "ModelsPipelineStatusValue",
+            "format": ""
+        },
+        {
+            "name": "stream",
+            "baseName": "stream",
+            "type": "ModelsPipelineStreamInfo",
             "format": ""
         }    ];
 

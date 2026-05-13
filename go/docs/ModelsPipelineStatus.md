@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **PipelineName** | Pointer to **string** |  | [optional] 
 **Progress** | Pointer to [**ModelsProgressEntries**](ModelsProgressEntries.md) |  | [optional] 
 **Status** | Pointer to [**ModelsPipelineStatusValue**](ModelsPipelineStatusValue.md) |  | [optional] 
+**Stream** | Pointer to [**ModelsPipelineStreamInfo**](ModelsPipelineStreamInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -387,6 +388,31 @@ SetStatus sets Status field to given value.
 `func (o *ModelsPipelineStatus) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetStream
+
+`func (o *ModelsPipelineStatus) GetStream() ModelsPipelineStreamInfo`
+
+GetStream returns the Stream field if non-nil, zero value otherwise.
+
+### GetStreamOk
+
+`func (o *ModelsPipelineStatus) GetStreamOk() (*ModelsPipelineStreamInfo, bool)`
+
+GetStreamOk returns a tuple with the Stream field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStream
+
+`func (o *ModelsPipelineStatus) SetStream(v ModelsPipelineStreamInfo)`
+
+SetStream sets Stream field to given value.
+
+### HasStream
+
+`func (o *ModelsPipelineStatus) HasStream() bool`
+
+HasStream returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AvgBytesPerRecordEgress** | Pointer to **int32** |  | [optional] 
 **AvgBytesPerRecordIngress** | Pointer to **int32** |  | [optional] 
+**Backpressure** | Pointer to [**ModelsNodeBackpressure**](ModelsNodeBackpressure.md) |  | [optional] 
 **ComponentType** | Pointer to **string** |  | [optional] 
 **ComponentTypeId** | Pointer to **string** |  | [optional] 
 **Egress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
@@ -87,6 +88,31 @@ SetAvgBytesPerRecordIngress sets AvgBytesPerRecordIngress field to given value.
 `func (o *ModelsPipelineNodeStatus) HasAvgBytesPerRecordIngress() bool`
 
 HasAvgBytesPerRecordIngress returns a boolean if a field has been set.
+
+### GetBackpressure
+
+`func (o *ModelsPipelineNodeStatus) GetBackpressure() ModelsNodeBackpressure`
+
+GetBackpressure returns the Backpressure field if non-nil, zero value otherwise.
+
+### GetBackpressureOk
+
+`func (o *ModelsPipelineNodeStatus) GetBackpressureOk() (*ModelsNodeBackpressure, bool)`
+
+GetBackpressureOk returns a tuple with the Backpressure field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackpressure
+
+`func (o *ModelsPipelineNodeStatus) SetBackpressure(v ModelsNodeBackpressure)`
+
+SetBackpressure sets Backpressure field to given value.
+
+### HasBackpressure
+
+`func (o *ModelsPipelineNodeStatus) HasBackpressure() bool`
+
+HasBackpressure returns a boolean if a field has been set.
 
 ### GetComponentType
 

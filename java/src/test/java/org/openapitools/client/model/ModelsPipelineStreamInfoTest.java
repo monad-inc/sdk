@@ -20,145 +20,37 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsDataUsage;
-import org.openapitools.client.model.ModelsNodeBackpressure;
-import org.openapitools.client.model.ModelsPipelineStatusValue;
-import org.openapitools.client.model.ModelsProgressEntries;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ModelsPipelineNodeStatus
+ * Model tests for ModelsPipelineStreamInfo
  */
-public class ModelsPipelineNodeStatusTest {
-    private final ModelsPipelineNodeStatus model = new ModelsPipelineNodeStatus();
+public class ModelsPipelineStreamInfoTest {
+    private final ModelsPipelineStreamInfo model = new ModelsPipelineStreamInfo();
 
     /**
-     * Model tests for ModelsPipelineNodeStatus
+     * Model tests for ModelsPipelineStreamInfo
      */
     @Test
-    public void testModelsPipelineNodeStatus() {
-        // TODO: test ModelsPipelineNodeStatus
+    public void testModelsPipelineStreamInfo() {
+        // TODO: test ModelsPipelineStreamInfo
     }
 
     /**
-     * Test the property 'avgBytesPerRecordEgress'
+     * Test the property 'bytes'
      */
     @Test
-    public void avgBytesPerRecordEgressTest() {
-        // TODO: test avgBytesPerRecordEgress
+    public void bytesTest() {
+        // TODO: test bytes
     }
 
     /**
-     * Test the property 'avgBytesPerRecordIngress'
+     * Test the property 'records'
      */
     @Test
-    public void avgBytesPerRecordIngressTest() {
-        // TODO: test avgBytesPerRecordIngress
-    }
-
-    /**
-     * Test the property 'backpressure'
-     */
-    @Test
-    public void backpressureTest() {
-        // TODO: test backpressure
-    }
-
-    /**
-     * Test the property 'componentType'
-     */
-    @Test
-    public void componentTypeTest() {
-        // TODO: test componentType
-    }
-
-    /**
-     * Test the property 'componentTypeId'
-     */
-    @Test
-    public void componentTypeIdTest() {
-        // TODO: test componentTypeId
-    }
-
-    /**
-     * Test the property 'egress'
-     */
-    @Test
-    public void egressTest() {
-        // TODO: test egress
-    }
-
-    /**
-     * Test the property 'errors'
-     */
-    @Test
-    public void errorsTest() {
-        // TODO: test errors
-    }
-
-    /**
-     * Test the property 'ingress'
-     */
-    @Test
-    public void ingressTest() {
-        // TODO: test ingress
-    }
-
-    /**
-     * Test the property 'lastIngestedTime'
-     */
-    @Test
-    public void lastIngestedTimeTest() {
-        // TODO: test lastIngestedTime
-    }
-
-    /**
-     * Test the property 'lastRecordProcessedTime'
-     */
-    @Test
-    public void lastRecordProcessedTimeTest() {
-        // TODO: test lastRecordProcessedTime
-    }
-
-    /**
-     * Test the property 'lastUpdatedAt'
-     */
-    @Test
-    public void lastUpdatedAtTest() {
-        // TODO: test lastUpdatedAt
-    }
-
-    /**
-     * Test the property 'nodeId'
-     */
-    @Test
-    public void nodeIdTest() {
-        // TODO: test nodeId
-    }
-
-    /**
-     * Test the property 'nodeSlug'
-     */
-    @Test
-    public void nodeSlugTest() {
-        // TODO: test nodeSlug
-    }
-
-    /**
-     * Test the property 'progress'
-     */
-    @Test
-    public void progressTest() {
-        // TODO: test progress
-    }
-
-    /**
-     * Test the property 'status'
-     */
-    @Test
-    public void statusTest() {
-        // TODO: test status
+    public void recordsTest() {
+        // TODO: test records
     }
 
 }

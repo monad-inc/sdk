@@ -249,6 +249,7 @@ export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputConnectorCategory';
 export * from '../models/ModelsInputList';
 export * from '../models/ModelsManagedBy';
+export * from '../models/ModelsNodeBackpressure';
 export * from '../models/ModelsNodeComponent';
 export * from '../models/ModelsOrganizationList';
 export * from '../models/ModelsOrganizationUser';
@@ -270,6 +271,7 @@ export * from '../models/ModelsPipelineNodeStatus';
 export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
 export * from '../models/ModelsPipelineStatusValue';
+export * from '../models/ModelsPipelineStreamInfo';
 export * from '../models/ModelsProgressEntries';
 export * from '../models/ModelsProgressEntry';
 export * from '../models/ModelsProgressLabel';
@@ -811,6 +813,7 @@ import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
+import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
@@ -828,10 +831,11 @@ import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode             } from '../models/ModelsPipelineNode';
-import { ModelsPipelineNodeStatus               } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelineNodeStatus                } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
-import { ModelsPipelineStatus               } from '../models/ModelsPipelineStatus';
+import { ModelsPipelineStatus                } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
+import { ModelsPipelineStreamInfo } from '../models/ModelsPipelineStreamInfo';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry    } from '../models/ModelsProgressEntry';
 import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
@@ -1426,6 +1430,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsInput": ModelsInput,
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,
+    "ModelsNodeBackpressure": ModelsNodeBackpressure,
     "ModelsNodeComponent": ModelsNodeComponent,
     "ModelsOrganizationList": ModelsOrganizationList,
     "ModelsOrganizationUser": ModelsOrganizationUser,
@@ -1445,6 +1450,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineNodeStatus": ModelsPipelineNodeStatus,
     "ModelsPipelineRetentionPolicy": ModelsPipelineRetentionPolicy,
     "ModelsPipelineStatus": ModelsPipelineStatus,
+    "ModelsPipelineStreamInfo": ModelsPipelineStreamInfo,
     "ModelsProgressEntries": ModelsProgressEntries,
     "ModelsProgressEntry": ModelsProgressEntry,
     "ModelsQuotaList": ModelsQuotaList,

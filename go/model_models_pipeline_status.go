@@ -34,6 +34,7 @@ type ModelsPipelineStatus struct {
 	PipelineName *string `json:"pipeline_name,omitempty"`
 	Progress *ModelsProgressEntries `json:"progress,omitempty"`
 	Status *ModelsPipelineStatusValue `json:"status,omitempty"`
+	Stream *ModelsPipelineStreamInfo `json:"stream,omitempty"`
 }
 
 // NewModelsPipelineStatus instantiates a new ModelsPipelineStatus object
@@ -501,6 +502,38 @@ func (o *ModelsPipelineStatus) SetStatus(v ModelsPipelineStatusValue) {
 	o.Status = &v
 }
 
+// GetStream returns the Stream field value if set, zero value otherwise.
+func (o *ModelsPipelineStatus) GetStream() ModelsPipelineStreamInfo {
+	if o == nil || IsNil(o.Stream) {
+		var ret ModelsPipelineStreamInfo
+		return ret
+	}
+	return *o.Stream
+}
+
+// GetStreamOk returns a tuple with the Stream field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineStatus) GetStreamOk() (*ModelsPipelineStreamInfo, bool) {
+	if o == nil || IsNil(o.Stream) {
+		return nil, false
+	}
+	return o.Stream, true
+}
+
+// HasStream returns a boolean if a field has been set.
+func (o *ModelsPipelineStatus) HasStream() bool {
+	if o != nil && !IsNil(o.Stream) {
+		return true
+	}
+
+	return false
+}
+
+// SetStream gets a reference to the given ModelsPipelineStreamInfo and assigns it to the Stream field.
+func (o *ModelsPipelineStatus) SetStream(v ModelsPipelineStreamInfo) {
+	o.Stream = &v
+}
+
 func (o ModelsPipelineStatus) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -552,6 +585,9 @@ func (o ModelsPipelineStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.Stream) {
+		toSerialize["stream"] = o.Stream
 	}
 	return toSerialize, nil
 }

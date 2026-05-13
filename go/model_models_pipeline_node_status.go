@@ -22,6 +22,7 @@ var _ MappedNullable = &ModelsPipelineNodeStatus{}
 type ModelsPipelineNodeStatus struct {
 	AvgBytesPerRecordEgress *int32 `json:"avg_bytes_per_record_egress,omitempty"`
 	AvgBytesPerRecordIngress *int32 `json:"avg_bytes_per_record_ingress,omitempty"`
+	Backpressure *ModelsNodeBackpressure `json:"backpressure,omitempty"`
 	ComponentType *string `json:"component_type,omitempty"`
 	ComponentTypeId *string `json:"component_type_id,omitempty"`
 	Egress *ModelsDataUsage `json:"egress,omitempty"`
@@ -115,6 +116,38 @@ func (o *ModelsPipelineNodeStatus) HasAvgBytesPerRecordIngress() bool {
 // SetAvgBytesPerRecordIngress gets a reference to the given int32 and assigns it to the AvgBytesPerRecordIngress field.
 func (o *ModelsPipelineNodeStatus) SetAvgBytesPerRecordIngress(v int32) {
 	o.AvgBytesPerRecordIngress = &v
+}
+
+// GetBackpressure returns the Backpressure field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetBackpressure() ModelsNodeBackpressure {
+	if o == nil || IsNil(o.Backpressure) {
+		var ret ModelsNodeBackpressure
+		return ret
+	}
+	return *o.Backpressure
+}
+
+// GetBackpressureOk returns a tuple with the Backpressure field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetBackpressureOk() (*ModelsNodeBackpressure, bool) {
+	if o == nil || IsNil(o.Backpressure) {
+		return nil, false
+	}
+	return o.Backpressure, true
+}
+
+// HasBackpressure returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasBackpressure() bool {
+	if o != nil && !IsNil(o.Backpressure) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackpressure gets a reference to the given ModelsNodeBackpressure and assigns it to the Backpressure field.
+func (o *ModelsPipelineNodeStatus) SetBackpressure(v ModelsNodeBackpressure) {
+	o.Backpressure = &v
 }
 
 // GetComponentType returns the ComponentType field value if set, zero value otherwise.
@@ -516,6 +549,9 @@ func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AvgBytesPerRecordIngress) {
 		toSerialize["avg_bytes_per_record_ingress"] = o.AvgBytesPerRecordIngress
+	}
+	if !IsNil(o.Backpressure) {
+		toSerialize["backpressure"] = o.Backpressure
 	}
 	if !IsNil(o.ComponentType) {
 		toSerialize["component_type"] = o.ComponentType

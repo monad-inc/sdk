@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsDataUsage;
+import org.openapitools.client.model.ModelsNodeBackpressure;
 import org.openapitools.client.model.ModelsPipelineStatusValue;
 import org.openapitools.client.model.ModelsProgressEntries;
 
@@ -62,6 +63,11 @@ public class ModelsPipelineNodeStatus {
   @SerializedName(SERIALIZED_NAME_AVG_BYTES_PER_RECORD_INGRESS)
   @javax.annotation.Nullable
   private Integer avgBytesPerRecordIngress;
+
+  public static final String SERIALIZED_NAME_BACKPRESSURE = "backpressure";
+  @SerializedName(SERIALIZED_NAME_BACKPRESSURE)
+  @javax.annotation.Nullable
+  private ModelsNodeBackpressure backpressure;
 
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
@@ -161,6 +167,25 @@ public class ModelsPipelineNodeStatus {
 
   public void setAvgBytesPerRecordIngress(@javax.annotation.Nullable Integer avgBytesPerRecordIngress) {
     this.avgBytesPerRecordIngress = avgBytesPerRecordIngress;
+  }
+
+
+  public ModelsPipelineNodeStatus backpressure(@javax.annotation.Nullable ModelsNodeBackpressure backpressure) {
+    this.backpressure = backpressure;
+    return this;
+  }
+
+  /**
+   * Get backpressure
+   * @return backpressure
+   */
+  @javax.annotation.Nullable
+  public ModelsNodeBackpressure getBackpressure() {
+    return backpressure;
+  }
+
+  public void setBackpressure(@javax.annotation.Nullable ModelsNodeBackpressure backpressure) {
+    this.backpressure = backpressure;
   }
 
 
@@ -404,6 +429,7 @@ public class ModelsPipelineNodeStatus {
     ModelsPipelineNodeStatus modelsPipelineNodeStatus = (ModelsPipelineNodeStatus) o;
     return Objects.equals(this.avgBytesPerRecordEgress, modelsPipelineNodeStatus.avgBytesPerRecordEgress) &&
         Objects.equals(this.avgBytesPerRecordIngress, modelsPipelineNodeStatus.avgBytesPerRecordIngress) &&
+        Objects.equals(this.backpressure, modelsPipelineNodeStatus.backpressure) &&
         Objects.equals(this.componentType, modelsPipelineNodeStatus.componentType) &&
         Objects.equals(this.componentTypeId, modelsPipelineNodeStatus.componentTypeId) &&
         Objects.equals(this.egress, modelsPipelineNodeStatus.egress) &&
@@ -420,7 +446,7 @@ public class ModelsPipelineNodeStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(avgBytesPerRecordEgress, avgBytesPerRecordIngress, componentType, componentTypeId, egress, errors, ingress, lastIngestedTime, lastRecordProcessedTime, lastUpdatedAt, nodeId, nodeSlug, progress, status);
+    return Objects.hash(avgBytesPerRecordEgress, avgBytesPerRecordIngress, backpressure, componentType, componentTypeId, egress, errors, ingress, lastIngestedTime, lastRecordProcessedTime, lastUpdatedAt, nodeId, nodeSlug, progress, status);
   }
 
   @Override
@@ -429,6 +455,7 @@ public class ModelsPipelineNodeStatus {
     sb.append("class ModelsPipelineNodeStatus {\n");
     sb.append("    avgBytesPerRecordEgress: ").append(toIndentedString(avgBytesPerRecordEgress)).append("\n");
     sb.append("    avgBytesPerRecordIngress: ").append(toIndentedString(avgBytesPerRecordIngress)).append("\n");
+    sb.append("    backpressure: ").append(toIndentedString(backpressure)).append("\n");
     sb.append("    componentType: ").append(toIndentedString(componentType)).append("\n");
     sb.append("    componentTypeId: ").append(toIndentedString(componentTypeId)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
@@ -459,7 +486,7 @@ public class ModelsPipelineNodeStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "component_type", "component_type_id", "egress", "errors", "ingress", "last_ingested_time", "last_record_processed_time", "last_updated_at", "node_id", "node_slug", "progress", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "backpressure", "component_type", "component_type_id", "egress", "errors", "ingress", "last_ingested_time", "last_record_processed_time", "last_updated_at", "node_id", "node_slug", "progress", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -486,6 +513,10 @@ public class ModelsPipelineNodeStatus {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `backpressure`
+      if (jsonObj.get("backpressure") != null && !jsonObj.get("backpressure").isJsonNull()) {
+        ModelsNodeBackpressure.validateJsonElement(jsonObj.get("backpressure"));
+      }
       if ((jsonObj.get("component_type") != null && !jsonObj.get("component_type").isJsonNull()) && !jsonObj.get("component_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `component_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type").toString()));
       }

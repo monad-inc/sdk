@@ -265,6 +265,7 @@ from monad.models.models_input_config import ModelsInputConfig
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory
 from monad.models.models_input_list import ModelsInputList
 from monad.models.models_managed_by import ModelsManagedBy
+from monad.models.models_node_backpressure import ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent
 from monad.models.models_organization_list import ModelsOrganizationList
 from monad.models.models_organization_user import ModelsOrganizationUser
@@ -286,6 +287,7 @@ from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy
 from monad.models.models_pipeline_status import ModelsPipelineStatus
 from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue
+from monad.models.models_pipeline_stream_info import ModelsPipelineStreamInfo
 from monad.models.models_progress_entries import ModelsProgressEntries
 from monad.models.models_progress_entry import ModelsProgressEntry
 from monad.models.models_progress_label import ModelsProgressLabel

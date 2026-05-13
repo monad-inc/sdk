@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
 from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue
+from monad.models.models_pipeline_stream_info import ModelsPipelineStreamInfo
 from monad.models.models_progress_entries import ModelsProgressEntries
 from typing import Optional, Set
 from typing_extensions import Self
@@ -46,7 +47,8 @@ class ModelsPipelineStatus(BaseModel):
     pipeline_name: Optional[StrictStr] = None
     progress: Optional[ModelsProgressEntries] = None
     status: Optional[ModelsPipelineStatusValue] = None
-    __properties: ClassVar[List[str]] = ["average_size_egressed", "average_size_ingested", "egress", "errors", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
+    stream: Optional[ModelsPipelineStreamInfo] = None
+    __properties: ClassVar[List[str]] = ["average_size_egressed", "average_size_ingested", "egress", "errors", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status", "stream"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -103,6 +105,9 @@ class ModelsPipelineStatus(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of progress
         if self.progress:
             _dict['progress'] = self.progress.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of stream
+        if self.stream:
+            _dict['stream'] = self.stream.to_dict()
         return _dict
 
     @classmethod
@@ -128,7 +133,8 @@ class ModelsPipelineStatus(BaseModel):
             "pipeline_id": obj.get("pipeline_id"),
             "pipeline_name": obj.get("pipeline_name"),
             "progress": ModelsProgressEntries.from_dict(obj["progress"]) if obj.get("progress") is not None else None,
-            "status": obj.get("status")
+            "status": obj.get("status"),
+            "stream": ModelsPipelineStreamInfo.from_dict(obj["stream"]) if obj.get("stream") is not None else None
         })
         return _obj
 

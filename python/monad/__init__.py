@@ -317,6 +317,7 @@ __all__ = [
     "ModelsInputConnectorCategory",
     "ModelsInputList",
     "ModelsManagedBy",
+    "ModelsNodeBackpressure",
     "ModelsNodeComponent",
     "ModelsOrganizationList",
     "ModelsOrganizationUser",
@@ -338,6 +339,7 @@ __all__ = [
     "ModelsPipelineRetentionPolicy",
     "ModelsPipelineStatus",
     "ModelsPipelineStatusValue",
+    "ModelsPipelineStreamInfo",
     "ModelsProgressEntries",
     "ModelsProgressEntry",
     "ModelsProgressLabel",
@@ -932,6 +934,7 @@ from monad.models.models_input_config import ModelsInputConfig as ModelsInputCon
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory as ModelsInputConnectorCategory
 from monad.models.models_input_list import ModelsInputList as ModelsInputList
 from monad.models.models_managed_by import ModelsManagedBy as ModelsManagedBy
+from monad.models.models_node_backpressure import ModelsNodeBackpressure as ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent as ModelsNodeComponent
 from monad.models.models_organization_list import ModelsOrganizationList as ModelsOrganizationList
 from monad.models.models_organization_user import ModelsOrganizationUser as ModelsOrganizationUser
@@ -953,6 +956,7 @@ from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus as
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy as ModelsPipelineRetentionPolicy
 from monad.models.models_pipeline_status import ModelsPipelineStatus as ModelsPipelineStatus
 from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue as ModelsPipelineStatusValue
+from monad.models.models_pipeline_stream_info import ModelsPipelineStreamInfo as ModelsPipelineStreamInfo
 from monad.models.models_progress_entries import ModelsProgressEntries as ModelsProgressEntries
 from monad.models.models_progress_entry import ModelsProgressEntry as ModelsProgressEntry
 from monad.models.models_progress_label import ModelsProgressLabel as ModelsProgressLabel

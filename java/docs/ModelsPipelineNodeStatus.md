@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**avgBytesPerRecordEgress** | **Integer** |  |  [optional] |
 |**avgBytesPerRecordIngress** | **Integer** |  |  [optional] |
+|**backpressure** | [**ModelsNodeBackpressure**](ModelsNodeBackpressure.md) |  |  [optional] |
 |**componentType** | **String** |  |  [optional] |
 |**componentTypeId** | **String** |  |  [optional] |
 |**egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
