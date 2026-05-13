@@ -17,7 +17,7 @@
 |**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**applicationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**applicationKeyId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**enterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**username** | [**ModelsSecret**](ModelsSecret.md) |  |  |

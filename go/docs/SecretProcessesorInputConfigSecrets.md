@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**CredentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -287,11 +287,6 @@ and a boolean to check if the value has been set.
 
 SetCredentialsJson sets CredentialsJson field to given value.
 
-### HasCredentialsJson
-
-`func (o *SecretProcessesorInputConfigSecrets) HasCredentialsJson() bool`
-
-HasCredentialsJson returns a boolean if a field has been set.
 
 ### GetEnterpriseId
 

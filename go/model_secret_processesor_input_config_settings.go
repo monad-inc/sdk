@@ -56,11 +56,13 @@ type SecretProcessesorInputConfigSettings struct {
 	CustomerEventDataSettingsConfig *CustomerEventDataSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
 	DuoSecurityActivityLogsSettingsConfig *DuoSecurityActivityLogsSettingsConfig
+	EksAuditLogsSettingsConfig *EksAuditLogsSettingsConfig
 	EndorLabsAuditLogsSettingsConfig *EndorLabsAuditLogsSettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
+	GkeAuditLogsSettingsConfig *GkeAuditLogsSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	GoogleWorkspaceSettingsConfig *GoogleWorkspaceSettingsConfig
 	GreenhouseAuditLogsSettingsConfig *GreenhouseAuditLogsSettingsConfig
@@ -378,6 +380,13 @@ func DuoSecurityActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings
 	}
 }
 
+// EksAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EksAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func EksAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EksAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		EksAuditLogsSettingsConfig: v,
+	}
+}
+
 // EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EndorLabsAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EndorLabsAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -410,6 +419,13 @@ func FullScansSettingsConfigAsSecretProcessesorInputConfigSettings(v *FullScansS
 func GitlabIssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *GitlabIssuesSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		GitlabIssuesSettingsConfig: v,
+	}
+}
+
+// GkeAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns GkeAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func GkeAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *GkeAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		GkeAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -1439,6 +1455,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.DuoSecurityActivityLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into EksAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.EksAuditLogsSettingsConfig)
+	if err == nil {
+		jsonEksAuditLogsSettingsConfig, _ := json.Marshal(dst.EksAuditLogsSettingsConfig)
+		if string(jsonEksAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.EksAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.EksAuditLogsSettingsConfig); err != nil {
+				dst.EksAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.EksAuditLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into EndorLabsAuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.EndorLabsAuditLogsSettingsConfig)
 	if err == nil {
@@ -1522,6 +1555,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.GitlabIssuesSettingsConfig = nil
+	}
+
+	// try to unmarshal data into GkeAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.GkeAuditLogsSettingsConfig)
+	if err == nil {
+		jsonGkeAuditLogsSettingsConfig, _ := json.Marshal(dst.GkeAuditLogsSettingsConfig)
+		if string(jsonGkeAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.GkeAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GkeAuditLogsSettingsConfig); err != nil {
+				dst.GkeAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GkeAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into GoogleCloudStorageSettingsConfig
@@ -2515,11 +2565,13 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CustomerEventDataSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 		dst.DuoSecurityActivityLogsSettingsConfig = nil
+		dst.EksAuditLogsSettingsConfig = nil
 		dst.EndorLabsAuditLogsSettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
 		dst.GitlabIssuesSettingsConfig = nil
+		dst.GkeAuditLogsSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.GoogleWorkspaceSettingsConfig = nil
 		dst.GreenhouseAuditLogsSettingsConfig = nil
@@ -2735,6 +2787,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DuoSecurityActivityLogsSettingsConfig)
 	}
 
+	if src.EksAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.EksAuditLogsSettingsConfig)
+	}
+
 	if src.EndorLabsAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.EndorLabsAuditLogsSettingsConfig)
 	}
@@ -2753,6 +2809,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.GitlabIssuesSettingsConfig != nil {
 		return json.Marshal(&src.GitlabIssuesSettingsConfig)
+	}
+
+	if src.GkeAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.GkeAuditLogsSettingsConfig)
 	}
 
 	if src.GoogleCloudStorageSettingsConfig != nil {
@@ -3135,6 +3195,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.DuoSecurityActivityLogsSettingsConfig
 	}
 
+	if obj.EksAuditLogsSettingsConfig != nil {
+		return obj.EksAuditLogsSettingsConfig
+	}
+
 	if obj.EndorLabsAuditLogsSettingsConfig != nil {
 		return obj.EndorLabsAuditLogsSettingsConfig
 	}
@@ -3153,6 +3217,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.GitlabIssuesSettingsConfig != nil {
 		return obj.GitlabIssuesSettingsConfig
+	}
+
+	if obj.GkeAuditLogsSettingsConfig != nil {
+		return obj.GkeAuditLogsSettingsConfig
 	}
 
 	if obj.GoogleCloudStorageSettingsConfig != nil {
@@ -3533,6 +3601,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.DuoSecurityActivityLogsSettingsConfig
 	}
 
+	if obj.EksAuditLogsSettingsConfig != nil {
+		return *obj.EksAuditLogsSettingsConfig
+	}
+
 	if obj.EndorLabsAuditLogsSettingsConfig != nil {
 		return *obj.EndorLabsAuditLogsSettingsConfig
 	}
@@ -3551,6 +3623,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.GitlabIssuesSettingsConfig != nil {
 		return *obj.GitlabIssuesSettingsConfig
+	}
+
+	if obj.GkeAuditLogsSettingsConfig != nil {
+		return *obj.GkeAuditLogsSettingsConfig
 	}
 
 	if obj.GoogleCloudStorageSettingsConfig != nil {

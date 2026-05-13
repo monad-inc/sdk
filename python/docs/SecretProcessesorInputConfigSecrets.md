@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **application_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **application_key_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **username** | [**ModelsSecret**](ModelsSecret.md) |  | 

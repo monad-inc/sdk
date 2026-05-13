@@ -74,6 +74,8 @@ Name | Type | Description | Notes
 **Environment** | **string** | Determines the URI {environment}.docusign.com | 
 **UserId** | **string** | ID of the user to harvest audit logs for | 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
+**ClusterName** | **string** | The name of the GKE cluster. | 
+**UsesStaticCreds** | Pointer to **bool** |  | [optional] 
 **Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
@@ -86,6 +88,7 @@ Name | Type | Description | Notes
 **ProjectId** | **string** | The Google Cloud project ID to use | 
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
+**Location** | **string** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. | 
 **BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
 **AuthType** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | 
 **Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
@@ -159,7 +162,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, cron string, apiKeyId string, domainName string, environment string, userId string, namespace string, gitlabUrl string, projectId string, authType ZendeskAuditLogsAuthType, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -1859,6 +1862,51 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### GetClusterName
+
+`func (o *SecretProcessesorInputConfigSettings) GetClusterName() string`
+
+GetClusterName returns the ClusterName field if non-nil, zero value otherwise.
+
+### GetClusterNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetClusterNameOk() (*string, bool)`
+
+GetClusterNameOk returns a tuple with the ClusterName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClusterName
+
+`func (o *SecretProcessesorInputConfigSettings) SetClusterName(v string)`
+
+SetClusterName sets ClusterName field to given value.
+
+
+### GetUsesStaticCreds
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsesStaticCreds() bool`
+
+GetUsesStaticCreds returns the UsesStaticCreds field if non-nil, zero value otherwise.
+
+### GetUsesStaticCredsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsesStaticCredsOk() (*bool, bool)`
+
+GetUsesStaticCredsOk returns a tuple with the UsesStaticCreds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsesStaticCreds
+
+`func (o *SecretProcessesorInputConfigSettings) SetUsesStaticCreds(v bool)`
+
+SetUsesStaticCreds sets UsesStaticCreds field to given value.
+
+### HasUsesStaticCreds
+
+`func (o *SecretProcessesorInputConfigSettings) HasUsesStaticCreds() bool`
+
+HasUsesStaticCreds returns a boolean if a field has been set.
+
 ### GetNamespace
 
 `func (o *SecretProcessesorInputConfigSettings) GetNamespace() string`
@@ -2143,6 +2191,26 @@ SetWithLabelDetails sets WithLabelDetails field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasWithLabelDetails() bool`
 
 HasWithLabelDetails returns a boolean if a field has been set.
+
+### GetLocation
+
+`func (o *SecretProcessesorInputConfigSettings) GetLocation() string`
+
+GetLocation returns the Location field if non-nil, zero value otherwise.
+
+### GetLocationOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetLocationOk() (*string, bool)`
+
+GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocation
+
+`func (o *SecretProcessesorInputConfigSettings) SetLocation(v string)`
+
+SetLocation sets Location field to given value.
+
 
 ### GetBucketName
 

@@ -60,11 +60,13 @@ import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.CustomerEventDataSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
 import org.openapitools.client.model.DuoSecurityActivityLogsSettingsConfig;
+import org.openapitools.client.model.EksAuditLogsSettingsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
 import org.openapitools.client.model.EventSettingsConfig;
 import org.openapitools.client.model.FullScansSettingsConfig;
 import org.openapitools.client.model.GitlabIssuesSettingsConfig;
+import org.openapitools.client.model.GkeAuditLogsSettingsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
 import org.openapitools.client.model.GreenhouseAuditLogsSettingsConfig;
@@ -701,6 +703,22 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'clusterName'
+     */
+    @Test
+    public void clusterNameTest() {
+        // TODO: test clusterName
+    }
+
+    /**
+     * Test the property 'usesStaticCreds'
+     */
+    @Test
+    public void usesStaticCredsTest() {
+        // TODO: test usesStaticCreds
+    }
+
+    /**
      * Test the property 'namespace'
      */
     @Test
@@ -794,6 +812,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void withLabelDetailsTest() {
         // TODO: test withLabelDetails
+    }
+
+    /**
+     * Test the property 'location'
+     */
+    @Test
+    public void locationTest() {
+        // TODO: test location
     }
 
     /**

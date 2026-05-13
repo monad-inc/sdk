@@ -77,6 +77,8 @@
 |**environment** | [**EnvironmentEnum**](#EnvironmentEnum) | Determines the URI {environment}.docusign.com |  |
 |**userId** | **String** | ID of the user to harvest audit logs for |  |
 |**category** | **String** | The Category of logs to query |  [optional] |
+|**clusterName** | **String** | The name of the GKE cluster. |  |
+|**usesStaticCreds** | **Boolean** |  |  [optional] |
 |**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  |
 |**workspaceId** | **String** | The workspace ID of the Log Analytics workspace |  [optional] |
 |**appName** | **String** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. |  [optional] |
@@ -89,6 +91,7 @@
 |**projectId** | **String** | The Google Cloud project ID to use |  |
 |**state** | **String** | State to filter issues by e.g. opened, closed |  [optional] |
 |**withLabelDetails** | **Boolean** | Include label details in the response |  [optional] |
+|**location** | **String** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. |  |
 |**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
 |**authType** | **ZendeskAuditLogsAuthType** |  |  |
 |**email** | **String** | Email address to use for authenticating with Google Cloud (required for service_account auth). |  [optional] |

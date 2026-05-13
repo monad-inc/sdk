@@ -195,6 +195,8 @@ __all__ = [
     "DuoSecurityActivityLogsSecretsConfig",
     "DuoSecurityActivityLogsSettingsConfig",
     "DuplicateKeyValueToKeyArgumentsConfig",
+    "EksAuditLogsSecretsConfig",
+    "EksAuditLogsSettingsConfig",
     "ElasticsearchAuthTypeEnum",
     "ElasticsearchConnectionTypeEnum",
     "ElasticsearchSecretsConfig",
@@ -232,6 +234,8 @@ __all__ = [
     "GithubComMonadIncCorePkgTypesModelsUser",
     "GitlabIssuesSecretsConfig",
     "GitlabIssuesSettingsConfig",
+    "GkeAuditLogsSecretsConfig",
+    "GkeAuditLogsSettingsConfig",
     "GoogleCloudStorageOutputSecretsConfig",
     "GoogleCloudStorageOutputSettingsConfig",
     "GoogleCloudStorageSecretsConfig",
@@ -806,6 +810,8 @@ from monad.models.drop_record_where_value_eq_arguments_config import DropRecordW
 from monad.models.duo_security_activity_logs_secrets_config import DuoSecurityActivityLogsSecretsConfig as DuoSecurityActivityLogsSecretsConfig
 from monad.models.duo_security_activity_logs_settings_config import DuoSecurityActivityLogsSettingsConfig as DuoSecurityActivityLogsSettingsConfig
 from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig as DuplicateKeyValueToKeyArgumentsConfig
+from monad.models.eks_audit_logs_secrets_config import EksAuditLogsSecretsConfig as EksAuditLogsSecretsConfig
+from monad.models.eks_audit_logs_settings_config import EksAuditLogsSettingsConfig as EksAuditLogsSettingsConfig
 from monad.models.elasticsearch_auth_type_enum import ElasticsearchAuthTypeEnum as ElasticsearchAuthTypeEnum
 from monad.models.elasticsearch_connection_type_enum import ElasticsearchConnectionTypeEnum as ElasticsearchConnectionTypeEnum
 from monad.models.elasticsearch_secrets_config import ElasticsearchSecretsConfig as ElasticsearchSecretsConfig
@@ -843,6 +849,8 @@ from monad.models.github_com_monad_inc_core_pkg_types_models_time_range import G
 from monad.models.github_com_monad_inc_core_pkg_types_models_user import GithubComMonadIncCorePkgTypesModelsUser as GithubComMonadIncCorePkgTypesModelsUser
 from monad.models.gitlab_issues_secrets_config import GitlabIssuesSecretsConfig as GitlabIssuesSecretsConfig
 from monad.models.gitlab_issues_settings_config import GitlabIssuesSettingsConfig as GitlabIssuesSettingsConfig
+from monad.models.gke_audit_logs_secrets_config import GkeAuditLogsSecretsConfig as GkeAuditLogsSecretsConfig
+from monad.models.gke_audit_logs_settings_config import GkeAuditLogsSettingsConfig as GkeAuditLogsSettingsConfig
 from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudStorageOutputSecretsConfig as GoogleCloudStorageOutputSecretsConfig
 from monad.models.google_cloud_storage_output_settings_config import GoogleCloudStorageOutputSettingsConfig as GoogleCloudStorageOutputSettingsConfig
 from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageSecretsConfig as GoogleCloudStorageSecretsConfig

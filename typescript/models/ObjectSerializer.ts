@@ -127,6 +127,8 @@ export * from '../models/DropRecordWhereValueEqArgumentsConfig';
 export * from '../models/DuoSecurityActivityLogsSecretsConfig';
 export * from '../models/DuoSecurityActivityLogsSettingsConfig';
 export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+export * from '../models/EksAuditLogsSecretsConfig';
+export * from '../models/EksAuditLogsSettingsConfig';
 export * from '../models/ElasticsearchAuthTypeEnum';
 export * from '../models/ElasticsearchConnectionTypeEnum';
 export * from '../models/ElasticsearchSecretsConfig';
@@ -164,6 +166,8 @@ export * from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
+export * from '../models/GkeAuditLogsSecretsConfig';
+export * from '../models/GkeAuditLogsSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
 export * from '../models/GoogleCloudStorageOutputSettingsConfig';
 export * from '../models/GoogleCloudStorageSecretsConfig';
@@ -685,6 +689,8 @@ import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhere
 import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
 import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+import { EksAuditLogsSecretsConfig } from '../models/EksAuditLogsSecretsConfig';
+import { EksAuditLogsSettingsConfig } from '../models/EksAuditLogsSettingsConfig';
 import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
 import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
@@ -722,6 +728,8 @@ import { GithubComMonadIncCorePkgTypesModelsTimeRange } from '../models/GithubCo
 import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
+import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
+import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
@@ -1313,6 +1321,8 @@ let typeMap: {[index: string]: any} = {
     "DuoSecurityActivityLogsSecretsConfig": DuoSecurityActivityLogsSecretsConfig,
     "DuoSecurityActivityLogsSettingsConfig": DuoSecurityActivityLogsSettingsConfig,
     "DuplicateKeyValueToKeyArgumentsConfig": DuplicateKeyValueToKeyArgumentsConfig,
+    "EksAuditLogsSecretsConfig": EksAuditLogsSecretsConfig,
+    "EksAuditLogsSettingsConfig": EksAuditLogsSettingsConfig,
     "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
     "EncryptAESVariant": EncryptAESVariant,
@@ -1347,6 +1357,8 @@ let typeMap: {[index: string]: any} = {
     "GithubComMonadIncCorePkgTypesModelsUser": GithubComMonadIncCorePkgTypesModelsUser,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
+    "GkeAuditLogsSecretsConfig": GkeAuditLogsSecretsConfig,
+    "GkeAuditLogsSettingsConfig": GkeAuditLogsSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
     "GoogleCloudStorageOutputSettingsConfig": GoogleCloudStorageOutputSettingsConfig,
     "GoogleCloudStorageSecretsConfig": GoogleCloudStorageSecretsConfig,

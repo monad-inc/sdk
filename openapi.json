@@ -2111,6 +2111,40 @@
                 },
                 "type": "object"
             },
+            "eks_audit_logs.SecretsConfig": {
+                "properties": {
+                    "access_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "secret_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "type": "object"
+            },
+            "eks_audit_logs.SettingsConfig": {
+                "properties": {
+                    "backfill_start_time": {
+                        "type": "string"
+                    },
+                    "cluster_name": {
+                        "type": "string"
+                    },
+                    "region": {
+                        "type": "string"
+                    },
+                    "role_arn": {
+                        "type": "string"
+                    },
+                    "use_synthetic_data": {
+                        "type": "boolean"
+                    },
+                    "usesStaticCreds": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
             "elasticsearch.AuthTypeEnum": {
                 "description": "The method of authentication to use with the Elasticsearch cluster. Choose between 'api_key' or 'password'.",
                 "enum": [
@@ -2767,6 +2801,41 @@
                 },
                 "required": [
                     "gitlab_url",
+                    "project_id"
+                ],
+                "type": "object"
+            },
+            "gke_audit_logs.SecretsConfig": {
+                "description": "GKE Audit Logs secrets",
+                "properties": {
+                    "credentials_json": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "credentials_json"
+                ],
+                "type": "object"
+            },
+            "gke_audit_logs.SettingsConfig": {
+                "description": "GKE Audit Logs settings",
+                "properties": {
+                    "cluster_name": {
+                        "description": "The name of the GKE cluster.",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1.",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "description": "The GCP project ID that contains the GKE cluster.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "cluster_name",
+                    "location",
                     "project_id"
                 ],
                 "type": "object"
@@ -8853,6 +8922,9 @@
                                 "$ref": "#/components/schemas/duo_security_activity_logs.SecretsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/eks_audit_logs.SecretsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/endor_labs_audit_logs.SecretsConfig"
                             },
                             {
@@ -8866,6 +8938,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/gitlab_issues.SecretsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/gke_audit_logs.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/google_cloud_storage.SecretsConfig"
@@ -9228,6 +9303,9 @@
                                 "$ref": "#/components/schemas/duo_security_activity_logs.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/eks_audit_logs.SettingsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/endor_labs_audit_logs.SettingsConfig"
                             },
                             {
@@ -9241,6 +9319,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/gitlab_issues.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/gke_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/google_cloud_storage.SettingsConfig"
