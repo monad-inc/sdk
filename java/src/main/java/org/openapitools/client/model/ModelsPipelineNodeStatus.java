@@ -83,11 +83,6 @@ public class ModelsPipelineNodeStatus {
   @javax.annotation.Nullable
   private Integer errors;
 
-  public static final String SERIALIZED_NAME_EXPIRED_MESSAGES = "expired_messages";
-  @SerializedName(SERIALIZED_NAME_EXPIRED_MESSAGES)
-  @javax.annotation.Nullable
-  private Integer expiredMessages;
-
   public static final String SERIALIZED_NAME_INGRESS = "ingress";
   @SerializedName(SERIALIZED_NAME_INGRESS)
   @javax.annotation.Nullable
@@ -242,25 +237,6 @@ public class ModelsPipelineNodeStatus {
 
   public void setErrors(@javax.annotation.Nullable Integer errors) {
     this.errors = errors;
-  }
-
-
-  public ModelsPipelineNodeStatus expiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
-    this.expiredMessages = expiredMessages;
-    return this;
-  }
-
-  /**
-   * Get expiredMessages
-   * @return expiredMessages
-   */
-  @javax.annotation.Nullable
-  public Integer getExpiredMessages() {
-    return expiredMessages;
-  }
-
-  public void setExpiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
-    this.expiredMessages = expiredMessages;
   }
 
 
@@ -432,7 +408,6 @@ public class ModelsPipelineNodeStatus {
         Objects.equals(this.componentTypeId, modelsPipelineNodeStatus.componentTypeId) &&
         Objects.equals(this.egress, modelsPipelineNodeStatus.egress) &&
         Objects.equals(this.errors, modelsPipelineNodeStatus.errors) &&
-        Objects.equals(this.expiredMessages, modelsPipelineNodeStatus.expiredMessages) &&
         Objects.equals(this.ingress, modelsPipelineNodeStatus.ingress) &&
         Objects.equals(this.lastIngestedTime, modelsPipelineNodeStatus.lastIngestedTime) &&
         Objects.equals(this.lastRecordProcessedTime, modelsPipelineNodeStatus.lastRecordProcessedTime) &&
@@ -445,7 +420,7 @@ public class ModelsPipelineNodeStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(avgBytesPerRecordEgress, avgBytesPerRecordIngress, componentType, componentTypeId, egress, errors, expiredMessages, ingress, lastIngestedTime, lastRecordProcessedTime, lastUpdatedAt, nodeId, nodeSlug, progress, status);
+    return Objects.hash(avgBytesPerRecordEgress, avgBytesPerRecordIngress, componentType, componentTypeId, egress, errors, ingress, lastIngestedTime, lastRecordProcessedTime, lastUpdatedAt, nodeId, nodeSlug, progress, status);
   }
 
   @Override
@@ -458,7 +433,6 @@ public class ModelsPipelineNodeStatus {
     sb.append("    componentTypeId: ").append(toIndentedString(componentTypeId)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
-    sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    lastIngestedTime: ").append(toIndentedString(lastIngestedTime)).append("\n");
     sb.append("    lastRecordProcessedTime: ").append(toIndentedString(lastRecordProcessedTime)).append("\n");
@@ -485,7 +459,7 @@ public class ModelsPipelineNodeStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "last_record_processed_time", "last_updated_at", "node_id", "node_slug", "progress", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "component_type", "component_type_id", "egress", "errors", "ingress", "last_ingested_time", "last_record_processed_time", "last_updated_at", "node_id", "node_slug", "progress", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

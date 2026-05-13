@@ -37,7 +37,6 @@ class ModelsPipelineNodeStatus(BaseModel):
     component_type_id: Optional[StrictStr] = None
     egress: Optional[ModelsDataUsage] = None
     errors: Optional[StrictInt] = None
-    expired_messages: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
     last_ingested_time: Optional[StrictStr] = None
     last_record_processed_time: Optional[StrictStr] = None
@@ -46,7 +45,7 @@ class ModelsPipelineNodeStatus(BaseModel):
     node_slug: Optional[StrictStr] = None
     progress: Optional[ModelsProgressEntries] = None
     status: Optional[ModelsPipelineStatusValue] = None
-    __properties: ClassVar[List[str]] = ["avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "last_record_processed_time", "last_updated_at", "node_id", "node_slug", "progress", "status"]
+    __properties: ClassVar[List[str]] = ["avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "component_type", "component_type_id", "egress", "errors", "ingress", "last_ingested_time", "last_record_processed_time", "last_updated_at", "node_id", "node_slug", "progress", "status"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -114,7 +113,6 @@ class ModelsPipelineNodeStatus(BaseModel):
             "component_type_id": obj.get("component_type_id"),
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
             "errors": obj.get("errors"),
-            "expired_messages": obj.get("expired_messages"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "last_ingested_time": obj.get("last_ingested_time"),
             "last_record_processed_time": obj.get("last_record_processed_time"),

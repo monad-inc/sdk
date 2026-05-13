@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **component_type_id** | **str** |  | [optional] 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **errors** | **int** |  | [optional] 
-**expired_messages** | **int** |  | [optional] 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **last_ingested_time** | **str** |  | [optional] 
 **last_record_processed_time** | **str** |  | [optional] 

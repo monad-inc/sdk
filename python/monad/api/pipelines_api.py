@@ -3683,7 +3683,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
         node_id: Annotated[StrictStr, Field(description="Node ID")],
-        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)")] = None,
+        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 24 hours ago")] = None,
         end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
         _request_timeout: Union[
@@ -3709,7 +3709,7 @@ class PipelinesApi:
         :type pipeline_id: str
         :param node_id: Node ID (required)
         :type node_id: str
-        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
         :type metrics: List[str]
         :param start: ISO3339 start time, default 24 hours ago
         :type start: str
@@ -3771,7 +3771,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
         node_id: Annotated[StrictStr, Field(description="Node ID")],
-        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)")] = None,
+        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 24 hours ago")] = None,
         end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
         _request_timeout: Union[
@@ -3797,7 +3797,7 @@ class PipelinesApi:
         :type pipeline_id: str
         :param node_id: Node ID (required)
         :type node_id: str
-        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
         :type metrics: List[str]
         :param start: ISO3339 start time, default 24 hours ago
         :type start: str
@@ -3859,7 +3859,7 @@ class PipelinesApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
         node_id: Annotated[StrictStr, Field(description="Node ID")],
-        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)")] = None,
+        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 24 hours ago")] = None,
         end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
         _request_timeout: Union[
@@ -3885,7 +3885,7 @@ class PipelinesApi:
         :type pipeline_id: str
         :param node_id: Node ID (required)
         :type node_id: str
-        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
         :type metrics: List[str]
         :param start: ISO3339 start time, default 24 hours ago
         :type start: str
@@ -4029,7 +4029,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)")] = None,
+        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 24 hours ago")] = None,
         end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
         _request_timeout: Union[
@@ -4053,7 +4053,7 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
         :type metrics: List[str]
         :param start: ISO3339 start time, default 24 hours ago
         :type start: str
@@ -4113,7 +4113,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)")] = None,
+        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 24 hours ago")] = None,
         end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
         _request_timeout: Union[
@@ -4137,7 +4137,7 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
         :type metrics: List[str]
         :param start: ISO3339 start time, default 24 hours ago
         :type start: str
@@ -4197,7 +4197,7 @@ class PipelinesApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         pipeline_id: Annotated[StrictStr, Field(description="Pipeline ID")],
-        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)")] = None,
+        metrics: Annotated[Optional[List[StrictStr]], Field(description="Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 24 hours ago")] = None,
         end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
         _request_timeout: Union[
@@ -4221,7 +4221,7 @@ class PipelinesApi:
         :type organization_id: str
         :param pipeline_id: Pipeline ID (required)
         :type pipeline_id: str
-        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+        :param metrics: Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
         :type metrics: List[str]
         :param start: ISO3339 start time, default 24 hours ago
         :type start: str

@@ -5450,7 +5450,7 @@ export interface PipelinesApiGetPipelineNodeStatusRequest {
      */
     nodeId: string
     /**
-     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
      * Defaults to: undefined
      * @type Array&lt;string&gt;
      * @memberof PipelinesApigetPipelineNodeStatus
@@ -5488,7 +5488,7 @@ export interface PipelinesApiGetPipelineStatusRequest {
      */
     pipelineId: string
     /**
-     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
      * Defaults to: undefined
      * @type Array&lt;string&gt;
      * @memberof PipelinesApigetPipelineStatus

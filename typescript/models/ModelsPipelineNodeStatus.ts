@@ -22,7 +22,6 @@ export class ModelsPipelineNodeStatus {
     'componentTypeId'?: string;
     'egress'?: ModelsDataUsage;
     'errors'?: number;
-    'expiredMessages'?: number;
     'ingress'?: ModelsDataUsage;
     'lastIngestedTime'?: string;
     'lastRecordProcessedTime'?: string;
@@ -70,12 +69,6 @@ export class ModelsPipelineNodeStatus {
         {
             "name": "errors",
             "baseName": "errors",
-            "type": "number",
-            "format": ""
-        },
-        {
-            "name": "expiredMessages",
-            "baseName": "expired_messages",
             "type": "number",
             "format": ""
         },

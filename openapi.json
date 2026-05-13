@@ -5259,9 +5259,6 @@
                     "errors": {
                         "type": "integer"
                     },
-                    "expired_messages": {
-                        "type": "integer"
-                    },
                     "ingress": {
                         "$ref": "#/components/schemas/models.DataUsage"
                     },
@@ -5312,9 +5309,6 @@
                         "$ref": "#/components/schemas/models.DataUsage"
                     },
                     "errors": {
-                        "type": "integer"
-                    },
-                    "expired_messages": {
                         "type": "integer"
                     },
                     "ingress": {
@@ -18367,7 +18361,7 @@
                         }
                     },
                     {
-                        "description": "Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)",
+                        "description": "Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)",
                         "in": "query",
                         "name": "metrics",
                         "schema": {
@@ -18463,7 +18457,7 @@
                         }
                     },
                     {
-                        "description": "Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)",
+                        "description": "Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)",
                         "in": "query",
                         "name": "metrics",
                         "schema": {

@@ -937,7 +937,7 @@ func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
 	nodeId := "nodeId_example" // string | Node ID
-	metrics := []string{"Inner_example"} // []string | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+	metrics := []string{"Inner_example"} // []string | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
 	start := "start_example" // string | ISO3339 start time, default 24 hours ago (optional)
 	end := "end_example" // string | ISO3339 end time, default now (optional)
 
@@ -973,7 +973,7 @@ Name | Type | Description  | Notes
 
 
 
- **metrics** | **[]string** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | 
+ **metrics** | **[]string** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | 
  **start** | **string** | ISO3339 start time, default 24 hours ago | 
  **end** | **string** | ISO3339 end time, default now | 
 
@@ -1018,7 +1018,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
-	metrics := []string{"Inner_example"} // []string | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+	metrics := []string{"Inner_example"} // []string | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
 	start := "start_example" // string | ISO3339 start time, default 24 hours ago (optional)
 	end := "end_example" // string | ISO3339 end time, default now (optional)
 
@@ -1052,7 +1052,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **metrics** | **[]string** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | 
+ **metrics** | **[]string** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | 
  **start** | **string** | ISO3339 start time, default 24 hours ago | 
  **end** | **string** | ISO3339 end time, default now | 
 

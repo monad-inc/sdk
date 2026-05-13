@@ -76,11 +76,6 @@ public class ModelsPipelineStatus {
   @javax.annotation.Nullable
   private Integer errors;
 
-  public static final String SERIALIZED_NAME_EXPIRED_MESSAGES = "expired_messages";
-  @SerializedName(SERIALIZED_NAME_EXPIRED_MESSAGES)
-  @javax.annotation.Nullable
-  private Integer expiredMessages;
-
   public static final String SERIALIZED_NAME_INGRESS = "ingress";
   @SerializedName(SERIALIZED_NAME_INGRESS)
   @javax.annotation.Nullable
@@ -207,25 +202,6 @@ public class ModelsPipelineStatus {
 
   public void setErrors(@javax.annotation.Nullable Integer errors) {
     this.errors = errors;
-  }
-
-
-  public ModelsPipelineStatus expiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
-    this.expiredMessages = expiredMessages;
-    return this;
-  }
-
-  /**
-   * Get expiredMessages
-   * @return expiredMessages
-   */
-  @javax.annotation.Nullable
-  public Integer getExpiredMessages() {
-    return expiredMessages;
-  }
-
-  public void setExpiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
-    this.expiredMessages = expiredMessages;
   }
 
 
@@ -441,7 +417,6 @@ public class ModelsPipelineStatus {
         Objects.equals(this.averageSizeIngested, modelsPipelineStatus.averageSizeIngested) &&
         Objects.equals(this.egress, modelsPipelineStatus.egress) &&
         Objects.equals(this.errors, modelsPipelineStatus.errors) &&
-        Objects.equals(this.expiredMessages, modelsPipelineStatus.expiredMessages) &&
         Objects.equals(this.ingress, modelsPipelineStatus.ingress) &&
         Objects.equals(this.lastIngestedTime, modelsPipelineStatus.lastIngestedTime) &&
         Objects.equals(this.lastUpdatedAt, modelsPipelineStatus.lastUpdatedAt) &&
@@ -456,7 +431,7 @@ public class ModelsPipelineStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(averageSizeEgressed, averageSizeIngested, egress, errors, expiredMessages, ingress, lastIngestedTime, lastUpdatedAt, nodes, organizationId, organizationName, pipelineId, pipelineName, progress, status);
+    return Objects.hash(averageSizeEgressed, averageSizeIngested, egress, errors, ingress, lastIngestedTime, lastUpdatedAt, nodes, organizationId, organizationName, pipelineId, pipelineName, progress, status);
   }
 
   @Override
@@ -467,7 +442,6 @@ public class ModelsPipelineStatus {
     sb.append("    averageSizeIngested: ").append(toIndentedString(averageSizeIngested)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
-    sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    lastIngestedTime: ").append(toIndentedString(lastIngestedTime)).append("\n");
     sb.append("    lastUpdatedAt: ").append(toIndentedString(lastUpdatedAt)).append("\n");
@@ -496,7 +470,7 @@ public class ModelsPipelineStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("average_size_egressed", "average_size_ingested", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("average_size_egressed", "average_size_ingested", "egress", "errors", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

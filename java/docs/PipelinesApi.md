@@ -1030,7 +1030,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String pipelineId = "pipelineId_example"; // String | Pipeline ID
     String nodeId = "nodeId_example"; // String | Node ID
-    List<String> metrics = Arrays.asList(); // List<String> | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+    List<String> metrics = Arrays.asList(); // List<String> | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
     String start = "start_example"; // String | ISO3339 start time, default 24 hours ago
     String end = "end_example"; // String | ISO3339 end time, default now
     try {
@@ -1054,7 +1054,7 @@ public class Example {
 | **organizationId** | **String**| Organization ID | |
 | **pipelineId** | **String**| Pipeline ID | |
 | **nodeId** | **String**| Node ID | |
-| **metrics** | [**List&lt;String&gt;**](String.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | [optional] |
+| **metrics** | [**List&lt;String&gt;**](String.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | [optional] |
 | **start** | **String**| ISO3339 start time, default 24 hours ago | [optional] |
 | **end** | **String**| ISO3339 end time, default now | [optional] |
 
@@ -1115,7 +1115,7 @@ public class Example {
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String pipelineId = "pipelineId_example"; // String | Pipeline ID
-    List<String> metrics = Arrays.asList(); // List<String> | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+    List<String> metrics = Arrays.asList(); // List<String> | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
     String start = "start_example"; // String | ISO3339 start time, default 24 hours ago
     String end = "end_example"; // String | ISO3339 end time, default now
     try {
@@ -1138,7 +1138,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **pipelineId** | **String**| Pipeline ID | |
-| **metrics** | [**List&lt;String&gt;**](String.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | [optional] |
+| **metrics** | [**List&lt;String&gt;**](String.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | [optional] |
 | **start** | **String**| ISO3339 start time, default 24 hours ago | [optional] |
 | **end** | **String**| ISO3339 end time, default now | [optional] |
 

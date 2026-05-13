@@ -770,7 +770,7 @@ const request: PipelinesApiGetPipelineNodeStatusRequest = {
   pipelineId: "pipeline_id_example",
     // Node ID
   nodeId: "node_id_example",
-    // Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+    // Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
   metrics: [
     "metrics_example",
   ],
@@ -792,7 +792,7 @@ Name | Type | Description  | Notes
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
  **nodeId** | [**string**] | Node ID | defaults to undefined
- **metrics** | **Array&lt;string&gt;** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | (optional) defaults to undefined
+ **metrics** | **Array&lt;string&gt;** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | (optional) defaults to undefined
  **start** | [**string**] | ISO3339 start time, default 24 hours ago | (optional) defaults to undefined
  **end** | [**string**] | ISO3339 end time, default now | (optional) defaults to undefined
 
@@ -839,7 +839,7 @@ const request: PipelinesApiGetPipelineStatusRequest = {
   organizationId: "organization_id_example",
     // Pipeline ID
   pipelineId: "pipeline_id_example",
-    // Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+    // Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
   metrics: [
     "metrics_example",
   ],
@@ -860,7 +860,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
- **metrics** | **Array&lt;string&gt;** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | (optional) defaults to undefined
+ **metrics** | **Array&lt;string&gt;** | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | (optional) defaults to undefined
  **start** | [**string**] | ISO3339 start time, default 24 hours ago | (optional) defaults to undefined
  **end** | [**string**] | ISO3339 end time, default now | (optional) defaults to undefined
 

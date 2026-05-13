@@ -55,7 +55,6 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
                                 bytes = 56, 
                                 records = 56, ), 
                             errors = 56, 
-                            expired_messages = 56, 
                             ingress = monad.models.models/data_usage.models.DataUsage(
                                 bytes = 56, 
                                 records = 56, ), 
@@ -68,7 +67,6 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
                                     component_type = '', 
                                     component_type_id = '', 
                                     errors = 56, 
-                                    expired_messages = 56, 
                                     last_ingested_time = '', 
                                     last_record_processed_time = '', 
                                     last_updated_at = '', 

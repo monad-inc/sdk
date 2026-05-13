@@ -2016,7 +2016,7 @@ type ApiGetPipelineNodeStatusRequest struct {
 	end *string
 }
 
-// Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+// Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
 func (r ApiGetPipelineNodeStatusRequest) Metrics(metrics []string) ApiGetPipelineNodeStatusRequest {
 	r.metrics = &metrics
 	return r
@@ -2202,7 +2202,7 @@ type ApiGetPipelineStatusRequest struct {
 	end *string
 }
 
-// Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+// Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
 func (r ApiGetPipelineStatusRequest) Metrics(metrics []string) ApiGetPipelineStatusRequest {
 	r.metrics = &metrics
 	return r

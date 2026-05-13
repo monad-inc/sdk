@@ -24,7 +24,6 @@ type ModelsPipelineStatus struct {
 	AverageSizeIngested *int32 `json:"average_size_ingested,omitempty"`
 	Egress *ModelsDataUsage `json:"egress,omitempty"`
 	Errors *int32 `json:"errors,omitempty"`
-	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
 	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	LastUpdatedAt *string `json:"last_updated_at,omitempty"`
@@ -180,38 +179,6 @@ func (o *ModelsPipelineStatus) HasErrors() bool {
 // SetErrors gets a reference to the given int32 and assigns it to the Errors field.
 func (o *ModelsPipelineStatus) SetErrors(v int32) {
 	o.Errors = &v
-}
-
-// GetExpiredMessages returns the ExpiredMessages field value if set, zero value otherwise.
-func (o *ModelsPipelineStatus) GetExpiredMessages() int32 {
-	if o == nil || IsNil(o.ExpiredMessages) {
-		var ret int32
-		return ret
-	}
-	return *o.ExpiredMessages
-}
-
-// GetExpiredMessagesOk returns a tuple with the ExpiredMessages field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsPipelineStatus) GetExpiredMessagesOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExpiredMessages) {
-		return nil, false
-	}
-	return o.ExpiredMessages, true
-}
-
-// HasExpiredMessages returns a boolean if a field has been set.
-func (o *ModelsPipelineStatus) HasExpiredMessages() bool {
-	if o != nil && !IsNil(o.ExpiredMessages) {
-		return true
-	}
-
-	return false
-}
-
-// SetExpiredMessages gets a reference to the given int32 and assigns it to the ExpiredMessages field.
-func (o *ModelsPipelineStatus) SetExpiredMessages(v int32) {
-	o.ExpiredMessages = &v
 }
 
 // GetIngress returns the Ingress field value if set, zero value otherwise.
@@ -555,9 +522,6 @@ func (o ModelsPipelineStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Errors) {
 		toSerialize["errors"] = o.Errors
-	}
-	if !IsNil(o.ExpiredMessages) {
-		toSerialize["expired_messages"] = o.ExpiredMessages
 	}
 	if !IsNil(o.Ingress) {
 		toSerialize["ingress"] = o.Ingress

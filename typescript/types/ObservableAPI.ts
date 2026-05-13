@@ -5695,7 +5695,7 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param nodeId Node ID
-     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
@@ -5725,7 +5725,7 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param nodeId Node ID
-     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
@@ -5738,7 +5738,7 @@ export class ObservablePipelinesApi {
      * Get pipeline status
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
@@ -5767,7 +5767,7 @@ export class ObservablePipelinesApi {
      * Get pipeline status
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
-     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param [metrics] Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure)
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */

@@ -1939,7 +1939,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @param _callback Callback for upload/download progress
@@ -2039,7 +2039,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @return ModelsPipelineNodeStatus
@@ -2063,7 +2063,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @return ApiResponse&lt;ModelsPipelineNodeStatus&gt;
@@ -2088,7 +2088,7 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -2113,7 +2113,7 @@ public class PipelinesApi {
      * Build call for getPipelineStatus
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @param _callback Callback for upload/download progress
@@ -2206,7 +2206,7 @@ public class PipelinesApi {
      * Get pipeline status
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @return ModelsPipelineStatus
@@ -2229,7 +2229,7 @@ public class PipelinesApi {
      * Get pipeline status
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @return ApiResponse&lt;ModelsPipelineStatus&gt;
@@ -2253,7 +2253,7 @@ public class PipelinesApi {
      * Get pipeline status
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
-     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+     * @param metrics Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
      * @param start ISO3339 start time, default 24 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
      * @param _callback The callback to be executed when the API call finishes

@@ -21,7 +21,6 @@ export class ModelsPipelineStatus {
     'averageSizeIngested'?: number;
     'egress'?: ModelsDataUsage;
     'errors'?: number;
-    'expiredMessages'?: number;
     'ingress'?: ModelsDataUsage;
     'lastIngestedTime'?: string;
     'lastUpdatedAt'?: string;
@@ -59,12 +58,6 @@ export class ModelsPipelineStatus {
         {
             "name": "errors",
             "baseName": "errors",
-            "type": "number",
-            "format": ""
-        },
-        {
-            "name": "expiredMessages",
-            "baseName": "expired_messages",
             "type": "number",
             "format": ""
         },

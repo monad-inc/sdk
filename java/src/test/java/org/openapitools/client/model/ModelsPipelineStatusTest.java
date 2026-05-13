@@ -76,14 +76,6 @@ public class ModelsPipelineStatusTest {
     }
 
     /**
-     * Test the property 'expiredMessages'
-     */
-    @Test
-    public void expiredMessagesTest() {
-        // TODO: test expiredMessages
-    }
-
-    /**
      * Test the property 'ingress'
      */
     @Test

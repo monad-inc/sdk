@@ -63,7 +63,6 @@ class TestModelsPipelineNode(unittest.TestCase):
                         bytes = 56, 
                         records = 56, ), 
                     errors = 56, 
-                    expired_messages = 56, 
                     ingress = monad.models.models/data_usage.models.DataUsage(
                         bytes = 56, 
                         records = 56, ), 

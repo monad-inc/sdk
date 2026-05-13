@@ -1168,7 +1168,7 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID
     pipeline_id = 'pipeline_id_example' # str | Pipeline ID
     node_id = 'node_id_example' # str | Node ID
-    metrics = ['metrics_example'] # List[str] | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+    metrics = ['metrics_example'] # List[str] | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
     start = 'start_example' # str | ISO3339 start time, default 24 hours ago (optional)
     end = 'end_example' # str | ISO3339 end time, default now (optional)
 
@@ -1191,7 +1191,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **pipeline_id** | **str**| Pipeline ID | 
  **node_id** | **str**| Node ID | 
- **metrics** | [**List[str]**](str.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | [optional] 
+ **metrics** | [**List[str]**](str.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | [optional] 
  **start** | **str**| ISO3339 start time, default 24 hours ago | [optional] 
  **end** | **str**| ISO3339 end time, default now | [optional] 
 
@@ -1264,7 +1264,7 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     pipeline_id = 'pipeline_id_example' # str | Pipeline ID
-    metrics = ['metrics_example'] # List[str] | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) (optional)
+    metrics = ['metrics_example'] # List[str] | Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) (optional)
     start = 'start_example' # str | ISO3339 start time, default 24 hours ago (optional)
     end = 'end_example' # str | ISO3339 end time, default now (optional)
 
@@ -1286,7 +1286,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **pipeline_id** | **str**| Pipeline ID | 
- **metrics** | [**List[str]**](str.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records) | [optional] 
+ **metrics** | [**List[str]**](str.md)| Metrics to retrieve (all|health|ingress_bytes|egress_bytes|ingress_records|egress_records|backpressure) | [optional] 
  **start** | **str**| ISO3339 start time, default 24 hours ago | [optional] 
  **end** | **str**| ISO3339 end time, default now | [optional] 
 

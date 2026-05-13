@@ -36,7 +36,6 @@ class ModelsPipelineStatus(BaseModel):
     average_size_ingested: Optional[StrictInt] = None
     egress: Optional[ModelsDataUsage] = None
     errors: Optional[StrictInt] = None
-    expired_messages: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
     last_ingested_time: Optional[StrictStr] = None
     last_updated_at: Optional[StrictStr] = None
@@ -47,7 +46,7 @@ class ModelsPipelineStatus(BaseModel):
     pipeline_name: Optional[StrictStr] = None
     progress: Optional[ModelsProgressEntries] = None
     status: Optional[ModelsPipelineStatusValue] = None
-    __properties: ClassVar[List[str]] = ["average_size_egressed", "average_size_ingested", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
+    __properties: ClassVar[List[str]] = ["average_size_egressed", "average_size_ingested", "egress", "errors", "ingress", "last_ingested_time", "last_updated_at", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -120,7 +119,6 @@ class ModelsPipelineStatus(BaseModel):
             "average_size_ingested": obj.get("average_size_ingested"),
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
             "errors": obj.get("errors"),
-            "expired_messages": obj.get("expired_messages"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "last_ingested_time": obj.get("last_ingested_time"),
             "last_updated_at": obj.get("last_updated_at"),

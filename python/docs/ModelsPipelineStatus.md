@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **average_size_ingested** | **int** |  | [optional] 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **errors** | **int** |  | [optional] 
-**expired_messages** | **int** |  | [optional] 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **last_ingested_time** | **str** |  | [optional] 
 **last_updated_at** | **str** |  | [optional] 
