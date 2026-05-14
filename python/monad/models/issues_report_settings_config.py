@@ -45,9 +45,39 @@ class IssuesReportSettingsConfig(BaseModel):
     severities: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues according to Control severity")
     stack_layers: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues from specific stack layers")
     status: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter by Issue handling status @Description Default: OPEN")
-    tenant_data_center: Optional[StrictStr] = Field(default=None, description="DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact")
+    tenant_data_center: StrictStr = Field(description="DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"]
+
+    @field_validator('has_note')
+    def has_note_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['has_note', 'does_not_have_note', 'do_not_filter']):
+            raise ValueError("must be one of enum values ('has_note', 'does_not_have_note', 'do_not_filter')")
+        return value
+
+    @field_validator('has_remediation')
+    def has_remediation_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['has_remediation', 'does_not_have_remediation', 'do_not_filter']):
+            raise ValueError("must be one of enum values ('has_remediation', 'does_not_have_remediation', 'do_not_filter')")
+        return value
+
+    @field_validator('has_service_ticket')
+    def has_service_ticket_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['has_service_ticket', 'does_not_have_service_ticket', 'do_not_filter']):
+            raise ValueError("must be one of enum values ('has_service_ticket', 'does_not_have_service_ticket', 'do_not_filter')")
+        return value
 
     @field_validator('issue_types')
     def issue_types_validate_enum(cls, value):

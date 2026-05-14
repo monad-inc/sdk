@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Wiz cloud resource inventory secrets
 */
 export class CloudResourceInventorySecretsConfig {
-    'clientId'?: ModelsSecret;
-    'clientSecret'?: ModelsSecret;
+    'clientId': ModelsSecret;
+    'clientSecret': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

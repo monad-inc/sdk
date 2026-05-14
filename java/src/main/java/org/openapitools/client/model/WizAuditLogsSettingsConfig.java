@@ -57,7 +57,7 @@ public class WizAuditLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_TENANT_DATA_CENTER = "tenant_data_center";
   @SerializedName(SERIALIZED_NAME_TENANT_DATA_CENTER)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String tenantDataCenter;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -87,7 +87,7 @@ public class WizAuditLogsSettingsConfig {
   }
 
 
-  public WizAuditLogsSettingsConfig tenantDataCenter(@javax.annotation.Nullable String tenantDataCenter) {
+  public WizAuditLogsSettingsConfig tenantDataCenter(@javax.annotation.Nonnull String tenantDataCenter) {
     this.tenantDataCenter = tenantDataCenter;
     return this;
   }
@@ -96,12 +96,12 @@ public class WizAuditLogsSettingsConfig {
    * DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot;
    * @return tenantDataCenter
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getTenantDataCenter() {
     return tenantDataCenter;
   }
 
-  public void setTenantDataCenter(@javax.annotation.Nullable String tenantDataCenter) {
+  public void setTenantDataCenter(@javax.annotation.Nonnull String tenantDataCenter) {
     this.tenantDataCenter = tenantDataCenter;
   }
 
@@ -173,7 +173,7 @@ public class WizAuditLogsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "tenant_data_center", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_data_center"));
   }
 
   /**
@@ -196,11 +196,18 @@ public class WizAuditLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `WizAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : WizAuditLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("tenant_data_center") != null && !jsonObj.get("tenant_data_center").isJsonNull()) && !jsonObj.get("tenant_data_center").isJsonPrimitive()) {
+      if (!jsonObj.get("tenant_data_center").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_data_center` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_data_center").toString()));
       }
   }

@@ -27,15 +27,15 @@ export class IssuesSettingsConfig {
     /**
     * @Description Filter Issues with or without a note
     */
-    'hasNote'?: string;
+    'hasNote'?: IssuesSettingsConfigHasNoteEnum;
     /**
     * @Description Filter Issues with or without remediation
     */
-    'hasRemediation'?: string;
+    'hasRemediation'?: IssuesSettingsConfigHasRemediationEnum;
     /**
     * @Description Filter Issues with or without related service ticket
     */
-    'hasServiceTicket'?: string;
+    'hasServiceTicket'?: IssuesSettingsConfigHasServiceTicketEnum;
     /**
     * @Description Filter only Issues that match these specific IDs
     */
@@ -87,7 +87,7 @@ export class IssuesSettingsConfig {
     /**
     * DataCenter represents the tenant\'s data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact
     */
-    'tenantDataCenter'?: string;
+    'tenantDataCenter': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -113,19 +113,19 @@ export class IssuesSettingsConfig {
         {
             "name": "hasNote",
             "baseName": "has_note",
-            "type": "string",
+            "type": "IssuesSettingsConfigHasNoteEnum",
             "format": ""
         },
         {
             "name": "hasRemediation",
             "baseName": "has_remediation",
-            "type": "string",
+            "type": "IssuesSettingsConfigHasRemediationEnum",
             "format": ""
         },
         {
             "name": "hasServiceTicket",
             "baseName": "has_service_ticket",
-            "type": "string",
+            "type": "IssuesSettingsConfigHasServiceTicketEnum",
             "format": ""
         },
         {
@@ -221,6 +221,21 @@ export class IssuesSettingsConfig {
     }
 }
 
+export enum IssuesSettingsConfigHasNoteEnum {
+    HasNote = 'has_note',
+    DoesNotHaveNote = 'does_not_have_note',
+    DoNotFilter = 'do_not_filter'
+}
+export enum IssuesSettingsConfigHasRemediationEnum {
+    HasRemediation = 'has_remediation',
+    DoesNotHaveRemediation = 'does_not_have_remediation',
+    DoNotFilter = 'do_not_filter'
+}
+export enum IssuesSettingsConfigHasServiceTicketEnum {
+    HasServiceTicket = 'has_service_ticket',
+    DoesNotHaveServiceTicket = 'does_not_have_service_ticket',
+    DoNotFilter = 'do_not_filter'
+}
 export enum IssuesSettingsConfigIssueTypesEnum {
     ToxicCombination = 'TOXIC_COMBINATION',
     ThreatDetection = 'THREAT_DETECTION',

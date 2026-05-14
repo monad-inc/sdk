@@ -48,6 +48,10 @@ class TestCloudResourceInventoryReportsSettingsConfig(unittest.TestCase):
             )
         else:
             return CloudResourceInventoryReportsSettingsConfig(
+                endpoint_url = '',
+                entity_type = [
+                    ''
+                    ],
         )
         """
 

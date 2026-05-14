@@ -29,7 +29,7 @@ class WizAuditLogsSettingsConfig(BaseModel):
     Wiz Audit Logs settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental.")
-    tenant_data_center: Optional[StrictStr] = Field(default=None, description="DataCenter represents the tenant's data center location. Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\"")
+    tenant_data_center: StrictStr = Field(description="DataCenter represents the tenant's data center location. Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\"")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "tenant_data_center", "use_synthetic_data"]
 

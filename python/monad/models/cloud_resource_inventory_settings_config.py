@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,8 +31,8 @@ class CloudResourceInventorySettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.")
     cloud_platform: Optional[List[StrictStr]] = Field(default=None, description="Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.", alias="cloudPlatform")
-    endpoint_url: Optional[StrictStr] = Field(default=None, description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
-    entity_type: Optional[List[StrictStr]] = Field(default=None, description="Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.", alias="entityType")
+    endpoint_url: StrictStr = Field(description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
+    entity_type: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="Entity types for Wiz.", alias="entityType")
     full_snapshot: Optional[StrictBool] = Field(default=None, description="FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.")
     interval: Optional[StrictInt] = Field(default=None, description="Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")

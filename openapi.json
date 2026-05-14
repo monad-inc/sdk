@@ -1104,6 +1104,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "cloud_configuration_findings.SettingsConfig": {
@@ -1118,7 +1122,7 @@
                         "type": "string"
                     },
                     "result": {
-                        "description": "Result types for Wiz. Ex: 'PASSED', 'FAILED'.",
+                        "description": "Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.",
                         "items": {
                             "type": "string"
                         },
@@ -1126,7 +1130,7 @@
                         "uniqueItems": false
                     },
                     "severity": {
-                        "description": "Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'INFO'.",
+                        "description": "Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.",
                         "items": {
                             "type": "string"
                         },
@@ -1134,7 +1138,7 @@
                         "uniqueItems": false
                     },
                     "status": {
-                        "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.",
+                        "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED', 'REJECTED'.",
                         "items": {
                             "type": "string"
                         },
@@ -1146,6 +1150,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "endpoint_url"
+                ],
                 "type": "object"
             },
             "cloud_logs.SecretsConfig": {
@@ -1193,6 +1200,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "cloud_resource_inventory.SettingsConfig": {
@@ -1215,10 +1226,11 @@
                         "type": "string"
                     },
                     "entityType": {
-                        "description": "Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.",
+                        "description": "Entity types for Wiz.",
                         "items": {
                             "type": "string"
                         },
+                        "minItems": 1,
                         "type": "array",
                         "uniqueItems": false
                     },
@@ -1235,6 +1247,10 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "endpoint_url",
+                    "entityType"
+                ],
                 "type": "object"
             },
             "cloud_resource_inventory_reports.SecretsConfig": {
@@ -1247,6 +1263,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "cloud_resource_inventory_reports.SettingsConfig": {
@@ -1273,6 +1293,7 @@
                         "items": {
                             "type": "string"
                         },
+                        "minItems": 1,
                         "type": "array",
                         "uniqueItems": false
                     },
@@ -1281,6 +1302,10 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "endpoint_url",
+                    "entityType"
+                ],
                 "type": "object"
             },
             "cloudflare_ddos_attack_analytics.SecretsConfig": {
@@ -3242,14 +3267,29 @@
                     },
                     "has_note": {
                         "description": "@Description Filter Issues with or without a note",
+                        "enum": [
+                            "has_note",
+                            "does_not_have_note",
+                            "do_not_filter"
+                        ],
                         "type": "string"
                     },
                     "has_remediation": {
                         "description": "@Description Filter Issues with or without remediation",
+                        "enum": [
+                            "has_remediation",
+                            "does_not_have_remediation",
+                            "do_not_filter"
+                        ],
                         "type": "string"
                     },
                     "has_service_ticket": {
                         "description": "@Description Filter Issues with or without related service ticket",
+                        "enum": [
+                            "has_service_ticket",
+                            "does_not_have_service_ticket",
+                            "do_not_filter"
+                        ],
                         "type": "string"
                     },
                     "issue_ids": {
@@ -3382,6 +3422,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "tenant_data_center"
+                ],
                 "type": "object"
             },
             "issues_report.SecretsConfig": {
@@ -3417,14 +3460,29 @@
                     },
                     "has_note": {
                         "description": "@Description Filter Issues with or without a note",
+                        "enum": [
+                            "has_note",
+                            "does_not_have_note",
+                            "do_not_filter"
+                        ],
                         "type": "string"
                     },
                     "has_remediation": {
                         "description": "@Description Filter Issues with or without remediation",
+                        "enum": [
+                            "has_remediation",
+                            "does_not_have_remediation",
+                            "do_not_filter"
+                        ],
                         "type": "string"
                     },
                     "has_service_ticket": {
                         "description": "@Description Filter Issues with or without related service ticket",
+                        "enum": [
+                            "has_service_ticket",
+                            "does_not_have_service_ticket",
+                            "do_not_filter"
+                        ],
                         "type": "string"
                     },
                     "issue_ids": {
@@ -3557,6 +3615,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "tenant_data_center"
+                ],
                 "type": "object"
             },
             "jq.ArgumentsConfig": {
@@ -10927,6 +10988,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "vulnerability_findings.SettingsConfig": {
@@ -10945,6 +11010,7 @@
                         "items": {
                             "type": "string"
                         },
+                        "minItems": 1,
                         "type": "array",
                         "uniqueItems": false
                     },
@@ -10977,7 +11043,7 @@
                         "type": "boolean"
                     },
                     "vendor_severity": {
-                        "description": "Vendor severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'INFO'.",
+                        "description": "Vendor severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'",
                         "items": {
                             "type": "string"
                         },
@@ -10985,6 +11051,10 @@
                         "uniqueItems": false
                     }
                 },
+                "required": [
+                    "asset_types",
+                    "endpoint_url"
+                ],
                 "type": "object"
             },
             "vulnerability_findings_report.SecretsConfig": {
@@ -11000,6 +11070,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "vulnerability_findings_report.SettingsConfig": {
@@ -11018,6 +11092,7 @@
                         "items": {
                             "type": "string"
                         },
+                        "minItems": 1,
                         "type": "array",
                         "uniqueItems": false
                     },
@@ -11050,7 +11125,7 @@
                         "type": "boolean"
                     },
                     "vendor_severity": {
-                        "description": "Vendor severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'INFO'.",
+                        "description": "Vendor severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'",
                         "items": {
                             "type": "string"
                         },
@@ -11058,6 +11133,10 @@
                         "uniqueItems": false
                     }
                 },
+                "required": [
+                    "asset_types",
+                    "endpoint_url"
+                ],
                 "type": "object"
             },
             "wiz_audit_logs.SecretsConfig": {
@@ -11092,6 +11171,9 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "tenant_data_center"
+                ],
                 "type": "object"
             },
             "zendesk_audit_logs.AuthType": {

@@ -42,6 +42,7 @@ class TestWizAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return WizAuditLogsSettingsConfig(
+                tenant_data_center = '',
         )
         """
 

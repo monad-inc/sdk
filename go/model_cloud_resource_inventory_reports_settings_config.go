@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the CloudResourceInventoryReportsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -25,19 +27,23 @@ type CloudResourceInventoryReportsSettingsConfig struct {
 	// Cron expression for scheduling the input
 	Cron *string `json:"cron,omitempty"`
 	// Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.
-	EndpointUrl *string `json:"endpoint_url,omitempty"`
+	EndpointUrl string `json:"endpoint_url"`
 	// Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.
-	EntityType []string `json:"entityType,omitempty"`
+	EntityType []string `json:"entityType"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _CloudResourceInventoryReportsSettingsConfig CloudResourceInventoryReportsSettingsConfig
 
 // NewCloudResourceInventoryReportsSettingsConfig instantiates a new CloudResourceInventoryReportsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCloudResourceInventoryReportsSettingsConfig() *CloudResourceInventoryReportsSettingsConfig {
+func NewCloudResourceInventoryReportsSettingsConfig(endpointUrl string, entityType []string) *CloudResourceInventoryReportsSettingsConfig {
 	this := CloudResourceInventoryReportsSettingsConfig{}
+	this.EndpointUrl = endpointUrl
+	this.EntityType = entityType
 	return &this
 }
 
@@ -113,66 +119,50 @@ func (o *CloudResourceInventoryReportsSettingsConfig) SetCron(v string) {
 	o.Cron = &v
 }
 
-// GetEndpointUrl returns the EndpointUrl field value if set, zero value otherwise.
+// GetEndpointUrl returns the EndpointUrl field value
 func (o *CloudResourceInventoryReportsSettingsConfig) GetEndpointUrl() string {
-	if o == nil || IsNil(o.EndpointUrl) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.EndpointUrl
+
+	return o.EndpointUrl
 }
 
-// GetEndpointUrlOk returns a tuple with the EndpointUrl field value if set, nil otherwise
+// GetEndpointUrlOk returns a tuple with the EndpointUrl field value
 // and a boolean to check if the value has been set.
 func (o *CloudResourceInventoryReportsSettingsConfig) GetEndpointUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.EndpointUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndpointUrl, true
+	return &o.EndpointUrl, true
 }
 
-// HasEndpointUrl returns a boolean if a field has been set.
-func (o *CloudResourceInventoryReportsSettingsConfig) HasEndpointUrl() bool {
-	if o != nil && !IsNil(o.EndpointUrl) {
-		return true
-	}
-
-	return false
-}
-
-// SetEndpointUrl gets a reference to the given string and assigns it to the EndpointUrl field.
+// SetEndpointUrl sets field value
 func (o *CloudResourceInventoryReportsSettingsConfig) SetEndpointUrl(v string) {
-	o.EndpointUrl = &v
+	o.EndpointUrl = v
 }
 
-// GetEntityType returns the EntityType field value if set, zero value otherwise.
+// GetEntityType returns the EntityType field value
 func (o *CloudResourceInventoryReportsSettingsConfig) GetEntityType() []string {
-	if o == nil || IsNil(o.EntityType) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
+
 	return o.EntityType
 }
 
-// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// GetEntityTypeOk returns a tuple with the EntityType field value
 // and a boolean to check if the value has been set.
 func (o *CloudResourceInventoryReportsSettingsConfig) GetEntityTypeOk() ([]string, bool) {
-	if o == nil || IsNil(o.EntityType) {
+	if o == nil {
 		return nil, false
 	}
 	return o.EntityType, true
 }
 
-// HasEntityType returns a boolean if a field has been set.
-func (o *CloudResourceInventoryReportsSettingsConfig) HasEntityType() bool {
-	if o != nil && !IsNil(o.EntityType) {
-		return true
-	}
-
-	return false
-}
-
-// SetEntityType gets a reference to the given []string and assigns it to the EntityType field.
+// SetEntityType sets field value
 func (o *CloudResourceInventoryReportsSettingsConfig) SetEntityType(v []string) {
 	o.EntityType = v
 }
@@ -225,16 +215,50 @@ func (o CloudResourceInventoryReportsSettingsConfig) ToMap() (map[string]interfa
 	if !IsNil(o.Cron) {
 		toSerialize["cron"] = o.Cron
 	}
-	if !IsNil(o.EndpointUrl) {
-		toSerialize["endpoint_url"] = o.EndpointUrl
-	}
-	if !IsNil(o.EntityType) {
-		toSerialize["entityType"] = o.EntityType
-	}
+	toSerialize["endpoint_url"] = o.EndpointUrl
+	toSerialize["entityType"] = o.EntityType
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *CloudResourceInventoryReportsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"endpoint_url",
+		"entityType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCloudResourceInventoryReportsSettingsConfig := _CloudResourceInventoryReportsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varCloudResourceInventoryReportsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CloudResourceInventoryReportsSettingsConfig(varCloudResourceInventoryReportsSettingsConfig)
+
+	return err
 }
 
 type NullableCloudResourceInventoryReportsSettingsConfig struct {

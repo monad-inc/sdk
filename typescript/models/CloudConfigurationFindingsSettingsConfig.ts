@@ -23,17 +23,17 @@ export class CloudConfigurationFindingsSettingsConfig {
     /**
     * Endpoint URL for the Wiz API. Ex: \'https://api.wiz.io/v1/cloud-configuration-findings\'.
     */
-    'endpointUrl'?: string;
+    'endpointUrl': string;
     /**
-    * Result types for Wiz. Ex: \'PASSED\', \'FAILED\'.
+    * Result types for Wiz. Ex: \'PASSED\', \'FAILED\', \'ERROR\', \'NOT ASSESSED\'.
     */
     'result'?: Array<string>;
     /**
-    * Severity types for Wiz. Ex: \'CRITICAL\', \'HIGH\', \'MEDIUM\', \'LOW\', \'INFO\'.
+    * Severity types for Wiz. Ex: \'CRITICAL\', \'HIGH\', \'MEDIUM\', \'LOW\', \'NONE\'.
     */
     'severity'?: Array<string>;
     /**
-    * Status types for Wiz. Ex: \'OPEN\', \'RESOLVED\'.
+    * Status types for Wiz. Ex: \'OPEN\', \'RESOLVED\', \'REJECTED\'.
     */
     'status'?: Array<string>;
     /**

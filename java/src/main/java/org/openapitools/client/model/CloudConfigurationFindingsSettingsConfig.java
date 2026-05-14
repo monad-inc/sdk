@@ -59,7 +59,7 @@ public class CloudConfigurationFindingsSettingsConfig {
 
   public static final String SERIALIZED_NAME_ENDPOINT_URL = "endpoint_url";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String endpointUrl;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
@@ -104,7 +104,7 @@ public class CloudConfigurationFindingsSettingsConfig {
   }
 
 
-  public CloudConfigurationFindingsSettingsConfig endpointUrl(@javax.annotation.Nullable String endpointUrl) {
+  public CloudConfigurationFindingsSettingsConfig endpointUrl(@javax.annotation.Nonnull String endpointUrl) {
     this.endpointUrl = endpointUrl;
     return this;
   }
@@ -113,12 +113,12 @@ public class CloudConfigurationFindingsSettingsConfig {
    * Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-configuration-findings&#39;.
    * @return endpointUrl
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getEndpointUrl() {
     return endpointUrl;
   }
 
-  public void setEndpointUrl(@javax.annotation.Nullable String endpointUrl) {
+  public void setEndpointUrl(@javax.annotation.Nonnull String endpointUrl) {
     this.endpointUrl = endpointUrl;
   }
 
@@ -137,7 +137,7 @@ public class CloudConfigurationFindingsSettingsConfig {
   }
 
   /**
-   * Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;.
+   * Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;.
    * @return result
    */
   @javax.annotation.Nullable
@@ -164,7 +164,7 @@ public class CloudConfigurationFindingsSettingsConfig {
   }
 
   /**
-   * Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;.
+   * Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;NONE&#39;.
    * @return severity
    */
   @javax.annotation.Nullable
@@ -191,7 +191,7 @@ public class CloudConfigurationFindingsSettingsConfig {
   }
 
   /**
-   * Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;.
+   * Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;, &#39;REJECTED&#39;.
    * @return status
    */
   @javax.annotation.Nullable
@@ -277,7 +277,7 @@ public class CloudConfigurationFindingsSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "endpoint_url", "result", "severity", "status", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("endpoint_url"));
   }
 
   /**
@@ -300,11 +300,18 @@ public class CloudConfigurationFindingsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CloudConfigurationFindingsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CloudConfigurationFindingsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("endpoint_url") != null && !jsonObj.get("endpoint_url").isJsonNull()) && !jsonObj.get("endpoint_url").isJsonPrimitive()) {
+      if (!jsonObj.get("endpoint_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint_url").toString()));
       }
       // ensure the optional json data is an array if present

@@ -23,7 +23,7 @@ export class WizAuditLogsSettingsConfig {
     /**
     * DataCenter represents the tenant\'s data center location. Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\"
     */
-    'tenantDataCenter'?: string;
+    'tenantDataCenter': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

@@ -40,9 +40,9 @@ class TestIssuesReportSettingsConfig(unittest.TestCase):
                     ''
                     ],
                 cron = '',
-                has_note = '',
-                has_remediation = '',
-                has_service_ticket = '',
+                has_note = 'has_note',
+                has_remediation = 'has_remediation',
+                has_service_ticket = 'has_service_ticket',
                 issue_ids = [
                     ''
                     ],
@@ -78,6 +78,7 @@ class TestIssuesReportSettingsConfig(unittest.TestCase):
             )
         else:
             return IssuesReportSettingsConfig(
+                tenant_data_center = '',
         )
         """
 

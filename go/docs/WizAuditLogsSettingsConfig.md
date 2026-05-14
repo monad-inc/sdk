@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | [optional] 
+**TenantDataCenter** | **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewWizAuditLogsSettingsConfig
 
-`func NewWizAuditLogsSettingsConfig() *WizAuditLogsSettingsConfig`
+`func NewWizAuditLogsSettingsConfig(tenantDataCenter string, ) *WizAuditLogsSettingsConfig`
 
 NewWizAuditLogsSettingsConfig instantiates a new WizAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetTenantDataCenter sets TenantDataCenter field to given value.
 
-### HasTenantDataCenter
-
-`func (o *WizAuditLogsSettingsConfig) HasTenantDataCenter() bool`
-
-HasTenantDataCenter returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

@@ -64,12 +64,12 @@ public class CloudResourceInventorySettingsConfig {
 
   public static final String SERIALIZED_NAME_ENDPOINT_URL = "endpoint_url";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String endpointUrl;
 
   public static final String SERIALIZED_NAME_ENTITY_TYPE = "entityType";
   @SerializedName(SERIALIZED_NAME_ENTITY_TYPE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private List<String> entityType = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FULL_SNAPSHOT = "full_snapshot";
@@ -136,7 +136,7 @@ public class CloudResourceInventorySettingsConfig {
   }
 
 
-  public CloudResourceInventorySettingsConfig endpointUrl(@javax.annotation.Nullable String endpointUrl) {
+  public CloudResourceInventorySettingsConfig endpointUrl(@javax.annotation.Nonnull String endpointUrl) {
     this.endpointUrl = endpointUrl;
     return this;
   }
@@ -145,17 +145,17 @@ public class CloudResourceInventorySettingsConfig {
    * Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;.
    * @return endpointUrl
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getEndpointUrl() {
     return endpointUrl;
   }
 
-  public void setEndpointUrl(@javax.annotation.Nullable String endpointUrl) {
+  public void setEndpointUrl(@javax.annotation.Nonnull String endpointUrl) {
     this.endpointUrl = endpointUrl;
   }
 
 
-  public CloudResourceInventorySettingsConfig entityType(@javax.annotation.Nullable List<String> entityType) {
+  public CloudResourceInventorySettingsConfig entityType(@javax.annotation.Nonnull List<String> entityType) {
     this.entityType = entityType;
     return this;
   }
@@ -169,15 +169,15 @@ public class CloudResourceInventorySettingsConfig {
   }
 
   /**
-   * Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;.
+   * Entity types for Wiz.
    * @return entityType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<String> getEntityType() {
     return entityType;
   }
 
-  public void setEntityType(@javax.annotation.Nullable List<String> entityType) {
+  public void setEntityType(@javax.annotation.Nonnull List<String> entityType) {
     this.entityType = entityType;
   }
 
@@ -295,7 +295,7 @@ public class CloudResourceInventorySettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("endpoint_url", "entityType"));
   }
 
   /**
@@ -318,6 +318,13 @@ public class CloudResourceInventorySettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CloudResourceInventorySettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CloudResourceInventorySettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
@@ -326,11 +333,13 @@ public class CloudResourceInventorySettingsConfig {
       if (jsonObj.get("cloudPlatform") != null && !jsonObj.get("cloudPlatform").isJsonNull() && !jsonObj.get("cloudPlatform").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cloudPlatform` to be an array in the JSON string but got `%s`", jsonObj.get("cloudPlatform").toString()));
       }
-      if ((jsonObj.get("endpoint_url") != null && !jsonObj.get("endpoint_url").isJsonNull()) && !jsonObj.get("endpoint_url").isJsonPrimitive()) {
+      if (!jsonObj.get("endpoint_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint_url").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("entityType") != null && !jsonObj.get("entityType").isJsonNull() && !jsonObj.get("entityType").isJsonArray()) {
+      // ensure the required json array is present
+      if (jsonObj.get("entityType") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("entityType").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `entityType` to be an array in the JSON string but got `%s`", jsonObj.get("entityType").toString()));
       }
   }

@@ -155,9 +155,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 control_ids = [
                     ''
                     ],
-                has_note = '',
-                has_remediation = '',
-                has_service_ticket = '',
+                has_note = 'has_note',
+                has_remediation = 'has_remediation',
+                has_service_ticket = 'has_service_ticket',
                 issue_ids = [
                     ''
                     ],
@@ -254,6 +254,10 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 timestamp_column = '',
                 base_url = '',
                 org_slug = '',
+                endpoint_url = '',
+                entity_type = [
+                    ''
+                    ],
                 cron = '',
                 api_key_id = '',
                 domain_name = '',
@@ -265,6 +269,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 project_id = '',
                 location = '',
                 auth_type = 'api_auth',
+                tenant_data_center = '',
                 endpoint = '',
                 subdomain = '',
                 domain = '',
@@ -278,6 +283,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 warehouse = '',
                 tenant_domain = '',
                 tenant_url = '',
+                asset_types = [
+                    ''
+                    ],
                 sub_domain = '',
         )
         """

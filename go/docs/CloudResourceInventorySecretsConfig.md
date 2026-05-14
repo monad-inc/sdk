@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewCloudResourceInventorySecretsConfig
 
-`func NewCloudResourceInventorySecretsConfig() *CloudResourceInventorySecretsConfig`
+`func NewCloudResourceInventorySecretsConfig(clientId ModelsSecret, clientSecret ModelsSecret, ) *CloudResourceInventorySecretsConfig`
 
 NewCloudResourceInventorySecretsConfig instantiates a new CloudResourceInventorySecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
-
-`func (o *CloudResourceInventorySecretsConfig) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
-### HasClientSecret
-
-`func (o *CloudResourceInventorySecretsConfig) HasClientSecret() bool`
-
-HasClientSecret returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

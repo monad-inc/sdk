@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the IssuesReportSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -55,17 +57,20 @@ type IssuesReportSettingsConfig struct {
 	// @Description Filter by Issue handling status @Description Default: OPEN
 	Status []string `json:"status,omitempty"`
 	// DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact
-	TenantDataCenter *string `json:"tenant_data_center,omitempty"`
+	TenantDataCenter string `json:"tenant_data_center"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
+
+type _IssuesReportSettingsConfig IssuesReportSettingsConfig
 
 // NewIssuesReportSettingsConfig instantiates a new IssuesReportSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIssuesReportSettingsConfig() *IssuesReportSettingsConfig {
+func NewIssuesReportSettingsConfig(tenantDataCenter string) *IssuesReportSettingsConfig {
 	this := IssuesReportSettingsConfig{}
+	this.TenantDataCenter = tenantDataCenter
 	return &this
 }
 
@@ -621,36 +626,28 @@ func (o *IssuesReportSettingsConfig) SetStatus(v []string) {
 	o.Status = v
 }
 
-// GetTenantDataCenter returns the TenantDataCenter field value if set, zero value otherwise.
+// GetTenantDataCenter returns the TenantDataCenter field value
 func (o *IssuesReportSettingsConfig) GetTenantDataCenter() string {
-	if o == nil || IsNil(o.TenantDataCenter) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.TenantDataCenter
+
+	return o.TenantDataCenter
 }
 
-// GetTenantDataCenterOk returns a tuple with the TenantDataCenter field value if set, nil otherwise
+// GetTenantDataCenterOk returns a tuple with the TenantDataCenter field value
 // and a boolean to check if the value has been set.
 func (o *IssuesReportSettingsConfig) GetTenantDataCenterOk() (*string, bool) {
-	if o == nil || IsNil(o.TenantDataCenter) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TenantDataCenter, true
+	return &o.TenantDataCenter, true
 }
 
-// HasTenantDataCenter returns a boolean if a field has been set.
-func (o *IssuesReportSettingsConfig) HasTenantDataCenter() bool {
-	if o != nil && !IsNil(o.TenantDataCenter) {
-		return true
-	}
-
-	return false
-}
-
-// SetTenantDataCenter gets a reference to the given string and assigns it to the TenantDataCenter field.
+// SetTenantDataCenter sets field value
 func (o *IssuesReportSettingsConfig) SetTenantDataCenter(v string) {
-	o.TenantDataCenter = &v
+	o.TenantDataCenter = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -746,13 +743,48 @@ func (o IssuesReportSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.TenantDataCenter) {
-		toSerialize["tenant_data_center"] = o.TenantDataCenter
-	}
+	toSerialize["tenant_data_center"] = o.TenantDataCenter
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *IssuesReportSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"tenant_data_center",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIssuesReportSettingsConfig := _IssuesReportSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varIssuesReportSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IssuesReportSettingsConfig(varIssuesReportSettingsConfig)
+
+	return err
 }
 
 type NullableIssuesReportSettingsConfig struct {

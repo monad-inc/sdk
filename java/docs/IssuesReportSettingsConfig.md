@@ -10,9 +10,9 @@ Wiz Issues settings
 |------------ | ------------- | ------------- | -------------|
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
 |**cron** | **String** | Cron string for scheduling the ingest of your input |  [optional] |
-|**hasNote** | **String** | @Description Filter Issues with or without a note |  [optional] |
-|**hasRemediation** | **String** | @Description Filter Issues with or without remediation |  [optional] |
-|**hasServiceTicket** | **String** | @Description Filter Issues with or without related service ticket |  [optional] |
+|**hasNote** | [**HasNoteEnum**](#HasNoteEnum) | @Description Filter Issues with or without a note |  [optional] |
+|**hasRemediation** | [**HasRemediationEnum**](#HasRemediationEnum) | @Description Filter Issues with or without remediation |  [optional] |
+|**hasServiceTicket** | [**HasServiceTicketEnum**](#HasServiceTicketEnum) | @Description Filter Issues with or without related service ticket |  [optional] |
 |**issueIds** | **List&lt;String&gt;** | @Description Filter only Issues that match these specific IDs |  [optional] |
 |**issueTypes** | [**List&lt;IssueTypesEnum&gt;**](#List&lt;IssueTypesEnum&gt;) | @Description Filter by Issue type |  [optional] |
 |**projectIds** | **List&lt;String&gt;** | @Description Filter Issues associated with specific project IDs |  [optional] |
@@ -25,8 +25,38 @@ Wiz Issues settings
 |**severities** | [**List&lt;SeveritiesEnum&gt;**](#List&lt;SeveritiesEnum&gt;) | @Description Filter Issues according to Control severity |  [optional] |
 |**stackLayers** | [**List&lt;StackLayersEnum&gt;**](#List&lt;StackLayersEnum&gt;) | @Description Filter Issues from specific stack layers |  [optional] |
 |**status** | [**List&lt;StatusEnum&gt;**](#List&lt;StatusEnum&gt;) | @Description Filter by Issue handling status @Description Default: OPEN |  [optional] |
-|**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact |  [optional] |
+|**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact |  |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
+
+
+
+## Enum: HasNoteEnum
+
+| Name | Value |
+|---- | -----|
+| HAS_NOTE | &quot;has_note&quot; |
+| DOES_NOT_HAVE_NOTE | &quot;does_not_have_note&quot; |
+| DO_NOT_FILTER | &quot;do_not_filter&quot; |
+
+
+
+## Enum: HasRemediationEnum
+
+| Name | Value |
+|---- | -----|
+| HAS_REMEDIATION | &quot;has_remediation&quot; |
+| DOES_NOT_HAVE_REMEDIATION | &quot;does_not_have_remediation&quot; |
+| DO_NOT_FILTER | &quot;do_not_filter&quot; |
+
+
+
+## Enum: HasServiceTicketEnum
+
+| Name | Value |
+|---- | -----|
+| HAS_SERVICE_TICKET | &quot;has_service_ticket&quot; |
+| DOES_NOT_HAVE_SERVICE_TICKET | &quot;does_not_have_service_ticket&quot; |
+| DO_NOT_FILTER | &quot;do_not_filter&quot; |
 
 
 

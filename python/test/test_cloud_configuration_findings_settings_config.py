@@ -51,6 +51,7 @@ class TestCloudConfigurationFindingsSettingsConfig(unittest.TestCase):
             )
         else:
             return CloudConfigurationFindingsSettingsConfig(
+                endpoint_url = '',
         )
         """
 

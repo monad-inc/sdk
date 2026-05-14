@@ -27,11 +27,11 @@ export class CloudResourceInventorySettingsConfig {
     /**
     * Endpoint URL for the Wiz API. Ex: \'https://api.wiz.io/v1/cloud-resource-inventory\'.
     */
-    'endpointUrl'?: string;
+    'endpointUrl': string;
     /**
-    * Entity types for Wiz. Ex: \'ACCOUNT\', \'REGION\', \'VPC\', \'SUBNET\', \'INSTANCE\'.
+    * Entity types for Wiz.
     */
-    'entityType'?: Array<string>;
+    'entityType': Array<string>;
     /**
     * FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
     */

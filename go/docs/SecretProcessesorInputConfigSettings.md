@@ -50,14 +50,14 @@ Name | Type | Description | Notes
 **HasNextPagePath** | Pointer to **string** | JSONPath location to check if there are more pages | [optional] 
 **PaginationCursorPath** | Pointer to **string** | JSONPath location for pagination cursor/token | [optional] 
 **Variables** | Pointer to [**[]MonadGraphqlInputVariable**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request | [optional] 
-**EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
-**Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
+**EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | 
+**Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
 **Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **EnableProtoPayloadParsing** | Pointer to **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
-**EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
+**EntityType** | **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
 **Cron** | **string** | Cron string for scheduling the ingest of your input | 
@@ -112,7 +112,7 @@ Name | Type | Description | Notes
 **SearchQuery** | Pointer to **string** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found | [optional] 
 **SecurityScan** | Pointer to **string** | @Description Filter by security scan source | [optional] 
 **StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
-**TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | [optional] 
+**TenantDataCenter** | **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 **Endpoint** | **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
@@ -152,9 +152,9 @@ Name | Type | Description | Notes
 **WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 **CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
-**AssetTypes** | Pointer to **[]string** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | [optional] 
+**AssetTypes** | **[]string** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
-**VendorSeverity** | Pointer to **[]string** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
+**VendorSeverity** | Pointer to **[]string** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39; | [optional] 
 **EmailAddress** | Pointer to **string** | This is the email address registered with your Zendesk account | [optional] 
 **SubDomain** | **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | 
 
@@ -162,7 +162,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []string, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, tenantDataCenter string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []string, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -1306,11 +1306,6 @@ and a boolean to check if the value has been set.
 
 SetEndpointUrl sets EndpointUrl field to given value.
 
-### HasEndpointUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasEndpointUrl() bool`
-
-HasEndpointUrl returns a boolean if a field has been set.
 
 ### GetResult
 
@@ -1481,11 +1476,6 @@ and a boolean to check if the value has been set.
 
 SetEntityType sets EntityType field to given value.
 
-### HasEntityType
-
-`func (o *SecretProcessesorInputConfigSettings) HasEntityType() bool`
-
-HasEntityType returns a boolean if a field has been set.
 
 ### GetFullSnapshot
 
@@ -2801,11 +2791,6 @@ and a boolean to check if the value has been set.
 
 SetTenantDataCenter sets TenantDataCenter field to given value.
 
-### HasTenantDataCenter
-
-`func (o *SecretProcessesorInputConfigSettings) HasTenantDataCenter() bool`
-
-HasTenantDataCenter returns a boolean if a field has been set.
 
 ### GetAuditLogTypes
 
@@ -3736,11 +3721,6 @@ and a boolean to check if the value has been set.
 
 SetAssetTypes sets AssetTypes field to given value.
 
-### HasAssetTypes
-
-`func (o *SecretProcessesorInputConfigSettings) HasAssetTypes() bool`
-
-HasAssetTypes returns a boolean if a field has been set.
 
 ### GetDetectionMethod
 

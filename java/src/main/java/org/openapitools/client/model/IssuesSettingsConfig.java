@@ -62,20 +62,182 @@ public class IssuesSettingsConfig {
   @javax.annotation.Nullable
   private List<String> controlIds = new ArrayList<>();
 
+  /**
+   * @Description Filter Issues with or without a note
+   */
+  @JsonAdapter(HasNoteEnum.Adapter.class)
+  public enum HasNoteEnum {
+    HAS_NOTE("has_note"),
+    
+    DOES_NOT_HAVE_NOTE("does_not_have_note"),
+    
+    DO_NOT_FILTER("do_not_filter");
+
+    private String value;
+
+    HasNoteEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static HasNoteEnum fromValue(String value) {
+      for (HasNoteEnum b : HasNoteEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<HasNoteEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final HasNoteEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public HasNoteEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return HasNoteEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      HasNoteEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_HAS_NOTE = "has_note";
   @SerializedName(SERIALIZED_NAME_HAS_NOTE)
   @javax.annotation.Nullable
-  private String hasNote;
+  private HasNoteEnum hasNote;
+
+  /**
+   * @Description Filter Issues with or without remediation
+   */
+  @JsonAdapter(HasRemediationEnum.Adapter.class)
+  public enum HasRemediationEnum {
+    HAS_REMEDIATION("has_remediation"),
+    
+    DOES_NOT_HAVE_REMEDIATION("does_not_have_remediation"),
+    
+    DO_NOT_FILTER("do_not_filter");
+
+    private String value;
+
+    HasRemediationEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static HasRemediationEnum fromValue(String value) {
+      for (HasRemediationEnum b : HasRemediationEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<HasRemediationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final HasRemediationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public HasRemediationEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return HasRemediationEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      HasRemediationEnum.fromValue(value);
+    }
+  }
 
   public static final String SERIALIZED_NAME_HAS_REMEDIATION = "has_remediation";
   @SerializedName(SERIALIZED_NAME_HAS_REMEDIATION)
   @javax.annotation.Nullable
-  private String hasRemediation;
+  private HasRemediationEnum hasRemediation;
+
+  /**
+   * @Description Filter Issues with or without related service ticket
+   */
+  @JsonAdapter(HasServiceTicketEnum.Adapter.class)
+  public enum HasServiceTicketEnum {
+    HAS_SERVICE_TICKET("has_service_ticket"),
+    
+    DOES_NOT_HAVE_SERVICE_TICKET("does_not_have_service_ticket"),
+    
+    DO_NOT_FILTER("do_not_filter");
+
+    private String value;
+
+    HasServiceTicketEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static HasServiceTicketEnum fromValue(String value) {
+      for (HasServiceTicketEnum b : HasServiceTicketEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<HasServiceTicketEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final HasServiceTicketEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public HasServiceTicketEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return HasServiceTicketEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      HasServiceTicketEnum.fromValue(value);
+    }
+  }
 
   public static final String SERIALIZED_NAME_HAS_SERVICE_TICKET = "has_service_ticket";
   @SerializedName(SERIALIZED_NAME_HAS_SERVICE_TICKET)
   @javax.annotation.Nullable
-  private String hasServiceTicket;
+  private HasServiceTicketEnum hasServiceTicket;
 
   public static final String SERIALIZED_NAME_ISSUE_IDS = "issue_ids";
   @SerializedName(SERIALIZED_NAME_ISSUE_IDS)
@@ -433,7 +595,7 @@ public class IssuesSettingsConfig {
 
   public static final String SERIALIZED_NAME_TENANT_DATA_CENTER = "tenant_data_center";
   @SerializedName(SERIALIZED_NAME_TENANT_DATA_CENTER)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String tenantDataCenter;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -490,7 +652,7 @@ public class IssuesSettingsConfig {
   }
 
 
-  public IssuesSettingsConfig hasNote(@javax.annotation.Nullable String hasNote) {
+  public IssuesSettingsConfig hasNote(@javax.annotation.Nullable HasNoteEnum hasNote) {
     this.hasNote = hasNote;
     return this;
   }
@@ -500,16 +662,16 @@ public class IssuesSettingsConfig {
    * @return hasNote
    */
   @javax.annotation.Nullable
-  public String getHasNote() {
+  public HasNoteEnum getHasNote() {
     return hasNote;
   }
 
-  public void setHasNote(@javax.annotation.Nullable String hasNote) {
+  public void setHasNote(@javax.annotation.Nullable HasNoteEnum hasNote) {
     this.hasNote = hasNote;
   }
 
 
-  public IssuesSettingsConfig hasRemediation(@javax.annotation.Nullable String hasRemediation) {
+  public IssuesSettingsConfig hasRemediation(@javax.annotation.Nullable HasRemediationEnum hasRemediation) {
     this.hasRemediation = hasRemediation;
     return this;
   }
@@ -519,16 +681,16 @@ public class IssuesSettingsConfig {
    * @return hasRemediation
    */
   @javax.annotation.Nullable
-  public String getHasRemediation() {
+  public HasRemediationEnum getHasRemediation() {
     return hasRemediation;
   }
 
-  public void setHasRemediation(@javax.annotation.Nullable String hasRemediation) {
+  public void setHasRemediation(@javax.annotation.Nullable HasRemediationEnum hasRemediation) {
     this.hasRemediation = hasRemediation;
   }
 
 
-  public IssuesSettingsConfig hasServiceTicket(@javax.annotation.Nullable String hasServiceTicket) {
+  public IssuesSettingsConfig hasServiceTicket(@javax.annotation.Nullable HasServiceTicketEnum hasServiceTicket) {
     this.hasServiceTicket = hasServiceTicket;
     return this;
   }
@@ -538,11 +700,11 @@ public class IssuesSettingsConfig {
    * @return hasServiceTicket
    */
   @javax.annotation.Nullable
-  public String getHasServiceTicket() {
+  public HasServiceTicketEnum getHasServiceTicket() {
     return hasServiceTicket;
   }
 
-  public void setHasServiceTicket(@javax.annotation.Nullable String hasServiceTicket) {
+  public void setHasServiceTicket(@javax.annotation.Nullable HasServiceTicketEnum hasServiceTicket) {
     this.hasServiceTicket = hasServiceTicket;
   }
 
@@ -847,7 +1009,7 @@ public class IssuesSettingsConfig {
   }
 
 
-  public IssuesSettingsConfig tenantDataCenter(@javax.annotation.Nullable String tenantDataCenter) {
+  public IssuesSettingsConfig tenantDataCenter(@javax.annotation.Nonnull String tenantDataCenter) {
     this.tenantDataCenter = tenantDataCenter;
     return this;
   }
@@ -856,12 +1018,12 @@ public class IssuesSettingsConfig {
    * DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact
    * @return tenantDataCenter
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getTenantDataCenter() {
     return tenantDataCenter;
   }
 
-  public void setTenantDataCenter(@javax.annotation.Nullable String tenantDataCenter) {
+  public void setTenantDataCenter(@javax.annotation.Nonnull String tenantDataCenter) {
     this.tenantDataCenter = tenantDataCenter;
   }
 
@@ -965,7 +1127,7 @@ public class IssuesSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_data_center"));
   }
 
   /**
@@ -988,6 +1150,13 @@ public class IssuesSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `IssuesSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : IssuesSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
@@ -999,11 +1168,23 @@ public class IssuesSettingsConfig {
       if ((jsonObj.get("has_note") != null && !jsonObj.get("has_note").isJsonNull()) && !jsonObj.get("has_note").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_note` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_note").toString()));
       }
+      // validate the optional field `has_note`
+      if (jsonObj.get("has_note") != null && !jsonObj.get("has_note").isJsonNull()) {
+        HasNoteEnum.validateJsonElement(jsonObj.get("has_note"));
+      }
       if ((jsonObj.get("has_remediation") != null && !jsonObj.get("has_remediation").isJsonNull()) && !jsonObj.get("has_remediation").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_remediation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_remediation").toString()));
       }
+      // validate the optional field `has_remediation`
+      if (jsonObj.get("has_remediation") != null && !jsonObj.get("has_remediation").isJsonNull()) {
+        HasRemediationEnum.validateJsonElement(jsonObj.get("has_remediation"));
+      }
       if ((jsonObj.get("has_service_ticket") != null && !jsonObj.get("has_service_ticket").isJsonNull()) && !jsonObj.get("has_service_ticket").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_service_ticket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_service_ticket").toString()));
+      }
+      // validate the optional field `has_service_ticket`
+      if (jsonObj.get("has_service_ticket") != null && !jsonObj.get("has_service_ticket").isJsonNull()) {
+        HasServiceTicketEnum.validateJsonElement(jsonObj.get("has_service_ticket"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("issue_ids") != null && !jsonObj.get("issue_ids").isJsonNull() && !jsonObj.get("issue_ids").isJsonArray()) {
@@ -1050,7 +1231,7 @@ public class IssuesSettingsConfig {
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull() && !jsonObj.get("status").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be an array in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      if ((jsonObj.get("tenant_data_center") != null && !jsonObj.get("tenant_data_center").isJsonNull()) && !jsonObj.get("tenant_data_center").isJsonPrimitive()) {
+      if (!jsonObj.get("tenant_data_center").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_data_center` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_data_center").toString()));
       }
   }

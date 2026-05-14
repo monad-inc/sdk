@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **Cron** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
-**EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | [optional] 
-**EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
+**EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | 
+**EntityType** | **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewCloudResourceInventoryReportsSettingsConfig
 
-`func NewCloudResourceInventoryReportsSettingsConfig() *CloudResourceInventoryReportsSettingsConfig`
+`func NewCloudResourceInventoryReportsSettingsConfig(endpointUrl string, entityType []string, ) *CloudResourceInventoryReportsSettingsConfig`
 
 NewCloudResourceInventoryReportsSettingsConfig instantiates a new CloudResourceInventoryReportsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -98,11 +98,6 @@ and a boolean to check if the value has been set.
 
 SetEndpointUrl sets EndpointUrl field to given value.
 
-### HasEndpointUrl
-
-`func (o *CloudResourceInventoryReportsSettingsConfig) HasEndpointUrl() bool`
-
-HasEndpointUrl returns a boolean if a field has been set.
 
 ### GetEntityType
 
@@ -123,11 +118,6 @@ and a boolean to check if the value has been set.
 
 SetEntityType sets EntityType field to given value.
 
-### HasEntityType
-
-`func (o *CloudResourceInventoryReportsSettingsConfig) HasEntityType() bool`
-
-HasEntityType returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

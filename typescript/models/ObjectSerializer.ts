@@ -750,9 +750,9 @@ import { InputsConnectorMeta              } from '../models/InputsConnectorMeta'
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
-import { IssuesReportSettingsConfig      , IssuesReportSettingsConfigIssueTypesEnum    , IssuesReportSettingsConfigResolutionReasonsEnum      , IssuesReportSettingsConfigSeveritiesEnum  , IssuesReportSettingsConfigStackLayersEnum  , IssuesReportSettingsConfigStatusEnum     } from '../models/IssuesReportSettingsConfig';
+import { IssuesReportSettingsConfig  , IssuesReportSettingsConfigHasNoteEnum  , IssuesReportSettingsConfigHasRemediationEnum  , IssuesReportSettingsConfigHasServiceTicketEnum   , IssuesReportSettingsConfigIssueTypesEnum    , IssuesReportSettingsConfigResolutionReasonsEnum      , IssuesReportSettingsConfigSeveritiesEnum  , IssuesReportSettingsConfigStackLayersEnum  , IssuesReportSettingsConfigStatusEnum     } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
-import { IssuesSettingsConfig      , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
+import { IssuesSettingsConfig  , IssuesSettingsConfigHasNoteEnum  , IssuesSettingsConfigHasRemediationEnum  , IssuesSettingsConfigHasServiceTicketEnum   , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { JsonFormatType } from '../models/JsonFormatType';
 import { JsonJsonFormatter   } from '../models/JsonJsonFormatter';
@@ -1150,11 +1150,17 @@ let enumsMap: Set<string> = new Set<string>([
     "ElasticsearchConnectionTypeEnum",
     "FormatterType",
     "HttpPayloadStructure",
+    "IssuesReportSettingsConfigHasNoteEnum",
+    "IssuesReportSettingsConfigHasRemediationEnum",
+    "IssuesReportSettingsConfigHasServiceTicketEnum",
     "IssuesReportSettingsConfigIssueTypesEnum",
     "IssuesReportSettingsConfigResolutionReasonsEnum",
     "IssuesReportSettingsConfigSeveritiesEnum",
     "IssuesReportSettingsConfigStackLayersEnum",
     "IssuesReportSettingsConfigStatusEnum",
+    "IssuesSettingsConfigHasNoteEnum",
+    "IssuesSettingsConfigHasRemediationEnum",
+    "IssuesSettingsConfigHasServiceTicketEnum",
     "IssuesSettingsConfigIssueTypesEnum",
     "IssuesSettingsConfigResolutionReasonsEnum",
     "IssuesSettingsConfigSeveritiesEnum",
@@ -1192,6 +1198,9 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
     "SecretProcessesorInputConfigSettingsEnvironmentEnum",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
+    "SecretProcessesorInputConfigSettingsHasNoteEnum",
+    "SecretProcessesorInputConfigSettingsHasRemediationEnum",
+    "SecretProcessesorInputConfigSettingsHasServiceTicketEnum",
     "SecretProcessesorInputConfigSettingsIssueTypesEnum",
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsStackLayersEnum",

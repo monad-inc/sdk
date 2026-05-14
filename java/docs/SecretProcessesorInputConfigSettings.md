@@ -53,14 +53,14 @@
 |**hasNextPagePath** | **String** | JSONPath location to check if there are more pages |  [optional] |
 |**paginationCursorPath** | **String** | JSONPath location for pagination cursor/token |  [optional] |
 |**variables** | [**List&lt;MonadGraphqlInputVariable&gt;**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request |  [optional] |
-|**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  [optional] |
-|**result** | **List&lt;String&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. |  [optional] |
+|**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  |
+|**result** | **List&lt;String&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. |  [optional] |
 |**status** | **List&lt;String&gt;** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. |  [optional] |
 |**enableProtoPayloadParsing** | **Boolean** | Enables automatic parsing of embedded protocol buffer payloads within the input. |  [optional] |
 |**filter** | **String** | The filter to apply to the logs. |  [optional] |
 |**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
 |**cloudPlatform** | **List&lt;String&gt;** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |
-|**entityType** | **List&lt;String&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  [optional] |
+|**entityType** | **List&lt;String&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  |
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
 |**interval** | **Integer** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. |  [optional] |
 |**cron** | **String** | Cron string for scheduling the ingest of your input |  |
@@ -102,9 +102,9 @@
 |**severities** | [**List&lt;SeveritiesEnum&gt;**](#List&lt;SeveritiesEnum&gt;) | @Description Filter Issues according to Control severity |  [optional] |
 |**severityFilter** | [**List&lt;TypesStringFilter&gt;**](TypesStringFilter.md) |  |  [optional] |
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
-|**hasNote** | **String** | @Description Filter Issues with or without a note |  [optional] |
-|**hasRemediation** | **String** | @Description Filter Issues with or without remediation |  [optional] |
-|**hasServiceTicket** | **String** | @Description Filter Issues with or without related service ticket |  [optional] |
+|**hasNote** | [**HasNoteEnum**](#HasNoteEnum) | @Description Filter Issues with or without a note |  [optional] |
+|**hasRemediation** | [**HasRemediationEnum**](#HasRemediationEnum) | @Description Filter Issues with or without remediation |  [optional] |
+|**hasServiceTicket** | [**HasServiceTicketEnum**](#HasServiceTicketEnum) | @Description Filter Issues with or without related service ticket |  [optional] |
 |**issueIds** | **List&lt;String&gt;** | @Description Filter only Issues that match these specific IDs |  [optional] |
 |**issueTypes** | [**List&lt;IssueTypesEnum&gt;**](#List&lt;IssueTypesEnum&gt;) | @Description Filter by Issue type |  [optional] |
 |**projectIds** | **List&lt;String&gt;** | @Description Filter Issues associated with specific project IDs |  [optional] |
@@ -115,7 +115,7 @@
 |**searchQuery** | **String** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found |  [optional] |
 |**securityScan** | **String** | @Description Filter by security scan source |  [optional] |
 |**stackLayers** | [**List&lt;StackLayersEnum&gt;**](#List&lt;StackLayersEnum&gt;) | @Description Filter Issues from specific stack layers |  [optional] |
-|**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; |  [optional] |
+|**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; |  |
 |**auditLogTypes** | **List&lt;String&gt;** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. |  [optional] |
 |**logType** | **String** |  |  [optional] |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  |
@@ -155,9 +155,9 @@
 |**withPayload** | **Boolean** | Whether to include detailed payload information in the events. |  [optional] |
 |**customerId** | **String** | Optional: Filter audit logs by specific customer ID |  [optional] |
 |**assetStatus** | **List&lt;String&gt;** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. |  [optional] |
-|**assetTypes** | **List&lt;String&gt;** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. |  [optional] |
+|**assetTypes** | **List&lt;String&gt;** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. |  |
 |**detectionMethod** | **List&lt;String&gt;** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. |  [optional] |
-|**vendorSeverity** | **List&lt;String&gt;** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. |  [optional] |
+|**vendorSeverity** | **List&lt;String&gt;** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39; |  [optional] |
 |**emailAddress** | **String** | This is the email address registered with your Zendesk account |  [optional] |
 |**subDomain** | **String** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo |  |
 
@@ -223,6 +223,36 @@
 | MEDIUM | &quot;MEDIUM&quot; |
 | HIGH | &quot;HIGH&quot; |
 | CRITICAL | &quot;CRITICAL&quot; |
+
+
+
+## Enum: HasNoteEnum
+
+| Name | Value |
+|---- | -----|
+| HAS_NOTE | &quot;has_note&quot; |
+| DOES_NOT_HAVE_NOTE | &quot;does_not_have_note&quot; |
+| DO_NOT_FILTER | &quot;do_not_filter&quot; |
+
+
+
+## Enum: HasRemediationEnum
+
+| Name | Value |
+|---- | -----|
+| HAS_REMEDIATION | &quot;has_remediation&quot; |
+| DOES_NOT_HAVE_REMEDIATION | &quot;does_not_have_remediation&quot; |
+| DO_NOT_FILTER | &quot;do_not_filter&quot; |
+
+
+
+## Enum: HasServiceTicketEnum
+
+| Name | Value |
+|---- | -----|
+| HAS_SERVICE_TICKET | &quot;has_service_ticket&quot; |
+| DOES_NOT_HAVE_SERVICE_TICKET | &quot;does_not_have_service_ticket&quot; |
+| DO_NOT_FILTER | &quot;do_not_filter&quot; |
 
 
 

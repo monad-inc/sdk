@@ -27,11 +27,11 @@ export class CloudResourceInventoryReportsSettingsConfig {
     /**
     * Endpoint URL for the Wiz API. Ex: \'https://api.wiz.io/v1/cloud-resource-inventory\'.
     */
-    'endpointUrl'?: string;
+    'endpointUrl': string;
     /**
     * Entity types for Wiz. Ex: \'ACCOUNT\', \'REGION\', \'VPC\', \'SUBNET\', \'INSTANCE\'.
     */
-    'entityType'?: Array<string>;
+    'entityType': Array<string>;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */

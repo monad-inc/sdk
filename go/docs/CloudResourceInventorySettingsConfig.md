@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data. | [optional] 
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
-**EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | [optional] 
-**EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
+**EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | 
+**EntityType** | **[]string** | Entity types for Wiz. | 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewCloudResourceInventorySettingsConfig
 
-`func NewCloudResourceInventorySettingsConfig() *CloudResourceInventorySettingsConfig`
+`func NewCloudResourceInventorySettingsConfig(endpointUrl string, entityType []string, ) *CloudResourceInventorySettingsConfig`
 
 NewCloudResourceInventorySettingsConfig instantiates a new CloudResourceInventorySettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -100,11 +100,6 @@ and a boolean to check if the value has been set.
 
 SetEndpointUrl sets EndpointUrl field to given value.
 
-### HasEndpointUrl
-
-`func (o *CloudResourceInventorySettingsConfig) HasEndpointUrl() bool`
-
-HasEndpointUrl returns a boolean if a field has been set.
 
 ### GetEntityType
 
@@ -125,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetEntityType sets EntityType field to given value.
 
-### HasEntityType
-
-`func (o *CloudResourceInventorySettingsConfig) HasEntityType() bool`
-
-HasEntityType returns a boolean if a field has been set.
 
 ### GetFullSnapshot
 

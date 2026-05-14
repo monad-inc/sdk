@@ -21,14 +21,14 @@ Name | Type | Description | Notes
 **Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
 **StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
 **Status** | Pointer to **[]string** | @Description Filter by Issue handling status @Description Default: OPEN | [optional] 
-**TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
+**TenantDataCenter** | **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewIssuesReportSettingsConfig
 
-`func NewIssuesReportSettingsConfig() *IssuesReportSettingsConfig`
+`func NewIssuesReportSettingsConfig(tenantDataCenter string, ) *IssuesReportSettingsConfig`
 
 NewIssuesReportSettingsConfig instantiates a new IssuesReportSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -487,11 +487,6 @@ and a boolean to check if the value has been set.
 
 SetTenantDataCenter sets TenantDataCenter field to given value.
 
-### HasTenantDataCenter
-
-`func (o *IssuesReportSettingsConfig) HasTenantDataCenter() bool`
-
-HasTenantDataCenter returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

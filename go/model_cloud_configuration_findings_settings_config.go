@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the CloudConfigurationFindingsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,23 +25,26 @@ type CloudConfigurationFindingsSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.
-	EndpointUrl *string `json:"endpoint_url,omitempty"`
-	// Result types for Wiz. Ex: 'PASSED', 'FAILED'.
+	EndpointUrl string `json:"endpoint_url"`
+	// Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.
 	Result []string `json:"result,omitempty"`
-	// Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'INFO'.
+	// Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.
 	Severity []string `json:"severity,omitempty"`
-	// Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.
+	// Status types for Wiz. Ex: 'OPEN', 'RESOLVED', 'REJECTED'.
 	Status []string `json:"status,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
 
+type _CloudConfigurationFindingsSettingsConfig CloudConfigurationFindingsSettingsConfig
+
 // NewCloudConfigurationFindingsSettingsConfig instantiates a new CloudConfigurationFindingsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCloudConfigurationFindingsSettingsConfig() *CloudConfigurationFindingsSettingsConfig {
+func NewCloudConfigurationFindingsSettingsConfig(endpointUrl string) *CloudConfigurationFindingsSettingsConfig {
 	this := CloudConfigurationFindingsSettingsConfig{}
+	this.EndpointUrl = endpointUrl
 	return &this
 }
 
@@ -83,36 +88,28 @@ func (o *CloudConfigurationFindingsSettingsConfig) SetBackfillStartTime(v string
 	o.BackfillStartTime = &v
 }
 
-// GetEndpointUrl returns the EndpointUrl field value if set, zero value otherwise.
+// GetEndpointUrl returns the EndpointUrl field value
 func (o *CloudConfigurationFindingsSettingsConfig) GetEndpointUrl() string {
-	if o == nil || IsNil(o.EndpointUrl) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.EndpointUrl
+
+	return o.EndpointUrl
 }
 
-// GetEndpointUrlOk returns a tuple with the EndpointUrl field value if set, nil otherwise
+// GetEndpointUrlOk returns a tuple with the EndpointUrl field value
 // and a boolean to check if the value has been set.
 func (o *CloudConfigurationFindingsSettingsConfig) GetEndpointUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.EndpointUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndpointUrl, true
+	return &o.EndpointUrl, true
 }
 
-// HasEndpointUrl returns a boolean if a field has been set.
-func (o *CloudConfigurationFindingsSettingsConfig) HasEndpointUrl() bool {
-	if o != nil && !IsNil(o.EndpointUrl) {
-		return true
-	}
-
-	return false
-}
-
-// SetEndpointUrl gets a reference to the given string and assigns it to the EndpointUrl field.
+// SetEndpointUrl sets field value
 func (o *CloudConfigurationFindingsSettingsConfig) SetEndpointUrl(v string) {
-	o.EndpointUrl = &v
+	o.EndpointUrl = v
 }
 
 // GetResult returns the Result field value if set, zero value otherwise.
@@ -256,9 +253,7 @@ func (o CloudConfigurationFindingsSettingsConfig) ToMap() (map[string]interface{
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.EndpointUrl) {
-		toSerialize["endpoint_url"] = o.EndpointUrl
-	}
+	toSerialize["endpoint_url"] = o.EndpointUrl
 	if !IsNil(o.Result) {
 		toSerialize["result"] = o.Result
 	}
@@ -272,6 +267,43 @@ func (o CloudConfigurationFindingsSettingsConfig) ToMap() (map[string]interface{
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
+}
+
+func (o *CloudConfigurationFindingsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"endpoint_url",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCloudConfigurationFindingsSettingsConfig := _CloudConfigurationFindingsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varCloudConfigurationFindingsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CloudConfigurationFindingsSettingsConfig(varCloudConfigurationFindingsSettingsConfig)
+
+	return err
 }
 
 type NullableCloudConfigurationFindingsSettingsConfig struct {
