@@ -48,7 +48,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 bucket = '',
                 compression = 'auto',
                 format = 'json',
-                partition_format = 'hive compliant',
+                partition_format = 'flat hive compliant',
                 prefix = '',
                 record_location = '',
                 queue_url = '',

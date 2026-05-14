@@ -30,7 +30,7 @@ type AzureBlobStorageSettingsConfig struct {
 	Container *string `json:"container,omitempty"`
 	// File format of the Blob storage objects in Azure.
 	Format *string `json:"format,omitempty"`
-	// Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').
+	// Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// An optional prefix for Azure object keys to organize data within the container
 	Prefix *string `json:"prefix,omitempty"`

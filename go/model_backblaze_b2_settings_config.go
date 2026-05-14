@@ -28,7 +28,7 @@ type BackblazeB2SettingsConfig struct {
 	Compression *string `json:"compression,omitempty"`
 	// File format of the B2 objects
 	Format *string `json:"format,omitempty"`
-	// Specifies the partition format of your B2 bucket
+	// Partition format of your B2 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// Prefix of the B2 object keys to read
 	Prefix *string `json:"prefix,omitempty"`

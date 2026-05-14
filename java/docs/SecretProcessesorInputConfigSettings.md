@@ -19,7 +19,7 @@
 |**bucket** | **String** | Name of the storage bucket |  |
 |**compression** | [**CompressionEnum**](#CompressionEnum) | Compression format of the objects |  |
 |**format** | [**FormatEnum**](#FormatEnum) | File format of the objects |  |
-|**partitionFormat** | [**PartitionFormatEnum**](#PartitionFormatEnum) | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. |  [optional] |
+|**partitionFormat** | [**PartitionFormatEnum**](#PartitionFormatEnum) | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). |  [optional] |
 |**prefix** | **String** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. |  [optional] |
 |**recordLocation** | **String** | JSONPath location of the records array in the GraphQL response |  [optional] |
 |**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
@@ -199,6 +199,7 @@
 
 | Name | Value |
 |---- | -----|
+| FLAT_HIVE_COMPLIANT | &quot;flat hive compliant&quot; |
 | HIVE_COMPLIANT | &quot;hive compliant&quot; |
 | SIMPLE_DATE | &quot;simple date&quot; |
 

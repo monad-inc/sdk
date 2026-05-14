@@ -32,7 +32,7 @@ class AwsS3SettingsConfig(BaseModel):
     bucket: Optional[StrictStr] = Field(default=None, description="Name of the S3 bucket.")
     compression: Optional[StrictStr] = Field(default=None, description="Compression format of the S3 objects.")
     format: Optional[StrictStr] = Field(default=None, description="File format of the S3 objects.")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.")
+    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your S3 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix of the S3 object keys to read.")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. This can be ignored if the record is not in JSON format. Leave empty if you want the entire record.")
     region: Optional[StrictStr] = Field(default=None, description="AWS Region of your bucket.")

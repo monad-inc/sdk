@@ -33,7 +33,7 @@ export class BackblazeB2SettingsConfig {
     */
     'format'?: string;
     /**
-    * Specifies the partition format of your B2 bucket
+    * Partition format of your B2 bucket. Options: hive compliant (\'year=2024/month=01/day=01\'), flat hive compliant (\'dt=2024-01-01\'), or simple date (\'2024/01/01\').
     */
     'partitionFormat'?: string;
     /**

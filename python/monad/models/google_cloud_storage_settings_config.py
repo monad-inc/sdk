@@ -31,7 +31,7 @@ class GoogleCloudStorageSettingsConfig(BaseModel):
     bucket_name: Optional[StrictStr] = Field(default=None, description="The name of the Google Cloud Storage bucket to use")
     compression: Optional[StrictStr] = Field(default=None, description="Compression format of the Google Cloud Storage objects.")
     format: Optional[StrictStr] = Field(default=None, description="The format of the files in the bucket, e.g., \"json\", \"csv\", etc.")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.")
+    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="The prefix to use when reading from the bucket. This is used to filter objects in the bucket.")
     project_id: Optional[StrictStr] = Field(default=None, description="The Google Cloud project ID to use")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")

@@ -32,7 +32,7 @@ class BackblazeB2SettingsConfig(BaseModel):
     bucket: Optional[StrictStr] = Field(default=None, description="Name of the B2 bucket")
     compression: Optional[StrictStr] = Field(default=None, description="Compression format of the B2 objects")
     format: Optional[StrictStr] = Field(default=None, description="File format of the B2 objects")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the partition format of your B2 bucket")
+    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your B2 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix of the B2 object keys to read")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
     region: Optional[StrictStr] = Field(default=None, description="B2 Region of your bucket (e.g., us-west-001, us-west-002, eu-central-003)")

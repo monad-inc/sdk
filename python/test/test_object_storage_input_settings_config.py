@@ -40,7 +40,7 @@ class TestObjectStorageInputSettingsConfig(unittest.TestCase):
                 compression = 'auto',
                 endpoint = '',
                 format = 'json',
-                partition_format = 'hive compliant',
+                partition_format = 'flat hive compliant',
                 prefix = '',
                 record_location = '',
                 region = '',

@@ -175,7 +175,7 @@ public class BackblazeB2SettingsConfig {
   }
 
   /**
-   * Specifies the partition format of your B2 bucket
+   * Partition format of your B2 bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;).
    * @return partitionFormat
    */
   @javax.annotation.Nullable

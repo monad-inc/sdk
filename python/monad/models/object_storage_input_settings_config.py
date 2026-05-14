@@ -32,7 +32,7 @@ class ObjectStorageInputSettingsConfig(BaseModel):
     compression: StrictStr = Field(description="Compression format of the objects")
     endpoint: StrictStr = Field(description="Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com)")
     format: StrictStr = Field(description="File format of the objects")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.")
+    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix that leads to the start of the expected partition. For example: \"/foobar/year=2024/month=01/day=01/\". The prefix is `foobar`.")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
     region: Optional[StrictStr] = Field(default=None, description="Optional region for the object storage service. This is often required for services like AWS S3.")
@@ -60,8 +60,8 @@ class ObjectStorageInputSettingsConfig(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['hive compliant', 'simple date']):
-            raise ValueError("must be one of enum values ('hive compliant', 'simple date')")
+        if value not in set(['flat hive compliant', 'hive compliant', 'simple date']):
+            raise ValueError("must be one of enum values ('flat hive compliant', 'hive compliant', 'simple date')")
         return value
 
     model_config = ConfigDict(

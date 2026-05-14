@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **compression** | **str** | Compression format of the objects | 
 **endpoint** | **str** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
 **format** | **str** | File format of the objects | 
-**partition_format** | **str** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
+**partition_format** | **str** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
 **prefix** | **str** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **record_location** | **str** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 **region** | **str** | Optional region for the object storage service. This is often required for services like AWS S3. | [optional] 

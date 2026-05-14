@@ -408,7 +408,7 @@
                         "type": "string"
                     },
                     "partition_format": {
-                        "description": "Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.",
+                        "description": "Partition format of your S3 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -608,7 +608,7 @@
                         "type": "string"
                     },
                     "partition_format": {
-                        "description": "Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').",
+                        "description": "Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -787,7 +787,7 @@
                         "type": "string"
                     },
                     "partition_format": {
-                        "description": "Specifies the partition format of your B2 bucket",
+                        "description": "Partition format of your B2 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -2865,7 +2865,7 @@
                         "type": "string"
                     },
                     "partition_format": {
-                        "description": "Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.",
+                        "description": "Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -6226,8 +6226,9 @@
                         "type": "string"
                     },
                     "partition_format": {
-                        "description": "Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.",
+                        "description": "Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').",
                         "enum": [
+                            "flat hive compliant",
                             "hive compliant",
                             "simple date"
                         ],

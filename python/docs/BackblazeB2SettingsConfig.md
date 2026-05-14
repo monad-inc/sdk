@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **bucket** | **str** | Name of the B2 bucket | [optional] 
 **compression** | **str** | Compression format of the B2 objects | [optional] 
 **format** | **str** | File format of the B2 objects | [optional] 
-**partition_format** | **str** | Specifies the partition format of your B2 bucket | [optional] 
+**partition_format** | **str** | Partition format of your B2 bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
 **prefix** | **str** | Prefix of the B2 object keys to read | [optional] 
 **record_location** | **str** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 **region** | **str** | B2 Region of your bucket (e.g., us-west-001, us-west-002, eu-central-003) | [optional] 

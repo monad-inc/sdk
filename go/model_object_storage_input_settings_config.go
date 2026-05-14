@@ -30,7 +30,7 @@ type ObjectStorageInputSettingsConfig struct {
 	Endpoint string `json:"endpoint"`
 	// File format of the objects
 	Format string `json:"format"`
-	// Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.
+	// Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// Prefix that leads to the start of the expected partition. For example: \"/foobar/year=2024/month=01/day=01/\". The prefix is `foobar`.
 	Prefix *string `json:"prefix,omitempty"`

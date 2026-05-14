@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Bucket** | Pointer to **string** | Name of the B2 bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the B2 objects | [optional] 
 **Format** | Pointer to **string** | File format of the B2 objects | [optional] 
-**PartitionFormat** | Pointer to **string** | Specifies the partition format of your B2 bucket | [optional] 
+**PartitionFormat** | Pointer to **string** | Partition format of your B2 bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | Prefix of the B2 object keys to read | [optional] 
 **RecordLocation** | Pointer to **string** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 **Region** | Pointer to **string** | B2 Region of your bucket (e.g., us-west-001, us-west-002, eu-central-003) | [optional] 
