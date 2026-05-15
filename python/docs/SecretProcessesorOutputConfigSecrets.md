@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **application_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

@@ -225,6 +225,22 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
             )
         else:
             return SecretProcessesorOutputConfigSecrets(
+                client_id = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                client_secret = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
         )
         """
 

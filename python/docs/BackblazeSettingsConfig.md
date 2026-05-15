@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **bucket** | **str** | The name of the B2 bucket where data will be stored | [optional] 
 **compression** | **str** | The compression method to be applied to the data before storing in B2 | [optional] 
 **format_config** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
-**partition_format** | **str** | Specifies the format for organizing data into partitions | [optional] 
+**partition_format** | **str** | Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;). | [optional] 
 **prefix** | **str** | An optional prefix for B2 object keys to organize data within the bucket | [optional] 
 **region** | **str** | The B2 region/endpoint (e.g., us-west-001) | [optional] 
 

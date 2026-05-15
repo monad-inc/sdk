@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Databricks Output Secrets
 */
 export class DatabricksSecretsConfig {
-    'clientId'?: ModelsSecret;
-    'clientSecret'?: ModelsSecret;
+    'clientId': ModelsSecret;
+    'clientSecret': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

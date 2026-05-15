@@ -28,7 +28,7 @@ type AbsSettingsConfig struct {
 	// A container organizes a set of blobs, similar to a directory in a file system.
 	Container *string `json:"container,omitempty"`
 	FormatConfig *FormatterFormatConfig `json:"format_config,omitempty"`
-	// Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').
+	// Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// An optional prefix for Azure object keys to organize data within the container
 	Prefix *string `json:"prefix,omitempty"`

@@ -37,7 +37,7 @@
                         "$ref": "#/components/schemas/formatter.FormatConfig"
                     },
                     "partition_format": {
-                        "description": "Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').",
+                        "description": "Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -741,7 +741,7 @@
                         "$ref": "#/components/schemas/formatter.FormatConfig"
                     },
                     "partition_format": {
-                        "description": "Specifies the format for organizing data into partitions",
+                        "description": "Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -1927,6 +1927,21 @@
                 ],
                 "type": "object"
             },
+            "databricks.AutoLoaderWriteMode": {
+                "type": "object"
+            },
+            "databricks.CopyIntoWriteMode": {
+                "properties": {
+                    "table_name": {
+                        "description": "The target Delta table name. Required for copy_into mode. If the table doesn't exist, Monad will create it.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "table_name"
+                ],
+                "type": "object"
+            },
             "databricks.SecretsConfig": {
                 "description": "Databricks Output Secrets",
                 "properties": {
@@ -1937,6 +1952,10 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "databricks.SettingsConfig": {
@@ -1961,15 +1980,45 @@
                         "description": "The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)",
                         "type": "string"
                     },
-                    "table": {
-                        "description": "The target Delta table name. If the table doesn't exist, Monad will create it.",
+                    "volume": {
+                        "description": "The Unity Catalog Volume used for staging JSONL files",
                         "type": "string"
                     },
-                    "volume": {
-                        "description": "The Unity Catalog Volume used for staging JSONL files before COPY INTO",
+                    "write_mode": {
+                        "$ref": "#/components/schemas/databricks.WriteMode"
+                    }
+                },
+                "required": [
+                    "batch_config",
+                    "catalog",
+                    "http_path",
+                    "schema",
+                    "server_hostname",
+                    "volume",
+                    "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks.WriteMode": {
+                "description": "The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest",
+                "properties": {
+                    "auto_loader": {
+                        "$ref": "#/components/schemas/databricks.AutoLoaderWriteMode"
+                    },
+                    "copy_into": {
+                        "$ref": "#/components/schemas/databricks.CopyIntoWriteMode"
+                    },
+                    "write_mode": {
+                        "enum": [
+                            "autoloader",
+                            "copy_into"
+                        ],
                         "type": "string"
                     }
                 },
+                "required": [
+                    "write_mode"
+                ],
                 "type": "object"
             },
             "datadog.SecretsConfig": {
@@ -2933,7 +2982,7 @@
                         "$ref": "#/components/schemas/formatter.FormatConfig"
                     },
                     "partition_format": {
-                        "description": "Specifies the format for organizing data into partitions within your bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').",
+                        "description": "Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -6219,7 +6268,7 @@
                         "$ref": "#/components/schemas/formatter.FormatConfig"
                     },
                     "partition_format": {
-                        "description": "Specifies the format for organizing data into partitions within your bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').",
+                        "description": "Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').",
                         "type": "string"
                     },
                     "prefix": {
@@ -8836,7 +8885,7 @@
                         "$ref": "#/components/schemas/formatter.FormatConfig"
                     },
                     "partition_format": {
-                        "description": "Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').",
+                        "description": "Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').",
                         "type": "string"
                     },
                     "prefix": {

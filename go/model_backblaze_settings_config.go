@@ -26,7 +26,7 @@ type BackblazeSettingsConfig struct {
 	// The compression method to be applied to the data before storing in B2
 	Compression *string `json:"compression,omitempty"`
 	FormatConfig *FormatterFormatConfig `json:"format_config,omitempty"`
-	// Specifies the format for organizing data into partitions
+	// Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// An optional prefix for B2 object keys to organize data within the bucket
 	Prefix *string `json:"prefix,omitempty"`

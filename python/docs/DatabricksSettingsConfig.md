@@ -6,13 +6,13 @@ Databricks Output Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
-**catalog** | **str** | The Unity Catalog name | [optional] 
-**http_path** | **str** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | [optional] 
-**var_schema** | **str** | The target schema within the catalog | [optional] 
-**server_hostname** | **str** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | [optional] 
-**table** | **str** | The target Delta table name. If the table doesn&#39;t exist, Monad will create it. | [optional] 
-**volume** | **str** | The Unity Catalog Volume used for staging JSONL files before COPY INTO | [optional] 
+**batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
+**catalog** | **str** | The Unity Catalog name | 
+**http_path** | **str** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | 
+**var_schema** | **str** | The target schema within the catalog | 
+**server_hostname** | **str** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
+**volume** | **str** | The Unity Catalog Volume used for staging JSONL files | 
+**write_mode** | [**DatabricksWriteMode**](DatabricksWriteMode.md) |  | 
 
 ## Example
 

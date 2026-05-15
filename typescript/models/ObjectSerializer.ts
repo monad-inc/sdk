@@ -114,8 +114,10 @@ export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
 export * from '../models/CustomerEventDataSecretsConfig';
 export * from '../models/CustomerEventDataSettingsConfig';
+export * from '../models/DatabricksCopyIntoWriteMode';
 export * from '../models/DatabricksSecretsConfig';
 export * from '../models/DatabricksSettingsConfig';
+export * from '../models/DatabricksWriteMode';
 export * from '../models/DatadogSecretsConfig';
 export * from '../models/DatadogSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -678,8 +680,10 @@ import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
 import { CustomerEventDataSettingsConfig , CustomerEventDataSettingsConfigEnvironmentEnum    } from '../models/CustomerEventDataSettingsConfig';
+import { DatabricksCopyIntoWriteMode } from '../models/DatabricksCopyIntoWriteMode';
 import { DatabricksSecretsConfig } from '../models/DatabricksSecretsConfig';
 import { DatabricksSettingsConfig } from '../models/DatabricksSettingsConfig';
+import { DatabricksWriteMode  , DatabricksWriteModeWriteModeEnum   } from '../models/DatabricksWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -1146,6 +1150,7 @@ let enumsMap: Set<string> = new Set<string>([
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
     "CustomerEventDataSettingsConfigEnvironmentEnum",
+    "DatabricksWriteModeWriteModeEnum",
     "ElasticsearchAuthTypeEnum",
     "ElasticsearchConnectionTypeEnum",
     "FormatterType",
@@ -1321,8 +1326,10 @@ let typeMap: {[index: string]: any} = {
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
     "CustomerEventDataSecretsConfig": CustomerEventDataSecretsConfig,
     "CustomerEventDataSettingsConfig": CustomerEventDataSettingsConfig,
+    "DatabricksCopyIntoWriteMode": DatabricksCopyIntoWriteMode,
     "DatabricksSecretsConfig": DatabricksSecretsConfig,
     "DatabricksSettingsConfig": DatabricksSettingsConfig,
+    "DatabricksWriteMode": DatabricksWriteMode,
     "DatadogSecretsConfig": DatadogSecretsConfig,
     "DatadogSettingsConfig": DatadogSettingsConfig,
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,

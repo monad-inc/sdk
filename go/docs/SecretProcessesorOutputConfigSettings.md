@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
-**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
+**BatchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
 **Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
-**PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
+**PartitionFormat** | Pointer to **string** | Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
 **MessageGroupId** | Pointer to **string** | The message group ID for FIFO queues. This is required for FIFO queues. | [optional] 
 **QueueType** | Pointer to [**AwssqsoutputQueueType**](AwssqsoutputQueueType.md) |  | [optional] 
@@ -23,11 +23,12 @@ Name | Type | Description | Notes
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
-**Catalog** | Pointer to **string** | The Unity Catalog name | [optional] 
-**HttpPath** | Pointer to **string** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | [optional] 
-**Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
-**ServerHostname** | Pointer to **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | [optional] 
-**Volume** | Pointer to **string** | The Unity Catalog Volume used for staging JSONL files before COPY INTO | [optional] 
+**Catalog** | **string** | The Unity Catalog name | 
+**HttpPath** | **string** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | 
+**Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
+**ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
+**Volume** | **string** | The Unity Catalog Volume used for staging JSONL files | 
+**WriteMode** | [**DatabricksWriteMode**](DatabricksWriteMode.md) |  | 
 **Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **Ddtags** | Pointer to **[]string** | Tags associated with your logs. | [optional] 
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
@@ -98,7 +99,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings() *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, catalog string, httpPath string, schema string, serverHostname string, volume string, writeMode DatabricksWriteMode, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -157,11 +158,6 @@ and a boolean to check if the value has been set.
 
 SetBatchConfig sets BatchConfig field to given value.
 
-### HasBatchConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) HasBatchConfig() bool`
-
-HasBatchConfig returns a boolean if a field has been set.
 
 ### GetCompression
 
@@ -607,11 +603,6 @@ and a boolean to check if the value has been set.
 
 SetCatalog sets Catalog field to given value.
 
-### HasCatalog
-
-`func (o *SecretProcessesorOutputConfigSettings) HasCatalog() bool`
-
-HasCatalog returns a boolean if a field has been set.
 
 ### GetHttpPath
 
@@ -632,11 +623,6 @@ and a boolean to check if the value has been set.
 
 SetHttpPath sets HttpPath field to given value.
 
-### HasHttpPath
-
-`func (o *SecretProcessesorOutputConfigSettings) HasHttpPath() bool`
-
-HasHttpPath returns a boolean if a field has been set.
 
 ### GetSchema
 
@@ -657,11 +643,6 @@ and a boolean to check if the value has been set.
 
 SetSchema sets Schema field to given value.
 
-### HasSchema
-
-`func (o *SecretProcessesorOutputConfigSettings) HasSchema() bool`
-
-HasSchema returns a boolean if a field has been set.
 
 ### GetServerHostname
 
@@ -682,11 +663,6 @@ and a boolean to check if the value has been set.
 
 SetServerHostname sets ServerHostname field to given value.
 
-### HasServerHostname
-
-`func (o *SecretProcessesorOutputConfigSettings) HasServerHostname() bool`
-
-HasServerHostname returns a boolean if a field has been set.
 
 ### GetVolume
 
@@ -707,11 +683,26 @@ and a boolean to check if the value has been set.
 
 SetVolume sets Volume field to given value.
 
-### HasVolume
 
-`func (o *SecretProcessesorOutputConfigSettings) HasVolume() bool`
+### GetWriteMode
 
-HasVolume returns a boolean if a field has been set.
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteMode() DatabricksWriteMode`
+
+GetWriteMode returns the WriteMode field if non-nil, zero value otherwise.
+
+### GetWriteModeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteModeOk() (*DatabricksWriteMode, bool)`
+
+GetWriteModeOk returns a tuple with the WriteMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWriteMode
+
+`func (o *SecretProcessesorOutputConfigSettings) SetWriteMode(v DatabricksWriteMode)`
+
+SetWriteMode sets WriteMode field to given value.
+
 
 ### GetDdsource
 

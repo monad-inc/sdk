@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.BatchConfigBatchConfig;
+import org.openapitools.client.model.DatabricksWriteMode;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,43 +54,43 @@ import org.openapitools.client.JSON;
 public class DatabricksSettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private BatchConfigBatchConfig batchConfig;
 
   public static final String SERIALIZED_NAME_CATALOG = "catalog";
   @SerializedName(SERIALIZED_NAME_CATALOG)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String catalog;
 
   public static final String SERIALIZED_NAME_HTTP_PATH = "http_path";
   @SerializedName(SERIALIZED_NAME_HTTP_PATH)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String httpPath;
 
   public static final String SERIALIZED_NAME_SCHEMA = "schema";
   @SerializedName(SERIALIZED_NAME_SCHEMA)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String schema;
 
   public static final String SERIALIZED_NAME_SERVER_HOSTNAME = "server_hostname";
   @SerializedName(SERIALIZED_NAME_SERVER_HOSTNAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String serverHostname;
-
-  public static final String SERIALIZED_NAME_TABLE = "table";
-  @SerializedName(SERIALIZED_NAME_TABLE)
-  @javax.annotation.Nullable
-  private String table;
 
   public static final String SERIALIZED_NAME_VOLUME = "volume";
   @SerializedName(SERIALIZED_NAME_VOLUME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String volume;
+
+  public static final String SERIALIZED_NAME_WRITE_MODE = "write_mode";
+  @SerializedName(SERIALIZED_NAME_WRITE_MODE)
+  @javax.annotation.Nonnull
+  private DatabricksWriteMode writeMode;
 
   public DatabricksSettingsConfig() {
   }
 
-  public DatabricksSettingsConfig batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+  public DatabricksSettingsConfig batchConfig(@javax.annotation.Nonnull BatchConfigBatchConfig batchConfig) {
     this.batchConfig = batchConfig;
     return this;
   }
@@ -98,17 +99,17 @@ public class DatabricksSettingsConfig {
    * Get batchConfig
    * @return batchConfig
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public BatchConfigBatchConfig getBatchConfig() {
     return batchConfig;
   }
 
-  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+  public void setBatchConfig(@javax.annotation.Nonnull BatchConfigBatchConfig batchConfig) {
     this.batchConfig = batchConfig;
   }
 
 
-  public DatabricksSettingsConfig catalog(@javax.annotation.Nullable String catalog) {
+  public DatabricksSettingsConfig catalog(@javax.annotation.Nonnull String catalog) {
     this.catalog = catalog;
     return this;
   }
@@ -117,17 +118,17 @@ public class DatabricksSettingsConfig {
    * The Unity Catalog name
    * @return catalog
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getCatalog() {
     return catalog;
   }
 
-  public void setCatalog(@javax.annotation.Nullable String catalog) {
+  public void setCatalog(@javax.annotation.Nonnull String catalog) {
     this.catalog = catalog;
   }
 
 
-  public DatabricksSettingsConfig httpPath(@javax.annotation.Nullable String httpPath) {
+  public DatabricksSettingsConfig httpPath(@javax.annotation.Nonnull String httpPath) {
     this.httpPath = httpPath;
     return this;
   }
@@ -136,17 +137,17 @@ public class DatabricksSettingsConfig {
    * The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123)
    * @return httpPath
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getHttpPath() {
     return httpPath;
   }
 
-  public void setHttpPath(@javax.annotation.Nullable String httpPath) {
+  public void setHttpPath(@javax.annotation.Nonnull String httpPath) {
     this.httpPath = httpPath;
   }
 
 
-  public DatabricksSettingsConfig schema(@javax.annotation.Nullable String schema) {
+  public DatabricksSettingsConfig schema(@javax.annotation.Nonnull String schema) {
     this.schema = schema;
     return this;
   }
@@ -155,17 +156,17 @@ public class DatabricksSettingsConfig {
    * The target schema within the catalog
    * @return schema
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getSchema() {
     return schema;
   }
 
-  public void setSchema(@javax.annotation.Nullable String schema) {
+  public void setSchema(@javax.annotation.Nonnull String schema) {
     this.schema = schema;
   }
 
 
-  public DatabricksSettingsConfig serverHostname(@javax.annotation.Nullable String serverHostname) {
+  public DatabricksSettingsConfig serverHostname(@javax.annotation.Nonnull String serverHostname) {
     this.serverHostname = serverHostname;
     return this;
   }
@@ -174,51 +175,51 @@ public class DatabricksSettingsConfig {
    * The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)
    * @return serverHostname
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getServerHostname() {
     return serverHostname;
   }
 
-  public void setServerHostname(@javax.annotation.Nullable String serverHostname) {
+  public void setServerHostname(@javax.annotation.Nonnull String serverHostname) {
     this.serverHostname = serverHostname;
   }
 
 
-  public DatabricksSettingsConfig table(@javax.annotation.Nullable String table) {
-    this.table = table;
-    return this;
-  }
-
-  /**
-   * The target Delta table name. If the table doesn&#39;t exist, Monad will create it.
-   * @return table
-   */
-  @javax.annotation.Nullable
-  public String getTable() {
-    return table;
-  }
-
-  public void setTable(@javax.annotation.Nullable String table) {
-    this.table = table;
-  }
-
-
-  public DatabricksSettingsConfig volume(@javax.annotation.Nullable String volume) {
+  public DatabricksSettingsConfig volume(@javax.annotation.Nonnull String volume) {
     this.volume = volume;
     return this;
   }
 
   /**
-   * The Unity Catalog Volume used for staging JSONL files before COPY INTO
+   * The Unity Catalog Volume used for staging JSONL files
    * @return volume
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getVolume() {
     return volume;
   }
 
-  public void setVolume(@javax.annotation.Nullable String volume) {
+  public void setVolume(@javax.annotation.Nonnull String volume) {
     this.volume = volume;
+  }
+
+
+  public DatabricksSettingsConfig writeMode(@javax.annotation.Nonnull DatabricksWriteMode writeMode) {
+    this.writeMode = writeMode;
+    return this;
+  }
+
+  /**
+   * Get writeMode
+   * @return writeMode
+   */
+  @javax.annotation.Nonnull
+  public DatabricksWriteMode getWriteMode() {
+    return writeMode;
+  }
+
+  public void setWriteMode(@javax.annotation.Nonnull DatabricksWriteMode writeMode) {
+    this.writeMode = writeMode;
   }
 
 
@@ -237,13 +238,13 @@ public class DatabricksSettingsConfig {
         Objects.equals(this.httpPath, databricksSettingsConfig.httpPath) &&
         Objects.equals(this.schema, databricksSettingsConfig.schema) &&
         Objects.equals(this.serverHostname, databricksSettingsConfig.serverHostname) &&
-        Objects.equals(this.table, databricksSettingsConfig.table) &&
-        Objects.equals(this.volume, databricksSettingsConfig.volume);
+        Objects.equals(this.volume, databricksSettingsConfig.volume) &&
+        Objects.equals(this.writeMode, databricksSettingsConfig.writeMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(batchConfig, catalog, httpPath, schema, serverHostname, table, volume);
+    return Objects.hash(batchConfig, catalog, httpPath, schema, serverHostname, volume, writeMode);
   }
 
   @Override
@@ -255,8 +256,8 @@ public class DatabricksSettingsConfig {
     sb.append("    httpPath: ").append(toIndentedString(httpPath)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    serverHostname: ").append(toIndentedString(serverHostname)).append("\n");
-    sb.append("    table: ").append(toIndentedString(table)).append("\n");
     sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+    sb.append("    writeMode: ").append(toIndentedString(writeMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -275,10 +276,10 @@ public class DatabricksSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "http_path", "schema", "server_hostname", "table", "volume"));
+    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "http_path", "schema", "server_hostname", "volume", "write_mode"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "http_path", "schema", "server_hostname", "volume", "write_mode"));
   }
 
   /**
@@ -301,29 +302,33 @@ public class DatabricksSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DatabricksSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `batch_config`
-      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
-        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : DatabricksSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
-      if ((jsonObj.get("catalog") != null && !jsonObj.get("catalog").isJsonNull()) && !jsonObj.get("catalog").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `batch_config`
+      BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
+      if (!jsonObj.get("catalog").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `catalog` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog").toString()));
       }
-      if ((jsonObj.get("http_path") != null && !jsonObj.get("http_path").isJsonNull()) && !jsonObj.get("http_path").isJsonPrimitive()) {
+      if (!jsonObj.get("http_path").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `http_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("http_path").toString()));
       }
-      if ((jsonObj.get("schema") != null && !jsonObj.get("schema").isJsonNull()) && !jsonObj.get("schema").isJsonPrimitive()) {
+      if (!jsonObj.get("schema").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema").toString()));
       }
-      if ((jsonObj.get("server_hostname") != null && !jsonObj.get("server_hostname").isJsonNull()) && !jsonObj.get("server_hostname").isJsonPrimitive()) {
+      if (!jsonObj.get("server_hostname").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `server_hostname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("server_hostname").toString()));
       }
-      if ((jsonObj.get("table") != null && !jsonObj.get("table").isJsonNull()) && !jsonObj.get("table").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `table` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table").toString()));
-      }
-      if ((jsonObj.get("volume") != null && !jsonObj.get("volume").isJsonNull()) && !jsonObj.get("volume").isJsonPrimitive()) {
+      if (!jsonObj.get("volume").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `volume` to be a primitive type in the JSON string but got `%s`", jsonObj.get("volume").toString()));
       }
+      // validate the required field `write_mode`
+      DatabricksWriteMode.validateJsonElement(jsonObj.get("write_mode"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

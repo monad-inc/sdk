@@ -11,37 +11,35 @@
  */
 
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
+import { DatabricksWriteMode } from '../models/DatabricksWriteMode';
 import { HttpFile } from '../http/http';
 
 /**
 * Databricks Output Settings
 */
 export class DatabricksSettingsConfig {
-    'batchConfig'?: BatchConfigBatchConfig;
+    'batchConfig': BatchConfigBatchConfig;
     /**
     * The Unity Catalog name
     */
-    'catalog'?: string;
+    'catalog': string;
     /**
     * The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123)
     */
-    'httpPath'?: string;
+    'httpPath': string;
     /**
     * The target schema within the catalog
     */
-    'schema'?: string;
+    'schema': string;
     /**
     * The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)
     */
-    'serverHostname'?: string;
+    'serverHostname': string;
     /**
-    * The target Delta table name. If the table doesn\'t exist, Monad will create it.
+    * The Unity Catalog Volume used for staging JSONL files
     */
-    'table'?: string;
-    /**
-    * The Unity Catalog Volume used for staging JSONL files before COPY INTO
-    */
-    'volume'?: string;
+    'volume': string;
+    'writeMode': DatabricksWriteMode;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -79,15 +77,15 @@ export class DatabricksSettingsConfig {
             "format": ""
         },
         {
-            "name": "table",
-            "baseName": "table",
+            "name": "volume",
+            "baseName": "volume",
             "type": "string",
             "format": ""
         },
         {
-            "name": "volume",
-            "baseName": "volume",
-            "type": "string",
+            "name": "writeMode",
+            "baseName": "write_mode",
+            "type": "DatabricksWriteMode",
             "format": ""
         }    ];
 

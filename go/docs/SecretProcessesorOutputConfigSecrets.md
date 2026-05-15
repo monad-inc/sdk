@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSecrets
 
-`func NewSecretProcessesorOutputConfigSecrets() *SecretProcessesorOutputConfigSecrets`
+`func NewSecretProcessesorOutputConfigSecrets(clientId ModelsSecret, clientSecret ModelsSecret, ) *SecretProcessesorOutputConfigSecrets`
 
 NewSecretProcessesorOutputConfigSecrets instantiates a new SecretProcessesorOutputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -66,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
-
-`func (o *SecretProcessesorOutputConfigSecrets) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
@@ -91,11 +86,6 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
-### HasClientSecret
-
-`func (o *SecretProcessesorOutputConfigSecrets) HasClientSecret() bool`
-
-HasClientSecret returns a boolean if a field has been set.
 
 ### GetTenantId
 

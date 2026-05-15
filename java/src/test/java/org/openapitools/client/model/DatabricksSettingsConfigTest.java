@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.BatchConfigBatchConfig;
+import org.openapitools.client.model.DatabricksWriteMode;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -79,19 +80,19 @@ public class DatabricksSettingsConfigTest {
     }
 
     /**
-     * Test the property 'table'
-     */
-    @Test
-    public void tableTest() {
-        // TODO: test table
-    }
-
-    /**
      * Test the property 'volume'
      */
     @Test
     public void volumeTest() {
         // TODO: test volume
+    }
+
+    /**
+     * Test the property 'writeMode'
+     */
+    @Test
+    public void writeModeTest() {
+        // TODO: test writeMode
     }
 
 }

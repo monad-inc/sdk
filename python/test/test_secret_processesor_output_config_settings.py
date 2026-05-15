@@ -74,6 +74,11 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 var_schema = '',
                 server_hostname = '',
                 volume = '',
+                write_mode = monad.models.databricks/write_mode.databricks.WriteMode(
+                    auto_loader = monad.models.databricks/auto_loader_write_mode.databricks.AutoLoaderWriteMode(), 
+                    copy_into = monad.models.databricks/copy_into_write_mode.databricks.CopyIntoWriteMode(
+                        table_name = '', ), 
+                    write_mode = 'autoloader', ),
                 ddsource = '',
                 ddtags = [
                     ''
@@ -218,6 +223,20 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
             )
         else:
             return SecretProcessesorOutputConfigSettings(
+                batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
+                    batch_data_size = 56, 
+                    batch_record_count = 56, 
+                    publish_rate = 56, ),
+                catalog = '',
+                http_path = '',
+                var_schema = '',
+                server_hostname = '',
+                volume = '',
+                write_mode = monad.models.databricks/write_mode.databricks.WriteMode(
+                    auto_loader = monad.models.databricks/auto_loader_write_mode.databricks.AutoLoaderWriteMode(), 
+                    copy_into = monad.models.databricks/copy_into_write_mode.databricks.CopyIntoWriteMode(
+                        table_name = '', ), 
+                    write_mode = 'autoloader', ),
         )
         """
 

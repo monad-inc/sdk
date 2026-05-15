@@ -8,11 +8,11 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**accountUrl** | **String** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. |  [optional] |
-|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
+|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  |
 |**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
 |**container** | **String** | A container organizes a set of blobs, similar to a directory in a file system. |  [optional] |
 |**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
-|**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
+|**partitionFormat** | **String** | Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;). |  [optional] |
 |**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
 |**messageGroupId** | **String** | The message group ID for FIFO queues. This is required for FIFO queues. |  [optional] |
 |**queueType** | **AwssqsoutputQueueType** |  |  [optional] |
@@ -26,11 +26,12 @@
 |**ingressAddress** | **String** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. |  [optional] |
 |**path** | **String** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. |  [optional] |
 |**port** | **String** | The port of the Splunk instance. |  [optional] |
-|**catalog** | **String** | The Unity Catalog name |  [optional] |
-|**httpPath** | **String** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) |  [optional] |
-|**schema** | **String** | The schema within the Snowflake database where the target table resides. |  [optional] |
-|**serverHostname** | **String** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) |  [optional] |
-|**volume** | **String** | The Unity Catalog Volume used for staging JSONL files before COPY INTO |  [optional] |
+|**catalog** | **String** | The Unity Catalog name |  |
+|**httpPath** | **String** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) |  |
+|**schema** | **String** | The schema within the Snowflake database where the target table resides. |  |
+|**serverHostname** | **String** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) |  |
+|**volume** | **String** | The Unity Catalog Volume used for staging JSONL files |  |
+|**writeMode** | [**DatabricksWriteMode**](DatabricksWriteMode.md) |  |  |
 |**ddsource** | **String** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. |  [optional] |
 |**ddtags** | **List&lt;String&gt;** | Tags associated with your logs. |  [optional] |
 |**domainUrl** | **String** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs |  [optional] |

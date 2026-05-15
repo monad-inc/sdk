@@ -32,6 +32,7 @@ import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.BigquerySettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
 import org.openapitools.client.model.DatabricksSettingsConfig;
+import org.openapitools.client.model.DatabricksWriteMode;
 import org.openapitools.client.model.DatadogSettingsConfig;
 import org.openapitools.client.model.ElasticsearchConnectionTypeEnum;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
@@ -277,6 +278,14 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void volumeTest() {
         // TODO: test volume
+    }
+
+    /**
+     * Test the property 'writeMode'
+     */
+    @Test
+    public void writeModeTest() {
+        // TODO: test writeMode
     }
 
     /**

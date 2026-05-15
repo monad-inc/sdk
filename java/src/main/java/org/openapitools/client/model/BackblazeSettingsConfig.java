@@ -172,7 +172,7 @@ public class BackblazeSettingsConfig {
   }
 
   /**
-   * Specifies the format for organizing data into partitions
+   * Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;).
    * @return partitionFormat
    */
   @javax.annotation.Nullable

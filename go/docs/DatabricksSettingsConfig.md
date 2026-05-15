@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
-**Catalog** | Pointer to **string** | The Unity Catalog name | [optional] 
-**HttpPath** | Pointer to **string** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | [optional] 
-**Schema** | Pointer to **string** | The target schema within the catalog | [optional] 
-**ServerHostname** | Pointer to **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | [optional] 
-**Table** | Pointer to **string** | The target Delta table name. If the table doesn&#39;t exist, Monad will create it. | [optional] 
-**Volume** | Pointer to **string** | The Unity Catalog Volume used for staging JSONL files before COPY INTO | [optional] 
+**BatchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
+**Catalog** | **string** | The Unity Catalog name | 
+**HttpPath** | **string** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | 
+**Schema** | **string** | The target schema within the catalog | 
+**ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
+**Volume** | **string** | The Unity Catalog Volume used for staging JSONL files | 
+**WriteMode** | [**DatabricksWriteMode**](DatabricksWriteMode.md) |  | 
 
 ## Methods
 
 ### NewDatabricksSettingsConfig
 
-`func NewDatabricksSettingsConfig() *DatabricksSettingsConfig`
+`func NewDatabricksSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, httpPath string, schema string, serverHostname string, volume string, writeMode DatabricksWriteMode, ) *DatabricksSettingsConfig`
 
 NewDatabricksSettingsConfig instantiates a new DatabricksSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetBatchConfig sets BatchConfig field to given value.
 
-### HasBatchConfig
-
-`func (o *DatabricksSettingsConfig) HasBatchConfig() bool`
-
-HasBatchConfig returns a boolean if a field has been set.
 
 ### GetCatalog
 
@@ -75,11 +70,6 @@ and a boolean to check if the value has been set.
 
 SetCatalog sets Catalog field to given value.
 
-### HasCatalog
-
-`func (o *DatabricksSettingsConfig) HasCatalog() bool`
-
-HasCatalog returns a boolean if a field has been set.
 
 ### GetHttpPath
 
@@ -100,11 +90,6 @@ and a boolean to check if the value has been set.
 
 SetHttpPath sets HttpPath field to given value.
 
-### HasHttpPath
-
-`func (o *DatabricksSettingsConfig) HasHttpPath() bool`
-
-HasHttpPath returns a boolean if a field has been set.
 
 ### GetSchema
 
@@ -125,11 +110,6 @@ and a boolean to check if the value has been set.
 
 SetSchema sets Schema field to given value.
 
-### HasSchema
-
-`func (o *DatabricksSettingsConfig) HasSchema() bool`
-
-HasSchema returns a boolean if a field has been set.
 
 ### GetServerHostname
 
@@ -150,36 +130,6 @@ and a boolean to check if the value has been set.
 
 SetServerHostname sets ServerHostname field to given value.
 
-### HasServerHostname
-
-`func (o *DatabricksSettingsConfig) HasServerHostname() bool`
-
-HasServerHostname returns a boolean if a field has been set.
-
-### GetTable
-
-`func (o *DatabricksSettingsConfig) GetTable() string`
-
-GetTable returns the Table field if non-nil, zero value otherwise.
-
-### GetTableOk
-
-`func (o *DatabricksSettingsConfig) GetTableOk() (*string, bool)`
-
-GetTableOk returns a tuple with the Table field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTable
-
-`func (o *DatabricksSettingsConfig) SetTable(v string)`
-
-SetTable sets Table field to given value.
-
-### HasTable
-
-`func (o *DatabricksSettingsConfig) HasTable() bool`
-
-HasTable returns a boolean if a field has been set.
 
 ### GetVolume
 
@@ -200,11 +150,26 @@ and a boolean to check if the value has been set.
 
 SetVolume sets Volume field to given value.
 
-### HasVolume
 
-`func (o *DatabricksSettingsConfig) HasVolume() bool`
+### GetWriteMode
 
-HasVolume returns a boolean if a field has been set.
+`func (o *DatabricksSettingsConfig) GetWriteMode() DatabricksWriteMode`
+
+GetWriteMode returns the WriteMode field if non-nil, zero value otherwise.
+
+### GetWriteModeOk
+
+`func (o *DatabricksSettingsConfig) GetWriteModeOk() (*DatabricksWriteMode, bool)`
+
+GetWriteModeOk returns a tuple with the WriteMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWriteMode
+
+`func (o *DatabricksSettingsConfig) SetWriteMode(v DatabricksWriteMode)`
+
+SetWriteMode sets WriteMode field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

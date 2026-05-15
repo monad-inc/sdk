@@ -34,7 +34,7 @@ class GoogleCloudStorageOutputSettingsConfig(BaseModel):
     bucket: Optional[StrictStr] = Field(default=None, description="The name of the bucket where data will be stored")
     compression: Optional[StrictStr] = Field(default=None, description="The compression method to be applied to the data before storing")
     format: Optional[FormatterFormatConfig] = None
-    partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the format for organizing data into partitions within your bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').")
+    partition_format: Optional[StrictStr] = Field(default=None, description="Directory structure used to partition stored objects. Options: simple date (e.g., '2024/01/01'), hive compliant (e.g., 'year=2024/month=01/day=01'), and flat hive compliant (e.g., 'dt=2024-01-01').")
     prefix: Optional[StrictStr] = Field(default=None, description="An optional prefix for object keys to organize data within the bucket")
     __properties: ClassVar[List[str]] = ["batch_config", "bucket", "compression", "format", "partition_format", "prefix"]
 

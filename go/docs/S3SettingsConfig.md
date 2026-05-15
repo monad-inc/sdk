@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
-**PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
+**PartitionFormat** | Pointer to **string** | Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
 **Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 

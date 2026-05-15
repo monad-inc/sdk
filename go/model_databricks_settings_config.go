@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the DatabricksSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,27 +22,35 @@ var _ MappedNullable = &DatabricksSettingsConfig{}
 
 // DatabricksSettingsConfig Databricks Output Settings
 type DatabricksSettingsConfig struct {
-	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
+	BatchConfig BatchConfigBatchConfig `json:"batch_config"`
 	// The Unity Catalog name
-	Catalog *string `json:"catalog,omitempty"`
+	Catalog string `json:"catalog"`
 	// The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123)
-	HttpPath *string `json:"http_path,omitempty"`
+	HttpPath string `json:"http_path"`
 	// The target schema within the catalog
-	Schema *string `json:"schema,omitempty"`
+	Schema string `json:"schema"`
 	// The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)
-	ServerHostname *string `json:"server_hostname,omitempty"`
-	// The target Delta table name. If the table doesn't exist, Monad will create it.
-	Table *string `json:"table,omitempty"`
-	// The Unity Catalog Volume used for staging JSONL files before COPY INTO
-	Volume *string `json:"volume,omitempty"`
+	ServerHostname string `json:"server_hostname"`
+	// The Unity Catalog Volume used for staging JSONL files
+	Volume string `json:"volume"`
+	WriteMode DatabricksWriteMode `json:"write_mode"`
 }
+
+type _DatabricksSettingsConfig DatabricksSettingsConfig
 
 // NewDatabricksSettingsConfig instantiates a new DatabricksSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDatabricksSettingsConfig() *DatabricksSettingsConfig {
+func NewDatabricksSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, httpPath string, schema string, serverHostname string, volume string, writeMode DatabricksWriteMode) *DatabricksSettingsConfig {
 	this := DatabricksSettingsConfig{}
+	this.BatchConfig = batchConfig
+	this.Catalog = catalog
+	this.HttpPath = httpPath
+	this.Schema = schema
+	this.ServerHostname = serverHostname
+	this.Volume = volume
+	this.WriteMode = writeMode
 	return &this
 }
 
@@ -52,228 +62,172 @@ func NewDatabricksSettingsConfigWithDefaults() *DatabricksSettingsConfig {
 	return &this
 }
 
-// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
+// GetBatchConfig returns the BatchConfig field value
 func (o *DatabricksSettingsConfig) GetBatchConfig() BatchConfigBatchConfig {
-	if o == nil || IsNil(o.BatchConfig) {
+	if o == nil {
 		var ret BatchConfigBatchConfig
 		return ret
 	}
-	return *o.BatchConfig
+
+	return o.BatchConfig
 }
 
-// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
+// GetBatchConfigOk returns a tuple with the BatchConfig field value
 // and a boolean to check if the value has been set.
 func (o *DatabricksSettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
-	if o == nil || IsNil(o.BatchConfig) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BatchConfig, true
+	return &o.BatchConfig, true
 }
 
-// HasBatchConfig returns a boolean if a field has been set.
-func (o *DatabricksSettingsConfig) HasBatchConfig() bool {
-	if o != nil && !IsNil(o.BatchConfig) {
-		return true
-	}
-
-	return false
-}
-
-// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
+// SetBatchConfig sets field value
 func (o *DatabricksSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
-	o.BatchConfig = &v
+	o.BatchConfig = v
 }
 
-// GetCatalog returns the Catalog field value if set, zero value otherwise.
+// GetCatalog returns the Catalog field value
 func (o *DatabricksSettingsConfig) GetCatalog() string {
-	if o == nil || IsNil(o.Catalog) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Catalog
+
+	return o.Catalog
 }
 
-// GetCatalogOk returns a tuple with the Catalog field value if set, nil otherwise
+// GetCatalogOk returns a tuple with the Catalog field value
 // and a boolean to check if the value has been set.
 func (o *DatabricksSettingsConfig) GetCatalogOk() (*string, bool) {
-	if o == nil || IsNil(o.Catalog) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Catalog, true
+	return &o.Catalog, true
 }
 
-// HasCatalog returns a boolean if a field has been set.
-func (o *DatabricksSettingsConfig) HasCatalog() bool {
-	if o != nil && !IsNil(o.Catalog) {
-		return true
-	}
-
-	return false
-}
-
-// SetCatalog gets a reference to the given string and assigns it to the Catalog field.
+// SetCatalog sets field value
 func (o *DatabricksSettingsConfig) SetCatalog(v string) {
-	o.Catalog = &v
+	o.Catalog = v
 }
 
-// GetHttpPath returns the HttpPath field value if set, zero value otherwise.
+// GetHttpPath returns the HttpPath field value
 func (o *DatabricksSettingsConfig) GetHttpPath() string {
-	if o == nil || IsNil(o.HttpPath) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.HttpPath
+
+	return o.HttpPath
 }
 
-// GetHttpPathOk returns a tuple with the HttpPath field value if set, nil otherwise
+// GetHttpPathOk returns a tuple with the HttpPath field value
 // and a boolean to check if the value has been set.
 func (o *DatabricksSettingsConfig) GetHttpPathOk() (*string, bool) {
-	if o == nil || IsNil(o.HttpPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HttpPath, true
+	return &o.HttpPath, true
 }
 
-// HasHttpPath returns a boolean if a field has been set.
-func (o *DatabricksSettingsConfig) HasHttpPath() bool {
-	if o != nil && !IsNil(o.HttpPath) {
-		return true
-	}
-
-	return false
-}
-
-// SetHttpPath gets a reference to the given string and assigns it to the HttpPath field.
+// SetHttpPath sets field value
 func (o *DatabricksSettingsConfig) SetHttpPath(v string) {
-	o.HttpPath = &v
+	o.HttpPath = v
 }
 
-// GetSchema returns the Schema field value if set, zero value otherwise.
+// GetSchema returns the Schema field value
 func (o *DatabricksSettingsConfig) GetSchema() string {
-	if o == nil || IsNil(o.Schema) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Schema
+
+	return o.Schema
 }
 
-// GetSchemaOk returns a tuple with the Schema field value if set, nil otherwise
+// GetSchemaOk returns a tuple with the Schema field value
 // and a boolean to check if the value has been set.
 func (o *DatabricksSettingsConfig) GetSchemaOk() (*string, bool) {
-	if o == nil || IsNil(o.Schema) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Schema, true
+	return &o.Schema, true
 }
 
-// HasSchema returns a boolean if a field has been set.
-func (o *DatabricksSettingsConfig) HasSchema() bool {
-	if o != nil && !IsNil(o.Schema) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchema gets a reference to the given string and assigns it to the Schema field.
+// SetSchema sets field value
 func (o *DatabricksSettingsConfig) SetSchema(v string) {
-	o.Schema = &v
+	o.Schema = v
 }
 
-// GetServerHostname returns the ServerHostname field value if set, zero value otherwise.
+// GetServerHostname returns the ServerHostname field value
 func (o *DatabricksSettingsConfig) GetServerHostname() string {
-	if o == nil || IsNil(o.ServerHostname) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServerHostname
+
+	return o.ServerHostname
 }
 
-// GetServerHostnameOk returns a tuple with the ServerHostname field value if set, nil otherwise
+// GetServerHostnameOk returns a tuple with the ServerHostname field value
 // and a boolean to check if the value has been set.
 func (o *DatabricksSettingsConfig) GetServerHostnameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerHostname) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerHostname, true
+	return &o.ServerHostname, true
 }
 
-// HasServerHostname returns a boolean if a field has been set.
-func (o *DatabricksSettingsConfig) HasServerHostname() bool {
-	if o != nil && !IsNil(o.ServerHostname) {
-		return true
-	}
-
-	return false
-}
-
-// SetServerHostname gets a reference to the given string and assigns it to the ServerHostname field.
+// SetServerHostname sets field value
 func (o *DatabricksSettingsConfig) SetServerHostname(v string) {
-	o.ServerHostname = &v
+	o.ServerHostname = v
 }
 
-// GetTable returns the Table field value if set, zero value otherwise.
-func (o *DatabricksSettingsConfig) GetTable() string {
-	if o == nil || IsNil(o.Table) {
-		var ret string
-		return ret
-	}
-	return *o.Table
-}
-
-// GetTableOk returns a tuple with the Table field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DatabricksSettingsConfig) GetTableOk() (*string, bool) {
-	if o == nil || IsNil(o.Table) {
-		return nil, false
-	}
-	return o.Table, true
-}
-
-// HasTable returns a boolean if a field has been set.
-func (o *DatabricksSettingsConfig) HasTable() bool {
-	if o != nil && !IsNil(o.Table) {
-		return true
-	}
-
-	return false
-}
-
-// SetTable gets a reference to the given string and assigns it to the Table field.
-func (o *DatabricksSettingsConfig) SetTable(v string) {
-	o.Table = &v
-}
-
-// GetVolume returns the Volume field value if set, zero value otherwise.
+// GetVolume returns the Volume field value
 func (o *DatabricksSettingsConfig) GetVolume() string {
-	if o == nil || IsNil(o.Volume) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Volume
+
+	return o.Volume
 }
 
-// GetVolumeOk returns a tuple with the Volume field value if set, nil otherwise
+// GetVolumeOk returns a tuple with the Volume field value
 // and a boolean to check if the value has been set.
 func (o *DatabricksSettingsConfig) GetVolumeOk() (*string, bool) {
-	if o == nil || IsNil(o.Volume) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Volume, true
+	return &o.Volume, true
 }
 
-// HasVolume returns a boolean if a field has been set.
-func (o *DatabricksSettingsConfig) HasVolume() bool {
-	if o != nil && !IsNil(o.Volume) {
-		return true
+// SetVolume sets field value
+func (o *DatabricksSettingsConfig) SetVolume(v string) {
+	o.Volume = v
+}
+
+// GetWriteMode returns the WriteMode field value
+func (o *DatabricksSettingsConfig) GetWriteMode() DatabricksWriteMode {
+	if o == nil {
+		var ret DatabricksWriteMode
+		return ret
 	}
 
-	return false
+	return o.WriteMode
 }
 
-// SetVolume gets a reference to the given string and assigns it to the Volume field.
-func (o *DatabricksSettingsConfig) SetVolume(v string) {
-	o.Volume = &v
+// GetWriteModeOk returns a tuple with the WriteMode field value
+// and a boolean to check if the value has been set.
+func (o *DatabricksSettingsConfig) GetWriteModeOk() (*DatabricksWriteMode, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.WriteMode, true
+}
+
+// SetWriteMode sets field value
+func (o *DatabricksSettingsConfig) SetWriteMode(v DatabricksWriteMode) {
+	o.WriteMode = v
 }
 
 func (o DatabricksSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -286,28 +240,57 @@ func (o DatabricksSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o DatabricksSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BatchConfig) {
-		toSerialize["batch_config"] = o.BatchConfig
-	}
-	if !IsNil(o.Catalog) {
-		toSerialize["catalog"] = o.Catalog
-	}
-	if !IsNil(o.HttpPath) {
-		toSerialize["http_path"] = o.HttpPath
-	}
-	if !IsNil(o.Schema) {
-		toSerialize["schema"] = o.Schema
-	}
-	if !IsNil(o.ServerHostname) {
-		toSerialize["server_hostname"] = o.ServerHostname
-	}
-	if !IsNil(o.Table) {
-		toSerialize["table"] = o.Table
-	}
-	if !IsNil(o.Volume) {
-		toSerialize["volume"] = o.Volume
-	}
+	toSerialize["batch_config"] = o.BatchConfig
+	toSerialize["catalog"] = o.Catalog
+	toSerialize["http_path"] = o.HttpPath
+	toSerialize["schema"] = o.Schema
+	toSerialize["server_hostname"] = o.ServerHostname
+	toSerialize["volume"] = o.Volume
+	toSerialize["write_mode"] = o.WriteMode
 	return toSerialize, nil
+}
+
+func (o *DatabricksSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"batch_config",
+		"catalog",
+		"http_path",
+		"schema",
+		"server_hostname",
+		"volume",
+		"write_mode",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDatabricksSettingsConfig := _DatabricksSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varDatabricksSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DatabricksSettingsConfig(varDatabricksSettingsConfig)
+
+	return err
 }
 
 type NullableDatabricksSettingsConfig struct {

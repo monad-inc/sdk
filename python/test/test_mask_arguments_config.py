@@ -47,7 +47,7 @@ class TestMaskArgumentsConfig(unittest.TestCase):
                             organization_id = '', 
                             updated_at = '', 
                             value = '', ), ), 
-                    simple = monad.models.mask/simple_variant.mask.SimpleVariant(), 
+                    simple = monad.models.databricks/auto_loader_write_mode.databricks.AutoLoaderWriteMode(), 
                     type = '', )
             )
         else:

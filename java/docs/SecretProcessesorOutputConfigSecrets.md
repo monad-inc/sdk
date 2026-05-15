@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**applicationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

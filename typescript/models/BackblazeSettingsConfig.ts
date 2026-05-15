@@ -26,7 +26,7 @@ export class BackblazeSettingsConfig {
     'compression'?: string;
     'formatConfig'?: FormatterFormatConfig;
     /**
-    * Specifies the format for organizing data into partitions
+    * Directory structure used to partition stored objects. Options: simple date (e.g., \'2024/01/01\'), hive compliant (e.g., \'year=2024/month=01/day=01\'), and flat hive compliant (e.g., \'dt=2024-01-01\').
     */
     'partitionFormat'?: string;
     /**

@@ -19,8 +19,9 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig
+from monad.models.databricks_write_mode import DatabricksWriteMode
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,14 +30,14 @@ class DatabricksSettingsConfig(BaseModel):
     """
     Databricks Output Settings
     """ # noqa: E501
-    batch_config: Optional[BatchConfigBatchConfig] = None
-    catalog: Optional[StrictStr] = Field(default=None, description="The Unity Catalog name")
-    http_path: Optional[StrictStr] = Field(default=None, description="The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123)")
-    var_schema: Optional[StrictStr] = Field(default=None, description="The target schema within the catalog", alias="schema")
-    server_hostname: Optional[StrictStr] = Field(default=None, description="The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)")
-    table: Optional[StrictStr] = Field(default=None, description="The target Delta table name. If the table doesn't exist, Monad will create it.")
-    volume: Optional[StrictStr] = Field(default=None, description="The Unity Catalog Volume used for staging JSONL files before COPY INTO")
-    __properties: ClassVar[List[str]] = ["batch_config", "catalog", "http_path", "schema", "server_hostname", "table", "volume"]
+    batch_config: BatchConfigBatchConfig
+    catalog: StrictStr = Field(description="The Unity Catalog name")
+    http_path: StrictStr = Field(description="The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123)")
+    var_schema: StrictStr = Field(description="The target schema within the catalog", alias="schema")
+    server_hostname: StrictStr = Field(description="The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)")
+    volume: StrictStr = Field(description="The Unity Catalog Volume used for staging JSONL files")
+    write_mode: DatabricksWriteMode
+    __properties: ClassVar[List[str]] = ["batch_config", "catalog", "http_path", "schema", "server_hostname", "volume", "write_mode"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -80,6 +81,9 @@ class DatabricksSettingsConfig(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of batch_config
         if self.batch_config:
             _dict['batch_config'] = self.batch_config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of write_mode
+        if self.write_mode:
+            _dict['write_mode'] = self.write_mode.to_dict()
         return _dict
 
     @classmethod
@@ -97,8 +101,8 @@ class DatabricksSettingsConfig(BaseModel):
             "http_path": obj.get("http_path"),
             "schema": obj.get("schema"),
             "server_hostname": obj.get("server_hostname"),
-            "table": obj.get("table"),
-            "volume": obj.get("volume")
+            "volume": obj.get("volume"),
+            "write_mode": DatabricksWriteMode.from_dict(obj["write_mode"]) if obj.get("write_mode") is not None else None
         })
         return _obj
 
