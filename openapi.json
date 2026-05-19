@@ -1124,7 +1124,7 @@
                     "result": {
                         "description": "Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.Result"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -1132,7 +1132,7 @@
                     "severity": {
                         "description": "Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.VendorSeverity"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -1140,7 +1140,7 @@
                     "status": {
                         "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED', 'REJECTED'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.Status"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -1216,7 +1216,7 @@
                     "cloudPlatform": {
                         "description": "Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.CloudPlatform"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -1228,7 +1228,7 @@
                     "entityType": {
                         "description": "Entity types for Wiz.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.EntityType"
                         },
                         "minItems": 1,
                         "type": "array",
@@ -1275,7 +1275,7 @@
                     "cloudPlatform": {
                         "description": "Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.CloudPlatform"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -1291,7 +1291,7 @@
                     "entityType": {
                         "description": "Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.EntityType"
                         },
                         "minItems": 1,
                         "type": "array",
@@ -3315,31 +3315,13 @@
                         "uniqueItems": false
                     },
                     "has_note": {
-                        "description": "@Description Filter Issues with or without a note",
-                        "enum": [
-                            "has_note",
-                            "does_not_have_note",
-                            "do_not_filter"
-                        ],
-                        "type": "string"
+                        "$ref": "#/components/schemas/wiz.NoteFilter"
                     },
                     "has_remediation": {
-                        "description": "@Description Filter Issues with or without remediation",
-                        "enum": [
-                            "has_remediation",
-                            "does_not_have_remediation",
-                            "do_not_filter"
-                        ],
-                        "type": "string"
+                        "$ref": "#/components/schemas/wiz.RemediationFilter"
                     },
                     "has_service_ticket": {
-                        "description": "@Description Filter Issues with or without related service ticket",
-                        "enum": [
-                            "has_service_ticket",
-                            "does_not_have_service_ticket",
-                            "do_not_filter"
-                        ],
-                        "type": "string"
+                        "$ref": "#/components/schemas/wiz.ServiceTicketFilter"
                     },
                     "issue_ids": {
                         "description": "@Description Filter only Issues that match these specific IDs",
@@ -3352,12 +3334,7 @@
                     "issue_types": {
                         "description": "@Description Filter by Issue type",
                         "items": {
-                            "enum": [
-                                "TOXIC_COMBINATION",
-                                "THREAT_DETECTION",
-                                "CLOUD_CONFIGURATION"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.IssueType"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3377,17 +3354,7 @@
                     "resolution_reasons": {
                         "description": "@Description Filter Issues by resolution reason",
                         "items": {
-                            "enum": [
-                                "CONTROL_CHANGED",
-                                "CONTROL_DISABLED",
-                                "CONTROL_DELETED",
-                                "EXCEPTION",
-                                "FALSE_POSITIVE",
-                                "WONT_FIX",
-                                "OBJECT_DELETED",
-                                "ISSUE_FIXED"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.ResolutionReason"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3395,7 +3362,7 @@
                     "risk_equals_all": {
                         "description": "@Description Filters Issues by risk type according to Wiz-defined types of risk\n@Description Use the risk ID and not the risk name\n@Description All specified risks must be present",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.RiskType"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3403,7 +3370,7 @@
                     "risk_equals_any": {
                         "description": "@Description Filters Issues by risk type according to Wiz-defined types of risk\n@Description Use the risk ID and not the risk name",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.RiskType"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3419,14 +3386,7 @@
                     "severities": {
                         "description": "@Description Filter Issues according to Control severity",
                         "items": {
-                            "enum": [
-                                "INFORMATIONAL",
-                                "LOW",
-                                "MEDIUM",
-                                "HIGH",
-                                "CRITICAL"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.IssueSeverity"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3434,16 +3394,7 @@
                     "stack_layers": {
                         "description": "@Description Filter Issues from specific stack layers",
                         "items": {
-                            "enum": [
-                                "APPLICATION_AND_DATA",
-                                "CI_CD",
-                                "SECURITY_AND_IDENTITY",
-                                "COMPUTE_PLATFORMS",
-                                "CODE",
-                                "CLOUD_ENTITLEMENTS",
-                                "DATA_STORES"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.StackLayer"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3451,13 +3402,7 @@
                     "status": {
                         "description": "@Description Filter by Issue handling status\n@Description Default: OPEN",
                         "items": {
-                            "enum": [
-                                "OPEN",
-                                "IN_PROGRESS",
-                                "RESOLVED",
-                                "REJECTED"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.IssueStatus"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3508,31 +3453,13 @@
                         "type": "string"
                     },
                     "has_note": {
-                        "description": "@Description Filter Issues with or without a note",
-                        "enum": [
-                            "has_note",
-                            "does_not_have_note",
-                            "do_not_filter"
-                        ],
-                        "type": "string"
+                        "$ref": "#/components/schemas/wiz.NoteFilter"
                     },
                     "has_remediation": {
-                        "description": "@Description Filter Issues with or without remediation",
-                        "enum": [
-                            "has_remediation",
-                            "does_not_have_remediation",
-                            "do_not_filter"
-                        ],
-                        "type": "string"
+                        "$ref": "#/components/schemas/wiz.RemediationFilter"
                     },
                     "has_service_ticket": {
-                        "description": "@Description Filter Issues with or without related service ticket",
-                        "enum": [
-                            "has_service_ticket",
-                            "does_not_have_service_ticket",
-                            "do_not_filter"
-                        ],
-                        "type": "string"
+                        "$ref": "#/components/schemas/wiz.ServiceTicketFilter"
                     },
                     "issue_ids": {
                         "description": "@Description Filter only Issues that match these specific IDs",
@@ -3545,12 +3472,7 @@
                     "issue_types": {
                         "description": "@Description Filter by Issue type",
                         "items": {
-                            "enum": [
-                                "TOXIC_COMBINATION",
-                                "THREAT_DETECTION",
-                                "CLOUD_CONFIGURATION"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.IssueType"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3570,17 +3492,7 @@
                     "resolution_reasons": {
                         "description": "@Description Filter Issues by resolution reason",
                         "items": {
-                            "enum": [
-                                "CONTROL_CHANGED",
-                                "CONTROL_DISABLED",
-                                "CONTROL_DELETED",
-                                "EXCEPTION",
-                                "FALSE_POSITIVE",
-                                "WONT_FIX",
-                                "OBJECT_DELETED",
-                                "ISSUE_FIXED"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.ResolutionReason"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3588,7 +3500,7 @@
                     "risk_equals_all": {
                         "description": "@Description Filters Issues by risk type according to Wiz-defined types of risk\n@Description Use the risk ID and not the risk name\n@Description All specified risks must be present",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.RiskType"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3596,7 +3508,7 @@
                     "risk_equals_any": {
                         "description": "@Description Filters Issues by risk type according to Wiz-defined types of risk\n@Description Use the risk ID and not the risk name",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.RiskType"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3612,14 +3524,7 @@
                     "severities": {
                         "description": "@Description Filter Issues according to Control severity",
                         "items": {
-                            "enum": [
-                                "INFORMATIONAL",
-                                "LOW",
-                                "MEDIUM",
-                                "HIGH",
-                                "CRITICAL"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.IssueSeverity"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3627,16 +3532,7 @@
                     "stack_layers": {
                         "description": "@Description Filter Issues from specific stack layers",
                         "items": {
-                            "enum": [
-                                "APPLICATION_AND_DATA",
-                                "CI_CD",
-                                "SECURITY_AND_IDENTITY",
-                                "COMPUTE_PLATFORMS",
-                                "CODE",
-                                "CLOUD_ENTITLEMENTS",
-                                "DATA_STORES"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.StackLayer"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -3644,13 +3540,7 @@
                     "status": {
                         "description": "@Description Filter by Issue handling status\n@Description Default: OPEN",
                         "items": {
-                            "enum": [
-                                "OPEN",
-                                "IN_PROGRESS",
-                                "RESOLVED",
-                                "REJECTED"
-                            ],
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.IssueStatus"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11049,7 +10939,7 @@
                     "asset_status": {
                         "description": "Asset status types for Wiz. Ex: 'ACTIVE', 'INACTIVE'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.AssetStatus"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11057,7 +10947,7 @@
                     "asset_types": {
                         "description": "Asset types for Wiz. Ex: 'VIRTUAL_MACHINE', 'CONTAINER', etc.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.AssetType"
                         },
                         "minItems": 1,
                         "type": "array",
@@ -11070,7 +10960,7 @@
                     "detection_method": {
                         "description": "Detection method types for Wiz. Ex: 'AGENT', 'CLOUD', 'AGENT_CLOUD'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.DetectionMethod"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11082,7 +10972,7 @@
                     "status": {
                         "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.Status"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11094,7 +10984,7 @@
                     "vendor_severity": {
                         "description": "Vendor severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.VendorSeverity"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11131,7 +11021,7 @@
                     "asset_status": {
                         "description": "Asset status types for Wiz. Ex: 'ACTIVE', 'INACTIVE'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.AssetStatus"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11139,7 +11029,7 @@
                     "asset_types": {
                         "description": "Asset types for Wiz. Ex: 'VIRTUAL_MACHINE', 'CONTAINER', etc.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.AssetType"
                         },
                         "minItems": 1,
                         "type": "array",
@@ -11152,7 +11042,7 @@
                     "detection_method": {
                         "description": "Detection method types for Wiz. Ex: 'AGENT', 'CLOUD', 'AGENT_CLOUD'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.DetectionMethod"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11164,7 +11054,7 @@
                     "status": {
                         "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.Status"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11176,7 +11066,7 @@
                     "vendor_severity": {
                         "description": "Vendor severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/wiz.VendorSeverity"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -11187,6 +11077,558 @@
                     "endpoint_url"
                 ],
                 "type": "object"
+            },
+            "wiz.AssetStatus": {
+                "enum": [
+                    "Active",
+                    "Inactive",
+                    "Error"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "Active",
+                    "Inactive",
+                    "Error"
+                ]
+            },
+            "wiz.AssetType": {
+                "enum": [
+                    "SERVERLESS",
+                    "CONTAINER_IMAGE",
+                    "CONTAINER",
+                    "VIRTUAL_MACHINE"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "Serverless",
+                    "ContainerImage",
+                    "Container",
+                    "VirtualMachine"
+                ]
+            },
+            "wiz.CloudPlatform": {
+                "enum": [
+                    "Alibaba",
+                    "AKS",
+                    "AWS",
+                    "Azure",
+                    "EKS",
+                    "GCP",
+                    "GKE",
+                    "Kubernetes",
+                    "Linode",
+                    "OCI",
+                    "OKE",
+                    "OpenShift",
+                    "vSphere"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "Alibaba",
+                    "AKS",
+                    "AWS",
+                    "Azure",
+                    "EKS",
+                    "GCP",
+                    "GKE",
+                    "Kubernetes",
+                    "Linode",
+                    "OCI",
+                    "OKE",
+                    "OpenShift",
+                    "vSphere"
+                ]
+            },
+            "wiz.DetectionMethod": {
+                "enum": [
+                    "PACKAGE",
+                    "DEFAULT_PACKAGE",
+                    "LIBRARY",
+                    "OS",
+                    "INSTALLED_PROGRAM",
+                    "INSTALLED_PROGRAM_BY_SERVICE",
+                    "FILE_PATH"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "Package",
+                    "DefaultPackage",
+                    "Library",
+                    "OS",
+                    "InstalledProgram",
+                    "InstalledProgramByService",
+                    "FilePath"
+                ]
+            },
+            "wiz.EntityType": {
+                "enum": [
+                    "ACCESS_ROLE",
+                    "ACCESS_ROLE_BINDING",
+                    "ACCESS_ROLE_PERMISSION",
+                    "API_GATEWAY",
+                    "BACKUP_SERVICE",
+                    "BUCKET",
+                    "CICD_SERVICE",
+                    "CLOUD_LOG_CONFIGURATION",
+                    "CLOUD_ORGANIZATION",
+                    "CDN",
+                    "COMPUTE_INSTANCE_GROUP",
+                    "CONFIG_MAP",
+                    "CONTAINER",
+                    "CONTAINER_GROUP",
+                    "CONTAINER_IMAGE",
+                    "CONTAINER_REGISTRY",
+                    "CONTAINER_REPOSITORY",
+                    "CONTAINER_SERVICE",
+                    "CONTROLLER_REVISION",
+                    "DATA_WORKFLOW",
+                    "DATA_WORKLOAD",
+                    "DATABASE",
+                    "DAEMON_SET",
+                    "DEPLOYMENT",
+                    "DNS_RECORD",
+                    "DNS_ZONE",
+                    "DOMAIN",
+                    "EMAIL_SERVICE",
+                    "ENCRYPTION_KEY",
+                    "FILE_SYSTEM_SERVICE",
+                    "FIREWALL",
+                    "GATEWAY",
+                    "GOVERNANCE_POLICY",
+                    "GOVERNANCE_POLICY_GROUP",
+                    "KUBERNETES_CLUSTER",
+                    "KUBERNETES_CRON_JOB",
+                    "KUBERNETES_INGRESS",
+                    "KUBERNETES_INGRESS_CONTROLLER",
+                    "KUBERNETES_JOB",
+                    "KUBERNETES_NETWORK_POLICY",
+                    "KUBERNETES_NODE",
+                    "KUBERNETES_PERSISTENT_VOLUME",
+                    "KUBERNETES_PERSISTENT_VOLUME_CLAIM",
+                    "KUBERNETES_POD_SECURITY_POLICY",
+                    "KUBERNETES_SERVICE",
+                    "KUBERNETES_STORAGE_CLASS",
+                    "KUBERNETES_VOLUME",
+                    "LOAD_BALANCER",
+                    "MANAGED_CERTIFICATE",
+                    "MANAGEMENT_SERVICE",
+                    "MAP_REDUCE_CLUSTER",
+                    "MESSAGING_SERVICE",
+                    "MONITOR_ALERT",
+                    "NAMESPACE",
+                    "NETWORK_ADDRESS",
+                    "NETWORK_INTERFACE",
+                    "PEERING",
+                    "POD",
+                    "PRIVATE_ENDPOINT",
+                    "PRIVATE_LINK",
+                    "RAW_ACCESS_POLICY",
+                    "REGION",
+                    "REGISTERED_DOMAIN",
+                    "REPLICA_SET",
+                    "RESOURCE_GROUP",
+                    "ROUTE_TABLE",
+                    "SEARCH_INDEX",
+                    "SECRET",
+                    "SECRET_CONTAINER",
+                    "SERVERLESS",
+                    "SERVERLESS_PACKAGE",
+                    "SERVICE_CONFIGURATION",
+                    "SERVICE_USAGE_TECHNOLOGY",
+                    "SNAPSHOT",
+                    "STATEFUL_SET",
+                    "STORAGE_ACCOUNT",
+                    "SUBNET",
+                    "SUBSCRIPTION",
+                    "VIRTUAL_DESKTOP",
+                    "VIRTUAL_MACHINE",
+                    "VIRTUAL_MACHINE_IMAGE",
+                    "VIRTUAL_NETWORK",
+                    "VOLUME",
+                    "WEB_SERVICE"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "AccessRole",
+                    "AccessRoleBinding",
+                    "AccessRolePermission",
+                    "APIGateway",
+                    "BackupService",
+                    "Bucket",
+                    "CICDService",
+                    "CloudLogConfiguration",
+                    "CloudOrganization",
+                    "CDN",
+                    "ComputeInstanceGroup",
+                    "ConfigMap",
+                    "ContainerEntityType",
+                    "ContainerGroup",
+                    "ContainerImageEntityType",
+                    "ContainerRegistry",
+                    "ContainerRepository",
+                    "ContainerService",
+                    "ControllerRevision",
+                    "DataWorkflow",
+                    "DataWorkload",
+                    "Database",
+                    "DaemonSet",
+                    "Deployment",
+                    "DNSRecord",
+                    "DNSZone",
+                    "Domain",
+                    "EmailService",
+                    "EncryptionKey",
+                    "FileSystemService",
+                    "Firewall",
+                    "Gateway",
+                    "GovernancePolicy",
+                    "GovernancePolicyGroup",
+                    "KubernetesCluster",
+                    "KubernetesCronJob",
+                    "KubernetesIngress",
+                    "KubernetesIngressController",
+                    "KubernetesJob",
+                    "KubernetesNetworkPolicy",
+                    "KubernetesNode",
+                    "KubernetesPersistentVolume",
+                    "KubernetesPersistentVolumeClaim",
+                    "KubernetesPodSecurityPolicy",
+                    "KubernetesService",
+                    "KubernetesStorageClass",
+                    "KubernetesVolume",
+                    "LoadBalancer",
+                    "ManagedCertificate",
+                    "ManagementService",
+                    "MapReduceCluster",
+                    "MessagingService",
+                    "MonitorAlert",
+                    "Namespace",
+                    "NetworkAddress",
+                    "NetworkInterface",
+                    "Peering",
+                    "Pod",
+                    "PrivateEndpoint",
+                    "PrivateLink",
+                    "RawAccessPolicy",
+                    "Region",
+                    "RegisteredDomain",
+                    "ReplicaSet",
+                    "ResourceGroup",
+                    "RouteTable",
+                    "SearchIndex",
+                    "Secret",
+                    "SecretContainer",
+                    "ServerlessEntityType",
+                    "ServerlessPackage",
+                    "ServiceConfiguration",
+                    "ServiceUsageTechnology",
+                    "Snapshot",
+                    "StatefulSet",
+                    "StorageAccount",
+                    "Subnet",
+                    "Subscription",
+                    "VirtualDesktop",
+                    "VirtualMachineEntityType",
+                    "VirtualMachineImage",
+                    "VirtualNetwork",
+                    "Volume",
+                    "WebService"
+                ]
+            },
+            "wiz.IssueSeverity": {
+                "enum": [
+                    "INFORMATIONAL",
+                    "LOW",
+                    "MEDIUM",
+                    "HIGH",
+                    "CRITICAL",
+                    "INFORMATIONAL",
+                    "LOW",
+                    "MEDIUM",
+                    "HIGH",
+                    "CRITICAL",
+                    "INFORMATIONAL",
+                    "LOW",
+                    "MEDIUM",
+                    "HIGH",
+                    "CRITICAL"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "IssueSeverityInformational",
+                    "IssueSeverityLow",
+                    "IssueSeverityMedium",
+                    "IssueSeverityHigh",
+                    "IssueSeverityCritical"
+                ]
+            },
+            "wiz.IssueStatus": {
+                "enum": [
+                    "OPEN",
+                    "IN_PROGRESS",
+                    "RESOLVED",
+                    "REJECTED",
+                    "OPEN",
+                    "IN_PROGRESS",
+                    "RESOLVED",
+                    "REJECTED",
+                    "OPEN",
+                    "IN_PROGRESS",
+                    "RESOLVED",
+                    "REJECTED"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "IssueStatusOpen",
+                    "IssueStatusInProgress",
+                    "IssueStatusResolved",
+                    "IssueStatusRejected"
+                ]
+            },
+            "wiz.IssueType": {
+                "enum": [
+                    "TOXIC_COMBINATION",
+                    "THREAT_DETECTION",
+                    "CLOUD_CONFIGURATION",
+                    "TOXIC_COMBINATION",
+                    "THREAT_DETECTION",
+                    "CLOUD_CONFIGURATION",
+                    "TOXIC_COMBINATION",
+                    "THREAT_DETECTION",
+                    "CLOUD_CONFIGURATION"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "IssueTypeToxicCombination",
+                    "IssueTypeThreatDetection",
+                    "IssueTypeCloudConfiguration"
+                ]
+            },
+            "wiz.NoteFilter": {
+                "description": "@Description Filter Issues with or without a note",
+                "enum": [
+                    "has_note",
+                    "does_not_have_note",
+                    "do_not_filter",
+                    "has_note",
+                    "does_not_have_note",
+                    "do_not_filter",
+                    "has_note",
+                    "does_not_have_note",
+                    "do_not_filter"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "HasNote",
+                    "DoesNotHaveNote",
+                    "DoNotFilterNote"
+                ]
+            },
+            "wiz.RemediationFilter": {
+                "description": "@Description Filter Issues with or without remediation",
+                "enum": [
+                    "has_remediation",
+                    "does_not_have_remediation",
+                    "do_not_filter",
+                    "has_remediation",
+                    "does_not_have_remediation",
+                    "do_not_filter",
+                    "has_remediation",
+                    "does_not_have_remediation",
+                    "do_not_filter"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "HasRemediation",
+                    "DoesNotHaveRemediation",
+                    "DoNotFilterRemediation"
+                ]
+            },
+            "wiz.ResolutionReason": {
+                "enum": [
+                    "CONTROL_CHANGED",
+                    "CONTROL_DISABLED",
+                    "CONTROL_DELETED",
+                    "EXCEPTION",
+                    "FALSE_POSITIVE",
+                    "WONT_FIX",
+                    "OBJECT_DELETED",
+                    "ISSUE_FIXED",
+                    "CONTROL_CHANGED",
+                    "CONTROL_DISABLED",
+                    "CONTROL_DELETED",
+                    "EXCEPTION",
+                    "FALSE_POSITIVE",
+                    "WONT_FIX",
+                    "OBJECT_DELETED",
+                    "ISSUE_FIXED",
+                    "CONTROL_CHANGED",
+                    "CONTROL_DISABLED",
+                    "CONTROL_DELETED",
+                    "EXCEPTION",
+                    "FALSE_POSITIVE",
+                    "WONT_FIX",
+                    "OBJECT_DELETED",
+                    "ISSUE_FIXED"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "ResolutionControlChanged",
+                    "ResolutionControlDisabled",
+                    "ResolutionControlDeleted",
+                    "ResolutionException",
+                    "ResolutionFalsePositive",
+                    "ResolutionWontFix",
+                    "ResolutionObjectDeleted",
+                    "ResolutionIssueFixed"
+                ]
+            },
+            "wiz.Result": {
+                "enum": [
+                    "PASS",
+                    "FAIL",
+                    "ERROR",
+                    "NOT_ASSESSED"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "Pass",
+                    "Fail",
+                    "Err",
+                    "NotAssessed"
+                ]
+            },
+            "wiz.RiskType": {
+                "enum": [
+                    "wct-id-1861",
+                    "wct-id-1860",
+                    "wct-id-1859",
+                    "wct-id-1855",
+                    "wct-id-1856",
+                    "wct-id-5",
+                    "wct-id-907",
+                    "wct-id-1862",
+                    "wct-id-2",
+                    "wct-id-8",
+                    "wct-id-423",
+                    "wct-id-7",
+                    "wct-id-1854",
+                    "wct-id-1857",
+                    "wct-id-1858",
+                    "wct-id-940",
+                    "wct-id-1998",
+                    "wct-id-422",
+                    "wct-id-6",
+                    "wct-id-3"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "RiskTypeC2AndExfiltration",
+                    "RiskTypeCredentialAccess",
+                    "RiskTypeDefenseEvasion",
+                    "RiskTypeDiscovery",
+                    "RiskTypeExecution",
+                    "RiskTypeExternalExposure",
+                    "RiskTypeHighProfileThreat",
+                    "RiskTypeImpact",
+                    "RiskTypeInsecureApplication",
+                    "RiskTypeInsecureCICD",
+                    "RiskTypeInsecureKubernetesCluster",
+                    "RiskTypeInsecureUseOfSecrets",
+                    "RiskTypeInitialAccess",
+                    "RiskTypePersistence",
+                    "RiskTypePrivilegeEscalation",
+                    "RiskTypeReliabilityImpact",
+                    "RiskTypeUnprotectedAIModel",
+                    "RiskTypeUnprotectedData",
+                    "RiskTypeUnprotectedPrincipal",
+                    "RiskTypeVulnerability"
+                ]
+            },
+            "wiz.ServiceTicketFilter": {
+                "description": "@Description Filter Issues with or without related service ticket",
+                "enum": [
+                    "has_service_ticket",
+                    "does_not_have_service_ticket",
+                    "do_not_filter",
+                    "has_service_ticket",
+                    "does_not_have_service_ticket",
+                    "do_not_filter",
+                    "has_service_ticket",
+                    "does_not_have_service_ticket",
+                    "do_not_filter"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "HasServiceTicket",
+                    "DoesNotHaveServiceTicket",
+                    "DoNotFilterServiceTicket"
+                ]
+            },
+            "wiz.StackLayer": {
+                "enum": [
+                    "APPLICATION_AND_DATA",
+                    "CI_CD",
+                    "SECURITY_AND_IDENTITY",
+                    "COMPUTE_PLATFORMS",
+                    "CODE",
+                    "CLOUD_ENTITLEMENTS",
+                    "DATA_STORES",
+                    "APPLICATION_AND_DATA",
+                    "CI_CD",
+                    "SECURITY_AND_IDENTITY",
+                    "COMPUTE_PLATFORMS",
+                    "CODE",
+                    "CLOUD_ENTITLEMENTS",
+                    "DATA_STORES",
+                    "APPLICATION_AND_DATA",
+                    "CI_CD",
+                    "SECURITY_AND_IDENTITY",
+                    "COMPUTE_PLATFORMS",
+                    "CODE",
+                    "CLOUD_ENTITLEMENTS",
+                    "DATA_STORES"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "StackLayerApplicationAndData",
+                    "StackLayerCICD",
+                    "StackLayerSecurityAndIdentity",
+                    "StackLayerComputePlatforms",
+                    "StackLayerCode",
+                    "StackLayerCloudEntitlements",
+                    "StackLayerDataStores"
+                ]
+            },
+            "wiz.Status": {
+                "enum": [
+                    "OPEN",
+                    "RESOLVED",
+                    "REJECTED"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "Open",
+                    "Resolved",
+                    "Rejected"
+                ]
+            },
+            "wiz.VendorSeverity": {
+                "enum": [
+                    "NONE",
+                    "LOW",
+                    "MEDIUM",
+                    "HIGH",
+                    "CRITICAL"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "None",
+                    "Low",
+                    "Medium",
+                    "High",
+                    "Critical"
+                ]
             },
             "wiz_audit_logs.SecretsConfig": {
                 "description": "Wiz Audit Logs secrets",

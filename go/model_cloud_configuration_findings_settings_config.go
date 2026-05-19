@@ -27,11 +27,11 @@ type CloudConfigurationFindingsSettingsConfig struct {
 	// Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.
 	EndpointUrl string `json:"endpoint_url"`
 	// Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.
-	Result []string `json:"result,omitempty"`
+	Result []WizResult `json:"result,omitempty"`
 	// Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.
-	Severity []string `json:"severity,omitempty"`
+	Severity []WizVendorSeverity `json:"severity,omitempty"`
 	// Status types for Wiz. Ex: 'OPEN', 'RESOLVED', 'REJECTED'.
-	Status []string `json:"status,omitempty"`
+	Status []WizStatus `json:"status,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
@@ -113,9 +113,9 @@ func (o *CloudConfigurationFindingsSettingsConfig) SetEndpointUrl(v string) {
 }
 
 // GetResult returns the Result field value if set, zero value otherwise.
-func (o *CloudConfigurationFindingsSettingsConfig) GetResult() []string {
+func (o *CloudConfigurationFindingsSettingsConfig) GetResult() []WizResult {
 	if o == nil || IsNil(o.Result) {
-		var ret []string
+		var ret []WizResult
 		return ret
 	}
 	return o.Result
@@ -123,7 +123,7 @@ func (o *CloudConfigurationFindingsSettingsConfig) GetResult() []string {
 
 // GetResultOk returns a tuple with the Result field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CloudConfigurationFindingsSettingsConfig) GetResultOk() ([]string, bool) {
+func (o *CloudConfigurationFindingsSettingsConfig) GetResultOk() ([]WizResult, bool) {
 	if o == nil || IsNil(o.Result) {
 		return nil, false
 	}
@@ -139,15 +139,15 @@ func (o *CloudConfigurationFindingsSettingsConfig) HasResult() bool {
 	return false
 }
 
-// SetResult gets a reference to the given []string and assigns it to the Result field.
-func (o *CloudConfigurationFindingsSettingsConfig) SetResult(v []string) {
+// SetResult gets a reference to the given []WizResult and assigns it to the Result field.
+func (o *CloudConfigurationFindingsSettingsConfig) SetResult(v []WizResult) {
 	o.Result = v
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
-func (o *CloudConfigurationFindingsSettingsConfig) GetSeverity() []string {
+func (o *CloudConfigurationFindingsSettingsConfig) GetSeverity() []WizVendorSeverity {
 	if o == nil || IsNil(o.Severity) {
-		var ret []string
+		var ret []WizVendorSeverity
 		return ret
 	}
 	return o.Severity
@@ -155,7 +155,7 @@ func (o *CloudConfigurationFindingsSettingsConfig) GetSeverity() []string {
 
 // GetSeverityOk returns a tuple with the Severity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CloudConfigurationFindingsSettingsConfig) GetSeverityOk() ([]string, bool) {
+func (o *CloudConfigurationFindingsSettingsConfig) GetSeverityOk() ([]WizVendorSeverity, bool) {
 	if o == nil || IsNil(o.Severity) {
 		return nil, false
 	}
@@ -171,15 +171,15 @@ func (o *CloudConfigurationFindingsSettingsConfig) HasSeverity() bool {
 	return false
 }
 
-// SetSeverity gets a reference to the given []string and assigns it to the Severity field.
-func (o *CloudConfigurationFindingsSettingsConfig) SetSeverity(v []string) {
+// SetSeverity gets a reference to the given []WizVendorSeverity and assigns it to the Severity field.
+func (o *CloudConfigurationFindingsSettingsConfig) SetSeverity(v []WizVendorSeverity) {
 	o.Severity = v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *CloudConfigurationFindingsSettingsConfig) GetStatus() []string {
+func (o *CloudConfigurationFindingsSettingsConfig) GetStatus() []WizStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret []string
+		var ret []WizStatus
 		return ret
 	}
 	return o.Status
@@ -187,7 +187,7 @@ func (o *CloudConfigurationFindingsSettingsConfig) GetStatus() []string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CloudConfigurationFindingsSettingsConfig) GetStatusOk() ([]string, bool) {
+func (o *CloudConfigurationFindingsSettingsConfig) GetStatusOk() ([]WizStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *CloudConfigurationFindingsSettingsConfig) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given []string and assigns it to the Status field.
-func (o *CloudConfigurationFindingsSettingsConfig) SetStatus(v []string) {
+// SetStatus gets a reference to the given []WizStatus and assigns it to the Status field.
+func (o *CloudConfigurationFindingsSettingsConfig) SetStatus(v []WizStatus) {
 	o.Status = v
 }
 

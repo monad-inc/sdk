@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
+**CloudPlatform** | Pointer to [**[]WizCloudPlatform**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **Cron** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
 **EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | 
-**EntityType** | **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
+**EntityType** | [**[]WizEntityType**](WizEntityType.md) | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
 ### NewCloudResourceInventoryReportsSettingsConfig
 
-`func NewCloudResourceInventoryReportsSettingsConfig(endpointUrl string, entityType []string, ) *CloudResourceInventoryReportsSettingsConfig`
+`func NewCloudResourceInventoryReportsSettingsConfig(endpointUrl string, entityType []WizEntityType, ) *CloudResourceInventoryReportsSettingsConfig`
 
 NewCloudResourceInventoryReportsSettingsConfig instantiates a new CloudResourceInventoryReportsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCloudPlatform
 
-`func (o *CloudResourceInventoryReportsSettingsConfig) GetCloudPlatform() []string`
+`func (o *CloudResourceInventoryReportsSettingsConfig) GetCloudPlatform() []WizCloudPlatform`
 
 GetCloudPlatform returns the CloudPlatform field if non-nil, zero value otherwise.
 
 ### GetCloudPlatformOk
 
-`func (o *CloudResourceInventoryReportsSettingsConfig) GetCloudPlatformOk() (*[]string, bool)`
+`func (o *CloudResourceInventoryReportsSettingsConfig) GetCloudPlatformOk() (*[]WizCloudPlatform, bool)`
 
 GetCloudPlatformOk returns a tuple with the CloudPlatform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloudPlatform
 
-`func (o *CloudResourceInventoryReportsSettingsConfig) SetCloudPlatform(v []string)`
+`func (o *CloudResourceInventoryReportsSettingsConfig) SetCloudPlatform(v []WizCloudPlatform)`
 
 SetCloudPlatform sets CloudPlatform field to given value.
 
@@ -101,20 +101,20 @@ SetEndpointUrl sets EndpointUrl field to given value.
 
 ### GetEntityType
 
-`func (o *CloudResourceInventoryReportsSettingsConfig) GetEntityType() []string`
+`func (o *CloudResourceInventoryReportsSettingsConfig) GetEntityType() []WizEntityType`
 
 GetEntityType returns the EntityType field if non-nil, zero value otherwise.
 
 ### GetEntityTypeOk
 
-`func (o *CloudResourceInventoryReportsSettingsConfig) GetEntityTypeOk() (*[]string, bool)`
+`func (o *CloudResourceInventoryReportsSettingsConfig) GetEntityTypeOk() (*[]WizEntityType, bool)`
 
 GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntityType
 
-`func (o *CloudResourceInventoryReportsSettingsConfig) SetEntityType(v []string)`
+`func (o *CloudResourceInventoryReportsSettingsConfig) SetEntityType(v []WizEntityType)`
 
 SetEntityType sets EntityType field to given value.
 

@@ -20,6 +20,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.wiz_result import WizResult
+from monad.models.wiz_status import WizStatus
+from monad.models.wiz_vendor_severity import WizVendorSeverity
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,9 +33,9 @@ class CloudConfigurationFindingsSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     endpoint_url: StrictStr = Field(description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.")
-    result: Optional[List[StrictStr]] = Field(default=None, description="Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.")
-    severity: Optional[List[StrictStr]] = Field(default=None, description="Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.")
-    status: Optional[List[StrictStr]] = Field(default=None, description="Status types for Wiz. Ex: 'OPEN', 'RESOLVED', 'REJECTED'.")
+    result: Optional[List[WizResult]] = Field(default=None, description="Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.")
+    severity: Optional[List[WizVendorSeverity]] = Field(default=None, description="Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.")
+    status: Optional[List[WizStatus]] = Field(default=None, description="Status types for Wiz. Ex: 'OPEN', 'RESOLVED', 'REJECTED'.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "endpoint_url", "result", "severity", "status", "use_synthetic_data"]
 

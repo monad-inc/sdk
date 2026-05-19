@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.WizCloudPlatform;
+import org.openapitools.client.model.WizEntityType;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -60,7 +62,7 @@ public class CloudResourceInventorySettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_PLATFORM = "cloudPlatform";
   @SerializedName(SERIALIZED_NAME_CLOUD_PLATFORM)
   @javax.annotation.Nullable
-  private List<String> cloudPlatform = new ArrayList<>();
+  private List<WizCloudPlatform> cloudPlatform = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENDPOINT_URL = "endpoint_url";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
@@ -70,7 +72,7 @@ public class CloudResourceInventorySettingsConfig {
   public static final String SERIALIZED_NAME_ENTITY_TYPE = "entityType";
   @SerializedName(SERIALIZED_NAME_ENTITY_TYPE)
   @javax.annotation.Nonnull
-  private List<String> entityType = new ArrayList<>();
+  private List<WizEntityType> entityType = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FULL_SNAPSHOT = "full_snapshot";
   @SerializedName(SERIALIZED_NAME_FULL_SNAPSHOT)
@@ -109,12 +111,12 @@ public class CloudResourceInventorySettingsConfig {
   }
 
 
-  public CloudResourceInventorySettingsConfig cloudPlatform(@javax.annotation.Nullable List<String> cloudPlatform) {
+  public CloudResourceInventorySettingsConfig cloudPlatform(@javax.annotation.Nullable List<WizCloudPlatform> cloudPlatform) {
     this.cloudPlatform = cloudPlatform;
     return this;
   }
 
-  public CloudResourceInventorySettingsConfig addCloudPlatformItem(String cloudPlatformItem) {
+  public CloudResourceInventorySettingsConfig addCloudPlatformItem(WizCloudPlatform cloudPlatformItem) {
     if (this.cloudPlatform == null) {
       this.cloudPlatform = new ArrayList<>();
     }
@@ -127,11 +129,11 @@ public class CloudResourceInventorySettingsConfig {
    * @return cloudPlatform
    */
   @javax.annotation.Nullable
-  public List<String> getCloudPlatform() {
+  public List<WizCloudPlatform> getCloudPlatform() {
     return cloudPlatform;
   }
 
-  public void setCloudPlatform(@javax.annotation.Nullable List<String> cloudPlatform) {
+  public void setCloudPlatform(@javax.annotation.Nullable List<WizCloudPlatform> cloudPlatform) {
     this.cloudPlatform = cloudPlatform;
   }
 
@@ -155,12 +157,12 @@ public class CloudResourceInventorySettingsConfig {
   }
 
 
-  public CloudResourceInventorySettingsConfig entityType(@javax.annotation.Nonnull List<String> entityType) {
+  public CloudResourceInventorySettingsConfig entityType(@javax.annotation.Nonnull List<WizEntityType> entityType) {
     this.entityType = entityType;
     return this;
   }
 
-  public CloudResourceInventorySettingsConfig addEntityTypeItem(String entityTypeItem) {
+  public CloudResourceInventorySettingsConfig addEntityTypeItem(WizEntityType entityTypeItem) {
     if (this.entityType == null) {
       this.entityType = new ArrayList<>();
     }
@@ -173,11 +175,11 @@ public class CloudResourceInventorySettingsConfig {
    * @return entityType
    */
   @javax.annotation.Nonnull
-  public List<String> getEntityType() {
+  public List<WizEntityType> getEntityType() {
     return entityType;
   }
 
-  public void setEntityType(@javax.annotation.Nonnull List<String> entityType) {
+  public void setEntityType(@javax.annotation.Nonnull List<WizEntityType> entityType) {
     this.entityType = entityType;
   }
 

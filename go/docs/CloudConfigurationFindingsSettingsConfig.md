@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-configuration-findings&#39;. | 
-**Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
-**Severity** | Pointer to **[]string** | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;NONE&#39;. | [optional] 
-**Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;, &#39;REJECTED&#39;. | [optional] 
+**Result** | Pointer to [**[]WizResult**](WizResult.md) | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
+**Severity** | Pointer to [**[]WizVendorSeverity**](WizVendorSeverity.md) | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;NONE&#39;. | [optional] 
+**Status** | Pointer to [**[]WizStatus**](WizStatus.md) | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;, &#39;REJECTED&#39;. | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
@@ -77,20 +77,20 @@ SetEndpointUrl sets EndpointUrl field to given value.
 
 ### GetResult
 
-`func (o *CloudConfigurationFindingsSettingsConfig) GetResult() []string`
+`func (o *CloudConfigurationFindingsSettingsConfig) GetResult() []WizResult`
 
 GetResult returns the Result field if non-nil, zero value otherwise.
 
 ### GetResultOk
 
-`func (o *CloudConfigurationFindingsSettingsConfig) GetResultOk() (*[]string, bool)`
+`func (o *CloudConfigurationFindingsSettingsConfig) GetResultOk() (*[]WizResult, bool)`
 
 GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResult
 
-`func (o *CloudConfigurationFindingsSettingsConfig) SetResult(v []string)`
+`func (o *CloudConfigurationFindingsSettingsConfig) SetResult(v []WizResult)`
 
 SetResult sets Result field to given value.
 
@@ -102,20 +102,20 @@ HasResult returns a boolean if a field has been set.
 
 ### GetSeverity
 
-`func (o *CloudConfigurationFindingsSettingsConfig) GetSeverity() []string`
+`func (o *CloudConfigurationFindingsSettingsConfig) GetSeverity() []WizVendorSeverity`
 
 GetSeverity returns the Severity field if non-nil, zero value otherwise.
 
 ### GetSeverityOk
 
-`func (o *CloudConfigurationFindingsSettingsConfig) GetSeverityOk() (*[]string, bool)`
+`func (o *CloudConfigurationFindingsSettingsConfig) GetSeverityOk() (*[]WizVendorSeverity, bool)`
 
 GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSeverity
 
-`func (o *CloudConfigurationFindingsSettingsConfig) SetSeverity(v []string)`
+`func (o *CloudConfigurationFindingsSettingsConfig) SetSeverity(v []WizVendorSeverity)`
 
 SetSeverity sets Severity field to given value.
 
@@ -127,20 +127,20 @@ HasSeverity returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *CloudConfigurationFindingsSettingsConfig) GetStatus() []string`
+`func (o *CloudConfigurationFindingsSettingsConfig) GetStatus() []WizStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *CloudConfigurationFindingsSettingsConfig) GetStatusOk() (*[]string, bool)`
+`func (o *CloudConfigurationFindingsSettingsConfig) GetStatusOk() (*[]WizStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *CloudConfigurationFindingsSettingsConfig) SetStatus(v []string)`
+`func (o *CloudConfigurationFindingsSettingsConfig) SetStatus(v []WizStatus)`
 
 SetStatus sets Status field to given value.
 

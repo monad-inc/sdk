@@ -23,6 +23,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.WizIssueSeverity;
+import org.openapitools.client.model.WizIssueStatus;
+import org.openapitools.client.model.WizIssueType;
+import org.openapitools.client.model.WizNoteFilter;
+import org.openapitools.client.model.WizRemediationFilter;
+import org.openapitools.client.model.WizResolutionReason;
+import org.openapitools.client.model.WizRiskType;
+import org.openapitools.client.model.WizServiceTicketFilter;
+import org.openapitools.client.model.WizStackLayer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,246 +71,30 @@ public class IssuesSettingsConfig {
   @javax.annotation.Nullable
   private List<String> controlIds = new ArrayList<>();
 
-  /**
-   * @Description Filter Issues with or without a note
-   */
-  @JsonAdapter(HasNoteEnum.Adapter.class)
-  public enum HasNoteEnum {
-    HAS_NOTE("has_note"),
-    
-    DOES_NOT_HAVE_NOTE("does_not_have_note"),
-    
-    DO_NOT_FILTER("do_not_filter");
-
-    private String value;
-
-    HasNoteEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static HasNoteEnum fromValue(String value) {
-      for (HasNoteEnum b : HasNoteEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<HasNoteEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final HasNoteEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public HasNoteEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return HasNoteEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      HasNoteEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_HAS_NOTE = "has_note";
   @SerializedName(SERIALIZED_NAME_HAS_NOTE)
   @javax.annotation.Nullable
-  private HasNoteEnum hasNote;
-
-  /**
-   * @Description Filter Issues with or without remediation
-   */
-  @JsonAdapter(HasRemediationEnum.Adapter.class)
-  public enum HasRemediationEnum {
-    HAS_REMEDIATION("has_remediation"),
-    
-    DOES_NOT_HAVE_REMEDIATION("does_not_have_remediation"),
-    
-    DO_NOT_FILTER("do_not_filter");
-
-    private String value;
-
-    HasRemediationEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static HasRemediationEnum fromValue(String value) {
-      for (HasRemediationEnum b : HasRemediationEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<HasRemediationEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final HasRemediationEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public HasRemediationEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return HasRemediationEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      HasRemediationEnum.fromValue(value);
-    }
-  }
+  private WizNoteFilter hasNote;
 
   public static final String SERIALIZED_NAME_HAS_REMEDIATION = "has_remediation";
   @SerializedName(SERIALIZED_NAME_HAS_REMEDIATION)
   @javax.annotation.Nullable
-  private HasRemediationEnum hasRemediation;
-
-  /**
-   * @Description Filter Issues with or without related service ticket
-   */
-  @JsonAdapter(HasServiceTicketEnum.Adapter.class)
-  public enum HasServiceTicketEnum {
-    HAS_SERVICE_TICKET("has_service_ticket"),
-    
-    DOES_NOT_HAVE_SERVICE_TICKET("does_not_have_service_ticket"),
-    
-    DO_NOT_FILTER("do_not_filter");
-
-    private String value;
-
-    HasServiceTicketEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static HasServiceTicketEnum fromValue(String value) {
-      for (HasServiceTicketEnum b : HasServiceTicketEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<HasServiceTicketEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final HasServiceTicketEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public HasServiceTicketEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return HasServiceTicketEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      HasServiceTicketEnum.fromValue(value);
-    }
-  }
+  private WizRemediationFilter hasRemediation;
 
   public static final String SERIALIZED_NAME_HAS_SERVICE_TICKET = "has_service_ticket";
   @SerializedName(SERIALIZED_NAME_HAS_SERVICE_TICKET)
   @javax.annotation.Nullable
-  private HasServiceTicketEnum hasServiceTicket;
+  private WizServiceTicketFilter hasServiceTicket;
 
   public static final String SERIALIZED_NAME_ISSUE_IDS = "issue_ids";
   @SerializedName(SERIALIZED_NAME_ISSUE_IDS)
   @javax.annotation.Nullable
   private List<String> issueIds = new ArrayList<>();
 
-  /**
-   * Gets or Sets issueTypes
-   */
-  @JsonAdapter(IssueTypesEnum.Adapter.class)
-  public enum IssueTypesEnum {
-    TOXIC_COMBINATION("TOXIC_COMBINATION"),
-    
-    THREAT_DETECTION("THREAT_DETECTION"),
-    
-    CLOUD_CONFIGURATION("CLOUD_CONFIGURATION");
-
-    private String value;
-
-    IssueTypesEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static IssueTypesEnum fromValue(String value) {
-      for (IssueTypesEnum b : IssueTypesEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<IssueTypesEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final IssueTypesEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public IssueTypesEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return IssueTypesEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      IssueTypesEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_ISSUE_TYPES = "issue_types";
   @SerializedName(SERIALIZED_NAME_ISSUE_TYPES)
   @javax.annotation.Nullable
-  private List<IssueTypesEnum> issueTypes = new ArrayList<>();
+  private List<WizIssueType> issueTypes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROJECT_IDS = "project_ids";
   @SerializedName(SERIALIZED_NAME_PROJECT_IDS)
@@ -313,84 +106,20 @@ public class IssuesSettingsConfig {
   @javax.annotation.Nullable
   private String relatedEntityId;
 
-  /**
-   * Gets or Sets resolutionReasons
-   */
-  @JsonAdapter(ResolutionReasonsEnum.Adapter.class)
-  public enum ResolutionReasonsEnum {
-    CONTROL_CHANGED("CONTROL_CHANGED"),
-    
-    CONTROL_DISABLED("CONTROL_DISABLED"),
-    
-    CONTROL_DELETED("CONTROL_DELETED"),
-    
-    EXCEPTION("EXCEPTION"),
-    
-    FALSE_POSITIVE("FALSE_POSITIVE"),
-    
-    WONT_FIX("WONT_FIX"),
-    
-    OBJECT_DELETED("OBJECT_DELETED"),
-    
-    ISSUE_FIXED("ISSUE_FIXED");
-
-    private String value;
-
-    ResolutionReasonsEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ResolutionReasonsEnum fromValue(String value) {
-      for (ResolutionReasonsEnum b : ResolutionReasonsEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ResolutionReasonsEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ResolutionReasonsEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ResolutionReasonsEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return ResolutionReasonsEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      ResolutionReasonsEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_RESOLUTION_REASONS = "resolution_reasons";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_REASONS)
   @javax.annotation.Nullable
-  private List<ResolutionReasonsEnum> resolutionReasons = new ArrayList<>();
+  private List<WizResolutionReason> resolutionReasons = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RISK_EQUALS_ALL = "risk_equals_all";
   @SerializedName(SERIALIZED_NAME_RISK_EQUALS_ALL)
   @javax.annotation.Nullable
-  private List<String> riskEqualsAll = new ArrayList<>();
+  private List<WizRiskType> riskEqualsAll = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RISK_EQUALS_ANY = "risk_equals_any";
   @SerializedName(SERIALIZED_NAME_RISK_EQUALS_ANY)
   @javax.annotation.Nullable
-  private List<String> riskEqualsAny = new ArrayList<>();
+  private List<WizRiskType> riskEqualsAny = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEARCH_QUERY = "search_query";
   @SerializedName(SERIALIZED_NAME_SEARCH_QUERY)
@@ -402,196 +131,20 @@ public class IssuesSettingsConfig {
   @javax.annotation.Nullable
   private String securityScan;
 
-  /**
-   * Gets or Sets severities
-   */
-  @JsonAdapter(SeveritiesEnum.Adapter.class)
-  public enum SeveritiesEnum {
-    INFORMATIONAL("INFORMATIONAL"),
-    
-    LOW("LOW"),
-    
-    MEDIUM("MEDIUM"),
-    
-    HIGH("HIGH"),
-    
-    CRITICAL("CRITICAL");
-
-    private String value;
-
-    SeveritiesEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SeveritiesEnum fromValue(String value) {
-      for (SeveritiesEnum b : SeveritiesEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<SeveritiesEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SeveritiesEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SeveritiesEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return SeveritiesEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      SeveritiesEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_SEVERITIES = "severities";
   @SerializedName(SERIALIZED_NAME_SEVERITIES)
   @javax.annotation.Nullable
-  private List<SeveritiesEnum> severities = new ArrayList<>();
-
-  /**
-   * Gets or Sets stackLayers
-   */
-  @JsonAdapter(StackLayersEnum.Adapter.class)
-  public enum StackLayersEnum {
-    APPLICATION_AND_DATA("APPLICATION_AND_DATA"),
-    
-    CI_CD("CI_CD"),
-    
-    SECURITY_AND_IDENTITY("SECURITY_AND_IDENTITY"),
-    
-    COMPUTE_PLATFORMS("COMPUTE_PLATFORMS"),
-    
-    CODE("CODE"),
-    
-    CLOUD_ENTITLEMENTS("CLOUD_ENTITLEMENTS"),
-    
-    DATA_STORES("DATA_STORES");
-
-    private String value;
-
-    StackLayersEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StackLayersEnum fromValue(String value) {
-      for (StackLayersEnum b : StackLayersEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<StackLayersEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StackLayersEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StackLayersEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StackLayersEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StackLayersEnum.fromValue(value);
-    }
-  }
+  private List<WizIssueSeverity> severities = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STACK_LAYERS = "stack_layers";
   @SerializedName(SERIALIZED_NAME_STACK_LAYERS)
   @javax.annotation.Nullable
-  private List<StackLayersEnum> stackLayers = new ArrayList<>();
-
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    OPEN("OPEN"),
-    
-    IN_PROGRESS("IN_PROGRESS"),
-    
-    RESOLVED("RESOLVED"),
-    
-    REJECTED("REJECTED");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
+  private List<WizStackLayer> stackLayers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
-  private List<StatusEnum> status = new ArrayList<>();
+  private List<WizIssueStatus> status = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TENANT_DATA_CENTER = "tenant_data_center";
   @SerializedName(SERIALIZED_NAME_TENANT_DATA_CENTER)
@@ -652,59 +205,59 @@ public class IssuesSettingsConfig {
   }
 
 
-  public IssuesSettingsConfig hasNote(@javax.annotation.Nullable HasNoteEnum hasNote) {
+  public IssuesSettingsConfig hasNote(@javax.annotation.Nullable WizNoteFilter hasNote) {
     this.hasNote = hasNote;
     return this;
   }
 
   /**
-   * @Description Filter Issues with or without a note
+   * Get hasNote
    * @return hasNote
    */
   @javax.annotation.Nullable
-  public HasNoteEnum getHasNote() {
+  public WizNoteFilter getHasNote() {
     return hasNote;
   }
 
-  public void setHasNote(@javax.annotation.Nullable HasNoteEnum hasNote) {
+  public void setHasNote(@javax.annotation.Nullable WizNoteFilter hasNote) {
     this.hasNote = hasNote;
   }
 
 
-  public IssuesSettingsConfig hasRemediation(@javax.annotation.Nullable HasRemediationEnum hasRemediation) {
+  public IssuesSettingsConfig hasRemediation(@javax.annotation.Nullable WizRemediationFilter hasRemediation) {
     this.hasRemediation = hasRemediation;
     return this;
   }
 
   /**
-   * @Description Filter Issues with or without remediation
+   * Get hasRemediation
    * @return hasRemediation
    */
   @javax.annotation.Nullable
-  public HasRemediationEnum getHasRemediation() {
+  public WizRemediationFilter getHasRemediation() {
     return hasRemediation;
   }
 
-  public void setHasRemediation(@javax.annotation.Nullable HasRemediationEnum hasRemediation) {
+  public void setHasRemediation(@javax.annotation.Nullable WizRemediationFilter hasRemediation) {
     this.hasRemediation = hasRemediation;
   }
 
 
-  public IssuesSettingsConfig hasServiceTicket(@javax.annotation.Nullable HasServiceTicketEnum hasServiceTicket) {
+  public IssuesSettingsConfig hasServiceTicket(@javax.annotation.Nullable WizServiceTicketFilter hasServiceTicket) {
     this.hasServiceTicket = hasServiceTicket;
     return this;
   }
 
   /**
-   * @Description Filter Issues with or without related service ticket
+   * Get hasServiceTicket
    * @return hasServiceTicket
    */
   @javax.annotation.Nullable
-  public HasServiceTicketEnum getHasServiceTicket() {
+  public WizServiceTicketFilter getHasServiceTicket() {
     return hasServiceTicket;
   }
 
-  public void setHasServiceTicket(@javax.annotation.Nullable HasServiceTicketEnum hasServiceTicket) {
+  public void setHasServiceTicket(@javax.annotation.Nullable WizServiceTicketFilter hasServiceTicket) {
     this.hasServiceTicket = hasServiceTicket;
   }
 
@@ -736,12 +289,12 @@ public class IssuesSettingsConfig {
   }
 
 
-  public IssuesSettingsConfig issueTypes(@javax.annotation.Nullable List<IssueTypesEnum> issueTypes) {
+  public IssuesSettingsConfig issueTypes(@javax.annotation.Nullable List<WizIssueType> issueTypes) {
     this.issueTypes = issueTypes;
     return this;
   }
 
-  public IssuesSettingsConfig addIssueTypesItem(IssueTypesEnum issueTypesItem) {
+  public IssuesSettingsConfig addIssueTypesItem(WizIssueType issueTypesItem) {
     if (this.issueTypes == null) {
       this.issueTypes = new ArrayList<>();
     }
@@ -754,11 +307,11 @@ public class IssuesSettingsConfig {
    * @return issueTypes
    */
   @javax.annotation.Nullable
-  public List<IssueTypesEnum> getIssueTypes() {
+  public List<WizIssueType> getIssueTypes() {
     return issueTypes;
   }
 
-  public void setIssueTypes(@javax.annotation.Nullable List<IssueTypesEnum> issueTypes) {
+  public void setIssueTypes(@javax.annotation.Nullable List<WizIssueType> issueTypes) {
     this.issueTypes = issueTypes;
   }
 
@@ -809,12 +362,12 @@ public class IssuesSettingsConfig {
   }
 
 
-  public IssuesSettingsConfig resolutionReasons(@javax.annotation.Nullable List<ResolutionReasonsEnum> resolutionReasons) {
+  public IssuesSettingsConfig resolutionReasons(@javax.annotation.Nullable List<WizResolutionReason> resolutionReasons) {
     this.resolutionReasons = resolutionReasons;
     return this;
   }
 
-  public IssuesSettingsConfig addResolutionReasonsItem(ResolutionReasonsEnum resolutionReasonsItem) {
+  public IssuesSettingsConfig addResolutionReasonsItem(WizResolutionReason resolutionReasonsItem) {
     if (this.resolutionReasons == null) {
       this.resolutionReasons = new ArrayList<>();
     }
@@ -827,21 +380,21 @@ public class IssuesSettingsConfig {
    * @return resolutionReasons
    */
   @javax.annotation.Nullable
-  public List<ResolutionReasonsEnum> getResolutionReasons() {
+  public List<WizResolutionReason> getResolutionReasons() {
     return resolutionReasons;
   }
 
-  public void setResolutionReasons(@javax.annotation.Nullable List<ResolutionReasonsEnum> resolutionReasons) {
+  public void setResolutionReasons(@javax.annotation.Nullable List<WizResolutionReason> resolutionReasons) {
     this.resolutionReasons = resolutionReasons;
   }
 
 
-  public IssuesSettingsConfig riskEqualsAll(@javax.annotation.Nullable List<String> riskEqualsAll) {
+  public IssuesSettingsConfig riskEqualsAll(@javax.annotation.Nullable List<WizRiskType> riskEqualsAll) {
     this.riskEqualsAll = riskEqualsAll;
     return this;
   }
 
-  public IssuesSettingsConfig addRiskEqualsAllItem(String riskEqualsAllItem) {
+  public IssuesSettingsConfig addRiskEqualsAllItem(WizRiskType riskEqualsAllItem) {
     if (this.riskEqualsAll == null) {
       this.riskEqualsAll = new ArrayList<>();
     }
@@ -854,21 +407,21 @@ public class IssuesSettingsConfig {
    * @return riskEqualsAll
    */
   @javax.annotation.Nullable
-  public List<String> getRiskEqualsAll() {
+  public List<WizRiskType> getRiskEqualsAll() {
     return riskEqualsAll;
   }
 
-  public void setRiskEqualsAll(@javax.annotation.Nullable List<String> riskEqualsAll) {
+  public void setRiskEqualsAll(@javax.annotation.Nullable List<WizRiskType> riskEqualsAll) {
     this.riskEqualsAll = riskEqualsAll;
   }
 
 
-  public IssuesSettingsConfig riskEqualsAny(@javax.annotation.Nullable List<String> riskEqualsAny) {
+  public IssuesSettingsConfig riskEqualsAny(@javax.annotation.Nullable List<WizRiskType> riskEqualsAny) {
     this.riskEqualsAny = riskEqualsAny;
     return this;
   }
 
-  public IssuesSettingsConfig addRiskEqualsAnyItem(String riskEqualsAnyItem) {
+  public IssuesSettingsConfig addRiskEqualsAnyItem(WizRiskType riskEqualsAnyItem) {
     if (this.riskEqualsAny == null) {
       this.riskEqualsAny = new ArrayList<>();
     }
@@ -881,11 +434,11 @@ public class IssuesSettingsConfig {
    * @return riskEqualsAny
    */
   @javax.annotation.Nullable
-  public List<String> getRiskEqualsAny() {
+  public List<WizRiskType> getRiskEqualsAny() {
     return riskEqualsAny;
   }
 
-  public void setRiskEqualsAny(@javax.annotation.Nullable List<String> riskEqualsAny) {
+  public void setRiskEqualsAny(@javax.annotation.Nullable List<WizRiskType> riskEqualsAny) {
     this.riskEqualsAny = riskEqualsAny;
   }
 
@@ -928,12 +481,12 @@ public class IssuesSettingsConfig {
   }
 
 
-  public IssuesSettingsConfig severities(@javax.annotation.Nullable List<SeveritiesEnum> severities) {
+  public IssuesSettingsConfig severities(@javax.annotation.Nullable List<WizIssueSeverity> severities) {
     this.severities = severities;
     return this;
   }
 
-  public IssuesSettingsConfig addSeveritiesItem(SeveritiesEnum severitiesItem) {
+  public IssuesSettingsConfig addSeveritiesItem(WizIssueSeverity severitiesItem) {
     if (this.severities == null) {
       this.severities = new ArrayList<>();
     }
@@ -946,21 +499,21 @@ public class IssuesSettingsConfig {
    * @return severities
    */
   @javax.annotation.Nullable
-  public List<SeveritiesEnum> getSeverities() {
+  public List<WizIssueSeverity> getSeverities() {
     return severities;
   }
 
-  public void setSeverities(@javax.annotation.Nullable List<SeveritiesEnum> severities) {
+  public void setSeverities(@javax.annotation.Nullable List<WizIssueSeverity> severities) {
     this.severities = severities;
   }
 
 
-  public IssuesSettingsConfig stackLayers(@javax.annotation.Nullable List<StackLayersEnum> stackLayers) {
+  public IssuesSettingsConfig stackLayers(@javax.annotation.Nullable List<WizStackLayer> stackLayers) {
     this.stackLayers = stackLayers;
     return this;
   }
 
-  public IssuesSettingsConfig addStackLayersItem(StackLayersEnum stackLayersItem) {
+  public IssuesSettingsConfig addStackLayersItem(WizStackLayer stackLayersItem) {
     if (this.stackLayers == null) {
       this.stackLayers = new ArrayList<>();
     }
@@ -973,21 +526,21 @@ public class IssuesSettingsConfig {
    * @return stackLayers
    */
   @javax.annotation.Nullable
-  public List<StackLayersEnum> getStackLayers() {
+  public List<WizStackLayer> getStackLayers() {
     return stackLayers;
   }
 
-  public void setStackLayers(@javax.annotation.Nullable List<StackLayersEnum> stackLayers) {
+  public void setStackLayers(@javax.annotation.Nullable List<WizStackLayer> stackLayers) {
     this.stackLayers = stackLayers;
   }
 
 
-  public IssuesSettingsConfig status(@javax.annotation.Nullable List<StatusEnum> status) {
+  public IssuesSettingsConfig status(@javax.annotation.Nullable List<WizIssueStatus> status) {
     this.status = status;
     return this;
   }
 
-  public IssuesSettingsConfig addStatusItem(StatusEnum statusItem) {
+  public IssuesSettingsConfig addStatusItem(WizIssueStatus statusItem) {
     if (this.status == null) {
       this.status = new ArrayList<>();
     }
@@ -1000,11 +553,11 @@ public class IssuesSettingsConfig {
    * @return status
    */
   @javax.annotation.Nullable
-  public List<StatusEnum> getStatus() {
+  public List<WizIssueStatus> getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable List<StatusEnum> status) {
+  public void setStatus(@javax.annotation.Nullable List<WizIssueStatus> status) {
     this.status = status;
   }
 
@@ -1165,26 +718,17 @@ public class IssuesSettingsConfig {
       if (jsonObj.get("control_ids") != null && !jsonObj.get("control_ids").isJsonNull() && !jsonObj.get("control_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `control_ids` to be an array in the JSON string but got `%s`", jsonObj.get("control_ids").toString()));
       }
-      if ((jsonObj.get("has_note") != null && !jsonObj.get("has_note").isJsonNull()) && !jsonObj.get("has_note").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_note` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_note").toString()));
-      }
       // validate the optional field `has_note`
       if (jsonObj.get("has_note") != null && !jsonObj.get("has_note").isJsonNull()) {
-        HasNoteEnum.validateJsonElement(jsonObj.get("has_note"));
-      }
-      if ((jsonObj.get("has_remediation") != null && !jsonObj.get("has_remediation").isJsonNull()) && !jsonObj.get("has_remediation").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_remediation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_remediation").toString()));
+        WizNoteFilter.validateJsonElement(jsonObj.get("has_note"));
       }
       // validate the optional field `has_remediation`
       if (jsonObj.get("has_remediation") != null && !jsonObj.get("has_remediation").isJsonNull()) {
-        HasRemediationEnum.validateJsonElement(jsonObj.get("has_remediation"));
-      }
-      if ((jsonObj.get("has_service_ticket") != null && !jsonObj.get("has_service_ticket").isJsonNull()) && !jsonObj.get("has_service_ticket").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_service_ticket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_service_ticket").toString()));
+        WizRemediationFilter.validateJsonElement(jsonObj.get("has_remediation"));
       }
       // validate the optional field `has_service_ticket`
       if (jsonObj.get("has_service_ticket") != null && !jsonObj.get("has_service_ticket").isJsonNull()) {
-        HasServiceTicketEnum.validateJsonElement(jsonObj.get("has_service_ticket"));
+        WizServiceTicketFilter.validateJsonElement(jsonObj.get("has_service_ticket"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("issue_ids") != null && !jsonObj.get("issue_ids").isJsonNull() && !jsonObj.get("issue_ids").isJsonArray()) {

@@ -51,13 +51,13 @@ Name | Type | Description | Notes
 **PaginationCursorPath** | Pointer to **string** | JSONPath location for pagination cursor/token | [optional] 
 **Variables** | Pointer to [**[]MonadGraphqlInputVariable**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request | [optional] 
 **EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | 
-**Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
-**Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
+**Result** | Pointer to [**[]WizResult**](WizResult.md) | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
+**Status** | Pointer to [**[]WizStatus**](WizStatus.md) | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **EnableProtoPayloadParsing** | Pointer to **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
-**CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
-**EntityType** | **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
+**CloudPlatform** | Pointer to [**[]WizCloudPlatform**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
+**EntityType** | [**[]WizEntityType**](WizEntityType.md) | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
 **Cron** | **string** | Cron string for scheduling the ingest of your input | 
@@ -96,22 +96,22 @@ Name | Type | Description | Notes
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **PrimaryEntityValue** | Pointer to **string** | Filter by primary entity value (contains search) | [optional] 
-**Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
+**Severities** | Pointer to [**[]WizIssueSeverity**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
 **SeverityFilter** | Pointer to [**[]TypesStringFilter**](TypesStringFilter.md) |  | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
-**HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
-**HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
-**HasServiceTicket** | Pointer to **string** | @Description Filter Issues with or without related service ticket | [optional] 
+**HasNote** | Pointer to [**WizNoteFilter**](WizNoteFilter.md) |  | [optional] 
+**HasRemediation** | Pointer to [**WizRemediationFilter**](WizRemediationFilter.md) |  | [optional] 
+**HasServiceTicket** | Pointer to [**WizServiceTicketFilter**](WizServiceTicketFilter.md) |  | [optional] 
 **IssueIds** | Pointer to **[]string** | @Description Filter only Issues that match these specific IDs | [optional] 
-**IssueTypes** | Pointer to **[]string** | @Description Filter by Issue type | [optional] 
+**IssueTypes** | Pointer to [**[]WizIssueType**](WizIssueType.md) | @Description Filter by Issue type | [optional] 
 **ProjectIds** | Pointer to **[]string** | @Description Filter Issues associated with specific project IDs | [optional] 
 **RelatedEntityId** | Pointer to **string** | @Description Filter by related entity ids | [optional] 
-**ResolutionReasons** | Pointer to **[]string** | @Description Filter Issues by resolution reason | [optional] 
-**RiskEqualsAll** | Pointer to **[]string** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present | [optional] 
-**RiskEqualsAny** | Pointer to **[]string** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
+**ResolutionReasons** | Pointer to [**[]WizResolutionReason**](WizResolutionReason.md) | @Description Filter Issues by resolution reason | [optional] 
+**RiskEqualsAll** | Pointer to [**[]WizRiskType**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present | [optional] 
+**RiskEqualsAny** | Pointer to [**[]WizRiskType**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
 **SearchQuery** | Pointer to **string** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found | [optional] 
 **SecurityScan** | Pointer to **string** | @Description Filter by security scan source | [optional] 
-**StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
+**StackLayers** | Pointer to [**[]WizStackLayer**](WizStackLayer.md) | @Description Filter Issues from specific stack layers | [optional] 
 **TenantDataCenter** | **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
@@ -151,10 +151,10 @@ Name | Type | Description | Notes
 **Streams** | Pointer to **[]string** | ServiceNow streams to fetch data from | [optional] 
 **WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 **CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
-**AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
-**AssetTypes** | **[]string** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | 
-**DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
-**VendorSeverity** | Pointer to **[]string** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39; | [optional] 
+**AssetStatus** | Pointer to [**[]WizAssetStatus**](WizAssetStatus.md) | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
+**AssetTypes** | [**[]WizAssetType**](WizAssetType.md) | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | 
+**DetectionMethod** | Pointer to [**[]WizDetectionMethod**](WizDetectionMethod.md) | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
+**VendorSeverity** | Pointer to [**[]WizVendorSeverity**](WizVendorSeverity.md) | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39; | [optional] 
 **EmailAddress** | Pointer to **string** | This is the email address registered with your Zendesk account | [optional] 
 **SubDomain** | **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | 
 
@@ -162,7 +162,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []string, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, tenantDataCenter string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []string, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, tenantDataCenter string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -1309,20 +1309,20 @@ SetEndpointUrl sets EndpointUrl field to given value.
 
 ### GetResult
 
-`func (o *SecretProcessesorInputConfigSettings) GetResult() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetResult() []WizResult`
 
 GetResult returns the Result field if non-nil, zero value otherwise.
 
 ### GetResultOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetResultOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetResultOk() (*[]WizResult, bool)`
 
 GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResult
 
-`func (o *SecretProcessesorInputConfigSettings) SetResult(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetResult(v []WizResult)`
 
 SetResult sets Result field to given value.
 
@@ -1334,20 +1334,20 @@ HasResult returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *SecretProcessesorInputConfigSettings) GetStatus() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetStatus() []WizStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetStatusOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetStatusOk() (*[]WizStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *SecretProcessesorInputConfigSettings) SetStatus(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetStatus(v []WizStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -1434,20 +1434,20 @@ HasResourceNames returns a boolean if a field has been set.
 
 ### GetCloudPlatform
 
-`func (o *SecretProcessesorInputConfigSettings) GetCloudPlatform() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetCloudPlatform() []WizCloudPlatform`
 
 GetCloudPlatform returns the CloudPlatform field if non-nil, zero value otherwise.
 
 ### GetCloudPlatformOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetCloudPlatformOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetCloudPlatformOk() (*[]WizCloudPlatform, bool)`
 
 GetCloudPlatformOk returns a tuple with the CloudPlatform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloudPlatform
 
-`func (o *SecretProcessesorInputConfigSettings) SetCloudPlatform(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetCloudPlatform(v []WizCloudPlatform)`
 
 SetCloudPlatform sets CloudPlatform field to given value.
 
@@ -1459,20 +1459,20 @@ HasCloudPlatform returns a boolean if a field has been set.
 
 ### GetEntityType
 
-`func (o *SecretProcessesorInputConfigSettings) GetEntityType() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetEntityType() []WizEntityType`
 
 GetEntityType returns the EntityType field if non-nil, zero value otherwise.
 
 ### GetEntityTypeOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetEntityTypeOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetEntityTypeOk() (*[]WizEntityType, bool)`
 
 GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntityType
 
-`func (o *SecretProcessesorInputConfigSettings) SetEntityType(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetEntityType(v []WizEntityType)`
 
 SetEntityType sets EntityType field to given value.
 
@@ -2374,20 +2374,20 @@ HasPrimaryEntityValue returns a boolean if a field has been set.
 
 ### GetSeverities
 
-`func (o *SecretProcessesorInputConfigSettings) GetSeverities() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetSeverities() []WizIssueSeverity`
 
 GetSeverities returns the Severities field if non-nil, zero value otherwise.
 
 ### GetSeveritiesOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetSeveritiesOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetSeveritiesOk() (*[]WizIssueSeverity, bool)`
 
 GetSeveritiesOk returns a tuple with the Severities field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSeverities
 
-`func (o *SecretProcessesorInputConfigSettings) SetSeverities(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetSeverities(v []WizIssueSeverity)`
 
 SetSeverities sets Severities field to given value.
 
@@ -2449,20 +2449,20 @@ HasControlIds returns a boolean if a field has been set.
 
 ### GetHasNote
 
-`func (o *SecretProcessesorInputConfigSettings) GetHasNote() string`
+`func (o *SecretProcessesorInputConfigSettings) GetHasNote() WizNoteFilter`
 
 GetHasNote returns the HasNote field if non-nil, zero value otherwise.
 
 ### GetHasNoteOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetHasNoteOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetHasNoteOk() (*WizNoteFilter, bool)`
 
 GetHasNoteOk returns a tuple with the HasNote field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasNote
 
-`func (o *SecretProcessesorInputConfigSettings) SetHasNote(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetHasNote(v WizNoteFilter)`
 
 SetHasNote sets HasNote field to given value.
 
@@ -2474,20 +2474,20 @@ HasHasNote returns a boolean if a field has been set.
 
 ### GetHasRemediation
 
-`func (o *SecretProcessesorInputConfigSettings) GetHasRemediation() string`
+`func (o *SecretProcessesorInputConfigSettings) GetHasRemediation() WizRemediationFilter`
 
 GetHasRemediation returns the HasRemediation field if non-nil, zero value otherwise.
 
 ### GetHasRemediationOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetHasRemediationOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetHasRemediationOk() (*WizRemediationFilter, bool)`
 
 GetHasRemediationOk returns a tuple with the HasRemediation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasRemediation
 
-`func (o *SecretProcessesorInputConfigSettings) SetHasRemediation(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetHasRemediation(v WizRemediationFilter)`
 
 SetHasRemediation sets HasRemediation field to given value.
 
@@ -2499,20 +2499,20 @@ HasHasRemediation returns a boolean if a field has been set.
 
 ### GetHasServiceTicket
 
-`func (o *SecretProcessesorInputConfigSettings) GetHasServiceTicket() string`
+`func (o *SecretProcessesorInputConfigSettings) GetHasServiceTicket() WizServiceTicketFilter`
 
 GetHasServiceTicket returns the HasServiceTicket field if non-nil, zero value otherwise.
 
 ### GetHasServiceTicketOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetHasServiceTicketOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetHasServiceTicketOk() (*WizServiceTicketFilter, bool)`
 
 GetHasServiceTicketOk returns a tuple with the HasServiceTicket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasServiceTicket
 
-`func (o *SecretProcessesorInputConfigSettings) SetHasServiceTicket(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetHasServiceTicket(v WizServiceTicketFilter)`
 
 SetHasServiceTicket sets HasServiceTicket field to given value.
 
@@ -2549,20 +2549,20 @@ HasIssueIds returns a boolean if a field has been set.
 
 ### GetIssueTypes
 
-`func (o *SecretProcessesorInputConfigSettings) GetIssueTypes() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetIssueTypes() []WizIssueType`
 
 GetIssueTypes returns the IssueTypes field if non-nil, zero value otherwise.
 
 ### GetIssueTypesOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetIssueTypesOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetIssueTypesOk() (*[]WizIssueType, bool)`
 
 GetIssueTypesOk returns a tuple with the IssueTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssueTypes
 
-`func (o *SecretProcessesorInputConfigSettings) SetIssueTypes(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetIssueTypes(v []WizIssueType)`
 
 SetIssueTypes sets IssueTypes field to given value.
 
@@ -2624,20 +2624,20 @@ HasRelatedEntityId returns a boolean if a field has been set.
 
 ### GetResolutionReasons
 
-`func (o *SecretProcessesorInputConfigSettings) GetResolutionReasons() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetResolutionReasons() []WizResolutionReason`
 
 GetResolutionReasons returns the ResolutionReasons field if non-nil, zero value otherwise.
 
 ### GetResolutionReasonsOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetResolutionReasonsOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetResolutionReasonsOk() (*[]WizResolutionReason, bool)`
 
 GetResolutionReasonsOk returns a tuple with the ResolutionReasons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResolutionReasons
 
-`func (o *SecretProcessesorInputConfigSettings) SetResolutionReasons(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetResolutionReasons(v []WizResolutionReason)`
 
 SetResolutionReasons sets ResolutionReasons field to given value.
 
@@ -2649,20 +2649,20 @@ HasResolutionReasons returns a boolean if a field has been set.
 
 ### GetRiskEqualsAll
 
-`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAll() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAll() []WizRiskType`
 
 GetRiskEqualsAll returns the RiskEqualsAll field if non-nil, zero value otherwise.
 
 ### GetRiskEqualsAllOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAllOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAllOk() (*[]WizRiskType, bool)`
 
 GetRiskEqualsAllOk returns a tuple with the RiskEqualsAll field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskEqualsAll
 
-`func (o *SecretProcessesorInputConfigSettings) SetRiskEqualsAll(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetRiskEqualsAll(v []WizRiskType)`
 
 SetRiskEqualsAll sets RiskEqualsAll field to given value.
 
@@ -2674,20 +2674,20 @@ HasRiskEqualsAll returns a boolean if a field has been set.
 
 ### GetRiskEqualsAny
 
-`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAny() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAny() []WizRiskType`
 
 GetRiskEqualsAny returns the RiskEqualsAny field if non-nil, zero value otherwise.
 
 ### GetRiskEqualsAnyOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAnyOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetRiskEqualsAnyOk() (*[]WizRiskType, bool)`
 
 GetRiskEqualsAnyOk returns a tuple with the RiskEqualsAny field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskEqualsAny
 
-`func (o *SecretProcessesorInputConfigSettings) SetRiskEqualsAny(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetRiskEqualsAny(v []WizRiskType)`
 
 SetRiskEqualsAny sets RiskEqualsAny field to given value.
 
@@ -2749,20 +2749,20 @@ HasSecurityScan returns a boolean if a field has been set.
 
 ### GetStackLayers
 
-`func (o *SecretProcessesorInputConfigSettings) GetStackLayers() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetStackLayers() []WizStackLayer`
 
 GetStackLayers returns the StackLayers field if non-nil, zero value otherwise.
 
 ### GetStackLayersOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetStackLayersOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetStackLayersOk() (*[]WizStackLayer, bool)`
 
 GetStackLayersOk returns a tuple with the StackLayers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStackLayers
 
-`func (o *SecretProcessesorInputConfigSettings) SetStackLayers(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetStackLayers(v []WizStackLayer)`
 
 SetStackLayers sets StackLayers field to given value.
 
@@ -3679,20 +3679,20 @@ HasCustomerId returns a boolean if a field has been set.
 
 ### GetAssetStatus
 
-`func (o *SecretProcessesorInputConfigSettings) GetAssetStatus() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetAssetStatus() []WizAssetStatus`
 
 GetAssetStatus returns the AssetStatus field if non-nil, zero value otherwise.
 
 ### GetAssetStatusOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetAssetStatusOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetAssetStatusOk() (*[]WizAssetStatus, bool)`
 
 GetAssetStatusOk returns a tuple with the AssetStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssetStatus
 
-`func (o *SecretProcessesorInputConfigSettings) SetAssetStatus(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetAssetStatus(v []WizAssetStatus)`
 
 SetAssetStatus sets AssetStatus field to given value.
 
@@ -3704,40 +3704,40 @@ HasAssetStatus returns a boolean if a field has been set.
 
 ### GetAssetTypes
 
-`func (o *SecretProcessesorInputConfigSettings) GetAssetTypes() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetAssetTypes() []WizAssetType`
 
 GetAssetTypes returns the AssetTypes field if non-nil, zero value otherwise.
 
 ### GetAssetTypesOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetAssetTypesOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetAssetTypesOk() (*[]WizAssetType, bool)`
 
 GetAssetTypesOk returns a tuple with the AssetTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssetTypes
 
-`func (o *SecretProcessesorInputConfigSettings) SetAssetTypes(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetAssetTypes(v []WizAssetType)`
 
 SetAssetTypes sets AssetTypes field to given value.
 
 
 ### GetDetectionMethod
 
-`func (o *SecretProcessesorInputConfigSettings) GetDetectionMethod() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetDetectionMethod() []WizDetectionMethod`
 
 GetDetectionMethod returns the DetectionMethod field if non-nil, zero value otherwise.
 
 ### GetDetectionMethodOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetDetectionMethodOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetDetectionMethodOk() (*[]WizDetectionMethod, bool)`
 
 GetDetectionMethodOk returns a tuple with the DetectionMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDetectionMethod
 
-`func (o *SecretProcessesorInputConfigSettings) SetDetectionMethod(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetDetectionMethod(v []WizDetectionMethod)`
 
 SetDetectionMethod sets DetectionMethod field to given value.
 
@@ -3749,20 +3749,20 @@ HasDetectionMethod returns a boolean if a field has been set.
 
 ### GetVendorSeverity
 
-`func (o *SecretProcessesorInputConfigSettings) GetVendorSeverity() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetVendorSeverity() []WizVendorSeverity`
 
 GetVendorSeverity returns the VendorSeverity field if non-nil, zero value otherwise.
 
 ### GetVendorSeverityOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetVendorSeverityOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetVendorSeverityOk() (*[]WizVendorSeverity, bool)`
 
 GetVendorSeverityOk returns a tuple with the VendorSeverity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVendorSeverity
 
-`func (o *SecretProcessesorInputConfigSettings) SetVendorSeverity(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetVendorSeverity(v []WizVendorSeverity)`
 
 SetVendorSeverity sets VendorSeverity field to given value.
 

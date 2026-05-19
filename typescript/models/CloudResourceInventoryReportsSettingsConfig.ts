@@ -10,6 +10,8 @@
  * Do not edit the class manually.
  */
 
+import { WizCloudPlatform } from '../models/WizCloudPlatform';
+import { WizEntityType } from '../models/WizEntityType';
 import { HttpFile } from '../http/http';
 
 /**
@@ -19,7 +21,7 @@ export class CloudResourceInventoryReportsSettingsConfig {
     /**
     * Cloud Platform types for Wiz. Ex: \'AWS\', \'AZURE\', \'GCP\'.
     */
-    'cloudPlatform'?: Array<string>;
+    'cloudPlatform'?: Array<WizCloudPlatform>;
     /**
     * Cron expression for scheduling the input
     */
@@ -31,7 +33,7 @@ export class CloudResourceInventoryReportsSettingsConfig {
     /**
     * Entity types for Wiz. Ex: \'ACCOUNT\', \'REGION\', \'VPC\', \'SUBNET\', \'INSTANCE\'.
     */
-    'entityType': Array<string>;
+    'entityType': Array<WizEntityType>;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -45,7 +47,7 @@ export class CloudResourceInventoryReportsSettingsConfig {
         {
             "name": "cloudPlatform",
             "baseName": "cloudPlatform",
-            "type": "Array<string>",
+            "type": "Array<WizCloudPlatform>",
             "format": ""
         },
         {
@@ -63,7 +65,7 @@ export class CloudResourceInventoryReportsSettingsConfig {
         {
             "name": "entityType",
             "baseName": "entityType",
-            "type": "Array<string>",
+            "type": "Array<WizEntityType>",
             "format": ""
         },
         {

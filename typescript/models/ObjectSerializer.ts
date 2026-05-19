@@ -558,8 +558,25 @@ export * from '../models/VulnerabilityFindingsReportSecretsConfig';
 export * from '../models/VulnerabilityFindingsReportSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
 export * from '../models/VulnerabilityFindingsSettingsConfig';
+export * from '../models/WizAssetStatus';
+export * from '../models/WizAssetType';
 export * from '../models/WizAuditLogsSecretsConfig';
 export * from '../models/WizAuditLogsSettingsConfig';
+export * from '../models/WizCloudPlatform';
+export * from '../models/WizDetectionMethod';
+export * from '../models/WizEntityType';
+export * from '../models/WizIssueSeverity';
+export * from '../models/WizIssueStatus';
+export * from '../models/WizIssueType';
+export * from '../models/WizNoteFilter';
+export * from '../models/WizRemediationFilter';
+export * from '../models/WizResolutionReason';
+export * from '../models/WizResult';
+export * from '../models/WizRiskType';
+export * from '../models/WizServiceTicketFilter';
+export * from '../models/WizStackLayer';
+export * from '../models/WizStatus';
+export * from '../models/WizVendorSeverity';
 export * from '../models/ZendeskAuditLogsAuthType';
 export * from '../models/ZendeskAuditLogsSecretsConfig';
 export * from '../models/ZendeskAuditLogsSettingsConfig';
@@ -754,9 +771,9 @@ import { InputsConnectorMeta              } from '../models/InputsConnectorMeta'
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
-import { IssuesReportSettingsConfig  , IssuesReportSettingsConfigHasNoteEnum  , IssuesReportSettingsConfigHasRemediationEnum  , IssuesReportSettingsConfigHasServiceTicketEnum   , IssuesReportSettingsConfigIssueTypesEnum    , IssuesReportSettingsConfigResolutionReasonsEnum      , IssuesReportSettingsConfigSeveritiesEnum  , IssuesReportSettingsConfigStackLayersEnum  , IssuesReportSettingsConfigStatusEnum     } from '../models/IssuesReportSettingsConfig';
+import { IssuesReportSettingsConfig                    } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
-import { IssuesSettingsConfig  , IssuesSettingsConfigHasNoteEnum  , IssuesSettingsConfigHasRemediationEnum  , IssuesSettingsConfigHasServiceTicketEnum   , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
+import { IssuesSettingsConfig                    } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { JsonFormatType } from '../models/JsonFormatType';
 import { JsonJsonFormatter   } from '../models/JsonJsonFormatter';
@@ -1124,8 +1141,25 @@ import { VulnerabilityFindingsReportSecretsConfig } from '../models/Vulnerabilit
 import { VulnerabilityFindingsReportSettingsConfig } from '../models/VulnerabilityFindingsReportSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
+import { WizAssetStatus } from '../models/WizAssetStatus';
+import { WizAssetType } from '../models/WizAssetType';
 import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
 import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
+import { WizCloudPlatform } from '../models/WizCloudPlatform';
+import { WizDetectionMethod } from '../models/WizDetectionMethod';
+import { WizEntityType } from '../models/WizEntityType';
+import { WizIssueSeverity } from '../models/WizIssueSeverity';
+import { WizIssueStatus } from '../models/WizIssueStatus';
+import { WizIssueType } from '../models/WizIssueType';
+import { WizNoteFilter } from '../models/WizNoteFilter';
+import { WizRemediationFilter } from '../models/WizRemediationFilter';
+import { WizResolutionReason } from '../models/WizResolutionReason';
+import { WizResult } from '../models/WizResult';
+import { WizRiskType } from '../models/WizRiskType';
+import { WizServiceTicketFilter } from '../models/WizServiceTicketFilter';
+import { WizStackLayer } from '../models/WizStackLayer';
+import { WizStatus } from '../models/WizStatus';
+import { WizVendorSeverity } from '../models/WizVendorSeverity';
 import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
 import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
 import { ZendeskAuditLogsSettingsConfig     } from '../models/ZendeskAuditLogsSettingsConfig';
@@ -1155,22 +1189,6 @@ let enumsMap: Set<string> = new Set<string>([
     "ElasticsearchConnectionTypeEnum",
     "FormatterType",
     "HttpPayloadStructure",
-    "IssuesReportSettingsConfigHasNoteEnum",
-    "IssuesReportSettingsConfigHasRemediationEnum",
-    "IssuesReportSettingsConfigHasServiceTicketEnum",
-    "IssuesReportSettingsConfigIssueTypesEnum",
-    "IssuesReportSettingsConfigResolutionReasonsEnum",
-    "IssuesReportSettingsConfigSeveritiesEnum",
-    "IssuesReportSettingsConfigStackLayersEnum",
-    "IssuesReportSettingsConfigStatusEnum",
-    "IssuesSettingsConfigHasNoteEnum",
-    "IssuesSettingsConfigHasRemediationEnum",
-    "IssuesSettingsConfigHasServiceTicketEnum",
-    "IssuesSettingsConfigIssueTypesEnum",
-    "IssuesSettingsConfigResolutionReasonsEnum",
-    "IssuesSettingsConfigSeveritiesEnum",
-    "IssuesSettingsConfigStackLayersEnum",
-    "IssuesSettingsConfigStatusEnum",
     "JsonFormatType",
     "KafkaAcks",
     "KafkaCompressionType",
@@ -1202,16 +1220,26 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsFormatEnum",
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
     "SecretProcessesorInputConfigSettingsEnvironmentEnum",
-    "SecretProcessesorInputConfigSettingsSeveritiesEnum",
-    "SecretProcessesorInputConfigSettingsHasNoteEnum",
-    "SecretProcessesorInputConfigSettingsHasRemediationEnum",
-    "SecretProcessesorInputConfigSettingsHasServiceTicketEnum",
-    "SecretProcessesorInputConfigSettingsIssueTypesEnum",
-    "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
-    "SecretProcessesorInputConfigSettingsStackLayersEnum",
     "SnowflakeInputSettingsConfigAuthTypeEnum",
     "TypesStringComparison",
     "UtcTimestampTimestampFormat",
+    "WizAssetStatus",
+    "WizAssetType",
+    "WizCloudPlatform",
+    "WizDetectionMethod",
+    "WizEntityType",
+    "WizIssueSeverity",
+    "WizIssueStatus",
+    "WizIssueType",
+    "WizNoteFilter",
+    "WizRemediationFilter",
+    "WizResolutionReason",
+    "WizResult",
+    "WizRiskType",
+    "WizServiceTicketFilter",
+    "WizStackLayer",
+    "WizStatus",
+    "WizVendorSeverity",
     "ZendeskAuditLogsAuthType",
 ]);
 

@@ -22,6 +22,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.WizIssueSeverity;
+import org.openapitools.client.model.WizIssueStatus;
+import org.openapitools.client.model.WizIssueType;
+import org.openapitools.client.model.WizNoteFilter;
+import org.openapitools.client.model.WizRemediationFilter;
+import org.openapitools.client.model.WizResolutionReason;
+import org.openapitools.client.model.WizRiskType;
+import org.openapitools.client.model.WizServiceTicketFilter;
+import org.openapitools.client.model.WizStackLayer;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

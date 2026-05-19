@@ -39,13 +39,13 @@ class TestCloudConfigurationFindingsSettingsConfig(unittest.TestCase):
                 backfill_start_time = '',
                 endpoint_url = '',
                 result = [
-                    ''
+                    'PASS'
                     ],
                 severity = [
-                    ''
+                    'NONE'
                     ],
                 status = [
-                    ''
+                    'OPEN'
                     ],
                 use_synthetic_data = True
             )

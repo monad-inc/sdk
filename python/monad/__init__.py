@@ -626,8 +626,25 @@ __all__ = [
     "VulnerabilityFindingsReportSettingsConfig",
     "VulnerabilityFindingsSecretsConfig",
     "VulnerabilityFindingsSettingsConfig",
+    "WizAssetStatus",
+    "WizAssetType",
     "WizAuditLogsSecretsConfig",
     "WizAuditLogsSettingsConfig",
+    "WizCloudPlatform",
+    "WizDetectionMethod",
+    "WizEntityType",
+    "WizIssueSeverity",
+    "WizIssueStatus",
+    "WizIssueType",
+    "WizNoteFilter",
+    "WizRemediationFilter",
+    "WizResolutionReason",
+    "WizResult",
+    "WizRiskType",
+    "WizServiceTicketFilter",
+    "WizStackLayer",
+    "WizStatus",
+    "WizVendorSeverity",
     "ZendeskAuditLogsAuthType",
     "ZendeskAuditLogsSecretsConfig",
     "ZendeskAuditLogsSettingsConfig",
@@ -1245,8 +1262,25 @@ from monad.models.vulnerability_findings_report_secrets_config import Vulnerabil
 from monad.models.vulnerability_findings_report_settings_config import VulnerabilityFindingsReportSettingsConfig as VulnerabilityFindingsReportSettingsConfig
 from monad.models.vulnerability_findings_secrets_config import VulnerabilityFindingsSecretsConfig as VulnerabilityFindingsSecretsConfig
 from monad.models.vulnerability_findings_settings_config import VulnerabilityFindingsSettingsConfig as VulnerabilityFindingsSettingsConfig
+from monad.models.wiz_asset_status import WizAssetStatus as WizAssetStatus
+from monad.models.wiz_asset_type import WizAssetType as WizAssetType
 from monad.models.wiz_audit_logs_secrets_config import WizAuditLogsSecretsConfig as WizAuditLogsSecretsConfig
 from monad.models.wiz_audit_logs_settings_config import WizAuditLogsSettingsConfig as WizAuditLogsSettingsConfig
+from monad.models.wiz_cloud_platform import WizCloudPlatform as WizCloudPlatform
+from monad.models.wiz_detection_method import WizDetectionMethod as WizDetectionMethod
+from monad.models.wiz_entity_type import WizEntityType as WizEntityType
+from monad.models.wiz_issue_severity import WizIssueSeverity as WizIssueSeverity
+from monad.models.wiz_issue_status import WizIssueStatus as WizIssueStatus
+from monad.models.wiz_issue_type import WizIssueType as WizIssueType
+from monad.models.wiz_note_filter import WizNoteFilter as WizNoteFilter
+from monad.models.wiz_remediation_filter import WizRemediationFilter as WizRemediationFilter
+from monad.models.wiz_resolution_reason import WizResolutionReason as WizResolutionReason
+from monad.models.wiz_result import WizResult as WizResult
+from monad.models.wiz_risk_type import WizRiskType as WizRiskType
+from monad.models.wiz_service_ticket_filter import WizServiceTicketFilter as WizServiceTicketFilter
+from monad.models.wiz_stack_layer import WizStackLayer as WizStackLayer
+from monad.models.wiz_status import WizStatus as WizStatus
+from monad.models.wiz_vendor_severity import WizVendorSeverity as WizVendorSeverity
 from monad.models.zendesk_audit_logs_auth_type import ZendeskAuditLogsAuthType as ZendeskAuditLogsAuthType
 from monad.models.zendesk_audit_logs_secrets_config import ZendeskAuditLogsSecretsConfig as ZendeskAuditLogsSecretsConfig
 from monad.models.zendesk_audit_logs_settings_config import ZendeskAuditLogsSettingsConfig as ZendeskAuditLogsSettingsConfig

@@ -57,10 +57,10 @@ class TestIssuesReportSettingsConfig(unittest.TestCase):
                     'CONTROL_CHANGED'
                     ],
                 risk_equals_all = [
-                    ''
+                    'wct-id-1861'
                     ],
                 risk_equals_any = [
-                    ''
+                    'wct-id-1861'
                     ],
                 search_query = '',
                 security_scan = '',

@@ -10,6 +10,9 @@
  * Do not edit the class manually.
  */
 
+import { WizResult } from '../models/WizResult';
+import { WizStatus } from '../models/WizStatus';
+import { WizVendorSeverity } from '../models/WizVendorSeverity';
 import { HttpFile } from '../http/http';
 
 /**
@@ -27,15 +30,15 @@ export class CloudConfigurationFindingsSettingsConfig {
     /**
     * Result types for Wiz. Ex: \'PASSED\', \'FAILED\', \'ERROR\', \'NOT ASSESSED\'.
     */
-    'result'?: Array<string>;
+    'result'?: Array<WizResult>;
     /**
     * Severity types for Wiz. Ex: \'CRITICAL\', \'HIGH\', \'MEDIUM\', \'LOW\', \'NONE\'.
     */
-    'severity'?: Array<string>;
+    'severity'?: Array<WizVendorSeverity>;
     /**
     * Status types for Wiz. Ex: \'OPEN\', \'RESOLVED\', \'REJECTED\'.
     */
-    'status'?: Array<string>;
+    'status'?: Array<WizStatus>;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -61,19 +64,19 @@ export class CloudConfigurationFindingsSettingsConfig {
         {
             "name": "result",
             "baseName": "result",
-            "type": "Array<string>",
+            "type": "Array<WizResult>",
             "format": ""
         },
         {
             "name": "severity",
             "baseName": "severity",
-            "type": "Array<string>",
+            "type": "Array<WizVendorSeverity>",
             "format": ""
         },
         {
             "name": "status",
             "baseName": "status",
-            "type": "Array<string>",
+            "type": "Array<WizStatus>",
             "format": ""
         },
         {

@@ -38,11 +38,11 @@ class TestCloudResourceInventorySettingsConfig(unittest.TestCase):
             return CloudResourceInventorySettingsConfig(
                 backfill_start_time = '',
                 cloud_platform = [
-                    ''
+                    'Alibaba'
                     ],
                 endpoint_url = '',
                 entity_type = [
-                    ''
+                    'ACCESS_ROLE'
                     ],
                 full_snapshot = True,
                 interval = 56,
@@ -52,7 +52,7 @@ class TestCloudResourceInventorySettingsConfig(unittest.TestCase):
             return CloudResourceInventorySettingsConfig(
                 endpoint_url = '',
                 entity_type = [
-                    ''
+                    'ACCESS_ROLE'
                     ],
         )
         """

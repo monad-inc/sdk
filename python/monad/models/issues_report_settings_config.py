@@ -18,8 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.wiz_issue_severity import WizIssueSeverity
+from monad.models.wiz_issue_status import WizIssueStatus
+from monad.models.wiz_issue_type import WizIssueType
+from monad.models.wiz_note_filter import WizNoteFilter
+from monad.models.wiz_remediation_filter import WizRemediationFilter
+from monad.models.wiz_resolution_reason import WizResolutionReason
+from monad.models.wiz_risk_type import WizRiskType
+from monad.models.wiz_service_ticket_filter import WizServiceTicketFilter
+from monad.models.wiz_stack_layer import WizStackLayer
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,109 +39,24 @@ class IssuesReportSettingsConfig(BaseModel):
     """ # noqa: E501
     control_ids: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues created by specific control IDs")
     cron: Optional[StrictStr] = Field(default=None, description="Cron string for scheduling the ingest of your input")
-    has_note: Optional[StrictStr] = Field(default=None, description="@Description Filter Issues with or without a note")
-    has_remediation: Optional[StrictStr] = Field(default=None, description="@Description Filter Issues with or without remediation")
-    has_service_ticket: Optional[StrictStr] = Field(default=None, description="@Description Filter Issues with or without related service ticket")
+    has_note: Optional[WizNoteFilter] = None
+    has_remediation: Optional[WizRemediationFilter] = None
+    has_service_ticket: Optional[WizServiceTicketFilter] = None
     issue_ids: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter only Issues that match these specific IDs")
-    issue_types: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter by Issue type")
+    issue_types: Optional[List[WizIssueType]] = Field(default=None, description="@Description Filter by Issue type")
     project_ids: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues associated with specific project IDs")
     related_entity_id: Optional[StrictStr] = Field(default=None, description="@Description Filter by related entity ids")
-    resolution_reasons: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues by resolution reason")
-    risk_equals_all: Optional[List[StrictStr]] = Field(default=None, description="@Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present")
-    risk_equals_any: Optional[List[StrictStr]] = Field(default=None, description="@Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name")
+    resolution_reasons: Optional[List[WizResolutionReason]] = Field(default=None, description="@Description Filter Issues by resolution reason")
+    risk_equals_all: Optional[List[WizRiskType]] = Field(default=None, description="@Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present")
+    risk_equals_any: Optional[List[WizRiskType]] = Field(default=None, description="@Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name")
     search_query: Optional[StrictStr] = Field(default=None, description="@Description Free text search on Issue title or object name @Description Returns NULL if no match is found")
     security_scan: Optional[StrictStr] = Field(default=None, description="@Description Filter by security scan source")
-    severities: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues according to Control severity")
-    stack_layers: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues from specific stack layers")
-    status: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter by Issue handling status @Description Default: OPEN")
+    severities: Optional[List[WizIssueSeverity]] = Field(default=None, description="@Description Filter Issues according to Control severity")
+    stack_layers: Optional[List[WizStackLayer]] = Field(default=None, description="@Description Filter Issues from specific stack layers")
+    status: Optional[List[WizIssueStatus]] = Field(default=None, description="@Description Filter by Issue handling status @Description Default: OPEN")
     tenant_data_center: StrictStr = Field(description="DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"]
-
-    @field_validator('has_note')
-    def has_note_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['has_note', 'does_not_have_note', 'do_not_filter']):
-            raise ValueError("must be one of enum values ('has_note', 'does_not_have_note', 'do_not_filter')")
-        return value
-
-    @field_validator('has_remediation')
-    def has_remediation_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['has_remediation', 'does_not_have_remediation', 'do_not_filter']):
-            raise ValueError("must be one of enum values ('has_remediation', 'does_not_have_remediation', 'do_not_filter')")
-        return value
-
-    @field_validator('has_service_ticket')
-    def has_service_ticket_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['has_service_ticket', 'does_not_have_service_ticket', 'do_not_filter']):
-            raise ValueError("must be one of enum values ('has_service_ticket', 'does_not_have_service_ticket', 'do_not_filter')")
-        return value
-
-    @field_validator('issue_types')
-    def issue_types_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['TOXIC_COMBINATION', 'THREAT_DETECTION', 'CLOUD_CONFIGURATION']):
-                raise ValueError("each list item must be one of ('TOXIC_COMBINATION', 'THREAT_DETECTION', 'CLOUD_CONFIGURATION')")
-        return value
-
-    @field_validator('resolution_reasons')
-    def resolution_reasons_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['CONTROL_CHANGED', 'CONTROL_DISABLED', 'CONTROL_DELETED', 'EXCEPTION', 'FALSE_POSITIVE', 'WONT_FIX', 'OBJECT_DELETED', 'ISSUE_FIXED']):
-                raise ValueError("each list item must be one of ('CONTROL_CHANGED', 'CONTROL_DISABLED', 'CONTROL_DELETED', 'EXCEPTION', 'FALSE_POSITIVE', 'WONT_FIX', 'OBJECT_DELETED', 'ISSUE_FIXED')")
-        return value
-
-    @field_validator('severities')
-    def severities_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['INFORMATIONAL', 'LOW', 'MEDIUM', 'HIGH', 'CRITICAL']):
-                raise ValueError("each list item must be one of ('INFORMATIONAL', 'LOW', 'MEDIUM', 'HIGH', 'CRITICAL')")
-        return value
-
-    @field_validator('stack_layers')
-    def stack_layers_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['APPLICATION_AND_DATA', 'CI_CD', 'SECURITY_AND_IDENTITY', 'COMPUTE_PLATFORMS', 'CODE', 'CLOUD_ENTITLEMENTS', 'DATA_STORES']):
-                raise ValueError("each list item must be one of ('APPLICATION_AND_DATA', 'CI_CD', 'SECURITY_AND_IDENTITY', 'COMPUTE_PLATFORMS', 'CODE', 'CLOUD_ENTITLEMENTS', 'DATA_STORES')")
-        return value
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['OPEN', 'IN_PROGRESS', 'RESOLVED', 'REJECTED']):
-                raise ValueError("each list item must be one of ('OPEN', 'IN_PROGRESS', 'RESOLVED', 'REJECTED')")
-        return value
 
     model_config = ConfigDict(
         validate_by_name=True,

@@ -25,11 +25,11 @@ type CloudResourceInventorySettingsConfig struct {
 	// Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.
-	CloudPlatform []string `json:"cloudPlatform,omitempty"`
+	CloudPlatform []WizCloudPlatform `json:"cloudPlatform,omitempty"`
 	// Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.
 	EndpointUrl string `json:"endpoint_url"`
 	// Entity types for Wiz.
-	EntityType []string `json:"entityType"`
+	EntityType []WizEntityType `json:"entityType"`
 	// FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
 	FullSnapshot *bool `json:"full_snapshot,omitempty"`
 	// Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
@@ -44,7 +44,7 @@ type _CloudResourceInventorySettingsConfig CloudResourceInventorySettingsConfig
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCloudResourceInventorySettingsConfig(endpointUrl string, entityType []string) *CloudResourceInventorySettingsConfig {
+func NewCloudResourceInventorySettingsConfig(endpointUrl string, entityType []WizEntityType) *CloudResourceInventorySettingsConfig {
 	this := CloudResourceInventorySettingsConfig{}
 	this.EndpointUrl = endpointUrl
 	this.EntityType = entityType
@@ -92,9 +92,9 @@ func (o *CloudResourceInventorySettingsConfig) SetBackfillStartTime(v string) {
 }
 
 // GetCloudPlatform returns the CloudPlatform field value if set, zero value otherwise.
-func (o *CloudResourceInventorySettingsConfig) GetCloudPlatform() []string {
+func (o *CloudResourceInventorySettingsConfig) GetCloudPlatform() []WizCloudPlatform {
 	if o == nil || IsNil(o.CloudPlatform) {
-		var ret []string
+		var ret []WizCloudPlatform
 		return ret
 	}
 	return o.CloudPlatform
@@ -102,7 +102,7 @@ func (o *CloudResourceInventorySettingsConfig) GetCloudPlatform() []string {
 
 // GetCloudPlatformOk returns a tuple with the CloudPlatform field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CloudResourceInventorySettingsConfig) GetCloudPlatformOk() ([]string, bool) {
+func (o *CloudResourceInventorySettingsConfig) GetCloudPlatformOk() ([]WizCloudPlatform, bool) {
 	if o == nil || IsNil(o.CloudPlatform) {
 		return nil, false
 	}
@@ -118,8 +118,8 @@ func (o *CloudResourceInventorySettingsConfig) HasCloudPlatform() bool {
 	return false
 }
 
-// SetCloudPlatform gets a reference to the given []string and assigns it to the CloudPlatform field.
-func (o *CloudResourceInventorySettingsConfig) SetCloudPlatform(v []string) {
+// SetCloudPlatform gets a reference to the given []WizCloudPlatform and assigns it to the CloudPlatform field.
+func (o *CloudResourceInventorySettingsConfig) SetCloudPlatform(v []WizCloudPlatform) {
 	o.CloudPlatform = v
 }
 
@@ -148,9 +148,9 @@ func (o *CloudResourceInventorySettingsConfig) SetEndpointUrl(v string) {
 }
 
 // GetEntityType returns the EntityType field value
-func (o *CloudResourceInventorySettingsConfig) GetEntityType() []string {
+func (o *CloudResourceInventorySettingsConfig) GetEntityType() []WizEntityType {
 	if o == nil {
-		var ret []string
+		var ret []WizEntityType
 		return ret
 	}
 
@@ -159,7 +159,7 @@ func (o *CloudResourceInventorySettingsConfig) GetEntityType() []string {
 
 // GetEntityTypeOk returns a tuple with the EntityType field value
 // and a boolean to check if the value has been set.
-func (o *CloudResourceInventorySettingsConfig) GetEntityTypeOk() ([]string, bool) {
+func (o *CloudResourceInventorySettingsConfig) GetEntityTypeOk() ([]WizEntityType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -167,7 +167,7 @@ func (o *CloudResourceInventorySettingsConfig) GetEntityTypeOk() ([]string, bool
 }
 
 // SetEntityType sets field value
-func (o *CloudResourceInventorySettingsConfig) SetEntityType(v []string) {
+func (o *CloudResourceInventorySettingsConfig) SetEntityType(v []WizEntityType) {
 	o.EntityType = v
 }
 

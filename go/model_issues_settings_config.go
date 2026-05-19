@@ -26,36 +26,33 @@ type IssuesSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// @Description Filter Issues created by specific control IDs
 	ControlIds []string `json:"control_ids,omitempty"`
-	// @Description Filter Issues with or without a note
-	HasNote *string `json:"has_note,omitempty"`
-	// @Description Filter Issues with or without remediation
-	HasRemediation *string `json:"has_remediation,omitempty"`
-	// @Description Filter Issues with or without related service ticket
-	HasServiceTicket *string `json:"has_service_ticket,omitempty"`
+	HasNote *WizNoteFilter `json:"has_note,omitempty"`
+	HasRemediation *WizRemediationFilter `json:"has_remediation,omitempty"`
+	HasServiceTicket *WizServiceTicketFilter `json:"has_service_ticket,omitempty"`
 	// @Description Filter only Issues that match these specific IDs
 	IssueIds []string `json:"issue_ids,omitempty"`
 	// @Description Filter by Issue type
-	IssueTypes []string `json:"issue_types,omitempty"`
+	IssueTypes []WizIssueType `json:"issue_types,omitempty"`
 	// @Description Filter Issues associated with specific project IDs
 	ProjectIds []string `json:"project_ids,omitempty"`
 	// @Description Filter by related entity ids
 	RelatedEntityId *string `json:"related_entity_id,omitempty"`
 	// @Description Filter Issues by resolution reason
-	ResolutionReasons []string `json:"resolution_reasons,omitempty"`
+	ResolutionReasons []WizResolutionReason `json:"resolution_reasons,omitempty"`
 	// @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present
-	RiskEqualsAll []string `json:"risk_equals_all,omitempty"`
+	RiskEqualsAll []WizRiskType `json:"risk_equals_all,omitempty"`
 	// @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name
-	RiskEqualsAny []string `json:"risk_equals_any,omitempty"`
+	RiskEqualsAny []WizRiskType `json:"risk_equals_any,omitempty"`
 	// @Description Free text search on Issue title or object name @Description Returns NULL if no match is found
 	SearchQuery *string `json:"search_query,omitempty"`
 	// @Description Filter by security scan source
 	SecurityScan *string `json:"security_scan,omitempty"`
 	// @Description Filter Issues according to Control severity
-	Severities []string `json:"severities,omitempty"`
+	Severities []WizIssueSeverity `json:"severities,omitempty"`
 	// @Description Filter Issues from specific stack layers
-	StackLayers []string `json:"stack_layers,omitempty"`
+	StackLayers []WizStackLayer `json:"stack_layers,omitempty"`
 	// @Description Filter by Issue handling status @Description Default: OPEN
-	Status []string `json:"status,omitempty"`
+	Status []WizIssueStatus `json:"status,omitempty"`
 	// DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact
 	TenantDataCenter string `json:"tenant_data_center"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -147,9 +144,9 @@ func (o *IssuesSettingsConfig) SetControlIds(v []string) {
 }
 
 // GetHasNote returns the HasNote field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetHasNote() string {
+func (o *IssuesSettingsConfig) GetHasNote() WizNoteFilter {
 	if o == nil || IsNil(o.HasNote) {
-		var ret string
+		var ret WizNoteFilter
 		return ret
 	}
 	return *o.HasNote
@@ -157,7 +154,7 @@ func (o *IssuesSettingsConfig) GetHasNote() string {
 
 // GetHasNoteOk returns a tuple with the HasNote field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetHasNoteOk() (*string, bool) {
+func (o *IssuesSettingsConfig) GetHasNoteOk() (*WizNoteFilter, bool) {
 	if o == nil || IsNil(o.HasNote) {
 		return nil, false
 	}
@@ -173,15 +170,15 @@ func (o *IssuesSettingsConfig) HasHasNote() bool {
 	return false
 }
 
-// SetHasNote gets a reference to the given string and assigns it to the HasNote field.
-func (o *IssuesSettingsConfig) SetHasNote(v string) {
+// SetHasNote gets a reference to the given WizNoteFilter and assigns it to the HasNote field.
+func (o *IssuesSettingsConfig) SetHasNote(v WizNoteFilter) {
 	o.HasNote = &v
 }
 
 // GetHasRemediation returns the HasRemediation field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetHasRemediation() string {
+func (o *IssuesSettingsConfig) GetHasRemediation() WizRemediationFilter {
 	if o == nil || IsNil(o.HasRemediation) {
-		var ret string
+		var ret WizRemediationFilter
 		return ret
 	}
 	return *o.HasRemediation
@@ -189,7 +186,7 @@ func (o *IssuesSettingsConfig) GetHasRemediation() string {
 
 // GetHasRemediationOk returns a tuple with the HasRemediation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetHasRemediationOk() (*string, bool) {
+func (o *IssuesSettingsConfig) GetHasRemediationOk() (*WizRemediationFilter, bool) {
 	if o == nil || IsNil(o.HasRemediation) {
 		return nil, false
 	}
@@ -205,15 +202,15 @@ func (o *IssuesSettingsConfig) HasHasRemediation() bool {
 	return false
 }
 
-// SetHasRemediation gets a reference to the given string and assigns it to the HasRemediation field.
-func (o *IssuesSettingsConfig) SetHasRemediation(v string) {
+// SetHasRemediation gets a reference to the given WizRemediationFilter and assigns it to the HasRemediation field.
+func (o *IssuesSettingsConfig) SetHasRemediation(v WizRemediationFilter) {
 	o.HasRemediation = &v
 }
 
 // GetHasServiceTicket returns the HasServiceTicket field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetHasServiceTicket() string {
+func (o *IssuesSettingsConfig) GetHasServiceTicket() WizServiceTicketFilter {
 	if o == nil || IsNil(o.HasServiceTicket) {
-		var ret string
+		var ret WizServiceTicketFilter
 		return ret
 	}
 	return *o.HasServiceTicket
@@ -221,7 +218,7 @@ func (o *IssuesSettingsConfig) GetHasServiceTicket() string {
 
 // GetHasServiceTicketOk returns a tuple with the HasServiceTicket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetHasServiceTicketOk() (*string, bool) {
+func (o *IssuesSettingsConfig) GetHasServiceTicketOk() (*WizServiceTicketFilter, bool) {
 	if o == nil || IsNil(o.HasServiceTicket) {
 		return nil, false
 	}
@@ -237,8 +234,8 @@ func (o *IssuesSettingsConfig) HasHasServiceTicket() bool {
 	return false
 }
 
-// SetHasServiceTicket gets a reference to the given string and assigns it to the HasServiceTicket field.
-func (o *IssuesSettingsConfig) SetHasServiceTicket(v string) {
+// SetHasServiceTicket gets a reference to the given WizServiceTicketFilter and assigns it to the HasServiceTicket field.
+func (o *IssuesSettingsConfig) SetHasServiceTicket(v WizServiceTicketFilter) {
 	o.HasServiceTicket = &v
 }
 
@@ -275,9 +272,9 @@ func (o *IssuesSettingsConfig) SetIssueIds(v []string) {
 }
 
 // GetIssueTypes returns the IssueTypes field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetIssueTypes() []string {
+func (o *IssuesSettingsConfig) GetIssueTypes() []WizIssueType {
 	if o == nil || IsNil(o.IssueTypes) {
-		var ret []string
+		var ret []WizIssueType
 		return ret
 	}
 	return o.IssueTypes
@@ -285,7 +282,7 @@ func (o *IssuesSettingsConfig) GetIssueTypes() []string {
 
 // GetIssueTypesOk returns a tuple with the IssueTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetIssueTypesOk() ([]string, bool) {
+func (o *IssuesSettingsConfig) GetIssueTypesOk() ([]WizIssueType, bool) {
 	if o == nil || IsNil(o.IssueTypes) {
 		return nil, false
 	}
@@ -301,8 +298,8 @@ func (o *IssuesSettingsConfig) HasIssueTypes() bool {
 	return false
 }
 
-// SetIssueTypes gets a reference to the given []string and assigns it to the IssueTypes field.
-func (o *IssuesSettingsConfig) SetIssueTypes(v []string) {
+// SetIssueTypes gets a reference to the given []WizIssueType and assigns it to the IssueTypes field.
+func (o *IssuesSettingsConfig) SetIssueTypes(v []WizIssueType) {
 	o.IssueTypes = v
 }
 
@@ -371,9 +368,9 @@ func (o *IssuesSettingsConfig) SetRelatedEntityId(v string) {
 }
 
 // GetResolutionReasons returns the ResolutionReasons field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetResolutionReasons() []string {
+func (o *IssuesSettingsConfig) GetResolutionReasons() []WizResolutionReason {
 	if o == nil || IsNil(o.ResolutionReasons) {
-		var ret []string
+		var ret []WizResolutionReason
 		return ret
 	}
 	return o.ResolutionReasons
@@ -381,7 +378,7 @@ func (o *IssuesSettingsConfig) GetResolutionReasons() []string {
 
 // GetResolutionReasonsOk returns a tuple with the ResolutionReasons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetResolutionReasonsOk() ([]string, bool) {
+func (o *IssuesSettingsConfig) GetResolutionReasonsOk() ([]WizResolutionReason, bool) {
 	if o == nil || IsNil(o.ResolutionReasons) {
 		return nil, false
 	}
@@ -397,15 +394,15 @@ func (o *IssuesSettingsConfig) HasResolutionReasons() bool {
 	return false
 }
 
-// SetResolutionReasons gets a reference to the given []string and assigns it to the ResolutionReasons field.
-func (o *IssuesSettingsConfig) SetResolutionReasons(v []string) {
+// SetResolutionReasons gets a reference to the given []WizResolutionReason and assigns it to the ResolutionReasons field.
+func (o *IssuesSettingsConfig) SetResolutionReasons(v []WizResolutionReason) {
 	o.ResolutionReasons = v
 }
 
 // GetRiskEqualsAll returns the RiskEqualsAll field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetRiskEqualsAll() []string {
+func (o *IssuesSettingsConfig) GetRiskEqualsAll() []WizRiskType {
 	if o == nil || IsNil(o.RiskEqualsAll) {
-		var ret []string
+		var ret []WizRiskType
 		return ret
 	}
 	return o.RiskEqualsAll
@@ -413,7 +410,7 @@ func (o *IssuesSettingsConfig) GetRiskEqualsAll() []string {
 
 // GetRiskEqualsAllOk returns a tuple with the RiskEqualsAll field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetRiskEqualsAllOk() ([]string, bool) {
+func (o *IssuesSettingsConfig) GetRiskEqualsAllOk() ([]WizRiskType, bool) {
 	if o == nil || IsNil(o.RiskEqualsAll) {
 		return nil, false
 	}
@@ -429,15 +426,15 @@ func (o *IssuesSettingsConfig) HasRiskEqualsAll() bool {
 	return false
 }
 
-// SetRiskEqualsAll gets a reference to the given []string and assigns it to the RiskEqualsAll field.
-func (o *IssuesSettingsConfig) SetRiskEqualsAll(v []string) {
+// SetRiskEqualsAll gets a reference to the given []WizRiskType and assigns it to the RiskEqualsAll field.
+func (o *IssuesSettingsConfig) SetRiskEqualsAll(v []WizRiskType) {
 	o.RiskEqualsAll = v
 }
 
 // GetRiskEqualsAny returns the RiskEqualsAny field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetRiskEqualsAny() []string {
+func (o *IssuesSettingsConfig) GetRiskEqualsAny() []WizRiskType {
 	if o == nil || IsNil(o.RiskEqualsAny) {
-		var ret []string
+		var ret []WizRiskType
 		return ret
 	}
 	return o.RiskEqualsAny
@@ -445,7 +442,7 @@ func (o *IssuesSettingsConfig) GetRiskEqualsAny() []string {
 
 // GetRiskEqualsAnyOk returns a tuple with the RiskEqualsAny field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetRiskEqualsAnyOk() ([]string, bool) {
+func (o *IssuesSettingsConfig) GetRiskEqualsAnyOk() ([]WizRiskType, bool) {
 	if o == nil || IsNil(o.RiskEqualsAny) {
 		return nil, false
 	}
@@ -461,8 +458,8 @@ func (o *IssuesSettingsConfig) HasRiskEqualsAny() bool {
 	return false
 }
 
-// SetRiskEqualsAny gets a reference to the given []string and assigns it to the RiskEqualsAny field.
-func (o *IssuesSettingsConfig) SetRiskEqualsAny(v []string) {
+// SetRiskEqualsAny gets a reference to the given []WizRiskType and assigns it to the RiskEqualsAny field.
+func (o *IssuesSettingsConfig) SetRiskEqualsAny(v []WizRiskType) {
 	o.RiskEqualsAny = v
 }
 
@@ -531,9 +528,9 @@ func (o *IssuesSettingsConfig) SetSecurityScan(v string) {
 }
 
 // GetSeverities returns the Severities field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetSeverities() []string {
+func (o *IssuesSettingsConfig) GetSeverities() []WizIssueSeverity {
 	if o == nil || IsNil(o.Severities) {
-		var ret []string
+		var ret []WizIssueSeverity
 		return ret
 	}
 	return o.Severities
@@ -541,7 +538,7 @@ func (o *IssuesSettingsConfig) GetSeverities() []string {
 
 // GetSeveritiesOk returns a tuple with the Severities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetSeveritiesOk() ([]string, bool) {
+func (o *IssuesSettingsConfig) GetSeveritiesOk() ([]WizIssueSeverity, bool) {
 	if o == nil || IsNil(o.Severities) {
 		return nil, false
 	}
@@ -557,15 +554,15 @@ func (o *IssuesSettingsConfig) HasSeverities() bool {
 	return false
 }
 
-// SetSeverities gets a reference to the given []string and assigns it to the Severities field.
-func (o *IssuesSettingsConfig) SetSeverities(v []string) {
+// SetSeverities gets a reference to the given []WizIssueSeverity and assigns it to the Severities field.
+func (o *IssuesSettingsConfig) SetSeverities(v []WizIssueSeverity) {
 	o.Severities = v
 }
 
 // GetStackLayers returns the StackLayers field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetStackLayers() []string {
+func (o *IssuesSettingsConfig) GetStackLayers() []WizStackLayer {
 	if o == nil || IsNil(o.StackLayers) {
-		var ret []string
+		var ret []WizStackLayer
 		return ret
 	}
 	return o.StackLayers
@@ -573,7 +570,7 @@ func (o *IssuesSettingsConfig) GetStackLayers() []string {
 
 // GetStackLayersOk returns a tuple with the StackLayers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetStackLayersOk() ([]string, bool) {
+func (o *IssuesSettingsConfig) GetStackLayersOk() ([]WizStackLayer, bool) {
 	if o == nil || IsNil(o.StackLayers) {
 		return nil, false
 	}
@@ -589,15 +586,15 @@ func (o *IssuesSettingsConfig) HasStackLayers() bool {
 	return false
 }
 
-// SetStackLayers gets a reference to the given []string and assigns it to the StackLayers field.
-func (o *IssuesSettingsConfig) SetStackLayers(v []string) {
+// SetStackLayers gets a reference to the given []WizStackLayer and assigns it to the StackLayers field.
+func (o *IssuesSettingsConfig) SetStackLayers(v []WizStackLayer) {
 	o.StackLayers = v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *IssuesSettingsConfig) GetStatus() []string {
+func (o *IssuesSettingsConfig) GetStatus() []WizIssueStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret []string
+		var ret []WizIssueStatus
 		return ret
 	}
 	return o.Status
@@ -605,7 +602,7 @@ func (o *IssuesSettingsConfig) GetStatus() []string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IssuesSettingsConfig) GetStatusOk() ([]string, bool) {
+func (o *IssuesSettingsConfig) GetStatusOk() ([]WizIssueStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -621,8 +618,8 @@ func (o *IssuesSettingsConfig) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given []string and assigns it to the Status field.
-func (o *IssuesSettingsConfig) SetStatus(v []string) {
+// SetStatus gets a reference to the given []WizIssueStatus and assigns it to the Status field.
+func (o *IssuesSettingsConfig) SetStatus(v []WizIssueStatus) {
 	o.Status = v
 }
 

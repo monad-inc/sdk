@@ -10,6 +10,8 @@
  * Do not edit the class manually.
  */
 
+import { WizCloudPlatform } from '../models/WizCloudPlatform';
+import { WizEntityType } from '../models/WizEntityType';
 import { HttpFile } from '../http/http';
 
 /**
@@ -23,7 +25,7 @@ export class CloudResourceInventorySettingsConfig {
     /**
     * Cloud Platform types for Wiz. Ex: \'AWS\', \'AZURE\', \'GCP\'.
     */
-    'cloudPlatform'?: Array<string>;
+    'cloudPlatform'?: Array<WizCloudPlatform>;
     /**
     * Endpoint URL for the Wiz API. Ex: \'https://api.wiz.io/v1/cloud-resource-inventory\'.
     */
@@ -31,7 +33,7 @@ export class CloudResourceInventorySettingsConfig {
     /**
     * Entity types for Wiz.
     */
-    'entityType': Array<string>;
+    'entityType': Array<WizEntityType>;
     /**
     * FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
     */
@@ -59,7 +61,7 @@ export class CloudResourceInventorySettingsConfig {
         {
             "name": "cloudPlatform",
             "baseName": "cloudPlatform",
-            "type": "Array<string>",
+            "type": "Array<WizCloudPlatform>",
             "format": ""
         },
         {
@@ -71,7 +73,7 @@ export class CloudResourceInventorySettingsConfig {
         {
             "name": "entityType",
             "baseName": "entityType",
-            "type": "Array<string>",
+            "type": "Array<WizEntityType>",
             "format": ""
         },
         {

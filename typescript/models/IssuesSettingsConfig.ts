@@ -10,6 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { WizIssueSeverity } from '../models/WizIssueSeverity';
+import { WizIssueStatus } from '../models/WizIssueStatus';
+import { WizIssueType } from '../models/WizIssueType';
+import { WizNoteFilter } from '../models/WizNoteFilter';
+import { WizRemediationFilter } from '../models/WizRemediationFilter';
+import { WizResolutionReason } from '../models/WizResolutionReason';
+import { WizRiskType } from '../models/WizRiskType';
+import { WizServiceTicketFilter } from '../models/WizServiceTicketFilter';
+import { WizStackLayer } from '../models/WizStackLayer';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,18 +33,9 @@ export class IssuesSettingsConfig {
     * @Description Filter Issues created by specific control IDs
     */
     'controlIds'?: Array<string>;
-    /**
-    * @Description Filter Issues with or without a note
-    */
-    'hasNote'?: IssuesSettingsConfigHasNoteEnum;
-    /**
-    * @Description Filter Issues with or without remediation
-    */
-    'hasRemediation'?: IssuesSettingsConfigHasRemediationEnum;
-    /**
-    * @Description Filter Issues with or without related service ticket
-    */
-    'hasServiceTicket'?: IssuesSettingsConfigHasServiceTicketEnum;
+    'hasNote'?: WizNoteFilter;
+    'hasRemediation'?: WizRemediationFilter;
+    'hasServiceTicket'?: WizServiceTicketFilter;
     /**
     * @Description Filter only Issues that match these specific IDs
     */
@@ -43,7 +43,7 @@ export class IssuesSettingsConfig {
     /**
     * @Description Filter by Issue type
     */
-    'issueTypes'?: Array<IssuesSettingsConfigIssueTypesEnum>;
+    'issueTypes'?: Array<WizIssueType>;
     /**
     * @Description Filter Issues associated with specific project IDs
     */
@@ -55,15 +55,15 @@ export class IssuesSettingsConfig {
     /**
     * @Description Filter Issues by resolution reason
     */
-    'resolutionReasons'?: Array<IssuesSettingsConfigResolutionReasonsEnum>;
+    'resolutionReasons'?: Array<WizResolutionReason>;
     /**
     * @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present
     */
-    'riskEqualsAll'?: Array<string>;
+    'riskEqualsAll'?: Array<WizRiskType>;
     /**
     * @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name
     */
-    'riskEqualsAny'?: Array<string>;
+    'riskEqualsAny'?: Array<WizRiskType>;
     /**
     * @Description Free text search on Issue title or object name @Description Returns NULL if no match is found
     */
@@ -75,15 +75,15 @@ export class IssuesSettingsConfig {
     /**
     * @Description Filter Issues according to Control severity
     */
-    'severities'?: Array<IssuesSettingsConfigSeveritiesEnum>;
+    'severities'?: Array<WizIssueSeverity>;
     /**
     * @Description Filter Issues from specific stack layers
     */
-    'stackLayers'?: Array<IssuesSettingsConfigStackLayersEnum>;
+    'stackLayers'?: Array<WizStackLayer>;
     /**
     * @Description Filter by Issue handling status @Description Default: OPEN
     */
-    'status'?: Array<IssuesSettingsConfigStatusEnum>;
+    'status'?: Array<WizIssueStatus>;
     /**
     * DataCenter represents the tenant\'s data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact
     */
@@ -113,19 +113,19 @@ export class IssuesSettingsConfig {
         {
             "name": "hasNote",
             "baseName": "has_note",
-            "type": "IssuesSettingsConfigHasNoteEnum",
+            "type": "WizNoteFilter",
             "format": ""
         },
         {
             "name": "hasRemediation",
             "baseName": "has_remediation",
-            "type": "IssuesSettingsConfigHasRemediationEnum",
+            "type": "WizRemediationFilter",
             "format": ""
         },
         {
             "name": "hasServiceTicket",
             "baseName": "has_service_ticket",
-            "type": "IssuesSettingsConfigHasServiceTicketEnum",
+            "type": "WizServiceTicketFilter",
             "format": ""
         },
         {
@@ -137,7 +137,7 @@ export class IssuesSettingsConfig {
         {
             "name": "issueTypes",
             "baseName": "issue_types",
-            "type": "Array<IssuesSettingsConfigIssueTypesEnum>",
+            "type": "Array<WizIssueType>",
             "format": ""
         },
         {
@@ -155,19 +155,19 @@ export class IssuesSettingsConfig {
         {
             "name": "resolutionReasons",
             "baseName": "resolution_reasons",
-            "type": "Array<IssuesSettingsConfigResolutionReasonsEnum>",
+            "type": "Array<WizResolutionReason>",
             "format": ""
         },
         {
             "name": "riskEqualsAll",
             "baseName": "risk_equals_all",
-            "type": "Array<string>",
+            "type": "Array<WizRiskType>",
             "format": ""
         },
         {
             "name": "riskEqualsAny",
             "baseName": "risk_equals_any",
-            "type": "Array<string>",
+            "type": "Array<WizRiskType>",
             "format": ""
         },
         {
@@ -185,19 +185,19 @@ export class IssuesSettingsConfig {
         {
             "name": "severities",
             "baseName": "severities",
-            "type": "Array<IssuesSettingsConfigSeveritiesEnum>",
+            "type": "Array<WizIssueSeverity>",
             "format": ""
         },
         {
             "name": "stackLayers",
             "baseName": "stack_layers",
-            "type": "Array<IssuesSettingsConfigStackLayersEnum>",
+            "type": "Array<WizStackLayer>",
             "format": ""
         },
         {
             "name": "status",
             "baseName": "status",
-            "type": "Array<IssuesSettingsConfigStatusEnum>",
+            "type": "Array<WizIssueStatus>",
             "format": ""
         },
         {
@@ -221,56 +221,4 @@ export class IssuesSettingsConfig {
     }
 }
 
-export enum IssuesSettingsConfigHasNoteEnum {
-    HasNote = 'has_note',
-    DoesNotHaveNote = 'does_not_have_note',
-    DoNotFilter = 'do_not_filter'
-}
-export enum IssuesSettingsConfigHasRemediationEnum {
-    HasRemediation = 'has_remediation',
-    DoesNotHaveRemediation = 'does_not_have_remediation',
-    DoNotFilter = 'do_not_filter'
-}
-export enum IssuesSettingsConfigHasServiceTicketEnum {
-    HasServiceTicket = 'has_service_ticket',
-    DoesNotHaveServiceTicket = 'does_not_have_service_ticket',
-    DoNotFilter = 'do_not_filter'
-}
-export enum IssuesSettingsConfigIssueTypesEnum {
-    ToxicCombination = 'TOXIC_COMBINATION',
-    ThreatDetection = 'THREAT_DETECTION',
-    CloudConfiguration = 'CLOUD_CONFIGURATION'
-}
-export enum IssuesSettingsConfigResolutionReasonsEnum {
-    ControlChanged = 'CONTROL_CHANGED',
-    ControlDisabled = 'CONTROL_DISABLED',
-    ControlDeleted = 'CONTROL_DELETED',
-    Exception = 'EXCEPTION',
-    FalsePositive = 'FALSE_POSITIVE',
-    WontFix = 'WONT_FIX',
-    ObjectDeleted = 'OBJECT_DELETED',
-    IssueFixed = 'ISSUE_FIXED'
-}
-export enum IssuesSettingsConfigSeveritiesEnum {
-    Informational = 'INFORMATIONAL',
-    Low = 'LOW',
-    Medium = 'MEDIUM',
-    High = 'HIGH',
-    Critical = 'CRITICAL'
-}
-export enum IssuesSettingsConfigStackLayersEnum {
-    ApplicationAndData = 'APPLICATION_AND_DATA',
-    CiCd = 'CI_CD',
-    SecurityAndIdentity = 'SECURITY_AND_IDENTITY',
-    ComputePlatforms = 'COMPUTE_PLATFORMS',
-    Code = 'CODE',
-    CloudEntitlements = 'CLOUD_ENTITLEMENTS',
-    DataStores = 'DATA_STORES'
-}
-export enum IssuesSettingsConfigStatusEnum {
-    Open = 'OPEN',
-    InProgress = 'IN_PROGRESS',
-    Resolved = 'RESOLVED',
-    Rejected = 'REJECTED'
-}
 

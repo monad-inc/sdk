@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.WizResult;
+import org.openapitools.client.model.WizStatus;
+import org.openapitools.client.model.WizVendorSeverity;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -65,17 +68,17 @@ public class CloudConfigurationFindingsSettingsConfig {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
   @javax.annotation.Nullable
-  private List<String> result = new ArrayList<>();
+  private List<WizResult> result = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
   @javax.annotation.Nullable
-  private List<String> severity = new ArrayList<>();
+  private List<WizVendorSeverity> severity = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
-  private List<String> status = new ArrayList<>();
+  private List<WizStatus> status = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -123,12 +126,12 @@ public class CloudConfigurationFindingsSettingsConfig {
   }
 
 
-  public CloudConfigurationFindingsSettingsConfig result(@javax.annotation.Nullable List<String> result) {
+  public CloudConfigurationFindingsSettingsConfig result(@javax.annotation.Nullable List<WizResult> result) {
     this.result = result;
     return this;
   }
 
-  public CloudConfigurationFindingsSettingsConfig addResultItem(String resultItem) {
+  public CloudConfigurationFindingsSettingsConfig addResultItem(WizResult resultItem) {
     if (this.result == null) {
       this.result = new ArrayList<>();
     }
@@ -141,21 +144,21 @@ public class CloudConfigurationFindingsSettingsConfig {
    * @return result
    */
   @javax.annotation.Nullable
-  public List<String> getResult() {
+  public List<WizResult> getResult() {
     return result;
   }
 
-  public void setResult(@javax.annotation.Nullable List<String> result) {
+  public void setResult(@javax.annotation.Nullable List<WizResult> result) {
     this.result = result;
   }
 
 
-  public CloudConfigurationFindingsSettingsConfig severity(@javax.annotation.Nullable List<String> severity) {
+  public CloudConfigurationFindingsSettingsConfig severity(@javax.annotation.Nullable List<WizVendorSeverity> severity) {
     this.severity = severity;
     return this;
   }
 
-  public CloudConfigurationFindingsSettingsConfig addSeverityItem(String severityItem) {
+  public CloudConfigurationFindingsSettingsConfig addSeverityItem(WizVendorSeverity severityItem) {
     if (this.severity == null) {
       this.severity = new ArrayList<>();
     }
@@ -168,21 +171,21 @@ public class CloudConfigurationFindingsSettingsConfig {
    * @return severity
    */
   @javax.annotation.Nullable
-  public List<String> getSeverity() {
+  public List<WizVendorSeverity> getSeverity() {
     return severity;
   }
 
-  public void setSeverity(@javax.annotation.Nullable List<String> severity) {
+  public void setSeverity(@javax.annotation.Nullable List<WizVendorSeverity> severity) {
     this.severity = severity;
   }
 
 
-  public CloudConfigurationFindingsSettingsConfig status(@javax.annotation.Nullable List<String> status) {
+  public CloudConfigurationFindingsSettingsConfig status(@javax.annotation.Nullable List<WizStatus> status) {
     this.status = status;
     return this;
   }
 
-  public CloudConfigurationFindingsSettingsConfig addStatusItem(String statusItem) {
+  public CloudConfigurationFindingsSettingsConfig addStatusItem(WizStatus statusItem) {
     if (this.status == null) {
       this.status = new ArrayList<>();
     }
@@ -195,11 +198,11 @@ public class CloudConfigurationFindingsSettingsConfig {
    * @return status
    */
   @javax.annotation.Nullable
-  public List<String> getStatus() {
+  public List<WizStatus> getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable List<String> status) {
+  public void setStatus(@javax.annotation.Nullable List<WizStatus> status) {
     this.status = status;
   }
 

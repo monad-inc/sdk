@@ -88,10 +88,10 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 endpoint_url = '',
                 result = [
-                    ''
+                    'PASS'
                     ],
                 status = [
-                    ''
+                    'OPEN'
                     ],
                 enable_proto_payload_parsing = True,
                 filter = '',
@@ -99,10 +99,10 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ''
                     ],
                 cloud_platform = [
-                    ''
+                    'Alibaba'
                     ],
                 entity_type = [
-                    ''
+                    'ACCESS_ROLE'
                     ],
                 full_snapshot = True,
                 interval = 56,
@@ -172,10 +172,10 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     'CONTROL_CHANGED'
                     ],
                 risk_equals_all = [
-                    ''
+                    'wct-id-1861'
                     ],
                 risk_equals_any = [
-                    ''
+                    'wct-id-1861'
                     ],
                 search_query = '',
                 security_scan = '',
@@ -230,16 +230,16 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 with_payload = True,
                 customer_id = '',
                 asset_status = [
-                    ''
+                    'Active'
                     ],
                 asset_types = [
-                    ''
+                    'SERVERLESS'
                     ],
                 detection_method = [
-                    ''
+                    'PACKAGE'
                     ],
                 vendor_severity = [
-                    ''
+                    'NONE'
                     ],
                 email_address = '',
                 sub_domain = ''
@@ -256,7 +256,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 org_slug = '',
                 endpoint_url = '',
                 entity_type = [
-                    ''
+                    'ACCESS_ROLE'
                     ],
                 cron = '',
                 api_key_id = '',
@@ -284,7 +284,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 tenant_domain = '',
                 tenant_url = '',
                 asset_types = [
-                    ''
+                    'SERVERLESS'
                     ],
                 sub_domain = '',
         )

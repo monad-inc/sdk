@@ -21,6 +21,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from monad.models.wiz_cloud_platform import WizCloudPlatform
+from monad.models.wiz_entity_type import WizEntityType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,10 +31,10 @@ class CloudResourceInventoryReportsSettingsConfig(BaseModel):
     """
     Wiz Cloud Resource Inventory Reports settings
     """ # noqa: E501
-    cloud_platform: Optional[List[StrictStr]] = Field(default=None, description="Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.", alias="cloudPlatform")
+    cloud_platform: Optional[List[WizCloudPlatform]] = Field(default=None, description="Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.", alias="cloudPlatform")
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     endpoint_url: StrictStr = Field(description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
-    entity_type: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.", alias="entityType")
+    entity_type: Annotated[List[WizEntityType], Field(min_length=1)] = Field(description="Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.", alias="entityType")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["cloudPlatform", "cron", "endpoint_url", "entityType", "use_synthetic_data"]
 

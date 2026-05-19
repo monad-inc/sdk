@@ -37,12 +37,12 @@ class TestCloudResourceInventoryReportsSettingsConfig(unittest.TestCase):
         if include_optional:
             return CloudResourceInventoryReportsSettingsConfig(
                 cloud_platform = [
-                    ''
+                    'Alibaba'
                     ],
                 cron = '',
                 endpoint_url = '',
                 entity_type = [
-                    ''
+                    'ACCESS_ROLE'
                     ],
                 use_synthetic_data = True
             )
@@ -50,7 +50,7 @@ class TestCloudResourceInventoryReportsSettingsConfig(unittest.TestCase):
             return CloudResourceInventoryReportsSettingsConfig(
                 endpoint_url = '',
                 entity_type = [
-                    ''
+                    'ACCESS_ROLE'
                     ],
         )
         """

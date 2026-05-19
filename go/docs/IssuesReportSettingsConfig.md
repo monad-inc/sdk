@@ -6,21 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
-**HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
-**HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
-**HasServiceTicket** | Pointer to **string** | @Description Filter Issues with or without related service ticket | [optional] 
+**HasNote** | Pointer to [**WizNoteFilter**](WizNoteFilter.md) |  | [optional] 
+**HasRemediation** | Pointer to [**WizRemediationFilter**](WizRemediationFilter.md) |  | [optional] 
+**HasServiceTicket** | Pointer to [**WizServiceTicketFilter**](WizServiceTicketFilter.md) |  | [optional] 
 **IssueIds** | Pointer to **[]string** | @Description Filter only Issues that match these specific IDs | [optional] 
-**IssueTypes** | Pointer to **[]string** | @Description Filter by Issue type | [optional] 
+**IssueTypes** | Pointer to [**[]WizIssueType**](WizIssueType.md) | @Description Filter by Issue type | [optional] 
 **ProjectIds** | Pointer to **[]string** | @Description Filter Issues associated with specific project IDs | [optional] 
 **RelatedEntityId** | Pointer to **string** | @Description Filter by related entity ids | [optional] 
-**ResolutionReasons** | Pointer to **[]string** | @Description Filter Issues by resolution reason | [optional] 
-**RiskEqualsAll** | Pointer to **[]string** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present | [optional] 
-**RiskEqualsAny** | Pointer to **[]string** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
+**ResolutionReasons** | Pointer to [**[]WizResolutionReason**](WizResolutionReason.md) | @Description Filter Issues by resolution reason | [optional] 
+**RiskEqualsAll** | Pointer to [**[]WizRiskType**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present | [optional] 
+**RiskEqualsAny** | Pointer to [**[]WizRiskType**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
 **SearchQuery** | Pointer to **string** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found | [optional] 
 **SecurityScan** | Pointer to **string** | @Description Filter by security scan source | [optional] 
-**Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
-**StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
-**Status** | Pointer to **[]string** | @Description Filter by Issue handling status @Description Default: OPEN | [optional] 
+**Severities** | Pointer to [**[]WizIssueSeverity**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
+**StackLayers** | Pointer to [**[]WizStackLayer**](WizStackLayer.md) | @Description Filter Issues from specific stack layers | [optional] 
+**Status** | Pointer to [**[]WizIssueStatus**](WizIssueStatus.md) | @Description Filter by Issue handling status @Description Default: OPEN | [optional] 
 **TenantDataCenter** | **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
@@ -95,20 +95,20 @@ HasCron returns a boolean if a field has been set.
 
 ### GetHasNote
 
-`func (o *IssuesReportSettingsConfig) GetHasNote() string`
+`func (o *IssuesReportSettingsConfig) GetHasNote() WizNoteFilter`
 
 GetHasNote returns the HasNote field if non-nil, zero value otherwise.
 
 ### GetHasNoteOk
 
-`func (o *IssuesReportSettingsConfig) GetHasNoteOk() (*string, bool)`
+`func (o *IssuesReportSettingsConfig) GetHasNoteOk() (*WizNoteFilter, bool)`
 
 GetHasNoteOk returns a tuple with the HasNote field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasNote
 
-`func (o *IssuesReportSettingsConfig) SetHasNote(v string)`
+`func (o *IssuesReportSettingsConfig) SetHasNote(v WizNoteFilter)`
 
 SetHasNote sets HasNote field to given value.
 
@@ -120,20 +120,20 @@ HasHasNote returns a boolean if a field has been set.
 
 ### GetHasRemediation
 
-`func (o *IssuesReportSettingsConfig) GetHasRemediation() string`
+`func (o *IssuesReportSettingsConfig) GetHasRemediation() WizRemediationFilter`
 
 GetHasRemediation returns the HasRemediation field if non-nil, zero value otherwise.
 
 ### GetHasRemediationOk
 
-`func (o *IssuesReportSettingsConfig) GetHasRemediationOk() (*string, bool)`
+`func (o *IssuesReportSettingsConfig) GetHasRemediationOk() (*WizRemediationFilter, bool)`
 
 GetHasRemediationOk returns a tuple with the HasRemediation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasRemediation
 
-`func (o *IssuesReportSettingsConfig) SetHasRemediation(v string)`
+`func (o *IssuesReportSettingsConfig) SetHasRemediation(v WizRemediationFilter)`
 
 SetHasRemediation sets HasRemediation field to given value.
 
@@ -145,20 +145,20 @@ HasHasRemediation returns a boolean if a field has been set.
 
 ### GetHasServiceTicket
 
-`func (o *IssuesReportSettingsConfig) GetHasServiceTicket() string`
+`func (o *IssuesReportSettingsConfig) GetHasServiceTicket() WizServiceTicketFilter`
 
 GetHasServiceTicket returns the HasServiceTicket field if non-nil, zero value otherwise.
 
 ### GetHasServiceTicketOk
 
-`func (o *IssuesReportSettingsConfig) GetHasServiceTicketOk() (*string, bool)`
+`func (o *IssuesReportSettingsConfig) GetHasServiceTicketOk() (*WizServiceTicketFilter, bool)`
 
 GetHasServiceTicketOk returns a tuple with the HasServiceTicket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasServiceTicket
 
-`func (o *IssuesReportSettingsConfig) SetHasServiceTicket(v string)`
+`func (o *IssuesReportSettingsConfig) SetHasServiceTicket(v WizServiceTicketFilter)`
 
 SetHasServiceTicket sets HasServiceTicket field to given value.
 
@@ -195,20 +195,20 @@ HasIssueIds returns a boolean if a field has been set.
 
 ### GetIssueTypes
 
-`func (o *IssuesReportSettingsConfig) GetIssueTypes() []string`
+`func (o *IssuesReportSettingsConfig) GetIssueTypes() []WizIssueType`
 
 GetIssueTypes returns the IssueTypes field if non-nil, zero value otherwise.
 
 ### GetIssueTypesOk
 
-`func (o *IssuesReportSettingsConfig) GetIssueTypesOk() (*[]string, bool)`
+`func (o *IssuesReportSettingsConfig) GetIssueTypesOk() (*[]WizIssueType, bool)`
 
 GetIssueTypesOk returns a tuple with the IssueTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssueTypes
 
-`func (o *IssuesReportSettingsConfig) SetIssueTypes(v []string)`
+`func (o *IssuesReportSettingsConfig) SetIssueTypes(v []WizIssueType)`
 
 SetIssueTypes sets IssueTypes field to given value.
 
@@ -270,20 +270,20 @@ HasRelatedEntityId returns a boolean if a field has been set.
 
 ### GetResolutionReasons
 
-`func (o *IssuesReportSettingsConfig) GetResolutionReasons() []string`
+`func (o *IssuesReportSettingsConfig) GetResolutionReasons() []WizResolutionReason`
 
 GetResolutionReasons returns the ResolutionReasons field if non-nil, zero value otherwise.
 
 ### GetResolutionReasonsOk
 
-`func (o *IssuesReportSettingsConfig) GetResolutionReasonsOk() (*[]string, bool)`
+`func (o *IssuesReportSettingsConfig) GetResolutionReasonsOk() (*[]WizResolutionReason, bool)`
 
 GetResolutionReasonsOk returns a tuple with the ResolutionReasons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResolutionReasons
 
-`func (o *IssuesReportSettingsConfig) SetResolutionReasons(v []string)`
+`func (o *IssuesReportSettingsConfig) SetResolutionReasons(v []WizResolutionReason)`
 
 SetResolutionReasons sets ResolutionReasons field to given value.
 
@@ -295,20 +295,20 @@ HasResolutionReasons returns a boolean if a field has been set.
 
 ### GetRiskEqualsAll
 
-`func (o *IssuesReportSettingsConfig) GetRiskEqualsAll() []string`
+`func (o *IssuesReportSettingsConfig) GetRiskEqualsAll() []WizRiskType`
 
 GetRiskEqualsAll returns the RiskEqualsAll field if non-nil, zero value otherwise.
 
 ### GetRiskEqualsAllOk
 
-`func (o *IssuesReportSettingsConfig) GetRiskEqualsAllOk() (*[]string, bool)`
+`func (o *IssuesReportSettingsConfig) GetRiskEqualsAllOk() (*[]WizRiskType, bool)`
 
 GetRiskEqualsAllOk returns a tuple with the RiskEqualsAll field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskEqualsAll
 
-`func (o *IssuesReportSettingsConfig) SetRiskEqualsAll(v []string)`
+`func (o *IssuesReportSettingsConfig) SetRiskEqualsAll(v []WizRiskType)`
 
 SetRiskEqualsAll sets RiskEqualsAll field to given value.
 
@@ -320,20 +320,20 @@ HasRiskEqualsAll returns a boolean if a field has been set.
 
 ### GetRiskEqualsAny
 
-`func (o *IssuesReportSettingsConfig) GetRiskEqualsAny() []string`
+`func (o *IssuesReportSettingsConfig) GetRiskEqualsAny() []WizRiskType`
 
 GetRiskEqualsAny returns the RiskEqualsAny field if non-nil, zero value otherwise.
 
 ### GetRiskEqualsAnyOk
 
-`func (o *IssuesReportSettingsConfig) GetRiskEqualsAnyOk() (*[]string, bool)`
+`func (o *IssuesReportSettingsConfig) GetRiskEqualsAnyOk() (*[]WizRiskType, bool)`
 
 GetRiskEqualsAnyOk returns a tuple with the RiskEqualsAny field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskEqualsAny
 
-`func (o *IssuesReportSettingsConfig) SetRiskEqualsAny(v []string)`
+`func (o *IssuesReportSettingsConfig) SetRiskEqualsAny(v []WizRiskType)`
 
 SetRiskEqualsAny sets RiskEqualsAny field to given value.
 
@@ -395,20 +395,20 @@ HasSecurityScan returns a boolean if a field has been set.
 
 ### GetSeverities
 
-`func (o *IssuesReportSettingsConfig) GetSeverities() []string`
+`func (o *IssuesReportSettingsConfig) GetSeverities() []WizIssueSeverity`
 
 GetSeverities returns the Severities field if non-nil, zero value otherwise.
 
 ### GetSeveritiesOk
 
-`func (o *IssuesReportSettingsConfig) GetSeveritiesOk() (*[]string, bool)`
+`func (o *IssuesReportSettingsConfig) GetSeveritiesOk() (*[]WizIssueSeverity, bool)`
 
 GetSeveritiesOk returns a tuple with the Severities field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSeverities
 
-`func (o *IssuesReportSettingsConfig) SetSeverities(v []string)`
+`func (o *IssuesReportSettingsConfig) SetSeverities(v []WizIssueSeverity)`
 
 SetSeverities sets Severities field to given value.
 
@@ -420,20 +420,20 @@ HasSeverities returns a boolean if a field has been set.
 
 ### GetStackLayers
 
-`func (o *IssuesReportSettingsConfig) GetStackLayers() []string`
+`func (o *IssuesReportSettingsConfig) GetStackLayers() []WizStackLayer`
 
 GetStackLayers returns the StackLayers field if non-nil, zero value otherwise.
 
 ### GetStackLayersOk
 
-`func (o *IssuesReportSettingsConfig) GetStackLayersOk() (*[]string, bool)`
+`func (o *IssuesReportSettingsConfig) GetStackLayersOk() (*[]WizStackLayer, bool)`
 
 GetStackLayersOk returns a tuple with the StackLayers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStackLayers
 
-`func (o *IssuesReportSettingsConfig) SetStackLayers(v []string)`
+`func (o *IssuesReportSettingsConfig) SetStackLayers(v []WizStackLayer)`
 
 SetStackLayers sets StackLayers field to given value.
 
@@ -445,20 +445,20 @@ HasStackLayers returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *IssuesReportSettingsConfig) GetStatus() []string`
+`func (o *IssuesReportSettingsConfig) GetStatus() []WizIssueStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *IssuesReportSettingsConfig) GetStatusOk() (*[]string, bool)`
+`func (o *IssuesReportSettingsConfig) GetStatusOk() (*[]WizIssueStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *IssuesReportSettingsConfig) SetStatus(v []string)`
+`func (o *IssuesReportSettingsConfig) SetStatus(v []WizIssueStatus)`
 
 SetStatus sets Status field to given value.
 
