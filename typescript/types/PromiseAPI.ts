@@ -274,6 +274,7 @@ import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelinePurgeResponse } from '../models/ModelsPipelinePurgeResponse';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
@@ -4391,6 +4392,56 @@ export class PromisePipelinesApi {
     public listPipelinesV1(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineList> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listPipelinesV1(organizationId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Purge all messages from a pipeline\'s NATS stream
+     * Purge pipeline data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public purgePipelineWithHttpInfo(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelinePurgeResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.purgePipelineWithHttpInfo(organizationId, pipelineId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Purge all messages from a pipeline\'s NATS stream
+     * Purge pipeline data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public purgePipeline(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelinePurgeResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.purgePipeline(organizationId, pipelineId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Purge messages destined for a specific pipeline node
+     * Purge pipeline node data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     */
+    public purgePipelineNodeWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelinePurgeResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.purgePipelineNodeWithHttpInfo(organizationId, pipelineId, nodeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Purge messages destined for a specific pipeline node
+     * Purge pipeline node data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     */
+    public purgePipelineNode(organizationId: string, pipelineId: string, nodeId: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelinePurgeResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.purgePipelineNode(organizationId, pipelineId, nodeId, observableOptions);
         return result.toPromise();
     }
 

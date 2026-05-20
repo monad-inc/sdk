@@ -338,6 +338,7 @@ __all__ = [
     "ModelsPipelineMetricsValue",
     "ModelsPipelineNode",
     "ModelsPipelineNodeStatus",
+    "ModelsPipelinePurgeResponse",
     "ModelsPipelineRetentionPolicy",
     "ModelsPipelineStatus",
     "ModelsPipelineStatusValue",
@@ -975,6 +976,7 @@ from monad.models.models_pipeline_metrics import ModelsPipelineMetrics as Models
 from monad.models.models_pipeline_metrics_value import ModelsPipelineMetricsValue as ModelsPipelineMetricsValue
 from monad.models.models_pipeline_node import ModelsPipelineNode as ModelsPipelineNode
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus as ModelsPipelineNodeStatus
+from monad.models.models_pipeline_purge_response import ModelsPipelinePurgeResponse as ModelsPipelinePurgeResponse
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy as ModelsPipelineRetentionPolicy
 from monad.models.models_pipeline_status import ModelsPipelineStatus as ModelsPipelineStatus
 from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue as ModelsPipelineStatusValue

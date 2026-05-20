@@ -275,6 +275,7 @@ import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelinePurgeResponse } from '../models/ModelsPipelinePurgeResponse';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
@@ -5915,6 +5916,80 @@ export class ObservablePipelinesApi {
      */
     public listPipelinesV1(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsPipelineList> {
         return this.listPipelinesV1WithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineList>) => apiResponse.data));
+    }
+
+    /**
+     * Purge all messages from a pipeline\'s NATS stream
+     * Purge pipeline data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public purgePipelineWithHttpInfo(organizationId: string, pipelineId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelinePurgeResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.purgePipeline(organizationId, pipelineId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.purgePipelineWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Purge all messages from a pipeline\'s NATS stream
+     * Purge pipeline data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public purgePipeline(organizationId: string, pipelineId: string, _options?: ConfigurationOptions): Observable<ModelsPipelinePurgeResponse> {
+        return this.purgePipelineWithHttpInfo(organizationId, pipelineId, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelinePurgeResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Purge messages destined for a specific pipeline node
+     * Purge pipeline node data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     */
+    public purgePipelineNodeWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelinePurgeResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.purgePipelineNode(organizationId, pipelineId, nodeId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.purgePipelineNodeWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Purge messages destined for a specific pipeline node
+     * Purge pipeline node data
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     */
+    public purgePipelineNode(organizationId: string, pipelineId: string, nodeId: string, _options?: ConfigurationOptions): Observable<ModelsPipelinePurgeResponse> {
+        return this.purgePipelineNodeWithHttpInfo(organizationId, pipelineId, nodeId, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelinePurgeResponse>) => apiResponse.data));
     }
 
     /**

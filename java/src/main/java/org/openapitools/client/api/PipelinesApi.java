@@ -33,6 +33,7 @@ import org.openapitools.client.model.ModelsPipelineConfigV2;
 import org.openapitools.client.model.ModelsPipelineList;
 import org.openapitools.client.model.ModelsPipelineMetrics;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
+import org.openapitools.client.model.ModelsPipelinePurgeResponse;
 import org.openapitools.client.model.ModelsPipelineStatus;
 import org.openapitools.client.model.RoutesV2GetOrganizationSummaryResponse;
 import org.openapitools.client.model.RoutesV2MetricsResponse;
@@ -2757,6 +2758,322 @@ public class PipelinesApi {
 
         okhttp3.Call localVarCall = listPipelinesV1ValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for purgePipeline
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call purgePipelineCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/pipelines/{pipeline_id}/purge"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call purgePipelineValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling purgePipeline(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling purgePipeline(Async)");
+        }
+
+        return purgePipelineCall(organizationId, pipelineId, _callback);
+
+    }
+
+    /**
+     * Purge pipeline data
+     * Purge all messages from a pipeline&#39;s NATS stream
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @return ModelsPipelinePurgeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsPipelinePurgeResponse purgePipeline(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
+        ApiResponse<ModelsPipelinePurgeResponse> localVarResp = purgePipelineWithHttpInfo(organizationId, pipelineId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Purge pipeline data
+     * Purge all messages from a pipeline&#39;s NATS stream
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @return ApiResponse&lt;ModelsPipelinePurgeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsPipelinePurgeResponse> purgePipelineWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
+        okhttp3.Call localVarCall = purgePipelineValidateBeforeCall(organizationId, pipelineId, null);
+        Type localVarReturnType = new TypeToken<ModelsPipelinePurgeResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Purge pipeline data (asynchronously)
+     * Purge all messages from a pipeline&#39;s NATS stream
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call purgePipelineAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback<ModelsPipelinePurgeResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = purgePipelineValidateBeforeCall(organizationId, pipelineId, _callback);
+        Type localVarReturnType = new TypeToken<ModelsPipelinePurgeResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for purgePipelineNode
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call purgePipelineNodeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()))
+            .replace("{" + "node_id" + "}", localVarApiClient.escapeString(nodeId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call purgePipelineNodeValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling purgePipelineNode(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling purgePipelineNode(Async)");
+        }
+
+        // verify the required parameter 'nodeId' is set
+        if (nodeId == null) {
+            throw new ApiException("Missing the required parameter 'nodeId' when calling purgePipelineNode(Async)");
+        }
+
+        return purgePipelineNodeCall(organizationId, pipelineId, nodeId, _callback);
+
+    }
+
+    /**
+     * Purge pipeline node data
+     * Purge messages destined for a specific pipeline node
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @return ModelsPipelinePurgeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsPipelinePurgeResponse purgePipelineNode(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId) throws ApiException {
+        ApiResponse<ModelsPipelinePurgeResponse> localVarResp = purgePipelineNodeWithHttpInfo(organizationId, pipelineId, nodeId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Purge pipeline node data
+     * Purge messages destined for a specific pipeline node
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @return ApiResponse&lt;ModelsPipelinePurgeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsPipelinePurgeResponse> purgePipelineNodeWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId) throws ApiException {
+        okhttp3.Call localVarCall = purgePipelineNodeValidateBeforeCall(organizationId, pipelineId, nodeId, null);
+        Type localVarReturnType = new TypeToken<ModelsPipelinePurgeResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Purge pipeline node data (asynchronously)
+     * Purge messages destined for a specific pipeline node
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Purge completed </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Operator returned an error or NATS transport failed </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> No leaf operator answered (pipeline not scheduled) </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call purgePipelineNodeAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, final ApiCallback<ModelsPipelinePurgeResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = purgePipelineNodeValidateBeforeCall(organizationId, pipelineId, nodeId, _callback);
+        Type localVarReturnType = new TypeToken<ModelsPipelinePurgeResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

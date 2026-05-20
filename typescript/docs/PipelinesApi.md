@@ -21,6 +21,8 @@ Method | HTTP request | Description
 [**getPipelinesStatuses**](PipelinesApi.md#getPipelinesStatuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 [**listPipelines**](PipelinesApi.md#listPipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**listPipelinesV1**](PipelinesApi.md#listPipelinesV1) | **GET** /v1/{organization_id}/pipelines | List pipelines
+[**purgePipeline**](PipelinesApi.md#purgePipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
+[**purgePipelineNode**](PipelinesApi.md#purgePipelineNode) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**triggerPipeline**](PipelinesApi.md#triggerPipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**updatePipeline**](PipelinesApi.md#updatePipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**updatePipelineEdge**](PipelinesApi.md#updatePipelineEdge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -1076,6 +1078,129 @@ Name | Type | Description  | Notes
 **200** | List of pipelines |  -  |
 **400** | Invalid limit or offset |  -  |
 **500** | Failed to list pipelines |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **purgePipeline**
+> ModelsPipelinePurgeResponse purgePipeline()
+
+Purge all messages from a pipeline\'s NATS stream
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiPurgePipelineRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiPurgePipelineRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+};
+
+const data = await apiInstance.purgePipeline(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+
+
+### Return type
+
+**ModelsPipelinePurgeResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Purge completed |  -  |
+**403** | Insufficient permissions |  -  |
+**404** | Pipeline not found |  -  |
+**500** | Operator returned an error or NATS transport failed |  -  |
+**504** | No leaf operator answered (pipeline not scheduled) |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **purgePipelineNode**
+> ModelsPipelinePurgeResponse purgePipelineNode()
+
+Purge messages destined for a specific pipeline node
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiPurgePipelineNodeRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiPurgePipelineNodeRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Node ID
+  nodeId: "node_id_example",
+};
+
+const data = await apiInstance.purgePipelineNode(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **nodeId** | [**string**] | Node ID | defaults to undefined
+
+
+### Return type
+
+**ModelsPipelinePurgeResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Purge completed |  -  |
+**403** | Insufficient permissions |  -  |
+**404** | Pipeline not found |  -  |
+**500** | Operator returned an error or NATS transport failed |  -  |
+**504** | No leaf operator answered (pipeline not scheduled) |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

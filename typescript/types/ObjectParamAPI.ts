@@ -274,6 +274,7 @@ import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelinePurgeResponse } from '../models/ModelsPipelinePurgeResponse';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
@@ -5625,6 +5626,47 @@ export interface PipelinesApiListPipelinesV1Request {
     offset?: number
 }
 
+export interface PipelinesApiPurgePipelineRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApipurgePipeline
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApipurgePipeline
+     */
+    pipelineId: string
+}
+
+export interface PipelinesApiPurgePipelineNodeRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApipurgePipelineNode
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApipurgePipelineNode
+     */
+    pipelineId: string
+    /**
+     * Node ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApipurgePipelineNode
+     */
+    nodeId: string
+}
+
 export interface PipelinesApiTriggerPipelineRequest {
     /**
      * Organization ID
@@ -6029,6 +6071,42 @@ export class ObjectPipelinesApi {
      */
     public listPipelinesV1(param: PipelinesApiListPipelinesV1Request, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
         return this.api.listPipelinesV1(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Purge all messages from a pipeline\'s NATS stream
+     * Purge pipeline data
+     * @param param the request object
+     */
+    public purgePipelineWithHttpInfo(param: PipelinesApiPurgePipelineRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelinePurgeResponse>> {
+        return this.api.purgePipelineWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Purge all messages from a pipeline\'s NATS stream
+     * Purge pipeline data
+     * @param param the request object
+     */
+    public purgePipeline(param: PipelinesApiPurgePipelineRequest, options?: ConfigurationOptions): Promise<ModelsPipelinePurgeResponse> {
+        return this.api.purgePipeline(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Purge messages destined for a specific pipeline node
+     * Purge pipeline node data
+     * @param param the request object
+     */
+    public purgePipelineNodeWithHttpInfo(param: PipelinesApiPurgePipelineNodeRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelinePurgeResponse>> {
+        return this.api.purgePipelineNodeWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId,  options).toPromise();
+    }
+
+    /**
+     * Purge messages destined for a specific pipeline node
+     * Purge pipeline node data
+     * @param param the request object
+     */
+    public purgePipelineNode(param: PipelinesApiPurgePipelineNodeRequest, options?: ConfigurationOptions): Promise<ModelsPipelinePurgeResponse> {
+        return this.api.purgePipelineNode(param.organizationId, param.pipelineId, param.nodeId,  options).toPromise();
     }
 
     /**

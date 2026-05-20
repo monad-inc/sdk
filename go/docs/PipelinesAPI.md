@@ -21,6 +21,8 @@ Method | HTTP request | Description
 [**GetPipelinesStatuses**](PipelinesAPI.md#GetPipelinesStatuses) | **Get** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 [**ListPipelines**](PipelinesAPI.md#ListPipelines) | **Get** /v2/{organization_id}/pipelines | List pipelines
 [**ListPipelinesV1**](PipelinesAPI.md#ListPipelinesV1) | **Get** /v1/{organization_id}/pipelines | List pipelines
+[**PurgePipeline**](PipelinesAPI.md#PurgePipeline) | **Post** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
+[**PurgePipelineNode**](PipelinesAPI.md#PurgePipelineNode) | **Post** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**TriggerPipeline**](PipelinesAPI.md#TriggerPipeline) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**UpdatePipeline**](PipelinesAPI.md#UpdatePipeline) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**UpdatePipelineEdge**](PipelinesAPI.md#UpdatePipelineEdge) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -1287,6 +1289,155 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsPipelineList**](ModelsPipelineList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PurgePipeline
+
+> ModelsPipelinePurgeResponse PurgePipeline(ctx, organizationId, pipelineId).Execute()
+
+Purge pipeline data
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.PurgePipeline(context.Background(), organizationId, pipelineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.PurgePipeline``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PurgePipeline`: ModelsPipelinePurgeResponse
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.PurgePipeline`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPurgePipelineRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**ModelsPipelinePurgeResponse**](ModelsPipelinePurgeResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PurgePipelineNode
+
+> ModelsPipelinePurgeResponse PurgePipelineNode(ctx, organizationId, pipelineId, nodeId).Execute()
+
+Purge pipeline node data
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	nodeId := "nodeId_example" // string | Node ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.PurgePipelineNode(context.Background(), organizationId, pipelineId, nodeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.PurgePipelineNode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PurgePipelineNode`: ModelsPipelinePurgeResponse
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.PurgePipelineNode`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+**nodeId** | **string** | Node ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPurgePipelineNodeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**ModelsPipelinePurgeResponse**](ModelsPipelinePurgeResponse.md)
 
 ### Authorization
 

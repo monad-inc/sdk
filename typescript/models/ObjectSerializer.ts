@@ -270,6 +270,7 @@ export * from '../models/ModelsPipelineMetrics';
 export * from '../models/ModelsPipelineMetricsValue';
 export * from '../models/ModelsPipelineNode';
 export * from '../models/ModelsPipelineNodeStatus';
+export * from '../models/ModelsPipelinePurgeResponse';
 export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
 export * from '../models/ModelsPipelineStatusValue';
@@ -854,6 +855,7 @@ import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode             } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus                } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelinePurgeResponse } from '../models/ModelsPipelinePurgeResponse';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus                } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
@@ -1494,6 +1496,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineMetricsValue": ModelsPipelineMetricsValue,
     "ModelsPipelineNode": ModelsPipelineNode,
     "ModelsPipelineNodeStatus": ModelsPipelineNodeStatus,
+    "ModelsPipelinePurgeResponse": ModelsPipelinePurgeResponse,
     "ModelsPipelineRetentionPolicy": ModelsPipelineRetentionPolicy,
     "ModelsPipelineStatus": ModelsPipelineStatus,
     "ModelsPipelineStreamInfo": ModelsPipelineStreamInfo,

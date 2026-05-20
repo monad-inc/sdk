@@ -21,6 +21,8 @@ All URIs are relative to *https://monad.com/api*
 | [**getPipelinesStatuses**](PipelinesApi.md#getPipelinesStatuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status |
 | [**listPipelines**](PipelinesApi.md#listPipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines |
 | [**listPipelinesV1**](PipelinesApi.md#listPipelinesV1) | **GET** /v1/{organization_id}/pipelines | List pipelines |
+| [**purgePipeline**](PipelinesApi.md#purgePipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data |
+| [**purgePipelineNode**](PipelinesApi.md#purgePipelineNode) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data |
 | [**triggerPipeline**](PipelinesApi.md#triggerPipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually |
 | [**updatePipeline**](PipelinesApi.md#updatePipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline |
 | [**updatePipelineEdge**](PipelinesApi.md#updatePipelineEdge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge |
@@ -1409,6 +1411,170 @@ public class Example {
 | **200** | List of pipelines |  -  |
 | **400** | Invalid limit or offset |  -  |
 | **500** | Failed to list pipelines |  -  |
+
+<a id="purgePipeline"></a>
+# **purgePipeline**
+> ModelsPipelinePurgeResponse purgePipeline(organizationId, pipelineId)
+
+Purge pipeline data
+
+Purge all messages from a pipeline&#39;s NATS stream
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    try {
+      ModelsPipelinePurgeResponse result = apiInstance.purgePipeline(organizationId, pipelineId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#purgePipeline");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+
+### Return type
+
+[**ModelsPipelinePurgeResponse**](ModelsPipelinePurgeResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Purge completed |  -  |
+| **403** | Insufficient permissions |  -  |
+| **404** | Pipeline not found |  -  |
+| **500** | Operator returned an error or NATS transport failed |  -  |
+| **504** | No leaf operator answered (pipeline not scheduled) |  -  |
+
+<a id="purgePipelineNode"></a>
+# **purgePipelineNode**
+> ModelsPipelinePurgeResponse purgePipelineNode(organizationId, pipelineId, nodeId)
+
+Purge pipeline node data
+
+Purge messages destined for a specific pipeline node
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    String nodeId = "nodeId_example"; // String | Node ID
+    try {
+      ModelsPipelinePurgeResponse result = apiInstance.purgePipelineNode(organizationId, pipelineId, nodeId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#purgePipelineNode");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+| **nodeId** | **String**| Node ID | |
+
+### Return type
+
+[**ModelsPipelinePurgeResponse**](ModelsPipelinePurgeResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Purge completed |  -  |
+| **403** | Insufficient permissions |  -  |
+| **404** | Pipeline not found |  -  |
+| **500** | Operator returned an error or NATS transport failed |  -  |
+| **504** | No leaf operator answered (pipeline not scheduled) |  -  |
 
 <a id="triggerPipeline"></a>
 # **triggerPipeline**

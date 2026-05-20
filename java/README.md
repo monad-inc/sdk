@@ -318,6 +318,8 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**getPipelinesStatuses**](docs/PipelinesApi.md#getPipelinesStatuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 *PipelinesApi* | [**listPipelines**](docs/PipelinesApi.md#listPipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 *PipelinesApi* | [**listPipelinesV1**](docs/PipelinesApi.md#listPipelinesV1) | **GET** /v1/{organization_id}/pipelines | List pipelines
+*PipelinesApi* | [**purgePipeline**](docs/PipelinesApi.md#purgePipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
+*PipelinesApi* | [**purgePipelineNode**](docs/PipelinesApi.md#purgePipelineNode) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 *PipelinesApi* | [**triggerPipeline**](docs/PipelinesApi.md#triggerPipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 *PipelinesApi* | [**updatePipeline**](docs/PipelinesApi.md#updatePipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *PipelinesApi* | [**updatePipelineEdge**](docs/PipelinesApi.md#updatePipelineEdge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -627,6 +629,7 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineMetricsValue](docs/ModelsPipelineMetricsValue.md)
  - [ModelsPipelineNode](docs/ModelsPipelineNode.md)
  - [ModelsPipelineNodeStatus](docs/ModelsPipelineNodeStatus.md)
+ - [ModelsPipelinePurgeResponse](docs/ModelsPipelinePurgeResponse.md)
  - [ModelsPipelineRetentionPolicy](docs/ModelsPipelineRetentionPolicy.md)
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
  - [ModelsPipelineStatusValue](docs/ModelsPipelineStatusValue.md)

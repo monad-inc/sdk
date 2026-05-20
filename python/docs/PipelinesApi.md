@@ -21,6 +21,8 @@ Method | HTTP request | Description
 [**get_pipelines_statuses**](PipelinesApi.md#get_pipelines_statuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 [**list_pipelines**](PipelinesApi.md#list_pipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**list_pipelines_v1**](PipelinesApi.md#list_pipelines_v1) | **GET** /v1/{organization_id}/pipelines | List pipelines
+[**purge_pipeline**](PipelinesApi.md#purge_pipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
+[**purge_pipeline_node**](PipelinesApi.md#purge_pipeline_node) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**trigger_pipeline**](PipelinesApi.md#trigger_pipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**update_pipeline**](PipelinesApi.md#update_pipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**update_pipeline_edge**](PipelinesApi.md#update_pipeline_edge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -1591,6 +1593,192 @@ Name | Type | Description  | Notes
 **200** | List of pipelines |  -  |
 **400** | Invalid limit or offset |  -  |
 **500** | Failed to list pipelines |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **purge_pipeline**
+> ModelsPipelinePurgeResponse purge_pipeline(organization_id, pipeline_id)
+
+Purge pipeline data
+
+Purge all messages from a pipeline's NATS stream
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_pipeline_purge_response import ModelsPipelinePurgeResponse
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+
+    try:
+        # Purge pipeline data
+        api_response = api_instance.purge_pipeline(organization_id, pipeline_id)
+        print("The response of PipelinesApi->purge_pipeline:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->purge_pipeline: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+
+### Return type
+
+[**ModelsPipelinePurgeResponse**](ModelsPipelinePurgeResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Purge completed |  -  |
+**403** | Insufficient permissions |  -  |
+**404** | Pipeline not found |  -  |
+**500** | Operator returned an error or NATS transport failed |  -  |
+**504** | No leaf operator answered (pipeline not scheduled) |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **purge_pipeline_node**
+> ModelsPipelinePurgeResponse purge_pipeline_node(organization_id, pipeline_id, node_id)
+
+Purge pipeline node data
+
+Purge messages destined for a specific pipeline node
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_pipeline_purge_response import ModelsPipelinePurgeResponse
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    node_id = 'node_id_example' # str | Node ID
+
+    try:
+        # Purge pipeline node data
+        api_response = api_instance.purge_pipeline_node(organization_id, pipeline_id, node_id)
+        print("The response of PipelinesApi->purge_pipeline_node:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->purge_pipeline_node: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **node_id** | **str**| Node ID | 
+
+### Return type
+
+[**ModelsPipelinePurgeResponse**](ModelsPipelinePurgeResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Purge completed |  -  |
+**403** | Insufficient permissions |  -  |
+**404** | Pipeline not found |  -  |
+**500** | Operator returned an error or NATS transport failed |  -  |
+**504** | No leaf operator answered (pipeline not scheduled) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

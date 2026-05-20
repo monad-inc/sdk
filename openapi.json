@@ -5306,6 +5306,17 @@
                 },
                 "type": "object"
             },
+            "models.PipelinePurgeResponse": {
+                "properties": {
+                    "error": {
+                        "type": "string"
+                    },
+                    "purged": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
             "models.PipelineRetentionPolicy": {
                 "properties": {
                     "stream_age_limit": {
@@ -23206,6 +23217,195 @@
                 "summary": "Update child organization (team)",
                 "tags": [
                     "Organizations"
+                ]
+            }
+        },
+        "/v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge": {
+            "post": {
+                "description": "Purge messages destined for a specific pipeline node",
+                "operationId": "PurgePipelineNode",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pipeline ID",
+                        "in": "path",
+                        "name": "pipeline_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Node ID",
+                        "in": "path",
+                        "name": "node_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.PipelinePurgeResponse"
+                                }
+                            }
+                        },
+                        "description": "Purge completed"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Insufficient permissions"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Pipeline not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Operator returned an error or NATS transport failed"
+                    },
+                    "504": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "No leaf operator answered (pipeline not scheduled)"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Purge pipeline node data",
+                "tags": [
+                    "Pipelines"
+                ]
+            }
+        },
+        "/v3/{organization_id}/pipelines/{pipeline_id}/purge": {
+            "post": {
+                "description": "Purge all messages from a pipeline's NATS stream",
+                "operationId": "PurgePipeline",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pipeline ID",
+                        "in": "path",
+                        "name": "pipeline_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.PipelinePurgeResponse"
+                                }
+                            }
+                        },
+                        "description": "Purge completed"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Insufficient permissions"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Pipeline not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Operator returned an error or NATS transport failed"
+                    },
+                    "504": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "No leaf operator answered (pipeline not scheduled)"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Purge pipeline data",
+                "tags": [
+                    "Pipelines"
                 ]
             }
         },
