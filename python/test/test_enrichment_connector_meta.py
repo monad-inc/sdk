@@ -44,6 +44,8 @@ class TestEnrichmentConnectorMeta(unittest.TestCase):
                 in_beta = True,
                 internal = True,
                 name = '',
+                supported_features = monad.models.models/supported_features.models.SupportedFeatures(
+                    test_connection = True, ),
                 tier = 56,
                 type_id = ''
             )

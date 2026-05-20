@@ -20,112 +20,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsInputConnectorCategory;
-import org.openapitools.client.model.ModelsSupportedFeatures;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EnrichmentConnectorMeta
+ * Model tests for ModelsSupportedFeatures
  */
-public class EnrichmentConnectorMetaTest {
-    private final EnrichmentConnectorMeta model = new EnrichmentConnectorMeta();
+public class ModelsSupportedFeaturesTest {
+    private final ModelsSupportedFeatures model = new ModelsSupportedFeatures();
 
     /**
-     * Model tests for EnrichmentConnectorMeta
+     * Model tests for ModelsSupportedFeatures
      */
     @Test
-    public void testEnrichmentConnectorMeta() {
-        // TODO: test EnrichmentConnectorMeta
+    public void testModelsSupportedFeatures() {
+        // TODO: test ModelsSupportedFeatures
     }
 
     /**
-     * Test the property 'authType'
+     * Test the property 'testConnection'
      */
     @Test
-    public void authTypeTest() {
-        // TODO: test authType
-    }
-
-    /**
-     * Test the property 'config'
-     */
-    @Test
-    public void configTest() {
-        // TODO: test config
-    }
-
-    /**
-     * Test the property 'connectorCategory'
-     */
-    @Test
-    public void connectorCategoryTest() {
-        // TODO: test connectorCategory
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'house'
-     */
-    @Test
-    public void houseTest() {
-        // TODO: test house
-    }
-
-    /**
-     * Test the property 'inBeta'
-     */
-    @Test
-    public void inBetaTest() {
-        // TODO: test inBeta
-    }
-
-    /**
-     * Test the property 'internal'
-     */
-    @Test
-    public void internalTest() {
-        // TODO: test internal
-    }
-
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'supportedFeatures'
-     */
-    @Test
-    public void supportedFeaturesTest() {
-        // TODO: test supportedFeatures
-    }
-
-    /**
-     * Test the property 'tier'
-     */
-    @Test
-    public void tierTest() {
-        // TODO: test tier
-    }
-
-    /**
-     * Test the property 'typeId'
-     */
-    @Test
-    public void typeIdTest() {
-        // TODO: test typeId
+    public void testConnectionTest() {
+        // TODO: test testConnection
     }
 
 }

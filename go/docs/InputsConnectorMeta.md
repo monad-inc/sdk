@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **IsDefault** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ReleaseDate** | Pointer to **string** |  | [optional] 
+**SupportedFeatures** | Pointer to [**ModelsSupportedFeatures**](ModelsSupportedFeatures.md) |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
 
@@ -321,6 +322,31 @@ SetReleaseDate sets ReleaseDate field to given value.
 `func (o *InputsConnectorMeta) HasReleaseDate() bool`
 
 HasReleaseDate returns a boolean if a field has been set.
+
+### GetSupportedFeatures
+
+`func (o *InputsConnectorMeta) GetSupportedFeatures() ModelsSupportedFeatures`
+
+GetSupportedFeatures returns the SupportedFeatures field if non-nil, zero value otherwise.
+
+### GetSupportedFeaturesOk
+
+`func (o *InputsConnectorMeta) GetSupportedFeaturesOk() (*ModelsSupportedFeatures, bool)`
+
+GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportedFeatures
+
+`func (o *InputsConnectorMeta) SetSupportedFeatures(v ModelsSupportedFeatures)`
+
+SetSupportedFeatures sets SupportedFeatures field to given value.
+
+### HasSupportedFeatures
+
+`func (o *InputsConnectorMeta) HasSupportedFeatures() bool`
+
+HasSupportedFeatures returns a boolean if a field has been set.
 
 ### GetTier
 

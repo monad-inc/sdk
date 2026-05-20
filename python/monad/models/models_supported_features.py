@@ -18,33 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_billing_type import ModelsBillingType
-from monad.models.models_output_connector_category import ModelsOutputConnectorCategory
-from monad.models.models_supported_features import ModelsSupportedFeatures
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class OutputsConnectorMeta(BaseModel):
+class ModelsSupportedFeatures(BaseModel):
     """
-    OutputsConnectorMeta
+    ModelsSupportedFeatures
     """ # noqa: E501
-    auth_type: Optional[StrictStr] = None
-    billing_type: Optional[ModelsBillingType] = None
-    category: Optional[ModelsOutputConnectorCategory] = None
-    config: Optional[Any] = None
-    description: Optional[StrictStr] = None
-    house: Optional[StrictStr] = None
-    in_beta: Optional[StrictBool] = None
-    internal: Optional[StrictBool] = None
-    name: Optional[StrictStr] = None
-    release_date: Optional[StrictStr] = None
-    supported_features: Optional[ModelsSupportedFeatures] = None
-    tier: Optional[StrictInt] = None
-    type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "release_date", "supported_features", "tier", "type_id"]
+    test_connection: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["test_connection"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -64,7 +49,7 @@ class OutputsConnectorMeta(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OutputsConnectorMeta from a JSON string"""
+        """Create an instance of ModelsSupportedFeatures from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -85,19 +70,11 @@ class OutputsConnectorMeta(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of supported_features
-        if self.supported_features:
-            _dict['supported_features'] = self.supported_features.to_dict()
-        # set to None if config (nullable) is None
-        # and model_fields_set contains the field
-        if self.config is None and "config" in self.model_fields_set:
-            _dict['config'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OutputsConnectorMeta from a dict"""
+        """Create an instance of ModelsSupportedFeatures from a dict"""
         if obj is None:
             return None
 
@@ -105,19 +82,7 @@ class OutputsConnectorMeta(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auth_type": obj.get("auth_type"),
-            "billing_type": obj.get("billing_type"),
-            "category": obj.get("category"),
-            "config": obj.get("config"),
-            "description": obj.get("description"),
-            "house": obj.get("house"),
-            "in_beta": obj.get("in_beta"),
-            "internal": obj.get("internal"),
-            "name": obj.get("name"),
-            "release_date": obj.get("release_date"),
-            "supported_features": ModelsSupportedFeatures.from_dict(obj["supported_features"]) if obj.get("supported_features") is not None else None,
-            "tier": obj.get("tier"),
-            "type_id": obj.get("type_id")
+            "test_connection": obj.get("test_connection")
         })
         return _obj
 

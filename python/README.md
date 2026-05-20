@@ -625,6 +625,7 @@ Class | Method | HTTP request | Description
  - [ModelsStorageTypeSummaryResponse](docs/ModelsStorageTypeSummaryResponse.md)
  - [ModelsStorageTypeTimeSeries](docs/ModelsStorageTypeTimeSeries.md)
  - [ModelsStorageTypeTimeSeriesResponse](docs/ModelsStorageTypeTimeSeriesResponse.md)
+ - [ModelsSupportedFeatures](docs/ModelsSupportedFeatures.md)
  - [ModelsTransform](docs/ModelsTransform.md)
  - [ModelsTransformConditional](docs/ModelsTransformConditional.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)

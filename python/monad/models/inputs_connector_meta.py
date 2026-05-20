@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_billing_type import ModelsBillingType
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory
+from monad.models.models_supported_features import ModelsSupportedFeatures
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -41,9 +42,10 @@ class InputsConnectorMeta(BaseModel):
     is_default: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     release_date: Optional[StrictStr] = None
+    supported_features: Optional[ModelsSupportedFeatures] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_default", "name", "release_date", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_default", "name", "release_date", "supported_features", "tier", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +86,9 @@ class InputsConnectorMeta(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of supported_features
+        if self.supported_features:
+            _dict['supported_features'] = self.supported_features.to_dict()
         # set to None if config (nullable) is None
         # and model_fields_set contains the field
         if self.config is None and "config" in self.model_fields_set:
@@ -112,6 +117,7 @@ class InputsConnectorMeta(BaseModel):
             "is_default": obj.get("is_default"),
             "name": obj.get("name"),
             "release_date": obj.get("release_date"),
+            "supported_features": ModelsSupportedFeatures.from_dict(obj["supported_features"]) if obj.get("supported_features") is not None else None,
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")
         })

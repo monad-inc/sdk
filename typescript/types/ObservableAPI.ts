@@ -299,6 +299,7 @@ import { ModelsStorageTypeOutputDetail } from '../models/ModelsStorageTypeOutput
 import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
+import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConditional } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';

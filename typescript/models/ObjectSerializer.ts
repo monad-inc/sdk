@@ -294,6 +294,7 @@ export * from '../models/ModelsStorageTypeOutputDetail';
 export * from '../models/ModelsStorageTypeSummaryResponse';
 export * from '../models/ModelsStorageTypeTimeSeries';
 export * from '../models/ModelsStorageTypeTimeSeriesResponse';
+export * from '../models/ModelsSupportedFeatures';
 export * from '../models/ModelsTransform';
 export * from '../models/ModelsTransformConditional';
 export * from '../models/ModelsTransformConfig';
@@ -724,7 +725,7 @@ import { EncryptAlgorithmConfig } from '../models/EncryptAlgorithmConfig';
 import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
-import { EnrichmentConnectorMeta           } from '../models/EnrichmentConnectorMeta';
+import { EnrichmentConnectorMeta            } from '../models/EnrichmentConnectorMeta';
 import { EnrichmentSandboxRequestClass } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
@@ -767,7 +768,7 @@ import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig          } from '../models/HttpSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
-import { InputsConnectorMeta              } from '../models/InputsConnectorMeta';
+import { InputsConnectorMeta               } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
@@ -877,6 +878,7 @@ import { ModelsStorageTypeOutputDetail } from '../models/ModelsStorageTypeOutput
 import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
+import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { ModelsTransform         } from '../models/ModelsTransform';
 import { ModelsTransformConditional   } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
@@ -915,7 +917,7 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig        } from '../models/OrgAuditLogsSettingsConfig';
-import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
+import { OutputsConnectorMeta              } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig, OwnbackupAccountEventsSettingsConfigRegionEnum    } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
@@ -1510,6 +1512,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsStorageTypeSummaryResponse": ModelsStorageTypeSummaryResponse,
     "ModelsStorageTypeTimeSeries": ModelsStorageTypeTimeSeries,
     "ModelsStorageTypeTimeSeriesResponse": ModelsStorageTypeTimeSeriesResponse,
+    "ModelsSupportedFeatures": ModelsSupportedFeatures,
     "ModelsTransform": ModelsTransform,
     "ModelsTransformConditional": ModelsTransformConditional,
     "ModelsTransformConfig": ModelsTransformConfig,

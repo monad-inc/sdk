@@ -11,6 +11,7 @@
  */
 
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
+import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { HttpFile } from '../http/http';
 
 export class EnrichmentConnectorMeta {
@@ -22,6 +23,7 @@ export class EnrichmentConnectorMeta {
     'inBeta'?: boolean;
     'internal'?: boolean;
     'name'?: string;
+    'supportedFeatures'?: ModelsSupportedFeatures;
     'tier'?: number;
     'typeId'?: string;
 
@@ -76,6 +78,12 @@ export class EnrichmentConnectorMeta {
             "name": "name",
             "baseName": "name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "supportedFeatures",
+            "baseName": "supported_features",
+            "type": "ModelsSupportedFeatures",
             "format": ""
         },
         {

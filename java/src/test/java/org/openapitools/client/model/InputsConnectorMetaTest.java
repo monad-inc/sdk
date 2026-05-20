@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsBillingType;
 import org.openapitools.client.model.ModelsInputConnectorCategory;
+import org.openapitools.client.model.ModelsSupportedFeatures;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -126,6 +127,14 @@ public class InputsConnectorMetaTest {
     @Test
     public void releaseDateTest() {
         // TODO: test releaseDate
+    }
+
+    /**
+     * Test the property 'supportedFeatures'
+     */
+    @Test
+    public void supportedFeaturesTest() {
+        // TODO: test supportedFeatures
     }
 
     /**

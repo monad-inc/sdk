@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory
+from monad.models.models_supported_features import ModelsSupportedFeatures
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -37,9 +38,10 @@ class EnrichmentConnectorMeta(BaseModel):
     in_beta: Optional[StrictBool] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
+    supported_features: Optional[ModelsSupportedFeatures] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "config", "connector_category", "description", "house", "in_beta", "internal", "name", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["auth_type", "config", "connector_category", "description", "house", "in_beta", "internal", "name", "supported_features", "tier", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -80,6 +82,9 @@ class EnrichmentConnectorMeta(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of supported_features
+        if self.supported_features:
+            _dict['supported_features'] = self.supported_features.to_dict()
         # set to None if config (nullable) is None
         # and model_fields_set contains the field
         if self.config is None and "config" in self.model_fields_set:
@@ -105,6 +110,7 @@ class EnrichmentConnectorMeta(BaseModel):
             "in_beta": obj.get("in_beta"),
             "internal": obj.get("internal"),
             "name": obj.get("name"),
+            "supported_features": ModelsSupportedFeatures.from_dict(obj["supported_features"]) if obj.get("supported_features") is not None else None,
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")
         })

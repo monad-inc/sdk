@@ -31,6 +31,7 @@ type InputsConnectorMeta struct {
 	IsDefault *bool `json:"is_default,omitempty"`
 	Name *string `json:"name,omitempty"`
 	ReleaseDate *string `json:"release_date,omitempty"`
+	SupportedFeatures *ModelsSupportedFeatures `json:"supported_features,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
 }
@@ -405,6 +406,38 @@ func (o *InputsConnectorMeta) SetReleaseDate(v string) {
 	o.ReleaseDate = &v
 }
 
+// GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetSupportedFeatures() ModelsSupportedFeatures {
+	if o == nil || IsNil(o.SupportedFeatures) {
+		var ret ModelsSupportedFeatures
+		return ret
+	}
+	return *o.SupportedFeatures
+}
+
+// GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetSupportedFeaturesOk() (*ModelsSupportedFeatures, bool) {
+	if o == nil || IsNil(o.SupportedFeatures) {
+		return nil, false
+	}
+	return o.SupportedFeatures, true
+}
+
+// HasSupportedFeatures returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasSupportedFeatures() bool {
+	if o != nil && !IsNil(o.SupportedFeatures) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportedFeatures gets a reference to the given ModelsSupportedFeatures and assigns it to the SupportedFeatures field.
+func (o *InputsConnectorMeta) SetSupportedFeatures(v ModelsSupportedFeatures) {
+	o.SupportedFeatures = &v
+}
+
 // GetTier returns the Tier field value if set, zero value otherwise.
 func (o *InputsConnectorMeta) GetTier() int32 {
 	if o == nil || IsNil(o.Tier) {
@@ -511,6 +544,9 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ReleaseDate) {
 		toSerialize["release_date"] = o.ReleaseDate
+	}
+	if !IsNil(o.SupportedFeatures) {
+		toSerialize["supported_features"] = o.SupportedFeatures
 	}
 	if !IsNil(o.Tier) {
 		toSerialize["tier"] = o.Tier

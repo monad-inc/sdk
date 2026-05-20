@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.inputs_connector_meta import InputsConnectorMeta
+from monad.models.models_supported_features import ModelsSupportedFeatures
 
-class TestInputsConnectorMeta(unittest.TestCase):
-    """InputsConnectorMeta unit test stubs"""
+class TestModelsSupportedFeatures(unittest.TestCase):
+    """ModelsSupportedFeatures unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,39 +26,25 @@ class TestInputsConnectorMeta(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> InputsConnectorMeta:
-        """Test InputsConnectorMeta
+    def make_instance(self, include_optional) -> ModelsSupportedFeatures:
+        """Test ModelsSupportedFeatures
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `InputsConnectorMeta`
+        # uncomment below to create an instance of `ModelsSupportedFeatures`
         """
-        model = InputsConnectorMeta()
+        model = ModelsSupportedFeatures()
         if include_optional:
-            return InputsConnectorMeta(
-                auth_type = '',
-                billing_type = 0,
-                category = 'Application Security',
-                config = None,
-                description = '',
-                house = '',
-                in_beta = True,
-                internal = True,
-                is_default = True,
-                name = '',
-                release_date = '',
-                supported_features = monad.models.models/supported_features.models.SupportedFeatures(
-                    test_connection = True, ),
-                tier = 56,
-                type_id = ''
+            return ModelsSupportedFeatures(
+                test_connection = True
             )
         else:
-            return InputsConnectorMeta(
+            return ModelsSupportedFeatures(
         )
         """
 
-    def testInputsConnectorMeta(self):
-        """Test InputsConnectorMeta"""
+    def testModelsSupportedFeatures(self):
+        """Test ModelsSupportedFeatures"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

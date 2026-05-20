@@ -28,6 +28,7 @@ type EnrichmentConnectorMeta struct {
 	InBeta *bool `json:"in_beta,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 	Name *string `json:"name,omitempty"`
+	SupportedFeatures *ModelsSupportedFeatures `json:"supported_features,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
 }
@@ -306,6 +307,38 @@ func (o *EnrichmentConnectorMeta) SetName(v string) {
 	o.Name = &v
 }
 
+// GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
+func (o *EnrichmentConnectorMeta) GetSupportedFeatures() ModelsSupportedFeatures {
+	if o == nil || IsNil(o.SupportedFeatures) {
+		var ret ModelsSupportedFeatures
+		return ret
+	}
+	return *o.SupportedFeatures
+}
+
+// GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrichmentConnectorMeta) GetSupportedFeaturesOk() (*ModelsSupportedFeatures, bool) {
+	if o == nil || IsNil(o.SupportedFeatures) {
+		return nil, false
+	}
+	return o.SupportedFeatures, true
+}
+
+// HasSupportedFeatures returns a boolean if a field has been set.
+func (o *EnrichmentConnectorMeta) HasSupportedFeatures() bool {
+	if o != nil && !IsNil(o.SupportedFeatures) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportedFeatures gets a reference to the given ModelsSupportedFeatures and assigns it to the SupportedFeatures field.
+func (o *EnrichmentConnectorMeta) SetSupportedFeatures(v ModelsSupportedFeatures) {
+	o.SupportedFeatures = &v
+}
+
 // GetTier returns the Tier field value if set, zero value otherwise.
 func (o *EnrichmentConnectorMeta) GetTier() int32 {
 	if o == nil || IsNil(o.Tier) {
@@ -403,6 +436,9 @@ func (o EnrichmentConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.SupportedFeatures) {
+		toSerialize["supported_features"] = o.SupportedFeatures
 	}
 	if !IsNil(o.Tier) {
 		toSerialize["tier"] = o.Tier

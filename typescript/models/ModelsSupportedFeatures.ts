@@ -10,25 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { ModelsBillingType } from '../models/ModelsBillingType';
-import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
-import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { HttpFile } from '../http/http';
 
-export class OutputsConnectorMeta {
-    'authType'?: string;
-    'billingType'?: ModelsBillingType;
-    'category'?: ModelsOutputConnectorCategory;
-    'config'?: any | null;
-    'description'?: string;
-    'house'?: string;
-    'inBeta'?: boolean;
-    'internal'?: boolean;
-    'name'?: string;
-    'releaseDate'?: string;
-    'supportedFeatures'?: ModelsSupportedFeatures;
-    'tier'?: number;
-    'typeId'?: string;
+export class ModelsSupportedFeatures {
+    'testConnection'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -36,90 +21,16 @@ export class OutputsConnectorMeta {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "authType",
-            "baseName": "auth_type",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "billingType",
-            "baseName": "billing_type",
-            "type": "ModelsBillingType",
-            "format": ""
-        },
-        {
-            "name": "category",
-            "baseName": "category",
-            "type": "ModelsOutputConnectorCategory",
-            "format": ""
-        },
-        {
-            "name": "config",
-            "baseName": "config",
-            "type": "any",
-            "format": ""
-        },
-        {
-            "name": "description",
-            "baseName": "description",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "house",
-            "baseName": "house",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "inBeta",
-            "baseName": "in_beta",
+            "name": "testConnection",
+            "baseName": "test_connection",
             "type": "boolean",
-            "format": ""
-        },
-        {
-            "name": "internal",
-            "baseName": "internal",
-            "type": "boolean",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "releaseDate",
-            "baseName": "release_date",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "supportedFeatures",
-            "baseName": "supported_features",
-            "type": "ModelsSupportedFeatures",
-            "format": ""
-        },
-        {
-            "name": "tier",
-            "baseName": "tier",
-            "type": "number",
-            "format": ""
-        },
-        {
-            "name": "typeId",
-            "baseName": "type_id",
-            "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return OutputsConnectorMeta.attributeTypeMap;
+        return ModelsSupportedFeatures.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
-
-

@@ -15,6 +15,7 @@
 |**inBeta** | **Boolean** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**supportedFeatures** | [**ModelsSupportedFeatures**](ModelsSupportedFeatures.md) |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |
 

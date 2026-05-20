@@ -2392,6 +2392,9 @@
                     "name": {
                         "type": "string"
                     },
+                    "supported_features": {
+                        "$ref": "#/components/schemas/models.SupportedFeatures"
+                    },
                     "tier": {
                         "type": "integer"
                     },
@@ -3225,6 +3228,9 @@
                     },
                     "release_date": {
                         "type": "string"
+                    },
+                    "supported_features": {
+                        "$ref": "#/components/schemas/models.SupportedFeatures"
                     },
                     "tier": {
                         "type": "integer"
@@ -5811,6 +5817,14 @@
                 },
                 "type": "object"
             },
+            "models.SupportedFeatures": {
+                "properties": {
+                    "test_connection": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
             "models.Transform": {
                 "properties": {
                     "config": {
@@ -6570,6 +6584,9 @@
                     },
                     "release_date": {
                         "type": "string"
+                    },
+                    "supported_features": {
+                        "$ref": "#/components/schemas/models.SupportedFeatures"
                     },
                     "tier": {
                         "type": "integer"

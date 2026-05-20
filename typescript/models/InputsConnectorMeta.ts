@@ -12,6 +12,7 @@
 
 import { ModelsBillingType } from '../models/ModelsBillingType';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
+import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { HttpFile } from '../http/http';
 
 export class InputsConnectorMeta {
@@ -26,6 +27,7 @@ export class InputsConnectorMeta {
     'isDefault'?: boolean;
     'name'?: string;
     'releaseDate'?: string;
+    'supportedFeatures'?: ModelsSupportedFeatures;
     'tier'?: number;
     'typeId'?: string;
 
@@ -98,6 +100,12 @@ export class InputsConnectorMeta {
             "name": "releaseDate",
             "baseName": "release_date",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "supportedFeatures",
+            "baseName": "supported_features",
+            "type": "ModelsSupportedFeatures",
             "format": ""
         },
         {
