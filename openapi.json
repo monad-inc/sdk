@@ -8412,6 +8412,31 @@
                 },
                 "type": "object"
             },
+            "routesV3.CreateSessionRequest": {
+                "properties": {
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "ttl_seconds": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.CreateSessionResponse": {
+                "properties": {
+                    "expires_at": {
+                        "type": "string"
+                    },
+                    "session_token": {
+                        "type": "string"
+                    },
+                    "ttl_seconds": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
             "routesV3.EnrichmentSandboxRequest": {
                 "properties": {
                     "config": {
@@ -20633,6 +20658,82 @@
                 "summary": "Rules for edge conditions",
                 "tags": [
                     "Pipelines"
+                ]
+            }
+        },
+        "/v3/sessions": {
+            "post": {
+                "description": "Creates a short-lived JWT off the calling API key. When\n`organization_id` is supplied, the token is pinned to that\norg via a `scoped_org` claim and the org-access middleware\nrefuses any other org for this token. No new API key row\nis created — revoking the parent key invalidates every\nsession it minted.",
+                "operationId": "CreateSession",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV3.CreateSessionRequest",
+                                        "summary": "body",
+                                        "description": "Session options"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Session options"
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV3.CreateSessionResponse"
+                                }
+                            }
+                        },
+                        "description": "Session minted"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing or invalid auth"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Mint a short-lived API token, optionally scoped to a single org",
+                "tags": [
+                    "Sessions"
                 ]
             }
         },

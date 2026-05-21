@@ -309,6 +309,7 @@ Class | Method | HTTP request | Description
 *SecretsApi* | [**get_secret**](docs/SecretsApi.md#get_secret) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
 *SecretsApi* | [**list_secrets**](docs/SecretsApi.md#list_secrets) | **GET** /v2/{organization_id}/secrets | List secrets with components
 *SecretsApi* | [**update_secret**](docs/SecretsApi.md#update_secret) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
+*SessionsApi* | [**create_session**](docs/SessionsApi.md#create_session) | **POST** /v3/sessions | Mint a short-lived API token, optionally scoped to a single org
 *TransformSandboxApi* | [**apply_transformation**](docs/TransformSandboxApi.md#apply_transformation) | **POST** /v2/{organization_id}/sandbox/transform | Apply transformation to record
 *TransformSandboxApi* | [**apply_transformation_v2**](docs/TransformSandboxApi.md#apply_transformation_v2) | **POST** /v2/sandbox/transform | Apply transformation to record
 *TransformSandboxApi* | [**generate_record**](docs/TransformSandboxApi.md#generate_record) | **POST** /v2/sandbox/template | Generate sample record
@@ -441,6 +442,7 @@ Class | Method | HTTP request | Description
  - [CreatePipelineRequest](docs/CreatePipelineRequest.md)
  - [CreateRoleRequest](docs/CreateRoleRequest.md)
  - [CreateSecretRequest](docs/CreateSecretRequest.md)
+ - [CreateSessionRequest](docs/CreateSessionRequest.md)
  - [CreateTransformRecommendationRequest](docs/CreateTransformRecommendationRequest.md)
  - [CreateTransformRequest](docs/CreateTransformRequest.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)
@@ -773,6 +775,8 @@ Class | Method | HTTP request | Description
  - [RoutesV3CreateConnectionRequest](docs/RoutesV3CreateConnectionRequest.md)
  - [RoutesV3CreateConnectionRequestSaml](docs/RoutesV3CreateConnectionRequestSaml.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
+ - [RoutesV3CreateSessionRequest](docs/RoutesV3CreateSessionRequest.md)
+ - [RoutesV3CreateSessionResponse](docs/RoutesV3CreateSessionResponse.md)
  - [RoutesV3EnrichmentSandboxRequest](docs/RoutesV3EnrichmentSandboxRequest.md)
  - [RoutesV3EnrichmentSandboxResponse](docs/RoutesV3EnrichmentSandboxResponse.md)
  - [RoutesV3FieldUpdation](docs/RoutesV3FieldUpdation.md)

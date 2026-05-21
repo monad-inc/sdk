@@ -113,6 +113,7 @@ import { CreateOutputRequest } from '../models/CreateOutputRequest';
 import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { CreateSecretRequest } from '../models/CreateSecretRequest';
+import { CreateSessionRequest } from '../models/CreateSessionRequest';
 import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
 import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -445,6 +446,8 @@ import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3Create
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionRequest';
+import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
@@ -6606,6 +6609,58 @@ export class ObservableSecretsApi {
      */
     public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
         return this.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
+    }
+
+}
+
+import { SessionsApiRequestFactory, SessionsApiResponseProcessor} from "../apis/SessionsApi";
+export class ObservableSessionsApi {
+    private requestFactory: SessionsApiRequestFactory;
+    private responseProcessor: SessionsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: SessionsApiRequestFactory,
+        responseProcessor?: SessionsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new SessionsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new SessionsApiResponseProcessor();
+    }
+
+    /**
+     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Mint a short-lived API token, optionally scoped to a single org
+     * @param [createSessionRequest] Session options
+     */
+    public createSessionWithHttpInfo(createSessionRequest?: CreateSessionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3CreateSessionResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.createSession(createSessionRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.createSessionWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Mint a short-lived API token, optionally scoped to a single org
+     * @param [createSessionRequest] Session options
+     */
+    public createSession(createSessionRequest?: CreateSessionRequest, _options?: ConfigurationOptions): Observable<RoutesV3CreateSessionResponse> {
+        return this.createSessionWithHttpInfo(createSessionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3CreateSessionResponse>) => apiResponse.data));
     }
 
 }

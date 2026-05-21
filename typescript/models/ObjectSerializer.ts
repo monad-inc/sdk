@@ -108,6 +108,7 @@ export * from '../models/CreateOutputRequest';
 export * from '../models/CreatePipelineRequest';
 export * from '../models/CreateRoleRequest';
 export * from '../models/CreateSecretRequest';
+export * from '../models/CreateSessionRequest';
 export * from '../models/CreateTransformRecommendationRequest';
 export * from '../models/CreateTransformRequest';
 export * from '../models/CriblHttpSecretsConfig';
@@ -440,6 +441,8 @@ export * from '../models/RoutesV3CreateChildOrganizationRequest';
 export * from '../models/RoutesV3CreateConnectionRequest';
 export * from '../models/RoutesV3CreateConnectionRequestSaml';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
+export * from '../models/RoutesV3CreateSessionRequest';
+export * from '../models/RoutesV3CreateSessionResponse';
 export * from '../models/RoutesV3EnrichmentSandboxRequest';
 export * from '../models/RoutesV3EnrichmentSandboxResponse';
 export * from '../models/RoutesV3FieldUpdation';
@@ -693,6 +696,7 @@ import { CreateOutputRequestClass } from '../models/CreateOutputRequest';
 import { CreatePipelineRequestClass } from '../models/CreatePipelineRequest';
 import { CreateRoleRequestClass } from '../models/CreateRoleRequest';
 import { CreateSecretRequestClass } from '../models/CreateSecretRequest';
+import { CreateSessionRequestClass } from '../models/CreateSessionRequest';
 import { CreateTransformRecommendationRequestClass } from '../models/CreateTransformRecommendationRequest';
 import { CreateTransformRequestClass } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -1025,6 +1029,8 @@ import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3Create
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionRequest';
+import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
@@ -1352,6 +1358,7 @@ let typeMap: {[index: string]: any} = {
     "CreatePipelineRequest": CreatePipelineRequestClass,
     "CreateRoleRequest": CreateRoleRequestClass,
     "CreateSecretRequest": CreateSecretRequestClass,
+    "CreateSessionRequest": CreateSessionRequestClass,
     "CreateTransformRecommendationRequest": CreateTransformRecommendationRequestClass,
     "CreateTransformRequest": CreateTransformRequestClass,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
@@ -1658,6 +1665,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3CreateConnectionRequest": RoutesV3CreateConnectionRequest,
     "RoutesV3CreateConnectionRequestSaml": RoutesV3CreateConnectionRequestSaml,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
+    "RoutesV3CreateSessionRequest": RoutesV3CreateSessionRequest,
+    "RoutesV3CreateSessionResponse": RoutesV3CreateSessionResponse,
     "RoutesV3EnrichmentSandboxRequest": RoutesV3EnrichmentSandboxRequest,
     "RoutesV3EnrichmentSandboxResponse": RoutesV3EnrichmentSandboxResponse,
     "RoutesV3FieldUpdation": RoutesV3FieldUpdation,

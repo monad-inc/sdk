@@ -112,6 +112,7 @@ import { CreateOutputRequest } from '../models/CreateOutputRequest';
 import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { CreateSecretRequest } from '../models/CreateSecretRequest';
+import { CreateSessionRequest } from '../models/CreateSessionRequest';
 import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
 import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -444,6 +445,8 @@ import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3Create
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionRequest';
+import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
@@ -6644,6 +6647,45 @@ export class ObjectSecretsApi {
      */
     public updateSecret(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
         return this.api.updateSecret(param.organizationId, param.secretId, param.updateSecretRequest,  options).toPromise();
+    }
+
+}
+
+import { ObservableSessionsApi } from "./ObservableAPI";
+import { SessionsApiRequestFactory, SessionsApiResponseProcessor} from "../apis/SessionsApi";
+
+export interface SessionsApiCreateSessionRequest {
+    /**
+     * Session options
+     * @type CreateSessionRequest
+     * @memberof SessionsApicreateSession
+     */
+    createSessionRequest?: CreateSessionRequest
+}
+
+export class ObjectSessionsApi {
+    private api: ObservableSessionsApi
+
+    public constructor(configuration: Configuration, requestFactory?: SessionsApiRequestFactory, responseProcessor?: SessionsApiResponseProcessor) {
+        this.api = new ObservableSessionsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Mint a short-lived API token, optionally scoped to a single org
+     * @param param the request object
+     */
+    public createSessionWithHttpInfo(param: SessionsApiCreateSessionRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3CreateSessionResponse>> {
+        return this.api.createSessionWithHttpInfo(param.createSessionRequest,  options).toPromise();
+    }
+
+    /**
+     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Mint a short-lived API token, optionally scoped to a single org
+     * @param param the request object
+     */
+    public createSession(param: SessionsApiCreateSessionRequest = {}, options?: ConfigurationOptions): Promise<RoutesV3CreateSessionResponse> {
+        return this.api.createSession(param.createSessionRequest,  options).toPromise();
     }
 
 }

@@ -34,6 +34,7 @@ from monad.api.pipelines_api import PipelinesApi
 from monad.api.quotas_api import QuotasApi
 from monad.api.roles_api import RolesApi
 from monad.api.secrets_api import SecretsApi
+from monad.api.sessions_api import SessionsApi
 from monad.api.transform_sandbox_api import TransformSandboxApi
 from monad.api.transforms_api import TransformsApi
 from monad.api.transforms_recommendations_api import TransformsRecommendationsApi

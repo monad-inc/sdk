@@ -52,6 +52,7 @@ __all__ = [
     "QuotasApi",
     "RolesApi",
     "SecretsApi",
+    "SessionsApi",
     "TransformSandboxApi",
     "TransformsApi",
     "TransformsRecommendationsApi",
@@ -176,6 +177,7 @@ __all__ = [
     "CreatePipelineRequest",
     "CreateRoleRequest",
     "CreateSecretRequest",
+    "CreateSessionRequest",
     "CreateTransformRecommendationRequest",
     "CreateTransformRequest",
     "CriblHttpSecretsConfig",
@@ -508,6 +510,8 @@ __all__ = [
     "RoutesV3CreateConnectionRequest",
     "RoutesV3CreateConnectionRequestSaml",
     "RoutesV3CreateEnrichmentRequest",
+    "RoutesV3CreateSessionRequest",
+    "RoutesV3CreateSessionResponse",
     "RoutesV3EnrichmentSandboxRequest",
     "RoutesV3EnrichmentSandboxResponse",
     "RoutesV3FieldUpdation",
@@ -686,6 +690,7 @@ from monad.api.pipelines_api import PipelinesApi as PipelinesApi
 from monad.api.quotas_api import QuotasApi as QuotasApi
 from monad.api.roles_api import RolesApi as RolesApi
 from monad.api.secrets_api import SecretsApi as SecretsApi
+from monad.api.sessions_api import SessionsApi as SessionsApi
 from monad.api.transform_sandbox_api import TransformSandboxApi as TransformSandboxApi
 from monad.api.transforms_api import TransformsApi as TransformsApi
 from monad.api.transforms_recommendations_api import TransformsRecommendationsApi as TransformsRecommendationsApi
@@ -814,6 +819,7 @@ from monad.models.create_output_request import CreateOutputRequest as CreateOutp
 from monad.models.create_pipeline_request import CreatePipelineRequest as CreatePipelineRequest
 from monad.models.create_role_request import CreateRoleRequest as CreateRoleRequest
 from monad.models.create_secret_request import CreateSecretRequest as CreateSecretRequest
+from monad.models.create_session_request import CreateSessionRequest as CreateSessionRequest
 from monad.models.create_transform_recommendation_request import CreateTransformRecommendationRequest as CreateTransformRecommendationRequest
 from monad.models.create_transform_request import CreateTransformRequest as CreateTransformRequest
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig as CriblHttpSecretsConfig
@@ -1146,6 +1152,8 @@ from monad.models.routes_v3_create_child_organization_request import RoutesV3Cre
 from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest as RoutesV3CreateConnectionRequest
 from monad.models.routes_v3_create_connection_request_saml import RoutesV3CreateConnectionRequestSaml as RoutesV3CreateConnectionRequestSaml
 from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest as RoutesV3CreateEnrichmentRequest
+from monad.models.routes_v3_create_session_request import RoutesV3CreateSessionRequest as RoutesV3CreateSessionRequest
+from monad.models.routes_v3_create_session_response import RoutesV3CreateSessionResponse as RoutesV3CreateSessionResponse
 from monad.models.routes_v3_enrichment_sandbox_request import RoutesV3EnrichmentSandboxRequest as RoutesV3EnrichmentSandboxRequest
 from monad.models.routes_v3_enrichment_sandbox_response import RoutesV3EnrichmentSandboxResponse as RoutesV3EnrichmentSandboxResponse
 from monad.models.routes_v3_field_updation import RoutesV3FieldUpdation as RoutesV3FieldUpdation
