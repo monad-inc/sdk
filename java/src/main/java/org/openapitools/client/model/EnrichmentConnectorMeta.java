@@ -53,11 +53,6 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class EnrichmentConnectorMeta {
-  public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
-  @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
-  @javax.annotation.Nullable
-  private String authType;
-
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
@@ -110,25 +105,6 @@ public class EnrichmentConnectorMeta {
 
   public EnrichmentConnectorMeta() {
   }
-
-  public EnrichmentConnectorMeta authType(@javax.annotation.Nullable String authType) {
-    this.authType = authType;
-    return this;
-  }
-
-  /**
-   * Get authType
-   * @return authType
-   */
-  @javax.annotation.Nullable
-  public String getAuthType() {
-    return authType;
-  }
-
-  public void setAuthType(@javax.annotation.Nullable String authType) {
-    this.authType = authType;
-  }
-
 
   public EnrichmentConnectorMeta config(@javax.annotation.Nullable Object config) {
     this.config = config;
@@ -330,8 +306,7 @@ public class EnrichmentConnectorMeta {
       return false;
     }
     EnrichmentConnectorMeta enrichmentConnectorMeta = (EnrichmentConnectorMeta) o;
-    return Objects.equals(this.authType, enrichmentConnectorMeta.authType) &&
-        Objects.equals(this.config, enrichmentConnectorMeta.config) &&
+    return Objects.equals(this.config, enrichmentConnectorMeta.config) &&
         Objects.equals(this.connectorCategory, enrichmentConnectorMeta.connectorCategory) &&
         Objects.equals(this.description, enrichmentConnectorMeta.description) &&
         Objects.equals(this.house, enrichmentConnectorMeta.house) &&
@@ -349,7 +324,7 @@ public class EnrichmentConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, config, connectorCategory, description, house, inBeta, internal, name, supportedFeatures, tier, typeId);
+    return Objects.hash(config, connectorCategory, description, house, inBeta, internal, name, supportedFeatures, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -363,7 +338,6 @@ public class EnrichmentConnectorMeta {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class EnrichmentConnectorMeta {\n");
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    connectorCategory: ").append(toIndentedString(connectorCategory)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -392,7 +366,7 @@ public class EnrichmentConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "config", "connector_category", "description", "house", "in_beta", "internal", "name", "supported_features", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "connector_category", "description", "house", "in_beta", "internal", "name", "supported_features", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -419,9 +393,6 @@ public class EnrichmentConnectorMeta {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
-      }
       // validate the optional field `connector_category`
       if (jsonObj.get("connector_category") != null && !jsonObj.get("connector_category").isJsonNull()) {
         ModelsInputConnectorCategory.validateJsonElement(jsonObj.get("connector_category"));

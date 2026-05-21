@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_type** | **str** |  | [optional] 
 **config** | **object** |  | [optional] 
 **connector_category** | [**ModelsInputConnectorCategory**](ModelsInputConnectorCategory.md) |  | [optional] 
 **description** | **str** |  | [optional] 

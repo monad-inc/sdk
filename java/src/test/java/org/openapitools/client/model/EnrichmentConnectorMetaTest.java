@@ -41,14 +41,6 @@ public class EnrichmentConnectorMetaTest {
     }
 
     /**
-     * Test the property 'authType'
-     */
-    @Test
-    public void authTypeTest() {
-        // TODO: test authType
-    }
-
-    /**
      * Test the property 'config'
      */
     @Test

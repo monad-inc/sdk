@@ -20,7 +20,6 @@ var _ MappedNullable = &EnrichmentConnectorMeta{}
 
 // EnrichmentConnectorMeta struct for EnrichmentConnectorMeta
 type EnrichmentConnectorMeta struct {
-	AuthType *string `json:"auth_type,omitempty"`
 	Config interface{} `json:"config,omitempty"`
 	ConnectorCategory *ModelsInputConnectorCategory `json:"connector_category,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -48,38 +47,6 @@ func NewEnrichmentConnectorMeta() *EnrichmentConnectorMeta {
 func NewEnrichmentConnectorMetaWithDefaults() *EnrichmentConnectorMeta {
 	this := EnrichmentConnectorMeta{}
 	return &this
-}
-
-// GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *EnrichmentConnectorMeta) GetAuthType() string {
-	if o == nil || IsNil(o.AuthType) {
-		var ret string
-		return ret
-	}
-	return *o.AuthType
-}
-
-// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnrichmentConnectorMeta) GetAuthTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthType) {
-		return nil, false
-	}
-	return o.AuthType, true
-}
-
-// HasAuthType returns a boolean if a field has been set.
-func (o *EnrichmentConnectorMeta) HasAuthType() bool {
-	if o != nil && !IsNil(o.AuthType) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *EnrichmentConnectorMeta) SetAuthType(v string) {
-	o.AuthType = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -413,9 +380,6 @@ func (o EnrichmentConnectorMeta) MarshalJSON() ([]byte, error) {
 
 func (o EnrichmentConnectorMeta) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthType) {
-		toSerialize["auth_type"] = o.AuthType
-	}
 	if o.Config != nil {
 		toSerialize["config"] = o.Config
 	}

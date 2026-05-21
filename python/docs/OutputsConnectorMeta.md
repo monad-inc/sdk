@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_type** | **str** |  | [optional] 
 **billing_type** | [**ModelsBillingType**](ModelsBillingType.md) |  | [optional] 
 **category** | [**ModelsOutputConnectorCategory**](ModelsOutputConnectorCategory.md) |  | [optional] 
 **config** | **object** |  | [optional] 

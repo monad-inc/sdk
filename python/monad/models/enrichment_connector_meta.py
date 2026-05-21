@@ -30,7 +30,6 @@ class EnrichmentConnectorMeta(BaseModel):
     """
     EnrichmentConnectorMeta
     """ # noqa: E501
-    auth_type: Optional[StrictStr] = None
     config: Optional[Any] = None
     connector_category: Optional[ModelsInputConnectorCategory] = None
     description: Optional[StrictStr] = None
@@ -41,7 +40,7 @@ class EnrichmentConnectorMeta(BaseModel):
     supported_features: Optional[ModelsSupportedFeatures] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "config", "connector_category", "description", "house", "in_beta", "internal", "name", "supported_features", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["config", "connector_category", "description", "house", "in_beta", "internal", "name", "supported_features", "tier", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -102,7 +101,6 @@ class EnrichmentConnectorMeta(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auth_type": obj.get("auth_type"),
             "config": obj.get("config"),
             "connector_category": obj.get("connector_category"),
             "description": obj.get("description"),

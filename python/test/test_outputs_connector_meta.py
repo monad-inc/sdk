@@ -36,7 +36,6 @@ class TestOutputsConnectorMeta(unittest.TestCase):
         model = OutputsConnectorMeta()
         if include_optional:
             return OutputsConnectorMeta(
-                auth_type = '',
                 billing_type = 0,
                 category = 'Incident Management',
                 config = None,

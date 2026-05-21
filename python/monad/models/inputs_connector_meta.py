@@ -31,7 +31,6 @@ class InputsConnectorMeta(BaseModel):
     """
     InputsConnectorMeta
     """ # noqa: E501
-    auth_type: Optional[StrictStr] = None
     billing_type: Optional[ModelsBillingType] = None
     category: Optional[ModelsInputConnectorCategory] = None
     config: Optional[Any] = None
@@ -45,7 +44,7 @@ class InputsConnectorMeta(BaseModel):
     supported_features: Optional[ModelsSupportedFeatures] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_default", "name", "release_date", "supported_features", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_default", "name", "release_date", "supported_features", "tier", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -106,7 +105,6 @@ class InputsConnectorMeta(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auth_type": obj.get("auth_type"),
             "billing_type": obj.get("billing_type"),
             "category": obj.get("category"),
             "config": obj.get("config"),

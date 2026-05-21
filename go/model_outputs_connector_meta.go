@@ -20,7 +20,6 @@ var _ MappedNullable = &OutputsConnectorMeta{}
 
 // OutputsConnectorMeta struct for OutputsConnectorMeta
 type OutputsConnectorMeta struct {
-	AuthType *string `json:"auth_type,omitempty"`
 	BillingType *ModelsBillingType `json:"billing_type,omitempty"`
 	Category *ModelsOutputConnectorCategory `json:"category,omitempty"`
 	Config interface{} `json:"config,omitempty"`
@@ -50,38 +49,6 @@ func NewOutputsConnectorMeta() *OutputsConnectorMeta {
 func NewOutputsConnectorMetaWithDefaults() *OutputsConnectorMeta {
 	this := OutputsConnectorMeta{}
 	return &this
-}
-
-// GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *OutputsConnectorMeta) GetAuthType() string {
-	if o == nil || IsNil(o.AuthType) {
-		var ret string
-		return ret
-	}
-	return *o.AuthType
-}
-
-// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OutputsConnectorMeta) GetAuthTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthType) {
-		return nil, false
-	}
-	return o.AuthType, true
-}
-
-// HasAuthType returns a boolean if a field has been set.
-func (o *OutputsConnectorMeta) HasAuthType() bool {
-	if o != nil && !IsNil(o.AuthType) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *OutputsConnectorMeta) SetAuthType(v string) {
-	o.AuthType = &v
 }
 
 // GetBillingType returns the BillingType field value if set, zero value otherwise.
@@ -479,9 +446,6 @@ func (o OutputsConnectorMeta) MarshalJSON() ([]byte, error) {
 
 func (o OutputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthType) {
-		toSerialize["auth_type"] = o.AuthType
-	}
 	if !IsNil(o.BillingType) {
 		toSerialize["billing_type"] = o.BillingType
 	}

@@ -2370,9 +2370,6 @@
             },
             "enrichment.ConnectorMeta": {
                 "properties": {
-                    "auth_type": {
-                        "type": "string"
-                    },
                     "config": {},
                     "connector_category": {
                         "$ref": "#/components/schemas/models.InputConnectorCategory"
@@ -3198,9 +3195,6 @@
             },
             "inputs.ConnectorMeta": {
                 "properties": {
-                    "auth_type": {
-                        "type": "string"
-                    },
                     "billing_type": {
                         "$ref": "#/components/schemas/models.BillingType"
                     },
@@ -6568,9 +6562,6 @@
             },
             "outputs.ConnectorMeta": {
                 "properties": {
-                    "auth_type": {
-                        "type": "string"
-                    },
                     "billing_type": {
                         "$ref": "#/components/schemas/models.BillingType"
                     },

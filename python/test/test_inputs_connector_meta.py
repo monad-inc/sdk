@@ -36,7 +36,6 @@ class TestInputsConnectorMeta(unittest.TestCase):
         model = InputsConnectorMeta()
         if include_optional:
             return InputsConnectorMeta(
-                auth_type = '',
                 billing_type = 0,
                 category = 'Application Security',
                 config = None,

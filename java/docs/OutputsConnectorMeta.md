@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**authType** | **String** |  |  [optional] |
 |**billingType** | **ModelsBillingType** |  |  [optional] |
 |**category** | **ModelsOutputConnectorCategory** |  |  [optional] |
 |**config** | **Object** |  |  [optional] |

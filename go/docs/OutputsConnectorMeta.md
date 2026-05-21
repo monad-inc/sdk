@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to **string** |  | [optional] 
 **BillingType** | Pointer to [**ModelsBillingType**](ModelsBillingType.md) |  | [optional] 
 **Category** | Pointer to [**ModelsOutputConnectorCategory**](ModelsOutputConnectorCategory.md) |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
@@ -36,31 +35,6 @@ will change when the set of required properties is changed
 NewOutputsConnectorMetaWithDefaults instantiates a new OutputsConnectorMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAuthType
-
-`func (o *OutputsConnectorMeta) GetAuthType() string`
-
-GetAuthType returns the AuthType field if non-nil, zero value otherwise.
-
-### GetAuthTypeOk
-
-`func (o *OutputsConnectorMeta) GetAuthTypeOk() (*string, bool)`
-
-GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthType
-
-`func (o *OutputsConnectorMeta) SetAuthType(v string)`
-
-SetAuthType sets AuthType field to given value.
-
-### HasAuthType
-
-`func (o *OutputsConnectorMeta) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
 
 ### GetBillingType
 

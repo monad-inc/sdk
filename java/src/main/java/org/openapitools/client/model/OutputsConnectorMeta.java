@@ -54,11 +54,6 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class OutputsConnectorMeta {
-  public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
-  @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
-  @javax.annotation.Nullable
-  private String authType;
-
   public static final String SERIALIZED_NAME_BILLING_TYPE = "billing_type";
   @SerializedName(SERIALIZED_NAME_BILLING_TYPE)
   @javax.annotation.Nullable
@@ -121,25 +116,6 @@ public class OutputsConnectorMeta {
 
   public OutputsConnectorMeta() {
   }
-
-  public OutputsConnectorMeta authType(@javax.annotation.Nullable String authType) {
-    this.authType = authType;
-    return this;
-  }
-
-  /**
-   * Get authType
-   * @return authType
-   */
-  @javax.annotation.Nullable
-  public String getAuthType() {
-    return authType;
-  }
-
-  public void setAuthType(@javax.annotation.Nullable String authType) {
-    this.authType = authType;
-  }
-
 
   public OutputsConnectorMeta billingType(@javax.annotation.Nullable ModelsBillingType billingType) {
     this.billingType = billingType;
@@ -379,8 +355,7 @@ public class OutputsConnectorMeta {
       return false;
     }
     OutputsConnectorMeta outputsConnectorMeta = (OutputsConnectorMeta) o;
-    return Objects.equals(this.authType, outputsConnectorMeta.authType) &&
-        Objects.equals(this.billingType, outputsConnectorMeta.billingType) &&
+    return Objects.equals(this.billingType, outputsConnectorMeta.billingType) &&
         Objects.equals(this.category, outputsConnectorMeta.category) &&
         Objects.equals(this.config, outputsConnectorMeta.config) &&
         Objects.equals(this.description, outputsConnectorMeta.description) &&
@@ -400,7 +375,7 @@ public class OutputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, category, config, description, house, inBeta, internal, name, releaseDate, supportedFeatures, tier, typeId);
+    return Objects.hash(billingType, category, config, description, house, inBeta, internal, name, releaseDate, supportedFeatures, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -414,7 +389,6 @@ public class OutputsConnectorMeta {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OutputsConnectorMeta {\n");
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
@@ -445,7 +419,7 @@ public class OutputsConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "release_date", "supported_features", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "release_date", "supported_features", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -472,9 +446,6 @@ public class OutputsConnectorMeta {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
-      }
       // validate the optional field `billing_type`
       if (jsonObj.get("billing_type") != null && !jsonObj.get("billing_type").isJsonNull()) {
         ModelsBillingType.validateJsonElement(jsonObj.get("billing_type"));

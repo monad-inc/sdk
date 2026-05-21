@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**authType** | **String** |  |  [optional] |
 |**config** | **Object** |  |  [optional] |
 |**connectorCategory** | **ModelsInputConnectorCategory** |  |  [optional] |
 |**description** | **String** |  |  [optional] |

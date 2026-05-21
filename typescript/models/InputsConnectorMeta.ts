@@ -16,7 +16,6 @@ import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { HttpFile } from '../http/http';
 
 export class InputsConnectorMeta {
-    'authType'?: string;
     'billingType'?: ModelsBillingType;
     'category'?: ModelsInputConnectorCategory;
     'config'?: any | null;
@@ -36,12 +35,6 @@ export class InputsConnectorMeta {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "authType",
-            "baseName": "auth_type",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "billingType",
             "baseName": "billing_type",

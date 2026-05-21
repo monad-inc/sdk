@@ -15,7 +15,6 @@ import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { HttpFile } from '../http/http';
 
 export class EnrichmentConnectorMeta {
-    'authType'?: string;
     'config'?: any | null;
     'connectorCategory'?: ModelsInputConnectorCategory;
     'description'?: string;
@@ -32,12 +31,6 @@ export class EnrichmentConnectorMeta {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "authType",
-            "baseName": "auth_type",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "config",
             "baseName": "config",

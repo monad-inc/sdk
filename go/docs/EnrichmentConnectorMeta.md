@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
 **ConnectorCategory** | Pointer to [**ModelsInputConnectorCategory**](ModelsInputConnectorCategory.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -34,31 +33,6 @@ will change when the set of required properties is changed
 NewEnrichmentConnectorMetaWithDefaults instantiates a new EnrichmentConnectorMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAuthType
-
-`func (o *EnrichmentConnectorMeta) GetAuthType() string`
-
-GetAuthType returns the AuthType field if non-nil, zero value otherwise.
-
-### GetAuthTypeOk
-
-`func (o *EnrichmentConnectorMeta) GetAuthTypeOk() (*string, bool)`
-
-GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthType
-
-`func (o *EnrichmentConnectorMeta) SetAuthType(v string)`
-
-SetAuthType sets AuthType field to given value.
-
-### HasAuthType
-
-`func (o *EnrichmentConnectorMeta) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
 
 ### GetConfig
 
