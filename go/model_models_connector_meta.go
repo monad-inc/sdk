@@ -20,7 +20,6 @@ var _ MappedNullable = &ModelsConnectorMeta{}
 
 // ModelsConnectorMeta struct for ModelsConnectorMeta
 type ModelsConnectorMeta struct {
-	AuthType *string `json:"auth_type,omitempty"`
 	Config interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
@@ -43,38 +42,6 @@ func NewModelsConnectorMeta() *ModelsConnectorMeta {
 func NewModelsConnectorMetaWithDefaults() *ModelsConnectorMeta {
 	this := ModelsConnectorMeta{}
 	return &this
-}
-
-// GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *ModelsConnectorMeta) GetAuthType() string {
-	if o == nil || IsNil(o.AuthType) {
-		var ret string
-		return ret
-	}
-	return *o.AuthType
-}
-
-// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsConnectorMeta) GetAuthTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthType) {
-		return nil, false
-	}
-	return o.AuthType, true
-}
-
-// HasAuthType returns a boolean if a field has been set.
-func (o *ModelsConnectorMeta) HasAuthType() bool {
-	if o != nil && !IsNil(o.AuthType) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *ModelsConnectorMeta) SetAuthType(v string) {
-	o.AuthType = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -248,9 +215,6 @@ func (o ModelsConnectorMeta) MarshalJSON() ([]byte, error) {
 
 func (o ModelsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthType) {
-		toSerialize["auth_type"] = o.AuthType
-	}
 	if o.Config != nil {
 		toSerialize["config"] = o.Config
 	}

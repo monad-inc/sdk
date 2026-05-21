@@ -51,11 +51,6 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class ModelsConnectorMeta {
-  public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
-  @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
-  @javax.annotation.Nullable
-  private String authType;
-
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
@@ -83,25 +78,6 @@ public class ModelsConnectorMeta {
 
   public ModelsConnectorMeta() {
   }
-
-  public ModelsConnectorMeta authType(@javax.annotation.Nullable String authType) {
-    this.authType = authType;
-    return this;
-  }
-
-  /**
-   * Get authType
-   * @return authType
-   */
-  @javax.annotation.Nullable
-  public String getAuthType() {
-    return authType;
-  }
-
-  public void setAuthType(@javax.annotation.Nullable String authType) {
-    this.authType = authType;
-  }
-
 
   public ModelsConnectorMeta config(@javax.annotation.Nullable Object config) {
     this.config = config;
@@ -208,8 +184,7 @@ public class ModelsConnectorMeta {
       return false;
     }
     ModelsConnectorMeta modelsConnectorMeta = (ModelsConnectorMeta) o;
-    return Objects.equals(this.authType, modelsConnectorMeta.authType) &&
-        Objects.equals(this.config, modelsConnectorMeta.config) &&
+    return Objects.equals(this.config, modelsConnectorMeta.config) &&
         Objects.equals(this.description, modelsConnectorMeta.description) &&
         Objects.equals(this.internal, modelsConnectorMeta.internal) &&
         Objects.equals(this.name, modelsConnectorMeta.name) &&
@@ -222,7 +197,7 @@ public class ModelsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, config, description, internal, name, typeId);
+    return Objects.hash(config, description, internal, name, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -236,7 +211,6 @@ public class ModelsConnectorMeta {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsConnectorMeta {\n");
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
@@ -260,7 +234,7 @@ public class ModelsConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "config", "description", "internal", "name", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "internal", "name", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -287,9 +261,6 @@ public class ModelsConnectorMeta {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
-      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }

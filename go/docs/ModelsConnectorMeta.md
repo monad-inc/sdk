@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
@@ -29,31 +28,6 @@ will change when the set of required properties is changed
 NewModelsConnectorMetaWithDefaults instantiates a new ModelsConnectorMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAuthType
-
-`func (o *ModelsConnectorMeta) GetAuthType() string`
-
-GetAuthType returns the AuthType field if non-nil, zero value otherwise.
-
-### GetAuthTypeOk
-
-`func (o *ModelsConnectorMeta) GetAuthTypeOk() (*string, bool)`
-
-GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthType
-
-`func (o *ModelsConnectorMeta) SetAuthType(v string)`
-
-SetAuthType sets AuthType field to given value.
-
-### HasAuthType
-
-`func (o *ModelsConnectorMeta) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
 
 ### GetConfig
 

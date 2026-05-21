@@ -13,7 +13,6 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsConnectorMeta {
-    'authType'?: string;
     'config'?: any | null;
     'description'?: string;
     'internal'?: boolean;
@@ -25,12 +24,6 @@ export class ModelsConnectorMeta {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "authType",
-            "baseName": "auth_type",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "config",
             "baseName": "config",

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_type** | **str** |  | [optional] 
 **config** | **object** |  | [optional] 
 **description** | **str** |  | [optional] 
 **internal** | **bool** |  | [optional] 

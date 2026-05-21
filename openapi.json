@@ -4553,9 +4553,6 @@
             },
             "models.ConnectorMeta": {
                 "properties": {
-                    "auth_type": {
-                        "type": "string"
-                    },
                     "config": {},
                     "description": {
                         "type": "string"

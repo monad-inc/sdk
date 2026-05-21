@@ -28,13 +28,12 @@ class ModelsConnectorMeta(BaseModel):
     """
     ModelsConnectorMeta
     """ # noqa: E501
-    auth_type: Optional[StrictStr] = None
     config: Optional[Any] = None
     description: Optional[StrictStr] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "config", "description", "internal", "name", "type_id"]
+    __properties: ClassVar[List[str]] = ["config", "description", "internal", "name", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -92,7 +91,6 @@ class ModelsConnectorMeta(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auth_type": obj.get("auth_type"),
             "config": obj.get("config"),
             "description": obj.get("description"),
             "internal": obj.get("internal"),

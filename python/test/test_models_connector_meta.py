@@ -36,7 +36,6 @@ class TestModelsConnectorMeta(unittest.TestCase):
         model = ModelsConnectorMeta()
         if include_optional:
             return ModelsConnectorMeta(
-                auth_type = '',
                 config = None,
                 description = '',
                 internal = True,
