@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the Awssqss3SettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,30 +22,32 @@ var _ MappedNullable = &Awssqss3SettingsConfig{}
 
 // Awssqss3SettingsConfig AWS SQS S3 settings
 type Awssqss3SettingsConfig struct {
-	// Compression format of the S3 objects.
-	Compression *string `json:"compression,omitempty"`
-	// File format of the S3 objects.
-	Format *string `json:"format,omitempty"`
-	// The URL of the SQS queue to poll for messages.
-	QueueUrl *string `json:"queue_url,omitempty"`
-	// Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
+	// Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift.
+	Compression string `json:"compression"`
+	// Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers' package init wipes its Formats map after per-file inits register, so ListFormats() doesn't include csv today.
+	Format string `json:"format"`
+	KeyFilter *SqsS3BaseKeyFilter `json:"key_filter,omitempty"`
+	QueueUrl string `json:"queue_url"`
+	// Record location within each parsed object. JSON only; empty = whole record.
 	RecordLocation *string `json:"record_location,omitempty"`
-	// The AWS region where the SQS queue is located.
-	Region *string `json:"region,omitempty"`
-	// The ARN of the IAM role to assume for accessing the SQS queue.
+	Region string `json:"region"`
 	RoleArn *string `json:"role_arn,omitempty"`
-	// Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.
 	UsesSns *bool `json:"uses_sns,omitempty"`
-	// Whether to include S3 object metadata in the output.
 	WithMetadata *bool `json:"with_metadata,omitempty"`
 }
+
+type _Awssqss3SettingsConfig Awssqss3SettingsConfig
 
 // NewAwssqss3SettingsConfig instantiates a new Awssqss3SettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAwssqss3SettingsConfig() *Awssqss3SettingsConfig {
+func NewAwssqss3SettingsConfig(compression string, format string, queueUrl string, region string) *Awssqss3SettingsConfig {
 	this := Awssqss3SettingsConfig{}
+	this.Compression = compression
+	this.Format = format
+	this.QueueUrl = queueUrl
+	this.Region = region
 	return &this
 }
 
@@ -55,100 +59,108 @@ func NewAwssqss3SettingsConfigWithDefaults() *Awssqss3SettingsConfig {
 	return &this
 }
 
-// GetCompression returns the Compression field value if set, zero value otherwise.
+// GetCompression returns the Compression field value
 func (o *Awssqss3SettingsConfig) GetCompression() string {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Compression
+
+	return o.Compression
 }
 
-// GetCompressionOk returns a tuple with the Compression field value if set, nil otherwise
+// GetCompressionOk returns a tuple with the Compression field value
 // and a boolean to check if the value has been set.
 func (o *Awssqss3SettingsConfig) GetCompressionOk() (*string, bool) {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Compression, true
+	return &o.Compression, true
 }
 
-// HasCompression returns a boolean if a field has been set.
-func (o *Awssqss3SettingsConfig) HasCompression() bool {
-	if o != nil && !IsNil(o.Compression) {
-		return true
-	}
-
-	return false
-}
-
-// SetCompression gets a reference to the given string and assigns it to the Compression field.
+// SetCompression sets field value
 func (o *Awssqss3SettingsConfig) SetCompression(v string) {
-	o.Compression = &v
+	o.Compression = v
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
+// GetFormat returns the Format field value
 func (o *Awssqss3SettingsConfig) GetFormat() string {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Format
+
+	return o.Format
 }
 
-// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// GetFormatOk returns a tuple with the Format field value
 // and a boolean to check if the value has been set.
 func (o *Awssqss3SettingsConfig) GetFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Format, true
+	return &o.Format, true
 }
 
-// HasFormat returns a boolean if a field has been set.
-func (o *Awssqss3SettingsConfig) HasFormat() bool {
-	if o != nil && !IsNil(o.Format) {
+// SetFormat sets field value
+func (o *Awssqss3SettingsConfig) SetFormat(v string) {
+	o.Format = v
+}
+
+// GetKeyFilter returns the KeyFilter field value if set, zero value otherwise.
+func (o *Awssqss3SettingsConfig) GetKeyFilter() SqsS3BaseKeyFilter {
+	if o == nil || IsNil(o.KeyFilter) {
+		var ret SqsS3BaseKeyFilter
+		return ret
+	}
+	return *o.KeyFilter
+}
+
+// GetKeyFilterOk returns a tuple with the KeyFilter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Awssqss3SettingsConfig) GetKeyFilterOk() (*SqsS3BaseKeyFilter, bool) {
+	if o == nil || IsNil(o.KeyFilter) {
+		return nil, false
+	}
+	return o.KeyFilter, true
+}
+
+// HasKeyFilter returns a boolean if a field has been set.
+func (o *Awssqss3SettingsConfig) HasKeyFilter() bool {
+	if o != nil && !IsNil(o.KeyFilter) {
 		return true
 	}
 
 	return false
 }
 
-// SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *Awssqss3SettingsConfig) SetFormat(v string) {
-	o.Format = &v
+// SetKeyFilter gets a reference to the given SqsS3BaseKeyFilter and assigns it to the KeyFilter field.
+func (o *Awssqss3SettingsConfig) SetKeyFilter(v SqsS3BaseKeyFilter) {
+	o.KeyFilter = &v
 }
 
-// GetQueueUrl returns the QueueUrl field value if set, zero value otherwise.
+// GetQueueUrl returns the QueueUrl field value
 func (o *Awssqss3SettingsConfig) GetQueueUrl() string {
-	if o == nil || IsNil(o.QueueUrl) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.QueueUrl
+
+	return o.QueueUrl
 }
 
-// GetQueueUrlOk returns a tuple with the QueueUrl field value if set, nil otherwise
+// GetQueueUrlOk returns a tuple with the QueueUrl field value
 // and a boolean to check if the value has been set.
 func (o *Awssqss3SettingsConfig) GetQueueUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.QueueUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QueueUrl, true
+	return &o.QueueUrl, true
 }
 
-// HasQueueUrl returns a boolean if a field has been set.
-func (o *Awssqss3SettingsConfig) HasQueueUrl() bool {
-	if o != nil && !IsNil(o.QueueUrl) {
-		return true
-	}
-
-	return false
-}
-
-// SetQueueUrl gets a reference to the given string and assigns it to the QueueUrl field.
+// SetQueueUrl sets field value
 func (o *Awssqss3SettingsConfig) SetQueueUrl(v string) {
-	o.QueueUrl = &v
+	o.QueueUrl = v
 }
 
 // GetRecordLocation returns the RecordLocation field value if set, zero value otherwise.
@@ -183,36 +195,28 @@ func (o *Awssqss3SettingsConfig) SetRecordLocation(v string) {
 	o.RecordLocation = &v
 }
 
-// GetRegion returns the Region field value if set, zero value otherwise.
+// GetRegion returns the Region field value
 func (o *Awssqss3SettingsConfig) GetRegion() string {
-	if o == nil || IsNil(o.Region) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Region
+
+	return o.Region
 }
 
-// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
+// GetRegionOk returns a tuple with the Region field value
 // and a boolean to check if the value has been set.
 func (o *Awssqss3SettingsConfig) GetRegionOk() (*string, bool) {
-	if o == nil || IsNil(o.Region) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Region, true
+	return &o.Region, true
 }
 
-// HasRegion returns a boolean if a field has been set.
-func (o *Awssqss3SettingsConfig) HasRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
-}
-
-// SetRegion gets a reference to the given string and assigns it to the Region field.
+// SetRegion sets field value
 func (o *Awssqss3SettingsConfig) SetRegion(v string) {
-	o.Region = &v
+	o.Region = v
 }
 
 // GetRoleArn returns the RoleArn field value if set, zero value otherwise.
@@ -321,21 +325,16 @@ func (o Awssqss3SettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o Awssqss3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Compression) {
-		toSerialize["compression"] = o.Compression
+	toSerialize["compression"] = o.Compression
+	toSerialize["format"] = o.Format
+	if !IsNil(o.KeyFilter) {
+		toSerialize["key_filter"] = o.KeyFilter
 	}
-	if !IsNil(o.Format) {
-		toSerialize["format"] = o.Format
-	}
-	if !IsNil(o.QueueUrl) {
-		toSerialize["queue_url"] = o.QueueUrl
-	}
+	toSerialize["queue_url"] = o.QueueUrl
 	if !IsNil(o.RecordLocation) {
 		toSerialize["record_location"] = o.RecordLocation
 	}
-	if !IsNil(o.Region) {
-		toSerialize["region"] = o.Region
-	}
+	toSerialize["region"] = o.Region
 	if !IsNil(o.RoleArn) {
 		toSerialize["role_arn"] = o.RoleArn
 	}
@@ -346,6 +345,46 @@ func (o Awssqss3SettingsConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["with_metadata"] = o.WithMetadata
 	}
 	return toSerialize, nil
+}
+
+func (o *Awssqss3SettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"compression",
+		"format",
+		"queue_url",
+		"region",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAwssqss3SettingsConfig := _Awssqss3SettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAwssqss3SettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Awssqss3SettingsConfig(varAwssqss3SettingsConfig)
+
+	return err
 }
 
 type NullableAwssqss3SettingsConfig struct {

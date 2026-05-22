@@ -25,6 +25,7 @@ type SecretProcessesorInputConfigSettings struct {
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
+	AwsSqsS3CloudtrailSettingsConfig *AwsSqsS3CloudtrailSettingsConfig
 	Awssqss3SettingsConfig *Awssqss3SettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	AzureBlobStorageSettingsConfig *AzureBlobStorageSettingsConfig
@@ -160,6 +161,13 @@ func AwsGuarddutySettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsGuar
 func AwsS3SettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsS3SettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AwsS3SettingsConfig: v,
+	}
+}
+
+// AwsSqsS3CloudtrailSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsSqsS3CloudtrailSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AwsSqsS3CloudtrailSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsSqsS3CloudtrailSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AwsSqsS3CloudtrailSettingsConfig: v,
 	}
 }
 
@@ -926,6 +934,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AwsS3SettingsConfig = nil
+	}
+
+	// try to unmarshal data into AwsSqsS3CloudtrailSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwsSqsS3CloudtrailSettingsConfig)
+	if err == nil {
+		jsonAwsSqsS3CloudtrailSettingsConfig, _ := json.Marshal(dst.AwsSqsS3CloudtrailSettingsConfig)
+		if string(jsonAwsSqsS3CloudtrailSettingsConfig) == "{}" { // empty struct
+			dst.AwsSqsS3CloudtrailSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwsSqsS3CloudtrailSettingsConfig); err != nil {
+				dst.AwsSqsS3CloudtrailSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwsSqsS3CloudtrailSettingsConfig = nil
 	}
 
 	// try to unmarshal data into Awssqss3SettingsConfig
@@ -2534,6 +2559,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsGuarddutySettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
+		dst.AwsSqsS3CloudtrailSettingsConfig = nil
 		dst.Awssqss3SettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.AzureBlobStorageSettingsConfig = nil
@@ -2661,6 +2687,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AwsS3SettingsConfig != nil {
 		return json.Marshal(&src.AwsS3SettingsConfig)
+	}
+
+	if src.AwsSqsS3CloudtrailSettingsConfig != nil {
+		return json.Marshal(&src.AwsSqsS3CloudtrailSettingsConfig)
 	}
 
 	if src.Awssqss3SettingsConfig != nil {
@@ -3071,6 +3101,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AwsS3SettingsConfig
 	}
 
+	if obj.AwsSqsS3CloudtrailSettingsConfig != nil {
+		return obj.AwsSqsS3CloudtrailSettingsConfig
+	}
+
 	if obj.Awssqss3SettingsConfig != nil {
 		return obj.Awssqss3SettingsConfig
 	}
@@ -3475,6 +3509,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AwsS3SettingsConfig != nil {
 		return *obj.AwsS3SettingsConfig
+	}
+
+	if obj.AwsSqsS3CloudtrailSettingsConfig != nil {
+		return *obj.AwsSqsS3CloudtrailSettingsConfig
 	}
 
 	if obj.Awssqss3SettingsConfig != nil {

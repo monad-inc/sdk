@@ -8,14 +8,35 @@ AWS SQS S3 settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**compression** | **String** | Compression format of the S3 objects. |  [optional] |
-|**format** | **String** | File format of the S3 objects. |  [optional] |
-|**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
-|**recordLocation** | **String** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. |  [optional] |
-|**region** | **String** | The AWS region where the SQS queue is located. |  [optional] |
-|**roleArn** | **String** | The ARN of the IAM role to assume for accessing the SQS queue. |  [optional] |
-|**usesSns** | **Boolean** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. |  [optional] |
-|**withMetadata** | **Boolean** | Whether to include S3 object metadata in the output. |  [optional] |
+|**compression** | [**CompressionEnum**](#CompressionEnum) | Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift. |  |
+|**format** | [**FormatEnum**](#FormatEnum) | Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers&#39; package init wipes its Formats map after per-file inits register, so ListFormats() doesn&#39;t include csv today. |  |
+|**keyFilter** | [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  |  [optional] |
+|**queueUrl** | **String** |  |  |
+|**recordLocation** | **String** | Record location within each parsed object. JSON only; empty &#x3D; whole record. |  [optional] |
+|**region** | **String** |  |  |
+|**roleArn** | **String** |  |  [optional] |
+|**usesSns** | **Boolean** |  |  [optional] |
+|**withMetadata** | **Boolean** |  |  [optional] |
+
+
+
+## Enum: CompressionEnum
+
+| Name | Value |
+|---- | -----|
+| AUTO | &quot;auto&quot; |
+| GZIP | &quot;gzip&quot; |
+| NONE | &quot;none&quot; |
+
+
+
+## Enum: FormatEnum
+
+| Name | Value |
+|---- | -----|
+| JSON | &quot;json&quot; |
+| JSONL | &quot;jsonl&quot; |
+| WSV | &quot;wsv&quot; |
 
 
 

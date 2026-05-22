@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.sqs_s3_base_key_filter import SqsS3BaseKeyFilter
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,15 +29,30 @@ class Awssqss3SettingsConfig(BaseModel):
     """
     AWS SQS S3 settings
     """ # noqa: E501
-    compression: Optional[StrictStr] = Field(default=None, description="Compression format of the S3 objects.")
-    format: Optional[StrictStr] = Field(default=None, description="File format of the S3 objects.")
-    queue_url: Optional[StrictStr] = Field(default=None, description="The URL of the SQS queue to poll for messages.")
-    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
-    region: Optional[StrictStr] = Field(default=None, description="The AWS region where the SQS queue is located.")
-    role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the IAM role to assume for accessing the SQS queue.")
-    uses_sns: Optional[StrictBool] = Field(default=None, description="Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.")
-    with_metadata: Optional[StrictBool] = Field(default=None, description="Whether to include S3 object metadata in the output.")
-    __properties: ClassVar[List[str]] = ["compression", "format", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"]
+    compression: StrictStr = Field(description="Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift.")
+    format: StrictStr = Field(description="Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers' package init wipes its Formats map after per-file inits register, so ListFormats() doesn't include csv today.")
+    key_filter: Optional[SqsS3BaseKeyFilter] = None
+    queue_url: StrictStr
+    record_location: Optional[StrictStr] = Field(default=None, description="Record location within each parsed object. JSON only; empty = whole record.")
+    region: StrictStr
+    role_arn: Optional[StrictStr] = None
+    uses_sns: Optional[StrictBool] = None
+    with_metadata: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["compression", "format", "key_filter", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"]
+
+    @field_validator('compression')
+    def compression_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['auto', 'gzip', 'none']):
+            raise ValueError("must be one of enum values ('auto', 'gzip', 'none')")
+        return value
+
+    @field_validator('format')
+    def format_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['json', 'jsonl', 'wsv']):
+            raise ValueError("must be one of enum values ('json', 'jsonl', 'wsv')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -77,6 +93,9 @@ class Awssqss3SettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of key_filter
+        if self.key_filter:
+            _dict['key_filter'] = self.key_filter.to_dict()
         return _dict
 
     @classmethod
@@ -91,6 +110,7 @@ class Awssqss3SettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "compression": obj.get("compression"),
             "format": obj.get("format"),
+            "key_filter": SqsS3BaseKeyFilter.from_dict(obj["key_filter"]) if obj.get("key_filter") is not None else None,
             "queue_url": obj.get("queue_url"),
             "record_location": obj.get("record_location"),
             "region": obj.get("region"),

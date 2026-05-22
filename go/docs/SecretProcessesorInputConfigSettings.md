@@ -19,9 +19,12 @@ Name | Type | Description | Notes
 **PartitionFormat** | Pointer to **string** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **RecordLocation** | Pointer to **string** | JSONPath location of the records array in the GraphQL response | [optional] 
-**QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
-**UsesSns** | Pointer to **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 
-**WithMetadata** | Pointer to **bool** | Whether to include S3 object metadata in the output. | [optional] 
+**ChunkingMode** | Pointer to [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
+**ExcludeDigestFiles** | Pointer to **bool** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). | [optional] 
+**QueueUrl** | **string** |  | 
+**UsesSns** | Pointer to **bool** |  | [optional] 
+**WithMetadata** | Pointer to **bool** |  | [optional] 
+**KeyFilter** | Pointer to [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group containing the virtual network | [optional] 
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
@@ -162,7 +165,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, tenantDataCenter string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, tenantDataCenter string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -527,6 +530,56 @@ SetRecordLocation sets RecordLocation field to given value.
 
 HasRecordLocation returns a boolean if a field has been set.
 
+### GetChunkingMode
+
+`func (o *SecretProcessesorInputConfigSettings) GetChunkingMode() AwsSqsS3CloudtrailChunkingMode`
+
+GetChunkingMode returns the ChunkingMode field if non-nil, zero value otherwise.
+
+### GetChunkingModeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetChunkingModeOk() (*AwsSqsS3CloudtrailChunkingMode, bool)`
+
+GetChunkingModeOk returns a tuple with the ChunkingMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChunkingMode
+
+`func (o *SecretProcessesorInputConfigSettings) SetChunkingMode(v AwsSqsS3CloudtrailChunkingMode)`
+
+SetChunkingMode sets ChunkingMode field to given value.
+
+### HasChunkingMode
+
+`func (o *SecretProcessesorInputConfigSettings) HasChunkingMode() bool`
+
+HasChunkingMode returns a boolean if a field has been set.
+
+### GetExcludeDigestFiles
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeDigestFiles() bool`
+
+GetExcludeDigestFiles returns the ExcludeDigestFiles field if non-nil, zero value otherwise.
+
+### GetExcludeDigestFilesOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeDigestFilesOk() (*bool, bool)`
+
+GetExcludeDigestFilesOk returns a tuple with the ExcludeDigestFiles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeDigestFiles
+
+`func (o *SecretProcessesorInputConfigSettings) SetExcludeDigestFiles(v bool)`
+
+SetExcludeDigestFiles sets ExcludeDigestFiles field to given value.
+
+### HasExcludeDigestFiles
+
+`func (o *SecretProcessesorInputConfigSettings) HasExcludeDigestFiles() bool`
+
+HasExcludeDigestFiles returns a boolean if a field has been set.
+
 ### GetQueueUrl
 
 `func (o *SecretProcessesorInputConfigSettings) GetQueueUrl() string`
@@ -546,11 +599,6 @@ and a boolean to check if the value has been set.
 
 SetQueueUrl sets QueueUrl field to given value.
 
-### HasQueueUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasQueueUrl() bool`
-
-HasQueueUrl returns a boolean if a field has been set.
 
 ### GetUsesSns
 
@@ -601,6 +649,31 @@ SetWithMetadata sets WithMetadata field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasWithMetadata() bool`
 
 HasWithMetadata returns a boolean if a field has been set.
+
+### GetKeyFilter
+
+`func (o *SecretProcessesorInputConfigSettings) GetKeyFilter() SqsS3BaseKeyFilter`
+
+GetKeyFilter returns the KeyFilter field if non-nil, zero value otherwise.
+
+### GetKeyFilterOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetKeyFilterOk() (*SqsS3BaseKeyFilter, bool)`
+
+GetKeyFilterOk returns a tuple with the KeyFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyFilter
+
+`func (o *SecretProcessesorInputConfigSettings) SetKeyFilter(v SqsS3BaseKeyFilter)`
+
+SetKeyFilter sets KeyFilter field to given value.
+
+### HasKeyFilter
+
+`func (o *SecretProcessesorInputConfigSettings) HasKeyFilter() bool`
+
+HasKeyFilter returns a boolean if a field has been set.
 
 ### GetCorrelationId
 

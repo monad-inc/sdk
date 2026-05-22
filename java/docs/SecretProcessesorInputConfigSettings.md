@@ -22,9 +22,12 @@
 |**partitionFormat** | [**PartitionFormatEnum**](#PartitionFormatEnum) | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). |  [optional] |
 |**prefix** | **String** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. |  [optional] |
 |**recordLocation** | **String** | JSONPath location of the records array in the GraphQL response |  [optional] |
-|**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
-|**usesSns** | **Boolean** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. |  [optional] |
-|**withMetadata** | **Boolean** | Whether to include S3 object metadata in the output. |  [optional] |
+|**chunkingMode** | **AwsSqsS3CloudtrailChunkingMode** |  |  [optional] |
+|**excludeDigestFiles** | **Boolean** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). |  [optional] |
+|**queueUrl** | **String** |  |  |
+|**usesSns** | **Boolean** |  |  [optional] |
+|**withMetadata** | **Boolean** |  |  [optional] |
+|**keyFilter** | [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  |  [optional] |
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |
 |**resourceGroupName** | **String** | The name of the resource group containing the virtual network |  [optional] |
 |**resourceProvider** | **String** | The provider of the resource |  [optional] |

@@ -39,6 +39,8 @@ from monad.models.aws_guardduty_secrets_config import AwsGuarddutySecretsConfig
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig
 from monad.models.aws_s3_secrets_config import AwsS3SecretsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig
+from monad.models.aws_sqs_s3_cloudtrail_chunking_mode import AwsSqsS3CloudtrailChunkingMode
+from monad.models.aws_sqs_s3_cloudtrail_settings_config import AwsSqsS3CloudtrailSettingsConfig
 from monad.models.awssqsoutput_queue_type import AwssqsoutputQueueType
 from monad.models.awssqsoutput_settings_config import AwssqsoutputSettingsConfig
 from monad.models.awssqss3_settings_config import Awssqss3SettingsConfig
@@ -518,6 +520,11 @@ from monad.models.snyk_targets_secrets_config import SnykTargetsSecretsConfig
 from monad.models.snyk_targets_settings_config import SnykTargetsSettingsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig
 from monad.models.splunk_settings_config import SplunkSettingsConfig
+from monad.models.sqs_s3_base_filter_variant import SqsS3BaseFilterVariant
+from monad.models.sqs_s3_base_key_filter import SqsS3BaseKeyFilter
+from monad.models.sqs_s3_base_key_filter_mode import SqsS3BaseKeyFilterMode
+from monad.models.sqs_s3_base_key_filter_operator import SqsS3BaseKeyFilterOperator
+from monad.models.sqs_s3_base_key_filter_type import SqsS3BaseKeyFilterType
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig
 from monad.models.sumologic_settings_config import SumologicSettingsConfig
 from monad.models.sumologic_source_metadata import SumologicSourceMetadata

@@ -29,6 +29,8 @@ import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
 import org.openapitools.client.model.AuthLogsSettingsConfig;
 import org.openapitools.client.model.AwsGuarddutySettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
+import org.openapitools.client.model.AwsSqsS3CloudtrailChunkingMode;
+import org.openapitools.client.model.AwsSqsS3CloudtrailSettingsConfig;
 import org.openapitools.client.model.Awssqss3SettingsConfig;
 import org.openapitools.client.model.AzureActivityLogsSettingsConfig;
 import org.openapitools.client.model.AzureBlobStorageSettingsConfig;
@@ -102,6 +104,7 @@ import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
 import org.openapitools.client.model.SnowflakeInputSettingsConfig;
 import org.openapitools.client.model.SnykIssuesSettingsConfig;
 import org.openapitools.client.model.SnykTargetsSettingsConfig;
+import org.openapitools.client.model.SqsS3BaseKeyFilter;
 import org.openapitools.client.model.SyntheticDataCustomSettingsConfig;
 import org.openapitools.client.model.SyntheticDataSettingsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSettingsConfig;
@@ -279,6 +282,22 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'chunkingMode'
+     */
+    @Test
+    public void chunkingModeTest() {
+        // TODO: test chunkingMode
+    }
+
+    /**
+     * Test the property 'excludeDigestFiles'
+     */
+    @Test
+    public void excludeDigestFilesTest() {
+        // TODO: test excludeDigestFiles
+    }
+
+    /**
      * Test the property 'queueUrl'
      */
     @Test
@@ -300,6 +319,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void withMetadataTest() {
         // TODO: test withMetadata
+    }
+
+    /**
+     * Test the property 'keyFilter'
+     */
+    @Test
+    public void keyFilterTest() {
+        // TODO: test keyFilter
     }
 
     /**

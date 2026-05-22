@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { SqsS3BaseKeyFilter } from '../models/SqsS3BaseKeyFilter';
 import { HttpFile } from '../http/http';
 
 /**
@@ -17,36 +18,22 @@ import { HttpFile } from '../http/http';
 */
 export class Awssqss3SettingsConfig {
     /**
-    * Compression format of the S3 objects.
+    * Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift.
     */
-    'compression'?: string;
+    'compression': Awssqss3SettingsConfigCompressionEnum;
     /**
-    * File format of the S3 objects.
+    * Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers\' package init wipes its Formats map after per-file inits register, so ListFormats() doesn\'t include csv today.
     */
-    'format'?: string;
+    'format': Awssqss3SettingsConfigFormatEnum;
+    'keyFilter'?: SqsS3BaseKeyFilter;
+    'queueUrl': string;
     /**
-    * The URL of the SQS queue to poll for messages.
-    */
-    'queueUrl'?: string;
-    /**
-    * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
+    * Record location within each parsed object. JSON only; empty = whole record.
     */
     'recordLocation'?: string;
-    /**
-    * The AWS region where the SQS queue is located.
-    */
-    'region'?: string;
-    /**
-    * The ARN of the IAM role to assume for accessing the SQS queue.
-    */
+    'region': string;
     'roleArn'?: string;
-    /**
-    * Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.
-    */
     'usesSns'?: boolean;
-    /**
-    * Whether to include S3 object metadata in the output.
-    */
     'withMetadata'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
@@ -57,13 +44,19 @@ export class Awssqss3SettingsConfig {
         {
             "name": "compression",
             "baseName": "compression",
-            "type": "string",
+            "type": "Awssqss3SettingsConfigCompressionEnum",
             "format": ""
         },
         {
             "name": "format",
             "baseName": "format",
-            "type": "string",
+            "type": "Awssqss3SettingsConfigFormatEnum",
+            "format": ""
+        },
+        {
+            "name": "keyFilter",
+            "baseName": "key_filter",
+            "type": "SqsS3BaseKeyFilter",
             "format": ""
         },
         {
@@ -110,3 +103,15 @@ export class Awssqss3SettingsConfig {
     public constructor() {
     }
 }
+
+export enum Awssqss3SettingsConfigCompressionEnum {
+    Auto = 'auto',
+    Gzip = 'gzip',
+    None = 'none'
+}
+export enum Awssqss3SettingsConfigFormatEnum {
+    Json = 'json',
+    Jsonl = 'jsonl',
+    Wsv = 'wsv'
+}
+

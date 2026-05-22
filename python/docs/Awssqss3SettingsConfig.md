@@ -6,14 +6,15 @@ AWS SQS S3 settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**compression** | **str** | Compression format of the S3 objects. | [optional] 
-**format** | **str** | File format of the S3 objects. | [optional] 
-**queue_url** | **str** | The URL of the SQS queue to poll for messages. | [optional] 
-**record_location** | **str** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
-**region** | **str** | The AWS region where the SQS queue is located. | [optional] 
-**role_arn** | **str** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 
-**uses_sns** | **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 
-**with_metadata** | **bool** | Whether to include S3 object metadata in the output. | [optional] 
+**compression** | **str** | Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift. | 
+**format** | **str** | Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers&#39; package init wipes its Formats map after per-file inits register, so ListFormats() doesn&#39;t include csv today. | 
+**key_filter** | [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  | [optional] 
+**queue_url** | **str** |  | 
+**record_location** | **str** | Record location within each parsed object. JSON only; empty &#x3D; whole record. | [optional] 
+**region** | **str** |  | 
+**role_arn** | **str** |  | [optional] 
+**uses_sns** | **bool** |  | [optional] 
+**with_metadata** | **bool** |  | [optional] 
 
 ## Example
 

@@ -4,20 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Compression** | Pointer to **string** | Compression format of the S3 objects. | [optional] 
-**Format** | Pointer to **string** | File format of the S3 objects. | [optional] 
-**QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
-**RecordLocation** | Pointer to **string** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
-**Region** | Pointer to **string** | The AWS region where the SQS queue is located. | [optional] 
-**RoleArn** | Pointer to **string** | The ARN of the IAM role to assume for accessing the SQS queue. | [optional] 
-**UsesSns** | Pointer to **bool** | Uses AWS SNS in the middle of S3 and SQS for fan-out usecases. | [optional] 
-**WithMetadata** | Pointer to **bool** | Whether to include S3 object metadata in the output. | [optional] 
+**Compression** | **string** | Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift. | 
+**Format** | **string** | Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers&#39; package init wipes its Formats map after per-file inits register, so ListFormats() doesn&#39;t include csv today. | 
+**KeyFilter** | Pointer to [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  | [optional] 
+**QueueUrl** | **string** |  | 
+**RecordLocation** | Pointer to **string** | Record location within each parsed object. JSON only; empty &#x3D; whole record. | [optional] 
+**Region** | **string** |  | 
+**RoleArn** | Pointer to **string** |  | [optional] 
+**UsesSns** | Pointer to **bool** |  | [optional] 
+**WithMetadata** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewAwssqss3SettingsConfig
 
-`func NewAwssqss3SettingsConfig() *Awssqss3SettingsConfig`
+`func NewAwssqss3SettingsConfig(compression string, format string, queueUrl string, region string, ) *Awssqss3SettingsConfig`
 
 NewAwssqss3SettingsConfig instantiates a new Awssqss3SettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +52,6 @@ and a boolean to check if the value has been set.
 
 SetCompression sets Compression field to given value.
 
-### HasCompression
-
-`func (o *Awssqss3SettingsConfig) HasCompression() bool`
-
-HasCompression returns a boolean if a field has been set.
 
 ### GetFormat
 
@@ -76,11 +72,31 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
 
-`func (o *Awssqss3SettingsConfig) HasFormat() bool`
+### GetKeyFilter
 
-HasFormat returns a boolean if a field has been set.
+`func (o *Awssqss3SettingsConfig) GetKeyFilter() SqsS3BaseKeyFilter`
+
+GetKeyFilter returns the KeyFilter field if non-nil, zero value otherwise.
+
+### GetKeyFilterOk
+
+`func (o *Awssqss3SettingsConfig) GetKeyFilterOk() (*SqsS3BaseKeyFilter, bool)`
+
+GetKeyFilterOk returns a tuple with the KeyFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyFilter
+
+`func (o *Awssqss3SettingsConfig) SetKeyFilter(v SqsS3BaseKeyFilter)`
+
+SetKeyFilter sets KeyFilter field to given value.
+
+### HasKeyFilter
+
+`func (o *Awssqss3SettingsConfig) HasKeyFilter() bool`
+
+HasKeyFilter returns a boolean if a field has been set.
 
 ### GetQueueUrl
 
@@ -101,11 +117,6 @@ and a boolean to check if the value has been set.
 
 SetQueueUrl sets QueueUrl field to given value.
 
-### HasQueueUrl
-
-`func (o *Awssqss3SettingsConfig) HasQueueUrl() bool`
-
-HasQueueUrl returns a boolean if a field has been set.
 
 ### GetRecordLocation
 
@@ -151,11 +162,6 @@ and a boolean to check if the value has been set.
 
 SetRegion sets Region field to given value.
 
-### HasRegion
-
-`func (o *Awssqss3SettingsConfig) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
 
 ### GetRoleArn
 

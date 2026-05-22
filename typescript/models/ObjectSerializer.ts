@@ -23,6 +23,8 @@ export * from '../models/AwsGuarddutySecretsConfig';
 export * from '../models/AwsGuarddutySettingsConfig';
 export * from '../models/AwsS3SecretsConfig';
 export * from '../models/AwsS3SettingsConfig';
+export * from '../models/AwsSqsS3CloudtrailChunkingMode';
+export * from '../models/AwsSqsS3CloudtrailSettingsConfig';
 export * from '../models/AwssqsoutputQueueType';
 export * from '../models/AwssqsoutputSettingsConfig';
 export * from '../models/Awssqss3SettingsConfig';
@@ -502,6 +504,11 @@ export * from '../models/SnykTargetsSecretsConfig';
 export * from '../models/SnykTargetsSettingsConfig';
 export * from '../models/SplunkSecretsConfig';
 export * from '../models/SplunkSettingsConfig';
+export * from '../models/SqsS3BaseFilterVariant';
+export * from '../models/SqsS3BaseKeyFilter';
+export * from '../models/SqsS3BaseKeyFilterMode';
+export * from '../models/SqsS3BaseKeyFilterOperator';
+export * from '../models/SqsS3BaseKeyFilterType';
 export * from '../models/SumologicSecretsConfig';
 export * from '../models/SumologicSettingsConfig';
 export * from '../models/SumologicSourceMetadata';
@@ -611,9 +618,11 @@ import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
+import { AwsSqsS3CloudtrailChunkingMode } from '../models/AwsSqsS3CloudtrailChunkingMode';
+import { AwsSqsS3CloudtrailSettingsConfig        } from '../models/AwsSqsS3CloudtrailSettingsConfig';
 import { AwssqsoutputQueueType } from '../models/AwssqsoutputQueueType';
 import { AwssqsoutputSettingsConfig      } from '../models/AwssqsoutputSettingsConfig';
-import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
+import { Awssqss3SettingsConfig, Awssqss3SettingsConfigCompressionEnum  , Awssqss3SettingsConfigFormatEnum          } from '../models/Awssqss3SettingsConfig';
 import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
 import { AxiomSettingsConfig } from '../models/AxiomSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
@@ -1090,6 +1099,11 @@ import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
 import { SnykTargetsSettingsConfig } from '../models/SnykTargetsSettingsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
+import { SqsS3BaseFilterVariant    } from '../models/SqsS3BaseFilterVariant';
+import { SqsS3BaseKeyFilter   } from '../models/SqsS3BaseKeyFilter';
+import { SqsS3BaseKeyFilterMode } from '../models/SqsS3BaseKeyFilterMode';
+import { SqsS3BaseKeyFilterOperator } from '../models/SqsS3BaseKeyFilterOperator';
+import { SqsS3BaseKeyFilterType } from '../models/SqsS3BaseKeyFilterType';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { SumologicSourceMetadata } from '../models/SumologicSourceMetadata';
@@ -1190,7 +1204,10 @@ let enumsMap: Set<string> = new Set<string>([
     "AlertsAlertCategory",
     "AlertsAlertGranularity",
     "AlertsAlertHouse",
+    "AwsSqsS3CloudtrailChunkingMode",
     "AwssqsoutputQueueType",
+    "Awssqss3SettingsConfigCompressionEnum",
+    "Awssqss3SettingsConfigFormatEnum",
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
     "CustomerEventDataSettingsConfigEnvironmentEnum",
@@ -1231,6 +1248,9 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
     "SecretProcessesorInputConfigSettingsEnvironmentEnum",
     "SnowflakeInputSettingsConfigAuthTypeEnum",
+    "SqsS3BaseKeyFilterMode",
+    "SqsS3BaseKeyFilterOperator",
+    "SqsS3BaseKeyFilterType",
     "TypesStringComparison",
     "UtcTimestampTimestampFormat",
     "WizAssetStatus",
@@ -1276,6 +1296,7 @@ let typeMap: {[index: string]: any} = {
     "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
     "AwsS3SecretsConfig": AwsS3SecretsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
+    "AwsSqsS3CloudtrailSettingsConfig": AwsSqsS3CloudtrailSettingsConfig,
     "AwssqsoutputSettingsConfig": AwssqsoutputSettingsConfig,
     "Awssqss3SettingsConfig": Awssqss3SettingsConfig,
     "AxiomSecretsConfig": AxiomSecretsConfig,
@@ -1726,6 +1747,8 @@ let typeMap: {[index: string]: any} = {
     "SnykTargetsSettingsConfig": SnykTargetsSettingsConfig,
     "SplunkSecretsConfig": SplunkSecretsConfig,
     "SplunkSettingsConfig": SplunkSettingsConfig,
+    "SqsS3BaseFilterVariant": SqsS3BaseFilterVariant,
+    "SqsS3BaseKeyFilter": SqsS3BaseKeyFilter,
     "SumologicSecretsConfig": SumologicSecretsConfig,
     "SumologicSettingsConfig": SumologicSettingsConfig,
     "SumologicSourceMetadata": SumologicSourceMetadata,

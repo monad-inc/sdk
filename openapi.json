@@ -430,6 +430,52 @@
                 },
                 "type": "object"
             },
+            "aws_sqs_s3_cloudtrail.ChunkingMode": {
+                "description": "ChunkingMode for the Records array. Empty → by_size.",
+                "enum": [
+                    "by_size",
+                    "per_record",
+                    "by_size",
+                    "per_record"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "ChunkingModeBySize",
+                    "ChunkingModePerRecord"
+                ]
+            },
+            "aws_sqs_s3_cloudtrail.SettingsConfig": {
+                "description": "AWS SQS S3 CloudTrail settings",
+                "properties": {
+                    "chunking_mode": {
+                        "$ref": "#/components/schemas/aws_sqs_s3_cloudtrail.ChunkingMode"
+                    },
+                    "exclude_digest_files": {
+                        "description": "ExcludeDigestFiles skips keys containing \"/CloudTrail-Digest/\" (hash\nsignatures, not events).",
+                        "type": "boolean"
+                    },
+                    "queue_url": {
+                        "type": "string"
+                    },
+                    "region": {
+                        "type": "string"
+                    },
+                    "role_arn": {
+                        "type": "string"
+                    },
+                    "uses_sns": {
+                        "type": "boolean"
+                    },
+                    "with_metadata": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "queue_url",
+                    "region"
+                ],
+                "type": "object"
+            },
             "awssqsoutput.QueueType": {
                 "description": "The type of SQS queue to use. Can be either \"standard\" or \"fifo\".",
                 "enum": [
@@ -471,38 +517,52 @@
                 "description": "AWS SQS S3 settings",
                 "properties": {
                     "compression": {
-                        "description": "Compression format of the S3 objects.",
+                        "description": "Compression of S3 objects. oneof must mirror\ncompression_handlers.ListCompressions(); TestCompressionFormatTagDrift\nguards drift.",
+                        "enum": [
+                            "auto",
+                            "gzip",
+                            "none"
+                        ],
                         "type": "string"
                     },
                     "format": {
-                        "description": "File format of the S3 objects.",
+                        "description": "Format of S3 objects. oneof must mirror format_handlers.ListFormats();\nTestCompressionFormatTagDrift guards drift. csv is omitted because\nformat_handlers' package init wipes its Formats map after per-file\ninits register, so ListFormats() doesn't include csv today.",
+                        "enum": [
+                            "json",
+                            "jsonl",
+                            "wsv"
+                        ],
                         "type": "string"
                     },
+                    "key_filter": {
+                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilter"
+                    },
                     "queue_url": {
-                        "description": "The URL of the SQS queue to poll for messages.",
                         "type": "string"
                     },
                     "record_location": {
-                        "description": "Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.",
+                        "description": "Record location within each parsed object. JSON only; empty = whole record.",
                         "type": "string"
                     },
                     "region": {
-                        "description": "The AWS region where the SQS queue is located.",
                         "type": "string"
                     },
                     "role_arn": {
-                        "description": "The ARN of the IAM role to assume for accessing the SQS queue.",
                         "type": "string"
                     },
                     "uses_sns": {
-                        "description": "Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.",
                         "type": "boolean"
                     },
                     "with_metadata": {
-                        "description": "Whether to include S3 object metadata in the output.",
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "compression",
+                    "format",
+                    "queue_url",
+                    "region"
+                ],
                 "type": "object"
             },
             "axiom.SecretsConfig": {
@@ -9274,6 +9334,9 @@
                                 "$ref": "#/components/schemas/aws_s3.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/aws_sqs_s3_cloudtrail.SettingsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/awssqss3.SettingsConfig"
                             },
                             {
@@ -10282,6 +10345,82 @@
                     }
                 },
                 "type": "object"
+            },
+            "sqs_s3_base.FilterVariant": {
+                "properties": {
+                    "mode": {
+                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilterMode"
+                    },
+                    "operator": {
+                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilterOperator"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "mode",
+                    "operator",
+                    "value"
+                ],
+                "type": "object"
+            },
+            "sqs_s3_base.KeyFilter": {
+                "description": "Optional S3 key filter. nil pointer = no filtering.",
+                "properties": {
+                    "filter": {
+                        "$ref": "#/components/schemas/sqs_s3_base.FilterVariant"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilterType"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "sqs_s3_base.KeyFilterMode": {
+                "enum": [
+                    "include",
+                    "exclude",
+                    "include",
+                    "exclude"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "KeyFilterModeInclude",
+                    "KeyFilterModeExclude"
+                ]
+            },
+            "sqs_s3_base.KeyFilterOperator": {
+                "enum": [
+                    "contains",
+                    "ends_with",
+                    "starts_with",
+                    "contains",
+                    "ends_with",
+                    "starts_with"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "KeyFilterOpContains",
+                    "KeyFilterOpEndsWith",
+                    "KeyFilterOpStartsWith"
+                ]
+            },
+            "sqs_s3_base.KeyFilterType": {
+                "enum": [
+                    "none",
+                    "filter",
+                    "none",
+                    "filter"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "KeyFilterTypeNone",
+                    "KeyFilterTypeFilter"
+                ]
             },
             "sumologic.SecretsConfig": {
                 "description": "Sumo Logic Output Secrets",

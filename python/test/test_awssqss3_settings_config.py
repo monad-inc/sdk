@@ -36,8 +36,14 @@ class TestAwssqss3SettingsConfig(unittest.TestCase):
         model = Awssqss3SettingsConfig()
         if include_optional:
             return Awssqss3SettingsConfig(
-                compression = '',
-                format = '',
+                compression = 'auto',
+                format = 'json',
+                key_filter = monad.models.sqs_s3_base/key_filter.sqs_s3_base.KeyFilter(
+                    filter = monad.models.sqs_s3_base/filter_variant.sqs_s3_base.FilterVariant(
+                        mode = 'include', 
+                        operator = 'contains', 
+                        value = '', ), 
+                    type = 'none', ),
                 queue_url = '',
                 record_location = '',
                 region = '',
@@ -47,6 +53,10 @@ class TestAwssqss3SettingsConfig(unittest.TestCase):
             )
         else:
             return Awssqss3SettingsConfig(
+                compression = 'auto',
+                format = 'json',
+                queue_url = '',
+                region = '',
         )
         """
 

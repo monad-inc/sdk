@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.SqsS3BaseKeyFilter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,19 +51,132 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Awssqss3SettingsConfig {
+  /**
+   * Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift.
+   */
+  @JsonAdapter(CompressionEnum.Adapter.class)
+  public enum CompressionEnum {
+    AUTO("auto"),
+    
+    GZIP("gzip"),
+    
+    NONE("none");
+
+    private String value;
+
+    CompressionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CompressionEnum fromValue(String value) {
+      for (CompressionEnum b : CompressionEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CompressionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CompressionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CompressionEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CompressionEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CompressionEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
-  @javax.annotation.Nullable
-  private String compression;
+  @javax.annotation.Nonnull
+  private CompressionEnum compression;
+
+  /**
+   * Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers&#39; package init wipes its Formats map after per-file inits register, so ListFormats() doesn&#39;t include csv today.
+   */
+  @JsonAdapter(FormatEnum.Adapter.class)
+  public enum FormatEnum {
+    JSON("json"),
+    
+    JSONL("jsonl"),
+    
+    WSV("wsv");
+
+    private String value;
+
+    FormatEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static FormatEnum fromValue(String value) {
+      for (FormatEnum b : FormatEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<FormatEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FormatEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FormatEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return FormatEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      FormatEnum.fromValue(value);
+    }
+  }
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
+  @javax.annotation.Nonnull
+  private FormatEnum format;
+
+  public static final String SERIALIZED_NAME_KEY_FILTER = "key_filter";
+  @SerializedName(SERIALIZED_NAME_KEY_FILTER)
   @javax.annotation.Nullable
-  private String format;
+  private SqsS3BaseKeyFilter keyFilter;
 
   public static final String SERIALIZED_NAME_QUEUE_URL = "queue_url";
   @SerializedName(SERIALIZED_NAME_QUEUE_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String queueUrl;
 
   public static final String SERIALIZED_NAME_RECORD_LOCATION = "record_location";
@@ -72,7 +186,7 @@ public class Awssqss3SettingsConfig {
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String region;
 
   public static final String SERIALIZED_NAME_ROLE_ARN = "role_arn";
@@ -93,59 +207,78 @@ public class Awssqss3SettingsConfig {
   public Awssqss3SettingsConfig() {
   }
 
-  public Awssqss3SettingsConfig compression(@javax.annotation.Nullable String compression) {
+  public Awssqss3SettingsConfig compression(@javax.annotation.Nonnull CompressionEnum compression) {
     this.compression = compression;
     return this;
   }
 
   /**
-   * Compression format of the S3 objects.
+   * Compression of S3 objects. oneof must mirror compression_handlers.ListCompressions(); TestCompressionFormatTagDrift guards drift.
    * @return compression
    */
-  @javax.annotation.Nullable
-  public String getCompression() {
+  @javax.annotation.Nonnull
+  public CompressionEnum getCompression() {
     return compression;
   }
 
-  public void setCompression(@javax.annotation.Nullable String compression) {
+  public void setCompression(@javax.annotation.Nonnull CompressionEnum compression) {
     this.compression = compression;
   }
 
 
-  public Awssqss3SettingsConfig format(@javax.annotation.Nullable String format) {
+  public Awssqss3SettingsConfig format(@javax.annotation.Nonnull FormatEnum format) {
     this.format = format;
     return this;
   }
 
   /**
-   * File format of the S3 objects.
+   * Format of S3 objects. oneof must mirror format_handlers.ListFormats(); TestCompressionFormatTagDrift guards drift. csv is omitted because format_handlers&#39; package init wipes its Formats map after per-file inits register, so ListFormats() doesn&#39;t include csv today.
    * @return format
    */
-  @javax.annotation.Nullable
-  public String getFormat() {
+  @javax.annotation.Nonnull
+  public FormatEnum getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable String format) {
+  public void setFormat(@javax.annotation.Nonnull FormatEnum format) {
     this.format = format;
   }
 
 
-  public Awssqss3SettingsConfig queueUrl(@javax.annotation.Nullable String queueUrl) {
+  public Awssqss3SettingsConfig keyFilter(@javax.annotation.Nullable SqsS3BaseKeyFilter keyFilter) {
+    this.keyFilter = keyFilter;
+    return this;
+  }
+
+  /**
+   * Get keyFilter
+   * @return keyFilter
+   */
+  @javax.annotation.Nullable
+  public SqsS3BaseKeyFilter getKeyFilter() {
+    return keyFilter;
+  }
+
+  public void setKeyFilter(@javax.annotation.Nullable SqsS3BaseKeyFilter keyFilter) {
+    this.keyFilter = keyFilter;
+  }
+
+
+  public Awssqss3SettingsConfig queueUrl(@javax.annotation.Nonnull String queueUrl) {
     this.queueUrl = queueUrl;
     return this;
   }
 
   /**
-   * The URL of the SQS queue to poll for messages.
+   * Get queueUrl
    * @return queueUrl
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getQueueUrl() {
     return queueUrl;
   }
 
-  public void setQueueUrl(@javax.annotation.Nullable String queueUrl) {
+  public void setQueueUrl(@javax.annotation.Nonnull String queueUrl) {
     this.queueUrl = queueUrl;
   }
 
@@ -156,7 +289,7 @@ public class Awssqss3SettingsConfig {
   }
 
   /**
-   * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
+   * Record location within each parsed object. JSON only; empty &#x3D; whole record.
    * @return recordLocation
    */
   @javax.annotation.Nullable
@@ -169,21 +302,21 @@ public class Awssqss3SettingsConfig {
   }
 
 
-  public Awssqss3SettingsConfig region(@javax.annotation.Nullable String region) {
+  public Awssqss3SettingsConfig region(@javax.annotation.Nonnull String region) {
     this.region = region;
     return this;
   }
 
   /**
-   * The AWS region where the SQS queue is located.
+   * Get region
    * @return region
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getRegion() {
     return region;
   }
 
-  public void setRegion(@javax.annotation.Nullable String region) {
+  public void setRegion(@javax.annotation.Nonnull String region) {
     this.region = region;
   }
 
@@ -194,7 +327,7 @@ public class Awssqss3SettingsConfig {
   }
 
   /**
-   * The ARN of the IAM role to assume for accessing the SQS queue.
+   * Get roleArn
    * @return roleArn
    */
   @javax.annotation.Nullable
@@ -213,7 +346,7 @@ public class Awssqss3SettingsConfig {
   }
 
   /**
-   * Uses AWS SNS in the middle of S3 and SQS for fan-out usecases.
+   * Get usesSns
    * @return usesSns
    */
   @javax.annotation.Nullable
@@ -232,7 +365,7 @@ public class Awssqss3SettingsConfig {
   }
 
   /**
-   * Whether to include S3 object metadata in the output.
+   * Get withMetadata
    * @return withMetadata
    */
   @javax.annotation.Nullable
@@ -257,6 +390,7 @@ public class Awssqss3SettingsConfig {
     Awssqss3SettingsConfig awssqss3SettingsConfig = (Awssqss3SettingsConfig) o;
     return Objects.equals(this.compression, awssqss3SettingsConfig.compression) &&
         Objects.equals(this.format, awssqss3SettingsConfig.format) &&
+        Objects.equals(this.keyFilter, awssqss3SettingsConfig.keyFilter) &&
         Objects.equals(this.queueUrl, awssqss3SettingsConfig.queueUrl) &&
         Objects.equals(this.recordLocation, awssqss3SettingsConfig.recordLocation) &&
         Objects.equals(this.region, awssqss3SettingsConfig.region) &&
@@ -267,7 +401,7 @@ public class Awssqss3SettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(compression, format, queueUrl, recordLocation, region, roleArn, usesSns, withMetadata);
+    return Objects.hash(compression, format, keyFilter, queueUrl, recordLocation, region, roleArn, usesSns, withMetadata);
   }
 
   @Override
@@ -276,6 +410,7 @@ public class Awssqss3SettingsConfig {
     sb.append("class Awssqss3SettingsConfig {\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("    keyFilter: ").append(toIndentedString(keyFilter)).append("\n");
     sb.append("    queueUrl: ").append(toIndentedString(queueUrl)).append("\n");
     sb.append("    recordLocation: ").append(toIndentedString(recordLocation)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
@@ -300,10 +435,10 @@ public class Awssqss3SettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("compression", "format", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"));
+    openapiFields = new HashSet<String>(Arrays.asList("compression", "format", "key_filter", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("compression", "format", "queue_url", "region"));
   }
 
   /**
@@ -326,20 +461,35 @@ public class Awssqss3SettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Awssqss3SettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Awssqss3SettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
+      if (!jsonObj.get("compression").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
-      if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
+      // validate the required field `compression`
+      CompressionEnum.validateJsonElement(jsonObj.get("compression"));
+      if (!jsonObj.get("format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
-      if ((jsonObj.get("queue_url") != null && !jsonObj.get("queue_url").isJsonNull()) && !jsonObj.get("queue_url").isJsonPrimitive()) {
+      // validate the required field `format`
+      FormatEnum.validateJsonElement(jsonObj.get("format"));
+      // validate the optional field `key_filter`
+      if (jsonObj.get("key_filter") != null && !jsonObj.get("key_filter").isJsonNull()) {
+        SqsS3BaseKeyFilter.validateJsonElement(jsonObj.get("key_filter"));
+      }
+      if (!jsonObj.get("queue_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `queue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("queue_url").toString()));
       }
       if ((jsonObj.get("record_location") != null && !jsonObj.get("record_location").isJsonNull()) && !jsonObj.get("record_location").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record_location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_location").toString()));
       }
-      if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
+      if (!jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("role_arn") != null && !jsonObj.get("role_arn").isJsonNull()) && !jsonObj.get("role_arn").isJsonPrimitive()) {

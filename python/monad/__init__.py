@@ -92,6 +92,8 @@ __all__ = [
     "AwsGuarddutySettingsConfig",
     "AwsS3SecretsConfig",
     "AwsS3SettingsConfig",
+    "AwsSqsS3CloudtrailChunkingMode",
+    "AwsSqsS3CloudtrailSettingsConfig",
     "AwssqsoutputQueueType",
     "AwssqsoutputSettingsConfig",
     "Awssqss3SettingsConfig",
@@ -571,6 +573,11 @@ __all__ = [
     "SnykTargetsSettingsConfig",
     "SplunkSecretsConfig",
     "SplunkSettingsConfig",
+    "SqsS3BaseFilterVariant",
+    "SqsS3BaseKeyFilter",
+    "SqsS3BaseKeyFilterMode",
+    "SqsS3BaseKeyFilterOperator",
+    "SqsS3BaseKeyFilterType",
     "SumologicSecretsConfig",
     "SumologicSettingsConfig",
     "SumologicSourceMetadata",
@@ -734,6 +741,8 @@ from monad.models.aws_guardduty_secrets_config import AwsGuarddutySecretsConfig 
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig as AwsGuarddutySettingsConfig
 from monad.models.aws_s3_secrets_config import AwsS3SecretsConfig as AwsS3SecretsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
+from monad.models.aws_sqs_s3_cloudtrail_chunking_mode import AwsSqsS3CloudtrailChunkingMode as AwsSqsS3CloudtrailChunkingMode
+from monad.models.aws_sqs_s3_cloudtrail_settings_config import AwsSqsS3CloudtrailSettingsConfig as AwsSqsS3CloudtrailSettingsConfig
 from monad.models.awssqsoutput_queue_type import AwssqsoutputQueueType as AwssqsoutputQueueType
 from monad.models.awssqsoutput_settings_config import AwssqsoutputSettingsConfig as AwssqsoutputSettingsConfig
 from monad.models.awssqss3_settings_config import Awssqss3SettingsConfig as Awssqss3SettingsConfig
@@ -1213,6 +1222,11 @@ from monad.models.snyk_targets_secrets_config import SnykTargetsSecretsConfig as
 from monad.models.snyk_targets_settings_config import SnykTargetsSettingsConfig as SnykTargetsSettingsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig as SplunkSecretsConfig
 from monad.models.splunk_settings_config import SplunkSettingsConfig as SplunkSettingsConfig
+from monad.models.sqs_s3_base_filter_variant import SqsS3BaseFilterVariant as SqsS3BaseFilterVariant
+from monad.models.sqs_s3_base_key_filter import SqsS3BaseKeyFilter as SqsS3BaseKeyFilter
+from monad.models.sqs_s3_base_key_filter_mode import SqsS3BaseKeyFilterMode as SqsS3BaseKeyFilterMode
+from monad.models.sqs_s3_base_key_filter_operator import SqsS3BaseKeyFilterOperator as SqsS3BaseKeyFilterOperator
+from monad.models.sqs_s3_base_key_filter_type import SqsS3BaseKeyFilterType as SqsS3BaseKeyFilterType
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig as SumologicSecretsConfig
 from monad.models.sumologic_settings_config import SumologicSettingsConfig as SumologicSettingsConfig
 from monad.models.sumologic_source_metadata import SumologicSourceMetadata as SumologicSourceMetadata
