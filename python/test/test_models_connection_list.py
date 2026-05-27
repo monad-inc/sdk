@@ -40,9 +40,13 @@ class TestModelsConnectionList(unittest.TestCase):
                     monad.models.models/connection.models.Connection(
                         created_at = '', 
                         description = '', 
+                        email_domains = [
+                            ''
+                            ], 
                         id = '', 
                         name = '', 
                         organization_id = '', 
+                        public_name = '', 
                         saml_entity_id = '', 
                         saml_metadata_url = '', 
                         type = '', 

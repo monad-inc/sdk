@@ -6,9 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**EmailDomains** | Pointer to **[]string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
+**PublicName** | Pointer to **string** |  | [optional] 
 **SamlEntityId** | Pointer to **string** |  | [optional] 
 **SamlMetadataUrl** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -82,6 +84,31 @@ SetDescription sets Description field to given value.
 `func (o *ModelsConnection) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetEmailDomains
+
+`func (o *ModelsConnection) GetEmailDomains() []string`
+
+GetEmailDomains returns the EmailDomains field if non-nil, zero value otherwise.
+
+### GetEmailDomainsOk
+
+`func (o *ModelsConnection) GetEmailDomainsOk() (*[]string, bool)`
+
+GetEmailDomainsOk returns a tuple with the EmailDomains field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailDomains
+
+`func (o *ModelsConnection) SetEmailDomains(v []string)`
+
+SetEmailDomains sets EmailDomains field to given value.
+
+### HasEmailDomains
+
+`func (o *ModelsConnection) HasEmailDomains() bool`
+
+HasEmailDomains returns a boolean if a field has been set.
 
 ### GetId
 
@@ -157,6 +184,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *ModelsConnection) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetPublicName
+
+`func (o *ModelsConnection) GetPublicName() string`
+
+GetPublicName returns the PublicName field if non-nil, zero value otherwise.
+
+### GetPublicNameOk
+
+`func (o *ModelsConnection) GetPublicNameOk() (*string, bool)`
+
+GetPublicNameOk returns a tuple with the PublicName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicName
+
+`func (o *ModelsConnection) SetPublicName(v string)`
+
+SetPublicName sets PublicName field to given value.
+
+### HasPublicName
+
+`func (o *ModelsConnection) HasPublicName() bool`
+
+HasPublicName returns a boolean if a field has been set.
 
 ### GetSamlEntityId
 

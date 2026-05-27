@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -60,6 +62,11 @@ public class ModelsConnection {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_EMAIL_DOMAINS = "email_domains";
+  @SerializedName(SERIALIZED_NAME_EMAIL_DOMAINS)
+  @javax.annotation.Nullable
+  private List<String> emailDomains = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -74,6 +81,11 @@ public class ModelsConnection {
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
   private String organizationId;
+
+  public static final String SERIALIZED_NAME_PUBLIC_NAME = "public_name";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_NAME)
+  @javax.annotation.Nullable
+  private String publicName;
 
   public static final String SERIALIZED_NAME_SAML_ENTITY_ID = "saml_entity_id";
   @SerializedName(SERIALIZED_NAME_SAML_ENTITY_ID)
@@ -136,6 +148,33 @@ public class ModelsConnection {
   }
 
 
+  public ModelsConnection emailDomains(@javax.annotation.Nullable List<String> emailDomains) {
+    this.emailDomains = emailDomains;
+    return this;
+  }
+
+  public ModelsConnection addEmailDomainsItem(String emailDomainsItem) {
+    if (this.emailDomains == null) {
+      this.emailDomains = new ArrayList<>();
+    }
+    this.emailDomains.add(emailDomainsItem);
+    return this;
+  }
+
+  /**
+   * Get emailDomains
+   * @return emailDomains
+   */
+  @javax.annotation.Nullable
+  public List<String> getEmailDomains() {
+    return emailDomains;
+  }
+
+  public void setEmailDomains(@javax.annotation.Nullable List<String> emailDomains) {
+    this.emailDomains = emailDomains;
+  }
+
+
   public ModelsConnection id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
@@ -190,6 +229,25 @@ public class ModelsConnection {
 
   public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
+  }
+
+
+  public ModelsConnection publicName(@javax.annotation.Nullable String publicName) {
+    this.publicName = publicName;
+    return this;
+  }
+
+  /**
+   * Get publicName
+   * @return publicName
+   */
+  @javax.annotation.Nullable
+  public String getPublicName() {
+    return publicName;
+  }
+
+  public void setPublicName(@javax.annotation.Nullable String publicName) {
+    this.publicName = publicName;
   }
 
 
@@ -281,9 +339,11 @@ public class ModelsConnection {
     ModelsConnection modelsConnection = (ModelsConnection) o;
     return Objects.equals(this.createdAt, modelsConnection.createdAt) &&
         Objects.equals(this.description, modelsConnection.description) &&
+        Objects.equals(this.emailDomains, modelsConnection.emailDomains) &&
         Objects.equals(this.id, modelsConnection.id) &&
         Objects.equals(this.name, modelsConnection.name) &&
         Objects.equals(this.organizationId, modelsConnection.organizationId) &&
+        Objects.equals(this.publicName, modelsConnection.publicName) &&
         Objects.equals(this.samlEntityId, modelsConnection.samlEntityId) &&
         Objects.equals(this.samlMetadataUrl, modelsConnection.samlMetadataUrl) &&
         Objects.equals(this.type, modelsConnection.type) &&
@@ -292,7 +352,7 @@ public class ModelsConnection {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, name, organizationId, samlEntityId, samlMetadataUrl, type, updatedAt);
+    return Objects.hash(createdAt, description, emailDomains, id, name, organizationId, publicName, samlEntityId, samlMetadataUrl, type, updatedAt);
   }
 
   @Override
@@ -301,9 +361,11 @@ public class ModelsConnection {
     sb.append("class ModelsConnection {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    emailDomains: ").append(toIndentedString(emailDomains)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    publicName: ").append(toIndentedString(publicName)).append("\n");
     sb.append("    samlEntityId: ").append(toIndentedString(samlEntityId)).append("\n");
     sb.append("    samlMetadataUrl: ").append(toIndentedString(samlMetadataUrl)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -326,7 +388,7 @@ public class ModelsConnection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "name", "organization_id", "saml_entity_id", "saml_metadata_url", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "email_domains", "id", "name", "organization_id", "public_name", "saml_entity_id", "saml_metadata_url", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -359,6 +421,10 @@ public class ModelsConnection {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("email_domains") != null && !jsonObj.get("email_domains").isJsonNull() && !jsonObj.get("email_domains").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email_domains` to be an array in the JSON string but got `%s`", jsonObj.get("email_domains").toString()));
+      }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
@@ -367,6 +433,9 @@ public class ModelsConnection {
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+      }
+      if ((jsonObj.get("public_name") != null && !jsonObj.get("public_name").isJsonNull()) && !jsonObj.get("public_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `public_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_name").toString()));
       }
       if ((jsonObj.get("saml_entity_id") != null && !jsonObj.get("saml_entity_id").isJsonNull()) && !jsonObj.get("saml_entity_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `saml_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_entity_id").toString()));

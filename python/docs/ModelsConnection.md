@@ -7,9 +7,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**email_domains** | **List[str]** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
+**public_name** | **str** |  | [optional] 
 **saml_entity_id** | **str** |  | [optional] 
 **saml_metadata_url** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 

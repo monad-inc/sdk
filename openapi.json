@@ -4561,6 +4561,13 @@
                     "description": {
                         "type": "string"
                     },
+                    "email_domains": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
                     "id": {
                         "type": "string"
                     },
@@ -4568,6 +4575,9 @@
                         "type": "string"
                     },
                     "organization_id": {
+                        "type": "string"
+                    },
+                    "public_name": {
                         "type": "string"
                     },
                     "saml_entity_id": {

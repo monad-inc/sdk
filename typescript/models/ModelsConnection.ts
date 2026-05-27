@@ -15,9 +15,11 @@ import { HttpFile } from '../http/http';
 export class ModelsConnection {
     'createdAt'?: string;
     'description'?: string;
+    'emailDomains'?: Array<string>;
     'id'?: string;
     'name'?: string;
     'organizationId'?: string;
+    'publicName'?: string;
     'samlEntityId'?: string;
     'samlMetadataUrl'?: string;
     'type'?: string;
@@ -41,6 +43,12 @@ export class ModelsConnection {
             "format": ""
         },
         {
+            "name": "emailDomains",
+            "baseName": "email_domains",
+            "type": "Array<string>",
+            "format": ""
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "string",
@@ -55,6 +63,12 @@ export class ModelsConnection {
         {
             "name": "organizationId",
             "baseName": "organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "publicName",
+            "baseName": "public_name",
             "type": "string",
             "format": ""
         },

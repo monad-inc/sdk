@@ -22,9 +22,11 @@ var _ MappedNullable = &ModelsConnection{}
 type ModelsConnection struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
+	EmailDomains []string `json:"email_domains,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
+	PublicName *string `json:"public_name,omitempty"`
 	SamlEntityId *string `json:"saml_entity_id,omitempty"`
 	SamlMetadataUrl *string `json:"saml_metadata_url,omitempty"`
 	Type *string `json:"type,omitempty"`
@@ -110,6 +112,38 @@ func (o *ModelsConnection) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ModelsConnection) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetEmailDomains returns the EmailDomains field value if set, zero value otherwise.
+func (o *ModelsConnection) GetEmailDomains() []string {
+	if o == nil || IsNil(o.EmailDomains) {
+		var ret []string
+		return ret
+	}
+	return o.EmailDomains
+}
+
+// GetEmailDomainsOk returns a tuple with the EmailDomains field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsConnection) GetEmailDomainsOk() ([]string, bool) {
+	if o == nil || IsNil(o.EmailDomains) {
+		return nil, false
+	}
+	return o.EmailDomains, true
+}
+
+// HasEmailDomains returns a boolean if a field has been set.
+func (o *ModelsConnection) HasEmailDomains() bool {
+	if o != nil && !IsNil(o.EmailDomains) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmailDomains gets a reference to the given []string and assigns it to the EmailDomains field.
+func (o *ModelsConnection) SetEmailDomains(v []string) {
+	o.EmailDomains = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -206,6 +240,38 @@ func (o *ModelsConnection) HasOrganizationId() bool {
 // SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
 func (o *ModelsConnection) SetOrganizationId(v string) {
 	o.OrganizationId = &v
+}
+
+// GetPublicName returns the PublicName field value if set, zero value otherwise.
+func (o *ModelsConnection) GetPublicName() string {
+	if o == nil || IsNil(o.PublicName) {
+		var ret string
+		return ret
+	}
+	return *o.PublicName
+}
+
+// GetPublicNameOk returns a tuple with the PublicName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsConnection) GetPublicNameOk() (*string, bool) {
+	if o == nil || IsNil(o.PublicName) {
+		return nil, false
+	}
+	return o.PublicName, true
+}
+
+// HasPublicName returns a boolean if a field has been set.
+func (o *ModelsConnection) HasPublicName() bool {
+	if o != nil && !IsNil(o.PublicName) {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicName gets a reference to the given string and assigns it to the PublicName field.
+func (o *ModelsConnection) SetPublicName(v string) {
+	o.PublicName = &v
 }
 
 // GetSamlEntityId returns the SamlEntityId field value if set, zero value otherwise.
@@ -352,6 +418,9 @@ func (o ModelsConnection) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	if !IsNil(o.EmailDomains) {
+		toSerialize["email_domains"] = o.EmailDomains
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -360,6 +429,9 @@ func (o ModelsConnection) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.PublicName) {
+		toSerialize["public_name"] = o.PublicName
 	}
 	if !IsNil(o.SamlEntityId) {
 		toSerialize["saml_entity_id"] = o.SamlEntityId
