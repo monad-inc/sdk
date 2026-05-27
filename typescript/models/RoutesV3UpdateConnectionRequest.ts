@@ -21,6 +21,10 @@ export class RoutesV3UpdateConnectionRequest {
     * Connection Name to be updated
     */
     'name'?: string;
+    /**
+    * PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.
+    */
+    'publicName'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -36,6 +40,12 @@ export class RoutesV3UpdateConnectionRequest {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "publicName",
+            "baseName": "public_name",
             "type": "string",
             "format": ""
         }    ];

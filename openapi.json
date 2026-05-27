@@ -8444,8 +8444,20 @@
                         "description": "Description of the connection",
                         "type": "string"
                     },
+                    "email_domains": {
+                        "description": "EmailDomains associated with the connection for SP-initiated SSO\ndiscovery. Optional; empty/unset falls through to the column default\n(empty array).",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
                     "name": {
                         "description": "Name of the connection",
+                        "type": "string"
+                    },
+                    "public_name": {
+                        "description": "PublicName is the customer-controlled label shown to end users in the\nSSO discovery picker. Optional; empty/unset falls through to the\ncolumn default (an auto-generated `sso-\u003chex\u003e` value).",
                         "type": "string"
                     },
                     "saml": {
@@ -8820,6 +8832,10 @@
                     },
                     "name": {
                         "description": "Connection Name to be updated",
+                        "type": "string"
+                    },
+                    "public_name": {
+                        "description": "PublicName is the customer-facing label shown to end users in the\nSSO discovery picker. Optional; nil preserves the existing value,\nnon-nil overwrites.",
                         "type": "string"
                     }
                 },

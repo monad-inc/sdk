@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | Description of the connection | [optional] 
+**EmailDomains** | Pointer to **[]string** | EmailDomains associated with the connection for SP-initiated SSO discovery. Optional; empty/unset falls through to the column default (empty array). | [optional] 
 **Name** | Pointer to **string** | Name of the connection | [optional] 
+**PublicName** | Pointer to **string** | PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated &#x60;sso-&lt;hex&gt;&#x60; value). | [optional] 
 **Saml** | Pointer to [**RoutesV3CreateConnectionRequestSaml**](RoutesV3CreateConnectionRequestSaml.md) |  | [optional] 
 
 ## Methods
@@ -52,6 +54,31 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetEmailDomains
+
+`func (o *CreateConnectionRequest) GetEmailDomains() []string`
+
+GetEmailDomains returns the EmailDomains field if non-nil, zero value otherwise.
+
+### GetEmailDomainsOk
+
+`func (o *CreateConnectionRequest) GetEmailDomainsOk() (*[]string, bool)`
+
+GetEmailDomainsOk returns a tuple with the EmailDomains field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailDomains
+
+`func (o *CreateConnectionRequest) SetEmailDomains(v []string)`
+
+SetEmailDomains sets EmailDomains field to given value.
+
+### HasEmailDomains
+
+`func (o *CreateConnectionRequest) HasEmailDomains() bool`
+
+HasEmailDomains returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *CreateConnectionRequest) GetName() string`
@@ -76,6 +103,31 @@ SetName sets Name field to given value.
 `func (o *CreateConnectionRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPublicName
+
+`func (o *CreateConnectionRequest) GetPublicName() string`
+
+GetPublicName returns the PublicName field if non-nil, zero value otherwise.
+
+### GetPublicNameOk
+
+`func (o *CreateConnectionRequest) GetPublicNameOk() (*string, bool)`
+
+GetPublicNameOk returns a tuple with the PublicName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicName
+
+`func (o *CreateConnectionRequest) SetPublicName(v string)`
+
+SetPublicName sets PublicName field to given value.
+
+### HasPublicName
+
+`func (o *CreateConnectionRequest) HasPublicName() bool`
+
+HasPublicName returns a boolean if a field has been set.
 
 ### GetSaml
 

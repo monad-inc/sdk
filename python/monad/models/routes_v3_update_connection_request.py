@@ -30,7 +30,8 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = Field(default=None, description="Connection Description to be updated")
     name: Optional[StrictStr] = Field(default=None, description="Connection Name to be updated")
-    __properties: ClassVar[List[str]] = ["description", "name"]
+    public_name: Optional[StrictStr] = Field(default=None, description="PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.")
+    __properties: ClassVar[List[str]] = ["description", "name", "public_name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,7 +85,8 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "public_name": obj.get("public_name")
         })
         return _obj
 

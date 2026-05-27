@@ -37,7 +37,8 @@ class TestRoutesV3UpdateConnectionRequest(unittest.TestCase):
         if include_optional:
             return RoutesV3UpdateConnectionRequest(
                 description = '',
-                name = ''
+                name = '',
+                public_name = ''
             )
         else:
             return RoutesV3UpdateConnectionRequest(

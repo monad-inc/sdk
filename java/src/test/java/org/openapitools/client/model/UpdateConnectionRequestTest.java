@@ -53,4 +53,12 @@ public class UpdateConnectionRequestTest {
         // TODO: test name
     }
 
+    /**
+     * Test the property 'publicName'
+     */
+    @Test
+    public void publicNameTest() {
+        // TODO: test publicName
+    }
+
 }

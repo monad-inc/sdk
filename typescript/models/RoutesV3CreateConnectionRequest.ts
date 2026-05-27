@@ -19,9 +19,17 @@ export class RoutesV3CreateConnectionRequest {
     */
     'description'?: string;
     /**
+    * EmailDomains associated with the connection for SP-initiated SSO discovery. Optional; empty/unset falls through to the column default (empty array).
+    */
+    'emailDomains'?: Array<string>;
+    /**
     * Name of the connection
     */
     'name'?: string;
+    /**
+    * PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated `sso-<hex>` value).
+    */
+    'publicName'?: string;
     'saml'?: RoutesV3CreateConnectionRequestSaml;
 
     static readonly discriminator: string | undefined = undefined;
@@ -36,8 +44,20 @@ export class RoutesV3CreateConnectionRequest {
             "format": ""
         },
         {
+            "name": "emailDomains",
+            "baseName": "email_domains",
+            "type": "Array<string>",
+            "format": ""
+        },
+        {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "publicName",
+            "baseName": "public_name",
             "type": "string",
             "format": ""
         },

@@ -22,8 +22,12 @@ var _ MappedNullable = &RoutesV3CreateConnectionRequest{}
 type RoutesV3CreateConnectionRequest struct {
 	// Description of the connection
 	Description *string `json:"description,omitempty"`
+	// EmailDomains associated with the connection for SP-initiated SSO discovery. Optional; empty/unset falls through to the column default (empty array).
+	EmailDomains []string `json:"email_domains,omitempty"`
 	// Name of the connection
 	Name *string `json:"name,omitempty"`
+	// PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated `sso-<hex>` value).
+	PublicName *string `json:"public_name,omitempty"`
 	Saml *RoutesV3CreateConnectionRequestSaml `json:"saml,omitempty"`
 }
 
@@ -76,6 +80,38 @@ func (o *RoutesV3CreateConnectionRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetEmailDomains returns the EmailDomains field value if set, zero value otherwise.
+func (o *RoutesV3CreateConnectionRequest) GetEmailDomains() []string {
+	if o == nil || IsNil(o.EmailDomains) {
+		var ret []string
+		return ret
+	}
+	return o.EmailDomains
+}
+
+// GetEmailDomainsOk returns a tuple with the EmailDomains field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3CreateConnectionRequest) GetEmailDomainsOk() ([]string, bool) {
+	if o == nil || IsNil(o.EmailDomains) {
+		return nil, false
+	}
+	return o.EmailDomains, true
+}
+
+// HasEmailDomains returns a boolean if a field has been set.
+func (o *RoutesV3CreateConnectionRequest) HasEmailDomains() bool {
+	if o != nil && !IsNil(o.EmailDomains) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmailDomains gets a reference to the given []string and assigns it to the EmailDomains field.
+func (o *RoutesV3CreateConnectionRequest) SetEmailDomains(v []string) {
+	o.EmailDomains = v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *RoutesV3CreateConnectionRequest) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -106,6 +142,38 @@ func (o *RoutesV3CreateConnectionRequest) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *RoutesV3CreateConnectionRequest) SetName(v string) {
 	o.Name = &v
+}
+
+// GetPublicName returns the PublicName field value if set, zero value otherwise.
+func (o *RoutesV3CreateConnectionRequest) GetPublicName() string {
+	if o == nil || IsNil(o.PublicName) {
+		var ret string
+		return ret
+	}
+	return *o.PublicName
+}
+
+// GetPublicNameOk returns a tuple with the PublicName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3CreateConnectionRequest) GetPublicNameOk() (*string, bool) {
+	if o == nil || IsNil(o.PublicName) {
+		return nil, false
+	}
+	return o.PublicName, true
+}
+
+// HasPublicName returns a boolean if a field has been set.
+func (o *RoutesV3CreateConnectionRequest) HasPublicName() bool {
+	if o != nil && !IsNil(o.PublicName) {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicName gets a reference to the given string and assigns it to the PublicName field.
+func (o *RoutesV3CreateConnectionRequest) SetPublicName(v string) {
+	o.PublicName = &v
 }
 
 // GetSaml returns the Saml field value if set, zero value otherwise.
@@ -153,8 +221,14 @@ func (o RoutesV3CreateConnectionRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	if !IsNil(o.EmailDomains) {
+		toSerialize["email_domains"] = o.EmailDomains
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.PublicName) {
+		toSerialize["public_name"] = o.PublicName
 	}
 	if !IsNil(o.Saml) {
 		toSerialize["saml"] = o.Saml

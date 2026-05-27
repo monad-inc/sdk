@@ -37,7 +37,8 @@ class TestUpdateConnectionRequest(unittest.TestCase):
         if include_optional:
             return UpdateConnectionRequest(
                 description = '',
-                name = ''
+                name = '',
+                public_name = ''
             )
         else:
             return UpdateConnectionRequest(

@@ -60,6 +60,11 @@ public class RoutesV3UpdateConnectionRequest {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_PUBLIC_NAME = "public_name";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_NAME)
+  @javax.annotation.Nullable
+  private String publicName;
+
   public RoutesV3UpdateConnectionRequest() {
   }
 
@@ -101,6 +106,25 @@ public class RoutesV3UpdateConnectionRequest {
   }
 
 
+  public RoutesV3UpdateConnectionRequest publicName(@javax.annotation.Nullable String publicName) {
+    this.publicName = publicName;
+    return this;
+  }
+
+  /**
+   * PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.
+   * @return publicName
+   */
+  @javax.annotation.Nullable
+  public String getPublicName() {
+    return publicName;
+  }
+
+  public void setPublicName(@javax.annotation.Nullable String publicName) {
+    this.publicName = publicName;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +136,13 @@ public class RoutesV3UpdateConnectionRequest {
     }
     RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest = (RoutesV3UpdateConnectionRequest) o;
     return Objects.equals(this.description, routesV3UpdateConnectionRequest.description) &&
-        Objects.equals(this.name, routesV3UpdateConnectionRequest.name);
+        Objects.equals(this.name, routesV3UpdateConnectionRequest.name) &&
+        Objects.equals(this.publicName, routesV3UpdateConnectionRequest.publicName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, name);
+    return Objects.hash(description, name, publicName);
   }
 
   @Override
@@ -126,6 +151,7 @@ public class RoutesV3UpdateConnectionRequest {
     sb.append("class RoutesV3UpdateConnectionRequest {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    publicName: ").append(toIndentedString(publicName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,7 +170,7 @@ public class RoutesV3UpdateConnectionRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "name", "public_name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -176,6 +202,9 @@ public class RoutesV3UpdateConnectionRequest {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("public_name") != null && !jsonObj.get("public_name").isJsonNull()) && !jsonObj.get("public_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `public_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_name").toString()));
       }
   }
 

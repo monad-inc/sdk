@@ -30,9 +30,11 @@ class RoutesV3CreateConnectionRequest(BaseModel):
     RoutesV3CreateConnectionRequest
     """ # noqa: E501
     description: Optional[StrictStr] = Field(default=None, description="Description of the connection")
+    email_domains: Optional[List[StrictStr]] = Field(default=None, description="EmailDomains associated with the connection for SP-initiated SSO discovery. Optional; empty/unset falls through to the column default (empty array).")
     name: Optional[StrictStr] = Field(default=None, description="Name of the connection")
+    public_name: Optional[StrictStr] = Field(default=None, description="PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated `sso-<hex>` value).")
     saml: Optional[RoutesV3CreateConnectionRequestSaml] = None
-    __properties: ClassVar[List[str]] = ["description", "name", "saml"]
+    __properties: ClassVar[List[str]] = ["description", "email_domains", "name", "public_name", "saml"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,7 +91,9 @@ class RoutesV3CreateConnectionRequest(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
+            "email_domains": obj.get("email_domains"),
             "name": obj.get("name"),
+            "public_name": obj.get("public_name"),
             "saml": RoutesV3CreateConnectionRequestSaml.from_dict(obj["saml"]) if obj.get("saml") is not None else None
         })
         return _obj

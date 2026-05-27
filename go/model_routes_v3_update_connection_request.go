@@ -24,6 +24,8 @@ type RoutesV3UpdateConnectionRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Connection Name to be updated
 	Name *string `json:"name,omitempty"`
+	// PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.
+	PublicName *string `json:"public_name,omitempty"`
 }
 
 // NewRoutesV3UpdateConnectionRequest instantiates a new RoutesV3UpdateConnectionRequest object
@@ -107,6 +109,38 @@ func (o *RoutesV3UpdateConnectionRequest) SetName(v string) {
 	o.Name = &v
 }
 
+// GetPublicName returns the PublicName field value if set, zero value otherwise.
+func (o *RoutesV3UpdateConnectionRequest) GetPublicName() string {
+	if o == nil || IsNil(o.PublicName) {
+		var ret string
+		return ret
+	}
+	return *o.PublicName
+}
+
+// GetPublicNameOk returns a tuple with the PublicName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3UpdateConnectionRequest) GetPublicNameOk() (*string, bool) {
+	if o == nil || IsNil(o.PublicName) {
+		return nil, false
+	}
+	return o.PublicName, true
+}
+
+// HasPublicName returns a boolean if a field has been set.
+func (o *RoutesV3UpdateConnectionRequest) HasPublicName() bool {
+	if o != nil && !IsNil(o.PublicName) {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicName gets a reference to the given string and assigns it to the PublicName field.
+func (o *RoutesV3UpdateConnectionRequest) SetPublicName(v string) {
+	o.PublicName = &v
+}
+
 func (o RoutesV3UpdateConnectionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -122,6 +156,9 @@ func (o RoutesV3UpdateConnectionRequest) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.PublicName) {
+		toSerialize["public_name"] = o.PublicName
 	}
 	return toSerialize, nil
 }

@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.client.model.RoutesV3CreateConnectionRequestSaml;
 
 import com.google.gson.Gson;
@@ -56,10 +58,20 @@ public class RoutesV3CreateConnectionRequest {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_EMAIL_DOMAINS = "email_domains";
+  @SerializedName(SERIALIZED_NAME_EMAIL_DOMAINS)
+  @javax.annotation.Nullable
+  private List<String> emailDomains = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_PUBLIC_NAME = "public_name";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_NAME)
+  @javax.annotation.Nullable
+  private String publicName;
 
   public static final String SERIALIZED_NAME_SAML = "saml";
   @SerializedName(SERIALIZED_NAME_SAML)
@@ -88,6 +100,33 @@ public class RoutesV3CreateConnectionRequest {
   }
 
 
+  public RoutesV3CreateConnectionRequest emailDomains(@javax.annotation.Nullable List<String> emailDomains) {
+    this.emailDomains = emailDomains;
+    return this;
+  }
+
+  public RoutesV3CreateConnectionRequest addEmailDomainsItem(String emailDomainsItem) {
+    if (this.emailDomains == null) {
+      this.emailDomains = new ArrayList<>();
+    }
+    this.emailDomains.add(emailDomainsItem);
+    return this;
+  }
+
+  /**
+   * EmailDomains associated with the connection for SP-initiated SSO discovery. Optional; empty/unset falls through to the column default (empty array).
+   * @return emailDomains
+   */
+  @javax.annotation.Nullable
+  public List<String> getEmailDomains() {
+    return emailDomains;
+  }
+
+  public void setEmailDomains(@javax.annotation.Nullable List<String> emailDomains) {
+    this.emailDomains = emailDomains;
+  }
+
+
   public RoutesV3CreateConnectionRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -104,6 +143,25 @@ public class RoutesV3CreateConnectionRequest {
 
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
+  }
+
+
+  public RoutesV3CreateConnectionRequest publicName(@javax.annotation.Nullable String publicName) {
+    this.publicName = publicName;
+    return this;
+  }
+
+  /**
+   * PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated &#x60;sso-&lt;hex&gt;&#x60; value).
+   * @return publicName
+   */
+  @javax.annotation.Nullable
+  public String getPublicName() {
+    return publicName;
+  }
+
+  public void setPublicName(@javax.annotation.Nullable String publicName) {
+    this.publicName = publicName;
   }
 
 
@@ -137,13 +195,15 @@ public class RoutesV3CreateConnectionRequest {
     }
     RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest = (RoutesV3CreateConnectionRequest) o;
     return Objects.equals(this.description, routesV3CreateConnectionRequest.description) &&
+        Objects.equals(this.emailDomains, routesV3CreateConnectionRequest.emailDomains) &&
         Objects.equals(this.name, routesV3CreateConnectionRequest.name) &&
+        Objects.equals(this.publicName, routesV3CreateConnectionRequest.publicName) &&
         Objects.equals(this.saml, routesV3CreateConnectionRequest.saml);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, name, saml);
+    return Objects.hash(description, emailDomains, name, publicName, saml);
   }
 
   @Override
@@ -151,7 +211,9 @@ public class RoutesV3CreateConnectionRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV3CreateConnectionRequest {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    emailDomains: ").append(toIndentedString(emailDomains)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    publicName: ").append(toIndentedString(publicName)).append("\n");
     sb.append("    saml: ").append(toIndentedString(saml)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -171,7 +233,7 @@ public class RoutesV3CreateConnectionRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "name", "saml"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "email_domains", "name", "public_name", "saml"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -201,8 +263,15 @@ public class RoutesV3CreateConnectionRequest {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("email_domains") != null && !jsonObj.get("email_domains").isJsonNull() && !jsonObj.get("email_domains").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email_domains` to be an array in the JSON string but got `%s`", jsonObj.get("email_domains").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("public_name") != null && !jsonObj.get("public_name").isJsonNull()) && !jsonObj.get("public_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `public_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_name").toString()));
       }
       // validate the optional field `saml`
       if (jsonObj.get("saml") != null && !jsonObj.get("saml").isJsonNull()) {

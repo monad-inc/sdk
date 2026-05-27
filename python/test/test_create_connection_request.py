@@ -37,7 +37,11 @@ class TestCreateConnectionRequest(unittest.TestCase):
         if include_optional:
             return CreateConnectionRequest(
                 description = '',
+                email_domains = [
+                    ''
+                    ],
                 name = '',
+                public_name = '',
                 saml = monad.models.routes_v3_create_connection_request_saml.routesV3_CreateConnectionRequest_saml(
                     entity_id = '', 
                     metadata_url = '', )
