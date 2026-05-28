@@ -37,7 +37,7 @@ class TestEnrichmentConnectorMeta(unittest.TestCase):
         if include_optional:
             return EnrichmentConnectorMeta(
                 config = None,
-                connector_category = 'Application Security',
+                connector_category = 'AI Tools',
                 description = '',
                 house = '',
                 in_beta = True,

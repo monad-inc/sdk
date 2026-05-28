@@ -29,6 +29,8 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ModelsInputConnectorCategory.Adapter.class)
 public enum ModelsInputConnectorCategory {
   
+  AITools("AI Tools"),
+  
   ApplicationSecurity("Application Security"),
   
   AssetInventory("Asset Inventory"),

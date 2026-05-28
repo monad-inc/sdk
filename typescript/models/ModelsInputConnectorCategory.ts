@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export enum ModelsInputConnectorCategory {
+    AITools = 'AI Tools',
     ApplicationSecurity = 'Application Security',
     AssetInventory = 'Asset Inventory',
     CloudSecurity = 'Cloud Security',

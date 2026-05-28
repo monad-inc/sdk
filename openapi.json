@@ -4764,6 +4764,7 @@
             },
             "models.InputConnectorCategory": {
                 "enum": [
+                    "AI Tools",
                     "Application Security",
                     "Asset Inventory",
                     "Cloud Security",
@@ -4792,6 +4793,7 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "AITools",
                     "ApplicationSecurity",
                     "AssetInventory",
                     "CloudSecurity",

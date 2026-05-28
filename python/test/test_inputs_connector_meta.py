@@ -37,7 +37,7 @@ class TestInputsConnectorMeta(unittest.TestCase):
         if include_optional:
             return InputsConnectorMeta(
                 billing_type = 0,
-                category = 'Application Security',
+                category = 'AI Tools',
                 config = None,
                 description = '',
                 house = '',

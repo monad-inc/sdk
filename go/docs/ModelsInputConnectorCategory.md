@@ -3,6 +3,8 @@
 ## Enum
 
 
+* `AITools` (value: `"AI Tools"`)
+
 * `ApplicationSecurity` (value: `"Application Security"`)
 
 * `AssetInventory` (value: `"Asset Inventory"`)

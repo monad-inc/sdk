@@ -27,6 +27,7 @@ class ModelsInputConnectorCategory(str, Enum):
     """
     allowed enum values
     """
+    AITools = 'AI Tools'
     ApplicationSecurity = 'Application Security'
     AssetInventory = 'Asset Inventory'
     CloudSecurity = 'Cloud Security'

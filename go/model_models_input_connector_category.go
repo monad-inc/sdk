@@ -21,6 +21,7 @@ type ModelsInputConnectorCategory string
 
 // List of models.InputConnectorCategory
 const (
+	AITools ModelsInputConnectorCategory = "AI Tools"
 	ApplicationSecurity ModelsInputConnectorCategory = "Application Security"
 	AssetInventory ModelsInputConnectorCategory = "Asset Inventory"
 	CloudSecurity ModelsInputConnectorCategory = "Cloud Security"
@@ -50,6 +51,7 @@ const (
 
 // All allowed values of ModelsInputConnectorCategory enum
 var AllowedModelsInputConnectorCategoryEnumValues = []ModelsInputConnectorCategory{
+	"AI Tools",
 	"Application Security",
 	"Asset Inventory",
 	"Cloud Security",
