@@ -23,14 +23,10 @@ type SqsS3BaseKeyFilterType string
 const (
 	KeyFilterTypeNone SqsS3BaseKeyFilterType = "none"
 	KeyFilterTypeFilter SqsS3BaseKeyFilterType = "filter"
-	NONE2 SqsS3BaseKeyFilterType = "none"
-	FILTER2 SqsS3BaseKeyFilterType = "filter"
 )
 
 // All allowed values of SqsS3BaseKeyFilterType enum
 var AllowedSqsS3BaseKeyFilterTypeEnumValues = []SqsS3BaseKeyFilterType{
-	"none",
-	"filter",
 	"none",
 	"filter",
 }

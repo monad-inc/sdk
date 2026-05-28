@@ -35,23 +35,7 @@ public enum WizIssueStatus {
   
   IssueStatusResolved("RESOLVED"),
   
-  IssueStatusRejected("REJECTED"),
-  
-  OPEN2("OPEN"),
-  
-  IN_PROGRESS2("IN_PROGRESS"),
-  
-  RESOLVED2("RESOLVED"),
-  
-  REJECTED2("REJECTED"),
-  
-  OPEN3("OPEN"),
-  
-  IN_PROGRESS3("IN_PROGRESS"),
-  
-  RESOLVED3("RESOLVED"),
-  
-  REJECTED3("REJECTED");
+  IssueStatusRejected("REJECTED");
 
   private String value;
 

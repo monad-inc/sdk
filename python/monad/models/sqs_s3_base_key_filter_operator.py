@@ -30,9 +30,6 @@ class SqsS3BaseKeyFilterOperator(str, Enum):
     KeyFilterOpContains = 'contains'
     KeyFilterOpEndsWith = 'ends_with'
     KeyFilterOpStartsWith = 'starts_with'
-    'contains'2 = 'contains'
-    'ends_with'2 = 'ends_with'
-    'starts_with'2 = 'starts_with'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

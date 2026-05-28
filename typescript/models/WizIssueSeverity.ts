@@ -17,15 +17,5 @@ export enum WizIssueSeverity {
     IssueSeverityLow = 'LOW',
     IssueSeverityMedium = 'MEDIUM',
     IssueSeverityHigh = 'HIGH',
-    IssueSeverityCritical = 'CRITICAL',
-    Informational2 = 'INFORMATIONAL',
-    Low2 = 'LOW',
-    Medium2 = 'MEDIUM',
-    High2 = 'HIGH',
-    Critical2 = 'CRITICAL',
-    Informational3 = 'INFORMATIONAL',
-    Low3 = 'LOW',
-    Medium3 = 'MEDIUM',
-    High3 = 'HIGH',
-    Critical3 = 'CRITICAL'
+    IssueSeverityCritical = 'CRITICAL'
 }

@@ -19,19 +19,5 @@ export enum WizStackLayer {
     StackLayerComputePlatforms = 'COMPUTE_PLATFORMS',
     StackLayerCode = 'CODE',
     StackLayerCloudEntitlements = 'CLOUD_ENTITLEMENTS',
-    StackLayerDataStores = 'DATA_STORES',
-    ApplicationAndData2 = 'APPLICATION_AND_DATA',
-    CiCd2 = 'CI_CD',
-    SecurityAndIdentity2 = 'SECURITY_AND_IDENTITY',
-    ComputePlatforms2 = 'COMPUTE_PLATFORMS',
-    Code2 = 'CODE',
-    CloudEntitlements2 = 'CLOUD_ENTITLEMENTS',
-    DataStores2 = 'DATA_STORES',
-    ApplicationAndData3 = 'APPLICATION_AND_DATA',
-    CiCd3 = 'CI_CD',
-    SecurityAndIdentity3 = 'SECURITY_AND_IDENTITY',
-    ComputePlatforms3 = 'COMPUTE_PLATFORMS',
-    Code3 = 'CODE',
-    CloudEntitlements3 = 'CLOUD_ENTITLEMENTS',
-    DataStores3 = 'DATA_STORES'
+    StackLayerDataStores = 'DATA_STORES'
 }

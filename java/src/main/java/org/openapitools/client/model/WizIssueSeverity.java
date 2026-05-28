@@ -37,27 +37,7 @@ public enum WizIssueSeverity {
   
   IssueSeverityHigh("HIGH"),
   
-  IssueSeverityCritical("CRITICAL"),
-  
-  INFORMATIONAL2("INFORMATIONAL"),
-  
-  LOW2("LOW"),
-  
-  MEDIUM2("MEDIUM"),
-  
-  HIGH2("HIGH"),
-  
-  CRITICAL2("CRITICAL"),
-  
-  INFORMATIONAL3("INFORMATIONAL"),
-  
-  LOW3("LOW"),
-  
-  MEDIUM3("MEDIUM"),
-  
-  HIGH3("HIGH"),
-  
-  CRITICAL3("CRITICAL");
+  IssueSeverityCritical("CRITICAL");
 
   private String value;
 

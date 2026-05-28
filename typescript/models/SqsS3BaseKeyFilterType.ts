@@ -14,7 +14,5 @@ import { HttpFile } from '../http/http';
 
 export enum SqsS3BaseKeyFilterType {
     KeyFilterTypeNone = 'none',
-    KeyFilterTypeFilter = 'filter',
-    None2 = 'none',
-    Filter2 = 'filter'
+    KeyFilterTypeFilter = 'filter'
 }

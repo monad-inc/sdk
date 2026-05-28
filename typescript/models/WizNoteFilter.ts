@@ -18,11 +18,5 @@ import { HttpFile } from '../http/http';
 export enum WizNoteFilter {
     HasNote = 'has_note',
     DoesNotHaveNote = 'does_not_have_note',
-    DoNotFilterNote = 'do_not_filter',
-    HasNote2 = 'has_note',
-    DoesNotHaveNote2 = 'does_not_have_note',
-    DoNotFilter2 = 'do_not_filter',
-    HasNote3 = 'has_note',
-    DoesNotHaveNote3 = 'does_not_have_note',
-    DoNotFilter3 = 'do_not_filter'
+    DoNotFilterNote = 'do_not_filter'
 }

@@ -17,7 +17,5 @@ import { HttpFile } from '../http/http';
 */
 export enum AwsSqsS3CloudtrailChunkingMode {
     ChunkingModeBySize = 'by_size',
-    ChunkingModePerRecord = 'per_record',
-    BySize2 = 'by_size',
-    PerRecord2 = 'per_record'
+    ChunkingModePerRecord = 'per_record'
 }

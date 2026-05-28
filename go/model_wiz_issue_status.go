@@ -25,26 +25,10 @@ const (
 	IssueStatusInProgress WizIssueStatus = "IN_PROGRESS"
 	IssueStatusResolved WizIssueStatus = "RESOLVED"
 	IssueStatusRejected WizIssueStatus = "REJECTED"
-	OPEN2 WizIssueStatus = "OPEN"
-	IN_PROGRESS2 WizIssueStatus = "IN_PROGRESS"
-	RESOLVED2 WizIssueStatus = "RESOLVED"
-	REJECTED2 WizIssueStatus = "REJECTED"
-	OPEN3 WizIssueStatus = "OPEN"
-	IN_PROGRESS3 WizIssueStatus = "IN_PROGRESS"
-	RESOLVED3 WizIssueStatus = "RESOLVED"
-	REJECTED3 WizIssueStatus = "REJECTED"
 )
 
 // All allowed values of WizIssueStatus enum
 var AllowedWizIssueStatusEnumValues = []WizIssueStatus{
-	"OPEN",
-	"IN_PROGRESS",
-	"RESOLVED",
-	"REJECTED",
-	"OPEN",
-	"IN_PROGRESS",
-	"RESOLVED",
-	"REJECTED",
 	"OPEN",
 	"IN_PROGRESS",
 	"RESOLVED",

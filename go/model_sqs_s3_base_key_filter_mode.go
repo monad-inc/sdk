@@ -23,14 +23,10 @@ type SqsS3BaseKeyFilterMode string
 const (
 	KeyFilterModeInclude SqsS3BaseKeyFilterMode = "include"
 	KeyFilterModeExclude SqsS3BaseKeyFilterMode = "exclude"
-	INCLUDE2 SqsS3BaseKeyFilterMode = "include"
-	EXCLUDE2 SqsS3BaseKeyFilterMode = "exclude"
 )
 
 // All allowed values of SqsS3BaseKeyFilterMode enum
 var AllowedSqsS3BaseKeyFilterModeEnumValues = []SqsS3BaseKeyFilterMode{
-	"include",
-	"exclude",
 	"include",
 	"exclude",
 }

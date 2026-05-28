@@ -29,8 +29,6 @@ class SqsS3BaseKeyFilterMode(str, Enum):
     """
     KeyFilterModeInclude = 'include'
     KeyFilterModeExclude = 'exclude'
-    'include'2 = 'include'
-    'exclude'2 = 'exclude'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

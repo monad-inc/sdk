@@ -434,8 +434,6 @@
                 "description": "ChunkingMode for the Records array. Empty → by_size.",
                 "enum": [
                     "by_size",
-                    "per_record",
-                    "by_size",
                     "per_record"
                 ],
                 "type": "string",
@@ -2592,9 +2590,6 @@
             },
             "formatter.Type": {
                 "enum": [
-                    "delimited",
-                    "parquet",
-                    "json",
                     "delimited",
                     "parquet",
                     "json"
@@ -10409,8 +10404,6 @@
             "sqs_s3_base.KeyFilterMode": {
                 "enum": [
                     "include",
-                    "exclude",
-                    "include",
                     "exclude"
                 ],
                 "type": "string",
@@ -10421,9 +10414,6 @@
             },
             "sqs_s3_base.KeyFilterOperator": {
                 "enum": [
-                    "contains",
-                    "ends_with",
-                    "starts_with",
                     "contains",
                     "ends_with",
                     "starts_with"
@@ -10437,8 +10427,6 @@
             },
             "sqs_s3_base.KeyFilterType": {
                 "enum": [
-                    "none",
-                    "filter",
                     "none",
                     "filter"
                 ],
@@ -11547,16 +11535,6 @@
                     "LOW",
                     "MEDIUM",
                     "HIGH",
-                    "CRITICAL",
-                    "INFORMATIONAL",
-                    "LOW",
-                    "MEDIUM",
-                    "HIGH",
-                    "CRITICAL",
-                    "INFORMATIONAL",
-                    "LOW",
-                    "MEDIUM",
-                    "HIGH",
                     "CRITICAL"
                 ],
                 "type": "string",
@@ -11570,14 +11548,6 @@
             },
             "wiz.IssueStatus": {
                 "enum": [
-                    "OPEN",
-                    "IN_PROGRESS",
-                    "RESOLVED",
-                    "REJECTED",
-                    "OPEN",
-                    "IN_PROGRESS",
-                    "RESOLVED",
-                    "REJECTED",
                     "OPEN",
                     "IN_PROGRESS",
                     "RESOLVED",
@@ -11595,12 +11565,6 @@
                 "enum": [
                     "TOXIC_COMBINATION",
                     "THREAT_DETECTION",
-                    "CLOUD_CONFIGURATION",
-                    "TOXIC_COMBINATION",
-                    "THREAT_DETECTION",
-                    "CLOUD_CONFIGURATION",
-                    "TOXIC_COMBINATION",
-                    "THREAT_DETECTION",
                     "CLOUD_CONFIGURATION"
                 ],
                 "type": "string",
@@ -11613,12 +11577,6 @@
             "wiz.NoteFilter": {
                 "description": "@Description Filter Issues with or without a note",
                 "enum": [
-                    "has_note",
-                    "does_not_have_note",
-                    "do_not_filter",
-                    "has_note",
-                    "does_not_have_note",
-                    "do_not_filter",
                     "has_note",
                     "does_not_have_note",
                     "do_not_filter"
@@ -11635,12 +11593,6 @@
                 "enum": [
                     "has_remediation",
                     "does_not_have_remediation",
-                    "do_not_filter",
-                    "has_remediation",
-                    "does_not_have_remediation",
-                    "do_not_filter",
-                    "has_remediation",
-                    "does_not_have_remediation",
                     "do_not_filter"
                 ],
                 "type": "string",
@@ -11652,22 +11604,6 @@
             },
             "wiz.ResolutionReason": {
                 "enum": [
-                    "CONTROL_CHANGED",
-                    "CONTROL_DISABLED",
-                    "CONTROL_DELETED",
-                    "EXCEPTION",
-                    "FALSE_POSITIVE",
-                    "WONT_FIX",
-                    "OBJECT_DELETED",
-                    "ISSUE_FIXED",
-                    "CONTROL_CHANGED",
-                    "CONTROL_DISABLED",
-                    "CONTROL_DELETED",
-                    "EXCEPTION",
-                    "FALSE_POSITIVE",
-                    "WONT_FIX",
-                    "OBJECT_DELETED",
-                    "ISSUE_FIXED",
                     "CONTROL_CHANGED",
                     "CONTROL_DISABLED",
                     "CONTROL_DELETED",
@@ -11756,12 +11692,6 @@
                 "enum": [
                     "has_service_ticket",
                     "does_not_have_service_ticket",
-                    "do_not_filter",
-                    "has_service_ticket",
-                    "does_not_have_service_ticket",
-                    "do_not_filter",
-                    "has_service_ticket",
-                    "does_not_have_service_ticket",
                     "do_not_filter"
                 ],
                 "type": "string",
@@ -11773,20 +11703,6 @@
             },
             "wiz.StackLayer": {
                 "enum": [
-                    "APPLICATION_AND_DATA",
-                    "CI_CD",
-                    "SECURITY_AND_IDENTITY",
-                    "COMPUTE_PLATFORMS",
-                    "CODE",
-                    "CLOUD_ENTITLEMENTS",
-                    "DATA_STORES",
-                    "APPLICATION_AND_DATA",
-                    "CI_CD",
-                    "SECURITY_AND_IDENTITY",
-                    "COMPUTE_PLATFORMS",
-                    "CODE",
-                    "CLOUD_ENTITLEMENTS",
-                    "DATA_STORES",
                     "APPLICATION_AND_DATA",
                     "CI_CD",
                     "SECURITY_AND_IDENTITY",
@@ -11877,8 +11793,6 @@
                 "description": "AuthType is the type of authentication used for the input",
                 "enum": [
                     "api_auth",
-                    "oauth",
-                    "api_auth",
                     "oauth"
                 ],
                 "type": "string",
@@ -11940,6 +11854,10 @@
             }
         }
     },
+    "externalDocs": {
+        "description": "",
+        "url": ""
+    },
     "info": {
         "contact": {
             "email": "support@monad.com",
@@ -11950,10 +11868,7 @@
         "title": "Monad API",
         "version": "1.0"
     },
-    "externalDocs": {
-        "description": "",
-        "url": ""
-    },
+    "openapi": "3.1.0",
     "paths": {
         "/v1/inputs": {
             "get": {
@@ -12154,8 +12069,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routes.LoginRequest",
-                                        "summary": "login",
-                                        "description": "Login request"
+                                        "description": "Login request",
+                                        "summary": "login"
                                     }
                                 ]
                             }
@@ -12402,8 +12317,8 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/routes.CreateOrganizationRequest",
-                                "summary": "createOrganizationRequest",
-                                "description": "Request body for creating an organization"
+                                "description": "Request body for creating an organization",
+                                "summary": "createOrganizationRequest"
                             }
                         }
                     },
@@ -12495,8 +12410,8 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/routes.UpdateOrganizationRequest",
-                                "summary": "updateOrganizationRequest",
-                                "description": "Request body for updating an organization"
+                                "description": "Request body for updating an organization",
+                                "summary": "updateOrganizationRequest"
                             }
                         }
                     },
@@ -13093,8 +13008,8 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/routes.InviteUserToOrganizationRequest",
-                                "summary": "inviteUserToOrganizationRequest",
-                                "description": "Request body for inviting a user to an organization"
+                                "description": "Request body for inviting a user to an organization",
+                                "summary": "inviteUserToOrganizationRequest"
                             }
                         }
                     },
@@ -13968,8 +13883,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routes.UpdatePipelineRequest",
-                                        "summary": "updatePipelineRequest",
-                                        "description": "Request body for updating a pipeline"
+                                        "description": "Request body for updating a pipeline",
+                                        "summary": "updatePipelineRequest"
                                     }
                                 ]
                             }
@@ -14114,8 +14029,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routes.CreateTransformRequest",
-                                        "summary": "createTransformRequest",
-                                        "description": "Request body for creating a transform"
+                                        "description": "Request body for creating a transform",
+                                        "summary": "createTransformRequest"
                                     }
                                 ]
                             }
@@ -14315,8 +14230,8 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/routes.UpdateTransformRequest",
-                                "summary": "updateTransformRequest",
-                                "description": "Request body for updating a transform"
+                                "description": "Request body for updating a transform",
+                                "summary": "updateTransformRequest"
                             }
                         }
                     },
@@ -14454,8 +14369,8 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/routes.AddUserToOrganizationRequest",
-                                "summary": "addOrganizationUserRequest",
-                                "description": "Request body for adding a user to an organization"
+                                "description": "Request body for adding a user to an organization",
+                                "summary": "addOrganizationUserRequest"
                             }
                         }
                     },
@@ -14661,8 +14576,8 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/routes.UpdateUserInOrganizationRequest",
-                                "summary": "updateUserInOrganizationRequest",
-                                "description": "Request body for updating a user in an organization"
+                                "description": "Request body for updating a user in an organization",
+                                "summary": "updateUserInOrganizationRequest"
                             }
                         }
                     },
@@ -14792,8 +14707,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateBillingAccountRequest",
-                                        "summary": "createBillingAccountRequest",
-                                        "description": "Request body for creating a billing account"
+                                        "description": "Request body for creating a billing account",
+                                        "summary": "createBillingAccountRequest"
                                     }
                                 ]
                             }
@@ -14978,8 +14893,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.UpdateBillingAccountRequest",
-                                        "summary": "updateBillingAccountRequest",
-                                        "description": "Request body for updating a billing account"
+                                        "description": "Request body for updating a billing account",
+                                        "summary": "updateBillingAccountRequest"
                                     }
                                 ]
                             }
@@ -15115,8 +15030,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateBillingAccountRoleRequest",
-                                        "summary": "createBillingAccountRoleRequest",
-                                        "description": "Create Billing Account Role Request"
+                                        "description": "Create Billing Account Role Request",
+                                        "summary": "createBillingAccountRoleRequest"
                                     }
                                 ]
                             }
@@ -15332,8 +15247,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.UpdateBillingAccountRoleRequest",
-                                        "summary": "updateBillingAccountRoleRequest",
-                                        "description": "Update Billing Account Role Request"
+                                        "description": "Update Billing Account Role Request",
+                                        "summary": "updateBillingAccountRoleRequest"
                                     }
                                 ]
                             }
@@ -15419,8 +15334,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreatebillingAccountUserRoleRequest",
-                                        "summary": "createbillingAccountUserRoleRequest",
-                                        "description": "Create Billing Account User Role Request"
+                                        "description": "Create Billing Account User Role Request",
+                                        "summary": "createbillingAccountUserRoleRequest"
                                     }
                                 ]
                             }
@@ -15681,8 +15596,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateBillingAccountSubscriptionRequest",
-                                        "summary": "createBillingAccountSubscriptionRequest",
-                                        "description": "Request body for creating a billing subscription"
+                                        "description": "Request body for creating a billing subscription",
+                                        "summary": "createBillingAccountSubscriptionRequest"
                                     }
                                 ]
                             }
@@ -15994,8 +15909,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.ApplyConditionRequest",
-                                        "summary": "request",
-                                        "description": "Condition and record"
+                                        "description": "Condition and record",
+                                        "summary": "request"
                                     }
                                 ]
                             }
@@ -16101,8 +16016,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.GenerateRecordRequest",
-                                        "summary": "request",
-                                        "description": "Record generation parameters"
+                                        "description": "Record generation parameters",
+                                        "summary": "request"
                                     }
                                 ]
                             }
@@ -16161,8 +16076,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.ApplyTransformationRequest",
-                                        "summary": "request",
-                                        "description": "Transform configuration and record"
+                                        "description": "Transform configuration and record",
+                                        "summary": "request"
                                     }
                                 ]
                             }
@@ -16416,8 +16331,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateAPIKeyRequest",
-                                        "summary": "createAPIKeyRequest",
-                                        "description": "Request body for creating an API key"
+                                        "description": "Request body for creating an API key",
+                                        "summary": "createAPIKeyRequest"
                                     }
                                 ]
                             }
@@ -16642,8 +16557,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.UpdateAPIKeyRequest",
-                                        "summary": "updateAPIKeyRequest",
-                                        "description": "Request body for updating an API key"
+                                        "description": "Request body for updating an API key",
+                                        "summary": "updateAPIKeyRequest"
                                     }
                                 ]
                             }
@@ -16801,8 +16716,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateInputRequest",
-                                        "summary": "createInputRequest",
-                                        "description": "Input configuration"
+                                        "description": "Input configuration",
+                                        "summary": "createInputRequest"
                                     }
                                 ]
                             }
@@ -16882,8 +16797,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.TestInputConnectionRequest",
-                                        "summary": "testConnectionRequest",
-                                        "description": "Input configuration to test"
+                                        "description": "Input configuration to test",
+                                        "summary": "testConnectionRequest"
                                     }
                                 ]
                             }
@@ -16980,8 +16895,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.UpdateInputRequest",
-                                        "summary": "updateInputRequest",
-                                        "description": "Input configuration update"
+                                        "description": "Input configuration update",
+                                        "summary": "updateInputRequest"
                                     }
                                 ]
                             }
@@ -17086,8 +17001,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.PutInputRequest",
-                                        "summary": "updateInputRequest",
-                                        "description": "Input configuration update"
+                                        "description": "Input configuration update",
+                                        "summary": "updateInputRequest"
                                     }
                                 ]
                             }
@@ -18073,8 +17988,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateOutputRequest",
-                                        "summary": "createOutputRequest",
-                                        "description": "Output configuration"
+                                        "description": "Output configuration",
+                                        "summary": "createOutputRequest"
                                     }
                                 ]
                             }
@@ -18154,8 +18069,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.TestOutputConnectionRequest",
-                                        "summary": "testConnectionRequest",
-                                        "description": "Output configuration to test"
+                                        "description": "Output configuration to test",
+                                        "summary": "testConnectionRequest"
                                     }
                                 ]
                             }
@@ -18252,8 +18167,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.UpdateOutputRequest",
-                                        "summary": "updateOutputRequest",
-                                        "description": "Output configuration update"
+                                        "description": "Output configuration update",
+                                        "summary": "updateOutputRequest"
                                     }
                                 ]
                             }
@@ -18358,8 +18273,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.PutOutputRequest",
-                                        "summary": "updateOutputRequest",
-                                        "description": "Output configuration update"
+                                        "description": "Output configuration update",
+                                        "summary": "updateOutputRequest"
                                     }
                                 ]
                             }
@@ -18599,8 +18514,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreatePipelineRequest",
-                                        "summary": "createPipelineRequest",
-                                        "description": "Request body for creating a pipeline"
+                                        "description": "Request body for creating a pipeline",
+                                        "summary": "createPipelineRequest"
                                     }
                                 ]
                             }
@@ -18987,8 +18902,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.UpdatePipelineRequest",
-                                        "summary": "updatePipelineRequest",
-                                        "description": "Request body for updating a pipeline"
+                                        "description": "Request body for updating a pipeline",
+                                        "summary": "updatePipelineRequest"
                                     }
                                 ]
                             }
@@ -19086,8 +19001,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.PatchPipelineEdgeRequest",
-                                        "summary": "patchPipelineEdgeRequest",
-                                        "description": "Request body"
+                                        "description": "Request body",
+                                        "summary": "patchPipelineEdgeRequest"
                                     }
                                 ]
                             }
@@ -19717,8 +19632,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateRoleV2Request",
-                                        "summary": "createRoleRequest",
-                                        "description": "Request body for creating a role"
+                                        "description": "Request body for creating a role",
+                                        "summary": "createRoleRequest"
                                     }
                                 ]
                             }
@@ -19990,8 +19905,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.UpdateRoleV2Request",
-                                        "summary": "updateRoleRequest",
-                                        "description": "Request body for updating a role"
+                                        "description": "Request body for updating a role",
+                                        "summary": "updateRoleRequest"
                                     }
                                 ]
                             }
@@ -20071,8 +19986,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.ApplyTransformationRequest",
-                                        "summary": "request",
-                                        "description": "Transform configuration and record"
+                                        "description": "Transform configuration and record",
+                                        "summary": "request"
                                     }
                                 ]
                             }
@@ -20217,8 +20132,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateOrUpdateSecretRequest",
-                                        "summary": "secret",
-                                        "description": "Secret to create"
+                                        "description": "Secret to create",
+                                        "summary": "secret"
                                     }
                                 ]
                             }
@@ -20436,8 +20351,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.CreateOrUpdateSecretRequest",
-                                        "summary": "secret",
-                                        "description": "Secret updates"
+                                        "description": "Secret updates",
+                                        "summary": "secret"
                                     }
                                 ]
                             }
@@ -20586,8 +20501,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.SetStorageTypeCostRequest",
-                                        "summary": "body",
-                                        "description": "Cost configuration"
+                                        "description": "Cost configuration",
+                                        "summary": "body"
                                     }
                                 ]
                             }
@@ -20840,8 +20755,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.CreateSessionRequest",
-                                        "summary": "body",
-                                        "description": "Session options"
+                                        "description": "Session options",
+                                        "summary": "body"
                                     }
                                 ]
                             }
@@ -20956,8 +20871,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/community_transforms_internal.TransformConfig",
-                                        "summary": "exportRequest",
-                                        "description": "Transform to export and optional metadata"
+                                        "description": "Transform to export and optional metadata",
+                                        "summary": "exportRequest"
                                     }
                                 ]
                             }
@@ -21305,8 +21220,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.CreateAlertRuleRequest",
-                                        "summary": "createAlertRuleRequest",
-                                        "description": "Request body for creating an alert rule"
+                                        "description": "Request body for creating an alert rule",
+                                        "summary": "createAlertRuleRequest"
                                     }
                                 ]
                             }
@@ -21535,8 +21450,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.UpdateAlertRuleRequest",
-                                        "summary": "updateAlertRuleRequest",
-                                        "description": "Request body for updating an alert rule"
+                                        "description": "Request body for updating an alert rule",
+                                        "summary": "updateAlertRuleRequest"
                                     }
                                 ]
                             }
@@ -21895,8 +21810,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.CreateConnectionRequest",
-                                        "summary": "createConnectionRequest",
-                                        "description": "Request body for creating a connection"
+                                        "description": "Request body for creating a connection",
+                                        "summary": "createConnectionRequest"
                                     }
                                 ]
                             }
@@ -22115,8 +22030,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.UpdateConnectionRequest",
-                                        "summary": "updateConnectionRequest",
-                                        "description": "Request body for updating a connection"
+                                        "description": "Request body for updating a connection",
+                                        "summary": "updateConnectionRequest"
                                     }
                                 ]
                             }
@@ -22276,8 +22191,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.CreateEnrichmentRequest",
-                                        "summary": "createEnrichmentRequest",
-                                        "description": "Enrichment configuration"
+                                        "description": "Enrichment configuration",
+                                        "summary": "createEnrichmentRequest"
                                     }
                                 ]
                             }
@@ -22357,8 +22272,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.EnrichmentSandboxRequest",
-                                        "summary": "request",
-                                        "description": "Enrichment configuration and record"
+                                        "description": "Enrichment configuration and record",
+                                        "summary": "request"
                                     }
                                 ]
                             }
@@ -22438,8 +22353,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.TestEnrichmentConnectionRequest",
-                                        "summary": "testConnectionRequest",
-                                        "description": "Enrichment configuration to test"
+                                        "description": "Enrichment configuration to test",
+                                        "summary": "testConnectionRequest"
                                     }
                                 ]
                             }
@@ -22672,8 +22587,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.UpdateEnrichmentRequest",
-                                        "summary": "updateEnrichmentRequest",
-                                        "description": "Enrichment configuration update"
+                                        "description": "Enrichment configuration update",
+                                        "summary": "updateEnrichmentRequest"
                                     }
                                 ]
                             }
@@ -22778,8 +22693,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.PutEnrichmentRequest",
-                                        "summary": "updateEnrichmentRequest",
-                                        "description": "Enrichment configuration update"
+                                        "description": "Enrichment configuration update",
+                                        "summary": "updateEnrichmentRequest"
                                     }
                                 ]
                             }
@@ -23257,8 +23172,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.CreateChildOrganizationRequest",
-                                        "summary": "createChildOrganizationRequest",
-                                        "description": "Request body"
+                                        "description": "Request body",
+                                        "summary": "createChildOrganizationRequest"
                                     }
                                 ]
                             }
@@ -23408,8 +23323,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.UpdateChildOrganizationRequest",
-                                        "summary": "updateChildOrganizationRequest",
-                                        "description": "Request body"
+                                        "description": "Request body",
+                                        "summary": "updateChildOrganizationRequest"
                                     }
                                 ]
                             }
@@ -23688,8 +23603,8 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV3.TransformRecommendationRequest",
-                                        "summary": "transformRecommendationRequest",
-                                        "description": "Security data to analyze"
+                                        "description": "Security data to analyze",
+                                        "summary": "transformRecommendationRequest"
                                     }
                                 ]
                             }
@@ -23799,7 +23714,6 @@
             }
         }
     },
-    "openapi": "3.1.0",
     "servers": [
         {
             "url": "https://monad.com/api"

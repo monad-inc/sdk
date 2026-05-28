@@ -9,9 +9,5 @@
 
 * `KeyFilterModeExclude` (value: `"exclude"`)
 
-* `INCLUDE2` (value: `"include"`)
-
-* `EXCLUDE2` (value: `"exclude"`)
-
 
 

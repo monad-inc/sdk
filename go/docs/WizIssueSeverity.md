@@ -13,26 +13,6 @@
 
 * `IssueSeverityCritical` (value: `"CRITICAL"`)
 
-* `INFORMATIONAL2` (value: `"INFORMATIONAL"`)
-
-* `LOW2` (value: `"LOW"`)
-
-* `MEDIUM2` (value: `"MEDIUM"`)
-
-* `HIGH2` (value: `"HIGH"`)
-
-* `CRITICAL2` (value: `"CRITICAL"`)
-
-* `INFORMATIONAL3` (value: `"INFORMATIONAL"`)
-
-* `LOW3` (value: `"LOW"`)
-
-* `MEDIUM3` (value: `"MEDIUM"`)
-
-* `HIGH3` (value: `"HIGH"`)
-
-* `CRITICAL3` (value: `"CRITICAL"`)
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

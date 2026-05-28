@@ -24,22 +24,10 @@ const (
 	HasServiceTicket WizServiceTicketFilter = "has_service_ticket"
 	DoesNotHaveServiceTicket WizServiceTicketFilter = "does_not_have_service_ticket"
 	DoNotFilterServiceTicket WizServiceTicketFilter = "do_not_filter"
-	HAS_SERVICE_TICKET2 WizServiceTicketFilter = "has_service_ticket"
-	DOES_NOT_HAVE_SERVICE_TICKET2 WizServiceTicketFilter = "does_not_have_service_ticket"
-	DO_NOT_FILTER2 WizServiceTicketFilter = "do_not_filter"
-	HAS_SERVICE_TICKET3 WizServiceTicketFilter = "has_service_ticket"
-	DOES_NOT_HAVE_SERVICE_TICKET3 WizServiceTicketFilter = "does_not_have_service_ticket"
-	DO_NOT_FILTER3 WizServiceTicketFilter = "do_not_filter"
 )
 
 // All allowed values of WizServiceTicketFilter enum
 var AllowedWizServiceTicketFilterEnumValues = []WizServiceTicketFilter{
-	"has_service_ticket",
-	"does_not_have_service_ticket",
-	"do_not_filter",
-	"has_service_ticket",
-	"does_not_have_service_ticket",
-	"do_not_filter",
 	"has_service_ticket",
 	"does_not_have_service_ticket",
 	"do_not_filter",

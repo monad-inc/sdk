@@ -18,11 +18,5 @@ import { HttpFile } from '../http/http';
 export enum WizServiceTicketFilter {
     HasServiceTicket = 'has_service_ticket',
     DoesNotHaveServiceTicket = 'does_not_have_service_ticket',
-    DoNotFilterServiceTicket = 'do_not_filter',
-    HasServiceTicket2 = 'has_service_ticket',
-    DoesNotHaveServiceTicket2 = 'does_not_have_service_ticket',
-    DoNotFilter2 = 'do_not_filter',
-    HasServiceTicket3 = 'has_service_ticket',
-    DoesNotHaveServiceTicket3 = 'does_not_have_service_ticket',
-    DoNotFilter3 = 'do_not_filter'
+    DoNotFilterServiceTicket = 'do_not_filter'
 }

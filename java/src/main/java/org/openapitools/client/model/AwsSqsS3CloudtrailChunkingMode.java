@@ -31,11 +31,7 @@ public enum AwsSqsS3CloudtrailChunkingMode {
   
   ChunkingModeBySize("by_size"),
   
-  ChunkingModePerRecord("per_record"),
-  
-  BY_SIZE2("by_size"),
-  
-  PER_RECORD2("per_record");
+  ChunkingModePerRecord("per_record");
 
   private String value;
 

@@ -33,19 +33,7 @@ public enum WizServiceTicketFilter {
   
   DoesNotHaveServiceTicket("does_not_have_service_ticket"),
   
-  DoNotFilterServiceTicket("do_not_filter"),
-  
-  HAS_SERVICE_TICKET2("has_service_ticket"),
-  
-  DOES_NOT_HAVE_SERVICE_TICKET2("does_not_have_service_ticket"),
-  
-  DO_NOT_FILTER2("do_not_filter"),
-  
-  HAS_SERVICE_TICKET3("has_service_ticket"),
-  
-  DOES_NOT_HAVE_SERVICE_TICKET3("does_not_have_service_ticket"),
-  
-  DO_NOT_FILTER3("do_not_filter");
+  DoNotFilterServiceTicket("do_not_filter");
 
   private String value;
 

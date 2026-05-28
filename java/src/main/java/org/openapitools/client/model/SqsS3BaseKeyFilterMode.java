@@ -31,11 +31,7 @@ public enum SqsS3BaseKeyFilterMode {
   
   KeyFilterModeInclude("include"),
   
-  KeyFilterModeExclude("exclude"),
-  
-  INCLUDE2("include"),
-  
-  EXCLUDE2("exclude");
+  KeyFilterModeExclude("exclude");
 
   private String value;
 

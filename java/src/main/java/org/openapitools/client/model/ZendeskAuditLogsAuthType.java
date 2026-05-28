@@ -31,11 +31,7 @@ public enum ZendeskAuditLogsAuthType {
   
   AuthTypeAPIAuth("api_auth"),
   
-  AuthTypeOAuth("oauth"),
-  
-  API_AUTH2("api_auth"),
-  
-  OAUTH2("oauth");
+  AuthTypeOAuth("oauth");
 
   private String value;
 

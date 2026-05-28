@@ -33,19 +33,7 @@ public enum WizNoteFilter {
   
   DoesNotHaveNote("does_not_have_note"),
   
-  DoNotFilterNote("do_not_filter"),
-  
-  HAS_NOTE2("has_note"),
-  
-  DOES_NOT_HAVE_NOTE2("does_not_have_note"),
-  
-  DO_NOT_FILTER2("do_not_filter"),
-  
-  HAS_NOTE3("has_note"),
-  
-  DOES_NOT_HAVE_NOTE3("does_not_have_note"),
-  
-  DO_NOT_FILTER3("do_not_filter");
+  DoNotFilterNote("do_not_filter");
 
   private String value;
 

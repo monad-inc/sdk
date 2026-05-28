@@ -24,22 +24,10 @@ const (
 	HasNote WizNoteFilter = "has_note"
 	DoesNotHaveNote WizNoteFilter = "does_not_have_note"
 	DoNotFilterNote WizNoteFilter = "do_not_filter"
-	HAS_NOTE2 WizNoteFilter = "has_note"
-	DOES_NOT_HAVE_NOTE2 WizNoteFilter = "does_not_have_note"
-	DO_NOT_FILTER2 WizNoteFilter = "do_not_filter"
-	HAS_NOTE3 WizNoteFilter = "has_note"
-	DOES_NOT_HAVE_NOTE3 WizNoteFilter = "does_not_have_note"
-	DO_NOT_FILTER3 WizNoteFilter = "do_not_filter"
 )
 
 // All allowed values of WizNoteFilter enum
 var AllowedWizNoteFilterEnumValues = []WizNoteFilter{
-	"has_note",
-	"does_not_have_note",
-	"do_not_filter",
-	"has_note",
-	"does_not_have_note",
-	"do_not_filter",
 	"has_note",
 	"does_not_have_note",
 	"do_not_filter",

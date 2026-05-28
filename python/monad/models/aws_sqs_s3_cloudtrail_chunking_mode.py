@@ -29,8 +29,6 @@ class AwsSqsS3CloudtrailChunkingMode(str, Enum):
     """
     ChunkingModeBySize = 'by_size'
     ChunkingModePerRecord = 'per_record'
-    'by_size'2 = 'by_size'
-    'per_record'2 = 'per_record'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -24,22 +24,10 @@ const (
 	HasRemediation WizRemediationFilter = "has_remediation"
 	DoesNotHaveRemediation WizRemediationFilter = "does_not_have_remediation"
 	DoNotFilterRemediation WizRemediationFilter = "do_not_filter"
-	HAS_REMEDIATION2 WizRemediationFilter = "has_remediation"
-	DOES_NOT_HAVE_REMEDIATION2 WizRemediationFilter = "does_not_have_remediation"
-	DO_NOT_FILTER2 WizRemediationFilter = "do_not_filter"
-	HAS_REMEDIATION3 WizRemediationFilter = "has_remediation"
-	DOES_NOT_HAVE_REMEDIATION3 WizRemediationFilter = "does_not_have_remediation"
-	DO_NOT_FILTER3 WizRemediationFilter = "do_not_filter"
 )
 
 // All allowed values of WizRemediationFilter enum
 var AllowedWizRemediationFilterEnumValues = []WizRemediationFilter{
-	"has_remediation",
-	"does_not_have_remediation",
-	"do_not_filter",
-	"has_remediation",
-	"does_not_have_remediation",
-	"do_not_filter",
 	"has_remediation",
 	"does_not_have_remediation",
 	"do_not_filter",

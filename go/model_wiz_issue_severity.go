@@ -26,30 +26,10 @@ const (
 	IssueSeverityMedium WizIssueSeverity = "MEDIUM"
 	IssueSeverityHigh WizIssueSeverity = "HIGH"
 	IssueSeverityCritical WizIssueSeverity = "CRITICAL"
-	INFORMATIONAL2 WizIssueSeverity = "INFORMATIONAL"
-	LOW2 WizIssueSeverity = "LOW"
-	MEDIUM2 WizIssueSeverity = "MEDIUM"
-	HIGH2 WizIssueSeverity = "HIGH"
-	CRITICAL2 WizIssueSeverity = "CRITICAL"
-	INFORMATIONAL3 WizIssueSeverity = "INFORMATIONAL"
-	LOW3 WizIssueSeverity = "LOW"
-	MEDIUM3 WizIssueSeverity = "MEDIUM"
-	HIGH3 WizIssueSeverity = "HIGH"
-	CRITICAL3 WizIssueSeverity = "CRITICAL"
 )
 
 // All allowed values of WizIssueSeverity enum
 var AllowedWizIssueSeverityEnumValues = []WizIssueSeverity{
-	"INFORMATIONAL",
-	"LOW",
-	"MEDIUM",
-	"HIGH",
-	"CRITICAL",
-	"INFORMATIONAL",
-	"LOW",
-	"MEDIUM",
-	"HIGH",
-	"CRITICAL",
 	"INFORMATIONAL",
 	"LOW",
 	"MEDIUM",

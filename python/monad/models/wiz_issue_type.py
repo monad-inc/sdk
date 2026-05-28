@@ -30,12 +30,6 @@ class WizIssueType(str, Enum):
     IssueTypeToxicCombination = 'TOXIC_COMBINATION'
     IssueTypeThreatDetection = 'THREAT_DETECTION'
     IssueTypeCloudConfiguration = 'CLOUD_CONFIGURATION'
-    'TOXIC_COMBINATION'2 = 'TOXIC_COMBINATION'
-    'THREAT_DETECTION'2 = 'THREAT_DETECTION'
-    'CLOUD_CONFIGURATION'2 = 'CLOUD_CONFIGURATION'
-    'TOXIC_COMBINATION'3 = 'TOXIC_COMBINATION'
-    'THREAT_DETECTION'3 = 'THREAT_DETECTION'
-    'CLOUD_CONFIGURATION'3 = 'CLOUD_CONFIGURATION'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

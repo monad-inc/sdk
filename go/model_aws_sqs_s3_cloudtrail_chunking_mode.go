@@ -23,14 +23,10 @@ type AwsSqsS3CloudtrailChunkingMode string
 const (
 	ChunkingModeBySize AwsSqsS3CloudtrailChunkingMode = "by_size"
 	ChunkingModePerRecord AwsSqsS3CloudtrailChunkingMode = "per_record"
-	BY_SIZE2 AwsSqsS3CloudtrailChunkingMode = "by_size"
-	PER_RECORD2 AwsSqsS3CloudtrailChunkingMode = "per_record"
 )
 
 // All allowed values of AwsSqsS3CloudtrailChunkingMode enum
 var AllowedAwsSqsS3CloudtrailChunkingModeEnumValues = []AwsSqsS3CloudtrailChunkingMode{
-	"by_size",
-	"per_record",
 	"by_size",
 	"per_record",
 }

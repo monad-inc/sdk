@@ -15,8 +15,5 @@ import { HttpFile } from '../http/http';
 export enum SqsS3BaseKeyFilterOperator {
     KeyFilterOpContains = 'contains',
     KeyFilterOpEndsWith = 'ends_with',
-    KeyFilterOpStartsWith = 'starts_with',
-    Contains2 = 'contains',
-    EndsWith2 = 'ends_with',
-    StartsWith2 = 'starts_with'
+    KeyFilterOpStartsWith = 'starts_with'
 }

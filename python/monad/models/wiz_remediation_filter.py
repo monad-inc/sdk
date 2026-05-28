@@ -30,12 +30,6 @@ class WizRemediationFilter(str, Enum):
     HasRemediation = 'has_remediation'
     DoesNotHaveRemediation = 'does_not_have_remediation'
     DoNotFilterRemediation = 'do_not_filter'
-    'has_remediation'2 = 'has_remediation'
-    'does_not_have_remediation'2 = 'does_not_have_remediation'
-    'do_not_filter'2 = 'do_not_filter'
-    'has_remediation'3 = 'has_remediation'
-    'does_not_have_remediation'3 = 'does_not_have_remediation'
-    'do_not_filter'3 = 'do_not_filter'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -9,9 +9,5 @@
 
 * `KeyFilterTypeFilter` (value: `"filter"`)
 
-* `NONE2` (value: `"none"`)
-
-* `FILTER2` (value: `"filter"`)
-
 
 

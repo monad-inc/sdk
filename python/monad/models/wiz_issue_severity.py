@@ -32,16 +32,6 @@ class WizIssueSeverity(str, Enum):
     IssueSeverityMedium = 'MEDIUM'
     IssueSeverityHigh = 'HIGH'
     IssueSeverityCritical = 'CRITICAL'
-    'INFORMATIONAL'2 = 'INFORMATIONAL'
-    'LOW'2 = 'LOW'
-    'MEDIUM'2 = 'MEDIUM'
-    'HIGH'2 = 'HIGH'
-    'CRITICAL'2 = 'CRITICAL'
-    'INFORMATIONAL'3 = 'INFORMATIONAL'
-    'LOW'3 = 'LOW'
-    'MEDIUM'3 = 'MEDIUM'
-    'HIGH'3 = 'HIGH'
-    'CRITICAL'3 = 'CRITICAL'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -29,8 +29,6 @@ class SqsS3BaseKeyFilterType(str, Enum):
     """
     KeyFilterTypeNone = 'none'
     KeyFilterTypeFilter = 'filter'
-    'none'2 = 'none'
-    'filter'2 = 'filter'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

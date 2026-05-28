@@ -30,12 +30,6 @@ class WizServiceTicketFilter(str, Enum):
     HasServiceTicket = 'has_service_ticket'
     DoesNotHaveServiceTicket = 'does_not_have_service_ticket'
     DoNotFilterServiceTicket = 'do_not_filter'
-    'has_service_ticket'2 = 'has_service_ticket'
-    'does_not_have_service_ticket'2 = 'does_not_have_service_ticket'
-    'do_not_filter'2 = 'do_not_filter'
-    'has_service_ticket'3 = 'has_service_ticket'
-    'does_not_have_service_ticket'3 = 'does_not_have_service_ticket'
-    'do_not_filter'3 = 'do_not_filter'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

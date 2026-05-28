@@ -24,16 +24,10 @@ const (
 	KeyFilterOpContains SqsS3BaseKeyFilterOperator = "contains"
 	KeyFilterOpEndsWith SqsS3BaseKeyFilterOperator = "ends_with"
 	KeyFilterOpStartsWith SqsS3BaseKeyFilterOperator = "starts_with"
-	CONTAINS2 SqsS3BaseKeyFilterOperator = "contains"
-	ENDS_WITH2 SqsS3BaseKeyFilterOperator = "ends_with"
-	STARTS_WITH2 SqsS3BaseKeyFilterOperator = "starts_with"
 )
 
 // All allowed values of SqsS3BaseKeyFilterOperator enum
 var AllowedSqsS3BaseKeyFilterOperatorEnumValues = []SqsS3BaseKeyFilterOperator{
-	"contains",
-	"ends_with",
-	"starts_with",
 	"contains",
 	"ends_with",
 	"starts_with",

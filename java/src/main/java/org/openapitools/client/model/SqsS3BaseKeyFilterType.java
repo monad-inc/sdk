@@ -31,11 +31,7 @@ public enum SqsS3BaseKeyFilterType {
   
   KeyFilterTypeNone("none"),
   
-  KeyFilterTypeFilter("filter"),
-  
-  NONE2("none"),
-  
-  FILTER2("filter");
+  KeyFilterTypeFilter("filter");
 
   private String value;
 

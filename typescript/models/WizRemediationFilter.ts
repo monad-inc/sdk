@@ -18,11 +18,5 @@ import { HttpFile } from '../http/http';
 export enum WizRemediationFilter {
     HasRemediation = 'has_remediation',
     DoesNotHaveRemediation = 'does_not_have_remediation',
-    DoNotFilterRemediation = 'do_not_filter',
-    HasRemediation2 = 'has_remediation',
-    DoesNotHaveRemediation2 = 'does_not_have_remediation',
-    DoNotFilter2 = 'do_not_filter',
-    HasRemediation3 = 'has_remediation',
-    DoesNotHaveRemediation3 = 'does_not_have_remediation',
-    DoNotFilter3 = 'do_not_filter'
+    DoNotFilterRemediation = 'do_not_filter'
 }

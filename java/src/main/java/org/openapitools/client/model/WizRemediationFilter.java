@@ -33,19 +33,7 @@ public enum WizRemediationFilter {
   
   DoesNotHaveRemediation("does_not_have_remediation"),
   
-  DoNotFilterRemediation("do_not_filter"),
-  
-  HAS_REMEDIATION2("has_remediation"),
-  
-  DOES_NOT_HAVE_REMEDIATION2("does_not_have_remediation"),
-  
-  DO_NOT_FILTER2("do_not_filter"),
-  
-  HAS_REMEDIATION3("has_remediation"),
-  
-  DOES_NOT_HAVE_REMEDIATION3("does_not_have_remediation"),
-  
-  DO_NOT_FILTER3("do_not_filter");
+  DoNotFilterRemediation("do_not_filter");
 
   private String value;
 

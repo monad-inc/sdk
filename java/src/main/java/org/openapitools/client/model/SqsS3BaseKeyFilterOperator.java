@@ -33,13 +33,7 @@ public enum SqsS3BaseKeyFilterOperator {
   
   KeyFilterOpEndsWith("ends_with"),
   
-  KeyFilterOpStartsWith("starts_with"),
-  
-  CONTAINS2("contains"),
-  
-  ENDS_WITH2("ends_with"),
-  
-  STARTS_WITH2("starts_with");
+  KeyFilterOpStartsWith("starts_with");
 
   private String value;
 

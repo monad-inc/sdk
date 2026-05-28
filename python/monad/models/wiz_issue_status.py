@@ -31,14 +31,6 @@ class WizIssueStatus(str, Enum):
     IssueStatusInProgress = 'IN_PROGRESS'
     IssueStatusResolved = 'RESOLVED'
     IssueStatusRejected = 'REJECTED'
-    'OPEN'2 = 'OPEN'
-    'IN_PROGRESS'2 = 'IN_PROGRESS'
-    'RESOLVED'2 = 'RESOLVED'
-    'REJECTED'2 = 'REJECTED'
-    'OPEN'3 = 'OPEN'
-    'IN_PROGRESS'3 = 'IN_PROGRESS'
-    'RESOLVED'3 = 'RESOLVED'
-    'REJECTED'3 = 'REJECTED'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

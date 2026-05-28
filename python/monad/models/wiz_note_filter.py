@@ -30,12 +30,6 @@ class WizNoteFilter(str, Enum):
     HasNote = 'has_note'
     DoesNotHaveNote = 'does_not_have_note'
     DoNotFilterNote = 'do_not_filter'
-    'has_note'2 = 'has_note'
-    'does_not_have_note'2 = 'does_not_have_note'
-    'do_not_filter'2 = 'do_not_filter'
-    'has_note'3 = 'has_note'
-    'does_not_have_note'3 = 'does_not_have_note'
-    'do_not_filter'3 = 'do_not_filter'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

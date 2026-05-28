@@ -16,13 +16,5 @@ export enum WizIssueStatus {
     IssueStatusOpen = 'OPEN',
     IssueStatusInProgress = 'IN_PROGRESS',
     IssueStatusResolved = 'RESOLVED',
-    IssueStatusRejected = 'REJECTED',
-    Open2 = 'OPEN',
-    InProgress2 = 'IN_PROGRESS',
-    Resolved2 = 'RESOLVED',
-    Rejected2 = 'REJECTED',
-    Open3 = 'OPEN',
-    InProgress3 = 'IN_PROGRESS',
-    Resolved3 = 'RESOLVED',
-    Rejected3 = 'REJECTED'
+    IssueStatusRejected = 'REJECTED'
 }

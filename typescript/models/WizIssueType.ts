@@ -15,11 +15,5 @@ import { HttpFile } from '../http/http';
 export enum WizIssueType {
     IssueTypeToxicCombination = 'TOXIC_COMBINATION',
     IssueTypeThreatDetection = 'THREAT_DETECTION',
-    IssueTypeCloudConfiguration = 'CLOUD_CONFIGURATION',
-    ToxicCombination2 = 'TOXIC_COMBINATION',
-    ThreatDetection2 = 'THREAT_DETECTION',
-    CloudConfiguration2 = 'CLOUD_CONFIGURATION',
-    ToxicCombination3 = 'TOXIC_COMBINATION',
-    ThreatDetection3 = 'THREAT_DETECTION',
-    CloudConfiguration3 = 'CLOUD_CONFIGURATION'
+    IssueTypeCloudConfiguration = 'CLOUD_CONFIGURATION'
 }

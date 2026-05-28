@@ -29,42 +29,10 @@ const (
 	ResolutionWontFix WizResolutionReason = "WONT_FIX"
 	ResolutionObjectDeleted WizResolutionReason = "OBJECT_DELETED"
 	ResolutionIssueFixed WizResolutionReason = "ISSUE_FIXED"
-	CONTROL_CHANGED2 WizResolutionReason = "CONTROL_CHANGED"
-	CONTROL_DISABLED2 WizResolutionReason = "CONTROL_DISABLED"
-	CONTROL_DELETED2 WizResolutionReason = "CONTROL_DELETED"
-	EXCEPTION2 WizResolutionReason = "EXCEPTION"
-	FALSE_POSITIVE2 WizResolutionReason = "FALSE_POSITIVE"
-	WONT_FIX2 WizResolutionReason = "WONT_FIX"
-	OBJECT_DELETED2 WizResolutionReason = "OBJECT_DELETED"
-	ISSUE_FIXED2 WizResolutionReason = "ISSUE_FIXED"
-	CONTROL_CHANGED3 WizResolutionReason = "CONTROL_CHANGED"
-	CONTROL_DISABLED3 WizResolutionReason = "CONTROL_DISABLED"
-	CONTROL_DELETED3 WizResolutionReason = "CONTROL_DELETED"
-	EXCEPTION3 WizResolutionReason = "EXCEPTION"
-	FALSE_POSITIVE3 WizResolutionReason = "FALSE_POSITIVE"
-	WONT_FIX3 WizResolutionReason = "WONT_FIX"
-	OBJECT_DELETED3 WizResolutionReason = "OBJECT_DELETED"
-	ISSUE_FIXED3 WizResolutionReason = "ISSUE_FIXED"
 )
 
 // All allowed values of WizResolutionReason enum
 var AllowedWizResolutionReasonEnumValues = []WizResolutionReason{
-	"CONTROL_CHANGED",
-	"CONTROL_DISABLED",
-	"CONTROL_DELETED",
-	"EXCEPTION",
-	"FALSE_POSITIVE",
-	"WONT_FIX",
-	"OBJECT_DELETED",
-	"ISSUE_FIXED",
-	"CONTROL_CHANGED",
-	"CONTROL_DISABLED",
-	"CONTROL_DELETED",
-	"EXCEPTION",
-	"FALSE_POSITIVE",
-	"WONT_FIX",
-	"OBJECT_DELETED",
-	"ISSUE_FIXED",
 	"CONTROL_CHANGED",
 	"CONTROL_DISABLED",
 	"CONTROL_DELETED",

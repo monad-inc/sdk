@@ -14,7 +14,5 @@ import { HttpFile } from '../http/http';
 
 export enum SqsS3BaseKeyFilterMode {
     KeyFilterModeInclude = 'include',
-    KeyFilterModeExclude = 'exclude',
-    Include2 = 'include',
-    Exclude2 = 'exclude'
+    KeyFilterModeExclude = 'exclude'
 }

@@ -20,21 +20,5 @@ export enum WizResolutionReason {
     ResolutionFalsePositive = 'FALSE_POSITIVE',
     ResolutionWontFix = 'WONT_FIX',
     ResolutionObjectDeleted = 'OBJECT_DELETED',
-    ResolutionIssueFixed = 'ISSUE_FIXED',
-    ControlChanged2 = 'CONTROL_CHANGED',
-    ControlDisabled2 = 'CONTROL_DISABLED',
-    ControlDeleted2 = 'CONTROL_DELETED',
-    Exception2 = 'EXCEPTION',
-    FalsePositive2 = 'FALSE_POSITIVE',
-    WontFix2 = 'WONT_FIX',
-    ObjectDeleted2 = 'OBJECT_DELETED',
-    IssueFixed2 = 'ISSUE_FIXED',
-    ControlChanged3 = 'CONTROL_CHANGED',
-    ControlDisabled3 = 'CONTROL_DISABLED',
-    ControlDeleted3 = 'CONTROL_DELETED',
-    Exception3 = 'EXCEPTION',
-    FalsePositive3 = 'FALSE_POSITIVE',
-    WontFix3 = 'WONT_FIX',
-    ObjectDeleted3 = 'OBJECT_DELETED',
-    IssueFixed3 = 'ISSUE_FIXED'
+    ResolutionIssueFixed = 'ISSUE_FIXED'
 }
