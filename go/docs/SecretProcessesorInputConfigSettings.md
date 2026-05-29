@@ -107,7 +107,7 @@ Name | Type | Description | Notes
 **HasServiceTicket** | Pointer to [**WizServiceTicketFilter**](WizServiceTicketFilter.md) |  | [optional] 
 **IssueIds** | Pointer to **[]string** | @Description Filter only Issues that match these specific IDs | [optional] 
 **IssueTypes** | Pointer to [**[]WizIssueType**](WizIssueType.md) | @Description Filter by Issue type | [optional] 
-**ProjectIds** | Pointer to **[]string** | @Description Filter Issues associated with specific project IDs | [optional] 
+**ProjectIds** | **[]string** | The GCP project IDs hosting Looker Core instances. | 
 **RelatedEntityId** | Pointer to **string** | @Description Filter by related entity ids | [optional] 
 **ResolutionReasons** | Pointer to [**[]WizResolutionReason**](WizResolutionReason.md) | @Description Filter Issues by resolution reason | [optional] 
 **RiskEqualsAll** | Pointer to [**[]WizRiskType**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present | [optional] 
@@ -117,6 +117,7 @@ Name | Type | Description | Notes
 **StackLayers** | Pointer to [**[]WizStackLayer**](WizStackLayer.md) | @Description Filter Issues from specific stack layers | [optional] 
 **TenantDataCenter** | **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
+**LogCategories** | **[]string** | The audit log categories to ingest. | 
 **LogType** | Pointer to **string** |  | [optional] 
 **Endpoint** | **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
@@ -165,7 +166,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, tenantDataCenter string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -2664,11 +2665,6 @@ and a boolean to check if the value has been set.
 
 SetProjectIds sets ProjectIds field to given value.
 
-### HasProjectIds
-
-`func (o *SecretProcessesorInputConfigSettings) HasProjectIds() bool`
-
-HasProjectIds returns a boolean if a field has been set.
 
 ### GetRelatedEntityId
 
@@ -2889,6 +2885,26 @@ SetAuditLogTypes sets AuditLogTypes field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasAuditLogTypes() bool`
 
 HasAuditLogTypes returns a boolean if a field has been set.
+
+### GetLogCategories
+
+`func (o *SecretProcessesorInputConfigSettings) GetLogCategories() []string`
+
+GetLogCategories returns the LogCategories field if non-nil, zero value otherwise.
+
+### GetLogCategoriesOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetLogCategoriesOk() (*[]string, bool)`
+
+GetLogCategoriesOk returns a tuple with the LogCategories field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogCategories
+
+`func (o *SecretProcessesorInputConfigSettings) SetLogCategories(v []string)`
+
+SetLogCategories sets LogCategories field to given value.
+
 
 ### GetLogType
 

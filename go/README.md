@@ -522,6 +522,8 @@ Class | Method | HTTP request | Description
  - [LeafconditionsInfo](docs/LeafconditionsInfo.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
+ - [LookerAuditLogsSecretsConfig](docs/LookerAuditLogsSecretsConfig.md)
+ - [LookerAuditLogsSettingsConfig](docs/LookerAuditLogsSettingsConfig.md)
  - [MaskArgumentsConfig](docs/MaskArgumentsConfig.md)
  - [MaskDeterministicVariant](docs/MaskDeterministicVariant.md)
  - [MaskModeConfig](docs/MaskModeConfig.md)

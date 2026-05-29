@@ -110,7 +110,7 @@
 |**hasServiceTicket** | **WizServiceTicketFilter** |  |  [optional] |
 |**issueIds** | **List&lt;String&gt;** | @Description Filter only Issues that match these specific IDs |  [optional] |
 |**issueTypes** | **List&lt;WizIssueType&gt;** | @Description Filter by Issue type |  [optional] |
-|**projectIds** | **List&lt;String&gt;** | @Description Filter Issues associated with specific project IDs |  [optional] |
+|**projectIds** | **List&lt;String&gt;** | The GCP project IDs hosting Looker Core instances. |  |
 |**relatedEntityId** | **String** | @Description Filter by related entity ids |  [optional] |
 |**resolutionReasons** | **List&lt;WizResolutionReason&gt;** | @Description Filter Issues by resolution reason |  [optional] |
 |**riskEqualsAll** | **List&lt;WizRiskType&gt;** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present |  [optional] |
@@ -120,6 +120,7 @@
 |**stackLayers** | **List&lt;WizStackLayer&gt;** | @Description Filter Issues from specific stack layers |  [optional] |
 |**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; |  |
 |**auditLogTypes** | **List&lt;String&gt;** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. |  [optional] |
+|**logCategories** | **List&lt;String&gt;** | The audit log categories to ingest. |  |
 |**logType** | **String** |  |  [optional] |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  |
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |

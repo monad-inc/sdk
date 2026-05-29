@@ -213,6 +213,8 @@ export * from '../models/KvlookupKVEntry';
 export * from '../models/LeafconditionsInfo';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
+export * from '../models/LookerAuditLogsSecretsConfig';
+export * from '../models/LookerAuditLogsSettingsConfig';
 export * from '../models/MaskArgumentsConfig';
 export * from '../models/MaskDeterministicVariant';
 export * from '../models/MaskModeConfig';
@@ -808,6 +810,8 @@ import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
+import { LookerAuditLogsSecretsConfig } from '../models/LookerAuditLogsSecretsConfig';
+import { LookerAuditLogsSettingsConfig } from '../models/LookerAuditLogsSettingsConfig';
 import { MaskArgumentsConfig } from '../models/MaskArgumentsConfig';
 import { MaskDeterministicVariant } from '../models/MaskDeterministicVariant';
 import { MaskModeConfig } from '../models/MaskModeConfig';
@@ -1473,6 +1477,8 @@ let typeMap: {[index: string]: any} = {
     "LeafconditionsInfo": LeafconditionsInfo,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
+    "LookerAuditLogsSecretsConfig": LookerAuditLogsSecretsConfig,
+    "LookerAuditLogsSettingsConfig": LookerAuditLogsSettingsConfig,
     "MaskArgumentsConfig": MaskArgumentsConfig,
     "MaskDeterministicVariant": MaskDeterministicVariant,
     "MaskModeConfig": MaskModeConfig,

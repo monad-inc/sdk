@@ -282,6 +282,8 @@ __all__ = [
     "LeafconditionsInfo",
     "LogAnalyticsQuerySecretsConfig",
     "LogAnalyticsQuerySettingsConfig",
+    "LookerAuditLogsSecretsConfig",
+    "LookerAuditLogsSettingsConfig",
     "MaskArgumentsConfig",
     "MaskDeterministicVariant",
     "MaskModeConfig",
@@ -931,6 +933,8 @@ from monad.models.kvlookup_kv_entry import KvlookupKVEntry as KvlookupKVEntry
 from monad.models.leafconditions_info import LeafconditionsInfo as LeafconditionsInfo
 from monad.models.log_analytics_query_secrets_config import LogAnalyticsQuerySecretsConfig as LogAnalyticsQuerySecretsConfig
 from monad.models.log_analytics_query_settings_config import LogAnalyticsQuerySettingsConfig as LogAnalyticsQuerySettingsConfig
+from monad.models.looker_audit_logs_secrets_config import LookerAuditLogsSecretsConfig as LookerAuditLogsSecretsConfig
+from monad.models.looker_audit_logs_settings_config import LookerAuditLogsSettingsConfig as LookerAuditLogsSettingsConfig
 from monad.models.mask_arguments_config import MaskArgumentsConfig as MaskArgumentsConfig
 from monad.models.mask_deterministic_variant import MaskDeterministicVariant as MaskDeterministicVariant
 from monad.models.mask_mode_config import MaskModeConfig as MaskModeConfig

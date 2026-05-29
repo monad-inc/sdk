@@ -3976,6 +3976,45 @@
                 },
                 "type": "object"
             },
+            "looker_audit_logs.SecretsConfig": {
+                "description": "Looker Core Audit Logs secrets",
+                "properties": {
+                    "credentials_json": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "credentials_json"
+                ],
+                "type": "object"
+            },
+            "looker_audit_logs.SettingsConfig": {
+                "description": "Looker Core Audit Logs settings",
+                "properties": {
+                    "log_categories": {
+                        "description": "The audit log categories to ingest.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "project_ids": {
+                        "description": "The GCP project IDs hosting Looker Core instances.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "required": [
+                    "log_categories",
+                    "project_ids"
+                ],
+                "type": "object"
+            },
             "mask.ArgumentsConfig": {
                 "properties": {
                     "key": {
@@ -9186,6 +9225,9 @@
                                 "$ref": "#/components/schemas/log_analytics_query.SecretsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/looker_audit_logs.SecretsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/meraki_config_logs.SecretsConfig"
                             },
                             {
@@ -9568,6 +9610,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/log_analytics_query.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/looker_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/meraki_config_logs.SettingsConfig"

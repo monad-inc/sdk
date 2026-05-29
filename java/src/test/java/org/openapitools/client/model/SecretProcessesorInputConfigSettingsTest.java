@@ -78,6 +78,7 @@ import org.openapitools.client.model.IssuesReportSettingsConfig;
 import org.openapitools.client.model.IssuesSettingsConfig;
 import org.openapitools.client.model.KoiAuditLogsSettingsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
+import org.openapitools.client.model.LookerAuditLogsSettingsConfig;
 import org.openapitools.client.model.MerakiConfigLogsSettingsConfig;
 import org.openapitools.client.model.Microsoft365GenericSettingsConfig;
 import org.openapitools.client.model.MonadGraphqlInputVariable;
@@ -1063,6 +1064,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void auditLogTypesTest() {
         // TODO: test auditLogTypes
+    }
+
+    /**
+     * Test the property 'logCategories'
+     */
+    @Test
+    public void logCategoriesTest() {
+        // TODO: test logCategories
     }
 
     /**

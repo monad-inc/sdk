@@ -194,6 +194,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 audit_log_types = [
                     ''
                     ],
+                log_categories = [
+                    ''
+                    ],
                 log_type = '',
                 endpoint = '',
                 skip_ssl_verification = True,
@@ -278,7 +281,13 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 project_id = '',
                 location = '',
                 auth_type = 'api_auth',
+                project_ids = [
+                    ''
+                    ],
                 tenant_data_center = '',
+                log_categories = [
+                    ''
+                    ],
                 endpoint = '',
                 subdomain = '',
                 domain = '',

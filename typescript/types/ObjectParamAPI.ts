@@ -217,6 +217,8 @@ import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
+import { LookerAuditLogsSecretsConfig } from '../models/LookerAuditLogsSecretsConfig';
+import { LookerAuditLogsSettingsConfig } from '../models/LookerAuditLogsSettingsConfig';
 import { MaskArgumentsConfig } from '../models/MaskArgumentsConfig';
 import { MaskDeterministicVariant } from '../models/MaskDeterministicVariant';
 import { MaskModeConfig } from '../models/MaskModeConfig';

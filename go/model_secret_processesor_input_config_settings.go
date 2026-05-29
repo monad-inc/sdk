@@ -73,6 +73,7 @@ type SecretProcessesorInputConfigSettings struct {
 	IssuesSettingsConfig *IssuesSettingsConfig
 	KoiAuditLogsSettingsConfig *KoiAuditLogsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
+	LookerAuditLogsSettingsConfig *LookerAuditLogsSettingsConfig
 	MerakiConfigLogsSettingsConfig *MerakiConfigLogsSettingsConfig
 	Microsoft365GenericSettingsConfig *Microsoft365GenericSettingsConfig
 	MonadLogSettingsConfig *MonadLogSettingsConfig
@@ -497,6 +498,13 @@ func KoiAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *KoiAudi
 func LogAnalyticsQuerySettingsConfigAsSecretProcessesorInputConfigSettings(v *LogAnalyticsQuerySettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		LogAnalyticsQuerySettingsConfig: v,
+	}
+}
+
+// LookerAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns LookerAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func LookerAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *LookerAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		LookerAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -1752,6 +1760,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.LogAnalyticsQuerySettingsConfig = nil
 	}
 
+	// try to unmarshal data into LookerAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.LookerAuditLogsSettingsConfig)
+	if err == nil {
+		jsonLookerAuditLogsSettingsConfig, _ := json.Marshal(dst.LookerAuditLogsSettingsConfig)
+		if string(jsonLookerAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.LookerAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.LookerAuditLogsSettingsConfig); err != nil {
+				dst.LookerAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.LookerAuditLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into MerakiConfigLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.MerakiConfigLogsSettingsConfig)
 	if err == nil {
@@ -2607,6 +2632,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.IssuesSettingsConfig = nil
 		dst.KoiAuditLogsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
+		dst.LookerAuditLogsSettingsConfig = nil
 		dst.MerakiConfigLogsSettingsConfig = nil
 		dst.Microsoft365GenericSettingsConfig = nil
 		dst.MonadLogSettingsConfig = nil
@@ -2879,6 +2905,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.LogAnalyticsQuerySettingsConfig != nil {
 		return json.Marshal(&src.LogAnalyticsQuerySettingsConfig)
+	}
+
+	if src.LookerAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.LookerAuditLogsSettingsConfig)
 	}
 
 	if src.MerakiConfigLogsSettingsConfig != nil {
@@ -3293,6 +3323,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.LogAnalyticsQuerySettingsConfig
 	}
 
+	if obj.LookerAuditLogsSettingsConfig != nil {
+		return obj.LookerAuditLogsSettingsConfig
+	}
+
 	if obj.MerakiConfigLogsSettingsConfig != nil {
 		return obj.MerakiConfigLogsSettingsConfig
 	}
@@ -3701,6 +3735,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.LogAnalyticsQuerySettingsConfig != nil {
 		return *obj.LogAnalyticsQuerySettingsConfig
+	}
+
+	if obj.LookerAuditLogsSettingsConfig != nil {
+		return *obj.LookerAuditLogsSettingsConfig
 	}
 
 	if obj.MerakiConfigLogsSettingsConfig != nil {

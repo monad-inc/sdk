@@ -71,6 +71,7 @@ import org.openapitools.client.model.IssuesReportSecretsConfig;
 import org.openapitools.client.model.IssuesSecretsConfig;
 import org.openapitools.client.model.KoiAuditLogsSecretsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySecretsConfig;
+import org.openapitools.client.model.LookerAuditLogsSecretsConfig;
 import org.openapitools.client.model.MerakiConfigLogsSecretsConfig;
 import org.openapitools.client.model.Microsoft365GenericSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
