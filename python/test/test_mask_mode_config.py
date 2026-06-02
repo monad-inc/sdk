@@ -45,7 +45,7 @@ class TestMaskModeConfig(unittest.TestCase):
                         organization_id = '', 
                         updated_at = '', 
                         value = '', ), ),
-                simple = monad.models.databricks/auto_loader_write_mode.databricks.AutoLoaderWriteMode(),
+                simple = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(),
                 type = ''
             )
         else:

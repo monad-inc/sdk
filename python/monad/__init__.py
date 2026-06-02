@@ -189,10 +189,14 @@ __all__ = [
     "CriblHttpSettingsConfig",
     "CustomerEventDataSecretsConfig",
     "CustomerEventDataSettingsConfig",
-    "DatabricksCopyIntoWriteMode",
-    "DatabricksSecretsConfig",
-    "DatabricksSettingsConfig",
-    "DatabricksWriteMode",
+    "DatabricksDeltaTableCopyIntoWriteMode",
+    "DatabricksDeltaTableSecretsConfig",
+    "DatabricksDeltaTableSettingsConfig",
+    "DatabricksDeltaTableWriteMode",
+    "DatabricksLakewatchAutoLoaderWriteMode",
+    "DatabricksLakewatchSettingsConfig",
+    "DatabricksLakewatchWriteMode",
+    "DatabricksLakewatchZeroBusWriteMode",
     "DatadogSecretsConfig",
     "DatadogSettingsConfig",
     "DefenderForEndpointAlertsSecretsConfig",
@@ -849,10 +853,14 @@ from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig as Cri
 from monad.models.cribl_http_settings_config import CriblHttpSettingsConfig as CriblHttpSettingsConfig
 from monad.models.customer_event_data_secrets_config import CustomerEventDataSecretsConfig as CustomerEventDataSecretsConfig
 from monad.models.customer_event_data_settings_config import CustomerEventDataSettingsConfig as CustomerEventDataSettingsConfig
-from monad.models.databricks_copy_into_write_mode import DatabricksCopyIntoWriteMode as DatabricksCopyIntoWriteMode
-from monad.models.databricks_secrets_config import DatabricksSecretsConfig as DatabricksSecretsConfig
-from monad.models.databricks_settings_config import DatabricksSettingsConfig as DatabricksSettingsConfig
-from monad.models.databricks_write_mode import DatabricksWriteMode as DatabricksWriteMode
+from monad.models.databricks_delta_table_copy_into_write_mode import DatabricksDeltaTableCopyIntoWriteMode as DatabricksDeltaTableCopyIntoWriteMode
+from monad.models.databricks_delta_table_secrets_config import DatabricksDeltaTableSecretsConfig as DatabricksDeltaTableSecretsConfig
+from monad.models.databricks_delta_table_settings_config import DatabricksDeltaTableSettingsConfig as DatabricksDeltaTableSettingsConfig
+from monad.models.databricks_delta_table_write_mode import DatabricksDeltaTableWriteMode as DatabricksDeltaTableWriteMode
+from monad.models.databricks_lakewatch_auto_loader_write_mode import DatabricksLakewatchAutoLoaderWriteMode as DatabricksLakewatchAutoLoaderWriteMode
+from monad.models.databricks_lakewatch_settings_config import DatabricksLakewatchSettingsConfig as DatabricksLakewatchSettingsConfig
+from monad.models.databricks_lakewatch_write_mode import DatabricksLakewatchWriteMode as DatabricksLakewatchWriteMode
+from monad.models.databricks_lakewatch_zero_bus_write_mode import DatabricksLakewatchZeroBusWriteMode as DatabricksLakewatchZeroBusWriteMode
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig
 from monad.models.datadog_settings_config import DatadogSettingsConfig as DatadogSettingsConfig
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig

@@ -31,8 +31,9 @@ import org.openapitools.client.model.BackblazeSettingsConfig;
 import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.BigquerySettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
-import org.openapitools.client.model.DatabricksSettingsConfig;
-import org.openapitools.client.model.DatabricksWriteMode;
+import org.openapitools.client.model.DatabricksDeltaTableSettingsConfig;
+import org.openapitools.client.model.DatabricksLakewatchSettingsConfig;
+import org.openapitools.client.model.DatabricksLakewatchWriteMode;
 import org.openapitools.client.model.DatadogSettingsConfig;
 import org.openapitools.client.model.ElasticsearchConnectionConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
@@ -47,6 +48,7 @@ import org.openapitools.client.model.KafkaSaslMechanism;
 import org.openapitools.client.model.KafkaSecurityProtocol;
 import org.openapitools.client.model.KafkaSettingsConfig;
 import org.openapitools.client.model.KvLookupOutputSettingsConfig;
+import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.NextGenSiemSettingsConfig;
 import org.openapitools.client.model.ObjectStorageSettingsConfig;
 import org.openapitools.client.model.OpensearchAuthMode;
@@ -286,6 +288,22 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void writeModeTest() {
         // TODO: test writeMode
+    }
+
+    /**
+     * Test the property 'clientId'
+     */
+    @Test
+    public void clientIdTest() {
+        // TODO: test clientId
+    }
+
+    /**
+     * Test the property 'clientSecret'
+     */
+    @Test
+    public void clientSecretTest() {
+        // TODO: test clientSecret
     }
 
     /**

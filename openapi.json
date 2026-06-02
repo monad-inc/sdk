@@ -2037,22 +2037,27 @@
                 ],
                 "type": "object"
             },
-            "databricks.AutoLoaderWriteMode": {
+            "databricks_delta_table.AutoLoaderWriteMode": {
                 "type": "object"
             },
-            "databricks.CopyIntoWriteMode": {
+            "databricks_delta_table.CopyIntoWriteMode": {
                 "properties": {
+                    "http_path": {
+                        "description": "The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.",
+                        "type": "string"
+                    },
                     "table_name": {
                         "description": "The target Delta table name. Required for copy_into mode. If the table doesn't exist, Monad will create it.",
                         "type": "string"
                     }
                 },
                 "required": [
+                    "http_path",
                     "table_name"
                 ],
                 "type": "object"
             },
-            "databricks.SecretsConfig": {
+            "databricks_delta_table.SecretsConfig": {
                 "description": "Databricks Output Secrets",
                 "properties": {
                     "client_id": {
@@ -2068,7 +2073,7 @@
                 ],
                 "type": "object"
             },
-            "databricks.SettingsConfig": {
+            "databricks_delta_table.SettingsConfig": {
                 "description": "Databricks Output Settings",
                 "properties": {
                     "batch_config": {
@@ -2079,7 +2084,7 @@
                         "type": "string"
                     },
                     "http_path": {
-                        "description": "The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123)",
+                        "description": "Deprecated. Moved under copy_into mode. Autoloader does not require warehouse\nThe SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.",
                         "type": "string"
                     },
                     "schema": {
@@ -2095,13 +2100,12 @@
                         "type": "string"
                     },
                     "write_mode": {
-                        "$ref": "#/components/schemas/databricks.WriteMode"
+                        "$ref": "#/components/schemas/databricks_delta_table.WriteMode"
                     }
                 },
                 "required": [
                     "batch_config",
                     "catalog",
-                    "http_path",
                     "schema",
                     "server_hostname",
                     "volume",
@@ -2109,14 +2113,14 @@
                 ],
                 "type": "object"
             },
-            "databricks.WriteMode": {
+            "databricks_delta_table.WriteMode": {
                 "description": "The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest",
                 "properties": {
                     "auto_loader": {
-                        "$ref": "#/components/schemas/databricks.AutoLoaderWriteMode"
+                        "$ref": "#/components/schemas/databricks_delta_table.AutoLoaderWriteMode"
                     },
                     "copy_into": {
-                        "$ref": "#/components/schemas/databricks.CopyIntoWriteMode"
+                        "$ref": "#/components/schemas/databricks_delta_table.CopyIntoWriteMode"
                     },
                     "write_mode": {
                         "enum": [
@@ -2128,6 +2132,98 @@
                 },
                 "required": [
                     "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.AutoLoaderWriteMode": {
+                "properties": {
+                    "volume": {
+                        "description": "The Unity Catalog Volume used for staging JSONL files",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "volume"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.SettingsConfig": {
+                "description": "Databricks Lakewatch Output Settings",
+                "properties": {
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "catalog": {
+                        "description": "The Unity Catalog name",
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "client_secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "schema": {
+                        "description": "The target schema within the catalog",
+                        "type": "string"
+                    },
+                    "server_hostname": {
+                        "description": "The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)",
+                        "type": "string"
+                    },
+                    "write_mode": {
+                        "$ref": "#/components/schemas/databricks_lakewatch.WriteMode"
+                    }
+                },
+                "required": [
+                    "batch_config",
+                    "catalog",
+                    "client_id",
+                    "client_secret",
+                    "schema",
+                    "server_hostname",
+                    "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.WriteMode": {
+                "description": "The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol",
+                "properties": {
+                    "auto_loader": {
+                        "$ref": "#/components/schemas/databricks_lakewatch.AutoLoaderWriteMode"
+                    },
+                    "write_mode": {
+                        "enum": [
+                            "autoloader",
+                            "zerobus"
+                        ],
+                        "type": "string"
+                    },
+                    "zerobus": {
+                        "$ref": "#/components/schemas/databricks_lakewatch.ZeroBusWriteMode"
+                    }
+                },
+                "required": [
+                    "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.ZeroBusWriteMode": {
+                "properties": {
+                    "region": {
+                        "type": "string"
+                    },
+                    "table_name": {
+                        "type": "string"
+                    },
+                    "workspace_id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "region",
+                    "table_name",
+                    "workspace_id"
                 ],
                 "type": "object"
             },
@@ -9965,7 +10061,7 @@
                                 "$ref": "#/components/schemas/cribl_http.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/databricks.SecretsConfig"
+                                "$ref": "#/components/schemas/databricks_delta_table.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/datadog.SecretsConfig"
@@ -10046,7 +10142,10 @@
                                 "$ref": "#/components/schemas/cribl_http.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/databricks.SettingsConfig"
+                                "$ref": "#/components/schemas/databricks_delta_table.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/databricks_lakewatch.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/datadog.SettingsConfig"

@@ -25,11 +25,13 @@ Name | Type | Description | Notes
 **path** | **str** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **port** | **str** | The port of the Splunk instance. | [optional] 
 **catalog** | **str** | The Unity Catalog name | 
-**http_path** | **str** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | 
+**http_path** | **str** | Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader. | [optional] 
 **var_schema** | **str** | The schema within the Snowflake database where the target table resides. | 
 **server_hostname** | **str** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
 **volume** | **str** | The Unity Catalog Volume used for staging JSONL files | 
-**write_mode** | [**DatabricksWriteMode**](DatabricksWriteMode.md) |  | 
+**write_mode** | [**DatabricksLakewatchWriteMode**](DatabricksLakewatchWriteMode.md) |  | 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ddsource** | **str** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **ddtags** | **List[str]** | Tags associated with your logs. | [optional] 
 **domain_url** | **str** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 

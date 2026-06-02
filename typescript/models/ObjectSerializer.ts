@@ -120,10 +120,14 @@ export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
 export * from '../models/CustomerEventDataSecretsConfig';
 export * from '../models/CustomerEventDataSettingsConfig';
-export * from '../models/DatabricksCopyIntoWriteMode';
-export * from '../models/DatabricksSecretsConfig';
-export * from '../models/DatabricksSettingsConfig';
-export * from '../models/DatabricksWriteMode';
+export * from '../models/DatabricksDeltaTableCopyIntoWriteMode';
+export * from '../models/DatabricksDeltaTableSecretsConfig';
+export * from '../models/DatabricksDeltaTableSettingsConfig';
+export * from '../models/DatabricksDeltaTableWriteMode';
+export * from '../models/DatabricksLakewatchAutoLoaderWriteMode';
+export * from '../models/DatabricksLakewatchSettingsConfig';
+export * from '../models/DatabricksLakewatchWriteMode';
+export * from '../models/DatabricksLakewatchZeroBusWriteMode';
 export * from '../models/DatadogSecretsConfig';
 export * from '../models/DatadogSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -726,10 +730,14 @@ import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
 import { CustomerEventDataSettingsConfig , CustomerEventDataSettingsConfigEnvironmentEnum    } from '../models/CustomerEventDataSettingsConfig';
-import { DatabricksCopyIntoWriteMode } from '../models/DatabricksCopyIntoWriteMode';
-import { DatabricksSecretsConfig } from '../models/DatabricksSecretsConfig';
-import { DatabricksSettingsConfig } from '../models/DatabricksSettingsConfig';
-import { DatabricksWriteMode  , DatabricksWriteModeWriteModeEnum   } from '../models/DatabricksWriteMode';
+import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDeltaTableCopyIntoWriteMode';
+import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTableSecretsConfig';
+import { DatabricksDeltaTableSettingsConfig } from '../models/DatabricksDeltaTableSettingsConfig';
+import { DatabricksDeltaTableWriteMode  , DatabricksDeltaTableWriteModeWriteModeEnum   } from '../models/DatabricksDeltaTableWriteMode';
+import { DatabricksLakewatchAutoLoaderWriteMode } from '../models/DatabricksLakewatchAutoLoaderWriteMode';
+import { DatabricksLakewatchSettingsConfig } from '../models/DatabricksLakewatchSettingsConfig';
+import { DatabricksLakewatchWriteMode , DatabricksLakewatchWriteModeWriteModeEnum    } from '../models/DatabricksLakewatchWriteMode';
+import { DatabricksLakewatchZeroBusWriteMode } from '../models/DatabricksLakewatchZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -1234,7 +1242,8 @@ let enumsMap: Set<string> = new Set<string>([
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
     "CustomerEventDataSettingsConfigEnvironmentEnum",
-    "DatabricksWriteModeWriteModeEnum",
+    "DatabricksDeltaTableWriteModeWriteModeEnum",
+    "DatabricksLakewatchWriteModeWriteModeEnum",
     "ElasticsearchAuthConfigTypeEnum",
     "ElasticsearchConnectionConfigTypeEnum",
     "FormatterType",
@@ -1413,10 +1422,14 @@ let typeMap: {[index: string]: any} = {
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
     "CustomerEventDataSecretsConfig": CustomerEventDataSecretsConfig,
     "CustomerEventDataSettingsConfig": CustomerEventDataSettingsConfig,
-    "DatabricksCopyIntoWriteMode": DatabricksCopyIntoWriteMode,
-    "DatabricksSecretsConfig": DatabricksSecretsConfig,
-    "DatabricksSettingsConfig": DatabricksSettingsConfig,
-    "DatabricksWriteMode": DatabricksWriteMode,
+    "DatabricksDeltaTableCopyIntoWriteMode": DatabricksDeltaTableCopyIntoWriteMode,
+    "DatabricksDeltaTableSecretsConfig": DatabricksDeltaTableSecretsConfig,
+    "DatabricksDeltaTableSettingsConfig": DatabricksDeltaTableSettingsConfig,
+    "DatabricksDeltaTableWriteMode": DatabricksDeltaTableWriteMode,
+    "DatabricksLakewatchAutoLoaderWriteMode": DatabricksLakewatchAutoLoaderWriteMode,
+    "DatabricksLakewatchSettingsConfig": DatabricksLakewatchSettingsConfig,
+    "DatabricksLakewatchWriteMode": DatabricksLakewatchWriteMode,
+    "DatabricksLakewatchZeroBusWriteMode": DatabricksLakewatchZeroBusWriteMode,
     "DatadogSecretsConfig": DatadogSecretsConfig,
     "DatadogSettingsConfig": DatadogSettingsConfig,
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,

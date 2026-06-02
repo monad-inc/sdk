@@ -27,7 +27,7 @@ import org.openapitools.client.model.AxiomSecretsConfig;
 import org.openapitools.client.model.BackblazeSecretsConfig;
 import org.openapitools.client.model.BigquerySecretsConfig;
 import org.openapitools.client.model.CriblHttpSecretsConfig;
-import org.openapitools.client.model.DatabricksSecretsConfig;
+import org.openapitools.client.model.DatabricksDeltaTableSecretsConfig;
 import org.openapitools.client.model.DatadogSecretsConfig;
 import org.openapitools.client.model.ElasticsearchSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSecretsConfig;

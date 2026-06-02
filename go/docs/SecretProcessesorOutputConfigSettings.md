@@ -24,11 +24,13 @@ Name | Type | Description | Notes
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
 **Catalog** | **string** | The Unity Catalog name | 
-**HttpPath** | **string** | The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123) | 
+**HttpPath** | Pointer to **string** | Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader. | [optional] 
 **Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
 **ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
 **Volume** | **string** | The Unity Catalog Volume used for staging JSONL files | 
-**WriteMode** | [**DatabricksWriteMode**](DatabricksWriteMode.md) |  | 
+**WriteMode** | [**DatabricksLakewatchWriteMode**](DatabricksLakewatchWriteMode.md) |  | 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **Ddtags** | Pointer to **[]string** | Tags associated with your logs. | [optional] 
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
@@ -100,7 +102,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, catalog string, httpPath string, schema string, serverHostname string, volume string, writeMode DatabricksWriteMode, index string, username string, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, catalog string, schema string, serverHostname string, volume string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, username string, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -624,6 +626,11 @@ and a boolean to check if the value has been set.
 
 SetHttpPath sets HttpPath field to given value.
 
+### HasHttpPath
+
+`func (o *SecretProcessesorOutputConfigSettings) HasHttpPath() bool`
+
+HasHttpPath returns a boolean if a field has been set.
 
 ### GetSchema
 
@@ -687,22 +694,62 @@ SetVolume sets Volume field to given value.
 
 ### GetWriteMode
 
-`func (o *SecretProcessesorOutputConfigSettings) GetWriteMode() DatabricksWriteMode`
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteMode() DatabricksLakewatchWriteMode`
 
 GetWriteMode returns the WriteMode field if non-nil, zero value otherwise.
 
 ### GetWriteModeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetWriteModeOk() (*DatabricksWriteMode, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteModeOk() (*DatabricksLakewatchWriteMode, bool)`
 
 GetWriteModeOk returns a tuple with the WriteMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWriteMode
 
-`func (o *SecretProcessesorOutputConfigSettings) SetWriteMode(v DatabricksWriteMode)`
+`func (o *SecretProcessesorOutputConfigSettings) SetWriteMode(v DatabricksLakewatchWriteMode)`
 
 SetWriteMode sets WriteMode field to given value.
+
+
+### GetClientId
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientId() ModelsSecret`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientIdOk() (*ModelsSecret, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *SecretProcessesorOutputConfigSettings) SetClientId(v ModelsSecret)`
+
+SetClientId sets ClientId field to given value.
+
+
+### GetClientSecret
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientSecret() ModelsSecret`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientSecretOk() (*ModelsSecret, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *SecretProcessesorOutputConfigSettings) SetClientSecret(v ModelsSecret)`
+
+SetClientSecret sets ClientSecret field to given value.
 
 
 ### GetDdsource

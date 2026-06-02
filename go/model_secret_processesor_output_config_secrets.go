@@ -24,7 +24,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	BackblazeSecretsConfig *BackblazeSecretsConfig
 	BigquerySecretsConfig *BigquerySecretsConfig
 	CriblHttpSecretsConfig *CriblHttpSecretsConfig
-	DatabricksSecretsConfig *DatabricksSecretsConfig
+	DatabricksDeltaTableSecretsConfig *DatabricksDeltaTableSecretsConfig
 	DatadogSecretsConfig *DatadogSecretsConfig
 	ElasticsearchSecretsConfig *ElasticsearchSecretsConfig
 	GoogleCloudStorageOutputSecretsConfig *GoogleCloudStorageOutputSecretsConfig
@@ -79,10 +79,10 @@ func CriblHttpSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *CriblHttpSe
 	}
 }
 
-// DatabricksSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns DatabricksSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
-func DatabricksSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *DatabricksSecretsConfig) SecretProcessesorOutputConfigSecrets {
+// DatabricksDeltaTableSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns DatabricksDeltaTableSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func DatabricksDeltaTableSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *DatabricksDeltaTableSecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
-		DatabricksSecretsConfig: v,
+		DatabricksDeltaTableSecretsConfig: v,
 	}
 }
 
@@ -295,21 +295,21 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.CriblHttpSecretsConfig = nil
 	}
 
-	// try to unmarshal data into DatabricksSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.DatabricksSecretsConfig)
+	// try to unmarshal data into DatabricksDeltaTableSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.DatabricksDeltaTableSecretsConfig)
 	if err == nil {
-		jsonDatabricksSecretsConfig, _ := json.Marshal(dst.DatabricksSecretsConfig)
-		if string(jsonDatabricksSecretsConfig) == "{}" { // empty struct
-			dst.DatabricksSecretsConfig = nil
+		jsonDatabricksDeltaTableSecretsConfig, _ := json.Marshal(dst.DatabricksDeltaTableSecretsConfig)
+		if string(jsonDatabricksDeltaTableSecretsConfig) == "{}" { // empty struct
+			dst.DatabricksDeltaTableSecretsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DatabricksSecretsConfig); err != nil {
-				dst.DatabricksSecretsConfig = nil
+			if err = validator.Validate(dst.DatabricksDeltaTableSecretsConfig); err != nil {
+				dst.DatabricksDeltaTableSecretsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DatabricksSecretsConfig = nil
+		dst.DatabricksDeltaTableSecretsConfig = nil
 	}
 
 	// try to unmarshal data into DatadogSecretsConfig
@@ -608,7 +608,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.BackblazeSecretsConfig = nil
 		dst.BigquerySecretsConfig = nil
 		dst.CriblHttpSecretsConfig = nil
-		dst.DatabricksSecretsConfig = nil
+		dst.DatabricksDeltaTableSecretsConfig = nil
 		dst.DatadogSecretsConfig = nil
 		dst.ElasticsearchSecretsConfig = nil
 		dst.GoogleCloudStorageOutputSecretsConfig = nil
@@ -657,8 +657,8 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CriblHttpSecretsConfig)
 	}
 
-	if src.DatabricksSecretsConfig != nil {
-		return json.Marshal(&src.DatabricksSecretsConfig)
+	if src.DatabricksDeltaTableSecretsConfig != nil {
+		return json.Marshal(&src.DatabricksDeltaTableSecretsConfig)
 	}
 
 	if src.DatadogSecretsConfig != nil {
@@ -757,8 +757,8 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.CriblHttpSecretsConfig
 	}
 
-	if obj.DatabricksSecretsConfig != nil {
-		return obj.DatabricksSecretsConfig
+	if obj.DatabricksDeltaTableSecretsConfig != nil {
+		return obj.DatabricksDeltaTableSecretsConfig
 	}
 
 	if obj.DatadogSecretsConfig != nil {
@@ -855,8 +855,8 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 		return *obj.CriblHttpSecretsConfig
 	}
 
-	if obj.DatabricksSecretsConfig != nil {
-		return *obj.DatabricksSecretsConfig
+	if obj.DatabricksDeltaTableSecretsConfig != nil {
+		return *obj.DatabricksDeltaTableSecretsConfig
 	}
 
 	if obj.DatadogSecretsConfig != nil {

@@ -25,7 +25,8 @@ type SecretProcessesorOutputConfigSettings struct {
 	BackblazeSettingsConfig *BackblazeSettingsConfig
 	BigquerySettingsConfig *BigquerySettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
-	DatabricksSettingsConfig *DatabricksSettingsConfig
+	DatabricksDeltaTableSettingsConfig *DatabricksDeltaTableSettingsConfig
+	DatabricksLakewatchSettingsConfig *DatabricksLakewatchSettingsConfig
 	DatadogSettingsConfig *DatadogSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
@@ -91,10 +92,17 @@ func CriblHttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *CriblHttp
 	}
 }
 
-// DatabricksSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns DatabricksSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
-func DatabricksSettingsConfigAsSecretProcessesorOutputConfigSettings(v *DatabricksSettingsConfig) SecretProcessesorOutputConfigSettings {
+// DatabricksDeltaTableSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns DatabricksDeltaTableSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func DatabricksDeltaTableSettingsConfigAsSecretProcessesorOutputConfigSettings(v *DatabricksDeltaTableSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
-		DatabricksSettingsConfig: v,
+		DatabricksDeltaTableSettingsConfig: v,
+	}
+}
+
+// DatabricksLakewatchSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns DatabricksLakewatchSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func DatabricksLakewatchSettingsConfigAsSecretProcessesorOutputConfigSettings(v *DatabricksLakewatchSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		DatabricksLakewatchSettingsConfig: v,
 	}
 }
 
@@ -352,21 +360,38 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.CriblHttpSettingsConfig = nil
 	}
 
-	// try to unmarshal data into DatabricksSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DatabricksSettingsConfig)
+	// try to unmarshal data into DatabricksDeltaTableSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.DatabricksDeltaTableSettingsConfig)
 	if err == nil {
-		jsonDatabricksSettingsConfig, _ := json.Marshal(dst.DatabricksSettingsConfig)
-		if string(jsonDatabricksSettingsConfig) == "{}" { // empty struct
-			dst.DatabricksSettingsConfig = nil
+		jsonDatabricksDeltaTableSettingsConfig, _ := json.Marshal(dst.DatabricksDeltaTableSettingsConfig)
+		if string(jsonDatabricksDeltaTableSettingsConfig) == "{}" { // empty struct
+			dst.DatabricksDeltaTableSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DatabricksSettingsConfig); err != nil {
-				dst.DatabricksSettingsConfig = nil
+			if err = validator.Validate(dst.DatabricksDeltaTableSettingsConfig); err != nil {
+				dst.DatabricksDeltaTableSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DatabricksSettingsConfig = nil
+		dst.DatabricksDeltaTableSettingsConfig = nil
+	}
+
+	// try to unmarshal data into DatabricksLakewatchSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.DatabricksLakewatchSettingsConfig)
+	if err == nil {
+		jsonDatabricksLakewatchSettingsConfig, _ := json.Marshal(dst.DatabricksLakewatchSettingsConfig)
+		if string(jsonDatabricksLakewatchSettingsConfig) == "{}" { // empty struct
+			dst.DatabricksLakewatchSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DatabricksLakewatchSettingsConfig); err != nil {
+				dst.DatabricksLakewatchSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DatabricksLakewatchSettingsConfig = nil
 	}
 
 	// try to unmarshal data into DatadogSettingsConfig
@@ -734,7 +759,8 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.BackblazeSettingsConfig = nil
 		dst.BigquerySettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
-		dst.DatabricksSettingsConfig = nil
+		dst.DatabricksDeltaTableSettingsConfig = nil
+		dst.DatabricksLakewatchSettingsConfig = nil
 		dst.DatadogSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
@@ -791,8 +817,12 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CriblHttpSettingsConfig)
 	}
 
-	if src.DatabricksSettingsConfig != nil {
-		return json.Marshal(&src.DatabricksSettingsConfig)
+	if src.DatabricksDeltaTableSettingsConfig != nil {
+		return json.Marshal(&src.DatabricksDeltaTableSettingsConfig)
+	}
+
+	if src.DatabricksLakewatchSettingsConfig != nil {
+		return json.Marshal(&src.DatabricksLakewatchSettingsConfig)
 	}
 
 	if src.DatadogSettingsConfig != nil {
@@ -911,8 +941,12 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.CriblHttpSettingsConfig
 	}
 
-	if obj.DatabricksSettingsConfig != nil {
-		return obj.DatabricksSettingsConfig
+	if obj.DatabricksDeltaTableSettingsConfig != nil {
+		return obj.DatabricksDeltaTableSettingsConfig
+	}
+
+	if obj.DatabricksLakewatchSettingsConfig != nil {
+		return obj.DatabricksLakewatchSettingsConfig
 	}
 
 	if obj.DatadogSettingsConfig != nil {
@@ -1029,8 +1063,12 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 		return *obj.CriblHttpSettingsConfig
 	}
 
-	if obj.DatabricksSettingsConfig != nil {
-		return *obj.DatabricksSettingsConfig
+	if obj.DatabricksDeltaTableSettingsConfig != nil {
+		return *obj.DatabricksDeltaTableSettingsConfig
+	}
+
+	if obj.DatabricksLakewatchSettingsConfig != nil {
+		return *obj.DatabricksLakewatchSettingsConfig
 	}
 
 	if obj.DatadogSettingsConfig != nil {
