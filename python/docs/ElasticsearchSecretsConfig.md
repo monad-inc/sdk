@@ -1,6 +1,5 @@
 # ElasticsearchSecretsConfig
 
-Elasticsearch Output Secrets
 
 ## Properties
 

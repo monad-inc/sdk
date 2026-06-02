@@ -13,66 +13,36 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * The type of connection to use with Elasticsearch. Choose between &#39;cloud_id&#39; for Elastic Cloud or &#39;url&#39; for direct connection.
+ * Model tests for ElasticsearchUrlVariant
  */
-@JsonAdapter(ElasticsearchConnectionTypeEnum.Adapter.class)
-public enum ElasticsearchConnectionTypeEnum {
-  
-  ConnectionTypeCloud("cloud_id"),
-  
-  ConnectionTypeURL("url");
+public class ElasticsearchUrlVariantTest {
+    private final ElasticsearchUrlVariant model = new ElasticsearchUrlVariant();
 
-  private String value;
-
-  ElasticsearchConnectionTypeEnum(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static ElasticsearchConnectionTypeEnum fromValue(String value) {
-    for (ElasticsearchConnectionTypeEnum b : ElasticsearchConnectionTypeEnum.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<ElasticsearchConnectionTypeEnum> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final ElasticsearchConnectionTypeEnum enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+    /**
+     * Model tests for ElasticsearchUrlVariant
+     */
+    @Test
+    public void testElasticsearchUrlVariant() {
+        // TODO: test ElasticsearchUrlVariant
     }
 
-    @Override
-    public ElasticsearchConnectionTypeEnum read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return ElasticsearchConnectionTypeEnum.fromValue(value);
+    /**
+     * Test the property 'endpoint'
+     */
+    @Test
+    public void endpointTest() {
+        // TODO: test endpoint
     }
-  }
 
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    ElasticsearchConnectionTypeEnum.fromValue(value);
-  }
 }
-

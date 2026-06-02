@@ -13,9 +13,6 @@
 import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
-/**
-* Elasticsearch Output Secrets
-*/
 export class ElasticsearchSecretsConfig {
     'apiKey'?: ModelsSecret;
     'password'?: ModelsSecret;

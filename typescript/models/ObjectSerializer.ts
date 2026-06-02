@@ -137,10 +137,13 @@ export * from '../models/DuoSecurityActivityLogsSettingsConfig';
 export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 export * from '../models/EksAuditLogsSecretsConfig';
 export * from '../models/EksAuditLogsSettingsConfig';
-export * from '../models/ElasticsearchAuthTypeEnum';
-export * from '../models/ElasticsearchConnectionTypeEnum';
+export * from '../models/ElasticsearchAuthConfig';
+export * from '../models/ElasticsearchCloudIdVariant';
+export * from '../models/ElasticsearchConnectionConfig';
+export * from '../models/ElasticsearchSecretVariant';
 export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
+export * from '../models/ElasticsearchUrlVariant';
 export * from '../models/EncryptAESVariant';
 export * from '../models/EncryptAgeVariant';
 export * from '../models/EncryptAlgorithmConfig';
@@ -740,10 +743,13 @@ import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActi
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { EksAuditLogsSecretsConfig } from '../models/EksAuditLogsSecretsConfig';
 import { EksAuditLogsSettingsConfig } from '../models/EksAuditLogsSettingsConfig';
-import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
-import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
+import { ElasticsearchAuthConfig  , ElasticsearchAuthConfigTypeEnum   } from '../models/ElasticsearchAuthConfig';
+import { ElasticsearchCloudIdVariant } from '../models/ElasticsearchCloudIdVariant';
+import { ElasticsearchConnectionConfig , ElasticsearchConnectionConfigTypeEnum    } from '../models/ElasticsearchConnectionConfig';
+import { ElasticsearchSecretVariant } from '../models/ElasticsearchSecretVariant';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
-import { ElasticsearchSettingsConfig        } from '../models/ElasticsearchSettingsConfig';
+import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { ElasticsearchUrlVariant } from '../models/ElasticsearchUrlVariant';
 import { EncryptAESVariant } from '../models/EncryptAESVariant';
 import { EncryptAgeVariant } from '../models/EncryptAgeVariant';
 import { EncryptAlgorithmConfig } from '../models/EncryptAlgorithmConfig';
@@ -1229,8 +1235,8 @@ let enumsMap: Set<string> = new Set<string>([
     "ConvertTimestampTimestampFormat",
     "CustomerEventDataSettingsConfigEnvironmentEnum",
     "DatabricksWriteModeWriteModeEnum",
-    "ElasticsearchAuthTypeEnum",
-    "ElasticsearchConnectionTypeEnum",
+    "ElasticsearchAuthConfigTypeEnum",
+    "ElasticsearchConnectionConfigTypeEnum",
     "FormatterType",
     "GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum",
     "HttpPayloadStructure",
@@ -1424,8 +1430,13 @@ let typeMap: {[index: string]: any} = {
     "DuplicateKeyValueToKeyArgumentsConfig": DuplicateKeyValueToKeyArgumentsConfig,
     "EksAuditLogsSecretsConfig": EksAuditLogsSecretsConfig,
     "EksAuditLogsSettingsConfig": EksAuditLogsSettingsConfig,
+    "ElasticsearchAuthConfig": ElasticsearchAuthConfig,
+    "ElasticsearchCloudIdVariant": ElasticsearchCloudIdVariant,
+    "ElasticsearchConnectionConfig": ElasticsearchConnectionConfig,
+    "ElasticsearchSecretVariant": ElasticsearchSecretVariant,
     "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
+    "ElasticsearchUrlVariant": ElasticsearchUrlVariant,
     "EncryptAESVariant": EncryptAESVariant,
     "EncryptAgeVariant": EncryptAgeVariant,
     "EncryptAlgorithmConfig": EncryptAlgorithmConfig,

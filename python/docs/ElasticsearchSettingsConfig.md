@@ -6,13 +6,15 @@ Elasticsearch Output Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_type** | [**ElasticsearchAuthTypeEnum**](ElasticsearchAuthTypeEnum.md) |  | [optional] 
-**cloud_id** | **str** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. | [optional] 
-**connection_type** | [**ElasticsearchConnectionTypeEnum**](ElasticsearchConnectionTypeEnum.md) |  | [optional] 
-**index** | **str** | The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically. | [optional] 
+**auth_config** | [**ElasticsearchAuthConfig**](ElasticsearchAuthConfig.md) |  | [optional] 
+**auth_type** | **str** | DEPRECATED: use AuthConfig &amp; ConnectionConfig instead | [optional] 
+**cloud_id** | **str** |  | [optional] 
+**connection_config** | [**ElasticsearchConnectionConfig**](ElasticsearchConnectionConfig.md) |  | [optional] 
+**connection_type** | **str** |  | [optional] 
+**index** | **str** | The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically. | 
 **insecure_skip_verify** | **bool** | If set to true, it skips verification of the server&#39;s TLS certificate. This is insecure and should only be used for testing purposes. | [optional] 
-**url** | **str** | The URL of the Elasticsearch cluster. Required when connection type is set to &#39;url&#39;. | [optional] 
-**username** | **str** | Username for authenticating with the Elasticsearch cluster. | [optional] 
+**url** | **str** |  | [optional] 
+**username** | **str** | Username for authenticating with the Elasticsearch cluster. | 
 
 ## Example
 

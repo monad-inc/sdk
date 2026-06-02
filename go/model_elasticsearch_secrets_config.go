@@ -18,7 +18,7 @@ import (
 // checks if the ElasticsearchSecretsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ElasticsearchSecretsConfig{}
 
-// ElasticsearchSecretsConfig Elasticsearch Output Secrets
+// ElasticsearchSecretsConfig struct for ElasticsearchSecretsConfig
 type ElasticsearchSecretsConfig struct {
 	ApiKey *ModelsSecret `json:"api_key,omitempty"`
 	Password *ModelsSecret `json:"password,omitempty"`

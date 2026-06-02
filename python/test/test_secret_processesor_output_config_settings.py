@@ -86,9 +86,28 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 domain_url = '',
                 hostname = '',
                 service = '',
+                auth_config = monad.models.slack/auth_config.slack.AuthConfig(
+                    bot_token = monad.models.slack/bot_token_variant.slack.BotTokenVariant(
+                        channel_id = '', ), 
+                    type = '', 
+                    webhook = monad.models.slack/webhook_variant.slack.WebhookVariant(
+                        webhook_url = monad.models.models/secret.models.Secret(
+                            created_at = '', 
+                            description = '', 
+                            id = '', 
+                            name = '', 
+                            organization_id = '', 
+                            updated_at = '', 
+                            value = '', ), ), ),
                 auth_type = '',
                 cloud_id = '',
-                connection_type = 'cloud_id',
+                connection_config = monad.models.elasticsearch/connection_config.elasticsearch.ConnectionConfig(
+                    cloud_id = monad.models.elasticsearch/cloud_id_variant.elasticsearch.CloudIdVariant(
+                        id = '', ), 
+                    type = 'url', 
+                    url = monad.models.elasticsearch/url_variant.elasticsearch.UrlVariant(
+                        endpoint = '', ), ),
+                connection_type = '',
                 index = '',
                 insecure_skip_verify = True,
                 url = '',
@@ -190,19 +209,6 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     source_region = '', ),
                 rule_id = '',
                 stream_name = '',
-                auth_config = monad.models.slack/auth_config.slack.AuthConfig(
-                    bot_token = monad.models.slack/bot_token_variant.slack.BotTokenVariant(
-                        channel_id = '', ), 
-                    type = '', 
-                    webhook = monad.models.slack/webhook_variant.slack.WebhookVariant(
-                        webhook_url = monad.models.models/secret.models.Secret(
-                            created_at = '', 
-                            description = '', 
-                            id = '', 
-                            name = '', 
-                            organization_id = '', 
-                            updated_at = '', 
-                            value = '', ), ), ),
                 message_template = '',
                 account = '',
                 case_insensitivity = True,
@@ -237,6 +243,8 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     copy_into = monad.models.databricks/copy_into_write_mode.databricks.CopyIntoWriteMode(
                         table_name = '', ), 
                     write_mode = 'autoloader', ),
+                index = '',
+                username = '',
         )
         """
 

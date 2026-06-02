@@ -13,26 +13,41 @@
 """  # noqa: E501
 
 
-from __future__ import annotations
-import json
-from enum import Enum
-from typing_extensions import Self
+import unittest
 
+from monad.models.elasticsearch_url_variant import ElasticsearchUrlVariant
 
-class ElasticsearchAuthTypeEnum(str, Enum):
-    """
-    The method of authentication to use with the Elasticsearch cluster. Choose between 'api_key' or 'password'.
-    """
+class TestElasticsearchUrlVariant(unittest.TestCase):
+    """ElasticsearchUrlVariant unit test stubs"""
 
-    """
-    allowed enum values
-    """
-    AuthTypeAPI = 'api_key'
-    AuthTypePwd = 'password'
+    def setUp(self):
+        pass
 
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Create an instance of ElasticsearchAuthTypeEnum from a JSON string"""
-        return cls(json.loads(json_str))
+    def tearDown(self):
+        pass
 
+    def make_instance(self, include_optional) -> ElasticsearchUrlVariant:
+        """Test ElasticsearchUrlVariant
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `ElasticsearchUrlVariant`
+        """
+        model = ElasticsearchUrlVariant()
+        if include_optional:
+            return ElasticsearchUrlVariant(
+                endpoint = ''
+            )
+        else:
+            return ElasticsearchUrlVariant(
+                endpoint = '',
+        )
+        """
 
+    def testElasticsearchUrlVariant(self):
+        """Test ElasticsearchUrlVariant"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
+
+if __name__ == '__main__':
+    unittest.main()

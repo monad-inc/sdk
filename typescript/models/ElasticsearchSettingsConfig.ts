@@ -10,36 +10,35 @@
  * Do not edit the class manually.
  */
 
-import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
-import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
+import { ElasticsearchAuthConfig } from '../models/ElasticsearchAuthConfig';
+import { ElasticsearchConnectionConfig } from '../models/ElasticsearchConnectionConfig';
 import { HttpFile } from '../http/http';
 
 /**
 * Elasticsearch Output Settings
 */
 export class ElasticsearchSettingsConfig {
-    'authType'?: ElasticsearchAuthTypeEnum;
+    'authConfig'?: ElasticsearchAuthConfig;
     /**
-    * The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to \'cloud_id\'.
+    * DEPRECATED: use AuthConfig & ConnectionConfig instead
     */
+    'authType'?: string;
     'cloudId'?: string;
-    'connectionType'?: ElasticsearchConnectionTypeEnum;
+    'connectionConfig'?: ElasticsearchConnectionConfig;
+    'connectionType'?: string;
     /**
     * The name of the Elasticsearch index to write data to. If the index doesn\'t exist, it will be created automatically.
     */
-    'index'?: string;
+    'index': string;
     /**
     * If set to true, it skips verification of the server\'s TLS certificate. This is insecure and should only be used for testing purposes.
     */
     'insecureSkipVerify'?: boolean;
-    /**
-    * The URL of the Elasticsearch cluster. Required when connection type is set to \'url\'.
-    */
     'url'?: string;
     /**
     * Username for authenticating with the Elasticsearch cluster.
     */
-    'username'?: string;
+    'username': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -47,9 +46,15 @@ export class ElasticsearchSettingsConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "authConfig",
+            "baseName": "auth_config",
+            "type": "ElasticsearchAuthConfig",
+            "format": ""
+        },
+        {
             "name": "authType",
             "baseName": "auth_type",
-            "type": "ElasticsearchAuthTypeEnum",
+            "type": "string",
             "format": ""
         },
         {
@@ -59,9 +64,15 @@ export class ElasticsearchSettingsConfig {
             "format": ""
         },
         {
+            "name": "connectionConfig",
+            "baseName": "connection_config",
+            "type": "ElasticsearchConnectionConfig",
+            "format": ""
+        },
+        {
             "name": "connectionType",
             "baseName": "connection_type",
-            "type": "ElasticsearchConnectionTypeEnum",
+            "type": "string",
             "format": ""
         },
         {
@@ -96,5 +107,3 @@ export class ElasticsearchSettingsConfig {
     public constructor() {
     }
 }
-
-

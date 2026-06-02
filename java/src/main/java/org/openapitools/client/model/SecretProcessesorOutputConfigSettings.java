@@ -35,7 +35,7 @@ import org.openapitools.client.model.CriblHttpSettingsConfig;
 import org.openapitools.client.model.DatabricksSettingsConfig;
 import org.openapitools.client.model.DatabricksWriteMode;
 import org.openapitools.client.model.DatadogSettingsConfig;
-import org.openapitools.client.model.ElasticsearchConnectionTypeEnum;
+import org.openapitools.client.model.ElasticsearchConnectionConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;

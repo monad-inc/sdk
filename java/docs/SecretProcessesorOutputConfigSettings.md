@@ -37,13 +37,15 @@
 |**domainUrl** | **String** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs |  [optional] |
 |**hostname** | **String** | The name of the originating host of the log. |  [optional] |
 |**service** | **String** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. |  [optional] |
+|**authConfig** | [**SlackAuthConfig**](SlackAuthConfig.md) |  |  [optional] |
 |**authType** | **String** |  |  [optional] |
-|**cloudId** | **String** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. |  [optional] |
-|**connectionType** | **ElasticsearchConnectionTypeEnum** |  |  [optional] |
-|**index** | **String** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. |  [optional] |
+|**cloudId** | **String** |  |  [optional] |
+|**connectionConfig** | [**ElasticsearchConnectionConfig**](ElasticsearchConnectionConfig.md) |  |  [optional] |
+|**connectionType** | **String** |  |  [optional] |
+|**index** | **String** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. |  |
 |**insecureSkipVerify** | **Boolean** | Whether to skip TLS certificate verification (not recommended for production). |  [optional] |
 |**url** | **String** | The URL of the Sumo Logic instance. |  [optional] |
-|**username** | **String** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. |  [optional] |
+|**username** | **String** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. |  |
 |**format** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
 |**endpoint** | **String** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. |  [optional] |
 |**headers** | [**List&lt;KafkaKafkaHeader&gt;**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message |  [optional] |
@@ -87,7 +89,6 @@
 |**sourceAccountDetails** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  |  [optional] |
 |**ruleId** | **String** | The unique identifier of the Data Collection Rule (DCR). |  [optional] |
 |**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  [optional] |
-|**authConfig** | [**SlackAuthConfig**](SlackAuthConfig.md) |  |  [optional] |
 |**messageTemplate** | **String** |  |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**caseInsensitivity** | **Boolean** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. |  [optional] |

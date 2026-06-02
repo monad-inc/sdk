@@ -27,7 +27,7 @@ from pydantic_core import to_jsonable_python
 
 class ElasticsearchSecretsConfig(BaseModel):
     """
-    Elasticsearch Output Secrets
+    ElasticsearchSecretsConfig
     """ # noqa: E501
     api_key: Optional[ModelsSecret] = None
     password: Optional[ModelsSecret] = None

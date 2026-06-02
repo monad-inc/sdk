@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.elasticsearch_auth_type_enum import ElasticsearchAuthTypeEnum
-from monad.models.elasticsearch_connection_type_enum import ElasticsearchConnectionTypeEnum
+from monad.models.elasticsearch_auth_config import ElasticsearchAuthConfig
+from monad.models.elasticsearch_connection_config import ElasticsearchConnectionConfig
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,14 +30,16 @@ class ElasticsearchSettingsConfig(BaseModel):
     """
     Elasticsearch Output Settings
     """ # noqa: E501
-    auth_type: Optional[ElasticsearchAuthTypeEnum] = None
-    cloud_id: Optional[StrictStr] = Field(default=None, description="The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to 'cloud_id'.")
-    connection_type: Optional[ElasticsearchConnectionTypeEnum] = None
-    index: Optional[StrictStr] = Field(default=None, description="The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.")
+    auth_config: Optional[ElasticsearchAuthConfig] = None
+    auth_type: Optional[StrictStr] = Field(default=None, description="DEPRECATED: use AuthConfig & ConnectionConfig instead")
+    cloud_id: Optional[StrictStr] = None
+    connection_config: Optional[ElasticsearchConnectionConfig] = None
+    connection_type: Optional[StrictStr] = None
+    index: StrictStr = Field(description="The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.")
     insecure_skip_verify: Optional[StrictBool] = Field(default=None, description="If set to true, it skips verification of the server's TLS certificate. This is insecure and should only be used for testing purposes.")
-    url: Optional[StrictStr] = Field(default=None, description="The URL of the Elasticsearch cluster. Required when connection type is set to 'url'.")
-    username: Optional[StrictStr] = Field(default=None, description="Username for authenticating with the Elasticsearch cluster.")
-    __properties: ClassVar[List[str]] = ["auth_type", "cloud_id", "connection_type", "index", "insecure_skip_verify", "url", "username"]
+    url: Optional[StrictStr] = None
+    username: StrictStr = Field(description="Username for authenticating with the Elasticsearch cluster.")
+    __properties: ClassVar[List[str]] = ["auth_config", "auth_type", "cloud_id", "connection_config", "connection_type", "index", "insecure_skip_verify", "url", "username"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -78,6 +80,12 @@ class ElasticsearchSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of auth_config
+        if self.auth_config:
+            _dict['auth_config'] = self.auth_config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of connection_config
+        if self.connection_config:
+            _dict['connection_config'] = self.connection_config.to_dict()
         return _dict
 
     @classmethod
@@ -90,8 +98,10 @@ class ElasticsearchSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "auth_config": ElasticsearchAuthConfig.from_dict(obj["auth_config"]) if obj.get("auth_config") is not None else None,
             "auth_type": obj.get("auth_type"),
             "cloud_id": obj.get("cloud_id"),
+            "connection_config": ElasticsearchConnectionConfig.from_dict(obj["connection_config"]) if obj.get("connection_config") is not None else None,
             "connection_type": obj.get("connection_type"),
             "index": obj.get("index"),
             "insecure_skip_verify": obj.get("insecure_skip_verify"),

@@ -141,10 +141,13 @@ import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActi
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { EksAuditLogsSecretsConfig } from '../models/EksAuditLogsSecretsConfig';
 import { EksAuditLogsSettingsConfig } from '../models/EksAuditLogsSettingsConfig';
-import { ElasticsearchAuthTypeEnum } from '../models/ElasticsearchAuthTypeEnum';
-import { ElasticsearchConnectionTypeEnum } from '../models/ElasticsearchConnectionTypeEnum';
+import { ElasticsearchAuthConfig } from '../models/ElasticsearchAuthConfig';
+import { ElasticsearchCloudIdVariant } from '../models/ElasticsearchCloudIdVariant';
+import { ElasticsearchConnectionConfig } from '../models/ElasticsearchConnectionConfig';
+import { ElasticsearchSecretVariant } from '../models/ElasticsearchSecretVariant';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { ElasticsearchUrlVariant } from '../models/ElasticsearchUrlVariant';
 import { EncryptAESVariant } from '../models/EncryptAESVariant';
 import { EncryptAgeVariant } from '../models/EncryptAgeVariant';
 import { EncryptAlgorithmConfig } from '../models/EncryptAlgorithmConfig';

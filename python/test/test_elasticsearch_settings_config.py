@@ -36,9 +36,35 @@ class TestElasticsearchSettingsConfig(unittest.TestCase):
         model = ElasticsearchSettingsConfig()
         if include_optional:
             return ElasticsearchSettingsConfig(
-                auth_type = 'api_key',
+                auth_config = monad.models.elasticsearch/auth_config.elasticsearch.AuthConfig(
+                    api_key = monad.models.elasticsearch/secret_variant.elasticsearch.SecretVariant(
+                        secret = monad.models.models/secret.models.Secret(
+                            created_at = '', 
+                            description = '', 
+                            id = '', 
+                            name = '', 
+                            organization_id = '', 
+                            updated_at = '', 
+                            value = '', ), ), 
+                    password = monad.models.elasticsearch/secret_variant.elasticsearch.SecretVariant(
+                        secret = monad.models.models/secret.models.Secret(
+                            created_at = '', 
+                            description = '', 
+                            id = '', 
+                            name = '', 
+                            organization_id = '', 
+                            updated_at = '', 
+                            value = '', ), ), 
+                    type = 'api_key', ),
+                auth_type = '',
                 cloud_id = '',
-                connection_type = 'cloud_id',
+                connection_config = monad.models.elasticsearch/connection_config.elasticsearch.ConnectionConfig(
+                    cloud_id = monad.models.elasticsearch/cloud_id_variant.elasticsearch.CloudIdVariant(
+                        id = '', ), 
+                    type = 'url', 
+                    url = monad.models.elasticsearch/url_variant.elasticsearch.UrlVariant(
+                        endpoint = '', ), ),
+                connection_type = '',
                 index = '',
                 insecure_skip_verify = True,
                 url = '',
@@ -46,6 +72,8 @@ class TestElasticsearchSettingsConfig(unittest.TestCase):
             )
         else:
             return ElasticsearchSettingsConfig(
+                index = '',
+                username = '',
         )
         """
 

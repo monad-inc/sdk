@@ -13,66 +13,37 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * The method of authentication to use with the Elasticsearch cluster. Choose between &#39;api_key&#39; or &#39;password&#39;.
+ * Model tests for ElasticsearchSecretVariant
  */
-@JsonAdapter(ElasticsearchAuthTypeEnum.Adapter.class)
-public enum ElasticsearchAuthTypeEnum {
-  
-  AuthTypeAPI("api_key"),
-  
-  AuthTypePwd("password");
+public class ElasticsearchSecretVariantTest {
+    private final ElasticsearchSecretVariant model = new ElasticsearchSecretVariant();
 
-  private String value;
-
-  ElasticsearchAuthTypeEnum(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static ElasticsearchAuthTypeEnum fromValue(String value) {
-    for (ElasticsearchAuthTypeEnum b : ElasticsearchAuthTypeEnum.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<ElasticsearchAuthTypeEnum> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final ElasticsearchAuthTypeEnum enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+    /**
+     * Model tests for ElasticsearchSecretVariant
+     */
+    @Test
+    public void testElasticsearchSecretVariant() {
+        // TODO: test ElasticsearchSecretVariant
     }
 
-    @Override
-    public ElasticsearchAuthTypeEnum read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return ElasticsearchAuthTypeEnum.fromValue(value);
+    /**
+     * Test the property 'secret'
+     */
+    @Test
+    public void secretTest() {
+        // TODO: test secret
     }
-  }
 
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    ElasticsearchAuthTypeEnum.fromValue(value);
-  }
 }
-

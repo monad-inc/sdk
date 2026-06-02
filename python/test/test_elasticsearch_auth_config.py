@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.elasticsearch_connection_type_enum import ElasticsearchConnectionTypeEnum
+from monad.models.elasticsearch_auth_config import ElasticsearchAuthConfig
 
-class TestElasticsearchConnectionTypeEnum(unittest.TestCase):
-    """ElasticsearchConnectionTypeEnum unit test stubs"""
+class TestElasticsearchAuthConfig(unittest.TestCase):
+    """ElasticsearchAuthConfig unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,9 +26,46 @@ class TestElasticsearchConnectionTypeEnum(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testElasticsearchConnectionTypeEnum(self):
-        """Test ElasticsearchConnectionTypeEnum"""
-        # inst = ElasticsearchConnectionTypeEnum()
+    def make_instance(self, include_optional) -> ElasticsearchAuthConfig:
+        """Test ElasticsearchAuthConfig
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `ElasticsearchAuthConfig`
+        """
+        model = ElasticsearchAuthConfig()
+        if include_optional:
+            return ElasticsearchAuthConfig(
+                api_key = monad.models.elasticsearch/secret_variant.elasticsearch.SecretVariant(
+                    secret = monad.models.models/secret.models.Secret(
+                        created_at = '', 
+                        description = '', 
+                        id = '', 
+                        name = '', 
+                        organization_id = '', 
+                        updated_at = '', 
+                        value = '', ), ),
+                password = monad.models.elasticsearch/secret_variant.elasticsearch.SecretVariant(
+                    secret = monad.models.models/secret.models.Secret(
+                        created_at = '', 
+                        description = '', 
+                        id = '', 
+                        name = '', 
+                        organization_id = '', 
+                        updated_at = '', 
+                        value = '', ), ),
+                type = 'api_key'
+            )
+        else:
+            return ElasticsearchAuthConfig(
+                type = 'api_key',
+        )
+        """
+
+    def testElasticsearchAuthConfig(self):
+        """Test ElasticsearchAuthConfig"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
 
 if __name__ == '__main__':
     unittest.main()

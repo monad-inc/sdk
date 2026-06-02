@@ -13,20 +13,54 @@
 
 package org.openapitools.client.model;
 
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+import org.openapitools.client.model.ElasticsearchCloudIdVariant;
+import org.openapitools.client.model.ElasticsearchUrlVariant;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ElasticsearchConnectionTypeEnum
+ * Model tests for ElasticsearchConnectionConfig
  */
-public class ElasticsearchConnectionTypeEnumTest {
+public class ElasticsearchConnectionConfigTest {
+    private final ElasticsearchConnectionConfig model = new ElasticsearchConnectionConfig();
+
     /**
-     * Model tests for ElasticsearchConnectionTypeEnum
+     * Model tests for ElasticsearchConnectionConfig
      */
     @Test
-    public void testElasticsearchConnectionTypeEnum() {
-        // TODO: test ElasticsearchConnectionTypeEnum
+    public void testElasticsearchConnectionConfig() {
+        // TODO: test ElasticsearchConnectionConfig
+    }
+
+    /**
+     * Test the property 'cloudId'
+     */
+    @Test
+    public void cloudIdTest() {
+        // TODO: test cloudId
+    }
+
+    /**
+     * Test the property 'type'
+     */
+    @Test
+    public void typeTest() {
+        // TODO: test type
+    }
+
+    /**
+     * Test the property 'url'
+     */
+    @Test
+    public void urlTest() {
+        // TODO: test url
     }
 
 }

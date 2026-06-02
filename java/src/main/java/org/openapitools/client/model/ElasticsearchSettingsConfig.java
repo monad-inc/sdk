@@ -21,8 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ElasticsearchAuthTypeEnum;
-import org.openapitools.client.model.ElasticsearchConnectionTypeEnum;
+import org.openapitools.client.model.ElasticsearchAuthConfig;
+import org.openapitools.client.model.ElasticsearchConnectionConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,24 +52,34 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class ElasticsearchSettingsConfig {
+  public static final String SERIALIZED_NAME_AUTH_CONFIG = "auth_config";
+  @SerializedName(SERIALIZED_NAME_AUTH_CONFIG)
+  @javax.annotation.Nullable
+  private ElasticsearchAuthConfig authConfig;
+
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
   @javax.annotation.Nullable
-  private ElasticsearchAuthTypeEnum authType;
+  private String authType;
 
   public static final String SERIALIZED_NAME_CLOUD_ID = "cloud_id";
   @SerializedName(SERIALIZED_NAME_CLOUD_ID)
   @javax.annotation.Nullable
   private String cloudId;
 
+  public static final String SERIALIZED_NAME_CONNECTION_CONFIG = "connection_config";
+  @SerializedName(SERIALIZED_NAME_CONNECTION_CONFIG)
+  @javax.annotation.Nullable
+  private ElasticsearchConnectionConfig connectionConfig;
+
   public static final String SERIALIZED_NAME_CONNECTION_TYPE = "connection_type";
   @SerializedName(SERIALIZED_NAME_CONNECTION_TYPE)
   @javax.annotation.Nullable
-  private ElasticsearchConnectionTypeEnum connectionType;
+  private String connectionType;
 
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String index;
 
   public static final String SERIALIZED_NAME_INSECURE_SKIP_VERIFY = "insecure_skip_verify";
@@ -84,27 +94,46 @@ public class ElasticsearchSettingsConfig {
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String username;
 
   public ElasticsearchSettingsConfig() {
   }
 
-  public ElasticsearchSettingsConfig authType(@javax.annotation.Nullable ElasticsearchAuthTypeEnum authType) {
+  public ElasticsearchSettingsConfig authConfig(@javax.annotation.Nullable ElasticsearchAuthConfig authConfig) {
+    this.authConfig = authConfig;
+    return this;
+  }
+
+  /**
+   * Get authConfig
+   * @return authConfig
+   */
+  @javax.annotation.Nullable
+  public ElasticsearchAuthConfig getAuthConfig() {
+    return authConfig;
+  }
+
+  public void setAuthConfig(@javax.annotation.Nullable ElasticsearchAuthConfig authConfig) {
+    this.authConfig = authConfig;
+  }
+
+
+  public ElasticsearchSettingsConfig authType(@javax.annotation.Nullable String authType) {
     this.authType = authType;
     return this;
   }
 
   /**
-   * Get authType
+   * DEPRECATED: use AuthConfig &amp; ConnectionConfig instead
    * @return authType
    */
   @javax.annotation.Nullable
-  public ElasticsearchAuthTypeEnum getAuthType() {
+  public String getAuthType() {
     return authType;
   }
 
-  public void setAuthType(@javax.annotation.Nullable ElasticsearchAuthTypeEnum authType) {
+  public void setAuthType(@javax.annotation.Nullable String authType) {
     this.authType = authType;
   }
 
@@ -115,7 +144,7 @@ public class ElasticsearchSettingsConfig {
   }
 
   /**
-   * The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;.
+   * Get cloudId
    * @return cloudId
    */
   @javax.annotation.Nullable
@@ -128,7 +157,26 @@ public class ElasticsearchSettingsConfig {
   }
 
 
-  public ElasticsearchSettingsConfig connectionType(@javax.annotation.Nullable ElasticsearchConnectionTypeEnum connectionType) {
+  public ElasticsearchSettingsConfig connectionConfig(@javax.annotation.Nullable ElasticsearchConnectionConfig connectionConfig) {
+    this.connectionConfig = connectionConfig;
+    return this;
+  }
+
+  /**
+   * Get connectionConfig
+   * @return connectionConfig
+   */
+  @javax.annotation.Nullable
+  public ElasticsearchConnectionConfig getConnectionConfig() {
+    return connectionConfig;
+  }
+
+  public void setConnectionConfig(@javax.annotation.Nullable ElasticsearchConnectionConfig connectionConfig) {
+    this.connectionConfig = connectionConfig;
+  }
+
+
+  public ElasticsearchSettingsConfig connectionType(@javax.annotation.Nullable String connectionType) {
     this.connectionType = connectionType;
     return this;
   }
@@ -138,16 +186,16 @@ public class ElasticsearchSettingsConfig {
    * @return connectionType
    */
   @javax.annotation.Nullable
-  public ElasticsearchConnectionTypeEnum getConnectionType() {
+  public String getConnectionType() {
     return connectionType;
   }
 
-  public void setConnectionType(@javax.annotation.Nullable ElasticsearchConnectionTypeEnum connectionType) {
+  public void setConnectionType(@javax.annotation.Nullable String connectionType) {
     this.connectionType = connectionType;
   }
 
 
-  public ElasticsearchSettingsConfig index(@javax.annotation.Nullable String index) {
+  public ElasticsearchSettingsConfig index(@javax.annotation.Nonnull String index) {
     this.index = index;
     return this;
   }
@@ -156,12 +204,12 @@ public class ElasticsearchSettingsConfig {
    * The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically.
    * @return index
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getIndex() {
     return index;
   }
 
-  public void setIndex(@javax.annotation.Nullable String index) {
+  public void setIndex(@javax.annotation.Nonnull String index) {
     this.index = index;
   }
 
@@ -191,7 +239,7 @@ public class ElasticsearchSettingsConfig {
   }
 
   /**
-   * The URL of the Elasticsearch cluster. Required when connection type is set to &#39;url&#39;.
+   * Get url
    * @return url
    */
   @javax.annotation.Nullable
@@ -204,7 +252,7 @@ public class ElasticsearchSettingsConfig {
   }
 
 
-  public ElasticsearchSettingsConfig username(@javax.annotation.Nullable String username) {
+  public ElasticsearchSettingsConfig username(@javax.annotation.Nonnull String username) {
     this.username = username;
     return this;
   }
@@ -213,12 +261,12 @@ public class ElasticsearchSettingsConfig {
    * Username for authenticating with the Elasticsearch cluster.
    * @return username
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUsername() {
     return username;
   }
 
-  public void setUsername(@javax.annotation.Nullable String username) {
+  public void setUsername(@javax.annotation.Nonnull String username) {
     this.username = username;
   }
 
@@ -233,8 +281,10 @@ public class ElasticsearchSettingsConfig {
       return false;
     }
     ElasticsearchSettingsConfig elasticsearchSettingsConfig = (ElasticsearchSettingsConfig) o;
-    return Objects.equals(this.authType, elasticsearchSettingsConfig.authType) &&
+    return Objects.equals(this.authConfig, elasticsearchSettingsConfig.authConfig) &&
+        Objects.equals(this.authType, elasticsearchSettingsConfig.authType) &&
         Objects.equals(this.cloudId, elasticsearchSettingsConfig.cloudId) &&
+        Objects.equals(this.connectionConfig, elasticsearchSettingsConfig.connectionConfig) &&
         Objects.equals(this.connectionType, elasticsearchSettingsConfig.connectionType) &&
         Objects.equals(this.index, elasticsearchSettingsConfig.index) &&
         Objects.equals(this.insecureSkipVerify, elasticsearchSettingsConfig.insecureSkipVerify) &&
@@ -244,15 +294,17 @@ public class ElasticsearchSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, cloudId, connectionType, index, insecureSkipVerify, url, username);
+    return Objects.hash(authConfig, authType, cloudId, connectionConfig, connectionType, index, insecureSkipVerify, url, username);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ElasticsearchSettingsConfig {\n");
+    sb.append("    authConfig: ").append(toIndentedString(authConfig)).append("\n");
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    cloudId: ").append(toIndentedString(cloudId)).append("\n");
+    sb.append("    connectionConfig: ").append(toIndentedString(connectionConfig)).append("\n");
     sb.append("    connectionType: ").append(toIndentedString(connectionType)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    insecureSkipVerify: ").append(toIndentedString(insecureSkipVerify)).append("\n");
@@ -276,10 +328,10 @@ public class ElasticsearchSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "cloud_id", "connection_type", "index", "insecure_skip_verify", "url", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_config", "auth_type", "cloud_id", "connection_config", "connection_type", "index", "insecure_skip_verify", "url", "username"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("index", "username"));
   }
 
   /**
@@ -302,25 +354,38 @@ public class ElasticsearchSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ElasticsearchSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ElasticsearchSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `auth_type`
-      if (jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) {
-        ElasticsearchAuthTypeEnum.validateJsonElement(jsonObj.get("auth_type"));
+      // validate the optional field `auth_config`
+      if (jsonObj.get("auth_config") != null && !jsonObj.get("auth_config").isJsonNull()) {
+        ElasticsearchAuthConfig.validateJsonElement(jsonObj.get("auth_config"));
+      }
+      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
       }
       if ((jsonObj.get("cloud_id") != null && !jsonObj.get("cloud_id").isJsonNull()) && !jsonObj.get("cloud_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cloud_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cloud_id").toString()));
       }
-      // validate the optional field `connection_type`
-      if (jsonObj.get("connection_type") != null && !jsonObj.get("connection_type").isJsonNull()) {
-        ElasticsearchConnectionTypeEnum.validateJsonElement(jsonObj.get("connection_type"));
+      // validate the optional field `connection_config`
+      if (jsonObj.get("connection_config") != null && !jsonObj.get("connection_config").isJsonNull()) {
+        ElasticsearchConnectionConfig.validateJsonElement(jsonObj.get("connection_config"));
       }
-      if ((jsonObj.get("index") != null && !jsonObj.get("index").isJsonNull()) && !jsonObj.get("index").isJsonPrimitive()) {
+      if ((jsonObj.get("connection_type") != null && !jsonObj.get("connection_type").isJsonNull()) && !jsonObj.get("connection_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `connection_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_type").toString()));
+      }
+      if (!jsonObj.get("index").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `index` to be a primitive type in the JSON string but got `%s`", jsonObj.get("index").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
-      if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
+      if (!jsonObj.get("username").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
   }

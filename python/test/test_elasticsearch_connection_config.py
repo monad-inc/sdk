@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.elasticsearch_auth_type_enum import ElasticsearchAuthTypeEnum
+from monad.models.elasticsearch_connection_config import ElasticsearchConnectionConfig
 
-class TestElasticsearchAuthTypeEnum(unittest.TestCase):
-    """ElasticsearchAuthTypeEnum unit test stubs"""
+class TestElasticsearchConnectionConfig(unittest.TestCase):
+    """ElasticsearchConnectionConfig unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,9 +26,32 @@ class TestElasticsearchAuthTypeEnum(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testElasticsearchAuthTypeEnum(self):
-        """Test ElasticsearchAuthTypeEnum"""
-        # inst = ElasticsearchAuthTypeEnum()
+    def make_instance(self, include_optional) -> ElasticsearchConnectionConfig:
+        """Test ElasticsearchConnectionConfig
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `ElasticsearchConnectionConfig`
+        """
+        model = ElasticsearchConnectionConfig()
+        if include_optional:
+            return ElasticsearchConnectionConfig(
+                cloud_id = monad.models.elasticsearch/cloud_id_variant.elasticsearch.CloudIdVariant(
+                    id = '', ),
+                type = 'url',
+                url = monad.models.elasticsearch/url_variant.elasticsearch.UrlVariant(
+                    endpoint = '', )
+            )
+        else:
+            return ElasticsearchConnectionConfig(
+                type = 'url',
+        )
+        """
+
+    def testElasticsearchConnectionConfig(self):
+        """Test ElasticsearchConnectionConfig"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
 
 if __name__ == '__main__':
     unittest.main()

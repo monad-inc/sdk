@@ -34,13 +34,15 @@ Name | Type | Description | Notes
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
 **Hostname** | Pointer to **string** | The name of the originating host of the log. | [optional] 
 **Service** | Pointer to **string** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. | [optional] 
+**AuthConfig** | Pointer to [**SlackAuthConfig**](SlackAuthConfig.md) |  | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
-**CloudId** | Pointer to **string** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. | [optional] 
-**ConnectionType** | Pointer to [**ElasticsearchConnectionTypeEnum**](ElasticsearchConnectionTypeEnum.md) |  | [optional] 
-**Index** | Pointer to **string** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
+**CloudId** | Pointer to **string** |  | [optional] 
+**ConnectionConfig** | Pointer to [**ElasticsearchConnectionConfig**](ElasticsearchConnectionConfig.md) |  | [optional] 
+**ConnectionType** | Pointer to **string** |  | [optional] 
+**Index** | **string** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | 
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **Url** | Pointer to **string** | The URL of the Sumo Logic instance. | [optional] 
-**Username** | Pointer to **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
+**Username** | **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | 
 **Format** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
@@ -84,7 +86,6 @@ Name | Type | Description | Notes
 **SourceAccountDetails** | Pointer to [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
-**AuthConfig** | Pointer to [**SlackAuthConfig**](SlackAuthConfig.md) |  | [optional] 
 **MessageTemplate** | Pointer to **string** |  | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **CaseInsensitivity** | Pointer to **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
@@ -99,7 +100,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, catalog string, httpPath string, schema string, serverHostname string, volume string, writeMode DatabricksWriteMode, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, catalog string, httpPath string, schema string, serverHostname string, volume string, writeMode DatabricksWriteMode, index string, username string, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -829,6 +830,31 @@ SetService sets Service field to given value.
 
 HasService returns a boolean if a field has been set.
 
+### GetAuthConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthConfig() SlackAuthConfig`
+
+GetAuthConfig returns the AuthConfig field if non-nil, zero value otherwise.
+
+### GetAuthConfigOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthConfigOk() (*SlackAuthConfig, bool)`
+
+GetAuthConfigOk returns a tuple with the AuthConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) SetAuthConfig(v SlackAuthConfig)`
+
+SetAuthConfig sets AuthConfig field to given value.
+
+### HasAuthConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) HasAuthConfig() bool`
+
+HasAuthConfig returns a boolean if a field has been set.
+
 ### GetAuthType
 
 `func (o *SecretProcessesorOutputConfigSettings) GetAuthType() string`
@@ -879,22 +905,47 @@ SetCloudId sets CloudId field to given value.
 
 HasCloudId returns a boolean if a field has been set.
 
+### GetConnectionConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) GetConnectionConfig() ElasticsearchConnectionConfig`
+
+GetConnectionConfig returns the ConnectionConfig field if non-nil, zero value otherwise.
+
+### GetConnectionConfigOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetConnectionConfigOk() (*ElasticsearchConnectionConfig, bool)`
+
+GetConnectionConfigOk returns a tuple with the ConnectionConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) SetConnectionConfig(v ElasticsearchConnectionConfig)`
+
+SetConnectionConfig sets ConnectionConfig field to given value.
+
+### HasConnectionConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) HasConnectionConfig() bool`
+
+HasConnectionConfig returns a boolean if a field has been set.
+
 ### GetConnectionType
 
-`func (o *SecretProcessesorOutputConfigSettings) GetConnectionType() ElasticsearchConnectionTypeEnum`
+`func (o *SecretProcessesorOutputConfigSettings) GetConnectionType() string`
 
 GetConnectionType returns the ConnectionType field if non-nil, zero value otherwise.
 
 ### GetConnectionTypeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetConnectionTypeOk() (*ElasticsearchConnectionTypeEnum, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetConnectionTypeOk() (*string, bool)`
 
 GetConnectionTypeOk returns a tuple with the ConnectionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionType
 
-`func (o *SecretProcessesorOutputConfigSettings) SetConnectionType(v ElasticsearchConnectionTypeEnum)`
+`func (o *SecretProcessesorOutputConfigSettings) SetConnectionType(v string)`
 
 SetConnectionType sets ConnectionType field to given value.
 
@@ -923,11 +974,6 @@ and a boolean to check if the value has been set.
 
 SetIndex sets Index field to given value.
 
-### HasIndex
-
-`func (o *SecretProcessesorOutputConfigSettings) HasIndex() bool`
-
-HasIndex returns a boolean if a field has been set.
 
 ### GetInsecureSkipVerify
 
@@ -998,11 +1044,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *SecretProcessesorOutputConfigSettings) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 ### GetFormat
 
@@ -2078,31 +2119,6 @@ SetStreamName sets StreamName field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasStreamName() bool`
 
 HasStreamName returns a boolean if a field has been set.
-
-### GetAuthConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthConfig() SlackAuthConfig`
-
-GetAuthConfig returns the AuthConfig field if non-nil, zero value otherwise.
-
-### GetAuthConfigOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthConfigOk() (*SlackAuthConfig, bool)`
-
-GetAuthConfigOk returns a tuple with the AuthConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) SetAuthConfig(v SlackAuthConfig)`
-
-SetAuthConfig sets AuthConfig field to given value.
-
-### HasAuthConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) HasAuthConfig() bool`
-
-HasAuthConfig returns a boolean if a field has been set.
 
 ### GetMessageTemplate
 

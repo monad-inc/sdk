@@ -10,12 +10,49 @@
  * Do not edit the class manually.
  */
 
+import { ElasticsearchCloudIdVariant } from '../models/ElasticsearchCloudIdVariant';
+import { ElasticsearchUrlVariant } from '../models/ElasticsearchUrlVariant';
 import { HttpFile } from '../http/http';
 
-/**
-* The method of authentication to use with the Elasticsearch cluster. Choose between \'api_key\' or \'password\'.
-*/
-export enum ElasticsearchAuthTypeEnum {
-    AuthTypeAPI = 'api_key',
-    AuthTypePwd = 'password'
+export class ElasticsearchConnectionConfig {
+    'cloudId'?: ElasticsearchCloudIdVariant;
+    'type': ElasticsearchConnectionConfigTypeEnum;
+    'url'?: ElasticsearchUrlVariant;
+
+    static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
+
+    static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "cloudId",
+            "baseName": "cloud_id",
+            "type": "ElasticsearchCloudIdVariant",
+            "format": ""
+        },
+        {
+            "name": "type",
+            "baseName": "type",
+            "type": "ElasticsearchConnectionConfigTypeEnum",
+            "format": ""
+        },
+        {
+            "name": "url",
+            "baseName": "url",
+            "type": "ElasticsearchUrlVariant",
+            "format": ""
+        }    ];
+
+    static getAttributeTypeMap() {
+        return ElasticsearchConnectionConfig.attributeTypeMap;
+    }
+
+    public constructor() {
+    }
 }
+
+export enum ElasticsearchConnectionConfigTypeEnum {
+    Url = 'url',
+    CloudId = 'cloud_id'
+}
+

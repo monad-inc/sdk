@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the ElasticsearchSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,26 +22,31 @@ var _ MappedNullable = &ElasticsearchSettingsConfig{}
 
 // ElasticsearchSettingsConfig Elasticsearch Output Settings
 type ElasticsearchSettingsConfig struct {
-	AuthType *ElasticsearchAuthTypeEnum `json:"auth_type,omitempty"`
-	// The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to 'cloud_id'.
+	AuthConfig *ElasticsearchAuthConfig `json:"auth_config,omitempty"`
+	// DEPRECATED: use AuthConfig & ConnectionConfig instead
+	AuthType *string `json:"auth_type,omitempty"`
 	CloudId *string `json:"cloud_id,omitempty"`
-	ConnectionType *ElasticsearchConnectionTypeEnum `json:"connection_type,omitempty"`
+	ConnectionConfig *ElasticsearchConnectionConfig `json:"connection_config,omitempty"`
+	ConnectionType *string `json:"connection_type,omitempty"`
 	// The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.
-	Index *string `json:"index,omitempty"`
+	Index string `json:"index"`
 	// If set to true, it skips verification of the server's TLS certificate. This is insecure and should only be used for testing purposes.
 	InsecureSkipVerify *bool `json:"insecure_skip_verify,omitempty"`
-	// The URL of the Elasticsearch cluster. Required when connection type is set to 'url'.
 	Url *string `json:"url,omitempty"`
 	// Username for authenticating with the Elasticsearch cluster.
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 }
+
+type _ElasticsearchSettingsConfig ElasticsearchSettingsConfig
 
 // NewElasticsearchSettingsConfig instantiates a new ElasticsearchSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewElasticsearchSettingsConfig() *ElasticsearchSettingsConfig {
+func NewElasticsearchSettingsConfig(index string, username string) *ElasticsearchSettingsConfig {
 	this := ElasticsearchSettingsConfig{}
+	this.Index = index
+	this.Username = username
 	return &this
 }
 
@@ -51,10 +58,42 @@ func NewElasticsearchSettingsConfigWithDefaults() *ElasticsearchSettingsConfig {
 	return &this
 }
 
+// GetAuthConfig returns the AuthConfig field value if set, zero value otherwise.
+func (o *ElasticsearchSettingsConfig) GetAuthConfig() ElasticsearchAuthConfig {
+	if o == nil || IsNil(o.AuthConfig) {
+		var ret ElasticsearchAuthConfig
+		return ret
+	}
+	return *o.AuthConfig
+}
+
+// GetAuthConfigOk returns a tuple with the AuthConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ElasticsearchSettingsConfig) GetAuthConfigOk() (*ElasticsearchAuthConfig, bool) {
+	if o == nil || IsNil(o.AuthConfig) {
+		return nil, false
+	}
+	return o.AuthConfig, true
+}
+
+// HasAuthConfig returns a boolean if a field has been set.
+func (o *ElasticsearchSettingsConfig) HasAuthConfig() bool {
+	if o != nil && !IsNil(o.AuthConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthConfig gets a reference to the given ElasticsearchAuthConfig and assigns it to the AuthConfig field.
+func (o *ElasticsearchSettingsConfig) SetAuthConfig(v ElasticsearchAuthConfig) {
+	o.AuthConfig = &v
+}
+
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *ElasticsearchSettingsConfig) GetAuthType() ElasticsearchAuthTypeEnum {
+func (o *ElasticsearchSettingsConfig) GetAuthType() string {
 	if o == nil || IsNil(o.AuthType) {
-		var ret ElasticsearchAuthTypeEnum
+		var ret string
 		return ret
 	}
 	return *o.AuthType
@@ -62,7 +101,7 @@ func (o *ElasticsearchSettingsConfig) GetAuthType() ElasticsearchAuthTypeEnum {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*ElasticsearchAuthTypeEnum, bool) {
+func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -78,8 +117,8 @@ func (o *ElasticsearchSettingsConfig) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given ElasticsearchAuthTypeEnum and assigns it to the AuthType field.
-func (o *ElasticsearchSettingsConfig) SetAuthType(v ElasticsearchAuthTypeEnum) {
+// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
+func (o *ElasticsearchSettingsConfig) SetAuthType(v string) {
 	o.AuthType = &v
 }
 
@@ -115,10 +154,42 @@ func (o *ElasticsearchSettingsConfig) SetCloudId(v string) {
 	o.CloudId = &v
 }
 
+// GetConnectionConfig returns the ConnectionConfig field value if set, zero value otherwise.
+func (o *ElasticsearchSettingsConfig) GetConnectionConfig() ElasticsearchConnectionConfig {
+	if o == nil || IsNil(o.ConnectionConfig) {
+		var ret ElasticsearchConnectionConfig
+		return ret
+	}
+	return *o.ConnectionConfig
+}
+
+// GetConnectionConfigOk returns a tuple with the ConnectionConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ElasticsearchSettingsConfig) GetConnectionConfigOk() (*ElasticsearchConnectionConfig, bool) {
+	if o == nil || IsNil(o.ConnectionConfig) {
+		return nil, false
+	}
+	return o.ConnectionConfig, true
+}
+
+// HasConnectionConfig returns a boolean if a field has been set.
+func (o *ElasticsearchSettingsConfig) HasConnectionConfig() bool {
+	if o != nil && !IsNil(o.ConnectionConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionConfig gets a reference to the given ElasticsearchConnectionConfig and assigns it to the ConnectionConfig field.
+func (o *ElasticsearchSettingsConfig) SetConnectionConfig(v ElasticsearchConnectionConfig) {
+	o.ConnectionConfig = &v
+}
+
 // GetConnectionType returns the ConnectionType field value if set, zero value otherwise.
-func (o *ElasticsearchSettingsConfig) GetConnectionType() ElasticsearchConnectionTypeEnum {
+func (o *ElasticsearchSettingsConfig) GetConnectionType() string {
 	if o == nil || IsNil(o.ConnectionType) {
-		var ret ElasticsearchConnectionTypeEnum
+		var ret string
 		return ret
 	}
 	return *o.ConnectionType
@@ -126,7 +197,7 @@ func (o *ElasticsearchSettingsConfig) GetConnectionType() ElasticsearchConnectio
 
 // GetConnectionTypeOk returns a tuple with the ConnectionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*ElasticsearchConnectionTypeEnum, bool) {
+func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.ConnectionType) {
 		return nil, false
 	}
@@ -142,41 +213,33 @@ func (o *ElasticsearchSettingsConfig) HasConnectionType() bool {
 	return false
 }
 
-// SetConnectionType gets a reference to the given ElasticsearchConnectionTypeEnum and assigns it to the ConnectionType field.
-func (o *ElasticsearchSettingsConfig) SetConnectionType(v ElasticsearchConnectionTypeEnum) {
+// SetConnectionType gets a reference to the given string and assigns it to the ConnectionType field.
+func (o *ElasticsearchSettingsConfig) SetConnectionType(v string) {
 	o.ConnectionType = &v
 }
 
-// GetIndex returns the Index field value if set, zero value otherwise.
+// GetIndex returns the Index field value
 func (o *ElasticsearchSettingsConfig) GetIndex() string {
-	if o == nil || IsNil(o.Index) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Index
+
+	return o.Index
 }
 
-// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// GetIndexOk returns a tuple with the Index field value
 // and a boolean to check if the value has been set.
 func (o *ElasticsearchSettingsConfig) GetIndexOk() (*string, bool) {
-	if o == nil || IsNil(o.Index) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Index, true
+	return &o.Index, true
 }
 
-// HasIndex returns a boolean if a field has been set.
-func (o *ElasticsearchSettingsConfig) HasIndex() bool {
-	if o != nil && !IsNil(o.Index) {
-		return true
-	}
-
-	return false
-}
-
-// SetIndex gets a reference to the given string and assigns it to the Index field.
+// SetIndex sets field value
 func (o *ElasticsearchSettingsConfig) SetIndex(v string) {
-	o.Index = &v
+	o.Index = v
 }
 
 // GetInsecureSkipVerify returns the InsecureSkipVerify field value if set, zero value otherwise.
@@ -243,36 +306,28 @@ func (o *ElasticsearchSettingsConfig) SetUrl(v string) {
 	o.Url = &v
 }
 
-// GetUsername returns the Username field value if set, zero value otherwise.
+// GetUsername returns the Username field value
 func (o *ElasticsearchSettingsConfig) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Username
+
+	return o.Username
 }
 
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
+// GetUsernameOk returns a tuple with the Username field value
 // and a boolean to check if the value has been set.
 func (o *ElasticsearchSettingsConfig) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Username, true
+	return &o.Username, true
 }
 
-// HasUsername returns a boolean if a field has been set.
-func (o *ElasticsearchSettingsConfig) HasUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
+// SetUsername sets field value
 func (o *ElasticsearchSettingsConfig) SetUsername(v string) {
-	o.Username = &v
+	o.Username = v
 }
 
 func (o ElasticsearchSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -285,28 +340,68 @@ func (o ElasticsearchSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ElasticsearchSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AuthConfig) {
+		toSerialize["auth_config"] = o.AuthConfig
+	}
 	if !IsNil(o.AuthType) {
 		toSerialize["auth_type"] = o.AuthType
 	}
 	if !IsNil(o.CloudId) {
 		toSerialize["cloud_id"] = o.CloudId
 	}
+	if !IsNil(o.ConnectionConfig) {
+		toSerialize["connection_config"] = o.ConnectionConfig
+	}
 	if !IsNil(o.ConnectionType) {
 		toSerialize["connection_type"] = o.ConnectionType
 	}
-	if !IsNil(o.Index) {
-		toSerialize["index"] = o.Index
-	}
+	toSerialize["index"] = o.Index
 	if !IsNil(o.InsecureSkipVerify) {
 		toSerialize["insecure_skip_verify"] = o.InsecureSkipVerify
 	}
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url
 	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
-	}
+	toSerialize["username"] = o.Username
 	return toSerialize, nil
+}
+
+func (o *ElasticsearchSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"index",
+		"username",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varElasticsearchSettingsConfig := _ElasticsearchSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varElasticsearchSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ElasticsearchSettingsConfig(varElasticsearchSettingsConfig)
+
+	return err
 }
 
 type NullableElasticsearchSettingsConfig struct {

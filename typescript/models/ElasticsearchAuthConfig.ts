@@ -10,12 +10,48 @@
  * Do not edit the class manually.
  */
 
+import { ElasticsearchSecretVariant } from '../models/ElasticsearchSecretVariant';
 import { HttpFile } from '../http/http';
 
-/**
-* The type of connection to use with Elasticsearch. Choose between \'cloud_id\' for Elastic Cloud or \'url\' for direct connection.
-*/
-export enum ElasticsearchConnectionTypeEnum {
-    ConnectionTypeCloud = 'cloud_id',
-    ConnectionTypeURL = 'url'
+export class ElasticsearchAuthConfig {
+    'apiKey'?: ElasticsearchSecretVariant;
+    'password'?: ElasticsearchSecretVariant;
+    'type': ElasticsearchAuthConfigTypeEnum;
+
+    static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
+
+    static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "apiKey",
+            "baseName": "api_key",
+            "type": "ElasticsearchSecretVariant",
+            "format": ""
+        },
+        {
+            "name": "password",
+            "baseName": "password",
+            "type": "ElasticsearchSecretVariant",
+            "format": ""
+        },
+        {
+            "name": "type",
+            "baseName": "type",
+            "type": "ElasticsearchAuthConfigTypeEnum",
+            "format": ""
+        }    ];
+
+    static getAttributeTypeMap() {
+        return ElasticsearchAuthConfig.attributeTypeMap;
+    }
+
+    public constructor() {
+    }
 }
+
+export enum ElasticsearchAuthConfigTypeEnum {
+    ApiKey = 'api_key',
+    Password = 'password'
+}
+

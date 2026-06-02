@@ -2329,32 +2329,71 @@
                 },
                 "type": "object"
             },
-            "elasticsearch.AuthTypeEnum": {
-                "description": "The method of authentication to use with the Elasticsearch cluster. Choose between 'api_key' or 'password'.",
-                "enum": [
-                    "api_key",
-                    "password"
+            "elasticsearch.AuthConfig": {
+                "properties": {
+                    "api_key": {
+                        "$ref": "#/components/schemas/elasticsearch.SecretVariant"
+                    },
+                    "password": {
+                        "$ref": "#/components/schemas/elasticsearch.SecretVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "api_key",
+                            "password"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
                 ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "AuthTypeAPI",
-                    "AuthTypePwd"
-                ]
+                "type": "object"
             },
-            "elasticsearch.ConnectionTypeEnum": {
-                "description": "The type of connection to use with Elasticsearch. Choose between 'cloud_id' for Elastic Cloud or 'url' for direct connection.",
-                "enum": [
-                    "cloud_id",
-                    "url"
+            "elasticsearch.CloudIdVariant": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id"
                 ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "ConnectionTypeCloud",
-                    "ConnectionTypeURL"
-                ]
+                "type": "object"
+            },
+            "elasticsearch.ConnectionConfig": {
+                "properties": {
+                    "cloud_id": {
+                        "$ref": "#/components/schemas/elasticsearch.CloudIdVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "url",
+                            "cloud_id"
+                        ],
+                        "type": "string"
+                    },
+                    "url": {
+                        "$ref": "#/components/schemas/elasticsearch.UrlVariant"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "elasticsearch.SecretVariant": {
+                "properties": {
+                    "secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "secret"
+                ],
+                "type": "object"
             },
             "elasticsearch.SecretsConfig": {
-                "description": "Elasticsearch Output Secrets",
                 "properties": {
                     "api_key": {
                         "$ref": "#/components/schemas/models.Secret"
@@ -2368,15 +2407,21 @@
             "elasticsearch.SettingsConfig": {
                 "description": "Elasticsearch Output Settings",
                 "properties": {
-                    "auth_type": {
-                        "$ref": "#/components/schemas/elasticsearch.AuthTypeEnum"
+                    "auth_config": {
+                        "$ref": "#/components/schemas/elasticsearch.AuthConfig"
                     },
-                    "cloud_id": {
-                        "description": "The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to 'cloud_id'.",
+                    "auth_type": {
+                        "description": "DEPRECATED: use AuthConfig \u0026 ConnectionConfig instead",
                         "type": "string"
                     },
+                    "cloud_id": {
+                        "type": "string"
+                    },
+                    "connection_config": {
+                        "$ref": "#/components/schemas/elasticsearch.ConnectionConfig"
+                    },
                     "connection_type": {
-                        "$ref": "#/components/schemas/elasticsearch.ConnectionTypeEnum"
+                        "type": "string"
                     },
                     "index": {
                         "description": "The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.",
@@ -2387,7 +2432,6 @@
                         "type": "boolean"
                     },
                     "url": {
-                        "description": "The URL of the Elasticsearch cluster. Required when connection type is set to 'url'.",
                         "type": "string"
                     },
                     "username": {
@@ -2395,6 +2439,21 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "index",
+                    "username"
+                ],
+                "type": "object"
+            },
+            "elasticsearch.UrlVariant": {
+                "properties": {
+                    "endpoint": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "endpoint"
+                ],
                 "type": "object"
             },
             "encrypt.AESVariant": {

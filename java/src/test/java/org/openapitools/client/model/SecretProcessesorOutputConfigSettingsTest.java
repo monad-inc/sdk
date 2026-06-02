@@ -34,7 +34,7 @@ import org.openapitools.client.model.CriblHttpSettingsConfig;
 import org.openapitools.client.model.DatabricksSettingsConfig;
 import org.openapitools.client.model.DatabricksWriteMode;
 import org.openapitools.client.model.DatadogSettingsConfig;
-import org.openapitools.client.model.ElasticsearchConnectionTypeEnum;
+import org.openapitools.client.model.ElasticsearchConnectionConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;
@@ -329,6 +329,14 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'authConfig'
+     */
+    @Test
+    public void authConfigTest() {
+        // TODO: test authConfig
+    }
+
+    /**
      * Test the property 'authType'
      */
     @Test
@@ -342,6 +350,14 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void cloudIdTest() {
         // TODO: test cloudId
+    }
+
+    /**
+     * Test the property 'connectionConfig'
+     */
+    @Test
+    public void connectionConfigTest() {
+        // TODO: test connectionConfig
     }
 
     /**
@@ -726,14 +742,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void streamNameTest() {
         // TODO: test streamName
-    }
-
-    /**
-     * Test the property 'authConfig'
-     */
-    @Test
-    public void authConfigTest() {
-        // TODO: test authConfig
     }
 
     /**

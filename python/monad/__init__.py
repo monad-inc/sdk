@@ -206,10 +206,13 @@ __all__ = [
     "DuplicateKeyValueToKeyArgumentsConfig",
     "EksAuditLogsSecretsConfig",
     "EksAuditLogsSettingsConfig",
-    "ElasticsearchAuthTypeEnum",
-    "ElasticsearchConnectionTypeEnum",
+    "ElasticsearchAuthConfig",
+    "ElasticsearchCloudIdVariant",
+    "ElasticsearchConnectionConfig",
+    "ElasticsearchSecretVariant",
     "ElasticsearchSecretsConfig",
     "ElasticsearchSettingsConfig",
+    "ElasticsearchUrlVariant",
     "EncryptAESVariant",
     "EncryptAgeVariant",
     "EncryptAlgorithmConfig",
@@ -863,10 +866,13 @@ from monad.models.duo_security_activity_logs_settings_config import DuoSecurityA
 from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig as DuplicateKeyValueToKeyArgumentsConfig
 from monad.models.eks_audit_logs_secrets_config import EksAuditLogsSecretsConfig as EksAuditLogsSecretsConfig
 from monad.models.eks_audit_logs_settings_config import EksAuditLogsSettingsConfig as EksAuditLogsSettingsConfig
-from monad.models.elasticsearch_auth_type_enum import ElasticsearchAuthTypeEnum as ElasticsearchAuthTypeEnum
-from monad.models.elasticsearch_connection_type_enum import ElasticsearchConnectionTypeEnum as ElasticsearchConnectionTypeEnum
+from monad.models.elasticsearch_auth_config import ElasticsearchAuthConfig as ElasticsearchAuthConfig
+from monad.models.elasticsearch_cloud_id_variant import ElasticsearchCloudIdVariant as ElasticsearchCloudIdVariant
+from monad.models.elasticsearch_connection_config import ElasticsearchConnectionConfig as ElasticsearchConnectionConfig
+from monad.models.elasticsearch_secret_variant import ElasticsearchSecretVariant as ElasticsearchSecretVariant
 from monad.models.elasticsearch_secrets_config import ElasticsearchSecretsConfig as ElasticsearchSecretsConfig
 from monad.models.elasticsearch_settings_config import ElasticsearchSettingsConfig as ElasticsearchSettingsConfig
+from monad.models.elasticsearch_url_variant import ElasticsearchUrlVariant as ElasticsearchUrlVariant
 from monad.models.encrypt_aes_variant import EncryptAESVariant as EncryptAESVariant
 from monad.models.encrypt_age_variant import EncryptAgeVariant as EncryptAgeVariant
 from monad.models.encrypt_algorithm_config import EncryptAlgorithmConfig as EncryptAlgorithmConfig

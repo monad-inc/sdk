@@ -47,7 +47,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Elasticsearch Output Secrets
+ * ElasticsearchSecretsConfig
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class ElasticsearchSecretsConfig {

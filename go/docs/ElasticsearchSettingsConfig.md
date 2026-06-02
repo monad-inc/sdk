@@ -4,19 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthType** | Pointer to [**ElasticsearchAuthTypeEnum**](ElasticsearchAuthTypeEnum.md) |  | [optional] 
-**CloudId** | Pointer to **string** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. | [optional] 
-**ConnectionType** | Pointer to [**ElasticsearchConnectionTypeEnum**](ElasticsearchConnectionTypeEnum.md) |  | [optional] 
-**Index** | Pointer to **string** | The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically. | [optional] 
+**AuthConfig** | Pointer to [**ElasticsearchAuthConfig**](ElasticsearchAuthConfig.md) |  | [optional] 
+**AuthType** | Pointer to **string** | DEPRECATED: use AuthConfig &amp; ConnectionConfig instead | [optional] 
+**CloudId** | Pointer to **string** |  | [optional] 
+**ConnectionConfig** | Pointer to [**ElasticsearchConnectionConfig**](ElasticsearchConnectionConfig.md) |  | [optional] 
+**ConnectionType** | Pointer to **string** |  | [optional] 
+**Index** | **string** | The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically. | 
 **InsecureSkipVerify** | Pointer to **bool** | If set to true, it skips verification of the server&#39;s TLS certificate. This is insecure and should only be used for testing purposes. | [optional] 
-**Url** | Pointer to **string** | The URL of the Elasticsearch cluster. Required when connection type is set to &#39;url&#39;. | [optional] 
-**Username** | Pointer to **string** | Username for authenticating with the Elasticsearch cluster. | [optional] 
+**Url** | Pointer to **string** |  | [optional] 
+**Username** | **string** | Username for authenticating with the Elasticsearch cluster. | 
 
 ## Methods
 
 ### NewElasticsearchSettingsConfig
 
-`func NewElasticsearchSettingsConfig() *ElasticsearchSettingsConfig`
+`func NewElasticsearchSettingsConfig(index string, username string, ) *ElasticsearchSettingsConfig`
 
 NewElasticsearchSettingsConfig instantiates a new ElasticsearchSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -31,22 +33,47 @@ NewElasticsearchSettingsConfigWithDefaults instantiates a new ElasticsearchSetti
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetAuthConfig
+
+`func (o *ElasticsearchSettingsConfig) GetAuthConfig() ElasticsearchAuthConfig`
+
+GetAuthConfig returns the AuthConfig field if non-nil, zero value otherwise.
+
+### GetAuthConfigOk
+
+`func (o *ElasticsearchSettingsConfig) GetAuthConfigOk() (*ElasticsearchAuthConfig, bool)`
+
+GetAuthConfigOk returns a tuple with the AuthConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthConfig
+
+`func (o *ElasticsearchSettingsConfig) SetAuthConfig(v ElasticsearchAuthConfig)`
+
+SetAuthConfig sets AuthConfig field to given value.
+
+### HasAuthConfig
+
+`func (o *ElasticsearchSettingsConfig) HasAuthConfig() bool`
+
+HasAuthConfig returns a boolean if a field has been set.
+
 ### GetAuthType
 
-`func (o *ElasticsearchSettingsConfig) GetAuthType() ElasticsearchAuthTypeEnum`
+`func (o *ElasticsearchSettingsConfig) GetAuthType() string`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*ElasticsearchAuthTypeEnum, bool)`
+`func (o *ElasticsearchSettingsConfig) GetAuthTypeOk() (*string, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *ElasticsearchSettingsConfig) SetAuthType(v ElasticsearchAuthTypeEnum)`
+`func (o *ElasticsearchSettingsConfig) SetAuthType(v string)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -81,22 +108,47 @@ SetCloudId sets CloudId field to given value.
 
 HasCloudId returns a boolean if a field has been set.
 
+### GetConnectionConfig
+
+`func (o *ElasticsearchSettingsConfig) GetConnectionConfig() ElasticsearchConnectionConfig`
+
+GetConnectionConfig returns the ConnectionConfig field if non-nil, zero value otherwise.
+
+### GetConnectionConfigOk
+
+`func (o *ElasticsearchSettingsConfig) GetConnectionConfigOk() (*ElasticsearchConnectionConfig, bool)`
+
+GetConnectionConfigOk returns a tuple with the ConnectionConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionConfig
+
+`func (o *ElasticsearchSettingsConfig) SetConnectionConfig(v ElasticsearchConnectionConfig)`
+
+SetConnectionConfig sets ConnectionConfig field to given value.
+
+### HasConnectionConfig
+
+`func (o *ElasticsearchSettingsConfig) HasConnectionConfig() bool`
+
+HasConnectionConfig returns a boolean if a field has been set.
+
 ### GetConnectionType
 
-`func (o *ElasticsearchSettingsConfig) GetConnectionType() ElasticsearchConnectionTypeEnum`
+`func (o *ElasticsearchSettingsConfig) GetConnectionType() string`
 
 GetConnectionType returns the ConnectionType field if non-nil, zero value otherwise.
 
 ### GetConnectionTypeOk
 
-`func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*ElasticsearchConnectionTypeEnum, bool)`
+`func (o *ElasticsearchSettingsConfig) GetConnectionTypeOk() (*string, bool)`
 
 GetConnectionTypeOk returns a tuple with the ConnectionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionType
 
-`func (o *ElasticsearchSettingsConfig) SetConnectionType(v ElasticsearchConnectionTypeEnum)`
+`func (o *ElasticsearchSettingsConfig) SetConnectionType(v string)`
 
 SetConnectionType sets ConnectionType field to given value.
 
@@ -125,11 +177,6 @@ and a boolean to check if the value has been set.
 
 SetIndex sets Index field to given value.
 
-### HasIndex
-
-`func (o *ElasticsearchSettingsConfig) HasIndex() bool`
-
-HasIndex returns a boolean if a field has been set.
 
 ### GetInsecureSkipVerify
 
@@ -200,11 +247,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *ElasticsearchSettingsConfig) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

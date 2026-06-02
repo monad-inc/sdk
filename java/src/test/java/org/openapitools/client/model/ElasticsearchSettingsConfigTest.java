@@ -20,8 +20,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ElasticsearchAuthTypeEnum;
-import org.openapitools.client.model.ElasticsearchConnectionTypeEnum;
+import org.openapitools.client.model.ElasticsearchAuthConfig;
+import org.openapitools.client.model.ElasticsearchConnectionConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -40,6 +40,14 @@ public class ElasticsearchSettingsConfigTest {
     }
 
     /**
+     * Test the property 'authConfig'
+     */
+    @Test
+    public void authConfigTest() {
+        // TODO: test authConfig
+    }
+
+    /**
      * Test the property 'authType'
      */
     @Test
@@ -53,6 +61,14 @@ public class ElasticsearchSettingsConfigTest {
     @Test
     public void cloudIdTest() {
         // TODO: test cloudId
+    }
+
+    /**
+     * Test the property 'connectionConfig'
+     */
+    @Test
+    public void connectionConfigTest() {
+        // TODO: test connectionConfig
     }
 
     /**
