@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **RoleId** | Pointer to **string** |  | [optional] 
+**TokenVersion** | Pointer to **int32** | TokenVersion is the current generation of the key. It is embedded in minted JWTs as the &#x60;ver&#x60; claim and bumped on rotation to invalidate previously-issued tokens without changing the key&#39;s id. | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -206,6 +207,31 @@ SetRoleId sets RoleId field to given value.
 `func (o *ModelsAPIKey) HasRoleId() bool`
 
 HasRoleId returns a boolean if a field has been set.
+
+### GetTokenVersion
+
+`func (o *ModelsAPIKey) GetTokenVersion() int32`
+
+GetTokenVersion returns the TokenVersion field if non-nil, zero value otherwise.
+
+### GetTokenVersionOk
+
+`func (o *ModelsAPIKey) GetTokenVersionOk() (*int32, bool)`
+
+GetTokenVersionOk returns a tuple with the TokenVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTokenVersion
+
+`func (o *ModelsAPIKey) SetTokenVersion(v int32)`
+
+SetTokenVersion sets TokenVersion field to given value.
+
+### HasTokenVersion
+
+`func (o *ModelsAPIKey) HasTokenVersion() bool`
+
+HasTokenVersion returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

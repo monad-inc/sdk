@@ -94,6 +94,14 @@ public class ModelsAPIKeyTest {
     }
 
     /**
+     * Test the property 'tokenVersion'
+     */
+    @Test
+    public void tokenVersionTest() {
+        // TODO: test tokenVersion
+    }
+
+    /**
      * Test the property 'updatedAt'
      */
     @Test

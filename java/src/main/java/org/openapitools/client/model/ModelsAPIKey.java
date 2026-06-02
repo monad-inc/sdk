@@ -85,6 +85,11 @@ public class ModelsAPIKey {
   @javax.annotation.Nullable
   private String roleId;
 
+  public static final String SERIALIZED_NAME_TOKEN_VERSION = "token_version";
+  @SerializedName(SERIALIZED_NAME_TOKEN_VERSION)
+  @javax.annotation.Nullable
+  private Integer tokenVersion;
+
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nullable
@@ -226,6 +231,25 @@ public class ModelsAPIKey {
   }
 
 
+  public ModelsAPIKey tokenVersion(@javax.annotation.Nullable Integer tokenVersion) {
+    this.tokenVersion = tokenVersion;
+    return this;
+  }
+
+  /**
+   * TokenVersion is the current generation of the key. It is embedded in minted JWTs as the &#x60;ver&#x60; claim and bumped on rotation to invalidate previously-issued tokens without changing the key&#39;s id.
+   * @return tokenVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getTokenVersion() {
+    return tokenVersion;
+  }
+
+  public void setTokenVersion(@javax.annotation.Nullable Integer tokenVersion) {
+    this.tokenVersion = tokenVersion;
+  }
+
+
   public ModelsAPIKey updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -262,12 +286,13 @@ public class ModelsAPIKey {
         Objects.equals(this.name, modelsAPIKey.name) &&
         Objects.equals(this.organizationId, modelsAPIKey.organizationId) &&
         Objects.equals(this.roleId, modelsAPIKey.roleId) &&
+        Objects.equals(this.tokenVersion, modelsAPIKey.tokenVersion) &&
         Objects.equals(this.updatedAt, modelsAPIKey.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, expirationTime, id, name, organizationId, roleId, updatedAt);
+    return Objects.hash(createdAt, description, expirationTime, id, name, organizationId, roleId, tokenVersion, updatedAt);
   }
 
   @Override
@@ -281,6 +306,7 @@ public class ModelsAPIKey {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+    sb.append("    tokenVersion: ").append(toIndentedString(tokenVersion)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -300,7 +326,7 @@ public class ModelsAPIKey {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "name", "organization_id", "role_id", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "name", "organization_id", "role_id", "token_version", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

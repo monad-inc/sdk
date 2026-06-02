@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,8 +35,9 @@ class ModelsAPIKey(BaseModel):
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     role_id: Optional[StrictStr] = None
+    token_version: Optional[StrictInt] = Field(default=None, description="TokenVersion is the current generation of the key. It is embedded in minted JWTs as the `ver` claim and bumped on rotation to invalidate previously-issued tokens without changing the key's id.")
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "expiration_time", "id", "name", "organization_id", "role_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "expiration_time", "id", "name", "organization_id", "role_id", "token_version", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -96,6 +97,7 @@ class ModelsAPIKey(BaseModel):
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "role_id": obj.get("role_id"),
+            "token_version": obj.get("token_version"),
             "updated_at": obj.get("updated_at")
         })
         return _obj

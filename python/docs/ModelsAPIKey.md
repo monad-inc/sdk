@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **role_id** | **str** |  | [optional] 
+**token_version** | **int** | TokenVersion is the current generation of the key. It is embedded in minted JWTs as the &#x60;ver&#x60; claim and bumped on rotation to invalidate previously-issued tokens without changing the key&#39;s id. | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

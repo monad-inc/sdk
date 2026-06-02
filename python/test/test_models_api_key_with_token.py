@@ -44,6 +44,7 @@ class TestModelsAPIKeyWithToken(unittest.TestCase):
                 organization_id = '',
                 role_id = '',
                 token = '',
+                token_version = 56,
                 updated_at = ''
             )
         else:

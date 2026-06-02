@@ -27,6 +27,8 @@ type ModelsAPIKey struct {
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
+	// TokenVersion is the current generation of the key. It is embedded in minted JWTs as the `ver` claim and bumped on rotation to invalidate previously-issued tokens without changing the key's id.
+	TokenVersion *int32 `json:"token_version,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -271,6 +273,38 @@ func (o *ModelsAPIKey) SetRoleId(v string) {
 	o.RoleId = &v
 }
 
+// GetTokenVersion returns the TokenVersion field value if set, zero value otherwise.
+func (o *ModelsAPIKey) GetTokenVersion() int32 {
+	if o == nil || IsNil(o.TokenVersion) {
+		var ret int32
+		return ret
+	}
+	return *o.TokenVersion
+}
+
+// GetTokenVersionOk returns a tuple with the TokenVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsAPIKey) GetTokenVersionOk() (*int32, bool) {
+	if o == nil || IsNil(o.TokenVersion) {
+		return nil, false
+	}
+	return o.TokenVersion, true
+}
+
+// HasTokenVersion returns a boolean if a field has been set.
+func (o *ModelsAPIKey) HasTokenVersion() bool {
+	if o != nil && !IsNil(o.TokenVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetTokenVersion gets a reference to the given int32 and assigns it to the TokenVersion field.
+func (o *ModelsAPIKey) SetTokenVersion(v int32) {
+	o.TokenVersion = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsAPIKey) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -333,6 +367,9 @@ func (o ModelsAPIKey) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RoleId) {
 		toSerialize["role_id"] = o.RoleId
+	}
+	if !IsNil(o.TokenVersion) {
+		toSerialize["token_version"] = o.TokenVersion
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

@@ -20,6 +20,10 @@ export class ModelsAPIKey {
     'name'?: string;
     'organizationId'?: string;
     'roleId'?: string;
+    /**
+    * TokenVersion is the current generation of the key. It is embedded in minted JWTs as the `ver` claim and bumped on rotation to invalidate previously-issued tokens without changing the key\'s id.
+    */
+    'tokenVersion'?: number;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -67,6 +71,12 @@ export class ModelsAPIKey {
             "name": "roleId",
             "baseName": "role_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "tokenVersion",
+            "baseName": "token_version",
+            "type": "number",
             "format": ""
         },
         {

@@ -4253,6 +4253,10 @@
                     "role_id": {
                         "type": "string"
                     },
+                    "token_version": {
+                        "description": "TokenVersion is the current generation of the key. It is embedded in\nminted JWTs as the `ver` claim and bumped on rotation to invalidate\npreviously-issued tokens without changing the key's id.",
+                        "type": "integer"
+                    },
                     "updated_at": {
                         "type": "string"
                     }
@@ -4299,6 +4303,10 @@
                     },
                     "token": {
                         "type": "string"
+                    },
+                    "token_version": {
+                        "description": "TokenVersion is the current generation of the key. It is embedded in\nminted JWTs as the `ver` claim and bumped on rotation to invalidate\npreviously-issued tokens without changing the key's id.",
+                        "type": "integer"
                     },
                     "updated_at": {
                         "type": "string"
