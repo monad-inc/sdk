@@ -154,7 +154,10 @@ __all__ = [
     "ClumioConsolidatedAlertsSettingsConfig",
     "CodaAuditEventsSecretsConfig",
     "CodaAuditEventsSettingsConfig",
+    "CommonAuthConfig",
     "CommonAuthType",
+    "CommonGitHubAppVariant",
+    "CommonPersonalAccessTokenVariant",
     "CommunityEditionSecretsConfig",
     "CommunityEditionSettingsConfig",
     "CommunityTransformsInternalTransformConfig",
@@ -230,6 +233,9 @@ __all__ = [
     "GenerateRecordRequest",
     "GeolocusSettingsConfig",
     "GetTokenRequest",
+    "GithubActionsWorkflowLogsWebhookRepositoryScope",
+    "GithubActionsWorkflowLogsWebhookScopeConfig",
+    "GithubActionsWorkflowLogsWebhookSettingsConfig",
     "GithubComMonadIncCorePkgTypesModelsAlert",
     "GithubComMonadIncCorePkgTypesModelsAlertStatus",
     "GithubComMonadIncCorePkgTypesModelsOrganization",
@@ -805,7 +811,10 @@ from monad.models.clumio_consolidated_alerts_secrets_config import ClumioConsoli
 from monad.models.clumio_consolidated_alerts_settings_config import ClumioConsolidatedAlertsSettingsConfig as ClumioConsolidatedAlertsSettingsConfig
 from monad.models.coda_audit_events_secrets_config import CodaAuditEventsSecretsConfig as CodaAuditEventsSecretsConfig
 from monad.models.coda_audit_events_settings_config import CodaAuditEventsSettingsConfig as CodaAuditEventsSettingsConfig
+from monad.models.common_auth_config import CommonAuthConfig as CommonAuthConfig
 from monad.models.common_auth_type import CommonAuthType as CommonAuthType
+from monad.models.common_git_hub_app_variant import CommonGitHubAppVariant as CommonGitHubAppVariant
+from monad.models.common_personal_access_token_variant import CommonPersonalAccessTokenVariant as CommonPersonalAccessTokenVariant
 from monad.models.community_edition_secrets_config import CommunityEditionSecretsConfig as CommunityEditionSecretsConfig
 from monad.models.community_edition_settings_config import CommunityEditionSettingsConfig as CommunityEditionSettingsConfig
 from monad.models.community_transforms_internal_transform_config import CommunityTransformsInternalTransformConfig as CommunityTransformsInternalTransformConfig
@@ -881,6 +890,9 @@ from monad.models.full_scans_settings_config import FullScansSettingsConfig as F
 from monad.models.generate_record_request import GenerateRecordRequest as GenerateRecordRequest
 from monad.models.geolocus_settings_config import GeolocusSettingsConfig as GeolocusSettingsConfig
 from monad.models.get_token_request import GetTokenRequest as GetTokenRequest
+from monad.models.github_actions_workflow_logs_webhook_repository_scope import GithubActionsWorkflowLogsWebhookRepositoryScope as GithubActionsWorkflowLogsWebhookRepositoryScope
+from monad.models.github_actions_workflow_logs_webhook_scope_config import GithubActionsWorkflowLogsWebhookScopeConfig as GithubActionsWorkflowLogsWebhookScopeConfig
+from monad.models.github_actions_workflow_logs_webhook_settings_config import GithubActionsWorkflowLogsWebhookSettingsConfig as GithubActionsWorkflowLogsWebhookSettingsConfig
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert as GithubComMonadIncCorePkgTypesModelsAlert
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus as GithubComMonadIncCorePkgTypesModelsAlertStatus
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization as GithubComMonadIncCorePkgTypesModelsOrganization

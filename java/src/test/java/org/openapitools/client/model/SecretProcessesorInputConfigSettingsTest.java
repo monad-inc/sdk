@@ -58,6 +58,7 @@ import org.openapitools.client.model.CloudtrailSettingsConfig;
 import org.openapitools.client.model.ClumioAuditLogsSettingsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSettingsConfig;
 import org.openapitools.client.model.CodaAuditEventsSettingsConfig;
+import org.openapitools.client.model.CommonAuthConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.CustomerEventDataSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
@@ -67,6 +68,8 @@ import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
 import org.openapitools.client.model.EventSettingsConfig;
 import org.openapitools.client.model.FullScansSettingsConfig;
+import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookScopeConfig;
+import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookSettingsConfig;
 import org.openapitools.client.model.GitlabIssuesSettingsConfig;
 import org.openapitools.client.model.GkeAuditLogsSettingsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
@@ -81,6 +84,7 @@ import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
 import org.openapitools.client.model.LookerAuditLogsSettingsConfig;
 import org.openapitools.client.model.MerakiConfigLogsSettingsConfig;
 import org.openapitools.client.model.Microsoft365GenericSettingsConfig;
+import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.MonadGraphqlInputVariable;
 import org.openapitools.client.model.MonadLogSettingsConfig;
 import org.openapitools.client.model.ObjectStorageInputSettingsConfig;
@@ -808,6 +812,30 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void repoTest() {
         // TODO: test repo
+    }
+
+    /**
+     * Test the property 'authConfig'
+     */
+    @Test
+    public void authConfigTest() {
+        // TODO: test authConfig
+    }
+
+    /**
+     * Test the property 'scope'
+     */
+    @Test
+    public void scopeTest() {
+        // TODO: test scope
+    }
+
+    /**
+     * Test the property 'webhookSecret'
+     */
+    @Test
+    public void webhookSecretTest() {
+        // TODO: test webhookSecret
     }
 
     /**

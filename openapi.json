@@ -1636,6 +1636,28 @@
                 },
                 "type": "object"
             },
+            "common.AuthConfig": {
+                "description": "AuthConfig downloads logs; needs actions:read on the scoped repos.",
+                "properties": {
+                    "github_app": {
+                        "$ref": "#/components/schemas/common.GitHubAppVariant"
+                    },
+                    "personal_access_token": {
+                        "$ref": "#/components/schemas/common.PersonalAccessTokenVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "personal_access_token",
+                            "github_app"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
             "common.AuthType": {
                 "description": "Authentication type to use",
                 "enum": [
@@ -1647,6 +1669,36 @@
                     "AuthTypePersonalAccessToken",
                     "AuthTypeGitHubApp"
                 ]
+            },
+            "common.GitHubAppVariant": {
+                "properties": {
+                    "client_id": {
+                        "type": "string"
+                    },
+                    "installation_id": {
+                        "type": "string"
+                    },
+                    "private_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "client_id",
+                    "installation_id",
+                    "private_key"
+                ],
+                "type": "object"
+            },
+            "common.PersonalAccessTokenVariant": {
+                "properties": {
+                    "token": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "token"
+                ],
+                "type": "object"
             },
             "community_edition.SecretsConfig": {
                 "description": "GreyNoise Community Edition secrets",
@@ -2661,6 +2713,55 @@
                         "type": "boolean"
                     }
                 },
+                "type": "object"
+            },
+            "github_actions_workflow_logs_webhook.RepositoryScope": {
+                "properties": {
+                    "owner": {
+                        "type": "string"
+                    },
+                    "repo": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "owner",
+                    "repo"
+                ],
+                "type": "object"
+            },
+            "github_actions_workflow_logs_webhook.ScopeConfig": {
+                "properties": {
+                    "repository": {
+                        "$ref": "#/components/schemas/github_actions_workflow_logs_webhook.RepositoryScope"
+                    },
+                    "type": {
+                        "enum": [
+                            "repository"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "github_actions_workflow_logs_webhook.SettingsConfig": {
+                "properties": {
+                    "auth_config": {
+                        "$ref": "#/components/schemas/common.AuthConfig"
+                    },
+                    "scope": {
+                        "$ref": "#/components/schemas/github_actions_workflow_logs_webhook.ScopeConfig"
+                    },
+                    "webhook_secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "webhook_secret"
+                ],
                 "type": "object"
             },
             "github_com_monad-inc_core_pkg_types_models.Alert": {
@@ -9508,6 +9609,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/full_scans.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/github_actions_workflow_logs_webhook.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/gitlab_issues.SettingsConfig"

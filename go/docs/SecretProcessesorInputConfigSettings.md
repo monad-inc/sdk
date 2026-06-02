@@ -85,6 +85,9 @@ Name | Type | Description | Notes
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
+**AuthConfig** | Pointer to [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
+**Scope** | Pointer to [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  | [optional] 
+**WebhookSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
 **GitlabUrl** | **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | 
 **IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
@@ -166,7 +169,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, webhookSecret ModelsSecret, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -2115,6 +2118,76 @@ SetRepo sets Repo field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRepo() bool`
 
 HasRepo returns a boolean if a field has been set.
+
+### GetAuthConfig
+
+`func (o *SecretProcessesorInputConfigSettings) GetAuthConfig() CommonAuthConfig`
+
+GetAuthConfig returns the AuthConfig field if non-nil, zero value otherwise.
+
+### GetAuthConfigOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAuthConfigOk() (*CommonAuthConfig, bool)`
+
+GetAuthConfigOk returns a tuple with the AuthConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthConfig
+
+`func (o *SecretProcessesorInputConfigSettings) SetAuthConfig(v CommonAuthConfig)`
+
+SetAuthConfig sets AuthConfig field to given value.
+
+### HasAuthConfig
+
+`func (o *SecretProcessesorInputConfigSettings) HasAuthConfig() bool`
+
+HasAuthConfig returns a boolean if a field has been set.
+
+### GetScope
+
+`func (o *SecretProcessesorInputConfigSettings) GetScope() GithubActionsWorkflowLogsWebhookScopeConfig`
+
+GetScope returns the Scope field if non-nil, zero value otherwise.
+
+### GetScopeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetScopeOk() (*GithubActionsWorkflowLogsWebhookScopeConfig, bool)`
+
+GetScopeOk returns a tuple with the Scope field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScope
+
+`func (o *SecretProcessesorInputConfigSettings) SetScope(v GithubActionsWorkflowLogsWebhookScopeConfig)`
+
+SetScope sets Scope field to given value.
+
+### HasScope
+
+`func (o *SecretProcessesorInputConfigSettings) HasScope() bool`
+
+HasScope returns a boolean if a field has been set.
+
+### GetWebhookSecret
+
+`func (o *SecretProcessesorInputConfigSettings) GetWebhookSecret() ModelsSecret`
+
+GetWebhookSecret returns the WebhookSecret field if non-nil, zero value otherwise.
+
+### GetWebhookSecretOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetWebhookSecretOk() (*ModelsSecret, bool)`
+
+GetWebhookSecretOk returns a tuple with the WebhookSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookSecret
+
+`func (o *SecretProcessesorInputConfigSettings) SetWebhookSecret(v ModelsSecret)`
+
+SetWebhookSecret sets WebhookSecret field to given value.
+
 
 ### GetConfidential
 

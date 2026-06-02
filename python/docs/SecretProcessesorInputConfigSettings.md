@@ -86,6 +86,9 @@ Name | Type | Description | Notes
 **cloud** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **member_cid** | **str** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
 **repo** | **str** | A repository slug to filter full-scans by. | [optional] 
+**auth_config** | [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
+**scope** | [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  | [optional] 
+**webhook_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **confidential** | **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
 **gitlab_url** | **str** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | 
 **issue_type** | **str** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 

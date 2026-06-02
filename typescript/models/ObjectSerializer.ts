@@ -85,7 +85,10 @@ export * from '../models/ClumioConsolidatedAlertsSecretsConfig';
 export * from '../models/ClumioConsolidatedAlertsSettingsConfig';
 export * from '../models/CodaAuditEventsSecretsConfig';
 export * from '../models/CodaAuditEventsSettingsConfig';
+export * from '../models/CommonAuthConfig';
 export * from '../models/CommonAuthType';
+export * from '../models/CommonGitHubAppVariant';
+export * from '../models/CommonPersonalAccessTokenVariant';
 export * from '../models/CommunityEditionSecretsConfig';
 export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
@@ -161,6 +164,9 @@ export * from '../models/FullScansSettingsConfig';
 export * from '../models/GenerateRecordRequest';
 export * from '../models/GeolocusSettingsConfig';
 export * from '../models/GetTokenRequest';
+export * from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
+export * from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
+export * from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -682,7 +688,10 @@ import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolida
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
 import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
+import { CommonAuthConfig  , CommonAuthConfigTypeEnum   } from '../models/CommonAuthConfig';
 import { CommonAuthType } from '../models/CommonAuthType';
+import { CommonGitHubAppVariant } from '../models/CommonGitHubAppVariant';
+import { CommonPersonalAccessTokenVariant } from '../models/CommonPersonalAccessTokenVariant';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
@@ -758,6 +767,9 @@ import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GenerateRecordRequestClass } from '../models/GenerateRecordRequest';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
 import { GetTokenRequestClass } from '../models/GetTokenRequest';
+import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
+import { GithubActionsWorkflowLogsWebhookScopeConfig , GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum   } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
+import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus    } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
@@ -1212,6 +1224,7 @@ let enumsMap: Set<string> = new Set<string>([
     "AwssqsoutputQueueType",
     "Awssqss3SettingsConfigCompressionEnum",
     "Awssqss3SettingsConfigFormatEnum",
+    "CommonAuthConfigTypeEnum",
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
     "CustomerEventDataSettingsConfigEnvironmentEnum",
@@ -1219,6 +1232,7 @@ let enumsMap: Set<string> = new Set<string>([
     "ElasticsearchAuthTypeEnum",
     "ElasticsearchConnectionTypeEnum",
     "FormatterType",
+    "GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum",
     "HttpPayloadStructure",
     "JsonFormatType",
     "KafkaAcks",
@@ -1360,6 +1374,9 @@ let typeMap: {[index: string]: any} = {
     "ClumioConsolidatedAlertsSettingsConfig": ClumioConsolidatedAlertsSettingsConfig,
     "CodaAuditEventsSecretsConfig": CodaAuditEventsSecretsConfig,
     "CodaAuditEventsSettingsConfig": CodaAuditEventsSettingsConfig,
+    "CommonAuthConfig": CommonAuthConfig,
+    "CommonGitHubAppVariant": CommonGitHubAppVariant,
+    "CommonPersonalAccessTokenVariant": CommonPersonalAccessTokenVariant,
     "CommunityEditionSecretsConfig": CommunityEditionSecretsConfig,
     "CommunityEditionSettingsConfig": CommunityEditionSettingsConfig,
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
@@ -1431,6 +1448,9 @@ let typeMap: {[index: string]: any} = {
     "GenerateRecordRequest": GenerateRecordRequestClass,
     "GeolocusSettingsConfig": GeolocusSettingsConfig,
     "GetTokenRequest": GetTokenRequestClass,
+    "GithubActionsWorkflowLogsWebhookRepositoryScope": GithubActionsWorkflowLogsWebhookRepositoryScope,
+    "GithubActionsWorkflowLogsWebhookScopeConfig": GithubActionsWorkflowLogsWebhookScopeConfig,
+    "GithubActionsWorkflowLogsWebhookSettingsConfig": GithubActionsWorkflowLogsWebhookSettingsConfig,
     "GithubComMonadIncCorePkgTypesModelsAlert": GithubComMonadIncCorePkgTypesModelsAlert,
     "GithubComMonadIncCorePkgTypesModelsAlertStatus": GithubComMonadIncCorePkgTypesModelsAlertStatus,
     "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,

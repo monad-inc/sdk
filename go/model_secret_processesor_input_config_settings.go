@@ -62,6 +62,7 @@ type SecretProcessesorInputConfigSettings struct {
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
+	GithubActionsWorkflowLogsWebhookSettingsConfig *GithubActionsWorkflowLogsWebhookSettingsConfig
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
 	GkeAuditLogsSettingsConfig *GkeAuditLogsSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
@@ -421,6 +422,13 @@ func EventSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventSettingsC
 func FullScansSettingsConfigAsSecretProcessesorInputConfigSettings(v *FullScansSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		FullScansSettingsConfig: v,
+	}
+}
+
+// GithubActionsWorkflowLogsWebhookSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns GithubActionsWorkflowLogsWebhookSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func GithubActionsWorkflowLogsWebhookSettingsConfigAsSecretProcessesorInputConfigSettings(v *GithubActionsWorkflowLogsWebhookSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		GithubActionsWorkflowLogsWebhookSettingsConfig: v,
 	}
 }
 
@@ -1573,6 +1581,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.FullScansSettingsConfig = nil
 	}
 
+	// try to unmarshal data into GithubActionsWorkflowLogsWebhookSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.GithubActionsWorkflowLogsWebhookSettingsConfig)
+	if err == nil {
+		jsonGithubActionsWorkflowLogsWebhookSettingsConfig, _ := json.Marshal(dst.GithubActionsWorkflowLogsWebhookSettingsConfig)
+		if string(jsonGithubActionsWorkflowLogsWebhookSettingsConfig) == "{}" { // empty struct
+			dst.GithubActionsWorkflowLogsWebhookSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GithubActionsWorkflowLogsWebhookSettingsConfig); err != nil {
+				dst.GithubActionsWorkflowLogsWebhookSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GithubActionsWorkflowLogsWebhookSettingsConfig = nil
+	}
+
 	// try to unmarshal data into GitlabIssuesSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.GitlabIssuesSettingsConfig)
 	if err == nil {
@@ -2621,6 +2646,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
+		dst.GithubActionsWorkflowLogsWebhookSettingsConfig = nil
 		dst.GitlabIssuesSettingsConfig = nil
 		dst.GkeAuditLogsSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
@@ -2861,6 +2887,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.FullScansSettingsConfig != nil {
 		return json.Marshal(&src.FullScansSettingsConfig)
+	}
+
+	if src.GithubActionsWorkflowLogsWebhookSettingsConfig != nil {
+		return json.Marshal(&src.GithubActionsWorkflowLogsWebhookSettingsConfig)
 	}
 
 	if src.GitlabIssuesSettingsConfig != nil {
@@ -3279,6 +3309,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.FullScansSettingsConfig
 	}
 
+	if obj.GithubActionsWorkflowLogsWebhookSettingsConfig != nil {
+		return obj.GithubActionsWorkflowLogsWebhookSettingsConfig
+	}
+
 	if obj.GitlabIssuesSettingsConfig != nil {
 		return obj.GitlabIssuesSettingsConfig
 	}
@@ -3691,6 +3725,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.FullScansSettingsConfig != nil {
 		return *obj.FullScansSettingsConfig
+	}
+
+	if obj.GithubActionsWorkflowLogsWebhookSettingsConfig != nil {
+		return *obj.GithubActionsWorkflowLogsWebhookSettingsConfig
 	}
 
 	if obj.GitlabIssuesSettingsConfig != nil {
