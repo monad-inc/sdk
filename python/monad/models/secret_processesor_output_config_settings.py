@@ -40,6 +40,7 @@ from monad.models.panther_settings_config import PantherSettingsConfig
 from monad.models.postgresql_settings_config import PostgresqlSettingsConfig
 from monad.models.prometheus_settings_config import PrometheusSettingsConfig
 from monad.models.s3_settings_config import S3SettingsConfig
+from monad.models.scanner_settings_config import ScannerSettingsConfig
 from monad.models.security_lake_settings_config import SecurityLakeSettingsConfig
 from monad.models.sentinel_settings_config import SentinelSettingsConfig
 from monad.models.slack_settings_config import SlackSettingsConfig
@@ -50,7 +51,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SECRETPROCESSESOROUTPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["AbsSettingsConfig", "AwssqsoutputSettingsConfig", "AxiomSettingsConfig", "BackblazeSettingsConfig", "BigquerySettingsConfig", "CriblHttpSettingsConfig", "DatabricksDeltaTableSettingsConfig", "DatabricksLakewatchSettingsConfig", "DatadogSettingsConfig", "Dict[str, object]", "ElasticsearchSettingsConfig", "GoogleCloudStorageOutputSettingsConfig", "HttpSettingsConfig", "KafkaSettingsConfig", "KvLookupOutputSettingsConfig", "NextGenSiemSettingsConfig", "ObjectStorageSettingsConfig", "OpensearchSettingsConfig", "PagerdutySettingsConfig", "PantherSettingsConfig", "PostgresqlSettingsConfig", "PrometheusSettingsConfig", "S3SettingsConfig", "SecurityLakeSettingsConfig", "SentinelSettingsConfig", "SlackSettingsConfig", "SnowflakeOutputSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig"]
+SECRETPROCESSESOROUTPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["AbsSettingsConfig", "AwssqsoutputSettingsConfig", "AxiomSettingsConfig", "BackblazeSettingsConfig", "BigquerySettingsConfig", "CriblHttpSettingsConfig", "DatabricksDeltaTableSettingsConfig", "DatabricksLakewatchSettingsConfig", "DatadogSettingsConfig", "Dict[str, object]", "ElasticsearchSettingsConfig", "GoogleCloudStorageOutputSettingsConfig", "HttpSettingsConfig", "KafkaSettingsConfig", "KvLookupOutputSettingsConfig", "NextGenSiemSettingsConfig", "ObjectStorageSettingsConfig", "OpensearchSettingsConfig", "PagerdutySettingsConfig", "PantherSettingsConfig", "PostgresqlSettingsConfig", "PrometheusSettingsConfig", "S3SettingsConfig", "ScannerSettingsConfig", "SecurityLakeSettingsConfig", "SentinelSettingsConfig", "SlackSettingsConfig", "SnowflakeOutputSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig"]
 
 class SecretProcessesorOutputConfigSettings(BaseModel):
     """
@@ -102,20 +103,22 @@ class SecretProcessesorOutputConfigSettings(BaseModel):
     oneof_schema_22_validator: Optional[PrometheusSettingsConfig] = None
     # data type: S3SettingsConfig
     oneof_schema_23_validator: Optional[S3SettingsConfig] = None
+    # data type: ScannerSettingsConfig
+    oneof_schema_24_validator: Optional[ScannerSettingsConfig] = None
     # data type: SecurityLakeSettingsConfig
-    oneof_schema_24_validator: Optional[SecurityLakeSettingsConfig] = None
+    oneof_schema_25_validator: Optional[SecurityLakeSettingsConfig] = None
     # data type: SentinelSettingsConfig
-    oneof_schema_25_validator: Optional[SentinelSettingsConfig] = None
+    oneof_schema_26_validator: Optional[SentinelSettingsConfig] = None
     # data type: SlackSettingsConfig
-    oneof_schema_26_validator: Optional[SlackSettingsConfig] = None
+    oneof_schema_27_validator: Optional[SlackSettingsConfig] = None
     # data type: SnowflakeOutputSettingsConfig
-    oneof_schema_27_validator: Optional[SnowflakeOutputSettingsConfig] = None
+    oneof_schema_28_validator: Optional[SnowflakeOutputSettingsConfig] = None
     # data type: SplunkSettingsConfig
-    oneof_schema_28_validator: Optional[SplunkSettingsConfig] = None
+    oneof_schema_29_validator: Optional[SplunkSettingsConfig] = None
     # data type: SumologicSettingsConfig
-    oneof_schema_29_validator: Optional[SumologicSettingsConfig] = None
-    actual_instance: Optional[Union[AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]] = None
-    one_of_schemas: Set[str] = { "AbsSettingsConfig", "AwssqsoutputSettingsConfig", "AxiomSettingsConfig", "BackblazeSettingsConfig", "BigquerySettingsConfig", "CriblHttpSettingsConfig", "DatabricksDeltaTableSettingsConfig", "DatabricksLakewatchSettingsConfig", "DatadogSettingsConfig", "Dict[str, object]", "ElasticsearchSettingsConfig", "GoogleCloudStorageOutputSettingsConfig", "HttpSettingsConfig", "KafkaSettingsConfig", "KvLookupOutputSettingsConfig", "NextGenSiemSettingsConfig", "ObjectStorageSettingsConfig", "OpensearchSettingsConfig", "PagerdutySettingsConfig", "PantherSettingsConfig", "PostgresqlSettingsConfig", "PrometheusSettingsConfig", "S3SettingsConfig", "SecurityLakeSettingsConfig", "SentinelSettingsConfig", "SlackSettingsConfig", "SnowflakeOutputSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig" }
+    oneof_schema_30_validator: Optional[SumologicSettingsConfig] = None
+    actual_instance: Optional[Union[AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]] = None
+    one_of_schemas: Set[str] = { "AbsSettingsConfig", "AwssqsoutputSettingsConfig", "AxiomSettingsConfig", "BackblazeSettingsConfig", "BigquerySettingsConfig", "CriblHttpSettingsConfig", "DatabricksDeltaTableSettingsConfig", "DatabricksLakewatchSettingsConfig", "DatadogSettingsConfig", "Dict[str, object]", "ElasticsearchSettingsConfig", "GoogleCloudStorageOutputSettingsConfig", "HttpSettingsConfig", "KafkaSettingsConfig", "KvLookupOutputSettingsConfig", "NextGenSiemSettingsConfig", "ObjectStorageSettingsConfig", "OpensearchSettingsConfig", "PagerdutySettingsConfig", "PantherSettingsConfig", "PostgresqlSettingsConfig", "PrometheusSettingsConfig", "S3SettingsConfig", "ScannerSettingsConfig", "SecurityLakeSettingsConfig", "SentinelSettingsConfig", "SlackSettingsConfig", "SnowflakeOutputSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -254,6 +257,11 @@ class SecretProcessesorOutputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `S3SettingsConfig`")
         else:
             match += 1
+        # validate data type: ScannerSettingsConfig
+        if not isinstance(v, ScannerSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ScannerSettingsConfig`")
+        else:
+            match += 1
         # validate data type: SecurityLakeSettingsConfig
         if not isinstance(v, SecurityLakeSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `SecurityLakeSettingsConfig`")
@@ -286,10 +294,10 @@ class SecretProcessesorOutputConfigSettings(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -445,6 +453,12 @@ class SecretProcessesorOutputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into ScannerSettingsConfig
+        try:
+            instance.actual_instance = ScannerSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into SecurityLakeSettingsConfig
         try:
             instance.actual_instance = SecurityLakeSettingsConfig.from_json(json_str)
@@ -484,10 +498,10 @@ class SecretProcessesorOutputConfigSettings(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -501,7 +515,7 @@ class SecretProcessesorOutputConfigSettings(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatabricksLakewatchSettingsConfig, DatadogSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

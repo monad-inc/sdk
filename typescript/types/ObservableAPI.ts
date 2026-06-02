@@ -488,6 +488,14 @@ import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnect
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { ScannerAuthConfig } from '../models/ScannerAuthConfig';
+import { ScannerDelimitedVariant } from '../models/ScannerDelimitedVariant';
+import { ScannerFormatConfig } from '../models/ScannerFormatConfig';
+import { ScannerIAMRoleVariant } from '../models/ScannerIAMRoleVariant';
+import { ScannerJSONVariant } from '../models/ScannerJSONVariant';
+import { ScannerParquetVariant } from '../models/ScannerParquetVariant';
+import { ScannerSettingsConfig } from '../models/ScannerSettingsConfig';
+import { ScannerStaticCredentialsVariant } from '../models/ScannerStaticCredentialsVariant';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecrets } from '../models/SecretProcessesorEnrichmentConfigSecrets';
 import { SecretProcessesorEnrichmentConfigSettings } from '../models/SecretProcessesorEnrichmentConfigSettings';

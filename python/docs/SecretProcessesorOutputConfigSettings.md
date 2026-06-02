@@ -7,18 +7,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_url** | **str** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
-**compression** | **str** | The compression method to be applied to the data before storing in S3 | [optional] 
+**compression** | **str** | Compression applied before upload. Scanner indexes both uncompressed and gzip objects. | 
 **container** | **str** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **format_config** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
-**partition_format** | **str** | Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;). | [optional] 
-**prefix** | **str** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
+**partition_format** | **str** | Directory structure used to partition stored objects. | [optional] 
+**prefix** | **str** | Optional prefix for S3 object keys. Should match the prefix on the Scanner source. | [optional] 
 **message_group_id** | **str** | The message group ID for FIFO queues. This is required for FIFO queues. | [optional] 
 **queue_type** | [**AwssqsoutputQueueType**](AwssqsoutputQueueType.md) |  | [optional] 
 **queue_url** | **str** | The URL of the SQS queue to poll for messages. | [optional] 
-**region** | **str** | The AWS region where the S3 bucket is located | [optional] 
+**region** | **str** | The AWS region where the S3 bucket is located. | 
 **role_arn** | **str** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **dataset** | **str** | The name of the BigQuery dataset where the table resides | [optional] 
-**bucket** | **str** | The name of the S3 bucket where data will be stored | [optional] 
+**bucket** | **str** | The S3 bucket in your AWS account that Scanner indexes. | 
 **project_id** | **str** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
 **table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
 **ingress_address** | **str** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **insecure_skip_verify** | **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **url** | **str** | The URL of the Sumo Logic instance. | [optional] 
 **username** | **str** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | 
-**format** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
+**format** | [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
 **endpoint** | **str** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **headers** | [**List[KafkaKafkaHeader]**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **max_batch_data_size** | **int** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
@@ -78,7 +78,7 @@ Name | Type | Description | Notes
 **database** | **str** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **host** | **str** | The host of the PostgreSQL database | [optional] 
 **user** | **str** | The username of the Snowflake account used to establish the connection. | [optional] 
-**auth** | [**PrometheusAuthConfig**](PrometheusAuthConfig.md) |  | [optional] 
+**auth** | [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | [optional] 
 **label_fields** | **List[str]** |  | [optional] 
 **metric_name** | [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
 **timestamp_field** | **str** |  | [optional] 

@@ -483,6 +483,14 @@ export * from '../models/RoutesV3UpdateConnectionRequest';
 export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SecretsConfig';
 export * from '../models/S3SettingsConfig';
+export * from '../models/ScannerAuthConfig';
+export * from '../models/ScannerDelimitedVariant';
+export * from '../models/ScannerFormatConfig';
+export * from '../models/ScannerIAMRoleVariant';
+export * from '../models/ScannerJSONVariant';
+export * from '../models/ScannerParquetVariant';
+export * from '../models/ScannerSettingsConfig';
+export * from '../models/ScannerStaticCredentialsVariant';
 export * from '../models/SecretProcessesorEnrichmentConfig';
 export * from '../models/SecretProcessesorEnrichmentConfigSecrets';
 export * from '../models/SecretProcessesorEnrichmentConfigSettings';
@@ -1093,6 +1101,14 @@ import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnect
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { ScannerAuthConfig  , ScannerAuthConfigTypeEnum   } from '../models/ScannerAuthConfig';
+import { ScannerDelimitedVariant } from '../models/ScannerDelimitedVariant';
+import { ScannerFormatConfig   , ScannerFormatConfigTypeEnum   } from '../models/ScannerFormatConfig';
+import { ScannerIAMRoleVariant } from '../models/ScannerIAMRoleVariant';
+import { ScannerJSONVariant, ScannerJSONVariantTypeEnum   } from '../models/ScannerJSONVariant';
+import { ScannerParquetVariant } from '../models/ScannerParquetVariant';
+import { ScannerSettingsConfig   , ScannerSettingsConfigCompressionEnum       } from '../models/ScannerSettingsConfig';
+import { ScannerStaticCredentialsVariant } from '../models/ScannerStaticCredentialsVariant';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecretsClass } from '../models/SecretProcessesorEnrichmentConfigSecrets';
 import { SecretProcessesorEnrichmentConfigSettingsClass } from '../models/SecretProcessesorEnrichmentConfigSettings';
@@ -1275,11 +1291,16 @@ let enumsMap: Set<string> = new Set<string>([
     "OpensearchAuthMode",
     "OwnbackupAccountEventsSettingsConfigRegionEnum",
     "PagerdutyEventType",
+    "ScannerAuthConfigTypeEnum",
+    "ScannerFormatConfigTypeEnum",
+    "ScannerJSONVariantTypeEnum",
+    "ScannerSettingsConfigCompressionEnum",
     "SecretProcessesorInputConfigSettingsRegionEnum",
     "SecretProcessesorInputConfigSettingsCompressionEnum",
     "SecretProcessesorInputConfigSettingsFormatEnum",
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
     "SecretProcessesorInputConfigSettingsEnvironmentEnum",
+    "SecretProcessesorOutputConfigSettingsCompressionEnum",
     "SnowflakeInputSettingsConfigAuthTypeEnum",
     "SqsS3BaseKeyFilterMode",
     "SqsS3BaseKeyFilterOperator",
@@ -1761,6 +1782,14 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
     "S3SecretsConfig": S3SecretsConfig,
     "S3SettingsConfig": S3SettingsConfig,
+    "ScannerAuthConfig": ScannerAuthConfig,
+    "ScannerDelimitedVariant": ScannerDelimitedVariant,
+    "ScannerFormatConfig": ScannerFormatConfig,
+    "ScannerIAMRoleVariant": ScannerIAMRoleVariant,
+    "ScannerJSONVariant": ScannerJSONVariant,
+    "ScannerParquetVariant": ScannerParquetVariant,
+    "ScannerSettingsConfig": ScannerSettingsConfig,
+    "ScannerStaticCredentialsVariant": ScannerStaticCredentialsVariant,
     "SecretProcessesorEnrichmentConfig": SecretProcessesorEnrichmentConfig,
     "SecretProcessesorEnrichmentConfigSecrets": SecretProcessesorEnrichmentConfigSecretsClass,
     "SecretProcessesorEnrichmentConfigSettings": SecretProcessesorEnrichmentConfigSettingsClass,

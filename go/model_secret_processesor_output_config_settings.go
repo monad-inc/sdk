@@ -41,6 +41,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	PostgresqlSettingsConfig *PostgresqlSettingsConfig
 	PrometheusSettingsConfig *PrometheusSettingsConfig
 	S3SettingsConfig *S3SettingsConfig
+	ScannerSettingsConfig *ScannerSettingsConfig
 	SecurityLakeSettingsConfig *SecurityLakeSettingsConfig
 	SentinelSettingsConfig *SentinelSettingsConfig
 	SlackSettingsConfig *SlackSettingsConfig
@@ -201,6 +202,13 @@ func PrometheusSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Promethe
 func S3SettingsConfigAsSecretProcessesorOutputConfigSettings(v *S3SettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		S3SettingsConfig: v,
+	}
+}
+
+// ScannerSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns ScannerSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func ScannerSettingsConfigAsSecretProcessesorOutputConfigSettings(v *ScannerSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		ScannerSettingsConfig: v,
 	}
 }
 
@@ -632,6 +640,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.S3SettingsConfig = nil
 	}
 
+	// try to unmarshal data into ScannerSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ScannerSettingsConfig)
+	if err == nil {
+		jsonScannerSettingsConfig, _ := json.Marshal(dst.ScannerSettingsConfig)
+		if string(jsonScannerSettingsConfig) == "{}" { // empty struct
+			dst.ScannerSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ScannerSettingsConfig); err != nil {
+				dst.ScannerSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ScannerSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SecurityLakeSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SecurityLakeSettingsConfig)
 	if err == nil {
@@ -775,6 +800,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.PostgresqlSettingsConfig = nil
 		dst.PrometheusSettingsConfig = nil
 		dst.S3SettingsConfig = nil
+		dst.ScannerSettingsConfig = nil
 		dst.SecurityLakeSettingsConfig = nil
 		dst.SentinelSettingsConfig = nil
 		dst.SlackSettingsConfig = nil
@@ -879,6 +905,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.S3SettingsConfig != nil {
 		return json.Marshal(&src.S3SettingsConfig)
+	}
+
+	if src.ScannerSettingsConfig != nil {
+		return json.Marshal(&src.ScannerSettingsConfig)
 	}
 
 	if src.SecurityLakeSettingsConfig != nil {
@@ -1005,6 +1035,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.S3SettingsConfig
 	}
 
+	if obj.ScannerSettingsConfig != nil {
+		return obj.ScannerSettingsConfig
+	}
+
 	if obj.SecurityLakeSettingsConfig != nil {
 		return obj.SecurityLakeSettingsConfig
 	}
@@ -1125,6 +1159,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.S3SettingsConfig != nil {
 		return *obj.S3SettingsConfig
+	}
+
+	if obj.ScannerSettingsConfig != nil {
+		return *obj.ScannerSettingsConfig
 	}
 
 	if obj.SecurityLakeSettingsConfig != nil {

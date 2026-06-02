@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **BatchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
-**Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
+**Compression** | **string** | Compression applied before upload. Scanner indexes both uncompressed and gzip objects. | 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
-**PartitionFormat** | Pointer to **string** | Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;). | [optional] 
-**Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
+**PartitionFormat** | Pointer to **string** | Directory structure used to partition stored objects. | [optional] 
+**Prefix** | Pointer to **string** | Optional prefix for S3 object keys. Should match the prefix on the Scanner source. | [optional] 
 **MessageGroupId** | Pointer to **string** | The message group ID for FIFO queues. This is required for FIFO queues. | [optional] 
 **QueueType** | Pointer to [**AwssqsoutputQueueType**](AwssqsoutputQueueType.md) |  | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
-**Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
+**Region** | **string** | The AWS region where the S3 bucket is located. | 
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **Dataset** | Pointer to **string** | The name of the BigQuery dataset where the table resides | [optional] 
-**Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
+**Bucket** | **string** | The S3 bucket in your AWS account that Scanner indexes. | 
 **ProjectId** | Pointer to **string** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
 **Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **Url** | Pointer to **string** | The URL of the Sumo Logic instance. | [optional] 
 **Username** | **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | 
-**Format** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
+**Format** | Pointer to [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
 **Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
@@ -77,7 +77,7 @@ Name | Type | Description | Notes
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Host** | Pointer to **string** | The host of the PostgreSQL database | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
-**Auth** | Pointer to [**PrometheusAuthConfig**](PrometheusAuthConfig.md) |  | [optional] 
+**Auth** | Pointer to [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | [optional] 
 **LabelFields** | Pointer to **[]string** |  | [optional] 
 **MetricName** | Pointer to [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
 **TimestampField** | Pointer to **string** |  | [optional] 
@@ -102,7 +102,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, catalog string, schema string, serverHostname string, volume string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, username string, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, catalog string, schema string, serverHostname string, volume string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, username string, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -181,11 +181,6 @@ and a boolean to check if the value has been set.
 
 SetCompression sets Compression field to given value.
 
-### HasCompression
-
-`func (o *SecretProcessesorOutputConfigSettings) HasCompression() bool`
-
-HasCompression returns a boolean if a field has been set.
 
 ### GetContainer
 
@@ -381,11 +376,6 @@ and a boolean to check if the value has been set.
 
 SetRegion sets Region field to given value.
 
-### HasRegion
-
-`func (o *SecretProcessesorOutputConfigSettings) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
 
 ### GetRoleArn
 
@@ -456,11 +446,6 @@ and a boolean to check if the value has been set.
 
 SetBucket sets Bucket field to given value.
 
-### HasBucket
-
-`func (o *SecretProcessesorOutputConfigSettings) HasBucket() bool`
-
-HasBucket returns a boolean if a field has been set.
 
 ### GetProjectId
 
@@ -1094,20 +1079,20 @@ SetUsername sets Username field to given value.
 
 ### GetFormat
 
-`func (o *SecretProcessesorOutputConfigSettings) GetFormat() FormatterFormatConfig`
+`func (o *SecretProcessesorOutputConfigSettings) GetFormat() ScannerFormatConfig`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetFormatOk() (*FormatterFormatConfig, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetFormatOk() (*ScannerFormatConfig, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *SecretProcessesorOutputConfigSettings) SetFormat(v FormatterFormatConfig)`
+`func (o *SecretProcessesorOutputConfigSettings) SetFormat(v ScannerFormatConfig)`
 
 SetFormat sets Format field to given value.
 
@@ -1894,20 +1879,20 @@ HasUser returns a boolean if a field has been set.
 
 ### GetAuth
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAuth() PrometheusAuthConfig`
+`func (o *SecretProcessesorOutputConfigSettings) GetAuth() ScannerAuthConfig`
 
 GetAuth returns the Auth field if non-nil, zero value otherwise.
 
 ### GetAuthOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthOk() (*PrometheusAuthConfig, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthOk() (*ScannerAuthConfig, bool)`
 
 GetAuthOk returns a tuple with the Auth field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuth
 
-`func (o *SecretProcessesorOutputConfigSettings) SetAuth(v PrometheusAuthConfig)`
+`func (o *SecretProcessesorOutputConfigSettings) SetAuth(v ScannerAuthConfig)`
 
 SetAuth sets Auth field to given value.
 

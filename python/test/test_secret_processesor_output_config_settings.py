@@ -41,7 +41,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     batch_data_size = 56, 
                     batch_record_count = 56, 
                     publish_rate = 56, ),
-                compression = '',
+                compression = 'none',
                 container = '',
                 format_config = monad.models.formatter/format_config.formatter.FormatConfig(
                     format = 'delimited', 
@@ -131,18 +131,17 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 insecure_skip_verify = True,
                 url = '',
                 username = '',
-                format = monad.models.formatter/format_config.formatter.FormatConfig(
-                    format = 'delimited', 
-                    delimited_format = monad.models.delimited/delimiter_formatter.delimited.DelimiterFormatter(
+                format = monad.models.scanner/format_config.scanner.FormatConfig(
+                    delimited = monad.models.scanner/delimited_variant.scanner.DelimitedVariant(
                         delimiter = '', 
                         headers = [
                             ''
                             ], ), 
-                    json_format = monad.models.json/json_formatter.json.JsonFormatter(
-                        key = '', 
-                        type = 'nested', ), 
-                    parquet_format = monad.models.parquet/parquet_formatter.parquet.ParquetFormatter(
-                        schema = '', ), ),
+                    json = monad.models.scanner/json_variant.scanner.JSONVariant(
+                        type = 'array', ), 
+                    parquet = monad.models.scanner/parquet_variant.scanner.ParquetVariant(
+                        schema = '', ), 
+                    type = 'json', ),
                 endpoint = '',
                 headers = [
                     monad.models.kafka/kafka_header.kafka.kafkaHeader(
@@ -187,9 +186,11 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 database = '',
                 host = '',
                 user = '',
-                auth = monad.models.prometheus/auth_config.prometheus.AuthConfig(
-                    basic = monad.models.prometheus/basic_variant.prometheus.BasicVariant(
-                        password = monad.models.models/secret.models.Secret(
+                auth = monad.models.scanner/auth_config.scanner.AuthConfig(
+                    iam_role = monad.models.scanner/iam_role_variant.scanner.IAMRoleVariant(
+                        role_arn = '', ), 
+                    static_credentials = monad.models.scanner/static_credentials_variant.scanner.StaticCredentialsVariant(
+                        access_key = monad.models.models/secret.models.Secret(
                             created_at = '', 
                             description = '', 
                             id = '', 
@@ -197,7 +198,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             organization_id = '', 
                             updated_at = '', 
                             value = '', ), 
-                        username = monad.models.models/secret.models.Secret(
+                        secret_key = monad.models.models/secret.models.Secret(
                             created_at = '', 
                             description = '', 
                             id = '', 
@@ -205,9 +206,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             organization_id = '', 
                             updated_at = '', 
                             value = '', ), ), 
-                    bearer = monad.models.prometheus/bearer_variant.prometheus.BearerVariant(
-                        bearer_token = , ), 
-                    type = '', ),
+                    type = 'iam_role', ),
                 label_fields = [
                     ''
                     ],
@@ -252,6 +251,9 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     batch_data_size = 56, 
                     batch_record_count = 56, 
                     publish_rate = 56, ),
+                compression = 'none',
+                region = '',
+                bucket = '',
                 catalog = '',
                 var_schema = '',
                 server_hostname = '',

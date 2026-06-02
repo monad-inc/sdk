@@ -9220,6 +9220,181 @@
                 },
                 "type": "object"
             },
+            "scanner.AuthConfig": {
+                "description": "Authentication used to write to the bucket (IAM role or static credentials).",
+                "properties": {
+                    "iam_role": {
+                        "$ref": "#/components/schemas/scanner.IAMRoleVariant"
+                    },
+                    "static_credentials": {
+                        "$ref": "#/components/schemas/scanner.StaticCredentialsVariant"
+                    },
+                    "type": {
+                        "description": "Authentication type: iam_role or static_credentials.",
+                        "enum": [
+                            "iam_role",
+                            "static_credentials"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "scanner.DelimitedVariant": {
+                "description": "Delimited (CSV) output configuration (required when type is delimited).",
+                "properties": {
+                    "delimiter": {
+                        "description": "Single-character field delimiter (e.g. ',').",
+                        "type": "string"
+                    },
+                    "headers": {
+                        "description": "Optional ordered list of column headers.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "required": [
+                    "delimiter",
+                    "headers"
+                ],
+                "type": "object"
+            },
+            "scanner.FormatConfig": {
+                "description": "The on-disk format Scanner will index.",
+                "properties": {
+                    "delimited": {
+                        "$ref": "#/components/schemas/scanner.DelimitedVariant"
+                    },
+                    "json": {
+                        "$ref": "#/components/schemas/scanner.JSONVariant"
+                    },
+                    "parquet": {
+                        "$ref": "#/components/schemas/scanner.ParquetVariant"
+                    },
+                    "type": {
+                        "description": "Output format: json, parquet, or delimited.",
+                        "enum": [
+                            "json",
+                            "parquet",
+                            "delimited"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "scanner.IAMRoleVariant": {
+                "description": "IAM role configuration (required when type is iam_role).",
+                "properties": {
+                    "role_arn": {
+                        "description": "The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MonadRole).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "role_arn"
+                ],
+                "type": "object"
+            },
+            "scanner.JSONVariant": {
+                "description": "JSON output configuration (required when type is json).",
+                "properties": {
+                    "type": {
+                        "description": "'line' writes one JSON object per line (JSON Lines); 'array' writes a JSON array of objects.",
+                        "enum": [
+                            "array",
+                            "line"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "scanner.ParquetVariant": {
+                "description": "Parquet output configuration (required when type is parquet).",
+                "properties": {
+                    "schema": {
+                        "description": "JSON schema describing the Parquet columns.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "schema"
+                ],
+                "type": "object"
+            },
+            "scanner.SettingsConfig": {
+                "description": "Scanner S3 Output Settings",
+                "properties": {
+                    "auth": {
+                        "$ref": "#/components/schemas/scanner.AuthConfig"
+                    },
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "bucket": {
+                        "description": "The S3 bucket in your AWS account that Scanner indexes.",
+                        "type": "string"
+                    },
+                    "compression": {
+                        "description": "Compression applied before upload. Scanner indexes both uncompressed and gzip objects.",
+                        "enum": [
+                            "none",
+                            "gzip"
+                        ],
+                        "type": "string"
+                    },
+                    "format": {
+                        "$ref": "#/components/schemas/scanner.FormatConfig"
+                    },
+                    "partition_format": {
+                        "description": "Directory structure used to partition stored objects.",
+                        "type": "string"
+                    },
+                    "prefix": {
+                        "description": "Optional prefix for S3 object keys. Should match the prefix on the Scanner source.",
+                        "type": "string"
+                    },
+                    "region": {
+                        "description": "The AWS region where the S3 bucket is located.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bucket",
+                    "compression",
+                    "region"
+                ],
+                "type": "object"
+            },
+            "scanner.StaticCredentialsVariant": {
+                "description": "Static credential configuration (required when type is static_credentials).",
+                "properties": {
+                    "access_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "secret_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "access_key",
+                    "secret_key"
+                ],
+                "type": "object"
+            },
             "secret_processesor.EnrichmentConfig": {
                 "properties": {
                     "secrets": {
@@ -10191,6 +10366,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/s3.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/scanner.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/security_lake.SettingsConfig"

@@ -552,6 +552,14 @@ __all__ = [
     "RoutesV3UpdateEnrichmentRequest",
     "S3SecretsConfig",
     "S3SettingsConfig",
+    "ScannerAuthConfig",
+    "ScannerDelimitedVariant",
+    "ScannerFormatConfig",
+    "ScannerIAMRoleVariant",
+    "ScannerJSONVariant",
+    "ScannerParquetVariant",
+    "ScannerSettingsConfig",
+    "ScannerStaticCredentialsVariant",
     "SecretProcessesorEnrichmentConfig",
     "SecretProcessesorEnrichmentConfigSecrets",
     "SecretProcessesorEnrichmentConfigSettings",
@@ -1216,6 +1224,14 @@ from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConne
 from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest as RoutesV3UpdateEnrichmentRequest
 from monad.models.s3_secrets_config import S3SecretsConfig as S3SecretsConfig
 from monad.models.s3_settings_config import S3SettingsConfig as S3SettingsConfig
+from monad.models.scanner_auth_config import ScannerAuthConfig as ScannerAuthConfig
+from monad.models.scanner_delimited_variant import ScannerDelimitedVariant as ScannerDelimitedVariant
+from monad.models.scanner_format_config import ScannerFormatConfig as ScannerFormatConfig
+from monad.models.scanner_iam_role_variant import ScannerIAMRoleVariant as ScannerIAMRoleVariant
+from monad.models.scanner_json_variant import ScannerJSONVariant as ScannerJSONVariant
+from monad.models.scanner_parquet_variant import ScannerParquetVariant as ScannerParquetVariant
+from monad.models.scanner_settings_config import ScannerSettingsConfig as ScannerSettingsConfig
+from monad.models.scanner_static_credentials_variant import ScannerStaticCredentialsVariant as ScannerStaticCredentialsVariant
 from monad.models.secret_processesor_enrichment_config import SecretProcessesorEnrichmentConfig as SecretProcessesorEnrichmentConfig
 from monad.models.secret_processesor_enrichment_config_secrets import SecretProcessesorEnrichmentConfigSecrets as SecretProcessesorEnrichmentConfigSecrets
 from monad.models.secret_processesor_enrichment_config_settings import SecretProcessesorEnrichmentConfigSettings as SecretProcessesorEnrichmentConfigSettings
