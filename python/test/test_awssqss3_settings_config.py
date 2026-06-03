@@ -37,7 +37,7 @@ class TestAwssqss3SettingsConfig(unittest.TestCase):
         if include_optional:
             return Awssqss3SettingsConfig(
                 compression = 'auto',
-                format = 'json',
+                format = 'csv',
                 key_filter = monad.models.sqs_s3_base/key_filter.sqs_s3_base.KeyFilter(
                     filter = monad.models.sqs_s3_base/filter_variant.sqs_s3_base.FilterVariant(
                         mode = 'include', 
@@ -54,7 +54,7 @@ class TestAwssqss3SettingsConfig(unittest.TestCase):
         else:
             return Awssqss3SettingsConfig(
                 compression = 'auto',
-                format = 'json',
+                format = 'csv',
                 queue_url = '',
                 region = '',
         )

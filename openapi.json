@@ -526,6 +526,8 @@
                     "format": {
                         "description": "Format of S3 objects. oneof must mirror format_handlers.ListFormats();\nTestCompressionFormatTagDrift guards drift. csv is omitted because\nformat_handlers' package init wipes its Formats map after per-file\ninits register, so ListFormats() doesn't include csv today.",
                         "enum": [
+                            "csv",
+                            "delimited",
                             "json",
                             "jsonl",
                             "wsv"

@@ -34,6 +34,8 @@ AWS SQS S3 settings
 
 | Name | Value |
 |---- | -----|
+| CSV | &quot;csv&quot; |
+| DELIMITED | &quot;delimited&quot; |
 | JSON | &quot;json&quot; |
 | JSONL | &quot;jsonl&quot; |
 | WSV | &quot;wsv&quot; |

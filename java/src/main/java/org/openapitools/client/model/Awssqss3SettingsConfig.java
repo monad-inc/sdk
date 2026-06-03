@@ -115,6 +115,10 @@ public class Awssqss3SettingsConfig {
    */
   @JsonAdapter(FormatEnum.Adapter.class)
   public enum FormatEnum {
+    CSV("csv"),
+    
+    DELIMITED("delimited"),
+    
     JSON("json"),
     
     JSONL("jsonl"),

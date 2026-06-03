@@ -110,6 +110,8 @@ export enum Awssqss3SettingsConfigCompressionEnum {
     None = 'none'
 }
 export enum Awssqss3SettingsConfigFormatEnum {
+    Csv = 'csv',
+    Delimited = 'delimited',
     Json = 'json',
     Jsonl = 'jsonl',
     Wsv = 'wsv'

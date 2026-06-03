@@ -50,8 +50,8 @@ class Awssqss3SettingsConfig(BaseModel):
     @field_validator('format')
     def format_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['json', 'jsonl', 'wsv']):
-            raise ValueError("must be one of enum values ('json', 'jsonl', 'wsv')")
+        if value not in set(['csv', 'delimited', 'json', 'jsonl', 'wsv']):
+            raise ValueError("must be one of enum values ('csv', 'delimited', 'json', 'jsonl', 'wsv')")
         return value
 
     model_config = ConfigDict(
