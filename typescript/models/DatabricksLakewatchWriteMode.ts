@@ -18,7 +18,7 @@ import { HttpFile } from '../http/http';
 * The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol
 */
 export class DatabricksLakewatchWriteMode {
-    'autoLoader'?: DatabricksLakewatchAutoLoaderWriteMode;
+    'autoloader'?: DatabricksLakewatchAutoLoaderWriteMode;
     'writeMode': DatabricksLakewatchWriteModeWriteModeEnum;
     'zerobus'?: DatabricksLakewatchZeroBusWriteMode;
 
@@ -28,8 +28,8 @@ export class DatabricksLakewatchWriteMode {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "autoLoader",
-            "baseName": "auto_loader",
+            "name": "autoloader",
+            "baseName": "autoloader",
             "type": "DatabricksLakewatchAutoLoaderWriteMode",
             "format": ""
         },

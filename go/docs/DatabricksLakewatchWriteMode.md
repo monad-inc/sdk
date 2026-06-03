@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AutoLoader** | Pointer to [**DatabricksLakewatchAutoLoaderWriteMode**](DatabricksLakewatchAutoLoaderWriteMode.md) |  | [optional] 
+**Autoloader** | Pointer to [**DatabricksLakewatchAutoLoaderWriteMode**](DatabricksLakewatchAutoLoaderWriteMode.md) |  | [optional] 
 **WriteMode** | **string** |  | 
 **Zerobus** | Pointer to [**DatabricksLakewatchZeroBusWriteMode**](DatabricksLakewatchZeroBusWriteMode.md) |  | [optional] 
 
@@ -27,30 +27,30 @@ NewDatabricksLakewatchWriteModeWithDefaults instantiates a new DatabricksLakewat
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAutoLoader
+### GetAutoloader
 
-`func (o *DatabricksLakewatchWriteMode) GetAutoLoader() DatabricksLakewatchAutoLoaderWriteMode`
+`func (o *DatabricksLakewatchWriteMode) GetAutoloader() DatabricksLakewatchAutoLoaderWriteMode`
 
-GetAutoLoader returns the AutoLoader field if non-nil, zero value otherwise.
+GetAutoloader returns the Autoloader field if non-nil, zero value otherwise.
 
-### GetAutoLoaderOk
+### GetAutoloaderOk
 
-`func (o *DatabricksLakewatchWriteMode) GetAutoLoaderOk() (*DatabricksLakewatchAutoLoaderWriteMode, bool)`
+`func (o *DatabricksLakewatchWriteMode) GetAutoloaderOk() (*DatabricksLakewatchAutoLoaderWriteMode, bool)`
 
-GetAutoLoaderOk returns a tuple with the AutoLoader field if it's non-nil, zero value otherwise
+GetAutoloaderOk returns a tuple with the Autoloader field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAutoLoader
+### SetAutoloader
 
-`func (o *DatabricksLakewatchWriteMode) SetAutoLoader(v DatabricksLakewatchAutoLoaderWriteMode)`
+`func (o *DatabricksLakewatchWriteMode) SetAutoloader(v DatabricksLakewatchAutoLoaderWriteMode)`
 
-SetAutoLoader sets AutoLoader field to given value.
+SetAutoloader sets Autoloader field to given value.
 
-### HasAutoLoader
+### HasAutoloader
 
-`func (o *DatabricksLakewatchWriteMode) HasAutoLoader() bool`
+`func (o *DatabricksLakewatchWriteMode) HasAutoloader() bool`
 
-HasAutoLoader returns a boolean if a field has been set.
+HasAutoloader returns a boolean if a field has been set.
 
 ### GetWriteMode
 

@@ -30,10 +30,10 @@ class DatabricksLakewatchWriteMode(BaseModel):
     """
     The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol
     """ # noqa: E501
-    auto_loader: Optional[DatabricksLakewatchAutoLoaderWriteMode] = None
+    autoloader: Optional[DatabricksLakewatchAutoLoaderWriteMode] = None
     write_mode: StrictStr
     zerobus: Optional[DatabricksLakewatchZeroBusWriteMode] = None
-    __properties: ClassVar[List[str]] = ["auto_loader", "write_mode", "zerobus"]
+    __properties: ClassVar[List[str]] = ["autoloader", "write_mode", "zerobus"]
 
     @field_validator('write_mode')
     def write_mode_validate_enum(cls, value):
@@ -81,9 +81,9 @@ class DatabricksLakewatchWriteMode(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of auto_loader
-        if self.auto_loader:
-            _dict['auto_loader'] = self.auto_loader.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of autoloader
+        if self.autoloader:
+            _dict['autoloader'] = self.autoloader.to_dict()
         # override the default output from pydantic by calling `to_dict()` of zerobus
         if self.zerobus:
             _dict['zerobus'] = self.zerobus.to_dict()
@@ -99,7 +99,7 @@ class DatabricksLakewatchWriteMode(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auto_loader": DatabricksLakewatchAutoLoaderWriteMode.from_dict(obj["auto_loader"]) if obj.get("auto_loader") is not None else None,
+            "autoloader": DatabricksLakewatchAutoLoaderWriteMode.from_dict(obj["autoloader"]) if obj.get("autoloader") is not None else None,
             "write_mode": obj.get("write_mode"),
             "zerobus": DatabricksLakewatchZeroBusWriteMode.from_dict(obj["zerobus"]) if obj.get("zerobus") is not None else None
         })

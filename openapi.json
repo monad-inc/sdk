@@ -2189,7 +2189,7 @@
             "databricks_lakewatch.WriteMode": {
                 "description": "The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol",
                 "properties": {
-                    "auto_loader": {
+                    "autoloader": {
                         "$ref": "#/components/schemas/databricks_lakewatch.AutoLoaderWriteMode"
                     },
                     "write_mode": {

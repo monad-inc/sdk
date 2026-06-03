@@ -36,7 +36,7 @@ class TestDatabricksLakewatchWriteMode(unittest.TestCase):
         model = DatabricksLakewatchWriteMode()
         if include_optional:
             return DatabricksLakewatchWriteMode(
-                auto_loader = monad.models.databricks_lakewatch/auto_loader_write_mode.databricks_lakewatch.AutoLoaderWriteMode(
+                autoloader = monad.models.databricks_lakewatch/auto_loader_write_mode.databricks_lakewatch.AutoLoaderWriteMode(
                     volume = '', ),
                 write_mode = 'autoloader',
                 zerobus = monad.models.databricks_lakewatch/zero_bus_write_mode.databricks_lakewatch.ZeroBusWriteMode(

@@ -60,7 +60,7 @@ class TestDatabricksLakewatchSettingsConfig(unittest.TestCase):
                 var_schema = '',
                 server_hostname = '',
                 write_mode = monad.models.databricks_lakewatch/write_mode.databricks_lakewatch.WriteMode(
-                    auto_loader = monad.models.databricks_lakewatch/auto_loader_write_mode.databricks_lakewatch.AutoLoaderWriteMode(
+                    autoloader = monad.models.databricks_lakewatch/auto_loader_write_mode.databricks_lakewatch.AutoLoaderWriteMode(
                         volume = '', ), 
                     write_mode = 'autoloader', 
                     zerobus = monad.models.databricks_lakewatch/zero_bus_write_mode.databricks_lakewatch.ZeroBusWriteMode(
@@ -94,7 +94,7 @@ class TestDatabricksLakewatchSettingsConfig(unittest.TestCase):
                 var_schema = '',
                 server_hostname = '',
                 write_mode = monad.models.databricks_lakewatch/write_mode.databricks_lakewatch.WriteMode(
-                    auto_loader = monad.models.databricks_lakewatch/auto_loader_write_mode.databricks_lakewatch.AutoLoaderWriteMode(
+                    autoloader = monad.models.databricks_lakewatch/auto_loader_write_mode.databricks_lakewatch.AutoLoaderWriteMode(
                         volume = '', ), 
                     write_mode = 'autoloader', 
                     zerobus = monad.models.databricks_lakewatch/zero_bus_write_mode.databricks_lakewatch.ZeroBusWriteMode(

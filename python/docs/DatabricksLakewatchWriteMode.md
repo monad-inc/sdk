@@ -6,7 +6,7 @@ The write mode: autoloader stages files for Databricks Autoloader to ingest; zer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auto_loader** | [**DatabricksLakewatchAutoLoaderWriteMode**](DatabricksLakewatchAutoLoaderWriteMode.md) |  | [optional] 
+**autoloader** | [**DatabricksLakewatchAutoLoaderWriteMode**](DatabricksLakewatchAutoLoaderWriteMode.md) |  | [optional] 
 **write_mode** | **str** |  | 
 **zerobus** | [**DatabricksLakewatchZeroBusWriteMode**](DatabricksLakewatchZeroBusWriteMode.md) |  | [optional] 
 

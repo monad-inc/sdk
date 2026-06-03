@@ -52,10 +52,10 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class DatabricksLakewatchWriteMode {
-  public static final String SERIALIZED_NAME_AUTO_LOADER = "auto_loader";
-  @SerializedName(SERIALIZED_NAME_AUTO_LOADER)
+  public static final String SERIALIZED_NAME_AUTOLOADER = "autoloader";
+  @SerializedName(SERIALIZED_NAME_AUTOLOADER)
   @javax.annotation.Nullable
-  private DatabricksLakewatchAutoLoaderWriteMode autoLoader;
+  private DatabricksLakewatchAutoLoaderWriteMode autoloader;
 
   /**
    * Gets or Sets writeMode
@@ -122,22 +122,22 @@ public class DatabricksLakewatchWriteMode {
   public DatabricksLakewatchWriteMode() {
   }
 
-  public DatabricksLakewatchWriteMode autoLoader(@javax.annotation.Nullable DatabricksLakewatchAutoLoaderWriteMode autoLoader) {
-    this.autoLoader = autoLoader;
+  public DatabricksLakewatchWriteMode autoloader(@javax.annotation.Nullable DatabricksLakewatchAutoLoaderWriteMode autoloader) {
+    this.autoloader = autoloader;
     return this;
   }
 
   /**
-   * Get autoLoader
-   * @return autoLoader
+   * Get autoloader
+   * @return autoloader
    */
   @javax.annotation.Nullable
-  public DatabricksLakewatchAutoLoaderWriteMode getAutoLoader() {
-    return autoLoader;
+  public DatabricksLakewatchAutoLoaderWriteMode getAutoloader() {
+    return autoloader;
   }
 
-  public void setAutoLoader(@javax.annotation.Nullable DatabricksLakewatchAutoLoaderWriteMode autoLoader) {
-    this.autoLoader = autoLoader;
+  public void setAutoloader(@javax.annotation.Nullable DatabricksLakewatchAutoLoaderWriteMode autoloader) {
+    this.autoloader = autoloader;
   }
 
 
@@ -189,21 +189,21 @@ public class DatabricksLakewatchWriteMode {
       return false;
     }
     DatabricksLakewatchWriteMode databricksLakewatchWriteMode = (DatabricksLakewatchWriteMode) o;
-    return Objects.equals(this.autoLoader, databricksLakewatchWriteMode.autoLoader) &&
+    return Objects.equals(this.autoloader, databricksLakewatchWriteMode.autoloader) &&
         Objects.equals(this.writeMode, databricksLakewatchWriteMode.writeMode) &&
         Objects.equals(this.zerobus, databricksLakewatchWriteMode.zerobus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoLoader, writeMode, zerobus);
+    return Objects.hash(autoloader, writeMode, zerobus);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DatabricksLakewatchWriteMode {\n");
-    sb.append("    autoLoader: ").append(toIndentedString(autoLoader)).append("\n");
+    sb.append("    autoloader: ").append(toIndentedString(autoloader)).append("\n");
     sb.append("    writeMode: ").append(toIndentedString(writeMode)).append("\n");
     sb.append("    zerobus: ").append(toIndentedString(zerobus)).append("\n");
     sb.append("}");
@@ -224,7 +224,7 @@ public class DatabricksLakewatchWriteMode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auto_loader", "write_mode", "zerobus"));
+    openapiFields = new HashSet<String>(Arrays.asList("autoloader", "write_mode", "zerobus"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("write_mode"));
@@ -258,9 +258,9 @@ public class DatabricksLakewatchWriteMode {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `auto_loader`
-      if (jsonObj.get("auto_loader") != null && !jsonObj.get("auto_loader").isJsonNull()) {
-        DatabricksLakewatchAutoLoaderWriteMode.validateJsonElement(jsonObj.get("auto_loader"));
+      // validate the optional field `autoloader`
+      if (jsonObj.get("autoloader") != null && !jsonObj.get("autoloader").isJsonNull()) {
+        DatabricksLakewatchAutoLoaderWriteMode.validateJsonElement(jsonObj.get("autoloader"));
       }
       if (!jsonObj.get("write_mode").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `write_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("write_mode").toString()));

@@ -22,7 +22,7 @@ var _ MappedNullable = &DatabricksLakewatchWriteMode{}
 
 // DatabricksLakewatchWriteMode The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol
 type DatabricksLakewatchWriteMode struct {
-	AutoLoader *DatabricksLakewatchAutoLoaderWriteMode `json:"auto_loader,omitempty"`
+	Autoloader *DatabricksLakewatchAutoLoaderWriteMode `json:"autoloader,omitempty"`
 	WriteMode string `json:"write_mode"`
 	Zerobus *DatabricksLakewatchZeroBusWriteMode `json:"zerobus,omitempty"`
 }
@@ -47,36 +47,36 @@ func NewDatabricksLakewatchWriteModeWithDefaults() *DatabricksLakewatchWriteMode
 	return &this
 }
 
-// GetAutoLoader returns the AutoLoader field value if set, zero value otherwise.
-func (o *DatabricksLakewatchWriteMode) GetAutoLoader() DatabricksLakewatchAutoLoaderWriteMode {
-	if o == nil || IsNil(o.AutoLoader) {
+// GetAutoloader returns the Autoloader field value if set, zero value otherwise.
+func (o *DatabricksLakewatchWriteMode) GetAutoloader() DatabricksLakewatchAutoLoaderWriteMode {
+	if o == nil || IsNil(o.Autoloader) {
 		var ret DatabricksLakewatchAutoLoaderWriteMode
 		return ret
 	}
-	return *o.AutoLoader
+	return *o.Autoloader
 }
 
-// GetAutoLoaderOk returns a tuple with the AutoLoader field value if set, nil otherwise
+// GetAutoloaderOk returns a tuple with the Autoloader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DatabricksLakewatchWriteMode) GetAutoLoaderOk() (*DatabricksLakewatchAutoLoaderWriteMode, bool) {
-	if o == nil || IsNil(o.AutoLoader) {
+func (o *DatabricksLakewatchWriteMode) GetAutoloaderOk() (*DatabricksLakewatchAutoLoaderWriteMode, bool) {
+	if o == nil || IsNil(o.Autoloader) {
 		return nil, false
 	}
-	return o.AutoLoader, true
+	return o.Autoloader, true
 }
 
-// HasAutoLoader returns a boolean if a field has been set.
-func (o *DatabricksLakewatchWriteMode) HasAutoLoader() bool {
-	if o != nil && !IsNil(o.AutoLoader) {
+// HasAutoloader returns a boolean if a field has been set.
+func (o *DatabricksLakewatchWriteMode) HasAutoloader() bool {
+	if o != nil && !IsNil(o.Autoloader) {
 		return true
 	}
 
 	return false
 }
 
-// SetAutoLoader gets a reference to the given DatabricksLakewatchAutoLoaderWriteMode and assigns it to the AutoLoader field.
-func (o *DatabricksLakewatchWriteMode) SetAutoLoader(v DatabricksLakewatchAutoLoaderWriteMode) {
-	o.AutoLoader = &v
+// SetAutoloader gets a reference to the given DatabricksLakewatchAutoLoaderWriteMode and assigns it to the Autoloader field.
+func (o *DatabricksLakewatchWriteMode) SetAutoloader(v DatabricksLakewatchAutoLoaderWriteMode) {
+	o.Autoloader = &v
 }
 
 // GetWriteMode returns the WriteMode field value
@@ -145,8 +145,8 @@ func (o DatabricksLakewatchWriteMode) MarshalJSON() ([]byte, error) {
 
 func (o DatabricksLakewatchWriteMode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AutoLoader) {
-		toSerialize["auto_loader"] = o.AutoLoader
+	if !IsNil(o.Autoloader) {
+		toSerialize["autoloader"] = o.Autoloader
 	}
 	toSerialize["write_mode"] = o.WriteMode
 	if !IsNil(o.Zerobus) {

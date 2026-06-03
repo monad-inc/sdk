@@ -40,11 +40,11 @@ public class DatabricksLakewatchWriteModeTest {
     }
 
     /**
-     * Test the property 'autoLoader'
+     * Test the property 'autoloader'
      */
     @Test
-    public void autoLoaderTest() {
-        // TODO: test autoLoader
+    public void autoloaderTest() {
+        // TODO: test autoloader
     }
 
     /**
