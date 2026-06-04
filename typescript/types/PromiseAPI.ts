@@ -128,10 +128,6 @@ import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDelta
 import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTableSecretsConfig';
 import { DatabricksDeltaTableSettingsConfig } from '../models/DatabricksDeltaTableSettingsConfig';
 import { DatabricksDeltaTableWriteMode } from '../models/DatabricksDeltaTableWriteMode';
-import { DatabricksLakewatchAutoLoaderWriteMode } from '../models/DatabricksLakewatchAutoLoaderWriteMode';
-import { DatabricksLakewatchSettingsConfig } from '../models/DatabricksLakewatchSettingsConfig';
-import { DatabricksLakewatchWriteMode } from '../models/DatabricksLakewatchWriteMode';
-import { DatabricksLakewatchZeroBusWriteMode } from '../models/DatabricksLakewatchZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';

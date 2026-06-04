@@ -2137,98 +2137,6 @@
                 ],
                 "type": "object"
             },
-            "databricks_lakewatch.AutoLoaderWriteMode": {
-                "properties": {
-                    "volume": {
-                        "description": "The Unity Catalog Volume used for staging JSONL files",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "volume"
-                ],
-                "type": "object"
-            },
-            "databricks_lakewatch.SettingsConfig": {
-                "description": "Databricks Lakewatch Output Settings",
-                "properties": {
-                    "batch_config": {
-                        "$ref": "#/components/schemas/batch_config.BatchConfig"
-                    },
-                    "catalog": {
-                        "description": "The Unity Catalog name",
-                        "type": "string"
-                    },
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "schema": {
-                        "description": "The target schema within the catalog",
-                        "type": "string"
-                    },
-                    "server_hostname": {
-                        "description": "The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)",
-                        "type": "string"
-                    },
-                    "write_mode": {
-                        "$ref": "#/components/schemas/databricks_lakewatch.WriteMode"
-                    }
-                },
-                "required": [
-                    "batch_config",
-                    "catalog",
-                    "client_id",
-                    "client_secret",
-                    "schema",
-                    "server_hostname",
-                    "write_mode"
-                ],
-                "type": "object"
-            },
-            "databricks_lakewatch.WriteMode": {
-                "description": "The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol",
-                "properties": {
-                    "autoloader": {
-                        "$ref": "#/components/schemas/databricks_lakewatch.AutoLoaderWriteMode"
-                    },
-                    "write_mode": {
-                        "enum": [
-                            "autoloader",
-                            "zerobus"
-                        ],
-                        "type": "string"
-                    },
-                    "zerobus": {
-                        "$ref": "#/components/schemas/databricks_lakewatch.ZeroBusWriteMode"
-                    }
-                },
-                "required": [
-                    "write_mode"
-                ],
-                "type": "object"
-            },
-            "databricks_lakewatch.ZeroBusWriteMode": {
-                "properties": {
-                    "region": {
-                        "type": "string"
-                    },
-                    "table_name": {
-                        "type": "string"
-                    },
-                    "workspace_id": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "region",
-                    "table_name",
-                    "workspace_id"
-                ],
-                "type": "object"
-            },
             "datadog.SecretsConfig": {
                 "properties": {
                     "api_key": {
@@ -10320,9 +10228,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/databricks_delta_table.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/databricks_lakewatch.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/datadog.SettingsConfig"

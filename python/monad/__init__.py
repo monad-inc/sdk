@@ -193,10 +193,6 @@ __all__ = [
     "DatabricksDeltaTableSecretsConfig",
     "DatabricksDeltaTableSettingsConfig",
     "DatabricksDeltaTableWriteMode",
-    "DatabricksLakewatchAutoLoaderWriteMode",
-    "DatabricksLakewatchSettingsConfig",
-    "DatabricksLakewatchWriteMode",
-    "DatabricksLakewatchZeroBusWriteMode",
     "DatadogSecretsConfig",
     "DatadogSettingsConfig",
     "DefenderForEndpointAlertsSecretsConfig",
@@ -865,10 +861,6 @@ from monad.models.databricks_delta_table_copy_into_write_mode import DatabricksD
 from monad.models.databricks_delta_table_secrets_config import DatabricksDeltaTableSecretsConfig as DatabricksDeltaTableSecretsConfig
 from monad.models.databricks_delta_table_settings_config import DatabricksDeltaTableSettingsConfig as DatabricksDeltaTableSettingsConfig
 from monad.models.databricks_delta_table_write_mode import DatabricksDeltaTableWriteMode as DatabricksDeltaTableWriteMode
-from monad.models.databricks_lakewatch_auto_loader_write_mode import DatabricksLakewatchAutoLoaderWriteMode as DatabricksLakewatchAutoLoaderWriteMode
-from monad.models.databricks_lakewatch_settings_config import DatabricksLakewatchSettingsConfig as DatabricksLakewatchSettingsConfig
-from monad.models.databricks_lakewatch_write_mode import DatabricksLakewatchWriteMode as DatabricksLakewatchWriteMode
-from monad.models.databricks_lakewatch_zero_bus_write_mode import DatabricksLakewatchZeroBusWriteMode as DatabricksLakewatchZeroBusWriteMode
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig
 from monad.models.datadog_settings_config import DatadogSettingsConfig as DatadogSettingsConfig
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig

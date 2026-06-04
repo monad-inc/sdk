@@ -31,9 +31,7 @@
 |**schema** | **String** | The schema within the Snowflake database where the target table resides. |  |
 |**serverHostname** | **String** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) |  |
 |**volume** | **String** | The Unity Catalog Volume used for staging JSONL files |  |
-|**writeMode** | [**DatabricksLakewatchWriteMode**](DatabricksLakewatchWriteMode.md) |  |  |
-|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**writeMode** | [**DatabricksDeltaTableWriteMode**](DatabricksDeltaTableWriteMode.md) |  |  |
 |**ddsource** | **String** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. |  [optional] |
 |**ddtags** | **List&lt;String&gt;** | Tags associated with your logs. |  [optional] |
 |**domainUrl** | **String** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs |  [optional] |

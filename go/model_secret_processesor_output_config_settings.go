@@ -26,7 +26,6 @@ type SecretProcessesorOutputConfigSettings struct {
 	BigquerySettingsConfig *BigquerySettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
 	DatabricksDeltaTableSettingsConfig *DatabricksDeltaTableSettingsConfig
-	DatabricksLakewatchSettingsConfig *DatabricksLakewatchSettingsConfig
 	DatadogSettingsConfig *DatadogSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
@@ -97,13 +96,6 @@ func CriblHttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *CriblHttp
 func DatabricksDeltaTableSettingsConfigAsSecretProcessesorOutputConfigSettings(v *DatabricksDeltaTableSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		DatabricksDeltaTableSettingsConfig: v,
-	}
-}
-
-// DatabricksLakewatchSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns DatabricksLakewatchSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
-func DatabricksLakewatchSettingsConfigAsSecretProcessesorOutputConfigSettings(v *DatabricksLakewatchSettingsConfig) SecretProcessesorOutputConfigSettings {
-	return SecretProcessesorOutputConfigSettings{
-		DatabricksLakewatchSettingsConfig: v,
 	}
 }
 
@@ -383,23 +375,6 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.DatabricksDeltaTableSettingsConfig = nil
-	}
-
-	// try to unmarshal data into DatabricksLakewatchSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DatabricksLakewatchSettingsConfig)
-	if err == nil {
-		jsonDatabricksLakewatchSettingsConfig, _ := json.Marshal(dst.DatabricksLakewatchSettingsConfig)
-		if string(jsonDatabricksLakewatchSettingsConfig) == "{}" { // empty struct
-			dst.DatabricksLakewatchSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DatabricksLakewatchSettingsConfig); err != nil {
-				dst.DatabricksLakewatchSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DatabricksLakewatchSettingsConfig = nil
 	}
 
 	// try to unmarshal data into DatadogSettingsConfig
@@ -785,7 +760,6 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.BigquerySettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
 		dst.DatabricksDeltaTableSettingsConfig = nil
-		dst.DatabricksLakewatchSettingsConfig = nil
 		dst.DatadogSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
@@ -845,10 +819,6 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.DatabricksDeltaTableSettingsConfig != nil {
 		return json.Marshal(&src.DatabricksDeltaTableSettingsConfig)
-	}
-
-	if src.DatabricksLakewatchSettingsConfig != nil {
-		return json.Marshal(&src.DatabricksLakewatchSettingsConfig)
 	}
 
 	if src.DatadogSettingsConfig != nil {
@@ -975,10 +945,6 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.DatabricksDeltaTableSettingsConfig
 	}
 
-	if obj.DatabricksLakewatchSettingsConfig != nil {
-		return obj.DatabricksLakewatchSettingsConfig
-	}
-
 	if obj.DatadogSettingsConfig != nil {
 		return obj.DatadogSettingsConfig
 	}
@@ -1099,10 +1065,6 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.DatabricksDeltaTableSettingsConfig != nil {
 		return *obj.DatabricksDeltaTableSettingsConfig
-	}
-
-	if obj.DatabricksLakewatchSettingsConfig != nil {
-		return *obj.DatabricksLakewatchSettingsConfig
 	}
 
 	if obj.DatadogSettingsConfig != nil {

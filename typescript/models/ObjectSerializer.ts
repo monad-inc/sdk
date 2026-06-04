@@ -124,10 +124,6 @@ export * from '../models/DatabricksDeltaTableCopyIntoWriteMode';
 export * from '../models/DatabricksDeltaTableSecretsConfig';
 export * from '../models/DatabricksDeltaTableSettingsConfig';
 export * from '../models/DatabricksDeltaTableWriteMode';
-export * from '../models/DatabricksLakewatchAutoLoaderWriteMode';
-export * from '../models/DatabricksLakewatchSettingsConfig';
-export * from '../models/DatabricksLakewatchWriteMode';
-export * from '../models/DatabricksLakewatchZeroBusWriteMode';
 export * from '../models/DatadogSecretsConfig';
 export * from '../models/DatadogSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -742,10 +738,6 @@ import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDelta
 import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTableSecretsConfig';
 import { DatabricksDeltaTableSettingsConfig } from '../models/DatabricksDeltaTableSettingsConfig';
 import { DatabricksDeltaTableWriteMode  , DatabricksDeltaTableWriteModeWriteModeEnum   } from '../models/DatabricksDeltaTableWriteMode';
-import { DatabricksLakewatchAutoLoaderWriteMode } from '../models/DatabricksLakewatchAutoLoaderWriteMode';
-import { DatabricksLakewatchSettingsConfig } from '../models/DatabricksLakewatchSettingsConfig';
-import { DatabricksLakewatchWriteMode , DatabricksLakewatchWriteModeWriteModeEnum    } from '../models/DatabricksLakewatchWriteMode';
-import { DatabricksLakewatchZeroBusWriteMode } from '../models/DatabricksLakewatchZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -1259,7 +1251,6 @@ let enumsMap: Set<string> = new Set<string>([
     "ConvertTimestampTimestampFormat",
     "CustomerEventDataSettingsConfigEnvironmentEnum",
     "DatabricksDeltaTableWriteModeWriteModeEnum",
-    "DatabricksLakewatchWriteModeWriteModeEnum",
     "ElasticsearchAuthConfigTypeEnum",
     "ElasticsearchConnectionConfigTypeEnum",
     "FormatterType",
@@ -1447,10 +1438,6 @@ let typeMap: {[index: string]: any} = {
     "DatabricksDeltaTableSecretsConfig": DatabricksDeltaTableSecretsConfig,
     "DatabricksDeltaTableSettingsConfig": DatabricksDeltaTableSettingsConfig,
     "DatabricksDeltaTableWriteMode": DatabricksDeltaTableWriteMode,
-    "DatabricksLakewatchAutoLoaderWriteMode": DatabricksLakewatchAutoLoaderWriteMode,
-    "DatabricksLakewatchSettingsConfig": DatabricksLakewatchSettingsConfig,
-    "DatabricksLakewatchWriteMode": DatabricksLakewatchWriteMode,
-    "DatabricksLakewatchZeroBusWriteMode": DatabricksLakewatchZeroBusWriteMode,
     "DatadogSecretsConfig": DatadogSecretsConfig,
     "DatadogSettingsConfig": DatadogSettingsConfig,
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,
