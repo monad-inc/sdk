@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * The on-disk format Scanner will index.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ScannerFormatConfig {
   public static final String SERIALIZED_NAME_DELIMITED = "delimited";
   @SerializedName(SERIALIZED_NAME_DELIMITED)

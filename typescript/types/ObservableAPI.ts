@@ -583,7 +583,6 @@ import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
@@ -6604,12 +6603,12 @@ export class ObservableSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecretWithHttpInfo(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
+    public updateSecretWithHttpInfo(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateSecret(organizationId, secretId, updateSecretRequest, _config);
+        const requestContextPromise = this.requestFactory.updateSecret(organizationId, secretId, createSecretRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6631,10 +6630,10 @@ export class ObservableSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
-        return this.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
+    public updateSecret(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
+        return this.updateSecretWithHttpInfo(organizationId, secretId, createSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
     }
 
 }
@@ -6866,13 +6865,13 @@ export class ObservableTransformsApi {
     /**
      * Get transform metadata
      * Get transform metadata
-     * @param transformTypeId Transform type ID
+     * @param operationTypeId Transform type ID
      * @param [body]
      */
-    public getTransformTypeMetaWithHttpInfo(transformTypeId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<any>> {
+    public getTransformTypeMetaWithHttpInfo(operationTypeId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<any>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.getTransformTypeMeta(transformTypeId, body, _config);
+        const requestContextPromise = this.requestFactory.getTransformTypeMeta(operationTypeId, body, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -6892,11 +6891,11 @@ export class ObservableTransformsApi {
     /**
      * Get transform metadata
      * Get transform metadata
-     * @param transformTypeId Transform type ID
+     * @param operationTypeId Transform type ID
      * @param [body]
      */
-    public getTransformTypeMeta(transformTypeId: string, body?: any, _options?: ConfigurationOptions): Observable<any> {
-        return this.getTransformTypeMetaWithHttpInfo(transformTypeId, body, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
+    public getTransformTypeMeta(operationTypeId: string, body?: any, _options?: ConfigurationOptions): Observable<any> {
+        return this.getTransformTypeMetaWithHttpInfo(operationTypeId, body, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
     }
 
     /**

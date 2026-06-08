@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Generator version: 7.22.0
+  - Generator version: 7.23.0
 
 Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.
 
@@ -340,7 +340,7 @@ Class | Method | HTTP request | Description
 *TransformSandboxApi* | [**applyTransformationV2**](docs/TransformSandboxApi.md#applyTransformationV2) | **POST** /v2/sandbox/transform | Apply transformation to record
 *TransformSandboxApi* | [**generateRecord**](docs/TransformSandboxApi.md#generateRecord) | **POST** /v2/sandbox/template | Generate sample record
 *TransformSandboxApi* | [**listTemplates**](docs/TransformSandboxApi.md#listTemplates) | **GET** /v2/sandbox/template | List available templates
-*TransformsApi* | [**getTransformTypeMeta**](docs/TransformsApi.md#getTransformTypeMeta) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
+*TransformsApi* | [**getTransformTypeMeta**](docs/TransformsApi.md#getTransformTypeMeta) | **GET** /v1/transforms/{operation_type_id} | Get transform metadata
 *TransformsApi* | [**listTransformTypes**](docs/TransformsApi.md#listTransformTypes) | **GET** /v1/transforms | List transforms
 *TransformsRecommendationsApi* | [**createTransformRecommendation**](docs/TransformsRecommendationsApi.md#createTransformRecommendation) | **POST** /v3/{organization_id}/transform_recommendations | Create transform recommendation
 *TransformsRecommendationsApi* | [**listAvailableOptimizers**](docs/TransformsRecommendationsApi.md#listAvailableOptimizers) | **GET** /v3/{organization_id}/transform_recommendations/optimizers | List available transform optimizers
@@ -938,7 +938,6 @@ Class | Method | HTTP request | Description
  - [UpdatePipelineRequest](docs/UpdatePipelineRequest.md)
  - [UpdatePipelineV1Request](docs/UpdatePipelineV1Request.md)
  - [UpdateRoleRequest](docs/UpdateRoleRequest.md)
- - [UpdateSecretRequest](docs/UpdateSecretRequest.md)
  - [UtcTimestampArgumentsConfig](docs/UtcTimestampArgumentsConfig.md)
  - [UtcTimestampTimestampFormat](docs/UtcTimestampTimestampFormat.md)
  - [VercelUserEventsSecretsConfig](docs/VercelUserEventsSecretsConfig.md)

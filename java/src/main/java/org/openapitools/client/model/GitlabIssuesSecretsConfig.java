@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Gitlab Issues secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class GitlabIssuesSecretsConfig {
   public static final String SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN = "personal_access_token";
   @SerializedName(SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN)

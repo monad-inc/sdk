@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncCorePkgTypesModelsAlertStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class GithubComMonadIncCorePkgTypesModelsAlertStatus {
   public static final String SERIALIZED_NAME_CLEARING_STARTED_AT = "clearing_started_at";
   @SerializedName(SERIALIZED_NAME_CLEARING_STARTED_AT)

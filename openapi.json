@@ -12302,7 +12302,8 @@
                 "summary": "List inputs",
                 "tags": [
                     "Inputs"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/inputs/{input_type_id}": {
@@ -12353,7 +12354,8 @@
                 "summary": "Get input config meta",
                 "tags": [
                     "Inputs"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/login": {
@@ -12375,7 +12377,8 @@
                 "summary": "Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.",
                 "tags": [
                     "Authentication"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/login/callback": {
@@ -12397,7 +12400,8 @@
                 "summary": "Handle login callback",
                 "tags": [
                     "Authentication"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/login/resend-verification": {
@@ -12454,7 +12458,8 @@
                 "summary": "Resend email verification",
                 "tags": [
                     "Authentication"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/login/token": {
@@ -12526,7 +12531,8 @@
                 "summary": "Get Authentication token",
                 "tags": [
                     "Authentication"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/oauth/{type_id}/callback": {
@@ -12577,7 +12583,8 @@
                 "summary": "Oauth callback",
                 "tags": [
                     "Oauth"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/oauth/{type_id}/{organization_id}": {
@@ -12637,7 +12644,8 @@
                 "summary": "Get oauth redirect",
                 "tags": [
                     "Oauth"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/organizations": {
@@ -12709,7 +12717,8 @@
                 "summary": "List organizations for user",
                 "tags": [
                     "Organizations"
-                ]
+                ],
+                "x-required-permissions": []
             },
             "post": {
                 "description": "Create organization",
@@ -12750,7 +12759,8 @@
                 "summary": "Create organization",
                 "tags": [
                     "Organizations"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/organizations/{organization_id}": {
@@ -12791,6 +12801,9 @@
                 "summary": "Delete organization",
                 "tags": [
                     "Organizations"
+                ],
+                "x-required-permissions": [
+                    "organization:delete"
                 ]
             },
             "patch": {
@@ -12843,6 +12856,9 @@
                 "summary": "Update organization",
                 "tags": [
                     "Organizations"
+                ],
+                "x-required-permissions": [
+                    "organization:write"
                 ]
             }
         },
@@ -12876,7 +12892,8 @@
                 "summary": "List outputs",
                 "tags": [
                     "Outputs"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/outputs/{output_type_id}": {
@@ -12927,7 +12944,8 @@
                 "summary": "Get output config meta",
                 "tags": [
                     "Outputs"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/transforms": {
@@ -12969,10 +12987,11 @@
                 "summary": "List transforms",
                 "tags": [
                     "Transforms"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
-        "/v1/transforms/{transform_type_id}": {
+        "/v1/transforms/{operation_type_id}": {
             "get": {
                 "description": "Get transform metadata",
                 "operationId": "GetTransformTypeMeta",
@@ -12980,7 +12999,7 @@
                     {
                         "description": "Transform type ID",
                         "in": "path",
-                        "name": "transform_type_id",
+                        "name": "operation_type_id",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -13027,7 +13046,8 @@
                 "summary": "Get transform metadata",
                 "tags": [
                     "Transforms"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/users": {
@@ -13095,7 +13115,8 @@
                 "summary": "Get your current user",
                 "tags": [
                     "Users"
-                ]
+                ],
+                "x-required-permissions": []
             },
             "post": {
                 "description": "Create user",
@@ -13152,7 +13173,8 @@
                 "summary": "Create user",
                 "tags": [
                     "Users"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/{organization_id}/data/{node_id}": {
@@ -13222,6 +13244,9 @@
                 "summary": "Stream node data",
                 "tags": [
                     "Logs"
+                ],
+                "x-required-permissions": [
+                    "pipeline:data:read"
                 ]
             }
         },
@@ -13279,6 +13304,9 @@
                 "summary": "List organization inputs",
                 "tags": [
                     "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:read"
                 ]
             }
         },
@@ -13339,6 +13367,9 @@
                 "summary": "Delete input",
                 "tags": [
                     "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:delete"
                 ]
             },
             "get": {
@@ -13387,6 +13418,9 @@
                 "summary": "Get organization input",
                 "tags": [
                     "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:read"
                 ]
             }
         },
@@ -13471,6 +13505,9 @@
                 "summary": "Invite user to organization",
                 "tags": [
                     "Organization Invites"
+                ],
+                "x-required-permissions": [
+                    "user:write"
                 ]
             }
         },
@@ -13548,6 +13585,9 @@
                 "summary": "Stream organization logs",
                 "tags": [
                     "Logs"
+                ],
+                "x-required-permissions": [
+                    "organization:logs:read"
                 ]
             }
         },
@@ -13617,6 +13657,9 @@
                 "summary": "Stream organization api logs",
                 "tags": [
                     "Logs"
+                ],
+                "x-required-permissions": [
+                    "organization:logs:read"
                 ]
             }
         },
@@ -13686,6 +13729,9 @@
                 "summary": "Stream organization pipeline logs",
                 "tags": [
                     "Logs"
+                ],
+                "x-required-permissions": [
+                    "pipeline:logs:read"
                 ]
             }
         },
@@ -13772,6 +13818,9 @@
                 "summary": "Stream pipeline logs",
                 "tags": [
                     "Logs"
+                ],
+                "x-required-permissions": [
+                    "pipeline:logs:read"
                 ]
             }
         },
@@ -13867,6 +13916,9 @@
                 "summary": "Stream node logs",
                 "tags": [
                     "Logs"
+                ],
+                "x-required-permissions": [
+                    "pipeline:logs:read"
                 ]
             }
         },
@@ -13934,6 +13986,9 @@
                 "summary": "List configured outputs in organization",
                 "tags": [
                     "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:read"
                 ]
             }
         },
@@ -13994,6 +14049,9 @@
                 "summary": "Delete output",
                 "tags": [
                     "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:delete"
                 ]
             },
             "get": {
@@ -14052,6 +14110,9 @@
                 "summary": "Get a output",
                 "tags": [
                     "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:read"
                 ]
             }
         },
@@ -14130,6 +14191,9 @@
                 "summary": "List pipelines",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -14190,6 +14254,9 @@
                 "summary": "Delete pipeline",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:delete"
                 ]
             },
             "get": {
@@ -14249,6 +14316,9 @@
                 "summary": "Get pipeline",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             },
             "patch": {
@@ -14338,6 +14408,9 @@
                 "summary": "Update pipeline",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:write"
                 ]
             }
         },
@@ -14405,6 +14478,9 @@
                 "summary": "List configured transforms in a transform",
                 "tags": [
                     "Organization Transforms"
+                ],
+                "x-required-permissions": [
+                    "transform:read"
                 ]
             },
             "post": {
@@ -14484,6 +14560,9 @@
                 "summary": "Create transform",
                 "tags": [
                     "Organization Transforms"
+                ],
+                "x-required-permissions": [
+                    "transform:write"
                 ]
             }
         },
@@ -14544,6 +14623,9 @@
                 "summary": "Delete transform",
                 "tags": [
                     "Organization Transforms"
+                ],
+                "x-required-permissions": [
+                    "transform:delete"
                 ]
             },
             "get": {
@@ -14602,6 +14684,9 @@
                 "summary": "Get transform",
                 "tags": [
                     "Organization Transforms"
+                ],
+                "x-required-permissions": [
+                    "transform:read"
                 ]
             },
             "patch": {
@@ -14683,6 +14768,9 @@
                 "summary": "Update transform",
                 "tags": [
                     "Organization Transforms"
+                ],
+                "x-required-permissions": [
+                    "transform:write"
                 ]
             }
         },
@@ -14750,6 +14838,9 @@
                 "summary": "List organization users",
                 "tags": [
                     "Organization Users"
+                ],
+                "x-required-permissions": [
+                    "user:read"
                 ]
             },
             "post": {
@@ -14822,6 +14913,9 @@
                 "summary": "Add user to organization",
                 "tags": [
                     "Organization Users"
+                ],
+                "x-required-permissions": [
+                    "user:write"
                 ]
             }
         },
@@ -14879,7 +14973,8 @@
                 "summary": "Leave organization",
                 "tags": [
                     "Organization Users"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v1/{organization_id}/users/{user_id}": {
@@ -14948,6 +15043,9 @@
                 "summary": "Remove user from organization",
                 "tags": [
                     "Organization Users"
+                ],
+                "x-required-permissions": [
+                    "user:delete"
                 ]
             },
             "patch": {
@@ -15029,6 +15127,9 @@
                 "summary": "Update user in organization",
                 "tags": [
                     "Organization Users"
+                ],
+                "x-required-permissions": [
+                    "user:write"
                 ]
             }
         },
@@ -15094,7 +15195,8 @@
                 "summary": "List Billing Accounts",
                 "tags": [
                     "Billing Accounts"
-                ]
+                ],
+                "x-required-permissions": []
             },
             "post": {
                 "description": "Create Billing Account",
@@ -15159,7 +15261,8 @@
                 "summary": "Create Billing Account",
                 "tags": [
                     "Billing Accounts"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/billing/accounts/{billing_account_id}": {
@@ -15213,6 +15316,9 @@
                 "summary": "Delete Billing Account",
                 "tags": [
                     "Billing Accounts"
+                ],
+                "x-required-permissions": [
+                    "billing_account:delete"
                 ]
             },
             "get": {
@@ -15269,6 +15375,9 @@
                 "summary": "Get Billing Account",
                 "tags": [
                     "Billing Accounts"
+                ],
+                "x-required-permissions": [
+                    "billing_account:read"
                 ]
             },
             "patch": {
@@ -15345,6 +15454,9 @@
                 "summary": "Update Billing Account",
                 "tags": [
                     "Billing Accounts"
+                ],
+                "x-required-permissions": [
+                    "billing_account:write"
                 ]
             }
         },
@@ -15406,6 +15518,9 @@
                 "summary": "Get Billing Account Roles",
                 "tags": [
                     "Billing Accounts RBAC"
+                ],
+                "x-required-permissions": [
+                    "billing_account:role:read"
                 ]
             },
             "post": {
@@ -15482,6 +15597,9 @@
                 "summary": "Create Billing Account Role",
                 "tags": [
                     "Billing Accounts RBAC"
+                ],
+                "x-required-permissions": [
+                    "billing_account:role:write"
                 ]
             }
         },
@@ -15549,6 +15667,9 @@
                 "summary": "Delete Billing Account Role",
                 "tags": [
                     "Billing Accounts RBAC"
+                ],
+                "x-required-permissions": [
+                    "billing_account:role:delete"
                 ]
             },
             "get": {
@@ -15614,6 +15735,9 @@
                 "summary": "Get Billing Account Role",
                 "tags": [
                     "Billing Accounts RBAC"
+                ],
+                "x-required-permissions": [
+                    "billing_account:role:read"
                 ]
             },
             "patch": {
@@ -15699,6 +15823,9 @@
                 "summary": "Update Billing Account Role",
                 "tags": [
                     "Billing Accounts RBAC"
+                ],
+                "x-required-permissions": [
+                    "billing_account:role:write"
                 ]
             }
         },
@@ -15786,6 +15913,9 @@
                 "summary": "Create Billing Account User Role",
                 "tags": [
                     "Billing Accounts RBAC"
+                ],
+                "x-required-permissions": [
+                    "billing_account:role:write"
                 ]
             }
         },
@@ -15862,6 +15992,9 @@
                 "summary": "Delete Billing Account User Role",
                 "tags": [
                     "Billing Accounts RBAC"
+                ],
+                "x-required-permissions": [
+                    "billing_account:role:write"
                 ]
             }
         },
@@ -15916,6 +16049,9 @@
                 "summary": "Cancel Billing Account Subscription",
                 "tags": [
                     "Billing Products"
+                ],
+                "x-required-permissions": [
+                    "billing_account:write"
                 ]
             },
             "get": {
@@ -15972,6 +16108,9 @@
                 "summary": "Get Billing Account Subscription",
                 "tags": [
                     "Billing Products"
+                ],
+                "x-required-permissions": [
+                    "billing_account:read"
                 ]
             },
             "post": {
@@ -16048,6 +16187,9 @@
                 "summary": "Create Billing Account Subscription",
                 "tags": [
                     "Billing Products"
+                ],
+                "x-required-permissions": [
+                    "billing_account:write"
                 ]
             }
         },
@@ -16098,7 +16240,8 @@
                 "summary": "Get Billing Permissions",
                 "tags": [
                     "Billing Accounts RBAC"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/billing/products": {
@@ -16171,7 +16314,8 @@
                 "summary": "List Billing Products",
                 "tags": [
                     "Billing Products"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/conditions": {
@@ -16204,7 +16348,8 @@
                 "summary": "List conditions",
                 "tags": [
                     "Conditions"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/quotas": {
@@ -16294,7 +16439,8 @@
                 "summary": "List quotas",
                 "tags": [
                     "Quotas"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/sandbox/condition": {
@@ -16364,7 +16510,8 @@
                 "summary": "Apply condition to record",
                 "tags": [
                     "Condition Sandbox"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/sandbox/template": {
@@ -16403,7 +16550,8 @@
                 "summary": "List available templates",
                 "tags": [
                     "Transform Sandbox"
-                ]
+                ],
+                "x-required-permissions": []
             },
             "post": {
                 "description": "Generate a sample record using the specified template type",
@@ -16461,7 +16609,8 @@
                 "summary": "Generate sample record",
                 "tags": [
                     "Transform Sandbox"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/sandbox/transform": {
@@ -16531,7 +16680,8 @@
                 "summary": "Apply transformation to record",
                 "tags": [
                     "Transform Sandbox"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/transforms/repository": {
@@ -16589,7 +16739,8 @@
                 "summary": "List transforms",
                 "tags": [
                     "Transforms Repository"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/transforms/repository/{transform_id}": {
@@ -16640,7 +16791,8 @@
                 "summary": "Get transform details",
                 "tags": [
                     "Transforms Repository"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/{organization_id}/api_keys": {
@@ -16707,6 +16859,9 @@
                 "summary": "List API keys",
                 "tags": [
                     "Organization API Keys"
+                ],
+                "x-required-permissions": [
+                    "apikey:read"
                 ]
             },
             "post": {
@@ -16786,6 +16941,9 @@
                 "summary": "Create API key",
                 "tags": [
                     "Organization API Keys"
+                ],
+                "x-required-permissions": [
+                    "apikey:write"
                 ]
             }
         },
@@ -16856,6 +17014,9 @@
                 "summary": "Delete API key",
                 "tags": [
                     "Organization API Keys"
+                ],
+                "x-required-permissions": [
+                    "apikey:delete"
                 ]
             },
             "get": {
@@ -16924,6 +17085,9 @@
                 "summary": "Get API key",
                 "tags": [
                     "Organization API Keys"
+                ],
+                "x-required-permissions": [
+                    "apikey:read"
                 ]
             },
             "patch": {
@@ -17012,6 +17176,9 @@
                 "summary": "Update API key",
                 "tags": [
                     "Organization API Keys"
+                ],
+                "x-required-permissions": [
+                    "apikey:write"
                 ]
             }
         },
@@ -17082,6 +17249,9 @@
                 "summary": "Regenerate API key",
                 "tags": [
                     "Organization API Keys"
+                ],
+                "x-required-permissions": [
+                    "apikey:write"
                 ]
             }
         },
@@ -17171,6 +17341,9 @@
                 "summary": "Create input",
                 "tags": [
                     "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:write"
                 ]
             }
         },
@@ -17252,6 +17425,9 @@
                 "summary": "Test input connection",
                 "tags": [
                     "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:write"
                 ]
             }
         },
@@ -17360,6 +17536,9 @@
                 "summary": "Update input",
                 "tags": [
                     "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:write"
                 ]
             },
             "put": {
@@ -17466,6 +17645,9 @@
                 "summary": "Replace input",
                 "tags": [
                     "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:write"
                 ]
             }
         },
@@ -17925,6 +18107,9 @@
                 "summary": "Get storage type metrics",
                 "tags": [
                     "Organizations Storage Cost"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -18028,6 +18213,9 @@
                 "summary": "Get storage type output details",
                 "tags": [
                     "Organizations Storage Cost"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -18131,6 +18319,9 @@
                 "summary": "Get storage type cost summary",
                 "tags": [
                     "Organizations Storage Cost"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -18242,6 +18433,9 @@
                 "summary": "Get storage type output details by type",
                 "tags": [
                     "Organizations Storage Cost"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -18354,6 +18548,9 @@
                 "summary": "Get storage type cost summary by type",
                 "tags": [
                     "Organizations"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -18443,6 +18640,9 @@
                 "summary": "Create output",
                 "tags": [
                     "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:write"
                 ]
             }
         },
@@ -18524,6 +18724,9 @@
                 "summary": "Test output connection",
                 "tags": [
                     "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:write"
                 ]
             }
         },
@@ -18632,6 +18835,9 @@
                 "summary": "Update output",
                 "tags": [
                     "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:write"
                 ]
             },
             "put": {
@@ -18738,6 +18944,9 @@
                 "summary": "Replace output",
                 "tags": [
                     "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:write"
                 ]
             }
         },
@@ -18805,6 +19014,9 @@
                 "summary": "Get status of all pipelines for an organization",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -18890,6 +19102,9 @@
                 "summary": "List pipelines",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             },
             "post": {
@@ -18969,6 +19184,9 @@
                 "summary": "Create pipeline",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:write"
                 ]
             }
         },
@@ -19047,6 +19265,9 @@
                 "summary": "Get metrics for specific pipelines",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -19143,6 +19364,9 @@
                 "summary": "Get pipeline status",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -19203,6 +19427,9 @@
                 "summary": "Delete pipeline",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:delete"
                 ]
             },
             "get": {
@@ -19269,6 +19496,9 @@
                 "summary": "Get pipeline configuration",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             },
             "patch": {
@@ -19357,6 +19587,9 @@
                 "summary": "Update pipeline",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:write"
                 ]
             }
         },
@@ -19459,6 +19692,9 @@
                 "summary": "Update pipeline edge",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:write"
                 ]
             }
         },
@@ -19546,6 +19782,9 @@
                 "summary": "Get pipeline status",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -19642,6 +19881,9 @@
                 "summary": "Get pipeline node status",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -19732,6 +19974,9 @@
                 "summary": "Trigger pipeline manually",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:write"
                 ]
             }
         },
@@ -19855,6 +20100,9 @@
                 "summary": "Get pipeline node metrics",
                 "tags": [
                     "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -19941,6 +20189,9 @@
                 "summary": "Get Organization Quotas",
                 "tags": [
                     "Organization Quotas"
+                ],
+                "x-required-permissions": [
+                    "pipeline:read"
                 ]
             }
         },
@@ -20008,6 +20259,9 @@
                 "summary": "List roles",
                 "tags": [
                     "Roles"
+                ],
+                "x-required-permissions": [
+                    "role:read"
                 ]
             },
             "post": {
@@ -20087,6 +20341,9 @@
                 "summary": "Create role",
                 "tags": [
                     "Roles"
+                ],
+                "x-required-permissions": [
+                    "role:write"
                 ]
             }
         },
@@ -20154,6 +20411,9 @@
                 "summary": "List permissions",
                 "tags": [
                     "Permissions"
+                ],
+                "x-required-permissions": [
+                    "role:read"
                 ]
             }
         },
@@ -20214,6 +20474,9 @@
                 "summary": "Delete role",
                 "tags": [
                     "Roles"
+                ],
+                "x-required-permissions": [
+                    "role:delete"
                 ]
             },
             "get": {
@@ -20272,6 +20535,9 @@
                 "summary": "Get role",
                 "tags": [
                     "Roles"
+                ],
+                "x-required-permissions": [
+                    "role:read"
                 ]
             },
             "patch": {
@@ -20360,6 +20626,9 @@
                 "summary": "Update role",
                 "tags": [
                     "Roles"
+                ],
+                "x-required-permissions": [
+                    "role:write"
                 ]
             }
         },
@@ -20441,7 +20710,8 @@
                 "summary": "Apply transformation to record",
                 "tags": [
                     "Transform Sandbox"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v2/{organization_id}/secrets": {
@@ -20508,6 +20778,9 @@
                 "summary": "List secrets with components",
                 "tags": [
                     "Secrets"
+                ],
+                "x-required-permissions": [
+                    "secrets:read"
                 ]
             },
             "post": {
@@ -20587,6 +20860,9 @@
                 "summary": "Create secret",
                 "tags": [
                     "Secrets"
+                ],
+                "x-required-permissions": [
+                    "secrets:write"
                 ]
             }
         },
@@ -20650,6 +20926,9 @@
                 "summary": "Delete secret",
                 "tags": [
                     "Secrets"
+                ],
+                "x-required-permissions": [
+                    "secrets:delete"
                 ]
             },
             "get": {
@@ -20718,6 +20997,9 @@
                 "summary": "Get secret with components",
                 "tags": [
                     "Secrets"
+                ],
+                "x-required-permissions": [
+                    "secrets:read"
                 ]
             },
             "patch": {
@@ -20816,6 +21098,9 @@
                 "summary": "Update secret",
                 "tags": [
                     "Secrets"
+                ],
+                "x-required-permissions": [
+                    "secrets:write"
                 ]
             }
         },
@@ -20877,6 +21162,9 @@
                 "summary": "Get storage type cost",
                 "tags": [
                     "Organizations Storage Cost"
+                ],
+                "x-required-permissions": [
+                    "organization:write"
                 ]
             },
             "put": {
@@ -20966,6 +21254,9 @@
                 "summary": "Set storage type cost",
                 "tags": [
                     "Organizations Storage Cost"
+                ],
+                "x-required-permissions": [
+                    "organization:write"
                 ]
             }
         },
@@ -20999,7 +21290,8 @@
                 "summary": "List alert rule types",
                 "tags": [
                     "Alert Rules"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/alert_rules/{alert_rule_type_id}": {
@@ -21050,7 +21342,8 @@
                 "summary": "Get alert rule type config metadata",
                 "tags": [
                     "Alert Rules"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/feature_flags": {
@@ -21080,7 +21373,8 @@
                 "summary": "Get feature flags",
                 "tags": [
                     "Feature Flags"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/pipeline_edges/edge_condition_operator_types": {
@@ -21110,7 +21404,8 @@
                 "summary": "Conditional types for edge conditions",
                 "tags": [
                     "Pipelines"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/pipeline_edges/edge_condition_rules": {
@@ -21140,7 +21435,8 @@
                 "summary": "Rules for edge conditions",
                 "tags": [
                     "Pipelines"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/sessions": {
@@ -21256,7 +21552,8 @@
                 "summary": "List community transforms",
                 "tags": [
                     "Transforms Repository"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/transforms/repository/export": {
@@ -21326,7 +21623,8 @@
                 "summary": "Export transform to YAML",
                 "tags": [
                     "Transforms Repository"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/transforms/repository/import": {
@@ -21393,7 +21691,8 @@
                 "summary": "Import transform from YAML",
                 "tags": [
                     "Transforms Repository"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/transforms/repository/{transform_id}": {
@@ -21454,7 +21753,8 @@
                 "summary": "Get transform details",
                 "tags": [
                     "Transforms Repository"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/users/mfa": {
@@ -21494,7 +21794,8 @@
                 "summary": "Get MFA status",
                 "tags": [
                     "Users"
-                ]
+                ],
+                "x-required-permissions": []
             },
             "post": {
                 "description": "Enable MFA for a user and create enrollment ticket (OTP only)",
@@ -21532,7 +21833,8 @@
                 "summary": "Enable MFA",
                 "tags": [
                     "Users"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/{organization_id}/alert_rules": {
@@ -21596,6 +21898,9 @@
                 "summary": "Get all alert rules",
                 "tags": [
                     "Alert Rules"
+                ],
+                "x-required-permissions": [
+                    "alert_rule:read"
                 ]
             },
             "post": {
@@ -21672,6 +21977,9 @@
                 "summary": "Create a new alert rule",
                 "tags": [
                     "Alert Rules"
+                ],
+                "x-required-permissions": [
+                    "alert_rule:write"
                 ]
             }
         },
@@ -21742,6 +22050,9 @@
                 "summary": "Delete alert rule",
                 "tags": [
                     "Alert Rules"
+                ],
+                "x-required-permissions": [
+                    "alert_rule:delete"
                 ]
             },
             "get": {
@@ -21817,6 +22128,9 @@
                 "summary": "Get alert rule by ID",
                 "tags": [
                     "Alert Rules"
+                ],
+                "x-required-permissions": [
+                    "alert_rule:read"
                 ]
             },
             "put": {
@@ -21902,6 +22216,9 @@
                 "summary": "Update alert rule",
                 "tags": [
                     "Alert Rules"
+                ],
+                "x-required-permissions": [
+                    "alert_rule:write"
                 ]
             }
         },
@@ -22016,6 +22333,9 @@
                 "summary": "List alerts with pagination",
                 "tags": [
                     "Alerts"
+                ],
+                "x-required-permissions": [
+                    "alert_rule:read"
                 ]
             }
         },
@@ -22122,6 +22442,9 @@
                 "summary": "Stream alerts in real-time",
                 "tags": [
                     "Alerts"
+                ],
+                "x-required-permissions": [
+                    "alert_rule:read"
                 ]
             }
         },
@@ -22186,6 +22509,9 @@
                 "summary": "Get all connections",
                 "tags": [
                     "Connections"
+                ],
+                "x-required-permissions": [
+                    "sso_connection:read"
                 ]
             },
             "post": {
@@ -22262,6 +22588,9 @@
                 "summary": "Create a new connection",
                 "tags": [
                     "Connections"
+                ],
+                "x-required-permissions": [
+                    "sso_connection:write"
                 ]
             }
         },
@@ -22322,6 +22651,9 @@
                 "summary": "Delete connection",
                 "tags": [
                     "Connections"
+                ],
+                "x-required-permissions": [
+                    "sso_connection:delete"
                 ]
             },
             "get": {
@@ -22397,6 +22729,9 @@
                 "summary": "Get connection by ID",
                 "tags": [
                     "Connections"
+                ],
+                "x-required-permissions": [
+                    "sso_connection:read"
                 ]
             },
             "patch": {
@@ -22482,6 +22817,9 @@
                 "summary": "Update connection",
                 "tags": [
                     "Connections"
+                ],
+                "x-required-permissions": [
+                    "sso_connection:write"
                 ]
             }
         },
@@ -22559,6 +22897,9 @@
                 "summary": "List enrichments",
                 "tags": [
                     "Organization Enrichments"
+                ],
+                "x-required-permissions": [
+                    "enrichment:read"
                 ]
             },
             "post": {
@@ -22646,6 +22987,9 @@
                 "summary": "Create enrichment",
                 "tags": [
                     "Organization Enrichments"
+                ],
+                "x-required-permissions": [
+                    "enrichment:write"
                 ]
             }
         },
@@ -22727,6 +23071,9 @@
                 "summary": "Apply enrichment to record",
                 "tags": [
                     "Enrichment Sandbox"
+                ],
+                "x-required-permissions": [
+                    "enrichment:write"
                 ]
             }
         },
@@ -22808,6 +23155,9 @@
                 "summary": "Test enrichment connection",
                 "tags": [
                     "Organization Enrichments"
+                ],
+                "x-required-permissions": [
+                    "enrichment:write"
                 ]
             }
         },
@@ -22878,6 +23228,9 @@
                 "summary": "Delete enrichment",
                 "tags": [
                     "Organization Enrichments"
+                ],
+                "x-required-permissions": [
+                    "enrichment:write"
                 ]
             },
             "get": {
@@ -22946,6 +23299,9 @@
                 "summary": "Get enrichment",
                 "tags": [
                     "Organization Enrichments"
+                ],
+                "x-required-permissions": [
+                    "enrichment:read"
                 ]
             },
             "patch": {
@@ -23052,6 +23408,9 @@
                 "summary": "Update enrichment",
                 "tags": [
                     "Organization Enrichments"
+                ],
+                "x-required-permissions": [
+                    "enrichment:write"
                 ]
             },
             "put": {
@@ -23158,6 +23517,9 @@
                 "summary": "Replace enrichment",
                 "tags": [
                     "Organization Enrichments"
+                ],
+                "x-required-permissions": [
+                    "enrichment:write"
                 ]
             }
         },
@@ -23202,7 +23564,8 @@
                 "summary": "List enrichments",
                 "tags": [
                     "Enrichments"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/{organization_id}/enrichments_meta/{enrichment_type_id}": {
@@ -23262,7 +23625,8 @@
                 "summary": "Get enrichment config meta",
                 "tags": [
                     "Enrichments"
-                ]
+                ],
+                "x-required-permissions": []
             }
         },
         "/v3/{organization_id}/kv_lookup/metadata": {
@@ -23322,6 +23686,9 @@
                 "summary": "Get KV lookup metadata",
                 "tags": [
                     "Key Value Store"
+                ],
+                "x-required-permissions": [
+                    "pipeline:data:read"
                 ]
             }
         },
@@ -23404,6 +23771,9 @@
                 "summary": "Get KV lookup sample entries",
                 "tags": [
                     "Key Value Store"
+                ],
+                "x-required-permissions": [
+                    "pipeline:data:read"
                 ]
             }
         },
@@ -23473,6 +23843,9 @@
                 "summary": "Get value by key from KV lookup",
                 "tags": [
                     "Key Value Store"
+                ],
+                "x-required-permissions": [
+                    "pipeline:data:read"
                 ]
             }
         },
@@ -23548,6 +23921,9 @@
                 "summary": "List child organizations (teams)",
                 "tags": [
                     "Organizations"
+                ],
+                "x-required-permissions": [
+                    "team:read"
                 ]
             },
             "post": {
@@ -23627,6 +24003,9 @@
                 "summary": "Create child organization (team)",
                 "tags": [
                     "Organizations"
+                ],
+                "x-required-permissions": [
+                    "team:write"
                 ]
             }
         },
@@ -23690,6 +24069,9 @@
                 "summary": "Delete child organization (team)",
                 "tags": [
                     "Organizations"
+                ],
+                "x-required-permissions": [
+                    "team:delete"
                 ]
             },
             "patch": {
@@ -23788,6 +24170,9 @@
                 "summary": "Update child organization (team)",
                 "tags": [
                     "Organizations"
+                ],
+                "x-required-permissions": [
+                    "team:write"
                 ]
             }
         },
@@ -24068,6 +24453,9 @@
                 "summary": "Create transform recommendation",
                 "tags": [
                     "Transforms Recommendations"
+                ],
+                "x-required-permissions": [
+                    "transform:read"
                 ]
             }
         },
@@ -24112,6 +24500,9 @@
                 "summary": "List available transform optimizers",
                 "tags": [
                     "Transforms Recommendations"
+                ],
+                "x-required-permissions": [
+                    "transform:read"
                 ]
             }
         }

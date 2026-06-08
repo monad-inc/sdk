@@ -42,7 +42,7 @@ class TransformsApi:
     @validate_call
     def get_transform_type_meta(
         self,
-        transform_type_id: Annotated[StrictStr, Field(description="Transform type ID")],
+        operation_type_id: Annotated[StrictStr, Field(description="Transform type ID")],
         body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
@@ -61,8 +61,8 @@ class TransformsApi:
 
         Get transform metadata
 
-        :param transform_type_id: Transform type ID (required)
-        :type transform_type_id: str
+        :param operation_type_id: Transform type ID (required)
+        :type operation_type_id: str
         :param body:
         :type body: object
         :param _request_timeout: timeout setting for this request. If one
@@ -88,7 +88,7 @@ class TransformsApi:
         """ # noqa: E501
 
         _param = self._get_transform_type_meta_serialize(
-            transform_type_id=transform_type_id,
+            operation_type_id=operation_type_id,
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -114,7 +114,7 @@ class TransformsApi:
     @validate_call
     def get_transform_type_meta_with_http_info(
         self,
-        transform_type_id: Annotated[StrictStr, Field(description="Transform type ID")],
+        operation_type_id: Annotated[StrictStr, Field(description="Transform type ID")],
         body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
@@ -133,8 +133,8 @@ class TransformsApi:
 
         Get transform metadata
 
-        :param transform_type_id: Transform type ID (required)
-        :type transform_type_id: str
+        :param operation_type_id: Transform type ID (required)
+        :type operation_type_id: str
         :param body:
         :type body: object
         :param _request_timeout: timeout setting for this request. If one
@@ -160,7 +160,7 @@ class TransformsApi:
         """ # noqa: E501
 
         _param = self._get_transform_type_meta_serialize(
-            transform_type_id=transform_type_id,
+            operation_type_id=operation_type_id,
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -186,7 +186,7 @@ class TransformsApi:
     @validate_call
     def get_transform_type_meta_without_preload_content(
         self,
-        transform_type_id: Annotated[StrictStr, Field(description="Transform type ID")],
+        operation_type_id: Annotated[StrictStr, Field(description="Transform type ID")],
         body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
@@ -205,8 +205,8 @@ class TransformsApi:
 
         Get transform metadata
 
-        :param transform_type_id: Transform type ID (required)
-        :type transform_type_id: str
+        :param operation_type_id: Transform type ID (required)
+        :type operation_type_id: str
         :param body:
         :type body: object
         :param _request_timeout: timeout setting for this request. If one
@@ -232,7 +232,7 @@ class TransformsApi:
         """ # noqa: E501
 
         _param = self._get_transform_type_meta_serialize(
-            transform_type_id=transform_type_id,
+            operation_type_id=operation_type_id,
             body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -253,7 +253,7 @@ class TransformsApi:
 
     def _get_transform_type_meta_serialize(
         self,
-        transform_type_id,
+        operation_type_id,
         body,
         _request_auth,
         _content_type,
@@ -276,8 +276,8 @@ class TransformsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if transform_type_id is not None:
-            _path_params['transform_type_id'] = transform_type_id
+        if operation_type_id is not None:
+            _path_params['operation_type_id'] = operation_type_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -316,7 +316,7 @@ class TransformsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v1/transforms/{transform_type_id}',
+            resource_path='/v1/transforms/{operation_type_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecret
 
-> RoutesV2SecretResponse UpdateSecret(ctx, organizationId, secretId).UpdateSecretRequest(updateSecretRequest).Execute()
+> RoutesV2SecretResponse UpdateSecret(ctx, organizationId, secretId).CreateSecretRequest(createSecretRequest).Execute()
 
 Update secret
 
@@ -325,11 +325,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	secretId := "secretId_example" // string | Secret ID
-	updateSecretRequest := openapiclient.UpdateSecret_request{RoutesV2CreateOrUpdateSecretRequest: openapiclient.NewRoutesV2CreateOrUpdateSecretRequest()} // UpdateSecretRequest | Secret updates
+	createSecretRequest := openapiclient.CreateSecret_request{RoutesV2CreateOrUpdateSecretRequest: openapiclient.NewRoutesV2CreateOrUpdateSecretRequest()} // CreateSecretRequest | Secret updates
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecretsAPI.UpdateSecret(context.Background(), organizationId, secretId).UpdateSecretRequest(updateSecretRequest).Execute()
+	resp, r, err := apiClient.SecretsAPI.UpdateSecret(context.Background(), organizationId, secretId).CreateSecretRequest(createSecretRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecretsAPI.UpdateSecret``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **updateSecretRequest** | [**UpdateSecretRequest**](UpdateSecretRequest.md) | Secret updates | 
+ **createSecretRequest** | [**CreateSecretRequest**](CreateSecretRequest.md) | Secret updates | 
 
 ### Return type
 

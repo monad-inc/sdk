@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * InputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_BILLING_TYPE = "billing_type";
   @SerializedName(SERIALIZED_NAME_BILLING_TYPE)

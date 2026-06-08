@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_secret**
-> RoutesV2SecretResponse update_secret(organization_id, secret_id, update_secret_request)
+> RoutesV2SecretResponse update_secret(organization_id, secret_id, create_secret_request)
 
 Update secret
 
@@ -384,8 +384,8 @@ Updates a specific secret by ID
 
 ```python
 import monad
+from monad.models.create_secret_request import CreateSecretRequest
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse
-from monad.models.update_secret_request import UpdateSecretRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -418,11 +418,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.SecretsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     secret_id = 'secret_id_example' # str | Secret ID
-    update_secret_request = monad.UpdateSecretRequest() # UpdateSecretRequest | Secret updates
+    create_secret_request = monad.CreateSecretRequest() # CreateSecretRequest | Secret updates
 
     try:
         # Update secret
-        api_response = api_instance.update_secret(organization_id, secret_id, update_secret_request)
+        api_response = api_instance.update_secret(organization_id, secret_id, create_secret_request)
         print("The response of SecretsApi->update_secret:\n")
         pprint(api_response)
     except Exception as e:
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **secret_id** | **str**| Secret ID | 
- **update_secret_request** | [**UpdateSecretRequest**](UpdateSecretRequest.md)| Secret updates | 
+ **create_secret_request** | [**CreateSecretRequest**](CreateSecretRequest.md)| Secret updates | 
 
 ### Return type
 

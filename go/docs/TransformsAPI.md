@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetTransformTypeMeta**](TransformsAPI.md#GetTransformTypeMeta) | **Get** /v1/transforms/{transform_type_id} | Get transform metadata
+[**GetTransformTypeMeta**](TransformsAPI.md#GetTransformTypeMeta) | **Get** /v1/transforms/{operation_type_id} | Get transform metadata
 [**ListTransformTypes**](TransformsAPI.md#ListTransformTypes) | **Get** /v1/transforms | List transforms
 
 
 
 ## GetTransformTypeMeta
 
-> interface{} GetTransformTypeMeta(ctx, transformTypeId).Body(body).Execute()
+> interface{} GetTransformTypeMeta(ctx, operationTypeId).Body(body).Execute()
 
 Get transform metadata
 
@@ -30,12 +30,12 @@ import (
 )
 
 func main() {
-	transformTypeId := "transformTypeId_example" // string | Transform type ID
+	operationTypeId := "operationTypeId_example" // string | Transform type ID
 	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransformsAPI.GetTransformTypeMeta(context.Background(), transformTypeId).Body(body).Execute()
+	resp, r, err := apiClient.TransformsAPI.GetTransformTypeMeta(context.Background(), operationTypeId).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TransformsAPI.GetTransformTypeMeta``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**transformTypeId** | **string** | Transform type ID | 
+**operationTypeId** | **string** | Transform type ID | 
 
 ### Other Parameters
 

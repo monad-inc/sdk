@@ -74,7 +74,7 @@ public class TransformsApi {
 
     /**
      * Build call for getTransformTypeMeta
-     * @param transformTypeId Transform type ID (required)
+     * @param operationTypeId Transform type ID (required)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -87,7 +87,7 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTransformTypeMetaCall(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTransformTypeMetaCall(@javax.annotation.Nonnull String operationTypeId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -104,8 +104,8 @@ public class TransformsApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/v1/transforms/{transform_type_id}"
-            .replace("{" + "transform_type_id" + "}", localVarApiClient.escapeString(transformTypeId.toString()));
+        String localVarPath = "/v1/transforms/{operation_type_id}"
+            .replace("{" + "operation_type_id" + "}", localVarApiClient.escapeString(operationTypeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -134,20 +134,20 @@ public class TransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTransformTypeMetaValidateBeforeCall(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'transformTypeId' is set
-        if (transformTypeId == null) {
-            throw new ApiException("Missing the required parameter 'transformTypeId' when calling getTransformTypeMeta(Async)");
+    private okhttp3.Call getTransformTypeMetaValidateBeforeCall(@javax.annotation.Nonnull String operationTypeId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'operationTypeId' is set
+        if (operationTypeId == null) {
+            throw new ApiException("Missing the required parameter 'operationTypeId' when calling getTransformTypeMeta(Async)");
         }
 
-        return getTransformTypeMetaCall(transformTypeId, body, _callback);
+        return getTransformTypeMetaCall(operationTypeId, body, _callback);
 
     }
 
     /**
      * Get transform metadata
      * Get transform metadata
-     * @param transformTypeId Transform type ID (required)
+     * @param operationTypeId Transform type ID (required)
      * @param body  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -159,15 +159,15 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object getTransformTypeMeta(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body) throws ApiException {
-        ApiResponse<Object> localVarResp = getTransformTypeMetaWithHttpInfo(transformTypeId, body);
+    public Object getTransformTypeMeta(@javax.annotation.Nonnull String operationTypeId, @javax.annotation.Nullable Object body) throws ApiException {
+        ApiResponse<Object> localVarResp = getTransformTypeMetaWithHttpInfo(operationTypeId, body);
         return localVarResp.getData();
     }
 
     /**
      * Get transform metadata
      * Get transform metadata
-     * @param transformTypeId Transform type ID (required)
+     * @param operationTypeId Transform type ID (required)
      * @param body  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -179,8 +179,8 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getTransformTypeMetaWithHttpInfo(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body) throws ApiException {
-        okhttp3.Call localVarCall = getTransformTypeMetaValidateBeforeCall(transformTypeId, body, null);
+    public ApiResponse<Object> getTransformTypeMetaWithHttpInfo(@javax.annotation.Nonnull String operationTypeId, @javax.annotation.Nullable Object body) throws ApiException {
+        okhttp3.Call localVarCall = getTransformTypeMetaValidateBeforeCall(operationTypeId, body, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -188,7 +188,7 @@ public class TransformsApi {
     /**
      * Get transform metadata (asynchronously)
      * Get transform metadata
-     * @param transformTypeId Transform type ID (required)
+     * @param operationTypeId Transform type ID (required)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -201,9 +201,9 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTransformTypeMetaAsync(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getTransformTypeMetaAsync(@javax.annotation.Nonnull String operationTypeId, @javax.annotation.Nullable Object body, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTransformTypeMetaValidateBeforeCall(transformTypeId, body, _callback);
+        okhttp3.Call localVarCall = getTransformTypeMetaValidateBeforeCall(operationTypeId, body, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

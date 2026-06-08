@@ -4,12 +4,12 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_transform_type_meta**](TransformsApi.md#get_transform_type_meta) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
+[**get_transform_type_meta**](TransformsApi.md#get_transform_type_meta) | **GET** /v1/transforms/{operation_type_id} | Get transform metadata
 [**list_transform_types**](TransformsApi.md#list_transform_types) | **GET** /v1/transforms | List transforms
 
 
 # **get_transform_type_meta**
-> object get_transform_type_meta(transform_type_id, body=body)
+> object get_transform_type_meta(operation_type_id, body=body)
 
 Get transform metadata
 
@@ -52,12 +52,12 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformsApi(api_client)
-    transform_type_id = 'transform_type_id_example' # str | Transform type ID
+    operation_type_id = 'operation_type_id_example' # str | Transform type ID
     body = None # object |  (optional)
 
     try:
         # Get transform metadata
-        api_response = api_instance.get_transform_type_meta(transform_type_id, body=body)
+        api_response = api_instance.get_transform_type_meta(operation_type_id, body=body)
         print("The response of TransformsApi->get_transform_type_meta:\n")
         pprint(api_response)
     except Exception as e:
@@ -71,7 +71,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transform_type_id** | **str**| Transform type ID | 
+ **operation_type_id** | **str**| Transform type ID | 
  **body** | **object**|  | [optional] 
 
 ### Return type

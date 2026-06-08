@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * BigQuery Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class BigquerySettingsConfig {
   public static final String SERIALIZED_NAME_DATASET = "dataset";
   @SerializedName(SERIALIZED_NAME_DATASET)

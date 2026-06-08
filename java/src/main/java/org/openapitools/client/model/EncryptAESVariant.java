@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * EncryptAESVariant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class EncryptAESVariant {
   public static final String SERIALIZED_NAME_ENCRYPTION_KEY = "encryption_key";
   @SerializedName(SERIALIZED_NAME_ENCRYPTION_KEY)

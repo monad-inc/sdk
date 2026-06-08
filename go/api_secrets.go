@@ -655,12 +655,12 @@ type ApiUpdateSecretRequest struct {
 	ApiService *SecretsAPIService
 	organizationId string
 	secretId string
-	updateSecretRequest *UpdateSecretRequest
+	createSecretRequest *CreateSecretRequest
 }
 
 // Secret updates
-func (r ApiUpdateSecretRequest) UpdateSecretRequest(updateSecretRequest UpdateSecretRequest) ApiUpdateSecretRequest {
-	r.updateSecretRequest = &updateSecretRequest
+func (r ApiUpdateSecretRequest) CreateSecretRequest(createSecretRequest CreateSecretRequest) ApiUpdateSecretRequest {
+	r.createSecretRequest = &createSecretRequest
 	return r
 }
 
@@ -709,8 +709,8 @@ func (a *SecretsAPIService) UpdateSecretExecute(r ApiUpdateSecretRequest) (*Rout
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updateSecretRequest == nil {
-		return localVarReturnValue, nil, reportError("updateSecretRequest is required and must be specified")
+	if r.createSecretRequest == nil {
+		return localVarReturnValue, nil, reportError("createSecretRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -731,7 +731,7 @@ func (a *SecretsAPIService) UpdateSecretExecute(r ApiUpdateSecretRequest) (*Rout
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateSecretRequest
+	localVarPostBody = r.createSecretRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

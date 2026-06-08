@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ConvertTimestampArgumentsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ConvertTimestampArgumentsConfig {
   public static final String SERIALIZED_NAME_SOURCE_FORMAT = "source_format";
   @SerializedName(SERIALIZED_NAME_SOURCE_FORMAT)

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * GKE Audit Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class GkeAuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_CLUSTER_NAME = "cluster_name";
   @SerializedName(SERIALIZED_NAME_CLUSTER_NAME)

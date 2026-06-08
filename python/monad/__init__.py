@@ -647,7 +647,6 @@ __all__ = [
     "UpdatePipelineRequest",
     "UpdatePipelineV1Request",
     "UpdateRoleRequest",
-    "UpdateSecretRequest",
     "UtcTimestampArgumentsConfig",
     "UtcTimestampTimestampFormat",
     "VercelUserEventsSecretsConfig",
@@ -1315,7 +1314,6 @@ from monad.models.update_pipeline_edge_request import UpdatePipelineEdgeRequest 
 from monad.models.update_pipeline_request import UpdatePipelineRequest as UpdatePipelineRequest
 from monad.models.update_pipeline_v1_request import UpdatePipelineV1Request as UpdatePipelineV1Request
 from monad.models.update_role_request import UpdateRoleRequest as UpdateRoleRequest
-from monad.models.update_secret_request import UpdateSecretRequest as UpdateSecretRequest
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig as UtcTimestampArgumentsConfig
 from monad.models.utc_timestamp_timestamp_format import UtcTimestampTimestampFormat as UtcTimestampTimestampFormat
 from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecretsConfig as VercelUserEventsSecretsConfig

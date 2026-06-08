@@ -329,7 +329,7 @@ public class Example {
 
 <a id="updateSecret"></a>
 # **updateSecret**
-> RoutesV2SecretResponse updateSecret(organizationId, secretId, updateSecretRequest)
+> RoutesV2SecretResponse updateSecret(organizationId, secretId, createSecretRequest)
 
 Update secret
 
@@ -365,9 +365,9 @@ public class Example {
     SecretsApi apiInstance = new SecretsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String secretId = "secretId_example"; // String | Secret ID
-    UpdateSecretRequest updateSecretRequest = new UpdateSecretRequest(); // UpdateSecretRequest | Secret updates
+    CreateSecretRequest createSecretRequest = new CreateSecretRequest(); // CreateSecretRequest | Secret updates
     try {
-      RoutesV2SecretResponse result = apiInstance.updateSecret(organizationId, secretId, updateSecretRequest);
+      RoutesV2SecretResponse result = apiInstance.updateSecret(organizationId, secretId, createSecretRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SecretsApi#updateSecret");
@@ -386,7 +386,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **secretId** | **String**| Secret ID | |
-| **updateSecretRequest** | [**UpdateSecretRequest**](UpdateSecretRequest.md)| Secret updates | |
+| **createSecretRequest** | [**CreateSecretRequest**](CreateSecretRequest.md)| Secret updates | |
 
 ### Return type
 

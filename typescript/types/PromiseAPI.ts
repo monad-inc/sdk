@@ -582,7 +582,6 @@ import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
@@ -4892,11 +4891,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecretWithHttpInfo(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public updateSecretWithHttpInfo(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, observableOptions);
+        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, createSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -4905,11 +4904,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
+    public updateSecret(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecret(organizationId, secretId, updateSecretRequest, observableOptions);
+        const result = this.api.updateSecret(organizationId, secretId, createSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5085,24 +5084,24 @@ export class PromiseTransformsApi {
     /**
      * Get transform metadata
      * Get transform metadata
-     * @param transformTypeId Transform type ID
+     * @param operationTypeId Transform type ID
      * @param [body]
      */
-    public getTransformTypeMetaWithHttpInfo(transformTypeId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+    public getTransformTypeMetaWithHttpInfo(operationTypeId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.getTransformTypeMetaWithHttpInfo(transformTypeId, body, observableOptions);
+        const result = this.api.getTransformTypeMetaWithHttpInfo(operationTypeId, body, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Get transform metadata
      * Get transform metadata
-     * @param transformTypeId Transform type ID
+     * @param operationTypeId Transform type ID
      * @param [body]
      */
-    public getTransformTypeMeta(transformTypeId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<any> {
+    public getTransformTypeMeta(operationTypeId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<any> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.getTransformTypeMeta(transformTypeId, body, observableOptions);
+        const result = this.api.getTransformTypeMeta(operationTypeId, body, observableOptions);
         return result.toPromise();
     }
 

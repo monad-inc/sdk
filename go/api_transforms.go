@@ -27,7 +27,7 @@ type TransformsAPIService service
 type ApiGetTransformTypeMetaRequest struct {
 	ctx context.Context
 	ApiService *TransformsAPIService
-	transformTypeId string
+	operationTypeId string
 	body *map[string]interface{}
 }
 
@@ -46,14 +46,14 @@ GetTransformTypeMeta Get transform metadata
 Get transform metadata
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param transformTypeId Transform type ID
+ @param operationTypeId Transform type ID
  @return ApiGetTransformTypeMetaRequest
 */
-func (a *TransformsAPIService) GetTransformTypeMeta(ctx context.Context, transformTypeId string) ApiGetTransformTypeMetaRequest {
+func (a *TransformsAPIService) GetTransformTypeMeta(ctx context.Context, operationTypeId string) ApiGetTransformTypeMetaRequest {
 	return ApiGetTransformTypeMetaRequest{
 		ApiService: a,
 		ctx: ctx,
-		transformTypeId: transformTypeId,
+		operationTypeId: operationTypeId,
 	}
 }
 
@@ -72,8 +72,8 @@ func (a *TransformsAPIService) GetTransformTypeMetaExecute(r ApiGetTransformType
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/transforms/{transform_type_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"transform_type_id"+"}", url.PathEscape(parameterValueToString(r.transformTypeId, "transformTypeId")), -1)
+	localVarPath := localBasePath + "/v1/transforms/{operation_type_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"operation_type_id"+"}", url.PathEscape(parameterValueToString(r.operationTypeId, "operationTypeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

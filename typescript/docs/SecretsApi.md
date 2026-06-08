@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateSecret**
-> RoutesV2SecretResponse updateSecret(updateSecretRequest)
+> RoutesV2SecretResponse updateSecret(createSecretRequest)
 
 Updates a specific secret by ID
 
@@ -266,7 +266,7 @@ const request: SecretsApiUpdateSecretRequest = {
     // Secret ID
   secretId: "secret_id_example",
     // Secret updates
-  updateSecretRequest: null,
+  createSecretRequest: null,
 };
 
 const data = await apiInstance.updateSecret(request);
@@ -278,7 +278,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateSecretRequest** | **UpdateSecretRequest**| Secret updates |
+ **createSecretRequest** | **CreateSecretRequest**| Secret updates |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **secretId** | [**string**] | Secret ID | defaults to undefined
 

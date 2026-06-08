@@ -18,22 +18,22 @@ export class TransformsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Get transform metadata
      * Get transform metadata
-     * @param transformTypeId Transform type ID
+     * @param operationTypeId Transform type ID
      * @param body 
      */
-    public async getTransformTypeMeta(transformTypeId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async getTransformTypeMeta(operationTypeId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'transformTypeId' is not null or undefined
-        if (transformTypeId === null || transformTypeId === undefined) {
-            throw new RequiredError("TransformsApi", "getTransformTypeMeta", "transformTypeId");
+        // verify required parameter 'operationTypeId' is not null or undefined
+        if (operationTypeId === null || operationTypeId === undefined) {
+            throw new RequiredError("TransformsApi", "getTransformTypeMeta", "operationTypeId");
         }
 
 
 
         // Path Params
-        const localVarPath = '/v1/transforms/{transform_type_id}'
-            .replace('{transform_type_id}', encodeURIComponent(String(transformTypeId)));
+        const localVarPath = '/v1/transforms/{operation_type_id}'
+            .replace('{operation_type_id}', encodeURIComponent(String(operationTypeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Authentication used to write to the bucket (IAM role or static credentials).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ScannerAuthConfig {
   public static final String SERIALIZED_NAME_IAM_ROLE = "iam_role";
   @SerializedName(SERIALIZED_NAME_IAM_ROLE)

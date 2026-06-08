@@ -4,7 +4,7 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTransformTypeMeta**](TransformsApi.md#getTransformTypeMeta) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
+[**getTransformTypeMeta**](TransformsApi.md#getTransformTypeMeta) | **GET** /v1/transforms/{operation_type_id} | Get transform metadata
 [**listTransformTypes**](TransformsApi.md#listTransformTypes) | **GET** /v1/transforms | List transforms
 
 
@@ -25,7 +25,7 @@ const apiInstance = new TransformsApi(configuration);
 
 const request: TransformsApiGetTransformTypeMetaRequest = {
     // Transform type ID
-  transformTypeId: "transform_type_id_example",
+  operationTypeId: "operation_type_id_example",
   
   body: {},
 };
@@ -40,7 +40,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **any**|  |
- **transformTypeId** | [**string**] | Transform type ID | defaults to undefined
+ **operationTypeId** | [**string**] | Transform type ID | defaults to undefined
 
 
 ### Return type

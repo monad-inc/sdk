@@ -4,13 +4,13 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getTransformTypeMeta**](TransformsApi.md#getTransformTypeMeta) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata |
+| [**getTransformTypeMeta**](TransformsApi.md#getTransformTypeMeta) | **GET** /v1/transforms/{operation_type_id} | Get transform metadata |
 | [**listTransformTypes**](TransformsApi.md#listTransformTypes) | **GET** /v1/transforms | List transforms |
 
 
 <a id="getTransformTypeMeta"></a>
 # **getTransformTypeMeta**
-> Object getTransformTypeMeta(transformTypeId, body)
+> Object getTransformTypeMeta(operationTypeId, body)
 
 Get transform metadata
 
@@ -44,10 +44,10 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     TransformsApi apiInstance = new TransformsApi(defaultClient);
-    String transformTypeId = "transformTypeId_example"; // String | Transform type ID
+    String operationTypeId = "operationTypeId_example"; // String | Transform type ID
     Object body = null; // Object | 
     try {
-      Object result = apiInstance.getTransformTypeMeta(transformTypeId, body);
+      Object result = apiInstance.getTransformTypeMeta(operationTypeId, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransformsApi#getTransformTypeMeta");
@@ -64,7 +64,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **transformTypeId** | **String**| Transform type ID | |
+| **operationTypeId** | **String**| Transform type ID | |
 | **body** | **Object**|  | [optional] |
 
 ### Return type

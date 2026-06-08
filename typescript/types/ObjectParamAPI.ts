@@ -582,7 +582,6 @@ import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
@@ -6572,10 +6571,10 @@ export interface SecretsApiUpdateSecretRequest {
     secretId: string
     /**
      * Secret updates
-     * @type UpdateSecretRequest
+     * @type CreateSecretRequest
      * @memberof SecretsApiupdateSecret
      */
-    updateSecretRequest: UpdateSecretRequest
+    createSecretRequest: CreateSecretRequest
 }
 
 export class ObjectSecretsApi {
@@ -6663,7 +6662,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public updateSecretWithHttpInfo(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        return this.api.updateSecretWithHttpInfo(param.organizationId, param.secretId, param.updateSecretRequest,  options).toPromise();
+        return this.api.updateSecretWithHttpInfo(param.organizationId, param.secretId, param.createSecretRequest,  options).toPromise();
     }
 
     /**
@@ -6672,7 +6671,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public updateSecret(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
-        return this.api.updateSecret(param.organizationId, param.secretId, param.updateSecretRequest,  options).toPromise();
+        return this.api.updateSecret(param.organizationId, param.secretId, param.createSecretRequest,  options).toPromise();
     }
 
 }
@@ -6853,7 +6852,7 @@ export interface TransformsApiGetTransformTypeMetaRequest {
      * @type string
      * @memberof TransformsApigetTransformTypeMeta
      */
-    transformTypeId: string
+    operationTypeId: string
     /**
      * 
      * @type any
@@ -6884,7 +6883,7 @@ export class ObjectTransformsApi {
      * @param param the request object
      */
     public getTransformTypeMetaWithHttpInfo(param: TransformsApiGetTransformTypeMetaRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.getTransformTypeMetaWithHttpInfo(param.transformTypeId, param.body,  options).toPromise();
+        return this.api.getTransformTypeMetaWithHttpInfo(param.operationTypeId, param.body,  options).toPromise();
     }
 
     /**
@@ -6893,7 +6892,7 @@ export class ObjectTransformsApi {
      * @param param the request object
      */
     public getTransformTypeMeta(param: TransformsApiGetTransformTypeMetaRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.getTransformTypeMeta(param.transformTypeId, param.body,  options).toPromise();
+        return this.api.getTransformTypeMeta(param.operationTypeId, param.body,  options).toPromise();
     }
 
     /**

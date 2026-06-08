@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * JSON output configuration (required when type is json).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ScannerJSONVariant {
   /**
    * &#39;line&#39; writes one JSON object per line (JSON Lines); &#39;array&#39; writes a JSON array of objects.

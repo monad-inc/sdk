@@ -578,7 +578,6 @@ export * from '../models/UpdatePipelineEdgeRequest';
 export * from '../models/UpdatePipelineRequest';
 export * from '../models/UpdatePipelineV1Request';
 export * from '../models/UpdateRoleRequest';
-export * from '../models/UpdateSecretRequest';
 export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/UtcTimestampTimestampFormat';
 export * from '../models/VercelUserEventsSecretsConfig';
@@ -1192,7 +1191,6 @@ import { UpdatePipelineEdgeRequestClass } from '../models/UpdatePipelineEdgeRequ
 import { UpdatePipelineRequestClass } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1RequestClass } from '../models/UpdatePipelineV1Request';
 import { UpdateRoleRequestClass } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequestClass } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig   } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
@@ -1864,7 +1862,6 @@ let typeMap: {[index: string]: any} = {
     "UpdatePipelineRequest": UpdatePipelineRequestClass,
     "UpdatePipelineV1Request": UpdatePipelineV1RequestClass,
     "UpdateRoleRequest": UpdateRoleRequestClass,
-    "UpdateSecretRequest": UpdateSecretRequestClass,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,

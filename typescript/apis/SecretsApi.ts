@@ -13,7 +13,6 @@ import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
-import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 
 /**
  * no description
@@ -245,9 +244,9 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public async updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateSecret(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -262,9 +261,9 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'updateSecretRequest' is not null or undefined
-        if (updateSecretRequest === null || updateSecretRequest === undefined) {
-            throw new RequiredError("SecretsApi", "updateSecret", "updateSecretRequest");
+        // verify required parameter 'createSecretRequest' is not null or undefined
+        if (createSecretRequest === null || createSecretRequest === undefined) {
+            throw new RequiredError("SecretsApi", "updateSecret", "createSecretRequest");
         }
 
 
@@ -284,7 +283,7 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(updateSecretRequest, "UpdateSecretRequest", ""),
+            ObjectSerializer.serialize(createSecretRequest, "CreateSecretRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

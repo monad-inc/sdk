@@ -594,7 +594,6 @@ from monad.models.update_pipeline_edge_request import UpdatePipelineEdgeRequest
 from monad.models.update_pipeline_request import UpdatePipelineRequest
 from monad.models.update_pipeline_v1_request import UpdatePipelineV1Request
 from monad.models.update_role_request import UpdateRoleRequest
-from monad.models.update_secret_request import UpdateSecretRequest
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig
 from monad.models.utc_timestamp_timestamp_format import UtcTimestampTimestampFormat
 from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecretsConfig

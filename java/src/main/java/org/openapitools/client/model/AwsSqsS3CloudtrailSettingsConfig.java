@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS SQS S3 CloudTrail settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class AwsSqsS3CloudtrailSettingsConfig {
   public static final String SERIALIZED_NAME_CHUNKING_MODE = "chunking_mode";
   @SerializedName(SERIALIZED_NAME_CHUNKING_MODE)

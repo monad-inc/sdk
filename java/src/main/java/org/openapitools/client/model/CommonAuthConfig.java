@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * AuthConfig downloads logs; needs actions:read on the scoped repos.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CommonAuthConfig {
   public static final String SERIALIZED_NAME_GITHUB_APP = "github_app";
   @SerializedName(SERIALIZED_NAME_GITHUB_APP)

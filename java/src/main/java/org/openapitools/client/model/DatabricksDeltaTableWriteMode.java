@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksDeltaTableWriteMode {
   public static final String SERIALIZED_NAME_AUTO_LOADER = "auto_loader";
   @SerializedName(SERIALIZED_NAME_AUTO_LOADER)
