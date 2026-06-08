@@ -21,6 +21,7 @@ __version__ = "1.0.0"
 __all__ = [
     "AlertRulesApi",
     "AlertsApi",
+    "AuditLogsApi",
     "AuthenticationApi",
     "BillingAccountsApi",
     "BillingAccountsRBACApi",
@@ -241,6 +242,7 @@ __all__ = [
     "GithubActionsWorkflowLogsWebhookSettingsConfig",
     "GithubComMonadIncCorePkgTypesModelsAlert",
     "GithubComMonadIncCorePkgTypesModelsAlertStatus",
+    "GithubComMonadIncCorePkgTypesModelsAuditResource",
     "GithubComMonadIncCorePkgTypesModelsOrganization",
     "GithubComMonadIncCorePkgTypesModelsPermission",
     "GithubComMonadIncCorePkgTypesModelsQuota",
@@ -304,9 +306,12 @@ __all__ = [
     "ModelsAPIKey",
     "ModelsAPIKeyList",
     "ModelsAPIKeyWithToken",
+    "ModelsAPILogActor",
+    "ModelsAPILogActorRole",
     "ModelsAlertRule",
     "ModelsAlertRuleList",
     "ModelsAlertState",
+    "ModelsAuditAction",
     "ModelsBillingAccount",
     "ModelsBillingAccountList",
     "ModelsBillingAccountPermission",
@@ -324,6 +329,7 @@ __all__ = [
     "ModelsConnectionList",
     "ModelsConnectorInfo",
     "ModelsConnectorMeta",
+    "ModelsCursorPagination",
     "ModelsDataUsage",
     "ModelsElseAction",
     "ModelsEnrichment",
@@ -336,6 +342,8 @@ __all__ = [
     "ModelsManagedBy",
     "ModelsNodeBackpressure",
     "ModelsNodeComponent",
+    "ModelsOrganizationAuditLog",
+    "ModelsOrganizationAuditLogList",
     "ModelsOrganizationList",
     "ModelsOrganizationUser",
     "ModelsOrganizationUserList",
@@ -684,6 +692,7 @@ __all__ = [
 # import apis into sdk package
 from monad.api.alert_rules_api import AlertRulesApi as AlertRulesApi
 from monad.api.alerts_api import AlertsApi as AlertsApi
+from monad.api.audit_logs_api import AuditLogsApi as AuditLogsApi
 from monad.api.authentication_api import AuthenticationApi as AuthenticationApi
 from monad.api.billing_accounts_api import BillingAccountsApi as BillingAccountsApi
 from monad.api.billing_accounts_rbac_api import BillingAccountsRBACApi as BillingAccountsRBACApi
@@ -908,6 +917,7 @@ from monad.models.github_actions_workflow_logs_webhook_scope_config import Githu
 from monad.models.github_actions_workflow_logs_webhook_settings_config import GithubActionsWorkflowLogsWebhookSettingsConfig as GithubActionsWorkflowLogsWebhookSettingsConfig
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert as GithubComMonadIncCorePkgTypesModelsAlert
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus as GithubComMonadIncCorePkgTypesModelsAlertStatus
+from monad.models.github_com_monad_inc_core_pkg_types_models_audit_resource import GithubComMonadIncCorePkgTypesModelsAuditResource as GithubComMonadIncCorePkgTypesModelsAuditResource
 from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization as GithubComMonadIncCorePkgTypesModelsOrganization
 from monad.models.github_com_monad_inc_core_pkg_types_models_permission import GithubComMonadIncCorePkgTypesModelsPermission as GithubComMonadIncCorePkgTypesModelsPermission
 from monad.models.github_com_monad_inc_core_pkg_types_models_quota import GithubComMonadIncCorePkgTypesModelsQuota as GithubComMonadIncCorePkgTypesModelsQuota
@@ -971,9 +981,12 @@ from monad.models.microsoft365_generic_settings_config import Microsoft365Generi
 from monad.models.models_api_key import ModelsAPIKey as ModelsAPIKey
 from monad.models.models_api_key_list import ModelsAPIKeyList as ModelsAPIKeyList
 from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken as ModelsAPIKeyWithToken
+from monad.models.models_api_log_actor import ModelsAPILogActor as ModelsAPILogActor
+from monad.models.models_api_log_actor_role import ModelsAPILogActorRole as ModelsAPILogActorRole
 from monad.models.models_alert_rule import ModelsAlertRule as ModelsAlertRule
 from monad.models.models_alert_rule_list import ModelsAlertRuleList as ModelsAlertRuleList
 from monad.models.models_alert_state import ModelsAlertState as ModelsAlertState
+from monad.models.models_audit_action import ModelsAuditAction as ModelsAuditAction
 from monad.models.models_billing_account import ModelsBillingAccount as ModelsBillingAccount
 from monad.models.models_billing_account_list import ModelsBillingAccountList as ModelsBillingAccountList
 from monad.models.models_billing_account_permission import ModelsBillingAccountPermission as ModelsBillingAccountPermission
@@ -991,6 +1004,7 @@ from monad.models.models_connection import ModelsConnection as ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList as ModelsConnectionList
 from monad.models.models_connector_info import ModelsConnectorInfo as ModelsConnectorInfo
 from monad.models.models_connector_meta import ModelsConnectorMeta as ModelsConnectorMeta
+from monad.models.models_cursor_pagination import ModelsCursorPagination as ModelsCursorPagination
 from monad.models.models_data_usage import ModelsDataUsage as ModelsDataUsage
 from monad.models.models_else_action import ModelsElseAction as ModelsElseAction
 from monad.models.models_enrichment import ModelsEnrichment as ModelsEnrichment
@@ -1003,6 +1017,8 @@ from monad.models.models_input_list import ModelsInputList as ModelsInputList
 from monad.models.models_managed_by import ModelsManagedBy as ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure as ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent as ModelsNodeComponent
+from monad.models.models_organization_audit_log import ModelsOrganizationAuditLog as ModelsOrganizationAuditLog
+from monad.models.models_organization_audit_log_list import ModelsOrganizationAuditLogList as ModelsOrganizationAuditLogList
 from monad.models.models_organization_list import ModelsOrganizationList as ModelsOrganizationList
 from monad.models.models_organization_user import ModelsOrganizationUser as ModelsOrganizationUser
 from monad.models.models_organization_user_list import ModelsOrganizationUserList as ModelsOrganizationUserList

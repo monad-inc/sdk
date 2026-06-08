@@ -177,6 +177,7 @@ import { GithubActionsWorkflowLogsWebhookScopeConfig } from '../models/GithubAct
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
+import { GithubComMonadIncCorePkgTypesModelsAuditResource } from '../models/GithubComMonadIncCorePkgTypesModelsAuditResource';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
@@ -240,9 +241,12 @@ import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365Generic
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
+import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
+import { ModelsAuditAction } from '../models/ModelsAuditAction';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -260,6 +264,7 @@ import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
+import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsElseAction } from '../models/ModelsElseAction';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
@@ -272,6 +277,8 @@ import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
+import { ModelsOrganizationAuditLog } from '../models/ModelsOrganizationAuditLog';
+import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
@@ -992,6 +999,74 @@ export class ObservableAlertsApi {
      */
     public streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: ConfigurationOptions): Observable<string> {
         return this.streamAlertsWithHttpInfo(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+}
+
+import { AuditLogsApiRequestFactory, AuditLogsApiResponseProcessor} from "../apis/AuditLogsApi";
+export class ObservableAuditLogsApi {
+    private requestFactory: AuditLogsApiRequestFactory;
+    private responseProcessor: AuditLogsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: AuditLogsApiRequestFactory,
+        responseProcessor?: AuditLogsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new AuditLogsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new AuditLogsApiResponseProcessor();
+    }
+
+    /**
+     * List the organization\'s audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline\'s merged history: the pipeline\'s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+     * List organization audit logs
+     * @param organizationId Organization ID
+     * @param [limit] Page size (default 50, max 100)
+     * @param [cursor] Opaque cursor from a previous response; filters are carried by the cursor
+     * @param [resourceType] Filter by resource type (e.g. input, output, transform, enrichment, pipeline, secret); alone it returns all rows of that type
+     * @param [resourceId] Filter by resource ID; requires resource_type
+     * @param [actorId] Filter by actor ID
+     * @param [action] Filter by action (insert, update, delete)
+     * @param [_from] Only rows at or after this RFC3339 timestamp
+     * @param [to] Only rows before this RFC3339 timestamp
+     */
+    public listOrganizationAuditLogsWithHttpInfo(organizationId: string, limit?: number, cursor?: string, resourceType?: string, resourceId?: string, actorId?: string, action?: string, _from?: string, to?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganizationAuditLogList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listOrganizationAuditLogs(organizationId, limit, cursor, resourceType, resourceId, actorId, action, _from, to, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listOrganizationAuditLogsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List the organization\'s audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline\'s merged history: the pipeline\'s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+     * List organization audit logs
+     * @param organizationId Organization ID
+     * @param [limit] Page size (default 50, max 100)
+     * @param [cursor] Opaque cursor from a previous response; filters are carried by the cursor
+     * @param [resourceType] Filter by resource type (e.g. input, output, transform, enrichment, pipeline, secret); alone it returns all rows of that type
+     * @param [resourceId] Filter by resource ID; requires resource_type
+     * @param [actorId] Filter by actor ID
+     * @param [action] Filter by action (insert, update, delete)
+     * @param [_from] Only rows at or after this RFC3339 timestamp
+     * @param [to] Only rows before this RFC3339 timestamp
+     */
+    public listOrganizationAuditLogs(organizationId: string, limit?: number, cursor?: string, resourceType?: string, resourceId?: string, actorId?: string, action?: string, _from?: string, to?: string, _options?: ConfigurationOptions): Observable<ModelsOrganizationAuditLogList> {
+        return this.listOrganizationAuditLogsWithHttpInfo(organizationId, limit, cursor, resourceType, resourceId, actorId, action, _from, to, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganizationAuditLogList>) => apiResponse.data));
     }
 
 }

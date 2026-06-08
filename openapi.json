@@ -2881,6 +2881,19 @@
                 },
                 "type": "object"
             },
+            "github_com_monad-inc_core_pkg_types_models.AuditResource": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "new": {},
+                    "old": {},
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "github_com_monad-inc_core_pkg_types_models.Organization": {
                 "properties": {
                     "billing_account_id": {
@@ -4379,6 +4392,43 @@
                 },
                 "type": "object"
             },
+            "models.APILogActor": {
+                "properties": {
+                    "auth_method": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "$ref": "#/components/schemas/models.APILogActorRole"
+                    }
+                },
+                "type": "object"
+            },
+            "models.APILogActorRole": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "inherited": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "models.AlertRule": {
                 "properties": {
                     "active": {
@@ -4446,6 +4496,19 @@
                 "x-enum-varnames": [
                     "AlertStatusFiring",
                     "AlertStatusResolved"
+                ]
+            },
+            "models.AuditAction": {
+                "enum": [
+                    "insert",
+                    "update",
+                    "delete"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "AuditActionInsert",
+                    "AuditActionUpdate",
+                    "AuditActionDelete"
                 ]
             },
             "models.BillingAccount": {
@@ -4847,6 +4910,17 @@
                 },
                 "type": "object"
             },
+            "models.CursorPagination": {
+                "properties": {
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "next_cursor": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "models.DataUsage": {
                 "properties": {
                     "bytes": {
@@ -5090,6 +5164,47 @@
                     },
                     "type": {
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.OrganizationAuditLog": {
+                "properties": {
+                    "action": {
+                        "$ref": "#/components/schemas/models.AuditAction"
+                    },
+                    "actor": {
+                        "$ref": "#/components/schemas/models.APILogActor"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "occurred_at": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "resource": {
+                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.AuditResource"
+                    }
+                },
+                "type": "object"
+            },
+            "models.OrganizationAuditLogList": {
+                "properties": {
+                    "logs": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.OrganizationAuditLog"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.CursorPagination"
                     }
                 },
                 "type": "object"
@@ -22445,6 +22560,141 @@
                 ],
                 "x-required-permissions": [
                     "alert_rule:read"
+                ]
+            }
+        },
+        "/v3/{organization_id}/audit_logs": {
+            "get": {
+                "description": "List the organization's audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline's merged history: the pipeline's own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.",
+                "operationId": "ListOrganizationAuditLogs",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Page size (default 50, max 100)",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Opaque cursor from a previous response; filters are carried by the cursor",
+                        "in": "query",
+                        "name": "cursor",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by resource type (e.g. input, output, transform, enrichment, pipeline, secret); alone it returns all rows of that type",
+                        "in": "query",
+                        "name": "resource_type",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by resource ID; requires resource_type",
+                        "in": "query",
+                        "name": "resource_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by actor ID",
+                        "in": "query",
+                        "name": "actor_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by action (insert, update, delete)",
+                        "in": "query",
+                        "name": "action",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Only rows at or after this RFC3339 timestamp",
+                        "in": "query",
+                        "name": "from",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Only rows before this RFC3339 timestamp",
+                        "in": "query",
+                        "name": "to",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.OrganizationAuditLogList"
+                                }
+                            }
+                        },
+                        "description": "One page of audit logs"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid query parameters or cursor"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing organization:logs:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List organization audit logs",
+                "tags": [
+                    "Audit Logs"
                 ]
             }
         },

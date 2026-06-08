@@ -172,6 +172,7 @@ Class | Method | HTTP request | Description
 *AlertRulesApi* | [**update_alert_rule**](docs/AlertRulesApi.md#update_alert_rule) | **PUT** /v3/{organization_id}/alert_rules/{alert_rule_id} | Update alert rule
 *AlertsApi* | [**list_alerts**](docs/AlertsApi.md#list_alerts) | **GET** /v3/{organization_id}/alerts | List alerts with pagination
 *AlertsApi* | [**stream_alerts**](docs/AlertsApi.md#stream_alerts) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
+*AuditLogsApi* | [**list_organization_audit_logs**](docs/AuditLogsApi.md#list_organization_audit_logs) | **GET** /v3/{organization_id}/audit_logs | List organization audit logs
 *AuthenticationApi* | [**get_token**](docs/AuthenticationApi.md#get_token) | **POST** /v1/login/token | Get Authentication token
 *AuthenticationApi* | [**login_callback_handler**](docs/AuthenticationApi.md#login_callback_handler) | **GET** /v1/login/callback | Handle login callback
 *AuthenticationApi* | [**login_handler**](docs/AuthenticationApi.md#login_handler) | **GET** /v1/login | Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
@@ -506,6 +507,7 @@ Class | Method | HTTP request | Description
  - [GithubActionsWorkflowLogsWebhookSettingsConfig](docs/GithubActionsWorkflowLogsWebhookSettingsConfig.md)
  - [GithubComMonadIncCorePkgTypesModelsAlert](docs/GithubComMonadIncCorePkgTypesModelsAlert.md)
  - [GithubComMonadIncCorePkgTypesModelsAlertStatus](docs/GithubComMonadIncCorePkgTypesModelsAlertStatus.md)
+ - [GithubComMonadIncCorePkgTypesModelsAuditResource](docs/GithubComMonadIncCorePkgTypesModelsAuditResource.md)
  - [GithubComMonadIncCorePkgTypesModelsOrganization](docs/GithubComMonadIncCorePkgTypesModelsOrganization.md)
  - [GithubComMonadIncCorePkgTypesModelsPermission](docs/GithubComMonadIncCorePkgTypesModelsPermission.md)
  - [GithubComMonadIncCorePkgTypesModelsQuota](docs/GithubComMonadIncCorePkgTypesModelsQuota.md)
@@ -569,9 +571,12 @@ Class | Method | HTTP request | Description
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
+ - [ModelsAPILogActor](docs/ModelsAPILogActor.md)
+ - [ModelsAPILogActorRole](docs/ModelsAPILogActorRole.md)
  - [ModelsAlertRule](docs/ModelsAlertRule.md)
  - [ModelsAlertRuleList](docs/ModelsAlertRuleList.md)
  - [ModelsAlertState](docs/ModelsAlertState.md)
+ - [ModelsAuditAction](docs/ModelsAuditAction.md)
  - [ModelsBillingAccount](docs/ModelsBillingAccount.md)
  - [ModelsBillingAccountList](docs/ModelsBillingAccountList.md)
  - [ModelsBillingAccountPermission](docs/ModelsBillingAccountPermission.md)
@@ -589,6 +594,7 @@ Class | Method | HTTP request | Description
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
  - [ModelsConnectorInfo](docs/ModelsConnectorInfo.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
+ - [ModelsCursorPagination](docs/ModelsCursorPagination.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsElseAction](docs/ModelsElseAction.md)
  - [ModelsEnrichment](docs/ModelsEnrichment.md)
@@ -601,6 +607,8 @@ Class | Method | HTTP request | Description
  - [ModelsManagedBy](docs/ModelsManagedBy.md)
  - [ModelsNodeBackpressure](docs/ModelsNodeBackpressure.md)
  - [ModelsNodeComponent](docs/ModelsNodeComponent.md)
+ - [ModelsOrganizationAuditLog](docs/ModelsOrganizationAuditLog.md)
+ - [ModelsOrganizationAuditLogList](docs/ModelsOrganizationAuditLogList.md)
  - [ModelsOrganizationList](docs/ModelsOrganizationList.md)
  - [ModelsOrganizationUser](docs/ModelsOrganizationUser.md)
  - [ModelsOrganizationUserList](docs/ModelsOrganizationUserList.md)

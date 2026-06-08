@@ -3,6 +3,7 @@
 # import apis into api package
 from monad.api.alert_rules_api import AlertRulesApi
 from monad.api.alerts_api import AlertsApi
+from monad.api.audit_logs_api import AuditLogsApi
 from monad.api.authentication_api import AuthenticationApi
 from monad.api.billing_accounts_api import BillingAccountsApi
 from monad.api.billing_accounts_rbac_api import BillingAccountsRBACApi

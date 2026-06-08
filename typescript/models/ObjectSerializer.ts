@@ -172,6 +172,7 @@ export * from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 export * from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsAuditResource';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 export * from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
@@ -235,9 +236,12 @@ export * from '../models/Microsoft365GenericSettingsConfig';
 export * from '../models/ModelsAPIKey';
 export * from '../models/ModelsAPIKeyList';
 export * from '../models/ModelsAPIKeyWithToken';
+export * from '../models/ModelsAPILogActor';
+export * from '../models/ModelsAPILogActorRole';
 export * from '../models/ModelsAlertRule';
 export * from '../models/ModelsAlertRuleList';
 export * from '../models/ModelsAlertState';
+export * from '../models/ModelsAuditAction';
 export * from '../models/ModelsBillingAccount';
 export * from '../models/ModelsBillingAccountList';
 export * from '../models/ModelsBillingAccountPermission';
@@ -255,6 +259,7 @@ export * from '../models/ModelsConnection';
 export * from '../models/ModelsConnectionList';
 export * from '../models/ModelsConnectorInfo';
 export * from '../models/ModelsConnectorMeta';
+export * from '../models/ModelsCursorPagination';
 export * from '../models/ModelsDataUsage';
 export * from '../models/ModelsElseAction';
 export * from '../models/ModelsEnrichment';
@@ -267,6 +272,8 @@ export * from '../models/ModelsInputList';
 export * from '../models/ModelsManagedBy';
 export * from '../models/ModelsNodeBackpressure';
 export * from '../models/ModelsNodeComponent';
+export * from '../models/ModelsOrganizationAuditLog';
+export * from '../models/ModelsOrganizationAuditLogList';
 export * from '../models/ModelsOrganizationList';
 export * from '../models/ModelsOrganizationUser';
 export * from '../models/ModelsOrganizationUserList';
@@ -785,6 +792,7 @@ import { GithubActionsWorkflowLogsWebhookScopeConfig , GithubActionsWorkflowLogs
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus    } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
+import { GithubComMonadIncCorePkgTypesModelsAuditResource } from '../models/GithubComMonadIncCorePkgTypesModelsAuditResource';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 import { GithubComMonadIncCorePkgTypesModelsQuota                } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
@@ -848,9 +856,12 @@ import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365Generic
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
+import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
+import { ModelsAuditAction } from '../models/ModelsAuditAction';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -868,6 +879,7 @@ import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
+import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsElseAction } from '../models/ModelsElseAction';
 import { ModelsEnrichment          } from '../models/ModelsEnrichment';
@@ -880,6 +892,8 @@ import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
+import { ModelsOrganizationAuditLog        } from '../models/ModelsOrganizationAuditLog';
+import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
@@ -1260,6 +1274,7 @@ let enumsMap: Set<string> = new Set<string>([
     "KafkaSaslMechanism",
     "KafkaSecurityProtocol",
     "ModelsAlertState",
+    "ModelsAuditAction",
     "ModelsBillingProductType",
     "ModelsBillingType",
     "ModelsComponentType",
@@ -1483,6 +1498,7 @@ let typeMap: {[index: string]: any} = {
     "GithubActionsWorkflowLogsWebhookSettingsConfig": GithubActionsWorkflowLogsWebhookSettingsConfig,
     "GithubComMonadIncCorePkgTypesModelsAlert": GithubComMonadIncCorePkgTypesModelsAlert,
     "GithubComMonadIncCorePkgTypesModelsAlertStatus": GithubComMonadIncCorePkgTypesModelsAlertStatus,
+    "GithubComMonadIncCorePkgTypesModelsAuditResource": GithubComMonadIncCorePkgTypesModelsAuditResource,
     "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,
     "GithubComMonadIncCorePkgTypesModelsPermission": GithubComMonadIncCorePkgTypesModelsPermission,
     "GithubComMonadIncCorePkgTypesModelsQuota": GithubComMonadIncCorePkgTypesModelsQuota,
@@ -1540,6 +1556,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsAPIKey": ModelsAPIKey,
     "ModelsAPIKeyList": ModelsAPIKeyList,
     "ModelsAPIKeyWithToken": ModelsAPIKeyWithToken,
+    "ModelsAPILogActor": ModelsAPILogActor,
+    "ModelsAPILogActorRole": ModelsAPILogActorRole,
     "ModelsAlertRule": ModelsAlertRule,
     "ModelsAlertRuleList": ModelsAlertRuleList,
     "ModelsBillingAccount": ModelsBillingAccount,
@@ -1555,6 +1573,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsConnectionList": ModelsConnectionList,
     "ModelsConnectorInfo": ModelsConnectorInfo,
     "ModelsConnectorMeta": ModelsConnectorMeta,
+    "ModelsCursorPagination": ModelsCursorPagination,
     "ModelsDataUsage": ModelsDataUsage,
     "ModelsEnrichment": ModelsEnrichment,
     "ModelsEnrichmentConfig": ModelsEnrichmentConfig,
@@ -1564,6 +1583,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsInputList": ModelsInputList,
     "ModelsNodeBackpressure": ModelsNodeBackpressure,
     "ModelsNodeComponent": ModelsNodeComponent,
+    "ModelsOrganizationAuditLog": ModelsOrganizationAuditLog,
+    "ModelsOrganizationAuditLogList": ModelsOrganizationAuditLogList,
     "ModelsOrganizationList": ModelsOrganizationList,
     "ModelsOrganizationUser": ModelsOrganizationUser,
     "ModelsOrganizationUserList": ModelsOrganizationUserList,
