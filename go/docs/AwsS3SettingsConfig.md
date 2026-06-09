@@ -5,20 +5,22 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental. | [optional] 
-**Bucket** | Pointer to **string** | Name of the S3 bucket. | [optional] 
-**Compression** | Pointer to **string** | Compression format of the S3 objects. | [optional] 
-**Format** | Pointer to **string** | File format of the S3 objects. | [optional] 
-**PartitionFormat** | Pointer to **string** | Partition format of your S3 bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
+**Bucket** | **string** | Name of the S3 bucket. | 
+**Compression** | **string** | Compression format of the S3 objects. | 
+**Format** | **string** | File format of the S3 objects. | 
+**KeyFilter** | Pointer to [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  | [optional] 
+**PartitionFormat** | **string** | Partition format of your S3 bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
 **Prefix** | Pointer to **string** | Prefix of the S3 object keys to read. | [optional] 
 **RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. Leave empty if you want the entire record. | [optional] 
 **Region** | Pointer to **string** | AWS Region of your bucket. | [optional] 
 **RoleArn** | Pointer to **string** | Role ARN to assume when reading from S3. | [optional] 
+**Schema** | **[]string** | Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \&quot;delimited\&quot; format only; the \&quot;csv\&quot; and \&quot;wsv\&quot; formats always read column names from the first row and ignore this field. | 
 
 ## Methods
 
 ### NewAwsS3SettingsConfig
 
-`func NewAwsS3SettingsConfig() *AwsS3SettingsConfig`
+`func NewAwsS3SettingsConfig(bucket string, compression string, format string, partitionFormat string, schema []string, ) *AwsS3SettingsConfig`
 
 NewAwsS3SettingsConfig instantiates a new AwsS3SettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -77,11 +79,6 @@ and a boolean to check if the value has been set.
 
 SetBucket sets Bucket field to given value.
 
-### HasBucket
-
-`func (o *AwsS3SettingsConfig) HasBucket() bool`
-
-HasBucket returns a boolean if a field has been set.
 
 ### GetCompression
 
@@ -102,11 +99,6 @@ and a boolean to check if the value has been set.
 
 SetCompression sets Compression field to given value.
 
-### HasCompression
-
-`func (o *AwsS3SettingsConfig) HasCompression() bool`
-
-HasCompression returns a boolean if a field has been set.
 
 ### GetFormat
 
@@ -127,11 +119,31 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
 
-`func (o *AwsS3SettingsConfig) HasFormat() bool`
+### GetKeyFilter
 
-HasFormat returns a boolean if a field has been set.
+`func (o *AwsS3SettingsConfig) GetKeyFilter() SqsS3BaseKeyFilter`
+
+GetKeyFilter returns the KeyFilter field if non-nil, zero value otherwise.
+
+### GetKeyFilterOk
+
+`func (o *AwsS3SettingsConfig) GetKeyFilterOk() (*SqsS3BaseKeyFilter, bool)`
+
+GetKeyFilterOk returns a tuple with the KeyFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyFilter
+
+`func (o *AwsS3SettingsConfig) SetKeyFilter(v SqsS3BaseKeyFilter)`
+
+SetKeyFilter sets KeyFilter field to given value.
+
+### HasKeyFilter
+
+`func (o *AwsS3SettingsConfig) HasKeyFilter() bool`
+
+HasKeyFilter returns a boolean if a field has been set.
 
 ### GetPartitionFormat
 
@@ -152,11 +164,6 @@ and a boolean to check if the value has been set.
 
 SetPartitionFormat sets PartitionFormat field to given value.
 
-### HasPartitionFormat
-
-`func (o *AwsS3SettingsConfig) HasPartitionFormat() bool`
-
-HasPartitionFormat returns a boolean if a field has been set.
 
 ### GetPrefix
 
@@ -257,6 +264,26 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *AwsS3SettingsConfig) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetSchema
+
+`func (o *AwsS3SettingsConfig) GetSchema() []string`
+
+GetSchema returns the Schema field if non-nil, zero value otherwise.
+
+### GetSchemaOk
+
+`func (o *AwsS3SettingsConfig) GetSchemaOk() (*[]string, bool)`
+
+GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchema
+
+`func (o *AwsS3SettingsConfig) SetSchema(v []string)`
+
+SetSchema sets Schema field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

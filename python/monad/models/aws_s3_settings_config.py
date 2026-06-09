@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.sqs_s3_base_key_filter import SqsS3BaseKeyFilter
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,15 +30,17 @@ class AwsS3SettingsConfig(BaseModel):
     AWS S3 settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.")
-    bucket: Optional[StrictStr] = Field(default=None, description="Name of the S3 bucket.")
-    compression: Optional[StrictStr] = Field(default=None, description="Compression format of the S3 objects.")
-    format: Optional[StrictStr] = Field(default=None, description="File format of the S3 objects.")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your S3 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
+    bucket: StrictStr = Field(description="Name of the S3 bucket.")
+    compression: StrictStr = Field(description="Compression format of the S3 objects.")
+    format: StrictStr = Field(description="File format of the S3 objects.")
+    key_filter: Optional[SqsS3BaseKeyFilter] = None
+    partition_format: StrictStr = Field(description="Partition format of your S3 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix of the S3 object keys to read.")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. This can be ignored if the record is not in JSON format. Leave empty if you want the entire record.")
     region: Optional[StrictStr] = Field(default=None, description="AWS Region of your bucket.")
     role_arn: Optional[StrictStr] = Field(default=None, description="Role ARN to assume when reading from S3.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket", "compression", "format", "partition_format", "prefix", "record_location", "region", "role_arn"]
+    var_schema: List[StrictStr] = Field(description="Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \"delimited\" format only; the \"csv\" and \"wsv\" formats always read column names from the first row and ignore this field.", alias="schema")
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket", "compression", "format", "key_filter", "partition_format", "prefix", "record_location", "region", "role_arn", "schema"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -78,6 +81,9 @@ class AwsS3SettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of key_filter
+        if self.key_filter:
+            _dict['key_filter'] = self.key_filter.to_dict()
         return _dict
 
     @classmethod
@@ -94,11 +100,13 @@ class AwsS3SettingsConfig(BaseModel):
             "bucket": obj.get("bucket"),
             "compression": obj.get("compression"),
             "format": obj.get("format"),
+            "key_filter": SqsS3BaseKeyFilter.from_dict(obj["key_filter"]) if obj.get("key_filter") is not None else None,
             "partition_format": obj.get("partition_format"),
             "prefix": obj.get("prefix"),
             "record_location": obj.get("record_location"),
             "region": obj.get("region"),
-            "role_arn": obj.get("role_arn")
+            "role_arn": obj.get("role_arn"),
+            "schema": obj.get("schema")
         })
         return _obj
 

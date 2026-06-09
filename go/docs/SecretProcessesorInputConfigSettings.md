@@ -16,15 +16,16 @@ Name | Type | Description | Notes
 **Bucket** | **string** | Name of the storage bucket | 
 **Compression** | **string** | Compression format of the objects | 
 **Format** | **string** | File format of the objects | 
-**PartitionFormat** | Pointer to **string** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
+**KeyFilter** | Pointer to [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  | [optional] 
+**PartitionFormat** | **string** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **RecordLocation** | Pointer to **string** | JSONPath location of the records array in the GraphQL response | [optional] 
+**Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
 **ChunkingMode** | Pointer to [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
 **ExcludeDigestFiles** | Pointer to **bool** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). | [optional] 
 **QueueUrl** | **string** |  | 
 **UsesSns** | Pointer to **bool** |  | [optional] 
 **WithMetadata** | Pointer to **bool** |  | [optional] 
-**KeyFilter** | Pointer to [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group containing the virtual network | [optional] 
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
@@ -139,7 +140,6 @@ Name | Type | Description | Notes
 **Account** | **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | 
 **Database** | **string** | The name of the Snowflake database to connect to and perform operations on | 
 **Role** | **string** | The name of the Role your service account was granted which can access your resources. | 
-**Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
 **User** | **string** | The username of the Snowflake account used to establish the connection. | 
 **Warehouse** | **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
@@ -169,7 +169,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, webhookSecret ModelsSecret, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, schema string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, webhookSecret ModelsSecret, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -459,6 +459,31 @@ and a boolean to check if the value has been set.
 SetFormat sets Format field to given value.
 
 
+### GetKeyFilter
+
+`func (o *SecretProcessesorInputConfigSettings) GetKeyFilter() SqsS3BaseKeyFilter`
+
+GetKeyFilter returns the KeyFilter field if non-nil, zero value otherwise.
+
+### GetKeyFilterOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetKeyFilterOk() (*SqsS3BaseKeyFilter, bool)`
+
+GetKeyFilterOk returns a tuple with the KeyFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyFilter
+
+`func (o *SecretProcessesorInputConfigSettings) SetKeyFilter(v SqsS3BaseKeyFilter)`
+
+SetKeyFilter sets KeyFilter field to given value.
+
+### HasKeyFilter
+
+`func (o *SecretProcessesorInputConfigSettings) HasKeyFilter() bool`
+
+HasKeyFilter returns a boolean if a field has been set.
+
 ### GetPartitionFormat
 
 `func (o *SecretProcessesorInputConfigSettings) GetPartitionFormat() string`
@@ -478,11 +503,6 @@ and a boolean to check if the value has been set.
 
 SetPartitionFormat sets PartitionFormat field to given value.
 
-### HasPartitionFormat
-
-`func (o *SecretProcessesorInputConfigSettings) HasPartitionFormat() bool`
-
-HasPartitionFormat returns a boolean if a field has been set.
 
 ### GetPrefix
 
@@ -533,6 +553,26 @@ SetRecordLocation sets RecordLocation field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRecordLocation() bool`
 
 HasRecordLocation returns a boolean if a field has been set.
+
+### GetSchema
+
+`func (o *SecretProcessesorInputConfigSettings) GetSchema() string`
+
+GetSchema returns the Schema field if non-nil, zero value otherwise.
+
+### GetSchemaOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSchemaOk() (*string, bool)`
+
+GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchema
+
+`func (o *SecretProcessesorInputConfigSettings) SetSchema(v string)`
+
+SetSchema sets Schema field to given value.
+
 
 ### GetChunkingMode
 
@@ -653,31 +693,6 @@ SetWithMetadata sets WithMetadata field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasWithMetadata() bool`
 
 HasWithMetadata returns a boolean if a field has been set.
-
-### GetKeyFilter
-
-`func (o *SecretProcessesorInputConfigSettings) GetKeyFilter() SqsS3BaseKeyFilter`
-
-GetKeyFilter returns the KeyFilter field if non-nil, zero value otherwise.
-
-### GetKeyFilterOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetKeyFilterOk() (*SqsS3BaseKeyFilter, bool)`
-
-GetKeyFilterOk returns a tuple with the KeyFilter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKeyFilter
-
-`func (o *SecretProcessesorInputConfigSettings) SetKeyFilter(v SqsS3BaseKeyFilter)`
-
-SetKeyFilter sets KeyFilter field to given value.
-
-### HasKeyFilter
-
-`func (o *SecretProcessesorInputConfigSettings) HasKeyFilter() bool`
-
-HasKeyFilter returns a boolean if a field has been set.
 
 ### GetCorrelationId
 
@@ -3387,26 +3402,6 @@ and a boolean to check if the value has been set.
 `func (o *SecretProcessesorInputConfigSettings) SetRole(v string)`
 
 SetRole sets Role field to given value.
-
-
-### GetSchema
-
-`func (o *SecretProcessesorInputConfigSettings) GetSchema() string`
-
-GetSchema returns the Schema field if non-nil, zero value otherwise.
-
-### GetSchemaOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetSchemaOk() (*string, bool)`
-
-GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchema
-
-`func (o *SecretProcessesorInputConfigSettings) SetSchema(v string)`
-
-SetSchema sets Schema field to given value.
 
 
 ### GetUser

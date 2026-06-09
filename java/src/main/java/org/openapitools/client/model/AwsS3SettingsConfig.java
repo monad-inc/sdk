@@ -21,6 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import org.openapitools.client.model.SqsS3BaseKeyFilter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,22 +60,27 @@ public class AwsS3SettingsConfig {
 
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String bucket;
 
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String compression;
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String format;
+
+  public static final String SERIALIZED_NAME_KEY_FILTER = "key_filter";
+  @SerializedName(SERIALIZED_NAME_KEY_FILTER)
+  @javax.annotation.Nullable
+  private SqsS3BaseKeyFilter keyFilter;
 
   public static final String SERIALIZED_NAME_PARTITION_FORMAT = "partition_format";
   @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String partitionFormat;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
@@ -94,6 +102,11 @@ public class AwsS3SettingsConfig {
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
   @javax.annotation.Nullable
   private String roleArn;
+
+  public static final String SERIALIZED_NAME_SCHEMA = "schema";
+  @SerializedName(SERIALIZED_NAME_SCHEMA)
+  @javax.annotation.Nonnull
+  private Set<String> schema = new LinkedHashSet<>();
 
   public AwsS3SettingsConfig() {
   }
@@ -117,7 +130,7 @@ public class AwsS3SettingsConfig {
   }
 
 
-  public AwsS3SettingsConfig bucket(@javax.annotation.Nullable String bucket) {
+  public AwsS3SettingsConfig bucket(@javax.annotation.Nonnull String bucket) {
     this.bucket = bucket;
     return this;
   }
@@ -126,17 +139,17 @@ public class AwsS3SettingsConfig {
    * Name of the S3 bucket.
    * @return bucket
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getBucket() {
     return bucket;
   }
 
-  public void setBucket(@javax.annotation.Nullable String bucket) {
+  public void setBucket(@javax.annotation.Nonnull String bucket) {
     this.bucket = bucket;
   }
 
 
-  public AwsS3SettingsConfig compression(@javax.annotation.Nullable String compression) {
+  public AwsS3SettingsConfig compression(@javax.annotation.Nonnull String compression) {
     this.compression = compression;
     return this;
   }
@@ -145,17 +158,17 @@ public class AwsS3SettingsConfig {
    * Compression format of the S3 objects.
    * @return compression
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getCompression() {
     return compression;
   }
 
-  public void setCompression(@javax.annotation.Nullable String compression) {
+  public void setCompression(@javax.annotation.Nonnull String compression) {
     this.compression = compression;
   }
 
 
-  public AwsS3SettingsConfig format(@javax.annotation.Nullable String format) {
+  public AwsS3SettingsConfig format(@javax.annotation.Nonnull String format) {
     this.format = format;
     return this;
   }
@@ -164,17 +177,36 @@ public class AwsS3SettingsConfig {
    * File format of the S3 objects.
    * @return format
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable String format) {
+  public void setFormat(@javax.annotation.Nonnull String format) {
     this.format = format;
   }
 
 
-  public AwsS3SettingsConfig partitionFormat(@javax.annotation.Nullable String partitionFormat) {
+  public AwsS3SettingsConfig keyFilter(@javax.annotation.Nullable SqsS3BaseKeyFilter keyFilter) {
+    this.keyFilter = keyFilter;
+    return this;
+  }
+
+  /**
+   * Get keyFilter
+   * @return keyFilter
+   */
+  @javax.annotation.Nullable
+  public SqsS3BaseKeyFilter getKeyFilter() {
+    return keyFilter;
+  }
+
+  public void setKeyFilter(@javax.annotation.Nullable SqsS3BaseKeyFilter keyFilter) {
+    this.keyFilter = keyFilter;
+  }
+
+
+  public AwsS3SettingsConfig partitionFormat(@javax.annotation.Nonnull String partitionFormat) {
     this.partitionFormat = partitionFormat;
     return this;
   }
@@ -183,12 +215,12 @@ public class AwsS3SettingsConfig {
    * Partition format of your S3 bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;).
    * @return partitionFormat
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getPartitionFormat() {
     return partitionFormat;
   }
 
-  public void setPartitionFormat(@javax.annotation.Nullable String partitionFormat) {
+  public void setPartitionFormat(@javax.annotation.Nonnull String partitionFormat) {
     this.partitionFormat = partitionFormat;
   }
 
@@ -269,6 +301,33 @@ public class AwsS3SettingsConfig {
   }
 
 
+  public AwsS3SettingsConfig schema(@javax.annotation.Nonnull Set<String> schema) {
+    this.schema = schema;
+    return this;
+  }
+
+  public AwsS3SettingsConfig addSchemaItem(String schemaItem) {
+    if (this.schema == null) {
+      this.schema = new LinkedHashSet<>();
+    }
+    this.schema.add(schemaItem);
+    return this;
+  }
+
+  /**
+   * Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \&quot;delimited\&quot; format only; the \&quot;csv\&quot; and \&quot;wsv\&quot; formats always read column names from the first row and ignore this field.
+   * @return schema
+   */
+  @javax.annotation.Nonnull
+  public Set<String> getSchema() {
+    return schema;
+  }
+
+  public void setSchema(@javax.annotation.Nonnull Set<String> schema) {
+    this.schema = schema;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -283,16 +342,18 @@ public class AwsS3SettingsConfig {
         Objects.equals(this.bucket, awsS3SettingsConfig.bucket) &&
         Objects.equals(this.compression, awsS3SettingsConfig.compression) &&
         Objects.equals(this.format, awsS3SettingsConfig.format) &&
+        Objects.equals(this.keyFilter, awsS3SettingsConfig.keyFilter) &&
         Objects.equals(this.partitionFormat, awsS3SettingsConfig.partitionFormat) &&
         Objects.equals(this.prefix, awsS3SettingsConfig.prefix) &&
         Objects.equals(this.recordLocation, awsS3SettingsConfig.recordLocation) &&
         Objects.equals(this.region, awsS3SettingsConfig.region) &&
-        Objects.equals(this.roleArn, awsS3SettingsConfig.roleArn);
+        Objects.equals(this.roleArn, awsS3SettingsConfig.roleArn) &&
+        Objects.equals(this.schema, awsS3SettingsConfig.schema);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, bucket, compression, format, partitionFormat, prefix, recordLocation, region, roleArn);
+    return Objects.hash(backfillStartTime, bucket, compression, format, keyFilter, partitionFormat, prefix, recordLocation, region, roleArn, schema);
   }
 
   @Override
@@ -303,11 +364,13 @@ public class AwsS3SettingsConfig {
     sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("    keyFilter: ").append(toIndentedString(keyFilter)).append("\n");
     sb.append("    partitionFormat: ").append(toIndentedString(partitionFormat)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    recordLocation: ").append(toIndentedString(recordLocation)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -326,10 +389,10 @@ public class AwsS3SettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "bucket", "compression", "format", "partition_format", "prefix", "record_location", "region", "role_arn"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "bucket", "compression", "format", "key_filter", "partition_format", "prefix", "record_location", "region", "role_arn", "schema"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("bucket", "compression", "format", "partition_format", "schema"));
   }
 
   /**
@@ -352,20 +415,31 @@ public class AwsS3SettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AwsS3SettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : AwsS3SettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("bucket") != null && !jsonObj.get("bucket").isJsonNull()) && !jsonObj.get("bucket").isJsonPrimitive()) {
+      if (!jsonObj.get("bucket").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket").toString()));
       }
-      if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
+      if (!jsonObj.get("compression").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
-      if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
+      if (!jsonObj.get("format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
-      if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
+      // validate the optional field `key_filter`
+      if (jsonObj.get("key_filter") != null && !jsonObj.get("key_filter").isJsonNull()) {
+        SqsS3BaseKeyFilter.validateJsonElement(jsonObj.get("key_filter"));
+      }
+      if (!jsonObj.get("partition_format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
@@ -379,6 +453,12 @@ public class AwsS3SettingsConfig {
       }
       if ((jsonObj.get("role_arn") != null && !jsonObj.get("role_arn").isJsonNull()) && !jsonObj.get("role_arn").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_arn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_arn").toString()));
+      }
+      // ensure the required json array is present
+      if (jsonObj.get("schema") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("schema").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema` to be an array in the JSON string but got `%s`", jsonObj.get("schema").toString()));
       }
   }
 

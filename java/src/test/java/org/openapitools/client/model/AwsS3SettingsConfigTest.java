@@ -20,6 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import org.openapitools.client.model.SqsS3BaseKeyFilter;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -70,6 +73,14 @@ public class AwsS3SettingsConfigTest {
     }
 
     /**
+     * Test the property 'keyFilter'
+     */
+    @Test
+    public void keyFilterTest() {
+        // TODO: test keyFilter
+    }
+
+    /**
      * Test the property 'partitionFormat'
      */
     @Test
@@ -107,6 +118,14 @@ public class AwsS3SettingsConfigTest {
     @Test
     public void roleArnTest() {
         // TODO: test roleArn
+    }
+
+    /**
+     * Test the property 'schema'
+     */
+    @Test
+    public void schemaTest() {
+        // TODO: test schema
     }
 
 }

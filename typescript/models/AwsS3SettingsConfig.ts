@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { SqsS3BaseKeyFilter } from '../models/SqsS3BaseKeyFilter';
 import { HttpFile } from '../http/http';
 
 /**
@@ -23,19 +24,20 @@ export class AwsS3SettingsConfig {
     /**
     * Name of the S3 bucket.
     */
-    'bucket'?: string;
+    'bucket': string;
     /**
     * Compression format of the S3 objects.
     */
-    'compression'?: string;
+    'compression': string;
     /**
     * File format of the S3 objects.
     */
-    'format'?: string;
+    'format': string;
+    'keyFilter'?: SqsS3BaseKeyFilter;
     /**
     * Partition format of your S3 bucket. Options: hive compliant (\'year=2024/month=01/day=01\'), flat hive compliant (\'dt=2024-01-01\'), or simple date (\'2024/01/01\').
     */
-    'partitionFormat'?: string;
+    'partitionFormat': string;
     /**
     * Prefix of the S3 object keys to read.
     */
@@ -52,6 +54,10 @@ export class AwsS3SettingsConfig {
     * Role ARN to assume when reading from S3.
     */
     'roleArn'?: string;
+    /**
+    * Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \"delimited\" format only; the \"csv\" and \"wsv\" formats always read column names from the first row and ignore this field.
+    */
+    'schema': Set<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -83,6 +89,12 @@ export class AwsS3SettingsConfig {
             "format": ""
         },
         {
+            "name": "keyFilter",
+            "baseName": "key_filter",
+            "type": "SqsS3BaseKeyFilter",
+            "format": ""
+        },
+        {
             "name": "partitionFormat",
             "baseName": "partition_format",
             "type": "string",
@@ -110,6 +122,12 @@ export class AwsS3SettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "schema",
+            "baseName": "schema",
+            "type": "Set<string>",
             "format": ""
         }    ];
 

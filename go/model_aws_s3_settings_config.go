@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the AwsS3SettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,13 +25,14 @@ type AwsS3SettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Name of the S3 bucket.
-	Bucket *string `json:"bucket,omitempty"`
+	Bucket string `json:"bucket"`
 	// Compression format of the S3 objects.
-	Compression *string `json:"compression,omitempty"`
+	Compression string `json:"compression"`
 	// File format of the S3 objects.
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
+	KeyFilter *SqsS3BaseKeyFilter `json:"key_filter,omitempty"`
 	// Partition format of your S3 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').
-	PartitionFormat *string `json:"partition_format,omitempty"`
+	PartitionFormat string `json:"partition_format"`
 	// Prefix of the S3 object keys to read.
 	Prefix *string `json:"prefix,omitempty"`
 	// Location of the record in the JSON object. This can be ignored if the record is not in JSON format. Leave empty if you want the entire record.
@@ -38,14 +41,23 @@ type AwsS3SettingsConfig struct {
 	Region *string `json:"region,omitempty"`
 	// Role ARN to assume when reading from S3.
 	RoleArn *string `json:"role_arn,omitempty"`
+	// Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \"delimited\" format only; the \"csv\" and \"wsv\" formats always read column names from the first row and ignore this field.
+	Schema []string `json:"schema"`
 }
+
+type _AwsS3SettingsConfig AwsS3SettingsConfig
 
 // NewAwsS3SettingsConfig instantiates a new AwsS3SettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAwsS3SettingsConfig() *AwsS3SettingsConfig {
+func NewAwsS3SettingsConfig(bucket string, compression string, format string, partitionFormat string, schema []string) *AwsS3SettingsConfig {
 	this := AwsS3SettingsConfig{}
+	this.Bucket = bucket
+	this.Compression = compression
+	this.Format = format
+	this.PartitionFormat = partitionFormat
+	this.Schema = schema
 	return &this
 }
 
@@ -89,132 +101,132 @@ func (o *AwsS3SettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
-// GetBucket returns the Bucket field value if set, zero value otherwise.
+// GetBucket returns the Bucket field value
 func (o *AwsS3SettingsConfig) GetBucket() string {
-	if o == nil || IsNil(o.Bucket) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Bucket
+
+	return o.Bucket
 }
 
-// GetBucketOk returns a tuple with the Bucket field value if set, nil otherwise
+// GetBucketOk returns a tuple with the Bucket field value
 // and a boolean to check if the value has been set.
 func (o *AwsS3SettingsConfig) GetBucketOk() (*string, bool) {
-	if o == nil || IsNil(o.Bucket) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Bucket, true
+	return &o.Bucket, true
 }
 
-// HasBucket returns a boolean if a field has been set.
-func (o *AwsS3SettingsConfig) HasBucket() bool {
-	if o != nil && !IsNil(o.Bucket) {
-		return true
-	}
-
-	return false
-}
-
-// SetBucket gets a reference to the given string and assigns it to the Bucket field.
+// SetBucket sets field value
 func (o *AwsS3SettingsConfig) SetBucket(v string) {
-	o.Bucket = &v
+	o.Bucket = v
 }
 
-// GetCompression returns the Compression field value if set, zero value otherwise.
+// GetCompression returns the Compression field value
 func (o *AwsS3SettingsConfig) GetCompression() string {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Compression
+
+	return o.Compression
 }
 
-// GetCompressionOk returns a tuple with the Compression field value if set, nil otherwise
+// GetCompressionOk returns a tuple with the Compression field value
 // and a boolean to check if the value has been set.
 func (o *AwsS3SettingsConfig) GetCompressionOk() (*string, bool) {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Compression, true
+	return &o.Compression, true
 }
 
-// HasCompression returns a boolean if a field has been set.
-func (o *AwsS3SettingsConfig) HasCompression() bool {
-	if o != nil && !IsNil(o.Compression) {
-		return true
-	}
-
-	return false
-}
-
-// SetCompression gets a reference to the given string and assigns it to the Compression field.
+// SetCompression sets field value
 func (o *AwsS3SettingsConfig) SetCompression(v string) {
-	o.Compression = &v
+	o.Compression = v
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
+// GetFormat returns the Format field value
 func (o *AwsS3SettingsConfig) GetFormat() string {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Format
+
+	return o.Format
 }
 
-// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// GetFormatOk returns a tuple with the Format field value
 // and a boolean to check if the value has been set.
 func (o *AwsS3SettingsConfig) GetFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Format, true
+	return &o.Format, true
 }
 
-// HasFormat returns a boolean if a field has been set.
-func (o *AwsS3SettingsConfig) HasFormat() bool {
-	if o != nil && !IsNil(o.Format) {
+// SetFormat sets field value
+func (o *AwsS3SettingsConfig) SetFormat(v string) {
+	o.Format = v
+}
+
+// GetKeyFilter returns the KeyFilter field value if set, zero value otherwise.
+func (o *AwsS3SettingsConfig) GetKeyFilter() SqsS3BaseKeyFilter {
+	if o == nil || IsNil(o.KeyFilter) {
+		var ret SqsS3BaseKeyFilter
+		return ret
+	}
+	return *o.KeyFilter
+}
+
+// GetKeyFilterOk returns a tuple with the KeyFilter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AwsS3SettingsConfig) GetKeyFilterOk() (*SqsS3BaseKeyFilter, bool) {
+	if o == nil || IsNil(o.KeyFilter) {
+		return nil, false
+	}
+	return o.KeyFilter, true
+}
+
+// HasKeyFilter returns a boolean if a field has been set.
+func (o *AwsS3SettingsConfig) HasKeyFilter() bool {
+	if o != nil && !IsNil(o.KeyFilter) {
 		return true
 	}
 
 	return false
 }
 
-// SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *AwsS3SettingsConfig) SetFormat(v string) {
-	o.Format = &v
+// SetKeyFilter gets a reference to the given SqsS3BaseKeyFilter and assigns it to the KeyFilter field.
+func (o *AwsS3SettingsConfig) SetKeyFilter(v SqsS3BaseKeyFilter) {
+	o.KeyFilter = &v
 }
 
-// GetPartitionFormat returns the PartitionFormat field value if set, zero value otherwise.
+// GetPartitionFormat returns the PartitionFormat field value
 func (o *AwsS3SettingsConfig) GetPartitionFormat() string {
-	if o == nil || IsNil(o.PartitionFormat) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.PartitionFormat
+
+	return o.PartitionFormat
 }
 
-// GetPartitionFormatOk returns a tuple with the PartitionFormat field value if set, nil otherwise
+// GetPartitionFormatOk returns a tuple with the PartitionFormat field value
 // and a boolean to check if the value has been set.
 func (o *AwsS3SettingsConfig) GetPartitionFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.PartitionFormat) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PartitionFormat, true
+	return &o.PartitionFormat, true
 }
 
-// HasPartitionFormat returns a boolean if a field has been set.
-func (o *AwsS3SettingsConfig) HasPartitionFormat() bool {
-	if o != nil && !IsNil(o.PartitionFormat) {
-		return true
-	}
-
-	return false
-}
-
-// SetPartitionFormat gets a reference to the given string and assigns it to the PartitionFormat field.
+// SetPartitionFormat sets field value
 func (o *AwsS3SettingsConfig) SetPartitionFormat(v string) {
-	o.PartitionFormat = &v
+	o.PartitionFormat = v
 }
 
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
@@ -345,6 +357,30 @@ func (o *AwsS3SettingsConfig) SetRoleArn(v string) {
 	o.RoleArn = &v
 }
 
+// GetSchema returns the Schema field value
+func (o *AwsS3SettingsConfig) GetSchema() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+
+	return o.Schema
+}
+
+// GetSchemaOk returns a tuple with the Schema field value
+// and a boolean to check if the value has been set.
+func (o *AwsS3SettingsConfig) GetSchemaOk() ([]string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Schema, true
+}
+
+// SetSchema sets field value
+func (o *AwsS3SettingsConfig) SetSchema(v []string) {
+	o.Schema = v
+}
+
 func (o AwsS3SettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -358,18 +394,13 @@ func (o AwsS3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.Bucket) {
-		toSerialize["bucket"] = o.Bucket
+	toSerialize["bucket"] = o.Bucket
+	toSerialize["compression"] = o.Compression
+	toSerialize["format"] = o.Format
+	if !IsNil(o.KeyFilter) {
+		toSerialize["key_filter"] = o.KeyFilter
 	}
-	if !IsNil(o.Compression) {
-		toSerialize["compression"] = o.Compression
-	}
-	if !IsNil(o.Format) {
-		toSerialize["format"] = o.Format
-	}
-	if !IsNil(o.PartitionFormat) {
-		toSerialize["partition_format"] = o.PartitionFormat
-	}
+	toSerialize["partition_format"] = o.PartitionFormat
 	if !IsNil(o.Prefix) {
 		toSerialize["prefix"] = o.Prefix
 	}
@@ -382,7 +413,49 @@ func (o AwsS3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RoleArn) {
 		toSerialize["role_arn"] = o.RoleArn
 	}
+	toSerialize["schema"] = o.Schema
 	return toSerialize, nil
+}
+
+func (o *AwsS3SettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"bucket",
+		"compression",
+		"format",
+		"partition_format",
+		"schema",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAwsS3SettingsConfig := _AwsS3SettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAwsS3SettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AwsS3SettingsConfig(varAwsS3SettingsConfig)
+
+	return err
 }
 
 type NullableAwsS3SettingsConfig struct {

@@ -40,14 +40,30 @@ class TestAwsS3SettingsConfig(unittest.TestCase):
                 bucket = '',
                 compression = '',
                 format = '',
+                key_filter = monad.models.sqs_s3_base/key_filter.sqs_s3_base.KeyFilter(
+                    filter = monad.models.sqs_s3_base/filter_variant.sqs_s3_base.FilterVariant(
+                        mode = 'include', 
+                        operator = 'contains', 
+                        value = '', ), 
+                    type = 'none', ),
                 partition_format = '',
                 prefix = '',
                 record_location = '',
                 region = '',
-                role_arn = ''
+                role_arn = '',
+                var_schema = [
+                    ''
+                    ]
             )
         else:
             return AwsS3SettingsConfig(
+                bucket = '',
+                compression = '',
+                format = '',
+                partition_format = '',
+                var_schema = [
+                    ''
+                    ],
         )
         """
 

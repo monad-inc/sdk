@@ -19,15 +19,16 @@
 |**bucket** | **String** | Name of the storage bucket |  |
 |**compression** | [**CompressionEnum**](#CompressionEnum) | Compression format of the objects |  |
 |**format** | [**FormatEnum**](#FormatEnum) | File format of the objects |  |
-|**partitionFormat** | [**PartitionFormatEnum**](#PartitionFormatEnum) | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). |  [optional] |
+|**keyFilter** | [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  |  [optional] |
+|**partitionFormat** | [**PartitionFormatEnum**](#PartitionFormatEnum) | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). |  |
 |**prefix** | **String** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. |  [optional] |
 |**recordLocation** | **String** | JSONPath location of the records array in the GraphQL response |  [optional] |
+|**schema** | **String** | The schema within the Snowflake database where the target table resides. |  |
 |**chunkingMode** | **AwsSqsS3CloudtrailChunkingMode** |  |  [optional] |
 |**excludeDigestFiles** | **Boolean** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). |  [optional] |
 |**queueUrl** | **String** |  |  |
 |**usesSns** | **Boolean** |  |  [optional] |
 |**withMetadata** | **Boolean** |  |  [optional] |
-|**keyFilter** | [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  |  [optional] |
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |
 |**resourceGroupName** | **String** | The name of the resource group containing the virtual network |  [optional] |
 |**resourceProvider** | **String** | The provider of the resource |  [optional] |
@@ -142,7 +143,6 @@
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  |
-|**schema** | **String** | The schema within the Snowflake database where the target table resides. |  |
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  |
 |**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  |
 |**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |

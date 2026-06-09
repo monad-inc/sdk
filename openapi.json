@@ -407,6 +407,9 @@
                         "description": "File format of the S3 objects.",
                         "type": "string"
                     },
+                    "key_filter": {
+                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilter"
+                    },
                     "partition_format": {
                         "description": "Partition format of your S3 bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').",
                         "type": "string"
@@ -426,8 +429,23 @@
                     "role_arn": {
                         "description": "Role ARN to assume when reading from S3.",
                         "type": "string"
+                    },
+                    "schema": {
+                        "description": "Ordered list of column names for headerless delimited files (e.g. PSV).\nApplies to the \"delimited\" format only; the \"csv\" and \"wsv\" formats always\nread column names from the first row and ignore this field.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": true
                     }
                 },
+                "required": [
+                    "bucket",
+                    "compression",
+                    "format",
+                    "partition_format",
+                    "schema"
+                ],
                 "type": "object"
             },
             "aws_sqs_s3_cloudtrail.ChunkingMode": {

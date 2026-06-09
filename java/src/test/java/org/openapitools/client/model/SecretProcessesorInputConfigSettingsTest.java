@@ -263,6 +263,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'keyFilter'
+     */
+    @Test
+    public void keyFilterTest() {
+        // TODO: test keyFilter
+    }
+
+    /**
      * Test the property 'partitionFormat'
      */
     @Test
@@ -284,6 +292,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void recordLocationTest() {
         // TODO: test recordLocation
+    }
+
+    /**
+     * Test the property 'schema'
+     */
+    @Test
+    public void schemaTest() {
+        // TODO: test schema
     }
 
     /**
@@ -324,14 +340,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void withMetadataTest() {
         // TODO: test withMetadata
-    }
-
-    /**
-     * Test the property 'keyFilter'
-     */
-    @Test
-    public void keyFilterTest() {
-        // TODO: test keyFilter
     }
 
     /**
@@ -1244,14 +1252,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void roleTest() {
         // TODO: test role
-    }
-
-    /**
-     * Test the property 'schema'
-     */
-    @Test
-    public void schemaTest() {
-        // TODO: test schema
     }
 
     /**
