@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Username** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -77,56 +75,6 @@ SetClientSecret sets ClientSecret field to given value.
 `func (o *UniversalSecretsConfig) HasClientSecret() bool`
 
 HasClientSecret returns a boolean if a field has been set.
-
-### GetPassword
-
-`func (o *UniversalSecretsConfig) GetPassword() ModelsSecret`
-
-GetPassword returns the Password field if non-nil, zero value otherwise.
-
-### GetPasswordOk
-
-`func (o *UniversalSecretsConfig) GetPasswordOk() (*ModelsSecret, bool)`
-
-GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPassword
-
-`func (o *UniversalSecretsConfig) SetPassword(v ModelsSecret)`
-
-SetPassword sets Password field to given value.
-
-### HasPassword
-
-`func (o *UniversalSecretsConfig) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
-
-### GetUsername
-
-`func (o *UniversalSecretsConfig) GetUsername() ModelsSecret`
-
-GetUsername returns the Username field if non-nil, zero value otherwise.
-
-### GetUsernameOk
-
-`func (o *UniversalSecretsConfig) GetUsernameOk() (*ModelsSecret, bool)`
-
-GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsername
-
-`func (o *UniversalSecretsConfig) SetUsername(v ModelsSecret)`
-
-SetUsername sets Username field to given value.
-
-### HasUsername
-
-`func (o *UniversalSecretsConfig) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

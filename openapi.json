@@ -11505,12 +11505,6 @@
                     },
                     "client_secret": {
                         "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "password": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "username": {
-                        "$ref": "#/components/schemas/models.Secret"
                     }
                 },
                 "type": "object"

@@ -22,8 +22,6 @@ var _ MappedNullable = &UniversalSecretsConfig{}
 type UniversalSecretsConfig struct {
 	ClientId *ModelsSecret `json:"client_id,omitempty"`
 	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
-	Password *ModelsSecret `json:"password,omitempty"`
-	Username *ModelsSecret `json:"username,omitempty"`
 }
 
 // NewUniversalSecretsConfig instantiates a new UniversalSecretsConfig object
@@ -107,70 +105,6 @@ func (o *UniversalSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 
-// GetPassword returns the Password field value if set, zero value otherwise.
-func (o *UniversalSecretsConfig) GetPassword() ModelsSecret {
-	if o == nil || IsNil(o.Password) {
-		var ret ModelsSecret
-		return ret
-	}
-	return *o.Password
-}
-
-// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UniversalSecretsConfig) GetPasswordOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.Password) {
-		return nil, false
-	}
-	return o.Password, true
-}
-
-// HasPassword returns a boolean if a field has been set.
-func (o *UniversalSecretsConfig) HasPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
-}
-
-// SetPassword gets a reference to the given ModelsSecret and assigns it to the Password field.
-func (o *UniversalSecretsConfig) SetPassword(v ModelsSecret) {
-	o.Password = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *UniversalSecretsConfig) GetUsername() ModelsSecret {
-	if o == nil || IsNil(o.Username) {
-		var ret ModelsSecret
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UniversalSecretsConfig) GetUsernameOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.Username) {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// HasUsername returns a boolean if a field has been set.
-func (o *UniversalSecretsConfig) HasUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsername gets a reference to the given ModelsSecret and assigns it to the Username field.
-func (o *UniversalSecretsConfig) SetUsername(v ModelsSecret) {
-	o.Username = &v
-}
-
 func (o UniversalSecretsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -186,12 +120,6 @@ func (o UniversalSecretsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ClientSecret) {
 		toSerialize["client_secret"] = o.ClientSecret
-	}
-	if !IsNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
 	}
 	return toSerialize, nil
 }

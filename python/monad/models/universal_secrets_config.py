@@ -31,9 +31,7 @@ class UniversalSecretsConfig(BaseModel):
     """ # noqa: E501
     client_id: Optional[ModelsSecret] = None
     client_secret: Optional[ModelsSecret] = None
-    password: Optional[ModelsSecret] = None
-    username: Optional[ModelsSecret] = None
-    __properties: ClassVar[List[str]] = ["client_id", "client_secret", "password", "username"]
+    __properties: ClassVar[List[str]] = ["client_id", "client_secret"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -80,12 +78,6 @@ class UniversalSecretsConfig(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of client_secret
         if self.client_secret:
             _dict['client_secret'] = self.client_secret.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of password
-        if self.password:
-            _dict['password'] = self.password.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of username
-        if self.username:
-            _dict['username'] = self.username.to_dict()
         return _dict
 
     @classmethod
@@ -99,9 +91,7 @@ class UniversalSecretsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "client_id": ModelsSecret.from_dict(obj["client_id"]) if obj.get("client_id") is not None else None,
-            "client_secret": ModelsSecret.from_dict(obj["client_secret"]) if obj.get("client_secret") is not None else None,
-            "password": ModelsSecret.from_dict(obj["password"]) if obj.get("password") is not None else None,
-            "username": ModelsSecret.from_dict(obj["username"]) if obj.get("username") is not None else None
+            "client_secret": ModelsSecret.from_dict(obj["client_secret"]) if obj.get("client_secret") is not None else None
         })
         return _obj
 

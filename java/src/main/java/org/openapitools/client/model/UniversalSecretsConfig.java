@@ -61,16 +61,6 @@ public class UniversalSecretsConfig {
   @javax.annotation.Nullable
   private ModelsSecret clientSecret;
 
-  public static final String SERIALIZED_NAME_PASSWORD = "password";
-  @SerializedName(SERIALIZED_NAME_PASSWORD)
-  @javax.annotation.Nullable
-  private ModelsSecret password;
-
-  public static final String SERIALIZED_NAME_USERNAME = "username";
-  @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
-  private ModelsSecret username;
-
   public UniversalSecretsConfig() {
   }
 
@@ -112,44 +102,6 @@ public class UniversalSecretsConfig {
   }
 
 
-  public UniversalSecretsConfig password(@javax.annotation.Nullable ModelsSecret password) {
-    this.password = password;
-    return this;
-  }
-
-  /**
-   * Get password
-   * @return password
-   */
-  @javax.annotation.Nullable
-  public ModelsSecret getPassword() {
-    return password;
-  }
-
-  public void setPassword(@javax.annotation.Nullable ModelsSecret password) {
-    this.password = password;
-  }
-
-
-  public UniversalSecretsConfig username(@javax.annotation.Nullable ModelsSecret username) {
-    this.username = username;
-    return this;
-  }
-
-  /**
-   * Get username
-   * @return username
-   */
-  @javax.annotation.Nullable
-  public ModelsSecret getUsername() {
-    return username;
-  }
-
-  public void setUsername(@javax.annotation.Nullable ModelsSecret username) {
-    this.username = username;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -161,14 +113,12 @@ public class UniversalSecretsConfig {
     }
     UniversalSecretsConfig universalSecretsConfig = (UniversalSecretsConfig) o;
     return Objects.equals(this.clientId, universalSecretsConfig.clientId) &&
-        Objects.equals(this.clientSecret, universalSecretsConfig.clientSecret) &&
-        Objects.equals(this.password, universalSecretsConfig.password) &&
-        Objects.equals(this.username, universalSecretsConfig.username);
+        Objects.equals(this.clientSecret, universalSecretsConfig.clientSecret);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, clientSecret, password, username);
+    return Objects.hash(clientId, clientSecret);
   }
 
   @Override
@@ -177,8 +127,6 @@ public class UniversalSecretsConfig {
     sb.append("class UniversalSecretsConfig {\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -197,7 +145,7 @@ public class UniversalSecretsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("client_id", "client_secret", "password", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("client_id", "client_secret"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -231,14 +179,6 @@ public class UniversalSecretsConfig {
       // validate the optional field `client_secret`
       if (jsonObj.get("client_secret") != null && !jsonObj.get("client_secret").isJsonNull()) {
         ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
-      }
-      // validate the optional field `password`
-      if (jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("password"));
-      }
-      // validate the optional field `username`
-      if (jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("username"));
       }
   }
 

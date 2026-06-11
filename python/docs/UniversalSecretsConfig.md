@@ -7,8 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**username** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

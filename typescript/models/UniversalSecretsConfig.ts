@@ -16,8 +16,6 @@ import { HttpFile } from '../http/http';
 export class UniversalSecretsConfig {
     'clientId'?: ModelsSecret;
     'clientSecret'?: ModelsSecret;
-    'password'?: ModelsSecret;
-    'username'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,18 +31,6 @@ export class UniversalSecretsConfig {
         {
             "name": "clientSecret",
             "baseName": "client_secret",
-            "type": "ModelsSecret",
-            "format": ""
-        },
-        {
-            "name": "password",
-            "baseName": "password",
-            "type": "ModelsSecret",
-            "format": ""
-        },
-        {
-            "name": "username",
-            "baseName": "username",
             "type": "ModelsSecret",
             "format": ""
         }    ];
