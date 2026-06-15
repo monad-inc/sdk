@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **application_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **application_key_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **personal_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

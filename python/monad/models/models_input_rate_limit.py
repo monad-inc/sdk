@@ -18,22 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_input_rate_limit import ModelsInputRateLimit
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from monad.models.models_rate_unit import ModelsRateUnit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class BoxEventsSettingsConfig(BaseModel):
+class ModelsInputRateLimit(BaseModel):
     """
-    Box Events secrets
+    Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
     """ # noqa: E501
-    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, data from 1 year ago upto now from box is fetched on the first sync. All syncs thereafter will be incremental.")
-    event_type: Optional[List[StrictStr]] = Field(default=None, description="A list of event types to filter by.")
-    rate_limit: Optional[ModelsInputRateLimit] = None
-    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "event_type", "rate_limit", "use_synthetic_data"]
+    rate: Optional[Union[StrictFloat, StrictInt]] = None
+    unit: Optional[ModelsRateUnit] = None
+    __properties: ClassVar[List[str]] = ["rate", "unit"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -53,7 +51,7 @@ class BoxEventsSettingsConfig(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of BoxEventsSettingsConfig from a JSON string"""
+        """Create an instance of ModelsInputRateLimit from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,14 +72,11 @@ class BoxEventsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of rate_limit
-        if self.rate_limit:
-            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of BoxEventsSettingsConfig from a dict"""
+        """Create an instance of ModelsInputRateLimit from a dict"""
         if obj is None:
             return None
 
@@ -89,10 +84,8 @@ class BoxEventsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "backfill_start_time": obj.get("backfill_start_time"),
-            "event_type": obj.get("event_type"),
-            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
-            "use_synthetic_data": obj.get("use_synthetic_data")
+            "rate": obj.get("rate"),
+            "unit": obj.get("unit")
         })
         return _obj
 

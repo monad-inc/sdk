@@ -335,6 +335,14 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
                     organization_id = '', 
                     updated_at = '', 
                     value = '', ),
+                enterprise_id = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
                 password = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 

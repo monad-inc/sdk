@@ -13,63 +13,68 @@
 
 package org.openapitools.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
+
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.openapitools.client.model.ModelsInputRateLimit;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BoxEventsSettingsConfig
+ * Gets or Sets models.RateUnit
  */
-public class BoxEventsSettingsConfigTest {
-    private final BoxEventsSettingsConfig model = new BoxEventsSettingsConfig();
+@JsonAdapter(ModelsRateUnit.Adapter.class)
+public enum ModelsRateUnit {
+  
+  RatePerSecond("per_second"),
+  
+  RatePerMinute("per_minute"),
+  
+  RatePerHour("per_hour");
 
-    /**
-     * Model tests for BoxEventsSettingsConfig
-     */
-    @Test
-    public void testBoxEventsSettingsConfig() {
-        // TODO: test BoxEventsSettingsConfig
+  private String value;
+
+  ModelsRateUnit(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static ModelsRateUnit fromValue(String value) {
+    for (ModelsRateUnit b : ModelsRateUnit.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<ModelsRateUnit> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final ModelsRateUnit enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
     }
 
-    /**
-     * Test the property 'backfillStartTime'
-     */
-    @Test
-    public void backfillStartTimeTest() {
-        // TODO: test backfillStartTime
+    @Override
+    public ModelsRateUnit read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return ModelsRateUnit.fromValue(value);
     }
+  }
 
-    /**
-     * Test the property 'eventType'
-     */
-    @Test
-    public void eventTypeTest() {
-        // TODO: test eventType
-    }
-
-    /**
-     * Test the property 'rateLimit'
-     */
-    @Test
-    public void rateLimitTest() {
-        // TODO: test rateLimit
-    }
-
-    /**
-     * Test the property 'useSyntheticData'
-     */
-    @Test
-    public void useSyntheticDataTest() {
-        // TODO: test useSyntheticData
-    }
-
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    ModelsRateUnit.fromValue(value);
+  }
 }
+

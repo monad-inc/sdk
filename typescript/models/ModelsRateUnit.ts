@@ -10,45 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
-/**
-* Box Events secrets
-*/
-export class BoxEventsSecretsConfig {
-    'clientId': ModelsSecret;
-    'clientSecret': ModelsSecret;
-    'enterpriseId': ModelsSecret;
-
-    static readonly discriminator: string | undefined = undefined;
-
-    static readonly mapping: {[index: string]: string} | undefined = undefined;
-
-    static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "clientId",
-            "baseName": "client_id",
-            "type": "ModelsSecret",
-            "format": ""
-        },
-        {
-            "name": "clientSecret",
-            "baseName": "client_secret",
-            "type": "ModelsSecret",
-            "format": ""
-        },
-        {
-            "name": "enterpriseId",
-            "baseName": "enterprise_id",
-            "type": "ModelsSecret",
-            "format": ""
-        }    ];
-
-    static getAttributeTypeMap() {
-        return BoxEventsSecretsConfig.attributeTypeMap;
-    }
-
-    public constructor() {
-    }
+export enum ModelsRateUnit {
+    RatePerSecond = 'per_second',
+    RatePerMinute = 'per_minute',
+    RatePerHour = 'per_hour'
 }

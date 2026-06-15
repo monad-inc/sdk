@@ -1007,6 +1007,11 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret",
+                    "enterprise_id"
+                ],
                 "type": "object"
             },
             "box_events.SettingsConfig": {
@@ -1023,6 +1028,9 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -5141,6 +5149,18 @@
                 },
                 "type": "object"
             },
+            "models.InputRateLimit": {
+                "description": "Optional ceiling on outbound Box API request rate. Absent ≡ no limit.",
+                "properties": {
+                    "rate": {
+                        "type": "number"
+                    },
+                    "unit": {
+                        "$ref": "#/components/schemas/models.RateUnit"
+                    }
+                },
+                "type": "object"
+            },
             "models.ManagedBy": {
                 "enum": [
                     "customer",
@@ -5913,6 +5933,19 @@
                 "type": "string",
                 "x-enum-varnames": [
                     "QuotaTimeframeMonth"
+                ]
+            },
+            "models.RateUnit": {
+                "enum": [
+                    "per_second",
+                    "per_minute",
+                    "per_hour"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "RatePerSecond",
+                    "RatePerMinute",
+                    "RatePerHour"
                 ]
             },
             "models.RawConfig": {

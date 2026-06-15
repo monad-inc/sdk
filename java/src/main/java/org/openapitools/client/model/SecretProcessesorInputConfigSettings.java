@@ -85,6 +85,7 @@ import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
 import org.openapitools.client.model.LookerAuditLogsSettingsConfig;
 import org.openapitools.client.model.MerakiConfigLogsSettingsConfig;
 import org.openapitools.client.model.Microsoft365GenericSettingsConfig;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.MonadGraphqlInputVariable;
 import org.openapitools.client.model.MonadLogSettingsConfig;

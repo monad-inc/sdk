@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**EnterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewBoxEventsSecretsConfig
 
-`func NewBoxEventsSecretsConfig() *BoxEventsSecretsConfig`
+`func NewBoxEventsSecretsConfig(clientId ModelsSecret, clientSecret ModelsSecret, enterpriseId ModelsSecret, ) *BoxEventsSecretsConfig`
 
 NewBoxEventsSecretsConfig instantiates a new BoxEventsSecretsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
-
-`func (o *BoxEventsSecretsConfig) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
@@ -71,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
-### HasClientSecret
-
-`func (o *BoxEventsSecretsConfig) HasClientSecret() bool`
-
-HasClientSecret returns a boolean if a field has been set.
 
 ### GetEnterpriseId
 
@@ -96,11 +86,6 @@ and a boolean to check if the value has been set.
 
 SetEnterpriseId sets EnterpriseId field to given value.
 
-### HasEnterpriseId
-
-`func (o *BoxEventsSecretsConfig) HasEnterpriseId() bool`
-
-HasEnterpriseId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.box_events_settings_config import BoxEventsSettingsConfig
+from monad.models.models_rate_unit import ModelsRateUnit
 
-class TestBoxEventsSettingsConfig(unittest.TestCase):
-    """BoxEventsSettingsConfig unit test stubs"""
+class TestModelsRateUnit(unittest.TestCase):
+    """ModelsRateUnit unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,34 +26,9 @@ class TestBoxEventsSettingsConfig(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BoxEventsSettingsConfig:
-        """Test BoxEventsSettingsConfig
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `BoxEventsSettingsConfig`
-        """
-        model = BoxEventsSettingsConfig()
-        if include_optional:
-            return BoxEventsSettingsConfig(
-                backfill_start_time = '',
-                event_type = [
-                    ''
-                    ],
-                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
-                    rate = 1.337, 
-                    unit = 'per_second', ),
-                use_synthetic_data = True
-            )
-        else:
-            return BoxEventsSettingsConfig(
-        )
-        """
-
-    def testBoxEventsSettingsConfig(self):
-        """Test BoxEventsSettingsConfig"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+    def testModelsRateUnit(self):
+        """Test ModelsRateUnit"""
+        # inst = ModelsRateUnit()
 
 if __name__ == '__main__':
     unittest.main()

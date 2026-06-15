@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the BoxEventsSecretsConfig type satisfies the MappedNullable interface at compile time
@@ -20,17 +22,22 @@ var _ MappedNullable = &BoxEventsSecretsConfig{}
 
 // BoxEventsSecretsConfig Box Events secrets
 type BoxEventsSecretsConfig struct {
-	ClientId *ModelsSecret `json:"client_id,omitempty"`
-	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
-	EnterpriseId *ModelsSecret `json:"enterprise_id,omitempty"`
+	ClientId ModelsSecret `json:"client_id"`
+	ClientSecret ModelsSecret `json:"client_secret"`
+	EnterpriseId ModelsSecret `json:"enterprise_id"`
 }
+
+type _BoxEventsSecretsConfig BoxEventsSecretsConfig
 
 // NewBoxEventsSecretsConfig instantiates a new BoxEventsSecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBoxEventsSecretsConfig() *BoxEventsSecretsConfig {
+func NewBoxEventsSecretsConfig(clientId ModelsSecret, clientSecret ModelsSecret, enterpriseId ModelsSecret) *BoxEventsSecretsConfig {
 	this := BoxEventsSecretsConfig{}
+	this.ClientId = clientId
+	this.ClientSecret = clientSecret
+	this.EnterpriseId = enterpriseId
 	return &this
 }
 
@@ -42,100 +49,76 @@ func NewBoxEventsSecretsConfigWithDefaults() *BoxEventsSecretsConfig {
 	return &this
 }
 
-// GetClientId returns the ClientId field value if set, zero value otherwise.
+// GetClientId returns the ClientId field value
 func (o *BoxEventsSecretsConfig) GetClientId() ModelsSecret {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ClientId
+
+	return o.ClientId
 }
 
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// GetClientIdOk returns a tuple with the ClientId field value
 // and a boolean to check if the value has been set.
 func (o *BoxEventsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientId, true
+	return &o.ClientId, true
 }
 
-// HasClientId returns a boolean if a field has been set.
-func (o *BoxEventsSecretsConfig) HasClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+// SetClientId sets field value
 func (o *BoxEventsSecretsConfig) SetClientId(v ModelsSecret) {
-	o.ClientId = &v
+	o.ClientId = v
 }
 
-// GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
+// GetClientSecret returns the ClientSecret field value
 func (o *BoxEventsSecretsConfig) GetClientSecret() ModelsSecret {
-	if o == nil || IsNil(o.ClientSecret) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.ClientSecret
+
+	return o.ClientSecret
 }
 
-// GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
+// GetClientSecretOk returns a tuple with the ClientSecret field value
 // and a boolean to check if the value has been set.
 func (o *BoxEventsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.ClientSecret) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientSecret, true
+	return &o.ClientSecret, true
 }
 
-// HasClientSecret returns a boolean if a field has been set.
-func (o *BoxEventsSecretsConfig) HasClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+// SetClientSecret sets field value
 func (o *BoxEventsSecretsConfig) SetClientSecret(v ModelsSecret) {
-	o.ClientSecret = &v
+	o.ClientSecret = v
 }
 
-// GetEnterpriseId returns the EnterpriseId field value if set, zero value otherwise.
+// GetEnterpriseId returns the EnterpriseId field value
 func (o *BoxEventsSecretsConfig) GetEnterpriseId() ModelsSecret {
-	if o == nil || IsNil(o.EnterpriseId) {
+	if o == nil {
 		var ret ModelsSecret
 		return ret
 	}
-	return *o.EnterpriseId
+
+	return o.EnterpriseId
 }
 
-// GetEnterpriseIdOk returns a tuple with the EnterpriseId field value if set, nil otherwise
+// GetEnterpriseIdOk returns a tuple with the EnterpriseId field value
 // and a boolean to check if the value has been set.
 func (o *BoxEventsSecretsConfig) GetEnterpriseIdOk() (*ModelsSecret, bool) {
-	if o == nil || IsNil(o.EnterpriseId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EnterpriseId, true
+	return &o.EnterpriseId, true
 }
 
-// HasEnterpriseId returns a boolean if a field has been set.
-func (o *BoxEventsSecretsConfig) HasEnterpriseId() bool {
-	if o != nil && !IsNil(o.EnterpriseId) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnterpriseId gets a reference to the given ModelsSecret and assigns it to the EnterpriseId field.
+// SetEnterpriseId sets field value
 func (o *BoxEventsSecretsConfig) SetEnterpriseId(v ModelsSecret) {
-	o.EnterpriseId = &v
+	o.EnterpriseId = v
 }
 
 func (o BoxEventsSecretsConfig) MarshalJSON() ([]byte, error) {
@@ -148,16 +131,49 @@ func (o BoxEventsSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o BoxEventsSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ClientId) {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if !IsNil(o.ClientSecret) {
-		toSerialize["client_secret"] = o.ClientSecret
-	}
-	if !IsNil(o.EnterpriseId) {
-		toSerialize["enterprise_id"] = o.EnterpriseId
-	}
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
+	toSerialize["enterprise_id"] = o.EnterpriseId
 	return toSerialize, nil
+}
+
+func (o *BoxEventsSecretsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"client_id",
+		"client_secret",
+		"enterprise_id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varBoxEventsSecretsConfig := _BoxEventsSecretsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varBoxEventsSecretsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BoxEventsSecretsConfig(varBoxEventsSecretsConfig)
+
+	return err
 }
 
 type NullableBoxEventsSecretsConfig struct {

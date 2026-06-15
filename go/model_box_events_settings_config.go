@@ -24,6 +24,7 @@ type BoxEventsSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// A list of event types to filter by.
 	EventType []string `json:"event_type,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
@@ -109,6 +110,38 @@ func (o *BoxEventsSettingsConfig) SetEventType(v []string) {
 	o.EventType = v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *BoxEventsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BoxEventsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *BoxEventsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *BoxEventsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
 func (o *BoxEventsSettingsConfig) GetUseSyntheticData() bool {
 	if o == nil || IsNil(o.UseSyntheticData) {
@@ -156,6 +189,9 @@ func (o BoxEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EventType) {
 		toSerialize["event_type"] = o.EventType
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData

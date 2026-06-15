@@ -13,47 +13,27 @@
 """  # noqa: E501
 
 
-import unittest
+from __future__ import annotations
+import json
+from enum import Enum
+from typing_extensions import Self
 
-from monad.models.box_events_settings_config import BoxEventsSettingsConfig
 
-class TestBoxEventsSettingsConfig(unittest.TestCase):
-    """BoxEventsSettingsConfig unit test stubs"""
+class ModelsRateUnit(str, Enum):
+    """
+    ModelsRateUnit
+    """
 
-    def setUp(self):
-        pass
+    """
+    allowed enum values
+    """
+    RatePerSecond = 'per_second'
+    RatePerMinute = 'per_minute'
+    RatePerHour = 'per_hour'
 
-    def tearDown(self):
-        pass
+    @classmethod
+    def from_json(cls, json_str: str) -> Self:
+        """Create an instance of ModelsRateUnit from a JSON string"""
+        return cls(json.loads(json_str))
 
-    def make_instance(self, include_optional) -> BoxEventsSettingsConfig:
-        """Test BoxEventsSettingsConfig
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `BoxEventsSettingsConfig`
-        """
-        model = BoxEventsSettingsConfig()
-        if include_optional:
-            return BoxEventsSettingsConfig(
-                backfill_start_time = '',
-                event_type = [
-                    ''
-                    ],
-                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
-                    rate = 1.337, 
-                    unit = 'per_second', ),
-                use_synthetic_data = True
-            )
-        else:
-            return BoxEventsSettingsConfig(
-        )
-        """
 
-    def testBoxEventsSettingsConfig(self):
-        """Test BoxEventsSettingsConfig"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
-
-if __name__ == '__main__':
-    unittest.main()

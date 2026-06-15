@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,9 +29,9 @@ class BoxEventsSecretsConfig(BaseModel):
     """
     Box Events secrets
     """ # noqa: E501
-    client_id: Optional[ModelsSecret] = None
-    client_secret: Optional[ModelsSecret] = None
-    enterprise_id: Optional[ModelsSecret] = None
+    client_id: ModelsSecret
+    client_secret: ModelsSecret
+    enterprise_id: ModelsSecret
     __properties: ClassVar[List[str]] = ["client_id", "client_secret", "enterprise_id"]
 
     model_config = ConfigDict(

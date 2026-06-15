@@ -269,6 +269,7 @@ export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputConnectorCategory';
 export * from '../models/ModelsInputList';
+export * from '../models/ModelsInputRateLimit';
 export * from '../models/ModelsManagedBy';
 export * from '../models/ModelsNodeBackpressure';
 export * from '../models/ModelsNodeComponent';
@@ -304,6 +305,7 @@ export * from '../models/ModelsQuotaLimitType';
 export * from '../models/ModelsQuotaLimitUnit';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsQuotaTimeframe';
+export * from '../models/ModelsRateUnit';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSecret';
@@ -889,6 +891,7 @@ import { ModelsInput          } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
+import { ModelsInputRateLimit   } from '../models/ModelsInputRateLimit';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
@@ -924,6 +927,7 @@ import { ModelsQuotaLimitType } from '../models/ModelsQuotaLimitType';
 import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
+import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
@@ -1289,6 +1293,7 @@ let enumsMap: Set<string> = new Set<string>([
     "ModelsQuotaLimitType",
     "ModelsQuotaLimitUnit",
     "ModelsQuotaTimeframe",
+    "ModelsRateUnit",
     "ObjectStorageInputSettingsConfigCompressionEnum",
     "ObjectStorageInputSettingsConfigFormatEnum",
     "ObjectStorageInputSettingsConfigPartitionFormatEnum",
@@ -1581,6 +1586,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsInput": ModelsInput,
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,
+    "ModelsInputRateLimit": ModelsInputRateLimit,
     "ModelsNodeBackpressure": ModelsNodeBackpressure,
     "ModelsNodeComponent": ModelsNodeComponent,
     "ModelsOrganizationAuditLog": ModelsOrganizationAuditLog,

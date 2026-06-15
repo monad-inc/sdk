@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CredentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**EnterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, enterpriseId ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -307,11 +307,6 @@ and a boolean to check if the value has been set.
 
 SetEnterpriseId sets EnterpriseId field to given value.
 
-### HasEnterpriseId
-
-`func (o *SecretProcessesorInputConfigSecrets) HasEnterpriseId() bool`
-
-HasEnterpriseId returns a boolean if a field has been set.
 
 ### GetPassword
 

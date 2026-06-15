@@ -83,6 +83,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 timestamp_column = '',
                 base_url = '',
                 event_type = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 hostname = '',
                 organization_id = '',
                 org_slug = '',

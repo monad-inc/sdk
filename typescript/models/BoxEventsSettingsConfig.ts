@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class BoxEventsSettingsConfig {
     * A list of event types to filter by.
     */
     'eventType'?: Array<string>;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -44,6 +46,12 @@ export class BoxEventsSettingsConfig {
             "name": "eventType",
             "baseName": "event_type",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

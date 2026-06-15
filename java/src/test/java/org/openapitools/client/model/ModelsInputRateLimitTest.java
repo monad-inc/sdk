@@ -19,57 +19,40 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.client.model.ModelsInputRateLimit;
+import org.openapitools.client.model.ModelsRateUnit;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BoxEventsSettingsConfig
+ * Model tests for ModelsInputRateLimit
  */
-public class BoxEventsSettingsConfigTest {
-    private final BoxEventsSettingsConfig model = new BoxEventsSettingsConfig();
+public class ModelsInputRateLimitTest {
+    private final ModelsInputRateLimit model = new ModelsInputRateLimit();
 
     /**
-     * Model tests for BoxEventsSettingsConfig
+     * Model tests for ModelsInputRateLimit
      */
     @Test
-    public void testBoxEventsSettingsConfig() {
-        // TODO: test BoxEventsSettingsConfig
+    public void testModelsInputRateLimit() {
+        // TODO: test ModelsInputRateLimit
     }
 
     /**
-     * Test the property 'backfillStartTime'
+     * Test the property 'rate'
      */
     @Test
-    public void backfillStartTimeTest() {
-        // TODO: test backfillStartTime
+    public void rateTest() {
+        // TODO: test rate
     }
 
     /**
-     * Test the property 'eventType'
+     * Test the property 'unit'
      */
     @Test
-    public void eventTypeTest() {
-        // TODO: test eventType
-    }
-
-    /**
-     * Test the property 'rateLimit'
-     */
-    @Test
-    public void rateLimitTest() {
-        // TODO: test rateLimit
-    }
-
-    /**
-     * Test the property 'useSyntheticData'
-     */
-    @Test
-    public void useSyntheticDataTest() {
-        // TODO: test useSyntheticData
+    public void unitTest() {
+        // TODO: test unit
     }
 
 }

@@ -339,6 +339,7 @@ __all__ = [
     "ModelsInputConfig",
     "ModelsInputConnectorCategory",
     "ModelsInputList",
+    "ModelsInputRateLimit",
     "ModelsManagedBy",
     "ModelsNodeBackpressure",
     "ModelsNodeComponent",
@@ -374,6 +375,7 @@ __all__ = [
     "ModelsQuotaLimitUnit",
     "ModelsQuotaList",
     "ModelsQuotaTimeframe",
+    "ModelsRateUnit",
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
     "ModelsSecret",
@@ -1014,6 +1016,7 @@ from monad.models.models_input import ModelsInput as ModelsInput
 from monad.models.models_input_config import ModelsInputConfig as ModelsInputConfig
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory as ModelsInputConnectorCategory
 from monad.models.models_input_list import ModelsInputList as ModelsInputList
+from monad.models.models_input_rate_limit import ModelsInputRateLimit as ModelsInputRateLimit
 from monad.models.models_managed_by import ModelsManagedBy as ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure as ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent as ModelsNodeComponent
@@ -1049,6 +1052,7 @@ from monad.models.models_quota_limit_type import ModelsQuotaLimitType as ModelsQ
 from monad.models.models_quota_limit_unit import ModelsQuotaLimitUnit as ModelsQuotaLimitUnit
 from monad.models.models_quota_list import ModelsQuotaList as ModelsQuotaList
 from monad.models.models_quota_timeframe import ModelsQuotaTimeframe as ModelsQuotaTimeframe
+from monad.models.models_rate_unit import ModelsRateUnit as ModelsRateUnit
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
 from monad.models.models_secret import ModelsSecret as ModelsSecret

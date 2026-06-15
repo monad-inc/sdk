@@ -10,16 +10,15 @@
  * Do not edit the class manually.
  */
 
-import { ModelsSecret } from '../models/ModelsSecret';
+import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { HttpFile } from '../http/http';
 
 /**
-* Box Events secrets
+* Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
 */
-export class BoxEventsSecretsConfig {
-    'clientId': ModelsSecret;
-    'clientSecret': ModelsSecret;
-    'enterpriseId': ModelsSecret;
+export class ModelsInputRateLimit {
+    'rate'?: number;
+    'unit'?: ModelsRateUnit;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -27,28 +26,24 @@ export class BoxEventsSecretsConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "clientId",
-            "baseName": "client_id",
-            "type": "ModelsSecret",
+            "name": "rate",
+            "baseName": "rate",
+            "type": "number",
             "format": ""
         },
         {
-            "name": "clientSecret",
-            "baseName": "client_secret",
-            "type": "ModelsSecret",
-            "format": ""
-        },
-        {
-            "name": "enterpriseId",
-            "baseName": "enterprise_id",
-            "type": "ModelsSecret",
+            "name": "unit",
+            "baseName": "unit",
+            "type": "ModelsRateUnit",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return BoxEventsSecretsConfig.attributeTypeMap;
+        return ModelsInputRateLimit.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
+
+

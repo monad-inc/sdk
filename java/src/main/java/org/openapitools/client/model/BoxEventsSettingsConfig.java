@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -61,6 +62,11 @@ public class BoxEventsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
   @javax.annotation.Nullable
   private List<String> eventType = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -116,6 +122,25 @@ public class BoxEventsSettingsConfig {
   }
 
 
+  public BoxEventsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public BoxEventsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -147,12 +172,13 @@ public class BoxEventsSettingsConfig {
     BoxEventsSettingsConfig boxEventsSettingsConfig = (BoxEventsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, boxEventsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.eventType, boxEventsSettingsConfig.eventType) &&
+        Objects.equals(this.rateLimit, boxEventsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, boxEventsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, eventType, useSyntheticData);
+    return Objects.hash(backfillStartTime, eventType, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -161,6 +187,7 @@ public class BoxEventsSettingsConfig {
     sb.append("class BoxEventsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -180,7 +207,7 @@ public class BoxEventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "event_type", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "event_type", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -213,6 +240,10 @@ public class BoxEventsSettingsConfig {
       // ensure the optional json data is an array if present
       if (jsonObj.get("event_type") != null && !jsonObj.get("event_type").isJsonNull() && !jsonObj.get("event_type").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `event_type` to be an array in the JSON string but got `%s`", jsonObj.get("event_type").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

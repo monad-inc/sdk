@@ -285,6 +285,7 @@ from monad.models.models_input import ModelsInput
 from monad.models.models_input_config import ModelsInputConfig
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory
 from monad.models.models_input_list import ModelsInputList
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent
@@ -320,6 +321,7 @@ from monad.models.models_quota_limit_type import ModelsQuotaLimitType
 from monad.models.models_quota_limit_unit import ModelsQuotaLimitUnit
 from monad.models.models_quota_list import ModelsQuotaList
 from monad.models.models_quota_timeframe import ModelsQuotaTimeframe
+from monad.models.models_rate_unit import ModelsRateUnit
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList
 from monad.models.models_secret import ModelsSecret

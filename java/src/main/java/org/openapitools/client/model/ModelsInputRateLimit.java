@@ -20,8 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsSecret;
+import org.openapitools.client.model.ModelsRateUnit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,82 +48,58 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Box Events secrets
+ * Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
-public class BoxEventsSecretsConfig {
-  public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
-  @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nonnull
-  private ModelsSecret clientId;
+public class ModelsInputRateLimit {
+  public static final String SERIALIZED_NAME_RATE = "rate";
+  @SerializedName(SERIALIZED_NAME_RATE)
+  @javax.annotation.Nullable
+  private BigDecimal rate;
 
-  public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
-  @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  @javax.annotation.Nonnull
-  private ModelsSecret clientSecret;
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
+  @javax.annotation.Nullable
+  private ModelsRateUnit unit;
 
-  public static final String SERIALIZED_NAME_ENTERPRISE_ID = "enterprise_id";
-  @SerializedName(SERIALIZED_NAME_ENTERPRISE_ID)
-  @javax.annotation.Nonnull
-  private ModelsSecret enterpriseId;
-
-  public BoxEventsSecretsConfig() {
+  public ModelsInputRateLimit() {
   }
 
-  public BoxEventsSecretsConfig clientId(@javax.annotation.Nonnull ModelsSecret clientId) {
-    this.clientId = clientId;
+  public ModelsInputRateLimit rate(@javax.annotation.Nullable BigDecimal rate) {
+    this.rate = rate;
     return this;
   }
 
   /**
-   * Get clientId
-   * @return clientId
+   * Get rate
+   * @return rate
    */
-  @javax.annotation.Nonnull
-  public ModelsSecret getClientId() {
-    return clientId;
+  @javax.annotation.Nullable
+  public BigDecimal getRate() {
+    return rate;
   }
 
-  public void setClientId(@javax.annotation.Nonnull ModelsSecret clientId) {
-    this.clientId = clientId;
+  public void setRate(@javax.annotation.Nullable BigDecimal rate) {
+    this.rate = rate;
   }
 
 
-  public BoxEventsSecretsConfig clientSecret(@javax.annotation.Nonnull ModelsSecret clientSecret) {
-    this.clientSecret = clientSecret;
+  public ModelsInputRateLimit unit(@javax.annotation.Nullable ModelsRateUnit unit) {
+    this.unit = unit;
     return this;
   }
 
   /**
-   * Get clientSecret
-   * @return clientSecret
+   * Get unit
+   * @return unit
    */
-  @javax.annotation.Nonnull
-  public ModelsSecret getClientSecret() {
-    return clientSecret;
+  @javax.annotation.Nullable
+  public ModelsRateUnit getUnit() {
+    return unit;
   }
 
-  public void setClientSecret(@javax.annotation.Nonnull ModelsSecret clientSecret) {
-    this.clientSecret = clientSecret;
-  }
-
-
-  public BoxEventsSecretsConfig enterpriseId(@javax.annotation.Nonnull ModelsSecret enterpriseId) {
-    this.enterpriseId = enterpriseId;
-    return this;
-  }
-
-  /**
-   * Get enterpriseId
-   * @return enterpriseId
-   */
-  @javax.annotation.Nonnull
-  public ModelsSecret getEnterpriseId() {
-    return enterpriseId;
-  }
-
-  public void setEnterpriseId(@javax.annotation.Nonnull ModelsSecret enterpriseId) {
-    this.enterpriseId = enterpriseId;
+  public void setUnit(@javax.annotation.Nullable ModelsRateUnit unit) {
+    this.unit = unit;
   }
 
 
@@ -135,24 +112,22 @@ public class BoxEventsSecretsConfig {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BoxEventsSecretsConfig boxEventsSecretsConfig = (BoxEventsSecretsConfig) o;
-    return Objects.equals(this.clientId, boxEventsSecretsConfig.clientId) &&
-        Objects.equals(this.clientSecret, boxEventsSecretsConfig.clientSecret) &&
-        Objects.equals(this.enterpriseId, boxEventsSecretsConfig.enterpriseId);
+    ModelsInputRateLimit modelsInputRateLimit = (ModelsInputRateLimit) o;
+    return Objects.equals(this.rate, modelsInputRateLimit.rate) &&
+        Objects.equals(this.unit, modelsInputRateLimit.unit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, clientSecret, enterpriseId);
+    return Objects.hash(rate, unit);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BoxEventsSecretsConfig {\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
-    sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
+    sb.append("class ModelsInputRateLimit {\n");
+    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
+    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -171,68 +146,59 @@ public class BoxEventsSecretsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("client_id", "client_secret", "enterprise_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("rate", "unit"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("client_id", "client_secret", "enterprise_id"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to BoxEventsSecretsConfig
+   * @throws IOException if the JSON Element is invalid with respect to ModelsInputRateLimit
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!BoxEventsSecretsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BoxEventsSecretsConfig is not found in the empty JSON string", BoxEventsSecretsConfig.openapiRequiredFields.toString()));
+        if (!ModelsInputRateLimit.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsInputRateLimit is not found in the empty JSON string", ModelsInputRateLimit.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!BoxEventsSecretsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BoxEventsSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : BoxEventsSecretsConfig.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!ModelsInputRateLimit.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsInputRateLimit` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `client_id`
-      ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
-      // validate the required field `client_secret`
-      ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
-      // validate the required field `enterprise_id`
-      ModelsSecret.validateJsonElement(jsonObj.get("enterprise_id"));
+      // validate the optional field `unit`
+      if (jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) {
+        ModelsRateUnit.validateJsonElement(jsonObj.get("unit"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!BoxEventsSecretsConfig.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'BoxEventsSecretsConfig' and its subtypes
+       if (!ModelsInputRateLimit.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelsInputRateLimit' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<BoxEventsSecretsConfig> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(BoxEventsSecretsConfig.class));
+       final TypeAdapter<ModelsInputRateLimit> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsInputRateLimit.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<BoxEventsSecretsConfig>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelsInputRateLimit>() {
            @Override
-           public void write(JsonWriter out, BoxEventsSecretsConfig value) throws IOException {
+           public void write(JsonWriter out, ModelsInputRateLimit value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public BoxEventsSecretsConfig read(JsonReader in) throws IOException {
+           public ModelsInputRateLimit read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -243,18 +209,18 @@ public class BoxEventsSecretsConfig {
   }
 
   /**
-   * Create an instance of BoxEventsSecretsConfig given an JSON string
+   * Create an instance of ModelsInputRateLimit given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of BoxEventsSecretsConfig
-   * @throws IOException if the JSON string is invalid with respect to BoxEventsSecretsConfig
+   * @return An instance of ModelsInputRateLimit
+   * @throws IOException if the JSON string is invalid with respect to ModelsInputRateLimit
    */
-  public static BoxEventsSecretsConfig fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, BoxEventsSecretsConfig.class);
+  public static ModelsInputRateLimit fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelsInputRateLimit.class);
   }
 
   /**
-   * Convert an instance of BoxEventsSecretsConfig to an JSON string
+   * Convert an instance of ModelsInputRateLimit to an JSON string
    *
    * @return JSON string
    */
