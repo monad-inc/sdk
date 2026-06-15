@@ -60,6 +60,11 @@ public class DatabricksDeltaTableCopyIntoWriteMode {
   @javax.annotation.Nonnull
   private String tableName;
 
+  public static final String SERIALIZED_NAME_VOLUME = "volume";
+  @SerializedName(SERIALIZED_NAME_VOLUME)
+  @javax.annotation.Nonnull
+  private String volume;
+
   public DatabricksDeltaTableCopyIntoWriteMode() {
   }
 
@@ -101,6 +106,25 @@ public class DatabricksDeltaTableCopyIntoWriteMode {
   }
 
 
+  public DatabricksDeltaTableCopyIntoWriteMode volume(@javax.annotation.Nonnull String volume) {
+    this.volume = volume;
+    return this;
+  }
+
+  /**
+   * The Unity Catalog Volume used for staging JSONL files before COPY INTO.
+   * @return volume
+   */
+  @javax.annotation.Nonnull
+  public String getVolume() {
+    return volume;
+  }
+
+  public void setVolume(@javax.annotation.Nonnull String volume) {
+    this.volume = volume;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +136,13 @@ public class DatabricksDeltaTableCopyIntoWriteMode {
     }
     DatabricksDeltaTableCopyIntoWriteMode databricksDeltaTableCopyIntoWriteMode = (DatabricksDeltaTableCopyIntoWriteMode) o;
     return Objects.equals(this.httpPath, databricksDeltaTableCopyIntoWriteMode.httpPath) &&
-        Objects.equals(this.tableName, databricksDeltaTableCopyIntoWriteMode.tableName);
+        Objects.equals(this.tableName, databricksDeltaTableCopyIntoWriteMode.tableName) &&
+        Objects.equals(this.volume, databricksDeltaTableCopyIntoWriteMode.volume);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(httpPath, tableName);
+    return Objects.hash(httpPath, tableName, volume);
   }
 
   @Override
@@ -126,6 +151,7 @@ public class DatabricksDeltaTableCopyIntoWriteMode {
     sb.append("class DatabricksDeltaTableCopyIntoWriteMode {\n");
     sb.append("    httpPath: ").append(toIndentedString(httpPath)).append("\n");
     sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
+    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,10 +170,10 @@ public class DatabricksDeltaTableCopyIntoWriteMode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("http_path", "table_name"));
+    openapiFields = new HashSet<String>(Arrays.asList("http_path", "table_name", "volume"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("http_path", "table_name"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("http_path", "table_name", "volume"));
   }
 
   /**
@@ -183,6 +209,9 @@ public class DatabricksDeltaTableCopyIntoWriteMode {
       }
       if (!jsonObj.get("table_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `table_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table_name").toString()));
+      }
+      if (!jsonObj.get("volume").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `volume` to be a primitive type in the JSON string but got `%s`", jsonObj.get("volume").toString()));
       }
   }
 

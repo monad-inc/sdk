@@ -24,10 +24,6 @@ export class DatabricksDeltaTableSettingsConfig {
     */
     'catalog': string;
     /**
-    * Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.
-    */
-    'httpPath'?: string;
-    /**
     * The target schema within the catalog
     */
     'schema': string;
@@ -35,10 +31,6 @@ export class DatabricksDeltaTableSettingsConfig {
     * The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)
     */
     'serverHostname': string;
-    /**
-    * The Unity Catalog Volume used for staging JSONL files
-    */
-    'volume': string;
     'writeMode': DatabricksDeltaTableWriteMode;
 
     static readonly discriminator: string | undefined = undefined;
@@ -59,12 +51,6 @@ export class DatabricksDeltaTableSettingsConfig {
             "format": ""
         },
         {
-            "name": "httpPath",
-            "baseName": "http_path",
-            "type": "string",
-            "format": ""
-        },
-        {
             "name": "schema",
             "baseName": "schema",
             "type": "string",
@@ -73,12 +59,6 @@ export class DatabricksDeltaTableSettingsConfig {
         {
             "name": "serverHostname",
             "baseName": "server_hostname",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "volume",
-            "baseName": "volume",
             "type": "string",
             "format": ""
         },

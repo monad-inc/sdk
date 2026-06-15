@@ -20,11 +20,12 @@ import (
 // checks if the DatabricksDeltaTableWriteMode type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DatabricksDeltaTableWriteMode{}
 
-// DatabricksDeltaTableWriteMode The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest
+// DatabricksDeltaTableWriteMode The write mode controls how data is loaded.
 type DatabricksDeltaTableWriteMode struct {
-	AutoLoader map[string]interface{} `json:"auto_loader,omitempty"`
+	AutoLoader *DatabricksDeltaTableAutoLoaderWriteMode `json:"auto_loader,omitempty"`
 	CopyInto *DatabricksDeltaTableCopyIntoWriteMode `json:"copy_into,omitempty"`
 	WriteMode string `json:"write_mode"`
+	Zerobus *DatabricksDeltaTableZeroBusWriteMode `json:"zerobus,omitempty"`
 }
 
 type _DatabricksDeltaTableWriteMode DatabricksDeltaTableWriteMode
@@ -48,19 +49,19 @@ func NewDatabricksDeltaTableWriteModeWithDefaults() *DatabricksDeltaTableWriteMo
 }
 
 // GetAutoLoader returns the AutoLoader field value if set, zero value otherwise.
-func (o *DatabricksDeltaTableWriteMode) GetAutoLoader() map[string]interface{} {
+func (o *DatabricksDeltaTableWriteMode) GetAutoLoader() DatabricksDeltaTableAutoLoaderWriteMode {
 	if o == nil || IsNil(o.AutoLoader) {
-		var ret map[string]interface{}
+		var ret DatabricksDeltaTableAutoLoaderWriteMode
 		return ret
 	}
-	return o.AutoLoader
+	return *o.AutoLoader
 }
 
 // GetAutoLoaderOk returns a tuple with the AutoLoader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DatabricksDeltaTableWriteMode) GetAutoLoaderOk() (map[string]interface{}, bool) {
+func (o *DatabricksDeltaTableWriteMode) GetAutoLoaderOk() (*DatabricksDeltaTableAutoLoaderWriteMode, bool) {
 	if o == nil || IsNil(o.AutoLoader) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.AutoLoader, true
 }
@@ -74,9 +75,9 @@ func (o *DatabricksDeltaTableWriteMode) HasAutoLoader() bool {
 	return false
 }
 
-// SetAutoLoader gets a reference to the given map[string]interface{} and assigns it to the AutoLoader field.
-func (o *DatabricksDeltaTableWriteMode) SetAutoLoader(v map[string]interface{}) {
-	o.AutoLoader = v
+// SetAutoLoader gets a reference to the given DatabricksDeltaTableAutoLoaderWriteMode and assigns it to the AutoLoader field.
+func (o *DatabricksDeltaTableWriteMode) SetAutoLoader(v DatabricksDeltaTableAutoLoaderWriteMode) {
+	o.AutoLoader = &v
 }
 
 // GetCopyInto returns the CopyInto field value if set, zero value otherwise.
@@ -135,6 +136,38 @@ func (o *DatabricksDeltaTableWriteMode) SetWriteMode(v string) {
 	o.WriteMode = v
 }
 
+// GetZerobus returns the Zerobus field value if set, zero value otherwise.
+func (o *DatabricksDeltaTableWriteMode) GetZerobus() DatabricksDeltaTableZeroBusWriteMode {
+	if o == nil || IsNil(o.Zerobus) {
+		var ret DatabricksDeltaTableZeroBusWriteMode
+		return ret
+	}
+	return *o.Zerobus
+}
+
+// GetZerobusOk returns a tuple with the Zerobus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DatabricksDeltaTableWriteMode) GetZerobusOk() (*DatabricksDeltaTableZeroBusWriteMode, bool) {
+	if o == nil || IsNil(o.Zerobus) {
+		return nil, false
+	}
+	return o.Zerobus, true
+}
+
+// HasZerobus returns a boolean if a field has been set.
+func (o *DatabricksDeltaTableWriteMode) HasZerobus() bool {
+	if o != nil && !IsNil(o.Zerobus) {
+		return true
+	}
+
+	return false
+}
+
+// SetZerobus gets a reference to the given DatabricksDeltaTableZeroBusWriteMode and assigns it to the Zerobus field.
+func (o *DatabricksDeltaTableWriteMode) SetZerobus(v DatabricksDeltaTableZeroBusWriteMode) {
+	o.Zerobus = &v
+}
+
 func (o DatabricksDeltaTableWriteMode) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -152,6 +185,9 @@ func (o DatabricksDeltaTableWriteMode) ToMap() (map[string]interface{}, error) {
 		toSerialize["copy_into"] = o.CopyInto
 	}
 	toSerialize["write_mode"] = o.WriteMode
+	if !IsNil(o.Zerobus) {
+		toSerialize["zerobus"] = o.Zerobus
+	}
 	return toSerialize, nil
 }
 

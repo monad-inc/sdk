@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from monad.models.databricks_delta_table_write_mode import DatabricksDeltaTableWriteMode
 from typing import Optional, Set
@@ -32,12 +32,10 @@ class DatabricksDeltaTableSettingsConfig(BaseModel):
     """ # noqa: E501
     batch_config: BatchConfigBatchConfig
     catalog: StrictStr = Field(description="The Unity Catalog name")
-    http_path: Optional[StrictStr] = Field(default=None, description="Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.")
     var_schema: StrictStr = Field(description="The target schema within the catalog", alias="schema")
     server_hostname: StrictStr = Field(description="The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)")
-    volume: StrictStr = Field(description="The Unity Catalog Volume used for staging JSONL files")
     write_mode: DatabricksDeltaTableWriteMode
-    __properties: ClassVar[List[str]] = ["batch_config", "catalog", "http_path", "schema", "server_hostname", "volume", "write_mode"]
+    __properties: ClassVar[List[str]] = ["batch_config", "catalog", "schema", "server_hostname", "write_mode"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -98,10 +96,8 @@ class DatabricksDeltaTableSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
             "catalog": obj.get("catalog"),
-            "http_path": obj.get("http_path"),
             "schema": obj.get("schema"),
             "server_hostname": obj.get("server_hostname"),
-            "volume": obj.get("volume"),
             "write_mode": DatabricksDeltaTableWriteMode.from_dict(obj["write_mode"]) if obj.get("write_mode") is not None else None
         })
         return _obj

@@ -25,14 +25,10 @@ type DatabricksDeltaTableSettingsConfig struct {
 	BatchConfig BatchConfigBatchConfig `json:"batch_config"`
 	// The Unity Catalog name
 	Catalog string `json:"catalog"`
-	// Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.
-	HttpPath *string `json:"http_path,omitempty"`
 	// The target schema within the catalog
 	Schema string `json:"schema"`
 	// The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)
 	ServerHostname string `json:"server_hostname"`
-	// The Unity Catalog Volume used for staging JSONL files
-	Volume string `json:"volume"`
 	WriteMode DatabricksDeltaTableWriteMode `json:"write_mode"`
 }
 
@@ -42,13 +38,12 @@ type _DatabricksDeltaTableSettingsConfig DatabricksDeltaTableSettingsConfig
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDatabricksDeltaTableSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, schema string, serverHostname string, volume string, writeMode DatabricksDeltaTableWriteMode) *DatabricksDeltaTableSettingsConfig {
+func NewDatabricksDeltaTableSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, schema string, serverHostname string, writeMode DatabricksDeltaTableWriteMode) *DatabricksDeltaTableSettingsConfig {
 	this := DatabricksDeltaTableSettingsConfig{}
 	this.BatchConfig = batchConfig
 	this.Catalog = catalog
 	this.Schema = schema
 	this.ServerHostname = serverHostname
-	this.Volume = volume
 	this.WriteMode = writeMode
 	return &this
 }
@@ -109,38 +104,6 @@ func (o *DatabricksDeltaTableSettingsConfig) SetCatalog(v string) {
 	o.Catalog = v
 }
 
-// GetHttpPath returns the HttpPath field value if set, zero value otherwise.
-func (o *DatabricksDeltaTableSettingsConfig) GetHttpPath() string {
-	if o == nil || IsNil(o.HttpPath) {
-		var ret string
-		return ret
-	}
-	return *o.HttpPath
-}
-
-// GetHttpPathOk returns a tuple with the HttpPath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DatabricksDeltaTableSettingsConfig) GetHttpPathOk() (*string, bool) {
-	if o == nil || IsNil(o.HttpPath) {
-		return nil, false
-	}
-	return o.HttpPath, true
-}
-
-// HasHttpPath returns a boolean if a field has been set.
-func (o *DatabricksDeltaTableSettingsConfig) HasHttpPath() bool {
-	if o != nil && !IsNil(o.HttpPath) {
-		return true
-	}
-
-	return false
-}
-
-// SetHttpPath gets a reference to the given string and assigns it to the HttpPath field.
-func (o *DatabricksDeltaTableSettingsConfig) SetHttpPath(v string) {
-	o.HttpPath = &v
-}
-
 // GetSchema returns the Schema field value
 func (o *DatabricksDeltaTableSettingsConfig) GetSchema() string {
 	if o == nil {
@@ -189,30 +152,6 @@ func (o *DatabricksDeltaTableSettingsConfig) SetServerHostname(v string) {
 	o.ServerHostname = v
 }
 
-// GetVolume returns the Volume field value
-func (o *DatabricksDeltaTableSettingsConfig) GetVolume() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Volume
-}
-
-// GetVolumeOk returns a tuple with the Volume field value
-// and a boolean to check if the value has been set.
-func (o *DatabricksDeltaTableSettingsConfig) GetVolumeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Volume, true
-}
-
-// SetVolume sets field value
-func (o *DatabricksDeltaTableSettingsConfig) SetVolume(v string) {
-	o.Volume = v
-}
-
 // GetWriteMode returns the WriteMode field value
 func (o *DatabricksDeltaTableSettingsConfig) GetWriteMode() DatabricksDeltaTableWriteMode {
 	if o == nil {
@@ -249,12 +188,8 @@ func (o DatabricksDeltaTableSettingsConfig) ToMap() (map[string]interface{}, err
 	toSerialize := map[string]interface{}{}
 	toSerialize["batch_config"] = o.BatchConfig
 	toSerialize["catalog"] = o.Catalog
-	if !IsNil(o.HttpPath) {
-		toSerialize["http_path"] = o.HttpPath
-	}
 	toSerialize["schema"] = o.Schema
 	toSerialize["server_hostname"] = o.ServerHostname
-	toSerialize["volume"] = o.Volume
 	toSerialize["write_mode"] = o.WriteMode
 	return toSerialize, nil
 }
@@ -268,7 +203,6 @@ func (o *DatabricksDeltaTableSettingsConfig) UnmarshalJSON(data []byte) (err err
 		"catalog",
 		"schema",
 		"server_hostname",
-		"volume",
 		"write_mode",
 	}
 

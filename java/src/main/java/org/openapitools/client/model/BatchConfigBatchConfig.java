@@ -46,7 +46,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed
+ * Controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class BatchConfigBatchConfig {

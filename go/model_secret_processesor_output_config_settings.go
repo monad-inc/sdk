@@ -45,6 +45,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	SentinelSettingsConfig *SentinelSettingsConfig
 	SlackSettingsConfig *SlackSettingsConfig
 	SnowflakeOutputSettingsConfig *SnowflakeOutputSettingsConfig
+	SnowflakeSnowpipeStreamingSettingsConfig *SnowflakeSnowpipeStreamingSettingsConfig
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
@@ -229,6 +230,13 @@ func SlackSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SlackSettings
 func SnowflakeOutputSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SnowflakeOutputSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		SnowflakeOutputSettingsConfig: v,
+	}
+}
+
+// SnowflakeSnowpipeStreamingSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns SnowflakeSnowpipeStreamingSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func SnowflakeSnowpipeStreamingSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SnowflakeSnowpipeStreamingSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		SnowflakeSnowpipeStreamingSettingsConfig: v,
 	}
 }
 
@@ -700,6 +708,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SnowflakeOutputSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SnowflakeSnowpipeStreamingSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnowflakeSnowpipeStreamingSettingsConfig)
+	if err == nil {
+		jsonSnowflakeSnowpipeStreamingSettingsConfig, _ := json.Marshal(dst.SnowflakeSnowpipeStreamingSettingsConfig)
+		if string(jsonSnowflakeSnowpipeStreamingSettingsConfig) == "{}" { // empty struct
+			dst.SnowflakeSnowpipeStreamingSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SnowflakeSnowpipeStreamingSettingsConfig); err != nil {
+				dst.SnowflakeSnowpipeStreamingSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SnowflakeSnowpipeStreamingSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SplunkSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SplunkSettingsConfig)
 	if err == nil {
@@ -779,6 +804,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SentinelSettingsConfig = nil
 		dst.SlackSettingsConfig = nil
 		dst.SnowflakeOutputSettingsConfig = nil
+		dst.SnowflakeSnowpipeStreamingSettingsConfig = nil
 		dst.SplunkSettingsConfig = nil
 		dst.SumologicSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
@@ -895,6 +921,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SnowflakeOutputSettingsConfig != nil {
 		return json.Marshal(&src.SnowflakeOutputSettingsConfig)
+	}
+
+	if src.SnowflakeSnowpipeStreamingSettingsConfig != nil {
+		return json.Marshal(&src.SnowflakeSnowpipeStreamingSettingsConfig)
 	}
 
 	if src.SplunkSettingsConfig != nil {
@@ -1021,6 +1051,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.SnowflakeOutputSettingsConfig
 	}
 
+	if obj.SnowflakeSnowpipeStreamingSettingsConfig != nil {
+		return obj.SnowflakeSnowpipeStreamingSettingsConfig
+	}
+
 	if obj.SplunkSettingsConfig != nil {
 		return obj.SplunkSettingsConfig
 	}
@@ -1141,6 +1175,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.SnowflakeOutputSettingsConfig != nil {
 		return *obj.SnowflakeOutputSettingsConfig
+	}
+
+	if obj.SnowflakeSnowpipeStreamingSettingsConfig != nil {
+		return *obj.SnowflakeSnowpipeStreamingSettingsConfig
 	}
 
 	if obj.SplunkSettingsConfig != nil {

@@ -48,6 +48,7 @@ import org.openapitools.client.model.KafkaSaslMechanism;
 import org.openapitools.client.model.KafkaSecurityProtocol;
 import org.openapitools.client.model.KafkaSettingsConfig;
 import org.openapitools.client.model.KvLookupOutputSettingsConfig;
+import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.NextGenSiemSettingsConfig;
 import org.openapitools.client.model.ObjectStorageSettingsConfig;
 import org.openapitools.client.model.OpensearchAuthMode;
@@ -71,6 +72,7 @@ import org.openapitools.client.model.SentinelSettingsConfig;
 import org.openapitools.client.model.SlackAuthConfig;
 import org.openapitools.client.model.SlackSettingsConfig;
 import org.openapitools.client.model.SnowflakeOutputSettingsConfig;
+import org.openapitools.client.model.SnowflakeSnowpipeStreamingSettingsConfig;
 import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
 import org.openapitools.client.model.SumologicSourceMetadata;
@@ -150,6 +152,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             final TypeAdapter<SentinelSettingsConfig> adapterSentinelSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SentinelSettingsConfig.class));
             final TypeAdapter<SlackSettingsConfig> adapterSlackSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SlackSettingsConfig.class));
             final TypeAdapter<SnowflakeOutputSettingsConfig> adapterSnowflakeOutputSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnowflakeOutputSettingsConfig.class));
+            final TypeAdapter<SnowflakeSnowpipeStreamingSettingsConfig> adapterSnowflakeSnowpipeStreamingSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnowflakeSnowpipeStreamingSettingsConfig.class));
             final TypeAdapter<SplunkSettingsConfig> adapterSplunkSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SplunkSettingsConfig.class));
             final TypeAdapter<SumologicSettingsConfig> adapterSumologicSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SumologicSettingsConfig.class));
 
@@ -323,6 +326,12 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `SnowflakeSnowpipeStreamingSettingsConfig`
+                    if (value.getActualInstance() instanceof SnowflakeSnowpipeStreamingSettingsConfig) {
+                        JsonElement element = adapterSnowflakeSnowpipeStreamingSettingsConfig.toJsonTree((SnowflakeSnowpipeStreamingSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `SplunkSettingsConfig`
                     if (value.getActualInstance() instanceof SplunkSettingsConfig) {
                         JsonElement element = adapterSplunkSettingsConfig.toJsonTree((SplunkSettingsConfig)value.getActualInstance());
@@ -335,7 +344,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SnowflakeSnowpipeStreamingSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
                 }
 
                 @Override
@@ -674,6 +683,18 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SnowflakeOutputSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SnowflakeOutputSettingsConfig'", e);
                     }
+                    // deserialize SnowflakeSnowpipeStreamingSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        SnowflakeSnowpipeStreamingSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterSnowflakeSnowpipeStreamingSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'SnowflakeSnowpipeStreamingSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SnowflakeSnowpipeStreamingSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'SnowflakeSnowpipeStreamingSettingsConfig'", e);
+                    }
                     // deserialize SplunkSettingsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -751,6 +772,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
         schemas.put("SentinelSettingsConfig", SentinelSettingsConfig.class);
         schemas.put("SlackSettingsConfig", SlackSettingsConfig.class);
         schemas.put("SnowflakeOutputSettingsConfig", SnowflakeOutputSettingsConfig.class);
+        schemas.put("SnowflakeSnowpipeStreamingSettingsConfig", SnowflakeSnowpipeStreamingSettingsConfig.class);
         schemas.put("SplunkSettingsConfig", SplunkSettingsConfig.class);
         schemas.put("SumologicSettingsConfig", SumologicSettingsConfig.class);
     }
@@ -763,7 +785,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SnowflakeSnowpipeStreamingSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -904,6 +926,11 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             return;
         }
 
+        if (instance instanceof SnowflakeSnowpipeStreamingSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof SplunkSettingsConfig) {
             super.setActualInstance(instance);
             return;
@@ -914,14 +941,14 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SnowflakeSnowpipeStreamingSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SnowflakeSnowpipeStreamingSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
-     * @return The actual instance (AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
+     * @return The actual instance (AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map&lt;String, Object&gt;, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SnowflakeSnowpipeStreamingSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -1254,6 +1281,18 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
     }
 
     /**
+     * Get the actual instance of `SnowflakeSnowpipeStreamingSettingsConfig`. If the actual instance is not `SnowflakeSnowpipeStreamingSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `SnowflakeSnowpipeStreamingSettingsConfig`
+     * @throws ClassCastException if the instance is not `SnowflakeSnowpipeStreamingSettingsConfig`
+     */
+    @SuppressWarnings("unchecked")
+    public SnowflakeSnowpipeStreamingSettingsConfig getSnowflakeSnowpipeStreamingSettingsConfig() throws ClassCastException {
+        return (SnowflakeSnowpipeStreamingSettingsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `SplunkSettingsConfig`. If the actual instance is not `SplunkSettingsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -1506,6 +1545,14 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SnowflakeOutputSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with SnowflakeSnowpipeStreamingSettingsConfig
+        try {
+            SnowflakeSnowpipeStreamingSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SnowflakeSnowpipeStreamingSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with SplunkSettingsConfig
         try {
             SplunkSettingsConfig.validateJsonElement(jsonElement);
@@ -1523,7 +1570,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorOutputConfigSettings with oneOf schemas: AbsSettingsConfig, AwssqsoutputSettingsConfig, AxiomSettingsConfig, BackblazeSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, DatabricksDeltaTableSettingsConfig, DatadogSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, KafkaSettingsConfig, KvLookupOutputSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PantherSettingsConfig, PostgresqlSettingsConfig, PrometheusSettingsConfig, S3SettingsConfig, ScannerSettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SlackSettingsConfig, SnowflakeOutputSettingsConfig, SnowflakeSnowpipeStreamingSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

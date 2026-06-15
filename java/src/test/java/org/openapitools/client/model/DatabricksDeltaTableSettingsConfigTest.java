@@ -56,14 +56,6 @@ public class DatabricksDeltaTableSettingsConfigTest {
     }
 
     /**
-     * Test the property 'httpPath'
-     */
-    @Test
-    public void httpPathTest() {
-        // TODO: test httpPath
-    }
-
-    /**
      * Test the property 'schema'
      */
     @Test
@@ -77,14 +69,6 @@ public class DatabricksDeltaTableSettingsConfigTest {
     @Test
     public void serverHostnameTest() {
         // TODO: test serverHostname
-    }
-
-    /**
-     * Test the property 'volume'
-     */
-    @Test
-    public void volumeTest() {
-        // TODO: test volume
     }
 
     /**

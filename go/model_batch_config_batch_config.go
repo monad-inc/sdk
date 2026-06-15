@@ -18,7 +18,7 @@ import (
 // checks if the BatchConfigBatchConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BatchConfigBatchConfig{}
 
-// BatchConfigBatchConfig controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed
+// BatchConfigBatchConfig Controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed.
 type BatchConfigBatchConfig struct {
 	BatchDataSize *int32 `json:"batch_data_size,omitempty"`
 	BatchRecordCount *int32 `json:"batch_record_count,omitempty"`

@@ -6,17 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BatchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
 **Catalog** | **string** | The Unity Catalog name | 
-**HttpPath** | Pointer to **string** | Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader. | [optional] 
 **Schema** | **string** | The target schema within the catalog | 
 **ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
-**Volume** | **string** | The Unity Catalog Volume used for staging JSONL files | 
 **WriteMode** | [**DatabricksDeltaTableWriteMode**](DatabricksDeltaTableWriteMode.md) |  | 
 
 ## Methods
 
 ### NewDatabricksDeltaTableSettingsConfig
 
-`func NewDatabricksDeltaTableSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, schema string, serverHostname string, volume string, writeMode DatabricksDeltaTableWriteMode, ) *DatabricksDeltaTableSettingsConfig`
+`func NewDatabricksDeltaTableSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, schema string, serverHostname string, writeMode DatabricksDeltaTableWriteMode, ) *DatabricksDeltaTableSettingsConfig`
 
 NewDatabricksDeltaTableSettingsConfig instantiates a new DatabricksDeltaTableSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -71,31 +69,6 @@ and a boolean to check if the value has been set.
 SetCatalog sets Catalog field to given value.
 
 
-### GetHttpPath
-
-`func (o *DatabricksDeltaTableSettingsConfig) GetHttpPath() string`
-
-GetHttpPath returns the HttpPath field if non-nil, zero value otherwise.
-
-### GetHttpPathOk
-
-`func (o *DatabricksDeltaTableSettingsConfig) GetHttpPathOk() (*string, bool)`
-
-GetHttpPathOk returns a tuple with the HttpPath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHttpPath
-
-`func (o *DatabricksDeltaTableSettingsConfig) SetHttpPath(v string)`
-
-SetHttpPath sets HttpPath field to given value.
-
-### HasHttpPath
-
-`func (o *DatabricksDeltaTableSettingsConfig) HasHttpPath() bool`
-
-HasHttpPath returns a boolean if a field has been set.
-
 ### GetSchema
 
 `func (o *DatabricksDeltaTableSettingsConfig) GetSchema() string`
@@ -134,26 +107,6 @@ and a boolean to check if the value has been set.
 `func (o *DatabricksDeltaTableSettingsConfig) SetServerHostname(v string)`
 
 SetServerHostname sets ServerHostname field to given value.
-
-
-### GetVolume
-
-`func (o *DatabricksDeltaTableSettingsConfig) GetVolume() string`
-
-GetVolume returns the Volume field if non-nil, zero value otherwise.
-
-### GetVolumeOk
-
-`func (o *DatabricksDeltaTableSettingsConfig) GetVolumeOk() (*string, bool)`
-
-GetVolumeOk returns a tuple with the Volume field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVolume
-
-`func (o *DatabricksDeltaTableSettingsConfig) SetVolume(v string)`
-
-SetVolume sets Volume field to given value.
 
 
 ### GetWriteMode

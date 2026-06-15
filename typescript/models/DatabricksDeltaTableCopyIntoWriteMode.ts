@@ -21,6 +21,10 @@ export class DatabricksDeltaTableCopyIntoWriteMode {
     * The target Delta table name. Required for copy_into mode. If the table doesn\'t exist, Monad will create it.
     */
     'tableName': string;
+    /**
+    * The Unity Catalog Volume used for staging JSONL files before COPY INTO.
+    */
+    'volume': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -36,6 +40,12 @@ export class DatabricksDeltaTableCopyIntoWriteMode {
         {
             "name": "tableName",
             "baseName": "table_name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "volume",
+            "baseName": "volume",
             "type": "string",
             "format": ""
         }    ];

@@ -74,7 +74,7 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
                             organization_id = '', 
                             updated_at = '', 
                             value = '', ), ), 
-                    simple = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(), 
+                    simple = monad.models.mask/simple_variant.mask.SimpleVariant(), 
                     type = '', ),
                 value_to_set = None,
                 format = 'rfc3339'

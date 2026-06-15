@@ -24,10 +24,8 @@ Name | Type | Description | Notes
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
 **Catalog** | **string** | The Unity Catalog name | 
-**HttpPath** | Pointer to **string** | Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader. | [optional] 
-**Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
+**Schema** | **string** | The schema within the database that contains the target pipe. | 
 **ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
-**Volume** | **string** | The Unity Catalog Volume used for staging JSONL files | 
 **WriteMode** | [**DatabricksDeltaTableWriteMode**](DatabricksDeltaTableWriteMode.md) |  | 
 **Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **Ddtags** | Pointer to **[]string** | Tags associated with your logs. | [optional] 
@@ -72,9 +70,9 @@ Name | Type | Description | Notes
 **SummaryConfig** | Pointer to [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 **HttpIngestUrl** | Pointer to **string** |  | [optional] 
 **ColumnNames** | Pointer to **[]string** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
-**Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
+**Database** | **string** | The Snowflake database that contains the target pipe. | 
 **Host** | Pointer to **string** | The host of the PostgreSQL database | [optional] 
-**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
+**User** | **string** | The username of the Snowflake account used to authenticate. The user&#39;s DEFAULT_ROLE must be set to a role with access to the pipe. | 
 **Auth** | Pointer to [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | [optional] 
 **LabelFields** | Pointer to **[]string** |  | [optional] 
 **MetricName** | Pointer to [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
@@ -87,11 +85,14 @@ Name | Type | Description | Notes
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
 **MessageTemplate** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
+**Account** | **string** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. | 
 **CaseInsensitivity** | Pointer to **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**ChannelPrefix** | Pointer to **string** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. Defaults to \&quot;monad\&quot;. | [optional] 
+**Pipe** | **string** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
+**PrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
 **ToCreate** | Pointer to **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **SourceMetadata** | Pointer to [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
@@ -100,7 +101,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, catalog string, schema string, serverHostname string, volume string, writeMode DatabricksDeltaTableWriteMode, index string, username string, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, catalog string, schema string, serverHostname string, writeMode DatabricksDeltaTableWriteMode, index string, username string, database string, user string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -590,31 +591,6 @@ and a boolean to check if the value has been set.
 SetCatalog sets Catalog field to given value.
 
 
-### GetHttpPath
-
-`func (o *SecretProcessesorOutputConfigSettings) GetHttpPath() string`
-
-GetHttpPath returns the HttpPath field if non-nil, zero value otherwise.
-
-### GetHttpPathOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetHttpPathOk() (*string, bool)`
-
-GetHttpPathOk returns a tuple with the HttpPath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHttpPath
-
-`func (o *SecretProcessesorOutputConfigSettings) SetHttpPath(v string)`
-
-SetHttpPath sets HttpPath field to given value.
-
-### HasHttpPath
-
-`func (o *SecretProcessesorOutputConfigSettings) HasHttpPath() bool`
-
-HasHttpPath returns a boolean if a field has been set.
-
 ### GetSchema
 
 `func (o *SecretProcessesorOutputConfigSettings) GetSchema() string`
@@ -653,26 +629,6 @@ and a boolean to check if the value has been set.
 `func (o *SecretProcessesorOutputConfigSettings) SetServerHostname(v string)`
 
 SetServerHostname sets ServerHostname field to given value.
-
-
-### GetVolume
-
-`func (o *SecretProcessesorOutputConfigSettings) GetVolume() string`
-
-GetVolume returns the Volume field if non-nil, zero value otherwise.
-
-### GetVolumeOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetVolumeOk() (*string, bool)`
-
-GetVolumeOk returns a tuple with the Volume field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVolume
-
-`func (o *SecretProcessesorOutputConfigSettings) SetVolume(v string)`
-
-SetVolume sets Volume field to given value.
 
 
 ### GetWriteMode
@@ -1779,11 +1735,6 @@ and a boolean to check if the value has been set.
 
 SetDatabase sets Database field to given value.
 
-### HasDatabase
-
-`func (o *SecretProcessesorOutputConfigSettings) HasDatabase() bool`
-
-HasDatabase returns a boolean if a field has been set.
 
 ### GetHost
 
@@ -1829,11 +1780,6 @@ and a boolean to check if the value has been set.
 
 SetUser sets User field to given value.
 
-### HasUser
-
-`func (o *SecretProcessesorOutputConfigSettings) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
 
 ### GetAuth
 
@@ -2154,11 +2100,6 @@ and a boolean to check if the value has been set.
 
 SetAccount sets Account field to given value.
 
-### HasAccount
-
-`func (o *SecretProcessesorOutputConfigSettings) HasAccount() bool`
-
-HasAccount returns a boolean if a field has been set.
 
 ### GetCaseInsensitivity
 
@@ -2259,6 +2200,71 @@ SetWarehouse sets Warehouse field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasWarehouse() bool`
 
 HasWarehouse returns a boolean if a field has been set.
+
+### GetChannelPrefix
+
+`func (o *SecretProcessesorOutputConfigSettings) GetChannelPrefix() string`
+
+GetChannelPrefix returns the ChannelPrefix field if non-nil, zero value otherwise.
+
+### GetChannelPrefixOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetChannelPrefixOk() (*string, bool)`
+
+GetChannelPrefixOk returns a tuple with the ChannelPrefix field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannelPrefix
+
+`func (o *SecretProcessesorOutputConfigSettings) SetChannelPrefix(v string)`
+
+SetChannelPrefix sets ChannelPrefix field to given value.
+
+### HasChannelPrefix
+
+`func (o *SecretProcessesorOutputConfigSettings) HasChannelPrefix() bool`
+
+HasChannelPrefix returns a boolean if a field has been set.
+
+### GetPipe
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPipe() string`
+
+GetPipe returns the Pipe field if non-nil, zero value otherwise.
+
+### GetPipeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPipeOk() (*string, bool)`
+
+GetPipeOk returns a tuple with the Pipe field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPipe
+
+`func (o *SecretProcessesorOutputConfigSettings) SetPipe(v string)`
+
+SetPipe sets Pipe field to given value.
+
+
+### GetPrivateKey
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPrivateKey() ModelsSecret`
+
+GetPrivateKey returns the PrivateKey field if non-nil, zero value otherwise.
+
+### GetPrivateKeyOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPrivateKeyOk() (*ModelsSecret, bool)`
+
+GetPrivateKeyOk returns a tuple with the PrivateKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivateKey
+
+`func (o *SecretProcessesorOutputConfigSettings) SetPrivateKey(v ModelsSecret)`
+
+SetPrivateKey sets PrivateKey field to given value.
+
 
 ### GetAllowInsecure
 

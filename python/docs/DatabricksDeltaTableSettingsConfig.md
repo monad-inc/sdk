@@ -8,10 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
 **catalog** | **str** | The Unity Catalog name | 
-**http_path** | **str** | Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader. | [optional] 
 **var_schema** | **str** | The target schema within the catalog | 
 **server_hostname** | **str** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
-**volume** | **str** | The Unity Catalog Volume used for staging JSONL files | 
 **write_mode** | [**DatabricksDeltaTableWriteMode**](DatabricksDeltaTableWriteMode.md) |  | 
 
 ## Example

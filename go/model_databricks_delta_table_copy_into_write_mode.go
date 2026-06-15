@@ -26,6 +26,8 @@ type DatabricksDeltaTableCopyIntoWriteMode struct {
 	HttpPath string `json:"http_path"`
 	// The target Delta table name. Required for copy_into mode. If the table doesn't exist, Monad will create it.
 	TableName string `json:"table_name"`
+	// The Unity Catalog Volume used for staging JSONL files before COPY INTO.
+	Volume string `json:"volume"`
 }
 
 type _DatabricksDeltaTableCopyIntoWriteMode DatabricksDeltaTableCopyIntoWriteMode
@@ -34,10 +36,11 @@ type _DatabricksDeltaTableCopyIntoWriteMode DatabricksDeltaTableCopyIntoWriteMod
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDatabricksDeltaTableCopyIntoWriteMode(httpPath string, tableName string) *DatabricksDeltaTableCopyIntoWriteMode {
+func NewDatabricksDeltaTableCopyIntoWriteMode(httpPath string, tableName string, volume string) *DatabricksDeltaTableCopyIntoWriteMode {
 	this := DatabricksDeltaTableCopyIntoWriteMode{}
 	this.HttpPath = httpPath
 	this.TableName = tableName
+	this.Volume = volume
 	return &this
 }
 
@@ -97,6 +100,30 @@ func (o *DatabricksDeltaTableCopyIntoWriteMode) SetTableName(v string) {
 	o.TableName = v
 }
 
+// GetVolume returns the Volume field value
+func (o *DatabricksDeltaTableCopyIntoWriteMode) GetVolume() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Volume
+}
+
+// GetVolumeOk returns a tuple with the Volume field value
+// and a boolean to check if the value has been set.
+func (o *DatabricksDeltaTableCopyIntoWriteMode) GetVolumeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Volume, true
+}
+
+// SetVolume sets field value
+func (o *DatabricksDeltaTableCopyIntoWriteMode) SetVolume(v string) {
+	o.Volume = v
+}
+
 func (o DatabricksDeltaTableCopyIntoWriteMode) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -109,6 +136,7 @@ func (o DatabricksDeltaTableCopyIntoWriteMode) ToMap() (map[string]interface{}, 
 	toSerialize := map[string]interface{}{}
 	toSerialize["http_path"] = o.HttpPath
 	toSerialize["table_name"] = o.TableName
+	toSerialize["volume"] = o.Volume
 	return toSerialize, nil
 }
 
@@ -119,6 +147,7 @@ func (o *DatabricksDeltaTableCopyIntoWriteMode) UnmarshalJSON(data []byte) (err 
 	requiredProperties := []string{
 		"http_path",
 		"table_name",
+		"volume",
 	}
 
 	allProperties := make(map[string]interface{})

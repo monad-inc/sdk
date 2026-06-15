@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.DatabricksDeltaTableAutoLoaderWriteMode;
 import org.openapitools.client.model.DatabricksDeltaTableCopyIntoWriteMode;
+import org.openapitools.client.model.DatabricksDeltaTableZeroBusWriteMode;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -60,6 +62,14 @@ public class DatabricksDeltaTableWriteModeTest {
     @Test
     public void writeModeTest() {
         // TODO: test writeMode
+    }
+
+    /**
+     * Test the property 'zerobus'
+     */
+    @Test
+    public void zerobusTest() {
+        // TODO: test zerobus
     }
 
 }

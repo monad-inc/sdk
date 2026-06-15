@@ -62,11 +62,6 @@ public class DatabricksDeltaTableSettingsConfig {
   @javax.annotation.Nonnull
   private String catalog;
 
-  public static final String SERIALIZED_NAME_HTTP_PATH = "http_path";
-  @SerializedName(SERIALIZED_NAME_HTTP_PATH)
-  @javax.annotation.Nullable
-  private String httpPath;
-
   public static final String SERIALIZED_NAME_SCHEMA = "schema";
   @SerializedName(SERIALIZED_NAME_SCHEMA)
   @javax.annotation.Nonnull
@@ -76,11 +71,6 @@ public class DatabricksDeltaTableSettingsConfig {
   @SerializedName(SERIALIZED_NAME_SERVER_HOSTNAME)
   @javax.annotation.Nonnull
   private String serverHostname;
-
-  public static final String SERIALIZED_NAME_VOLUME = "volume";
-  @SerializedName(SERIALIZED_NAME_VOLUME)
-  @javax.annotation.Nonnull
-  private String volume;
 
   public static final String SERIALIZED_NAME_WRITE_MODE = "write_mode";
   @SerializedName(SERIALIZED_NAME_WRITE_MODE)
@@ -128,25 +118,6 @@ public class DatabricksDeltaTableSettingsConfig {
   }
 
 
-  public DatabricksDeltaTableSettingsConfig httpPath(@javax.annotation.Nullable String httpPath) {
-    this.httpPath = httpPath;
-    return this;
-  }
-
-  /**
-   * Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.
-   * @return httpPath
-   */
-  @javax.annotation.Nullable
-  public String getHttpPath() {
-    return httpPath;
-  }
-
-  public void setHttpPath(@javax.annotation.Nullable String httpPath) {
-    this.httpPath = httpPath;
-  }
-
-
   public DatabricksDeltaTableSettingsConfig schema(@javax.annotation.Nonnull String schema) {
     this.schema = schema;
     return this;
@@ -185,25 +156,6 @@ public class DatabricksDeltaTableSettingsConfig {
   }
 
 
-  public DatabricksDeltaTableSettingsConfig volume(@javax.annotation.Nonnull String volume) {
-    this.volume = volume;
-    return this;
-  }
-
-  /**
-   * The Unity Catalog Volume used for staging JSONL files
-   * @return volume
-   */
-  @javax.annotation.Nonnull
-  public String getVolume() {
-    return volume;
-  }
-
-  public void setVolume(@javax.annotation.Nonnull String volume) {
-    this.volume = volume;
-  }
-
-
   public DatabricksDeltaTableSettingsConfig writeMode(@javax.annotation.Nonnull DatabricksDeltaTableWriteMode writeMode) {
     this.writeMode = writeMode;
     return this;
@@ -235,16 +187,14 @@ public class DatabricksDeltaTableSettingsConfig {
     DatabricksDeltaTableSettingsConfig databricksDeltaTableSettingsConfig = (DatabricksDeltaTableSettingsConfig) o;
     return Objects.equals(this.batchConfig, databricksDeltaTableSettingsConfig.batchConfig) &&
         Objects.equals(this.catalog, databricksDeltaTableSettingsConfig.catalog) &&
-        Objects.equals(this.httpPath, databricksDeltaTableSettingsConfig.httpPath) &&
         Objects.equals(this.schema, databricksDeltaTableSettingsConfig.schema) &&
         Objects.equals(this.serverHostname, databricksDeltaTableSettingsConfig.serverHostname) &&
-        Objects.equals(this.volume, databricksDeltaTableSettingsConfig.volume) &&
         Objects.equals(this.writeMode, databricksDeltaTableSettingsConfig.writeMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(batchConfig, catalog, httpPath, schema, serverHostname, volume, writeMode);
+    return Objects.hash(batchConfig, catalog, schema, serverHostname, writeMode);
   }
 
   @Override
@@ -253,10 +203,8 @@ public class DatabricksDeltaTableSettingsConfig {
     sb.append("class DatabricksDeltaTableSettingsConfig {\n");
     sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
     sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
-    sb.append("    httpPath: ").append(toIndentedString(httpPath)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    serverHostname: ").append(toIndentedString(serverHostname)).append("\n");
-    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("    writeMode: ").append(toIndentedString(writeMode)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -276,10 +224,10 @@ public class DatabricksDeltaTableSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "http_path", "schema", "server_hostname", "volume", "write_mode"));
+    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "schema", "server_hostname", "write_mode"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "schema", "server_hostname", "volume", "write_mode"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "schema", "server_hostname", "write_mode"));
   }
 
   /**
@@ -315,17 +263,11 @@ public class DatabricksDeltaTableSettingsConfig {
       if (!jsonObj.get("catalog").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `catalog` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog").toString()));
       }
-      if ((jsonObj.get("http_path") != null && !jsonObj.get("http_path").isJsonNull()) && !jsonObj.get("http_path").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `http_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("http_path").toString()));
-      }
       if (!jsonObj.get("schema").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema").toString()));
       }
       if (!jsonObj.get("server_hostname").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `server_hostname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("server_hostname").toString()));
-      }
-      if (!jsonObj.get("volume").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `volume` to be a primitive type in the JSON string but got `%s`", jsonObj.get("volume").toString()));
       }
       // validate the required field `write_mode`
       DatabricksDeltaTableWriteMode.validateJsonElement(jsonObj.get("write_mode"));

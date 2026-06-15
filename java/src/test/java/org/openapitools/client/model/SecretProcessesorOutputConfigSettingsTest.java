@@ -47,6 +47,7 @@ import org.openapitools.client.model.KafkaSaslMechanism;
 import org.openapitools.client.model.KafkaSecurityProtocol;
 import org.openapitools.client.model.KafkaSettingsConfig;
 import org.openapitools.client.model.KvLookupOutputSettingsConfig;
+import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.NextGenSiemSettingsConfig;
 import org.openapitools.client.model.ObjectStorageSettingsConfig;
 import org.openapitools.client.model.OpensearchAuthMode;
@@ -70,6 +71,7 @@ import org.openapitools.client.model.SentinelSettingsConfig;
 import org.openapitools.client.model.SlackAuthConfig;
 import org.openapitools.client.model.SlackSettingsConfig;
 import org.openapitools.client.model.SnowflakeOutputSettingsConfig;
+import org.openapitools.client.model.SnowflakeSnowpipeStreamingSettingsConfig;
 import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
 import org.openapitools.client.model.SumologicSourceMetadata;
@@ -251,14 +253,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'httpPath'
-     */
-    @Test
-    public void httpPathTest() {
-        // TODO: test httpPath
-    }
-
-    /**
      * Test the property 'schema'
      */
     @Test
@@ -272,14 +266,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void serverHostnameTest() {
         // TODO: test serverHostname
-    }
-
-    /**
-     * Test the property 'volume'
-     */
-    @Test
-    public void volumeTest() {
-        // TODO: test volume
     }
 
     /**
@@ -792,6 +778,30 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void warehouseTest() {
         // TODO: test warehouse
+    }
+
+    /**
+     * Test the property 'channelPrefix'
+     */
+    @Test
+    public void channelPrefixTest() {
+        // TODO: test channelPrefix
+    }
+
+    /**
+     * Test the property 'pipe'
+     */
+    @Test
+    public void pipeTest() {
+        // TODO: test pipe
+    }
+
+    /**
+     * Test the property 'privateKey'
+     */
+    @Test
+    public void privateKeyTest() {
+        // TODO: test privateKey
     }
 
     /**

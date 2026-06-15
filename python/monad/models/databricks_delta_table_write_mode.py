@@ -20,25 +20,28 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.databricks_delta_table_auto_loader_write_mode import DatabricksDeltaTableAutoLoaderWriteMode
 from monad.models.databricks_delta_table_copy_into_write_mode import DatabricksDeltaTableCopyIntoWriteMode
+from monad.models.databricks_delta_table_zero_bus_write_mode import DatabricksDeltaTableZeroBusWriteMode
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
 class DatabricksDeltaTableWriteMode(BaseModel):
     """
-    The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest
+    The write mode controls how data is loaded.
     """ # noqa: E501
-    auto_loader: Optional[Dict[str, Any]] = None
+    auto_loader: Optional[DatabricksDeltaTableAutoLoaderWriteMode] = None
     copy_into: Optional[DatabricksDeltaTableCopyIntoWriteMode] = None
     write_mode: StrictStr
-    __properties: ClassVar[List[str]] = ["auto_loader", "copy_into", "write_mode"]
+    zerobus: Optional[DatabricksDeltaTableZeroBusWriteMode] = None
+    __properties: ClassVar[List[str]] = ["auto_loader", "copy_into", "write_mode", "zerobus"]
 
     @field_validator('write_mode')
     def write_mode_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['autoloader', 'copy_into']):
-            raise ValueError("must be one of enum values ('autoloader', 'copy_into')")
+        if value not in set(['autoloader', 'copy_into', 'zerobus']):
+            raise ValueError("must be one of enum values ('autoloader', 'copy_into', 'zerobus')")
         return value
 
     model_config = ConfigDict(
@@ -80,9 +83,15 @@ class DatabricksDeltaTableWriteMode(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of auto_loader
+        if self.auto_loader:
+            _dict['auto_loader'] = self.auto_loader.to_dict()
         # override the default output from pydantic by calling `to_dict()` of copy_into
         if self.copy_into:
             _dict['copy_into'] = self.copy_into.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of zerobus
+        if self.zerobus:
+            _dict['zerobus'] = self.zerobus.to_dict()
         return _dict
 
     @classmethod
@@ -95,9 +104,10 @@ class DatabricksDeltaTableWriteMode(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auto_loader": obj.get("auto_loader"),
+            "auto_loader": DatabricksDeltaTableAutoLoaderWriteMode.from_dict(obj["auto_loader"]) if obj.get("auto_loader") is not None else None,
             "copy_into": DatabricksDeltaTableCopyIntoWriteMode.from_dict(obj["copy_into"]) if obj.get("copy_into") is not None else None,
-            "write_mode": obj.get("write_mode")
+            "write_mode": obj.get("write_mode"),
+            "zerobus": DatabricksDeltaTableZeroBusWriteMode.from_dict(obj["zerobus"]) if obj.get("zerobus") is not None else None
         })
         return _obj
 

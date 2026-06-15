@@ -120,10 +120,12 @@ export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
 export * from '../models/CustomerEventDataSecretsConfig';
 export * from '../models/CustomerEventDataSettingsConfig';
+export * from '../models/DatabricksDeltaTableAutoLoaderWriteMode';
 export * from '../models/DatabricksDeltaTableCopyIntoWriteMode';
 export * from '../models/DatabricksDeltaTableSecretsConfig';
 export * from '../models/DatabricksDeltaTableSettingsConfig';
 export * from '../models/DatabricksDeltaTableWriteMode';
+export * from '../models/DatabricksDeltaTableZeroBusWriteMode';
 export * from '../models/DatadogSecretsConfig';
 export * from '../models/DatadogSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -526,6 +528,7 @@ export * from '../models/SnowflakeInputSecretsConfig';
 export * from '../models/SnowflakeInputSettingsConfig';
 export * from '../models/SnowflakeOutputSecretsConfig';
 export * from '../models/SnowflakeOutputSettingsConfig';
+export * from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
 export * from '../models/SnykIssuesSecretsConfig';
 export * from '../models/SnykIssuesSettingsConfig';
 export * from '../models/SnykTargetsSecretsConfig';
@@ -742,10 +745,12 @@ import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
 import { CustomerEventDataSettingsConfig , CustomerEventDataSettingsConfigEnvironmentEnum    } from '../models/CustomerEventDataSettingsConfig';
+import { DatabricksDeltaTableAutoLoaderWriteMode } from '../models/DatabricksDeltaTableAutoLoaderWriteMode';
 import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDeltaTableCopyIntoWriteMode';
 import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTableSecretsConfig';
 import { DatabricksDeltaTableSettingsConfig } from '../models/DatabricksDeltaTableSettingsConfig';
-import { DatabricksDeltaTableWriteMode  , DatabricksDeltaTableWriteModeWriteModeEnum   } from '../models/DatabricksDeltaTableWriteMode';
+import { DatabricksDeltaTableWriteMode  , DatabricksDeltaTableWriteModeWriteModeEnum    } from '../models/DatabricksDeltaTableWriteMode';
+import { DatabricksDeltaTableZeroBusWriteMode } from '../models/DatabricksDeltaTableZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -1148,6 +1153,7 @@ import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConf
 import { SnowflakeInputSettingsConfig , SnowflakeInputSettingsConfigAuthTypeEnum            } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
+import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
 import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
@@ -1452,10 +1458,12 @@ let typeMap: {[index: string]: any} = {
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
     "CustomerEventDataSecretsConfig": CustomerEventDataSecretsConfig,
     "CustomerEventDataSettingsConfig": CustomerEventDataSettingsConfig,
+    "DatabricksDeltaTableAutoLoaderWriteMode": DatabricksDeltaTableAutoLoaderWriteMode,
     "DatabricksDeltaTableCopyIntoWriteMode": DatabricksDeltaTableCopyIntoWriteMode,
     "DatabricksDeltaTableSecretsConfig": DatabricksDeltaTableSecretsConfig,
     "DatabricksDeltaTableSettingsConfig": DatabricksDeltaTableSettingsConfig,
     "DatabricksDeltaTableWriteMode": DatabricksDeltaTableWriteMode,
+    "DatabricksDeltaTableZeroBusWriteMode": DatabricksDeltaTableZeroBusWriteMode,
     "DatadogSecretsConfig": DatadogSecretsConfig,
     "DatadogSettingsConfig": DatadogSettingsConfig,
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,
@@ -1832,6 +1840,7 @@ let typeMap: {[index: string]: any} = {
     "SnowflakeInputSettingsConfig": SnowflakeInputSettingsConfig,
     "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
     "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
+    "SnowflakeSnowpipeStreamingSettingsConfig": SnowflakeSnowpipeStreamingSettingsConfig,
     "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
     "SnykIssuesSettingsConfig": SnykIssuesSettingsConfig,
     "SnykTargetsSecretsConfig": SnykTargetsSecretsConfig,

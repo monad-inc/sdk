@@ -10,16 +10,19 @@
  * Do not edit the class manually.
  */
 
+import { DatabricksDeltaTableAutoLoaderWriteMode } from '../models/DatabricksDeltaTableAutoLoaderWriteMode';
 import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDeltaTableCopyIntoWriteMode';
+import { DatabricksDeltaTableZeroBusWriteMode } from '../models/DatabricksDeltaTableZeroBusWriteMode';
 import { HttpFile } from '../http/http';
 
 /**
-* The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest
+* The write mode controls how data is loaded.
 */
 export class DatabricksDeltaTableWriteMode {
-    'autoLoader'?: any;
+    'autoLoader'?: DatabricksDeltaTableAutoLoaderWriteMode;
     'copyInto'?: DatabricksDeltaTableCopyIntoWriteMode;
     'writeMode': DatabricksDeltaTableWriteModeWriteModeEnum;
+    'zerobus'?: DatabricksDeltaTableZeroBusWriteMode;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +32,7 @@ export class DatabricksDeltaTableWriteMode {
         {
             "name": "autoLoader",
             "baseName": "auto_loader",
-            "type": "any",
+            "type": "DatabricksDeltaTableAutoLoaderWriteMode",
             "format": ""
         },
         {
@@ -43,6 +46,12 @@ export class DatabricksDeltaTableWriteMode {
             "baseName": "write_mode",
             "type": "DatabricksDeltaTableWriteModeWriteModeEnum",
             "format": ""
+        },
+        {
+            "name": "zerobus",
+            "baseName": "zerobus",
+            "type": "DatabricksDeltaTableZeroBusWriteMode",
+            "format": ""
         }    ];
 
     static getAttributeTypeMap() {
@@ -55,6 +64,7 @@ export class DatabricksDeltaTableWriteMode {
 
 export enum DatabricksDeltaTableWriteModeWriteModeEnum {
     Autoloader = 'autoloader',
-    CopyInto = 'copy_into'
+    CopyInto = 'copy_into',
+    Zerobus = 'zerobus'
 }
 

@@ -2,15 +2,16 @@
 
 # DatabricksDeltaTableWriteMode
 
-The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest
+The write mode controls how data is loaded.
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**autoLoader** | **Object** |  |  [optional] |
+|**autoLoader** | [**DatabricksDeltaTableAutoLoaderWriteMode**](DatabricksDeltaTableAutoLoaderWriteMode.md) |  |  [optional] |
 |**copyInto** | [**DatabricksDeltaTableCopyIntoWriteMode**](DatabricksDeltaTableCopyIntoWriteMode.md) |  |  [optional] |
 |**writeMode** | [**WriteModeEnum**](#WriteModeEnum) |  |  |
+|**zerobus** | [**DatabricksDeltaTableZeroBusWriteMode**](DatabricksDeltaTableZeroBusWriteMode.md) |  |  [optional] |
 
 
 
@@ -20,6 +21,7 @@ The write mode: copy_into (default) stages files and uses COPY INTO; autoloader 
 |---- | -----|
 | AUTOLOADER | &quot;autoloader&quot; |
 | COPY_INTO | &quot;copy_into&quot; |
+| ZEROBUS | &quot;zerobus&quot; |
 
 
 

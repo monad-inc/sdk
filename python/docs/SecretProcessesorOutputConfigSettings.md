@@ -25,10 +25,8 @@ Name | Type | Description | Notes
 **path** | **str** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **port** | **str** | The port of the Splunk instance. | [optional] 
 **catalog** | **str** | The Unity Catalog name | 
-**http_path** | **str** | Deprecated. Moved under copy_into mode. Autoloader does not require warehouse The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader. | [optional] 
-**var_schema** | **str** | The schema within the Snowflake database where the target table resides. | 
+**var_schema** | **str** | The schema within the database that contains the target pipe. | 
 **server_hostname** | **str** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
-**volume** | **str** | The Unity Catalog Volume used for staging JSONL files | 
 **write_mode** | [**DatabricksDeltaTableWriteMode**](DatabricksDeltaTableWriteMode.md) |  | 
 **ddsource** | **str** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **ddtags** | **List[str]** | Tags associated with your logs. | [optional] 
@@ -73,9 +71,9 @@ Name | Type | Description | Notes
 **summary_config** | [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 **http_ingest_url** | **str** |  | [optional] 
 **column_names** | **List[str]** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
-**database** | **str** | The name of the Snowflake database to connect to and perform operations on | [optional] 
+**database** | **str** | The Snowflake database that contains the target pipe. | 
 **host** | **str** | The host of the PostgreSQL database | [optional] 
-**user** | **str** | The username of the Snowflake account used to establish the connection. | [optional] 
+**user** | **str** | The username of the Snowflake account used to authenticate. The user&#39;s DEFAULT_ROLE must be set to a role with access to the pipe. | 
 **auth** | [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | [optional] 
 **label_fields** | **List[str]** |  | [optional] 
 **metric_name** | [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
@@ -88,11 +86,14 @@ Name | Type | Description | Notes
 **rule_id** | **str** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **stream_name** | **str** | The name of the data stream defined in the Data Collection Rule. | [optional] 
 **message_template** | **str** |  | [optional] 
-**account** | **str** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
+**account** | **str** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. | 
 **case_insensitivity** | **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **stage** | **str** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
 **warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**channel_prefix** | **str** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. Defaults to \&quot;monad\&quot;. | [optional] 
+**pipe** | **str** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
+**private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **allow_insecure** | **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
 **to_create** | **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **source_metadata** | [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 

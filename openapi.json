@@ -884,7 +884,7 @@
                 "type": "object"
             },
             "batch_config.BatchConfig": {
-                "description": "controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed",
+                "description": "Controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed.",
                 "properties": {
                     "batch_data_size": {
                         "type": "integer"
@@ -2066,6 +2066,15 @@
                 "type": "object"
             },
             "databricks_delta_table.AutoLoaderWriteMode": {
+                "properties": {
+                    "volume": {
+                        "description": "The Unity Catalog Volume used for staging JSONL files for Autoloader to ingest.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "volume"
+                ],
                 "type": "object"
             },
             "databricks_delta_table.CopyIntoWriteMode": {
@@ -2077,11 +2086,16 @@
                     "table_name": {
                         "description": "The target Delta table name. Required for copy_into mode. If the table doesn't exist, Monad will create it.",
                         "type": "string"
+                    },
+                    "volume": {
+                        "description": "The Unity Catalog Volume used for staging JSONL files before COPY INTO.",
+                        "type": "string"
                     }
                 },
                 "required": [
                     "http_path",
-                    "table_name"
+                    "table_name",
+                    "volume"
                 ],
                 "type": "object"
             },
@@ -2111,20 +2125,12 @@
                         "description": "The Unity Catalog name",
                         "type": "string"
                     },
-                    "http_path": {
-                        "description": "Deprecated. Moved under copy_into mode. Autoloader does not require warehouse\nThe SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.",
-                        "type": "string"
-                    },
                     "schema": {
                         "description": "The target schema within the catalog",
                         "type": "string"
                     },
                     "server_hostname": {
                         "description": "The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)",
-                        "type": "string"
-                    },
-                    "volume": {
-                        "description": "The Unity Catalog Volume used for staging JSONL files",
                         "type": "string"
                     },
                     "write_mode": {
@@ -2136,13 +2142,12 @@
                     "catalog",
                     "schema",
                     "server_hostname",
-                    "volume",
                     "write_mode"
                 ],
                 "type": "object"
             },
             "databricks_delta_table.WriteMode": {
-                "description": "The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest",
+                "description": "The write mode controls how data is loaded.",
                 "properties": {
                     "auto_loader": {
                         "$ref": "#/components/schemas/databricks_delta_table.AutoLoaderWriteMode"
@@ -2153,13 +2158,39 @@
                     "write_mode": {
                         "enum": [
                             "autoloader",
-                            "copy_into"
+                            "copy_into",
+                            "zerobus"
                         ],
                         "type": "string"
+                    },
+                    "zerobus": {
+                        "$ref": "#/components/schemas/databricks_delta_table.ZeroBusWriteMode"
                     }
                 },
                 "required": [
                     "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_delta_table.ZeroBusWriteMode": {
+                "properties": {
+                    "region": {
+                        "description": "The Databricks workspace region (e.g. us-west-2) used to form the ZeroBus data-plane endpoint.",
+                        "type": "string"
+                    },
+                    "table_name": {
+                        "description": "The target Delta table name. The table must already exist with the expected schema.",
+                        "type": "string"
+                    },
+                    "workspace_id": {
+                        "description": "The numeric Databricks workspace ID used to scope the ZeroBus OAuth token and form the data-plane endpoint.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "region",
+                    "table_name",
+                    "workspace_id"
                 ],
                 "type": "object"
             },
@@ -10456,6 +10487,9 @@
                                 "$ref": "#/components/schemas/snowflake_output.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/snowflake_snowpipe_streaming.SettingsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/splunk.SettingsConfig"
                             },
                             {
@@ -10839,6 +10873,50 @@
                         "type": "string"
                     }
                 },
+                "type": "object"
+            },
+            "snowflake_snowpipe_streaming.SettingsConfig": {
+                "description": "Snowflake Snowpipe Streaming Output Settings",
+                "properties": {
+                    "account": {
+                        "description": "The unique identifier for your Snowflake account, e.g. 'orgname-account_name'.",
+                        "type": "string"
+                    },
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "channel_prefix": {
+                        "description": "Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance. Defaults to \"monad\".",
+                        "type": "string"
+                    },
+                    "database": {
+                        "description": "The Snowflake database that contains the target pipe.",
+                        "type": "string"
+                    },
+                    "pipe": {
+                        "description": "The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE =\u003e 'STREAMING')).",
+                        "type": "string"
+                    },
+                    "private_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "schema": {
+                        "description": "The schema within the database that contains the target pipe.",
+                        "type": "string"
+                    },
+                    "user": {
+                        "description": "The username of the Snowflake account used to authenticate. The user's DEFAULT_ROLE must be set to a role with access to the pipe.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "account",
+                    "database",
+                    "pipe",
+                    "private_key",
+                    "schema",
+                    "user"
+                ],
                 "type": "object"
             },
             "snyk_issues.SecretsConfig": {

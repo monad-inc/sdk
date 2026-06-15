@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AutoLoader** | Pointer to **map[string]interface{}** |  | [optional] 
+**AutoLoader** | Pointer to [**DatabricksDeltaTableAutoLoaderWriteMode**](DatabricksDeltaTableAutoLoaderWriteMode.md) |  | [optional] 
 **CopyInto** | Pointer to [**DatabricksDeltaTableCopyIntoWriteMode**](DatabricksDeltaTableCopyIntoWriteMode.md) |  | [optional] 
 **WriteMode** | **string** |  | 
+**Zerobus** | Pointer to [**DatabricksDeltaTableZeroBusWriteMode**](DatabricksDeltaTableZeroBusWriteMode.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAutoLoader
 
-`func (o *DatabricksDeltaTableWriteMode) GetAutoLoader() map[string]interface{}`
+`func (o *DatabricksDeltaTableWriteMode) GetAutoLoader() DatabricksDeltaTableAutoLoaderWriteMode`
 
 GetAutoLoader returns the AutoLoader field if non-nil, zero value otherwise.
 
 ### GetAutoLoaderOk
 
-`func (o *DatabricksDeltaTableWriteMode) GetAutoLoaderOk() (*map[string]interface{}, bool)`
+`func (o *DatabricksDeltaTableWriteMode) GetAutoLoaderOk() (*DatabricksDeltaTableAutoLoaderWriteMode, bool)`
 
 GetAutoLoaderOk returns a tuple with the AutoLoader field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAutoLoader
 
-`func (o *DatabricksDeltaTableWriteMode) SetAutoLoader(v map[string]interface{})`
+`func (o *DatabricksDeltaTableWriteMode) SetAutoLoader(v DatabricksDeltaTableAutoLoaderWriteMode)`
 
 SetAutoLoader sets AutoLoader field to given value.
 
@@ -96,6 +97,31 @@ and a boolean to check if the value has been set.
 
 SetWriteMode sets WriteMode field to given value.
 
+
+### GetZerobus
+
+`func (o *DatabricksDeltaTableWriteMode) GetZerobus() DatabricksDeltaTableZeroBusWriteMode`
+
+GetZerobus returns the Zerobus field if non-nil, zero value otherwise.
+
+### GetZerobusOk
+
+`func (o *DatabricksDeltaTableWriteMode) GetZerobusOk() (*DatabricksDeltaTableZeroBusWriteMode, bool)`
+
+GetZerobusOk returns a tuple with the Zerobus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZerobus
+
+`func (o *DatabricksDeltaTableWriteMode) SetZerobus(v DatabricksDeltaTableZeroBusWriteMode)`
+
+SetZerobus sets Zerobus field to given value.
+
+### HasZerobus
+
+`func (o *DatabricksDeltaTableWriteMode) HasZerobus() bool`
+
+HasZerobus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

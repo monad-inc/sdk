@@ -30,7 +30,8 @@ class DatabricksDeltaTableCopyIntoWriteMode(BaseModel):
     """ # noqa: E501
     http_path: StrictStr = Field(description="The SQL warehouse HTTP path from connection details (e.g. /sql/1.0/warehouses/abc123). Required for copy_into mode; not needed for autoloader.")
     table_name: StrictStr = Field(description="The target Delta table name. Required for copy_into mode. If the table doesn't exist, Monad will create it.")
-    __properties: ClassVar[List[str]] = ["http_path", "table_name"]
+    volume: StrictStr = Field(description="The Unity Catalog Volume used for staging JSONL files before COPY INTO.")
+    __properties: ClassVar[List[str]] = ["http_path", "table_name", "volume"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,7 +85,8 @@ class DatabricksDeltaTableCopyIntoWriteMode(BaseModel):
 
         _obj = cls.model_validate({
             "http_path": obj.get("http_path"),
-            "table_name": obj.get("table_name")
+            "table_name": obj.get("table_name"),
+            "volume": obj.get("volume")
         })
         return _obj
 

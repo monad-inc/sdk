@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 /**
-* controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed
+* Controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed.
 */
 export class BatchConfigBatchConfig {
     'batchDataSize'?: number;

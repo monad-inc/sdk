@@ -36,11 +36,17 @@ class TestDatabricksDeltaTableWriteMode(unittest.TestCase):
         model = DatabricksDeltaTableWriteMode()
         if include_optional:
             return DatabricksDeltaTableWriteMode(
-                auto_loader = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(),
+                auto_loader = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(
+                    volume = '', ),
                 copy_into = monad.models.databricks_delta_table/copy_into_write_mode.databricks_delta_table.CopyIntoWriteMode(
                     http_path = '', 
-                    table_name = '', ),
-                write_mode = 'autoloader'
+                    table_name = '', 
+                    volume = '', ),
+                write_mode = 'autoloader',
+                zerobus = monad.models.databricks_delta_table/zero_bus_write_mode.databricks_delta_table.ZeroBusWriteMode(
+                    region = '', 
+                    table_name = '', 
+                    workspace_id = '', )
             )
         else:
             return DatabricksDeltaTableWriteMode(

@@ -36,6 +36,7 @@ import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
+import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { HttpFile } from '../http/http';
@@ -45,7 +46,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass
@@ -56,6 +57,7 @@ export class SecretProcessesorOutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

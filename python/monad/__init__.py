@@ -190,10 +190,12 @@ __all__ = [
     "CriblHttpSettingsConfig",
     "CustomerEventDataSecretsConfig",
     "CustomerEventDataSettingsConfig",
+    "DatabricksDeltaTableAutoLoaderWriteMode",
     "DatabricksDeltaTableCopyIntoWriteMode",
     "DatabricksDeltaTableSecretsConfig",
     "DatabricksDeltaTableSettingsConfig",
     "DatabricksDeltaTableWriteMode",
+    "DatabricksDeltaTableZeroBusWriteMode",
     "DatadogSecretsConfig",
     "DatadogSettingsConfig",
     "DefenderForEndpointAlertsSecretsConfig",
@@ -596,6 +598,7 @@ __all__ = [
     "SnowflakeInputSettingsConfig",
     "SnowflakeOutputSecretsConfig",
     "SnowflakeOutputSettingsConfig",
+    "SnowflakeSnowpipeStreamingSettingsConfig",
     "SnykIssuesSecretsConfig",
     "SnykIssuesSettingsConfig",
     "SnykTargetsSecretsConfig",
@@ -867,10 +870,12 @@ from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig as Cri
 from monad.models.cribl_http_settings_config import CriblHttpSettingsConfig as CriblHttpSettingsConfig
 from monad.models.customer_event_data_secrets_config import CustomerEventDataSecretsConfig as CustomerEventDataSecretsConfig
 from monad.models.customer_event_data_settings_config import CustomerEventDataSettingsConfig as CustomerEventDataSettingsConfig
+from monad.models.databricks_delta_table_auto_loader_write_mode import DatabricksDeltaTableAutoLoaderWriteMode as DatabricksDeltaTableAutoLoaderWriteMode
 from monad.models.databricks_delta_table_copy_into_write_mode import DatabricksDeltaTableCopyIntoWriteMode as DatabricksDeltaTableCopyIntoWriteMode
 from monad.models.databricks_delta_table_secrets_config import DatabricksDeltaTableSecretsConfig as DatabricksDeltaTableSecretsConfig
 from monad.models.databricks_delta_table_settings_config import DatabricksDeltaTableSettingsConfig as DatabricksDeltaTableSettingsConfig
 from monad.models.databricks_delta_table_write_mode import DatabricksDeltaTableWriteMode as DatabricksDeltaTableWriteMode
+from monad.models.databricks_delta_table_zero_bus_write_mode import DatabricksDeltaTableZeroBusWriteMode as DatabricksDeltaTableZeroBusWriteMode
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig
 from monad.models.datadog_settings_config import DatadogSettingsConfig as DatadogSettingsConfig
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig
@@ -1273,6 +1278,7 @@ from monad.models.snowflake_input_secrets_config import SnowflakeInputSecretsCon
 from monad.models.snowflake_input_settings_config import SnowflakeInputSettingsConfig as SnowflakeInputSettingsConfig
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig as SnowflakeOutputSecretsConfig
 from monad.models.snowflake_output_settings_config import SnowflakeOutputSettingsConfig as SnowflakeOutputSettingsConfig
+from monad.models.snowflake_snowpipe_streaming_settings_config import SnowflakeSnowpipeStreamingSettingsConfig as SnowflakeSnowpipeStreamingSettingsConfig
 from monad.models.snyk_issues_secrets_config import SnykIssuesSecretsConfig as SnykIssuesSecretsConfig
 from monad.models.snyk_issues_settings_config import SnykIssuesSettingsConfig as SnykIssuesSettingsConfig
 from monad.models.snyk_targets_secrets_config import SnykTargetsSecretsConfig as SnykTargetsSecretsConfig

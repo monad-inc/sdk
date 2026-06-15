@@ -21,7 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.DatabricksDeltaTableAutoLoaderWriteMode;
 import org.openapitools.client.model.DatabricksDeltaTableCopyIntoWriteMode;
+import org.openapitools.client.model.DatabricksDeltaTableZeroBusWriteMode;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,14 +49,14 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * The write mode: copy_into (default) stages files and uses COPY INTO; autoloader stages files for Databricks Autoloader to ingest
+ * The write mode controls how data is loaded.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksDeltaTableWriteMode {
   public static final String SERIALIZED_NAME_AUTO_LOADER = "auto_loader";
   @SerializedName(SERIALIZED_NAME_AUTO_LOADER)
   @javax.annotation.Nullable
-  private Object autoLoader;
+  private DatabricksDeltaTableAutoLoaderWriteMode autoLoader;
 
   public static final String SERIALIZED_NAME_COPY_INTO = "copy_into";
   @SerializedName(SERIALIZED_NAME_COPY_INTO)
@@ -68,7 +70,9 @@ public class DatabricksDeltaTableWriteMode {
   public enum WriteModeEnum {
     AUTOLOADER("autoloader"),
     
-    COPY_INTO("copy_into");
+    COPY_INTO("copy_into"),
+    
+    ZEROBUS("zerobus");
 
     private String value;
 
@@ -118,10 +122,15 @@ public class DatabricksDeltaTableWriteMode {
   @javax.annotation.Nonnull
   private WriteModeEnum writeMode;
 
+  public static final String SERIALIZED_NAME_ZEROBUS = "zerobus";
+  @SerializedName(SERIALIZED_NAME_ZEROBUS)
+  @javax.annotation.Nullable
+  private DatabricksDeltaTableZeroBusWriteMode zerobus;
+
   public DatabricksDeltaTableWriteMode() {
   }
 
-  public DatabricksDeltaTableWriteMode autoLoader(@javax.annotation.Nullable Object autoLoader) {
+  public DatabricksDeltaTableWriteMode autoLoader(@javax.annotation.Nullable DatabricksDeltaTableAutoLoaderWriteMode autoLoader) {
     this.autoLoader = autoLoader;
     return this;
   }
@@ -131,11 +140,11 @@ public class DatabricksDeltaTableWriteMode {
    * @return autoLoader
    */
   @javax.annotation.Nullable
-  public Object getAutoLoader() {
+  public DatabricksDeltaTableAutoLoaderWriteMode getAutoLoader() {
     return autoLoader;
   }
 
-  public void setAutoLoader(@javax.annotation.Nullable Object autoLoader) {
+  public void setAutoLoader(@javax.annotation.Nullable DatabricksDeltaTableAutoLoaderWriteMode autoLoader) {
     this.autoLoader = autoLoader;
   }
 
@@ -178,6 +187,25 @@ public class DatabricksDeltaTableWriteMode {
   }
 
 
+  public DatabricksDeltaTableWriteMode zerobus(@javax.annotation.Nullable DatabricksDeltaTableZeroBusWriteMode zerobus) {
+    this.zerobus = zerobus;
+    return this;
+  }
+
+  /**
+   * Get zerobus
+   * @return zerobus
+   */
+  @javax.annotation.Nullable
+  public DatabricksDeltaTableZeroBusWriteMode getZerobus() {
+    return zerobus;
+  }
+
+  public void setZerobus(@javax.annotation.Nullable DatabricksDeltaTableZeroBusWriteMode zerobus) {
+    this.zerobus = zerobus;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -190,12 +218,13 @@ public class DatabricksDeltaTableWriteMode {
     DatabricksDeltaTableWriteMode databricksDeltaTableWriteMode = (DatabricksDeltaTableWriteMode) o;
     return Objects.equals(this.autoLoader, databricksDeltaTableWriteMode.autoLoader) &&
         Objects.equals(this.copyInto, databricksDeltaTableWriteMode.copyInto) &&
-        Objects.equals(this.writeMode, databricksDeltaTableWriteMode.writeMode);
+        Objects.equals(this.writeMode, databricksDeltaTableWriteMode.writeMode) &&
+        Objects.equals(this.zerobus, databricksDeltaTableWriteMode.zerobus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoLoader, copyInto, writeMode);
+    return Objects.hash(autoLoader, copyInto, writeMode, zerobus);
   }
 
   @Override
@@ -205,6 +234,7 @@ public class DatabricksDeltaTableWriteMode {
     sb.append("    autoLoader: ").append(toIndentedString(autoLoader)).append("\n");
     sb.append("    copyInto: ").append(toIndentedString(copyInto)).append("\n");
     sb.append("    writeMode: ").append(toIndentedString(writeMode)).append("\n");
+    sb.append("    zerobus: ").append(toIndentedString(zerobus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,7 +253,7 @@ public class DatabricksDeltaTableWriteMode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auto_loader", "copy_into", "write_mode"));
+    openapiFields = new HashSet<String>(Arrays.asList("auto_loader", "copy_into", "write_mode", "zerobus"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("write_mode"));
@@ -257,6 +287,10 @@ public class DatabricksDeltaTableWriteMode {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `auto_loader`
+      if (jsonObj.get("auto_loader") != null && !jsonObj.get("auto_loader").isJsonNull()) {
+        DatabricksDeltaTableAutoLoaderWriteMode.validateJsonElement(jsonObj.get("auto_loader"));
+      }
       // validate the optional field `copy_into`
       if (jsonObj.get("copy_into") != null && !jsonObj.get("copy_into").isJsonNull()) {
         DatabricksDeltaTableCopyIntoWriteMode.validateJsonElement(jsonObj.get("copy_into"));
@@ -266,6 +300,10 @@ public class DatabricksDeltaTableWriteMode {
       }
       // validate the required field `write_mode`
       WriteModeEnum.validateJsonElement(jsonObj.get("write_mode"));
+      // validate the optional field `zerobus`
+      if (jsonObj.get("zerobus") != null && !jsonObj.get("zerobus").isJsonNull()) {
+        DatabricksDeltaTableZeroBusWriteMode.validateJsonElement(jsonObj.get("zerobus"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

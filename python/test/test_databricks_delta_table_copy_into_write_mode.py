@@ -37,12 +37,14 @@ class TestDatabricksDeltaTableCopyIntoWriteMode(unittest.TestCase):
         if include_optional:
             return DatabricksDeltaTableCopyIntoWriteMode(
                 http_path = '',
-                table_name = ''
+                table_name = '',
+                volume = ''
             )
         else:
             return DatabricksDeltaTableCopyIntoWriteMode(
                 http_path = '',
                 table_name = '',
+                volume = '',
         )
         """
 

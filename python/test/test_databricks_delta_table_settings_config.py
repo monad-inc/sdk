@@ -41,16 +41,20 @@ class TestDatabricksDeltaTableSettingsConfig(unittest.TestCase):
                     batch_record_count = 56, 
                     publish_rate = 56, ),
                 catalog = '',
-                http_path = '',
                 var_schema = '',
                 server_hostname = '',
-                volume = '',
                 write_mode = monad.models.databricks_delta_table/write_mode.databricks_delta_table.WriteMode(
-                    auto_loader = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(), 
+                    auto_loader = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(
+                        volume = '', ), 
                     copy_into = monad.models.databricks_delta_table/copy_into_write_mode.databricks_delta_table.CopyIntoWriteMode(
                         http_path = '', 
-                        table_name = '', ), 
-                    write_mode = 'autoloader', )
+                        table_name = '', 
+                        volume = '', ), 
+                    write_mode = 'autoloader', 
+                    zerobus = monad.models.databricks_delta_table/zero_bus_write_mode.databricks_delta_table.ZeroBusWriteMode(
+                        region = '', 
+                        table_name = '', 
+                        workspace_id = '', ), )
             )
         else:
             return DatabricksDeltaTableSettingsConfig(
@@ -61,13 +65,18 @@ class TestDatabricksDeltaTableSettingsConfig(unittest.TestCase):
                 catalog = '',
                 var_schema = '',
                 server_hostname = '',
-                volume = '',
                 write_mode = monad.models.databricks_delta_table/write_mode.databricks_delta_table.WriteMode(
-                    auto_loader = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(), 
+                    auto_loader = monad.models.databricks_delta_table/auto_loader_write_mode.databricks_delta_table.AutoLoaderWriteMode(
+                        volume = '', ), 
                     copy_into = monad.models.databricks_delta_table/copy_into_write_mode.databricks_delta_table.CopyIntoWriteMode(
                         http_path = '', 
-                        table_name = '', ), 
-                    write_mode = 'autoloader', ),
+                        table_name = '', 
+                        volume = '', ), 
+                    write_mode = 'autoloader', 
+                    zerobus = monad.models.databricks_delta_table/zero_bus_write_mode.databricks_delta_table.ZeroBusWriteMode(
+                        region = '', 
+                        table_name = '', 
+                        workspace_id = '', ), ),
         )
         """
 
