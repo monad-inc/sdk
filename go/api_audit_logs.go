@@ -24,6 +24,241 @@ import (
 // AuditLogsAPIService AuditLogsAPI service
 type AuditLogsAPIService service
 
+type ApiGetOrganizationAuditLogHistogramRequest struct {
+	ctx context.Context
+	ApiService *AuditLogsAPIService
+	organizationId string
+	from *string
+	to *string
+	buckets *int32
+	resourceType *string
+	resourceId *string
+	actorId *string
+	action *string
+}
+
+// Bucket window start (inclusive), RFC3339
+func (r ApiGetOrganizationAuditLogHistogramRequest) From(from string) ApiGetOrganizationAuditLogHistogramRequest {
+	r.from = &from
+	return r
+}
+
+// Bucket window end (exclusive), RFC3339
+func (r ApiGetOrganizationAuditLogHistogramRequest) To(to string) ApiGetOrganizationAuditLogHistogramRequest {
+	r.to = &to
+	return r
+}
+
+// Number of equal-width buckets (default 100, max 500)
+func (r ApiGetOrganizationAuditLogHistogramRequest) Buckets(buckets int32) ApiGetOrganizationAuditLogHistogramRequest {
+	r.buckets = &buckets
+	return r
+}
+
+// Filter by resource type; with resource_id selects the merged feed
+func (r ApiGetOrganizationAuditLogHistogramRequest) ResourceType(resourceType string) ApiGetOrganizationAuditLogHistogramRequest {
+	r.resourceType = &resourceType
+	return r
+}
+
+// Filter by resource ID; requires resource_type
+func (r ApiGetOrganizationAuditLogHistogramRequest) ResourceId(resourceId string) ApiGetOrganizationAuditLogHistogramRequest {
+	r.resourceId = &resourceId
+	return r
+}
+
+// Filter by actor ID
+func (r ApiGetOrganizationAuditLogHistogramRequest) ActorId(actorId string) ApiGetOrganizationAuditLogHistogramRequest {
+	r.actorId = &actorId
+	return r
+}
+
+// Filter by action (insert, update, delete)
+func (r ApiGetOrganizationAuditLogHistogramRequest) Action(action string) ApiGetOrganizationAuditLogHistogramRequest {
+	r.action = &action
+	return r
+}
+
+func (r ApiGetOrganizationAuditLogHistogramRequest) Execute() (*ModelsOrganizationAuditLogHistogram, *http.Response, error) {
+	return r.ApiService.GetOrganizationAuditLogHistogramExecute(r)
+}
+
+/*
+GetOrganizationAuditLogHistogram Audit log change histogram
+
+Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @return ApiGetOrganizationAuditLogHistogramRequest
+*/
+func (a *AuditLogsAPIService) GetOrganizationAuditLogHistogram(ctx context.Context, organizationId string) ApiGetOrganizationAuditLogHistogramRequest {
+	return ApiGetOrganizationAuditLogHistogramRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsOrganizationAuditLogHistogram
+func (a *AuditLogsAPIService) GetOrganizationAuditLogHistogramExecute(r ApiGetOrganizationAuditLogHistogramRequest) (*ModelsOrganizationAuditLogHistogram, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsOrganizationAuditLogHistogram
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuditLogsAPIService.GetOrganizationAuditLogHistogram")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v3/{organization_id}/audit_logs/histogram"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.from == nil {
+		return localVarReturnValue, nil, reportError("from is required and must be specified")
+	}
+	if r.to == nil {
+		return localVarReturnValue, nil, reportError("to is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "from", r.from, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "to", r.to, "form", "")
+	if r.buckets != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "buckets", r.buckets, "form", "")
+	}
+	if r.resourceType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resource_type", r.resourceType, "form", "")
+	}
+	if r.resourceId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resource_id", r.resourceId, "form", "")
+	}
+	if r.actorId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "actor_id", r.actorId, "form", "")
+	}
+	if r.action != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "action", r.action, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiListOrganizationAuditLogsRequest struct {
 	ctx context.Context
 	ApiService *AuditLogsAPIService

@@ -244,6 +244,7 @@ export * from '../models/ModelsAlertRule';
 export * from '../models/ModelsAlertRuleList';
 export * from '../models/ModelsAlertState';
 export * from '../models/ModelsAuditAction';
+export * from '../models/ModelsAuditLogHistogramBucket';
 export * from '../models/ModelsBillingAccount';
 export * from '../models/ModelsBillingAccountList';
 export * from '../models/ModelsBillingAccountPermission';
@@ -276,6 +277,7 @@ export * from '../models/ModelsManagedBy';
 export * from '../models/ModelsNodeBackpressure';
 export * from '../models/ModelsNodeComponent';
 export * from '../models/ModelsOrganizationAuditLog';
+export * from '../models/ModelsOrganizationAuditLogHistogram';
 export * from '../models/ModelsOrganizationAuditLogList';
 export * from '../models/ModelsOrganizationList';
 export * from '../models/ModelsOrganizationUser';
@@ -871,6 +873,7 @@ import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
+import { ModelsAuditLogHistogramBucket } from '../models/ModelsAuditLogHistogramBucket';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -903,6 +906,7 @@ import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
 import { ModelsOrganizationAuditLog        } from '../models/ModelsOrganizationAuditLog';
+import { ModelsOrganizationAuditLogHistogram } from '../models/ModelsOrganizationAuditLogHistogram';
 import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
@@ -1577,6 +1581,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsAPILogActorRole": ModelsAPILogActorRole,
     "ModelsAlertRule": ModelsAlertRule,
     "ModelsAlertRuleList": ModelsAlertRuleList,
+    "ModelsAuditLogHistogramBucket": ModelsAuditLogHistogramBucket,
     "ModelsBillingAccount": ModelsBillingAccount,
     "ModelsBillingAccountList": ModelsBillingAccountList,
     "ModelsBillingAccountPermission": ModelsBillingAccountPermission,
@@ -1602,6 +1607,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsNodeBackpressure": ModelsNodeBackpressure,
     "ModelsNodeComponent": ModelsNodeComponent,
     "ModelsOrganizationAuditLog": ModelsOrganizationAuditLog,
+    "ModelsOrganizationAuditLogHistogram": ModelsOrganizationAuditLogHistogram,
     "ModelsOrganizationAuditLogList": ModelsOrganizationAuditLogList,
     "ModelsOrganizationList": ModelsOrganizationList,
     "ModelsOrganizationUser": ModelsOrganizationUser,

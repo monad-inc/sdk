@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ModelsOrganizationAuditLogHistogram;
 import org.openapitools.client.model.ModelsOrganizationAuditLogList;
 import org.openapitools.client.model.ResponderErrorResponse;
 
@@ -73,6 +74,211 @@ public class AuditLogsApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for getOrganizationAuditLogHistogram
+     * @param organizationId Organization ID (required)
+     * @param from Bucket window start (inclusive), RFC3339 (required)
+     * @param to Bucket window end (exclusive), RFC3339 (required)
+     * @param buckets Number of equal-width buckets (default 100, max 500) (optional)
+     * @param resourceType Filter by resource type; with resource_id selects the merged feed (optional)
+     * @param resourceId Filter by resource ID; requires resource_type (optional)
+     * @param actorId Filter by actor ID (optional)
+     * @param action Filter by action (insert, update, delete) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Bucketed change counts </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid query parameters </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing organization:logs:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOrganizationAuditLogHistogramCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String from, @javax.annotation.Nonnull String to, @javax.annotation.Nullable Integer buckets, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String actorId, @javax.annotation.Nullable String action, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/audit_logs/histogram"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
+        if (buckets != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("buckets", buckets));
+        }
+
+        if (resourceType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resource_type", resourceType));
+        }
+
+        if (resourceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resource_id", resourceId));
+        }
+
+        if (actorId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("actor_id", actorId));
+        }
+
+        if (action != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("action", action));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getOrganizationAuditLogHistogramValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String from, @javax.annotation.Nonnull String to, @javax.annotation.Nullable Integer buckets, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String actorId, @javax.annotation.Nullable String action, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationAuditLogHistogram(Async)");
+        }
+
+        // verify the required parameter 'from' is set
+        if (from == null) {
+            throw new ApiException("Missing the required parameter 'from' when calling getOrganizationAuditLogHistogram(Async)");
+        }
+
+        // verify the required parameter 'to' is set
+        if (to == null) {
+            throw new ApiException("Missing the required parameter 'to' when calling getOrganizationAuditLogHistogram(Async)");
+        }
+
+        return getOrganizationAuditLogHistogramCall(organizationId, from, to, buckets, resourceType, resourceId, actorId, action, _callback);
+
+    }
+
+    /**
+     * Audit log change histogram
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * @param organizationId Organization ID (required)
+     * @param from Bucket window start (inclusive), RFC3339 (required)
+     * @param to Bucket window end (exclusive), RFC3339 (required)
+     * @param buckets Number of equal-width buckets (default 100, max 500) (optional)
+     * @param resourceType Filter by resource type; with resource_id selects the merged feed (optional)
+     * @param resourceId Filter by resource ID; requires resource_type (optional)
+     * @param actorId Filter by actor ID (optional)
+     * @param action Filter by action (insert, update, delete) (optional)
+     * @return ModelsOrganizationAuditLogHistogram
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Bucketed change counts </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid query parameters </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing organization:logs:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsOrganizationAuditLogHistogram getOrganizationAuditLogHistogram(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String from, @javax.annotation.Nonnull String to, @javax.annotation.Nullable Integer buckets, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String actorId, @javax.annotation.Nullable String action) throws ApiException {
+        ApiResponse<ModelsOrganizationAuditLogHistogram> localVarResp = getOrganizationAuditLogHistogramWithHttpInfo(organizationId, from, to, buckets, resourceType, resourceId, actorId, action);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Audit log change histogram
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * @param organizationId Organization ID (required)
+     * @param from Bucket window start (inclusive), RFC3339 (required)
+     * @param to Bucket window end (exclusive), RFC3339 (required)
+     * @param buckets Number of equal-width buckets (default 100, max 500) (optional)
+     * @param resourceType Filter by resource type; with resource_id selects the merged feed (optional)
+     * @param resourceId Filter by resource ID; requires resource_type (optional)
+     * @param actorId Filter by actor ID (optional)
+     * @param action Filter by action (insert, update, delete) (optional)
+     * @return ApiResponse&lt;ModelsOrganizationAuditLogHistogram&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Bucketed change counts </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid query parameters </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing organization:logs:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsOrganizationAuditLogHistogram> getOrganizationAuditLogHistogramWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String from, @javax.annotation.Nonnull String to, @javax.annotation.Nullable Integer buckets, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String actorId, @javax.annotation.Nullable String action) throws ApiException {
+        okhttp3.Call localVarCall = getOrganizationAuditLogHistogramValidateBeforeCall(organizationId, from, to, buckets, resourceType, resourceId, actorId, action, null);
+        Type localVarReturnType = new TypeToken<ModelsOrganizationAuditLogHistogram>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Audit log change histogram (asynchronously)
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * @param organizationId Organization ID (required)
+     * @param from Bucket window start (inclusive), RFC3339 (required)
+     * @param to Bucket window end (exclusive), RFC3339 (required)
+     * @param buckets Number of equal-width buckets (default 100, max 500) (optional)
+     * @param resourceType Filter by resource type; with resource_id selects the merged feed (optional)
+     * @param resourceId Filter by resource ID; requires resource_type (optional)
+     * @param actorId Filter by actor ID (optional)
+     * @param action Filter by action (insert, update, delete) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Bucketed change counts </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid query parameters </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing organization:logs:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOrganizationAuditLogHistogramAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String from, @javax.annotation.Nonnull String to, @javax.annotation.Nullable Integer buckets, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String actorId, @javax.annotation.Nullable String action, final ApiCallback<ModelsOrganizationAuditLogHistogram> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOrganizationAuditLogHistogramValidateBeforeCall(organizationId, from, to, buckets, resourceType, resourceId, actorId, action, _callback);
+        Type localVarReturnType = new TypeToken<ModelsOrganizationAuditLogHistogram>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for listOrganizationAuditLogs
      * @param organizationId Organization ID (required)

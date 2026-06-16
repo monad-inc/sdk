@@ -260,6 +260,7 @@ from monad.models.models_alert_rule import ModelsAlertRule
 from monad.models.models_alert_rule_list import ModelsAlertRuleList
 from monad.models.models_alert_state import ModelsAlertState
 from monad.models.models_audit_action import ModelsAuditAction
+from monad.models.models_audit_log_histogram_bucket import ModelsAuditLogHistogramBucket
 from monad.models.models_billing_account import ModelsBillingAccount
 from monad.models.models_billing_account_list import ModelsBillingAccountList
 from monad.models.models_billing_account_permission import ModelsBillingAccountPermission
@@ -292,6 +293,7 @@ from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent
 from monad.models.models_organization_audit_log import ModelsOrganizationAuditLog
+from monad.models.models_organization_audit_log_histogram import ModelsOrganizationAuditLogHistogram
 from monad.models.models_organization_audit_log_list import ModelsOrganizationAuditLogList
 from monad.models.models_organization_list import ModelsOrganizationList
 from monad.models.models_organization_user import ModelsOrganizationUser

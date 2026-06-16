@@ -19,6 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from monad.models.models_organization_audit_log_histogram import ModelsOrganizationAuditLogHistogram
 from monad.models.models_organization_audit_log_list import ModelsOrganizationAuditLogList
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -37,6 +38,396 @@ class AuditLogsApi:
         if api_client is None:
             api_client = ApiClient.get_default()
         self.api_client = api_client
+
+
+    @validate_call
+    def get_organization_audit_log_histogram(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        var_from: Annotated[StrictStr, Field(description="Bucket window start (inclusive), RFC3339")],
+        to: Annotated[StrictStr, Field(description="Bucket window end (exclusive), RFC3339")],
+        buckets: Annotated[Optional[StrictInt], Field(description="Number of equal-width buckets (default 100, max 500)")] = None,
+        resource_type: Annotated[Optional[StrictStr], Field(description="Filter by resource type; with resource_id selects the merged feed")] = None,
+        resource_id: Annotated[Optional[StrictStr], Field(description="Filter by resource ID; requires resource_type")] = None,
+        actor_id: Annotated[Optional[StrictStr], Field(description="Filter by actor ID")] = None,
+        action: Annotated[Optional[StrictStr], Field(description="Filter by action (insert, update, delete)")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ModelsOrganizationAuditLogHistogram:
+        """Audit log change histogram
+
+        Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param var_from: Bucket window start (inclusive), RFC3339 (required)
+        :type var_from: str
+        :param to: Bucket window end (exclusive), RFC3339 (required)
+        :type to: str
+        :param buckets: Number of equal-width buckets (default 100, max 500)
+        :type buckets: int
+        :param resource_type: Filter by resource type; with resource_id selects the merged feed
+        :type resource_type: str
+        :param resource_id: Filter by resource ID; requires resource_type
+        :type resource_id: str
+        :param actor_id: Filter by actor ID
+        :type actor_id: str
+        :param action: Filter by action (insert, update, delete)
+        :type action: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_organization_audit_log_histogram_serialize(
+            organization_id=organization_id,
+            var_from=var_from,
+            to=to,
+            buckets=buckets,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            actor_id=actor_id,
+            action=action,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsOrganizationAuditLogHistogram",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_organization_audit_log_histogram_with_http_info(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        var_from: Annotated[StrictStr, Field(description="Bucket window start (inclusive), RFC3339")],
+        to: Annotated[StrictStr, Field(description="Bucket window end (exclusive), RFC3339")],
+        buckets: Annotated[Optional[StrictInt], Field(description="Number of equal-width buckets (default 100, max 500)")] = None,
+        resource_type: Annotated[Optional[StrictStr], Field(description="Filter by resource type; with resource_id selects the merged feed")] = None,
+        resource_id: Annotated[Optional[StrictStr], Field(description="Filter by resource ID; requires resource_type")] = None,
+        actor_id: Annotated[Optional[StrictStr], Field(description="Filter by actor ID")] = None,
+        action: Annotated[Optional[StrictStr], Field(description="Filter by action (insert, update, delete)")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ModelsOrganizationAuditLogHistogram]:
+        """Audit log change histogram
+
+        Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param var_from: Bucket window start (inclusive), RFC3339 (required)
+        :type var_from: str
+        :param to: Bucket window end (exclusive), RFC3339 (required)
+        :type to: str
+        :param buckets: Number of equal-width buckets (default 100, max 500)
+        :type buckets: int
+        :param resource_type: Filter by resource type; with resource_id selects the merged feed
+        :type resource_type: str
+        :param resource_id: Filter by resource ID; requires resource_type
+        :type resource_id: str
+        :param actor_id: Filter by actor ID
+        :type actor_id: str
+        :param action: Filter by action (insert, update, delete)
+        :type action: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_organization_audit_log_histogram_serialize(
+            organization_id=organization_id,
+            var_from=var_from,
+            to=to,
+            buckets=buckets,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            actor_id=actor_id,
+            action=action,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsOrganizationAuditLogHistogram",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_organization_audit_log_histogram_without_preload_content(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        var_from: Annotated[StrictStr, Field(description="Bucket window start (inclusive), RFC3339")],
+        to: Annotated[StrictStr, Field(description="Bucket window end (exclusive), RFC3339")],
+        buckets: Annotated[Optional[StrictInt], Field(description="Number of equal-width buckets (default 100, max 500)")] = None,
+        resource_type: Annotated[Optional[StrictStr], Field(description="Filter by resource type; with resource_id selects the merged feed")] = None,
+        resource_id: Annotated[Optional[StrictStr], Field(description="Filter by resource ID; requires resource_type")] = None,
+        actor_id: Annotated[Optional[StrictStr], Field(description="Filter by actor ID")] = None,
+        action: Annotated[Optional[StrictStr], Field(description="Filter by action (insert, update, delete)")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Audit log change histogram
+
+        Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param var_from: Bucket window start (inclusive), RFC3339 (required)
+        :type var_from: str
+        :param to: Bucket window end (exclusive), RFC3339 (required)
+        :type to: str
+        :param buckets: Number of equal-width buckets (default 100, max 500)
+        :type buckets: int
+        :param resource_type: Filter by resource type; with resource_id selects the merged feed
+        :type resource_type: str
+        :param resource_id: Filter by resource ID; requires resource_type
+        :type resource_id: str
+        :param actor_id: Filter by actor ID
+        :type actor_id: str
+        :param action: Filter by action (insert, update, delete)
+        :type action: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_organization_audit_log_histogram_serialize(
+            organization_id=organization_id,
+            var_from=var_from,
+            to=to,
+            buckets=buckets,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            actor_id=actor_id,
+            action=action,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsOrganizationAuditLogHistogram",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_organization_audit_log_histogram_serialize(
+        self,
+        organization_id,
+        var_from,
+        to,
+        buckets,
+        resource_type,
+        resource_id,
+        actor_id,
+        action,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
+        # process the query parameters
+        if var_from is not None:
+            
+            _query_params.append(('from', var_from))
+            
+        if to is not None:
+            
+            _query_params.append(('to', to))
+            
+        if buckets is not None:
+            
+            _query_params.append(('buckets', buckets))
+            
+        if resource_type is not None:
+            
+            _query_params.append(('resource_type', resource_type))
+            
+        if resource_id is not None:
+            
+            _query_params.append(('resource_id', resource_id))
+            
+        if actor_id is not None:
+            
+            _query_params.append(('actor_id', actor_id))
+            
+        if action is not None:
+            
+            _query_params.append(('action', action))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuth', 
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/{organization_id}/audit_logs/histogram',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
 
 
     @validate_call

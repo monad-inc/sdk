@@ -314,6 +314,7 @@ __all__ = [
     "ModelsAlertRuleList",
     "ModelsAlertState",
     "ModelsAuditAction",
+    "ModelsAuditLogHistogramBucket",
     "ModelsBillingAccount",
     "ModelsBillingAccountList",
     "ModelsBillingAccountPermission",
@@ -346,6 +347,7 @@ __all__ = [
     "ModelsNodeBackpressure",
     "ModelsNodeComponent",
     "ModelsOrganizationAuditLog",
+    "ModelsOrganizationAuditLogHistogram",
     "ModelsOrganizationAuditLogList",
     "ModelsOrganizationList",
     "ModelsOrganizationUser",
@@ -996,6 +998,7 @@ from monad.models.models_alert_rule import ModelsAlertRule as ModelsAlertRule
 from monad.models.models_alert_rule_list import ModelsAlertRuleList as ModelsAlertRuleList
 from monad.models.models_alert_state import ModelsAlertState as ModelsAlertState
 from monad.models.models_audit_action import ModelsAuditAction as ModelsAuditAction
+from monad.models.models_audit_log_histogram_bucket import ModelsAuditLogHistogramBucket as ModelsAuditLogHistogramBucket
 from monad.models.models_billing_account import ModelsBillingAccount as ModelsBillingAccount
 from monad.models.models_billing_account_list import ModelsBillingAccountList as ModelsBillingAccountList
 from monad.models.models_billing_account_permission import ModelsBillingAccountPermission as ModelsBillingAccountPermission
@@ -1028,6 +1031,7 @@ from monad.models.models_managed_by import ModelsManagedBy as ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure as ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent as ModelsNodeComponent
 from monad.models.models_organization_audit_log import ModelsOrganizationAuditLog as ModelsOrganizationAuditLog
+from monad.models.models_organization_audit_log_histogram import ModelsOrganizationAuditLogHistogram as ModelsOrganizationAuditLogHistogram
 from monad.models.models_organization_audit_log_list import ModelsOrganizationAuditLogList as ModelsOrganizationAuditLogList
 from monad.models.models_organization_list import ModelsOrganizationList as ModelsOrganizationList
 from monad.models.models_organization_user import ModelsOrganizationUser as ModelsOrganizationUser

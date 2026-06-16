@@ -147,6 +147,7 @@ Class | Method | HTTP request | Description
 *AlertRulesAPI* | [**UpdateAlertRule**](docs/AlertRulesAPI.md#updatealertrule) | **Put** /v3/{organization_id}/alert_rules/{alert_rule_id} | Update alert rule
 *AlertsAPI* | [**ListAlerts**](docs/AlertsAPI.md#listalerts) | **Get** /v3/{organization_id}/alerts | List alerts with pagination
 *AlertsAPI* | [**StreamAlerts**](docs/AlertsAPI.md#streamalerts) | **Get** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
+*AuditLogsAPI* | [**GetOrganizationAuditLogHistogram**](docs/AuditLogsAPI.md#getorganizationauditloghistogram) | **Get** /v3/{organization_id}/audit_logs/histogram | Audit log change histogram
 *AuditLogsAPI* | [**ListOrganizationAuditLogs**](docs/AuditLogsAPI.md#listorganizationauditlogs) | **Get** /v3/{organization_id}/audit_logs | List organization audit logs
 *AuthenticationAPI* | [**GetToken**](docs/AuthenticationAPI.md#gettoken) | **Post** /v1/login/token | Get Authentication token
 *AuthenticationAPI* | [**LoginCallbackHandler**](docs/AuthenticationAPI.md#logincallbackhandler) | **Get** /v1/login/callback | Handle login callback
@@ -554,6 +555,7 @@ Class | Method | HTTP request | Description
  - [ModelsAlertRuleList](docs/ModelsAlertRuleList.md)
  - [ModelsAlertState](docs/ModelsAlertState.md)
  - [ModelsAuditAction](docs/ModelsAuditAction.md)
+ - [ModelsAuditLogHistogramBucket](docs/ModelsAuditLogHistogramBucket.md)
  - [ModelsBillingAccount](docs/ModelsBillingAccount.md)
  - [ModelsBillingAccountList](docs/ModelsBillingAccountList.md)
  - [ModelsBillingAccountPermission](docs/ModelsBillingAccountPermission.md)
@@ -586,6 +588,7 @@ Class | Method | HTTP request | Description
  - [ModelsNodeBackpressure](docs/ModelsNodeBackpressure.md)
  - [ModelsNodeComponent](docs/ModelsNodeComponent.md)
  - [ModelsOrganizationAuditLog](docs/ModelsOrganizationAuditLog.md)
+ - [ModelsOrganizationAuditLogHistogram](docs/ModelsOrganizationAuditLogHistogram.md)
  - [ModelsOrganizationAuditLogList](docs/ModelsOrganizationAuditLogList.md)
  - [ModelsOrganizationList](docs/ModelsOrganizationList.md)
  - [ModelsOrganizationUser](docs/ModelsOrganizationUser.md)

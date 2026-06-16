@@ -248,6 +248,7 @@ import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
+import { ModelsAuditLogHistogramBucket } from '../models/ModelsAuditLogHistogramBucket';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -280,6 +281,7 @@ import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
 import { ModelsOrganizationAuditLog } from '../models/ModelsOrganizationAuditLog';
+import { ModelsOrganizationAuditLogHistogram } from '../models/ModelsOrganizationAuditLogHistogram';
 import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
@@ -914,6 +916,42 @@ export class PromiseAuditLogsApi {
         responseProcessor?: AuditLogsApiResponseProcessor
     ) {
         this.api = new ObservableAuditLogsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Audit log change histogram
+     * @param organizationId Organization ID
+     * @param _from Bucket window start (inclusive), RFC3339
+     * @param to Bucket window end (exclusive), RFC3339
+     * @param [buckets] Number of equal-width buckets (default 100, max 500)
+     * @param [resourceType] Filter by resource type; with resource_id selects the merged feed
+     * @param [resourceId] Filter by resource ID; requires resource_type
+     * @param [actorId] Filter by actor ID
+     * @param [action] Filter by action (insert, update, delete)
+     */
+    public getOrganizationAuditLogHistogramWithHttpInfo(organizationId: string, _from: string, to: string, buckets?: number, resourceType?: string, resourceId?: string, actorId?: string, action?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganizationAuditLogHistogram>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getOrganizationAuditLogHistogramWithHttpInfo(organizationId, _from, to, buckets, resourceType, resourceId, actorId, action, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Audit log change histogram
+     * @param organizationId Organization ID
+     * @param _from Bucket window start (inclusive), RFC3339
+     * @param to Bucket window end (exclusive), RFC3339
+     * @param [buckets] Number of equal-width buckets (default 100, max 500)
+     * @param [resourceType] Filter by resource type; with resource_id selects the merged feed
+     * @param [resourceId] Filter by resource ID; requires resource_type
+     * @param [actorId] Filter by actor ID
+     * @param [action] Filter by action (insert, update, delete)
+     */
+    public getOrganizationAuditLogHistogram(organizationId: string, _from: string, to: string, buckets?: number, resourceType?: string, resourceId?: string, actorId?: string, action?: string, _options?: PromiseConfigurationOptions): Promise<ModelsOrganizationAuditLogHistogram> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getOrganizationAuditLogHistogram(organizationId, _from, to, buckets, resourceType, resourceId, actorId, action, observableOptions);
+        return result.toPromise();
     }
 
     /**

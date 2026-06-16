@@ -8,6 +8,7 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { ModelsOrganizationAuditLogHistogram } from '../models/ModelsOrganizationAuditLogHistogram';
 import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 
@@ -15,6 +16,108 @@ import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
  * no description
  */
 export class AuditLogsApiRequestFactory extends BaseAPIRequestFactory {
+
+    /**
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Audit log change histogram
+     * @param organizationId Organization ID
+     * @param _from Bucket window start (inclusive), RFC3339
+     * @param to Bucket window end (exclusive), RFC3339
+     * @param buckets Number of equal-width buckets (default 100, max 500)
+     * @param resourceType Filter by resource type; with resource_id selects the merged feed
+     * @param resourceId Filter by resource ID; requires resource_type
+     * @param actorId Filter by actor ID
+     * @param action Filter by action (insert, update, delete)
+     */
+    public async getOrganizationAuditLogHistogram(organizationId: string, _from: string, to: string, buckets?: number, resourceType?: string, resourceId?: string, actorId?: string, action?: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("AuditLogsApi", "getOrganizationAuditLogHistogram", "organizationId");
+        }
+
+
+        // verify required parameter '_from' is not null or undefined
+        if (_from === null || _from === undefined) {
+            throw new RequiredError("AuditLogsApi", "getOrganizationAuditLogHistogram", "_from");
+        }
+
+
+        // verify required parameter 'to' is not null or undefined
+        if (to === null || to === undefined) {
+            throw new RequiredError("AuditLogsApi", "getOrganizationAuditLogHistogram", "to");
+        }
+
+
+
+
+
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/audit_logs/histogram'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (_from !== undefined) {
+            requestContext.setQueryParam("from", ObjectSerializer.serialize(_from, "string", ""));
+        }
+
+        // Query Params
+        if (to !== undefined) {
+            requestContext.setQueryParam("to", ObjectSerializer.serialize(to, "string", ""));
+        }
+
+        // Query Params
+        if (buckets !== undefined) {
+            requestContext.setQueryParam("buckets", ObjectSerializer.serialize(buckets, "number", ""));
+        }
+
+        // Query Params
+        if (resourceType !== undefined) {
+            requestContext.setQueryParam("resource_type", ObjectSerializer.serialize(resourceType, "string", ""));
+        }
+
+        // Query Params
+        if (resourceId !== undefined) {
+            requestContext.setQueryParam("resource_id", ObjectSerializer.serialize(resourceId, "string", ""));
+        }
+
+        // Query Params
+        if (actorId !== undefined) {
+            requestContext.setQueryParam("actor_id", ObjectSerializer.serialize(actorId, "string", ""));
+        }
+
+        // Query Params
+        if (action !== undefined) {
+            requestContext.setQueryParam("action", ObjectSerializer.serialize(action, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
 
     /**
      * List the organization\'s audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline\'s merged history: the pipeline\'s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
@@ -118,6 +221,56 @@ export class AuditLogsApiRequestFactory extends BaseAPIRequestFactory {
 }
 
 export class AuditLogsApiResponseProcessor {
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getOrganizationAuditLogHistogram
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getOrganizationAuditLogHistogramWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsOrganizationAuditLogHistogram >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsOrganizationAuditLogHistogram = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsOrganizationAuditLogHistogram", ""
+            ) as ModelsOrganizationAuditLogHistogram;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid query parameters", body, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Missing organization:logs:read permission", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsOrganizationAuditLogHistogram = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsOrganizationAuditLogHistogram", ""
+            ) as ModelsOrganizationAuditLogHistogram;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
 
     /**
      * Unwraps the actual response sent by the server from the response context and deserializes the response content

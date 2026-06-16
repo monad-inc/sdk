@@ -4568,6 +4568,32 @@
                     "AuditActionDelete"
                 ]
             },
+            "models.AuditLogHistogramBucket": {
+                "properties": {
+                    "by_action": {
+                        "additionalProperties": {
+                            "type": "integer"
+                        },
+                        "type": "object"
+                    },
+                    "by_resource_type": {
+                        "additionalProperties": {
+                            "type": "integer"
+                        },
+                        "type": "object"
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "index": {
+                        "type": "integer"
+                    },
+                    "start": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "models.BillingAccount": {
                 "properties": {
                     "billing_email": {
@@ -5268,6 +5294,30 @@
                     },
                     "resource": {
                         "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.AuditResource"
+                    }
+                },
+                "type": "object"
+            },
+            "models.OrganizationAuditLogHistogram": {
+                "properties": {
+                    "bucket_seconds": {
+                        "type": "number"
+                    },
+                    "buckets": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.AuditLogHistogramBucket"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "earliest_occurred_at": {
+                        "type": "string"
+                    },
+                    "latest_occurred_at": {
+                        "type": "string"
+                    },
+                    "total": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -22868,6 +22918,135 @@
                     }
                 ],
                 "summary": "List organization audit logs",
+                "tags": [
+                    "Audit Logs"
+                ]
+            }
+        },
+        "/v3/{organization_id}/audit_logs/histogram": {
+            "get": {
+                "description": "Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.",
+                "operationId": "GetOrganizationAuditLogHistogram",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Bucket window start (inclusive), RFC3339",
+                        "in": "query",
+                        "name": "from",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Bucket window end (exclusive), RFC3339",
+                        "in": "query",
+                        "name": "to",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Number of equal-width buckets (default 100, max 500)",
+                        "in": "query",
+                        "name": "buckets",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Filter by resource type; with resource_id selects the merged feed",
+                        "in": "query",
+                        "name": "resource_type",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by resource ID; requires resource_type",
+                        "in": "query",
+                        "name": "resource_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by actor ID",
+                        "in": "query",
+                        "name": "actor_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by action (insert, update, delete)",
+                        "in": "query",
+                        "name": "action",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.OrganizationAuditLogHistogram"
+                                }
+                            }
+                        },
+                        "description": "Bucketed change counts"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid query parameters"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing organization:logs:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Audit log change histogram",
                 "tags": [
                     "Audit Logs"
                 ]
