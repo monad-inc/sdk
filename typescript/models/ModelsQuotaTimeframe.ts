@@ -13,5 +13,6 @@
 import { HttpFile } from '../http/http';
 
 export enum ModelsQuotaTimeframe {
-    QuotaTimeframeMonth = 'month'
+    QuotaTimeframeMonth = 'month',
+    QuotaTimeframeDay = 'day'
 }

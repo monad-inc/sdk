@@ -5971,11 +5971,13 @@
             },
             "models.QuotaTimeframe": {
                 "enum": [
-                    "month"
+                    "month",
+                    "day"
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "QuotaTimeframeMonth"
+                    "QuotaTimeframeMonth",
+                    "QuotaTimeframeDay"
                 ]
             },
             "models.RateUnit": {

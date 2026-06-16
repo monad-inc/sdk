@@ -28,6 +28,7 @@ class ModelsQuotaTimeframe(str, Enum):
     allowed enum values
     """
     QuotaTimeframeMonth = 'month'
+    QuotaTimeframeDay = 'day'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

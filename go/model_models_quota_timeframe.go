@@ -22,11 +22,13 @@ type ModelsQuotaTimeframe string
 // List of models.QuotaTimeframe
 const (
 	QuotaTimeframeMonth ModelsQuotaTimeframe = "month"
+	QuotaTimeframeDay ModelsQuotaTimeframe = "day"
 )
 
 // All allowed values of ModelsQuotaTimeframe enum
 var AllowedModelsQuotaTimeframeEnumValues = []ModelsQuotaTimeframe{
 	"month",
+	"day",
 }
 
 func (v *ModelsQuotaTimeframe) UnmarshalJSON(src []byte) error {

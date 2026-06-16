@@ -7,5 +7,7 @@
 
 * `QuotaTimeframeMonth` (value: `"month"`)
 
+* `QuotaTimeframeDay` (value: `"day"`)
+
 
 

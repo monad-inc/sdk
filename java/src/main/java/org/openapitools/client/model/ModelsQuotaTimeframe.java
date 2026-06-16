@@ -29,7 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ModelsQuotaTimeframe.Adapter.class)
 public enum ModelsQuotaTimeframe {
   
-  QuotaTimeframeMonth("month");
+  QuotaTimeframeMonth("month"),
+  
+  QuotaTimeframeDay("day");
 
   private String value;
 
