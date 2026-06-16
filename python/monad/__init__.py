@@ -378,6 +378,8 @@ __all__ = [
     "ModelsQuotaList",
     "ModelsQuotaTimeframe",
     "ModelsRateUnit",
+    "ModelsReference",
+    "ModelsReferences",
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
     "ModelsSecret",
@@ -1058,6 +1060,8 @@ from monad.models.models_quota_limit_unit import ModelsQuotaLimitUnit as ModelsQ
 from monad.models.models_quota_list import ModelsQuotaList as ModelsQuotaList
 from monad.models.models_quota_timeframe import ModelsQuotaTimeframe as ModelsQuotaTimeframe
 from monad.models.models_rate_unit import ModelsRateUnit as ModelsRateUnit
+from monad.models.models_reference import ModelsReference as ModelsReference
+from monad.models.models_references import ModelsReferences as ModelsReferences
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
 from monad.models.models_secret import ModelsSecret as ModelsSecret

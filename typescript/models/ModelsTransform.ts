@@ -11,6 +11,7 @@
  */
 
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { HttpFile } from '../http/http';
 
@@ -22,6 +23,7 @@ export class ModelsTransform {
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
+    'references'?: ModelsReferences;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -69,6 +71,12 @@ export class ModelsTransform {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "references",
+            "baseName": "references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **managed_by** | [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
+**references** | [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 

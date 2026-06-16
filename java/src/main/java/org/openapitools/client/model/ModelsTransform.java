@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsManagedBy;
+import org.openapitools.client.model.ModelsReferences;
 import org.openapitools.client.model.ModelsTransformConfig;
 
 import com.google.gson.Gson;
@@ -86,6 +87,11 @@ public class ModelsTransform {
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
   private String organizationId;
+
+  public static final String SERIALIZED_NAME_REFERENCES = "references";
+  @SerializedName(SERIALIZED_NAME_REFERENCES)
+  @javax.annotation.Nullable
+  private ModelsReferences references;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -228,6 +234,25 @@ public class ModelsTransform {
   }
 
 
+  public ModelsTransform references(@javax.annotation.Nullable ModelsReferences references) {
+    this.references = references;
+    return this;
+  }
+
+  /**
+   * Get references
+   * @return references
+   */
+  @javax.annotation.Nullable
+  public ModelsReferences getReferences() {
+    return references;
+  }
+
+  public void setReferences(@javax.annotation.Nullable ModelsReferences references) {
+    this.references = references;
+  }
+
+
   public ModelsTransform updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -264,12 +289,13 @@ public class ModelsTransform {
         Objects.equals(this.managedBy, modelsTransform.managedBy) &&
         Objects.equals(this.name, modelsTransform.name) &&
         Objects.equals(this.organizationId, modelsTransform.organizationId) &&
+        Objects.equals(this.references, modelsTransform.references) &&
         Objects.equals(this.updatedAt, modelsTransform.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, updatedAt);
+    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, references, updatedAt);
   }
 
   @Override
@@ -283,6 +309,7 @@ public class ModelsTransform {
     sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -302,7 +329,7 @@ public class ModelsTransform {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -351,6 +378,10 @@ public class ModelsTransform {
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+      }
+      // validate the optional field `references`
+      if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
+        ModelsReferences.validateJsonElement(jsonObj.get("references"));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

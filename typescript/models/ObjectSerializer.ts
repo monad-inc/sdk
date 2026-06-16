@@ -308,6 +308,8 @@ export * from '../models/ModelsQuotaLimitUnit';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsQuotaTimeframe';
 export * from '../models/ModelsRateUnit';
+export * from '../models/ModelsReference';
+export * from '../models/ModelsReferences';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSecret';
@@ -889,10 +891,10 @@ import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsElseAction } from '../models/ModelsElseAction';
-import { ModelsEnrichment          } from '../models/ModelsEnrichment';
+import { ModelsEnrichment           } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
-import { ModelsInput          } from '../models/ModelsInput';
+import { ModelsInput           } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
@@ -905,7 +907,7 @@ import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAudi
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
-import { ModelsOutput          } from '../models/ModelsOutput';
+import { ModelsOutput           } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
@@ -933,6 +935,8 @@ import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
+import { ModelsReference } from '../models/ModelsReference';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
@@ -946,7 +950,7 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
-import { ModelsTransform         } from '../models/ModelsTransform';
+import { ModelsTransform          } from '../models/ModelsTransform';
 import { ModelsTransformConditional   } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
@@ -1025,9 +1029,9 @@ import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettings
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
-import { RoutesGetInputResponse           } from '../models/RoutesGetInputResponse';
-import { RoutesGetOutputResponse           } from '../models/RoutesGetOutputResponse';
-import { RoutesGetTransformResponse          } from '../models/RoutesGetTransformResponse';
+import { RoutesGetInputResponse            } from '../models/RoutesGetInputResponse';
+import { RoutesGetOutputResponse            } from '../models/RoutesGetOutputResponse';
+import { RoutesGetTransformResponse           } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
@@ -1095,7 +1099,7 @@ import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionRe
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
-import { RoutesV3GetEnrichmentResponse           } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetEnrichmentResponse            } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
@@ -1622,6 +1626,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsProgressEntries": ModelsProgressEntries,
     "ModelsProgressEntry": ModelsProgressEntry,
     "ModelsQuotaList": ModelsQuotaList,
+    "ModelsReference": ModelsReference,
+    "ModelsReferences": ModelsReferences,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
     "ModelsSecret": ModelsSecret,

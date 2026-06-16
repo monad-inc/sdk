@@ -12,6 +12,7 @@
 
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
 export class ModelsInput {
@@ -22,6 +23,7 @@ export class ModelsInput {
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
+    'references'?: ModelsReferences;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -70,6 +72,12 @@ export class ModelsInput {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "references",
+            "baseName": "references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

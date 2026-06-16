@@ -669,6 +669,8 @@ Class | Method | HTTP request | Description
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsQuotaTimeframe](docs/ModelsQuotaTimeframe.md)
  - [ModelsRateUnit](docs/ModelsRateUnit.md)
+ - [ModelsReference](docs/ModelsReference.md)
+ - [ModelsReferences](docs/ModelsReferences.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
  - [ModelsSecret](docs/ModelsSecret.md)

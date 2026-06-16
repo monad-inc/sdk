@@ -5024,6 +5024,9 @@
                     "organization_id": {
                         "type": "string"
                     },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -5083,6 +5086,9 @@
                     },
                     "organization_id": {
                         "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
                     },
                     "type": {
                         "type": "string"
@@ -5231,6 +5237,9 @@
                     "name": {
                         "type": "string"
                     },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
+                    },
                     "type": {
                         "type": "string"
                     }
@@ -5371,6 +5380,9 @@
                     },
                     "organization_id": {
                         "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
                     },
                     "type": {
                         "type": "string"
@@ -5983,6 +5995,29 @@
                 "additionalProperties": {},
                 "type": "object"
             },
+            "models.Reference": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.References": {
+                "properties": {
+                    "secrets": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.Reference"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
             "models.RoleWithPermissions": {
                 "properties": {
                     "created_at": {
@@ -6326,6 +6361,9 @@
                     },
                     "organization_id": {
                         "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
                     },
                     "updated_at": {
                         "type": "string"
@@ -7643,6 +7681,9 @@
                     "organization_id": {
                         "type": "string"
                     },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -7682,6 +7723,9 @@
                     "organization_id": {
                         "type": "string"
                     },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -7720,6 +7764,9 @@
                     },
                     "organization_id": {
                         "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
                     },
                     "updated_at": {
                         "type": "string"
@@ -9002,6 +9049,9 @@
                     },
                     "organization_id": {
                         "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
                     },
                     "type": {
                         "type": "string"

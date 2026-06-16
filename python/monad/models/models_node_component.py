@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_references import ModelsReferences
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -32,8 +33,9 @@ class ModelsNodeComponent(BaseModel):
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    references: Optional[ModelsReferences] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "description", "id", "name", "type"]
+    __properties: ClassVar[List[str]] = ["config", "description", "id", "name", "references", "type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -74,6 +76,9 @@ class ModelsNodeComponent(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of references
+        if self.references:
+            _dict['references'] = self.references.to_dict()
         return _dict
 
     @classmethod
@@ -90,6 +95,7 @@ class ModelsNodeComponent(BaseModel):
             "description": obj.get("description"),
             "id": obj.get("id"),
             "name": obj.get("name"),
+            "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
             "type": obj.get("type")
         })
         return _obj

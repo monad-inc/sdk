@@ -24,6 +24,7 @@ type ModelsNodeComponent struct {
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	References *ModelsReferences `json:"references,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -172,6 +173,38 @@ func (o *ModelsNodeComponent) SetName(v string) {
 	o.Name = &v
 }
 
+// GetReferences returns the References field value if set, zero value otherwise.
+func (o *ModelsNodeComponent) GetReferences() ModelsReferences {
+	if o == nil || IsNil(o.References) {
+		var ret ModelsReferences
+		return ret
+	}
+	return *o.References
+}
+
+// GetReferencesOk returns a tuple with the References field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsNodeComponent) GetReferencesOk() (*ModelsReferences, bool) {
+	if o == nil || IsNil(o.References) {
+		return nil, false
+	}
+	return o.References, true
+}
+
+// HasReferences returns a boolean if a field has been set.
+func (o *ModelsNodeComponent) HasReferences() bool {
+	if o != nil && !IsNil(o.References) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferences gets a reference to the given ModelsReferences and assigns it to the References field.
+func (o *ModelsNodeComponent) SetReferences(v ModelsReferences) {
+	o.References = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ModelsNodeComponent) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -225,6 +258,9 @@ func (o ModelsNodeComponent) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.References) {
+		toSerialize["references"] = o.References
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

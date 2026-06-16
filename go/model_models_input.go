@@ -27,6 +27,7 @@ type ModelsInput struct {
 	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
+	References *ModelsReferences `json:"references,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -272,6 +273,38 @@ func (o *ModelsInput) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetReferences returns the References field value if set, zero value otherwise.
+func (o *ModelsInput) GetReferences() ModelsReferences {
+	if o == nil || IsNil(o.References) {
+		var ret ModelsReferences
+		return ret
+	}
+	return *o.References
+}
+
+// GetReferencesOk returns a tuple with the References field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsInput) GetReferencesOk() (*ModelsReferences, bool) {
+	if o == nil || IsNil(o.References) {
+		return nil, false
+	}
+	return o.References, true
+}
+
+// HasReferences returns a boolean if a field has been set.
+func (o *ModelsInput) HasReferences() bool {
+	if o != nil && !IsNil(o.References) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferences gets a reference to the given ModelsReferences and assigns it to the References field.
+func (o *ModelsInput) SetReferences(v ModelsReferences) {
+	o.References = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ModelsInput) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -366,6 +399,9 @@ func (o ModelsInput) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.References) {
+		toSerialize["references"] = o.References
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

@@ -42,6 +42,12 @@ class TestModelsNodeComponent(unittest.TestCase):
                 description = '',
                 id = '',
                 name = '',
+                references = monad.models.models/references.models.References(
+                    secrets = [
+                        monad.models.models/reference.models.Reference(
+                            id = '', 
+                            organization_id = '', )
+                        ], ),
                 type = ''
             )
         else:

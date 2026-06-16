@@ -313,6 +313,8 @@ import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
+import { ModelsReference } from '../models/ModelsReference';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';

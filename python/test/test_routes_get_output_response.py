@@ -106,6 +106,12 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
                 managed_by = 'customer',
                 name = '',
                 organization_id = '',
+                references = monad.models.models/references.models.References(
+                    secrets = [
+                        monad.models.models/reference.models.Reference(
+                            id = '', 
+                            organization_id = '', )
+                        ], ),
                 type = '',
                 updated_at = ''
             )

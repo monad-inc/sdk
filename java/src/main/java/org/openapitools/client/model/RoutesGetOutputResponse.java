@@ -26,6 +26,7 @@ import java.util.List;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsOutputConfig;
 import org.openapitools.client.model.ModelsPipeline;
+import org.openapitools.client.model.ModelsReferences;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -94,6 +95,11 @@ public class RoutesGetOutputResponse {
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
   private String organizationId;
+
+  public static final String SERIALIZED_NAME_REFERENCES = "references";
+  @SerializedName(SERIALIZED_NAME_REFERENCES)
+  @javax.annotation.Nullable
+  private ModelsReferences references;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -268,6 +274,25 @@ public class RoutesGetOutputResponse {
   }
 
 
+  public RoutesGetOutputResponse references(@javax.annotation.Nullable ModelsReferences references) {
+    this.references = references;
+    return this;
+  }
+
+  /**
+   * Get references
+   * @return references
+   */
+  @javax.annotation.Nullable
+  public ModelsReferences getReferences() {
+    return references;
+  }
+
+  public void setReferences(@javax.annotation.Nullable ModelsReferences references) {
+    this.references = references;
+  }
+
+
   public RoutesGetOutputResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -324,13 +349,14 @@ public class RoutesGetOutputResponse {
         Objects.equals(this.managedBy, routesGetOutputResponse.managedBy) &&
         Objects.equals(this.name, routesGetOutputResponse.name) &&
         Objects.equals(this.organizationId, routesGetOutputResponse.organizationId) &&
+        Objects.equals(this.references, routesGetOutputResponse.references) &&
         Objects.equals(this.type, routesGetOutputResponse.type) &&
         Objects.equals(this.updatedAt, routesGetOutputResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, type, updatedAt);
+    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, type, updatedAt);
   }
 
   @Override
@@ -345,6 +371,7 @@ public class RoutesGetOutputResponse {
     sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -365,7 +392,7 @@ public class RoutesGetOutputResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -428,6 +455,10 @@ public class RoutesGetOutputResponse {
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+      }
+      // validate the optional field `references`
+      if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
+        ModelsReferences.validateJsonElement(jsonObj.get("references"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

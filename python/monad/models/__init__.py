@@ -324,6 +324,8 @@ from monad.models.models_quota_limit_unit import ModelsQuotaLimitUnit
 from monad.models.models_quota_list import ModelsQuotaList
 from monad.models.models_quota_timeframe import ModelsQuotaTimeframe
 from monad.models.models_rate_unit import ModelsRateUnit
+from monad.models.models_reference import ModelsReference
+from monad.models.models_references import ModelsReferences
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList
 from monad.models.models_secret import ModelsSecret

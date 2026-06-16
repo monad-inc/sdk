@@ -13,6 +13,7 @@
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsPipeline } from '../models/ModelsPipeline';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
 export class RoutesGetInputResponse {
@@ -24,6 +25,7 @@ export class RoutesGetInputResponse {
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
+    'references'?: ModelsReferences;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -78,6 +80,12 @@ export class RoutesGetInputResponse {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "references",
+            "baseName": "references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

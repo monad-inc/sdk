@@ -27,6 +27,7 @@ type ModelsTransform struct {
 	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
+	References *ModelsReferences `json:"references,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -271,6 +272,38 @@ func (o *ModelsTransform) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetReferences returns the References field value if set, zero value otherwise.
+func (o *ModelsTransform) GetReferences() ModelsReferences {
+	if o == nil || IsNil(o.References) {
+		var ret ModelsReferences
+		return ret
+	}
+	return *o.References
+}
+
+// GetReferencesOk returns a tuple with the References field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsTransform) GetReferencesOk() (*ModelsReferences, bool) {
+	if o == nil || IsNil(o.References) {
+		return nil, false
+	}
+	return o.References, true
+}
+
+// HasReferences returns a boolean if a field has been set.
+func (o *ModelsTransform) HasReferences() bool {
+	if o != nil && !IsNil(o.References) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferences gets a reference to the given ModelsReferences and assigns it to the References field.
+func (o *ModelsTransform) SetReferences(v ModelsReferences) {
+	o.References = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsTransform) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -333,6 +366,9 @@ func (o ModelsTransform) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.References) {
+		toSerialize["references"] = o.References
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

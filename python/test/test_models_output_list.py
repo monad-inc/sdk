@@ -51,6 +51,7 @@ class TestModelsOutputList(unittest.TestCase):
                         managed_by = 'customer', 
                         name = '', 
                         organization_id = '', 
+                        references = monad.models.models/references.models.References(), 
                         type = '', 
                         updated_at = '', )
                     ],

@@ -12,6 +12,7 @@
 
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
 export class ModelsEnrichment {
@@ -22,6 +23,7 @@ export class ModelsEnrichment {
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
+    'references'?: ModelsReferences;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -70,6 +72,12 @@ export class ModelsEnrichment {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "references",
+            "baseName": "references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

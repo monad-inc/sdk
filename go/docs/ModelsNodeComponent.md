@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetName sets Name field to given value.
 `func (o *ModelsNodeComponent) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetReferences
+
+`func (o *ModelsNodeComponent) GetReferences() ModelsReferences`
+
+GetReferences returns the References field if non-nil, zero value otherwise.
+
+### GetReferencesOk
+
+`func (o *ModelsNodeComponent) GetReferencesOk() (*ModelsReferences, bool)`
+
+GetReferencesOk returns a tuple with the References field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferences
+
+`func (o *ModelsNodeComponent) SetReferences(v ModelsReferences)`
+
+SetReferences sets References field to given value.
+
+### HasReferences
+
+`func (o *ModelsNodeComponent) HasReferences() bool`
+
+HasReferences returns a boolean if a field has been set.
 
 ### GetType
 

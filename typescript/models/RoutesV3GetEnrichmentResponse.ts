@@ -13,6 +13,7 @@
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsPipeline } from '../models/ModelsPipeline';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3GetEnrichmentResponse {
@@ -24,6 +25,7 @@ export class RoutesV3GetEnrichmentResponse {
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
+    'references'?: ModelsReferences;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -78,6 +80,12 @@ export class RoutesV3GetEnrichmentResponse {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "references",
+            "baseName": "references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

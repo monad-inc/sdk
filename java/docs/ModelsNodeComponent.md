@@ -11,6 +11,7 @@
 |**description** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**references** | [**ModelsReferences**](ModelsReferences.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 
 

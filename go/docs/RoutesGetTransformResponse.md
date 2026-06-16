@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
+**References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *RoutesGetTransformResponse) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetReferences
+
+`func (o *RoutesGetTransformResponse) GetReferences() ModelsReferences`
+
+GetReferences returns the References field if non-nil, zero value otherwise.
+
+### GetReferencesOk
+
+`func (o *RoutesGetTransformResponse) GetReferencesOk() (*ModelsReferences, bool)`
+
+GetReferencesOk returns a tuple with the References field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferences
+
+`func (o *RoutesGetTransformResponse) SetReferences(v ModelsReferences)`
+
+SetReferences sets References field to given value.
+
+### HasReferences
+
+`func (o *RoutesGetTransformResponse) HasReferences() bool`
+
+HasReferences returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

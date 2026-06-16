@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.ModelsReferences;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -71,6 +72,11 @@ public class ModelsNodeComponent {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_REFERENCES = "references";
+  @SerializedName(SERIALIZED_NAME_REFERENCES)
+  @javax.annotation.Nullable
+  private ModelsReferences references;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -164,6 +170,25 @@ public class ModelsNodeComponent {
   }
 
 
+  public ModelsNodeComponent references(@javax.annotation.Nullable ModelsReferences references) {
+    this.references = references;
+    return this;
+  }
+
+  /**
+   * Get references
+   * @return references
+   */
+  @javax.annotation.Nullable
+  public ModelsReferences getReferences() {
+    return references;
+  }
+
+  public void setReferences(@javax.annotation.Nullable ModelsReferences references) {
+    this.references = references;
+  }
+
+
   public ModelsNodeComponent type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -197,12 +222,13 @@ public class ModelsNodeComponent {
         Objects.equals(this.description, modelsNodeComponent.description) &&
         Objects.equals(this.id, modelsNodeComponent.id) &&
         Objects.equals(this.name, modelsNodeComponent.name) &&
+        Objects.equals(this.references, modelsNodeComponent.references) &&
         Objects.equals(this.type, modelsNodeComponent.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, id, name, type);
+    return Objects.hash(config, description, id, name, references, type);
   }
 
   @Override
@@ -213,6 +239,7 @@ public class ModelsNodeComponent {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -232,7 +259,7 @@ public class ModelsNodeComponent {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "id", "name", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "id", "name", "references", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -267,6 +294,10 @@ public class ModelsNodeComponent {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the optional field `references`
+      if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
+        ModelsReferences.validateJsonElement(jsonObj.get("references"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

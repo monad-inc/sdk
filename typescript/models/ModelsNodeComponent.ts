@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
 export class ModelsNodeComponent {
@@ -17,6 +18,7 @@ export class ModelsNodeComponent {
     'description'?: string;
     'id'?: string;
     'name'?: string;
+    'references'?: ModelsReferences;
     'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -46,6 +48,12 @@ export class ModelsNodeComponent {
             "name": "name",
             "baseName": "name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "references",
+            "baseName": "references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipeline;
+import org.openapitools.client.model.ModelsReferences;
 import org.openapitools.client.model.ModelsTransformConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -104,6 +105,14 @@ public class RoutesGetTransformResponseTest {
     @Test
     public void organizationIdTest() {
         // TODO: test organizationId
+    }
+
+    /**
+     * Test the property 'references'
+     */
+    @Test
+    public void referencesTest() {
+        // TODO: test references
     }
 
     /**

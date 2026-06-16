@@ -15,6 +15,7 @@
 |**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
+|**references** | [**ModelsReferences**](ModelsReferences.md) |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

@@ -13,6 +13,7 @@
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsPipeline } from '../models/ModelsPipeline';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
 export class RoutesGetOutputResponse {
@@ -24,6 +25,7 @@ export class RoutesGetOutputResponse {
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
+    'references'?: ModelsReferences;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -78,6 +80,12 @@ export class RoutesGetOutputResponse {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "references",
+            "baseName": "references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

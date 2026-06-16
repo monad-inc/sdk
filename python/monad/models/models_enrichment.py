@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_enrichment_config import ModelsEnrichmentConfig
 from monad.models.models_managed_by import ModelsManagedBy
+from monad.models.models_references import ModelsReferences
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -37,9 +38,10 @@ class ModelsEnrichment(BaseModel):
     managed_by: Optional[ModelsManagedBy] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
+    references: Optional[ModelsReferences] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "created_at", "description", "id", "managed_by", "name", "organization_id", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "type", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -83,6 +85,9 @@ class ModelsEnrichment(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of config
         if self.config:
             _dict['config'] = self.config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of references
+        if self.references:
+            _dict['references'] = self.references.to_dict()
         return _dict
 
     @classmethod
@@ -102,6 +107,7 @@ class ModelsEnrichment(BaseModel):
             "managed_by": obj.get("managed_by"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
+            "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
             "type": obj.get("type"),
             "updated_at": obj.get("updated_at")
         })
