@@ -870,7 +870,7 @@ import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
-import { ModelsAlertRule } from '../models/ModelsAlertRule';
+import { ModelsAlertRule             } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';

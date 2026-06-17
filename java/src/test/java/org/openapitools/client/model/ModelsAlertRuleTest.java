@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.client.model.ModelsManagedBy;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -71,6 +72,14 @@ public class ModelsAlertRuleTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
     }
 
     /**

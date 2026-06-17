@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.client.model.ModelsManagedBy;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -73,6 +74,11 @@ public class ModelsAlertRule {
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @javax.annotation.Nullable
+  private ModelsManagedBy managedBy;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -185,6 +191,25 @@ public class ModelsAlertRule {
 
   public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
+  }
+
+
+  public ModelsAlertRule managedBy(@javax.annotation.Nullable ModelsManagedBy managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * Get managedBy
+   * @return managedBy
+   */
+  @javax.annotation.Nullable
+  public ModelsManagedBy getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@javax.annotation.Nullable ModelsManagedBy managedBy) {
+    this.managedBy = managedBy;
   }
 
 
@@ -351,6 +376,7 @@ public class ModelsAlertRule {
         Objects.equals(this.createdAt, modelsAlertRule.createdAt) &&
         Objects.equals(this.description, modelsAlertRule.description) &&
         Objects.equals(this.id, modelsAlertRule.id) &&
+        Objects.equals(this.managedBy, modelsAlertRule.managedBy) &&
         Objects.equals(this.name, modelsAlertRule.name) &&
         Objects.equals(this.organizationId, modelsAlertRule.organizationId) &&
         Objects.equals(this.pipelineIds, modelsAlertRule.pipelineIds) &&
@@ -362,7 +388,7 @@ public class ModelsAlertRule {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, createdAt, description, id, name, organizationId, pipelineIds, ruleConfig, severity, type, updatedAt);
+    return Objects.hash(active, createdAt, description, id, managedBy, name, organizationId, pipelineIds, ruleConfig, severity, type, updatedAt);
   }
 
   @Override
@@ -373,6 +399,7 @@ public class ModelsAlertRule {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    pipelineIds: ").append(toIndentedString(pipelineIds)).append("\n");
@@ -398,7 +425,7 @@ public class ModelsAlertRule {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "name", "organization_id", "pipeline_ids", "rule_config", "severity", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "managed_by", "name", "organization_id", "pipeline_ids", "rule_config", "severity", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -433,6 +460,10 @@ public class ModelsAlertRule {
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ModelsManagedBy.validateJsonElement(jsonObj.get("managed_by"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

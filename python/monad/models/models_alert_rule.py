@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_managed_by import ModelsManagedBy
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -32,6 +33,7 @@ class ModelsAlertRule(BaseModel):
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
+    managed_by: Optional[ModelsManagedBy] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     pipeline_ids: Optional[List[StrictStr]] = None
@@ -39,7 +41,7 @@ class ModelsAlertRule(BaseModel):
     severity: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["active", "created_at", "description", "id", "name", "organization_id", "pipeline_ids", "rule_config", "severity", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["active", "created_at", "description", "id", "managed_by", "name", "organization_id", "pipeline_ids", "rule_config", "severity", "type", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -96,6 +98,7 @@ class ModelsAlertRule(BaseModel):
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),
+            "managed_by": obj.get("managed_by"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "pipeline_ids": obj.get("pipeline_ids"),

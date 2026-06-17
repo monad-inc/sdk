@@ -4500,6 +4500,9 @@
                     "id": {
                         "type": "string"
                     },
+                    "managed_by": {
+                        "$ref": "#/components/schemas/models.ManagedBy"
+                    },
                     "name": {
                         "type": "string"
                     },

@@ -24,6 +24,7 @@ type ModelsAlertRule struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
+	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineIds []string `json:"pipeline_ids,omitempty"`
@@ -176,6 +177,38 @@ func (o *ModelsAlertRule) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ModelsAlertRule) SetId(v string) {
 	o.Id = &v
+}
+
+// GetManagedBy returns the ManagedBy field value if set, zero value otherwise.
+func (o *ModelsAlertRule) GetManagedBy() ModelsManagedBy {
+	if o == nil || IsNil(o.ManagedBy) {
+		var ret ModelsManagedBy
+		return ret
+	}
+	return *o.ManagedBy
+}
+
+// GetManagedByOk returns a tuple with the ManagedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsAlertRule) GetManagedByOk() (*ModelsManagedBy, bool) {
+	if o == nil || IsNil(o.ManagedBy) {
+		return nil, false
+	}
+	return o.ManagedBy, true
+}
+
+// HasManagedBy returns a boolean if a field has been set.
+func (o *ModelsAlertRule) HasManagedBy() bool {
+	if o != nil && !IsNil(o.ManagedBy) {
+		return true
+	}
+
+	return false
+}
+
+// SetManagedBy gets a reference to the given ModelsManagedBy and assigns it to the ManagedBy field.
+func (o *ModelsAlertRule) SetManagedBy(v ModelsManagedBy) {
+	o.ManagedBy = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -423,6 +456,9 @@ func (o ModelsAlertRule) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.ManagedBy) {
+		toSerialize["managed_by"] = o.ManagedBy
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

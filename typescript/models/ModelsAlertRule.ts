@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { HttpFile } from '../http/http';
 
 export class ModelsAlertRule {
@@ -17,6 +18,7 @@ export class ModelsAlertRule {
     'createdAt'?: string;
     'description'?: string;
     'id'?: string;
+    'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
     'pipelineIds'?: Array<string>;
@@ -52,6 +54,12 @@ export class ModelsAlertRule {
             "name": "id",
             "baseName": "id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "managedBy",
+            "baseName": "managed_by",
+            "type": "ModelsManagedBy",
             "format": ""
         },
         {
@@ -104,3 +112,5 @@ export class ModelsAlertRule {
     public constructor() {
     }
 }
+
+

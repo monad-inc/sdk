@@ -11,6 +11,7 @@
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
+|**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**pipelineIds** | **List&lt;String&gt;** |  |  [optional] |
