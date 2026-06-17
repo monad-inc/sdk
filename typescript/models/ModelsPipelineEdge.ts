@@ -23,6 +23,7 @@ export class ModelsPipelineEdge {
     'name'?: string;
     'organizationId'?: string;
     'pipelineId'?: string;
+    'schemaDetection'?: boolean;
     'toNodeInstanceId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -82,6 +83,12 @@ export class ModelsPipelineEdge {
             "name": "pipelineId",
             "baseName": "pipeline_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "schemaDetection",
+            "baseName": "schema_detection",
+            "type": "boolean",
             "format": ""
         },
         {

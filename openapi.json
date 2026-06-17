@@ -5658,6 +5658,9 @@
                     "pipeline_id": {
                         "type": "string"
                     },
+                    "schema_detection": {
+                        "type": "boolean"
+                    },
                     "to_node_instance_id": {
                         "type": "string"
                     }

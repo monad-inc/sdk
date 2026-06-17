@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **pipeline_id** | **str** |  | [optional] 
+**schema_detection** | **bool** |  | [optional] 
 **to_node_instance_id** | **str** |  | [optional] 
 
 ## Example

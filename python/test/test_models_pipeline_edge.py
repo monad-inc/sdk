@@ -50,6 +50,7 @@ class TestModelsPipelineEdge(unittest.TestCase):
                 name = '',
                 organization_id = '',
                 pipeline_id = '',
+                schema_detection = True,
                 to_node_instance_id = ''
             )
         else:

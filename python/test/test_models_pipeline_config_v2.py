@@ -57,6 +57,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                         name = '', 
                         organization_id = '', 
                         pipeline_id = '', 
+                        schema_detection = True, 
                         to_node_instance_id = '', )
                     ],
                 enabled = True,

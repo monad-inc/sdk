@@ -29,6 +29,7 @@ type ModelsPipelineEdge struct {
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
+	SchemaDetection *bool `json:"schema_detection,omitempty"`
 	ToNodeInstanceId *string `json:"to_node_instance_id,omitempty"`
 }
 
@@ -337,6 +338,38 @@ func (o *ModelsPipelineEdge) SetPipelineId(v string) {
 	o.PipelineId = &v
 }
 
+// GetSchemaDetection returns the SchemaDetection field value if set, zero value otherwise.
+func (o *ModelsPipelineEdge) GetSchemaDetection() bool {
+	if o == nil || IsNil(o.SchemaDetection) {
+		var ret bool
+		return ret
+	}
+	return *o.SchemaDetection
+}
+
+// GetSchemaDetectionOk returns a tuple with the SchemaDetection field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineEdge) GetSchemaDetectionOk() (*bool, bool) {
+	if o == nil || IsNil(o.SchemaDetection) {
+		return nil, false
+	}
+	return o.SchemaDetection, true
+}
+
+// HasSchemaDetection returns a boolean if a field has been set.
+func (o *ModelsPipelineEdge) HasSchemaDetection() bool {
+	if o != nil && !IsNil(o.SchemaDetection) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchemaDetection gets a reference to the given bool and assigns it to the SchemaDetection field.
+func (o *ModelsPipelineEdge) SetSchemaDetection(v bool) {
+	o.SchemaDetection = &v
+}
+
 // GetToNodeInstanceId returns the ToNodeInstanceId field value if set, zero value otherwise.
 func (o *ModelsPipelineEdge) GetToNodeInstanceId() string {
 	if o == nil || IsNil(o.ToNodeInstanceId) {
@@ -405,6 +438,9 @@ func (o ModelsPipelineEdge) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PipelineId) {
 		toSerialize["pipeline_id"] = o.PipelineId
+	}
+	if !IsNil(o.SchemaDetection) {
+		toSerialize["schema_detection"] = o.SchemaDetection
 	}
 	if !IsNil(o.ToNodeInstanceId) {
 		toSerialize["to_node_instance_id"] = o.ToNodeInstanceId

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
+**SchemaDetection** | Pointer to **bool** |  | [optional] 
 **ToNodeInstanceId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetPipelineId sets PipelineId field to given value.
 `func (o *ModelsPipelineEdge) HasPipelineId() bool`
 
 HasPipelineId returns a boolean if a field has been set.
+
+### GetSchemaDetection
+
+`func (o *ModelsPipelineEdge) GetSchemaDetection() bool`
+
+GetSchemaDetection returns the SchemaDetection field if non-nil, zero value otherwise.
+
+### GetSchemaDetectionOk
+
+`func (o *ModelsPipelineEdge) GetSchemaDetectionOk() (*bool, bool)`
+
+GetSchemaDetectionOk returns a tuple with the SchemaDetection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemaDetection
+
+`func (o *ModelsPipelineEdge) SetSchemaDetection(v bool)`
+
+SetSchemaDetection sets SchemaDetection field to given value.
+
+### HasSchemaDetection
+
+`func (o *ModelsPipelineEdge) HasSchemaDetection() bool`
+
+HasSchemaDetection returns a boolean if a field has been set.
 
 ### GetToNodeInstanceId
 

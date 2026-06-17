@@ -96,6 +96,11 @@ public class ModelsPipelineEdge {
   @javax.annotation.Nullable
   private String pipelineId;
 
+  public static final String SERIALIZED_NAME_SCHEMA_DETECTION = "schema_detection";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_DETECTION)
+  @javax.annotation.Nullable
+  private Boolean schemaDetection;
+
   public static final String SERIALIZED_NAME_TO_NODE_INSTANCE_ID = "to_node_instance_id";
   @SerializedName(SERIALIZED_NAME_TO_NODE_INSTANCE_ID)
   @javax.annotation.Nullable
@@ -275,6 +280,25 @@ public class ModelsPipelineEdge {
   }
 
 
+  public ModelsPipelineEdge schemaDetection(@javax.annotation.Nullable Boolean schemaDetection) {
+    this.schemaDetection = schemaDetection;
+    return this;
+  }
+
+  /**
+   * Get schemaDetection
+   * @return schemaDetection
+   */
+  @javax.annotation.Nullable
+  public Boolean getSchemaDetection() {
+    return schemaDetection;
+  }
+
+  public void setSchemaDetection(@javax.annotation.Nullable Boolean schemaDetection) {
+    this.schemaDetection = schemaDetection;
+  }
+
+
   public ModelsPipelineEdge toNodeInstanceId(@javax.annotation.Nullable String toNodeInstanceId) {
     this.toNodeInstanceId = toNodeInstanceId;
     return this;
@@ -313,12 +337,13 @@ public class ModelsPipelineEdge {
         Objects.equals(this.name, modelsPipelineEdge.name) &&
         Objects.equals(this.organizationId, modelsPipelineEdge.organizationId) &&
         Objects.equals(this.pipelineId, modelsPipelineEdge.pipelineId) &&
+        Objects.equals(this.schemaDetection, modelsPipelineEdge.schemaDetection) &&
         Objects.equals(this.toNodeInstanceId, modelsPipelineEdge.toNodeInstanceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, createdAt, description, disabled, fromNodeInstanceId, id, name, organizationId, pipelineId, toNodeInstanceId);
+    return Objects.hash(conditions, createdAt, description, disabled, fromNodeInstanceId, id, name, organizationId, pipelineId, schemaDetection, toNodeInstanceId);
   }
 
   @Override
@@ -334,6 +359,7 @@ public class ModelsPipelineEdge {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
+    sb.append("    schemaDetection: ").append(toIndentedString(schemaDetection)).append("\n");
     sb.append("    toNodeInstanceId: ").append(toIndentedString(toNodeInstanceId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -353,7 +379,7 @@ public class ModelsPipelineEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection", "to_node_instance_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

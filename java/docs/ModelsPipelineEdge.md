@@ -16,6 +16,7 @@
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**pipelineId** | **String** |  |  [optional] |
+|**schemaDetection** | **Boolean** |  |  [optional] |
 |**toNodeInstanceId** | **String** |  |  [optional] |
 
 
