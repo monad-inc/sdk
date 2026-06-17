@@ -7581,6 +7581,44 @@
                 },
                 "type": "object"
             },
+            "redshift_audit_logs.SettingsConfig": {
+                "description": "Amazon Redshift audit logs settings",
+                "properties": {
+                    "backfill_start_time": {
+                        "description": "Date to start fetching data from. If not specified, a full sync of data\nup to now is performed on the first sync; subsequent syncs are incremental.",
+                        "type": "string"
+                    },
+                    "bucket": {
+                        "description": "Name of the S3 bucket that receives Redshift audit logs.",
+                        "type": "string"
+                    },
+                    "log_type": {
+                        "description": "Which Redshift audit log to ingest. Must be one of the supported log\ntypes (connectionlog, userlog).",
+                        "enum": [
+                            "connectionlog",
+                            "userlog"
+                        ],
+                        "type": "string"
+                    },
+                    "prefix": {
+                        "description": "Prefix of the audit log keys, up to (but not including) the date\npartition — e.g. \"AWSLogs/123456789012/redshift/us-east-1\". If you\nconfigured a custom S3 key prefix for audit logging, include it here.",
+                        "type": "string"
+                    },
+                    "region": {
+                        "description": "AWS Region of your bucket.",
+                        "type": "string"
+                    },
+                    "role_arn": {
+                        "description": "Role ARN to assume when reading from S3.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bucket",
+                    "log_type"
+                ],
+                "type": "object"
+            },
             "rename_key.ArgumentsConfig": {
                 "properties": {
                     "key": {
@@ -10330,6 +10368,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/pubsub.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/redshift_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/rootly_audit_logs.SettingsConfig"

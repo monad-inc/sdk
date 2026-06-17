@@ -42,7 +42,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 project = '',
                 service = '',
                 interval_seconds = 56,
-                region = 'app1',
+                region = '',
                 role_arn = '',
                 severity = '',
                 bucket = '',
@@ -236,7 +236,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 log_categories = [
                     ''
                     ],
-                log_type = '',
+                log_type = 'connectionlog',
                 endpoint = '',
                 skip_ssl_verification = True,
                 use_path_style = True,
@@ -296,7 +296,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
         else:
             return SecretProcessesorInputConfigSettings(
                 host = '',
-                region = 'app1',
+                region = '',
                 bucket = '',
                 compression = 'auto',
                 format = 'json',
@@ -336,6 +336,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 log_categories = [
                     ''
                     ],
+                log_type = 'connectionlog',
                 endpoint = '',
                 subdomain = '',
                 domain = '',

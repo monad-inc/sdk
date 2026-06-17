@@ -92,6 +92,7 @@ type SecretProcessesorInputConfigSettings struct {
 	PolymerSettingsConfig *PolymerSettingsConfig
 	PostmanAuditLogsSettingsConfig *PostmanAuditLogsSettingsConfig
 	PubsubSettingsConfig *PubsubSettingsConfig
+	RedshiftAuditLogsSettingsConfig *RedshiftAuditLogsSettingsConfig
 	RootlyAuditLogsSettingsConfig *RootlyAuditLogsSettingsConfig
 	SemgrepCodeFindingsSettingsConfig *SemgrepCodeFindingsSettingsConfig
 	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
@@ -632,6 +633,13 @@ func PostmanAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Pos
 func PubsubSettingsConfigAsSecretProcessesorInputConfigSettings(v *PubsubSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		PubsubSettingsConfig: v,
+	}
+}
+
+// RedshiftAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns RedshiftAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func RedshiftAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *RedshiftAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		RedshiftAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -2091,6 +2099,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PubsubSettingsConfig = nil
 	}
 
+	// try to unmarshal data into RedshiftAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.RedshiftAuditLogsSettingsConfig)
+	if err == nil {
+		jsonRedshiftAuditLogsSettingsConfig, _ := json.Marshal(dst.RedshiftAuditLogsSettingsConfig)
+		if string(jsonRedshiftAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.RedshiftAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.RedshiftAuditLogsSettingsConfig); err != nil {
+				dst.RedshiftAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.RedshiftAuditLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into RootlyAuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.RootlyAuditLogsSettingsConfig)
 	if err == nil {
@@ -2676,6 +2701,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PolymerSettingsConfig = nil
 		dst.PostmanAuditLogsSettingsConfig = nil
 		dst.PubsubSettingsConfig = nil
+		dst.RedshiftAuditLogsSettingsConfig = nil
 		dst.RootlyAuditLogsSettingsConfig = nil
 		dst.SemgrepCodeFindingsSettingsConfig = nil
 		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
@@ -3007,6 +3033,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.PubsubSettingsConfig != nil {
 		return json.Marshal(&src.PubsubSettingsConfig)
+	}
+
+	if src.RedshiftAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.RedshiftAuditLogsSettingsConfig)
 	}
 
 	if src.RootlyAuditLogsSettingsConfig != nil {
@@ -3429,6 +3459,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.PubsubSettingsConfig
 	}
 
+	if obj.RedshiftAuditLogsSettingsConfig != nil {
+		return obj.RedshiftAuditLogsSettingsConfig
+	}
+
 	if obj.RootlyAuditLogsSettingsConfig != nil {
 		return obj.RootlyAuditLogsSettingsConfig
 	}
@@ -3845,6 +3879,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.PubsubSettingsConfig != nil {
 		return *obj.PubsubSettingsConfig
+	}
+
+	if obj.RedshiftAuditLogsSettingsConfig != nil {
+		return *obj.RedshiftAuditLogsSettingsConfig
 	}
 
 	if obj.RootlyAuditLogsSettingsConfig != nil {

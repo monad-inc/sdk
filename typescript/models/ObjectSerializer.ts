@@ -393,6 +393,7 @@ export * from '../models/PrometheusSettingsConfig';
 export * from '../models/PrometheusStaticMetricVariant';
 export * from '../models/PubsubSecretsConfig';
 export * from '../models/PubsubSettingsConfig';
+export * from '../models/RedshiftAuditLogsSettingsConfig';
 export * from '../models/RenameKeyArgumentsConfig';
 export * from '../models/RenameKeyWhereValueEqArgumentsConfig';
 export * from '../models/ReplaceEnrichmentRequest';
@@ -1022,6 +1023,7 @@ import { PrometheusSettingsConfig } from '../models/PrometheusSettingsConfig';
 import { PrometheusStaticMetricVariant } from '../models/PrometheusStaticMetricVariant';
 import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
+import { RedshiftAuditLogsSettingsConfig  , RedshiftAuditLogsSettingsConfigLogTypeEnum      } from '../models/RedshiftAuditLogsSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
 import { ReplaceEnrichmentRequestClass } from '../models/ReplaceEnrichmentRequest';
@@ -1314,15 +1316,16 @@ let enumsMap: Set<string> = new Set<string>([
     "OpensearchAuthMode",
     "OwnbackupAccountEventsSettingsConfigRegionEnum",
     "PagerdutyEventType",
+    "RedshiftAuditLogsSettingsConfigLogTypeEnum",
     "ScannerAuthConfigTypeEnum",
     "ScannerFormatConfigTypeEnum",
     "ScannerJSONVariantTypeEnum",
     "ScannerSettingsConfigCompressionEnum",
-    "SecretProcessesorInputConfigSettingsRegionEnum",
     "SecretProcessesorInputConfigSettingsCompressionEnum",
     "SecretProcessesorInputConfigSettingsFormatEnum",
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
     "SecretProcessesorInputConfigSettingsEnvironmentEnum",
+    "SecretProcessesorInputConfigSettingsLogTypeEnum",
     "SecretProcessesorOutputConfigSettingsCompressionEnum",
     "SnowflakeInputSettingsConfigAuthTypeEnum",
     "SqsS3BaseKeyFilterMode",
@@ -1713,6 +1716,7 @@ let typeMap: {[index: string]: any} = {
     "PrometheusStaticMetricVariant": PrometheusStaticMetricVariant,
     "PubsubSecretsConfig": PubsubSecretsConfig,
     "PubsubSettingsConfig": PubsubSettingsConfig,
+    "RedshiftAuditLogsSettingsConfig": RedshiftAuditLogsSettingsConfig,
     "RenameKeyArgumentsConfig": RenameKeyArgumentsConfig,
     "RenameKeyWhereValueEqArgumentsConfig": RenameKeyWhereValueEqArgumentsConfig,
     "ReplaceEnrichmentRequest": ReplaceEnrichmentRequestClass,

@@ -11,15 +11,15 @@ Name | Type | Description | Notes
 **project** | **str** | The GCP project ID containing the BigQuery dataset | [optional] 
 **service** | **str** | The Aiven service name | [optional] 
 **interval_seconds** | **int** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
-**region** | **str** | Region of the OwnBackup instance | 
-**role_arn** | **str** | The ARN of the IAM role to assume for accessing Inspector. | [optional] 
+**region** | **str** | AWS Region of your bucket. | 
+**role_arn** | **str** | Role ARN to assume when reading from S3. | [optional] 
 **severity** | **str** | Filter by alert severity (error, warning) | [optional] 
-**bucket** | **str** | Name of the storage bucket | 
+**bucket** | **str** | Name of the S3 bucket that receives Redshift audit logs. | 
 **compression** | **str** | Compression format of the objects | 
 **format** | **str** | File format of the objects | 
 **key_filter** | [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  | [optional] 
 **partition_format** | **str** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
-**prefix** | **str** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
+**prefix** | **str** | Prefix of the audit log keys, up to (but not including) the date partition — e.g. \&quot;AWSLogs/123456789012/redshift/us-east-1\&quot;. If you configured a custom S3 key prefix for audit logging, include it here. | [optional] 
 **record_location** | **str** | JSONPath location of the records array in the GraphQL response | [optional] 
 **var_schema** | **str** | The schema within the Snowflake database where the target table resides. | 
 **chunking_mode** | [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
@@ -124,7 +124,7 @@ Name | Type | Description | Notes
 **tenant_data_center** | **str** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **audit_log_types** | **List[str]** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **log_categories** | **List[str]** | The audit log categories to ingest. | 
-**log_type** | **str** |  | [optional] 
+**log_type** | **str** | Which Redshift audit log to ingest. Must be one of the supported log types (connectionlog, userlog). | 
 **endpoint** | **str** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
 **skip_ssl_verification** | **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **use_path_style** | **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 

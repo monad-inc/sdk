@@ -397,6 +397,7 @@ import { PrometheusSettingsConfig } from '../models/PrometheusSettingsConfig';
 import { PrometheusStaticMetricVariant } from '../models/PrometheusStaticMetricVariant';
 import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
+import { RedshiftAuditLogsSettingsConfig } from '../models/RedshiftAuditLogsSettingsConfig';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
 import { ReplaceEnrichmentRequest } from '../models/ReplaceEnrichmentRequest';

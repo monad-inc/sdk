@@ -704,6 +704,7 @@ Class | Method | HTTP request | Description
  - [PrometheusStaticMetricVariant](docs/PrometheusStaticMetricVariant.md)
  - [PubsubSecretsConfig](docs/PubsubSecretsConfig.md)
  - [PubsubSettingsConfig](docs/PubsubSettingsConfig.md)
+ - [RedshiftAuditLogsSettingsConfig](docs/RedshiftAuditLogsSettingsConfig.md)
  - [RenameKeyArgumentsConfig](docs/RenameKeyArgumentsConfig.md)
  - [RenameKeyWhereValueEqArgumentsConfig](docs/RenameKeyWhereValueEqArgumentsConfig.md)
  - [ReplaceEnrichmentRequest](docs/ReplaceEnrichmentRequest.md)

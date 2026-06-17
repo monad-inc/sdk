@@ -13,15 +13,15 @@
 |**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
 |**service** | **String** | The Aiven service name |  [optional] |
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
-|**region** | [**RegionEnum**](#RegionEnum) | Region of the OwnBackup instance |  |
-|**roleArn** | **String** | The ARN of the IAM role to assume for accessing Inspector. |  [optional] |
+|**region** | **String** | AWS Region of your bucket. |  |
+|**roleArn** | **String** | Role ARN to assume when reading from S3. |  [optional] |
 |**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
-|**bucket** | **String** | Name of the storage bucket |  |
+|**bucket** | **String** | Name of the S3 bucket that receives Redshift audit logs. |  |
 |**compression** | [**CompressionEnum**](#CompressionEnum) | Compression format of the objects |  |
 |**format** | [**FormatEnum**](#FormatEnum) | File format of the objects |  |
 |**keyFilter** | [**SqsS3BaseKeyFilter**](SqsS3BaseKeyFilter.md) |  |  [optional] |
 |**partitionFormat** | [**PartitionFormatEnum**](#PartitionFormatEnum) | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). |  |
-|**prefix** | **String** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. |  [optional] |
+|**prefix** | **String** | Prefix of the audit log keys, up to (but not including) the date partition — e.g. \&quot;AWSLogs/123456789012/redshift/us-east-1\&quot;. If you configured a custom S3 key prefix for audit logging, include it here. |  [optional] |
 |**recordLocation** | **String** | JSONPath location of the records array in the GraphQL response |  [optional] |
 |**schema** | **String** | The schema within the Snowflake database where the target table resides. |  |
 |**chunkingMode** | **AwsSqsS3CloudtrailChunkingMode** |  |  [optional] |
@@ -126,7 +126,7 @@
 |**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; |  |
 |**auditLogTypes** | **List&lt;String&gt;** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. |  [optional] |
 |**logCategories** | **List&lt;String&gt;** | The audit log categories to ingest. |  |
-|**logType** | **String** |  |  [optional] |
+|**logType** | [**LogTypeEnum**](#LogTypeEnum) | Which Redshift audit log to ingest. Must be one of the supported log types (connectionlog, userlog). |  |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  |
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
@@ -171,18 +171,6 @@
 
 
 
-## Enum: RegionEnum
-
-| Name | Value |
-|---- | -----|
-| APP1 | &quot;app1&quot; |
-| EMEA1 | &quot;emea1&quot; |
-| UK1 | &quot;uk1&quot; |
-| USGOV2 | &quot;usgov2&quot; |
-| HIPAA1 | &quot;hipaa1&quot; |
-
-
-
 ## Enum: CompressionEnum
 
 | Name | Value |
@@ -219,6 +207,15 @@
 |---- | -----|
 | PRODUCTION | &quot;production&quot; |
 | DEVELOPMENT | &quot;development&quot; |
+
+
+
+## Enum: LogTypeEnum
+
+| Name | Value |
+|---- | -----|
+| CONNECTIONLOG | &quot;connectionlog&quot; |
+| USERLOG | &quot;userlog&quot; |
 
 
 

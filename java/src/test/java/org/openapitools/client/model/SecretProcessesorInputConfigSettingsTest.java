@@ -102,6 +102,7 @@ import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PolymerSettingsConfig;
 import org.openapitools.client.model.PostmanAuditLogsSettingsConfig;
 import org.openapitools.client.model.PubsubSettingsConfig;
+import org.openapitools.client.model.RedshiftAuditLogsSettingsConfig;
 import org.openapitools.client.model.RootlyAuditLogsSettingsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;

@@ -463,6 +463,7 @@ __all__ = [
     "PrometheusStaticMetricVariant",
     "PubsubSecretsConfig",
     "PubsubSettingsConfig",
+    "RedshiftAuditLogsSettingsConfig",
     "RenameKeyArgumentsConfig",
     "RenameKeyWhereValueEqArgumentsConfig",
     "ReplaceEnrichmentRequest",
@@ -1147,6 +1148,7 @@ from monad.models.prometheus_settings_config import PrometheusSettingsConfig as 
 from monad.models.prometheus_static_metric_variant import PrometheusStaticMetricVariant as PrometheusStaticMetricVariant
 from monad.models.pubsub_secrets_config import PubsubSecretsConfig as PubsubSecretsConfig
 from monad.models.pubsub_settings_config import PubsubSettingsConfig as PubsubSettingsConfig
+from monad.models.redshift_audit_logs_settings_config import RedshiftAuditLogsSettingsConfig as RedshiftAuditLogsSettingsConfig
 from monad.models.rename_key_arguments_config import RenameKeyArgumentsConfig as RenameKeyArgumentsConfig
 from monad.models.rename_key_where_value_eq_arguments_config import RenameKeyWhereValueEqArgumentsConfig as RenameKeyWhereValueEqArgumentsConfig
 from monad.models.replace_enrichment_request import ReplaceEnrichmentRequest as ReplaceEnrichmentRequest
