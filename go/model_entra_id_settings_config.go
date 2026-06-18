@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the EntraIdSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,22 +22,31 @@ var _ MappedNullable = &EntraIdSettingsConfig{}
 
 // EntraIdSettingsConfig Microsoft Entra ID settings
 type EntraIdSettingsConfig struct {
+	// The date to start fetching data from on first sync
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The Category of logs to query
-	Category *string `json:"category,omitempty"`
+	Category string `json:"category"`
+	// The ingestion delay in seconds for the data source
+	IngestionDelay *int32 `json:"ingestion_delay,omitempty"`
 	// The tenant ID of the Azure AD application
-	TenantId *string `json:"tenant_id,omitempty"`
+	TenantId string `json:"tenant_id"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// The workspace ID of the Log Analytics workspace
-	WorkspaceId *string `json:"workspace_id,omitempty"`
+	WorkspaceId string `json:"workspace_id"`
 }
+
+type _EntraIdSettingsConfig EntraIdSettingsConfig
 
 // NewEntraIdSettingsConfig instantiates a new EntraIdSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEntraIdSettingsConfig() *EntraIdSettingsConfig {
+func NewEntraIdSettingsConfig(category string, tenantId string, workspaceId string) *EntraIdSettingsConfig {
 	this := EntraIdSettingsConfig{}
+	this.Category = category
+	this.TenantId = tenantId
+	this.WorkspaceId = workspaceId
 	return &this
 }
 
@@ -47,68 +58,116 @@ func NewEntraIdSettingsConfigWithDefaults() *EntraIdSettingsConfig {
 	return &this
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
-func (o *EntraIdSettingsConfig) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *EntraIdSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.BackfillStartTime
 }
 
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntraIdSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *EntraIdSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *EntraIdSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
+}
+
+// GetCategory returns the Category field value
+func (o *EntraIdSettingsConfig) GetCategory() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Category
+}
+
+// GetCategoryOk returns a tuple with the Category field value
 // and a boolean to check if the value has been set.
 func (o *EntraIdSettingsConfig) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return &o.Category, true
 }
 
-// HasCategory returns a boolean if a field has been set.
-func (o *EntraIdSettingsConfig) HasCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+// SetCategory sets field value
+func (o *EntraIdSettingsConfig) SetCategory(v string) {
+	o.Category = v
+}
+
+// GetIngestionDelay returns the IngestionDelay field value if set, zero value otherwise.
+func (o *EntraIdSettingsConfig) GetIngestionDelay() int32 {
+	if o == nil || IsNil(o.IngestionDelay) {
+		var ret int32
+		return ret
+	}
+	return *o.IngestionDelay
+}
+
+// GetIngestionDelayOk returns a tuple with the IngestionDelay field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntraIdSettingsConfig) GetIngestionDelayOk() (*int32, bool) {
+	if o == nil || IsNil(o.IngestionDelay) {
+		return nil, false
+	}
+	return o.IngestionDelay, true
+}
+
+// HasIngestionDelay returns a boolean if a field has been set.
+func (o *EntraIdSettingsConfig) HasIngestionDelay() bool {
+	if o != nil && !IsNil(o.IngestionDelay) {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *EntraIdSettingsConfig) SetCategory(v string) {
-	o.Category = &v
+// SetIngestionDelay gets a reference to the given int32 and assigns it to the IngestionDelay field.
+func (o *EntraIdSettingsConfig) SetIngestionDelay(v int32) {
+	o.IngestionDelay = &v
 }
 
-// GetTenantId returns the TenantId field value if set, zero value otherwise.
+// GetTenantId returns the TenantId field value
 func (o *EntraIdSettingsConfig) GetTenantId() string {
-	if o == nil || IsNil(o.TenantId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.TenantId
+
+	return o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
+// GetTenantIdOk returns a tuple with the TenantId field value
 // and a boolean to check if the value has been set.
 func (o *EntraIdSettingsConfig) GetTenantIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TenantId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TenantId, true
+	return &o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *EntraIdSettingsConfig) HasTenantId() bool {
-	if o != nil && !IsNil(o.TenantId) {
-		return true
-	}
-
-	return false
-}
-
-// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
+// SetTenantId sets field value
 func (o *EntraIdSettingsConfig) SetTenantId(v string) {
-	o.TenantId = &v
+	o.TenantId = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -143,36 +202,28 @@ func (o *EntraIdSettingsConfig) SetUseSyntheticData(v bool) {
 	o.UseSyntheticData = &v
 }
 
-// GetWorkspaceId returns the WorkspaceId field value if set, zero value otherwise.
+// GetWorkspaceId returns the WorkspaceId field value
 func (o *EntraIdSettingsConfig) GetWorkspaceId() string {
-	if o == nil || IsNil(o.WorkspaceId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.WorkspaceId
+
+	return o.WorkspaceId
 }
 
-// GetWorkspaceIdOk returns a tuple with the WorkspaceId field value if set, nil otherwise
+// GetWorkspaceIdOk returns a tuple with the WorkspaceId field value
 // and a boolean to check if the value has been set.
 func (o *EntraIdSettingsConfig) GetWorkspaceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkspaceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WorkspaceId, true
+	return &o.WorkspaceId, true
 }
 
-// HasWorkspaceId returns a boolean if a field has been set.
-func (o *EntraIdSettingsConfig) HasWorkspaceId() bool {
-	if o != nil && !IsNil(o.WorkspaceId) {
-		return true
-	}
-
-	return false
-}
-
-// SetWorkspaceId gets a reference to the given string and assigns it to the WorkspaceId field.
+// SetWorkspaceId sets field value
 func (o *EntraIdSettingsConfig) SetWorkspaceId(v string) {
-	o.WorkspaceId = &v
+	o.WorkspaceId = v
 }
 
 func (o EntraIdSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -185,19 +236,58 @@ func (o EntraIdSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o EntraIdSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.TenantId) {
-		toSerialize["tenant_id"] = o.TenantId
+	toSerialize["category"] = o.Category
+	if !IsNil(o.IngestionDelay) {
+		toSerialize["ingestion_delay"] = o.IngestionDelay
 	}
+	toSerialize["tenant_id"] = o.TenantId
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
-	if !IsNil(o.WorkspaceId) {
-		toSerialize["workspace_id"] = o.WorkspaceId
-	}
+	toSerialize["workspace_id"] = o.WorkspaceId
 	return toSerialize, nil
+}
+
+func (o *EntraIdSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"category",
+		"tenant_id",
+		"workspace_id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varEntraIdSettingsConfig := _EntraIdSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varEntraIdSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EntraIdSettingsConfig(varEntraIdSettingsConfig)
+
+	return err
 }
 
 type NullableEntraIdSettingsConfig struct {

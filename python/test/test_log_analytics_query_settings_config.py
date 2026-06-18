@@ -36,6 +36,8 @@ class TestLogAnalyticsQuerySettingsConfig(unittest.TestCase):
         model = LogAnalyticsQuerySettingsConfig()
         if include_optional:
             return LogAnalyticsQuerySettingsConfig(
+                backfill_start_time = '',
+                ingestion_delay = 56,
                 query = '',
                 tenant_id = '',
                 use_synthetic_data = True,
@@ -43,6 +45,9 @@ class TestLogAnalyticsQuerySettingsConfig(unittest.TestCase):
             )
         else:
             return LogAnalyticsQuerySettingsConfig(
+                query = '',
+                tenant_id = '',
+                workspace_id = '',
         )
         """
 

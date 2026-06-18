@@ -38,6 +38,22 @@ public class LogAnalyticsQuerySettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
+     * Test the property 'ingestionDelay'
+     */
+    @Test
+    public void ingestionDelayTest() {
+        // TODO: test ingestionDelay
+    }
+
+    /**
      * Test the property 'query'
      */
     @Test

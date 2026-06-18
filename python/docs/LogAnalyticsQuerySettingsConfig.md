@@ -6,10 +6,12 @@ Microsoft Log Analytics Query settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**query** | **str** | The query to run against the Log Analytics workspace | [optional] 
-**tenant_id** | **str** | The tenant ID of the Azure AD application | [optional] 
+**backfill_start_time** | **str** | The date to start fetching data from on first sync | [optional] 
+**ingestion_delay** | **int** | The ingestion delay in seconds for the data source | [optional] 
+**query** | **str** | The query to run against the Log Analytics workspace | 
+**tenant_id** | **str** | The tenant ID of the Azure AD application | 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**workspace_id** | **str** | The workspace ID of the Log Analytics workspace | [optional] 
+**workspace_id** | **str** | The workspace ID of the Log Analytics workspace | 
 
 ## Example
 

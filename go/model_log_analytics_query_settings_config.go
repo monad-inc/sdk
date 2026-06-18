@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the LogAnalyticsQuerySettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,22 +22,31 @@ var _ MappedNullable = &LogAnalyticsQuerySettingsConfig{}
 
 // LogAnalyticsQuerySettingsConfig Microsoft Log Analytics Query settings
 type LogAnalyticsQuerySettingsConfig struct {
+	// The date to start fetching data from on first sync
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
+	// The ingestion delay in seconds for the data source
+	IngestionDelay *int32 `json:"ingestion_delay,omitempty"`
 	// The query to run against the Log Analytics workspace
-	Query *string `json:"query,omitempty"`
+	Query string `json:"query"`
 	// The tenant ID of the Azure AD application
-	TenantId *string `json:"tenant_id,omitempty"`
+	TenantId string `json:"tenant_id"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// The workspace ID of the Log Analytics workspace
-	WorkspaceId *string `json:"workspace_id,omitempty"`
+	WorkspaceId string `json:"workspace_id"`
 }
+
+type _LogAnalyticsQuerySettingsConfig LogAnalyticsQuerySettingsConfig
 
 // NewLogAnalyticsQuerySettingsConfig instantiates a new LogAnalyticsQuerySettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLogAnalyticsQuerySettingsConfig() *LogAnalyticsQuerySettingsConfig {
+func NewLogAnalyticsQuerySettingsConfig(query string, tenantId string, workspaceId string) *LogAnalyticsQuerySettingsConfig {
 	this := LogAnalyticsQuerySettingsConfig{}
+	this.Query = query
+	this.TenantId = tenantId
+	this.WorkspaceId = workspaceId
 	return &this
 }
 
@@ -47,68 +58,116 @@ func NewLogAnalyticsQuerySettingsConfigWithDefaults() *LogAnalyticsQuerySettings
 	return &this
 }
 
-// GetQuery returns the Query field value if set, zero value otherwise.
-func (o *LogAnalyticsQuerySettingsConfig) GetQuery() string {
-	if o == nil || IsNil(o.Query) {
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *LogAnalyticsQuerySettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
 		var ret string
 		return ret
 	}
-	return *o.Query
+	return *o.BackfillStartTime
 }
 
-// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LogAnalyticsQuerySettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *LogAnalyticsQuerySettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *LogAnalyticsQuerySettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
+}
+
+// GetIngestionDelay returns the IngestionDelay field value if set, zero value otherwise.
+func (o *LogAnalyticsQuerySettingsConfig) GetIngestionDelay() int32 {
+	if o == nil || IsNil(o.IngestionDelay) {
+		var ret int32
+		return ret
+	}
+	return *o.IngestionDelay
+}
+
+// GetIngestionDelayOk returns a tuple with the IngestionDelay field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LogAnalyticsQuerySettingsConfig) GetIngestionDelayOk() (*int32, bool) {
+	if o == nil || IsNil(o.IngestionDelay) {
+		return nil, false
+	}
+	return o.IngestionDelay, true
+}
+
+// HasIngestionDelay returns a boolean if a field has been set.
+func (o *LogAnalyticsQuerySettingsConfig) HasIngestionDelay() bool {
+	if o != nil && !IsNil(o.IngestionDelay) {
+		return true
+	}
+
+	return false
+}
+
+// SetIngestionDelay gets a reference to the given int32 and assigns it to the IngestionDelay field.
+func (o *LogAnalyticsQuerySettingsConfig) SetIngestionDelay(v int32) {
+	o.IngestionDelay = &v
+}
+
+// GetQuery returns the Query field value
+func (o *LogAnalyticsQuerySettingsConfig) GetQuery() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Query
+}
+
+// GetQueryOk returns a tuple with the Query field value
 // and a boolean to check if the value has been set.
 func (o *LogAnalyticsQuerySettingsConfig) GetQueryOk() (*string, bool) {
-	if o == nil || IsNil(o.Query) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Query, true
+	return &o.Query, true
 }
 
-// HasQuery returns a boolean if a field has been set.
-func (o *LogAnalyticsQuerySettingsConfig) HasQuery() bool {
-	if o != nil && !IsNil(o.Query) {
-		return true
-	}
-
-	return false
-}
-
-// SetQuery gets a reference to the given string and assigns it to the Query field.
+// SetQuery sets field value
 func (o *LogAnalyticsQuerySettingsConfig) SetQuery(v string) {
-	o.Query = &v
+	o.Query = v
 }
 
-// GetTenantId returns the TenantId field value if set, zero value otherwise.
+// GetTenantId returns the TenantId field value
 func (o *LogAnalyticsQuerySettingsConfig) GetTenantId() string {
-	if o == nil || IsNil(o.TenantId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.TenantId
+
+	return o.TenantId
 }
 
-// GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
+// GetTenantIdOk returns a tuple with the TenantId field value
 // and a boolean to check if the value has been set.
 func (o *LogAnalyticsQuerySettingsConfig) GetTenantIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TenantId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TenantId, true
+	return &o.TenantId, true
 }
 
-// HasTenantId returns a boolean if a field has been set.
-func (o *LogAnalyticsQuerySettingsConfig) HasTenantId() bool {
-	if o != nil && !IsNil(o.TenantId) {
-		return true
-	}
-
-	return false
-}
-
-// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
+// SetTenantId sets field value
 func (o *LogAnalyticsQuerySettingsConfig) SetTenantId(v string) {
-	o.TenantId = &v
+	o.TenantId = v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -143,36 +202,28 @@ func (o *LogAnalyticsQuerySettingsConfig) SetUseSyntheticData(v bool) {
 	o.UseSyntheticData = &v
 }
 
-// GetWorkspaceId returns the WorkspaceId field value if set, zero value otherwise.
+// GetWorkspaceId returns the WorkspaceId field value
 func (o *LogAnalyticsQuerySettingsConfig) GetWorkspaceId() string {
-	if o == nil || IsNil(o.WorkspaceId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.WorkspaceId
+
+	return o.WorkspaceId
 }
 
-// GetWorkspaceIdOk returns a tuple with the WorkspaceId field value if set, nil otherwise
+// GetWorkspaceIdOk returns a tuple with the WorkspaceId field value
 // and a boolean to check if the value has been set.
 func (o *LogAnalyticsQuerySettingsConfig) GetWorkspaceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkspaceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WorkspaceId, true
+	return &o.WorkspaceId, true
 }
 
-// HasWorkspaceId returns a boolean if a field has been set.
-func (o *LogAnalyticsQuerySettingsConfig) HasWorkspaceId() bool {
-	if o != nil && !IsNil(o.WorkspaceId) {
-		return true
-	}
-
-	return false
-}
-
-// SetWorkspaceId gets a reference to the given string and assigns it to the WorkspaceId field.
+// SetWorkspaceId sets field value
 func (o *LogAnalyticsQuerySettingsConfig) SetWorkspaceId(v string) {
-	o.WorkspaceId = &v
+	o.WorkspaceId = v
 }
 
 func (o LogAnalyticsQuerySettingsConfig) MarshalJSON() ([]byte, error) {
@@ -185,19 +236,58 @@ func (o LogAnalyticsQuerySettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o LogAnalyticsQuerySettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Query) {
-		toSerialize["query"] = o.Query
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.TenantId) {
-		toSerialize["tenant_id"] = o.TenantId
+	if !IsNil(o.IngestionDelay) {
+		toSerialize["ingestion_delay"] = o.IngestionDelay
 	}
+	toSerialize["query"] = o.Query
+	toSerialize["tenant_id"] = o.TenantId
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
-	if !IsNil(o.WorkspaceId) {
-		toSerialize["workspace_id"] = o.WorkspaceId
-	}
+	toSerialize["workspace_id"] = o.WorkspaceId
 	return toSerialize, nil
+}
+
+func (o *LogAnalyticsQuerySettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"query",
+		"tenant_id",
+		"workspace_id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLogAnalyticsQuerySettingsConfig := _LogAnalyticsQuerySettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varLogAnalyticsQuerySettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LogAnalyticsQuerySettingsConfig(varLogAnalyticsQuerySettingsConfig)
+
+	return err
 }
 
 type NullableLogAnalyticsQuerySettingsConfig struct {

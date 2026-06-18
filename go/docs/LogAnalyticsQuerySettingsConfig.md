@@ -4,16 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Query** | Pointer to **string** | The query to run against the Log Analytics workspace | [optional] 
-**TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**BackfillStartTime** | Pointer to **string** | The date to start fetching data from on first sync | [optional] 
+**IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
+**Query** | **string** | The query to run against the Log Analytics workspace | 
+**TenantId** | **string** | The tenant ID of the Azure AD application | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
+**WorkspaceId** | **string** | The workspace ID of the Log Analytics workspace | 
 
 ## Methods
 
 ### NewLogAnalyticsQuerySettingsConfig
 
-`func NewLogAnalyticsQuerySettingsConfig() *LogAnalyticsQuerySettingsConfig`
+`func NewLogAnalyticsQuerySettingsConfig(query string, tenantId string, workspaceId string, ) *LogAnalyticsQuerySettingsConfig`
 
 NewLogAnalyticsQuerySettingsConfig instantiates a new LogAnalyticsQuerySettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -27,6 +29,56 @@ will change when the set of required properties is changed
 NewLogAnalyticsQuerySettingsConfigWithDefaults instantiates a new LogAnalyticsQuerySettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBackfillStartTime
+
+`func (o *LogAnalyticsQuerySettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *LogAnalyticsQuerySettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *LogAnalyticsQuerySettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *LogAnalyticsQuerySettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
+
+### GetIngestionDelay
+
+`func (o *LogAnalyticsQuerySettingsConfig) GetIngestionDelay() int32`
+
+GetIngestionDelay returns the IngestionDelay field if non-nil, zero value otherwise.
+
+### GetIngestionDelayOk
+
+`func (o *LogAnalyticsQuerySettingsConfig) GetIngestionDelayOk() (*int32, bool)`
+
+GetIngestionDelayOk returns a tuple with the IngestionDelay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngestionDelay
+
+`func (o *LogAnalyticsQuerySettingsConfig) SetIngestionDelay(v int32)`
+
+SetIngestionDelay sets IngestionDelay field to given value.
+
+### HasIngestionDelay
+
+`func (o *LogAnalyticsQuerySettingsConfig) HasIngestionDelay() bool`
+
+HasIngestionDelay returns a boolean if a field has been set.
 
 ### GetQuery
 
@@ -47,11 +99,6 @@ and a boolean to check if the value has been set.
 
 SetQuery sets Query field to given value.
 
-### HasQuery
-
-`func (o *LogAnalyticsQuerySettingsConfig) HasQuery() bool`
-
-HasQuery returns a boolean if a field has been set.
 
 ### GetTenantId
 
@@ -72,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetTenantId sets TenantId field to given value.
 
-### HasTenantId
-
-`func (o *LogAnalyticsQuerySettingsConfig) HasTenantId() bool`
-
-HasTenantId returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 
@@ -122,11 +164,6 @@ and a boolean to check if the value has been set.
 
 SetWorkspaceId sets WorkspaceId field to given value.
 
-### HasWorkspaceId
-
-`func (o *LogAnalyticsQuerySettingsConfig) HasWorkspaceId() bool`
-
-HasWorkspaceId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

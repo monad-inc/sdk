@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,11 +28,20 @@ class EntraIdSettingsConfig(BaseModel):
     """
     Microsoft Entra ID settings
     """ # noqa: E501
-    category: Optional[StrictStr] = Field(default=None, description="The Category of logs to query")
-    tenant_id: Optional[StrictStr] = Field(default=None, description="The tenant ID of the Azure AD application")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="The date to start fetching data from on first sync")
+    category: StrictStr = Field(description="The Category of logs to query")
+    ingestion_delay: Optional[StrictInt] = Field(default=None, description="The ingestion delay in seconds for the data source")
+    tenant_id: StrictStr = Field(description="The tenant ID of the Azure AD application")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    workspace_id: Optional[StrictStr] = Field(default=None, description="The workspace ID of the Log Analytics workspace")
-    __properties: ClassVar[List[str]] = ["category", "tenant_id", "use_synthetic_data", "workspace_id"]
+    workspace_id: StrictStr = Field(description="The workspace ID of the Log Analytics workspace")
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "category", "ingestion_delay", "tenant_id", "use_synthetic_data", "workspace_id"]
+
+    @field_validator('category')
+    def category_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['AuditLogs', 'SigninLogs', 'AADNonInteractiveUserSignInLogs', 'AADServicePrincipalSignInLogs', 'AADManagedIdentitySignInLogs']):
+            raise ValueError("must be one of enum values ('AuditLogs', 'SigninLogs', 'AADNonInteractiveUserSignInLogs', 'AADServicePrincipalSignInLogs', 'AADManagedIdentitySignInLogs')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -85,7 +94,9 @@ class EntraIdSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "category": obj.get("category"),
+            "ingestion_delay": obj.get("ingestion_delay"),
             "tenant_id": obj.get("tenant_id"),
             "use_synthetic_data": obj.get("use_synthetic_data"),
             "workspace_id": obj.get("workspace_id")

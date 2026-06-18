@@ -8,8 +8,8 @@ Microsoft Entra ID secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Microsoft Log Analytics Query secrets
 */
 export class LogAnalyticsQuerySecretsConfig {
-    'clientId'?: ModelsSecret;
-    'clientSecret'?: ModelsSecret;
+    'clientId': ModelsSecret;
+    'clientSecret': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

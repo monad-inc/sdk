@@ -17,8 +17,8 @@ import { HttpFile } from '../http/http';
 * Microsoft Entra ID secrets
 */
 export class EntraIdSecretsConfig {
-    'clientId'?: ModelsSecret;
-    'clientSecret'?: ModelsSecret;
+    'clientId': ModelsSecret;
+    'clientSecret': ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 

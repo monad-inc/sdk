@@ -17,13 +17,21 @@ import { HttpFile } from '../http/http';
 */
 export class EntraIdSettingsConfig {
     /**
+    * The date to start fetching data from on first sync
+    */
+    'backfillStartTime'?: string;
+    /**
     * The Category of logs to query
     */
-    'category'?: string;
+    'category': EntraIdSettingsConfigCategoryEnum;
+    /**
+    * The ingestion delay in seconds for the data source
+    */
+    'ingestionDelay'?: number;
     /**
     * The tenant ID of the Azure AD application
     */
-    'tenantId'?: string;
+    'tenantId': string;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -31,7 +39,7 @@ export class EntraIdSettingsConfig {
     /**
     * The workspace ID of the Log Analytics workspace
     */
-    'workspaceId'?: string;
+    'workspaceId': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -39,9 +47,21 @@ export class EntraIdSettingsConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "category",
             "baseName": "category",
-            "type": "string",
+            "type": "EntraIdSettingsConfigCategoryEnum",
+            "format": ""
+        },
+        {
+            "name": "ingestionDelay",
+            "baseName": "ingestion_delay",
+            "type": "number",
             "format": ""
         },
         {
@@ -70,3 +90,12 @@ export class EntraIdSettingsConfig {
     public constructor() {
     }
 }
+
+export enum EntraIdSettingsConfigCategoryEnum {
+    AuditLogs = 'AuditLogs',
+    SigninLogs = 'SigninLogs',
+    AadNonInteractiveUserSignInLogs = 'AADNonInteractiveUserSignInLogs',
+    AadServicePrincipalSignInLogs = 'AADServicePrincipalSignInLogs',
+    AadManagedIdentitySignInLogs = 'AADManagedIdentitySignInLogs'
+}
+

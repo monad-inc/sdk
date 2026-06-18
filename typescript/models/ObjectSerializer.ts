@@ -785,7 +785,7 @@ import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSe
 import { EnrichmentConnectorMeta           } from '../models/EnrichmentConnectorMeta';
 import { EnrichmentSandboxRequestClass } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
-import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
+import { EntraIdSettingsConfig , EntraIdSettingsConfigCategoryEnum       } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { ExportTransformRequestClass } from '../models/ExportTransformRequest';
@@ -1285,6 +1285,7 @@ let enumsMap: Set<string> = new Set<string>([
     "DatabricksDeltaTableWriteModeWriteModeEnum",
     "ElasticsearchAuthConfigTypeEnum",
     "ElasticsearchConnectionConfigTypeEnum",
+    "EntraIdSettingsConfigCategoryEnum",
     "FormatterType",
     "GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum",
     "HttpPayloadStructure",
@@ -1325,6 +1326,7 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsFormatEnum",
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
     "SecretProcessesorInputConfigSettingsEnvironmentEnum",
+    "SecretProcessesorInputConfigSettingsCategoryEnum",
     "SecretProcessesorInputConfigSettingsLogTypeEnum",
     "SecretProcessesorOutputConfigSettingsCompressionEnum",
     "SnowflakeInputSettingsConfigAuthTypeEnum",

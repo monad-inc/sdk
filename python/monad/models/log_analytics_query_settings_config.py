@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,11 +28,13 @@ class LogAnalyticsQuerySettingsConfig(BaseModel):
     """
     Microsoft Log Analytics Query settings
     """ # noqa: E501
-    query: Optional[StrictStr] = Field(default=None, description="The query to run against the Log Analytics workspace")
-    tenant_id: Optional[StrictStr] = Field(default=None, description="The tenant ID of the Azure AD application")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="The date to start fetching data from on first sync")
+    ingestion_delay: Optional[StrictInt] = Field(default=None, description="The ingestion delay in seconds for the data source")
+    query: StrictStr = Field(description="The query to run against the Log Analytics workspace")
+    tenant_id: StrictStr = Field(description="The tenant ID of the Azure AD application")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    workspace_id: Optional[StrictStr] = Field(default=None, description="The workspace ID of the Log Analytics workspace")
-    __properties: ClassVar[List[str]] = ["query", "tenant_id", "use_synthetic_data", "workspace_id"]
+    workspace_id: StrictStr = Field(description="The workspace ID of the Log Analytics workspace")
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "ingestion_delay", "query", "tenant_id", "use_synthetic_data", "workspace_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -85,6 +87,8 @@ class LogAnalyticsQuerySettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
+            "ingestion_delay": obj.get("ingestion_delay"),
             "query": obj.get("query"),
             "tenant_id": obj.get("tenant_id"),
             "use_synthetic_data": obj.get("use_synthetic_data"),

@@ -4,16 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Category** | Pointer to **string** | The Category of logs to query | [optional] 
-**TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**BackfillStartTime** | Pointer to **string** | The date to start fetching data from on first sync | [optional] 
+**Category** | **string** | The Category of logs to query | 
+**IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
+**TenantId** | **string** | The tenant ID of the Azure AD application | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
+**WorkspaceId** | **string** | The workspace ID of the Log Analytics workspace | 
 
 ## Methods
 
 ### NewEntraIdSettingsConfig
 
-`func NewEntraIdSettingsConfig() *EntraIdSettingsConfig`
+`func NewEntraIdSettingsConfig(category string, tenantId string, workspaceId string, ) *EntraIdSettingsConfig`
 
 NewEntraIdSettingsConfig instantiates a new EntraIdSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -27,6 +29,31 @@ will change when the set of required properties is changed
 NewEntraIdSettingsConfigWithDefaults instantiates a new EntraIdSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBackfillStartTime
+
+`func (o *EntraIdSettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *EntraIdSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *EntraIdSettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *EntraIdSettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetCategory
 
@@ -47,11 +74,31 @@ and a boolean to check if the value has been set.
 
 SetCategory sets Category field to given value.
 
-### HasCategory
 
-`func (o *EntraIdSettingsConfig) HasCategory() bool`
+### GetIngestionDelay
 
-HasCategory returns a boolean if a field has been set.
+`func (o *EntraIdSettingsConfig) GetIngestionDelay() int32`
+
+GetIngestionDelay returns the IngestionDelay field if non-nil, zero value otherwise.
+
+### GetIngestionDelayOk
+
+`func (o *EntraIdSettingsConfig) GetIngestionDelayOk() (*int32, bool)`
+
+GetIngestionDelayOk returns a tuple with the IngestionDelay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngestionDelay
+
+`func (o *EntraIdSettingsConfig) SetIngestionDelay(v int32)`
+
+SetIngestionDelay sets IngestionDelay field to given value.
+
+### HasIngestionDelay
+
+`func (o *EntraIdSettingsConfig) HasIngestionDelay() bool`
+
+HasIngestionDelay returns a boolean if a field has been set.
 
 ### GetTenantId
 
@@ -72,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetTenantId sets TenantId field to given value.
 
-### HasTenantId
-
-`func (o *EntraIdSettingsConfig) HasTenantId() bool`
-
-HasTenantId returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 
@@ -122,11 +164,6 @@ and a boolean to check if the value has been set.
 
 SetWorkspaceId sets WorkspaceId field to given value.
 
-### HasWorkspaceId
-
-`func (o *EntraIdSettingsConfig) HasWorkspaceId() bool`
-
-HasWorkspaceId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

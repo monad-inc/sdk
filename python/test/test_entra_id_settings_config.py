@@ -36,13 +36,18 @@ class TestEntraIdSettingsConfig(unittest.TestCase):
         model = EntraIdSettingsConfig()
         if include_optional:
             return EntraIdSettingsConfig(
-                category = '',
+                backfill_start_time = '',
+                category = 'AuditLogs',
+                ingestion_delay = 56,
                 tenant_id = '',
                 use_synthetic_data = True,
                 workspace_id = ''
             )
         else:
             return EntraIdSettingsConfig(
+                category = 'AuditLogs',
+                tenant_id = '',
+                workspace_id = '',
         )
         """
 

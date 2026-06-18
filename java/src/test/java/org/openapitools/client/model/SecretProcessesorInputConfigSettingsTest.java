@@ -793,6 +793,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'ingestionDelay'
+     */
+    @Test
+    public void ingestionDelayTest() {
+        // TODO: test ingestionDelay
+    }
+
+    /**
      * Test the property 'workspaceId'
      */
     @Test

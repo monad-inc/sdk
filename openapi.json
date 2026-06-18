@@ -2643,14 +2643,33 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "entra_id.SettingsConfig": {
                 "description": "Microsoft Entra ID settings",
                 "properties": {
+                    "backfill_start_time": {
+                        "description": "The date to start fetching data from on first sync",
+                        "type": "string"
+                    },
                     "category": {
                         "description": "The Category of logs to query",
+                        "enum": [
+                            "AuditLogs",
+                            "SigninLogs",
+                            "AADNonInteractiveUserSignInLogs",
+                            "AADServicePrincipalSignInLogs",
+                            "AADManagedIdentitySignInLogs"
+                        ],
                         "type": "string"
+                    },
+                    "ingestion_delay": {
+                        "description": "The ingestion delay in seconds for the data source",
+                        "type": "integer"
                     },
                     "tenant_id": {
                         "description": "The tenant ID of the Azure AD application",
@@ -2665,6 +2684,11 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "category",
+                    "tenant_id",
+                    "workspace_id"
+                ],
                 "type": "object"
             },
             "event.SecretsConfig": {
@@ -4188,11 +4212,23 @@
                         "$ref": "#/components/schemas/models.Secret"
                     }
                 },
+                "required": [
+                    "client_id",
+                    "client_secret"
+                ],
                 "type": "object"
             },
             "log_analytics_query.SettingsConfig": {
                 "description": "Microsoft Log Analytics Query settings",
                 "properties": {
+                    "backfill_start_time": {
+                        "description": "The date to start fetching data from on first sync",
+                        "type": "string"
+                    },
+                    "ingestion_delay": {
+                        "description": "The ingestion delay in seconds for the data source",
+                        "type": "integer"
+                    },
                     "query": {
                         "description": "The query to run against the Log Analytics workspace",
                         "type": "string"
@@ -4210,6 +4246,11 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "query",
+                    "tenant_id",
+                    "workspace_id"
+                ],
                 "type": "object"
             },
             "looker_audit_logs.SecretsConfig": {

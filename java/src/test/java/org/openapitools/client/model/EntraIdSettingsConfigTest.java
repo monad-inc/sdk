@@ -38,11 +38,27 @@ public class EntraIdSettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'category'
      */
     @Test
     public void categoryTest() {
         // TODO: test category
+    }
+
+    /**
+     * Test the property 'ingestionDelay'
+     */
+    @Test
+    public void ingestionDelayTest() {
+        // TODO: test ingestionDelay
     }
 
     /**

@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **resource_provider** | **str** | The provider of the resource | [optional] 
 **resource_uri** | **str** | The URI of the resource | [optional] 
 **subscription_id** | **str** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
-**tenant_id** | **str** | The Azure Entra ID tenant (directory) ID | [optional] 
+**tenant_id** | **str** | The Azure Entra ID tenant (directory) ID | 
 **account_url** | **str** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **container** | **str** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **consumer_group** | **str** | The consumer group name for reading events (default: &#x60;$Default&#x60;) | [optional] 
@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **storage_account_url** | **str** | The Azure storage account URL where flow logs are stored | [optional] 
 **virtual_network_name** | **str** | The name of the virtual network for which flow logs are being collected | [optional] 
 **dataset** | **str** | The BigQuery dataset ID containing the table | [optional] 
-**query** | **str** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
+**query** | **str** | Optional custom query to use instead of table (must include timestamp_column) | 
 **table** | **str** | The name of the table in Snowflake to query data from. | [optional] 
 **timestamp_column** | **str** | The column containing timestamp values used for incremental loading | 
 **base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
@@ -79,11 +79,12 @@ Name | Type | Description | Notes
 **domain_name** | **str** | TODO: Name of domain added on Polymer Hub portal | 
 **environment** | **str** | Determines the URI {environment}.docusign.com | 
 **user_id** | **str** | ID of the user to harvest audit logs for | 
-**category** | **str** | The Category of logs to query | [optional] 
+**category** | **str** | The Category of logs to query | 
 **cluster_name** | **str** | The name of the GKE cluster. | 
 **uses_static_creds** | **bool** |  | [optional] 
 **namespace** | **str** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
-**workspace_id** | **str** | The workspace ID of the Log Analytics workspace | [optional] 
+**ingestion_delay** | **int** | The ingestion delay in seconds for the data source | [optional] 
+**workspace_id** | **str** | The workspace ID of the Log Analytics workspace | 
 **app_name** | **str** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **cloud** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **member_cid** | **str** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 

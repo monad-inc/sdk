@@ -53,18 +53,18 @@ import org.openapitools.client.JSON;
 public class EntraIdSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ModelsSecret clientSecret;
 
   public EntraIdSecretsConfig() {
   }
 
-  public EntraIdSecretsConfig clientId(@javax.annotation.Nullable ModelsSecret clientId) {
+  public EntraIdSecretsConfig clientId(@javax.annotation.Nonnull ModelsSecret clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -73,17 +73,17 @@ public class EntraIdSecretsConfig {
    * Get clientId
    * @return clientId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getClientId() {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nullable ModelsSecret clientId) {
+  public void setClientId(@javax.annotation.Nonnull ModelsSecret clientId) {
     this.clientId = clientId;
   }
 
 
-  public EntraIdSecretsConfig clientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
+  public EntraIdSecretsConfig clientSecret(@javax.annotation.Nonnull ModelsSecret clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
@@ -92,12 +92,12 @@ public class EntraIdSecretsConfig {
    * Get clientSecret
    * @return clientSecret
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ModelsSecret getClientSecret() {
     return clientSecret;
   }
 
-  public void setClientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
+  public void setClientSecret(@javax.annotation.Nonnull ModelsSecret clientSecret) {
     this.clientSecret = clientSecret;
   }
 
@@ -148,7 +148,7 @@ public class EntraIdSecretsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("client_id", "client_secret"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("client_id", "client_secret"));
   }
 
   /**
@@ -171,15 +171,18 @@ public class EntraIdSecretsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EntraIdSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EntraIdSecretsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `client_id`
-      if (jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
-      }
-      // validate the optional field `client_secret`
-      if (jsonObj.get("client_secret") != null && !jsonObj.get("client_secret").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
-      }
+      // validate the required field `client_id`
+      ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
+      // validate the required field `client_secret`
+      ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

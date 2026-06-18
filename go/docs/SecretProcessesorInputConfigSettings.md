@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
-**TenantId** | Pointer to **string** | The Azure Entra ID tenant (directory) ID | [optional] 
+**TenantId** | **string** | The Azure Entra ID tenant (directory) ID | 
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **ConsumerGroup** | Pointer to **string** | The consumer group name for reading events (default: &#x60;$Default&#x60;) | [optional] 
@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
 **VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
-**Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
+**Query** | **string** | Optional custom query to use instead of table (must include timestamp_column) | 
 **Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
 **TimestampColumn** | **string** | The column containing timestamp values used for incremental loading | 
 **BaseUrl** | **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
@@ -78,11 +78,12 @@ Name | Type | Description | Notes
 **DomainName** | **string** | TODO: Name of domain added on Polymer Hub portal | 
 **Environment** | **string** | Determines the URI {environment}.docusign.com | 
 **UserId** | **string** | ID of the user to harvest audit logs for | 
-**Category** | Pointer to **string** | The Category of logs to query | [optional] 
+**Category** | **string** | The Category of logs to query | 
 **ClusterName** | **string** | The name of the GKE cluster. | 
 **UsesStaticCreds** | Pointer to **bool** |  | [optional] 
 **Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
-**WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
+**IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
+**WorkspaceId** | **string** | The workspace ID of the Log Analytics workspace | 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
@@ -170,7 +171,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema string, queueUrl string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, clusterName string, namespace string, webhookSecret ModelsSecret, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, logType string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema string, queueUrl string, tenantId string, query string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, logType string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -839,11 +840,6 @@ and a boolean to check if the value has been set.
 
 SetTenantId sets TenantId field to given value.
 
-### HasTenantId
-
-`func (o *SecretProcessesorInputConfigSettings) HasTenantId() bool`
-
-HasTenantId returns a boolean if a field has been set.
 
 ### GetAccountUrl
 
@@ -1089,11 +1085,6 @@ and a boolean to check if the value has been set.
 
 SetQuery sets Query field to given value.
 
-### HasQuery
-
-`func (o *SecretProcessesorInputConfigSettings) HasQuery() bool`
-
-HasQuery returns a boolean if a field has been set.
 
 ### GetTable
 
@@ -1964,11 +1955,6 @@ and a boolean to check if the value has been set.
 
 SetCategory sets Category field to given value.
 
-### HasCategory
-
-`func (o *SecretProcessesorInputConfigSettings) HasCategory() bool`
-
-HasCategory returns a boolean if a field has been set.
 
 ### GetClusterName
 
@@ -2035,6 +2021,31 @@ and a boolean to check if the value has been set.
 SetNamespace sets Namespace field to given value.
 
 
+### GetIngestionDelay
+
+`func (o *SecretProcessesorInputConfigSettings) GetIngestionDelay() int32`
+
+GetIngestionDelay returns the IngestionDelay field if non-nil, zero value otherwise.
+
+### GetIngestionDelayOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIngestionDelayOk() (*int32, bool)`
+
+GetIngestionDelayOk returns a tuple with the IngestionDelay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngestionDelay
+
+`func (o *SecretProcessesorInputConfigSettings) SetIngestionDelay(v int32)`
+
+SetIngestionDelay sets IngestionDelay field to given value.
+
+### HasIngestionDelay
+
+`func (o *SecretProcessesorInputConfigSettings) HasIngestionDelay() bool`
+
+HasIngestionDelay returns a boolean if a field has been set.
+
 ### GetWorkspaceId
 
 `func (o *SecretProcessesorInputConfigSettings) GetWorkspaceId() string`
@@ -2054,11 +2065,6 @@ and a boolean to check if the value has been set.
 
 SetWorkspaceId sets WorkspaceId field to given value.
 
-### HasWorkspaceId
-
-`func (o *SecretProcessesorInputConfigSettings) HasWorkspaceId() bool`
-
-HasWorkspaceId returns a boolean if a field has been set.
 
 ### GetAppName
 

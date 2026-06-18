@@ -50,14 +50,24 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class LogAnalyticsQuerySettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
+  public static final String SERIALIZED_NAME_INGESTION_DELAY = "ingestion_delay";
+  @SerializedName(SERIALIZED_NAME_INGESTION_DELAY)
+  @javax.annotation.Nullable
+  private Integer ingestionDelay;
+
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String query;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String tenantId;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -67,13 +77,51 @@ public class LogAnalyticsQuerySettingsConfig {
 
   public static final String SERIALIZED_NAME_WORKSPACE_ID = "workspace_id";
   @SerializedName(SERIALIZED_NAME_WORKSPACE_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String workspaceId;
 
   public LogAnalyticsQuerySettingsConfig() {
   }
 
-  public LogAnalyticsQuerySettingsConfig query(@javax.annotation.Nullable String query) {
+  public LogAnalyticsQuerySettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * The date to start fetching data from on first sync
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
+
+  public LogAnalyticsQuerySettingsConfig ingestionDelay(@javax.annotation.Nullable Integer ingestionDelay) {
+    this.ingestionDelay = ingestionDelay;
+    return this;
+  }
+
+  /**
+   * The ingestion delay in seconds for the data source
+   * @return ingestionDelay
+   */
+  @javax.annotation.Nullable
+  public Integer getIngestionDelay() {
+    return ingestionDelay;
+  }
+
+  public void setIngestionDelay(@javax.annotation.Nullable Integer ingestionDelay) {
+    this.ingestionDelay = ingestionDelay;
+  }
+
+
+  public LogAnalyticsQuerySettingsConfig query(@javax.annotation.Nonnull String query) {
     this.query = query;
     return this;
   }
@@ -82,17 +130,17 @@ public class LogAnalyticsQuerySettingsConfig {
    * The query to run against the Log Analytics workspace
    * @return query
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getQuery() {
     return query;
   }
 
-  public void setQuery(@javax.annotation.Nullable String query) {
+  public void setQuery(@javax.annotation.Nonnull String query) {
     this.query = query;
   }
 
 
-  public LogAnalyticsQuerySettingsConfig tenantId(@javax.annotation.Nullable String tenantId) {
+  public LogAnalyticsQuerySettingsConfig tenantId(@javax.annotation.Nonnull String tenantId) {
     this.tenantId = tenantId;
     return this;
   }
@@ -101,12 +149,12 @@ public class LogAnalyticsQuerySettingsConfig {
    * The tenant ID of the Azure AD application
    * @return tenantId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getTenantId() {
     return tenantId;
   }
 
-  public void setTenantId(@javax.annotation.Nullable String tenantId) {
+  public void setTenantId(@javax.annotation.Nonnull String tenantId) {
     this.tenantId = tenantId;
   }
 
@@ -130,7 +178,7 @@ public class LogAnalyticsQuerySettingsConfig {
   }
 
 
-  public LogAnalyticsQuerySettingsConfig workspaceId(@javax.annotation.Nullable String workspaceId) {
+  public LogAnalyticsQuerySettingsConfig workspaceId(@javax.annotation.Nonnull String workspaceId) {
     this.workspaceId = workspaceId;
     return this;
   }
@@ -139,12 +187,12 @@ public class LogAnalyticsQuerySettingsConfig {
    * The workspace ID of the Log Analytics workspace
    * @return workspaceId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getWorkspaceId() {
     return workspaceId;
   }
 
-  public void setWorkspaceId(@javax.annotation.Nullable String workspaceId) {
+  public void setWorkspaceId(@javax.annotation.Nonnull String workspaceId) {
     this.workspaceId = workspaceId;
   }
 
@@ -159,7 +207,9 @@ public class LogAnalyticsQuerySettingsConfig {
       return false;
     }
     LogAnalyticsQuerySettingsConfig logAnalyticsQuerySettingsConfig = (LogAnalyticsQuerySettingsConfig) o;
-    return Objects.equals(this.query, logAnalyticsQuerySettingsConfig.query) &&
+    return Objects.equals(this.backfillStartTime, logAnalyticsQuerySettingsConfig.backfillStartTime) &&
+        Objects.equals(this.ingestionDelay, logAnalyticsQuerySettingsConfig.ingestionDelay) &&
+        Objects.equals(this.query, logAnalyticsQuerySettingsConfig.query) &&
         Objects.equals(this.tenantId, logAnalyticsQuerySettingsConfig.tenantId) &&
         Objects.equals(this.useSyntheticData, logAnalyticsQuerySettingsConfig.useSyntheticData) &&
         Objects.equals(this.workspaceId, logAnalyticsQuerySettingsConfig.workspaceId);
@@ -167,13 +217,15 @@ public class LogAnalyticsQuerySettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, tenantId, useSyntheticData, workspaceId);
+    return Objects.hash(backfillStartTime, ingestionDelay, query, tenantId, useSyntheticData, workspaceId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LogAnalyticsQuerySettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
+    sb.append("    ingestionDelay: ").append(toIndentedString(ingestionDelay)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
@@ -196,10 +248,10 @@ public class LogAnalyticsQuerySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("query", "tenant_id", "use_synthetic_data", "workspace_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "ingestion_delay", "query", "tenant_id", "use_synthetic_data", "workspace_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("query", "tenant_id", "workspace_id"));
   }
 
   /**
@@ -222,14 +274,24 @@ public class LogAnalyticsQuerySettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `LogAnalyticsQuerySettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : LogAnalyticsQuerySettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      if (!jsonObj.get("query").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
       }
-      if ((jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) && !jsonObj.get("tenant_id").isJsonPrimitive()) {
+      if (!jsonObj.get("tenant_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
       }
-      if ((jsonObj.get("workspace_id") != null && !jsonObj.get("workspace_id").isJsonNull()) && !jsonObj.get("workspace_id").isJsonPrimitive()) {
+      if (!jsonObj.get("workspace_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `workspace_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workspace_id").toString()));
       }
   }

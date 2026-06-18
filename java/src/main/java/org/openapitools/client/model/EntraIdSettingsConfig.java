@@ -50,14 +50,82 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class EntraIdSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
+  /**
+   * The Category of logs to query
+   */
+  @JsonAdapter(CategoryEnum.Adapter.class)
+  public enum CategoryEnum {
+    AUDIT_LOGS("AuditLogs"),
+    
+    SIGNIN_LOGS("SigninLogs"),
+    
+    AAD_NON_INTERACTIVE_USER_SIGN_IN_LOGS("AADNonInteractiveUserSignInLogs"),
+    
+    AAD_SERVICE_PRINCIPAL_SIGN_IN_LOGS("AADServicePrincipalSignInLogs"),
+    
+    AAD_MANAGED_IDENTITY_SIGN_IN_LOGS("AADManagedIdentitySignInLogs");
+
+    private String value;
+
+    CategoryEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CategoryEnum fromValue(String value) {
+      for (CategoryEnum b : CategoryEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CategoryEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CategoryEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CategoryEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CategoryEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CategoryEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nonnull
+  private CategoryEnum category;
+
+  public static final String SERIALIZED_NAME_INGESTION_DELAY = "ingestion_delay";
+  @SerializedName(SERIALIZED_NAME_INGESTION_DELAY)
   @javax.annotation.Nullable
-  private String category;
+  private Integer ingestionDelay;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String tenantId;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
@@ -67,13 +135,32 @@ public class EntraIdSettingsConfig {
 
   public static final String SERIALIZED_NAME_WORKSPACE_ID = "workspace_id";
   @SerializedName(SERIALIZED_NAME_WORKSPACE_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String workspaceId;
 
   public EntraIdSettingsConfig() {
   }
 
-  public EntraIdSettingsConfig category(@javax.annotation.Nullable String category) {
+  public EntraIdSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * The date to start fetching data from on first sync
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
+
+  public EntraIdSettingsConfig category(@javax.annotation.Nonnull CategoryEnum category) {
     this.category = category;
     return this;
   }
@@ -82,17 +169,36 @@ public class EntraIdSettingsConfig {
    * The Category of logs to query
    * @return category
    */
-  @javax.annotation.Nullable
-  public String getCategory() {
+  @javax.annotation.Nonnull
+  public CategoryEnum getCategory() {
     return category;
   }
 
-  public void setCategory(@javax.annotation.Nullable String category) {
+  public void setCategory(@javax.annotation.Nonnull CategoryEnum category) {
     this.category = category;
   }
 
 
-  public EntraIdSettingsConfig tenantId(@javax.annotation.Nullable String tenantId) {
+  public EntraIdSettingsConfig ingestionDelay(@javax.annotation.Nullable Integer ingestionDelay) {
+    this.ingestionDelay = ingestionDelay;
+    return this;
+  }
+
+  /**
+   * The ingestion delay in seconds for the data source
+   * @return ingestionDelay
+   */
+  @javax.annotation.Nullable
+  public Integer getIngestionDelay() {
+    return ingestionDelay;
+  }
+
+  public void setIngestionDelay(@javax.annotation.Nullable Integer ingestionDelay) {
+    this.ingestionDelay = ingestionDelay;
+  }
+
+
+  public EntraIdSettingsConfig tenantId(@javax.annotation.Nonnull String tenantId) {
     this.tenantId = tenantId;
     return this;
   }
@@ -101,12 +207,12 @@ public class EntraIdSettingsConfig {
    * The tenant ID of the Azure AD application
    * @return tenantId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getTenantId() {
     return tenantId;
   }
 
-  public void setTenantId(@javax.annotation.Nullable String tenantId) {
+  public void setTenantId(@javax.annotation.Nonnull String tenantId) {
     this.tenantId = tenantId;
   }
 
@@ -130,7 +236,7 @@ public class EntraIdSettingsConfig {
   }
 
 
-  public EntraIdSettingsConfig workspaceId(@javax.annotation.Nullable String workspaceId) {
+  public EntraIdSettingsConfig workspaceId(@javax.annotation.Nonnull String workspaceId) {
     this.workspaceId = workspaceId;
     return this;
   }
@@ -139,12 +245,12 @@ public class EntraIdSettingsConfig {
    * The workspace ID of the Log Analytics workspace
    * @return workspaceId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getWorkspaceId() {
     return workspaceId;
   }
 
-  public void setWorkspaceId(@javax.annotation.Nullable String workspaceId) {
+  public void setWorkspaceId(@javax.annotation.Nonnull String workspaceId) {
     this.workspaceId = workspaceId;
   }
 
@@ -159,7 +265,9 @@ public class EntraIdSettingsConfig {
       return false;
     }
     EntraIdSettingsConfig entraIdSettingsConfig = (EntraIdSettingsConfig) o;
-    return Objects.equals(this.category, entraIdSettingsConfig.category) &&
+    return Objects.equals(this.backfillStartTime, entraIdSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.category, entraIdSettingsConfig.category) &&
+        Objects.equals(this.ingestionDelay, entraIdSettingsConfig.ingestionDelay) &&
         Objects.equals(this.tenantId, entraIdSettingsConfig.tenantId) &&
         Objects.equals(this.useSyntheticData, entraIdSettingsConfig.useSyntheticData) &&
         Objects.equals(this.workspaceId, entraIdSettingsConfig.workspaceId);
@@ -167,14 +275,16 @@ public class EntraIdSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, tenantId, useSyntheticData, workspaceId);
+    return Objects.hash(backfillStartTime, category, ingestionDelay, tenantId, useSyntheticData, workspaceId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class EntraIdSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    ingestionDelay: ").append(toIndentedString(ingestionDelay)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
@@ -196,10 +306,10 @@ public class EntraIdSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("category", "tenant_id", "use_synthetic_data", "workspace_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "category", "ingestion_delay", "tenant_id", "use_synthetic_data", "workspace_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("category", "tenant_id", "workspace_id"));
   }
 
   /**
@@ -222,14 +332,26 @@ public class EntraIdSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EntraIdSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EntraIdSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      if (!jsonObj.get("category").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
-      if ((jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) && !jsonObj.get("tenant_id").isJsonPrimitive()) {
+      // validate the required field `category`
+      CategoryEnum.validateJsonElement(jsonObj.get("category"));
+      if (!jsonObj.get("tenant_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
       }
-      if ((jsonObj.get("workspace_id") != null && !jsonObj.get("workspace_id").isJsonNull()) && !jsonObj.get("workspace_id").isJsonPrimitive()) {
+      if (!jsonObj.get("workspace_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `workspace_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workspace_id").toString()));
       }
   }
