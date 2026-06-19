@@ -15,8 +15,15 @@ import { GithubComMonadIncCorePkgTypesModelsResourceReference } from '../models/
 import { HttpFile } from '../http/http';
 
 export class GithubComMonadIncCorePkgTypesModelsAlert {
+    /**
+    * incident start (frozen across re-fires)
+    */
     'createdAt'?: number;
     'description'?: string;
+    /**
+    * this emission\'s fire time; differs per re-fire
+    */
+    'firedAt'?: number;
     'id'?: string;
     'metadata'?: any | null;
     'name'?: string;
@@ -42,6 +49,12 @@ export class GithubComMonadIncCorePkgTypesModelsAlert {
             "name": "description",
             "baseName": "description",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "firedAt",
+            "baseName": "fired_at",
+            "type": "number",
             "format": ""
         },
         {

@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **int32** |  | [optional] 
+**CreatedAt** | Pointer to **int32** | incident start (frozen across re-fires) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**FiredAt** | Pointer to **int32** | this emission&#39;s fire time; differs per re-fire | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to **interface{}** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -84,6 +85,31 @@ SetDescription sets Description field to given value.
 `func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetFiredAt
+
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetFiredAt() int32`
+
+GetFiredAt returns the FiredAt field if non-nil, zero value otherwise.
+
+### GetFiredAtOk
+
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetFiredAtOk() (*int32, bool)`
+
+GetFiredAtOk returns a tuple with the FiredAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFiredAt
+
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetFiredAt(v int32)`
+
+SetFiredAt sets FiredAt field to given value.
+
+### HasFiredAt
+
+`func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasFiredAt() bool`
+
+HasFiredAt returns a boolean if a field has been set.
 
 ### GetId
 

@@ -20,8 +20,11 @@ var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsAlert{}
 
 // GithubComMonadIncCorePkgTypesModelsAlert struct for GithubComMonadIncCorePkgTypesModelsAlert
 type GithubComMonadIncCorePkgTypesModelsAlert struct {
+	// incident start (frozen across re-fires)
 	CreatedAt *int32 `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
+	// this emission's fire time; differs per re-fire
+	FiredAt *int32 `json:"fired_at,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Metadata interface{} `json:"metadata,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -112,6 +115,38 @@ func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetFiredAt returns the FiredAt field value if set, zero value otherwise.
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetFiredAt() int32 {
+	if o == nil || IsNil(o.FiredAt) {
+		var ret int32
+		return ret
+	}
+	return *o.FiredAt
+}
+
+// GetFiredAtOk returns a tuple with the FiredAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) GetFiredAtOk() (*int32, bool) {
+	if o == nil || IsNil(o.FiredAt) {
+		return nil, false
+	}
+	return o.FiredAt, true
+}
+
+// HasFiredAt returns a boolean if a field has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) HasFiredAt() bool {
+	if o != nil && !IsNil(o.FiredAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetFiredAt gets a reference to the given int32 and assigns it to the FiredAt field.
+func (o *GithubComMonadIncCorePkgTypesModelsAlert) SetFiredAt(v int32) {
+	o.FiredAt = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -418,6 +453,9 @@ func (o GithubComMonadIncCorePkgTypesModelsAlert) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.FiredAt) {
+		toSerialize["fired_at"] = o.FiredAt
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

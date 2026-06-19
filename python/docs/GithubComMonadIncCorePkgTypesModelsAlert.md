@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **int** |  | [optional] 
+**created_at** | **int** | incident start (frozen across re-fires) | [optional] 
 **description** | **str** |  | [optional] 
+**fired_at** | **int** | this emission&#39;s fire time; differs per re-fire | [optional] 
 **id** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 
 **name** | **str** |  | [optional] 

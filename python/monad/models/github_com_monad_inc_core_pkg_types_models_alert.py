@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.github_com_monad_inc_core_pkg_types_models_alert_status import GithubComMonadIncCorePkgTypesModelsAlertStatus
 from monad.models.github_com_monad_inc_core_pkg_types_models_resource_reference import GithubComMonadIncCorePkgTypesModelsResourceReference
@@ -30,8 +30,9 @@ class GithubComMonadIncCorePkgTypesModelsAlert(BaseModel):
     """
     GithubComMonadIncCorePkgTypesModelsAlert
     """ # noqa: E501
-    created_at: Optional[StrictInt] = None
+    created_at: Optional[StrictInt] = Field(default=None, description="incident start (frozen across re-fires)")
     description: Optional[StrictStr] = None
+    fired_at: Optional[StrictInt] = Field(default=None, description="this emission's fire time; differs per re-fire")
     id: Optional[StrictStr] = None
     metadata: Optional[Any] = None
     name: Optional[StrictStr] = None
@@ -41,7 +42,7 @@ class GithubComMonadIncCorePkgTypesModelsAlert(BaseModel):
     rule_type: Optional[StrictStr] = None
     severity: Optional[StrictStr] = None
     status: Optional[GithubComMonadIncCorePkgTypesModelsAlertStatus] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "metadata", "name", "organization_id", "resource", "rule_id", "rule_type", "severity", "status"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "fired_at", "id", "metadata", "name", "organization_id", "resource", "rule_id", "rule_type", "severity", "status"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -107,6 +108,7 @@ class GithubComMonadIncCorePkgTypesModelsAlert(BaseModel):
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
+            "fired_at": obj.get("fired_at"),
             "id": obj.get("id"),
             "metadata": obj.get("metadata"),
             "name": obj.get("name"),

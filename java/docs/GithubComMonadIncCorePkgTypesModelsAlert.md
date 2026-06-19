@@ -7,8 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**createdAt** | **Integer** |  |  [optional] |
+|**createdAt** | **Integer** | incident start (frozen across re-fires) |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**firedAt** | **Integer** | this emission&#39;s fire time; differs per re-fire |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**metadata** | **Object** |  |  [optional] |
 |**name** | **String** |  |  [optional] |

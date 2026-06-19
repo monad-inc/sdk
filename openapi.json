@@ -2913,10 +2913,15 @@
             "github_com_monad-inc_core_pkg_types_models.Alert": {
                 "properties": {
                     "created_at": {
+                        "description": "incident start (frozen across re-fires)",
                         "type": "integer"
                     },
                     "description": {
                         "type": "string"
+                    },
+                    "fired_at": {
+                        "description": "this emission's fire time; differs per re-fire",
+                        "type": "integer"
                     },
                     "id": {
                         "type": "string"

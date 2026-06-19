@@ -38,6 +38,7 @@ class TestGithubComMonadIncCorePkgTypesModelsAlert(unittest.TestCase):
             return GithubComMonadIncCorePkgTypesModelsAlert(
                 created_at = 56,
                 description = '',
+                fired_at = 56,
                 id = '',
                 metadata = None,
                 name = '',

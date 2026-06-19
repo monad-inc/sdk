@@ -40,6 +40,7 @@ class TestRoutesV3AlertList(unittest.TestCase):
                     monad.models.github_com_monad_inc_core_pkg_types_models/alert.github_com_monad-inc_core_pkg_types_models.Alert(
                         created_at = 56, 
                         description = '', 
+                        fired_at = 56, 
                         id = '', 
                         metadata = null, 
                         name = '', 

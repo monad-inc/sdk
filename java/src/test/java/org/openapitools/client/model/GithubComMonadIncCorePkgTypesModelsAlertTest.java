@@ -57,6 +57,14 @@ public class GithubComMonadIncCorePkgTypesModelsAlertTest {
     }
 
     /**
+     * Test the property 'firedAt'
+     */
+    @Test
+    public void firedAtTest() {
+        // TODO: test firedAt
+    }
+
+    /**
      * Test the property 'id'
      */
     @Test

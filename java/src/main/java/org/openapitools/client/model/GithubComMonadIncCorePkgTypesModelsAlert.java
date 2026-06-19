@@ -63,6 +63,11 @@ public class GithubComMonadIncCorePkgTypesModelsAlert {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_FIRED_AT = "fired_at";
+  @SerializedName(SERIALIZED_NAME_FIRED_AT)
+  @javax.annotation.Nullable
+  private Integer firedAt;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -117,7 +122,7 @@ public class GithubComMonadIncCorePkgTypesModelsAlert {
   }
 
   /**
-   * Get createdAt
+   * incident start (frozen across re-fires)
    * @return createdAt
    */
   @javax.annotation.Nullable
@@ -146,6 +151,25 @@ public class GithubComMonadIncCorePkgTypesModelsAlert {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public GithubComMonadIncCorePkgTypesModelsAlert firedAt(@javax.annotation.Nullable Integer firedAt) {
+    this.firedAt = firedAt;
+    return this;
+  }
+
+  /**
+   * this emission&#39;s fire time; differs per re-fire
+   * @return firedAt
+   */
+  @javax.annotation.Nullable
+  public Integer getFiredAt() {
+    return firedAt;
+  }
+
+  public void setFiredAt(@javax.annotation.Nullable Integer firedAt) {
+    this.firedAt = firedAt;
   }
 
 
@@ -332,6 +356,7 @@ public class GithubComMonadIncCorePkgTypesModelsAlert {
     GithubComMonadIncCorePkgTypesModelsAlert githubComMonadIncCorePkgTypesModelsAlert = (GithubComMonadIncCorePkgTypesModelsAlert) o;
     return Objects.equals(this.createdAt, githubComMonadIncCorePkgTypesModelsAlert.createdAt) &&
         Objects.equals(this.description, githubComMonadIncCorePkgTypesModelsAlert.description) &&
+        Objects.equals(this.firedAt, githubComMonadIncCorePkgTypesModelsAlert.firedAt) &&
         Objects.equals(this.id, githubComMonadIncCorePkgTypesModelsAlert.id) &&
         Objects.equals(this.metadata, githubComMonadIncCorePkgTypesModelsAlert.metadata) &&
         Objects.equals(this.name, githubComMonadIncCorePkgTypesModelsAlert.name) &&
@@ -349,7 +374,7 @@ public class GithubComMonadIncCorePkgTypesModelsAlert {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, metadata, name, organizationId, resource, ruleId, ruleType, severity, status);
+    return Objects.hash(createdAt, description, firedAt, id, metadata, name, organizationId, resource, ruleId, ruleType, severity, status);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -365,6 +390,7 @@ public class GithubComMonadIncCorePkgTypesModelsAlert {
     sb.append("class GithubComMonadIncCorePkgTypesModelsAlert {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    firedAt: ").append(toIndentedString(firedAt)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -392,7 +418,7 @@ public class GithubComMonadIncCorePkgTypesModelsAlert {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "metadata", "name", "organization_id", "resource", "rule_id", "rule_type", "severity", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "fired_at", "id", "metadata", "name", "organization_id", "resource", "rule_id", "rule_type", "severity", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
