@@ -126,4 +126,12 @@ public class ModelsPipelineEdgeTest {
         // TODO: test toNodeInstanceId
     }
 
+    /**
+     * Test the property 'updatedAt'
+     */
+    @Test
+    public void updatedAtTest() {
+        // TODO: test updatedAt
+    }
+
 }

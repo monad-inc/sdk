@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Disabled** | Pointer to **bool** |  | [optional] 
 **FromNodeInstanceId** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ToNodeInstanceId** | **string** |  | 
 
@@ -124,6 +125,31 @@ and a boolean to check if the value has been set.
 
 SetFromNodeInstanceId sets FromNodeInstanceId field to given value.
 
+
+### GetId
+
+`func (o *RoutesV2PipelineRequestEdge) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *RoutesV2PipelineRequestEdge) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *RoutesV2PipelineRequestEdge) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *RoutesV2PipelineRequestEdge) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 

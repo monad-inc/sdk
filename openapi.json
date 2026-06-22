@@ -5763,6 +5763,9 @@
                     },
                     "to_node_instance_id": {
                         "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -8584,6 +8587,9 @@
                         "type": "boolean"
                     },
                     "from_node_instance_id": {
+                        "type": "string"
+                    },
+                    "id": {
                         "type": "string"
                     },
                     "name": {

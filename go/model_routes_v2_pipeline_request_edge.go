@@ -26,6 +26,7 @@ type RoutesV2PipelineRequestEdge struct {
 	Description *string `json:"description,omitempty"`
 	Disabled *bool `json:"disabled,omitempty"`
 	FromNodeInstanceId string `json:"from_node_instance_id"`
+	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	ToNodeInstanceId string `json:"to_node_instance_id"`
 }
@@ -171,6 +172,38 @@ func (o *RoutesV2PipelineRequestEdge) SetFromNodeInstanceId(v string) {
 	o.FromNodeInstanceId = v
 }
 
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *RoutesV2PipelineRequestEdge) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PipelineRequestEdge) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *RoutesV2PipelineRequestEdge) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *RoutesV2PipelineRequestEdge) SetId(v string) {
+	o.Id = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *RoutesV2PipelineRequestEdge) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -247,6 +280,9 @@ func (o RoutesV2PipelineRequestEdge) ToMap() (map[string]interface{}, error) {
 		toSerialize["disabled"] = o.Disabled
 	}
 	toSerialize["from_node_instance_id"] = o.FromNodeInstanceId
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}

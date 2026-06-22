@@ -48,6 +48,7 @@ class TestCreatePipelineRequest(unittest.TestCase):
                         description = '', 
                         disabled = True, 
                         from_node_instance_id = '', 
+                        id = '', 
                         name = '', 
                         to_node_instance_id = '', )
                     ],
@@ -75,6 +76,7 @@ class TestCreatePipelineRequest(unittest.TestCase):
                         description = '', 
                         disabled = True, 
                         from_node_instance_id = '', 
+                        id = '', 
                         name = '', 
                         to_node_instance_id = '', )
                     ],

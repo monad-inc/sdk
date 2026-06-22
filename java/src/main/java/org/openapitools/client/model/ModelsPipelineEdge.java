@@ -106,6 +106,11 @@ public class ModelsPipelineEdge {
   @javax.annotation.Nullable
   private String toNodeInstanceId;
 
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
+  private String updatedAt;
+
   public ModelsPipelineEdge() {
   }
 
@@ -318,6 +323,25 @@ public class ModelsPipelineEdge {
   }
 
 
+  public ModelsPipelineEdge updatedAt(@javax.annotation.Nullable String updatedAt) {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  /**
+   * Get updatedAt
+   * @return updatedAt
+   */
+  @javax.annotation.Nullable
+  public String getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -338,12 +362,13 @@ public class ModelsPipelineEdge {
         Objects.equals(this.organizationId, modelsPipelineEdge.organizationId) &&
         Objects.equals(this.pipelineId, modelsPipelineEdge.pipelineId) &&
         Objects.equals(this.schemaDetection, modelsPipelineEdge.schemaDetection) &&
-        Objects.equals(this.toNodeInstanceId, modelsPipelineEdge.toNodeInstanceId);
+        Objects.equals(this.toNodeInstanceId, modelsPipelineEdge.toNodeInstanceId) &&
+        Objects.equals(this.updatedAt, modelsPipelineEdge.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, createdAt, description, disabled, fromNodeInstanceId, id, name, organizationId, pipelineId, schemaDetection, toNodeInstanceId);
+    return Objects.hash(conditions, createdAt, description, disabled, fromNodeInstanceId, id, name, organizationId, pipelineId, schemaDetection, toNodeInstanceId, updatedAt);
   }
 
   @Override
@@ -361,6 +386,7 @@ public class ModelsPipelineEdge {
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
     sb.append("    schemaDetection: ").append(toIndentedString(schemaDetection)).append("\n");
     sb.append("    toNodeInstanceId: ").append(toIndentedString(toNodeInstanceId)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -379,7 +405,7 @@ public class ModelsPipelineEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection", "to_node_instance_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection", "to_node_instance_id", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -433,6 +459,9 @@ public class ModelsPipelineEdge {
       }
       if ((jsonObj.get("to_node_instance_id") != null && !jsonObj.get("to_node_instance_id").isJsonNull()) && !jsonObj.get("to_node_instance_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `to_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_node_instance_id").toString()));
+      }
+      if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
       }
   }
 

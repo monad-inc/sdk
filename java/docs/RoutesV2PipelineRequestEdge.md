@@ -11,6 +11,7 @@
 |**description** | **String** |  |  [optional] |
 |**disabled** | **Boolean** |  |  [optional] |
 |**fromNodeInstanceId** | **String** |  |  |
+|**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**toNodeInstanceId** | **String** |  |  |
 

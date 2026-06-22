@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **pipeline_id** | **str** |  | [optional] 
 **schema_detection** | **bool** |  | [optional] 
 **to_node_instance_id** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

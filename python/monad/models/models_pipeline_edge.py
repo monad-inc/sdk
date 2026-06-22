@@ -40,7 +40,8 @@ class ModelsPipelineEdge(BaseModel):
     pipeline_id: Optional[StrictStr] = None
     schema_detection: Optional[StrictBool] = None
     to_node_instance_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection", "to_node_instance_id"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection", "to_node_instance_id", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -106,7 +107,8 @@ class ModelsPipelineEdge(BaseModel):
             "organization_id": obj.get("organization_id"),
             "pipeline_id": obj.get("pipeline_id"),
             "schema_detection": obj.get("schema_detection"),
-            "to_node_instance_id": obj.get("to_node_instance_id")
+            "to_node_instance_id": obj.get("to_node_instance_id"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

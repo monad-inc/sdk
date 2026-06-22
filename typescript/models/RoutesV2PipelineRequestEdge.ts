@@ -18,6 +18,7 @@ export class RoutesV2PipelineRequestEdge {
     'description'?: string;
     'disabled'?: boolean;
     'fromNodeInstanceId': string;
+    'id'?: string;
     'name'?: string;
     'toNodeInstanceId': string;
 
@@ -47,6 +48,12 @@ export class RoutesV2PipelineRequestEdge {
         {
             "name": "fromNodeInstanceId",
             "baseName": "from_node_instance_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "id",
+            "baseName": "id",
             "type": "string",
             "format": ""
         },

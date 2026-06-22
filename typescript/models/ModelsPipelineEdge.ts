@@ -25,6 +25,7 @@ export class ModelsPipelineEdge {
     'pipelineId'?: string;
     'schemaDetection'?: boolean;
     'toNodeInstanceId'?: string;
+    'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -94,6 +95,12 @@ export class ModelsPipelineEdge {
         {
             "name": "toNodeInstanceId",
             "baseName": "to_node_instance_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "updatedAt",
+            "baseName": "updated_at",
             "type": "string",
             "format": ""
         }    ];

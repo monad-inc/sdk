@@ -71,6 +71,11 @@ public class RoutesV2PipelineRequestEdge {
   @javax.annotation.Nonnull
   private String fromNodeInstanceId;
 
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
+  private String id;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
@@ -160,6 +165,25 @@ public class RoutesV2PipelineRequestEdge {
   }
 
 
+  public RoutesV2PipelineRequestEdge id(@javax.annotation.Nullable String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+   */
+  @javax.annotation.Nullable
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@javax.annotation.Nullable String id) {
+    this.id = id;
+  }
+
+
   public RoutesV2PipelineRequestEdge name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -212,13 +236,14 @@ public class RoutesV2PipelineRequestEdge {
         Objects.equals(this.description, routesV2PipelineRequestEdge.description) &&
         Objects.equals(this.disabled, routesV2PipelineRequestEdge.disabled) &&
         Objects.equals(this.fromNodeInstanceId, routesV2PipelineRequestEdge.fromNodeInstanceId) &&
+        Objects.equals(this.id, routesV2PipelineRequestEdge.id) &&
         Objects.equals(this.name, routesV2PipelineRequestEdge.name) &&
         Objects.equals(this.toNodeInstanceId, routesV2PipelineRequestEdge.toNodeInstanceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, description, disabled, fromNodeInstanceId, name, toNodeInstanceId);
+    return Objects.hash(conditions, description, disabled, fromNodeInstanceId, id, name, toNodeInstanceId);
   }
 
   @Override
@@ -229,6 +254,7 @@ public class RoutesV2PipelineRequestEdge {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    fromNodeInstanceId: ").append(toIndentedString(fromNodeInstanceId)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    toNodeInstanceId: ").append(toIndentedString(toNodeInstanceId)).append("\n");
     sb.append("}");
@@ -249,7 +275,7 @@ public class RoutesV2PipelineRequestEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "disabled", "from_node_instance_id", "name", "to_node_instance_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "disabled", "from_node_instance_id", "id", "name", "to_node_instance_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("from_node_instance_id", "to_node_instance_id"));
@@ -292,6 +318,9 @@ public class RoutesV2PipelineRequestEdge {
       }
       if (!jsonObj.get("from_node_instance_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_node_instance_id").toString()));
+      }
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

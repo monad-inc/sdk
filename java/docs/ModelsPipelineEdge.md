@@ -18,6 +18,7 @@
 |**pipelineId** | **String** |  |  [optional] |
 |**schemaDetection** | **Boolean** |  |  [optional] |
 |**toNodeInstanceId** | **String** |  |  [optional] |
+|**updatedAt** | **String** |  |  [optional] |
 
 
 

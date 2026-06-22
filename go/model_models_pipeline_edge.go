@@ -31,6 +31,7 @@ type ModelsPipelineEdge struct {
 	PipelineId *string `json:"pipeline_id,omitempty"`
 	SchemaDetection *bool `json:"schema_detection,omitempty"`
 	ToNodeInstanceId *string `json:"to_node_instance_id,omitempty"`
+	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
 // NewModelsPipelineEdge instantiates a new ModelsPipelineEdge object
@@ -402,6 +403,38 @@ func (o *ModelsPipelineEdge) SetToNodeInstanceId(v string) {
 	o.ToNodeInstanceId = &v
 }
 
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
+func (o *ModelsPipelineEdge) GetUpdatedAt() string {
+	if o == nil || IsNil(o.UpdatedAt) {
+		var ret string
+		return ret
+	}
+	return *o.UpdatedAt
+}
+
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineEdge) GetUpdatedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.UpdatedAt) {
+		return nil, false
+	}
+	return o.UpdatedAt, true
+}
+
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *ModelsPipelineEdge) HasUpdatedAt() bool {
+	if o != nil && !IsNil(o.UpdatedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
+func (o *ModelsPipelineEdge) SetUpdatedAt(v string) {
+	o.UpdatedAt = &v
+}
+
 func (o ModelsPipelineEdge) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -444,6 +477,9 @@ func (o ModelsPipelineEdge) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ToNodeInstanceId) {
 		toSerialize["to_node_instance_id"] = o.ToNodeInstanceId
+	}
+	if !IsNil(o.UpdatedAt) {
+		toSerialize["updated_at"] = o.UpdatedAt
 	}
 	return toSerialize, nil
 }

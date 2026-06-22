@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **disabled** | **bool** |  | [optional] 
 **from_node_instance_id** | **str** |  | 
+**id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **to_node_instance_id** | **str** |  | 
 
