@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,9 +31,10 @@ class CloudflareHttpRequestsSettingsConfig(BaseModel):
     """ # noqa: E501
     fields: Optional[List[StrictStr]] = Field(default=None, description="Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints.")
     lookback_duration: Optional[StrictStr] = Field(default=None, description="Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     zone_id: Optional[StrictStr] = Field(default=None, description="Cloudflare Zone ID")
-    __properties: ClassVar[List[str]] = ["fields", "lookback_duration", "use_synthetic_data", "zone_id"]
+    __properties: ClassVar[List[str]] = ["fields", "lookback_duration", "rate_limit", "use_synthetic_data", "zone_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -73,6 +75,9 @@ class CloudflareHttpRequestsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -87,6 +92,7 @@ class CloudflareHttpRequestsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "fields": obj.get("fields"),
             "lookback_duration": obj.get("lookback_duration"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data"),
             "zone_id": obj.get("zone_id")
         })

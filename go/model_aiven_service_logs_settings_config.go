@@ -24,6 +24,7 @@ type AivenServiceLogsSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The Aiven project name
 	Project *string `json:"project,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// The Aiven service name
 	Service *string `json:"service,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -111,6 +112,38 @@ func (o *AivenServiceLogsSettingsConfig) SetProject(v string) {
 	o.Project = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *AivenServiceLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AivenServiceLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *AivenServiceLogsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *AivenServiceLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetService returns the Service field value if set, zero value otherwise.
 func (o *AivenServiceLogsSettingsConfig) GetService() string {
 	if o == nil || IsNil(o.Service) {
@@ -190,6 +223,9 @@ func (o AivenServiceLogsSettingsConfig) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Project) {
 		toSerialize["project"] = o.Project
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.Service) {
 		toSerialize["service"] = o.Service

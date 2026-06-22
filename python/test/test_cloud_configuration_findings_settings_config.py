@@ -38,6 +38,9 @@ class TestCloudConfigurationFindingsSettingsConfig(unittest.TestCase):
             return CloudConfigurationFindingsSettingsConfig(
                 backfill_start_time = '',
                 endpoint_url = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 result = [
                     'PASS'
                     ],

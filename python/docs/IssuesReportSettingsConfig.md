@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **issue_ids** | **List[str]** | @Description Filter only Issues that match these specific IDs | [optional] 
 **issue_types** | [**List[WizIssueType]**](WizIssueType.md) | @Description Filter by Issue type | [optional] 
 **project_ids** | **List[str]** | @Description Filter Issues associated with specific project IDs | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **related_entity_id** | **str** | @Description Filter by related entity ids | [optional] 
 **resolution_reasons** | [**List[WizResolutionReason]**](WizResolutionReason.md) | @Description Filter Issues by resolution reason | [optional] 
 **risk_equals_all** | [**List[WizRiskType]**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present | [optional] 

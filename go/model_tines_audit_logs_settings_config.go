@@ -26,6 +26,7 @@ type TinesAuditLogsSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Filter by specific operation names (optional)
 	OperationNames []string `json:"operation_names,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// The Tines tenant domain (e.g., your-org.tines.com)
 	TenantDomain string `json:"tenant_domain"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -116,6 +117,38 @@ func (o *TinesAuditLogsSettingsConfig) HasOperationNames() bool {
 // SetOperationNames gets a reference to the given []string and assigns it to the OperationNames field.
 func (o *TinesAuditLogsSettingsConfig) SetOperationNames(v []string) {
 	o.OperationNames = v
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *TinesAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TinesAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *TinesAuditLogsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *TinesAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetTenantDomain returns the TenantDomain field value
@@ -221,6 +254,9 @@ func (o TinesAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OperationNames) {
 		toSerialize["operation_names"] = o.OperationNames
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	toSerialize["tenant_domain"] = o.TenantDomain
 	if !IsNil(o.UseSyntheticData) {

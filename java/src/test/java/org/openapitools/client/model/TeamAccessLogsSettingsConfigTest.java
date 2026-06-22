@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -43,6 +44,14 @@ public class TeamAccessLogsSettingsConfigTest {
     @Test
     public void backfillStartTimeTest() {
         // TODO: test backfillStartTime
+    }
+
+    /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
     }
 
     /**

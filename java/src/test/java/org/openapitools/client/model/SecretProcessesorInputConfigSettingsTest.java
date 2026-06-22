@@ -201,6 +201,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
+    }
+
+    /**
      * Test the property 'service'
      */
     @Test
@@ -502,14 +510,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void eventTypeTest() {
         // TODO: test eventType
-    }
-
-    /**
-     * Test the property 'rateLimit'
-     */
-    @Test
-    public void rateLimitTest() {
-        // TODO: test rateLimit
     }
 
     /**

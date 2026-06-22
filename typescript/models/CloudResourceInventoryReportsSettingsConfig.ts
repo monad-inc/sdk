@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { WizCloudPlatform } from '../models/WizCloudPlatform';
 import { WizEntityType } from '../models/WizEntityType';
 import { HttpFile } from '../http/http';
@@ -34,6 +35,7 @@ export class CloudResourceInventoryReportsSettingsConfig {
     * Entity types for Wiz. Ex: \'ACCOUNT\', \'REGION\', \'VPC\', \'SUBNET\', \'INSTANCE\'.
     */
     'entityType': Array<WizEntityType>;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -66,6 +68,12 @@ export class CloudResourceInventoryReportsSettingsConfig {
             "name": "entityType",
             "baseName": "entityType",
             "type": "Array<WizEntityType>",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

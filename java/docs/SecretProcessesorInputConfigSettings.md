@@ -11,6 +11,7 @@
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**backfillStartTime** | **String** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
 |**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**service** | **String** | The Aiven service name |  [optional] |
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
 |**region** | **String** | AWS Region of your bucket. |  |
@@ -49,7 +50,6 @@
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  |
 |**baseUrl** | **String** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) |  |
 |**eventType** | **String** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types |  [optional] |
-|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**hostname** | **String** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) |  [optional] |
 |**organizationId** | **String** | Organization ID for the Salesforce instance |  [optional] |
 |**orgSlug** | **String** | The ID or slug of the organization |  |

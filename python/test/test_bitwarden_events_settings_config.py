@@ -38,6 +38,9 @@ class TestBitwardenEventsSettingsConfig(unittest.TestCase):
             return BitwardenEventsSettingsConfig(
                 backfill_start_time = '',
                 base_url = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 region = '',
                 use_synthetic_data = True
             )

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **string** | Cloudflare Account ID | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from (RFC3339 format). Note: Historical data availability depends on your Cloudflare plan (Free: last 50 scans, Self Serve: 30 days, Enterprise: 12 months, Cloudforce One: unlimited) | [optional] 
 **FilterMyScans** | Pointer to **bool** | Filter to only show scans created by the current API token | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetFilterMyScans sets FilterMyScans field to given value.
 `func (o *CloudflareUrlScannerSettingsConfig) HasFilterMyScans() bool`
 
 HasFilterMyScans returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *CloudflareUrlScannerSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *CloudflareUrlScannerSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *CloudflareUrlScannerSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *CloudflareUrlScannerSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

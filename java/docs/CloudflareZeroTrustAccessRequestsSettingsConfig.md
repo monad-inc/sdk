@@ -10,6 +10,7 @@ Cloudflare Zero Trust Access Requests settings
 |------------ | ------------- | ------------- | -------------|
 |**accountId** | **String** | Cloudflare Account ID |  [optional] |
 |**backfillStartTime** | **String** | Date to start fetching data from (RFC3339 format) |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source |  [optional] |
 
 

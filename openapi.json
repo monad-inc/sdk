@@ -122,6 +122,9 @@
                         "description": "The Aiven project name",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "service": {
                         "description": "The Aiven service name",
                         "type": "string"
@@ -983,6 +986,9 @@
                         "description": "Base URL for self-hosted Bitwarden instance (required if region is SelfHosted)",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "region": {
                         "description": "Region of the Bitwarden instance: US, EU, or SelfHosted (default: US)",
                         "type": "string"
@@ -1061,6 +1067,9 @@
                     "hostname": {
                         "description": "The Brinqa environment hostname (e.g., \"ssb.brinqa.net\")",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -1207,6 +1216,9 @@
                         "description": "Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "result": {
                         "description": "Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.",
                         "items": {
@@ -1328,6 +1340,9 @@
                         "description": "Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.",
                         "type": "integer"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -1383,6 +1398,9 @@
                         "type": "array",
                         "uniqueItems": false
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -1414,6 +1432,9 @@
                         "description": "The date to start fetching data from (RFC3339 format). If not specified, fetches all available data within API retention limits.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -1440,6 +1461,9 @@
                     "lookback_duration": {
                         "description": "Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -1476,6 +1500,9 @@
                         "description": "Initial lookback duration for first sync (e.g., \"24h\", \"168h\"). Respects API retention limits.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -1511,6 +1538,9 @@
                         "description": "Filter to only show scans created by the current API token",
                         "type": "boolean"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source",
                         "type": "boolean"
@@ -1537,6 +1567,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from (RFC3339 format)",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source",
@@ -1656,6 +1689,9 @@
                     "org_id": {
                         "description": "Coda Organization ID.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -2590,6 +2626,9 @@
                         "description": "Your Endor Labs organization namespace (e.g., \"your-org\")",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -3365,6 +3404,9 @@
                         "description": "Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -3667,6 +3709,9 @@
                         "type": "array",
                         "uniqueItems": false
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "related_entity_id": {
                         "description": "@Description Filter by related entity ids",
                         "type": "string"
@@ -3804,6 +3849,9 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "related_entity_id": {
                         "description": "@Description Filter by related entity ids",
@@ -5262,7 +5310,7 @@
                 "type": "object"
             },
             "models.InputRateLimit": {
-                "description": "Optional ceiling on outbound Box API request rate. Absent ≡ no limit.",
+                "description": "Optional outbound request rate limit. Falls back to the Wiz default when unset.",
                 "properties": {
                     "rate": {
                         "type": "number"
@@ -6996,6 +7044,9 @@
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -7169,6 +7220,9 @@
                         "description": "Your GitHub organization name",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -7234,6 +7288,9 @@
             "ownbackup_account_events.SettingsConfig": {
                 "description": "Ownbackup Audit Logs settings",
                 "properties": {
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "region": {
                         "description": "Region of the OwnBackup instance",
                         "enum": [
@@ -7349,6 +7406,9 @@
             "pagerduty_audit_records.SettingsConfig": {
                 "description": "Pagerduty Audit Records settings",
                 "properties": {
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -7433,6 +7493,9 @@
                     "domain_name": {
                         "description": "TODO: Name of domain added on Polymer Hub portal",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -10853,6 +10916,9 @@
                         "description": "The ID or slug of the organization",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -10925,6 +10991,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. Dates before March 2018 are valid but will result in an error during validation.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -11444,6 +11513,9 @@
                         "description": "Start time for backfilling data",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -11469,6 +11541,9 @@
                     "backfill_start_time": {
                         "description": "Start time for backfilling data",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -11649,6 +11724,9 @@
                         "type": "array",
                         "uniqueItems": false
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "tenant_domain": {
                         "description": "The Tines tenant domain (e.g., your-org.tines.com)",
                         "type": "string"
@@ -11689,6 +11767,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "story_id": {
                         "description": "Filter by the given story.",
@@ -11770,6 +11851,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -11883,6 +11967,9 @@
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs.",
                         "type": "boolean"
@@ -11932,6 +12019,9 @@
                     "customer_id": {
                         "description": "Optional: Filter audit logs by specific customer ID",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -11997,6 +12087,9 @@
                     "endpoint_url": {
                         "description": "Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/vulnerability-findings'.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "status": {
                         "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.",
@@ -12079,6 +12172,9 @@
                     "endpoint_url": {
                         "description": "Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/vulnerability-findings'.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "status": {
                         "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.",
@@ -12609,6 +12705,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "tenant_data_center": {
                         "description": "DataCenter represents the tenant's data center location. Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\"",

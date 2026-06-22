@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, will fetch from the most recent data available. | [optional] 
 **base_url** | **str** | Base URL for self-hosted Bitwarden instance (required if region is SelfHosted) | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **region** | **str** | Region of the Bitwarden instance: US, EU, or SelfHosted (default: US) | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 

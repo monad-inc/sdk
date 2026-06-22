@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountId** | Pointer to **string** | Cloudflare Account ID | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from (RFC3339 format) | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetBackfillStartTime sets BackfillStartTime field to given value.
 `func (o *CloudflareZeroTrustAccessRequestsSettingsConfig) HasBackfillStartTime() bool`
 
 HasBackfillStartTime returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *CloudflareZeroTrustAccessRequestsSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *CloudflareZeroTrustAccessRequestsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *CloudflareZeroTrustAccessRequestsSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *CloudflareZeroTrustAccessRequestsSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

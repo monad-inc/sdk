@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 export class VercelUserEventsSettingsConfig {
@@ -17,6 +18,7 @@ export class VercelUserEventsSettingsConfig {
     * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
     */
     'backfillStartTime'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs.
     */
@@ -35,6 +37,12 @@ export class VercelUserEventsSettingsConfig {
             "name": "backfillStartTime",
             "baseName": "backfill_start_time",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

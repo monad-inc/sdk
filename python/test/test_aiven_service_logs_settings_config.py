@@ -38,6 +38,9 @@ class TestAivenServiceLogsSettingsConfig(unittest.TestCase):
             return AivenServiceLogsSettingsConfig(
                 backfill_start_time = '',
                 project = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 service = '',
                 use_synthetic_data = True
             )

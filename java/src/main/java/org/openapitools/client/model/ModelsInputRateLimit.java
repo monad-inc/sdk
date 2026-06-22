@@ -48,7 +48,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
+ * Optional outbound request rate limit. Falls back to the Wiz default when unset.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsInputRateLimit {

@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.WizResult;
 import org.openapitools.client.model.WizStatus;
 import org.openapitools.client.model.WizVendorSeverity;
@@ -56,6 +57,14 @@ public class CloudConfigurationFindingsSettingsConfigTest {
     @Test
     public void endpointUrlTest() {
         // TODO: test endpointUrl
+    }
+
+    /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
     }
 
     /**

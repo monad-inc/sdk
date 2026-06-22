@@ -10,12 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
 * Pagerduty Audit Records settings
 */
 export class PagerdutyAuditRecordsSettingsConfig {
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -26,6 +28,12 @@ export class PagerdutyAuditRecordsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
+            "format": ""
+        },
         {
             "name": "useSyntheticData",
             "baseName": "use_synthetic_data",

@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,8 +32,9 @@ class VoltioAuditLogsSettingsConfig(BaseModel):
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, defaults to 90 days ago. All syncs thereafter will be incremental.")
     base_url: StrictStr = Field(description="Base URL of your Volt.io API instance (e.g., https://api.volt.io)")
     customer_id: Optional[StrictStr] = Field(default=None, description="Optional: Filter audit logs by specific customer ID")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "base_url", "customer_id", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "base_url", "customer_id", "rate_limit", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -73,6 +75,9 @@ class VoltioAuditLogsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -88,6 +93,7 @@ class VoltioAuditLogsSettingsConfig(BaseModel):
             "backfill_start_time": obj.get("backfill_start_time"),
             "base_url": obj.get("base_url"),
             "customer_id": obj.get("customer_id"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

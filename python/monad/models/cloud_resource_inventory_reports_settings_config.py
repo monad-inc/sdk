@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from monad.models.wiz_cloud_platform import WizCloudPlatform
 from monad.models.wiz_entity_type import WizEntityType
 from typing import Optional, Set
@@ -35,8 +36,9 @@ class CloudResourceInventoryReportsSettingsConfig(BaseModel):
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     endpoint_url: StrictStr = Field(description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
     entity_type: Annotated[List[WizEntityType], Field(min_length=1)] = Field(description="Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.", alias="entityType")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["cloudPlatform", "cron", "endpoint_url", "entityType", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["cloudPlatform", "cron", "endpoint_url", "entityType", "rate_limit", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -77,6 +79,9 @@ class CloudResourceInventoryReportsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -93,6 +98,7 @@ class CloudResourceInventoryReportsSettingsConfig(BaseModel):
             "cron": obj.get("cron"),
             "endpoint_url": obj.get("endpoint_url"),
             "entityType": obj.get("entityType"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

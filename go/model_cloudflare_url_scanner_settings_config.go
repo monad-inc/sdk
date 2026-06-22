@@ -26,6 +26,7 @@ type CloudflareUrlScannerSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Filter to only show scans created by the current API token
 	FilterMyScans *bool `json:"filter_my_scans,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
@@ -143,6 +144,38 @@ func (o *CloudflareUrlScannerSettingsConfig) SetFilterMyScans(v bool) {
 	o.FilterMyScans = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *CloudflareUrlScannerSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudflareUrlScannerSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *CloudflareUrlScannerSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *CloudflareUrlScannerSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
 func (o *CloudflareUrlScannerSettingsConfig) GetUseSyntheticData() bool {
 	if o == nil || IsNil(o.UseSyntheticData) {
@@ -193,6 +226,9 @@ func (o CloudflareUrlScannerSettingsConfig) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.FilterMyScans) {
 		toSerialize["filter_my_scans"] = o.FilterMyScans
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData

@@ -36,6 +36,9 @@ class TestPagerdutyAuditRecordsSettingsConfig(unittest.TestCase):
         model = PagerdutyAuditRecordsSettingsConfig()
         if include_optional:
             return PagerdutyAuditRecordsSettingsConfig(
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 use_synthetic_data = True
             )
         else:

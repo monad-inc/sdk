@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,10 +31,11 @@ class TinesAuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, will fetch from the most recent data available.")
     operation_names: Optional[List[StrictStr]] = Field(default=None, description="Filter by specific operation names (optional)")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     tenant_domain: StrictStr = Field(description="The Tines tenant domain (e.g., your-org.tines.com)")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     user_ids: Optional[List[StrictStr]] = Field(default=None, description="Filter by specific user IDs (optional)")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "operation_names", "tenant_domain", "use_synthetic_data", "user_ids"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "operation_names", "rate_limit", "tenant_domain", "use_synthetic_data", "user_ids"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -74,6 +76,9 @@ class TinesAuditLogsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -88,6 +93,7 @@ class TinesAuditLogsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "backfill_start_time": obj.get("backfill_start_time"),
             "operation_names": obj.get("operation_names"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "tenant_domain": obj.get("tenant_domain"),
             "use_synthetic_data": obj.get("use_synthetic_data"),
             "user_ids": obj.get("user_ids")

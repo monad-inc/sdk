@@ -10,6 +10,7 @@ Aiven Service Logs settings
 |------------ | ------------- | ------------- | -------------|
 |**backfillStartTime** | **String** | Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
 |**project** | **String** | The Aiven project name |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**service** | **String** | The Aiven service name |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 

@@ -14,7 +14,7 @@ import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { HttpFile } from '../http/http';
 
 /**
-* Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
+* Optional outbound request rate limit. Falls back to the Wiz default when unset.
 */
 export class ModelsInputRateLimit {
     'rate'?: number;

@@ -10,12 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
 * Ownbackup Audit Logs settings
 */
 export class OwnbackupAccountEventsSettingsConfig {
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Region of the OwnBackup instance
     */
@@ -30,6 +32,12 @@ export class OwnbackupAccountEventsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
+            "format": ""
+        },
         {
             "name": "region",
             "baseName": "region",

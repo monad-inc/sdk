@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { WizResult } from '../models/WizResult';
 import { WizStatus } from '../models/WizStatus';
 import { WizVendorSeverity } from '../models/WizVendorSeverity';
@@ -27,6 +28,7 @@ export class CloudConfigurationFindingsSettingsConfig {
     * Endpoint URL for the Wiz API. Ex: \'https://api.wiz.io/v1/cloud-configuration-findings\'.
     */
     'endpointUrl': string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Result types for Wiz. Ex: \'PASSED\', \'FAILED\', \'ERROR\', \'NOT ASSESSED\'.
     */
@@ -59,6 +61,12 @@ export class CloudConfigurationFindingsSettingsConfig {
             "name": "endpointUrl",
             "baseName": "endpoint_url",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

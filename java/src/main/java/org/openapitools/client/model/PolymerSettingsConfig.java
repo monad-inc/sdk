@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,6 +56,11 @@ public class PolymerSettingsConfig {
   @javax.annotation.Nonnull
   private String domainName;
 
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
   @javax.annotation.Nullable
@@ -79,6 +85,25 @@ public class PolymerSettingsConfig {
 
   public void setDomainName(@javax.annotation.Nonnull String domainName) {
     this.domainName = domainName;
+  }
+
+
+  public PolymerSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -112,12 +137,13 @@ public class PolymerSettingsConfig {
     }
     PolymerSettingsConfig polymerSettingsConfig = (PolymerSettingsConfig) o;
     return Objects.equals(this.domainName, polymerSettingsConfig.domainName) &&
+        Objects.equals(this.rateLimit, polymerSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, polymerSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(domainName, useSyntheticData);
+    return Objects.hash(domainName, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -125,6 +151,7 @@ public class PolymerSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class PolymerSettingsConfig {\n");
     sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -144,7 +171,7 @@ public class PolymerSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("domain_name", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("domain_name", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("domain_name"));
@@ -180,6 +207,10 @@ public class PolymerSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("domain_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain_name").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

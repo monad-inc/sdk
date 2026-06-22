@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { WizCloudPlatform } from '../models/WizCloudPlatform';
 import { WizEntityType } from '../models/WizEntityType';
 import { HttpFile } from '../http/http';
@@ -42,6 +43,7 @@ export class CloudResourceInventorySettingsConfig {
     * Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
     */
     'interval'?: number;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -86,6 +88,12 @@ export class CloudResourceInventorySettingsConfig {
             "name": "interval",
             "baseName": "interval",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

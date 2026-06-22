@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **Service** | Pointer to **string** | The Aiven service name | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **Region** | **string** | AWS Region of your bucket. | 
@@ -46,7 +47,6 @@ Name | Type | Description | Notes
 **TimestampColumn** | **string** | The column containing timestamp values used for incremental loading | 
 **BaseUrl** | **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
-**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
 **OrganizationId** | Pointer to **string** | Organization ID for the Salesforce instance | [optional] 
 **OrgSlug** | **string** | The ID or slug of the organization | 
@@ -280,6 +280,31 @@ SetProject sets Project field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasProject() bool`
 
 HasProject returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *SecretProcessesorInputConfigSettings) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *SecretProcessesorInputConfigSettings) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *SecretProcessesorInputConfigSettings) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetService
 
@@ -1175,31 +1200,6 @@ SetEventType sets EventType field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasEventType() bool`
 
 HasEventType returns a boolean if a field has been set.
-
-### GetRateLimit
-
-`func (o *SecretProcessesorInputConfigSettings) GetRateLimit() ModelsInputRateLimit`
-
-GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
-
-### GetRateLimitOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
-
-GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRateLimit
-
-`func (o *SecretProcessesorInputConfigSettings) SetRateLimit(v ModelsInputRateLimit)`
-
-SetRateLimit sets RateLimit field to given value.
-
-### HasRateLimit
-
-`func (o *SecretProcessesorInputConfigSettings) HasRateLimit() bool`
-
-HasRateLimit returns a boolean if a field has been set.
 
 ### GetHostname
 

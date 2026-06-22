@@ -38,6 +38,9 @@ class TestCloudflareFirewallEventsSettingsConfig(unittest.TestCase):
             return CloudflareFirewallEventsSettingsConfig(
                 include_bot_fields = True,
                 lookback_duration = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 use_synthetic_data = True,
                 zone_id = ''
             )

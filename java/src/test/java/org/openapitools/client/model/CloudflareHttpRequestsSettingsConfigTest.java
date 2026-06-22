@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -53,6 +54,14 @@ public class CloudflareHttpRequestsSettingsConfigTest {
     @Test
     public void lookbackDurationTest() {
         // TODO: test lookbackDuration
+    }
+
+    /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
     }
 
     /**

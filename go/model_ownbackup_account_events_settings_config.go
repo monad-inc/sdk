@@ -22,6 +22,7 @@ var _ MappedNullable = &OwnbackupAccountEventsSettingsConfig{}
 
 // OwnbackupAccountEventsSettingsConfig Ownbackup Audit Logs settings
 type OwnbackupAccountEventsSettingsConfig struct {
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Region of the OwnBackup instance
 	Region string `json:"region"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -46,6 +47,38 @@ func NewOwnbackupAccountEventsSettingsConfig(region string) *OwnbackupAccountEve
 func NewOwnbackupAccountEventsSettingsConfigWithDefaults() *OwnbackupAccountEventsSettingsConfig {
 	this := OwnbackupAccountEventsSettingsConfig{}
 	return &this
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *OwnbackupAccountEventsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OwnbackupAccountEventsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *OwnbackupAccountEventsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *OwnbackupAccountEventsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetRegion returns the Region field value
@@ -114,6 +147,9 @@ func (o OwnbackupAccountEventsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OwnbackupAccountEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
+	}
 	toSerialize["region"] = o.Region
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData

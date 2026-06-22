@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.WizIssueSeverity;
 import org.openapitools.client.model.WizIssueStatus;
 import org.openapitools.client.model.WizIssueType;
@@ -100,6 +101,11 @@ public class IssuesReportSettingsConfig {
   @SerializedName(SERIALIZED_NAME_PROJECT_IDS)
   @javax.annotation.Nullable
   private List<String> projectIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_RELATED_ENTITY_ID = "related_entity_id";
   @SerializedName(SERIALIZED_NAME_RELATED_ENTITY_ID)
@@ -340,6 +346,25 @@ public class IssuesReportSettingsConfig {
 
   public void setProjectIds(@javax.annotation.Nullable List<String> projectIds) {
     this.projectIds = projectIds;
+  }
+
+
+  public IssuesReportSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -618,6 +643,7 @@ public class IssuesReportSettingsConfig {
         Objects.equals(this.issueIds, issuesReportSettingsConfig.issueIds) &&
         Objects.equals(this.issueTypes, issuesReportSettingsConfig.issueTypes) &&
         Objects.equals(this.projectIds, issuesReportSettingsConfig.projectIds) &&
+        Objects.equals(this.rateLimit, issuesReportSettingsConfig.rateLimit) &&
         Objects.equals(this.relatedEntityId, issuesReportSettingsConfig.relatedEntityId) &&
         Objects.equals(this.resolutionReasons, issuesReportSettingsConfig.resolutionReasons) &&
         Objects.equals(this.riskEqualsAll, issuesReportSettingsConfig.riskEqualsAll) &&
@@ -633,7 +659,7 @@ public class IssuesReportSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(controlIds, cron, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter, useSyntheticData);
+    return Objects.hash(controlIds, cron, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, rateLimit, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter, useSyntheticData);
   }
 
   @Override
@@ -648,6 +674,7 @@ public class IssuesReportSettingsConfig {
     sb.append("    issueIds: ").append(toIndentedString(issueIds)).append("\n");
     sb.append("    issueTypes: ").append(toIndentedString(issueTypes)).append("\n");
     sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    relatedEntityId: ").append(toIndentedString(relatedEntityId)).append("\n");
     sb.append("    resolutionReasons: ").append(toIndentedString(resolutionReasons)).append("\n");
     sb.append("    riskEqualsAll: ").append(toIndentedString(riskEqualsAll)).append("\n");
@@ -677,7 +704,7 @@ public class IssuesReportSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "rate_limit", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_data_center"));
@@ -741,6 +768,10 @@ public class IssuesReportSettingsConfig {
       // ensure the optional json data is an array if present
       if (jsonObj.get("project_ids") != null && !jsonObj.get("project_ids").isJsonNull() && !jsonObj.get("project_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `project_ids` to be an array in the JSON string but got `%s`", jsonObj.get("project_ids").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if ((jsonObj.get("related_entity_id") != null && !jsonObj.get("related_entity_id").isJsonNull()) && !jsonObj.get("related_entity_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `related_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("related_entity_id").toString()));

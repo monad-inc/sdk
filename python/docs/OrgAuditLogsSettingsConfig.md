@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **github_client_id** | **str** | GitHub Client ID (alternative to personal access token) | [optional] 
 **include** | **str** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **organization** | **str** | Your GitHub organization name | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

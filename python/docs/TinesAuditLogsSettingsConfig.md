@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, will fetch from the most recent data available. | [optional] 
 **operation_names** | **List[str]** | Filter by specific operation names (optional) | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **tenant_domain** | **str** | The Tines tenant domain (e.g., your-org.tines.com) | 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **user_ids** | **List[str]** | Filter by specific user IDs (optional) | [optional] 

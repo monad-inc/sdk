@@ -52,6 +52,9 @@ class TestIssuesSettingsConfig(unittest.TestCase):
                 project_ids = [
                     ''
                     ],
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 related_entity_id = '',
                 resolution_reasons = [
                     'CONTROL_CHANGED'

@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,8 +30,9 @@ class PolymerSettingsConfig(BaseModel):
     PolymerSettingsConfig
     """ # noqa: E501
     domain_name: StrictStr = Field(description="TODO: Name of domain added on Polymer Hub portal")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["domain_name", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["domain_name", "rate_limit", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -71,6 +73,9 @@ class PolymerSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -84,6 +89,7 @@ class PolymerSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "domain_name": obj.get("domain_name"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

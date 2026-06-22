@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,8 +32,9 @@ class CloudflareUrlScannerSettingsConfig(BaseModel):
     account_id: Optional[StrictStr] = Field(default=None, description="Cloudflare Account ID")
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from (RFC3339 format). Note: Historical data availability depends on your Cloudflare plan (Free: last 50 scans, Self Serve: 30 days, Enterprise: 12 months, Cloudforce One: unlimited)")
     filter_my_scans: Optional[StrictBool] = Field(default=None, description="Filter to only show scans created by the current API token")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source")
-    __properties: ClassVar[List[str]] = ["account_id", "backfill_start_time", "filter_my_scans", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["account_id", "backfill_start_time", "filter_my_scans", "rate_limit", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -73,6 +75,9 @@ class CloudflareUrlScannerSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -88,6 +93,7 @@ class CloudflareUrlScannerSettingsConfig(BaseModel):
             "account_id": obj.get("account_id"),
             "backfill_start_time": obj.get("backfill_start_time"),
             "filter_my_scans": obj.get("filter_my_scans"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

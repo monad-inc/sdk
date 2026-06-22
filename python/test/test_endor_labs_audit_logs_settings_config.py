@@ -38,6 +38,9 @@ class TestEndorLabsAuditLogsSettingsConfig(unittest.TestCase):
             return EndorLabsAuditLogsSettingsConfig(
                 backfill_start_time = '',
                 namespace = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 use_synthetic_data = True
             )
         else:

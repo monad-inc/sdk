@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -61,6 +62,11 @@ public class TinesAuditLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_OPERATION_NAMES)
   @javax.annotation.Nullable
   private List<String> operationNames = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_TENANT_DOMAIN = "tenant_domain";
   @SerializedName(SERIALIZED_NAME_TENANT_DOMAIN)
@@ -123,6 +129,25 @@ public class TinesAuditLogsSettingsConfig {
 
   public void setOperationNames(@javax.annotation.Nullable List<String> operationNames) {
     this.operationNames = operationNames;
+  }
+
+
+  public TinesAuditLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -203,6 +228,7 @@ public class TinesAuditLogsSettingsConfig {
     TinesAuditLogsSettingsConfig tinesAuditLogsSettingsConfig = (TinesAuditLogsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, tinesAuditLogsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.operationNames, tinesAuditLogsSettingsConfig.operationNames) &&
+        Objects.equals(this.rateLimit, tinesAuditLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.tenantDomain, tinesAuditLogsSettingsConfig.tenantDomain) &&
         Objects.equals(this.useSyntheticData, tinesAuditLogsSettingsConfig.useSyntheticData) &&
         Objects.equals(this.userIds, tinesAuditLogsSettingsConfig.userIds);
@@ -210,7 +236,7 @@ public class TinesAuditLogsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, operationNames, tenantDomain, useSyntheticData, userIds);
+    return Objects.hash(backfillStartTime, operationNames, rateLimit, tenantDomain, useSyntheticData, userIds);
   }
 
   @Override
@@ -219,6 +245,7 @@ public class TinesAuditLogsSettingsConfig {
     sb.append("class TinesAuditLogsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    operationNames: ").append(toIndentedString(operationNames)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    tenantDomain: ").append(toIndentedString(tenantDomain)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
@@ -240,7 +267,7 @@ public class TinesAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "operation_names", "tenant_domain", "use_synthetic_data", "user_ids"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "operation_names", "rate_limit", "tenant_domain", "use_synthetic_data", "user_ids"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_domain"));
@@ -280,6 +307,10 @@ public class TinesAuditLogsSettingsConfig {
       // ensure the optional json data is an array if present
       if (jsonObj.get("operation_names") != null && !jsonObj.get("operation_names").isJsonNull() && !jsonObj.get("operation_names").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `operation_names` to be an array in the JSON string but got `%s`", jsonObj.get("operation_names").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if (!jsonObj.get("tenant_domain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_domain").toString()));

@@ -37,6 +37,9 @@ class TestTinesEventsLogsSettingsConfig(unittest.TestCase):
         if include_optional:
             return TinesEventsLogsSettingsConfig(
                 backfill_start_time = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 story_id = '',
                 team_id = '',
                 tenant_url = '',

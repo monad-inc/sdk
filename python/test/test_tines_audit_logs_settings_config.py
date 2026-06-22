@@ -40,6 +40,9 @@ class TestTinesAuditLogsSettingsConfig(unittest.TestCase):
                 operation_names = [
                     ''
                     ],
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 tenant_domain = '',
                 use_synthetic_data = True,
                 user_ids = [

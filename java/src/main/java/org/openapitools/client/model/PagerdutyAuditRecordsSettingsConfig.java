@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,6 +51,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PagerdutyAuditRecordsSettingsConfig {
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
   @javax.annotation.Nullable
@@ -57,6 +63,25 @@ public class PagerdutyAuditRecordsSettingsConfig {
 
   public PagerdutyAuditRecordsSettingsConfig() {
   }
+
+  public PagerdutyAuditRecordsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
 
   public PagerdutyAuditRecordsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
@@ -87,18 +112,20 @@ public class PagerdutyAuditRecordsSettingsConfig {
       return false;
     }
     PagerdutyAuditRecordsSettingsConfig pagerdutyAuditRecordsSettingsConfig = (PagerdutyAuditRecordsSettingsConfig) o;
-    return Objects.equals(this.useSyntheticData, pagerdutyAuditRecordsSettingsConfig.useSyntheticData);
+    return Objects.equals(this.rateLimit, pagerdutyAuditRecordsSettingsConfig.rateLimit) &&
+        Objects.equals(this.useSyntheticData, pagerdutyAuditRecordsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(useSyntheticData);
+    return Objects.hash(rateLimit, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PagerdutyAuditRecordsSettingsConfig {\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -118,7 +145,7 @@ public class PagerdutyAuditRecordsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -145,6 +172,10 @@ public class PagerdutyAuditRecordsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

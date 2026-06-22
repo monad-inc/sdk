@@ -24,6 +24,7 @@ var _ MappedNullable = &WizAuditLogsSettingsConfig{}
 type WizAuditLogsSettingsConfig struct {
 	// Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// DataCenter represents the tenant's data center location. Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\"
 	TenantDataCenter string `json:"tenant_data_center"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -80,6 +81,38 @@ func (o *WizAuditLogsSettingsConfig) HasBackfillStartTime() bool {
 // SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
 func (o *WizAuditLogsSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *WizAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WizAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *WizAuditLogsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *WizAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetTenantDataCenter returns the TenantDataCenter field value
@@ -150,6 +183,9 @@ func (o WizAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	toSerialize["tenant_data_center"] = o.TenantDataCenter
 	if !IsNil(o.UseSyntheticData) {

@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class AivenServiceLogsSettingsConfig {
     * The Aiven project name
     */
     'project'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * The Aiven service name
     */
@@ -48,6 +50,12 @@ export class AivenServiceLogsSettingsConfig {
             "name": "project",
             "baseName": "project",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

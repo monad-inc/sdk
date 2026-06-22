@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -28,6 +29,7 @@ export class CloudflareUrlScannerSettingsConfig {
     * Filter to only show scans created by the current API token
     */
     'filterMyScans'?: boolean;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source
     */
@@ -54,6 +56,12 @@ export class CloudflareUrlScannerSettingsConfig {
             "name": "filterMyScans",
             "baseName": "filter_my_scans",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

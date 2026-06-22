@@ -36,6 +36,9 @@ class TestOwnbackupAccountEventsSettingsConfig(unittest.TestCase):
         model = OwnbackupAccountEventsSettingsConfig()
         if include_optional:
             return OwnbackupAccountEventsSettingsConfig(
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 region = 'app1',
                 use_synthetic_data = True
             )

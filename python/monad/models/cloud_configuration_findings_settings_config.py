@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from monad.models.wiz_result import WizResult
 from monad.models.wiz_status import WizStatus
 from monad.models.wiz_vendor_severity import WizVendorSeverity
@@ -33,11 +34,12 @@ class CloudConfigurationFindingsSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     endpoint_url: StrictStr = Field(description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     result: Optional[List[WizResult]] = Field(default=None, description="Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.")
     severity: Optional[List[WizVendorSeverity]] = Field(default=None, description="Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.")
     status: Optional[List[WizStatus]] = Field(default=None, description="Status types for Wiz. Ex: 'OPEN', 'RESOLVED', 'REJECTED'.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "endpoint_url", "result", "severity", "status", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "endpoint_url", "rate_limit", "result", "severity", "status", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -78,6 +80,9 @@ class CloudConfigurationFindingsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -92,6 +97,7 @@ class CloudConfigurationFindingsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "backfill_start_time": obj.get("backfill_start_time"),
             "endpoint_url": obj.get("endpoint_url"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "result": obj.get("result"),
             "severity": obj.get("severity"),
             "status": obj.get("status"),

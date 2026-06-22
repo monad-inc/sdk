@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.WizCloudPlatform;
 import org.openapitools.client.model.WizEntityType;
 
@@ -83,6 +84,11 @@ public class CloudResourceInventorySettingsConfig {
   @SerializedName(SERIALIZED_NAME_INTERVAL)
   @javax.annotation.Nullable
   private Integer interval;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -222,6 +228,25 @@ public class CloudResourceInventorySettingsConfig {
   }
 
 
+  public CloudResourceInventorySettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public CloudResourceInventorySettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -257,12 +282,13 @@ public class CloudResourceInventorySettingsConfig {
         Objects.equals(this.entityType, cloudResourceInventorySettingsConfig.entityType) &&
         Objects.equals(this.fullSnapshot, cloudResourceInventorySettingsConfig.fullSnapshot) &&
         Objects.equals(this.interval, cloudResourceInventorySettingsConfig.interval) &&
+        Objects.equals(this.rateLimit, cloudResourceInventorySettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, cloudResourceInventorySettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, cloudPlatform, endpointUrl, entityType, fullSnapshot, interval, useSyntheticData);
+    return Objects.hash(backfillStartTime, cloudPlatform, endpointUrl, entityType, fullSnapshot, interval, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -275,6 +301,7 @@ public class CloudResourceInventorySettingsConfig {
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    fullSnapshot: ").append(toIndentedString(fullSnapshot)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -294,7 +321,7 @@ public class CloudResourceInventorySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("endpoint_url", "entityType"));
@@ -343,6 +370,10 @@ public class CloudResourceInventorySettingsConfig {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("entityType").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `entityType` to be an array in the JSON string but got `%s`", jsonObj.get("entityType").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

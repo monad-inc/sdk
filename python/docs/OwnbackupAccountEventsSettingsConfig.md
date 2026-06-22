@@ -6,6 +6,7 @@ Ownbackup Audit Logs settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **region** | **str** | Region of the OwnBackup instance | 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 

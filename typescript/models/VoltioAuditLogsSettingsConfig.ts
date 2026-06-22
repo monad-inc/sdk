@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -28,6 +29,7 @@ export class VoltioAuditLogsSettingsConfig {
     * Optional: Filter audit logs by specific customer ID
     */
     'customerId'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -54,6 +56,12 @@ export class VoltioAuditLogsSettingsConfig {
             "name": "customerId",
             "baseName": "customer_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

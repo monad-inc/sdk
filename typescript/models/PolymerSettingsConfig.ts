@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 export class PolymerSettingsConfig {
@@ -17,6 +18,7 @@ export class PolymerSettingsConfig {
     * TODO: Name of domain added on Polymer Hub portal
     */
     'domainName': string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -31,6 +33,12 @@ export class PolymerSettingsConfig {
             "name": "domainName",
             "baseName": "domain_name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

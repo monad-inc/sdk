@@ -27,7 +27,7 @@ from pydantic_core import to_jsonable_python
 
 class ModelsInputRateLimit(BaseModel):
     """
-    Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
+    Optional outbound request rate limit. Falls back to the Wiz default when unset.
     """ # noqa: E501
     rate: Optional[Union[StrictFloat, StrictInt]] = None
     unit: Optional[ModelsRateUnit] = None

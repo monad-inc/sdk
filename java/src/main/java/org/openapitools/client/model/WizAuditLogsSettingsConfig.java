@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,6 +56,11 @@ public class WizAuditLogsSettingsConfig {
   @javax.annotation.Nullable
   private String backfillStartTime;
 
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_TENANT_DATA_CENTER = "tenant_data_center";
   @SerializedName(SERIALIZED_NAME_TENANT_DATA_CENTER)
   @javax.annotation.Nonnull
@@ -84,6 +90,25 @@ public class WizAuditLogsSettingsConfig {
 
   public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
     this.backfillStartTime = backfillStartTime;
+  }
+
+
+  public WizAuditLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -136,13 +161,14 @@ public class WizAuditLogsSettingsConfig {
     }
     WizAuditLogsSettingsConfig wizAuditLogsSettingsConfig = (WizAuditLogsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, wizAuditLogsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.rateLimit, wizAuditLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.tenantDataCenter, wizAuditLogsSettingsConfig.tenantDataCenter) &&
         Objects.equals(this.useSyntheticData, wizAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, tenantDataCenter, useSyntheticData);
+    return Objects.hash(backfillStartTime, rateLimit, tenantDataCenter, useSyntheticData);
   }
 
   @Override
@@ -150,6 +176,7 @@ public class WizAuditLogsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class WizAuditLogsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    tenantDataCenter: ").append(toIndentedString(tenantDataCenter)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -170,7 +197,7 @@ public class WizAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "tenant_data_center", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "rate_limit", "tenant_data_center", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_data_center"));
@@ -206,6 +233,10 @@ public class WizAuditLogsSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if (!jsonObj.get("tenant_data_center").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_data_center` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_data_center").toString()));

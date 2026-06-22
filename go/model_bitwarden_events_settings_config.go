@@ -24,6 +24,7 @@ type BitwardenEventsSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Base URL for self-hosted Bitwarden instance (required if region is SelfHosted)
 	BaseUrl *string `json:"base_url,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Region of the Bitwarden instance: US, EU, or SelfHosted (default: US)
 	Region *string `json:"region,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -111,6 +112,38 @@ func (o *BitwardenEventsSettingsConfig) SetBaseUrl(v string) {
 	o.BaseUrl = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *BitwardenEventsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BitwardenEventsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *BitwardenEventsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *BitwardenEventsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetRegion returns the Region field value if set, zero value otherwise.
 func (o *BitwardenEventsSettingsConfig) GetRegion() string {
 	if o == nil || IsNil(o.Region) {
@@ -190,6 +223,9 @@ func (o BitwardenEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.BaseUrl) {
 		toSerialize["base_url"] = o.BaseUrl
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.Region) {
 		toSerialize["region"] = o.Region

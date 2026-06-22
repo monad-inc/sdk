@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { WizIssueSeverity } from '../models/WizIssueSeverity';
 import { WizIssueStatus } from '../models/WizIssueStatus';
 import { WizIssueType } from '../models/WizIssueType';
@@ -48,6 +49,7 @@ export class IssuesSettingsConfig {
     * @Description Filter Issues associated with specific project IDs
     */
     'projectIds'?: Array<string>;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * @Description Filter by related entity ids
     */
@@ -144,6 +146,12 @@ export class IssuesSettingsConfig {
             "name": "projectIds",
             "baseName": "project_ids",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

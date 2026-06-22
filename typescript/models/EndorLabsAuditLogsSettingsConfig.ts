@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class EndorLabsAuditLogsSettingsConfig {
     * Your Endor Labs organization namespace (e.g., \"your-org\")
     */
     'namespace': string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -44,6 +46,12 @@ export class EndorLabsAuditLogsSettingsConfig {
             "name": "namespace",
             "baseName": "namespace",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

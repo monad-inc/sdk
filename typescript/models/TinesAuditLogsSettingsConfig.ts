@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class TinesAuditLogsSettingsConfig {
     * Filter by specific operation names (optional)
     */
     'operationNames'?: Array<string>;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * The Tines tenant domain (e.g., your-org.tines.com)
     */
@@ -52,6 +54,12 @@ export class TinesAuditLogsSettingsConfig {
             "name": "operationNames",
             "baseName": "operation_names",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

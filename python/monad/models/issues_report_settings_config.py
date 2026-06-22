@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from monad.models.wiz_issue_severity import WizIssueSeverity
 from monad.models.wiz_issue_status import WizIssueStatus
 from monad.models.wiz_issue_type import WizIssueType
@@ -45,6 +46,7 @@ class IssuesReportSettingsConfig(BaseModel):
     issue_ids: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter only Issues that match these specific IDs")
     issue_types: Optional[List[WizIssueType]] = Field(default=None, description="@Description Filter by Issue type")
     project_ids: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues associated with specific project IDs")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     related_entity_id: Optional[StrictStr] = Field(default=None, description="@Description Filter by related entity ids")
     resolution_reasons: Optional[List[WizResolutionReason]] = Field(default=None, description="@Description Filter Issues by resolution reason")
     risk_equals_all: Optional[List[WizRiskType]] = Field(default=None, description="@Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present")
@@ -56,7 +58,7 @@ class IssuesReportSettingsConfig(BaseModel):
     status: Optional[List[WizIssueStatus]] = Field(default=None, description="@Description Filter by Issue handling status @Description Default: OPEN")
     tenant_data_center: StrictStr = Field(description="DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["control_ids", "cron", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "rate_limit", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -97,6 +99,9 @@ class IssuesReportSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -117,6 +122,7 @@ class IssuesReportSettingsConfig(BaseModel):
             "issue_ids": obj.get("issue_ids"),
             "issue_types": obj.get("issue_types"),
             "project_ids": obj.get("project_ids"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "related_entity_id": obj.get("related_entity_id"),
             "resolution_reasons": obj.get("resolution_reasons"),
             "risk_equals_all": obj.get("risk_equals_all"),

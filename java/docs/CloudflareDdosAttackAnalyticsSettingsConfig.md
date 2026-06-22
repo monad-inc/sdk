@@ -10,6 +10,7 @@ Cloudflare DDoS Attack Analytics settings
 |------------ | ------------- | ------------- | -------------|
 |**accountId** | **String** | Cloudflare Account ID |  [optional] |
 |**backfillStartTime** | **String** | The date to start fetching data from (RFC3339 format). If not specified, fetches all available data within API retention limits. |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 

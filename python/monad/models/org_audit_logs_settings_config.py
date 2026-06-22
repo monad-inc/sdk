@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.common_auth_type import CommonAuthType
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -35,8 +36,9 @@ class OrgAuditLogsSettingsConfig(BaseModel):
     github_client_id: Optional[StrictStr] = Field(default=None, description="GitHub Client ID (alternative to personal access token)")
     include: Optional[StrictStr] = Field(default=None, description="Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both.")
     organization: Optional[StrictStr] = Field(default=None, description="Your GitHub organization name")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["auth_type", "backfill_start_time", "github_app_installation_id", "github_client_id", "include", "organization", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["auth_type", "backfill_start_time", "github_app_installation_id", "github_client_id", "include", "organization", "rate_limit", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -77,6 +79,9 @@ class OrgAuditLogsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -95,6 +100,7 @@ class OrgAuditLogsSettingsConfig(BaseModel):
             "github_client_id": obj.get("github_client_id"),
             "include": obj.get("include"),
             "organization": obj.get("organization"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,6 +55,11 @@ public class TinesEventsLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
   @javax.annotation.Nullable
   private String backfillStartTime;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_STORY_ID = "story_id";
   @SerializedName(SERIALIZED_NAME_STORY_ID)
@@ -94,6 +100,25 @@ public class TinesEventsLogsSettingsConfig {
 
   public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
     this.backfillStartTime = backfillStartTime;
+  }
+
+
+  public TinesEventsLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -184,6 +209,7 @@ public class TinesEventsLogsSettingsConfig {
     }
     TinesEventsLogsSettingsConfig tinesEventsLogsSettingsConfig = (TinesEventsLogsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, tinesEventsLogsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.rateLimit, tinesEventsLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.storyId, tinesEventsLogsSettingsConfig.storyId) &&
         Objects.equals(this.teamId, tinesEventsLogsSettingsConfig.teamId) &&
         Objects.equals(this.tenantUrl, tinesEventsLogsSettingsConfig.tenantUrl) &&
@@ -192,7 +218,7 @@ public class TinesEventsLogsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, storyId, teamId, tenantUrl, useSyntheticData);
+    return Objects.hash(backfillStartTime, rateLimit, storyId, teamId, tenantUrl, useSyntheticData);
   }
 
   @Override
@@ -200,6 +226,7 @@ public class TinesEventsLogsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class TinesEventsLogsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    storyId: ").append(toIndentedString(storyId)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    tenantUrl: ").append(toIndentedString(tenantUrl)).append("\n");
@@ -222,7 +249,7 @@ public class TinesEventsLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "story_id", "team_id", "tenant_url", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "rate_limit", "story_id", "team_id", "tenant_url", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("tenant_url"));
@@ -258,6 +285,10 @@ public class TinesEventsLogsSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if ((jsonObj.get("story_id") != null && !jsonObj.get("story_id").isJsonNull()) && !jsonObj.get("story_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `story_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("story_id").toString()));

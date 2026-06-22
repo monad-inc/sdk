@@ -833,9 +833,9 @@ import { InputsConnectorMeta              } from '../models/InputsConnectorMeta'
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
-import { IssuesReportSettingsConfig                    } from '../models/IssuesReportSettingsConfig';
+import { IssuesReportSettingsConfig                     } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
-import { IssuesSettingsConfig                    } from '../models/IssuesSettingsConfig';
+import { IssuesSettingsConfig                     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { JsonFormatType } from '../models/JsonFormatType';
 import { JsonJsonFormatter   } from '../models/JsonJsonFormatter';
@@ -992,10 +992,10 @@ import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
-import { OrgAuditLogsSettingsConfig        } from '../models/OrgAuditLogsSettingsConfig';
+import { OrgAuditLogsSettingsConfig         } from '../models/OrgAuditLogsSettingsConfig';
 import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
-import { OwnbackupAccountEventsSettingsConfig, OwnbackupAccountEventsSettingsConfigRegionEnum    } from '../models/OwnbackupAccountEventsSettingsConfig';
+import { OwnbackupAccountEventsSettingsConfig , OwnbackupAccountEventsSettingsConfigRegionEnum    } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
 import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';

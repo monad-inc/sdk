@@ -26,6 +26,7 @@ type CloudConfigurationFindingsSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.
 	EndpointUrl string `json:"endpoint_url"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Result types for Wiz. Ex: 'PASSED', 'FAILED', 'ERROR', 'NOT ASSESSED'.
 	Result []WizResult `json:"result,omitempty"`
 	// Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NONE'.
@@ -110,6 +111,38 @@ func (o *CloudConfigurationFindingsSettingsConfig) GetEndpointUrlOk() (*string, 
 // SetEndpointUrl sets field value
 func (o *CloudConfigurationFindingsSettingsConfig) SetEndpointUrl(v string) {
 	o.EndpointUrl = v
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *CloudConfigurationFindingsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudConfigurationFindingsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *CloudConfigurationFindingsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *CloudConfigurationFindingsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetResult returns the Result field value if set, zero value otherwise.
@@ -254,6 +287,9 @@ func (o CloudConfigurationFindingsSettingsConfig) ToMap() (map[string]interface{
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
 	toSerialize["endpoint_url"] = o.EndpointUrl
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
+	}
 	if !IsNil(o.Result) {
 		toSerialize["result"] = o.Result
 	}

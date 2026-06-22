@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.WizResult;
 import org.openapitools.client.model.WizStatus;
 import org.openapitools.client.model.WizVendorSeverity;
@@ -64,6 +65,11 @@ public class CloudConfigurationFindingsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
   @javax.annotation.Nonnull
   private String endpointUrl;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
@@ -123,6 +129,25 @@ public class CloudConfigurationFindingsSettingsConfig {
 
   public void setEndpointUrl(@javax.annotation.Nonnull String endpointUrl) {
     this.endpointUrl = endpointUrl;
+  }
+
+
+  public CloudConfigurationFindingsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -238,6 +263,7 @@ public class CloudConfigurationFindingsSettingsConfig {
     CloudConfigurationFindingsSettingsConfig cloudConfigurationFindingsSettingsConfig = (CloudConfigurationFindingsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, cloudConfigurationFindingsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.endpointUrl, cloudConfigurationFindingsSettingsConfig.endpointUrl) &&
+        Objects.equals(this.rateLimit, cloudConfigurationFindingsSettingsConfig.rateLimit) &&
         Objects.equals(this.result, cloudConfigurationFindingsSettingsConfig.result) &&
         Objects.equals(this.severity, cloudConfigurationFindingsSettingsConfig.severity) &&
         Objects.equals(this.status, cloudConfigurationFindingsSettingsConfig.status) &&
@@ -246,7 +272,7 @@ public class CloudConfigurationFindingsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, endpointUrl, result, severity, status, useSyntheticData);
+    return Objects.hash(backfillStartTime, endpointUrl, rateLimit, result, severity, status, useSyntheticData);
   }
 
   @Override
@@ -255,6 +281,7 @@ public class CloudConfigurationFindingsSettingsConfig {
     sb.append("class CloudConfigurationFindingsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    endpointUrl: ").append(toIndentedString(endpointUrl)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -277,7 +304,7 @@ public class CloudConfigurationFindingsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "endpoint_url", "result", "severity", "status", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "endpoint_url", "rate_limit", "result", "severity", "status", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("endpoint_url"));
@@ -316,6 +343,10 @@ public class CloudConfigurationFindingsSettingsConfig {
       }
       if (!jsonObj.get("endpoint_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint_url").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull() && !jsonObj.get("result").isJsonArray()) {

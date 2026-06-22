@@ -24,6 +24,7 @@ type CloudflareDdosAttackAnalyticsSettingsConfig struct {
 	AccountId *string `json:"account_id,omitempty"`
 	// The date to start fetching data from (RFC3339 format). If not specified, fetches all available data within API retention limits.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
@@ -109,6 +110,38 @@ func (o *CloudflareDdosAttackAnalyticsSettingsConfig) SetBackfillStartTime(v str
 	o.BackfillStartTime = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *CloudflareDdosAttackAnalyticsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudflareDdosAttackAnalyticsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *CloudflareDdosAttackAnalyticsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *CloudflareDdosAttackAnalyticsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
 func (o *CloudflareDdosAttackAnalyticsSettingsConfig) GetUseSyntheticData() bool {
 	if o == nil || IsNil(o.UseSyntheticData) {
@@ -156,6 +189,9 @@ func (o CloudflareDdosAttackAnalyticsSettingsConfig) ToMap() (map[string]interfa
 	}
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData

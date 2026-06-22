@@ -35,6 +35,7 @@ type IssuesSettingsConfig struct {
 	IssueTypes []WizIssueType `json:"issue_types,omitempty"`
 	// @Description Filter Issues associated with specific project IDs
 	ProjectIds []string `json:"project_ids,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// @Description Filter by related entity ids
 	RelatedEntityId *string `json:"related_entity_id,omitempty"`
 	// @Description Filter Issues by resolution reason
@@ -333,6 +334,38 @@ func (o *IssuesSettingsConfig) HasProjectIds() bool {
 // SetProjectIds gets a reference to the given []string and assigns it to the ProjectIds field.
 func (o *IssuesSettingsConfig) SetProjectIds(v []string) {
 	o.ProjectIds = v
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *IssuesSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IssuesSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *IssuesSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *IssuesSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetRelatedEntityId returns the RelatedEntityId field value if set, zero value otherwise.
@@ -712,6 +745,9 @@ func (o IssuesSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProjectIds) {
 		toSerialize["project_ids"] = o.ProjectIds
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.RelatedEntityId) {
 		toSerialize["related_entity_id"] = o.RelatedEntityId

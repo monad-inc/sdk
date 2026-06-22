@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -61,6 +62,11 @@ public class CloudflareHttpRequestsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_LOOKBACK_DURATION)
   @javax.annotation.Nullable
   private String lookbackDuration;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -121,6 +127,25 @@ public class CloudflareHttpRequestsSettingsConfig {
   }
 
 
+  public CloudflareHttpRequestsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public CloudflareHttpRequestsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -171,13 +196,14 @@ public class CloudflareHttpRequestsSettingsConfig {
     CloudflareHttpRequestsSettingsConfig cloudflareHttpRequestsSettingsConfig = (CloudflareHttpRequestsSettingsConfig) o;
     return Objects.equals(this.fields, cloudflareHttpRequestsSettingsConfig.fields) &&
         Objects.equals(this.lookbackDuration, cloudflareHttpRequestsSettingsConfig.lookbackDuration) &&
+        Objects.equals(this.rateLimit, cloudflareHttpRequestsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, cloudflareHttpRequestsSettingsConfig.useSyntheticData) &&
         Objects.equals(this.zoneId, cloudflareHttpRequestsSettingsConfig.zoneId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fields, lookbackDuration, useSyntheticData, zoneId);
+    return Objects.hash(fields, lookbackDuration, rateLimit, useSyntheticData, zoneId);
   }
 
   @Override
@@ -186,6 +212,7 @@ public class CloudflareHttpRequestsSettingsConfig {
     sb.append("class CloudflareHttpRequestsSettingsConfig {\n");
     sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    lookbackDuration: ").append(toIndentedString(lookbackDuration)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
     sb.append("}");
@@ -206,7 +233,7 @@ public class CloudflareHttpRequestsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("fields", "lookback_duration", "use_synthetic_data", "zone_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("fields", "lookback_duration", "rate_limit", "use_synthetic_data", "zone_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -239,6 +266,10 @@ public class CloudflareHttpRequestsSettingsConfig {
       }
       if ((jsonObj.get("lookback_duration") != null && !jsonObj.get("lookback_duration").isJsonNull()) && !jsonObj.get("lookback_duration").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lookback_duration` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lookback_duration").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if ((jsonObj.get("zone_id") != null && !jsonObj.get("zone_id").isJsonNull()) && !jsonObj.get("zone_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `zone_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zone_id").toString()));

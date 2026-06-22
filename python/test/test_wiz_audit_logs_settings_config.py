@@ -37,6 +37,9 @@ class TestWizAuditLogsSettingsConfig(unittest.TestCase):
         if include_optional:
             return WizAuditLogsSettingsConfig(
                 backfill_start_time = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 tenant_data_center = '',
                 use_synthetic_data = True
             )

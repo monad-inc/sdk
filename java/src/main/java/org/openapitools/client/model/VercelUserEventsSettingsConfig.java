@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,6 +56,11 @@ public class VercelUserEventsSettingsConfig {
   @javax.annotation.Nullable
   private String backfillStartTime;
 
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
   @javax.annotation.Nullable
@@ -84,6 +90,25 @@ public class VercelUserEventsSettingsConfig {
 
   public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
     this.backfillStartTime = backfillStartTime;
+  }
+
+
+  public VercelUserEventsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -136,13 +161,14 @@ public class VercelUserEventsSettingsConfig {
     }
     VercelUserEventsSettingsConfig vercelUserEventsSettingsConfig = (VercelUserEventsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, vercelUserEventsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.rateLimit, vercelUserEventsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, vercelUserEventsSettingsConfig.useSyntheticData) &&
         Objects.equals(this.withPayload, vercelUserEventsSettingsConfig.withPayload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, useSyntheticData, withPayload);
+    return Objects.hash(backfillStartTime, rateLimit, useSyntheticData, withPayload);
   }
 
   @Override
@@ -150,6 +176,7 @@ public class VercelUserEventsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class VercelUserEventsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    withPayload: ").append(toIndentedString(withPayload)).append("\n");
     sb.append("}");
@@ -170,7 +197,7 @@ public class VercelUserEventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "use_synthetic_data", "with_payload"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "rate_limit", "use_synthetic_data", "with_payload"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -199,6 +226,10 @@ public class VercelUserEventsSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

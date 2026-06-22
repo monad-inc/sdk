@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,6 +60,11 @@ public class CloudflareZeroTrustAccessRequestsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
   @javax.annotation.Nullable
   private String backfillStartTime;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -106,6 +112,25 @@ public class CloudflareZeroTrustAccessRequestsSettingsConfig {
   }
 
 
+  public CloudflareZeroTrustAccessRequestsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public CloudflareZeroTrustAccessRequestsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -137,12 +162,13 @@ public class CloudflareZeroTrustAccessRequestsSettingsConfig {
     CloudflareZeroTrustAccessRequestsSettingsConfig cloudflareZeroTrustAccessRequestsSettingsConfig = (CloudflareZeroTrustAccessRequestsSettingsConfig) o;
     return Objects.equals(this.accountId, cloudflareZeroTrustAccessRequestsSettingsConfig.accountId) &&
         Objects.equals(this.backfillStartTime, cloudflareZeroTrustAccessRequestsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.rateLimit, cloudflareZeroTrustAccessRequestsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, cloudflareZeroTrustAccessRequestsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, backfillStartTime, useSyntheticData);
+    return Objects.hash(accountId, backfillStartTime, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -151,6 +177,7 @@ public class CloudflareZeroTrustAccessRequestsSettingsConfig {
     sb.append("class CloudflareZeroTrustAccessRequestsSettingsConfig {\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -170,7 +197,7 @@ public class CloudflareZeroTrustAccessRequestsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("account_id", "backfill_start_time", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("account_id", "backfill_start_time", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -202,6 +229,10 @@ public class CloudflareZeroTrustAccessRequestsSettingsConfig {
       }
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

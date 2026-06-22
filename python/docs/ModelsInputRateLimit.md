@@ -1,6 +1,6 @@
 # ModelsInputRateLimit
 
-Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
+Optional outbound request rate limit. Falls back to the Wiz default when unset.
 
 ## Properties
 

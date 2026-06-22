@@ -14,6 +14,7 @@ GitHub organization audit logs settings
 |**githubClientId** | **String** | GitHub Client ID (alternative to personal access token) |  [optional] |
 |**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
 |**organization** | **String** | Your GitHub organization name |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 

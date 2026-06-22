@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.WizIssueSeverity;
 import org.openapitools.client.model.WizIssueStatus;
 import org.openapitools.client.model.WizIssueType;
@@ -110,6 +111,14 @@ public class IssuesSettingsConfigTest {
     @Test
     public void projectIdsTest() {
         // TODO: test projectIds
+    }
+
+    /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
     }
 
     /**

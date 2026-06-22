@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,9 +29,10 @@ class OwnbackupAccountEventsSettingsConfig(BaseModel):
     """
     Ownbackup Audit Logs settings
     """ # noqa: E501
+    rate_limit: Optional[ModelsInputRateLimit] = None
     region: StrictStr = Field(description="Region of the OwnBackup instance")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["region", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["rate_limit", "region", "use_synthetic_data"]
 
     @field_validator('region')
     def region_validate_enum(cls, value):
@@ -78,6 +80,9 @@ class OwnbackupAccountEventsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -90,6 +95,7 @@ class OwnbackupAccountEventsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "region": obj.get("region"),
             "use_synthetic_data": obj.get("use_synthetic_data")
         })

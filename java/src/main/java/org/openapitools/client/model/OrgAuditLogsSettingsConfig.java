@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.CommonAuthType;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -80,6 +81,11 @@ public class OrgAuditLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ORGANIZATION)
   @javax.annotation.Nullable
   private String organization;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -203,6 +209,25 @@ public class OrgAuditLogsSettingsConfig {
   }
 
 
+  public OrgAuditLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public OrgAuditLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -238,12 +263,13 @@ public class OrgAuditLogsSettingsConfig {
         Objects.equals(this.githubClientId, orgAuditLogsSettingsConfig.githubClientId) &&
         Objects.equals(this.include, orgAuditLogsSettingsConfig.include) &&
         Objects.equals(this.organization, orgAuditLogsSettingsConfig.organization) &&
+        Objects.equals(this.rateLimit, orgAuditLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, orgAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, backfillStartTime, githubAppInstallationId, githubClientId, include, organization, useSyntheticData);
+    return Objects.hash(authType, backfillStartTime, githubAppInstallationId, githubClientId, include, organization, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -256,6 +282,7 @@ public class OrgAuditLogsSettingsConfig {
     sb.append("    githubClientId: ").append(toIndentedString(githubClientId)).append("\n");
     sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -275,7 +302,7 @@ public class OrgAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "backfill_start_time", "github_app_installation_id", "github_client_id", "include", "organization", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "backfill_start_time", "github_app_installation_id", "github_client_id", "include", "organization", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -320,6 +347,10 @@ public class OrgAuditLogsSettingsConfig {
       }
       if ((jsonObj.get("organization") != null && !jsonObj.get("organization").isJsonNull()) && !jsonObj.get("organization").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

@@ -16,6 +16,7 @@ Wiz Issues settings
 |**issueIds** | **List&lt;String&gt;** | @Description Filter only Issues that match these specific IDs |  [optional] |
 |**issueTypes** | **List&lt;WizIssueType&gt;** | @Description Filter by Issue type |  [optional] |
 |**projectIds** | **List&lt;String&gt;** | @Description Filter Issues associated with specific project IDs |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**relatedEntityId** | **String** | @Description Filter by related entity ids |  [optional] |
 |**resolutionReasons** | **List&lt;WizResolutionReason&gt;** | @Description Filter Issues by resolution reason |  [optional] |
 |**riskEqualsAll** | **List&lt;WizRiskType&gt;** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present |  [optional] |

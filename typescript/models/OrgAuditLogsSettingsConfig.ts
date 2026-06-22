@@ -11,6 +11,7 @@
  */
 
 import { CommonAuthType } from '../models/CommonAuthType';
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -38,6 +39,7 @@ export class OrgAuditLogsSettingsConfig {
     * Your GitHub organization name
     */
     'organization'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -82,6 +84,12 @@ export class OrgAuditLogsSettingsConfig {
             "name": "organization",
             "baseName": "organization",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

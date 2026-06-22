@@ -18,7 +18,7 @@ import (
 // checks if the ModelsInputRateLimit type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsInputRateLimit{}
 
-// ModelsInputRateLimit Optional ceiling on outbound Box API request rate. Absent ≡ no limit.
+// ModelsInputRateLimit Optional outbound request rate limit. Falls back to the Wiz default when unset.
 type ModelsInputRateLimit struct {
 	Rate *float32 `json:"rate,omitempty"`
 	Unit *ModelsRateUnit `json:"unit,omitempty"`

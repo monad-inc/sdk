@@ -37,6 +37,9 @@ class TestVercelUserEventsSettingsConfig(unittest.TestCase):
         if include_optional:
             return VercelUserEventsSettingsConfig(
                 backfill_start_time = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 use_synthetic_data = True,
                 with_payload = True
             )

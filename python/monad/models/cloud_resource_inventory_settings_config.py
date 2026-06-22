@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from monad.models.wiz_cloud_platform import WizCloudPlatform
 from monad.models.wiz_entity_type import WizEntityType
 from typing import Optional, Set
@@ -37,8 +38,9 @@ class CloudResourceInventorySettingsConfig(BaseModel):
     entity_type: Annotated[List[WizEntityType], Field(min_length=1)] = Field(description="Entity types for Wiz.", alias="entityType")
     full_snapshot: Optional[StrictBool] = Field(default=None, description="FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.")
     interval: Optional[StrictInt] = Field(default=None, description="Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "rate_limit", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -79,6 +81,9 @@ class CloudResourceInventorySettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -97,6 +102,7 @@ class CloudResourceInventorySettingsConfig(BaseModel):
             "entityType": obj.get("entityType"),
             "full_snapshot": obj.get("full_snapshot"),
             "interval": obj.get("interval"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

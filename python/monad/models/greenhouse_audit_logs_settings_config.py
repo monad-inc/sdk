@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,9 +30,10 @@ class GreenhouseAuditLogsSettingsConfig(BaseModel):
     Greenhouse Audit Log settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     user_id: StrictStr = Field(description="ID of the user to harvest audit logs for")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "use_synthetic_data", "user_id"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "rate_limit", "use_synthetic_data", "user_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -72,6 +74,9 @@ class GreenhouseAuditLogsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -85,6 +90,7 @@ class GreenhouseAuditLogsSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "backfill_start_time": obj.get("backfill_start_time"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data"),
             "user_id": obj.get("user_id")
         })

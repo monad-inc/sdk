@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,6 +51,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OwnbackupAccountEventsSettingsConfig {
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   /**
    * Region of the OwnBackup instance
    */
@@ -121,6 +127,25 @@ public class OwnbackupAccountEventsSettingsConfig {
   public OwnbackupAccountEventsSettingsConfig() {
   }
 
+  public OwnbackupAccountEventsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public OwnbackupAccountEventsSettingsConfig region(@javax.annotation.Nonnull RegionEnum region) {
     this.region = region;
     return this;
@@ -169,19 +194,21 @@ public class OwnbackupAccountEventsSettingsConfig {
       return false;
     }
     OwnbackupAccountEventsSettingsConfig ownbackupAccountEventsSettingsConfig = (OwnbackupAccountEventsSettingsConfig) o;
-    return Objects.equals(this.region, ownbackupAccountEventsSettingsConfig.region) &&
+    return Objects.equals(this.rateLimit, ownbackupAccountEventsSettingsConfig.rateLimit) &&
+        Objects.equals(this.region, ownbackupAccountEventsSettingsConfig.region) &&
         Objects.equals(this.useSyntheticData, ownbackupAccountEventsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(region, useSyntheticData);
+    return Objects.hash(rateLimit, region, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OwnbackupAccountEventsSettingsConfig {\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -202,7 +229,7 @@ public class OwnbackupAccountEventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("region", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("rate_limit", "region", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("region"));
@@ -236,6 +263,10 @@ public class OwnbackupAccountEventsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
+      }
       if (!jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }

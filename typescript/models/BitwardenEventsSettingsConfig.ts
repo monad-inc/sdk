@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class BitwardenEventsSettingsConfig {
     * Base URL for self-hosted Bitwarden instance (required if region is SelfHosted)
     */
     'baseUrl'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Region of the Bitwarden instance: US, EU, or SelfHosted (default: US)
     */
@@ -48,6 +50,12 @@ export class BitwardenEventsSettingsConfig {
             "name": "baseUrl",
             "baseName": "base_url",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

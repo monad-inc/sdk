@@ -7,6 +7,7 @@ Tines Events Logs settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **story_id** | **str** | Filter by the given story. | [optional] 
 **team_id** | **str** | Filter by the given team. | [optional] 
 **tenant_url** | **str** | Unique URL for your Tines instance | 

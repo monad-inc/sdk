@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -64,6 +65,11 @@ public class SentryOrgAuditLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ORG_SLUG)
   @javax.annotation.Nonnull
   private String orgSlug;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -130,6 +136,25 @@ public class SentryOrgAuditLogsSettingsConfig {
   }
 
 
+  public SentryOrgAuditLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public SentryOrgAuditLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -162,12 +187,13 @@ public class SentryOrgAuditLogsSettingsConfig {
     return Objects.equals(this.backfillStartTime, sentryOrgAuditLogsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.hostName, sentryOrgAuditLogsSettingsConfig.hostName) &&
         Objects.equals(this.orgSlug, sentryOrgAuditLogsSettingsConfig.orgSlug) &&
+        Objects.equals(this.rateLimit, sentryOrgAuditLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, sentryOrgAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, hostName, orgSlug, useSyntheticData);
+    return Objects.hash(backfillStartTime, hostName, orgSlug, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -177,6 +203,7 @@ public class SentryOrgAuditLogsSettingsConfig {
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
     sb.append("    orgSlug: ").append(toIndentedString(orgSlug)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -196,7 +223,7 @@ public class SentryOrgAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "host_name", "org_slug", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "host_name", "org_slug", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("host_name", "org_slug"));
@@ -238,6 +265,10 @@ public class SentryOrgAuditLogsSettingsConfig {
       }
       if (!jsonObj.get("org_slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `org_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("org_slug").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 
