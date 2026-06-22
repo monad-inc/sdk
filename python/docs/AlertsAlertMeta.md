@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **granularity** | [**AlertsAlertGranularity**](AlertsAlertGranularity.md) |  | [optional] 
 **house** | [**AlertsAlertHouse**](AlertsAlertHouse.md) |  | [optional] 
 **internal** | **bool** |  | [optional] 
+**managed_by** | [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 

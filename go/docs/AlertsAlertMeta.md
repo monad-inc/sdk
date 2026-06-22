@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Granularity** | Pointer to [**AlertsAlertGranularity**](AlertsAlertGranularity.md) |  | [optional] 
 **House** | Pointer to [**AlertsAlertHouse**](AlertsAlertHouse.md) |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
+**ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -192,6 +193,31 @@ SetInternal sets Internal field to given value.
 `func (o *AlertsAlertMeta) HasInternal() bool`
 
 HasInternal returns a boolean if a field has been set.
+
+### GetManagedBy
+
+`func (o *AlertsAlertMeta) GetManagedBy() ModelsManagedBy`
+
+GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
+
+### GetManagedByOk
+
+`func (o *AlertsAlertMeta) GetManagedByOk() (*ModelsManagedBy, bool)`
+
+GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagedBy
+
+`func (o *AlertsAlertMeta) SetManagedBy(v ModelsManagedBy)`
+
+SetManagedBy sets ManagedBy field to given value.
+
+### HasManagedBy
+
+`func (o *AlertsAlertMeta) HasManagedBy() bool`
+
+HasManagedBy returns a boolean if a field has been set.
 
 ### GetName
 

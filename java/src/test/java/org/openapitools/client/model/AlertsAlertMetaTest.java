@@ -23,6 +23,7 @@ import java.util.Arrays;
 import org.openapitools.client.model.AlertsAlertCategory;
 import org.openapitools.client.model.AlertsAlertGranularity;
 import org.openapitools.client.model.AlertsAlertHouse;
+import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -87,6 +88,14 @@ public class AlertsAlertMetaTest {
     @Test
     public void internalTest() {
         // TODO: test internal
+    }
+
+    /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
     }
 
     /**

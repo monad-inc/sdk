@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.alerts_alert_category import AlertsAlertCategory
 from monad.models.alerts_alert_granularity import AlertsAlertGranularity
 from monad.models.alerts_alert_house import AlertsAlertHouse
+from monad.models.models_managed_by import ModelsManagedBy
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -37,10 +38,11 @@ class AlertsAlertMeta(BaseModel):
     granularity: Optional[AlertsAlertGranularity] = None
     house: Optional[AlertsAlertHouse] = None
     internal: Optional[StrictBool] = None
+    managed_by: Optional[ModelsManagedBy] = None
     name: Optional[StrictStr] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["category", "config", "description", "granularity", "house", "internal", "name", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["category", "config", "description", "granularity", "house", "internal", "managed_by", "name", "tier", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -104,6 +106,7 @@ class AlertsAlertMeta(BaseModel):
             "granularity": obj.get("granularity"),
             "house": obj.get("house"),
             "internal": obj.get("internal"),
+            "managed_by": obj.get("managed_by"),
             "name": obj.get("name"),
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")

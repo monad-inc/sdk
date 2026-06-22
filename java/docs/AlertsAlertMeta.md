@@ -13,6 +13,7 @@
 |**granularity** | **AlertsAlertGranularity** |  |  [optional] |
 |**house** | **AlertsAlertHouse** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
+|**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |

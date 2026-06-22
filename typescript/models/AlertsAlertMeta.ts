@@ -13,6 +13,7 @@
 import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
 import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
 import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
+import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { HttpFile } from '../http/http';
 
 export class AlertsAlertMeta {
@@ -22,6 +23,7 @@ export class AlertsAlertMeta {
     'granularity'?: AlertsAlertGranularity;
     'house'?: AlertsAlertHouse;
     'internal'?: boolean;
+    'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'tier'?: number;
     'typeId'?: string;
@@ -65,6 +67,12 @@ export class AlertsAlertMeta {
             "name": "internal",
             "baseName": "internal",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "managedBy",
+            "baseName": "managed_by",
+            "type": "ModelsManagedBy",
             "format": ""
         },
         {

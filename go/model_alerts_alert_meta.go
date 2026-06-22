@@ -26,6 +26,7 @@ type AlertsAlertMeta struct {
 	Granularity *AlertsAlertGranularity `json:"granularity,omitempty"`
 	House *AlertsAlertHouse `json:"house,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
+	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
@@ -241,6 +242,38 @@ func (o *AlertsAlertMeta) SetInternal(v bool) {
 	o.Internal = &v
 }
 
+// GetManagedBy returns the ManagedBy field value if set, zero value otherwise.
+func (o *AlertsAlertMeta) GetManagedBy() ModelsManagedBy {
+	if o == nil || IsNil(o.ManagedBy) {
+		var ret ModelsManagedBy
+		return ret
+	}
+	return *o.ManagedBy
+}
+
+// GetManagedByOk returns a tuple with the ManagedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertsAlertMeta) GetManagedByOk() (*ModelsManagedBy, bool) {
+	if o == nil || IsNil(o.ManagedBy) {
+		return nil, false
+	}
+	return o.ManagedBy, true
+}
+
+// HasManagedBy returns a boolean if a field has been set.
+func (o *AlertsAlertMeta) HasManagedBy() bool {
+	if o != nil && !IsNil(o.ManagedBy) {
+		return true
+	}
+
+	return false
+}
+
+// SetManagedBy gets a reference to the given ModelsManagedBy and assigns it to the ManagedBy field.
+func (o *AlertsAlertMeta) SetManagedBy(v ModelsManagedBy) {
+	o.ManagedBy = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *AlertsAlertMeta) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -364,6 +397,9 @@ func (o AlertsAlertMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Internal) {
 		toSerialize["internal"] = o.Internal
+	}
+	if !IsNil(o.ManagedBy) {
+		toSerialize["managed_by"] = o.ManagedBy
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

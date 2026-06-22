@@ -639,7 +639,7 @@ import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettin
 import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
 import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
 import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
-import { AlertsAlertMeta          } from '../models/AlertsAlertMeta';
+import { AlertsAlertMeta           } from '../models/AlertsAlertMeta';
 import { ApplyConditionV2RequestClass } from '../models/ApplyConditionV2Request';
 import { ApplyTransformationV2RequestClass } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';

@@ -24,6 +24,7 @@ import java.util.Arrays;
 import org.openapitools.client.model.AlertsAlertCategory;
 import org.openapitools.client.model.AlertsAlertGranularity;
 import org.openapitools.client.model.AlertsAlertHouse;
+import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -83,6 +84,11 @@ public class AlertsAlertMeta {
   @SerializedName(SERIALIZED_NAME_INTERNAL)
   @javax.annotation.Nullable
   private Boolean internal;
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @javax.annotation.Nullable
+  private ModelsManagedBy managedBy;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -216,6 +222,25 @@ public class AlertsAlertMeta {
   }
 
 
+  public AlertsAlertMeta managedBy(@javax.annotation.Nullable ModelsManagedBy managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * Get managedBy
+   * @return managedBy
+   */
+  @javax.annotation.Nullable
+  public ModelsManagedBy getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@javax.annotation.Nullable ModelsManagedBy managedBy) {
+    this.managedBy = managedBy;
+  }
+
+
   public AlertsAlertMeta name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -289,6 +314,7 @@ public class AlertsAlertMeta {
         Objects.equals(this.granularity, alertsAlertMeta.granularity) &&
         Objects.equals(this.house, alertsAlertMeta.house) &&
         Objects.equals(this.internal, alertsAlertMeta.internal) &&
+        Objects.equals(this.managedBy, alertsAlertMeta.managedBy) &&
         Objects.equals(this.name, alertsAlertMeta.name) &&
         Objects.equals(this.tier, alertsAlertMeta.tier) &&
         Objects.equals(this.typeId, alertsAlertMeta.typeId);
@@ -300,7 +326,7 @@ public class AlertsAlertMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, config, description, granularity, house, internal, name, tier, typeId);
+    return Objects.hash(category, config, description, granularity, house, internal, managedBy, name, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -320,6 +346,7 @@ public class AlertsAlertMeta {
     sb.append("    granularity: ").append(toIndentedString(granularity)).append("\n");
     sb.append("    house: ").append(toIndentedString(house)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
@@ -341,7 +368,7 @@ public class AlertsAlertMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("category", "config", "description", "granularity", "house", "internal", "name", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("category", "config", "description", "granularity", "house", "internal", "managed_by", "name", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -382,6 +409,10 @@ public class AlertsAlertMeta {
       // validate the optional field `house`
       if (jsonObj.get("house") != null && !jsonObj.get("house").isJsonNull()) {
         AlertsAlertHouse.validateJsonElement(jsonObj.get("house"));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ModelsManagedBy.validateJsonElement(jsonObj.get("managed_by"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

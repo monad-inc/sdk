@@ -42,6 +42,7 @@ class TestAlertsAlertMeta(unittest.TestCase):
                 granularity = 'pipeline',
                 house = 'Metrics',
                 internal = True,
+                managed_by = 'customer',
                 name = '',
                 tier = 56,
                 type_id = ''
