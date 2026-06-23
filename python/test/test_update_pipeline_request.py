@@ -50,6 +50,7 @@ class TestUpdatePipelineRequest(unittest.TestCase):
                         from_node_instance_id = '', 
                         id = '', 
                         name = '', 
+                        schema_detection = True, 
                         to_node_instance_id = '', )
                     ],
                 enabled = True,
@@ -78,6 +79,7 @@ class TestUpdatePipelineRequest(unittest.TestCase):
                         from_node_instance_id = '', 
                         id = '', 
                         name = '', 
+                        schema_detection = True, 
                         to_node_instance_id = '', )
                     ],
                 enabled = True,

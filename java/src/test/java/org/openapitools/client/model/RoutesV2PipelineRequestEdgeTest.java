@@ -87,6 +87,14 @@ public class RoutesV2PipelineRequestEdgeTest {
     }
 
     /**
+     * Test the property 'schemaDetection'
+     */
+    @Test
+    public void schemaDetectionTest() {
+        // TODO: test schemaDetection
+    }
+
+    /**
      * Test the property 'toNodeInstanceId'
      */
     @Test

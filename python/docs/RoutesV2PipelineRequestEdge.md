@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **from_node_instance_id** | **str** |  | 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**schema_detection** | **bool** |  | [optional] 
 **to_node_instance_id** | **str** |  | 
 
 ## Example

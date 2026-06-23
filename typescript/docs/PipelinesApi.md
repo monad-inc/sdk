@@ -19,10 +19,13 @@ Method | HTTP request | Description
 [**getPipelineNodeStatus**](PipelinesApi.md#getPipelineNodeStatus) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 [**getPipelineStatus**](PipelinesApi.md#getPipelineStatus) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 [**getPipelinesStatuses**](PipelinesApi.md#getPipelinesStatuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+[**getSchemaState**](PipelinesApi.md#getSchemaState) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state
 [**listPipelines**](PipelinesApi.md#listPipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**listPipelinesV1**](PipelinesApi.md#listPipelinesV1) | **GET** /v1/{organization_id}/pipelines | List pipelines
+[**listSchemaHistory**](PipelinesApi.md#listSchemaHistory) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history
 [**purgePipeline**](PipelinesApi.md#purgePipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**purgePipelineNode**](PipelinesApi.md#purgePipelineNode) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
+[**resetSchemaState**](PipelinesApi.md#resetSchemaState) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
 [**triggerPipeline**](PipelinesApi.md#triggerPipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**updatePipeline**](PipelinesApi.md#updatePipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**updatePipelineEdge**](PipelinesApi.md#updatePipelineEdge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -956,6 +959,68 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getSchemaState**
+> RoutesV3SchemaStateResponse getSchemaState()
+
+Get the current schema state for a pipeline edge
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiGetSchemaStateRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiGetSchemaStateRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Edge ID
+  edgeId: "edge_id_example",
+};
+
+const data = await apiInstance.getSchemaState(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **edgeId** | [**string**] | Edge ID | defaults to undefined
+
+
+### Return type
+
+**RoutesV3SchemaStateResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Current schema state |  -  |
+**400** | Missing query parameters |  -  |
+**404** | Schema state not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **listPipelines**
 > ModelsPipelineList listPipelines()
 
@@ -1081,6 +1146,67 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **listSchemaHistory**
+> Array<RoutesV3SchemaHistoryEntryResponse> listSchemaHistory()
+
+List schema drift events for a pipeline edge
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiListSchemaHistoryRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiListSchemaHistoryRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Edge ID
+  edgeId: "edge_id_example",
+};
+
+const data = await apiInstance.listSchemaHistory(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **edgeId** | [**string**] | Edge ID | defaults to undefined
+
+
+### Return type
+
+**Array<RoutesV3SchemaHistoryEntryResponse>**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Schema history |  -  |
+**400** | Missing query parameters |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **purgePipeline**
 > ModelsPipelinePurgeResponse purgePipeline()
 
@@ -1201,6 +1327,67 @@ Name | Type | Description  | Notes
 **404** | Pipeline not found |  -  |
 **500** | Operator returned an error or NATS transport failed |  -  |
 **504** | No leaf operator answered (pipeline not scheduled) |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **resetSchemaState**
+> void resetSchemaState()
+
+Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiResetSchemaStateRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiResetSchemaStateRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Edge ID
+  edgeId: "edge_id_example",
+};
+
+const data = await apiInstance.resetSchemaState(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **edgeId** | [**string**] | Edge ID | defaults to undefined
+
+
+### Return type
+
+**void**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Schema state reset successfully |  -  |
+**500** | Internal server error |  -  |
+**504** | Pipeline is not currently running; schema state cleared and will take effect on next start |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

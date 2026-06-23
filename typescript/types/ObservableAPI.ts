@@ -479,6 +479,7 @@ import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionReq
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -486,6 +487,8 @@ import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransfo
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
+import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
@@ -6002,6 +6005,44 @@ export class ObservablePipelinesApi {
     }
 
     /**
+     * Get the current schema state for a pipeline edge
+     * Get schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public getSchemaStateWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3SchemaStateResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.getSchemaState(organizationId, pipelineId, edgeId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.getSchemaStateWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get the current schema state for a pipeline edge
+     * Get schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public getSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<RoutesV3SchemaStateResponse> {
+        return this.getSchemaStateWithHttpInfo(organizationId, pipelineId, edgeId, _options).pipe(map((apiResponse: HttpInfo<RoutesV3SchemaStateResponse>) => apiResponse.data));
+    }
+
+    /**
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
@@ -6080,6 +6121,44 @@ export class ObservablePipelinesApi {
     }
 
     /**
+     * List schema drift events for a pipeline edge
+     * List schema history
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public listSchemaHistoryWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<HttpInfo<Array<RoutesV3SchemaHistoryEntryResponse>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listSchemaHistory(organizationId, pipelineId, edgeId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listSchemaHistoryWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List schema drift events for a pipeline edge
+     * List schema history
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public listSchemaHistory(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<Array<RoutesV3SchemaHistoryEntryResponse>> {
+        return this.listSchemaHistoryWithHttpInfo(organizationId, pipelineId, edgeId, _options).pipe(map((apiResponse: HttpInfo<Array<RoutesV3SchemaHistoryEntryResponse>>) => apiResponse.data));
+    }
+
+    /**
      * Purge all messages from a pipeline\'s NATS stream
      * Purge pipeline data
      * @param organizationId Organization ID
@@ -6151,6 +6230,44 @@ export class ObservablePipelinesApi {
      */
     public purgePipelineNode(organizationId: string, pipelineId: string, nodeId: string, _options?: ConfigurationOptions): Observable<ModelsPipelinePurgeResponse> {
         return this.purgePipelineNodeWithHttpInfo(organizationId, pipelineId, nodeId, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelinePurgeResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+     * Reset schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public resetSchemaStateWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.resetSchemaState(organizationId, pipelineId, edgeId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.resetSchemaStateWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+     * Reset schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public resetSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.resetSchemaStateWithHttpInfo(organizationId, pipelineId, edgeId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
     /**

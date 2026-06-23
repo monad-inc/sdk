@@ -13,8 +13,17 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV3CreateSessionResponse {
+    /**
+    * ExpiresAt is the token expiry as an RFC 3339 timestamp.
+    */
     'expiresAt'?: string;
+    /**
+    * SessionToken is the minted short-lived JWT. Send it as a Bearer token.
+    */
     'sessionToken'?: string;
+    /**
+    * TTLSeconds is the effective lifetime applied after clamping.
+    */
     'ttlSeconds'?: number;
 
     static readonly discriminator: string | undefined = undefined;

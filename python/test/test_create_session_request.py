@@ -36,8 +36,8 @@ class TestCreateSessionRequest(unittest.TestCase):
         model = CreateSessionRequest()
         if include_optional:
             return CreateSessionRequest(
-                organization_id = '',
-                ttl_seconds = 56
+                organization_id = '00000000-0000-0000-0000-000000000000',
+                ttl_seconds = 1800
             )
         else:
             return CreateSessionRequest(

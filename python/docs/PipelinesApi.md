@@ -19,10 +19,13 @@ Method | HTTP request | Description
 [**get_pipeline_node_status**](PipelinesApi.md#get_pipeline_node_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 [**get_pipeline_status**](PipelinesApi.md#get_pipeline_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 [**get_pipelines_statuses**](PipelinesApi.md#get_pipelines_statuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+[**get_schema_state**](PipelinesApi.md#get_schema_state) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state
 [**list_pipelines**](PipelinesApi.md#list_pipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**list_pipelines_v1**](PipelinesApi.md#list_pipelines_v1) | **GET** /v1/{organization_id}/pipelines | List pipelines
+[**list_schema_history**](PipelinesApi.md#list_schema_history) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history
 [**purge_pipeline**](PipelinesApi.md#purge_pipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**purge_pipeline_node**](PipelinesApi.md#purge_pipeline_node) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
+[**reset_schema_state**](PipelinesApi.md#reset_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
 [**trigger_pipeline**](PipelinesApi.md#trigger_pipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**update_pipeline**](PipelinesApi.md#update_pipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**update_pipeline_edge**](PipelinesApi.md#update_pipeline_edge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -1410,6 +1413,99 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_schema_state**
+> RoutesV3SchemaStateResponse get_schema_state(organization_id, pipeline_id, edge_id)
+
+Get schema state
+
+Get the current schema state for a pipeline edge
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.routes_v3_schema_state_response import RoutesV3SchemaStateResponse
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    edge_id = 'edge_id_example' # str | Edge ID
+
+    try:
+        # Get schema state
+        api_response = api_instance.get_schema_state(organization_id, pipeline_id, edge_id)
+        print("The response of PipelinesApi->get_schema_state:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->get_schema_state: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **edge_id** | **str**| Edge ID | 
+
+### Return type
+
+[**RoutesV3SchemaStateResponse**](RoutesV3SchemaStateResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Current schema state |  -  |
+**400** | Missing query parameters |  -  |
+**404** | Schema state not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_pipelines**
 > ModelsPipelineList list_pipelines(organization_id, limit=limit, offset=offset, include_status=include_status)
 
@@ -1596,6 +1692,98 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_schema_history**
+> List[RoutesV3SchemaHistoryEntryResponse] list_schema_history(organization_id, pipeline_id, edge_id)
+
+List schema history
+
+List schema drift events for a pipeline edge
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.routes_v3_schema_history_entry_response import RoutesV3SchemaHistoryEntryResponse
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    edge_id = 'edge_id_example' # str | Edge ID
+
+    try:
+        # List schema history
+        api_response = api_instance.list_schema_history(organization_id, pipeline_id, edge_id)
+        print("The response of PipelinesApi->list_schema_history:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->list_schema_history: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **edge_id** | **str**| Edge ID | 
+
+### Return type
+
+[**List[RoutesV3SchemaHistoryEntryResponse]**](RoutesV3SchemaHistoryEntryResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Schema history |  -  |
+**400** | Missing query parameters |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **purge_pipeline**
 > ModelsPipelinePurgeResponse purge_pipeline(organization_id, pipeline_id)
 
@@ -1779,6 +1967,95 @@ Name | Type | Description  | Notes
 **404** | Pipeline not found |  -  |
 **500** | Operator returned an error or NATS transport failed |  -  |
 **504** | No leaf operator answered (pipeline not scheduled) |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reset_schema_state**
+> reset_schema_state(organization_id, pipeline_id, edge_id)
+
+Reset schema state
+
+Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    edge_id = 'edge_id_example' # str | Edge ID
+
+    try:
+        # Reset schema state
+        api_instance.reset_schema_state(organization_id, pipeline_id, edge_id)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->reset_schema_state: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **edge_id** | **str**| Edge ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Schema state reset successfully |  -  |
+**500** | Internal server error |  -  |
+**504** | Pipeline is not currently running; schema state cleared and will take effect on next start |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -478,6 +478,7 @@ import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionReq
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -485,6 +486,8 @@ import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransfo
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
+import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
@@ -4480,6 +4483,32 @@ export class PromisePipelinesApi {
     }
 
     /**
+     * Get the current schema state for a pipeline edge
+     * Get schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public getSchemaStateWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SchemaStateResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getSchemaStateWithHttpInfo(organizationId, pipelineId, edgeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get the current schema state for a pipeline edge
+     * Get schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public getSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3SchemaStateResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getSchemaState(organizationId, pipelineId, edgeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
@@ -4534,6 +4563,32 @@ export class PromisePipelinesApi {
     }
 
     /**
+     * List schema drift events for a pipeline edge
+     * List schema history
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public listSchemaHistoryWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<RoutesV3SchemaHistoryEntryResponse>>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listSchemaHistoryWithHttpInfo(organizationId, pipelineId, edgeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List schema drift events for a pipeline edge
+     * List schema history
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public listSchemaHistory(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<Array<RoutesV3SchemaHistoryEntryResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listSchemaHistory(organizationId, pipelineId, edgeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Purge all messages from a pipeline\'s NATS stream
      * Purge pipeline data
      * @param organizationId Organization ID
@@ -4580,6 +4635,32 @@ export class PromisePipelinesApi {
     public purgePipelineNode(organizationId: string, pipelineId: string, nodeId: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelinePurgeResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.purgePipelineNode(organizationId, pipelineId, nodeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+     * Reset schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public resetSchemaStateWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.resetSchemaStateWithHttpInfo(organizationId, pipelineId, edgeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+     * Reset schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public resetSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<void> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.resetSchemaState(organizationId, pipelineId, edgeId, observableOptions);
         return result.toPromise();
     }
 

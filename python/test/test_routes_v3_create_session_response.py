@@ -36,9 +36,9 @@ class TestRoutesV3CreateSessionResponse(unittest.TestCase):
         model = RoutesV3CreateSessionResponse()
         if include_optional:
             return RoutesV3CreateSessionResponse(
-                expires_at = '',
+                expires_at = '2026-06-16T12:30:00Z',
                 session_token = '',
-                ttl_seconds = 56
+                ttl_seconds = 1800
             )
         else:
             return RoutesV3CreateSessionResponse(

@@ -74,7 +74,7 @@ public class RoutesV3CreateSessionResponse {
   }
 
   /**
-   * Get expiresAt
+   * ExpiresAt is the token expiry as an RFC 3339 timestamp.
    * @return expiresAt
    */
   @javax.annotation.Nullable
@@ -93,7 +93,7 @@ public class RoutesV3CreateSessionResponse {
   }
 
   /**
-   * Get sessionToken
+   * SessionToken is the minted short-lived JWT. Send it as a Bearer token.
    * @return sessionToken
    */
   @javax.annotation.Nullable
@@ -112,7 +112,7 @@ public class RoutesV3CreateSessionResponse {
   }
 
   /**
-   * Get ttlSeconds
+   * TTLSeconds is the effective lifetime applied after clamping.
    * @return ttlSeconds
    */
   @javax.annotation.Nullable

@@ -19,6 +19,8 @@ import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
+import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
+import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
@@ -991,6 +993,69 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Get the current schema state for a pipeline edge
+     * Get schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public async getSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "getSchemaState", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "getSchemaState", "pipelineId");
+        }
+
+
+        // verify required parameter 'edgeId' is not null or undefined
+        if (edgeId === null || edgeId === undefined) {
+            throw new RequiredError("PipelinesApi", "getSchemaState", "edgeId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (edgeId !== undefined) {
+            requestContext.setQueryParam("edge_id", ObjectSerializer.serialize(edgeId, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
@@ -1114,6 +1179,69 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * List schema drift events for a pipeline edge
+     * List schema history
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public async listSchemaHistory(organizationId: string, pipelineId: string, edgeId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "listSchemaHistory", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "listSchemaHistory", "pipelineId");
+        }
+
+
+        // verify required parameter 'edgeId' is not null or undefined
+        if (edgeId === null || edgeId === undefined) {
+            throw new RequiredError("PipelinesApi", "listSchemaHistory", "edgeId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (edgeId !== undefined) {
+            requestContext.setQueryParam("edge_id", ObjectSerializer.serialize(edgeId, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Purge all messages from a pipeline\'s NATS stream
      * Purge pipeline data
      * @param organizationId Organization ID
@@ -1197,6 +1325,65 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
             .replace('{organization_id}', encodeURIComponent(String(organizationId)))
             .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
             .replace('{node_id}', encodeURIComponent(String(nodeId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+     * Reset schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public async resetSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "resetSchemaState", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "resetSchemaState", "pipelineId");
+        }
+
+
+        // verify required parameter 'edgeId' is not null or undefined
+        if (edgeId === null || edgeId === undefined) {
+            throw new RequiredError("PipelinesApi", "resetSchemaState", "edgeId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{edge_id}', encodeURIComponent(String(edgeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -2088,6 +2275,56 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
+     * @params response Response returned by the server for a request to getSchemaState
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getSchemaStateWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3SchemaStateResponse >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: RoutesV3SchemaStateResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV3SchemaStateResponse", ""
+            ) as RoutesV3SchemaStateResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Missing query parameters", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Schema state not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: RoutesV3SchemaStateResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV3SchemaStateResponse", ""
+            ) as RoutesV3SchemaStateResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
      * @params response Response returned by the server for a request to listPipelines
      * @throws ApiException if the response code was not in [200, 299]
      */
@@ -2164,6 +2401,49 @@ export class PipelinesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsPipelineList", ""
             ) as ModelsPipelineList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listSchemaHistory
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async listSchemaHistoryWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<RoutesV3SchemaHistoryEntryResponse> >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: Array<RoutesV3SchemaHistoryEntryResponse> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<RoutesV3SchemaHistoryEntryResponse>", ""
+            ) as Array<RoutesV3SchemaHistoryEntryResponse>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Missing query parameters", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: Array<RoutesV3SchemaHistoryEntryResponse> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<RoutesV3SchemaHistoryEntryResponse>", ""
+            ) as Array<RoutesV3SchemaHistoryEntryResponse>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -2278,6 +2558,45 @@ export class PipelinesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsPipelinePurgeResponse", ""
             ) as ModelsPipelinePurgeResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to resetSchemaState
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async resetSchemaStateWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("204", response.httpStatusCode)) {
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+        if (isCodeInRange("504", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Pipeline is not currently running; schema state cleared and will take effect on next start", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: void = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "void", ""
+            ) as void;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

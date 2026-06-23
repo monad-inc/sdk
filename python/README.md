@@ -292,10 +292,13 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**get_pipeline_node_status**](docs/PipelinesApi.md#get_pipeline_node_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 *PipelinesApi* | [**get_pipeline_status**](docs/PipelinesApi.md#get_pipeline_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 *PipelinesApi* | [**get_pipelines_statuses**](docs/PipelinesApi.md#get_pipelines_statuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+*PipelinesApi* | [**get_schema_state**](docs/PipelinesApi.md#get_schema_state) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state
 *PipelinesApi* | [**list_pipelines**](docs/PipelinesApi.md#list_pipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 *PipelinesApi* | [**list_pipelines_v1**](docs/PipelinesApi.md#list_pipelines_v1) | **GET** /v1/{organization_id}/pipelines | List pipelines
+*PipelinesApi* | [**list_schema_history**](docs/PipelinesApi.md#list_schema_history) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history
 *PipelinesApi* | [**purge_pipeline**](docs/PipelinesApi.md#purge_pipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 *PipelinesApi* | [**purge_pipeline_node**](docs/PipelinesApi.md#purge_pipeline_node) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
+*PipelinesApi* | [**reset_schema_state**](docs/PipelinesApi.md#reset_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
 *PipelinesApi* | [**trigger_pipeline**](docs/PipelinesApi.md#trigger_pipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 *PipelinesApi* | [**update_pipeline**](docs/PipelinesApi.md#update_pipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *PipelinesApi* | [**update_pipeline_edge**](docs/PipelinesApi.md#update_pipeline_edge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -810,6 +813,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3CreateSessionResponse](docs/RoutesV3CreateSessionResponse.md)
  - [RoutesV3EnrichmentSandboxRequest](docs/RoutesV3EnrichmentSandboxRequest.md)
  - [RoutesV3EnrichmentSandboxResponse](docs/RoutesV3EnrichmentSandboxResponse.md)
+ - [RoutesV3FieldStateResponse](docs/RoutesV3FieldStateResponse.md)
  - [RoutesV3FieldUpdation](docs/RoutesV3FieldUpdation.md)
  - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
  - [RoutesV3GetFeatureFlagResponse](docs/RoutesV3GetFeatureFlagResponse.md)
@@ -817,6 +821,8 @@ Class | Method | HTTP request | Description
  - [RoutesV3MFAStatusResponse](docs/RoutesV3MFAStatusResponse.md)
  - [RoutesV3OptimizerType](docs/RoutesV3OptimizerType.md)
  - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
+ - [RoutesV3SchemaHistoryEntryResponse](docs/RoutesV3SchemaHistoryEntryResponse.md)
+ - [RoutesV3SchemaStateResponse](docs/RoutesV3SchemaStateResponse.md)
  - [RoutesV3SecurityDataAnalysis](docs/RoutesV3SecurityDataAnalysis.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3Summary](docs/RoutesV3Summary.md)

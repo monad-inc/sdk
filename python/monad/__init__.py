@@ -544,6 +544,7 @@ __all__ = [
     "RoutesV3CreateSessionResponse",
     "RoutesV3EnrichmentSandboxRequest",
     "RoutesV3EnrichmentSandboxResponse",
+    "RoutesV3FieldStateResponse",
     "RoutesV3FieldUpdation",
     "RoutesV3GetEnrichmentResponse",
     "RoutesV3GetFeatureFlagResponse",
@@ -551,6 +552,8 @@ __all__ = [
     "RoutesV3MFAStatusResponse",
     "RoutesV3OptimizerType",
     "RoutesV3PutEnrichmentRequest",
+    "RoutesV3SchemaHistoryEntryResponse",
+    "RoutesV3SchemaStateResponse",
     "RoutesV3SecurityDataAnalysis",
     "RoutesV3SuccessResponse",
     "RoutesV3Summary",
@@ -1229,6 +1232,7 @@ from monad.models.routes_v3_create_session_request import RoutesV3CreateSessionR
 from monad.models.routes_v3_create_session_response import RoutesV3CreateSessionResponse as RoutesV3CreateSessionResponse
 from monad.models.routes_v3_enrichment_sandbox_request import RoutesV3EnrichmentSandboxRequest as RoutesV3EnrichmentSandboxRequest
 from monad.models.routes_v3_enrichment_sandbox_response import RoutesV3EnrichmentSandboxResponse as RoutesV3EnrichmentSandboxResponse
+from monad.models.routes_v3_field_state_response import RoutesV3FieldStateResponse as RoutesV3FieldStateResponse
 from monad.models.routes_v3_field_updation import RoutesV3FieldUpdation as RoutesV3FieldUpdation
 from monad.models.routes_v3_get_enrichment_response import RoutesV3GetEnrichmentResponse as RoutesV3GetEnrichmentResponse
 from monad.models.routes_v3_get_feature_flag_response import RoutesV3GetFeatureFlagResponse as RoutesV3GetFeatureFlagResponse
@@ -1236,6 +1240,8 @@ from monad.models.routes_v3_import_transform_response import RoutesV3ImportTrans
 from monad.models.routes_v3_mfa_status_response import RoutesV3MFAStatusResponse as RoutesV3MFAStatusResponse
 from monad.models.routes_v3_optimizer_type import RoutesV3OptimizerType as RoutesV3OptimizerType
 from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentRequest as RoutesV3PutEnrichmentRequest
+from monad.models.routes_v3_schema_history_entry_response import RoutesV3SchemaHistoryEntryResponse as RoutesV3SchemaHistoryEntryResponse
+from monad.models.routes_v3_schema_state_response import RoutesV3SchemaStateResponse as RoutesV3SchemaStateResponse
 from monad.models.routes_v3_security_data_analysis import RoutesV3SecurityDataAnalysis as RoutesV3SecurityDataAnalysis
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse as RoutesV3SuccessResponse
 from monad.models.routes_v3_summary import RoutesV3Summary as RoutesV3Summary

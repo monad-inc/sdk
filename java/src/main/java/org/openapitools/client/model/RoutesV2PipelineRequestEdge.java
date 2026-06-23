@@ -81,6 +81,11 @@ public class RoutesV2PipelineRequestEdge {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_SCHEMA_DETECTION = "schema_detection";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_DETECTION)
+  @javax.annotation.Nullable
+  private Boolean schemaDetection;
+
   public static final String SERIALIZED_NAME_TO_NODE_INSTANCE_ID = "to_node_instance_id";
   @SerializedName(SERIALIZED_NAME_TO_NODE_INSTANCE_ID)
   @javax.annotation.Nonnull
@@ -203,6 +208,25 @@ public class RoutesV2PipelineRequestEdge {
   }
 
 
+  public RoutesV2PipelineRequestEdge schemaDetection(@javax.annotation.Nullable Boolean schemaDetection) {
+    this.schemaDetection = schemaDetection;
+    return this;
+  }
+
+  /**
+   * Get schemaDetection
+   * @return schemaDetection
+   */
+  @javax.annotation.Nullable
+  public Boolean getSchemaDetection() {
+    return schemaDetection;
+  }
+
+  public void setSchemaDetection(@javax.annotation.Nullable Boolean schemaDetection) {
+    this.schemaDetection = schemaDetection;
+  }
+
+
   public RoutesV2PipelineRequestEdge toNodeInstanceId(@javax.annotation.Nonnull String toNodeInstanceId) {
     this.toNodeInstanceId = toNodeInstanceId;
     return this;
@@ -238,12 +262,13 @@ public class RoutesV2PipelineRequestEdge {
         Objects.equals(this.fromNodeInstanceId, routesV2PipelineRequestEdge.fromNodeInstanceId) &&
         Objects.equals(this.id, routesV2PipelineRequestEdge.id) &&
         Objects.equals(this.name, routesV2PipelineRequestEdge.name) &&
+        Objects.equals(this.schemaDetection, routesV2PipelineRequestEdge.schemaDetection) &&
         Objects.equals(this.toNodeInstanceId, routesV2PipelineRequestEdge.toNodeInstanceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, description, disabled, fromNodeInstanceId, id, name, toNodeInstanceId);
+    return Objects.hash(conditions, description, disabled, fromNodeInstanceId, id, name, schemaDetection, toNodeInstanceId);
   }
 
   @Override
@@ -256,6 +281,7 @@ public class RoutesV2PipelineRequestEdge {
     sb.append("    fromNodeInstanceId: ").append(toIndentedString(fromNodeInstanceId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    schemaDetection: ").append(toIndentedString(schemaDetection)).append("\n");
     sb.append("    toNodeInstanceId: ").append(toIndentedString(toNodeInstanceId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -275,7 +301,7 @@ public class RoutesV2PipelineRequestEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "disabled", "from_node_instance_id", "id", "name", "to_node_instance_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "disabled", "from_node_instance_id", "id", "name", "schema_detection", "to_node_instance_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("from_node_instance_id", "to_node_instance_id"));

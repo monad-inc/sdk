@@ -478,6 +478,7 @@ import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionReq
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -485,6 +486,8 @@ import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransfo
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
+import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
@@ -5789,6 +5792,30 @@ export interface PipelinesApiGetPipelinesStatusesRequest {
     end?: string
 }
 
+export interface PipelinesApiGetSchemaStateRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetSchemaState
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetSchemaState
+     */
+    pipelineId: string
+    /**
+     * Edge ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetSchemaState
+     */
+    edgeId: string
+}
+
 export interface PipelinesApiListPipelinesRequest {
     /**
      * Organization ID
@@ -5844,6 +5871,30 @@ export interface PipelinesApiListPipelinesV1Request {
     offset?: number
 }
 
+export interface PipelinesApiListSchemaHistoryRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApilistSchemaHistory
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApilistSchemaHistory
+     */
+    pipelineId: string
+    /**
+     * Edge ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApilistSchemaHistory
+     */
+    edgeId: string
+}
+
 export interface PipelinesApiPurgePipelineRequest {
     /**
      * Organization ID
@@ -5883,6 +5934,30 @@ export interface PipelinesApiPurgePipelineNodeRequest {
      * @memberof PipelinesApipurgePipelineNode
      */
     nodeId: string
+}
+
+export interface PipelinesApiResetSchemaStateRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiresetSchemaState
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiresetSchemaState
+     */
+    pipelineId: string
+    /**
+     * Edge ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiresetSchemaState
+     */
+    edgeId: string
 }
 
 export interface PipelinesApiTriggerPipelineRequest {
@@ -6256,6 +6331,24 @@ export class ObjectPipelinesApi {
     }
 
     /**
+     * Get the current schema state for a pipeline edge
+     * Get schema state
+     * @param param the request object
+     */
+    public getSchemaStateWithHttpInfo(param: PipelinesApiGetSchemaStateRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SchemaStateResponse>> {
+        return this.api.getSchemaStateWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
+    }
+
+    /**
+     * Get the current schema state for a pipeline edge
+     * Get schema state
+     * @param param the request object
+     */
+    public getSchemaState(param: PipelinesApiGetSchemaStateRequest, options?: ConfigurationOptions): Promise<RoutesV3SchemaStateResponse> {
+        return this.api.getSchemaState(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
+    }
+
+    /**
      * List pipelines
      * List pipelines
      * @param param the request object
@@ -6292,6 +6385,24 @@ export class ObjectPipelinesApi {
     }
 
     /**
+     * List schema drift events for a pipeline edge
+     * List schema history
+     * @param param the request object
+     */
+    public listSchemaHistoryWithHttpInfo(param: PipelinesApiListSchemaHistoryRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV3SchemaHistoryEntryResponse>>> {
+        return this.api.listSchemaHistoryWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
+    }
+
+    /**
+     * List schema drift events for a pipeline edge
+     * List schema history
+     * @param param the request object
+     */
+    public listSchemaHistory(param: PipelinesApiListSchemaHistoryRequest, options?: ConfigurationOptions): Promise<Array<RoutesV3SchemaHistoryEntryResponse>> {
+        return this.api.listSchemaHistory(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
+    }
+
+    /**
      * Purge all messages from a pipeline\'s NATS stream
      * Purge pipeline data
      * @param param the request object
@@ -6325,6 +6436,24 @@ export class ObjectPipelinesApi {
      */
     public purgePipelineNode(param: PipelinesApiPurgePipelineNodeRequest, options?: ConfigurationOptions): Promise<ModelsPipelinePurgeResponse> {
         return this.api.purgePipelineNode(param.organizationId, param.pipelineId, param.nodeId,  options).toPromise();
+    }
+
+    /**
+     * Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+     * Reset schema state
+     * @param param the request object
+     */
+    public resetSchemaStateWithHttpInfo(param: PipelinesApiResetSchemaStateRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.resetSchemaStateWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
+    }
+
+    /**
+     * Delete the current schema state for an edge and signal the sidecar to restart in learning mode
+     * Reset schema state
+     * @param param the request object
+     */
+    public resetSchemaState(param: PipelinesApiResetSchemaStateRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.resetSchemaState(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
     }
 
     /**

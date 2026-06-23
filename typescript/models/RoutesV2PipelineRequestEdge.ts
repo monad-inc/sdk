@@ -20,6 +20,7 @@ export class RoutesV2PipelineRequestEdge {
     'fromNodeInstanceId': string;
     'id'?: string;
     'name'?: string;
+    'schemaDetection'?: boolean;
     'toNodeInstanceId': string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -61,6 +62,12 @@ export class RoutesV2PipelineRequestEdge {
             "name": "name",
             "baseName": "name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "schemaDetection",
+            "baseName": "schema_detection",
+            "type": "boolean",
             "format": ""
         },
         {

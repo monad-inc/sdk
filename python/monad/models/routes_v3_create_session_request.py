@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class RoutesV3CreateSessionRequest(BaseModel):
     """
     RoutesV3CreateSessionRequest
     """ # noqa: E501
-    organization_id: Optional[StrictStr] = None
-    ttl_seconds: Optional[StrictInt] = None
+    organization_id: Optional[StrictStr] = Field(default=None, description="OrganizationID, when set, pins the token to that single org via the `scoped_org` claim. Omit to inherit the parent key's org access. Not verified at mint time — the org-access middleware returns 403 at request time if the parent key has no role in it.", json_schema_extra={"examples": ["00000000-0000-0000-0000-000000000000"]})
+    ttl_seconds: Optional[StrictInt] = Field(default=None, description="TTLSeconds is the requested session lifetime in seconds. Defaults to 1800 (30 min). Clamped to [300, 3600] (5 min – 1 hr); a value that would outlive the parent API key is rejected with 400.", json_schema_extra={"examples": [1800]})
     __properties: ClassVar[List[str]] = ["organization_id", "ttl_seconds"]
 
     model_config = ConfigDict(

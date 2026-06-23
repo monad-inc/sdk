@@ -20,8 +20,11 @@ var _ MappedNullable = &RoutesV3CreateSessionResponse{}
 
 // RoutesV3CreateSessionResponse struct for RoutesV3CreateSessionResponse
 type RoutesV3CreateSessionResponse struct {
+	// ExpiresAt is the token expiry as an RFC 3339 timestamp.
 	ExpiresAt *string `json:"expires_at,omitempty"`
+	// SessionToken is the minted short-lived JWT. Send it as a Bearer token.
 	SessionToken *string `json:"session_token,omitempty"`
+	// TTLSeconds is the effective lifetime applied after clamping.
 	TtlSeconds *int32 `json:"ttl_seconds,omitempty"`
 }
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **FromNodeInstanceId** | **string** |  | 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**SchemaDetection** | Pointer to **bool** |  | [optional] 
 **ToNodeInstanceId** | **string** |  | 
 
 ## Methods
@@ -175,6 +176,31 @@ SetName sets Name field to given value.
 `func (o *RoutesV2PipelineRequestEdge) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetSchemaDetection
+
+`func (o *RoutesV2PipelineRequestEdge) GetSchemaDetection() bool`
+
+GetSchemaDetection returns the SchemaDetection field if non-nil, zero value otherwise.
+
+### GetSchemaDetectionOk
+
+`func (o *RoutesV2PipelineRequestEdge) GetSchemaDetectionOk() (*bool, bool)`
+
+GetSchemaDetectionOk returns a tuple with the SchemaDetection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemaDetection
+
+`func (o *RoutesV2PipelineRequestEdge) SetSchemaDetection(v bool)`
+
+SetSchemaDetection sets SchemaDetection field to given value.
+
+### HasSchemaDetection
+
+`func (o *RoutesV2PipelineRequestEdge) HasSchemaDetection() bool`
+
+HasSchemaDetection returns a boolean if a field has been set.
 
 ### GetToNodeInstanceId
 

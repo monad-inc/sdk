@@ -36,8 +36,8 @@ class TestRoutesV3CreateSessionRequest(unittest.TestCase):
         model = RoutesV3CreateSessionRequest()
         if include_optional:
             return RoutesV3CreateSessionRequest(
-                organization_id = '',
-                ttl_seconds = 56
+                organization_id = '00000000-0000-0000-0000-000000000000',
+                ttl_seconds = 1800
             )
         else:
             return RoutesV3CreateSessionRequest(

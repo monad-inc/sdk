@@ -474,6 +474,7 @@ export * from '../models/RoutesV3CreateSessionRequest';
 export * from '../models/RoutesV3CreateSessionResponse';
 export * from '../models/RoutesV3EnrichmentSandboxRequest';
 export * from '../models/RoutesV3EnrichmentSandboxResponse';
+export * from '../models/RoutesV3FieldStateResponse';
 export * from '../models/RoutesV3FieldUpdation';
 export * from '../models/RoutesV3GetEnrichmentResponse';
 export * from '../models/RoutesV3GetFeatureFlagResponse';
@@ -481,6 +482,8 @@ export * from '../models/RoutesV3ImportTransformResponse';
 export * from '../models/RoutesV3MFAStatusResponse';
 export * from '../models/RoutesV3OptimizerType';
 export * from '../models/RoutesV3PutEnrichmentRequest';
+export * from '../models/RoutesV3SchemaHistoryEntryResponse';
+export * from '../models/RoutesV3SchemaStateResponse';
 export * from '../models/RoutesV3SecurityDataAnalysis';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3Summary';
@@ -1104,6 +1107,7 @@ import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionReq
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse            } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -1111,6 +1115,8 @@ import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransfo
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
+import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
@@ -1799,6 +1805,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3CreateSessionResponse": RoutesV3CreateSessionResponse,
     "RoutesV3EnrichmentSandboxRequest": RoutesV3EnrichmentSandboxRequest,
     "RoutesV3EnrichmentSandboxResponse": RoutesV3EnrichmentSandboxResponse,
+    "RoutesV3FieldStateResponse": RoutesV3FieldStateResponse,
     "RoutesV3FieldUpdation": RoutesV3FieldUpdation,
     "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
     "RoutesV3GetFeatureFlagResponse": RoutesV3GetFeatureFlagResponse,
@@ -1806,6 +1813,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3MFAStatusResponse": RoutesV3MFAStatusResponse,
     "RoutesV3OptimizerType": RoutesV3OptimizerType,
     "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,
+    "RoutesV3SchemaHistoryEntryResponse": RoutesV3SchemaHistoryEntryResponse,
+    "RoutesV3SchemaStateResponse": RoutesV3SchemaStateResponse,
     "RoutesV3SecurityDataAnalysis": RoutesV3SecurityDataAnalysis,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3Summary": RoutesV3Summary,

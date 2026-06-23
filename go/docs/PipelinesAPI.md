@@ -19,10 +19,13 @@ Method | HTTP request | Description
 [**GetPipelineNodeStatus**](PipelinesAPI.md#GetPipelineNodeStatus) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 [**GetPipelineStatus**](PipelinesAPI.md#GetPipelineStatus) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 [**GetPipelinesStatuses**](PipelinesAPI.md#GetPipelinesStatuses) | **Get** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+[**GetSchemaState**](PipelinesAPI.md#GetSchemaState) | **Get** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state
 [**ListPipelines**](PipelinesAPI.md#ListPipelines) | **Get** /v2/{organization_id}/pipelines | List pipelines
 [**ListPipelinesV1**](PipelinesAPI.md#ListPipelinesV1) | **Get** /v1/{organization_id}/pipelines | List pipelines
+[**ListSchemaHistory**](PipelinesAPI.md#ListSchemaHistory) | **Get** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history
 [**PurgePipeline**](PipelinesAPI.md#PurgePipeline) | **Post** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**PurgePipelineNode**](PipelinesAPI.md#PurgePipelineNode) | **Post** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
+[**ResetSchemaState**](PipelinesAPI.md#ResetSchemaState) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
 [**TriggerPipeline**](PipelinesAPI.md#TriggerPipeline) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**UpdatePipeline**](PipelinesAPI.md#UpdatePipeline) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**UpdatePipelineEdge**](PipelinesAPI.md#UpdatePipelineEdge) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -1154,6 +1157,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetSchemaState
+
+> RoutesV3SchemaStateResponse GetSchemaState(ctx, organizationId, pipelineId).EdgeId(edgeId).Execute()
+
+Get schema state
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	edgeId := "edgeId_example" // string | Edge ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.GetSchemaState(context.Background(), organizationId, pipelineId).EdgeId(edgeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.GetSchemaState``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSchemaState`: RoutesV3SchemaStateResponse
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.GetSchemaState`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSchemaStateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **edgeId** | **string** | Edge ID | 
+
+### Return type
+
+[**RoutesV3SchemaStateResponse**](RoutesV3SchemaStateResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListPipelines
 
 > ModelsPipelineList ListPipelines(ctx, organizationId).Limit(limit).Offset(offset).IncludeStatus(includeStatus).Execute()
@@ -1304,6 +1382,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListSchemaHistory
+
+> []RoutesV3SchemaHistoryEntryResponse ListSchemaHistory(ctx, organizationId, pipelineId).EdgeId(edgeId).Execute()
+
+List schema history
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	edgeId := "edgeId_example" // string | Edge ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.ListSchemaHistory(context.Background(), organizationId, pipelineId).EdgeId(edgeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.ListSchemaHistory``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSchemaHistory`: []RoutesV3SchemaHistoryEntryResponse
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.ListSchemaHistory`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSchemaHistoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **edgeId** | **string** | Edge ID | 
+
+### Return type
+
+[**[]RoutesV3SchemaHistoryEntryResponse**](RoutesV3SchemaHistoryEntryResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PurgePipeline
 
 > ModelsPipelinePurgeResponse PurgePipeline(ctx, organizationId, pipelineId).Execute()
@@ -1438,6 +1591,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsPipelinePurgeResponse**](ModelsPipelinePurgeResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ResetSchemaState
+
+> ResetSchemaState(ctx, organizationId, pipelineId, edgeId).Execute()
+
+Reset schema state
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	edgeId := "edgeId_example" // string | Edge ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.PipelinesAPI.ResetSchemaState(context.Background(), organizationId, pipelineId, edgeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.ResetSchemaState``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+**edgeId** | **string** | Edge ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiResetSchemaStateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 

@@ -35,8 +35,9 @@ class RoutesV2PipelineRequestEdge(BaseModel):
     from_node_instance_id: StrictStr
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    schema_detection: Optional[StrictBool] = None
     to_node_instance_id: StrictStr
-    __properties: ClassVar[List[str]] = ["conditions", "description", "disabled", "from_node_instance_id", "id", "name", "to_node_instance_id"]
+    __properties: ClassVar[List[str]] = ["conditions", "description", "disabled", "from_node_instance_id", "id", "name", "schema_detection", "to_node_instance_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -98,6 +99,7 @@ class RoutesV2PipelineRequestEdge(BaseModel):
             "from_node_instance_id": obj.get("from_node_instance_id"),
             "id": obj.get("id"),
             "name": obj.get("name"),
+            "schema_detection": obj.get("schema_detection"),
             "to_node_instance_id": obj.get("to_node_instance_id")
         })
         return _obj

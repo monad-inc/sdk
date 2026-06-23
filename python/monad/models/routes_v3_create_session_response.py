@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,9 @@ class RoutesV3CreateSessionResponse(BaseModel):
     """
     RoutesV3CreateSessionResponse
     """ # noqa: E501
-    expires_at: Optional[StrictStr] = None
-    session_token: Optional[StrictStr] = None
-    ttl_seconds: Optional[StrictInt] = None
+    expires_at: Optional[StrictStr] = Field(default=None, description="ExpiresAt is the token expiry as an RFC 3339 timestamp.", json_schema_extra={"examples": ["2026-06-16T12:30:00Z"]})
+    session_token: Optional[StrictStr] = Field(default=None, description="SessionToken is the minted short-lived JWT. Send it as a Bearer token.")
+    ttl_seconds: Optional[StrictInt] = Field(default=None, description="TTLSeconds is the effective lifetime applied after clamping.", json_schema_extra={"examples": [1800]})
     __properties: ClassVar[List[str]] = ["expires_at", "session_token", "ttl_seconds"]
 
     model_config = ConfigDict(
