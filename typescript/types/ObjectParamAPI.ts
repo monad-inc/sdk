@@ -5427,6 +5427,30 @@ export interface PipelinesApiDeletePipelineV1Request {
     pipelineId: string
 }
 
+export interface PipelinesApiForceGraduateSchemaStateRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiforceGraduateSchemaState
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiforceGraduateSchemaState
+     */
+    pipelineId: string
+    /**
+     * Edge ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiforceGraduateSchemaState
+     */
+    edgeId: string
+}
+
 export interface PipelinesApiGetMetricsForPipelinesRequest {
     /**
      * Organization ID
@@ -6112,6 +6136,24 @@ export class ObjectPipelinesApi {
      */
     public deletePipelineV1(param: PipelinesApiDeletePipelineV1Request, options?: ConfigurationOptions): Promise<string> {
         return this.api.deletePipelineV1(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * Force graduate schema state
+     * @param param the request object
+     */
+    public forceGraduateSchemaStateWithHttpInfo(param: PipelinesApiForceGraduateSchemaStateRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.forceGraduateSchemaStateWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
+    }
+
+    /**
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * Force graduate schema state
+     * @param param the request object
+     */
+    public forceGraduateSchemaState(param: PipelinesApiForceGraduateSchemaStateRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.forceGraduateSchemaState(param.organizationId, param.pipelineId, param.edgeId,  options).toPromise();
     }
 
     /**

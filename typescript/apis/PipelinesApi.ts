@@ -194,6 +194,65 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * Force graduate schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public async forceGraduateSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "forceGraduateSchemaState", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "forceGraduateSchemaState", "pipelineId");
+        }
+
+
+        // verify required parameter 'edgeId' is not null or undefined
+        if (edgeId === null || edgeId === undefined) {
+            throw new RequiredError("PipelinesApi", "forceGraduateSchemaState", "edgeId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{edge_id}', encodeURIComponent(String(edgeId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Get aggregated ingress and egress metrics for specific pipelines
      * Get metrics for specific pipelines
      * @param organizationId Organization ID
@@ -1021,18 +1080,14 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection'
+        const localVarPath = '/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection'
             .replace('{organization_id}', encodeURIComponent(String(organizationId)))
-            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{edge_id}', encodeURIComponent(String(edgeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (edgeId !== undefined) {
-            requestContext.setQueryParam("edge_id", ObjectSerializer.serialize(edgeId, "string", ""));
-        }
 
 
         let authMethod: SecurityAuthentication | undefined;
@@ -1207,18 +1262,14 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events'
+        const localVarPath = '/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events'
             .replace('{organization_id}', encodeURIComponent(String(organizationId)))
-            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)));
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{edge_id}', encodeURIComponent(String(edgeId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (edgeId !== undefined) {
-            requestContext.setQueryParam("edge_id", ObjectSerializer.serialize(edgeId, "string", ""));
-        }
 
 
         let authMethod: SecurityAuthentication | undefined;
@@ -1801,6 +1852,52 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
+     * @params response Response returned by the server for a request to forceGraduateSchemaState
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async forceGraduateSchemaStateWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("204", response.httpStatusCode)) {
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Edge is not in learning mode", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+        if (isCodeInRange("504", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Pipeline is not currently running", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: void = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "void", ""
+            ) as void;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
      * @params response Response returned by the server for a request to getMetricsForPipelines
      * @throws ApiException if the response code was not in [200, 299]
      */
@@ -2287,13 +2384,6 @@ export class PipelinesApiResponseProcessor {
             ) as RoutesV3SchemaStateResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Missing query parameters", body, response.headers);
-        }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -2422,13 +2512,6 @@ export class PipelinesApiResponseProcessor {
                 "Array<RoutesV3SchemaHistoryEntryResponse>", ""
             ) as Array<RoutesV3SchemaHistoryEntryResponse>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("400", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Missing query parameters", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
@@ -2582,13 +2665,6 @@ export class PipelinesApiResponseProcessor {
                 "string", ""
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
-        }
-        if (isCodeInRange("504", response.httpStatusCode)) {
-            const body: string = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "string", ""
-            ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Pipeline is not currently running; schema state cleared and will take effect on next start", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml

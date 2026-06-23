@@ -515,6 +515,161 @@ public class PipelinesApi {
         return localVarCall;
     }
     /**
+     * Build call for forceGraduateSchemaState
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Schema state graduated to detection mode </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Edge is not in learning mode </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> Pipeline is not currently running </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call forceGraduateSchemaStateCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()))
+            .replace("{" + "edge_id" + "}", localVarApiClient.escapeString(edgeId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call forceGraduateSchemaStateValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling forceGraduateSchemaState(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling forceGraduateSchemaState(Async)");
+        }
+
+        // verify the required parameter 'edgeId' is set
+        if (edgeId == null) {
+            throw new ApiException("Missing the required parameter 'edgeId' when calling forceGraduateSchemaState(Async)");
+        }
+
+        return forceGraduateSchemaStateCall(organizationId, pipelineId, edgeId, _callback);
+
+    }
+
+    /**
+     * Force graduate schema state
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Schema state graduated to detection mode </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Edge is not in learning mode </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> Pipeline is not currently running </td><td>  -  </td></tr>
+     </table>
+     */
+    public void forceGraduateSchemaState(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId) throws ApiException {
+        forceGraduateSchemaStateWithHttpInfo(organizationId, pipelineId, edgeId);
+    }
+
+    /**
+     * Force graduate schema state
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Schema state graduated to detection mode </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Edge is not in learning mode </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> Pipeline is not currently running </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> forceGraduateSchemaStateWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId) throws ApiException {
+        okhttp3.Call localVarCall = forceGraduateSchemaStateValidateBeforeCall(organizationId, pipelineId, edgeId, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Force graduate schema state (asynchronously)
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Schema state graduated to detection mode </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Edge is not in learning mode </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 504 </td><td> Pipeline is not currently running </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call forceGraduateSchemaStateAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = forceGraduateSchemaStateValidateBeforeCall(organizationId, pipelineId, edgeId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getMetricsForPipelines
      * @param organizationId Organization ID (required)
      * @param pipelineIds Comma-separated list of pipeline IDs (required)
@@ -2457,7 +2612,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Current schema state </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Schema state not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -2479,19 +2633,16 @@ public class PipelinesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection"
+        String localVarPath = "/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection"
             .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
-            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()));
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()))
+            .replace("{" + "edge_id" + "}", localVarApiClient.escapeString(edgeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (edgeId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("edge_id", edgeId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -2546,7 +2697,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Current schema state </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Schema state not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -2569,7 +2719,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Current schema state </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Schema state not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -2594,7 +2743,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Current schema state </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Schema state not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -2938,7 +3086,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Schema history </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -2959,19 +3106,16 @@ public class PipelinesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events"
+        String localVarPath = "/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events"
             .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
-            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()));
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()))
+            .replace("{" + "edge_id" + "}", localVarApiClient.escapeString(edgeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (edgeId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("edge_id", edgeId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -3026,7 +3170,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Schema history </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -3048,7 +3191,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Schema history </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -3072,7 +3214,6 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Schema history </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Missing query parameters </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -3413,7 +3554,6 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Schema state reset successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-        <tr><td> 504 </td><td> Pipeline is not currently running; schema state cleared and will take effect on next start </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resetSchemaStateCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, final ApiCallback _callback) throws ApiException {
@@ -3497,7 +3637,6 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Schema state reset successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-        <tr><td> 504 </td><td> Pipeline is not currently running; schema state cleared and will take effect on next start </td><td>  -  </td></tr>
      </table>
      */
     public void resetSchemaState(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId) throws ApiException {
@@ -3518,7 +3657,6 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Schema state reset successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-        <tr><td> 504 </td><td> Pipeline is not currently running; schema state cleared and will take effect on next start </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> resetSchemaStateWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId) throws ApiException {
@@ -3541,7 +3679,6 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Schema state reset successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-        <tr><td> 504 </td><td> Pipeline is not currently running; schema state cleared and will take effect on next start </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resetSchemaStateAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, final ApiCallback<Void> _callback) throws ApiException {

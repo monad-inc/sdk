@@ -280,6 +280,7 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**create_pipeline**](docs/PipelinesApi.md#create_pipeline) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 *PipelinesApi* | [**delete_pipeline**](docs/PipelinesApi.md#delete_pipeline) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 *PipelinesApi* | [**delete_pipeline_v1**](docs/PipelinesApi.md#delete_pipeline_v1) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+*PipelinesApi* | [**force_graduate_schema_state**](docs/PipelinesApi.md#force_graduate_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state
 *PipelinesApi* | [**get_metrics_for_pipelines**](docs/PipelinesApi.md#get_metrics_for_pipelines) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 *PipelinesApi* | [**get_organization_summary**](docs/PipelinesApi.md#get_organization_summary) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 *PipelinesApi* | [**get_pipeline**](docs/PipelinesApi.md#get_pipeline) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
@@ -292,10 +293,10 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**get_pipeline_node_status**](docs/PipelinesApi.md#get_pipeline_node_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 *PipelinesApi* | [**get_pipeline_status**](docs/PipelinesApi.md#get_pipeline_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 *PipelinesApi* | [**get_pipelines_statuses**](docs/PipelinesApi.md#get_pipelines_statuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
-*PipelinesApi* | [**get_schema_state**](docs/PipelinesApi.md#get_schema_state) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state
+*PipelinesApi* | [**get_schema_state**](docs/PipelinesApi.md#get_schema_state) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection | Get schema state
 *PipelinesApi* | [**list_pipelines**](docs/PipelinesApi.md#list_pipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 *PipelinesApi* | [**list_pipelines_v1**](docs/PipelinesApi.md#list_pipelines_v1) | **GET** /v1/{organization_id}/pipelines | List pipelines
-*PipelinesApi* | [**list_schema_history**](docs/PipelinesApi.md#list_schema_history) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history
+*PipelinesApi* | [**list_schema_history**](docs/PipelinesApi.md#list_schema_history) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events | List schema history
 *PipelinesApi* | [**purge_pipeline**](docs/PipelinesApi.md#purge_pipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 *PipelinesApi* | [**purge_pipeline_node**](docs/PipelinesApi.md#purge_pipeline_node) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 *PipelinesApi* | [**reset_schema_state**](docs/PipelinesApi.md#reset_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state

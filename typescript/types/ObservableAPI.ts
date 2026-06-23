@@ -5527,6 +5527,44 @@ export class ObservablePipelinesApi {
     }
 
     /**
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * Force graduate schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public forceGraduateSchemaStateWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.forceGraduateSchemaState(organizationId, pipelineId, edgeId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.forceGraduateSchemaStateWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * Force graduate schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public forceGraduateSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.forceGraduateSchemaStateWithHttpInfo(organizationId, pipelineId, edgeId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
      * Get aggregated ingress and egress metrics for specific pipelines
      * Get metrics for specific pipelines
      * @param organizationId Organization ID

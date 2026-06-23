@@ -4149,6 +4149,32 @@ export class PromisePipelinesApi {
     }
 
     /**
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * Force graduate schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public forceGraduateSchemaStateWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.forceGraduateSchemaStateWithHttpInfo(organizationId, pipelineId, edgeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Force an edge in learning mode to immediately graduate to detection mode
+     * Force graduate schema state
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     */
+    public forceGraduateSchemaState(organizationId: string, pipelineId: string, edgeId: string, _options?: PromiseConfigurationOptions): Promise<void> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.forceGraduateSchemaState(organizationId, pipelineId, edgeId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Get aggregated ingress and egress metrics for specific pipelines
      * Get metrics for specific pipelines
      * @param organizationId Organization ID

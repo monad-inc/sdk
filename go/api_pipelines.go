@@ -479,6 +479,166 @@ func (a *PipelinesAPIService) DeletePipelineV1Execute(r ApiDeletePipelineV1Reque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiForceGraduateSchemaStateRequest struct {
+	ctx context.Context
+	ApiService *PipelinesAPIService
+	organizationId string
+	pipelineId string
+	edgeId string
+}
+
+func (r ApiForceGraduateSchemaStateRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ForceGraduateSchemaStateExecute(r)
+}
+
+/*
+ForceGraduateSchemaState Force graduate schema state
+
+Force an edge in learning mode to immediately graduate to detection mode
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @param pipelineId Pipeline ID
+ @param edgeId Edge ID
+ @return ApiForceGraduateSchemaStateRequest
+*/
+func (a *PipelinesAPIService) ForceGraduateSchemaState(ctx context.Context, organizationId string, pipelineId string, edgeId string) ApiForceGraduateSchemaStateRequest {
+	return ApiForceGraduateSchemaStateRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		pipelineId: pipelineId,
+		edgeId: edgeId,
+	}
+}
+
+// Execute executes the request
+func (a *PipelinesAPIService) ForceGraduateSchemaStateExecute(r ApiForceGraduateSchemaStateRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PipelinesAPIService.ForceGraduateSchemaState")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipeline_id"+"}", url.PathEscape(parameterValueToString(r.pipelineId, "pipelineId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"edge_id"+"}", url.PathEscape(parameterValueToString(r.edgeId, "edgeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 504 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type ApiGetMetricsForPipelinesRequest struct {
 	ctx context.Context
 	ApiService *PipelinesAPIService
@@ -2572,13 +2732,7 @@ type ApiGetSchemaStateRequest struct {
 	ApiService *PipelinesAPIService
 	organizationId string
 	pipelineId string
-	edgeId *string
-}
-
-// Edge ID
-func (r ApiGetSchemaStateRequest) EdgeId(edgeId string) ApiGetSchemaStateRequest {
-	r.edgeId = &edgeId
-	return r
+	edgeId string
 }
 
 func (r ApiGetSchemaStateRequest) Execute() (*RoutesV3SchemaStateResponse, *http.Response, error) {
@@ -2593,14 +2747,16 @@ Get the current schema state for a pipeline edge
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param pipelineId Pipeline ID
+ @param edgeId Edge ID
  @return ApiGetSchemaStateRequest
 */
-func (a *PipelinesAPIService) GetSchemaState(ctx context.Context, organizationId string, pipelineId string) ApiGetSchemaStateRequest {
+func (a *PipelinesAPIService) GetSchemaState(ctx context.Context, organizationId string, pipelineId string, edgeId string) ApiGetSchemaStateRequest {
 	return ApiGetSchemaStateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
 		pipelineId: pipelineId,
+		edgeId: edgeId,
 	}
 }
 
@@ -2619,18 +2775,15 @@ func (a *PipelinesAPIService) GetSchemaStateExecute(r ApiGetSchemaStateRequest) 
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection"
+	localVarPath := localBasePath + "/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection"
 	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pipeline_id"+"}", url.PathEscape(parameterValueToString(r.pipelineId, "pipelineId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"edge_id"+"}", url.PathEscape(parameterValueToString(r.edgeId, "edgeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.edgeId == nil {
-		return localVarReturnValue, nil, reportError("edgeId is required and must be specified")
-	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "edge_id", r.edgeId, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2697,17 +2850,6 @@ func (a *PipelinesAPIService) GetSchemaStateExecute(r ApiGetSchemaStateRequest) 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
 			var v string
@@ -3107,13 +3249,7 @@ type ApiListSchemaHistoryRequest struct {
 	ApiService *PipelinesAPIService
 	organizationId string
 	pipelineId string
-	edgeId *string
-}
-
-// Edge ID
-func (r ApiListSchemaHistoryRequest) EdgeId(edgeId string) ApiListSchemaHistoryRequest {
-	r.edgeId = &edgeId
-	return r
+	edgeId string
 }
 
 func (r ApiListSchemaHistoryRequest) Execute() ([]RoutesV3SchemaHistoryEntryResponse, *http.Response, error) {
@@ -3128,14 +3264,16 @@ List schema drift events for a pipeline edge
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param pipelineId Pipeline ID
+ @param edgeId Edge ID
  @return ApiListSchemaHistoryRequest
 */
-func (a *PipelinesAPIService) ListSchemaHistory(ctx context.Context, organizationId string, pipelineId string) ApiListSchemaHistoryRequest {
+func (a *PipelinesAPIService) ListSchemaHistory(ctx context.Context, organizationId string, pipelineId string, edgeId string) ApiListSchemaHistoryRequest {
 	return ApiListSchemaHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
 		pipelineId: pipelineId,
+		edgeId: edgeId,
 	}
 }
 
@@ -3154,18 +3292,15 @@ func (a *PipelinesAPIService) ListSchemaHistoryExecute(r ApiListSchemaHistoryReq
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events"
+	localVarPath := localBasePath + "/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events"
 	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pipeline_id"+"}", url.PathEscape(parameterValueToString(r.pipelineId, "pipelineId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"edge_id"+"}", url.PathEscape(parameterValueToString(r.edgeId, "edgeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.edgeId == nil {
-		return localVarReturnValue, nil, reportError("edgeId is required and must be specified")
-	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "edge_id", r.edgeId, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3232,17 +3367,6 @@ func (a *PipelinesAPIService) ListSchemaHistoryExecute(r ApiListSchemaHistoryReq
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
 			var v string
@@ -3752,17 +3876,6 @@ func (a *PipelinesAPIService) ResetSchemaStateExecute(r ApiResetSchemaStateReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v string
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 504 {
 			var v string
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

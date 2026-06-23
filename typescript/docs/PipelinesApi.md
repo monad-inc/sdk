@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createPipeline**](PipelinesApi.md#createPipeline) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 [**deletePipeline**](PipelinesApi.md#deletePipeline) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**deletePipelineV1**](PipelinesApi.md#deletePipelineV1) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+[**forceGraduateSchemaState**](PipelinesApi.md#forceGraduateSchemaState) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state
 [**getMetricsForPipelines**](PipelinesApi.md#getMetricsForPipelines) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**getOrganizationSummary**](PipelinesApi.md#getOrganizationSummary) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**getPipeline**](PipelinesApi.md#getPipeline) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
@@ -19,10 +20,10 @@ Method | HTTP request | Description
 [**getPipelineNodeStatus**](PipelinesApi.md#getPipelineNodeStatus) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 [**getPipelineStatus**](PipelinesApi.md#getPipelineStatus) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 [**getPipelinesStatuses**](PipelinesApi.md#getPipelinesStatuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
-[**getSchemaState**](PipelinesApi.md#getSchemaState) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state
+[**getSchemaState**](PipelinesApi.md#getSchemaState) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection | Get schema state
 [**listPipelines**](PipelinesApi.md#listPipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**listPipelinesV1**](PipelinesApi.md#listPipelinesV1) | **GET** /v1/{organization_id}/pipelines | List pipelines
-[**listSchemaHistory**](PipelinesApi.md#listSchemaHistory) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history
+[**listSchemaHistory**](PipelinesApi.md#listSchemaHistory) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events | List schema history
 [**purgePipeline**](PipelinesApi.md#purgePipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**purgePipelineNode**](PipelinesApi.md#purgePipelineNode) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**resetSchemaState**](PipelinesApi.md#resetSchemaState) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
@@ -201,6 +202,68 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Pipeline deleted successfully |  -  |
 **500** | Failed to delete pipeline |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **forceGraduateSchemaState**
+> void forceGraduateSchemaState()
+
+Force an edge in learning mode to immediately graduate to detection mode
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiForceGraduateSchemaStateRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiForceGraduateSchemaStateRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Edge ID
+  edgeId: "edge_id_example",
+};
+
+const data = await apiInstance.forceGraduateSchemaState(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **edgeId** | [**string**] | Edge ID | defaults to undefined
+
+
+### Return type
+
+**void**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Schema state graduated to detection mode |  -  |
+**400** | Edge is not in learning mode |  -  |
+**500** | Internal server error |  -  |
+**504** | Pipeline is not currently running |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1015,7 +1078,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Current schema state |  -  |
-**400** | Missing query parameters |  -  |
 **404** | Schema state not found |  -  |
 **500** | Internal server error |  -  |
 
@@ -1202,7 +1264,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Schema history |  -  |
-**400** | Missing query parameters |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -1387,7 +1448,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **204** | Schema state reset successfully |  -  |
 **500** | Internal server error |  -  |
-**504** | Pipeline is not currently running; schema state cleared and will take effect on next start |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

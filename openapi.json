@@ -20328,6 +20328,91 @@
                 ]
             }
         },
+        "/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate": {
+            "post": {
+                "description": "Force an edge in learning mode to immediately graduate to detection mode",
+                "operationId": "ForceGraduateSchemaState",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pipeline ID",
+                        "in": "path",
+                        "name": "pipeline_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Edge ID",
+                        "in": "path",
+                        "name": "edge_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Schema state graduated to detection mode"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Edge is not in learning mode"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    },
+                    "504": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Pipeline is not currently running"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Force graduate schema state",
+                "tags": [
+                    "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:write"
+                ]
+            }
+        },
         "/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset": {
             "post": {
                 "description": "Delete the current schema state for an edge and signal the sidecar to restart in learning mode",
@@ -20374,16 +20459,6 @@
                             }
                         },
                         "description": "Internal server error"
-                    },
-                    "504": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "description": "Pipeline is not currently running; schema state cleared and will take effect on next start"
                     }
                 },
                 "security": [
@@ -25145,6 +25220,157 @@
                 ]
             }
         },
+        "/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection": {
+            "get": {
+                "description": "Get the current schema state for a pipeline edge",
+                "operationId": "GetSchemaState",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pipeline ID",
+                        "in": "path",
+                        "name": "pipeline_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Edge ID",
+                        "in": "path",
+                        "name": "edge_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV3.schemaStateResponse"
+                                }
+                            }
+                        },
+                        "description": "Current schema state"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Schema state not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Get schema state",
+                "tags": [
+                    "Pipelines"
+                ]
+            }
+        },
+        "/v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events": {
+            "get": {
+                "description": "List schema drift events for a pipeline edge",
+                "operationId": "ListSchemaHistory",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pipeline ID",
+                        "in": "path",
+                        "name": "pipeline_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Edge ID",
+                        "in": "path",
+                        "name": "edge_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/routesV3.schemaHistoryEntryResponse"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        },
+                        "description": "Schema history"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List schema history",
+                "tags": [
+                    "Pipelines"
+                ]
+            }
+        },
         "/v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge": {
             "post": {
                 "description": "Purge messages destined for a specific pipeline node",
@@ -25329,177 +25555,6 @@
                     }
                 ],
                 "summary": "Purge pipeline data",
-                "tags": [
-                    "Pipelines"
-                ]
-            }
-        },
-        "/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection": {
-            "get": {
-                "description": "Get the current schema state for a pipeline edge",
-                "operationId": "GetSchemaState",
-                "parameters": [
-                    {
-                        "description": "Organization ID",
-                        "in": "path",
-                        "name": "organization_id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "description": "Pipeline ID",
-                        "in": "path",
-                        "name": "pipeline_id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "description": "Edge ID",
-                        "in": "query",
-                        "name": "edge_id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/routesV3.schemaStateResponse"
-                                }
-                            }
-                        },
-                        "description": "Current schema state"
-                    },
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "description": "Missing query parameters"
-                    },
-                    "404": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "description": "Schema state not found"
-                    },
-                    "500": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "description": "Internal server error"
-                    }
-                },
-                "security": [
-                    {
-                        "Bearer": []
-                    },
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "summary": "Get schema state",
-                "tags": [
-                    "Pipelines"
-                ]
-            }
-        },
-        "/v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events": {
-            "get": {
-                "description": "List schema drift events for a pipeline edge",
-                "operationId": "ListSchemaHistory",
-                "parameters": [
-                    {
-                        "description": "Organization ID",
-                        "in": "path",
-                        "name": "organization_id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "description": "Pipeline ID",
-                        "in": "path",
-                        "name": "pipeline_id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "description": "Edge ID",
-                        "in": "query",
-                        "name": "edge_id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "items": {
-                                        "$ref": "#/components/schemas/routesV3.schemaHistoryEntryResponse"
-                                    },
-                                    "type": "array"
-                                }
-                            }
-                        },
-                        "description": "Schema history"
-                    },
-                    "400": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "description": "Missing query parameters"
-                    },
-                    "500": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "description": "Internal server error"
-                    }
-                },
-                "security": [
-                    {
-                        "Bearer": []
-                    },
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "summary": "List schema history",
                 "tags": [
                     "Pipelines"
                 ]

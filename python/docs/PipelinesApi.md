@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_pipeline**](PipelinesApi.md#create_pipeline) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 [**delete_pipeline**](PipelinesApi.md#delete_pipeline) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**delete_pipeline_v1**](PipelinesApi.md#delete_pipeline_v1) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+[**force_graduate_schema_state**](PipelinesApi.md#force_graduate_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state
 [**get_metrics_for_pipelines**](PipelinesApi.md#get_metrics_for_pipelines) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**get_organization_summary**](PipelinesApi.md#get_organization_summary) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**get_pipeline**](PipelinesApi.md#get_pipeline) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
@@ -19,10 +20,10 @@ Method | HTTP request | Description
 [**get_pipeline_node_status**](PipelinesApi.md#get_pipeline_node_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 [**get_pipeline_status**](PipelinesApi.md#get_pipeline_status) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 [**get_pipelines_statuses**](PipelinesApi.md#get_pipelines_statuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
-[**get_schema_state**](PipelinesApi.md#get_schema_state) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state
+[**get_schema_state**](PipelinesApi.md#get_schema_state) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection | Get schema state
 [**list_pipelines**](PipelinesApi.md#list_pipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**list_pipelines_v1**](PipelinesApi.md#list_pipelines_v1) | **GET** /v1/{organization_id}/pipelines | List pipelines
-[**list_schema_history**](PipelinesApi.md#list_schema_history) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history
+[**list_schema_history**](PipelinesApi.md#list_schema_history) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events | List schema history
 [**purge_pipeline**](PipelinesApi.md#purge_pipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**purge_pipeline_node**](PipelinesApi.md#purge_pipeline_node) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**reset_schema_state**](PipelinesApi.md#reset_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
@@ -296,6 +297,96 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Pipeline deleted successfully |  -  |
 **500** | Failed to delete pipeline |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **force_graduate_schema_state**
+> force_graduate_schema_state(organization_id, pipeline_id, edge_id)
+
+Force graduate schema state
+
+Force an edge in learning mode to immediately graduate to detection mode
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    edge_id = 'edge_id_example' # str | Edge ID
+
+    try:
+        # Force graduate schema state
+        api_instance.force_graduate_schema_state(organization_id, pipeline_id, edge_id)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->force_graduate_schema_state: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **edge_id** | **str**| Edge ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Schema state graduated to detection mode |  -  |
+**400** | Edge is not in learning mode |  -  |
+**500** | Internal server error |  -  |
+**504** | Pipeline is not currently running |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1500,7 +1591,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Current schema state |  -  |
-**400** | Missing query parameters |  -  |
 **404** | Schema state not found |  -  |
 **500** | Internal server error |  -  |
 
@@ -1779,7 +1869,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Schema history |  -  |
-**400** | Missing query parameters |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2055,7 +2144,6 @@ void (empty response body)
 |-------------|-------------|------------------|
 **204** | Schema state reset successfully |  -  |
 **500** | Internal server error |  -  |
-**504** | Pipeline is not currently running; schema state cleared and will take effect on next start |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -7,6 +7,7 @@ All URIs are relative to *https://monad.com/api*
 | [**createPipeline**](PipelinesApi.md#createPipeline) | **POST** /v2/{organization_id}/pipelines | Create pipeline |
 | [**deletePipeline**](PipelinesApi.md#deletePipeline) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline |
 | [**deletePipelineV1**](PipelinesApi.md#deletePipelineV1) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline |
+| [**forceGraduateSchemaState**](PipelinesApi.md#forceGraduateSchemaState) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state |
 | [**getMetricsForPipelines**](PipelinesApi.md#getMetricsForPipelines) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines |
 | [**getOrganizationSummary**](PipelinesApi.md#getOrganizationSummary) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization |
 | [**getPipeline**](PipelinesApi.md#getPipeline) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline |
@@ -19,10 +20,10 @@ All URIs are relative to *https://monad.com/api*
 | [**getPipelineNodeStatus**](PipelinesApi.md#getPipelineNodeStatus) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status |
 | [**getPipelineStatus**](PipelinesApi.md#getPipelineStatus) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status |
 | [**getPipelinesStatuses**](PipelinesApi.md#getPipelinesStatuses) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status |
-| [**getSchemaState**](PipelinesApi.md#getSchemaState) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection | Get schema state |
+| [**getSchemaState**](PipelinesApi.md#getSchemaState) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection | Get schema state |
 | [**listPipelines**](PipelinesApi.md#listPipelines) | **GET** /v2/{organization_id}/pipelines | List pipelines |
 | [**listPipelinesV1**](PipelinesApi.md#listPipelinesV1) | **GET** /v1/{organization_id}/pipelines | List pipelines |
-| [**listSchemaHistory**](PipelinesApi.md#listSchemaHistory) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/schema-detection/events | List schema history |
+| [**listSchemaHistory**](PipelinesApi.md#listSchemaHistory) | **GET** /v3/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema-detection/events | List schema history |
 | [**purgePipeline**](PipelinesApi.md#purgePipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data |
 | [**purgePipelineNode**](PipelinesApi.md#purgePipelineNode) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data |
 | [**resetSchemaState**](PipelinesApi.md#resetSchemaState) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state |
@@ -266,6 +267,87 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Pipeline deleted successfully |  -  |
 | **500** | Failed to delete pipeline |  -  |
+
+<a id="forceGraduateSchemaState"></a>
+# **forceGraduateSchemaState**
+> forceGraduateSchemaState(organizationId, pipelineId, edgeId)
+
+Force graduate schema state
+
+Force an edge in learning mode to immediately graduate to detection mode
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    String edgeId = "edgeId_example"; // String | Edge ID
+    try {
+      apiInstance.forceGraduateSchemaState(organizationId, pipelineId, edgeId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#forceGraduateSchemaState");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+| **edgeId** | **String**| Edge ID | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Schema state graduated to detection mode |  -  |
+| **400** | Edge is not in learning mode |  -  |
+| **500** | Internal server error |  -  |
+| **504** | Pipeline is not currently running |  -  |
 
 <a id="getMetricsForPipelines"></a>
 # **getMetricsForPipelines**
@@ -1329,7 +1411,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Current schema state |  -  |
-| **400** | Missing query parameters |  -  |
 | **404** | Schema state not found |  -  |
 | **500** | Internal server error |  -  |
 
@@ -1575,7 +1656,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Schema history |  -  |
-| **400** | Missing query parameters |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="purgePipeline"></a>
@@ -1820,7 +1900,6 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **204** | Schema state reset successfully |  -  |
 | **500** | Internal server error |  -  |
-| **504** | Pipeline is not currently running; schema state cleared and will take effect on next start |  -  |
 
 <a id="triggerPipeline"></a>
 # **triggerPipeline**
