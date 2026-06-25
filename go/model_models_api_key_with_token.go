@@ -24,6 +24,8 @@ type ModelsAPIKeyWithToken struct {
 	Description *string `json:"description,omitempty"`
 	ExpirationTime *string `json:"expiration_time,omitempty"`
 	Id *string `json:"id,omitempty"`
+	// JWTSigningKeyID is the jwt_signing_keys row that signed the key's current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded.
+	JwtSigningKeyId *string `json:"jwt_signing_key_id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
@@ -176,6 +178,38 @@ func (o *ModelsAPIKeyWithToken) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ModelsAPIKeyWithToken) SetId(v string) {
 	o.Id = &v
+}
+
+// GetJwtSigningKeyId returns the JwtSigningKeyId field value if set, zero value otherwise.
+func (o *ModelsAPIKeyWithToken) GetJwtSigningKeyId() string {
+	if o == nil || IsNil(o.JwtSigningKeyId) {
+		var ret string
+		return ret
+	}
+	return *o.JwtSigningKeyId
+}
+
+// GetJwtSigningKeyIdOk returns a tuple with the JwtSigningKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsAPIKeyWithToken) GetJwtSigningKeyIdOk() (*string, bool) {
+	if o == nil || IsNil(o.JwtSigningKeyId) {
+		return nil, false
+	}
+	return o.JwtSigningKeyId, true
+}
+
+// HasJwtSigningKeyId returns a boolean if a field has been set.
+func (o *ModelsAPIKeyWithToken) HasJwtSigningKeyId() bool {
+	if o != nil && !IsNil(o.JwtSigningKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtSigningKeyId gets a reference to the given string and assigns it to the JwtSigningKeyId field.
+func (o *ModelsAPIKeyWithToken) SetJwtSigningKeyId(v string) {
+	o.JwtSigningKeyId = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -391,6 +425,9 @@ func (o ModelsAPIKeyWithToken) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.JwtSigningKeyId) {
+		toSerialize["jwt_signing_key_id"] = o.JwtSigningKeyId
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

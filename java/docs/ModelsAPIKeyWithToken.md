@@ -11,6 +11,7 @@
 |**description** | **String** |  |  [optional] |
 |**expirationTime** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
+|**jwtSigningKeyId** | **String** | JWTSigningKeyID is the jwt_signing_keys row that signed the key&#39;s current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded. |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**roleId** | **String** |  |  [optional] |

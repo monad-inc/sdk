@@ -40,6 +40,7 @@ class TestModelsAPIKeyWithToken(unittest.TestCase):
                 description = '',
                 expiration_time = '',
                 id = '',
+                jwt_signing_key_id = '',
                 name = '',
                 organization_id = '',
                 role_id = '',

@@ -32,12 +32,13 @@ class ModelsAPIKey(BaseModel):
     description: Optional[StrictStr] = None
     expiration_time: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
+    jwt_signing_key_id: Optional[StrictStr] = Field(default=None, description="JWTSigningKeyID is the jwt_signing_keys row that signed the key's current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded.")
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     role_id: Optional[StrictStr] = None
     token_version: Optional[StrictInt] = Field(default=None, description="TokenVersion is the current generation of the key. It is embedded in minted JWTs as the `ver` claim and bumped on rotation to invalidate previously-issued tokens without changing the key's id.")
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "expiration_time", "id", "name", "organization_id", "role_id", "token_version", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "name", "organization_id", "role_id", "token_version", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,6 +95,7 @@ class ModelsAPIKey(BaseModel):
             "description": obj.get("description"),
             "expiration_time": obj.get("expiration_time"),
             "id": obj.get("id"),
+            "jwt_signing_key_id": obj.get("jwt_signing_key_id"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "role_id": obj.get("role_id"),

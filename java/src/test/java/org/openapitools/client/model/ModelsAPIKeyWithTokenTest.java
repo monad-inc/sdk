@@ -70,6 +70,14 @@ public class ModelsAPIKeyWithTokenTest {
     }
 
     /**
+     * Test the property 'jwtSigningKeyId'
+     */
+    @Test
+    public void jwtSigningKeyIdTest() {
+        // TODO: test jwtSigningKeyId
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

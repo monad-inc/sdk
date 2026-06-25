@@ -17,6 +17,10 @@ export class ModelsAPIKeyWithToken {
     'description'?: string;
     'expirationTime'?: string;
     'id'?: string;
+    /**
+    * JWTSigningKeyID is the jwt_signing_keys row that signed the key\'s current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded.
+    */
+    'jwtSigningKeyId'?: string;
     'name'?: string;
     'organizationId'?: string;
     'roleId'?: string;
@@ -53,6 +57,12 @@ export class ModelsAPIKeyWithToken {
         {
             "name": "id",
             "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "jwtSigningKeyId",
+            "baseName": "jwt_signing_key_id",
             "type": "string",
             "format": ""
         },

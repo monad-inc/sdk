@@ -70,6 +70,11 @@ public class ModelsAPIKey {
   @javax.annotation.Nullable
   private String id;
 
+  public static final String SERIALIZED_NAME_JWT_SIGNING_KEY_ID = "jwt_signing_key_id";
+  @SerializedName(SERIALIZED_NAME_JWT_SIGNING_KEY_ID)
+  @javax.annotation.Nullable
+  private String jwtSigningKeyId;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
@@ -171,6 +176,25 @@ public class ModelsAPIKey {
 
   public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
+  }
+
+
+  public ModelsAPIKey jwtSigningKeyId(@javax.annotation.Nullable String jwtSigningKeyId) {
+    this.jwtSigningKeyId = jwtSigningKeyId;
+    return this;
+  }
+
+  /**
+   * JWTSigningKeyID is the jwt_signing_keys row that signed the key&#39;s current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded.
+   * @return jwtSigningKeyId
+   */
+  @javax.annotation.Nullable
+  public String getJwtSigningKeyId() {
+    return jwtSigningKeyId;
+  }
+
+  public void setJwtSigningKeyId(@javax.annotation.Nullable String jwtSigningKeyId) {
+    this.jwtSigningKeyId = jwtSigningKeyId;
   }
 
 
@@ -283,6 +307,7 @@ public class ModelsAPIKey {
         Objects.equals(this.description, modelsAPIKey.description) &&
         Objects.equals(this.expirationTime, modelsAPIKey.expirationTime) &&
         Objects.equals(this.id, modelsAPIKey.id) &&
+        Objects.equals(this.jwtSigningKeyId, modelsAPIKey.jwtSigningKeyId) &&
         Objects.equals(this.name, modelsAPIKey.name) &&
         Objects.equals(this.organizationId, modelsAPIKey.organizationId) &&
         Objects.equals(this.roleId, modelsAPIKey.roleId) &&
@@ -292,7 +317,7 @@ public class ModelsAPIKey {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, expirationTime, id, name, organizationId, roleId, tokenVersion, updatedAt);
+    return Objects.hash(createdAt, description, expirationTime, id, jwtSigningKeyId, name, organizationId, roleId, tokenVersion, updatedAt);
   }
 
   @Override
@@ -303,6 +328,7 @@ public class ModelsAPIKey {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    jwtSigningKeyId: ").append(toIndentedString(jwtSigningKeyId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
@@ -326,7 +352,7 @@ public class ModelsAPIKey {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "name", "organization_id", "role_id", "token_version", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "name", "organization_id", "role_id", "token_version", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -364,6 +390,9 @@ public class ModelsAPIKey {
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("jwt_signing_key_id") != null && !jsonObj.get("jwt_signing_key_id").isJsonNull()) && !jsonObj.get("jwt_signing_key_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `jwt_signing_key_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jwt_signing_key_id").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

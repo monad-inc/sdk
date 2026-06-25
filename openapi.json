@@ -4476,6 +4476,10 @@
                     "id": {
                         "type": "string"
                     },
+                    "jwt_signing_key_id": {
+                        "description": "JWTSigningKeyID is the jwt_signing_keys row that signed the key's current\ntoken. Re-stamped on rotation. Empty when signed via the legacy HS256\npath (no signing-key row), or for keys created before this was recorded.",
+                        "type": "string"
+                    },
                     "name": {
                         "type": "string"
                     },
@@ -4522,6 +4526,10 @@
                         "type": "string"
                     },
                     "id": {
+                        "type": "string"
+                    },
+                    "jwt_signing_key_id": {
+                        "description": "JWTSigningKeyID is the jwt_signing_keys row that signed the key's current\ntoken. Re-stamped on rotation. Empty when signed via the legacy HS256\npath (no signing-key row), or for keys created before this was recorded.",
                         "type": "string"
                     },
                     "name": {
