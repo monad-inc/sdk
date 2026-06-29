@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the RoutesV2UpdatePipelineRequest type satisfies the MappedNullable interface at compile time
@@ -23,24 +21,18 @@ var _ MappedNullable = &RoutesV2UpdatePipelineRequest{}
 // RoutesV2UpdatePipelineRequest struct for RoutesV2UpdatePipelineRequest
 type RoutesV2UpdatePipelineRequest struct {
 	Description *string `json:"description,omitempty"`
-	Edges []RoutesV2PipelineRequestEdge `json:"edges"`
-	Enabled bool `json:"enabled"`
-	Name string `json:"name"`
-	Nodes []RoutesV2PipelineRequestNode `json:"nodes"`
+	Edges []RoutesV2PipelineRequestEdge `json:"edges,omitempty"`
+	Enabled *bool `json:"enabled,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Nodes []RoutesV2PipelineRequestNode `json:"nodes,omitempty"`
 }
-
-type _RoutesV2UpdatePipelineRequest RoutesV2UpdatePipelineRequest
 
 // NewRoutesV2UpdatePipelineRequest instantiates a new RoutesV2UpdatePipelineRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesV2UpdatePipelineRequest(edges []RoutesV2PipelineRequestEdge, enabled bool, name string, nodes []RoutesV2PipelineRequestNode) *RoutesV2UpdatePipelineRequest {
+func NewRoutesV2UpdatePipelineRequest() *RoutesV2UpdatePipelineRequest {
 	this := RoutesV2UpdatePipelineRequest{}
-	this.Edges = edges
-	this.Enabled = enabled
-	this.Name = name
-	this.Nodes = nodes
 	return &this
 }
 
@@ -84,98 +76,130 @@ func (o *RoutesV2UpdatePipelineRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEdges returns the Edges field value
+// GetEdges returns the Edges field value if set, zero value otherwise.
 func (o *RoutesV2UpdatePipelineRequest) GetEdges() []RoutesV2PipelineRequestEdge {
-	if o == nil {
+	if o == nil || IsNil(o.Edges) {
 		var ret []RoutesV2PipelineRequestEdge
 		return ret
 	}
-
 	return o.Edges
 }
 
-// GetEdgesOk returns a tuple with the Edges field value
+// GetEdgesOk returns a tuple with the Edges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesV2UpdatePipelineRequest) GetEdgesOk() ([]RoutesV2PipelineRequestEdge, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Edges) {
 		return nil, false
 	}
 	return o.Edges, true
 }
 
-// SetEdges sets field value
+// HasEdges returns a boolean if a field has been set.
+func (o *RoutesV2UpdatePipelineRequest) HasEdges() bool {
+	if o != nil && !IsNil(o.Edges) {
+		return true
+	}
+
+	return false
+}
+
+// SetEdges gets a reference to the given []RoutesV2PipelineRequestEdge and assigns it to the Edges field.
 func (o *RoutesV2UpdatePipelineRequest) SetEdges(v []RoutesV2PipelineRequestEdge) {
 	o.Edges = v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *RoutesV2UpdatePipelineRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesV2UpdatePipelineRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *RoutesV2UpdatePipelineRequest) HasEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *RoutesV2UpdatePipelineRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *RoutesV2UpdatePipelineRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesV2UpdatePipelineRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *RoutesV2UpdatePipelineRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *RoutesV2UpdatePipelineRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetNodes returns the Nodes field value
+// GetNodes returns the Nodes field value if set, zero value otherwise.
 func (o *RoutesV2UpdatePipelineRequest) GetNodes() []RoutesV2PipelineRequestNode {
-	if o == nil {
+	if o == nil || IsNil(o.Nodes) {
 		var ret []RoutesV2PipelineRequestNode
 		return ret
 	}
-
 	return o.Nodes
 }
 
-// GetNodesOk returns a tuple with the Nodes field value
+// GetNodesOk returns a tuple with the Nodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesV2UpdatePipelineRequest) GetNodesOk() ([]RoutesV2PipelineRequestNode, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Nodes) {
 		return nil, false
 	}
 	return o.Nodes, true
 }
 
-// SetNodes sets field value
+// HasNodes returns a boolean if a field has been set.
+func (o *RoutesV2UpdatePipelineRequest) HasNodes() bool {
+	if o != nil && !IsNil(o.Nodes) {
+		return true
+	}
+
+	return false
+}
+
+// SetNodes gets a reference to the given []RoutesV2PipelineRequestNode and assigns it to the Nodes field.
 func (o *RoutesV2UpdatePipelineRequest) SetNodes(v []RoutesV2PipelineRequestNode) {
 	o.Nodes = v
 }
@@ -193,51 +217,19 @@ func (o RoutesV2UpdatePipelineRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["edges"] = o.Edges
-	toSerialize["enabled"] = o.Enabled
-	toSerialize["name"] = o.Name
-	toSerialize["nodes"] = o.Nodes
+	if !IsNil(o.Edges) {
+		toSerialize["edges"] = o.Edges
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Nodes) {
+		toSerialize["nodes"] = o.Nodes
+	}
 	return toSerialize, nil
-}
-
-func (o *RoutesV2UpdatePipelineRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"edges",
-		"enabled",
-		"name",
-		"nodes",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varRoutesV2UpdatePipelineRequest := _RoutesV2UpdatePipelineRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRoutesV2UpdatePipelineRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RoutesV2UpdatePipelineRequest(varRoutesV2UpdatePipelineRequest)
-
-	return err
 }
 
 type NullableRoutesV2UpdatePipelineRequest struct {

@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**edges** | [**List[RoutesV2PipelineRequestEdge]**](RoutesV2PipelineRequestEdge.md) |  | 
-**enabled** | **bool** |  | 
-**name** | **str** |  | 
-**nodes** | [**List[RoutesV2PipelineRequestNode]**](RoutesV2PipelineRequestNode.md) |  | 
+**edges** | [**List[RoutesV2PipelineRequestEdge]**](RoutesV2PipelineRequestEdge.md) |  | [optional] 
+**enabled** | **bool** |  | [optional] 
+**name** | **str** |  | [optional] 
+**nodes** | [**List[RoutesV2PipelineRequestNode]**](RoutesV2PipelineRequestNode.md) |  | [optional] 
 
 ## Example
 

@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**Edges** | [**[]RoutesV2PipelineRequestEdge**](RoutesV2PipelineRequestEdge.md) |  | 
-**Enabled** | **bool** |  | 
-**Name** | **string** |  | 
-**Nodes** | [**[]RoutesV2PipelineRequestNode**](RoutesV2PipelineRequestNode.md) |  | 
+**Edges** | Pointer to [**[]RoutesV2PipelineRequestEdge**](RoutesV2PipelineRequestEdge.md) |  | [optional] 
+**Enabled** | Pointer to **bool** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Nodes** | Pointer to [**[]RoutesV2PipelineRequestNode**](RoutesV2PipelineRequestNode.md) |  | [optional] 
 
 ## Methods
 
 ### NewUpdatePipelineRequest
 
-`func NewUpdatePipelineRequest(edges []RoutesV2PipelineRequestEdge, enabled bool, name string, nodes []RoutesV2PipelineRequestNode, ) *UpdatePipelineRequest`
+`func NewUpdatePipelineRequest() *UpdatePipelineRequest`
 
 NewUpdatePipelineRequest instantiates a new UpdatePipelineRequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetEdges sets Edges field to given value.
 
+### HasEdges
+
+`func (o *UpdatePipelineRequest) HasEdges() bool`
+
+HasEdges returns a boolean if a field has been set.
 
 ### GetEnabled
 
@@ -93,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *UpdatePipelineRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetName
 
@@ -113,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *UpdatePipelineRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNodes
 
@@ -133,6 +148,11 @@ and a boolean to check if the value has been set.
 
 SetNodes sets Nodes field to given value.
 
+### HasNodes
+
+`func (o *UpdatePipelineRequest) HasNodes() bool`
+
+HasNodes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

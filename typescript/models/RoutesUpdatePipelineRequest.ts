@@ -15,7 +15,7 @@ import { HttpFile } from '../http/http';
 export class RoutesUpdatePipelineRequest {
     'description'?: string;
     'enabled'?: boolean;
-    'name': string;
+    'name'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 

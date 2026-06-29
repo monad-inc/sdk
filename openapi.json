@@ -8149,9 +8149,6 @@
                         "type": "string"
                     }
                 },
-                "required": [
-                    "name"
-                ],
                 "type": "object"
             },
             "routes.UpdateTransformRequest": {
@@ -8415,10 +8412,10 @@
                     "name": {
                         "type": "string"
                     },
-                    "output_type": {
+                    "promise_id": {
                         "type": "string"
                     },
-                    "promise_id": {
+                    "type": {
                         "type": "string"
                     }
                 },
@@ -8669,7 +8666,7 @@
                     "name": {
                         "type": "string"
                     },
-                    "output_type": {
+                    "type": {
                         "type": "string"
                     }
                 },
@@ -8882,7 +8879,7 @@
                     "name": {
                         "type": "string"
                     },
-                    "output_type": {
+                    "type": {
                         "type": "string"
                     }
                 },
@@ -8914,12 +8911,6 @@
                         "uniqueItems": false
                     }
                 },
-                "required": [
-                    "edges",
-                    "enabled",
-                    "name",
-                    "nodes"
-                ],
                 "type": "object"
             },
             "routesV2.UpdateRoleV2Request": {

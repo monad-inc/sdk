@@ -31,10 +31,10 @@ class RoutesV2UpdatePipelineRequest(BaseModel):
     RoutesV2UpdatePipelineRequest
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    edges: List[RoutesV2PipelineRequestEdge]
-    enabled: StrictBool
-    name: StrictStr
-    nodes: List[RoutesV2PipelineRequestNode]
+    edges: Optional[List[RoutesV2PipelineRequestEdge]] = None
+    enabled: Optional[StrictBool] = None
+    name: Optional[StrictStr] = None
+    nodes: Optional[List[RoutesV2PipelineRequestNode]] = None
     __properties: ClassVar[List[str]] = ["description", "edges", "enabled", "name", "nodes"]
 
     model_config = ConfigDict(

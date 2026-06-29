@@ -23,7 +23,7 @@ type RoutesV2PutOutputRequest struct {
 	Config *SecretProcessesorOutputConfig `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
-	OutputType *string `json:"output_type,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
 
 // NewRoutesV2PutOutputRequest instantiates a new RoutesV2PutOutputRequest object
@@ -139,36 +139,36 @@ func (o *RoutesV2PutOutputRequest) SetName(v string) {
 	o.Name = &v
 }
 
-// GetOutputType returns the OutputType field value if set, zero value otherwise.
-func (o *RoutesV2PutOutputRequest) GetOutputType() string {
-	if o == nil || IsNil(o.OutputType) {
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *RoutesV2PutOutputRequest) GetType() string {
+	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
 	}
-	return *o.OutputType
+	return *o.Type
 }
 
-// GetOutputTypeOk returns a tuple with the OutputType field value if set, nil otherwise
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2PutOutputRequest) GetOutputTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.OutputType) {
+func (o *RoutesV2PutOutputRequest) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.OutputType, true
+	return o.Type, true
 }
 
-// HasOutputType returns a boolean if a field has been set.
-func (o *RoutesV2PutOutputRequest) HasOutputType() bool {
-	if o != nil && !IsNil(o.OutputType) {
+// HasType returns a boolean if a field has been set.
+func (o *RoutesV2PutOutputRequest) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetOutputType gets a reference to the given string and assigns it to the OutputType field.
-func (o *RoutesV2PutOutputRequest) SetOutputType(v string) {
-	o.OutputType = &v
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *RoutesV2PutOutputRequest) SetType(v string) {
+	o.Type = &v
 }
 
 func (o RoutesV2PutOutputRequest) MarshalJSON() ([]byte, error) {
@@ -190,8 +190,8 @@ func (o RoutesV2PutOutputRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.OutputType) {
-		toSerialize["output_type"] = o.OutputType
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
 }

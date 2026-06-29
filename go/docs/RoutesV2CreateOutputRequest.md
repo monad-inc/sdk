@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**SecretProcessesorOutputConfig**](SecretProcessesorOutputConfig.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**OutputType** | Pointer to **string** |  | [optional] 
 **PromiseId** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -104,31 +104,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetOutputType
-
-`func (o *RoutesV2CreateOutputRequest) GetOutputType() string`
-
-GetOutputType returns the OutputType field if non-nil, zero value otherwise.
-
-### GetOutputTypeOk
-
-`func (o *RoutesV2CreateOutputRequest) GetOutputTypeOk() (*string, bool)`
-
-GetOutputTypeOk returns a tuple with the OutputType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOutputType
-
-`func (o *RoutesV2CreateOutputRequest) SetOutputType(v string)`
-
-SetOutputType sets OutputType field to given value.
-
-### HasOutputType
-
-`func (o *RoutesV2CreateOutputRequest) HasOutputType() bool`
-
-HasOutputType returns a boolean if a field has been set.
-
 ### GetPromiseId
 
 `func (o *RoutesV2CreateOutputRequest) GetPromiseId() string`
@@ -153,6 +128,31 @@ SetPromiseId sets PromiseId field to given value.
 `func (o *RoutesV2CreateOutputRequest) HasPromiseId() bool`
 
 HasPromiseId returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *RoutesV2CreateOutputRequest) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *RoutesV2CreateOutputRequest) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *RoutesV2CreateOutputRequest) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *RoutesV2CreateOutputRequest) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

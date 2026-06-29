@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewUpdatePipelineV1Request
 
-`func NewUpdatePipelineV1Request(name string, ) *UpdatePipelineV1Request`
+`func NewUpdatePipelineV1Request() *UpdatePipelineV1Request`
 
 NewUpdatePipelineV1Request instantiates a new UpdatePipelineV1Request object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *UpdatePipelineV1Request) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

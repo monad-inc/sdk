@@ -66,15 +66,15 @@ public class RoutesV2CreateOutputRequest {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_OUTPUT_TYPE = "output_type";
-  @SerializedName(SERIALIZED_NAME_OUTPUT_TYPE)
-  @javax.annotation.Nullable
-  private String outputType;
-
   public static final String SERIALIZED_NAME_PROMISE_ID = "promise_id";
   @SerializedName(SERIALIZED_NAME_PROMISE_ID)
   @javax.annotation.Nullable
   private String promiseId;
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
+  private String type;
 
   public RoutesV2CreateOutputRequest() {
   }
@@ -136,25 +136,6 @@ public class RoutesV2CreateOutputRequest {
   }
 
 
-  public RoutesV2CreateOutputRequest outputType(@javax.annotation.Nullable String outputType) {
-    this.outputType = outputType;
-    return this;
-  }
-
-  /**
-   * Get outputType
-   * @return outputType
-   */
-  @javax.annotation.Nullable
-  public String getOutputType() {
-    return outputType;
-  }
-
-  public void setOutputType(@javax.annotation.Nullable String outputType) {
-    this.outputType = outputType;
-  }
-
-
   public RoutesV2CreateOutputRequest promiseId(@javax.annotation.Nullable String promiseId) {
     this.promiseId = promiseId;
     return this;
@@ -174,6 +155,25 @@ public class RoutesV2CreateOutputRequest {
   }
 
 
+  public RoutesV2CreateOutputRequest type(@javax.annotation.Nullable String type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @javax.annotation.Nullable
+  public String getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nullable String type) {
+    this.type = type;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -187,13 +187,13 @@ public class RoutesV2CreateOutputRequest {
     return Objects.equals(this.config, routesV2CreateOutputRequest.config) &&
         Objects.equals(this.description, routesV2CreateOutputRequest.description) &&
         Objects.equals(this.name, routesV2CreateOutputRequest.name) &&
-        Objects.equals(this.outputType, routesV2CreateOutputRequest.outputType) &&
-        Objects.equals(this.promiseId, routesV2CreateOutputRequest.promiseId);
+        Objects.equals(this.promiseId, routesV2CreateOutputRequest.promiseId) &&
+        Objects.equals(this.type, routesV2CreateOutputRequest.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name, outputType, promiseId);
+    return Objects.hash(config, description, name, promiseId, type);
   }
 
   @Override
@@ -203,8 +203,8 @@ public class RoutesV2CreateOutputRequest {
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    outputType: ").append(toIndentedString(outputType)).append("\n");
     sb.append("    promiseId: ").append(toIndentedString(promiseId)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,7 +223,7 @@ public class RoutesV2CreateOutputRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "output_type", "promise_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "promise_id", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -260,11 +260,11 @@ public class RoutesV2CreateOutputRequest {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("output_type") != null && !jsonObj.get("output_type").isJsonNull()) && !jsonObj.get("output_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `output_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output_type").toString()));
-      }
       if ((jsonObj.get("promise_id") != null && !jsonObj.get("promise_id").isJsonNull()) && !jsonObj.get("promise_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `promise_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("promise_id").toString()));
+      }
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 

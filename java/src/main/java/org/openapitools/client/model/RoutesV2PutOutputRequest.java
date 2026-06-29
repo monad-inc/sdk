@@ -66,10 +66,10 @@ public class RoutesV2PutOutputRequest {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_OUTPUT_TYPE = "output_type";
-  @SerializedName(SERIALIZED_NAME_OUTPUT_TYPE)
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
-  private String outputType;
+  private String type;
 
   public RoutesV2PutOutputRequest() {
   }
@@ -131,22 +131,22 @@ public class RoutesV2PutOutputRequest {
   }
 
 
-  public RoutesV2PutOutputRequest outputType(@javax.annotation.Nullable String outputType) {
-    this.outputType = outputType;
+  public RoutesV2PutOutputRequest type(@javax.annotation.Nullable String type) {
+    this.type = type;
     return this;
   }
 
   /**
-   * Get outputType
-   * @return outputType
+   * Get type
+   * @return type
    */
   @javax.annotation.Nullable
-  public String getOutputType() {
-    return outputType;
+  public String getType() {
+    return type;
   }
 
-  public void setOutputType(@javax.annotation.Nullable String outputType) {
-    this.outputType = outputType;
+  public void setType(@javax.annotation.Nullable String type) {
+    this.type = type;
   }
 
 
@@ -163,12 +163,12 @@ public class RoutesV2PutOutputRequest {
     return Objects.equals(this.config, routesV2PutOutputRequest.config) &&
         Objects.equals(this.description, routesV2PutOutputRequest.description) &&
         Objects.equals(this.name, routesV2PutOutputRequest.name) &&
-        Objects.equals(this.outputType, routesV2PutOutputRequest.outputType);
+        Objects.equals(this.type, routesV2PutOutputRequest.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name, outputType);
+    return Objects.hash(config, description, name, type);
   }
 
   @Override
@@ -178,7 +178,7 @@ public class RoutesV2PutOutputRequest {
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    outputType: ").append(toIndentedString(outputType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -197,7 +197,7 @@ public class RoutesV2PutOutputRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "output_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -234,8 +234,8 @@ public class RoutesV2PutOutputRequest {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("output_type") != null && !jsonObj.get("output_type").isJsonNull()) && !jsonObj.get("output_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `output_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output_type").toString()));
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 

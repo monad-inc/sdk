@@ -45,7 +45,7 @@ class TestReplaceOutputRequest(unittest.TestCase):
                         }, ),
                 description = '',
                 name = '',
-                output_type = ''
+                type = ''
             )
         else:
             return ReplaceOutputRequest(

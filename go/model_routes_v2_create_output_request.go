@@ -23,8 +23,8 @@ type RoutesV2CreateOutputRequest struct {
 	Config *SecretProcessesorOutputConfig `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
-	OutputType *string `json:"output_type,omitempty"`
 	PromiseId *string `json:"promise_id,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
 
 // NewRoutesV2CreateOutputRequest instantiates a new RoutesV2CreateOutputRequest object
@@ -140,38 +140,6 @@ func (o *RoutesV2CreateOutputRequest) SetName(v string) {
 	o.Name = &v
 }
 
-// GetOutputType returns the OutputType field value if set, zero value otherwise.
-func (o *RoutesV2CreateOutputRequest) GetOutputType() string {
-	if o == nil || IsNil(o.OutputType) {
-		var ret string
-		return ret
-	}
-	return *o.OutputType
-}
-
-// GetOutputTypeOk returns a tuple with the OutputType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV2CreateOutputRequest) GetOutputTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.OutputType) {
-		return nil, false
-	}
-	return o.OutputType, true
-}
-
-// HasOutputType returns a boolean if a field has been set.
-func (o *RoutesV2CreateOutputRequest) HasOutputType() bool {
-	if o != nil && !IsNil(o.OutputType) {
-		return true
-	}
-
-	return false
-}
-
-// SetOutputType gets a reference to the given string and assigns it to the OutputType field.
-func (o *RoutesV2CreateOutputRequest) SetOutputType(v string) {
-	o.OutputType = &v
-}
-
 // GetPromiseId returns the PromiseId field value if set, zero value otherwise.
 func (o *RoutesV2CreateOutputRequest) GetPromiseId() string {
 	if o == nil || IsNil(o.PromiseId) {
@@ -204,6 +172,38 @@ func (o *RoutesV2CreateOutputRequest) SetPromiseId(v string) {
 	o.PromiseId = &v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *RoutesV2CreateOutputRequest) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2CreateOutputRequest) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *RoutesV2CreateOutputRequest) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *RoutesV2CreateOutputRequest) SetType(v string) {
+	o.Type = &v
+}
+
 func (o RoutesV2CreateOutputRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -223,11 +223,11 @@ func (o RoutesV2CreateOutputRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.OutputType) {
-		toSerialize["output_type"] = o.OutputType
-	}
 	if !IsNil(o.PromiseId) {
 		toSerialize["promise_id"] = o.PromiseId
+	}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
 }

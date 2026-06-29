@@ -16,10 +16,10 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2UpdatePipelineRequest {
     'description'?: string;
-    'edges': Array<RoutesV2PipelineRequestEdge>;
-    'enabled': boolean;
-    'name': string;
-    'nodes': Array<RoutesV2PipelineRequestNode>;
+    'edges'?: Array<RoutesV2PipelineRequestEdge>;
+    'enabled'?: boolean;
+    'name'?: string;
+    'nodes'?: Array<RoutesV2PipelineRequestNode>;
 
     static readonly discriminator: string | undefined = undefined;
 

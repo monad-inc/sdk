@@ -17,7 +17,7 @@ export class RoutesV2PutOutputRequest {
     'config'?: SecretProcessesorOutputConfig;
     'description'?: string;
     'name'?: string;
-    'outputType'?: string;
+    'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -43,8 +43,8 @@ export class RoutesV2PutOutputRequest {
             "format": ""
         },
         {
-            "name": "outputType",
-            "baseName": "output_type",
+            "name": "type",
+            "baseName": "type",
             "type": "string",
             "format": ""
         }    ];

@@ -45,7 +45,7 @@ class TestRoutesV2PutOutputRequest(unittest.TestCase):
                         }, ),
                 description = '',
                 name = '',
-                output_type = ''
+                type = ''
             )
         else:
             return RoutesV2PutOutputRequest(

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**SecretProcessesorOutputConfig**](SecretProcessesorOutputConfig.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**OutputType** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -103,30 +103,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetOutputType
+### GetType
 
-`func (o *RoutesV2PutOutputRequest) GetOutputType() string`
+`func (o *RoutesV2PutOutputRequest) GetType() string`
 
-GetOutputType returns the OutputType field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetOutputTypeOk
+### GetTypeOk
 
-`func (o *RoutesV2PutOutputRequest) GetOutputTypeOk() (*string, bool)`
+`func (o *RoutesV2PutOutputRequest) GetTypeOk() (*string, bool)`
 
-GetOutputTypeOk returns a tuple with the OutputType field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOutputType
+### SetType
 
-`func (o *RoutesV2PutOutputRequest) SetOutputType(v string)`
+`func (o *RoutesV2PutOutputRequest) SetType(v string)`
 
-SetOutputType sets OutputType field to given value.
+SetType sets Type field to given value.
 
-### HasOutputType
+### HasType
 
-`func (o *RoutesV2PutOutputRequest) HasOutputType() bool`
+`func (o *RoutesV2PutOutputRequest) HasType() bool`
 
-HasOutputType returns a boolean if a field has been set.
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

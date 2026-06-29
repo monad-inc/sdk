@@ -1853,7 +1853,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
-	updatePipelineRequest := openapiclient.UpdatePipeline_request{RoutesV2UpdatePipelineRequest: openapiclient.NewRoutesV2UpdatePipelineRequest([]openapiclient.RoutesV2PipelineRequestEdge{*openapiclient.NewRoutesV2PipelineRequestEdge("FromNodeInstanceId_example", "ToNodeInstanceId_example")}, false, "Name_example", []openapiclient.RoutesV2PipelineRequestNode{*openapiclient.NewRoutesV2PipelineRequestNode("ComponentId_example", openapiclient.models.ComponentType("transform"), false)})} // UpdatePipelineRequest | Request body for updating a pipeline
+	updatePipelineRequest := openapiclient.UpdatePipeline_request{RoutesV2UpdatePipelineRequest: openapiclient.NewRoutesV2UpdatePipelineRequest()} // UpdatePipelineRequest | Request body for updating a pipeline
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2004,7 +2004,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
-	updatePipelineV1Request := openapiclient.UpdatePipelineV1_request{RoutesUpdatePipelineRequest: openapiclient.NewRoutesUpdatePipelineRequest("Name_example")} // UpdatePipelineV1Request | Request body for updating a pipeline
+	updatePipelineV1Request := openapiclient.UpdatePipelineV1_request{RoutesUpdatePipelineRequest: openapiclient.NewRoutesUpdatePipelineRequest()} // UpdatePipelineV1Request | Request body for updating a pipeline
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

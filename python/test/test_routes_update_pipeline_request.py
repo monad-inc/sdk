@@ -42,7 +42,6 @@ class TestRoutesUpdatePipelineRequest(unittest.TestCase):
             )
         else:
             return RoutesUpdatePipelineRequest(
-                name = '',
         )
         """
 

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**description** | **String** |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
-|**name** | **String** |  |  |
+|**name** | **String** |  |  [optional] |
 
 
 

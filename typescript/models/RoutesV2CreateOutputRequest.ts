@@ -17,8 +17,8 @@ export class RoutesV2CreateOutputRequest {
     'config'?: SecretProcessesorOutputConfig;
     'description'?: string;
     'name'?: string;
-    'outputType'?: string;
     'promiseId'?: string;
+    'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -44,14 +44,14 @@ export class RoutesV2CreateOutputRequest {
             "format": ""
         },
         {
-            "name": "outputType",
-            "baseName": "output_type",
+            "name": "promiseId",
+            "baseName": "promise_id",
             "type": "string",
             "format": ""
         },
         {
-            "name": "promiseId",
-            "baseName": "promise_id",
+            "name": "type",
+            "baseName": "type",
             "type": "string",
             "format": ""
         }    ];

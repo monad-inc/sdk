@@ -63,11 +63,11 @@ public class UpdateOutputRequestTest {
     }
 
     /**
-     * Test the property 'outputType'
+     * Test the property 'type'
      */
     @Test
-    public void outputTypeTest() {
-        // TODO: test outputType
+    public void typeTest() {
+        // TODO: test type
     }
 
 }

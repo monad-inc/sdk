@@ -45,8 +45,8 @@ class TestRoutesV2CreateOutputRequest(unittest.TestCase):
                         }, ),
                 description = '',
                 name = '',
-                output_type = '',
-                promise_id = ''
+                promise_id = '',
+                type = ''
             )
         else:
             return RoutesV2CreateOutputRequest(

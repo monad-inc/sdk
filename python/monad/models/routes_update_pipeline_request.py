@@ -30,7 +30,7 @@ class RoutesUpdatePipelineRequest(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = None
     enabled: Optional[StrictBool] = None
-    name: StrictStr
+    name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["description", "enabled", "name"]
 
     model_config = ConfigDict(

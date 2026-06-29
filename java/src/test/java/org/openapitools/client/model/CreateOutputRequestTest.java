@@ -63,19 +63,19 @@ public class CreateOutputRequestTest {
     }
 
     /**
-     * Test the property 'outputType'
-     */
-    @Test
-    public void outputTypeTest() {
-        // TODO: test outputType
-    }
-
-    /**
      * Test the property 'promiseId'
      */
     @Test
     public void promiseIdTest() {
         // TODO: test promiseId
+    }
+
+    /**
+     * Test the property 'type'
+     */
+    @Test
+    public void typeTest() {
+        // TODO: test type
     }
 
 }

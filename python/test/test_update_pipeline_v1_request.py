@@ -42,7 +42,6 @@ class TestUpdatePipelineV1Request(unittest.TestCase):
             )
         else:
             return UpdatePipelineV1Request(
-                name = '',
         )
         """
 

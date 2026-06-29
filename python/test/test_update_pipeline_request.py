@@ -66,32 +66,6 @@ class TestUpdatePipelineRequest(unittest.TestCase):
             )
         else:
             return UpdatePipelineRequest(
-                edges = [
-                    monad.models.routes_v2/pipeline_request_edge.routesV2.PipelineRequestEdge(
-                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                            config = {
-                                'key' : null
-                                }, 
-                            operator = 'always', 
-                            type_id = '', ), 
-                        description = '', 
-                        disabled = True, 
-                        from_node_instance_id = '', 
-                        id = '', 
-                        name = '', 
-                        schema_detection = True, 
-                        to_node_instance_id = '', )
-                    ],
-                enabled = True,
-                name = '',
-                nodes = [
-                    monad.models.routes_v2/pipeline_request_node.routesV2.PipelineRequestNode(
-                        component_id = '', 
-                        component_type = 'transform', 
-                        enabled = True, 
-                        id = '', 
-                        slug = '', )
-                    ],
         )
         """
 

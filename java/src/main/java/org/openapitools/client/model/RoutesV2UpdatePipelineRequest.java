@@ -61,22 +61,22 @@ public class RoutesV2UpdatePipelineRequest {
 
   public static final String SERIALIZED_NAME_EDGES = "edges";
   @SerializedName(SERIALIZED_NAME_EDGES)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<RoutesV2PipelineRequestEdge> edges = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_NODES = "nodes";
   @SerializedName(SERIALIZED_NAME_NODES)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<RoutesV2PipelineRequestNode> nodes = new ArrayList<>();
 
   public RoutesV2UpdatePipelineRequest() {
@@ -101,7 +101,7 @@ public class RoutesV2UpdatePipelineRequest {
   }
 
 
-  public RoutesV2UpdatePipelineRequest edges(@javax.annotation.Nonnull List<RoutesV2PipelineRequestEdge> edges) {
+  public RoutesV2UpdatePipelineRequest edges(@javax.annotation.Nullable List<RoutesV2PipelineRequestEdge> edges) {
     this.edges = edges;
     return this;
   }
@@ -118,17 +118,17 @@ public class RoutesV2UpdatePipelineRequest {
    * Get edges
    * @return edges
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<RoutesV2PipelineRequestEdge> getEdges() {
     return edges;
   }
 
-  public void setEdges(@javax.annotation.Nonnull List<RoutesV2PipelineRequestEdge> edges) {
+  public void setEdges(@javax.annotation.Nullable List<RoutesV2PipelineRequestEdge> edges) {
     this.edges = edges;
   }
 
 
-  public RoutesV2UpdatePipelineRequest enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public RoutesV2UpdatePipelineRequest enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -137,17 +137,17 @@ public class RoutesV2UpdatePipelineRequest {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public RoutesV2UpdatePipelineRequest name(@javax.annotation.Nonnull String name) {
+  public RoutesV2UpdatePipelineRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -156,17 +156,17 @@ public class RoutesV2UpdatePipelineRequest {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutesV2UpdatePipelineRequest nodes(@javax.annotation.Nonnull List<RoutesV2PipelineRequestNode> nodes) {
+  public RoutesV2UpdatePipelineRequest nodes(@javax.annotation.Nullable List<RoutesV2PipelineRequestNode> nodes) {
     this.nodes = nodes;
     return this;
   }
@@ -183,12 +183,12 @@ public class RoutesV2UpdatePipelineRequest {
    * Get nodes
    * @return nodes
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<RoutesV2PipelineRequestNode> getNodes() {
     return nodes;
   }
 
-  public void setNodes(@javax.annotation.Nonnull List<RoutesV2PipelineRequestNode> nodes) {
+  public void setNodes(@javax.annotation.Nullable List<RoutesV2PipelineRequestNode> nodes) {
     this.nodes = nodes;
   }
 
@@ -245,7 +245,7 @@ public class RoutesV2UpdatePipelineRequest {
     openapiFields = new HashSet<String>(Arrays.asList("description", "edges", "enabled", "name", "nodes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("edges", "enabled", "name", "nodes"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -268,38 +268,39 @@ public class RoutesV2UpdatePipelineRequest {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2UpdatePipelineRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : RoutesV2UpdatePipelineRequest.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      if (jsonObj.get("edges") != null) {
-        if (!jsonObj.get("edges").isJsonArray()) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `edges` to be an array in the JSON string but got `%s`", jsonObj.get("edges").toString()));
-        }
+      if (jsonObj.get("edges") != null && !jsonObj.get("edges").isJsonNull()) {
         JsonArray jsonArrayedges = jsonObj.getAsJsonArray("edges");
-        // validate the required field `edges` (array)
-        for (int i = 0; i < jsonArrayedges.size(); i++) {
-          RoutesV2PipelineRequestEdge.validateJsonElement(jsonArrayedges.get(i));
+        if (jsonArrayedges != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("edges").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `edges` to be an array in the JSON string but got `%s`", jsonObj.get("edges").toString()));
+          }
+
+          // validate the optional field `edges` (array)
+          for (int i = 0; i < jsonArrayedges.size(); i++) {
+            RoutesV2PipelineRequestEdge.validateJsonElement(jsonArrayedges.get(i));
+          };
         }
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (jsonObj.get("nodes") != null) {
-        if (!jsonObj.get("nodes").isJsonArray()) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodes` to be an array in the JSON string but got `%s`", jsonObj.get("nodes").toString()));
-        }
+      if (jsonObj.get("nodes") != null && !jsonObj.get("nodes").isJsonNull()) {
         JsonArray jsonArraynodes = jsonObj.getAsJsonArray("nodes");
-        // validate the required field `nodes` (array)
-        for (int i = 0; i < jsonArraynodes.size(); i++) {
-          RoutesV2PipelineRequestNode.validateJsonElement(jsonArraynodes.get(i));
+        if (jsonArraynodes != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("nodes").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodes` to be an array in the JSON string but got `%s`", jsonObj.get("nodes").toString()));
+          }
+
+          // validate the optional field `nodes` (array)
+          for (int i = 0; i < jsonArraynodes.size(); i++) {
+            RoutesV2PipelineRequestNode.validateJsonElement(jsonArraynodes.get(i));
+          };
         }
       }
   }
