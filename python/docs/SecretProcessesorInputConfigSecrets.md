@@ -30,7 +30,6 @@ Name | Type | Description | Notes
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 

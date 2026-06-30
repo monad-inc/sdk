@@ -29,7 +29,6 @@ Name | Type | Description | Notes
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RefreshToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **UserOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TwilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TwilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -582,31 +581,6 @@ and a boolean to check if the value has been set.
 
 SetUserOauthToken sets UserOauthToken field to given value.
 
-
-### GetPrivateKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPrivateKey() ModelsSecret`
-
-GetPrivateKey returns the PrivateKey field if non-nil, zero value otherwise.
-
-### GetPrivateKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPrivateKeyOk() (*ModelsSecret, bool)`
-
-GetPrivateKeyOk returns a tuple with the PrivateKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrivateKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetPrivateKey(v ModelsSecret)`
-
-SetPrivateKey sets PrivateKey field to given value.
-
-### HasPrivateKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasPrivateKey() bool`
-
-HasPrivateKey returns a boolean if a field has been set.
 
 ### GetToken
 

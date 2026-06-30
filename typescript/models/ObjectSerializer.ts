@@ -532,8 +532,6 @@ export * from '../models/SlackEnterpriseAuditLogsSecretsConfig';
 export * from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 export * from '../models/SlackSettingsConfig';
 export * from '../models/SlackWebhookVariant';
-export * from '../models/SnowflakeInputSecretsConfig';
-export * from '../models/SnowflakeInputSettingsConfig';
 export * from '../models/SnowflakeOutputSecretsConfig';
 export * from '../models/SnowflakeOutputSettingsConfig';
 export * from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
@@ -1165,8 +1163,6 @@ import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterprise
 import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
 import { SlackWebhookVariant } from '../models/SlackWebhookVariant';
-import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
-import { SnowflakeInputSettingsConfig , SnowflakeInputSettingsConfigAuthTypeEnum            } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
@@ -1335,7 +1331,6 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsCategoryEnum",
     "SecretProcessesorInputConfigSettingsLogTypeEnum",
     "SecretProcessesorOutputConfigSettingsCompressionEnum",
-    "SnowflakeInputSettingsConfigAuthTypeEnum",
     "SqsS3BaseKeyFilterMode",
     "SqsS3BaseKeyFilterOperator",
     "SqsS3BaseKeyFilterType",
@@ -1863,8 +1858,6 @@ let typeMap: {[index: string]: any} = {
     "SlackEnterpriseAuditLogsSettingsConfig": SlackEnterpriseAuditLogsSettingsConfig,
     "SlackSettingsConfig": SlackSettingsConfig,
     "SlackWebhookVariant": SlackWebhookVariant,
-    "SnowflakeInputSecretsConfig": SnowflakeInputSecretsConfig,
-    "SnowflakeInputSettingsConfig": SnowflakeInputSettingsConfig,
     "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
     "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
     "SnowflakeSnowpipeStreamingSettingsConfig": SnowflakeSnowpipeStreamingSettingsConfig,

@@ -89,7 +89,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
 	SentryOrgAuditLogsSecretsConfig *SentryOrgAuditLogsSecretsConfig
 	SlackEnterpriseAuditLogsSecretsConfig *SlackEnterpriseAuditLogsSecretsConfig
-	SnowflakeInputSecretsConfig *SnowflakeInputSecretsConfig
 	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
 	TaniumGraphqlInputSecretsConfig *TaniumGraphqlInputSecretsConfig
@@ -601,13 +600,6 @@ func SentryOrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Sen
 func SlackEnterpriseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SlackEnterpriseAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		SlackEnterpriseAuditLogsSecretsConfig: v,
-	}
-}
-
-// SnowflakeInputSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SnowflakeInputSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SnowflakeInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnowflakeInputSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SnowflakeInputSecretsConfig: v,
 	}
 }
 
@@ -1960,23 +1952,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SnowflakeInputSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnowflakeInputSecretsConfig)
-	if err == nil {
-		jsonSnowflakeInputSecretsConfig, _ := json.Marshal(dst.SnowflakeInputSecretsConfig)
-		if string(jsonSnowflakeInputSecretsConfig) == "{}" { // empty struct
-			dst.SnowflakeInputSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnowflakeInputSecretsConfig); err != nil {
-				dst.SnowflakeInputSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnowflakeInputSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SnykIssuesSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSecretsConfig)
 	if err == nil {
@@ -2423,7 +2398,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 		dst.SentryOrgAuditLogsSecretsConfig = nil
 		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
-		dst.SnowflakeInputSecretsConfig = nil
 		dst.SnykIssuesSecretsConfig = nil
 		dst.SnykTargetsSecretsConfig = nil
 		dst.TaniumGraphqlInputSecretsConfig = nil
@@ -2735,10 +2709,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SlackEnterpriseAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.SlackEnterpriseAuditLogsSecretsConfig)
-	}
-
-	if src.SnowflakeInputSecretsConfig != nil {
-		return json.Marshal(&src.SnowflakeInputSecretsConfig)
 	}
 
 	if src.SnykIssuesSecretsConfig != nil {
@@ -3117,10 +3087,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.SlackEnterpriseAuditLogsSecretsConfig
 	}
 
-	if obj.SnowflakeInputSecretsConfig != nil {
-		return obj.SnowflakeInputSecretsConfig
-	}
-
 	if obj.SnykIssuesSecretsConfig != nil {
 		return obj.SnykIssuesSecretsConfig
 	}
@@ -3493,10 +3459,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.SlackEnterpriseAuditLogsSecretsConfig != nil {
 		return *obj.SlackEnterpriseAuditLogsSecretsConfig
-	}
-
-	if obj.SnowflakeInputSecretsConfig != nil {
-		return *obj.SnowflakeInputSecretsConfig
 	}
 
 	if obj.SnykIssuesSecretsConfig != nil {

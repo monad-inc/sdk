@@ -32,7 +32,6 @@
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**refreshToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**privateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |

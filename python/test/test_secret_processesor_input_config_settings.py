@@ -60,7 +60,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 partition_format = 'flat hive compliant',
                 prefix = '',
                 record_location = '',
-                var_schema = '',
+                var_schema = [
+                    ''
+                    ],
                 chunking_mode = 'by_size',
                 exclude_digest_files = True,
                 queue_url = '',
@@ -252,11 +254,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 domain_url = '',
                 topic = '',
                 host_name = '',
-                account = '',
-                database = '',
-                role = '',
-                user = '',
-                warehouse = '',
                 rate = 56,
                 record_type = '',
                 custom_template = '',
@@ -302,18 +299,18 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 compression = 'auto',
                 format = 'json',
                 partition_format = 'flat hive compliant',
-                var_schema = '',
+                var_schema = [
+                    ''
+                    ],
                 queue_url = '',
                 tenant_id = '',
                 query = '',
-                timestamp_column = '',
                 base_url = '',
                 org_slug = '',
                 endpoint_url = '',
                 entity_type = [
                     'ACCESS_ROLE'
                     ],
-                cron = '',
                 api_key_id = '',
                 domain_name = '',
                 environment = 'production',
@@ -347,11 +344,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 domain = '',
                 username = '',
                 host_name = '',
-                account = '',
-                database = '',
-                role = '',
-                user = '',
-                warehouse = '',
                 tenant_domain = '',
                 tenant_url = '',
                 asset_types = [

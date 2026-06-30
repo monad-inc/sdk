@@ -10201,9 +10201,6 @@
                                 "$ref": "#/components/schemas/slack_enterprise_audit_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/snowflake_input.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/snyk_issues.SecretsConfig"
                             },
                             {
@@ -10598,9 +10595,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/slack_enterprise_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/snowflake_input.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/snyk_issues.SettingsConfig"
@@ -11097,83 +11091,6 @@
                         "type": "boolean"
                     }
                 },
-                "type": "object"
-            },
-            "snowflake_input.SecretsConfig": {
-                "description": "Snowflake Input Secrets",
-                "properties": {
-                    "password": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "private_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "snowflake_input.SettingsConfig": {
-                "description": "Snowflake Input Settings",
-                "properties": {
-                    "account": {
-                        "description": "The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.",
-                        "type": "string"
-                    },
-                    "auth_type": {
-                        "description": "Authentication type: \"password\" or \"private key\"",
-                        "enum": [
-                            "password",
-                            "private key"
-                        ],
-                        "type": "string"
-                    },
-                    "cron": {
-                        "description": "Cron string for scheduling the ingest of your input",
-                        "type": "string"
-                    },
-                    "database": {
-                        "description": "The name of the Snowflake database to connect to and perform operations on",
-                        "type": "string"
-                    },
-                    "query": {
-                        "description": "Optional custom query to use instead of table (must include timestamp_column)",
-                        "type": "string"
-                    },
-                    "role": {
-                        "description": "The name of the Role your service account was granted which can access your resources.",
-                        "type": "string"
-                    },
-                    "schema": {
-                        "description": "The schema within the Snowflake database where the target table resides.",
-                        "type": "string"
-                    },
-                    "table": {
-                        "description": "The name of the table in Snowflake to query data from.",
-                        "type": "string"
-                    },
-                    "timestamp_column": {
-                        "description": "The column containing timestamp values used for incremental loading",
-                        "type": "string"
-                    },
-                    "user": {
-                        "description": "The username of the Snowflake account used to establish the connection.",
-                        "type": "string"
-                    },
-                    "warehouse": {
-                        "description": "The Snowflake virtual warehouse to use for executing queries and processing data.",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "account",
-                    "auth_type",
-                    "cron",
-                    "database",
-                    "role",
-                    "schema",
-                    "timestamp_column",
-                    "user",
-                    "warehouse"
-                ],
                 "type": "object"
             },
             "snowflake_output.SecretsConfig": {

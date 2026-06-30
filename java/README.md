@@ -900,8 +900,6 @@ Class | Method | HTTP request | Description
  - [SlackEnterpriseAuditLogsSettingsConfig](docs/SlackEnterpriseAuditLogsSettingsConfig.md)
  - [SlackSettingsConfig](docs/SlackSettingsConfig.md)
  - [SlackWebhookVariant](docs/SlackWebhookVariant.md)
- - [SnowflakeInputSecretsConfig](docs/SnowflakeInputSecretsConfig.md)
- - [SnowflakeInputSettingsConfig](docs/SnowflakeInputSettingsConfig.md)
  - [SnowflakeOutputSecretsConfig](docs/SnowflakeOutputSecretsConfig.md)
  - [SnowflakeOutputSettingsConfig](docs/SnowflakeOutputSettingsConfig.md)
  - [SnowflakeSnowpipeStreamingSettingsConfig](docs/SnowflakeSnowpipeStreamingSettingsConfig.md)

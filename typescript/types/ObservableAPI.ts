@@ -537,8 +537,6 @@ import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterprise
 import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
 import { SlackWebhookVariant } from '../models/SlackWebhookVariant';
-import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
-import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';

@@ -98,7 +98,6 @@ type SecretProcessesorInputConfigSettings struct {
 	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
 	SentryOrgAuditLogsSettingsConfig *SentryOrgAuditLogsSettingsConfig
 	SlackEnterpriseAuditLogsSettingsConfig *SlackEnterpriseAuditLogsSettingsConfig
-	SnowflakeInputSettingsConfig *SnowflakeInputSettingsConfig
 	SnykIssuesSettingsConfig *SnykIssuesSettingsConfig
 	SnykTargetsSettingsConfig *SnykTargetsSettingsConfig
 	SyntheticDataCustomSettingsConfig *SyntheticDataCustomSettingsConfig
@@ -675,13 +674,6 @@ func SentryOrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *S
 func SlackEnterpriseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SlackEnterpriseAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		SlackEnterpriseAuditLogsSettingsConfig: v,
-	}
-}
-
-// SnowflakeInputSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SnowflakeInputSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SnowflakeInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnowflakeInputSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SnowflakeInputSettingsConfig: v,
 	}
 }
 
@@ -2201,23 +2193,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SlackEnterpriseAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into SnowflakeInputSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnowflakeInputSettingsConfig)
-	if err == nil {
-		jsonSnowflakeInputSettingsConfig, _ := json.Marshal(dst.SnowflakeInputSettingsConfig)
-		if string(jsonSnowflakeInputSettingsConfig) == "{}" { // empty struct
-			dst.SnowflakeInputSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnowflakeInputSettingsConfig); err != nil {
-				dst.SnowflakeInputSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnowflakeInputSettingsConfig = nil
-	}
-
 	// try to unmarshal data into SnykIssuesSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSettingsConfig)
 	if err == nil {
@@ -2707,7 +2682,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
 		dst.SentryOrgAuditLogsSettingsConfig = nil
 		dst.SlackEnterpriseAuditLogsSettingsConfig = nil
-		dst.SnowflakeInputSettingsConfig = nil
 		dst.SnykIssuesSettingsConfig = nil
 		dst.SnykTargetsSettingsConfig = nil
 		dst.SyntheticDataCustomSettingsConfig = nil
@@ -3057,10 +3031,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SlackEnterpriseAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.SlackEnterpriseAuditLogsSettingsConfig)
-	}
-
-	if src.SnowflakeInputSettingsConfig != nil {
-		return json.Marshal(&src.SnowflakeInputSettingsConfig)
 	}
 
 	if src.SnykIssuesSettingsConfig != nil {
@@ -3483,10 +3453,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.SlackEnterpriseAuditLogsSettingsConfig
 	}
 
-	if obj.SnowflakeInputSettingsConfig != nil {
-		return obj.SnowflakeInputSettingsConfig
-	}
-
 	if obj.SnykIssuesSettingsConfig != nil {
 		return obj.SnykIssuesSettingsConfig
 	}
@@ -3903,10 +3869,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.SlackEnterpriseAuditLogsSettingsConfig != nil {
 		return *obj.SlackEnterpriseAuditLogsSettingsConfig
-	}
-
-	if obj.SnowflakeInputSettingsConfig != nil {
-		return *obj.SnowflakeInputSettingsConfig
 	}
 
 	if obj.SnykIssuesSettingsConfig != nil {

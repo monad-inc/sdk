@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **partition_format** | **str** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
 **prefix** | **str** | Prefix of the audit log keys, up to (but not including) the date partition — e.g. \&quot;AWSLogs/123456789012/redshift/us-east-1\&quot;. If you configured a custom S3 key prefix for audit logging, include it here. | [optional] 
 **record_location** | **str** | JSONPath location of the records array in the GraphQL response | [optional] 
-**var_schema** | **str** | The schema within the Snowflake database where the target table resides. | 
+**var_schema** | **List[str]** | Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \&quot;delimited\&quot; format only; the \&quot;csv\&quot; and \&quot;wsv\&quot; formats always read column names from the first row and ignore this field. | 
 **chunking_mode** | [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
 **exclude_digest_files** | **bool** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). | [optional] 
 **queue_url** | **str** |  | 
@@ -43,9 +43,9 @@ Name | Type | Description | Notes
 **storage_account_url** | **str** | The Azure storage account URL where flow logs are stored | [optional] 
 **virtual_network_name** | **str** | The name of the virtual network for which flow logs are being collected | [optional] 
 **dataset** | **str** | The BigQuery dataset ID containing the table | [optional] 
-**query** | **str** | Optional custom query to use instead of table (must include timestamp_column) | 
-**table** | **str** | The name of the table in Snowflake to query data from. | [optional] 
-**timestamp_column** | **str** | The column containing timestamp values used for incremental loading | 
+**query** | **str** | The query to run against the Log Analytics workspace | 
+**table** | **str** | The BigQuery table ID to query data from | [optional] 
+**timestamp_column** | **str** | The column containing timestamp values used for incremental loading | [optional] 
 **base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **event_type** | **str** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **hostname** | **str** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
@@ -66,7 +66,7 @@ Name | Type | Description | Notes
 **entity_type** | [**List[WizEntityType]**](WizEntityType.md) | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
 **full_snapshot** | **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **interval** | **int** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**cron** | **str** | Cron string for scheduling the ingest of your input | 
+**cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
 **account_id** | **str** | Account ID for the input | [optional] 
 **include_bot_fields** | **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **zone_id** | **str** | Cloudflare Zone ID | [optional] 
@@ -140,11 +140,6 @@ Name | Type | Description | Notes
 **domain_url** | **str** | Domain URL for the Salesforce instance | [optional] 
 **topic** | **str** | Pub/Sub topic to subscribe to | [optional] 
 **host_name** | **str** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
-**account** | **str** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | 
-**database** | **str** | The name of the Snowflake database to connect to and perform operations on | 
-**role** | **str** | The name of the Role your service account was granted which can access your resources. | 
-**user** | **str** | The username of the Snowflake account used to establish the connection. | 
-**warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | 
 **rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **record_type** | **str** | The type of record to generate | [optional] 
 **custom_template** | **str** | A custom template using the functions we provide to generate demo data | [optional] 

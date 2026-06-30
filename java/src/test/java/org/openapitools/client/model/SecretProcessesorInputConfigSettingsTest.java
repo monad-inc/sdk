@@ -21,8 +21,10 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.openapitools.client.model.AdminLogsSettingsConfig;
 import org.openapitools.client.model.AivenServiceLogsSettingsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
@@ -108,7 +110,6 @@ import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
 import org.openapitools.client.model.SentryOrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
-import org.openapitools.client.model.SnowflakeInputSettingsConfig;
 import org.openapitools.client.model.SnykIssuesSettingsConfig;
 import org.openapitools.client.model.SnykTargetsSettingsConfig;
 import org.openapitools.client.model.SqsS3BaseKeyFilter;
@@ -1246,46 +1247,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void hostNameTest() {
         // TODO: test hostName
-    }
-
-    /**
-     * Test the property 'account'
-     */
-    @Test
-    public void accountTest() {
-        // TODO: test account
-    }
-
-    /**
-     * Test the property 'database'
-     */
-    @Test
-    public void databaseTest() {
-        // TODO: test database
-    }
-
-    /**
-     * Test the property 'role'
-     */
-    @Test
-    public void roleTest() {
-        // TODO: test role
-    }
-
-    /**
-     * Test the property 'user'
-     */
-    @Test
-    public void userTest() {
-        // TODO: test user
-    }
-
-    /**
-     * Test the property 'warehouse'
-     */
-    @Test
-    public void warehouseTest() {
-        // TODO: test warehouse
     }
 
     /**

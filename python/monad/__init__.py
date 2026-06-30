@@ -602,8 +602,6 @@ __all__ = [
     "SlackEnterpriseAuditLogsSettingsConfig",
     "SlackSettingsConfig",
     "SlackWebhookVariant",
-    "SnowflakeInputSecretsConfig",
-    "SnowflakeInputSettingsConfig",
     "SnowflakeOutputSecretsConfig",
     "SnowflakeOutputSettingsConfig",
     "SnowflakeSnowpipeStreamingSettingsConfig",
@@ -1290,8 +1288,6 @@ from monad.models.slack_enterprise_audit_logs_secrets_config import SlackEnterpr
 from monad.models.slack_enterprise_audit_logs_settings_config import SlackEnterpriseAuditLogsSettingsConfig as SlackEnterpriseAuditLogsSettingsConfig
 from monad.models.slack_settings_config import SlackSettingsConfig as SlackSettingsConfig
 from monad.models.slack_webhook_variant import SlackWebhookVariant as SlackWebhookVariant
-from monad.models.snowflake_input_secrets_config import SnowflakeInputSecretsConfig as SnowflakeInputSecretsConfig
-from monad.models.snowflake_input_settings_config import SnowflakeInputSettingsConfig as SnowflakeInputSettingsConfig
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig as SnowflakeOutputSecretsConfig
 from monad.models.snowflake_output_settings_config import SnowflakeOutputSettingsConfig as SnowflakeOutputSettingsConfig
 from monad.models.snowflake_snowpipe_streaming_settings_config import SnowflakeSnowpipeStreamingSettingsConfig as SnowflakeSnowpipeStreamingSettingsConfig

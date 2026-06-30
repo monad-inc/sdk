@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **PartitionFormat** | **string** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
 **Prefix** | Pointer to **string** | Prefix of the audit log keys, up to (but not including) the date partition — e.g. \&quot;AWSLogs/123456789012/redshift/us-east-1\&quot;. If you configured a custom S3 key prefix for audit logging, include it here. | [optional] 
 **RecordLocation** | Pointer to **string** | JSONPath location of the records array in the GraphQL response | [optional] 
-**Schema** | **string** | The schema within the Snowflake database where the target table resides. | 
+**Schema** | **[]string** | Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \&quot;delimited\&quot; format only; the \&quot;csv\&quot; and \&quot;wsv\&quot; formats always read column names from the first row and ignore this field. | 
 **ChunkingMode** | Pointer to [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
 **ExcludeDigestFiles** | Pointer to **bool** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). | [optional] 
 **QueueUrl** | **string** |  | 
@@ -42,9 +42,9 @@ Name | Type | Description | Notes
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
 **VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
-**Query** | **string** | Optional custom query to use instead of table (must include timestamp_column) | 
-**Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
-**TimestampColumn** | **string** | The column containing timestamp values used for incremental loading | 
+**Query** | **string** | The query to run against the Log Analytics workspace | 
+**Table** | Pointer to **string** | The BigQuery table ID to query data from | [optional] 
+**TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **BaseUrl** | **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
@@ -65,7 +65,7 @@ Name | Type | Description | Notes
 **EntityType** | [**[]WizEntityType**](WizEntityType.md) | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**Cron** | **string** | Cron string for scheduling the ingest of your input | 
+**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
@@ -139,11 +139,6 @@ Name | Type | Description | Notes
 **DomainUrl** | Pointer to **string** | Domain URL for the Salesforce instance | [optional] 
 **Topic** | Pointer to **string** | Pub/Sub topic to subscribe to | [optional] 
 **HostName** | **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
-**Account** | **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | 
-**Database** | **string** | The name of the Snowflake database to connect to and perform operations on | 
-**Role** | **string** | The name of the Role your service account was granted which can access your resources. | 
-**User** | **string** | The username of the Snowflake account used to establish the connection. | 
-**Warehouse** | **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
 **CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
@@ -171,7 +166,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema string, queueUrl string, tenantId string, query string, timestampColumn string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, cron string, apiKeyId string, domainName string, environment string, userId string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, logType string, endpoint string, subdomain string, domain string, username string, hostName string, account string, database string, role string, user string, warehouse string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, baseUrl string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, environment string, userId string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, gitlabUrl string, projectId string, location string, authType ZendeskAuditLogsAuthType, projectIds []string, tenantDataCenter string, logCategories []string, logType string, endpoint string, subdomain string, domain string, username string, hostName string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, subDomain string, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -583,20 +578,20 @@ HasRecordLocation returns a boolean if a field has been set.
 
 ### GetSchema
 
-`func (o *SecretProcessesorInputConfigSettings) GetSchema() string`
+`func (o *SecretProcessesorInputConfigSettings) GetSchema() []string`
 
 GetSchema returns the Schema field if non-nil, zero value otherwise.
 
 ### GetSchemaOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetSchemaOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetSchemaOk() (*[]string, bool)`
 
 GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchema
 
-`func (o *SecretProcessesorInputConfigSettings) SetSchema(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetSchema(v []string)`
 
 SetSchema sets Schema field to given value.
 
@@ -1155,6 +1150,11 @@ and a boolean to check if the value has been set.
 
 SetTimestampColumn sets TimestampColumn field to given value.
 
+### HasTimestampColumn
+
+`func (o *SecretProcessesorInputConfigSettings) HasTimestampColumn() bool`
+
+HasTimestampColumn returns a boolean if a field has been set.
 
 ### GetBaseUrl
 
@@ -1655,6 +1655,11 @@ and a boolean to check if the value has been set.
 
 SetCron sets Cron field to given value.
 
+### HasCron
+
+`func (o *SecretProcessesorInputConfigSettings) HasCron() bool`
+
+HasCron returns a boolean if a field has been set.
 
 ### GetAccountId
 
@@ -3369,106 +3374,6 @@ and a boolean to check if the value has been set.
 `func (o *SecretProcessesorInputConfigSettings) SetHostName(v string)`
 
 SetHostName sets HostName field to given value.
-
-
-### GetAccount
-
-`func (o *SecretProcessesorInputConfigSettings) GetAccount() string`
-
-GetAccount returns the Account field if non-nil, zero value otherwise.
-
-### GetAccountOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAccountOk() (*string, bool)`
-
-GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccount
-
-`func (o *SecretProcessesorInputConfigSettings) SetAccount(v string)`
-
-SetAccount sets Account field to given value.
-
-
-### GetDatabase
-
-`func (o *SecretProcessesorInputConfigSettings) GetDatabase() string`
-
-GetDatabase returns the Database field if non-nil, zero value otherwise.
-
-### GetDatabaseOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetDatabaseOk() (*string, bool)`
-
-GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDatabase
-
-`func (o *SecretProcessesorInputConfigSettings) SetDatabase(v string)`
-
-SetDatabase sets Database field to given value.
-
-
-### GetRole
-
-`func (o *SecretProcessesorInputConfigSettings) GetRole() string`
-
-GetRole returns the Role field if non-nil, zero value otherwise.
-
-### GetRoleOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRoleOk() (*string, bool)`
-
-GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRole
-
-`func (o *SecretProcessesorInputConfigSettings) SetRole(v string)`
-
-SetRole sets Role field to given value.
-
-
-### GetUser
-
-`func (o *SecretProcessesorInputConfigSettings) GetUser() string`
-
-GetUser returns the User field if non-nil, zero value otherwise.
-
-### GetUserOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserOk() (*string, bool)`
-
-GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUser
-
-`func (o *SecretProcessesorInputConfigSettings) SetUser(v string)`
-
-SetUser sets User field to given value.
-
-
-### GetWarehouse
-
-`func (o *SecretProcessesorInputConfigSettings) GetWarehouse() string`
-
-GetWarehouse returns the Warehouse field if non-nil, zero value otherwise.
-
-### GetWarehouseOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetWarehouseOk() (*string, bool)`
-
-GetWarehouseOk returns a tuple with the Warehouse field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWarehouse
-
-`func (o *SecretProcessesorInputConfigSettings) SetWarehouse(v string)`
-
-SetWarehouse sets Warehouse field to given value.
 
 
 ### GetRate

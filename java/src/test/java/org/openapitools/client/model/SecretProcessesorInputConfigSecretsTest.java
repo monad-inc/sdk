@@ -92,7 +92,6 @@ import org.openapitools.client.model.SemgrepCodeFindingsSecretsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig;
 import org.openapitools.client.model.SentryOrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSecretsConfig;
-import org.openapitools.client.model.SnowflakeInputSecretsConfig;
 import org.openapitools.client.model.SnykIssuesSecretsConfig;
 import org.openapitools.client.model.SnykTargetsSecretsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSecretsConfig;
@@ -329,14 +328,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void userOauthTokenTest() {
         // TODO: test userOauthToken
-    }
-
-    /**
-     * Test the property 'privateKey'
-     */
-    @Test
-    public void privateKeyTest() {
-        // TODO: test privateKey
     }
 
     /**
