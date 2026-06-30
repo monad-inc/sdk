@@ -14,6 +14,8 @@ The Monad API supports two authentication methods:
 
 ### API Key
 
+See [Generating an API key]({{BASE_URL}}/docs/guides/api-keys) for instructions on creating one.
+
 Include your API key in the `x-api-key` header:
 
 ```bash
