@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 export class BuildkiteAuditLogsSettingsConfig {
@@ -21,6 +22,7 @@ export class BuildkiteAuditLogsSettingsConfig {
     * The URL slug of your Buildkite organizations
     */
     'orgSlug'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,6 +39,12 @@ export class BuildkiteAuditLogsSettingsConfig {
             "name": "orgSlug",
             "baseName": "org_slug",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         }    ];
 

@@ -378,6 +378,7 @@ export * from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
 export * from '../models/PantherSecretsConfig';
 export * from '../models/PantherSettingsConfig';
 export * from '../models/ParquetParquetFormatter';
+export * from '../models/PersonaSettingsConfig';
 export * from '../models/PolymerSecretsConfig';
 export * from '../models/PolymerSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
@@ -750,7 +751,7 @@ import { CreateTransformRequestClass } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
-import { CustomerEventDataSettingsConfig , CustomerEventDataSettingsConfigEnvironmentEnum    } from '../models/CustomerEventDataSettingsConfig';
+import { CustomerEventDataSettingsConfig , CustomerEventDataSettingsConfigEnvironmentEnum     } from '../models/CustomerEventDataSettingsConfig';
 import { DatabricksDeltaTableAutoLoaderWriteMode } from '../models/DatabricksDeltaTableAutoLoaderWriteMode';
 import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDeltaTableCopyIntoWriteMode';
 import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTableSecretsConfig';
@@ -786,7 +787,7 @@ import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSe
 import { EnrichmentConnectorMeta           } from '../models/EnrichmentConnectorMeta';
 import { EnrichmentSandboxRequestClass } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
-import { EntraIdSettingsConfig , EntraIdSettingsConfigCategoryEnum       } from '../models/EntraIdSettingsConfig';
+import { EntraIdSettingsConfig , EntraIdSettingsConfigCategoryEnum        } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { ExportTransformRequestClass } from '../models/ExportTransformRequest';
@@ -1009,6 +1010,7 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
+import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
 import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
 import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
@@ -1258,7 +1260,7 @@ import { WizStatus } from '../models/WizStatus';
 import { WizVendorSeverity } from '../models/WizVendorSeverity';
 import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
 import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
-import { ZendeskAuditLogsSettingsConfig     } from '../models/ZendeskAuditLogsSettingsConfig';
+import { ZendeskAuditLogsSettingsConfig      } from '../models/ZendeskAuditLogsSettingsConfig';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -1704,6 +1706,7 @@ let typeMap: {[index: string]: any} = {
     "PantherSecretsConfig": PantherSecretsConfig,
     "PantherSettingsConfig": PantherSettingsConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
+    "PersonaSettingsConfig": PersonaSettingsConfig,
     "PolymerSecretsConfig": PolymerSecretsConfig,
     "PolymerSettingsConfig": PolymerSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,

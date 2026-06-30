@@ -26,6 +26,7 @@ type FullScansSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Cron expression for scheduling the input
 	OrgSlug string `json:"org_slug"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// A repository slug to filter full-scans by.
 	Repo *string `json:"repo,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -108,6 +109,38 @@ func (o *FullScansSettingsConfig) SetOrgSlug(v string) {
 	o.OrgSlug = v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *FullScansSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FullScansSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *FullScansSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *FullScansSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetRepo returns the Repo field value if set, zero value otherwise.
 func (o *FullScansSettingsConfig) GetRepo() string {
 	if o == nil || IsNil(o.Repo) {
@@ -186,6 +219,9 @@ func (o FullScansSettingsConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
 	toSerialize["org_slug"] = o.OrgSlug
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
+	}
 	if !IsNil(o.Repo) {
 		toSerialize["repo"] = o.Repo
 	}

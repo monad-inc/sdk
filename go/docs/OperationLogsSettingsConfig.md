@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **CategoryType** | Pointer to **string** | The category of logs to pull | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetCategoryType sets CategoryType field to given value.
 `func (o *OperationLogsSettingsConfig) HasCategoryType() bool`
 
 HasCategoryType returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *OperationLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *OperationLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *OperationLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *OperationLogsSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

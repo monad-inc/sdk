@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,6 +56,11 @@ public class Microsoft365GenericSettingsConfig {
   @javax.annotation.Nullable
   private String backfillStartTime;
 
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
   @javax.annotation.Nullable
@@ -84,6 +90,25 @@ public class Microsoft365GenericSettingsConfig {
 
   public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
     this.backfillStartTime = backfillStartTime;
+  }
+
+
+  public Microsoft365GenericSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -136,13 +161,14 @@ public class Microsoft365GenericSettingsConfig {
     }
     Microsoft365GenericSettingsConfig microsoft365GenericSettingsConfig = (Microsoft365GenericSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, microsoft365GenericSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.rateLimit, microsoft365GenericSettingsConfig.rateLimit) &&
         Objects.equals(this.tenantId, microsoft365GenericSettingsConfig.tenantId) &&
         Objects.equals(this.useSyntheticData, microsoft365GenericSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, tenantId, useSyntheticData);
+    return Objects.hash(backfillStartTime, rateLimit, tenantId, useSyntheticData);
   }
 
   @Override
@@ -150,6 +176,7 @@ public class Microsoft365GenericSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class Microsoft365GenericSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -170,7 +197,7 @@ public class Microsoft365GenericSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "tenant_id", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "rate_limit", "tenant_id", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -199,6 +226,10 @@ public class Microsoft365GenericSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if ((jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) && !jsonObj.get("tenant_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));

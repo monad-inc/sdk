@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,6 +60,11 @@ public class OracleSettingsConfig {
   @SerializedName(SERIALIZED_NAME_DOMAIN)
   @javax.annotation.Nonnull
   private String domain;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -108,6 +114,25 @@ public class OracleSettingsConfig {
 
   public void setDomain(@javax.annotation.Nonnull String domain) {
     this.domain = domain;
+  }
+
+
+  public OracleSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -161,13 +186,14 @@ public class OracleSettingsConfig {
     OracleSettingsConfig oracleSettingsConfig = (OracleSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, oracleSettingsConfig.backfillStartTime) &&
         Objects.equals(this.domain, oracleSettingsConfig.domain) &&
+        Objects.equals(this.rateLimit, oracleSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, oracleSettingsConfig.useSyntheticData) &&
         Objects.equals(this.username, oracleSettingsConfig.username);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, domain, useSyntheticData, username);
+    return Objects.hash(backfillStartTime, domain, rateLimit, useSyntheticData, username);
   }
 
   @Override
@@ -176,6 +202,7 @@ public class OracleSettingsConfig {
     sb.append("class OracleSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
@@ -196,7 +223,7 @@ public class OracleSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "domain", "use_synthetic_data", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "domain", "rate_limit", "use_synthetic_data", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("domain", "username"));
@@ -235,6 +262,10 @@ public class OracleSettingsConfig {
       }
       if (!jsonObj.get("domain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if (!jsonObj.get("username").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));

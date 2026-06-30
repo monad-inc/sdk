@@ -24,6 +24,7 @@ type BuildkiteAuditLogsSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The URL slug of your Buildkite organizations
 	OrgSlug *string `json:"org_slug,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 }
 
 // NewBuildkiteAuditLogsSettingsConfig instantiates a new BuildkiteAuditLogsSettingsConfig object
@@ -107,6 +108,38 @@ func (o *BuildkiteAuditLogsSettingsConfig) SetOrgSlug(v string) {
 	o.OrgSlug = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *BuildkiteAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BuildkiteAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *BuildkiteAuditLogsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *BuildkiteAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 func (o BuildkiteAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -122,6 +155,9 @@ func (o BuildkiteAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error
 	}
 	if !IsNil(o.OrgSlug) {
 		toSerialize["org_slug"] = o.OrgSlug
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	return toSerialize, nil
 }

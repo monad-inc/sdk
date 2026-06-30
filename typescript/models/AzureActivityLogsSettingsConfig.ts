@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -20,6 +21,7 @@ export class AzureActivityLogsSettingsConfig {
     * The correlation ID of the log
     */
     'correlationId'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * The name of the resource group
     */
@@ -54,6 +56,12 @@ export class AzureActivityLogsSettingsConfig {
             "name": "correlationId",
             "baseName": "correlation_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

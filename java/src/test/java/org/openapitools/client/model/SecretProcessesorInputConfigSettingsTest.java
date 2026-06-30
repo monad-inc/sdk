@@ -101,6 +101,7 @@ import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.OwnbackupAccountEventsSettingsConfig;
 import org.openapitools.client.model.PagerdutyAuditRecordsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
+import org.openapitools.client.model.PersonaSettingsConfig;
 import org.openapitools.client.model.PolymerSettingsConfig;
 import org.openapitools.client.model.PostmanAuditLogsSettingsConfig;
 import org.openapitools.client.model.PubsubSettingsConfig;

@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -20,6 +21,7 @@ export class Microsoft365GenericSettingsConfig {
     * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
     */
     'backfillStartTime'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * The Azure Entra ID tenant (directory) ID
     */
@@ -38,6 +40,12 @@ export class Microsoft365GenericSettingsConfig {
             "name": "backfillStartTime",
             "baseName": "backfill_start_time",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

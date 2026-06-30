@@ -25,6 +25,7 @@ type ZendeskAuditLogsSettingsConfig struct {
 	AuthType ZendeskAuditLogsAuthType `json:"auth_type"`
 	// This is the email address registered with your Zendesk account
 	EmailAddress *string `json:"email_address,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo
 	SubDomain string `json:"sub_domain"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -108,6 +109,38 @@ func (o *ZendeskAuditLogsSettingsConfig) SetEmailAddress(v string) {
 	o.EmailAddress = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *ZendeskAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ZendeskAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *ZendeskAuditLogsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *ZendeskAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetSubDomain returns the SubDomain field value
 func (o *ZendeskAuditLogsSettingsConfig) GetSubDomain() string {
 	if o == nil {
@@ -177,6 +210,9 @@ func (o ZendeskAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) 
 	toSerialize["auth_type"] = o.AuthType
 	if !IsNil(o.EmailAddress) {
 		toSerialize["email_address"] = o.EmailAddress
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	toSerialize["sub_domain"] = o.SubDomain
 	if !IsNil(o.UseSyntheticData) {

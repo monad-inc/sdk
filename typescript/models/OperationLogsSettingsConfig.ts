@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -28,6 +29,7 @@ export class OperationLogsSettingsConfig {
     * The category of logs to pull
     */
     'categoryType'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -54,6 +56,12 @@ export class OperationLogsSettingsConfig {
             "name": "categoryType",
             "baseName": "category_type",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

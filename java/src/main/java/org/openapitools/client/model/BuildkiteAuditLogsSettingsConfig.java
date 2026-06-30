@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,6 +60,11 @@ public class BuildkiteAuditLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ORG_SLUG)
   @javax.annotation.Nullable
   private String orgSlug;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public BuildkiteAuditLogsSettingsConfig() {
   }
@@ -101,6 +107,25 @@ public class BuildkiteAuditLogsSettingsConfig {
   }
 
 
+  public BuildkiteAuditLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +137,13 @@ public class BuildkiteAuditLogsSettingsConfig {
     }
     BuildkiteAuditLogsSettingsConfig buildkiteAuditLogsSettingsConfig = (BuildkiteAuditLogsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, buildkiteAuditLogsSettingsConfig.backfillStartTime) &&
-        Objects.equals(this.orgSlug, buildkiteAuditLogsSettingsConfig.orgSlug);
+        Objects.equals(this.orgSlug, buildkiteAuditLogsSettingsConfig.orgSlug) &&
+        Objects.equals(this.rateLimit, buildkiteAuditLogsSettingsConfig.rateLimit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, orgSlug);
+    return Objects.hash(backfillStartTime, orgSlug, rateLimit);
   }
 
   @Override
@@ -126,6 +152,7 @@ public class BuildkiteAuditLogsSettingsConfig {
     sb.append("class BuildkiteAuditLogsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    orgSlug: ").append(toIndentedString(orgSlug)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,7 +171,7 @@ public class BuildkiteAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "org_slug"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "org_slug", "rate_limit"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -176,6 +203,10 @@ public class BuildkiteAuditLogsSettingsConfig {
       }
       if ((jsonObj.get("org_slug") != null && !jsonObj.get("org_slug").isJsonNull()) && !jsonObj.get("org_slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `org_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("org_slug").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

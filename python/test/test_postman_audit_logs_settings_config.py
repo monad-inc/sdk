@@ -36,7 +36,10 @@ class TestPostmanAuditLogsSettingsConfig(unittest.TestCase):
         model = PostmanAuditLogsSettingsConfig()
         if include_optional:
             return PostmanAuditLogsSettingsConfig(
-                backfill_start_time = ''
+                backfill_start_time = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', )
             )
         else:
             return PostmanAuditLogsSettingsConfig(

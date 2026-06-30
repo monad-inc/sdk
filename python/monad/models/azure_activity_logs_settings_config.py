@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,13 +30,14 @@ class AzureActivityLogsSettingsConfig(BaseModel):
     Microsoft Azure Activity Logs settings
     """ # noqa: E501
     correlation_id: Optional[StrictStr] = Field(default=None, description="The correlation ID of the log")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     resource_group_name: Optional[StrictStr] = Field(default=None, description="The name of the resource group")
     resource_provider: Optional[StrictStr] = Field(default=None, description="The provider of the resource")
     resource_uri: Optional[StrictStr] = Field(default=None, description="The URI of the resource")
     subscription_id: Optional[StrictStr] = Field(default=None, description="The subscription ID of the Azure subscription")
     tenant_id: Optional[StrictStr] = Field(default=None, description="The tenant ID of the Azure AD application")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["correlation_id", "resource_group_name", "resource_provider", "resource_uri", "subscription_id", "tenant_id", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["correlation_id", "rate_limit", "resource_group_name", "resource_provider", "resource_uri", "subscription_id", "tenant_id", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -76,6 +78,9 @@ class AzureActivityLogsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -89,6 +94,7 @@ class AzureActivityLogsSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "correlation_id": obj.get("correlation_id"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "resource_group_name": obj.get("resource_group_name"),
             "resource_provider": obj.get("resource_provider"),
             "resource_uri": obj.get("resource_uri"),

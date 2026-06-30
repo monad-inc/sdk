@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,6 +51,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OneloginEventsSettingsConfig {
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_SUBDOMAIN = "subdomain";
   @SerializedName(SERIALIZED_NAME_SUBDOMAIN)
   @javax.annotation.Nonnull
@@ -62,6 +68,25 @@ public class OneloginEventsSettingsConfig {
 
   public OneloginEventsSettingsConfig() {
   }
+
+  public OneloginEventsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
 
   public OneloginEventsSettingsConfig subdomain(@javax.annotation.Nonnull String subdomain) {
     this.subdomain = subdomain;
@@ -111,19 +136,21 @@ public class OneloginEventsSettingsConfig {
       return false;
     }
     OneloginEventsSettingsConfig oneloginEventsSettingsConfig = (OneloginEventsSettingsConfig) o;
-    return Objects.equals(this.subdomain, oneloginEventsSettingsConfig.subdomain) &&
+    return Objects.equals(this.rateLimit, oneloginEventsSettingsConfig.rateLimit) &&
+        Objects.equals(this.subdomain, oneloginEventsSettingsConfig.subdomain) &&
         Objects.equals(this.useSyntheticData, oneloginEventsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(subdomain, useSyntheticData);
+    return Objects.hash(rateLimit, subdomain, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OneloginEventsSettingsConfig {\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    subdomain: ").append(toIndentedString(subdomain)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -144,7 +171,7 @@ public class OneloginEventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("subdomain", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("rate_limit", "subdomain", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("subdomain"));
@@ -178,6 +205,10 @@ public class OneloginEventsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
+      }
       if (!jsonObj.get("subdomain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subdomain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subdomain").toString()));
       }

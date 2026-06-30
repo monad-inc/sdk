@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,6 +55,11 @@ public class AzureActivityLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)
   @javax.annotation.Nullable
   private String correlationId;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_RESOURCE_GROUP_NAME = "resource_group_name";
   @SerializedName(SERIALIZED_NAME_RESOURCE_GROUP_NAME)
@@ -104,6 +110,25 @@ public class AzureActivityLogsSettingsConfig {
 
   public void setCorrelationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
+  }
+
+
+  public AzureActivityLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -232,6 +257,7 @@ public class AzureActivityLogsSettingsConfig {
     }
     AzureActivityLogsSettingsConfig azureActivityLogsSettingsConfig = (AzureActivityLogsSettingsConfig) o;
     return Objects.equals(this.correlationId, azureActivityLogsSettingsConfig.correlationId) &&
+        Objects.equals(this.rateLimit, azureActivityLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.resourceGroupName, azureActivityLogsSettingsConfig.resourceGroupName) &&
         Objects.equals(this.resourceProvider, azureActivityLogsSettingsConfig.resourceProvider) &&
         Objects.equals(this.resourceUri, azureActivityLogsSettingsConfig.resourceUri) &&
@@ -242,7 +268,7 @@ public class AzureActivityLogsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(correlationId, resourceGroupName, resourceProvider, resourceUri, subscriptionId, tenantId, useSyntheticData);
+    return Objects.hash(correlationId, rateLimit, resourceGroupName, resourceProvider, resourceUri, subscriptionId, tenantId, useSyntheticData);
   }
 
   @Override
@@ -250,6 +276,7 @@ public class AzureActivityLogsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class AzureActivityLogsSettingsConfig {\n");
     sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    resourceGroupName: ").append(toIndentedString(resourceGroupName)).append("\n");
     sb.append("    resourceProvider: ").append(toIndentedString(resourceProvider)).append("\n");
     sb.append("    resourceUri: ").append(toIndentedString(resourceUri)).append("\n");
@@ -274,7 +301,7 @@ public class AzureActivityLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("correlation_id", "resource_group_name", "resource_provider", "resource_uri", "subscription_id", "tenant_id", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("correlation_id", "rate_limit", "resource_group_name", "resource_provider", "resource_uri", "subscription_id", "tenant_id", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -303,6 +330,10 @@ public class AzureActivityLogsSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("correlation_id") != null && !jsonObj.get("correlation_id").isJsonNull()) && !jsonObj.get("correlation_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `correlation_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("correlation_id").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if ((jsonObj.get("resource_group_name") != null && !jsonObj.get("resource_group_name").isJsonNull()) && !jsonObj.get("resource_group_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_group_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_group_name").toString()));

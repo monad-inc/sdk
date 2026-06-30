@@ -39,6 +39,9 @@ class TestEntraIdSettingsConfig(unittest.TestCase):
                 backfill_start_time = '',
                 category = 'AuditLogs',
                 ingestion_delay = 56,
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 tenant_id = '',
                 use_synthetic_data = True,
                 workspace_id = ''

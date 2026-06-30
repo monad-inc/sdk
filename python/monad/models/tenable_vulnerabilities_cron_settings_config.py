@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,7 +30,8 @@ class TenableVulnerabilitiesCronSettingsConfig(BaseModel):
     Tenable vulnerabilities settings
     """ # noqa: E501
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression to schedule the data collection.")
-    __properties: ClassVar[List[str]] = ["cron"]
+    rate_limit: Optional[ModelsInputRateLimit] = None
+    __properties: ClassVar[List[str]] = ["cron", "rate_limit"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -70,6 +72,9 @@ class TenableVulnerabilitiesCronSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -82,7 +87,8 @@ class TenableVulnerabilitiesCronSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cron": obj.get("cron")
+            "cron": obj.get("cron"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None
         })
         return _obj
 

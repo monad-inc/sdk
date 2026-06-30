@@ -39,6 +39,9 @@ class TestLogAnalyticsQuerySettingsConfig(unittest.TestCase):
                 backfill_start_time = '',
                 ingestion_delay = 56,
                 query = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 tenant_id = '',
                 use_synthetic_data = True,
                 workspace_id = ''

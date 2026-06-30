@@ -746,6 +746,7 @@ Class | Method | HTTP request | Description
  - [PantherSecretsConfig](docs/PantherSecretsConfig.md)
  - [PantherSettingsConfig](docs/PantherSettingsConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
+ - [PersonaSettingsConfig](docs/PersonaSettingsConfig.md)
  - [PolymerSecretsConfig](docs/PolymerSecretsConfig.md)
  - [PolymerSettingsConfig](docs/PolymerSettingsConfig.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)

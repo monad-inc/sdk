@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **BackfillStartTime** | Pointer to **string** | BackfillStartTime is an optional ISO8601 timestamp to start fetching from. If not set, the input starts from the current time (no historical backfill). Example: \&quot;2024-01-01T00:00:00Z\&quot; | [optional] 
 **BaseUrl** | Pointer to **string** | Base URL for the Koi API (default: https://api.prod.koi.security) | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetBaseUrl sets BaseUrl field to given value.
 `func (o *KoiAuditLogsSettingsConfig) HasBaseUrl() bool`
 
 HasBaseUrl returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *KoiAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *KoiAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *KoiAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *KoiAuditLogsSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

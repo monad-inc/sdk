@@ -10,6 +10,7 @@ Arize authenticated audit logs settings
 |------------ | ------------- | ------------- | -------------|
 |**backfillStartTime** | **String** | Date to start fetching data from. |  [optional] |
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source |  [optional] |
 
 

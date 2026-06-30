@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -20,6 +21,7 @@ export class TenableVulnerabilitiesCronSettingsConfig {
     * Cron expression to schedule the data collection.
     */
     'cron'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +32,12 @@ export class TenableVulnerabilitiesCronSettingsConfig {
             "name": "cron",
             "baseName": "cron",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         }    ];
 

@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -28,6 +29,7 @@ export class EntraIdSettingsConfig {
     * The ingestion delay in seconds for the data source
     */
     'ingestionDelay'?: number;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * The tenant ID of the Azure AD application
     */
@@ -62,6 +64,12 @@ export class EntraIdSettingsConfig {
             "name": "ingestionDelay",
             "baseName": "ingestion_delay",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

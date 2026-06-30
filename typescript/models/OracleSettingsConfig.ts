@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 export class OracleSettingsConfig {
@@ -21,6 +22,7 @@ export class OracleSettingsConfig {
     * Domain name for the Oracle Cloud service
     */
     'domain': string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -45,6 +47,12 @@ export class OracleSettingsConfig {
             "name": "domain",
             "baseName": "domain",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

@@ -9,6 +9,7 @@ Microsoft Azure Activity Logs settings
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**resourceGroupName** | **String** | The name of the resource group |  [optional] |
 |**resourceProvider** | **String** | The provider of the resource |  [optional] |
 |**resourceUri** | **String** | The URI of the resource |  [optional] |

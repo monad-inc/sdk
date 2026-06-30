@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class FullScansSettingsConfig {
     * Cron expression for scheduling the input
     */
     'orgSlug': string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * A repository slug to filter full-scans by.
     */
@@ -48,6 +50,12 @@ export class FullScansSettingsConfig {
             "name": "orgSlug",
             "baseName": "org_slug",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

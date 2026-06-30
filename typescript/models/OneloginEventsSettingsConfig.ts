@@ -10,12 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
 * Onelogin Events settings
 */
 export class OneloginEventsSettingsConfig {
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * SubDomain is a placeholder that represents your specific OneLogin subdomain.
     */
@@ -30,6 +32,12 @@ export class OneloginEventsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
+            "format": ""
+        },
         {
             "name": "subdomain",
             "baseName": "subdomain",

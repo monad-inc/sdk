@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class ArizeAuditLogsSettingsConfig {
     * Time interval in seconds between consecutive GraphQL API calls
     */
     'intervalSeconds'?: number;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source
     */
@@ -44,6 +46,12 @@ export class ArizeAuditLogsSettingsConfig {
             "name": "intervalSeconds",
             "baseName": "interval_seconds",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

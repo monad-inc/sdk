@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,8 +31,9 @@ class ArizeAuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from.")
     interval_seconds: Optional[StrictInt] = Field(default=None, description="Time interval in seconds between consecutive GraphQL API calls")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "interval_seconds", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "interval_seconds", "rate_limit", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -72,6 +74,9 @@ class ArizeAuditLogsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -86,6 +91,7 @@ class ArizeAuditLogsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "backfill_start_time": obj.get("backfill_start_time"),
             "interval_seconds": obj.get("interval_seconds"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

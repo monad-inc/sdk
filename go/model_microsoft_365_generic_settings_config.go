@@ -22,6 +22,7 @@ var _ MappedNullable = &Microsoft365GenericSettingsConfig{}
 type Microsoft365GenericSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// The Azure Entra ID tenant (directory) ID
 	TenantId *string `json:"tenant_id,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -75,6 +76,38 @@ func (o *Microsoft365GenericSettingsConfig) HasBackfillStartTime() bool {
 // SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
 func (o *Microsoft365GenericSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *Microsoft365GenericSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Microsoft365GenericSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *Microsoft365GenericSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *Microsoft365GenericSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetTenantId returns the TenantId field value if set, zero value otherwise.
@@ -153,6 +186,9 @@ func (o Microsoft365GenericSettingsConfig) ToMap() (map[string]interface{}, erro
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.TenantId) {
 		toSerialize["tenant_id"] = o.TenantId

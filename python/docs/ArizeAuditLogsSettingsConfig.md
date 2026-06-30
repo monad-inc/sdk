@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from. | [optional] 
 **interval_seconds** | **int** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source | [optional] 
 
 ## Example

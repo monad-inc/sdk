@@ -36,6 +36,9 @@ class TestOneloginEventsSettingsConfig(unittest.TestCase):
         model = OneloginEventsSettingsConfig()
         if include_optional:
             return OneloginEventsSettingsConfig(
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 subdomain = '',
                 use_synthetic_data = True
             )

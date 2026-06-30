@@ -7,6 +7,7 @@ Tenable vulnerabilities settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cron** | **str** | Cron expression to schedule the data collection. | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 
 ## Example
 

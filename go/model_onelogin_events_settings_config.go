@@ -22,6 +22,7 @@ var _ MappedNullable = &OneloginEventsSettingsConfig{}
 
 // OneloginEventsSettingsConfig Onelogin Events settings
 type OneloginEventsSettingsConfig struct {
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// SubDomain is a placeholder that represents your specific OneLogin subdomain.
 	Subdomain string `json:"subdomain"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -46,6 +47,38 @@ func NewOneloginEventsSettingsConfig(subdomain string) *OneloginEventsSettingsCo
 func NewOneloginEventsSettingsConfigWithDefaults() *OneloginEventsSettingsConfig {
 	this := OneloginEventsSettingsConfig{}
 	return &this
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *OneloginEventsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OneloginEventsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *OneloginEventsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *OneloginEventsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetSubdomain returns the Subdomain field value
@@ -114,6 +147,9 @@ func (o OneloginEventsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OneloginEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
+	}
 	toSerialize["subdomain"] = o.Subdomain
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData

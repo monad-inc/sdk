@@ -448,6 +448,7 @@ __all__ = [
     "PantherSecretsConfig",
     "PantherSettingsConfig",
     "ParquetParquetFormatter",
+    "PersonaSettingsConfig",
     "PolymerSecretsConfig",
     "PolymerSettingsConfig",
     "PostgresqlSecretsConfig",
@@ -1134,6 +1135,7 @@ from monad.models.palo_alto_data_security_alerts_settings_config import PaloAlto
 from monad.models.panther_secrets_config import PantherSecretsConfig as PantherSecretsConfig
 from monad.models.panther_settings_config import PantherSettingsConfig as PantherSettingsConfig
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter as ParquetParquetFormatter
+from monad.models.persona_settings_config import PersonaSettingsConfig as PersonaSettingsConfig
 from monad.models.polymer_secrets_config import PolymerSecretsConfig as PolymerSecretsConfig
 from monad.models.polymer_settings_config import PolymerSettingsConfig as PolymerSettingsConfig
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as PostgresqlSecretsConfig

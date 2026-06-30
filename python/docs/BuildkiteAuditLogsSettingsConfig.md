@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Generate synthetic demo data instead of connecting to the real data source. UseSyntheticData bool &#x60;json:\&quot;use_synthetic_data\&quot;&#x60; Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **org_slug** | **str** | The URL slug of your Buildkite organizations | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 
 ## Example
 

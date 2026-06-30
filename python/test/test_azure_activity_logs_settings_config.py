@@ -37,6 +37,9 @@ class TestAzureActivityLogsSettingsConfig(unittest.TestCase):
         if include_optional:
             return AzureActivityLogsSettingsConfig(
                 correlation_id = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 resource_group_name = '',
                 resource_provider = '',
                 resource_uri = '',

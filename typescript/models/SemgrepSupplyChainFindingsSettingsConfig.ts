@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -20,6 +21,7 @@ export class SemgrepSupplyChainFindingsSettingsConfig {
     * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
     */
     'backfillStartTime'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -34,6 +36,12 @@ export class SemgrepSupplyChainFindingsSettingsConfig {
             "name": "backfillStartTime",
             "baseName": "backfill_start_time",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

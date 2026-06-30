@@ -11,6 +11,7 @@ Palo Alto Cortex Xsoar Management Logs settings
 |**apiKeyId** | **String** | API Key ID for authentication |  |
 |**backfillStartTime** | **String** | Start time for backfilling data |  [optional] |
 |**domainName** | **String** | Domain name of the Cortex XSOAR instance |  |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 

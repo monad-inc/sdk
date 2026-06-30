@@ -36,7 +36,10 @@ class TestTenableVulnerabilitiesCronSettingsConfig(unittest.TestCase):
         model = TenableVulnerabilitiesCronSettingsConfig()
         if include_optional:
             return TenableVulnerabilitiesCronSettingsConfig(
-                cron = ''
+                cron = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', )
             )
         else:
             return TenableVulnerabilitiesCronSettingsConfig(

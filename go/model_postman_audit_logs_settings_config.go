@@ -22,6 +22,7 @@ var _ MappedNullable = &PostmanAuditLogsSettingsConfig{}
 type PostmanAuditLogsSettingsConfig struct {
 	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 }
 
 // NewPostmanAuditLogsSettingsConfig instantiates a new PostmanAuditLogsSettingsConfig object
@@ -73,6 +74,38 @@ func (o *PostmanAuditLogsSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *PostmanAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PostmanAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *PostmanAuditLogsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *PostmanAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 func (o PostmanAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -85,6 +118,9 @@ func (o PostmanAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	return toSerialize, nil
 }

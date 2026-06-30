@@ -22,6 +22,7 @@ var _ MappedNullable = &TenableAssetsCronSettingsConfig{}
 type TenableAssetsCronSettingsConfig struct {
 	// Cron expression to schedule the data collection.
 	Cron *string `json:"cron,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 }
 
 // NewTenableAssetsCronSettingsConfig instantiates a new TenableAssetsCronSettingsConfig object
@@ -73,6 +74,38 @@ func (o *TenableAssetsCronSettingsConfig) SetCron(v string) {
 	o.Cron = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *TenableAssetsCronSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TenableAssetsCronSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *TenableAssetsCronSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *TenableAssetsCronSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 func (o TenableAssetsCronSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -85,6 +118,9 @@ func (o TenableAssetsCronSettingsConfig) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Cron) {
 		toSerialize["cron"] = o.Cron
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	return toSerialize, nil
 }

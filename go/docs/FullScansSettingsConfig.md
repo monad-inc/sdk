@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **OrgSlug** | **string** | Cron expression for scheduling the input | 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
@@ -72,6 +73,31 @@ and a boolean to check if the value has been set.
 
 SetOrgSlug sets OrgSlug field to given value.
 
+
+### GetRateLimit
+
+`func (o *FullScansSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *FullScansSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *FullScansSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *FullScansSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetRepo
 

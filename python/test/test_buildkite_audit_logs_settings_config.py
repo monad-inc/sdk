@@ -37,7 +37,10 @@ class TestBuildkiteAuditLogsSettingsConfig(unittest.TestCase):
         if include_optional:
             return BuildkiteAuditLogsSettingsConfig(
                 backfill_start_time = '',
-                org_slug = ''
+                org_slug = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', )
             )
         else:
             return BuildkiteAuditLogsSettingsConfig(

@@ -18,7 +18,7 @@ import (
 // checks if the ModelsInputRateLimit type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsInputRateLimit{}
 
-// ModelsInputRateLimit Optional outbound request rate limit. Falls back to the Wiz default when unset.
+// ModelsInputRateLimit Optional outbound request rate limit. Unlimited when unset. Zendesk's per-minute limit is plan-tier-specific (lowest tier 200/min), so a conservative shared ceiling is used to avoid capping higher-tier customers.
 type ModelsInputRateLimit struct {
 	Rate *float32 `json:"rate,omitempty"`
 	Unit *ModelsRateUnit `json:"unit,omitempty"`

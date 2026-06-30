@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **audit_log_types** | **List[str]** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **backfill_start_time** | **str** | BackfillStartTime is an optional ISO8601 timestamp to start fetching from. If not set, the input starts from the current time (no historical backfill). Example: \&quot;2024-01-01T00:00:00Z\&quot; | [optional] 
 **base_url** | **str** | Base URL for the Koi API (default: https://api.prod.koi.security) | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

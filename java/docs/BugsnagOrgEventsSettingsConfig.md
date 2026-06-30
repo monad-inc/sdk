@@ -10,6 +10,7 @@ Bugsnag Org Events settings
 |------------ | ------------- | ------------- | -------------|
 |**backfillStartTime** | **String** | Date to start fetching data from. |  [optional] |
 |**organizationId** | **String** | Organization ID |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 

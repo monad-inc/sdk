@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group | [optional] 
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
@@ -55,6 +56,31 @@ SetCorrelationId sets CorrelationId field to given value.
 `func (o *AzureActivityLogsSettingsConfig) HasCorrelationId() bool`
 
 HasCorrelationId returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *AzureActivityLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *AzureActivityLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *AzureActivityLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *AzureActivityLogsSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetResourceGroupName
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **account_id** | **str** | Account ID for the input | [optional] 
 **backfill_start_time** | **str** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **category_type** | **str** | The category of logs to pull | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

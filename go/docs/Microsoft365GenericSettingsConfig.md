@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **TenantId** | Pointer to **string** | The Azure Entra ID tenant (directory) ID | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
@@ -51,6 +52,31 @@ SetBackfillStartTime sets BackfillStartTime field to given value.
 `func (o *Microsoft365GenericSettingsConfig) HasBackfillStartTime() bool`
 
 HasBackfillStartTime returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *Microsoft365GenericSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *Microsoft365GenericSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *Microsoft365GenericSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *Microsoft365GenericSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetTenantId
 

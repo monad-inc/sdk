@@ -230,6 +230,9 @@
                         "description": "Time interval in seconds between consecutive GraphQL API calls",
                         "type": "integer"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source",
                         "type": "boolean"
@@ -626,6 +629,9 @@
                     "correlation_id": {
                         "description": "The correlation ID of the log",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "resource_group_name": {
                         "description": "The name of the resource group",
@@ -1101,6 +1107,9 @@
                         "description": "Organization ID",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -1125,6 +1134,9 @@
                     "org_slug": {
                         "description": "The URL slug of your Buildkite organizations",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     }
                 },
                 "type": "object"
@@ -2005,6 +2017,9 @@
                         "description": "Domain name of the Cortex XSOAR instance",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -2092,6 +2107,9 @@
                             "development"
                         ],
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "user_id": {
                         "description": "User id of the Docusign admin",
@@ -2285,6 +2303,9 @@
                 "properties": {
                     "category": {
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "severity": {
                         "type": "string"
@@ -2713,6 +2734,9 @@
                         "description": "The ingestion delay in seconds for the data source",
                         "type": "integer"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "tenant_id": {
                         "description": "The tenant ID of the Azure AD application",
                         "type": "string"
@@ -2863,6 +2887,9 @@
                     "org_slug": {
                         "description": "Cron expression for scheduling the input",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "repo": {
                         "description": "A repository slug to filter full-scans by.",
@@ -4146,6 +4173,9 @@
                         "description": "Base URL for the Koi API (default: https://api.prod.koi.security)",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -4288,6 +4318,9 @@
                     "query": {
                         "description": "The query to run against the Log Analytics workspace",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "tenant_id": {
                         "description": "The tenant ID of the Azure AD application",
@@ -4450,6 +4483,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "tenant_id": {
                         "description": "The Azure Entra ID tenant (directory) ID",
@@ -5321,7 +5357,7 @@
                 "type": "object"
             },
             "models.InputRateLimit": {
-                "description": "Optional outbound request rate limit. Falls back to the Wiz default when unset.",
+                "description": "Optional outbound request rate limit. Unlimited when unset. Zendesk's per-minute\nlimit is plan-tier-specific (lowest tier 200/min), so a conservative shared ceiling\nis used to avoid capping higher-tier customers.",
                 "properties": {
                     "rate": {
                         "type": "number"
@@ -7012,6 +7048,9 @@
             "onelogin_events.SettingsConfig": {
                 "description": "Onelogin Events settings",
                 "properties": {
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "subdomain": {
                         "description": "SubDomain is a placeholder that represents your specific OneLogin subdomain.",
                         "type": "string"
@@ -7044,6 +7083,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -7164,6 +7206,9 @@
                         "description": "The category of logs to pull",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -7180,6 +7225,9 @@
                     "domain": {
                         "description": "Domain name for the Oracle Cloud service",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -7453,6 +7501,9 @@
                         "description": "URL of the organization",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -7489,6 +7540,14 @@
                 "required": [
                     "schema"
                 ],
+                "type": "object"
+            },
+            "persona.SettingsConfig": {
+                "properties": {
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    }
+                },
                 "type": "object"
             },
             "polymer.SecretsConfig": {
@@ -7583,6 +7642,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     }
                 },
                 "type": "object"
@@ -7810,6 +7872,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -10570,6 +10635,9 @@
                                 "$ref": "#/components/schemas/palo_alto_data_security_alerts.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/persona.SettingsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/polymer.SettingsConfig"
                             },
                             {
@@ -10914,6 +10982,9 @@
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -10939,6 +11010,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -11216,6 +11290,9 @@
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -11241,6 +11318,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -11622,6 +11702,9 @@
                         "description": "Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -11651,6 +11734,9 @@
                     "cron": {
                         "description": "Cron expression to schedule the data collection.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     }
                 },
                 "type": "object"
@@ -11677,6 +11763,9 @@
                     "backfill_start_time": {
                         "description": "Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
@@ -11707,6 +11796,9 @@
                     "cron": {
                         "description": "Cron expression to schedule the data collection.",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     }
                 },
                 "type": "object"
@@ -12770,6 +12862,9 @@
                     "email_address": {
                         "description": "This is the email address registered with your Zendesk account",
                         "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
                     },
                     "sub_domain": {
                         "description": "This is the subdomain found in your Zendesk account URL\nFor example, if the URL is https://demo.zendesk.com then the subdomain will be demo",

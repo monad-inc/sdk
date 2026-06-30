@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -61,6 +62,14 @@ public class KoiAuditLogsSettingsConfigTest {
     @Test
     public void baseUrlTest() {
         // TODO: test baseUrl
+    }
+
+    /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
     }
 
     /**

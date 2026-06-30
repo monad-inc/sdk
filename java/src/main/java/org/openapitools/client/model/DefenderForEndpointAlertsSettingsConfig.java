@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,6 +55,11 @@ public class DefenderForEndpointAlertsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_CATEGORY)
   @javax.annotation.Nullable
   private String category;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
@@ -89,6 +95,25 @@ public class DefenderForEndpointAlertsSettingsConfig {
 
   public void setCategory(@javax.annotation.Nullable String category) {
     this.category = category;
+  }
+
+
+  public DefenderForEndpointAlertsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -160,6 +185,7 @@ public class DefenderForEndpointAlertsSettingsConfig {
     }
     DefenderForEndpointAlertsSettingsConfig defenderForEndpointAlertsSettingsConfig = (DefenderForEndpointAlertsSettingsConfig) o;
     return Objects.equals(this.category, defenderForEndpointAlertsSettingsConfig.category) &&
+        Objects.equals(this.rateLimit, defenderForEndpointAlertsSettingsConfig.rateLimit) &&
         Objects.equals(this.severity, defenderForEndpointAlertsSettingsConfig.severity) &&
         Objects.equals(this.tenantId, defenderForEndpointAlertsSettingsConfig.tenantId) &&
         Objects.equals(this.useSyntheticData, defenderForEndpointAlertsSettingsConfig.useSyntheticData);
@@ -167,7 +193,7 @@ public class DefenderForEndpointAlertsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, severity, tenantId, useSyntheticData);
+    return Objects.hash(category, rateLimit, severity, tenantId, useSyntheticData);
   }
 
   @Override
@@ -175,6 +201,7 @@ public class DefenderForEndpointAlertsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class DefenderForEndpointAlertsSettingsConfig {\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
@@ -196,7 +223,7 @@ public class DefenderForEndpointAlertsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("category", "severity", "tenant_id", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("category", "rate_limit", "severity", "tenant_id", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -225,6 +252,10 @@ public class DefenderForEndpointAlertsSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));

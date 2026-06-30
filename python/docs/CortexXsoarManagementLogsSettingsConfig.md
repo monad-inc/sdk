@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **api_key_id** | **str** | API Key ID for authentication | 
 **backfill_start_time** | **str** | Start time for backfilling data | [optional] 
 **domain_name** | **str** | Domain name of the Cortex XSOAR instance | 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

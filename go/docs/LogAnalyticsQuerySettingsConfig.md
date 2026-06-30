@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BackfillStartTime** | Pointer to **string** | The date to start fetching data from on first sync | [optional] 
 **IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
 **Query** | **string** | The query to run against the Log Analytics workspace | 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **TenantId** | **string** | The tenant ID of the Azure AD application | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **WorkspaceId** | **string** | The workspace ID of the Log Analytics workspace | 
@@ -99,6 +100,31 @@ and a boolean to check if the value has been set.
 
 SetQuery sets Query field to given value.
 
+
+### GetRateLimit
+
+`func (o *LogAnalyticsQuerySettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *LogAnalyticsQuerySettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *LogAnalyticsQuerySettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *LogAnalyticsQuerySettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetTenantId
 

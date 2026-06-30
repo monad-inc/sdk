@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from monad.models.zendesk_audit_logs_auth_type import ZendeskAuditLogsAuthType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,9 +32,10 @@ class ZendeskAuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     auth_type: ZendeskAuditLogsAuthType
     email_address: Optional[StrictStr] = Field(default=None, description="This is the email address registered with your Zendesk account")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     sub_domain: StrictStr = Field(description="This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["auth_type", "email_address", "sub_domain", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["auth_type", "email_address", "rate_limit", "sub_domain", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -74,6 +76,9 @@ class ZendeskAuditLogsSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -88,6 +93,7 @@ class ZendeskAuditLogsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "auth_type": obj.get("auth_type"),
             "email_address": obj.get("email_address"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "sub_domain": obj.get("sub_domain"),
             "use_synthetic_data": obj.get("use_synthetic_data")
         })

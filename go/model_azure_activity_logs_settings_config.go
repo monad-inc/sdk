@@ -22,6 +22,7 @@ var _ MappedNullable = &AzureActivityLogsSettingsConfig{}
 type AzureActivityLogsSettingsConfig struct {
 	// The correlation ID of the log
 	CorrelationId *string `json:"correlation_id,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// The name of the resource group
 	ResourceGroupName *string `json:"resource_group_name,omitempty"`
 	// The provider of the resource
@@ -83,6 +84,38 @@ func (o *AzureActivityLogsSettingsConfig) HasCorrelationId() bool {
 // SetCorrelationId gets a reference to the given string and assigns it to the CorrelationId field.
 func (o *AzureActivityLogsSettingsConfig) SetCorrelationId(v string) {
 	o.CorrelationId = &v
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *AzureActivityLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureActivityLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *AzureActivityLogsSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *AzureActivityLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetResourceGroupName returns the ResourceGroupName field value if set, zero value otherwise.
@@ -289,6 +322,9 @@ func (o AzureActivityLogsSettingsConfig) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CorrelationId) {
 		toSerialize["correlation_id"] = o.CorrelationId
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.ResourceGroupName) {
 		toSerialize["resource_group_name"] = o.ResourceGroupName

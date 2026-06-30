@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthType** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | 
 **EmailAddress** | Pointer to **string** | This is the email address registered with your Zendesk account | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **SubDomain** | **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
@@ -72,6 +73,31 @@ SetEmailAddress sets EmailAddress field to given value.
 `func (o *ZendeskAuditLogsSettingsConfig) HasEmailAddress() bool`
 
 HasEmailAddress returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *ZendeskAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *ZendeskAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *ZendeskAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *ZendeskAuditLogsSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetSubDomain
 

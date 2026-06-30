@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,6 +25,7 @@ export class CustomerEventDataSettingsConfig {
     * Determines the URI {environment}.docusign.com
     */
     'environment': CustomerEventDataSettingsConfigEnvironmentEnum;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * User id of the Docusign admin
     */
@@ -44,6 +46,12 @@ export class CustomerEventDataSettingsConfig {
             "name": "environment",
             "baseName": "environment",
             "type": "CustomerEventDataSettingsConfigEnvironmentEnum",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

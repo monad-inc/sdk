@@ -38,6 +38,9 @@ class TestCustomerEventDataSettingsConfig(unittest.TestCase):
             return CustomerEventDataSettingsConfig(
                 backfill_start_time = '',
                 environment = 'production',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 user_id = ''
             )
         else:

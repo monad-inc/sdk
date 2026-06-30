@@ -36,7 +36,10 @@ class TestTenableAssetsCronSettingsConfig(unittest.TestCase):
         model = TenableAssetsCronSettingsConfig()
         if include_optional:
             return TenableAssetsCronSettingsConfig(
-                cron = ''
+                cron = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', )
             )
         else:
             return TenableAssetsCronSettingsConfig(

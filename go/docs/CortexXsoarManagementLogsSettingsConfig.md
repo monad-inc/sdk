@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ApiKeyId** | **string** | API Key ID for authentication | 
 **BackfillStartTime** | Pointer to **string** | Start time for backfilling data | [optional] 
 **DomainName** | **string** | Domain name of the Cortex XSOAR instance | 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
@@ -92,6 +93,31 @@ and a boolean to check if the value has been set.
 
 SetDomainName sets DomainName field to given value.
 
+
+### GetRateLimit
+
+`func (o *CortexXsoarManagementLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *CortexXsoarManagementLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *CortexXsoarManagementLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *CortexXsoarManagementLogsSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
 import { HttpFile } from '../http/http';
 
@@ -22,6 +23,7 @@ export class ZendeskAuditLogsSettingsConfig {
     * This is the email address registered with your Zendesk account
     */
     'emailAddress'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo
     */
@@ -46,6 +48,12 @@ export class ZendeskAuditLogsSettingsConfig {
             "name": "emailAddress",
             "baseName": "email_address",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

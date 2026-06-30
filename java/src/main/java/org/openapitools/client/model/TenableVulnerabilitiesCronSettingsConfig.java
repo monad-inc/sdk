@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,6 +56,11 @@ public class TenableVulnerabilitiesCronSettingsConfig {
   @javax.annotation.Nullable
   private String cron;
 
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public TenableVulnerabilitiesCronSettingsConfig() {
   }
 
@@ -77,6 +83,25 @@ public class TenableVulnerabilitiesCronSettingsConfig {
   }
 
 
+  public TenableVulnerabilitiesCronSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +112,13 @@ public class TenableVulnerabilitiesCronSettingsConfig {
       return false;
     }
     TenableVulnerabilitiesCronSettingsConfig tenableVulnerabilitiesCronSettingsConfig = (TenableVulnerabilitiesCronSettingsConfig) o;
-    return Objects.equals(this.cron, tenableVulnerabilitiesCronSettingsConfig.cron);
+    return Objects.equals(this.cron, tenableVulnerabilitiesCronSettingsConfig.cron) &&
+        Objects.equals(this.rateLimit, tenableVulnerabilitiesCronSettingsConfig.rateLimit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron);
+    return Objects.hash(cron, rateLimit);
   }
 
   @Override
@@ -100,6 +126,7 @@ public class TenableVulnerabilitiesCronSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class TenableVulnerabilitiesCronSettingsConfig {\n");
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,7 +145,7 @@ public class TenableVulnerabilitiesCronSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron"));
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "rate_limit"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -147,6 +174,10 @@ public class TenableVulnerabilitiesCronSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

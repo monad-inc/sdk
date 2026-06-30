@@ -39,6 +39,9 @@ class TestOperationLogsSettingsConfig(unittest.TestCase):
                 account_id = '',
                 backfill_start_time = '',
                 category_type = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 use_synthetic_data = True
             )
         else:

@@ -37,6 +37,9 @@ class TestMicrosoft365GenericSettingsConfig(unittest.TestCase):
         if include_optional:
             return Microsoft365GenericSettingsConfig(
                 backfill_start_time = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 tenant_id = '',
                 use_synthetic_data = True
             )

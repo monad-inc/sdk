@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -112,6 +113,11 @@ public class CustomerEventDataSettingsConfig {
   @javax.annotation.Nonnull
   private EnvironmentEnum environment;
 
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
   @javax.annotation.Nonnull
@@ -158,6 +164,25 @@ public class CustomerEventDataSettingsConfig {
   }
 
 
+  public CustomerEventDataSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public CustomerEventDataSettingsConfig userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
@@ -189,12 +214,13 @@ public class CustomerEventDataSettingsConfig {
     CustomerEventDataSettingsConfig customerEventDataSettingsConfig = (CustomerEventDataSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, customerEventDataSettingsConfig.backfillStartTime) &&
         Objects.equals(this.environment, customerEventDataSettingsConfig.environment) &&
+        Objects.equals(this.rateLimit, customerEventDataSettingsConfig.rateLimit) &&
         Objects.equals(this.userId, customerEventDataSettingsConfig.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, environment, userId);
+    return Objects.hash(backfillStartTime, environment, rateLimit, userId);
   }
 
   @Override
@@ -203,6 +229,7 @@ public class CustomerEventDataSettingsConfig {
     sb.append("class CustomerEventDataSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -222,7 +249,7 @@ public class CustomerEventDataSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "environment", "user_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "environment", "rate_limit", "user_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("environment", "user_id"));
@@ -264,6 +291,10 @@ public class CustomerEventDataSettingsConfig {
       }
       // validate the required field `environment`
       EnvironmentEnum.validateJsonElement(jsonObj.get("environment"));
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
+      }
       if (!jsonObj.get("user_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
       }

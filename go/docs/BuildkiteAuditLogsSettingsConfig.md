@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Generate synthetic demo data instead of connecting to the real data source. UseSyntheticData bool &#x60;json:\&quot;use_synthetic_data\&quot;&#x60; Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **OrgSlug** | Pointer to **string** | The URL slug of your Buildkite organizations | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetOrgSlug sets OrgSlug field to given value.
 `func (o *BuildkiteAuditLogsSettingsConfig) HasOrgSlug() bool`
 
 HasOrgSlug returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *BuildkiteAuditLogsSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *BuildkiteAuditLogsSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *BuildkiteAuditLogsSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *BuildkiteAuditLogsSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

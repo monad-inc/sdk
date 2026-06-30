@@ -9,6 +9,7 @@ Tenable vulnerabilities settings
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**cron** | **String** | Cron expression to schedule the data collection. |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 
 
 

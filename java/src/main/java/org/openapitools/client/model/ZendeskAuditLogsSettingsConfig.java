@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.ZendeskAuditLogsAuthType;
 
 import com.google.gson.Gson;
@@ -60,6 +61,11 @@ public class ZendeskAuditLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_EMAIL_ADDRESS)
   @javax.annotation.Nullable
   private String emailAddress;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_SUB_DOMAIN = "sub_domain";
   @SerializedName(SERIALIZED_NAME_SUB_DOMAIN)
@@ -109,6 +115,25 @@ public class ZendeskAuditLogsSettingsConfig {
 
   public void setEmailAddress(@javax.annotation.Nullable String emailAddress) {
     this.emailAddress = emailAddress;
+  }
+
+
+  public ZendeskAuditLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -162,13 +187,14 @@ public class ZendeskAuditLogsSettingsConfig {
     ZendeskAuditLogsSettingsConfig zendeskAuditLogsSettingsConfig = (ZendeskAuditLogsSettingsConfig) o;
     return Objects.equals(this.authType, zendeskAuditLogsSettingsConfig.authType) &&
         Objects.equals(this.emailAddress, zendeskAuditLogsSettingsConfig.emailAddress) &&
+        Objects.equals(this.rateLimit, zendeskAuditLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.subDomain, zendeskAuditLogsSettingsConfig.subDomain) &&
         Objects.equals(this.useSyntheticData, zendeskAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, emailAddress, subDomain, useSyntheticData);
+    return Objects.hash(authType, emailAddress, rateLimit, subDomain, useSyntheticData);
   }
 
   @Override
@@ -177,6 +203,7 @@ public class ZendeskAuditLogsSettingsConfig {
     sb.append("class ZendeskAuditLogsSettingsConfig {\n");
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    emailAddress: ").append(toIndentedString(emailAddress)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    subDomain: ").append(toIndentedString(subDomain)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -197,7 +224,7 @@ public class ZendeskAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "email_address", "sub_domain", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "email_address", "rate_limit", "sub_domain", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("auth_type", "sub_domain"));
@@ -235,6 +262,10 @@ public class ZendeskAuditLogsSettingsConfig {
       ZendeskAuditLogsAuthType.validateJsonElement(jsonObj.get("auth_type"));
       if ((jsonObj.get("email_address") != null && !jsonObj.get("email_address").isJsonNull()) && !jsonObj.get("email_address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email_address").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if (!jsonObj.get("sub_domain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sub_domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_domain").toString()));

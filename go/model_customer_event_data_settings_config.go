@@ -26,6 +26,7 @@ type CustomerEventDataSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Determines the URI {environment}.docusign.com
 	Environment string `json:"environment"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// User id of the Docusign admin
 	UserId string `json:"user_id"`
 }
@@ -107,6 +108,38 @@ func (o *CustomerEventDataSettingsConfig) SetEnvironment(v string) {
 	o.Environment = v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *CustomerEventDataSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomerEventDataSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *CustomerEventDataSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *CustomerEventDataSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetUserId returns the UserId field value
 func (o *CustomerEventDataSettingsConfig) GetUserId() string {
 	if o == nil {
@@ -145,6 +178,9 @@ func (o CustomerEventDataSettingsConfig) ToMap() (map[string]interface{}, error)
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
 	toSerialize["environment"] = o.Environment
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
+	}
 	toSerialize["user_id"] = o.UserId
 	return toSerialize, nil
 }

@@ -89,6 +89,7 @@ type SecretProcessesorInputConfigSettings struct {
 	OwnbackupAccountEventsSettingsConfig *OwnbackupAccountEventsSettingsConfig
 	PagerdutyAuditRecordsSettingsConfig *PagerdutyAuditRecordsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
+	PersonaSettingsConfig *PersonaSettingsConfig
 	PolymerSettingsConfig *PolymerSettingsConfig
 	PostmanAuditLogsSettingsConfig *PostmanAuditLogsSettingsConfig
 	PubsubSettingsConfig *PubsubSettingsConfig
@@ -611,6 +612,13 @@ func PagerdutyAuditRecordsSettingsConfigAsSecretProcessesorInputConfigSettings(v
 func PaloAltoDataSecurityAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *PaloAltoDataSecurityAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		PaloAltoDataSecurityAlertsSettingsConfig: v,
+	}
+}
+
+// PersonaSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PersonaSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func PersonaSettingsConfigAsSecretProcessesorInputConfigSettings(v *PersonaSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		PersonaSettingsConfig: v,
 	}
 }
 
@@ -2040,6 +2048,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into PersonaSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PersonaSettingsConfig)
+	if err == nil {
+		jsonPersonaSettingsConfig, _ := json.Marshal(dst.PersonaSettingsConfig)
+		if string(jsonPersonaSettingsConfig) == "{}" { // empty struct
+			dst.PersonaSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PersonaSettingsConfig); err != nil {
+				dst.PersonaSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PersonaSettingsConfig = nil
+	}
+
 	// try to unmarshal data into PolymerSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.PolymerSettingsConfig)
 	if err == nil {
@@ -2673,6 +2698,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OwnbackupAccountEventsSettingsConfig = nil
 		dst.PagerdutyAuditRecordsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
+		dst.PersonaSettingsConfig = nil
 		dst.PolymerSettingsConfig = nil
 		dst.PostmanAuditLogsSettingsConfig = nil
 		dst.PubsubSettingsConfig = nil
@@ -2995,6 +3021,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.PaloAltoDataSecurityAlertsSettingsConfig != nil {
 		return json.Marshal(&src.PaloAltoDataSecurityAlertsSettingsConfig)
+	}
+
+	if src.PersonaSettingsConfig != nil {
+		return json.Marshal(&src.PersonaSettingsConfig)
 	}
 
 	if src.PolymerSettingsConfig != nil {
@@ -3417,6 +3447,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.PaloAltoDataSecurityAlertsSettingsConfig
 	}
 
+	if obj.PersonaSettingsConfig != nil {
+		return obj.PersonaSettingsConfig
+	}
+
 	if obj.PolymerSettingsConfig != nil {
 		return obj.PolymerSettingsConfig
 	}
@@ -3833,6 +3867,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
 		return *obj.PaloAltoDataSecurityAlertsSettingsConfig
+	}
+
+	if obj.PersonaSettingsConfig != nil {
+		return *obj.PersonaSettingsConfig
 	}
 
 	if obj.PolymerSettingsConfig != nil {

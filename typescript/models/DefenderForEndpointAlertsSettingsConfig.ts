@@ -10,10 +10,12 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 export class DefenderForEndpointAlertsSettingsConfig {
     'category'?: string;
+    'rateLimit'?: ModelsInputRateLimit;
     'severity'?: string;
     'tenantId'?: string;
     /**
@@ -30,6 +32,12 @@ export class DefenderForEndpointAlertsSettingsConfig {
             "name": "category",
             "baseName": "category",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

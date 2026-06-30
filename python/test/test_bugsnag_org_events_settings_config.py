@@ -38,6 +38,9 @@ class TestBugsnagOrgEventsSettingsConfig(unittest.TestCase):
             return BugsnagOrgEventsSettingsConfig(
                 backfill_start_time = '',
                 organization_id = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 use_synthetic_data = True
             )
         else:

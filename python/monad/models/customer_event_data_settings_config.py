@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,8 +31,9 @@ class CustomerEventDataSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from in RFC3339 format. If not specified, a full sync of data upto now would be performed on the first sync (since the previous 7 days). You must specify a backfill time to query for data for a time before 7 days. All syncs thereafter will be incremental.")
     environment: StrictStr = Field(description="Determines the URI {environment}.docusign.com")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     user_id: StrictStr = Field(description="User id of the Docusign admin")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "environment", "user_id"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "environment", "rate_limit", "user_id"]
 
     @field_validator('environment')
     def environment_validate_enum(cls, value):
@@ -79,6 +81,9 @@ class CustomerEventDataSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -93,6 +98,7 @@ class CustomerEventDataSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "backfill_start_time": obj.get("backfill_start_time"),
             "environment": obj.get("environment"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "user_id": obj.get("user_id")
         })
         return _obj

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -123,6 +124,11 @@ public class EntraIdSettingsConfig {
   @javax.annotation.Nullable
   private Integer ingestionDelay;
 
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
+
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
   @javax.annotation.Nonnull
@@ -198,6 +204,25 @@ public class EntraIdSettingsConfig {
   }
 
 
+  public EntraIdSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public EntraIdSettingsConfig tenantId(@javax.annotation.Nonnull String tenantId) {
     this.tenantId = tenantId;
     return this;
@@ -268,6 +293,7 @@ public class EntraIdSettingsConfig {
     return Objects.equals(this.backfillStartTime, entraIdSettingsConfig.backfillStartTime) &&
         Objects.equals(this.category, entraIdSettingsConfig.category) &&
         Objects.equals(this.ingestionDelay, entraIdSettingsConfig.ingestionDelay) &&
+        Objects.equals(this.rateLimit, entraIdSettingsConfig.rateLimit) &&
         Objects.equals(this.tenantId, entraIdSettingsConfig.tenantId) &&
         Objects.equals(this.useSyntheticData, entraIdSettingsConfig.useSyntheticData) &&
         Objects.equals(this.workspaceId, entraIdSettingsConfig.workspaceId);
@@ -275,7 +301,7 @@ public class EntraIdSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, category, ingestionDelay, tenantId, useSyntheticData, workspaceId);
+    return Objects.hash(backfillStartTime, category, ingestionDelay, rateLimit, tenantId, useSyntheticData, workspaceId);
   }
 
   @Override
@@ -285,6 +311,7 @@ public class EntraIdSettingsConfig {
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    ingestionDelay: ").append(toIndentedString(ingestionDelay)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
@@ -306,7 +333,7 @@ public class EntraIdSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "category", "ingestion_delay", "tenant_id", "use_synthetic_data", "workspace_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "category", "ingestion_delay", "rate_limit", "tenant_id", "use_synthetic_data", "workspace_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("category", "tenant_id", "workspace_id"));
@@ -348,6 +375,10 @@ public class EntraIdSettingsConfig {
       }
       // validate the required field `category`
       CategoryEnum.validateJsonElement(jsonObj.get("category"));
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
+      }
       if (!jsonObj.get("tenant_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
       }

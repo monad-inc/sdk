@@ -28,6 +28,7 @@ type EntraIdSettingsConfig struct {
 	Category string `json:"category"`
 	// The ingestion delay in seconds for the data source
 	IngestionDelay *int32 `json:"ingestion_delay,omitempty"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// The tenant ID of the Azure AD application
 	TenantId string `json:"tenant_id"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -146,6 +147,38 @@ func (o *EntraIdSettingsConfig) SetIngestionDelay(v int32) {
 	o.IngestionDelay = &v
 }
 
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *EntraIdSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntraIdSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *EntraIdSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *EntraIdSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
+}
+
 // GetTenantId returns the TenantId field value
 func (o *EntraIdSettingsConfig) GetTenantId() string {
 	if o == nil {
@@ -242,6 +275,9 @@ func (o EntraIdSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize["category"] = o.Category
 	if !IsNil(o.IngestionDelay) {
 		toSerialize["ingestion_delay"] = o.IngestionDelay
+	}
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	toSerialize["tenant_id"] = o.TenantId
 	if !IsNil(o.UseSyntheticData) {

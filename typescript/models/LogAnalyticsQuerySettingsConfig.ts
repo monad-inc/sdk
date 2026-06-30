@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -28,6 +29,7 @@ export class LogAnalyticsQuerySettingsConfig {
     * The query to run against the Log Analytics workspace
     */
     'query': string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * The tenant ID of the Azure AD application
     */
@@ -62,6 +64,12 @@ export class LogAnalyticsQuerySettingsConfig {
             "name": "query",
             "baseName": "query",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

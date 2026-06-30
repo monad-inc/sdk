@@ -37,6 +37,9 @@ class TestDefenderForEndpointAlertsSettingsConfig(unittest.TestCase):
         if include_optional:
             return DefenderForEndpointAlertsSettingsConfig(
                 category = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 severity = '',
                 tenant_id = '',
                 use_synthetic_data = True

@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,9 +31,10 @@ class OracleSettingsConfig(BaseModel):
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     domain: StrictStr = Field(description="Domain name for the Oracle Cloud service")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     username: StrictStr = Field(description="Username of Oracle Cloud service user with permissions to access the resource")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "domain", "use_synthetic_data", "username"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "domain", "rate_limit", "use_synthetic_data", "username"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -73,6 +75,9 @@ class OracleSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -87,6 +92,7 @@ class OracleSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "backfill_start_time": obj.get("backfill_start_time"),
             "domain": obj.get("domain"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data"),
             "username": obj.get("username")
         })

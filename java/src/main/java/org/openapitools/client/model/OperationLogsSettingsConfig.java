@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -64,6 +65,11 @@ public class OperationLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_CATEGORY_TYPE)
   @javax.annotation.Nullable
   private String categoryType;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -130,6 +136,25 @@ public class OperationLogsSettingsConfig {
   }
 
 
+  public OperationLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public OperationLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -162,12 +187,13 @@ public class OperationLogsSettingsConfig {
     return Objects.equals(this.accountId, operationLogsSettingsConfig.accountId) &&
         Objects.equals(this.backfillStartTime, operationLogsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.categoryType, operationLogsSettingsConfig.categoryType) &&
+        Objects.equals(this.rateLimit, operationLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, operationLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, backfillStartTime, categoryType, useSyntheticData);
+    return Objects.hash(accountId, backfillStartTime, categoryType, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -177,6 +203,7 @@ public class OperationLogsSettingsConfig {
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    categoryType: ").append(toIndentedString(categoryType)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -196,7 +223,7 @@ public class OperationLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("account_id", "backfill_start_time", "category_type", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("account_id", "backfill_start_time", "category_type", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -231,6 +258,10 @@ public class OperationLogsSettingsConfig {
       }
       if ((jsonObj.get("category_type") != null && !jsonObj.get("category_type").isJsonNull()) && !jsonObj.get("category_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `category_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category_type").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

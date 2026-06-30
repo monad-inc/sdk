@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,10 +32,11 @@ class LogAnalyticsQuerySettingsConfig(BaseModel):
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="The date to start fetching data from on first sync")
     ingestion_delay: Optional[StrictInt] = Field(default=None, description="The ingestion delay in seconds for the data source")
     query: StrictStr = Field(description="The query to run against the Log Analytics workspace")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     tenant_id: StrictStr = Field(description="The tenant ID of the Azure AD application")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     workspace_id: StrictStr = Field(description="The workspace ID of the Log Analytics workspace")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "ingestion_delay", "query", "tenant_id", "use_synthetic_data", "workspace_id"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "ingestion_delay", "query", "rate_limit", "tenant_id", "use_synthetic_data", "workspace_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -75,6 +77,9 @@ class LogAnalyticsQuerySettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -90,6 +95,7 @@ class LogAnalyticsQuerySettingsConfig(BaseModel):
             "backfill_start_time": obj.get("backfill_start_time"),
             "ingestion_delay": obj.get("ingestion_delay"),
             "query": obj.get("query"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "tenant_id": obj.get("tenant_id"),
             "use_synthetic_data": obj.get("use_synthetic_data"),
             "workspace_id": obj.get("workspace_id")

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -64,6 +65,11 @@ public class LogAnalyticsQuerySettingsConfig {
   @SerializedName(SERIALIZED_NAME_QUERY)
   @javax.annotation.Nonnull
   private String query;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
@@ -140,6 +146,25 @@ public class LogAnalyticsQuerySettingsConfig {
   }
 
 
+  public LogAnalyticsQuerySettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public LogAnalyticsQuerySettingsConfig tenantId(@javax.annotation.Nonnull String tenantId) {
     this.tenantId = tenantId;
     return this;
@@ -210,6 +235,7 @@ public class LogAnalyticsQuerySettingsConfig {
     return Objects.equals(this.backfillStartTime, logAnalyticsQuerySettingsConfig.backfillStartTime) &&
         Objects.equals(this.ingestionDelay, logAnalyticsQuerySettingsConfig.ingestionDelay) &&
         Objects.equals(this.query, logAnalyticsQuerySettingsConfig.query) &&
+        Objects.equals(this.rateLimit, logAnalyticsQuerySettingsConfig.rateLimit) &&
         Objects.equals(this.tenantId, logAnalyticsQuerySettingsConfig.tenantId) &&
         Objects.equals(this.useSyntheticData, logAnalyticsQuerySettingsConfig.useSyntheticData) &&
         Objects.equals(this.workspaceId, logAnalyticsQuerySettingsConfig.workspaceId);
@@ -217,7 +243,7 @@ public class LogAnalyticsQuerySettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, ingestionDelay, query, tenantId, useSyntheticData, workspaceId);
+    return Objects.hash(backfillStartTime, ingestionDelay, query, rateLimit, tenantId, useSyntheticData, workspaceId);
   }
 
   @Override
@@ -227,6 +253,7 @@ public class LogAnalyticsQuerySettingsConfig {
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    ingestionDelay: ").append(toIndentedString(ingestionDelay)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
@@ -248,7 +275,7 @@ public class LogAnalyticsQuerySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "ingestion_delay", "query", "tenant_id", "use_synthetic_data", "workspace_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "ingestion_delay", "query", "rate_limit", "tenant_id", "use_synthetic_data", "workspace_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("query", "tenant_id", "workspace_id"));
@@ -287,6 +314,10 @@ public class LogAnalyticsQuerySettingsConfig {
       }
       if (!jsonObj.get("query").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if (!jsonObj.get("tenant_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));

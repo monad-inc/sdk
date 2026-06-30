@@ -38,6 +38,9 @@ class TestZendeskAuditLogsSettingsConfig(unittest.TestCase):
             return ZendeskAuditLogsSettingsConfig(
                 auth_type = 'api_auth',
                 email_address = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 sub_domain = '',
                 use_synthetic_data = True
             )

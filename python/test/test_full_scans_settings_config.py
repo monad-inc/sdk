@@ -38,6 +38,9 @@ class TestFullScansSettingsConfig(unittest.TestCase):
             return FullScansSettingsConfig(
                 backfill_start_time = '',
                 org_slug = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 repo = '',
                 use_synthetic_data = True
             )

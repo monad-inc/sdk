@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,6 +60,11 @@ public class ArizeAuditLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_INTERVAL_SECONDS)
   @javax.annotation.Nullable
   private Integer intervalSeconds;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -106,6 +112,25 @@ public class ArizeAuditLogsSettingsConfig {
   }
 
 
+  public ArizeAuditLogsSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+  }
+
+
   public ArizeAuditLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -137,12 +162,13 @@ public class ArizeAuditLogsSettingsConfig {
     ArizeAuditLogsSettingsConfig arizeAuditLogsSettingsConfig = (ArizeAuditLogsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, arizeAuditLogsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.intervalSeconds, arizeAuditLogsSettingsConfig.intervalSeconds) &&
+        Objects.equals(this.rateLimit, arizeAuditLogsSettingsConfig.rateLimit) &&
         Objects.equals(this.useSyntheticData, arizeAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, intervalSeconds, useSyntheticData);
+    return Objects.hash(backfillStartTime, intervalSeconds, rateLimit, useSyntheticData);
   }
 
   @Override
@@ -151,6 +177,7 @@ public class ArizeAuditLogsSettingsConfig {
     sb.append("class ArizeAuditLogsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    intervalSeconds: ").append(toIndentedString(intervalSeconds)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -170,7 +197,7 @@ public class ArizeAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "interval_seconds", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "interval_seconds", "rate_limit", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -199,6 +226,10 @@ public class ArizeAuditLogsSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
   }
 

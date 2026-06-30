@@ -48,7 +48,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Optional outbound request rate limit. Falls back to the Wiz default when unset.
+ * Optional outbound request rate limit. Unlimited when unset. Zendesk&#39;s per-minute limit is plan-tier-specific (lowest tier 200/min), so a conservative shared ceiling is used to avoid capping higher-tier customers.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsInputRateLimit {

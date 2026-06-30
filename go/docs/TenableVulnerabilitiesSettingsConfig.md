@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data. | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetBackfillStartTime sets BackfillStartTime field to given value.
 `func (o *TenableVulnerabilitiesSettingsConfig) HasBackfillStartTime() bool`
 
 HasBackfillStartTime returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *TenableVulnerabilitiesSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *TenableVulnerabilitiesSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *TenableVulnerabilitiesSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *TenableVulnerabilitiesSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 
