@@ -63,10 +63,9 @@ Name | Type | Description | Notes
 **filter** | **str** | The filter to apply to the logs. | [optional] 
 **resource_names** | **List[str]** | The resources to query logs from. | [optional] 
 **cloud_platform** | [**List[WizCloudPlatform]**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
-**entity_type** | [**List[WizEntityType]**](WizEntityType.md) | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
+**entity_type** | [**List[WizEntityType]**](WizEntityType.md) | Entity types for Wiz. | 
 **full_snapshot** | **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **interval** | **int** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
 **account_id** | **str** | Account ID for the input | [optional] 
 **include_bot_fields** | **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **zone_id** | **str** | Cloudflare Zone ID | [optional] 
@@ -143,6 +142,7 @@ Name | Type | Description | Notes
 **rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **record_type** | **str** | The type of record to generate | [optional] 
 **custom_template** | **str** | A custom template using the functions we provide to generate demo data | [optional] 
+**cron** | **str** | Cron expression to schedule the data collection. | [optional] 
 **operation_names** | **List[str]** | Filter by specific operation names (optional) | [optional] 
 **tenant_domain** | **str** | The Tines tenant domain (e.g., your-org.tines.com) | 
 **user_ids** | **List[str]** | Filter by specific user IDs (optional) | [optional] 

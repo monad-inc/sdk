@@ -39,7 +39,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	BuildkiteGraphqlInputSecretsConfig *BuildkiteGraphqlInputSecretsConfig
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
 	CloudLogsSecretsConfig *CloudLogsSecretsConfig
-	CloudResourceInventoryReportsSecretsConfig *CloudResourceInventoryReportsSecretsConfig
 	CloudResourceInventorySecretsConfig *CloudResourceInventorySecretsConfig
 	CloudflareDdosAttackAnalyticsSecretsConfig *CloudflareDdosAttackAnalyticsSecretsConfig
 	CloudflareFirewallEventsSecretsConfig *CloudflareFirewallEventsSecretsConfig
@@ -65,7 +64,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	GreenhouseAuditLogsSecretsConfig *GreenhouseAuditLogsSecretsConfig
 	IndividualAlertsSecretsConfig *IndividualAlertsSecretsConfig
 	InspectorSecretsConfig *InspectorSecretsConfig
-	IssuesReportSecretsConfig *IssuesReportSecretsConfig
 	IssuesSecretsConfig *IssuesSecretsConfig
 	KoiAuditLogsSecretsConfig *KoiAuditLogsSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
@@ -106,7 +104,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	UniversalSecretsConfig *UniversalSecretsConfig
 	VercelUserEventsSecretsConfig *VercelUserEventsSecretsConfig
 	VoltioAuditLogsSecretsConfig *VoltioAuditLogsSecretsConfig
-	VulnerabilityFindingsReportSecretsConfig *VulnerabilityFindingsReportSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
 	WizAuditLogsSecretsConfig *WizAuditLogsSecretsConfig
 	ZendeskAuditLogsSecretsConfig *ZendeskAuditLogsSecretsConfig
@@ -250,13 +247,6 @@ func CloudConfigurationFindingsSecretsConfigAsSecretProcessesorInputConfigSecret
 func CloudLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		CloudLogsSecretsConfig: v,
-	}
-}
-
-// CloudResourceInventoryReportsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudResourceInventoryReportsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func CloudResourceInventoryReportsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudResourceInventoryReportsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		CloudResourceInventoryReportsSecretsConfig: v,
 	}
 }
 
@@ -432,13 +422,6 @@ func IndividualAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Indiv
 func InspectorSecretsConfigAsSecretProcessesorInputConfigSecrets(v *InspectorSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		InspectorSecretsConfig: v,
-	}
-}
-
-// IssuesReportSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns IssuesReportSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func IssuesReportSecretsConfigAsSecretProcessesorInputConfigSecrets(v *IssuesReportSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		IssuesReportSecretsConfig: v,
 	}
 }
 
@@ -719,13 +702,6 @@ func VercelUserEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Verce
 func VoltioAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VoltioAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		VoltioAuditLogsSecretsConfig: v,
-	}
-}
-
-// VulnerabilityFindingsReportSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VulnerabilityFindingsReportSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func VulnerabilityFindingsReportSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VulnerabilityFindingsReportSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		VulnerabilityFindingsReportSecretsConfig: v,
 	}
 }
 
@@ -1100,23 +1076,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.CloudLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into CloudResourceInventoryReportsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudResourceInventoryReportsSecretsConfig)
-	if err == nil {
-		jsonCloudResourceInventoryReportsSecretsConfig, _ := json.Marshal(dst.CloudResourceInventoryReportsSecretsConfig)
-		if string(jsonCloudResourceInventoryReportsSecretsConfig) == "{}" { // empty struct
-			dst.CloudResourceInventoryReportsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudResourceInventoryReportsSecretsConfig); err != nil {
-				dst.CloudResourceInventoryReportsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudResourceInventoryReportsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into CloudResourceInventorySecretsConfig
@@ -1542,23 +1501,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.InspectorSecretsConfig = nil
-	}
-
-	// try to unmarshal data into IssuesReportSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.IssuesReportSecretsConfig)
-	if err == nil {
-		jsonIssuesReportSecretsConfig, _ := json.Marshal(dst.IssuesReportSecretsConfig)
-		if string(jsonIssuesReportSecretsConfig) == "{}" { // empty struct
-			dst.IssuesReportSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.IssuesReportSecretsConfig); err != nil {
-				dst.IssuesReportSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.IssuesReportSecretsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSecretsConfig
@@ -2241,23 +2183,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.VoltioAuditLogsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into VulnerabilityFindingsReportSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsReportSecretsConfig)
-	if err == nil {
-		jsonVulnerabilityFindingsReportSecretsConfig, _ := json.Marshal(dst.VulnerabilityFindingsReportSecretsConfig)
-		if string(jsonVulnerabilityFindingsReportSecretsConfig) == "{}" { // empty struct
-			dst.VulnerabilityFindingsReportSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.VulnerabilityFindingsReportSecretsConfig); err != nil {
-				dst.VulnerabilityFindingsReportSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.VulnerabilityFindingsReportSecretsConfig = nil
-	}
-
 	// try to unmarshal data into VulnerabilityFindingsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsSecretsConfig)
 	if err == nil {
@@ -2348,7 +2273,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BuildkiteGraphqlInputSecretsConfig = nil
 		dst.CloudConfigurationFindingsSecretsConfig = nil
 		dst.CloudLogsSecretsConfig = nil
-		dst.CloudResourceInventoryReportsSecretsConfig = nil
 		dst.CloudResourceInventorySecretsConfig = nil
 		dst.CloudflareDdosAttackAnalyticsSecretsConfig = nil
 		dst.CloudflareFirewallEventsSecretsConfig = nil
@@ -2374,7 +2298,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.GreenhouseAuditLogsSecretsConfig = nil
 		dst.IndividualAlertsSecretsConfig = nil
 		dst.InspectorSecretsConfig = nil
-		dst.IssuesReportSecretsConfig = nil
 		dst.IssuesSecretsConfig = nil
 		dst.KoiAuditLogsSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
@@ -2415,7 +2338,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.UniversalSecretsConfig = nil
 		dst.VercelUserEventsSecretsConfig = nil
 		dst.VoltioAuditLogsSecretsConfig = nil
-		dst.VulnerabilityFindingsReportSecretsConfig = nil
 		dst.VulnerabilityFindingsSecretsConfig = nil
 		dst.WizAuditLogsSecretsConfig = nil
 		dst.ZendeskAuditLogsSecretsConfig = nil
@@ -2509,10 +2431,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.CloudLogsSecretsConfig != nil {
 		return json.Marshal(&src.CloudLogsSecretsConfig)
-	}
-
-	if src.CloudResourceInventoryReportsSecretsConfig != nil {
-		return json.Marshal(&src.CloudResourceInventoryReportsSecretsConfig)
 	}
 
 	if src.CloudResourceInventorySecretsConfig != nil {
@@ -2613,10 +2531,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.InspectorSecretsConfig != nil {
 		return json.Marshal(&src.InspectorSecretsConfig)
-	}
-
-	if src.IssuesReportSecretsConfig != nil {
-		return json.Marshal(&src.IssuesReportSecretsConfig)
 	}
 
 	if src.IssuesSecretsConfig != nil {
@@ -2779,10 +2693,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.VoltioAuditLogsSecretsConfig)
 	}
 
-	if src.VulnerabilityFindingsReportSecretsConfig != nil {
-		return json.Marshal(&src.VulnerabilityFindingsReportSecretsConfig)
-	}
-
 	if src.VulnerabilityFindingsSecretsConfig != nil {
 		return json.Marshal(&src.VulnerabilityFindingsSecretsConfig)
 	}
@@ -2887,10 +2797,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.CloudLogsSecretsConfig
 	}
 
-	if obj.CloudResourceInventoryReportsSecretsConfig != nil {
-		return obj.CloudResourceInventoryReportsSecretsConfig
-	}
-
 	if obj.CloudResourceInventorySecretsConfig != nil {
 		return obj.CloudResourceInventorySecretsConfig
 	}
@@ -2989,10 +2895,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.InspectorSecretsConfig != nil {
 		return obj.InspectorSecretsConfig
-	}
-
-	if obj.IssuesReportSecretsConfig != nil {
-		return obj.IssuesReportSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {
@@ -3155,10 +3057,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.VoltioAuditLogsSecretsConfig
 	}
 
-	if obj.VulnerabilityFindingsReportSecretsConfig != nil {
-		return obj.VulnerabilityFindingsReportSecretsConfig
-	}
-
 	if obj.VulnerabilityFindingsSecretsConfig != nil {
 		return obj.VulnerabilityFindingsSecretsConfig
 	}
@@ -3261,10 +3159,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.CloudLogsSecretsConfig
 	}
 
-	if obj.CloudResourceInventoryReportsSecretsConfig != nil {
-		return *obj.CloudResourceInventoryReportsSecretsConfig
-	}
-
 	if obj.CloudResourceInventorySecretsConfig != nil {
 		return *obj.CloudResourceInventorySecretsConfig
 	}
@@ -3363,10 +3257,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.InspectorSecretsConfig != nil {
 		return *obj.InspectorSecretsConfig
-	}
-
-	if obj.IssuesReportSecretsConfig != nil {
-		return *obj.IssuesReportSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {
@@ -3527,10 +3417,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.VoltioAuditLogsSecretsConfig != nil {
 		return *obj.VoltioAuditLogsSecretsConfig
-	}
-
-	if obj.VulnerabilityFindingsReportSecretsConfig != nil {
-		return *obj.VulnerabilityFindingsReportSecretsConfig
 	}
 
 	if obj.VulnerabilityFindingsSecretsConfig != nil {

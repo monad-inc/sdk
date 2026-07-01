@@ -49,7 +49,6 @@ import org.openapitools.client.model.BuildkiteGraphqlInputSettingsConfig;
 import org.openapitools.client.model.CisaUserSettingsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSettingsConfig;
 import org.openapitools.client.model.CloudLogsSettingsConfig;
-import org.openapitools.client.model.CloudResourceInventoryReportsSettingsConfig;
 import org.openapitools.client.model.CloudResourceInventorySettingsConfig;
 import org.openapitools.client.model.CloudflareDdosAttackAnalyticsSettingsConfig;
 import org.openapitools.client.model.CloudflareFirewallEventsSettingsConfig;
@@ -79,7 +78,6 @@ import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
 import org.openapitools.client.model.GreenhouseAuditLogsSettingsConfig;
 import org.openapitools.client.model.IndividualAlertsSettingsConfig;
 import org.openapitools.client.model.InspectorSettingsConfig;
-import org.openapitools.client.model.IssuesReportSettingsConfig;
 import org.openapitools.client.model.IssuesSettingsConfig;
 import org.openapitools.client.model.KoiAuditLogsSettingsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
@@ -132,7 +130,6 @@ import org.openapitools.client.model.TypesStringFilter;
 import org.openapitools.client.model.UniversalSettingsConfig;
 import org.openapitools.client.model.VercelUserEventsSettingsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSettingsConfig;
-import org.openapitools.client.model.VulnerabilityFindingsReportSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
 import org.openapitools.client.model.WizAssetStatus;
 import org.openapitools.client.model.WizAssetType;
@@ -656,14 +653,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void intervalTest() {
         // TODO: test interval
-    }
-
-    /**
-     * Test the property 'cron'
-     */
-    @Test
-    public void cronTest() {
-        // TODO: test cron
     }
 
     /**
@@ -1272,6 +1261,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void customTemplateTest() {
         // TODO: test customTemplate
+    }
+
+    /**
+     * Test the property 'cron'
+     */
+    @Test
+    public void cronTest() {
+        // TODO: test cron
     }
 
     /**

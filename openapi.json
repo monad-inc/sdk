@@ -1369,64 +1369,6 @@
                 ],
                 "type": "object"
             },
-            "cloud_resource_inventory_reports.SecretsConfig": {
-                "description": "Wiz Cloud Resource Inventory Reports secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "client_id",
-                    "client_secret"
-                ],
-                "type": "object"
-            },
-            "cloud_resource_inventory_reports.SettingsConfig": {
-                "description": "Wiz Cloud Resource Inventory Reports settings",
-                "properties": {
-                    "cloudPlatform": {
-                        "description": "Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.CloudPlatform"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "cron": {
-                        "description": "Cron expression for scheduling the input",
-                        "type": "string"
-                    },
-                    "endpoint_url": {
-                        "description": "Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.",
-                        "type": "string"
-                    },
-                    "entityType": {
-                        "description": "Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.EntityType"
-                        },
-                        "minItems": 1,
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "endpoint_url",
-                    "entityType"
-                ],
-                "type": "object"
-            },
             "cloudflare_ddos_attack_analytics.SecretsConfig": {
                 "description": "Cloudflare DDoS Attack Analytics secrets",
                 "properties": {
@@ -3705,147 +3647,6 @@
                         },
                         "type": "array",
                         "uniqueItems": false
-                    },
-                    "has_note": {
-                        "$ref": "#/components/schemas/wiz.NoteFilter"
-                    },
-                    "has_remediation": {
-                        "$ref": "#/components/schemas/wiz.RemediationFilter"
-                    },
-                    "has_service_ticket": {
-                        "$ref": "#/components/schemas/wiz.ServiceTicketFilter"
-                    },
-                    "issue_ids": {
-                        "description": "@Description Filter only Issues that match these specific IDs",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "issue_types": {
-                        "description": "@Description Filter by Issue type",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.IssueType"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "project_ids": {
-                        "description": "@Description Filter Issues associated with specific project IDs",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "related_entity_id": {
-                        "description": "@Description Filter by related entity ids",
-                        "type": "string"
-                    },
-                    "resolution_reasons": {
-                        "description": "@Description Filter Issues by resolution reason",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.ResolutionReason"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "risk_equals_all": {
-                        "description": "@Description Filters Issues by risk type according to Wiz-defined types of risk\n@Description Use the risk ID and not the risk name\n@Description All specified risks must be present",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.RiskType"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "risk_equals_any": {
-                        "description": "@Description Filters Issues by risk type according to Wiz-defined types of risk\n@Description Use the risk ID and not the risk name",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.RiskType"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "search_query": {
-                        "description": "@Description Free text search on Issue title or object name\n@Description Returns NULL if no match is found",
-                        "type": "string"
-                    },
-                    "security_scan": {
-                        "description": "@Description Filter by security scan source",
-                        "type": "string"
-                    },
-                    "severities": {
-                        "description": "@Description Filter Issues according to Control severity",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.IssueSeverity"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "stack_layers": {
-                        "description": "@Description Filter Issues from specific stack layers",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.StackLayer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "status": {
-                        "description": "@Description Filter by Issue handling status\n@Description Default: OPEN",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.IssueStatus"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "tenant_data_center": {
-                        "description": "DataCenter represents the tenant's data center location\n@Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\"\n@Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "tenant_data_center"
-                ],
-                "type": "object"
-            },
-            "issues_report.SecretsConfig": {
-                "description": "Wiz Issues secrets configuration",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "client_id",
-                    "client_secret"
-                ],
-                "type": "object"
-            },
-            "issues_report.SettingsConfig": {
-                "description": "Wiz Issues settings",
-                "properties": {
-                    "control_ids": {
-                        "description": "@Description Filter Issues created by specific control IDs",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "cron": {
-                        "description": "Cron string for scheduling the ingest of your input",
-                        "type": "string"
                     },
                     "has_note": {
                         "$ref": "#/components/schemas/wiz.NoteFilter"
@@ -10032,9 +9833,6 @@
                                 "$ref": "#/components/schemas/cloud_resource_inventory.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/cloud_resource_inventory_reports.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/cloudflare_ddos_attack_analytics.SecretsConfig"
                             },
                             {
@@ -10177,9 +9975,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/issues.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/issues_report.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/koi_audit_logs.SecretsConfig"
@@ -10326,9 +10121,6 @@
                                 "$ref": "#/components/schemas/vulnerability_findings.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/vulnerability_findings_report.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/wiz_audit_logs.SecretsConfig"
                             },
                             {
@@ -10411,9 +10203,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/cloud_resource_inventory.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/cloud_resource_inventory_reports.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/cloudflare_ddos_attack_analytics.SettingsConfig"
@@ -10564,9 +10353,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/issues.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/issues_report.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/koi_audit_logs.SettingsConfig"
@@ -10723,9 +10509,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/vulnerability_findings.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/vulnerability_findings_report.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/wiz_audit_logs.SettingsConfig"
@@ -12180,91 +11963,6 @@
                     },
                     "backfill_start_time": {
                         "description": "Date to start fetching data from. If not specified, Data is fetched since one year ago. All syncs thereafter will be of incremental data.",
-                        "type": "string"
-                    },
-                    "detection_method": {
-                        "description": "Detection method types for Wiz. Ex: 'AGENT', 'CLOUD', 'AGENT_CLOUD'.",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.DetectionMethod"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "endpoint_url": {
-                        "description": "Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/vulnerability-findings'.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "status": {
-                        "description": "Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.Status"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    },
-                    "vendor_severity": {
-                        "description": "Vendor severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.VendorSeverity"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    }
-                },
-                "required": [
-                    "asset_types",
-                    "endpoint_url"
-                ],
-                "type": "object"
-            },
-            "vulnerability_findings_report.SecretsConfig": {
-                "description": "Wiz vulnerability findings secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "client_id",
-                    "client_secret"
-                ],
-                "type": "object"
-            },
-            "vulnerability_findings_report.SettingsConfig": {
-                "description": "Wiz vulnerability findings settings",
-                "properties": {
-                    "asset_status": {
-                        "description": "Asset status types for Wiz. Ex: 'ACTIVE', 'INACTIVE'.",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.AssetStatus"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "asset_types": {
-                        "description": "Asset types for Wiz. Ex: 'VIRTUAL_MACHINE', 'CONTAINER', etc.",
-                        "items": {
-                            "$ref": "#/components/schemas/wiz.AssetType"
-                        },
-                        "minItems": 1,
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "cron": {
-                        "description": "Cron string for scheduling the ingest of your input",
                         "type": "string"
                     },
                     "detection_method": {

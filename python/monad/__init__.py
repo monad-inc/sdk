@@ -134,8 +134,6 @@ __all__ = [
     "CloudConfigurationFindingsSettingsConfig",
     "CloudLogsSecretsConfig",
     "CloudLogsSettingsConfig",
-    "CloudResourceInventoryReportsSecretsConfig",
-    "CloudResourceInventoryReportsSettingsConfig",
     "CloudResourceInventorySecretsConfig",
     "CloudResourceInventorySettingsConfig",
     "CloudflareDdosAttackAnalyticsSecretsConfig",
@@ -272,8 +270,6 @@ __all__ = [
     "InputsConnectorMeta",
     "InspectorSecretsConfig",
     "InspectorSettingsConfig",
-    "IssuesReportSecretsConfig",
-    "IssuesReportSettingsConfig",
     "IssuesSecretsConfig",
     "IssuesSettingsConfig",
     "JqArgumentsConfig",
@@ -673,8 +669,6 @@ __all__ = [
     "VercelUserEventsSettingsConfig",
     "VoltioAuditLogsSecretsConfig",
     "VoltioAuditLogsSettingsConfig",
-    "VulnerabilityFindingsReportSecretsConfig",
-    "VulnerabilityFindingsReportSettingsConfig",
     "VulnerabilityFindingsSecretsConfig",
     "VulnerabilityFindingsSettingsConfig",
     "WizAssetStatus",
@@ -821,8 +815,6 @@ from monad.models.cloud_configuration_findings_secrets_config import CloudConfig
 from monad.models.cloud_configuration_findings_settings_config import CloudConfigurationFindingsSettingsConfig as CloudConfigurationFindingsSettingsConfig
 from monad.models.cloud_logs_secrets_config import CloudLogsSecretsConfig as CloudLogsSecretsConfig
 from monad.models.cloud_logs_settings_config import CloudLogsSettingsConfig as CloudLogsSettingsConfig
-from monad.models.cloud_resource_inventory_reports_secrets_config import CloudResourceInventoryReportsSecretsConfig as CloudResourceInventoryReportsSecretsConfig
-from monad.models.cloud_resource_inventory_reports_settings_config import CloudResourceInventoryReportsSettingsConfig as CloudResourceInventoryReportsSettingsConfig
 from monad.models.cloud_resource_inventory_secrets_config import CloudResourceInventorySecretsConfig as CloudResourceInventorySecretsConfig
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig as CloudResourceInventorySettingsConfig
 from monad.models.cloudflare_ddos_attack_analytics_secrets_config import CloudflareDdosAttackAnalyticsSecretsConfig as CloudflareDdosAttackAnalyticsSecretsConfig
@@ -959,8 +951,6 @@ from monad.models.individual_alerts_settings_config import IndividualAlertsSetti
 from monad.models.inputs_connector_meta import InputsConnectorMeta as InputsConnectorMeta
 from monad.models.inspector_secrets_config import InspectorSecretsConfig as InspectorSecretsConfig
 from monad.models.inspector_settings_config import InspectorSettingsConfig as InspectorSettingsConfig
-from monad.models.issues_report_secrets_config import IssuesReportSecretsConfig as IssuesReportSecretsConfig
-from monad.models.issues_report_settings_config import IssuesReportSettingsConfig as IssuesReportSettingsConfig
 from monad.models.issues_secrets_config import IssuesSecretsConfig as IssuesSecretsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig as IssuesSettingsConfig
 from monad.models.jq_arguments_config import JqArgumentsConfig as JqArgumentsConfig
@@ -1360,8 +1350,6 @@ from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecre
 from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig as VercelUserEventsSettingsConfig
 from monad.models.voltio_audit_logs_secrets_config import VoltioAuditLogsSecretsConfig as VoltioAuditLogsSecretsConfig
 from monad.models.voltio_audit_logs_settings_config import VoltioAuditLogsSettingsConfig as VoltioAuditLogsSettingsConfig
-from monad.models.vulnerability_findings_report_secrets_config import VulnerabilityFindingsReportSecretsConfig as VulnerabilityFindingsReportSecretsConfig
-from monad.models.vulnerability_findings_report_settings_config import VulnerabilityFindingsReportSettingsConfig as VulnerabilityFindingsReportSettingsConfig
 from monad.models.vulnerability_findings_secrets_config import VulnerabilityFindingsSecretsConfig as VulnerabilityFindingsSecretsConfig
 from monad.models.vulnerability_findings_settings_config import VulnerabilityFindingsSettingsConfig as VulnerabilityFindingsSettingsConfig
 from monad.models.wiz_asset_status import WizAssetStatus as WizAssetStatus

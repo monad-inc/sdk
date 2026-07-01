@@ -62,10 +62,9 @@ Name | Type | Description | Notes
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **CloudPlatform** | Pointer to [**[]WizCloudPlatform**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
-**EntityType** | [**[]WizEntityType**](WizEntityType.md) | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | 
+**EntityType** | [**[]WizEntityType**](WizEntityType.md) | Entity types for Wiz. | 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
@@ -142,6 +141,7 @@ Name | Type | Description | Notes
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
 **CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
+**Cron** | Pointer to **string** | Cron expression to schedule the data collection. | [optional] 
 **OperationNames** | Pointer to **[]string** | Filter by specific operation names (optional) | [optional] 
 **TenantDomain** | **string** | The Tines tenant domain (e.g., your-org.tines.com) | 
 **UserIds** | Pointer to **[]string** | Filter by specific user IDs (optional) | [optional] 
@@ -1635,31 +1635,6 @@ SetInterval sets Interval field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
-
-### GetCron
-
-`func (o *SecretProcessesorInputConfigSettings) GetCron() string`
-
-GetCron returns the Cron field if non-nil, zero value otherwise.
-
-### GetCronOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCronOk() (*string, bool)`
-
-GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCron
-
-`func (o *SecretProcessesorInputConfigSettings) SetCron(v string)`
-
-SetCron sets Cron field to given value.
-
-### HasCron
-
-`func (o *SecretProcessesorInputConfigSettings) HasCron() bool`
-
-HasCron returns a boolean if a field has been set.
 
 ### GetAccountId
 
@@ -3450,6 +3425,31 @@ SetCustomTemplate sets CustomTemplate field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasCustomTemplate() bool`
 
 HasCustomTemplate returns a boolean if a field has been set.
+
+### GetCron
+
+`func (o *SecretProcessesorInputConfigSettings) GetCron() string`
+
+GetCron returns the Cron field if non-nil, zero value otherwise.
+
+### GetCronOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetCronOk() (*string, bool)`
+
+GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCron
+
+`func (o *SecretProcessesorInputConfigSettings) SetCron(v string)`
+
+SetCron sets Cron field to given value.
+
+### HasCron
+
+`func (o *SecretProcessesorInputConfigSettings) HasCron() bool`
+
+HasCron returns a boolean if a field has been set.
 
 ### GetOperationNames
 

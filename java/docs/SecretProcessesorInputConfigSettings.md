@@ -65,10 +65,9 @@
 |**filter** | **String** | The filter to apply to the logs. |  [optional] |
 |**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
 |**cloudPlatform** | **List&lt;WizCloudPlatform&gt;** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |
-|**entityType** | **List&lt;WizEntityType&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  |
+|**entityType** | **List&lt;WizEntityType&gt;** | Entity types for Wiz. |  |
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
 |**interval** | **Integer** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. |  [optional] |
-|**cron** | **String** | Cron string for scheduling the ingest of your input |  [optional] |
 |**accountId** | **String** | Account ID for the input |  [optional] |
 |**includeBotFields** | **Boolean** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) |  [optional] |
 |**zoneId** | **String** | Cloudflare Zone ID |  [optional] |
@@ -145,6 +144,7 @@
 |**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |
 |**recordType** | **String** | The type of record to generate |  [optional] |
 |**customTemplate** | **String** | A custom template using the functions we provide to generate demo data |  [optional] |
+|**cron** | **String** | Cron expression to schedule the data collection. |  [optional] |
 |**operationNames** | **List&lt;String&gt;** | Filter by specific operation names (optional) |  [optional] |
 |**tenantDomain** | **String** | The Tines tenant domain (e.g., your-org.tines.com) |  |
 |**userIds** | **List&lt;String&gt;** | Filter by specific user IDs (optional) |  [optional] |

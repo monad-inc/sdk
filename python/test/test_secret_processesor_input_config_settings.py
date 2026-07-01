@@ -120,7 +120,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 full_snapshot = True,
                 interval = 56,
-                cron = '',
                 account_id = '',
                 include_bot_fields = True,
                 zone_id = '',
@@ -257,6 +256,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 rate = 56,
                 record_type = '',
                 custom_template = '',
+                cron = '',
                 operation_names = [
                     ''
                     ],

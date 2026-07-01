@@ -64,8 +64,6 @@ export * from '../models/CloudConfigurationFindingsSecretsConfig';
 export * from '../models/CloudConfigurationFindingsSettingsConfig';
 export * from '../models/CloudLogsSecretsConfig';
 export * from '../models/CloudLogsSettingsConfig';
-export * from '../models/CloudResourceInventoryReportsSecretsConfig';
-export * from '../models/CloudResourceInventoryReportsSettingsConfig';
 export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
@@ -202,8 +200,6 @@ export * from '../models/IndividualAlertsSettingsConfig';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/InspectorSecretsConfig';
 export * from '../models/InspectorSettingsConfig';
-export * from '../models/IssuesReportSecretsConfig';
-export * from '../models/IssuesReportSettingsConfig';
 export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqArgumentsConfig';
@@ -603,8 +599,6 @@ export * from '../models/VercelUserEventsSecretsConfig';
 export * from '../models/VercelUserEventsSettingsConfig';
 export * from '../models/VoltioAuditLogsSecretsConfig';
 export * from '../models/VoltioAuditLogsSettingsConfig';
-export * from '../models/VulnerabilityFindingsReportSecretsConfig';
-export * from '../models/VulnerabilityFindingsReportSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
 export * from '../models/VulnerabilityFindingsSettingsConfig';
 export * from '../models/WizAssetStatus';
@@ -696,8 +690,6 @@ import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigur
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
 import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
 import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
-import { CloudResourceInventoryReportsSecretsConfig } from '../models/CloudResourceInventoryReportsSecretsConfig';
-import { CloudResourceInventoryReportsSettingsConfig } from '../models/CloudResourceInventoryReportsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudflareDdosAttackAnalyticsSecretsConfig } from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
@@ -834,8 +826,6 @@ import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettin
 import { InputsConnectorMeta              } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
-import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
-import { IssuesReportSettingsConfig                     } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig                     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
@@ -1235,8 +1225,6 @@ import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecrets
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
-import { VulnerabilityFindingsReportSecretsConfig } from '../models/VulnerabilityFindingsReportSecretsConfig';
-import { VulnerabilityFindingsReportSettingsConfig } from '../models/VulnerabilityFindingsReportSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { WizAssetStatus } from '../models/WizAssetStatus';
@@ -1420,8 +1408,6 @@ let typeMap: {[index: string]: any} = {
     "CloudConfigurationFindingsSettingsConfig": CloudConfigurationFindingsSettingsConfig,
     "CloudLogsSecretsConfig": CloudLogsSecretsConfig,
     "CloudLogsSettingsConfig": CloudLogsSettingsConfig,
-    "CloudResourceInventoryReportsSecretsConfig": CloudResourceInventoryReportsSecretsConfig,
-    "CloudResourceInventoryReportsSettingsConfig": CloudResourceInventoryReportsSettingsConfig,
     "CloudResourceInventorySecretsConfig": CloudResourceInventorySecretsConfig,
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudflareDdosAttackAnalyticsSecretsConfig": CloudflareDdosAttackAnalyticsSecretsConfig,
@@ -1554,8 +1540,6 @@ let typeMap: {[index: string]: any} = {
     "InputsConnectorMeta": InputsConnectorMeta,
     "InspectorSecretsConfig": InspectorSecretsConfig,
     "InspectorSettingsConfig": InspectorSettingsConfig,
-    "IssuesReportSecretsConfig": IssuesReportSecretsConfig,
-    "IssuesReportSettingsConfig": IssuesReportSettingsConfig,
     "IssuesSecretsConfig": IssuesSecretsConfig,
     "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqArgumentsConfig": JqArgumentsConfig,
@@ -1926,8 +1910,6 @@ let typeMap: {[index: string]: any} = {
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,
     "VoltioAuditLogsSecretsConfig": VoltioAuditLogsSecretsConfig,
     "VoltioAuditLogsSettingsConfig": VoltioAuditLogsSettingsConfig,
-    "VulnerabilityFindingsReportSecretsConfig": VulnerabilityFindingsReportSecretsConfig,
-    "VulnerabilityFindingsReportSettingsConfig": VulnerabilityFindingsReportSettingsConfig,
     "VulnerabilityFindingsSecretsConfig": VulnerabilityFindingsSecretsConfig,
     "VulnerabilityFindingsSettingsConfig": VulnerabilityFindingsSettingsConfig,
     "WizAuditLogsSecretsConfig": WizAuditLogsSecretsConfig,

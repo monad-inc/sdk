@@ -42,7 +42,6 @@ type SecretProcessesorInputConfigSettings struct {
 	CisaUserSettingsConfig *CisaUserSettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
-	CloudResourceInventoryReportsSettingsConfig *CloudResourceInventoryReportsSettingsConfig
 	CloudResourceInventorySettingsConfig *CloudResourceInventorySettingsConfig
 	CloudflareDdosAttackAnalyticsSettingsConfig *CloudflareDdosAttackAnalyticsSettingsConfig
 	CloudflareFirewallEventsSettingsConfig *CloudflareFirewallEventsSettingsConfig
@@ -70,7 +69,6 @@ type SecretProcessesorInputConfigSettings struct {
 	GreenhouseAuditLogsSettingsConfig *GreenhouseAuditLogsSettingsConfig
 	IndividualAlertsSettingsConfig *IndividualAlertsSettingsConfig
 	InspectorSettingsConfig *InspectorSettingsConfig
-	IssuesReportSettingsConfig *IssuesReportSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
 	KoiAuditLogsSettingsConfig *KoiAuditLogsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
@@ -118,7 +116,6 @@ type SecretProcessesorInputConfigSettings struct {
 	UniversalSettingsConfig *UniversalSettingsConfig
 	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
-	VulnerabilityFindingsReportSettingsConfig *VulnerabilityFindingsReportSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
 	ZendeskAuditLogsSettingsConfig *ZendeskAuditLogsSettingsConfig
@@ -283,13 +280,6 @@ func CloudConfigurationFindingsSettingsConfigAsSecretProcessesorInputConfigSetti
 func CloudLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CloudLogsSettingsConfig: v,
-	}
-}
-
-// CloudResourceInventoryReportsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudResourceInventoryReportsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func CloudResourceInventoryReportsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudResourceInventoryReportsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		CloudResourceInventoryReportsSettingsConfig: v,
 	}
 }
 
@@ -479,13 +469,6 @@ func IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Ind
 func InspectorSettingsConfigAsSecretProcessesorInputConfigSettings(v *InspectorSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		InspectorSettingsConfig: v,
-	}
-}
-
-// IssuesReportSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IssuesReportSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func IssuesReportSettingsConfigAsSecretProcessesorInputConfigSettings(v *IssuesReportSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		IssuesReportSettingsConfig: v,
 	}
 }
 
@@ -815,13 +798,6 @@ func VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Ver
 func VoltioAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VoltioAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		VoltioAuditLogsSettingsConfig: v,
-	}
-}
-
-// VulnerabilityFindingsReportSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VulnerabilityFindingsReportSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func VulnerabilityFindingsReportSettingsConfigAsSecretProcessesorInputConfigSettings(v *VulnerabilityFindingsReportSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		VulnerabilityFindingsReportSettingsConfig: v,
 	}
 }
 
@@ -1247,23 +1223,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CloudLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into CloudResourceInventoryReportsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.CloudResourceInventoryReportsSettingsConfig)
-	if err == nil {
-		jsonCloudResourceInventoryReportsSettingsConfig, _ := json.Marshal(dst.CloudResourceInventoryReportsSettingsConfig)
-		if string(jsonCloudResourceInventoryReportsSettingsConfig) == "{}" { // empty struct
-			dst.CloudResourceInventoryReportsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CloudResourceInventoryReportsSettingsConfig); err != nil {
-				dst.CloudResourceInventoryReportsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CloudResourceInventoryReportsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CloudResourceInventorySettingsConfig
@@ -1723,23 +1682,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.InspectorSettingsConfig = nil
-	}
-
-	// try to unmarshal data into IssuesReportSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.IssuesReportSettingsConfig)
-	if err == nil {
-		jsonIssuesReportSettingsConfig, _ := json.Marshal(dst.IssuesReportSettingsConfig)
-		if string(jsonIssuesReportSettingsConfig) == "{}" { // empty struct
-			dst.IssuesReportSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.IssuesReportSettingsConfig); err != nil {
-				dst.IssuesReportSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.IssuesReportSettingsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSettingsConfig
@@ -2541,23 +2483,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.VoltioAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into VulnerabilityFindingsReportSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsReportSettingsConfig)
-	if err == nil {
-		jsonVulnerabilityFindingsReportSettingsConfig, _ := json.Marshal(dst.VulnerabilityFindingsReportSettingsConfig)
-		if string(jsonVulnerabilityFindingsReportSettingsConfig) == "{}" { // empty struct
-			dst.VulnerabilityFindingsReportSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.VulnerabilityFindingsReportSettingsConfig); err != nil {
-				dst.VulnerabilityFindingsReportSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.VulnerabilityFindingsReportSettingsConfig = nil
-	}
-
 	// try to unmarshal data into VulnerabilityFindingsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsSettingsConfig)
 	if err == nil {
@@ -2651,7 +2576,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CisaUserSettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
-		dst.CloudResourceInventoryReportsSettingsConfig = nil
 		dst.CloudResourceInventorySettingsConfig = nil
 		dst.CloudflareDdosAttackAnalyticsSettingsConfig = nil
 		dst.CloudflareFirewallEventsSettingsConfig = nil
@@ -2679,7 +2603,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GreenhouseAuditLogsSettingsConfig = nil
 		dst.IndividualAlertsSettingsConfig = nil
 		dst.InspectorSettingsConfig = nil
-		dst.IssuesReportSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
 		dst.KoiAuditLogsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
@@ -2727,7 +2650,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.UniversalSettingsConfig = nil
 		dst.VercelUserEventsSettingsConfig = nil
 		dst.VoltioAuditLogsSettingsConfig = nil
-		dst.VulnerabilityFindingsReportSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.WizAuditLogsSettingsConfig = nil
 		dst.ZendeskAuditLogsSettingsConfig = nil
@@ -2833,10 +2755,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.CloudLogsSettingsConfig != nil {
 		return json.Marshal(&src.CloudLogsSettingsConfig)
-	}
-
-	if src.CloudResourceInventoryReportsSettingsConfig != nil {
-		return json.Marshal(&src.CloudResourceInventoryReportsSettingsConfig)
 	}
 
 	if src.CloudResourceInventorySettingsConfig != nil {
@@ -2945,10 +2863,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.InspectorSettingsConfig != nil {
 		return json.Marshal(&src.InspectorSettingsConfig)
-	}
-
-	if src.IssuesReportSettingsConfig != nil {
-		return json.Marshal(&src.IssuesReportSettingsConfig)
 	}
 
 	if src.IssuesSettingsConfig != nil {
@@ -3139,10 +3053,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.VoltioAuditLogsSettingsConfig)
 	}
 
-	if src.VulnerabilityFindingsReportSettingsConfig != nil {
-		return json.Marshal(&src.VulnerabilityFindingsReportSettingsConfig)
-	}
-
 	if src.VulnerabilityFindingsSettingsConfig != nil {
 		return json.Marshal(&src.VulnerabilityFindingsSettingsConfig)
 	}
@@ -3259,10 +3169,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CloudLogsSettingsConfig
 	}
 
-	if obj.CloudResourceInventoryReportsSettingsConfig != nil {
-		return obj.CloudResourceInventoryReportsSettingsConfig
-	}
-
 	if obj.CloudResourceInventorySettingsConfig != nil {
 		return obj.CloudResourceInventorySettingsConfig
 	}
@@ -3369,10 +3275,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.InspectorSettingsConfig != nil {
 		return obj.InspectorSettingsConfig
-	}
-
-	if obj.IssuesReportSettingsConfig != nil {
-		return obj.IssuesReportSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {
@@ -3563,10 +3465,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.VoltioAuditLogsSettingsConfig
 	}
 
-	if obj.VulnerabilityFindingsReportSettingsConfig != nil {
-		return obj.VulnerabilityFindingsReportSettingsConfig
-	}
-
 	if obj.VulnerabilityFindingsSettingsConfig != nil {
 		return obj.VulnerabilityFindingsSettingsConfig
 	}
@@ -3681,10 +3579,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.CloudLogsSettingsConfig
 	}
 
-	if obj.CloudResourceInventoryReportsSettingsConfig != nil {
-		return *obj.CloudResourceInventoryReportsSettingsConfig
-	}
-
 	if obj.CloudResourceInventorySettingsConfig != nil {
 		return *obj.CloudResourceInventorySettingsConfig
 	}
@@ -3791,10 +3685,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.InspectorSettingsConfig != nil {
 		return *obj.InspectorSettingsConfig
-	}
-
-	if obj.IssuesReportSettingsConfig != nil {
-		return *obj.IssuesReportSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {
@@ -3983,10 +3873,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.VoltioAuditLogsSettingsConfig != nil {
 		return *obj.VoltioAuditLogsSettingsConfig
-	}
-
-	if obj.VulnerabilityFindingsReportSettingsConfig != nil {
-		return *obj.VulnerabilityFindingsReportSettingsConfig
 	}
 
 	if obj.VulnerabilityFindingsSettingsConfig != nil {
