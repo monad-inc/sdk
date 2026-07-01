@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ComponentId** | **string** |  | 
 **ComponentType** | [**ModelsComponentType**](ModelsComponentType.md) |  | 
-**Enabled** | **bool** |  | 
+**Enabled** | Pointer to **bool** | nil &#x3D;&gt; enabled | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewRoutesV2PipelineRequestNode
 
-`func NewRoutesV2PipelineRequestNode(componentId string, componentType ModelsComponentType, enabled bool, ) *RoutesV2PipelineRequestNode`
+`func NewRoutesV2PipelineRequestNode(componentId string, componentType ModelsComponentType, ) *RoutesV2PipelineRequestNode`
 
 NewRoutesV2PipelineRequestNode instantiates a new RoutesV2PipelineRequestNode object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *RoutesV2PipelineRequestNode) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 

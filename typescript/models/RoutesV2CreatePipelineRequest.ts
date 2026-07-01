@@ -17,7 +17,10 @@ import { HttpFile } from '../http/http';
 export class RoutesV2CreatePipelineRequest {
     'description'?: string;
     'edges': Array<RoutesV2PipelineRequestEdge>;
-    'enabled': boolean;
+    /**
+    * nil => enabled
+    */
+    'enabled'?: boolean;
     'name': string;
     'nodes': Array<RoutesV2PipelineRequestNode>;
 

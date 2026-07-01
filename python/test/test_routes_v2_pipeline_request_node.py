@@ -46,7 +46,6 @@ class TestRoutesV2PipelineRequestNode(unittest.TestCase):
             return RoutesV2PipelineRequestNode(
                 component_id = '',
                 component_type = 'transform',
-                enabled = True,
         )
         """
 

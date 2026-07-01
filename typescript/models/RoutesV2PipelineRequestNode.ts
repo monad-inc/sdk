@@ -16,7 +16,10 @@ import { HttpFile } from '../http/http';
 export class RoutesV2PipelineRequestNode {
     'componentId': string;
     'componentType': ModelsComponentType;
-    'enabled': boolean;
+    /**
+    * nil => enabled
+    */
+    'enabled'?: boolean;
     'id'?: string;
     'slug'?: string;
 

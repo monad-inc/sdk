@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_component_type import ModelsComponentType
 from typing import Optional, Set
@@ -31,7 +31,7 @@ class RoutesV2PipelineRequestNode(BaseModel):
     """ # noqa: E501
     component_id: StrictStr
     component_type: ModelsComponentType
-    enabled: StrictBool
+    enabled: Optional[StrictBool] = Field(default=None, description="nil => enabled")
     id: Optional[StrictStr] = None
     slug: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["component_id", "component_type", "enabled", "id", "slug"]

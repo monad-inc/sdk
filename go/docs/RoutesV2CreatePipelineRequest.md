@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
 **Edges** | [**[]RoutesV2PipelineRequestEdge**](RoutesV2PipelineRequestEdge.md) |  | 
-**Enabled** | **bool** |  | 
+**Enabled** | Pointer to **bool** | nil &#x3D;&gt; enabled | [optional] 
 **Name** | **string** |  | 
 **Nodes** | [**[]RoutesV2PipelineRequestNode**](RoutesV2PipelineRequestNode.md) |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewRoutesV2CreatePipelineRequest
 
-`func NewRoutesV2CreatePipelineRequest(edges []RoutesV2PipelineRequestEdge, enabled bool, name string, nodes []RoutesV2PipelineRequestNode, ) *RoutesV2CreatePipelineRequest`
+`func NewRoutesV2CreatePipelineRequest(edges []RoutesV2PipelineRequestEdge, name string, nodes []RoutesV2PipelineRequestNode, ) *RoutesV2CreatePipelineRequest`
 
 NewRoutesV2CreatePipelineRequest instantiates a new RoutesV2CreatePipelineRequest object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *RoutesV2CreatePipelineRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetName
 

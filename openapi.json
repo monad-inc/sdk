@@ -8499,6 +8499,7 @@
                         "uniqueItems": false
                     },
                     "enabled": {
+                        "description": "nil =\u003e enabled",
                         "type": "boolean"
                     },
                     "name": {
@@ -8514,7 +8515,6 @@
                 },
                 "required": [
                     "edges",
-                    "enabled",
                     "name",
                     "nodes"
                 ],
@@ -8687,6 +8687,7 @@
                         "$ref": "#/components/schemas/models.ComponentType"
                     },
                     "enabled": {
+                        "description": "nil =\u003e enabled",
                         "type": "boolean"
                     },
                     "id": {
@@ -8698,8 +8699,7 @@
                 },
                 "required": [
                     "component_id",
-                    "component_type",
-                    "enabled"
+                    "component_type"
                 ],
                 "type": "object"
             },

@@ -56,7 +56,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	createPipelineRequest := openapiclient.CreatePipeline_request{RoutesV2CreatePipelineRequest: openapiclient.NewRoutesV2CreatePipelineRequest([]openapiclient.RoutesV2PipelineRequestEdge{*openapiclient.NewRoutesV2PipelineRequestEdge("FromNodeInstanceId_example", "ToNodeInstanceId_example")}, false, "Name_example", []openapiclient.RoutesV2PipelineRequestNode{*openapiclient.NewRoutesV2PipelineRequestNode("ComponentId_example", openapiclient.models.ComponentType("transform"), false)})} // CreatePipelineRequest | Request body for creating a pipeline
+	createPipelineRequest := openapiclient.CreatePipeline_request{RoutesV2CreatePipelineRequest: openapiclient.NewRoutesV2CreatePipelineRequest([]openapiclient.RoutesV2PipelineRequestEdge{*openapiclient.NewRoutesV2PipelineRequestEdge("FromNodeInstanceId_example", "ToNodeInstanceId_example")}, "Name_example", []openapiclient.RoutesV2PipelineRequestNode{*openapiclient.NewRoutesV2PipelineRequestNode("ComponentId_example", openapiclient.models.ComponentType("transform"))})} // CreatePipelineRequest | Request body for creating a pipeline
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

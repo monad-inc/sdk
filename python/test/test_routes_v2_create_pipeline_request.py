@@ -82,7 +82,6 @@ class TestRoutesV2CreatePipelineRequest(unittest.TestCase):
                         schema_detection = True, 
                         to_node_instance_id = '', )
                     ],
-                enabled = True,
                 name = '',
                 nodes = [
                     monad.models.routes_v2/pipeline_request_node.routesV2.PipelineRequestNode(

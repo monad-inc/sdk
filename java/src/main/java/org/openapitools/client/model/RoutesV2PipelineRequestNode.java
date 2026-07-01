@@ -63,7 +63,7 @@ public class RoutesV2PipelineRequestNode {
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_ID = "id";
@@ -117,21 +117,21 @@ public class RoutesV2PipelineRequestNode {
   }
 
 
-  public RoutesV2PipelineRequestNode enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public RoutesV2PipelineRequestNode enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
   /**
-   * Get enabled
+   * nil &#x3D;&gt; enabled
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
@@ -226,7 +226,7 @@ public class RoutesV2PipelineRequestNode {
     openapiFields = new HashSet<String>(Arrays.asList("component_id", "component_type", "enabled", "id", "slug"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("component_id", "component_type", "enabled"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("component_id", "component_type"));
   }
 
   /**

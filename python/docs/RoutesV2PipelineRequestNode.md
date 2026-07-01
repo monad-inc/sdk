@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component_id** | **str** |  | 
 **component_type** | [**ModelsComponentType**](ModelsComponentType.md) |  | 
-**enabled** | **bool** |  | 
+**enabled** | **bool** | nil &#x3D;&gt; enabled | [optional] 
 **id** | **str** |  | [optional] 
 **slug** | **str** |  | [optional] 
 

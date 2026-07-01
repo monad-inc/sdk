@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.routes_v2_pipeline_request_edge import RoutesV2PipelineRequestEdge
 from monad.models.routes_v2_pipeline_request_node import RoutesV2PipelineRequestNode
@@ -32,7 +32,7 @@ class RoutesV2CreatePipelineRequest(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = None
     edges: List[RoutesV2PipelineRequestEdge]
-    enabled: StrictBool
+    enabled: Optional[StrictBool] = Field(default=None, description="nil => enabled")
     name: StrictStr
     nodes: List[RoutesV2PipelineRequestNode]
     __properties: ClassVar[List[str]] = ["description", "edges", "enabled", "name", "nodes"]

@@ -24,7 +24,8 @@ var _ MappedNullable = &RoutesV2CreatePipelineRequest{}
 type RoutesV2CreatePipelineRequest struct {
 	Description *string `json:"description,omitempty"`
 	Edges []RoutesV2PipelineRequestEdge `json:"edges"`
-	Enabled bool `json:"enabled"`
+	// nil => enabled
+	Enabled *bool `json:"enabled,omitempty"`
 	Name string `json:"name"`
 	Nodes []RoutesV2PipelineRequestNode `json:"nodes"`
 }
@@ -35,10 +36,9 @@ type _RoutesV2CreatePipelineRequest RoutesV2CreatePipelineRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesV2CreatePipelineRequest(edges []RoutesV2PipelineRequestEdge, enabled bool, name string, nodes []RoutesV2PipelineRequestNode) *RoutesV2CreatePipelineRequest {
+func NewRoutesV2CreatePipelineRequest(edges []RoutesV2PipelineRequestEdge, name string, nodes []RoutesV2PipelineRequestNode) *RoutesV2CreatePipelineRequest {
 	this := RoutesV2CreatePipelineRequest{}
 	this.Edges = edges
-	this.Enabled = enabled
 	this.Name = name
 	this.Nodes = nodes
 	return &this
@@ -108,28 +108,36 @@ func (o *RoutesV2CreatePipelineRequest) SetEdges(v []RoutesV2PipelineRequestEdge
 	o.Edges = v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *RoutesV2CreatePipelineRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesV2CreatePipelineRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *RoutesV2CreatePipelineRequest) HasEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *RoutesV2CreatePipelineRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetName returns the Name field value
@@ -194,7 +202,9 @@ func (o RoutesV2CreatePipelineRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["edges"] = o.Edges
-	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["nodes"] = o.Nodes
 	return toSerialize, nil
@@ -206,7 +216,6 @@ func (o *RoutesV2CreatePipelineRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"edges",
-		"enabled",
 		"name",
 		"nodes",
 	}

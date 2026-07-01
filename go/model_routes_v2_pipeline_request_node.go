@@ -24,7 +24,8 @@ var _ MappedNullable = &RoutesV2PipelineRequestNode{}
 type RoutesV2PipelineRequestNode struct {
 	ComponentId string `json:"component_id"`
 	ComponentType ModelsComponentType `json:"component_type"`
-	Enabled bool `json:"enabled"`
+	// nil => enabled
+	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Slug *string `json:"slug,omitempty"`
 }
@@ -35,11 +36,10 @@ type _RoutesV2PipelineRequestNode RoutesV2PipelineRequestNode
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesV2PipelineRequestNode(componentId string, componentType ModelsComponentType, enabled bool) *RoutesV2PipelineRequestNode {
+func NewRoutesV2PipelineRequestNode(componentId string, componentType ModelsComponentType) *RoutesV2PipelineRequestNode {
 	this := RoutesV2PipelineRequestNode{}
 	this.ComponentId = componentId
 	this.ComponentType = componentType
-	this.Enabled = enabled
 	return &this
 }
 
@@ -99,28 +99,36 @@ func (o *RoutesV2PipelineRequestNode) SetComponentType(v ModelsComponentType) {
 	o.ComponentType = v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *RoutesV2PipelineRequestNode) GetEnabled() bool {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesV2PipelineRequestNode) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *RoutesV2PipelineRequestNode) HasEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *RoutesV2PipelineRequestNode) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -199,7 +207,9 @@ func (o RoutesV2PipelineRequestNode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["component_id"] = o.ComponentId
 	toSerialize["component_type"] = o.ComponentType
-	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -216,7 +226,6 @@ func (o *RoutesV2PipelineRequestNode) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"component_id",
 		"component_type",
-		"enabled",
 	}
 
 	allProperties := make(map[string]interface{})
