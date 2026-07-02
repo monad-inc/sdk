@@ -2872,6 +2872,17 @@
                 },
                 "type": "object"
             },
+            "github_actions_workflow_logs_webhook.OrganizationScope": {
+                "properties": {
+                    "owner": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "owner"
+                ],
+                "type": "object"
+            },
             "github_actions_workflow_logs_webhook.RepositoryScope": {
                 "properties": {
                     "owner": {
@@ -2889,12 +2900,16 @@
             },
             "github_actions_workflow_logs_webhook.ScopeConfig": {
                 "properties": {
+                    "organization": {
+                        "$ref": "#/components/schemas/github_actions_workflow_logs_webhook.OrganizationScope"
+                    },
                     "repository": {
                         "$ref": "#/components/schemas/github_actions_workflow_logs_webhook.RepositoryScope"
                     },
                     "type": {
                         "enum": [
-                            "repository"
+                            "repository",
+                            "organization"
                         ],
                         "type": "string"
                     }

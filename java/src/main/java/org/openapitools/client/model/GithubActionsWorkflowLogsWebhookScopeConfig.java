@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookOrganizationScope;
 import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookRepositoryScope;
 
 import com.google.gson.Gson;
@@ -51,6 +52,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class GithubActionsWorkflowLogsWebhookScopeConfig {
+  public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION)
+  @javax.annotation.Nullable
+  private GithubActionsWorkflowLogsWebhookOrganizationScope organization;
+
   public static final String SERIALIZED_NAME_REPOSITORY = "repository";
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
   @javax.annotation.Nullable
@@ -61,7 +67,9 @@ public class GithubActionsWorkflowLogsWebhookScopeConfig {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    REPOSITORY("repository");
+    REPOSITORY("repository"),
+    
+    ORGANIZATION("organization");
 
     private String value;
 
@@ -114,6 +122,25 @@ public class GithubActionsWorkflowLogsWebhookScopeConfig {
   public GithubActionsWorkflowLogsWebhookScopeConfig() {
   }
 
+  public GithubActionsWorkflowLogsWebhookScopeConfig organization(@javax.annotation.Nullable GithubActionsWorkflowLogsWebhookOrganizationScope organization) {
+    this.organization = organization;
+    return this;
+  }
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  public GithubActionsWorkflowLogsWebhookOrganizationScope getOrganization() {
+    return organization;
+  }
+
+  public void setOrganization(@javax.annotation.Nullable GithubActionsWorkflowLogsWebhookOrganizationScope organization) {
+    this.organization = organization;
+  }
+
+
   public GithubActionsWorkflowLogsWebhookScopeConfig repository(@javax.annotation.Nullable GithubActionsWorkflowLogsWebhookRepositoryScope repository) {
     this.repository = repository;
     return this;
@@ -162,19 +189,21 @@ public class GithubActionsWorkflowLogsWebhookScopeConfig {
       return false;
     }
     GithubActionsWorkflowLogsWebhookScopeConfig githubActionsWorkflowLogsWebhookScopeConfig = (GithubActionsWorkflowLogsWebhookScopeConfig) o;
-    return Objects.equals(this.repository, githubActionsWorkflowLogsWebhookScopeConfig.repository) &&
+    return Objects.equals(this.organization, githubActionsWorkflowLogsWebhookScopeConfig.organization) &&
+        Objects.equals(this.repository, githubActionsWorkflowLogsWebhookScopeConfig.repository) &&
         Objects.equals(this.type, githubActionsWorkflowLogsWebhookScopeConfig.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(repository, type);
+    return Objects.hash(organization, repository, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GithubActionsWorkflowLogsWebhookScopeConfig {\n");
+    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    repository: ").append(toIndentedString(repository)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
@@ -195,7 +224,7 @@ public class GithubActionsWorkflowLogsWebhookScopeConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("repository", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("organization", "repository", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type"));
@@ -229,6 +258,10 @@ public class GithubActionsWorkflowLogsWebhookScopeConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `organization`
+      if (jsonObj.get("organization") != null && !jsonObj.get("organization").isJsonNull()) {
+        GithubActionsWorkflowLogsWebhookOrganizationScope.validateJsonElement(jsonObj.get("organization"));
+      }
       // validate the optional field `repository`
       if (jsonObj.get("repository") != null && !jsonObj.get("repository").isJsonNull()) {
         GithubActionsWorkflowLogsWebhookRepositoryScope.validateJsonElement(jsonObj.get("repository"));

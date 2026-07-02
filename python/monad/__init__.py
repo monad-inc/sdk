@@ -237,6 +237,7 @@ __all__ = [
     "GenerateRecordRequest",
     "GeolocusSettingsConfig",
     "GetTokenRequest",
+    "GithubActionsWorkflowLogsWebhookOrganizationScope",
     "GithubActionsWorkflowLogsWebhookRepositoryScope",
     "GithubActionsWorkflowLogsWebhookScopeConfig",
     "GithubActionsWorkflowLogsWebhookSettingsConfig",
@@ -918,6 +919,7 @@ from monad.models.full_scans_settings_config import FullScansSettingsConfig as F
 from monad.models.generate_record_request import GenerateRecordRequest as GenerateRecordRequest
 from monad.models.geolocus_settings_config import GeolocusSettingsConfig as GeolocusSettingsConfig
 from monad.models.get_token_request import GetTokenRequest as GetTokenRequest
+from monad.models.github_actions_workflow_logs_webhook_organization_scope import GithubActionsWorkflowLogsWebhookOrganizationScope as GithubActionsWorkflowLogsWebhookOrganizationScope
 from monad.models.github_actions_workflow_logs_webhook_repository_scope import GithubActionsWorkflowLogsWebhookRepositoryScope as GithubActionsWorkflowLogsWebhookRepositoryScope
 from monad.models.github_actions_workflow_logs_webhook_scope_config import GithubActionsWorkflowLogsWebhookScopeConfig as GithubActionsWorkflowLogsWebhookScopeConfig
 from monad.models.github_actions_workflow_logs_webhook_settings_config import GithubActionsWorkflowLogsWebhookSettingsConfig as GithubActionsWorkflowLogsWebhookSettingsConfig

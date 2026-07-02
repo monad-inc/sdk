@@ -484,6 +484,7 @@ Class | Method | HTTP request | Description
  - [GenerateRecordRequest](docs/GenerateRecordRequest.md)
  - [GeolocusSettingsConfig](docs/GeolocusSettingsConfig.md)
  - [GetTokenRequest](docs/GetTokenRequest.md)
+ - [GithubActionsWorkflowLogsWebhookOrganizationScope](docs/GithubActionsWorkflowLogsWebhookOrganizationScope.md)
  - [GithubActionsWorkflowLogsWebhookRepositoryScope](docs/GithubActionsWorkflowLogsWebhookRepositoryScope.md)
  - [GithubActionsWorkflowLogsWebhookScopeConfig](docs/GithubActionsWorkflowLogsWebhookScopeConfig.md)
  - [GithubActionsWorkflowLogsWebhookSettingsConfig](docs/GithubActionsWorkflowLogsWebhookSettingsConfig.md)

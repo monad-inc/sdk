@@ -171,6 +171,7 @@ import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GenerateRecordRequest } from '../models/GenerateRecordRequest';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
 import { GetTokenRequest } from '../models/GetTokenRequest';
+import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/GithubActionsWorkflowLogsWebhookOrganizationScope';
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { GithubActionsWorkflowLogsWebhookScopeConfig } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';

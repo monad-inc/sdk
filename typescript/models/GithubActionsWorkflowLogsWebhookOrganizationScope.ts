@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/GithubActionsWorkflowLogsWebhookOrganizationScope';
-import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { HttpFile } from '../http/http';
 
-export class GithubActionsWorkflowLogsWebhookScopeConfig {
-    'organization'?: GithubActionsWorkflowLogsWebhookOrganizationScope;
-    'repository'?: GithubActionsWorkflowLogsWebhookRepositoryScope;
-    'type': GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum;
+export class GithubActionsWorkflowLogsWebhookOrganizationScope {
+    'owner': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -25,34 +21,16 @@ export class GithubActionsWorkflowLogsWebhookScopeConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "organization",
-            "baseName": "organization",
-            "type": "GithubActionsWorkflowLogsWebhookOrganizationScope",
-            "format": ""
-        },
-        {
-            "name": "repository",
-            "baseName": "repository",
-            "type": "GithubActionsWorkflowLogsWebhookRepositoryScope",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
-            "type": "GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum",
+            "name": "owner",
+            "baseName": "owner",
+            "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return GithubActionsWorkflowLogsWebhookScopeConfig.attributeTypeMap;
+        return GithubActionsWorkflowLogsWebhookOrganizationScope.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
-
-export enum GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum {
-    Repository = 'repository',
-    Organization = 'organization'
-}
-

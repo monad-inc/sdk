@@ -59,6 +59,8 @@ class TestGithubActionsWorkflowLogsWebhookSettingsConfig(unittest.TestCase):
                             value = '', ), ), 
                     type = 'personal_access_token', ),
                 scope = monad.models.github_actions_workflow_logs_webhook/scope_config.github_actions_workflow_logs_webhook.ScopeConfig(
+                    organization = monad.models.github_actions_workflow_logs_webhook/organization_scope.github_actions_workflow_logs_webhook.OrganizationScope(
+                        owner = '', ), 
                     repository = monad.models.github_actions_workflow_logs_webhook/repository_scope.github_actions_workflow_logs_webhook.RepositoryScope(
                         owner = '', 
                         repo = '', ), 

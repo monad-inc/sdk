@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.github_actions_workflow_logs_webhook_organization_scope import GithubActionsWorkflowLogsWebhookOrganizationScope
 from monad.models.github_actions_workflow_logs_webhook_repository_scope import GithubActionsWorkflowLogsWebhookRepositoryScope
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,15 +30,16 @@ class GithubActionsWorkflowLogsWebhookScopeConfig(BaseModel):
     """
     GithubActionsWorkflowLogsWebhookScopeConfig
     """ # noqa: E501
+    organization: Optional[GithubActionsWorkflowLogsWebhookOrganizationScope] = None
     repository: Optional[GithubActionsWorkflowLogsWebhookRepositoryScope] = None
     type: StrictStr
-    __properties: ClassVar[List[str]] = ["repository", "type"]
+    __properties: ClassVar[List[str]] = ["organization", "repository", "type"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['repository']):
-            raise ValueError("must be one of enum values ('repository')")
+        if value not in set(['repository', 'organization']):
+            raise ValueError("must be one of enum values ('repository', 'organization')")
         return value
 
     model_config = ConfigDict(
@@ -79,6 +81,9 @@ class GithubActionsWorkflowLogsWebhookScopeConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of organization
+        if self.organization:
+            _dict['organization'] = self.organization.to_dict()
         # override the default output from pydantic by calling `to_dict()` of repository
         if self.repository:
             _dict['repository'] = self.repository.to_dict()
@@ -94,6 +99,7 @@ class GithubActionsWorkflowLogsWebhookScopeConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "organization": GithubActionsWorkflowLogsWebhookOrganizationScope.from_dict(obj["organization"]) if obj.get("organization") is not None else None,
             "repository": GithubActionsWorkflowLogsWebhookRepositoryScope.from_dict(obj["repository"]) if obj.get("repository") is not None else None,
             "type": obj.get("type")
         })

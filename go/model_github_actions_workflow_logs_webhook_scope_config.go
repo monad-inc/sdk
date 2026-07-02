@@ -22,6 +22,7 @@ var _ MappedNullable = &GithubActionsWorkflowLogsWebhookScopeConfig{}
 
 // GithubActionsWorkflowLogsWebhookScopeConfig struct for GithubActionsWorkflowLogsWebhookScopeConfig
 type GithubActionsWorkflowLogsWebhookScopeConfig struct {
+	Organization *GithubActionsWorkflowLogsWebhookOrganizationScope `json:"organization,omitempty"`
 	Repository *GithubActionsWorkflowLogsWebhookRepositoryScope `json:"repository,omitempty"`
 	Type string `json:"type"`
 }
@@ -44,6 +45,38 @@ func NewGithubActionsWorkflowLogsWebhookScopeConfig(type_ string) *GithubActions
 func NewGithubActionsWorkflowLogsWebhookScopeConfigWithDefaults() *GithubActionsWorkflowLogsWebhookScopeConfig {
 	this := GithubActionsWorkflowLogsWebhookScopeConfig{}
 	return &this
+}
+
+// GetOrganization returns the Organization field value if set, zero value otherwise.
+func (o *GithubActionsWorkflowLogsWebhookScopeConfig) GetOrganization() GithubActionsWorkflowLogsWebhookOrganizationScope {
+	if o == nil || IsNil(o.Organization) {
+		var ret GithubActionsWorkflowLogsWebhookOrganizationScope
+		return ret
+	}
+	return *o.Organization
+}
+
+// GetOrganizationOk returns a tuple with the Organization field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GithubActionsWorkflowLogsWebhookScopeConfig) GetOrganizationOk() (*GithubActionsWorkflowLogsWebhookOrganizationScope, bool) {
+	if o == nil || IsNil(o.Organization) {
+		return nil, false
+	}
+	return o.Organization, true
+}
+
+// HasOrganization returns a boolean if a field has been set.
+func (o *GithubActionsWorkflowLogsWebhookScopeConfig) HasOrganization() bool {
+	if o != nil && !IsNil(o.Organization) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrganization gets a reference to the given GithubActionsWorkflowLogsWebhookOrganizationScope and assigns it to the Organization field.
+func (o *GithubActionsWorkflowLogsWebhookScopeConfig) SetOrganization(v GithubActionsWorkflowLogsWebhookOrganizationScope) {
+	o.Organization = &v
 }
 
 // GetRepository returns the Repository field value if set, zero value otherwise.
@@ -112,6 +145,9 @@ func (o GithubActionsWorkflowLogsWebhookScopeConfig) MarshalJSON() ([]byte, erro
 
 func (o GithubActionsWorkflowLogsWebhookScopeConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Organization) {
+		toSerialize["organization"] = o.Organization
+	}
 	if !IsNil(o.Repository) {
 		toSerialize["repository"] = o.Repository
 	}

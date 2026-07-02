@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.github_actions_workflow_logs_webhook_scope_config import GithubActionsWorkflowLogsWebhookScopeConfig
+from monad.models.github_actions_workflow_logs_webhook_organization_scope import GithubActionsWorkflowLogsWebhookOrganizationScope
 
-class TestGithubActionsWorkflowLogsWebhookScopeConfig(unittest.TestCase):
-    """GithubActionsWorkflowLogsWebhookScopeConfig unit test stubs"""
+class TestGithubActionsWorkflowLogsWebhookOrganizationScope(unittest.TestCase):
+    """GithubActionsWorkflowLogsWebhookOrganizationScope unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,31 +26,26 @@ class TestGithubActionsWorkflowLogsWebhookScopeConfig(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GithubActionsWorkflowLogsWebhookScopeConfig:
-        """Test GithubActionsWorkflowLogsWebhookScopeConfig
+    def make_instance(self, include_optional) -> GithubActionsWorkflowLogsWebhookOrganizationScope:
+        """Test GithubActionsWorkflowLogsWebhookOrganizationScope
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `GithubActionsWorkflowLogsWebhookScopeConfig`
+        # uncomment below to create an instance of `GithubActionsWorkflowLogsWebhookOrganizationScope`
         """
-        model = GithubActionsWorkflowLogsWebhookScopeConfig()
+        model = GithubActionsWorkflowLogsWebhookOrganizationScope()
         if include_optional:
-            return GithubActionsWorkflowLogsWebhookScopeConfig(
-                organization = monad.models.github_actions_workflow_logs_webhook/organization_scope.github_actions_workflow_logs_webhook.OrganizationScope(
-                    owner = '', ),
-                repository = monad.models.github_actions_workflow_logs_webhook/repository_scope.github_actions_workflow_logs_webhook.RepositoryScope(
-                    owner = '', 
-                    repo = '', ),
-                type = 'repository'
+            return GithubActionsWorkflowLogsWebhookOrganizationScope(
+                owner = ''
             )
         else:
-            return GithubActionsWorkflowLogsWebhookScopeConfig(
-                type = 'repository',
+            return GithubActionsWorkflowLogsWebhookOrganizationScope(
+                owner = '',
         )
         """
 
-    def testGithubActionsWorkflowLogsWebhookScopeConfig(self):
-        """Test GithubActionsWorkflowLogsWebhookScopeConfig"""
+    def testGithubActionsWorkflowLogsWebhookOrganizationScope(self):
+        """Test GithubActionsWorkflowLogsWebhookOrganizationScope"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

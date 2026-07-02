@@ -20,47 +20,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookOrganizationScope;
-import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookRepositoryScope;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for GithubActionsWorkflowLogsWebhookScopeConfig
+ * Model tests for GithubActionsWorkflowLogsWebhookOrganizationScope
  */
-public class GithubActionsWorkflowLogsWebhookScopeConfigTest {
-    private final GithubActionsWorkflowLogsWebhookScopeConfig model = new GithubActionsWorkflowLogsWebhookScopeConfig();
+public class GithubActionsWorkflowLogsWebhookOrganizationScopeTest {
+    private final GithubActionsWorkflowLogsWebhookOrganizationScope model = new GithubActionsWorkflowLogsWebhookOrganizationScope();
 
     /**
-     * Model tests for GithubActionsWorkflowLogsWebhookScopeConfig
+     * Model tests for GithubActionsWorkflowLogsWebhookOrganizationScope
      */
     @Test
-    public void testGithubActionsWorkflowLogsWebhookScopeConfig() {
-        // TODO: test GithubActionsWorkflowLogsWebhookScopeConfig
+    public void testGithubActionsWorkflowLogsWebhookOrganizationScope() {
+        // TODO: test GithubActionsWorkflowLogsWebhookOrganizationScope
     }
 
     /**
-     * Test the property 'organization'
+     * Test the property 'owner'
      */
     @Test
-    public void organizationTest() {
-        // TODO: test organization
-    }
-
-    /**
-     * Test the property 'repository'
-     */
-    @Test
-    public void repositoryTest() {
-        // TODO: test repository
-    }
-
-    /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
+    public void ownerTest() {
+        // TODO: test owner
     }
 
 }

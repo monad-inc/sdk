@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**organization** | [**GithubActionsWorkflowLogsWebhookOrganizationScope**](GithubActionsWorkflowLogsWebhookOrganizationScope.md) |  | [optional] 
 **repository** | [**GithubActionsWorkflowLogsWebhookRepositoryScope**](GithubActionsWorkflowLogsWebhookRepositoryScope.md) |  | [optional] 
 **type** | **str** |  | 
 

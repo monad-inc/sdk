@@ -167,6 +167,7 @@ export * from '../models/FullScansSettingsConfig';
 export * from '../models/GenerateRecordRequest';
 export * from '../models/GeolocusSettingsConfig';
 export * from '../models/GetTokenRequest';
+export * from '../models/GithubActionsWorkflowLogsWebhookOrganizationScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 export * from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
@@ -793,8 +794,9 @@ import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GenerateRecordRequestClass } from '../models/GenerateRecordRequest';
 import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
 import { GetTokenRequestClass } from '../models/GetTokenRequest';
+import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/GithubActionsWorkflowLogsWebhookOrganizationScope';
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
-import { GithubActionsWorkflowLogsWebhookScopeConfig , GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum   } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
+import { GithubActionsWorkflowLogsWebhookScopeConfig  , GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum   } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
 import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
 import { GithubComMonadIncCorePkgTypesModelsAlertStatus    } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
@@ -1508,6 +1510,7 @@ let typeMap: {[index: string]: any} = {
     "GenerateRecordRequest": GenerateRecordRequestClass,
     "GeolocusSettingsConfig": GeolocusSettingsConfig,
     "GetTokenRequest": GetTokenRequestClass,
+    "GithubActionsWorkflowLogsWebhookOrganizationScope": GithubActionsWorkflowLogsWebhookOrganizationScope,
     "GithubActionsWorkflowLogsWebhookRepositoryScope": GithubActionsWorkflowLogsWebhookRepositoryScope,
     "GithubActionsWorkflowLogsWebhookScopeConfig": GithubActionsWorkflowLogsWebhookScopeConfig,
     "GithubActionsWorkflowLogsWebhookSettingsConfig": GithubActionsWorkflowLogsWebhookSettingsConfig,
