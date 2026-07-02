@@ -8029,9 +8029,6 @@
                         "type": "string"
                     }
                 },
-                "required": [
-                    "name"
-                ],
                 "type": "object"
             },
             "routes.UpdateUserInOrganizationRequest": {
@@ -9367,9 +9364,6 @@
                         "type": "string"
                     }
                 },
-                "required": [
-                    "friendly_name"
-                ],
                 "type": "object"
             },
             "routesV3.UpdateConnectionRequest": {

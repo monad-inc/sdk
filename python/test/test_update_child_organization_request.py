@@ -41,7 +41,6 @@ class TestUpdateChildOrganizationRequest(unittest.TestCase):
             )
         else:
             return UpdateChildOrganizationRequest(
-                friendly_name = '',
         )
         """
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**RoutesTransformConfig**](RoutesTransformConfig.md) |  | [optional] 
 **description** | **str** |  | [optional] 
-**name** | **str** |  | 
+**name** | **str** |  | [optional] 
 
 ## Example
 

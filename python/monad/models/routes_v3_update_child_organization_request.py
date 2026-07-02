@@ -29,7 +29,7 @@ class RoutesV3UpdateChildOrganizationRequest(BaseModel):
     RoutesV3UpdateChildOrganizationRequest
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    friendly_name: StrictStr
+    friendly_name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["description", "friendly_name"]
 
     model_config = ConfigDict(

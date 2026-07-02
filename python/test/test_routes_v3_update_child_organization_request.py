@@ -41,7 +41,6 @@ class TestRoutesV3UpdateChildOrganizationRequest(unittest.TestCase):
             )
         else:
             return RoutesV3UpdateChildOrganizationRequest(
-                friendly_name = '',
         )
         """
 

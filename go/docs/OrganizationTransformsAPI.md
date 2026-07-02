@@ -327,7 +327,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	transformId := "transformId_example" // string | Transform ID
-	routesUpdateTransformRequest := *openapiclient.NewRoutesUpdateTransformRequest("Name_example") // RoutesUpdateTransformRequest | Request body for updating a transform
+	routesUpdateTransformRequest := *openapiclient.NewRoutesUpdateTransformRequest() // RoutesUpdateTransformRequest | Request body for updating a transform
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -16,7 +16,7 @@ import { HttpFile } from '../http/http';
 export class RoutesUpdateTransformRequest {
     'config'?: RoutesTransformConfig;
     'description'?: string;
-    'name': string;
+    'name'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 

@@ -31,7 +31,7 @@ class RoutesUpdateTransformRequest(BaseModel):
     """ # noqa: E501
     config: Optional[RoutesTransformConfig] = None
     description: Optional[StrictStr] = None
-    name: StrictStr
+    name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["config", "description", "name"]
 
     model_config = ConfigDict(

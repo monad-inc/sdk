@@ -61,7 +61,6 @@ class TestRoutesUpdateTransformRequest(unittest.TestCase):
             )
         else:
             return RoutesUpdateTransformRequest(
-                name = '',
         )
         """
 

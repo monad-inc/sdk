@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**FriendlyName** | **string** |  | 
+**FriendlyName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewUpdateChildOrganizationRequest
 
-`func NewUpdateChildOrganizationRequest(friendlyName string, ) *UpdateChildOrganizationRequest`
+`func NewUpdateChildOrganizationRequest() *UpdateChildOrganizationRequest`
 
 NewUpdateChildOrganizationRequest instantiates a new UpdateChildOrganizationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -70,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetFriendlyName sets FriendlyName field to given value.
 
+### HasFriendlyName
+
+`func (o *UpdateChildOrganizationRequest) HasFriendlyName() bool`
+
+HasFriendlyName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

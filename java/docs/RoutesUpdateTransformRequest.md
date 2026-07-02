@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**config** | [**RoutesTransformConfig**](RoutesTransformConfig.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**name** | **String** |  |  |
+|**name** | **String** |  |  [optional] |
 
 
 

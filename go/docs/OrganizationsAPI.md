@@ -549,7 +549,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
 	childOrganizationId := "childOrganizationId_example" // string | Child Organization ID
-	updateChildOrganizationRequest := openapiclient.UpdateChildOrganization_request{RoutesV3UpdateChildOrganizationRequest: openapiclient.NewRoutesV3UpdateChildOrganizationRequest("FriendlyName_example")} // UpdateChildOrganizationRequest | Request body
+	updateChildOrganizationRequest := openapiclient.UpdateChildOrganization_request{RoutesV3UpdateChildOrganizationRequest: openapiclient.NewRoutesV3UpdateChildOrganizationRequest()} // UpdateChildOrganizationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
