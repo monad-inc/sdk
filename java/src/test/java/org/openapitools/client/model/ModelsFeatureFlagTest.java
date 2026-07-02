@@ -25,17 +25,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for FlagsmithFlag
+ * Model tests for ModelsFeatureFlag
  */
-public class FlagsmithFlagTest {
-    private final FlagsmithFlag model = new FlagsmithFlag();
+public class ModelsFeatureFlagTest {
+    private final ModelsFeatureFlag model = new ModelsFeatureFlag();
 
     /**
-     * Model tests for FlagsmithFlag
+     * Model tests for ModelsFeatureFlag
      */
     @Test
-    public void testFlagsmithFlag() {
-        // TODO: test FlagsmithFlag
+    public void testModelsFeatureFlag() {
+        // TODO: test ModelsFeatureFlag
     }
 
     /**

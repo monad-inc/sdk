@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organizations** | **Dict[str, List[FlagsmithFlag]]** |  | [optional] 
-**user** | [**List[FlagsmithFlag]**](FlagsmithFlag.md) |  | [optional] 
+**organizations** | **Dict[str, List[ModelsFeatureFlag]]** |  | [optional] 
+**user** | [**List[ModelsFeatureFlag]**](ModelsFeatureFlag.md) |  | [optional] 
 
 ## Example
 

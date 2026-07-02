@@ -38,7 +38,7 @@ class TestRoutesV3GetFeatureFlagResponse(unittest.TestCase):
             return RoutesV3GetFeatureFlagResponse(
                 organizations = {
                     'key' : [
-                        monad.models.flagsmith/flag.flagsmith.Flag(
+                        monad.models.models/feature_flag.models.FeatureFlag(
                             enabled = True, 
                             feature_id = 56, 
                             feature_name = '', 
@@ -47,7 +47,7 @@ class TestRoutesV3GetFeatureFlagResponse(unittest.TestCase):
                         ]
                     },
                 user = [
-                    monad.models.flagsmith/flag.flagsmith.Flag(
+                    monad.models.models/feature_flag.models.FeatureFlag(
                         enabled = True, 
                         feature_id = 56, 
                         feature_name = '', 

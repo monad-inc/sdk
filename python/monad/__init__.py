@@ -227,7 +227,6 @@ __all__ = [
     "EventSecretsConfig",
     "EventSettingsConfig",
     "ExportTransformRequest",
-    "FlagsmithFlag",
     "FlattenArgumentsConfig",
     "FlattenallArgumentsConfig",
     "FormatterFormatConfig",
@@ -335,6 +334,7 @@ __all__ = [
     "ModelsEnrichment",
     "ModelsEnrichmentConfig",
     "ModelsEnrichmentList",
+    "ModelsFeatureFlag",
     "ModelsInput",
     "ModelsInputConfig",
     "ModelsInputConnectorCategory",
@@ -909,7 +909,6 @@ from monad.models.entra_id_settings_config import EntraIdSettingsConfig as Entra
 from monad.models.event_secrets_config import EventSecretsConfig as EventSecretsConfig
 from monad.models.event_settings_config import EventSettingsConfig as EventSettingsConfig
 from monad.models.export_transform_request import ExportTransformRequest as ExportTransformRequest
-from monad.models.flagsmith_flag import FlagsmithFlag as FlagsmithFlag
 from monad.models.flatten_arguments_config import FlattenArgumentsConfig as FlattenArgumentsConfig
 from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig as FlattenallArgumentsConfig
 from monad.models.formatter_format_config import FormatterFormatConfig as FormatterFormatConfig
@@ -1017,6 +1016,7 @@ from monad.models.models_else_action import ModelsElseAction as ModelsElseAction
 from monad.models.models_enrichment import ModelsEnrichment as ModelsEnrichment
 from monad.models.models_enrichment_config import ModelsEnrichmentConfig as ModelsEnrichmentConfig
 from monad.models.models_enrichment_list import ModelsEnrichmentList as ModelsEnrichmentList
+from monad.models.models_feature_flag import ModelsFeatureFlag as ModelsFeatureFlag
 from monad.models.models_input import ModelsInput as ModelsInput
 from monad.models.models_input_config import ModelsInputConfig as ModelsInputConfig
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory as ModelsInputConnectorCategory

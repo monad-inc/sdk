@@ -1,4 +1,4 @@
-# FlagsmithFlag
+# ModelsFeatureFlag
 
 
 ## Properties
@@ -14,19 +14,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from monad.models.flagsmith_flag import FlagsmithFlag
+from monad.models.models_feature_flag import ModelsFeatureFlag
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of FlagsmithFlag from a JSON string
-flagsmith_flag_instance = FlagsmithFlag.from_json(json)
+# create an instance of ModelsFeatureFlag from a JSON string
+models_feature_flag_instance = ModelsFeatureFlag.from_json(json)
 # print the JSON string representation of the object
-print(FlagsmithFlag.to_json())
+print(ModelsFeatureFlag.to_json())
 
 # convert the object into a dict
-flagsmith_flag_dict = flagsmith_flag_instance.to_dict()
-# create an instance of FlagsmithFlag from a dict
-flagsmith_flag_from_dict = FlagsmithFlag.from_dict(flagsmith_flag_dict)
+models_feature_flag_dict = models_feature_flag_instance.to_dict()
+# create an instance of ModelsFeatureFlag from a dict
+models_feature_flag_from_dict = ModelsFeatureFlag.from_dict(models_feature_flag_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

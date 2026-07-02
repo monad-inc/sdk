@@ -173,7 +173,6 @@ from monad.models.entra_id_settings_config import EntraIdSettingsConfig
 from monad.models.event_secrets_config import EventSecretsConfig
 from monad.models.event_settings_config import EventSettingsConfig
 from monad.models.export_transform_request import ExportTransformRequest
-from monad.models.flagsmith_flag import FlagsmithFlag
 from monad.models.flatten_arguments_config import FlattenArgumentsConfig
 from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig
 from monad.models.formatter_format_config import FormatterFormatConfig
@@ -281,6 +280,7 @@ from monad.models.models_else_action import ModelsElseAction
 from monad.models.models_enrichment import ModelsEnrichment
 from monad.models.models_enrichment_config import ModelsEnrichmentConfig
 from monad.models.models_enrichment_list import ModelsEnrichmentList
+from monad.models.models_feature_flag import ModelsFeatureFlag
 from monad.models.models_input import ModelsInput
 from monad.models.models_input_config import ModelsInputConfig
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory

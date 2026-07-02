@@ -2733,24 +2733,6 @@
                 },
                 "type": "object"
             },
-            "flagsmith.Flag": {
-                "properties": {
-                    "enabled": {
-                        "type": "boolean"
-                    },
-                    "featureID": {
-                        "type": "integer"
-                    },
-                    "featureName": {
-                        "type": "string"
-                    },
-                    "isDefault": {
-                        "type": "boolean"
-                    },
-                    "value": {}
-                },
-                "type": "object"
-            },
             "flatten.ArgumentsConfig": {
                 "properties": {
                     "delimiter": {
@@ -5047,6 +5029,24 @@
                     "pagination": {
                         "$ref": "#/components/schemas/models.Pagination"
                     }
+                },
+                "type": "object"
+            },
+            "models.FeatureFlag": {
+                "properties": {
+                    "Enabled": {
+                        "type": "boolean"
+                    },
+                    "FeatureID": {
+                        "type": "integer"
+                    },
+                    "FeatureName": {
+                        "type": "string"
+                    },
+                    "IsDefault": {
+                        "type": "boolean"
+                    },
+                    "Value": {}
                 },
                 "type": "object"
             },
@@ -9170,7 +9170,7 @@
                     "organizations": {
                         "additionalProperties": {
                             "items": {
-                                "$ref": "#/components/schemas/flagsmith.Flag"
+                                "$ref": "#/components/schemas/models.FeatureFlag"
                             },
                             "type": "array"
                         },
@@ -9178,7 +9178,7 @@
                     },
                     "user": {
                         "items": {
-                            "$ref": "#/components/schemas/flagsmith.Flag"
+                            "$ref": "#/components/schemas/models.FeatureFlag"
                         },
                         "type": "array",
                         "uniqueItems": false

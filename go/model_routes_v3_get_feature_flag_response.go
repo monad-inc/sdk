@@ -20,8 +20,8 @@ var _ MappedNullable = &RoutesV3GetFeatureFlagResponse{}
 
 // RoutesV3GetFeatureFlagResponse struct for RoutesV3GetFeatureFlagResponse
 type RoutesV3GetFeatureFlagResponse struct {
-	Organizations map[string][]FlagsmithFlag `json:"organizations,omitempty"`
-	User []FlagsmithFlag `json:"user,omitempty"`
+	Organizations map[string][]ModelsFeatureFlag `json:"organizations,omitempty"`
+	User []ModelsFeatureFlag `json:"user,omitempty"`
 }
 
 // NewRoutesV3GetFeatureFlagResponse instantiates a new RoutesV3GetFeatureFlagResponse object
@@ -42,9 +42,9 @@ func NewRoutesV3GetFeatureFlagResponseWithDefaults() *RoutesV3GetFeatureFlagResp
 }
 
 // GetOrganizations returns the Organizations field value if set, zero value otherwise.
-func (o *RoutesV3GetFeatureFlagResponse) GetOrganizations() map[string][]FlagsmithFlag {
+func (o *RoutesV3GetFeatureFlagResponse) GetOrganizations() map[string][]ModelsFeatureFlag {
 	if o == nil || IsNil(o.Organizations) {
-		var ret map[string][]FlagsmithFlag
+		var ret map[string][]ModelsFeatureFlag
 		return ret
 	}
 	return o.Organizations
@@ -52,9 +52,9 @@ func (o *RoutesV3GetFeatureFlagResponse) GetOrganizations() map[string][]Flagsmi
 
 // GetOrganizationsOk returns a tuple with the Organizations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3GetFeatureFlagResponse) GetOrganizationsOk() (map[string][]FlagsmithFlag, bool) {
+func (o *RoutesV3GetFeatureFlagResponse) GetOrganizationsOk() (map[string][]ModelsFeatureFlag, bool) {
 	if o == nil || IsNil(o.Organizations) {
-		return map[string][]FlagsmithFlag{}, false
+		return map[string][]ModelsFeatureFlag{}, false
 	}
 	return o.Organizations, true
 }
@@ -68,15 +68,15 @@ func (o *RoutesV3GetFeatureFlagResponse) HasOrganizations() bool {
 	return false
 }
 
-// SetOrganizations gets a reference to the given map[string][]FlagsmithFlag and assigns it to the Organizations field.
-func (o *RoutesV3GetFeatureFlagResponse) SetOrganizations(v map[string][]FlagsmithFlag) {
+// SetOrganizations gets a reference to the given map[string][]ModelsFeatureFlag and assigns it to the Organizations field.
+func (o *RoutesV3GetFeatureFlagResponse) SetOrganizations(v map[string][]ModelsFeatureFlag) {
 	o.Organizations = v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *RoutesV3GetFeatureFlagResponse) GetUser() []FlagsmithFlag {
+func (o *RoutesV3GetFeatureFlagResponse) GetUser() []ModelsFeatureFlag {
 	if o == nil || IsNil(o.User) {
-		var ret []FlagsmithFlag
+		var ret []ModelsFeatureFlag
 		return ret
 	}
 	return o.User
@@ -84,7 +84,7 @@ func (o *RoutesV3GetFeatureFlagResponse) GetUser() []FlagsmithFlag {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3GetFeatureFlagResponse) GetUserOk() ([]FlagsmithFlag, bool) {
+func (o *RoutesV3GetFeatureFlagResponse) GetUserOk() ([]ModelsFeatureFlag, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *RoutesV3GetFeatureFlagResponse) HasUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given []FlagsmithFlag and assigns it to the User field.
-func (o *RoutesV3GetFeatureFlagResponse) SetUser(v []FlagsmithFlag) {
+// SetUser gets a reference to the given []ModelsFeatureFlag and assigns it to the User field.
+func (o *RoutesV3GetFeatureFlagResponse) SetUser(v []ModelsFeatureFlag) {
 	o.User = v
 }
 

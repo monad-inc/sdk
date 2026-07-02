@@ -15,37 +15,37 @@ import (
 	"encoding/json"
 )
 
-// checks if the FlagsmithFlag type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &FlagsmithFlag{}
+// checks if the ModelsFeatureFlag type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ModelsFeatureFlag{}
 
-// FlagsmithFlag struct for FlagsmithFlag
-type FlagsmithFlag struct {
-	Enabled *bool `json:"enabled,omitempty"`
-	FeatureID *int32 `json:"featureID,omitempty"`
-	FeatureName *string `json:"featureName,omitempty"`
-	IsDefault *bool `json:"isDefault,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+// ModelsFeatureFlag struct for ModelsFeatureFlag
+type ModelsFeatureFlag struct {
+	Enabled *bool `json:"Enabled,omitempty"`
+	FeatureID *int32 `json:"FeatureID,omitempty"`
+	FeatureName *string `json:"FeatureName,omitempty"`
+	IsDefault *bool `json:"IsDefault,omitempty"`
+	Value interface{} `json:"Value,omitempty"`
 }
 
-// NewFlagsmithFlag instantiates a new FlagsmithFlag object
+// NewModelsFeatureFlag instantiates a new ModelsFeatureFlag object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFlagsmithFlag() *FlagsmithFlag {
-	this := FlagsmithFlag{}
+func NewModelsFeatureFlag() *ModelsFeatureFlag {
+	this := ModelsFeatureFlag{}
 	return &this
 }
 
-// NewFlagsmithFlagWithDefaults instantiates a new FlagsmithFlag object
+// NewModelsFeatureFlagWithDefaults instantiates a new ModelsFeatureFlag object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewFlagsmithFlagWithDefaults() *FlagsmithFlag {
-	this := FlagsmithFlag{}
+func NewModelsFeatureFlagWithDefaults() *ModelsFeatureFlag {
+	this := ModelsFeatureFlag{}
 	return &this
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *FlagsmithFlag) GetEnabled() bool {
+func (o *ModelsFeatureFlag) GetEnabled() bool {
 	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
@@ -55,7 +55,7 @@ func (o *FlagsmithFlag) GetEnabled() bool {
 
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlagsmithFlag) GetEnabledOk() (*bool, bool) {
+func (o *ModelsFeatureFlag) GetEnabledOk() (*bool, bool) {
 	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *FlagsmithFlag) GetEnabledOk() (*bool, bool) {
 }
 
 // HasEnabled returns a boolean if a field has been set.
-func (o *FlagsmithFlag) HasEnabled() bool {
+func (o *ModelsFeatureFlag) HasEnabled() bool {
 	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *FlagsmithFlag) HasEnabled() bool {
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *FlagsmithFlag) SetEnabled(v bool) {
+func (o *ModelsFeatureFlag) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
 // GetFeatureID returns the FeatureID field value if set, zero value otherwise.
-func (o *FlagsmithFlag) GetFeatureID() int32 {
+func (o *ModelsFeatureFlag) GetFeatureID() int32 {
 	if o == nil || IsNil(o.FeatureID) {
 		var ret int32
 		return ret
@@ -87,7 +87,7 @@ func (o *FlagsmithFlag) GetFeatureID() int32 {
 
 // GetFeatureIDOk returns a tuple with the FeatureID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlagsmithFlag) GetFeatureIDOk() (*int32, bool) {
+func (o *ModelsFeatureFlag) GetFeatureIDOk() (*int32, bool) {
 	if o == nil || IsNil(o.FeatureID) {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *FlagsmithFlag) GetFeatureIDOk() (*int32, bool) {
 }
 
 // HasFeatureID returns a boolean if a field has been set.
-func (o *FlagsmithFlag) HasFeatureID() bool {
+func (o *ModelsFeatureFlag) HasFeatureID() bool {
 	if o != nil && !IsNil(o.FeatureID) {
 		return true
 	}
@@ -104,12 +104,12 @@ func (o *FlagsmithFlag) HasFeatureID() bool {
 }
 
 // SetFeatureID gets a reference to the given int32 and assigns it to the FeatureID field.
-func (o *FlagsmithFlag) SetFeatureID(v int32) {
+func (o *ModelsFeatureFlag) SetFeatureID(v int32) {
 	o.FeatureID = &v
 }
 
 // GetFeatureName returns the FeatureName field value if set, zero value otherwise.
-func (o *FlagsmithFlag) GetFeatureName() string {
+func (o *ModelsFeatureFlag) GetFeatureName() string {
 	if o == nil || IsNil(o.FeatureName) {
 		var ret string
 		return ret
@@ -119,7 +119,7 @@ func (o *FlagsmithFlag) GetFeatureName() string {
 
 // GetFeatureNameOk returns a tuple with the FeatureName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlagsmithFlag) GetFeatureNameOk() (*string, bool) {
+func (o *ModelsFeatureFlag) GetFeatureNameOk() (*string, bool) {
 	if o == nil || IsNil(o.FeatureName) {
 		return nil, false
 	}
@@ -127,7 +127,7 @@ func (o *FlagsmithFlag) GetFeatureNameOk() (*string, bool) {
 }
 
 // HasFeatureName returns a boolean if a field has been set.
-func (o *FlagsmithFlag) HasFeatureName() bool {
+func (o *ModelsFeatureFlag) HasFeatureName() bool {
 	if o != nil && !IsNil(o.FeatureName) {
 		return true
 	}
@@ -136,12 +136,12 @@ func (o *FlagsmithFlag) HasFeatureName() bool {
 }
 
 // SetFeatureName gets a reference to the given string and assigns it to the FeatureName field.
-func (o *FlagsmithFlag) SetFeatureName(v string) {
+func (o *ModelsFeatureFlag) SetFeatureName(v string) {
 	o.FeatureName = &v
 }
 
 // GetIsDefault returns the IsDefault field value if set, zero value otherwise.
-func (o *FlagsmithFlag) GetIsDefault() bool {
+func (o *ModelsFeatureFlag) GetIsDefault() bool {
 	if o == nil || IsNil(o.IsDefault) {
 		var ret bool
 		return ret
@@ -151,7 +151,7 @@ func (o *FlagsmithFlag) GetIsDefault() bool {
 
 // GetIsDefaultOk returns a tuple with the IsDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlagsmithFlag) GetIsDefaultOk() (*bool, bool) {
+func (o *ModelsFeatureFlag) GetIsDefaultOk() (*bool, bool) {
 	if o == nil || IsNil(o.IsDefault) {
 		return nil, false
 	}
@@ -159,7 +159,7 @@ func (o *FlagsmithFlag) GetIsDefaultOk() (*bool, bool) {
 }
 
 // HasIsDefault returns a boolean if a field has been set.
-func (o *FlagsmithFlag) HasIsDefault() bool {
+func (o *ModelsFeatureFlag) HasIsDefault() bool {
 	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
@@ -168,12 +168,12 @@ func (o *FlagsmithFlag) HasIsDefault() bool {
 }
 
 // SetIsDefault gets a reference to the given bool and assigns it to the IsDefault field.
-func (o *FlagsmithFlag) SetIsDefault(v bool) {
+func (o *ModelsFeatureFlag) SetIsDefault(v bool) {
 	o.IsDefault = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *FlagsmithFlag) GetValue() interface{} {
+func (o *ModelsFeatureFlag) GetValue() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
@@ -184,7 +184,7 @@ func (o *FlagsmithFlag) GetValue() interface{} {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *FlagsmithFlag) GetValueOk() (*interface{}, bool) {
+func (o *ModelsFeatureFlag) GetValueOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -192,7 +192,7 @@ func (o *FlagsmithFlag) GetValueOk() (*interface{}, bool) {
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *FlagsmithFlag) HasValue() bool {
+func (o *ModelsFeatureFlag) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -201,11 +201,11 @@ func (o *FlagsmithFlag) HasValue() bool {
 }
 
 // SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *FlagsmithFlag) SetValue(v interface{}) {
+func (o *ModelsFeatureFlag) SetValue(v interface{}) {
 	o.Value = v
 }
 
-func (o FlagsmithFlag) MarshalJSON() ([]byte, error) {
+func (o ModelsFeatureFlag) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -213,58 +213,58 @@ func (o FlagsmithFlag) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o FlagsmithFlag) ToMap() (map[string]interface{}, error) {
+func (o ModelsFeatureFlag) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
+		toSerialize["Enabled"] = o.Enabled
 	}
 	if !IsNil(o.FeatureID) {
-		toSerialize["featureID"] = o.FeatureID
+		toSerialize["FeatureID"] = o.FeatureID
 	}
 	if !IsNil(o.FeatureName) {
-		toSerialize["featureName"] = o.FeatureName
+		toSerialize["FeatureName"] = o.FeatureName
 	}
 	if !IsNil(o.IsDefault) {
-		toSerialize["isDefault"] = o.IsDefault
+		toSerialize["IsDefault"] = o.IsDefault
 	}
 	if o.Value != nil {
-		toSerialize["value"] = o.Value
+		toSerialize["Value"] = o.Value
 	}
 	return toSerialize, nil
 }
 
-type NullableFlagsmithFlag struct {
-	value *FlagsmithFlag
+type NullableModelsFeatureFlag struct {
+	value *ModelsFeatureFlag
 	isSet bool
 }
 
-func (v NullableFlagsmithFlag) Get() *FlagsmithFlag {
+func (v NullableModelsFeatureFlag) Get() *ModelsFeatureFlag {
 	return v.value
 }
 
-func (v *NullableFlagsmithFlag) Set(val *FlagsmithFlag) {
+func (v *NullableModelsFeatureFlag) Set(val *ModelsFeatureFlag) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableFlagsmithFlag) IsSet() bool {
+func (v NullableModelsFeatureFlag) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableFlagsmithFlag) Unset() {
+func (v *NullableModelsFeatureFlag) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableFlagsmithFlag(val *FlagsmithFlag) *NullableFlagsmithFlag {
-	return &NullableFlagsmithFlag{value: val, isSet: true}
+func NewNullableModelsFeatureFlag(val *ModelsFeatureFlag) *NullableModelsFeatureFlag {
+	return &NullableModelsFeatureFlag{value: val, isSet: true}
 }
 
-func (v NullableFlagsmithFlag) MarshalJSON() ([]byte, error) {
+func (v NullableModelsFeatureFlag) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableFlagsmithFlag) UnmarshalJSON(src []byte) error {
+func (v *NullableModelsFeatureFlag) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

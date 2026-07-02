@@ -157,7 +157,6 @@ export * from '../models/EntraIdSettingsConfig';
 export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
 export * from '../models/ExportTransformRequest';
-export * from '../models/FlagsmithFlag';
 export * from '../models/FlattenArgumentsConfig';
 export * from '../models/FlattenallArgumentsConfig';
 export * from '../models/FormatterFormatConfig';
@@ -265,6 +264,7 @@ export * from '../models/ModelsElseAction';
 export * from '../models/ModelsEnrichment';
 export * from '../models/ModelsEnrichmentConfig';
 export * from '../models/ModelsEnrichmentList';
+export * from '../models/ModelsFeatureFlag';
 export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputConnectorCategory';
@@ -784,7 +784,6 @@ import { EntraIdSettingsConfig , EntraIdSettingsConfigCategoryEnum        } from
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { ExportTransformRequestClass } from '../models/ExportTransformRequest';
-import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
 import { FormatterFormatConfig     } from '../models/FormatterFormatConfig';
@@ -892,6 +891,7 @@ import { ModelsElseAction } from '../models/ModelsElseAction';
 import { ModelsEnrichment           } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
+import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
 import { ModelsInput           } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
@@ -1501,7 +1501,6 @@ let typeMap: {[index: string]: any} = {
     "EventSecretsConfig": EventSecretsConfig,
     "EventSettingsConfig": EventSettingsConfig,
     "ExportTransformRequest": ExportTransformRequestClass,
-    "FlagsmithFlag": FlagsmithFlag,
     "FlattenArgumentsConfig": FlattenArgumentsConfig,
     "FlattenallArgumentsConfig": FlattenallArgumentsConfig,
     "FormatterFormatConfig": FormatterFormatConfig,
@@ -1595,6 +1594,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsEnrichment": ModelsEnrichment,
     "ModelsEnrichmentConfig": ModelsEnrichmentConfig,
     "ModelsEnrichmentList": ModelsEnrichmentList,
+    "ModelsFeatureFlag": ModelsFeatureFlag,
     "ModelsInput": ModelsInput,
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,

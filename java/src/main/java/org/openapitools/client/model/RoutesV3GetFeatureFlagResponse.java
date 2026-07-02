@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.client.model.FlagsmithFlag;
+import org.openapitools.client.model.ModelsFeatureFlag;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,22 +58,22 @@ public class RoutesV3GetFeatureFlagResponse {
   public static final String SERIALIZED_NAME_ORGANIZATIONS = "organizations";
   @SerializedName(SERIALIZED_NAME_ORGANIZATIONS)
   @javax.annotation.Nullable
-  private Map<String, List<FlagsmithFlag>> organizations = new HashMap<>();
+  private Map<String, List<ModelsFeatureFlag>> organizations = new HashMap<>();
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
   @javax.annotation.Nullable
-  private List<FlagsmithFlag> user = new ArrayList<>();
+  private List<ModelsFeatureFlag> user = new ArrayList<>();
 
   public RoutesV3GetFeatureFlagResponse() {
   }
 
-  public RoutesV3GetFeatureFlagResponse organizations(@javax.annotation.Nullable Map<String, List<FlagsmithFlag>> organizations) {
+  public RoutesV3GetFeatureFlagResponse organizations(@javax.annotation.Nullable Map<String, List<ModelsFeatureFlag>> organizations) {
     this.organizations = organizations;
     return this;
   }
 
-  public RoutesV3GetFeatureFlagResponse putOrganizationsItem(String key, List<FlagsmithFlag> organizationsItem) {
+  public RoutesV3GetFeatureFlagResponse putOrganizationsItem(String key, List<ModelsFeatureFlag> organizationsItem) {
     if (this.organizations == null) {
       this.organizations = new HashMap<>();
     }
@@ -86,21 +86,21 @@ public class RoutesV3GetFeatureFlagResponse {
    * @return organizations
    */
   @javax.annotation.Nullable
-  public Map<String, List<FlagsmithFlag>> getOrganizations() {
+  public Map<String, List<ModelsFeatureFlag>> getOrganizations() {
     return organizations;
   }
 
-  public void setOrganizations(@javax.annotation.Nullable Map<String, List<FlagsmithFlag>> organizations) {
+  public void setOrganizations(@javax.annotation.Nullable Map<String, List<ModelsFeatureFlag>> organizations) {
     this.organizations = organizations;
   }
 
 
-  public RoutesV3GetFeatureFlagResponse user(@javax.annotation.Nullable List<FlagsmithFlag> user) {
+  public RoutesV3GetFeatureFlagResponse user(@javax.annotation.Nullable List<ModelsFeatureFlag> user) {
     this.user = user;
     return this;
   }
 
-  public RoutesV3GetFeatureFlagResponse addUserItem(FlagsmithFlag userItem) {
+  public RoutesV3GetFeatureFlagResponse addUserItem(ModelsFeatureFlag userItem) {
     if (this.user == null) {
       this.user = new ArrayList<>();
     }
@@ -113,11 +113,11 @@ public class RoutesV3GetFeatureFlagResponse {
    * @return user
    */
   @javax.annotation.Nullable
-  public List<FlagsmithFlag> getUser() {
+  public List<ModelsFeatureFlag> getUser() {
     return user;
   }
 
-  public void setUser(@javax.annotation.Nullable List<FlagsmithFlag> user) {
+  public void setUser(@javax.annotation.Nullable List<ModelsFeatureFlag> user) {
     this.user = user;
   }
 
@@ -202,7 +202,7 @@ public class RoutesV3GetFeatureFlagResponse {
 
           // validate the optional field `user` (array)
           for (int i = 0; i < jsonArrayuser.size(); i++) {
-            FlagsmithFlag.validateJsonElement(jsonArrayuser.get(i));
+            ModelsFeatureFlag.validateJsonElement(jsonArrayuser.get(i));
           };
         }
       }

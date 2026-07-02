@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.flagsmith_flag import FlagsmithFlag
+from monad.models.models_feature_flag import ModelsFeatureFlag
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,8 +29,8 @@ class RoutesV3GetFeatureFlagResponse(BaseModel):
     """
     RoutesV3GetFeatureFlagResponse
     """ # noqa: E501
-    organizations: Optional[Dict[str, List[FlagsmithFlag]]] = None
-    user: Optional[List[FlagsmithFlag]] = None
+    organizations: Optional[Dict[str, List[ModelsFeatureFlag]]] = None
+    user: Optional[List[ModelsFeatureFlag]] = None
     __properties: ClassVar[List[str]] = ["organizations", "user"]
 
     model_config = ConfigDict(
@@ -101,12 +101,12 @@ class RoutesV3GetFeatureFlagResponse(BaseModel):
 
         _obj = cls.model_validate({
             "organizations": {
-                _k: [FlagsmithFlag.from_dict(_item) for _item in _v] if _v is not None else None
+                _k: [ModelsFeatureFlag.from_dict(_item) for _item in _v] if _v is not None else None
                 for _k, _v in obj["organizations"].items()
             }
             if obj.get("organizations") is not None
             else None,
-            "user": [FlagsmithFlag.from_dict(_item) for _item in obj["user"]] if obj.get("user") is not None else None
+            "user": [ModelsFeatureFlag.from_dict(_item) for _item in obj["user"]] if obj.get("user") is not None else None
         })
         return _obj
 

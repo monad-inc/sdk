@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.flagsmith_flag import FlagsmithFlag
+from monad.models.models_feature_flag import ModelsFeatureFlag
 
-class TestFlagsmithFlag(unittest.TestCase):
-    """FlagsmithFlag unit test stubs"""
+class TestModelsFeatureFlag(unittest.TestCase):
+    """ModelsFeatureFlag unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestFlagsmithFlag(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FlagsmithFlag:
-        """Test FlagsmithFlag
+    def make_instance(self, include_optional) -> ModelsFeatureFlag:
+        """Test ModelsFeatureFlag
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `FlagsmithFlag`
+        # uncomment below to create an instance of `ModelsFeatureFlag`
         """
-        model = FlagsmithFlag()
+        model = ModelsFeatureFlag()
         if include_optional:
-            return FlagsmithFlag(
+            return ModelsFeatureFlag(
                 enabled = True,
                 feature_id = 56,
                 feature_name = '',
@@ -43,12 +43,12 @@ class TestFlagsmithFlag(unittest.TestCase):
                 value = None
             )
         else:
-            return FlagsmithFlag(
+            return ModelsFeatureFlag(
         )
         """
 
-    def testFlagsmithFlag(self):
-        """Test FlagsmithFlag"""
+    def testModelsFeatureFlag(self):
+        """Test ModelsFeatureFlag"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

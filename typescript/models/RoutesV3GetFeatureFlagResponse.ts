@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { FlagsmithFlag } from '../models/FlagsmithFlag';
+import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3GetFeatureFlagResponse {
-    'organizations'?: { [key: string]: Array<FlagsmithFlag>; };
-    'user'?: Array<FlagsmithFlag>;
+    'organizations'?: { [key: string]: Array<ModelsFeatureFlag>; };
+    'user'?: Array<ModelsFeatureFlag>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -25,13 +25,13 @@ export class RoutesV3GetFeatureFlagResponse {
         {
             "name": "organizations",
             "baseName": "organizations",
-            "type": "{ [key: string]: Array<FlagsmithFlag>; }",
+            "type": "{ [key: string]: Array<ModelsFeatureFlag>; }",
             "format": ""
         },
         {
             "name": "user",
             "baseName": "user",
-            "type": "Array<FlagsmithFlag>",
+            "type": "Array<ModelsFeatureFlag>",
             "format": ""
         }    ];
 

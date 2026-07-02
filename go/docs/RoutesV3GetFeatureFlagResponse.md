@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Organizations** | Pointer to [**map[string][]FlagsmithFlag**](array.md) |  | [optional] 
-**User** | Pointer to [**[]FlagsmithFlag**](FlagsmithFlag.md) |  | [optional] 
+**Organizations** | Pointer to [**map[string][]ModelsFeatureFlag**](array.md) |  | [optional] 
+**User** | Pointer to [**[]ModelsFeatureFlag**](ModelsFeatureFlag.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrganizations
 
-`func (o *RoutesV3GetFeatureFlagResponse) GetOrganizations() map[string][]FlagsmithFlag`
+`func (o *RoutesV3GetFeatureFlagResponse) GetOrganizations() map[string][]ModelsFeatureFlag`
 
 GetOrganizations returns the Organizations field if non-nil, zero value otherwise.
 
 ### GetOrganizationsOk
 
-`func (o *RoutesV3GetFeatureFlagResponse) GetOrganizationsOk() (*map[string][]FlagsmithFlag, bool)`
+`func (o *RoutesV3GetFeatureFlagResponse) GetOrganizationsOk() (*map[string][]ModelsFeatureFlag, bool)`
 
 GetOrganizationsOk returns a tuple with the Organizations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizations
 
-`func (o *RoutesV3GetFeatureFlagResponse) SetOrganizations(v map[string][]FlagsmithFlag)`
+`func (o *RoutesV3GetFeatureFlagResponse) SetOrganizations(v map[string][]ModelsFeatureFlag)`
 
 SetOrganizations sets Organizations field to given value.
 
@@ -53,20 +53,20 @@ HasOrganizations returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *RoutesV3GetFeatureFlagResponse) GetUser() []FlagsmithFlag`
+`func (o *RoutesV3GetFeatureFlagResponse) GetUser() []ModelsFeatureFlag`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *RoutesV3GetFeatureFlagResponse) GetUserOk() (*[]FlagsmithFlag, bool)`
+`func (o *RoutesV3GetFeatureFlagResponse) GetUserOk() (*[]ModelsFeatureFlag, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *RoutesV3GetFeatureFlagResponse) SetUser(v []FlagsmithFlag)`
+`func (o *RoutesV3GetFeatureFlagResponse) SetUser(v []ModelsFeatureFlag)`
 
 SetUser sets User field to given value.
 

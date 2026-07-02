@@ -24,16 +24,16 @@ from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class FlagsmithFlag(BaseModel):
+class ModelsFeatureFlag(BaseModel):
     """
-    FlagsmithFlag
+    ModelsFeatureFlag
     """ # noqa: E501
-    enabled: Optional[StrictBool] = None
-    feature_id: Optional[StrictInt] = Field(default=None, alias="featureID")
-    feature_name: Optional[StrictStr] = Field(default=None, alias="featureName")
-    is_default: Optional[StrictBool] = Field(default=None, alias="isDefault")
-    value: Optional[Any] = None
-    __properties: ClassVar[List[str]] = ["enabled", "featureID", "featureName", "isDefault", "value"]
+    enabled: Optional[StrictBool] = Field(default=None, alias="Enabled")
+    feature_id: Optional[StrictInt] = Field(default=None, alias="FeatureID")
+    feature_name: Optional[StrictStr] = Field(default=None, alias="FeatureName")
+    is_default: Optional[StrictBool] = Field(default=None, alias="IsDefault")
+    value: Optional[Any] = Field(default=None, alias="Value")
+    __properties: ClassVar[List[str]] = ["Enabled", "FeatureID", "FeatureName", "IsDefault", "Value"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -53,7 +53,7 @@ class FlagsmithFlag(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of FlagsmithFlag from a JSON string"""
+        """Create an instance of ModelsFeatureFlag from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,13 +77,13 @@ class FlagsmithFlag(BaseModel):
         # set to None if value (nullable) is None
         # and model_fields_set contains the field
         if self.value is None and "value" in self.model_fields_set:
-            _dict['value'] = None
+            _dict['Value'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of FlagsmithFlag from a dict"""
+        """Create an instance of ModelsFeatureFlag from a dict"""
         if obj is None:
             return None
 
@@ -91,11 +91,11 @@ class FlagsmithFlag(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "enabled": obj.get("enabled"),
-            "featureID": obj.get("featureID"),
-            "featureName": obj.get("featureName"),
-            "isDefault": obj.get("isDefault"),
-            "value": obj.get("value")
+            "Enabled": obj.get("Enabled"),
+            "FeatureID": obj.get("FeatureID"),
+            "FeatureName": obj.get("FeatureName"),
+            "IsDefault": obj.get("IsDefault"),
+            "Value": obj.get("Value")
         })
         return _obj
 

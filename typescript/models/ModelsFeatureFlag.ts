@@ -12,7 +12,7 @@
 
 import { HttpFile } from '../http/http';
 
-export class FlagsmithFlag {
+export class ModelsFeatureFlag {
     'enabled'?: boolean;
     'featureID'?: number;
     'featureName'?: string;
@@ -26,37 +26,37 @@ export class FlagsmithFlag {
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
             "name": "enabled",
-            "baseName": "enabled",
+            "baseName": "Enabled",
             "type": "boolean",
             "format": ""
         },
         {
             "name": "featureID",
-            "baseName": "featureID",
+            "baseName": "FeatureID",
             "type": "number",
             "format": ""
         },
         {
             "name": "featureName",
-            "baseName": "featureName",
+            "baseName": "FeatureName",
             "type": "string",
             "format": ""
         },
         {
             "name": "isDefault",
-            "baseName": "isDefault",
+            "baseName": "IsDefault",
             "type": "boolean",
             "format": ""
         },
         {
             "name": "value",
-            "baseName": "value",
+            "baseName": "Value",
             "type": "any",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return FlagsmithFlag.attributeTypeMap;
+        return ModelsFeatureFlag.attributeTypeMap;
     }
 
     public constructor() {

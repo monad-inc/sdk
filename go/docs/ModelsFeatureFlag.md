@@ -1,4 +1,4 @@
-# FlagsmithFlag
+# ModelsFeatureFlag
 
 ## Properties
 
@@ -12,156 +12,156 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewFlagsmithFlag
+### NewModelsFeatureFlag
 
-`func NewFlagsmithFlag() *FlagsmithFlag`
+`func NewModelsFeatureFlag() *ModelsFeatureFlag`
 
-NewFlagsmithFlag instantiates a new FlagsmithFlag object
+NewModelsFeatureFlag instantiates a new ModelsFeatureFlag object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewFlagsmithFlagWithDefaults
+### NewModelsFeatureFlagWithDefaults
 
-`func NewFlagsmithFlagWithDefaults() *FlagsmithFlag`
+`func NewModelsFeatureFlagWithDefaults() *ModelsFeatureFlag`
 
-NewFlagsmithFlagWithDefaults instantiates a new FlagsmithFlag object
+NewModelsFeatureFlagWithDefaults instantiates a new ModelsFeatureFlag object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetEnabled
 
-`func (o *FlagsmithFlag) GetEnabled() bool`
+`func (o *ModelsFeatureFlag) GetEnabled() bool`
 
 GetEnabled returns the Enabled field if non-nil, zero value otherwise.
 
 ### GetEnabledOk
 
-`func (o *FlagsmithFlag) GetEnabledOk() (*bool, bool)`
+`func (o *ModelsFeatureFlag) GetEnabledOk() (*bool, bool)`
 
 GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnabled
 
-`func (o *FlagsmithFlag) SetEnabled(v bool)`
+`func (o *ModelsFeatureFlag) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
 
 ### HasEnabled
 
-`func (o *FlagsmithFlag) HasEnabled() bool`
+`func (o *ModelsFeatureFlag) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
 
 ### GetFeatureID
 
-`func (o *FlagsmithFlag) GetFeatureID() int32`
+`func (o *ModelsFeatureFlag) GetFeatureID() int32`
 
 GetFeatureID returns the FeatureID field if non-nil, zero value otherwise.
 
 ### GetFeatureIDOk
 
-`func (o *FlagsmithFlag) GetFeatureIDOk() (*int32, bool)`
+`func (o *ModelsFeatureFlag) GetFeatureIDOk() (*int32, bool)`
 
 GetFeatureIDOk returns a tuple with the FeatureID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFeatureID
 
-`func (o *FlagsmithFlag) SetFeatureID(v int32)`
+`func (o *ModelsFeatureFlag) SetFeatureID(v int32)`
 
 SetFeatureID sets FeatureID field to given value.
 
 ### HasFeatureID
 
-`func (o *FlagsmithFlag) HasFeatureID() bool`
+`func (o *ModelsFeatureFlag) HasFeatureID() bool`
 
 HasFeatureID returns a boolean if a field has been set.
 
 ### GetFeatureName
 
-`func (o *FlagsmithFlag) GetFeatureName() string`
+`func (o *ModelsFeatureFlag) GetFeatureName() string`
 
 GetFeatureName returns the FeatureName field if non-nil, zero value otherwise.
 
 ### GetFeatureNameOk
 
-`func (o *FlagsmithFlag) GetFeatureNameOk() (*string, bool)`
+`func (o *ModelsFeatureFlag) GetFeatureNameOk() (*string, bool)`
 
 GetFeatureNameOk returns a tuple with the FeatureName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFeatureName
 
-`func (o *FlagsmithFlag) SetFeatureName(v string)`
+`func (o *ModelsFeatureFlag) SetFeatureName(v string)`
 
 SetFeatureName sets FeatureName field to given value.
 
 ### HasFeatureName
 
-`func (o *FlagsmithFlag) HasFeatureName() bool`
+`func (o *ModelsFeatureFlag) HasFeatureName() bool`
 
 HasFeatureName returns a boolean if a field has been set.
 
 ### GetIsDefault
 
-`func (o *FlagsmithFlag) GetIsDefault() bool`
+`func (o *ModelsFeatureFlag) GetIsDefault() bool`
 
 GetIsDefault returns the IsDefault field if non-nil, zero value otherwise.
 
 ### GetIsDefaultOk
 
-`func (o *FlagsmithFlag) GetIsDefaultOk() (*bool, bool)`
+`func (o *ModelsFeatureFlag) GetIsDefaultOk() (*bool, bool)`
 
 GetIsDefaultOk returns a tuple with the IsDefault field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsDefault
 
-`func (o *FlagsmithFlag) SetIsDefault(v bool)`
+`func (o *ModelsFeatureFlag) SetIsDefault(v bool)`
 
 SetIsDefault sets IsDefault field to given value.
 
 ### HasIsDefault
 
-`func (o *FlagsmithFlag) HasIsDefault() bool`
+`func (o *ModelsFeatureFlag) HasIsDefault() bool`
 
 HasIsDefault returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *FlagsmithFlag) GetValue() interface{}`
+`func (o *ModelsFeatureFlag) GetValue() interface{}`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *FlagsmithFlag) GetValueOk() (*interface{}, bool)`
+`func (o *ModelsFeatureFlag) GetValueOk() (*interface{}, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *FlagsmithFlag) SetValue(v interface{})`
+`func (o *ModelsFeatureFlag) SetValue(v interface{})`
 
 SetValue sets Value field to given value.
 
 ### HasValue
 
-`func (o *FlagsmithFlag) HasValue() bool`
+`func (o *ModelsFeatureFlag) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
 
 ### SetValueNil
 
-`func (o *FlagsmithFlag) SetValueNil(b bool)`
+`func (o *ModelsFeatureFlag) SetValueNil(b bool)`
 
  SetValueNil sets the value for Value to be an explicit nil
 
 ### UnsetValue
-`func (o *FlagsmithFlag) UnsetValue()`
+`func (o *ModelsFeatureFlag) UnsetValue()`
 
 UnsetValue ensures that no value is present for Value, not even an explicit nil
 

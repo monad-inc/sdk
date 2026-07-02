@@ -47,39 +47,39 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * FlagsmithFlag
+ * ModelsFeatureFlag
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
-public class FlagsmithFlag {
-  public static final String SERIALIZED_NAME_ENABLED = "enabled";
+public class ModelsFeatureFlag {
+  public static final String SERIALIZED_NAME_ENABLED = "Enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
   @javax.annotation.Nullable
   private Boolean enabled;
 
-  public static final String SERIALIZED_NAME_FEATURE_I_D = "featureID";
+  public static final String SERIALIZED_NAME_FEATURE_I_D = "FeatureID";
   @SerializedName(SERIALIZED_NAME_FEATURE_I_D)
   @javax.annotation.Nullable
   private Integer featureID;
 
-  public static final String SERIALIZED_NAME_FEATURE_NAME = "featureName";
+  public static final String SERIALIZED_NAME_FEATURE_NAME = "FeatureName";
   @SerializedName(SERIALIZED_NAME_FEATURE_NAME)
   @javax.annotation.Nullable
   private String featureName;
 
-  public static final String SERIALIZED_NAME_IS_DEFAULT = "isDefault";
+  public static final String SERIALIZED_NAME_IS_DEFAULT = "IsDefault";
   @SerializedName(SERIALIZED_NAME_IS_DEFAULT)
   @javax.annotation.Nullable
   private Boolean isDefault;
 
-  public static final String SERIALIZED_NAME_VALUE = "value";
+  public static final String SERIALIZED_NAME_VALUE = "Value";
   @SerializedName(SERIALIZED_NAME_VALUE)
   @javax.annotation.Nullable
   private Object value = null;
 
-  public FlagsmithFlag() {
+  public ModelsFeatureFlag() {
   }
 
-  public FlagsmithFlag enabled(@javax.annotation.Nullable Boolean enabled) {
+  public ModelsFeatureFlag enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -98,7 +98,7 @@ public class FlagsmithFlag {
   }
 
 
-  public FlagsmithFlag featureID(@javax.annotation.Nullable Integer featureID) {
+  public ModelsFeatureFlag featureID(@javax.annotation.Nullable Integer featureID) {
     this.featureID = featureID;
     return this;
   }
@@ -117,7 +117,7 @@ public class FlagsmithFlag {
   }
 
 
-  public FlagsmithFlag featureName(@javax.annotation.Nullable String featureName) {
+  public ModelsFeatureFlag featureName(@javax.annotation.Nullable String featureName) {
     this.featureName = featureName;
     return this;
   }
@@ -136,7 +136,7 @@ public class FlagsmithFlag {
   }
 
 
-  public FlagsmithFlag isDefault(@javax.annotation.Nullable Boolean isDefault) {
+  public ModelsFeatureFlag isDefault(@javax.annotation.Nullable Boolean isDefault) {
     this.isDefault = isDefault;
     return this;
   }
@@ -155,7 +155,7 @@ public class FlagsmithFlag {
   }
 
 
-  public FlagsmithFlag value(@javax.annotation.Nullable Object value) {
+  public ModelsFeatureFlag value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -183,12 +183,12 @@ public class FlagsmithFlag {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FlagsmithFlag flagsmithFlag = (FlagsmithFlag) o;
-    return Objects.equals(this.enabled, flagsmithFlag.enabled) &&
-        Objects.equals(this.featureID, flagsmithFlag.featureID) &&
-        Objects.equals(this.featureName, flagsmithFlag.featureName) &&
-        Objects.equals(this.isDefault, flagsmithFlag.isDefault) &&
-        Objects.equals(this.value, flagsmithFlag.value);
+    ModelsFeatureFlag modelsFeatureFlag = (ModelsFeatureFlag) o;
+    return Objects.equals(this.enabled, modelsFeatureFlag.enabled) &&
+        Objects.equals(this.featureID, modelsFeatureFlag.featureID) &&
+        Objects.equals(this.featureName, modelsFeatureFlag.featureName) &&
+        Objects.equals(this.isDefault, modelsFeatureFlag.isDefault) &&
+        Objects.equals(this.value, modelsFeatureFlag.value);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -210,7 +210,7 @@ public class FlagsmithFlag {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FlagsmithFlag {\n");
+    sb.append("class ModelsFeatureFlag {\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    featureID: ").append(toIndentedString(featureID)).append("\n");
     sb.append("    featureName: ").append(toIndentedString(featureName)).append("\n");
@@ -234,7 +234,7 @@ public class FlagsmithFlag {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("enabled", "featureID", "featureName", "isDefault", "value"));
+    openapiFields = new HashSet<String>(Arrays.asList("Enabled", "FeatureID", "FeatureName", "IsDefault", "Value"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -244,25 +244,25 @@ public class FlagsmithFlag {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to FlagsmithFlag
+   * @throws IOException if the JSON Element is invalid with respect to ModelsFeatureFlag
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!FlagsmithFlag.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in FlagsmithFlag is not found in the empty JSON string", FlagsmithFlag.openapiRequiredFields.toString()));
+        if (!ModelsFeatureFlag.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsFeatureFlag is not found in the empty JSON string", ModelsFeatureFlag.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!FlagsmithFlag.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `FlagsmithFlag` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ModelsFeatureFlag.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsFeatureFlag` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("featureName") != null && !jsonObj.get("featureName").isJsonNull()) && !jsonObj.get("featureName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `featureName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("featureName").toString()));
+      if ((jsonObj.get("FeatureName") != null && !jsonObj.get("FeatureName").isJsonNull()) && !jsonObj.get("FeatureName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `FeatureName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("FeatureName").toString()));
       }
   }
 
@@ -270,22 +270,22 @@ public class FlagsmithFlag {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!FlagsmithFlag.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'FlagsmithFlag' and its subtypes
+       if (!ModelsFeatureFlag.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelsFeatureFlag' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<FlagsmithFlag> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(FlagsmithFlag.class));
+       final TypeAdapter<ModelsFeatureFlag> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsFeatureFlag.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<FlagsmithFlag>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelsFeatureFlag>() {
            @Override
-           public void write(JsonWriter out, FlagsmithFlag value) throws IOException {
+           public void write(JsonWriter out, ModelsFeatureFlag value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public FlagsmithFlag read(JsonReader in) throws IOException {
+           public ModelsFeatureFlag read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -296,18 +296,18 @@ public class FlagsmithFlag {
   }
 
   /**
-   * Create an instance of FlagsmithFlag given an JSON string
+   * Create an instance of ModelsFeatureFlag given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of FlagsmithFlag
-   * @throws IOException if the JSON string is invalid with respect to FlagsmithFlag
+   * @return An instance of ModelsFeatureFlag
+   * @throws IOException if the JSON string is invalid with respect to ModelsFeatureFlag
    */
-  public static FlagsmithFlag fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, FlagsmithFlag.class);
+  public static ModelsFeatureFlag fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelsFeatureFlag.class);
   }
 
   /**
-   * Convert an instance of FlagsmithFlag to an JSON string
+   * Convert an instance of ModelsFeatureFlag to an JSON string
    *
    * @return JSON string
    */
