@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BillingEmail** | Pointer to **string** | Email address for billing | [optional] 
-**Description** | Pointer to **string** | Description of the billing account | [optional] 
-**Name** | Pointer to **string** | Name of the billing account | [optional] 
+**BillingEmail** | Pointer to **string** | Email address for billing. Nil preserves the current value. | [optional] 
+**Description** | Pointer to **string** | Description of the billing account. Nil preserves the current value. | [optional] 
+**Name** | Pointer to **string** | Name of the billing account. Nil preserves the current value. | [optional] 
 
 ## Methods
 

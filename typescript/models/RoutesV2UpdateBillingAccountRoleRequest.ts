@@ -14,15 +14,15 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2UpdateBillingAccountRoleRequest {
     /**
-    * Description of the role
+    * Description of the role. Nil preserves the current value.
     */
     'description'?: string;
     /**
-    * Name of the role
+    * Name of the role. Nil preserves the current value.
     */
     'name'?: string;
     /**
-    * Permission slugs for the role
+    * Permission slugs for the role. Nil preserves the current value; an empty slice clears all permissions.
     */
     'permissions'?: Array<string>;
 

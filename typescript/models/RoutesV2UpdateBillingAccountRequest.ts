@@ -14,15 +14,15 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2UpdateBillingAccountRequest {
     /**
-    * Email address for billing
+    * Email address for billing. Nil preserves the current value.
     */
     'billingEmail'?: string;
     /**
-    * Description of the billing account
+    * Description of the billing account. Nil preserves the current value.
     */
     'description'?: string;
     /**
-    * Name of the billing account
+    * Name of the billing account. Nil preserves the current value.
     */
     'name'?: string;
 

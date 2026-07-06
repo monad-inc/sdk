@@ -76,7 +76,7 @@ public class RoutesV2UpdateBillingAccountRoleRequest {
   }
 
   /**
-   * Description of the role
+   * Description of the role. Nil preserves the current value.
    * @return description
    */
   @javax.annotation.Nullable
@@ -95,7 +95,7 @@ public class RoutesV2UpdateBillingAccountRoleRequest {
   }
 
   /**
-   * Name of the role
+   * Name of the role. Nil preserves the current value.
    * @return name
    */
   @javax.annotation.Nullable
@@ -122,7 +122,7 @@ public class RoutesV2UpdateBillingAccountRoleRequest {
   }
 
   /**
-   * Permission slugs for the role
+   * Permission slugs for the role. Nil preserves the current value; an empty slice clears all permissions.
    * @return permissions
    */
   @javax.annotation.Nullable

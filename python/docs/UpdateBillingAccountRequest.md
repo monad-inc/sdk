@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**billing_email** | **str** | Email address for billing | [optional] 
-**description** | **str** | Description of the billing account | [optional] 
-**name** | **str** | Name of the billing account | [optional] 
+**billing_email** | **str** | Email address for billing. Nil preserves the current value. | [optional] 
+**description** | **str** | Description of the billing account. Nil preserves the current value. | [optional] 
+**name** | **str** | Name of the billing account. Nil preserves the current value. | [optional] 
 
 ## Example
 

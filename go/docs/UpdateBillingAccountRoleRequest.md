@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | Pointer to **string** | Description of the role | [optional] 
-**Name** | Pointer to **string** | Name of the role | [optional] 
-**Permissions** | Pointer to **[]string** | Permission slugs for the role | [optional] 
+**Description** | Pointer to **string** | Description of the role. Nil preserves the current value. | [optional] 
+**Name** | Pointer to **string** | Name of the role. Nil preserves the current value. | [optional] 
+**Permissions** | Pointer to **[]string** | Permission slugs for the role. Nil preserves the current value; an empty slice clears all permissions. | [optional] 
 
 ## Methods
 

@@ -8694,15 +8694,15 @@
             "routesV2.UpdateBillingAccountRequest": {
                 "properties": {
                     "billing_email": {
-                        "description": "Email address for billing",
+                        "description": "Email address for billing. Nil preserves the current value.",
                         "type": "string"
                     },
                     "description": {
-                        "description": "Description of the billing account",
+                        "description": "Description of the billing account. Nil preserves the current value.",
                         "type": "string"
                     },
                     "name": {
-                        "description": "Name of the billing account",
+                        "description": "Name of the billing account. Nil preserves the current value.",
                         "type": "string"
                     }
                 },
@@ -8711,15 +8711,15 @@
             "routesV2.UpdateBillingAccountRoleRequest": {
                 "properties": {
                     "description": {
-                        "description": "Description of the role",
+                        "description": "Description of the role. Nil preserves the current value.",
                         "type": "string"
                     },
                     "name": {
-                        "description": "Name of the role",
+                        "description": "Name of the role. Nil preserves the current value.",
                         "type": "string"
                     },
                     "permissions": {
-                        "description": "Permission slugs for the role",
+                        "description": "Permission slugs for the role. Nil preserves the current value;\nan empty slice clears all permissions.",
                         "items": {
                             "type": "string"
                         },

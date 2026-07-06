@@ -74,7 +74,7 @@ public class RoutesV2UpdateBillingAccountRequest {
   }
 
   /**
-   * Email address for billing
+   * Email address for billing. Nil preserves the current value.
    * @return billingEmail
    */
   @javax.annotation.Nullable
@@ -93,7 +93,7 @@ public class RoutesV2UpdateBillingAccountRequest {
   }
 
   /**
-   * Description of the billing account
+   * Description of the billing account. Nil preserves the current value.
    * @return description
    */
   @javax.annotation.Nullable
@@ -112,7 +112,7 @@ public class RoutesV2UpdateBillingAccountRequest {
   }
 
   /**
-   * Name of the billing account
+   * Name of the billing account. Nil preserves the current value.
    * @return name
    */
   @javax.annotation.Nullable

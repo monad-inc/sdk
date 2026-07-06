@@ -28,9 +28,9 @@ class RoutesV2UpdateBillingAccountRequest(BaseModel):
     """
     RoutesV2UpdateBillingAccountRequest
     """ # noqa: E501
-    billing_email: Optional[StrictStr] = Field(default=None, description="Email address for billing")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the billing account")
-    name: Optional[StrictStr] = Field(default=None, description="Name of the billing account")
+    billing_email: Optional[StrictStr] = Field(default=None, description="Email address for billing. Nil preserves the current value.")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the billing account. Nil preserves the current value.")
+    name: Optional[StrictStr] = Field(default=None, description="Name of the billing account. Nil preserves the current value.")
     __properties: ClassVar[List[str]] = ["billing_email", "description", "name"]
 
     model_config = ConfigDict(

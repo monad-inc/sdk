@@ -20,11 +20,11 @@ var _ MappedNullable = &RoutesV2UpdateBillingAccountRequest{}
 
 // RoutesV2UpdateBillingAccountRequest struct for RoutesV2UpdateBillingAccountRequest
 type RoutesV2UpdateBillingAccountRequest struct {
-	// Email address for billing
+	// Email address for billing. Nil preserves the current value.
 	BillingEmail *string `json:"billing_email,omitempty"`
-	// Description of the billing account
+	// Description of the billing account. Nil preserves the current value.
 	Description *string `json:"description,omitempty"`
-	// Name of the billing account
+	// Name of the billing account. Nil preserves the current value.
 	Name *string `json:"name,omitempty"`
 }
 

@@ -20,11 +20,11 @@ var _ MappedNullable = &RoutesV2UpdateBillingAccountRoleRequest{}
 
 // RoutesV2UpdateBillingAccountRoleRequest struct for RoutesV2UpdateBillingAccountRoleRequest
 type RoutesV2UpdateBillingAccountRoleRequest struct {
-	// Description of the role
+	// Description of the role. Nil preserves the current value.
 	Description *string `json:"description,omitempty"`
-	// Name of the role
+	// Name of the role. Nil preserves the current value.
 	Name *string `json:"name,omitempty"`
-	// Permission slugs for the role
+	// Permission slugs for the role. Nil preserves the current value; an empty slice clears all permissions.
 	Permissions []string `json:"permissions,omitempty"`
 }
 

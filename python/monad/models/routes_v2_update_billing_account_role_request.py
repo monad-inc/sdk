@@ -28,9 +28,9 @@ class RoutesV2UpdateBillingAccountRoleRequest(BaseModel):
     """
     RoutesV2UpdateBillingAccountRoleRequest
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Description of the role")
-    name: Optional[StrictStr] = Field(default=None, description="Name of the role")
-    permissions: Optional[List[StrictStr]] = Field(default=None, description="Permission slugs for the role")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the role. Nil preserves the current value.")
+    name: Optional[StrictStr] = Field(default=None, description="Name of the role. Nil preserves the current value.")
+    permissions: Optional[List[StrictStr]] = Field(default=None, description="Permission slugs for the role. Nil preserves the current value; an empty slice clears all permissions.")
     __properties: ClassVar[List[str]] = ["description", "name", "permissions"]
 
     model_config = ConfigDict(
