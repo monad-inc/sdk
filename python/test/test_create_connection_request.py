@@ -44,7 +44,9 @@ class TestCreateConnectionRequest(unittest.TestCase):
                 public_name = '',
                 saml = monad.models.routes_v3_create_connection_request_saml.routesV3_CreateConnectionRequest_saml(
                     entity_id = '', 
-                    metadata_url = '', )
+                    metadata_url = '', ),
+                session_settings = monad.models.models/connection_session_settings.models.ConnectionSessionSettings(
+                    session_timeout = 56, )
             )
         else:
             return CreateConnectionRequest(

@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { HttpFile } from '../http/http';
 
@@ -31,6 +32,7 @@ export class RoutesV3CreateConnectionRequest {
     */
     'publicName'?: string;
     'saml'?: RoutesV3CreateConnectionRequestSaml;
+    'sessionSettings'?: ModelsConnectionSessionSettings;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -65,6 +67,12 @@ export class RoutesV3CreateConnectionRequest {
             "name": "saml",
             "baseName": "saml",
             "type": "RoutesV3CreateConnectionRequestSaml",
+            "format": ""
+        },
+        {
+            "name": "sessionSettings",
+            "baseName": "session_settings",
+            "type": "ModelsConnectionSessionSettings",
             "format": ""
         }    ];
 

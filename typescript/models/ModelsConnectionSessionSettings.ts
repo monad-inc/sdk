@@ -12,6 +12,9 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* SessionSettings controls the session length for logins through this connection. Optional; nil preserves the existing value, non-nil overwrites.
+*/
 export class ModelsConnectionSessionSettings {
     'sessionTimeout'?: number;
 

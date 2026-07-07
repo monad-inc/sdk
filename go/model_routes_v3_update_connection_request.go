@@ -26,6 +26,7 @@ type RoutesV3UpdateConnectionRequest struct {
 	Name *string `json:"name,omitempty"`
 	// PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.
 	PublicName *string `json:"public_name,omitempty"`
+	SessionSettings *ModelsConnectionSessionSettings `json:"session_settings,omitempty"`
 }
 
 // NewRoutesV3UpdateConnectionRequest instantiates a new RoutesV3UpdateConnectionRequest object
@@ -141,6 +142,38 @@ func (o *RoutesV3UpdateConnectionRequest) SetPublicName(v string) {
 	o.PublicName = &v
 }
 
+// GetSessionSettings returns the SessionSettings field value if set, zero value otherwise.
+func (o *RoutesV3UpdateConnectionRequest) GetSessionSettings() ModelsConnectionSessionSettings {
+	if o == nil || IsNil(o.SessionSettings) {
+		var ret ModelsConnectionSessionSettings
+		return ret
+	}
+	return *o.SessionSettings
+}
+
+// GetSessionSettingsOk returns a tuple with the SessionSettings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3UpdateConnectionRequest) GetSessionSettingsOk() (*ModelsConnectionSessionSettings, bool) {
+	if o == nil || IsNil(o.SessionSettings) {
+		return nil, false
+	}
+	return o.SessionSettings, true
+}
+
+// HasSessionSettings returns a boolean if a field has been set.
+func (o *RoutesV3UpdateConnectionRequest) HasSessionSettings() bool {
+	if o != nil && !IsNil(o.SessionSettings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSessionSettings gets a reference to the given ModelsConnectionSessionSettings and assigns it to the SessionSettings field.
+func (o *RoutesV3UpdateConnectionRequest) SetSessionSettings(v ModelsConnectionSessionSettings) {
+	o.SessionSettings = &v
+}
+
 func (o RoutesV3UpdateConnectionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -159,6 +192,9 @@ func (o RoutesV3UpdateConnectionRequest) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.PublicName) {
 		toSerialize["public_name"] = o.PublicName
+	}
+	if !IsNil(o.SessionSettings) {
+		toSerialize["session_settings"] = o.SessionSettings
 	}
 	return toSerialize, nil
 }

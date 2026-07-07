@@ -29,6 +29,7 @@ type RoutesV3CreateConnectionRequest struct {
 	// PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated `sso-<hex>` value).
 	PublicName *string `json:"public_name,omitempty"`
 	Saml *RoutesV3CreateConnectionRequestSaml `json:"saml,omitempty"`
+	SessionSettings *ModelsConnectionSessionSettings `json:"session_settings,omitempty"`
 }
 
 // NewRoutesV3CreateConnectionRequest instantiates a new RoutesV3CreateConnectionRequest object
@@ -208,6 +209,38 @@ func (o *RoutesV3CreateConnectionRequest) SetSaml(v RoutesV3CreateConnectionRequ
 	o.Saml = &v
 }
 
+// GetSessionSettings returns the SessionSettings field value if set, zero value otherwise.
+func (o *RoutesV3CreateConnectionRequest) GetSessionSettings() ModelsConnectionSessionSettings {
+	if o == nil || IsNil(o.SessionSettings) {
+		var ret ModelsConnectionSessionSettings
+		return ret
+	}
+	return *o.SessionSettings
+}
+
+// GetSessionSettingsOk returns a tuple with the SessionSettings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3CreateConnectionRequest) GetSessionSettingsOk() (*ModelsConnectionSessionSettings, bool) {
+	if o == nil || IsNil(o.SessionSettings) {
+		return nil, false
+	}
+	return o.SessionSettings, true
+}
+
+// HasSessionSettings returns a boolean if a field has been set.
+func (o *RoutesV3CreateConnectionRequest) HasSessionSettings() bool {
+	if o != nil && !IsNil(o.SessionSettings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSessionSettings gets a reference to the given ModelsConnectionSessionSettings and assigns it to the SessionSettings field.
+func (o *RoutesV3CreateConnectionRequest) SetSessionSettings(v ModelsConnectionSessionSettings) {
+	o.SessionSettings = &v
+}
+
 func (o RoutesV3CreateConnectionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -232,6 +265,9 @@ func (o RoutesV3CreateConnectionRequest) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.Saml) {
 		toSerialize["saml"] = o.Saml
+	}
+	if !IsNil(o.SessionSettings) {
+		toSerialize["session_settings"] = o.SessionSettings
 	}
 	return toSerialize, nil
 }

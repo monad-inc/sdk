@@ -46,7 +46,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsConnectionSessionSettings
+ * SessionSettings controls the session length for logins through this connection. Optional; nil preserves the existing value, non-nil overwrites.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsConnectionSessionSettings {

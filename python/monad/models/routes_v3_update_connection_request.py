@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,7 +32,8 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="Connection Description to be updated")
     name: Optional[StrictStr] = Field(default=None, description="Connection Name to be updated")
     public_name: Optional[StrictStr] = Field(default=None, description="PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.")
-    __properties: ClassVar[List[str]] = ["description", "name", "public_name"]
+    session_settings: Optional[ModelsConnectionSessionSettings] = None
+    __properties: ClassVar[List[str]] = ["description", "name", "public_name", "session_settings"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -72,6 +74,9 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of session_settings
+        if self.session_settings:
+            _dict['session_settings'] = self.session_settings.to_dict()
         return _dict
 
     @classmethod
@@ -86,7 +91,8 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
         _obj = cls.model_validate({
             "description": obj.get("description"),
             "name": obj.get("name"),
-            "public_name": obj.get("public_name")
+            "public_name": obj.get("public_name"),
+            "session_settings": ModelsConnectionSessionSettings.from_dict(obj["session_settings"]) if obj.get("session_settings") is not None else None
         })
         return _obj
 

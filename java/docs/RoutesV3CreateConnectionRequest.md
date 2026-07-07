@@ -12,6 +12,7 @@
 |**name** | **String** | Name of the connection |  [optional] |
 |**publicName** | **String** | PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated &#x60;sso-&lt;hex&gt;&#x60; value). |  [optional] |
 |**saml** | [**RoutesV3CreateConnectionRequestSaml**](RoutesV3CreateConnectionRequestSaml.md) |  |  [optional] |
+|**sessionSettings** | [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  |  [optional] |
 
 
 

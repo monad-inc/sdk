@@ -26,7 +26,7 @@ from pydantic_core import to_jsonable_python
 
 class ModelsConnectionSessionSettings(BaseModel):
     """
-    ModelsConnectionSessionSettings
+    SessionSettings controls the session length for logins through this connection. Optional; nil preserves the existing value, non-nil overwrites.
     """ # noqa: E501
     session_timeout: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["session_timeout"]

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsConnectionSessionSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -64,6 +65,11 @@ public class RoutesV3UpdateConnectionRequest {
   @SerializedName(SERIALIZED_NAME_PUBLIC_NAME)
   @javax.annotation.Nullable
   private String publicName;
+
+  public static final String SERIALIZED_NAME_SESSION_SETTINGS = "session_settings";
+  @SerializedName(SERIALIZED_NAME_SESSION_SETTINGS)
+  @javax.annotation.Nullable
+  private ModelsConnectionSessionSettings sessionSettings;
 
   public RoutesV3UpdateConnectionRequest() {
   }
@@ -125,6 +131,25 @@ public class RoutesV3UpdateConnectionRequest {
   }
 
 
+  public RoutesV3UpdateConnectionRequest sessionSettings(@javax.annotation.Nullable ModelsConnectionSessionSettings sessionSettings) {
+    this.sessionSettings = sessionSettings;
+    return this;
+  }
+
+  /**
+   * Get sessionSettings
+   * @return sessionSettings
+   */
+  @javax.annotation.Nullable
+  public ModelsConnectionSessionSettings getSessionSettings() {
+    return sessionSettings;
+  }
+
+  public void setSessionSettings(@javax.annotation.Nullable ModelsConnectionSessionSettings sessionSettings) {
+    this.sessionSettings = sessionSettings;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +162,13 @@ public class RoutesV3UpdateConnectionRequest {
     RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest = (RoutesV3UpdateConnectionRequest) o;
     return Objects.equals(this.description, routesV3UpdateConnectionRequest.description) &&
         Objects.equals(this.name, routesV3UpdateConnectionRequest.name) &&
-        Objects.equals(this.publicName, routesV3UpdateConnectionRequest.publicName);
+        Objects.equals(this.publicName, routesV3UpdateConnectionRequest.publicName) &&
+        Objects.equals(this.sessionSettings, routesV3UpdateConnectionRequest.sessionSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, name, publicName);
+    return Objects.hash(description, name, publicName, sessionSettings);
   }
 
   @Override
@@ -152,6 +178,7 @@ public class RoutesV3UpdateConnectionRequest {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    publicName: ").append(toIndentedString(publicName)).append("\n");
+    sb.append("    sessionSettings: ").append(toIndentedString(sessionSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,7 +197,7 @@ public class RoutesV3UpdateConnectionRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "name", "public_name"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "name", "public_name", "session_settings"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -205,6 +232,10 @@ public class RoutesV3UpdateConnectionRequest {
       }
       if ((jsonObj.get("public_name") != null && !jsonObj.get("public_name").isJsonNull()) && !jsonObj.get("public_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `public_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_name").toString()));
+      }
+      // validate the optional field `session_settings`
+      if (jsonObj.get("session_settings") != null && !jsonObj.get("session_settings").isJsonNull()) {
+        ModelsConnectionSessionSettings.validateJsonElement(jsonObj.get("session_settings"));
       }
   }
 

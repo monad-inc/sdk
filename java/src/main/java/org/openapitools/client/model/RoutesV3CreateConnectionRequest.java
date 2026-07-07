@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsConnectionSessionSettings;
 import org.openapitools.client.model.RoutesV3CreateConnectionRequestSaml;
 
 import com.google.gson.Gson;
@@ -77,6 +78,11 @@ public class RoutesV3CreateConnectionRequest {
   @SerializedName(SERIALIZED_NAME_SAML)
   @javax.annotation.Nullable
   private RoutesV3CreateConnectionRequestSaml saml;
+
+  public static final String SERIALIZED_NAME_SESSION_SETTINGS = "session_settings";
+  @SerializedName(SERIALIZED_NAME_SESSION_SETTINGS)
+  @javax.annotation.Nullable
+  private ModelsConnectionSessionSettings sessionSettings;
 
   public RoutesV3CreateConnectionRequest() {
   }
@@ -184,6 +190,25 @@ public class RoutesV3CreateConnectionRequest {
   }
 
 
+  public RoutesV3CreateConnectionRequest sessionSettings(@javax.annotation.Nullable ModelsConnectionSessionSettings sessionSettings) {
+    this.sessionSettings = sessionSettings;
+    return this;
+  }
+
+  /**
+   * Get sessionSettings
+   * @return sessionSettings
+   */
+  @javax.annotation.Nullable
+  public ModelsConnectionSessionSettings getSessionSettings() {
+    return sessionSettings;
+  }
+
+  public void setSessionSettings(@javax.annotation.Nullable ModelsConnectionSessionSettings sessionSettings) {
+    this.sessionSettings = sessionSettings;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -198,12 +223,13 @@ public class RoutesV3CreateConnectionRequest {
         Objects.equals(this.emailDomains, routesV3CreateConnectionRequest.emailDomains) &&
         Objects.equals(this.name, routesV3CreateConnectionRequest.name) &&
         Objects.equals(this.publicName, routesV3CreateConnectionRequest.publicName) &&
-        Objects.equals(this.saml, routesV3CreateConnectionRequest.saml);
+        Objects.equals(this.saml, routesV3CreateConnectionRequest.saml) &&
+        Objects.equals(this.sessionSettings, routesV3CreateConnectionRequest.sessionSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, emailDomains, name, publicName, saml);
+    return Objects.hash(description, emailDomains, name, publicName, saml, sessionSettings);
   }
 
   @Override
@@ -215,6 +241,7 @@ public class RoutesV3CreateConnectionRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    publicName: ").append(toIndentedString(publicName)).append("\n");
     sb.append("    saml: ").append(toIndentedString(saml)).append("\n");
+    sb.append("    sessionSettings: ").append(toIndentedString(sessionSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -233,7 +260,7 @@ public class RoutesV3CreateConnectionRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "email_domains", "name", "public_name", "saml"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "email_domains", "name", "public_name", "saml", "session_settings"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -276,6 +303,10 @@ public class RoutesV3CreateConnectionRequest {
       // validate the optional field `saml`
       if (jsonObj.get("saml") != null && !jsonObj.get("saml").isJsonNull()) {
         RoutesV3CreateConnectionRequestSaml.validateJsonElement(jsonObj.get("saml"));
+      }
+      // validate the optional field `session_settings`
+      if (jsonObj.get("session_settings") != null && !jsonObj.get("session_settings").isJsonNull()) {
+        ModelsConnectionSessionSettings.validateJsonElement(jsonObj.get("session_settings"));
       }
   }
 

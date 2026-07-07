@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsConnectionSessionSettings;
 import org.openapitools.client.model.RoutesV3CreateConnectionRequestSaml;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -78,6 +79,14 @@ public class CreateConnectionRequestTest {
     @Test
     public void samlTest() {
         // TODO: test saml
+    }
+
+    /**
+     * Test the property 'sessionSettings'
+     */
+    @Test
+    public void sessionSettingsTest() {
+        // TODO: test sessionSettings
     }
 
 }

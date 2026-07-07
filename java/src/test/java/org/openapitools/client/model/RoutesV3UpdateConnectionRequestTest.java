@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsConnectionSessionSettings;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -59,6 +60,14 @@ public class RoutesV3UpdateConnectionRequestTest {
     @Test
     public void publicNameTest() {
         // TODO: test publicName
+    }
+
+    /**
+     * Test the property 'sessionSettings'
+     */
+    @Test
+    public void sessionSettingsTest() {
+        // TODO: test sessionSettings
     }
 
 }

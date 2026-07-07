@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3UpdateConnectionRequest {
@@ -25,6 +26,7 @@ export class RoutesV3UpdateConnectionRequest {
     * PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.
     */
     'publicName'?: string;
+    'sessionSettings'?: ModelsConnectionSessionSettings;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -47,6 +49,12 @@ export class RoutesV3UpdateConnectionRequest {
             "name": "publicName",
             "baseName": "public_name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "sessionSettings",
+            "baseName": "session_settings",
+            "type": "ModelsConnectionSessionSettings",
             "format": ""
         }    ];
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Connection Description to be updated | [optional] 
 **Name** | Pointer to **string** | Connection Name to be updated | [optional] 
 **PublicName** | Pointer to **string** | PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites. | [optional] 
+**SessionSettings** | Pointer to [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetPublicName sets PublicName field to given value.
 `func (o *RoutesV3UpdateConnectionRequest) HasPublicName() bool`
 
 HasPublicName returns a boolean if a field has been set.
+
+### GetSessionSettings
+
+`func (o *RoutesV3UpdateConnectionRequest) GetSessionSettings() ModelsConnectionSessionSettings`
+
+GetSessionSettings returns the SessionSettings field if non-nil, zero value otherwise.
+
+### GetSessionSettingsOk
+
+`func (o *RoutesV3UpdateConnectionRequest) GetSessionSettingsOk() (*ModelsConnectionSessionSettings, bool)`
+
+GetSessionSettingsOk returns a tuple with the SessionSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSessionSettings
+
+`func (o *RoutesV3UpdateConnectionRequest) SetSessionSettings(v ModelsConnectionSessionSettings)`
+
+SetSessionSettings sets SessionSettings field to given value.
+
+### HasSessionSettings
+
+`func (o *RoutesV3UpdateConnectionRequest) HasSessionSettings() bool`
+
+HasSessionSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

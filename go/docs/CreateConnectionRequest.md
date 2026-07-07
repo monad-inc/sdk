@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the connection | [optional] 
 **PublicName** | Pointer to **string** | PublicName is the customer-controlled label shown to end users in the SSO discovery picker. Optional; empty/unset falls through to the column default (an auto-generated &#x60;sso-&lt;hex&gt;&#x60; value). | [optional] 
 **Saml** | Pointer to [**RoutesV3CreateConnectionRequestSaml**](RoutesV3CreateConnectionRequestSaml.md) |  | [optional] 
+**SessionSettings** | Pointer to [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetSaml sets Saml field to given value.
 `func (o *CreateConnectionRequest) HasSaml() bool`
 
 HasSaml returns a boolean if a field has been set.
+
+### GetSessionSettings
+
+`func (o *CreateConnectionRequest) GetSessionSettings() ModelsConnectionSessionSettings`
+
+GetSessionSettings returns the SessionSettings field if non-nil, zero value otherwise.
+
+### GetSessionSettingsOk
+
+`func (o *CreateConnectionRequest) GetSessionSettingsOk() (*ModelsConnectionSessionSettings, bool)`
+
+GetSessionSettingsOk returns a tuple with the SessionSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSessionSettings
+
+`func (o *CreateConnectionRequest) SetSessionSettings(v ModelsConnectionSessionSettings)`
+
+SetSessionSettings sets SessionSettings field to given value.
+
+### HasSessionSettings
+
+`func (o *CreateConnectionRequest) HasSessionSettings() bool`
+
+HasSessionSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

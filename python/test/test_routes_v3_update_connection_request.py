@@ -38,7 +38,9 @@ class TestRoutesV3UpdateConnectionRequest(unittest.TestCase):
             return RoutesV3UpdateConnectionRequest(
                 description = '',
                 name = '',
-                public_name = ''
+                public_name = '',
+                session_settings = monad.models.models/connection_session_settings.models.ConnectionSessionSettings(
+                    session_timeout = 56, )
             )
         else:
             return RoutesV3UpdateConnectionRequest(

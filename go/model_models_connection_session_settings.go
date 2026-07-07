@@ -18,7 +18,7 @@ import (
 // checks if the ModelsConnectionSessionSettings type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsConnectionSessionSettings{}
 
-// ModelsConnectionSessionSettings struct for ModelsConnectionSessionSettings
+// ModelsConnectionSessionSettings SessionSettings controls the session length for logins through this connection. Optional; nil preserves the existing value, non-nil overwrites.
 type ModelsConnectionSessionSettings struct {
 	SessionTimeout *int32 `json:"session_timeout,omitempty"`
 }
