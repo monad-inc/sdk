@@ -32,7 +32,9 @@ import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.BigquerySettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
 import org.openapitools.client.model.DatabricksDeltaTableSettingsConfig;
-import org.openapitools.client.model.DatabricksDeltaTableWriteMode;
+import org.openapitools.client.model.DatabricksLakehouseSettingsConfig;
+import org.openapitools.client.model.DatabricksLakewatchSettingsConfig;
+import org.openapitools.client.model.DatabricksLakewatchWriteMode;
 import org.openapitools.client.model.DatadogSettingsConfig;
 import org.openapitools.client.model.ElasticsearchConnectionConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
@@ -274,6 +276,22 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void writeModeTest() {
         // TODO: test writeMode
+    }
+
+    /**
+     * Test the property 'clientId'
+     */
+    @Test
+    public void clientIdTest() {
+        // TODO: test clientId
+    }
+
+    /**
+     * Test the property 'clientSecret'
+     */
+    @Test
+    public void clientSecretTest() {
+        // TODO: test clientSecret
     }
 
     /**

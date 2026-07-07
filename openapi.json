@@ -2193,6 +2193,253 @@
                 ],
                 "type": "object"
             },
+            "databricks_lakehouse.AutoLoaderWriteMode": {
+                "properties": {
+                    "pipeline": {
+                        "$ref": "#/components/schemas/databricks_lakehouse.PipelineConfig"
+                    },
+                    "volume": {
+                        "description": "The Unity Catalog Volume used for staging JSONL files",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "volume"
+                ],
+                "type": "object"
+            },
+            "databricks_lakehouse.MonadManagedPipeline": {
+                "properties": {
+                    "interval": {
+                        "description": "How often the pipeline runs, in minutes; defaults to 60",
+                        "type": "integer"
+                    },
+                    "table_name": {
+                        "description": "The bronze table the pipeline writes into; defaults to bronze_\u003cvolume\u003e",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "databricks_lakehouse.PipelineConfig": {
+                "description": "Who manages the Auto Loader ingestion pipeline; omitted means self-managed",
+                "properties": {
+                    "mode": {
+                        "enum": [
+                            "self_managed",
+                            "monad_managed"
+                        ],
+                        "type": "string"
+                    },
+                    "monad_managed": {
+                        "$ref": "#/components/schemas/databricks_lakehouse.MonadManagedPipeline"
+                    }
+                },
+                "required": [
+                    "mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakehouse.SettingsConfig": {
+                "description": "Databricks Lakehouse Output Settings",
+                "properties": {
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "catalog": {
+                        "description": "The Unity Catalog name",
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "client_secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "schema": {
+                        "description": "The target schema within the catalog",
+                        "type": "string"
+                    },
+                    "server_hostname": {
+                        "description": "The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)",
+                        "type": "string"
+                    },
+                    "write_mode": {
+                        "$ref": "#/components/schemas/databricks_lakehouse.WriteMode"
+                    }
+                },
+                "required": [
+                    "batch_config",
+                    "catalog",
+                    "client_id",
+                    "client_secret",
+                    "schema",
+                    "server_hostname",
+                    "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakehouse.WriteMode": {
+                "description": "The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol",
+                "properties": {
+                    "autoloader": {
+                        "$ref": "#/components/schemas/databricks_lakehouse.AutoLoaderWriteMode"
+                    },
+                    "write_mode": {
+                        "enum": [
+                            "autoloader",
+                            "zerobus"
+                        ],
+                        "type": "string"
+                    },
+                    "zerobus": {
+                        "$ref": "#/components/schemas/databricks_lakehouse.ZeroBusWriteMode"
+                    }
+                },
+                "required": [
+                    "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakehouse.ZeroBusWriteMode": {
+                "properties": {
+                    "region": {
+                        "type": "string"
+                    },
+                    "table_name": {
+                        "type": "string"
+                    },
+                    "workspace_id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "region",
+                    "table_name",
+                    "workspace_id"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.AutoLoaderPipelineWriteMode": {
+                "properties": {
+                    "pipeline_interval": {
+                        "description": "How often the ingestion Job runs, in minutes. Range: 5 to 1440 (24h).",
+                        "maximum": 1440,
+                        "minimum": 5,
+                        "type": "integer"
+                    },
+                    "table": {
+                        "description": "The target table to ingest staged files into",
+                        "type": "string"
+                    },
+                    "volume": {
+                        "description": "The Unity Catalog Volume used for staging JSONL files",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "pipeline_interval",
+                    "table",
+                    "volume"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.AutoLoaderWriteMode": {
+                "properties": {
+                    "volume": {
+                        "description": "The Unity Catalog Volume used for staging JSONL files",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "volume"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.SettingsConfig": {
+                "description": "Databricks Lakewatch Output Settings",
+                "properties": {
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "catalog": {
+                        "description": "The Unity Catalog name",
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "client_secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "schema": {
+                        "description": "The target schema within the catalog",
+                        "type": "string"
+                    },
+                    "server_hostname": {
+                        "description": "The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)",
+                        "type": "string"
+                    },
+                    "write_mode": {
+                        "$ref": "#/components/schemas/databricks_lakewatch.WriteMode"
+                    }
+                },
+                "required": [
+                    "batch_config",
+                    "catalog",
+                    "client_id",
+                    "client_secret",
+                    "schema",
+                    "server_hostname",
+                    "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.WriteMode": {
+                "description": "The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol",
+                "properties": {
+                    "autoloader": {
+                        "$ref": "#/components/schemas/databricks_lakewatch.AutoLoaderWriteMode"
+                    },
+                    "autoloader_pipeline": {
+                        "$ref": "#/components/schemas/databricks_lakewatch.AutoLoaderPipelineWriteMode"
+                    },
+                    "write_mode": {
+                        "enum": [
+                            "autoloader",
+                            "autoloader_pipeline",
+                            "zerobus"
+                        ],
+                        "type": "string"
+                    },
+                    "zerobus": {
+                        "$ref": "#/components/schemas/databricks_lakewatch.ZeroBusWriteMode"
+                    }
+                },
+                "required": [
+                    "write_mode"
+                ],
+                "type": "object"
+            },
+            "databricks_lakewatch.ZeroBusWriteMode": {
+                "properties": {
+                    "region": {
+                        "type": "string"
+                    },
+                    "table_name": {
+                        "type": "string"
+                    },
+                    "workspace_id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "region",
+                    "table_name",
+                    "workspace_id"
+                ],
+                "type": "object"
+            },
             "datadog.SecretsConfig": {
                 "properties": {
                     "api_key": {
@@ -10634,6 +10881,12 @@
                             },
                             {
                                 "$ref": "#/components/schemas/databricks_delta_table.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/databricks_lakehouse.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/databricks_lakewatch.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/datadog.SettingsConfig"

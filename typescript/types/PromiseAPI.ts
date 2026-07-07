@@ -128,6 +128,17 @@ import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTabl
 import { DatabricksDeltaTableSettingsConfig } from '../models/DatabricksDeltaTableSettingsConfig';
 import { DatabricksDeltaTableWriteMode } from '../models/DatabricksDeltaTableWriteMode';
 import { DatabricksDeltaTableZeroBusWriteMode } from '../models/DatabricksDeltaTableZeroBusWriteMode';
+import { DatabricksLakehouseAutoLoaderWriteMode } from '../models/DatabricksLakehouseAutoLoaderWriteMode';
+import { DatabricksLakehouseMonadManagedPipeline } from '../models/DatabricksLakehouseMonadManagedPipeline';
+import { DatabricksLakehousePipelineConfig } from '../models/DatabricksLakehousePipelineConfig';
+import { DatabricksLakehouseSettingsConfig } from '../models/DatabricksLakehouseSettingsConfig';
+import { DatabricksLakehouseWriteMode } from '../models/DatabricksLakehouseWriteMode';
+import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
+import { DatabricksLakewatchAutoLoaderPipelineWriteMode } from '../models/DatabricksLakewatchAutoLoaderPipelineWriteMode';
+import { DatabricksLakewatchAutoLoaderWriteMode } from '../models/DatabricksLakewatchAutoLoaderWriteMode';
+import { DatabricksLakewatchSettingsConfig } from '../models/DatabricksLakewatchSettingsConfig';
+import { DatabricksLakewatchWriteMode } from '../models/DatabricksLakewatchWriteMode';
+import { DatabricksLakewatchZeroBusWriteMode } from '../models/DatabricksLakewatchZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';

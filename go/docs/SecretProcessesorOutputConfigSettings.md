@@ -26,7 +26,9 @@ Name | Type | Description | Notes
 **Catalog** | **string** | The Unity Catalog name | 
 **Schema** | **string** | The schema within the database that contains the target pipe. | 
 **ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
-**WriteMode** | [**DatabricksDeltaTableWriteMode**](DatabricksDeltaTableWriteMode.md) |  | 
+**WriteMode** | [**DatabricksLakewatchWriteMode**](DatabricksLakewatchWriteMode.md) |  | 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **Ddtags** | Pointer to **[]string** | Tags associated with your logs. | [optional] 
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
@@ -101,7 +103,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, catalog string, schema string, serverHostname string, writeMode DatabricksDeltaTableWriteMode, index string, username string, database string, user string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, catalog string, schema string, serverHostname string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, username string, database string, user string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -633,22 +635,62 @@ SetServerHostname sets ServerHostname field to given value.
 
 ### GetWriteMode
 
-`func (o *SecretProcessesorOutputConfigSettings) GetWriteMode() DatabricksDeltaTableWriteMode`
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteMode() DatabricksLakewatchWriteMode`
 
 GetWriteMode returns the WriteMode field if non-nil, zero value otherwise.
 
 ### GetWriteModeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetWriteModeOk() (*DatabricksDeltaTableWriteMode, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteModeOk() (*DatabricksLakewatchWriteMode, bool)`
 
 GetWriteModeOk returns a tuple with the WriteMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWriteMode
 
-`func (o *SecretProcessesorOutputConfigSettings) SetWriteMode(v DatabricksDeltaTableWriteMode)`
+`func (o *SecretProcessesorOutputConfigSettings) SetWriteMode(v DatabricksLakewatchWriteMode)`
 
 SetWriteMode sets WriteMode field to given value.
+
+
+### GetClientId
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientId() ModelsSecret`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientIdOk() (*ModelsSecret, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *SecretProcessesorOutputConfigSettings) SetClientId(v ModelsSecret)`
+
+SetClientId sets ClientId field to given value.
+
+
+### GetClientSecret
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientSecret() ModelsSecret`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetClientSecretOk() (*ModelsSecret, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *SecretProcessesorOutputConfigSettings) SetClientSecret(v ModelsSecret)`
+
+SetClientSecret sets ClientSecret field to given value.
 
 
 ### GetDdsource

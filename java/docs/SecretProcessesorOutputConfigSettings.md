@@ -29,7 +29,9 @@
 |**catalog** | **String** | The Unity Catalog name |  |
 |**schema** | **String** | The schema within the database that contains the target pipe. |  |
 |**serverHostname** | **String** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) |  |
-|**writeMode** | [**DatabricksDeltaTableWriteMode**](DatabricksDeltaTableWriteMode.md) |  |  |
+|**writeMode** | [**DatabricksLakewatchWriteMode**](DatabricksLakewatchWriteMode.md) |  |  |
+|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**ddsource** | **String** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. |  [optional] |
 |**ddtags** | **List&lt;String&gt;** | Tags associated with your logs. |  [optional] |
 |**domainUrl** | **String** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs |  [optional] |
