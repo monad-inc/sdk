@@ -267,6 +267,7 @@ export * from '../models/ModelsConditionEvaluatable';
 export * from '../models/ModelsConditionOperator';
 export * from '../models/ModelsConnection';
 export * from '../models/ModelsConnectionList';
+export * from '../models/ModelsConnectionSessionSettings';
 export * from '../models/ModelsConnectorInfo';
 export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsCursorPagination';
@@ -905,6 +906,7 @@ import { ModelsConditionEvaluatable     } from '../models/ModelsConditionEvaluat
 import { ModelsConditionOperator } from '../models/ModelsConditionOperator';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
+import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
@@ -1623,6 +1625,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsConditionEvaluatable": ModelsConditionEvaluatable,
     "ModelsConnection": ModelsConnection,
     "ModelsConnectionList": ModelsConnectionList,
+    "ModelsConnectionSessionSettings": ModelsConnectionSessionSettings,
     "ModelsConnectorInfo": ModelsConnectorInfo,
     "ModelsConnectorMeta": ModelsConnectorMeta,
     "ModelsCursorPagination": ModelsCursorPagination,

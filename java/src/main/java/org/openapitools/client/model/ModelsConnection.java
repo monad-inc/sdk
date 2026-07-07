@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsConnectionSessionSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -96,6 +97,11 @@ public class ModelsConnection {
   @SerializedName(SERIALIZED_NAME_SAML_METADATA_URL)
   @javax.annotation.Nullable
   private String samlMetadataUrl;
+
+  public static final String SERIALIZED_NAME_SESSION_SETTINGS = "session_settings";
+  @SerializedName(SERIALIZED_NAME_SESSION_SETTINGS)
+  @javax.annotation.Nullable
+  private ModelsConnectionSessionSettings sessionSettings;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -289,6 +295,25 @@ public class ModelsConnection {
   }
 
 
+  public ModelsConnection sessionSettings(@javax.annotation.Nullable ModelsConnectionSessionSettings sessionSettings) {
+    this.sessionSettings = sessionSettings;
+    return this;
+  }
+
+  /**
+   * Get sessionSettings
+   * @return sessionSettings
+   */
+  @javax.annotation.Nullable
+  public ModelsConnectionSessionSettings getSessionSettings() {
+    return sessionSettings;
+  }
+
+  public void setSessionSettings(@javax.annotation.Nullable ModelsConnectionSessionSettings sessionSettings) {
+    this.sessionSettings = sessionSettings;
+  }
+
+
   public ModelsConnection type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -346,13 +371,14 @@ public class ModelsConnection {
         Objects.equals(this.publicName, modelsConnection.publicName) &&
         Objects.equals(this.samlEntityId, modelsConnection.samlEntityId) &&
         Objects.equals(this.samlMetadataUrl, modelsConnection.samlMetadataUrl) &&
+        Objects.equals(this.sessionSettings, modelsConnection.sessionSettings) &&
         Objects.equals(this.type, modelsConnection.type) &&
         Objects.equals(this.updatedAt, modelsConnection.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, emailDomains, id, name, organizationId, publicName, samlEntityId, samlMetadataUrl, type, updatedAt);
+    return Objects.hash(createdAt, description, emailDomains, id, name, organizationId, publicName, samlEntityId, samlMetadataUrl, sessionSettings, type, updatedAt);
   }
 
   @Override
@@ -368,6 +394,7 @@ public class ModelsConnection {
     sb.append("    publicName: ").append(toIndentedString(publicName)).append("\n");
     sb.append("    samlEntityId: ").append(toIndentedString(samlEntityId)).append("\n");
     sb.append("    samlMetadataUrl: ").append(toIndentedString(samlMetadataUrl)).append("\n");
+    sb.append("    sessionSettings: ").append(toIndentedString(sessionSettings)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -388,7 +415,7 @@ public class ModelsConnection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "email_domains", "id", "name", "organization_id", "public_name", "saml_entity_id", "saml_metadata_url", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "email_domains", "id", "name", "organization_id", "public_name", "saml_entity_id", "saml_metadata_url", "session_settings", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -442,6 +469,10 @@ public class ModelsConnection {
       }
       if ((jsonObj.get("saml_metadata_url") != null && !jsonObj.get("saml_metadata_url").isJsonNull()) && !jsonObj.get("saml_metadata_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `saml_metadata_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_metadata_url").toString()));
+      }
+      // validate the optional field `session_settings`
+      if (jsonObj.get("session_settings") != null && !jsonObj.get("session_settings").isJsonNull()) {
+        ModelsConnectionSessionSettings.validateJsonElement(jsonObj.get("session_settings"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

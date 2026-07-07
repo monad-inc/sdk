@@ -19,121 +19,30 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.client.model.ModelsConnectionSessionSettings;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ModelsConnection
+ * Model tests for ModelsConnectionSessionSettings
  */
-public class ModelsConnectionTest {
-    private final ModelsConnection model = new ModelsConnection();
+public class ModelsConnectionSessionSettingsTest {
+    private final ModelsConnectionSessionSettings model = new ModelsConnectionSessionSettings();
 
     /**
-     * Model tests for ModelsConnection
+     * Model tests for ModelsConnectionSessionSettings
      */
     @Test
-    public void testModelsConnection() {
-        // TODO: test ModelsConnection
+    public void testModelsConnectionSessionSettings() {
+        // TODO: test ModelsConnectionSessionSettings
     }
 
     /**
-     * Test the property 'createdAt'
+     * Test the property 'sessionTimeout'
      */
     @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'emailDomains'
-     */
-    @Test
-    public void emailDomainsTest() {
-        // TODO: test emailDomains
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'organizationId'
-     */
-    @Test
-    public void organizationIdTest() {
-        // TODO: test organizationId
-    }
-
-    /**
-     * Test the property 'publicName'
-     */
-    @Test
-    public void publicNameTest() {
-        // TODO: test publicName
-    }
-
-    /**
-     * Test the property 'samlEntityId'
-     */
-    @Test
-    public void samlEntityIdTest() {
-        // TODO: test samlEntityId
-    }
-
-    /**
-     * Test the property 'samlMetadataUrl'
-     */
-    @Test
-    public void samlMetadataUrlTest() {
-        // TODO: test samlMetadataUrl
-    }
-
-    /**
-     * Test the property 'sessionSettings'
-     */
-    @Test
-    public void sessionSettingsTest() {
-        // TODO: test sessionSettings
-    }
-
-    /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
-    }
-
-    /**
-     * Test the property 'updatedAt'
-     */
-    @Test
-    public void updatedAtTest() {
-        // TODO: test updatedAt
+    public void sessionTimeoutTest() {
+        // TODO: test sessionTimeout
     }
 
 }

@@ -271,6 +271,7 @@ import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable
 import { ModelsConditionOperator } from '../models/ModelsConditionOperator';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
+import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';

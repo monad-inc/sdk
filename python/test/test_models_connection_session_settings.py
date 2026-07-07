@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.models_connection import ModelsConnection
+from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings
 
-class TestModelsConnection(unittest.TestCase):
-    """ModelsConnection unit test stubs"""
+class TestModelsConnectionSessionSettings(unittest.TestCase):
+    """ModelsConnectionSessionSettings unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,39 +26,25 @@ class TestModelsConnection(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsConnection:
-        """Test ModelsConnection
+    def make_instance(self, include_optional) -> ModelsConnectionSessionSettings:
+        """Test ModelsConnectionSessionSettings
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsConnection`
+        # uncomment below to create an instance of `ModelsConnectionSessionSettings`
         """
-        model = ModelsConnection()
+        model = ModelsConnectionSessionSettings()
         if include_optional:
-            return ModelsConnection(
-                created_at = '',
-                description = '',
-                email_domains = [
-                    ''
-                    ],
-                id = '',
-                name = '',
-                organization_id = '',
-                public_name = '',
-                saml_entity_id = '',
-                saml_metadata_url = '',
-                session_settings = monad.models.models/connection_session_settings.models.ConnectionSessionSettings(
-                    session_timeout = 56, ),
-                type = '',
-                updated_at = ''
+            return ModelsConnectionSessionSettings(
+                session_timeout = 56
             )
         else:
-            return ModelsConnection(
+            return ModelsConnectionSessionSettings(
         )
         """
 
-    def testModelsConnection(self):
-        """Test ModelsConnection"""
+    def testModelsConnectionSessionSettings(self):
+        """Test ModelsConnectionSessionSettings"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

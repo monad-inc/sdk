@@ -337,6 +337,7 @@ __all__ = [
     "ModelsConditionOperator",
     "ModelsConnection",
     "ModelsConnectionList",
+    "ModelsConnectionSessionSettings",
     "ModelsConnectorInfo",
     "ModelsConnectorMeta",
     "ModelsCursorPagination",
@@ -1030,6 +1031,7 @@ from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
 from monad.models.models_condition_operator import ModelsConditionOperator as ModelsConditionOperator
 from monad.models.models_connection import ModelsConnection as ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList as ModelsConnectionList
+from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings as ModelsConnectionSessionSettings
 from monad.models.models_connector_info import ModelsConnectorInfo as ModelsConnectorInfo
 from monad.models.models_connector_meta import ModelsConnectorMeta as ModelsConnectorMeta
 from monad.models.models_cursor_pagination import ModelsCursorPagination as ModelsCursorPagination

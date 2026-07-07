@@ -10,22 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { HttpFile } from '../http/http';
 
-export class ModelsConnection {
-    'createdAt'?: string;
-    'description'?: string;
-    'emailDomains'?: Array<string>;
-    'id'?: string;
-    'name'?: string;
-    'organizationId'?: string;
-    'publicName'?: string;
-    'samlEntityId'?: string;
-    'samlMetadataUrl'?: string;
-    'sessionSettings'?: ModelsConnectionSessionSettings;
-    'type'?: string;
-    'updatedAt'?: string;
+export class ModelsConnectionSessionSettings {
+    'sessionTimeout'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,80 +21,14 @@ export class ModelsConnection {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "createdAt",
-            "baseName": "created_at",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "description",
-            "baseName": "description",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "emailDomains",
-            "baseName": "email_domains",
-            "type": "Array<string>",
-            "format": ""
-        },
-        {
-            "name": "id",
-            "baseName": "id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "organizationId",
-            "baseName": "organization_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "publicName",
-            "baseName": "public_name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "samlEntityId",
-            "baseName": "saml_entity_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "samlMetadataUrl",
-            "baseName": "saml_metadata_url",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "sessionSettings",
-            "baseName": "session_settings",
-            "type": "ModelsConnectionSessionSettings",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "updatedAt",
-            "baseName": "updated_at",
-            "type": "string",
+            "name": "sessionTimeout",
+            "baseName": "session_timeout",
+            "type": "number",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return ModelsConnection.attributeTypeMap;
+        return ModelsConnectionSessionSettings.attributeTypeMap;
     }
 
     public constructor() {

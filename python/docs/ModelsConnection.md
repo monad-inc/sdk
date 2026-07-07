@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **public_name** | **str** |  | [optional] 
 **saml_entity_id** | **str** |  | [optional] 
 **saml_metadata_url** | **str** |  | [optional] 
+**session_settings** | [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 

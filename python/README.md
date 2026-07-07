@@ -609,6 +609,7 @@ Class | Method | HTTP request | Description
  - [ModelsConditionOperator](docs/ModelsConditionOperator.md)
  - [ModelsConnection](docs/ModelsConnection.md)
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
+ - [ModelsConnectionSessionSettings](docs/ModelsConnectionSessionSettings.md)
  - [ModelsConnectorInfo](docs/ModelsConnectorInfo.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsCursorPagination](docs/ModelsCursorPagination.md)

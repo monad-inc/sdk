@@ -29,6 +29,7 @@ type ModelsConnection struct {
 	PublicName *string `json:"public_name,omitempty"`
 	SamlEntityId *string `json:"saml_entity_id,omitempty"`
 	SamlMetadataUrl *string `json:"saml_metadata_url,omitempty"`
+	SessionSettings *ModelsConnectionSessionSettings `json:"session_settings,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -338,6 +339,38 @@ func (o *ModelsConnection) SetSamlMetadataUrl(v string) {
 	o.SamlMetadataUrl = &v
 }
 
+// GetSessionSettings returns the SessionSettings field value if set, zero value otherwise.
+func (o *ModelsConnection) GetSessionSettings() ModelsConnectionSessionSettings {
+	if o == nil || IsNil(o.SessionSettings) {
+		var ret ModelsConnectionSessionSettings
+		return ret
+	}
+	return *o.SessionSettings
+}
+
+// GetSessionSettingsOk returns a tuple with the SessionSettings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsConnection) GetSessionSettingsOk() (*ModelsConnectionSessionSettings, bool) {
+	if o == nil || IsNil(o.SessionSettings) {
+		return nil, false
+	}
+	return o.SessionSettings, true
+}
+
+// HasSessionSettings returns a boolean if a field has been set.
+func (o *ModelsConnection) HasSessionSettings() bool {
+	if o != nil && !IsNil(o.SessionSettings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSessionSettings gets a reference to the given ModelsConnectionSessionSettings and assigns it to the SessionSettings field.
+func (o *ModelsConnection) SetSessionSettings(v ModelsConnectionSessionSettings) {
+	o.SessionSettings = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ModelsConnection) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -438,6 +471,9 @@ func (o ModelsConnection) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SamlMetadataUrl) {
 		toSerialize["saml_metadata_url"] = o.SamlMetadataUrl
+	}
+	if !IsNil(o.SessionSettings) {
+		toSerialize["session_settings"] = o.SessionSettings
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

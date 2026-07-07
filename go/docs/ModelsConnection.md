@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **PublicName** | Pointer to **string** |  | [optional] 
 **SamlEntityId** | Pointer to **string** |  | [optional] 
 **SamlMetadataUrl** | Pointer to **string** |  | [optional] 
+**SessionSettings** | Pointer to [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -259,6 +260,31 @@ SetSamlMetadataUrl sets SamlMetadataUrl field to given value.
 `func (o *ModelsConnection) HasSamlMetadataUrl() bool`
 
 HasSamlMetadataUrl returns a boolean if a field has been set.
+
+### GetSessionSettings
+
+`func (o *ModelsConnection) GetSessionSettings() ModelsConnectionSessionSettings`
+
+GetSessionSettings returns the SessionSettings field if non-nil, zero value otherwise.
+
+### GetSessionSettingsOk
+
+`func (o *ModelsConnection) GetSessionSettingsOk() (*ModelsConnectionSessionSettings, bool)`
+
+GetSessionSettingsOk returns a tuple with the SessionSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSessionSettings
+
+`func (o *ModelsConnection) SetSessionSettings(v ModelsConnectionSessionSettings)`
+
+SetSessionSettings sets SessionSettings field to given value.
+
+### HasSessionSettings
+
+`func (o *ModelsConnection) HasSessionSettings() bool`
+
+HasSessionSettings returns a boolean if a field has been set.
 
 ### GetType
 

@@ -16,6 +16,7 @@
 |**publicName** | **String** |  |  [optional] |
 |**samlEntityId** | **String** |  |  [optional] |
 |**samlMetadataUrl** | **String** |  |  [optional] |
+|**sessionSettings** | [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 

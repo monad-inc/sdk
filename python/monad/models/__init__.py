@@ -283,6 +283,7 @@ from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
 from monad.models.models_condition_operator import ModelsConditionOperator
 from monad.models.models_connection import ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList
+from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings
 from monad.models.models_connector_info import ModelsConnectorInfo
 from monad.models.models_connector_meta import ModelsConnectorMeta
 from monad.models.models_cursor_pagination import ModelsCursorPagination

@@ -5129,6 +5129,9 @@
                     "saml_metadata_url": {
                         "type": "string"
                     },
+                    "session_settings": {
+                        "$ref": "#/components/schemas/models.ConnectionSessionSettings"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -5149,6 +5152,14 @@
                     },
                     "pagination": {
                         "$ref": "#/components/schemas/models.Pagination"
+                    }
+                },
+                "type": "object"
+            },
+            "models.ConnectionSessionSettings": {
+                "properties": {
+                    "session_timeout": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"

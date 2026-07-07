@@ -18,30 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ModelsConnection(BaseModel):
+class ModelsConnectionSessionSettings(BaseModel):
     """
-    ModelsConnection
+    ModelsConnectionSessionSettings
     """ # noqa: E501
-    created_at: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    email_domains: Optional[List[StrictStr]] = None
-    id: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    public_name: Optional[StrictStr] = None
-    saml_entity_id: Optional[StrictStr] = None
-    saml_metadata_url: Optional[StrictStr] = None
-    session_settings: Optional[ModelsConnectionSessionSettings] = None
-    type: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "email_domains", "id", "name", "organization_id", "public_name", "saml_entity_id", "saml_metadata_url", "session_settings", "type", "updated_at"]
+    session_timeout: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["session_timeout"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -61,7 +49,7 @@ class ModelsConnection(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsConnection from a JSON string"""
+        """Create an instance of ModelsConnectionSessionSettings from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -82,14 +70,11 @@ class ModelsConnection(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of session_settings
-        if self.session_settings:
-            _dict['session_settings'] = self.session_settings.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsConnection from a dict"""
+        """Create an instance of ModelsConnectionSessionSettings from a dict"""
         if obj is None:
             return None
 
@@ -97,18 +82,7 @@ class ModelsConnection(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "created_at": obj.get("created_at"),
-            "description": obj.get("description"),
-            "email_domains": obj.get("email_domains"),
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "organization_id": obj.get("organization_id"),
-            "public_name": obj.get("public_name"),
-            "saml_entity_id": obj.get("saml_entity_id"),
-            "saml_metadata_url": obj.get("saml_metadata_url"),
-            "session_settings": ModelsConnectionSessionSettings.from_dict(obj["session_settings"]) if obj.get("session_settings") is not None else None,
-            "type": obj.get("type"),
-            "updated_at": obj.get("updated_at")
+            "session_timeout": obj.get("session_timeout")
         })
         return _obj
 

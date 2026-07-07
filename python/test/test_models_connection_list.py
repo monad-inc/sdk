@@ -49,6 +49,8 @@ class TestModelsConnectionList(unittest.TestCase):
                         public_name = '', 
                         saml_entity_id = '', 
                         saml_metadata_url = '', 
+                        session_settings = monad.models.models/connection_session_settings.models.ConnectionSessionSettings(
+                            session_timeout = 56, ), 
                         type = '', 
                         updated_at = '', )
                     ],
