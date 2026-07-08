@@ -36,7 +36,7 @@ class TestRoutesV2CreateInputRequest(unittest.TestCase):
         model = RoutesV2CreateInputRequest()
         if include_optional:
             return RoutesV2CreateInputRequest(
-                config = monad.models.secret_processesor/input_config.secret_processesor.InputConfig(
+                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
                     secrets = {
                         'key' : null
                         }, 

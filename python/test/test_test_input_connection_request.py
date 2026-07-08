@@ -36,7 +36,7 @@ class TestTestInputConnectionRequest(unittest.TestCase):
         model = TestInputConnectionRequest()
         if include_optional:
             return TestInputConnectionRequest(
-                config = monad.models.secret_processesor/input_config.secret_processesor.InputConfig(
+                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
                     secrets = {
                         'key' : null
                         }, 

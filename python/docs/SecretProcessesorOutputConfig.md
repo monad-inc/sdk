@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**secrets** | [**SecretProcessesorOutputConfigSecrets**](SecretProcessesorOutputConfigSecrets.md) |  | [optional] 
-**settings** | [**SecretProcessesorOutputConfigSettings**](SecretProcessesorOutputConfigSettings.md) |  | [optional] 
+**secrets** | **Dict[str, object]** |  | [optional] 
+**settings** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

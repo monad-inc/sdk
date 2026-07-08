@@ -21,8 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.SecretProcessesorEnrichmentConfigSecrets;
-import org.openapitools.client.model.SecretProcessesorEnrichmentConfigSettings;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,18 +55,26 @@ public class SecretProcessesorEnrichmentConfig {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
   @javax.annotation.Nullable
-  private SecretProcessesorEnrichmentConfigSecrets secrets;
+  private Map<String, Object> secrets = new HashMap<>();
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
   @javax.annotation.Nullable
-  private SecretProcessesorEnrichmentConfigSettings settings;
+  private Map<String, Object> settings = new HashMap<>();
 
   public SecretProcessesorEnrichmentConfig() {
   }
 
-  public SecretProcessesorEnrichmentConfig secrets(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSecrets secrets) {
+  public SecretProcessesorEnrichmentConfig secrets(@javax.annotation.Nullable Map<String, Object> secrets) {
     this.secrets = secrets;
+    return this;
+  }
+
+  public SecretProcessesorEnrichmentConfig putSecretsItem(String key, Object secretsItem) {
+    if (this.secrets == null) {
+      this.secrets = new HashMap<>();
+    }
+    this.secrets.put(key, secretsItem);
     return this;
   }
 
@@ -75,17 +83,25 @@ public class SecretProcessesorEnrichmentConfig {
    * @return secrets
    */
   @javax.annotation.Nullable
-  public SecretProcessesorEnrichmentConfigSecrets getSecrets() {
+  public Map<String, Object> getSecrets() {
     return secrets;
   }
 
-  public void setSecrets(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSecrets secrets) {
+  public void setSecrets(@javax.annotation.Nullable Map<String, Object> secrets) {
     this.secrets = secrets;
   }
 
 
-  public SecretProcessesorEnrichmentConfig settings(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSettings settings) {
+  public SecretProcessesorEnrichmentConfig settings(@javax.annotation.Nullable Map<String, Object> settings) {
     this.settings = settings;
+    return this;
+  }
+
+  public SecretProcessesorEnrichmentConfig putSettingsItem(String key, Object settingsItem) {
+    if (this.settings == null) {
+      this.settings = new HashMap<>();
+    }
+    this.settings.put(key, settingsItem);
     return this;
   }
 
@@ -94,11 +110,11 @@ public class SecretProcessesorEnrichmentConfig {
    * @return settings
    */
   @javax.annotation.Nullable
-  public SecretProcessesorEnrichmentConfigSettings getSettings() {
+  public Map<String, Object> getSettings() {
     return settings;
   }
 
-  public void setSettings(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSettings settings) {
+  public void setSettings(@javax.annotation.Nullable Map<String, Object> settings) {
     this.settings = settings;
   }
 
@@ -173,14 +189,6 @@ public class SecretProcessesorEnrichmentConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `secrets`
-      if (jsonObj.get("secrets") != null && !jsonObj.get("secrets").isJsonNull()) {
-        SecretProcessesorEnrichmentConfigSecrets.validateJsonElement(jsonObj.get("secrets"));
-      }
-      // validate the optional field `settings`
-      if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
-        SecretProcessesorEnrichmentConfigSettings.validateJsonElement(jsonObj.get("settings"));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.client.model.RoutesTransformOperationArguments;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,7 +55,7 @@ public class RoutesTransformOperation {
   public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
   @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private RoutesTransformOperationArguments arguments;
+  private Map<String, Object> arguments = new HashMap<>();
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -76,8 +75,16 @@ public class RoutesTransformOperation {
   public RoutesTransformOperation() {
   }
 
-  public RoutesTransformOperation arguments(@javax.annotation.Nullable RoutesTransformOperationArguments arguments) {
+  public RoutesTransformOperation arguments(@javax.annotation.Nullable Map<String, Object> arguments) {
     this.arguments = arguments;
+    return this;
+  }
+
+  public RoutesTransformOperation putArgumentsItem(String key, Object argumentsItem) {
+    if (this.arguments == null) {
+      this.arguments = new HashMap<>();
+    }
+    this.arguments.put(key, argumentsItem);
     return this;
   }
 
@@ -86,11 +93,11 @@ public class RoutesTransformOperation {
    * @return arguments
    */
   @javax.annotation.Nullable
-  public RoutesTransformOperationArguments getArguments() {
+  public Map<String, Object> getArguments() {
     return arguments;
   }
 
-  public void setArguments(@javax.annotation.Nullable RoutesTransformOperationArguments arguments) {
+  public void setArguments(@javax.annotation.Nullable Map<String, Object> arguments) {
     this.arguments = arguments;
   }
 
@@ -234,10 +241,6 @@ public class RoutesTransformOperation {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `arguments`
-      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
-        RoutesTransformOperationArguments.validateJsonElement(jsonObj.get("arguments"));
-      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }

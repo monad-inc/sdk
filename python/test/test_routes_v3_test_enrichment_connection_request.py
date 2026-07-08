@@ -36,7 +36,7 @@ class TestRoutesV3TestEnrichmentConnectionRequest(unittest.TestCase):
         model = RoutesV3TestEnrichmentConnectionRequest()
         if include_optional:
             return RoutesV3TestEnrichmentConnectionRequest(
-                config = monad.models.secret_processesor/enrichment_config.secret_processesor.EnrichmentConfig(
+                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
                     secrets = {
                         'key' : null
                         }, 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Secrets** | Pointer to [**SecretProcessesorEnrichmentConfigSecrets**](SecretProcessesorEnrichmentConfigSecrets.md) |  | [optional] 
-**Settings** | Pointer to [**SecretProcessesorEnrichmentConfigSettings**](SecretProcessesorEnrichmentConfigSettings.md) |  | [optional] 
+**Secrets** | Pointer to **map[string]interface{}** |  | [optional] 
+**Settings** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSecrets
 
-`func (o *SecretProcessesorEnrichmentConfig) GetSecrets() SecretProcessesorEnrichmentConfigSecrets`
+`func (o *SecretProcessesorEnrichmentConfig) GetSecrets() map[string]interface{}`
 
 GetSecrets returns the Secrets field if non-nil, zero value otherwise.
 
 ### GetSecretsOk
 
-`func (o *SecretProcessesorEnrichmentConfig) GetSecretsOk() (*SecretProcessesorEnrichmentConfigSecrets, bool)`
+`func (o *SecretProcessesorEnrichmentConfig) GetSecretsOk() (*map[string]interface{}, bool)`
 
 GetSecretsOk returns a tuple with the Secrets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecrets
 
-`func (o *SecretProcessesorEnrichmentConfig) SetSecrets(v SecretProcessesorEnrichmentConfigSecrets)`
+`func (o *SecretProcessesorEnrichmentConfig) SetSecrets(v map[string]interface{})`
 
 SetSecrets sets Secrets field to given value.
 
@@ -53,20 +53,20 @@ HasSecrets returns a boolean if a field has been set.
 
 ### GetSettings
 
-`func (o *SecretProcessesorEnrichmentConfig) GetSettings() SecretProcessesorEnrichmentConfigSettings`
+`func (o *SecretProcessesorEnrichmentConfig) GetSettings() map[string]interface{}`
 
 GetSettings returns the Settings field if non-nil, zero value otherwise.
 
 ### GetSettingsOk
 
-`func (o *SecretProcessesorEnrichmentConfig) GetSettingsOk() (*SecretProcessesorEnrichmentConfigSettings, bool)`
+`func (o *SecretProcessesorEnrichmentConfig) GetSettingsOk() (*map[string]interface{}, bool)`
 
 GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSettings
 
-`func (o *SecretProcessesorEnrichmentConfig) SetSettings(v SecretProcessesorEnrichmentConfigSettings)`
+`func (o *SecretProcessesorEnrichmentConfig) SetSettings(v map[string]interface{})`
 
 SetSettings sets Settings field to given value.
 

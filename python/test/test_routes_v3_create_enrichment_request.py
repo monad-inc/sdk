@@ -36,7 +36,7 @@ class TestRoutesV3CreateEnrichmentRequest(unittest.TestCase):
         model = RoutesV3CreateEnrichmentRequest()
         if include_optional:
             return RoutesV3CreateEnrichmentRequest(
-                config = monad.models.secret_processesor/enrichment_config.secret_processesor.EnrichmentConfig(
+                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
                     secrets = {
                         'key' : null
                         }, 

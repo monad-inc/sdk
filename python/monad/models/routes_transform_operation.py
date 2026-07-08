@@ -20,7 +20,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_transform_operation_arguments import RoutesTransformOperationArguments
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,7 +28,7 @@ class RoutesTransformOperation(BaseModel):
     """
     RoutesTransformOperation
     """ # noqa: E501
-    arguments: Optional[RoutesTransformOperationArguments] = None
+    arguments: Optional[Dict[str, Any]] = None
     description: Optional[StrictStr] = None
     operation: Optional[StrictStr] = None
     secrets: Optional[Dict[str, Any]] = None
@@ -74,9 +73,6 @@ class RoutesTransformOperation(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of arguments
-        if self.arguments:
-            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -89,7 +85,7 @@ class RoutesTransformOperation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "arguments": RoutesTransformOperationArguments.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None,
+            "arguments": obj.get("arguments"),
             "description": obj.get("description"),
             "operation": obj.get("operation"),
             "secrets": obj.get("secrets")

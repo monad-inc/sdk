@@ -20,8 +20,8 @@ var _ MappedNullable = &SecretProcessesorInputConfig{}
 
 // SecretProcessesorInputConfig struct for SecretProcessesorInputConfig
 type SecretProcessesorInputConfig struct {
-	Secrets *SecretProcessesorInputConfigSecrets `json:"secrets,omitempty"`
-	Settings *SecretProcessesorInputConfigSettings `json:"settings,omitempty"`
+	Secrets map[string]interface{} `json:"secrets,omitempty"`
+	Settings map[string]interface{} `json:"settings,omitempty"`
 }
 
 // NewSecretProcessesorInputConfig instantiates a new SecretProcessesorInputConfig object
@@ -42,19 +42,19 @@ func NewSecretProcessesorInputConfigWithDefaults() *SecretProcessesorInputConfig
 }
 
 // GetSecrets returns the Secrets field value if set, zero value otherwise.
-func (o *SecretProcessesorInputConfig) GetSecrets() SecretProcessesorInputConfigSecrets {
+func (o *SecretProcessesorInputConfig) GetSecrets() map[string]interface{} {
 	if o == nil || IsNil(o.Secrets) {
-		var ret SecretProcessesorInputConfigSecrets
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Secrets
+	return o.Secrets
 }
 
 // GetSecretsOk returns a tuple with the Secrets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SecretProcessesorInputConfig) GetSecretsOk() (*SecretProcessesorInputConfigSecrets, bool) {
+func (o *SecretProcessesorInputConfig) GetSecretsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Secrets) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.Secrets, true
 }
@@ -68,25 +68,25 @@ func (o *SecretProcessesorInputConfig) HasSecrets() bool {
 	return false
 }
 
-// SetSecrets gets a reference to the given SecretProcessesorInputConfigSecrets and assigns it to the Secrets field.
-func (o *SecretProcessesorInputConfig) SetSecrets(v SecretProcessesorInputConfigSecrets) {
-	o.Secrets = &v
+// SetSecrets gets a reference to the given map[string]interface{} and assigns it to the Secrets field.
+func (o *SecretProcessesorInputConfig) SetSecrets(v map[string]interface{}) {
+	o.Secrets = v
 }
 
 // GetSettings returns the Settings field value if set, zero value otherwise.
-func (o *SecretProcessesorInputConfig) GetSettings() SecretProcessesorInputConfigSettings {
+func (o *SecretProcessesorInputConfig) GetSettings() map[string]interface{} {
 	if o == nil || IsNil(o.Settings) {
-		var ret SecretProcessesorInputConfigSettings
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Settings
+	return o.Settings
 }
 
 // GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SecretProcessesorInputConfig) GetSettingsOk() (*SecretProcessesorInputConfigSettings, bool) {
+func (o *SecretProcessesorInputConfig) GetSettingsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Settings) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.Settings, true
 }
@@ -100,9 +100,9 @@ func (o *SecretProcessesorInputConfig) HasSettings() bool {
 	return false
 }
 
-// SetSettings gets a reference to the given SecretProcessesorInputConfigSettings and assigns it to the Settings field.
-func (o *SecretProcessesorInputConfig) SetSettings(v SecretProcessesorInputConfigSettings) {
-	o.Settings = &v
+// SetSettings gets a reference to the given map[string]interface{} and assigns it to the Settings field.
+func (o *SecretProcessesorInputConfig) SetSettings(v map[string]interface{}) {
+	o.Settings = v
 }
 
 func (o SecretProcessesorInputConfig) MarshalJSON() ([]byte, error) {

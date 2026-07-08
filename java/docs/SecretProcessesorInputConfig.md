@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**secrets** | [**SecretProcessesorInputConfigSecrets**](SecretProcessesorInputConfigSecrets.md) |  |  [optional] |
-|**settings** | [**SecretProcessesorInputConfigSettings**](SecretProcessesorInputConfigSettings.md) |  |  [optional] |
+|**secrets** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**settings** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 

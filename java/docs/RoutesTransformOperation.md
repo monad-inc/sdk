@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**arguments** | [**RoutesTransformOperationArguments**](RoutesTransformOperationArguments.md) |  |  [optional] |
+|**arguments** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**operation** | **String** |  |  [optional] |
 |**secrets** | **Map&lt;String, Object&gt;** |  |  [optional] |

@@ -10,13 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcessesorOutputConfigSecrets';
-import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
 import { HttpFile } from '../http/http';
 
 export class SecretProcessesorOutputConfig {
-    'secrets'?: SecretProcessesorOutputConfigSecrets;
-    'settings'?: SecretProcessesorOutputConfigSettings;
+    'secrets'?: { [key: string]: any; };
+    'settings'?: { [key: string]: any; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -26,13 +24,13 @@ export class SecretProcessesorOutputConfig {
         {
             "name": "secrets",
             "baseName": "secrets",
-            "type": "SecretProcessesorOutputConfigSecrets",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {
             "name": "settings",
             "baseName": "settings",
-            "type": "SecretProcessesorOutputConfigSettings",
+            "type": "{ [key: string]: any; }",
             "format": ""
         }    ];
 
