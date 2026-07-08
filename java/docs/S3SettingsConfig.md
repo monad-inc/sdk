@@ -1,0 +1,21 @@
+
+
+# S3SettingsConfig
+
+S3 Output Settings
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
+|**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
+|**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
+|**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
+|**partitionFormat** | **String** | Directory structure used to partition stored objects. Options: simple date (e.g., &#39;2024/01/01&#39;), hive compliant (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), and flat hive compliant (e.g., &#39;dt&#x3D;2024-01-01&#39;). |  [optional] |
+|**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
+|**region** | **String** | The AWS region where the S3 bucket is located |  [optional] |
+|**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
+
+
+

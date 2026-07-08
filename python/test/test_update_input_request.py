@@ -36,7 +36,7 @@ class TestUpdateInputRequest(unittest.TestCase):
         model = UpdateInputRequest()
         if include_optional:
             return UpdateInputRequest(
-                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
+                config = monad.models.secret_processesor/input_config.secret_processesor.InputConfig(
                     secrets = {
                         'key' : null
                         }, 

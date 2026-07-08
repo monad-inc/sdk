@@ -10,10 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
 import { HttpFile } from '../http/http';
 
 export class RoutesTransformOperation {
-    'arguments'?: { [key: string]: any; };
+    'arguments'?: RoutesTransformOperationArguments;
     'description'?: string;
     'operation'?: string;
     'secrets'?: { [key: string]: any; };
@@ -26,7 +27,7 @@ export class RoutesTransformOperation {
         {
             "name": "arguments",
             "baseName": "arguments",
-            "type": "{ [key: string]: any; }",
+            "type": "RoutesTransformOperationArguments",
             "format": ""
         },
         {

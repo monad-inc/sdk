@@ -1,0 +1,14 @@
+
+
+# SemgrepSupplyChainFindingsSecretsConfig
+
+Semgrep supply chain findings secrets
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+
+
+

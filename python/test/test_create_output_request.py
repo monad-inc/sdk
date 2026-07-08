@@ -36,7 +36,7 @@ class TestCreateOutputRequest(unittest.TestCase):
         model = CreateOutputRequest()
         if include_optional:
             return CreateOutputRequest(
-                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
+                config = monad.models.secret_processesor/output_config.secret_processesor.OutputConfig(
                     secrets = {
                         'key' : null
                         }, 

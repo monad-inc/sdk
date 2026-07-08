@@ -1,0 +1,32 @@
+# TenableVulnerabilitiesSettingsConfig
+
+Tenable vulnerabilities settings
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**backfill_start_time** | **str** | Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data. | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
+
+## Example
+
+```python
+from monad.models.tenable_vulnerabilities_settings_config import TenableVulnerabilitiesSettingsConfig
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of TenableVulnerabilitiesSettingsConfig from a JSON string
+tenable_vulnerabilities_settings_config_instance = TenableVulnerabilitiesSettingsConfig.from_json(json)
+# print the JSON string representation of the object
+print(TenableVulnerabilitiesSettingsConfig.to_json())
+
+# convert the object into a dict
+tenable_vulnerabilities_settings_config_dict = tenable_vulnerabilities_settings_config_instance.to_dict()
+# create an instance of TenableVulnerabilitiesSettingsConfig from a dict
+tenable_vulnerabilities_settings_config_from_dict = TenableVulnerabilitiesSettingsConfig.from_dict(tenable_vulnerabilities_settings_config_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

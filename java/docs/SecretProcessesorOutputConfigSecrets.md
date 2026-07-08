@@ -1,0 +1,35 @@
+
+
+# SecretProcessesorOutputConfigSecrets
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**applicationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**applicationKeyId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**credentials** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**authHeaders** | [**Map&lt;String, ModelsSecret&gt;**](ModelsSecret.md) | Authentication headers |  [optional] |
+|**caCertificate** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientCertificate** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**routingKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**bearerToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**connectionString** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**privateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**accessId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+
+
+

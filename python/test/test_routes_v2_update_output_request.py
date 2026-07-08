@@ -36,7 +36,7 @@ class TestRoutesV2UpdateOutputRequest(unittest.TestCase):
         model = RoutesV2UpdateOutputRequest()
         if include_optional:
             return RoutesV2UpdateOutputRequest(
-                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
+                config = monad.models.secret_processesor/output_config.secret_processesor.OutputConfig(
                     secrets = {
                         'key' : null
                         }, 

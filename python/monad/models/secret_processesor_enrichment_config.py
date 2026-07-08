@@ -20,6 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.secret_processesor_enrichment_config_secrets import SecretProcessesorEnrichmentConfigSecrets
+from monad.models.secret_processesor_enrichment_config_settings import SecretProcessesorEnrichmentConfigSettings
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,8 +30,8 @@ class SecretProcessesorEnrichmentConfig(BaseModel):
     """
     SecretProcessesorEnrichmentConfig
     """ # noqa: E501
-    secrets: Optional[Dict[str, Any]] = None
-    settings: Optional[Dict[str, Any]] = None
+    secrets: Optional[SecretProcessesorEnrichmentConfigSecrets] = None
+    settings: Optional[SecretProcessesorEnrichmentConfigSettings] = None
     __properties: ClassVar[List[str]] = ["secrets", "settings"]
 
     model_config = ConfigDict(
@@ -71,6 +73,12 @@ class SecretProcessesorEnrichmentConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of secrets
+        if self.secrets:
+            _dict['secrets'] = self.secrets.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of settings
+        if self.settings:
+            _dict['settings'] = self.settings.to_dict()
         return _dict
 
     @classmethod
@@ -83,8 +91,8 @@ class SecretProcessesorEnrichmentConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "secrets": obj.get("secrets"),
-            "settings": obj.get("settings")
+            "secrets": SecretProcessesorEnrichmentConfigSecrets.from_dict(obj["secrets"]) if obj.get("secrets") is not None else None,
+            "settings": SecretProcessesorEnrichmentConfigSettings.from_dict(obj["settings"]) if obj.get("settings") is not None else None
         })
         return _obj
 

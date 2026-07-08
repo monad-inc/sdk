@@ -1,0 +1,15 @@
+
+
+# TenableVulnerabilitiesCronSettingsConfig
+
+Tenable vulnerabilities settings
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**cron** | **String** | Cron expression to schedule the data collection. |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
+
+
+

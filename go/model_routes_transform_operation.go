@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesTransformOperation{}
 
 // RoutesTransformOperation struct for RoutesTransformOperation
 type RoutesTransformOperation struct {
-	Arguments map[string]interface{} `json:"arguments,omitempty"`
+	Arguments *RoutesTransformOperationArguments `json:"arguments,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Operation *string `json:"operation,omitempty"`
 	Secrets map[string]interface{} `json:"secrets,omitempty"`
@@ -44,19 +44,19 @@ func NewRoutesTransformOperationWithDefaults() *RoutesTransformOperation {
 }
 
 // GetArguments returns the Arguments field value if set, zero value otherwise.
-func (o *RoutesTransformOperation) GetArguments() map[string]interface{} {
+func (o *RoutesTransformOperation) GetArguments() RoutesTransformOperationArguments {
 	if o == nil || IsNil(o.Arguments) {
-		var ret map[string]interface{}
+		var ret RoutesTransformOperationArguments
 		return ret
 	}
-	return o.Arguments
+	return *o.Arguments
 }
 
 // GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesTransformOperation) GetArgumentsOk() (map[string]interface{}, bool) {
+func (o *RoutesTransformOperation) GetArgumentsOk() (*RoutesTransformOperationArguments, bool) {
 	if o == nil || IsNil(o.Arguments) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Arguments, true
 }
@@ -70,9 +70,9 @@ func (o *RoutesTransformOperation) HasArguments() bool {
 	return false
 }
 
-// SetArguments gets a reference to the given map[string]interface{} and assigns it to the Arguments field.
-func (o *RoutesTransformOperation) SetArguments(v map[string]interface{}) {
-	o.Arguments = v
+// SetArguments gets a reference to the given RoutesTransformOperationArguments and assigns it to the Arguments field.
+func (o *RoutesTransformOperation) SetArguments(v RoutesTransformOperationArguments) {
+	o.Arguments = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
