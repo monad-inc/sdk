@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the RoutesV2UpdateAPIKeyRequest type satisfies the MappedNullable interface at compile time
@@ -23,18 +21,15 @@ var _ MappedNullable = &RoutesV2UpdateAPIKeyRequest{}
 // RoutesV2UpdateAPIKeyRequest struct for RoutesV2UpdateAPIKeyRequest
 type RoutesV2UpdateAPIKeyRequest struct {
 	Description *string `json:"description,omitempty"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 }
-
-type _RoutesV2UpdateAPIKeyRequest RoutesV2UpdateAPIKeyRequest
 
 // NewRoutesV2UpdateAPIKeyRequest instantiates a new RoutesV2UpdateAPIKeyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesV2UpdateAPIKeyRequest(name string) *RoutesV2UpdateAPIKeyRequest {
+func NewRoutesV2UpdateAPIKeyRequest() *RoutesV2UpdateAPIKeyRequest {
 	this := RoutesV2UpdateAPIKeyRequest{}
-	this.Name = name
 	return &this
 }
 
@@ -78,28 +73,36 @@ func (o *RoutesV2UpdateAPIKeyRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *RoutesV2UpdateAPIKeyRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesV2UpdateAPIKeyRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *RoutesV2UpdateAPIKeyRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *RoutesV2UpdateAPIKeyRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 func (o RoutesV2UpdateAPIKeyRequest) MarshalJSON() ([]byte, error) {
@@ -115,45 +118,10 @@ func (o RoutesV2UpdateAPIKeyRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	return toSerialize, nil
-}
-
-func (o *RoutesV2UpdateAPIKeyRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varRoutesV2UpdateAPIKeyRequest := _RoutesV2UpdateAPIKeyRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRoutesV2UpdateAPIKeyRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RoutesV2UpdateAPIKeyRequest(varRoutesV2UpdateAPIKeyRequest)
-
-	return err
 }
 
 type NullableRoutesV2UpdateAPIKeyRequest struct {

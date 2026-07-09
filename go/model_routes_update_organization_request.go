@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the RoutesUpdateOrganizationRequest type satisfies the MappedNullable interface at compile time
@@ -23,18 +21,15 @@ var _ MappedNullable = &RoutesUpdateOrganizationRequest{}
 // RoutesUpdateOrganizationRequest struct for RoutesUpdateOrganizationRequest
 type RoutesUpdateOrganizationRequest struct {
 	Description *string `json:"description,omitempty"`
-	FriendlyName string `json:"friendly_name"`
+	FriendlyName *string `json:"friendly_name,omitempty"`
 }
-
-type _RoutesUpdateOrganizationRequest RoutesUpdateOrganizationRequest
 
 // NewRoutesUpdateOrganizationRequest instantiates a new RoutesUpdateOrganizationRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesUpdateOrganizationRequest(friendlyName string) *RoutesUpdateOrganizationRequest {
+func NewRoutesUpdateOrganizationRequest() *RoutesUpdateOrganizationRequest {
 	this := RoutesUpdateOrganizationRequest{}
-	this.FriendlyName = friendlyName
 	return &this
 }
 
@@ -78,28 +73,36 @@ func (o *RoutesUpdateOrganizationRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetFriendlyName returns the FriendlyName field value
+// GetFriendlyName returns the FriendlyName field value if set, zero value otherwise.
 func (o *RoutesUpdateOrganizationRequest) GetFriendlyName() string {
-	if o == nil {
+	if o == nil || IsNil(o.FriendlyName) {
 		var ret string
 		return ret
 	}
-
-	return o.FriendlyName
+	return *o.FriendlyName
 }
 
-// GetFriendlyNameOk returns a tuple with the FriendlyName field value
+// GetFriendlyNameOk returns a tuple with the FriendlyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutesUpdateOrganizationRequest) GetFriendlyNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FriendlyName) {
 		return nil, false
 	}
-	return &o.FriendlyName, true
+	return o.FriendlyName, true
 }
 
-// SetFriendlyName sets field value
+// HasFriendlyName returns a boolean if a field has been set.
+func (o *RoutesUpdateOrganizationRequest) HasFriendlyName() bool {
+	if o != nil && !IsNil(o.FriendlyName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFriendlyName gets a reference to the given string and assigns it to the FriendlyName field.
 func (o *RoutesUpdateOrganizationRequest) SetFriendlyName(v string) {
-	o.FriendlyName = v
+	o.FriendlyName = &v
 }
 
 func (o RoutesUpdateOrganizationRequest) MarshalJSON() ([]byte, error) {
@@ -115,45 +118,10 @@ func (o RoutesUpdateOrganizationRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["friendly_name"] = o.FriendlyName
+	if !IsNil(o.FriendlyName) {
+		toSerialize["friendly_name"] = o.FriendlyName
+	}
 	return toSerialize, nil
-}
-
-func (o *RoutesUpdateOrganizationRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"friendly_name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varRoutesUpdateOrganizationRequest := _RoutesUpdateOrganizationRequest{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRoutesUpdateOrganizationRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RoutesUpdateOrganizationRequest(varRoutesUpdateOrganizationRequest)
-
-	return err
 }
 
 type NullableRoutesUpdateOrganizationRequest struct {

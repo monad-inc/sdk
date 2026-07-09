@@ -41,7 +41,6 @@ class TestUpdateAPIKeyRequest(unittest.TestCase):
             )
         else:
             return UpdateAPIKeyRequest(
-                name = '',
         )
         """
 

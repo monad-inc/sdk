@@ -14,7 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesUpdateOrganizationRequest {
     'description'?: string;
-    'friendlyName': string;
+    'friendlyName'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 

@@ -401,7 +401,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	apiKeyId := "apiKeyId_example" // string | API Key ID
-	updateAPIKeyRequest := openapiclient.UpdateAPIKey_request{RoutesV2UpdateAPIKeyRequest: openapiclient.NewRoutesV2UpdateAPIKeyRequest("Name_example")} // UpdateAPIKeyRequest | Request body for updating an API key
+	updateAPIKeyRequest := openapiclient.UpdateAPIKey_request{RoutesV2UpdateAPIKeyRequest: openapiclient.NewRoutesV2UpdateAPIKeyRequest()} // UpdateAPIKeyRequest | Request body for updating an API key
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -623,7 +623,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesUpdateOrganizationRequest := *openapiclient.NewRoutesUpdateOrganizationRequest("FriendlyName_example") // RoutesUpdateOrganizationRequest | Request body for updating an organization
+	routesUpdateOrganizationRequest := *openapiclient.NewRoutesUpdateOrganizationRequest() // RoutesUpdateOrganizationRequest | Request body for updating an organization
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

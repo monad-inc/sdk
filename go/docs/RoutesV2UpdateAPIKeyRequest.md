@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewRoutesV2UpdateAPIKeyRequest
 
-`func NewRoutesV2UpdateAPIKeyRequest(name string, ) *RoutesV2UpdateAPIKeyRequest`
+`func NewRoutesV2UpdateAPIKeyRequest() *RoutesV2UpdateAPIKeyRequest`
 
 NewRoutesV2UpdateAPIKeyRequest instantiates a new RoutesV2UpdateAPIKeyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -70,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RoutesV2UpdateAPIKeyRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

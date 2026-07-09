@@ -41,7 +41,6 @@ class TestRoutesV2UpdateAPIKeyRequest(unittest.TestCase):
             )
         else:
             return RoutesV2UpdateAPIKeyRequest(
-                name = '',
         )
         """
 

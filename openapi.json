@@ -8272,9 +8272,6 @@
                         "type": "string"
                     }
                 },
-                "required": [
-                    "friendly_name"
-                ],
                 "type": "object"
             },
             "routes.UpdatePipelineRequest": {
@@ -8945,9 +8942,6 @@
                         "type": "string"
                     }
                 },
-                "required": [
-                    "name"
-                ],
                 "type": "object"
             },
             "routesV2.UpdateBillingAccountRequest": {

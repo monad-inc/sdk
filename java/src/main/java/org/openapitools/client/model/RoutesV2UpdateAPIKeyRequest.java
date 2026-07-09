@@ -57,7 +57,7 @@ public class RoutesV2UpdateAPIKeyRequest {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String name;
 
   public RoutesV2UpdateAPIKeyRequest() {
@@ -82,7 +82,7 @@ public class RoutesV2UpdateAPIKeyRequest {
   }
 
 
-  public RoutesV2UpdateAPIKeyRequest name(@javax.annotation.Nonnull String name) {
+  public RoutesV2UpdateAPIKeyRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -91,12 +91,12 @@ public class RoutesV2UpdateAPIKeyRequest {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
@@ -147,7 +147,7 @@ public class RoutesV2UpdateAPIKeyRequest {
     openapiFields = new HashSet<String>(Arrays.asList("description", "name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -170,18 +170,11 @@ public class RoutesV2UpdateAPIKeyRequest {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2UpdateAPIKeyRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : RoutesV2UpdateAPIKeyRequest.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }

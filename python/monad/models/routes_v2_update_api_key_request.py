@@ -29,7 +29,7 @@ class RoutesV2UpdateAPIKeyRequest(BaseModel):
     RoutesV2UpdateAPIKeyRequest
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    name: StrictStr
+    name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["description", "name"]
 
     model_config = ConfigDict(

@@ -14,7 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2UpdateAPIKeyRequest {
     'description'?: string;
-    'name': string;
+    'name'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
