@@ -113,6 +113,7 @@ import { CreateInputRequest } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { CreateOutputRequest } from '../models/CreateOutputRequest';
 import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
+import { CreateResourceSharesRequest } from '../models/CreateResourceSharesRequest';
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { CreateSecretRequest } from '../models/CreateSecretRequest';
 import { CreateSessionRequest } from '../models/CreateSessionRequest';
@@ -325,12 +326,18 @@ import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsResourceShare } from '../models/ModelsResourceShare';
+import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
+import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsSharedResource } from '../models/ModelsSharedResource';
+import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -500,6 +507,7 @@ import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentReq
 import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
 import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
+import { RoutesV3ShareChangesRequest } from '../models/RoutesV3ShareChangesRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -4847,6 +4855,161 @@ export class PromiseQuotasApi {
     public listQuotas(billingAccountId?: string, organizationId?: string, limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsQuotaList> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listQuotas(billingAccountId, organizationId, limit, offset, body, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableResourceSharesApi } from './ObservableAPI';
+
+import { ResourceSharesApiRequestFactory, ResourceSharesApiResponseProcessor} from "../apis/ResourceSharesApi";
+export class PromiseResourceSharesApi {
+    private api: ObservableResourceSharesApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ResourceSharesApiRequestFactory,
+        responseProcessor?: ResourceSharesApiResponseProcessor
+    ) {
+        this.api = new ObservableResourceSharesApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource\'s auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.
+     * Share a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share request
+     */
+    public createResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.createResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource\'s auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.
+     * Share a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share request
+     */
+    public createResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.createResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource\'s policy auto-shares it with new children.
+     * List a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public listResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareWithUsageList>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource\'s policy auto-shares it with new children.
+     * List a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public listResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareWithUsageList> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listResourceShares(organizationId, resourceType, resourceId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
+     * List shared resources
+     * @param organizationId Owner organization ID
+     * @param [limit] Page size (default: 10)
+     * @param [offset] Offset (default: 0)
+     * @param [resourceType] Filter by resource type
+     */
+    public listSharedResourcesWithHttpInfo(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSharedResourceList>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listSharedResourcesWithHttpInfo(organizationId, limit, offset, resourceType, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
+     * List shared resources
+     * @param organizationId Owner organization ID
+     * @param [limit] Page size (default: 10)
+     * @param [offset] Offset (default: 0)
+     * @param [resourceType] Filter by resource type
+     */
+    public listSharedResources(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: PromiseConfigurationOptions): Promise<ModelsSharedResourceList> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listSharedResources(organizationId, limit, offset, resourceType, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.
+     * Unshare a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public unshareResourceWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.unshareResourceWithHttpInfo(organizationId, resourceType, resourceId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.
+     * Unshare a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public unshareResource(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.unshareResource(organizationId, resourceType, resourceId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Update a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share delta request
+     */
+    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Update a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share delta request
+     */
+    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.updateResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
         return result.toPromise();
     }
 

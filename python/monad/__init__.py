@@ -51,6 +51,7 @@ __all__ = [
     "PermissionsApi",
     "PipelinesApi",
     "QuotasApi",
+    "ResourceSharesApi",
     "RolesApi",
     "SecretsApi",
     "SessionsApi",
@@ -179,6 +180,7 @@ __all__ = [
     "CreateKeyValueIfKeyValueArgumentsConfig",
     "CreateOutputRequest",
     "CreatePipelineRequest",
+    "CreateResourceSharesRequest",
     "CreateRoleRequest",
     "CreateSecretRequest",
     "CreateSessionRequest",
@@ -391,12 +393,18 @@ __all__ = [
     "ModelsRateUnit",
     "ModelsReference",
     "ModelsReferences",
+    "ModelsResourceShare",
+    "ModelsResourceShareChangeSet",
+    "ModelsResourceShareWithUsage",
+    "ModelsResourceShareWithUsageList",
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
     "ModelsSecret",
     "ModelsSecretWithComponents",
     "ModelsSecretWithComponentsList",
     "ModelsShareDetails",
+    "ModelsSharedResource",
+    "ModelsSharedResourceList",
     "ModelsStorageTypeCostConfig",
     "ModelsStorageTypeCostEntry",
     "ModelsStorageTypeCostSummary",
@@ -566,6 +574,7 @@ __all__ = [
     "RoutesV3SchemaHistoryEntryResponse",
     "RoutesV3SchemaStateResponse",
     "RoutesV3SecurityDataAnalysis",
+    "RoutesV3ShareChangesRequest",
     "RoutesV3SuccessResponse",
     "RoutesV3Summary",
     "RoutesV3TestEnrichmentConnectionRequest",
@@ -742,6 +751,7 @@ from monad.api.outputs_api import OutputsApi as OutputsApi
 from monad.api.permissions_api import PermissionsApi as PermissionsApi
 from monad.api.pipelines_api import PipelinesApi as PipelinesApi
 from monad.api.quotas_api import QuotasApi as QuotasApi
+from monad.api.resource_shares_api import ResourceSharesApi as ResourceSharesApi
 from monad.api.roles_api import RolesApi as RolesApi
 from monad.api.secrets_api import SecretsApi as SecretsApi
 from monad.api.sessions_api import SessionsApi as SessionsApi
@@ -874,6 +884,7 @@ from monad.models.create_input_request import CreateInputRequest as CreateInputR
 from monad.models.create_key_value_if_key_value_arguments_config import CreateKeyValueIfKeyValueArgumentsConfig as CreateKeyValueIfKeyValueArgumentsConfig
 from monad.models.create_output_request import CreateOutputRequest as CreateOutputRequest
 from monad.models.create_pipeline_request import CreatePipelineRequest as CreatePipelineRequest
+from monad.models.create_resource_shares_request import CreateResourceSharesRequest as CreateResourceSharesRequest
 from monad.models.create_role_request import CreateRoleRequest as CreateRoleRequest
 from monad.models.create_secret_request import CreateSecretRequest as CreateSecretRequest
 from monad.models.create_session_request import CreateSessionRequest as CreateSessionRequest
@@ -1086,12 +1097,18 @@ from monad.models.models_quota_timeframe import ModelsQuotaTimeframe as ModelsQu
 from monad.models.models_rate_unit import ModelsRateUnit as ModelsRateUnit
 from monad.models.models_reference import ModelsReference as ModelsReference
 from monad.models.models_references import ModelsReferences as ModelsReferences
+from monad.models.models_resource_share import ModelsResourceShare as ModelsResourceShare
+from monad.models.models_resource_share_change_set import ModelsResourceShareChangeSet as ModelsResourceShareChangeSet
+from monad.models.models_resource_share_with_usage import ModelsResourceShareWithUsage as ModelsResourceShareWithUsage
+from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList as ModelsResourceShareWithUsageList
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
 from monad.models.models_secret import ModelsSecret as ModelsSecret
 from monad.models.models_secret_with_components import ModelsSecretWithComponents as ModelsSecretWithComponents
 from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList as ModelsSecretWithComponentsList
 from monad.models.models_share_details import ModelsShareDetails as ModelsShareDetails
+from monad.models.models_shared_resource import ModelsSharedResource as ModelsSharedResource
+from monad.models.models_shared_resource_list import ModelsSharedResourceList as ModelsSharedResourceList
 from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig as ModelsStorageTypeCostConfig
 from monad.models.models_storage_type_cost_entry import ModelsStorageTypeCostEntry as ModelsStorageTypeCostEntry
 from monad.models.models_storage_type_cost_summary import ModelsStorageTypeCostSummary as ModelsStorageTypeCostSummary
@@ -1261,6 +1278,7 @@ from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentR
 from monad.models.routes_v3_schema_history_entry_response import RoutesV3SchemaHistoryEntryResponse as RoutesV3SchemaHistoryEntryResponse
 from monad.models.routes_v3_schema_state_response import RoutesV3SchemaStateResponse as RoutesV3SchemaStateResponse
 from monad.models.routes_v3_security_data_analysis import RoutesV3SecurityDataAnalysis as RoutesV3SecurityDataAnalysis
+from monad.models.routes_v3_share_changes_request import RoutesV3ShareChangesRequest as RoutesV3ShareChangesRequest
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse as RoutesV3SuccessResponse
 from monad.models.routes_v3_summary import RoutesV3Summary as RoutesV3Summary
 from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest as RoutesV3TestEnrichmentConnectionRequest

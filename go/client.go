@@ -114,6 +114,8 @@ type APIClient struct {
 
 	QuotasAPI *QuotasAPIService
 
+	ResourceSharesAPI *ResourceSharesAPIService
+
 	RolesAPI *RolesAPIService
 
 	SecretsAPI *SecretsAPIService
@@ -179,6 +181,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PermissionsAPI = (*PermissionsAPIService)(&c.common)
 	c.PipelinesAPI = (*PipelinesAPIService)(&c.common)
 	c.QuotasAPI = (*QuotasAPIService)(&c.common)
+	c.ResourceSharesAPI = (*ResourceSharesAPIService)(&c.common)
 	c.RolesAPI = (*RolesAPIService)(&c.common)
 	c.SecretsAPI = (*SecretsAPIService)(&c.common)
 	c.SessionsAPI = (*SessionsAPIService)(&c.common)

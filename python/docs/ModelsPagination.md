@@ -1,5 +1,6 @@
 # ModelsPagination
 
+Pagination metadata.
 
 ## Properties
 

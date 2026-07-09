@@ -113,6 +113,7 @@ import { CreateInputRequest } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { CreateOutputRequest } from '../models/CreateOutputRequest';
 import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
+import { CreateResourceSharesRequest } from '../models/CreateResourceSharesRequest';
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { CreateSecretRequest } from '../models/CreateSecretRequest';
 import { CreateSessionRequest } from '../models/CreateSessionRequest';
@@ -325,12 +326,18 @@ import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsResourceShare } from '../models/ModelsResourceShare';
+import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
+import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsSharedResource } from '../models/ModelsSharedResource';
+import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -500,6 +507,7 @@ import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentReq
 import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
 import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
+import { RoutesV3ShareChangesRequest } from '../models/RoutesV3ShareChangesRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -6642,6 +6650,247 @@ export class ObjectQuotasApi {
      */
     public listQuotas(param: QuotasApiListQuotasRequest = {}, options?: ConfigurationOptions): Promise<ModelsQuotaList> {
         return this.api.listQuotas(param.billingAccountId, param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
+    }
+
+}
+
+import { ObservableResourceSharesApi } from "./ObservableAPI";
+import { ResourceSharesApiRequestFactory, ResourceSharesApiResponseProcessor} from "../apis/ResourceSharesApi";
+
+export interface ResourceSharesApiCreateResourceSharesRequest {
+    /**
+     * Owner organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApicreateResourceShares
+     */
+    organizationId: string
+    /**
+     * Resource type
+     * Defaults to: undefined
+     * @type &#39;secret&#39; | &#39;component&#39;
+     * @memberof ResourceSharesApicreateResourceShares
+     */
+    resourceType: 'secret' | 'component'
+    /**
+     * Resource ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApicreateResourceShares
+     */
+    resourceId: string
+    /**
+     * Share request
+     * @type CreateResourceSharesRequest
+     * @memberof ResourceSharesApicreateResourceShares
+     */
+    createResourceSharesRequest: CreateResourceSharesRequest
+}
+
+export interface ResourceSharesApiListResourceSharesRequest {
+    /**
+     * Owner organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistResourceShares
+     */
+    organizationId: string
+    /**
+     * Resource type
+     * Defaults to: undefined
+     * @type &#39;secret&#39; | &#39;component&#39;
+     * @memberof ResourceSharesApilistResourceShares
+     */
+    resourceType: 'secret' | 'component'
+    /**
+     * Resource ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistResourceShares
+     */
+    resourceId: string
+}
+
+export interface ResourceSharesApiListSharedResourcesRequest {
+    /**
+     * Owner organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistSharedResources
+     */
+    organizationId: string
+    /**
+     * Page size (default: 10)
+     * Defaults to: undefined
+     * @type number
+     * @memberof ResourceSharesApilistSharedResources
+     */
+    limit?: number
+    /**
+     * Offset (default: 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof ResourceSharesApilistSharedResources
+     */
+    offset?: number
+    /**
+     * Filter by resource type
+     * Defaults to: undefined
+     * @type &#39;secret&#39; | &#39;component&#39;
+     * @memberof ResourceSharesApilistSharedResources
+     */
+    resourceType?: 'secret' | 'component'
+}
+
+export interface ResourceSharesApiUnshareResourceRequest {
+    /**
+     * Owner organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApiunshareResource
+     */
+    organizationId: string
+    /**
+     * Resource type
+     * Defaults to: undefined
+     * @type &#39;secret&#39; | &#39;component&#39;
+     * @memberof ResourceSharesApiunshareResource
+     */
+    resourceType: 'secret' | 'component'
+    /**
+     * Resource ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApiunshareResource
+     */
+    resourceId: string
+}
+
+export interface ResourceSharesApiUpdateResourceSharesRequest {
+    /**
+     * Owner organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApiupdateResourceShares
+     */
+    organizationId: string
+    /**
+     * Resource type
+     * Defaults to: undefined
+     * @type &#39;secret&#39; | &#39;component&#39;
+     * @memberof ResourceSharesApiupdateResourceShares
+     */
+    resourceType: 'secret' | 'component'
+    /**
+     * Resource ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApiupdateResourceShares
+     */
+    resourceId: string
+    /**
+     * Share delta request
+     * @type CreateResourceSharesRequest
+     * @memberof ResourceSharesApiupdateResourceShares
+     */
+    createResourceSharesRequest: CreateResourceSharesRequest
+}
+
+export class ObjectResourceSharesApi {
+    private api: ObservableResourceSharesApi
+
+    public constructor(configuration: Configuration, requestFactory?: ResourceSharesApiRequestFactory, responseProcessor?: ResourceSharesApiResponseProcessor) {
+        this.api = new ObservableResourceSharesApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource\'s auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.
+     * Share a resource
+     * @param param the request object
+     */
+    public createResourceSharesWithHttpInfo(param: ResourceSharesApiCreateResourceSharesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+        return this.api.createResourceSharesWithHttpInfo(param.organizationId, param.resourceType, param.resourceId, param.createResourceSharesRequest,  options).toPromise();
+    }
+
+    /**
+     * Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource\'s auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.
+     * Share a resource
+     * @param param the request object
+     */
+    public createResourceShares(param: ResourceSharesApiCreateResourceSharesRequest, options?: ConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+        return this.api.createResourceShares(param.organizationId, param.resourceType, param.resourceId, param.createResourceSharesRequest,  options).toPromise();
+    }
+
+    /**
+     * List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource\'s policy auto-shares it with new children.
+     * List a resource\'s shares
+     * @param param the request object
+     */
+    public listResourceSharesWithHttpInfo(param: ResourceSharesApiListResourceSharesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceShareWithUsageList>> {
+        return this.api.listResourceSharesWithHttpInfo(param.organizationId, param.resourceType, param.resourceId,  options).toPromise();
+    }
+
+    /**
+     * List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource\'s policy auto-shares it with new children.
+     * List a resource\'s shares
+     * @param param the request object
+     */
+    public listResourceShares(param: ResourceSharesApiListResourceSharesRequest, options?: ConfigurationOptions): Promise<ModelsResourceShareWithUsageList> {
+        return this.api.listResourceShares(param.organizationId, param.resourceType, param.resourceId,  options).toPromise();
+    }
+
+    /**
+     * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
+     * List shared resources
+     * @param param the request object
+     */
+    public listSharedResourcesWithHttpInfo(param: ResourceSharesApiListSharedResourcesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSharedResourceList>> {
+        return this.api.listSharedResourcesWithHttpInfo(param.organizationId, param.limit, param.offset, param.resourceType,  options).toPromise();
+    }
+
+    /**
+     * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
+     * List shared resources
+     * @param param the request object
+     */
+    public listSharedResources(param: ResourceSharesApiListSharedResourcesRequest, options?: ConfigurationOptions): Promise<ModelsSharedResourceList> {
+        return this.api.listSharedResources(param.organizationId, param.limit, param.offset, param.resourceType,  options).toPromise();
+    }
+
+    /**
+     * Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.
+     * Unshare a resource
+     * @param param the request object
+     */
+    public unshareResourceWithHttpInfo(param: ResourceSharesApiUnshareResourceRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+        return this.api.unshareResourceWithHttpInfo(param.organizationId, param.resourceType, param.resourceId,  options).toPromise();
+    }
+
+    /**
+     * Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.
+     * Unshare a resource
+     * @param param the request object
+     */
+    public unshareResource(param: ResourceSharesApiUnshareResourceRequest, options?: ConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+        return this.api.unshareResource(param.organizationId, param.resourceType, param.resourceId,  options).toPromise();
+    }
+
+    /**
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Update a resource\'s shares
+     * @param param the request object
+     */
+    public updateResourceSharesWithHttpInfo(param: ResourceSharesApiUpdateResourceSharesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+        return this.api.updateResourceSharesWithHttpInfo(param.organizationId, param.resourceType, param.resourceId, param.createResourceSharesRequest,  options).toPromise();
+    }
+
+    /**
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Update a resource\'s shares
+     * @param param the request object
+     */
+    public updateResourceShares(param: ResourceSharesApiUpdateResourceSharesRequest, options?: ConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+        return this.api.updateResourceShares(param.organizationId, param.resourceType, param.resourceId, param.createResourceSharesRequest,  options).toPromise();
     }
 
 }

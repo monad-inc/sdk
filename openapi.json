@@ -5721,6 +5721,7 @@
                 "type": "object"
             },
             "models.Pagination": {
+                "description": "Pagination metadata.",
                 "properties": {
                     "limit": {
                         "type": "integer"
@@ -6304,6 +6305,114 @@
                 },
                 "type": "object"
             },
+            "models.ResourceShare": {
+                "properties": {
+                    "created_at": {
+                        "description": "When the share was created.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Unique identifier of the share.",
+                        "type": "string"
+                    },
+                    "owner_organization_id": {
+                        "description": "Organization that owns the shared resource (the parent org).",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "description": "Identifier of the shared secret or component.",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "Type of the shared resource: \"secret\" or \"component\".",
+                        "type": "string"
+                    },
+                    "target_organization_id": {
+                        "description": "Direct child the resource is shared with.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.ResourceShareChangeSet": {
+                "properties": {
+                    "created": {
+                        "description": "Shares newly created by the request.",
+                        "items": {
+                            "$ref": "#/components/schemas/models.ResourceShare"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "revoked": {
+                        "description": "Shares revoked (deleted) by the request.",
+                        "items": {
+                            "$ref": "#/components/schemas/models.ResourceShare"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "share_with_all_new_children": {
+                        "description": "The resource's auto-share policy state after the request.",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "models.ResourceShareWithUsage": {
+                "properties": {
+                    "created_at": {
+                        "description": "When the share was created.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Unique identifier of the share.",
+                        "type": "string"
+                    },
+                    "in_use": {
+                        "description": "Whether the target org is using the shared resource.",
+                        "type": "boolean"
+                    },
+                    "owner_organization_id": {
+                        "description": "Organization that owns the shared resource (the parent org).",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "description": "Identifier of the shared secret or component.",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "Type of the shared resource: \"secret\" or \"component\".",
+                        "type": "string"
+                    },
+                    "target_organization_id": {
+                        "description": "Direct child the resource is shared with.",
+                        "type": "string"
+                    },
+                    "target_organization_name": {
+                        "description": "Friendly name of the target org.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.ResourceShareWithUsageList": {
+                "properties": {
+                    "resource_shares": {
+                        "description": "The shares of a single resource, each with its usage flag.",
+                        "items": {
+                            "$ref": "#/components/schemas/models.ResourceShareWithUsage"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "share_with_all_new_children": {
+                        "description": "Whether the resource's policy auto-shares it with new direct children.",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
             "models.RoleWithPermissions": {
                 "properties": {
                     "created_at": {
@@ -6482,6 +6591,63 @@
                     "shared_with_me": {
                         "description": "SharedWithMe is true when the resource is shared to the requesting org by a parent org.",
                         "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "models.SharedResource": {
+                "properties": {
+                    "component_type": {
+                        "description": "Component kind (input/output/transform/enrichment); components only.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the resource, when set.",
+                        "type": "string"
+                    },
+                    "explicit_target_count": {
+                        "description": "Number of explicit per-child share rows for this resource.",
+                        "type": "integer"
+                    },
+                    "last_shared_at": {
+                        "description": "Most recent time any share row for this resource was created.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the resource.",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "description": "Identifier of the shared secret or component.",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "Type of the shared resource: \"secret\" or \"component\".",
+                        "type": "string"
+                    },
+                    "share_with_all_new_children": {
+                        "description": "Whether the resource's policy auto-shares it with new direct children.",
+                        "type": "boolean"
+                    },
+                    "sub_type": {
+                        "description": "Concrete connector kind; components only.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.SharedResourceList": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "shared_resources": {
+                        "description": "The page of shared resources.",
+                        "items": {
+                            "$ref": "#/components/schemas/models.SharedResource"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     }
                 },
                 "type": "object"
@@ -9553,6 +9719,35 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.ShareChangesRequest": {
+                "properties": {
+                    "all_current_children": {
+                        "description": "Share with every current direct child (future children excluded).",
+                        "type": "boolean"
+                    },
+                    "revoke_organization_ids": {
+                        "description": "Target organization ids whose share of this resource should be revoked.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "share_organization_ids": {
+                        "description": "Explicit direct-child organizations to share with.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "share_with_all_new_children": {
+                        "description": "Toggle auto-sharing with new direct children: omit to leave unchanged,\ntrue to enable, false to disable.",
+                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -25588,6 +25783,556 @@
                 "summary": "Purge pipeline data",
                 "tags": [
                     "Pipelines"
+                ]
+            }
+        },
+        "/v3/{organization_id}/resource_shares": {
+            "get": {
+                "description": "List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.",
+                "operationId": "ListSharedResources",
+                "parameters": [
+                    {
+                        "description": "Owner organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Page size (default: 10)",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Offset (default: 0)",
+                        "in": "query",
+                        "name": "offset",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Filter by resource type",
+                        "in": "query",
+                        "name": "resource_type",
+                        "schema": {
+                            "enum": [
+                                "secret",
+                                "component"
+                            ],
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.SharedResourceList"
+                                }
+                            }
+                        },
+                        "description": "Page of shared resources"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid query parameters"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing resource_sharing:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List shared resources",
+                "tags": [
+                    "Resource Shares"
+                ],
+                "x-required-permissions": [
+                    "resource_sharing:read"
+                ]
+            }
+        },
+        "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}": {
+            "delete": {
+                "description": "Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.",
+                "operationId": "UnshareResource",
+                "parameters": [
+                    {
+                        "description": "Owner organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource type",
+                        "in": "path",
+                        "name": "resource_type",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "secret",
+                                "component"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource ID",
+                        "in": "path",
+                        "name": "resource_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.ResourceShareChangeSet"
+                                }
+                            }
+                        },
+                        "description": "The revoked shares"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid resource_type"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing resource_sharing:write permission"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A share is in use by a target organization"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Unshare a resource",
+                "tags": [
+                    "Resource Shares"
+                ],
+                "x-required-permissions": [
+                    "resource_sharing:write"
+                ]
+            },
+            "get": {
+                "description": "List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource's policy auto-shares it with new children.",
+                "operationId": "ListResourceShares",
+                "parameters": [
+                    {
+                        "description": "Owner organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource type",
+                        "in": "path",
+                        "name": "resource_type",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "secret",
+                                "component"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource ID",
+                        "in": "path",
+                        "name": "resource_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.ResourceShareWithUsageList"
+                                }
+                            }
+                        },
+                        "description": "The resource's shares"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid resource_type"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing resource_sharing:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List a resource's shares",
+                "tags": [
+                    "Resource Shares"
+                ],
+                "x-required-permissions": [
+                    "resource_sharing:read"
+                ]
+            },
+            "patch": {
+                "description": "Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.",
+                "operationId": "UpdateResourceShares",
+                "parameters": [
+                    {
+                        "description": "Owner organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource type",
+                        "in": "path",
+                        "name": "resource_type",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "secret",
+                                "component"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource ID",
+                        "in": "path",
+                        "name": "resource_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV3.ShareChangesRequest",
+                                        "description": "Share delta request",
+                                        "summary": "body"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Share delta request",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.ResourceShareChangeSet"
+                                }
+                            }
+                        },
+                        "description": "Created and revoked shares"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid request"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing resource_sharing:write permission"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A revoked share is in use by the target organization"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Update a resource's shares",
+                "tags": [
+                    "Resource Shares"
+                ],
+                "x-required-permissions": [
+                    "resource_sharing:write"
+                ]
+            },
+            "post": {
+                "description": "Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource's auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.",
+                "operationId": "CreateResourceShares",
+                "parameters": [
+                    {
+                        "description": "Owner organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource type",
+                        "in": "path",
+                        "name": "resource_type",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "secret",
+                                "component"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource ID",
+                        "in": "path",
+                        "name": "resource_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV3.ShareChangesRequest",
+                                        "description": "Share request",
+                                        "summary": "body"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Share request",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.ResourceShareChangeSet"
+                                }
+                            }
+                        },
+                        "description": "Created and revoked shares"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid request"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing resource_sharing:write permission"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A revoked share is in use by the target organization"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Share a resource",
+                "tags": [
+                    "Resource Shares"
+                ],
+                "x-required-permissions": [
+                    "resource_sharing:write"
                 ]
             }
         },

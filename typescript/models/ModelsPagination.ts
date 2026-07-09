@@ -12,6 +12,9 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* Pagination metadata.
+*/
 export class ModelsPagination {
     'limit'?: number;
     'offset'?: number;

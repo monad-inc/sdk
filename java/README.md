@@ -333,6 +333,11 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**updatePipelineEdge**](docs/PipelinesApi.md#updatePipelineEdge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
 *PipelinesApi* | [**updatePipelineV1**](docs/PipelinesApi.md#updatePipelineV1) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *QuotasApi* | [**listQuotas**](docs/QuotasApi.md#listQuotas) | **GET** /v2/quotas | List quotas
+*ResourceSharesApi* | [**createResourceShares**](docs/ResourceSharesApi.md#createResourceShares) | **POST** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
+*ResourceSharesApi* | [**listResourceShares**](docs/ResourceSharesApi.md#listResourceShares) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares
+*ResourceSharesApi* | [**listSharedResources**](docs/ResourceSharesApi.md#listSharedResources) | **GET** /v3/{organization_id}/resource_shares | List shared resources
+*ResourceSharesApi* | [**unshareResource**](docs/ResourceSharesApi.md#unshareResource) | **DELETE** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
+*ResourceSharesApi* | [**updateResourceShares**](docs/ResourceSharesApi.md#updateResourceShares) | **PATCH** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Update a resource&#39;s shares
 *RolesApi* | [**createRole**](docs/RolesApi.md#createRole) | **POST** /v2/{organization_id}/roles | Create role
 *RolesApi* | [**deleteRole**](docs/RolesApi.md#deleteRole) | **DELETE** /v2/{organization_id}/roles/{role_id} | Delete role
 *RolesApi* | [**getRole**](docs/RolesApi.md#getRole) | **GET** /v2/{organization_id}/roles/{role_id} | Get role
@@ -477,6 +482,7 @@ Class | Method | HTTP request | Description
  - [CreateKeyValueIfKeyValueArgumentsConfig](docs/CreateKeyValueIfKeyValueArgumentsConfig.md)
  - [CreateOutputRequest](docs/CreateOutputRequest.md)
  - [CreatePipelineRequest](docs/CreatePipelineRequest.md)
+ - [CreateResourceSharesRequest](docs/CreateResourceSharesRequest.md)
  - [CreateRoleRequest](docs/CreateRoleRequest.md)
  - [CreateSecretRequest](docs/CreateSecretRequest.md)
  - [CreateSessionRequest](docs/CreateSessionRequest.md)
@@ -689,12 +695,18 @@ Class | Method | HTTP request | Description
  - [ModelsRateUnit](docs/ModelsRateUnit.md)
  - [ModelsReference](docs/ModelsReference.md)
  - [ModelsReferences](docs/ModelsReferences.md)
+ - [ModelsResourceShare](docs/ModelsResourceShare.md)
+ - [ModelsResourceShareChangeSet](docs/ModelsResourceShareChangeSet.md)
+ - [ModelsResourceShareWithUsage](docs/ModelsResourceShareWithUsage.md)
+ - [ModelsResourceShareWithUsageList](docs/ModelsResourceShareWithUsageList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
  - [ModelsSecret](docs/ModelsSecret.md)
  - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
  - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)
  - [ModelsShareDetails](docs/ModelsShareDetails.md)
+ - [ModelsSharedResource](docs/ModelsSharedResource.md)
+ - [ModelsSharedResourceList](docs/ModelsSharedResourceList.md)
  - [ModelsStorageTypeCostConfig](docs/ModelsStorageTypeCostConfig.md)
  - [ModelsStorageTypeCostEntry](docs/ModelsStorageTypeCostEntry.md)
  - [ModelsStorageTypeCostSummary](docs/ModelsStorageTypeCostSummary.md)
@@ -864,6 +876,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3SchemaHistoryEntryResponse](docs/RoutesV3SchemaHistoryEntryResponse.md)
  - [RoutesV3SchemaStateResponse](docs/RoutesV3SchemaStateResponse.md)
  - [RoutesV3SecurityDataAnalysis](docs/RoutesV3SecurityDataAnalysis.md)
+ - [RoutesV3ShareChangesRequest](docs/RoutesV3ShareChangesRequest.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3Summary](docs/RoutesV3Summary.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)

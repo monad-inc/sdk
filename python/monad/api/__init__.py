@@ -33,6 +33,7 @@ from monad.api.outputs_api import OutputsApi
 from monad.api.permissions_api import PermissionsApi
 from monad.api.pipelines_api import PipelinesApi
 from monad.api.quotas_api import QuotasApi
+from monad.api.resource_shares_api import ResourceSharesApi
 from monad.api.roles_api import RolesApi
 from monad.api.secrets_api import SecretsApi
 from monad.api.sessions_api import SessionsApi

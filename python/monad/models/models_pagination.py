@@ -26,7 +26,7 @@ from pydantic_core import to_jsonable_python
 
 class ModelsPagination(BaseModel):
     """
-    ModelsPagination
+    Pagination metadata.
     """ # noqa: E501
     limit: Optional[StrictInt] = None
     offset: Optional[StrictInt] = None

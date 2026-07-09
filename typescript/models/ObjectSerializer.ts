@@ -109,6 +109,7 @@ export * from '../models/CreateInputRequest';
 export * from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 export * from '../models/CreateOutputRequest';
 export * from '../models/CreatePipelineRequest';
+export * from '../models/CreateResourceSharesRequest';
 export * from '../models/CreateRoleRequest';
 export * from '../models/CreateSecretRequest';
 export * from '../models/CreateSessionRequest';
@@ -321,12 +322,18 @@ export * from '../models/ModelsQuotaTimeframe';
 export * from '../models/ModelsRateUnit';
 export * from '../models/ModelsReference';
 export * from '../models/ModelsReferences';
+export * from '../models/ModelsResourceShare';
+export * from '../models/ModelsResourceShareChangeSet';
+export * from '../models/ModelsResourceShareWithUsage';
+export * from '../models/ModelsResourceShareWithUsageList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSecret';
 export * from '../models/ModelsSecretWithComponents';
 export * from '../models/ModelsSecretWithComponentsList';
 export * from '../models/ModelsShareDetails';
+export * from '../models/ModelsSharedResource';
+export * from '../models/ModelsSharedResourceList';
 export * from '../models/ModelsStorageTypeCostConfig';
 export * from '../models/ModelsStorageTypeCostEntry';
 export * from '../models/ModelsStorageTypeCostSummary';
@@ -496,6 +503,7 @@ export * from '../models/RoutesV3PutEnrichmentRequest';
 export * from '../models/RoutesV3SchemaHistoryEntryResponse';
 export * from '../models/RoutesV3SchemaStateResponse';
 export * from '../models/RoutesV3SecurityDataAnalysis';
+export * from '../models/RoutesV3ShareChangesRequest';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3Summary';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -749,6 +757,7 @@ import { CreateInputRequestClass } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { CreateOutputRequestClass } from '../models/CreateOutputRequest';
 import { CreatePipelineRequestClass } from '../models/CreatePipelineRequest';
+import { CreateResourceSharesRequestClass } from '../models/CreateResourceSharesRequest';
 import { CreateRoleRequestClass } from '../models/CreateRoleRequest';
 import { CreateSecretRequestClass } from '../models/CreateSecretRequest';
 import { CreateSessionRequestClass } from '../models/CreateSessionRequest';
@@ -961,12 +970,18 @@ import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsResourceShare } from '../models/ModelsResourceShare';
+import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
+import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsSharedResource } from '../models/ModelsSharedResource';
+import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -1136,6 +1151,7 @@ import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentReq
 import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
 import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
+import { RoutesV3ShareChangesRequest } from '../models/RoutesV3ShareChangesRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -1482,6 +1498,7 @@ let typeMap: {[index: string]: any} = {
     "CreateKeyValueIfKeyValueArgumentsConfig": CreateKeyValueIfKeyValueArgumentsConfig,
     "CreateOutputRequest": CreateOutputRequestClass,
     "CreatePipelineRequest": CreatePipelineRequestClass,
+    "CreateResourceSharesRequest": CreateResourceSharesRequestClass,
     "CreateRoleRequest": CreateRoleRequestClass,
     "CreateSecretRequest": CreateSecretRequestClass,
     "CreateSessionRequest": CreateSessionRequestClass,
@@ -1670,12 +1687,18 @@ let typeMap: {[index: string]: any} = {
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsReference": ModelsReference,
     "ModelsReferences": ModelsReferences,
+    "ModelsResourceShare": ModelsResourceShare,
+    "ModelsResourceShareChangeSet": ModelsResourceShareChangeSet,
+    "ModelsResourceShareWithUsage": ModelsResourceShareWithUsage,
+    "ModelsResourceShareWithUsageList": ModelsResourceShareWithUsageList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
     "ModelsSecret": ModelsSecret,
     "ModelsSecretWithComponents": ModelsSecretWithComponents,
     "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,
     "ModelsShareDetails": ModelsShareDetails,
+    "ModelsSharedResource": ModelsSharedResource,
+    "ModelsSharedResourceList": ModelsSharedResourceList,
     "ModelsStorageTypeCostConfig": ModelsStorageTypeCostConfig,
     "ModelsStorageTypeCostEntry": ModelsStorageTypeCostEntry,
     "ModelsStorageTypeCostSummary": ModelsStorageTypeCostSummary,
@@ -1843,6 +1866,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3SchemaHistoryEntryResponse": RoutesV3SchemaHistoryEntryResponse,
     "RoutesV3SchemaStateResponse": RoutesV3SchemaStateResponse,
     "RoutesV3SecurityDataAnalysis": RoutesV3SecurityDataAnalysis,
+    "RoutesV3ShareChangesRequest": RoutesV3ShareChangesRequest,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3Summary": RoutesV3Summary,
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,

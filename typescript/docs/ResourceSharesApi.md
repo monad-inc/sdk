@@ -1,0 +1,336 @@
+# .ResourceSharesApi
+
+All URIs are relative to *https://monad.com/api*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createResourceShares**](ResourceSharesApi.md#createResourceShares) | **POST** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
+[**listResourceShares**](ResourceSharesApi.md#listResourceShares) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource\&#39;s shares
+[**listSharedResources**](ResourceSharesApi.md#listSharedResources) | **GET** /v3/{organization_id}/resource_shares | List shared resources
+[**unshareResource**](ResourceSharesApi.md#unshareResource) | **DELETE** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
+[**updateResourceShares**](ResourceSharesApi.md#updateResourceShares) | **PATCH** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Update a resource\&#39;s shares
+
+
+# **createResourceShares**
+> ModelsResourceShareChangeSet createResourceShares(createResourceSharesRequest)
+
+Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource\'s auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.
+
+### Example
+
+
+```typescript
+import { createConfiguration, ResourceSharesApi } from '';
+import type { ResourceSharesApiCreateResourceSharesRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new ResourceSharesApi(configuration);
+
+const request: ResourceSharesApiCreateResourceSharesRequest = {
+    // Owner organization ID
+  organizationId: "organization_id_example",
+    // Resource type
+  resourceType: "secret",
+    // Resource ID
+  resourceId: "resource_id_example",
+    // Share request
+  createResourceSharesRequest: null,
+};
+
+const data = await apiInstance.createResourceShares(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createResourceSharesRequest** | **CreateResourceSharesRequest**| Share request |
+ **organizationId** | [**string**] | Owner organization ID | defaults to undefined
+ **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
+ **resourceId** | [**string**] | Resource ID | defaults to undefined
+
+
+### Return type
+
+**ModelsResourceShareChangeSet**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Created and revoked shares |  -  |
+**400** | Invalid request |  -  |
+**403** | Missing resource_sharing:write permission |  -  |
+**409** | A revoked share is in use by the target organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listResourceShares**
+> ModelsResourceShareWithUsageList listResourceShares()
+
+List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource\'s policy auto-shares it with new children.
+
+### Example
+
+
+```typescript
+import { createConfiguration, ResourceSharesApi } from '';
+import type { ResourceSharesApiListResourceSharesRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new ResourceSharesApi(configuration);
+
+const request: ResourceSharesApiListResourceSharesRequest = {
+    // Owner organization ID
+  organizationId: "organization_id_example",
+    // Resource type
+  resourceType: "secret",
+    // Resource ID
+  resourceId: "resource_id_example",
+};
+
+const data = await apiInstance.listResourceShares(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Owner organization ID | defaults to undefined
+ **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
+ **resourceId** | [**string**] | Resource ID | defaults to undefined
+
+
+### Return type
+
+**ModelsResourceShareWithUsageList**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The resource\&#39;s shares |  -  |
+**400** | Invalid resource_type |  -  |
+**403** | Missing resource_sharing:read permission |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listSharedResources**
+> ModelsSharedResourceList listSharedResources()
+
+List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
+
+### Example
+
+
+```typescript
+import { createConfiguration, ResourceSharesApi } from '';
+import type { ResourceSharesApiListSharedResourcesRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new ResourceSharesApi(configuration);
+
+const request: ResourceSharesApiListSharedResourcesRequest = {
+    // Owner organization ID
+  organizationId: "organization_id_example",
+    // Page size (default: 10) (optional)
+  limit: 1,
+    // Offset (default: 0) (optional)
+  offset: 1,
+    // Filter by resource type (optional)
+  resourceType: "secret",
+};
+
+const data = await apiInstance.listSharedResources(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Owner organization ID | defaults to undefined
+ **limit** | [**number**] | Page size (default: 10) | (optional) defaults to undefined
+ **offset** | [**number**] | Offset (default: 0) | (optional) defaults to undefined
+ **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Filter by resource type | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsSharedResourceList**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Page of shared resources |  -  |
+**400** | Invalid query parameters |  -  |
+**403** | Missing resource_sharing:read permission |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **unshareResource**
+> ModelsResourceShareChangeSet unshareResource()
+
+Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.
+
+### Example
+
+
+```typescript
+import { createConfiguration, ResourceSharesApi } from '';
+import type { ResourceSharesApiUnshareResourceRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new ResourceSharesApi(configuration);
+
+const request: ResourceSharesApiUnshareResourceRequest = {
+    // Owner organization ID
+  organizationId: "organization_id_example",
+    // Resource type
+  resourceType: "secret",
+    // Resource ID
+  resourceId: "resource_id_example",
+};
+
+const data = await apiInstance.unshareResource(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Owner organization ID | defaults to undefined
+ **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
+ **resourceId** | [**string**] | Resource ID | defaults to undefined
+
+
+### Return type
+
+**ModelsResourceShareChangeSet**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The revoked shares |  -  |
+**400** | Invalid resource_type |  -  |
+**403** | Missing resource_sharing:write permission |  -  |
+**409** | A share is in use by a target organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **updateResourceShares**
+> ModelsResourceShareChangeSet updateResourceShares(createResourceSharesRequest)
+
+Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+
+### Example
+
+
+```typescript
+import { createConfiguration, ResourceSharesApi } from '';
+import type { ResourceSharesApiUpdateResourceSharesRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new ResourceSharesApi(configuration);
+
+const request: ResourceSharesApiUpdateResourceSharesRequest = {
+    // Owner organization ID
+  organizationId: "organization_id_example",
+    // Resource type
+  resourceType: "secret",
+    // Resource ID
+  resourceId: "resource_id_example",
+    // Share delta request
+  createResourceSharesRequest: null,
+};
+
+const data = await apiInstance.updateResourceShares(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createResourceSharesRequest** | **CreateResourceSharesRequest**| Share delta request |
+ **organizationId** | [**string**] | Owner organization ID | defaults to undefined
+ **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
+ **resourceId** | [**string**] | Resource ID | defaults to undefined
+
+
+### Return type
+
+**ModelsResourceShareChangeSet**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Created and revoked shares |  -  |
+**400** | Invalid request |  -  |
+**403** | Missing resource_sharing:write permission |  -  |
+**409** | A revoked share is in use by the target organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+

@@ -46,7 +46,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsPagination
+ * Pagination metadata.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsPagination {

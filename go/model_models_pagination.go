@@ -18,7 +18,7 @@ import (
 // checks if the ModelsPagination type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsPagination{}
 
-// ModelsPagination struct for ModelsPagination
+// ModelsPagination Pagination metadata.
 type ModelsPagination struct {
 	Limit *int32 `json:"limit,omitempty"`
 	Offset *int32 `json:"offset,omitempty"`

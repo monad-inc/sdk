@@ -114,6 +114,7 @@ import { CreateInputRequest } from '../models/CreateInputRequest';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { CreateOutputRequest } from '../models/CreateOutputRequest';
 import { CreatePipelineRequest } from '../models/CreatePipelineRequest';
+import { CreateResourceSharesRequest } from '../models/CreateResourceSharesRequest';
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { CreateSecretRequest } from '../models/CreateSecretRequest';
 import { CreateSessionRequest } from '../models/CreateSessionRequest';
@@ -326,12 +327,18 @@ import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsResourceShare } from '../models/ModelsResourceShare';
+import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
+import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsSharedResource } from '../models/ModelsSharedResource';
+import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -501,6 +508,7 @@ import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentReq
 import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
 import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
+import { RoutesV3ShareChangesRequest } from '../models/RoutesV3ShareChangesRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -6525,6 +6533,220 @@ export class ObservableQuotasApi {
      */
     public listQuotas(billingAccountId?: string, organizationId?: string, limit?: number, offset?: number, body?: any, _options?: ConfigurationOptions): Observable<ModelsQuotaList> {
         return this.listQuotasWithHttpInfo(billingAccountId, organizationId, limit, offset, body, _options).pipe(map((apiResponse: HttpInfo<ModelsQuotaList>) => apiResponse.data));
+    }
+
+}
+
+import { ResourceSharesApiRequestFactory, ResourceSharesApiResponseProcessor} from "../apis/ResourceSharesApi";
+export class ObservableResourceSharesApi {
+    private requestFactory: ResourceSharesApiRequestFactory;
+    private responseProcessor: ResourceSharesApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ResourceSharesApiRequestFactory,
+        responseProcessor?: ResourceSharesApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new ResourceSharesApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new ResourceSharesApiResponseProcessor();
+    }
+
+    /**
+     * Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource\'s auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.
+     * Share a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share request
+     */
+    public createResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareChangeSet>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.createResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.createResourceSharesWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Start sharing one resource with child organizations. The flat body takes two additive create inputs (share_organization_ids and/or all_current_children), may carry revoke_organization_ids, and may toggle the resource\'s auto-share policy via share_with_all_new_children (omit = unchanged, true = enable, false = disable). Re-sharing existing targets is idempotent.
+     * Share a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share request
+     */
+    public createResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: ConfigurationOptions): Observable<ModelsResourceShareChangeSet> {
+        return this.createResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareChangeSet>) => apiResponse.data));
+    }
+
+    /**
+     * List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource\'s policy auto-shares it with new children.
+     * List a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public listResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareWithUsageList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listResourceShares(organizationId, resourceType, resourceId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listResourceSharesWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List every per-child share of one resource, each annotated with whether the target organization is using it (in_use), plus whether the resource\'s policy auto-shares it with new children.
+     * List a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public listResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: ConfigurationOptions): Observable<ModelsResourceShareWithUsageList> {
+        return this.listResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareWithUsageList>) => apiResponse.data));
+    }
+
+    /**
+     * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
+     * List shared resources
+     * @param organizationId Owner organization ID
+     * @param [limit] Page size (default: 10)
+     * @param [offset] Offset (default: 0)
+     * @param [resourceType] Filter by resource type
+     */
+    public listSharedResourcesWithHttpInfo(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: ConfigurationOptions): Observable<HttpInfo<ModelsSharedResourceList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listSharedResources(organizationId, limit, offset, resourceType, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listSharedResourcesWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
+     * List shared resources
+     * @param organizationId Owner organization ID
+     * @param [limit] Page size (default: 10)
+     * @param [offset] Offset (default: 0)
+     * @param [resourceType] Filter by resource type
+     */
+    public listSharedResources(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: ConfigurationOptions): Observable<ModelsSharedResourceList> {
+        return this.listSharedResourcesWithHttpInfo(organizationId, limit, offset, resourceType, _options).pipe(map((apiResponse: HttpInfo<ModelsSharedResourceList>) => apiResponse.data));
+    }
+
+    /**
+     * Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.
+     * Unshare a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public unshareResourceWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareChangeSet>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.unshareResource(organizationId, resourceType, resourceId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.unshareResourceWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Remove every per-child share of one resource and its share policy in a single transaction, returning the revoked set. Rejected with 409 if any current target organization is actively using the resource.
+     * Unshare a resource
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     */
+    public unshareResource(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, _options?: ConfigurationOptions): Observable<ModelsResourceShareChangeSet> {
+        return this.unshareResourceWithHttpInfo(organizationId, resourceType, resourceId, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareChangeSet>) => apiResponse.data));
+    }
+
+    /**
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Update a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share delta request
+     */
+    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareChangeSet>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.updateResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.updateResourceSharesWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Update a resource\'s shares
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param createResourceSharesRequest Share delta request
+     */
+    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: ConfigurationOptions): Observable<ModelsResourceShareChangeSet> {
+        return this.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareChangeSet>) => apiResponse.data));
     }
 
 }
