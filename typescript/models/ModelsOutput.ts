@@ -13,6 +13,7 @@
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { HttpFile } from '../http/http';
 
 export class ModelsOutput {
@@ -24,6 +25,7 @@ export class ModelsOutput {
     'name'?: string;
     'organizationId'?: string;
     'references'?: ModelsReferences;
+    'shareDetails'?: ModelsShareDetails;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -78,6 +80,12 @@ export class ModelsOutput {
             "name": "references",
             "baseName": "references",
             "type": "ModelsReferences",
+            "format": ""
+        },
+        {
+            "name": "shareDetails",
+            "baseName": "share_details",
+            "type": "ModelsShareDetails",
             "format": ""
         },
         {

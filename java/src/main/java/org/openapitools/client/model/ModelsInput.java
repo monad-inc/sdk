@@ -24,6 +24,7 @@ import java.util.Arrays;
 import org.openapitools.client.model.ModelsInputConfig;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsReferences;
+import org.openapitools.client.model.ModelsShareDetails;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -92,6 +93,11 @@ public class ModelsInput {
   @SerializedName(SERIALIZED_NAME_REFERENCES)
   @javax.annotation.Nullable
   private ModelsReferences references;
+
+  public static final String SERIALIZED_NAME_SHARE_DETAILS = "share_details";
+  @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
+  @javax.annotation.Nullable
+  private ModelsShareDetails shareDetails;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -258,6 +264,25 @@ public class ModelsInput {
   }
 
 
+  public ModelsInput shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+    return this;
+  }
+
+  /**
+   * Get shareDetails
+   * @return shareDetails
+   */
+  @javax.annotation.Nullable
+  public ModelsShareDetails getShareDetails() {
+    return shareDetails;
+  }
+
+  public void setShareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+  }
+
+
   public ModelsInput type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -314,13 +339,14 @@ public class ModelsInput {
         Objects.equals(this.name, modelsInput.name) &&
         Objects.equals(this.organizationId, modelsInput.organizationId) &&
         Objects.equals(this.references, modelsInput.references) &&
+        Objects.equals(this.shareDetails, modelsInput.shareDetails) &&
         Objects.equals(this.type, modelsInput.type) &&
         Objects.equals(this.updatedAt, modelsInput.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, references, type, updatedAt);
+    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, type, updatedAt);
   }
 
   @Override
@@ -335,6 +361,7 @@ public class ModelsInput {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
+    sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -355,7 +382,7 @@ public class ModelsInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -408,6 +435,10 @@ public class ModelsInput {
       // validate the optional field `references`
       if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
         ModelsReferences.validateJsonElement(jsonObj.get("references"));
+      }
+      // validate the optional field `share_details`
+      if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
+        ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

@@ -26,6 +26,7 @@ import java.util.List;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipeline;
 import org.openapitools.client.model.ModelsReferences;
+import org.openapitools.client.model.ModelsShareDetails;
 import org.openapitools.client.model.ModelsTransformConfig;
 
 import com.google.gson.Gson;
@@ -100,6 +101,11 @@ public class RoutesGetTransformResponse {
   @SerializedName(SERIALIZED_NAME_REFERENCES)
   @javax.annotation.Nullable
   private ModelsReferences references;
+
+  public static final String SERIALIZED_NAME_SHARE_DETAILS = "share_details";
+  @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
+  @javax.annotation.Nullable
+  private ModelsShareDetails shareDetails;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -288,6 +294,25 @@ public class RoutesGetTransformResponse {
   }
 
 
+  public RoutesGetTransformResponse shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+    return this;
+  }
+
+  /**
+   * Get shareDetails
+   * @return shareDetails
+   */
+  @javax.annotation.Nullable
+  public ModelsShareDetails getShareDetails() {
+    return shareDetails;
+  }
+
+  public void setShareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+  }
+
+
   public RoutesGetTransformResponse updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -326,12 +351,13 @@ public class RoutesGetTransformResponse {
         Objects.equals(this.name, routesGetTransformResponse.name) &&
         Objects.equals(this.organizationId, routesGetTransformResponse.organizationId) &&
         Objects.equals(this.references, routesGetTransformResponse.references) &&
+        Objects.equals(this.shareDetails, routesGetTransformResponse.shareDetails) &&
         Objects.equals(this.updatedAt, routesGetTransformResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, updatedAt);
+    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, updatedAt);
   }
 
   @Override
@@ -347,6 +373,7 @@ public class RoutesGetTransformResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
+    sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -366,7 +393,7 @@ public class RoutesGetTransformResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -433,6 +460,10 @@ public class RoutesGetTransformResponse {
       // validate the optional field `references`
       if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
         ModelsReferences.validateJsonElement(jsonObj.get("references"));
+      }
+      // validate the optional field `share_details`
+      if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
+        ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

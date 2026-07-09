@@ -14,6 +14,7 @@ import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { HttpFile } from '../http/http';
 
 export class RoutesGetOutputResponse {
@@ -26,6 +27,7 @@ export class RoutesGetOutputResponse {
     'name'?: string;
     'organizationId'?: string;
     'references'?: ModelsReferences;
+    'shareDetails'?: ModelsShareDetails;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -86,6 +88,12 @@ export class RoutesGetOutputResponse {
             "name": "references",
             "baseName": "references",
             "type": "ModelsReferences",
+            "format": ""
+        },
+        {
+            "name": "shareDetails",
+            "baseName": "share_details",
+            "type": "ModelsShareDetails",
             "format": ""
         },
         {

@@ -30,6 +30,7 @@ type ModelsSecret struct {
 	Name *string `json:"name,omitempty"`
 	// The OrganizationID the secret belongs to
 	OrganizationId *string `json:"organization_id,omitempty"`
+	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
 	// When the secret was updated
 	UpdatedAt *string `json:"updated_at,omitempty"`
 	// The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.
@@ -213,6 +214,38 @@ func (o *ModelsSecret) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetShareDetails returns the ShareDetails field value if set, zero value otherwise.
+func (o *ModelsSecret) GetShareDetails() ModelsShareDetails {
+	if o == nil || IsNil(o.ShareDetails) {
+		var ret ModelsShareDetails
+		return ret
+	}
+	return *o.ShareDetails
+}
+
+// GetShareDetailsOk returns a tuple with the ShareDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsSecret) GetShareDetailsOk() (*ModelsShareDetails, bool) {
+	if o == nil || IsNil(o.ShareDetails) {
+		return nil, false
+	}
+	return o.ShareDetails, true
+}
+
+// HasShareDetails returns a boolean if a field has been set.
+func (o *ModelsSecret) HasShareDetails() bool {
+	if o != nil && !IsNil(o.ShareDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetShareDetails gets a reference to the given ModelsShareDetails and assigns it to the ShareDetails field.
+func (o *ModelsSecret) SetShareDetails(v ModelsShareDetails) {
+	o.ShareDetails = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsSecret) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -301,6 +334,9 @@ func (o ModelsSecret) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.ShareDetails) {
+		toSerialize["share_details"] = o.ShareDetails
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

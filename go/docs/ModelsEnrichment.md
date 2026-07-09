@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
+**ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -233,6 +234,31 @@ SetReferences sets References field to given value.
 `func (o *ModelsEnrichment) HasReferences() bool`
 
 HasReferences returns a boolean if a field has been set.
+
+### GetShareDetails
+
+`func (o *ModelsEnrichment) GetShareDetails() ModelsShareDetails`
+
+GetShareDetails returns the ShareDetails field if non-nil, zero value otherwise.
+
+### GetShareDetailsOk
+
+`func (o *ModelsEnrichment) GetShareDetailsOk() (*ModelsShareDetails, bool)`
+
+GetShareDetailsOk returns a tuple with the ShareDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShareDetails
+
+`func (o *ModelsEnrichment) SetShareDetails(v ModelsShareDetails)`
+
+SetShareDetails sets ShareDetails field to given value.
+
+### HasShareDetails
+
+`func (o *ModelsEnrichment) HasShareDetails() bool`
+
+HasShareDetails returns a boolean if a field has been set.
 
 ### GetType
 

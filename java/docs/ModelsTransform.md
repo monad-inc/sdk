@@ -15,6 +15,7 @@
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**references** | [**ModelsReferences**](ModelsReferences.md) |  |  [optional] |
+|**shareDetails** | [**ModelsShareDetails**](ModelsShareDetails.md) |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

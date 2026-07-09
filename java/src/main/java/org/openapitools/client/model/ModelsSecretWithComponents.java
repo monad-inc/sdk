@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsComponentReference;
+import org.openapitools.client.model.ModelsShareDetails;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -92,6 +93,11 @@ public class ModelsSecretWithComponents {
   @SerializedName(SERIALIZED_NAME_OUTPUTS)
   @javax.annotation.Nullable
   private List<ModelsComponentReference> outputs = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SHARE_DETAILS = "share_details";
+  @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
+  @javax.annotation.Nullable
+  private ModelsShareDetails shareDetails;
 
   public static final String SERIALIZED_NAME_TRANSFORMS = "transforms";
   @SerializedName(SERIALIZED_NAME_TRANSFORMS)
@@ -287,6 +293,25 @@ public class ModelsSecretWithComponents {
   }
 
 
+  public ModelsSecretWithComponents shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+    return this;
+  }
+
+  /**
+   * Get shareDetails
+   * @return shareDetails
+   */
+  @javax.annotation.Nullable
+  public ModelsShareDetails getShareDetails() {
+    return shareDetails;
+  }
+
+  public void setShareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+  }
+
+
   public ModelsSecretWithComponents transforms(@javax.annotation.Nullable List<ModelsComponentReference> transforms) {
     this.transforms = transforms;
     return this;
@@ -370,6 +395,7 @@ public class ModelsSecretWithComponents {
         Objects.equals(this.name, modelsSecretWithComponents.name) &&
         Objects.equals(this.organizationId, modelsSecretWithComponents.organizationId) &&
         Objects.equals(this.outputs, modelsSecretWithComponents.outputs) &&
+        Objects.equals(this.shareDetails, modelsSecretWithComponents.shareDetails) &&
         Objects.equals(this.transforms, modelsSecretWithComponents.transforms) &&
         Objects.equals(this.updatedAt, modelsSecretWithComponents.updatedAt) &&
         Objects.equals(this.value, modelsSecretWithComponents.value);
@@ -377,7 +403,7 @@ public class ModelsSecretWithComponents {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, enrichments, id, inputs, name, organizationId, outputs, transforms, updatedAt, value);
+    return Objects.hash(createdAt, description, enrichments, id, inputs, name, organizationId, outputs, shareDetails, transforms, updatedAt, value);
   }
 
   @Override
@@ -392,6 +418,7 @@ public class ModelsSecretWithComponents {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+    sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    transforms: ").append(toIndentedString(transforms)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
@@ -413,7 +440,7 @@ public class ModelsSecretWithComponents {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "transforms", "updated_at", "value"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "share_details", "transforms", "updated_at", "value"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -496,6 +523,10 @@ public class ModelsSecretWithComponents {
             ModelsComponentReference.validateJsonElement(jsonArrayoutputs.get(i));
           };
         }
+      }
+      // validate the optional field `share_details`
+      if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
+        ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
       }
       if (jsonObj.get("transforms") != null && !jsonObj.get("transforms").isJsonNull()) {
         JsonArray jsonArraytransforms = jsonObj.getAsJsonArray("transforms");

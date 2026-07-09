@@ -23,6 +23,7 @@ import java.util.Arrays;
 import org.openapitools.client.model.ModelsInputConfig;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsReferences;
+import org.openapitools.client.model.ModelsShareDetails;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -102,6 +103,14 @@ public class ModelsInputTest {
     @Test
     public void referencesTest() {
         // TODO: test references
+    }
+
+    /**
+     * Test the property 'shareDetails'
+     */
+    @Test
+    public void shareDetailsTest() {
+        // TODO: test shareDetails
     }
 
     /**

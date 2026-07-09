@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_references import ModelsReferences
+from monad.models.models_share_details import ModelsShareDetails
 from monad.models.models_transform_config import ModelsTransformConfig
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,8 +40,9 @@ class ModelsTransform(BaseModel):
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     references: Optional[ModelsReferences] = None
+    share_details: Optional[ModelsShareDetails] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "updated_at"]
+    __properties: ClassVar[List[str]] = ["config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -87,6 +89,9 @@ class ModelsTransform(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of references
         if self.references:
             _dict['references'] = self.references.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of share_details
+        if self.share_details:
+            _dict['share_details'] = self.share_details.to_dict()
         return _dict
 
     @classmethod
@@ -107,6 +112,7 @@ class ModelsTransform(BaseModel):
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
+            "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
             "updated_at": obj.get("updated_at")
         })
         return _obj

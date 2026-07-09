@@ -27,6 +27,7 @@ import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsOutputConfig;
 import org.openapitools.client.model.ModelsPipeline;
 import org.openapitools.client.model.ModelsReferences;
+import org.openapitools.client.model.ModelsShareDetails;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -100,6 +101,11 @@ public class RoutesGetOutputResponse {
   @SerializedName(SERIALIZED_NAME_REFERENCES)
   @javax.annotation.Nullable
   private ModelsReferences references;
+
+  public static final String SERIALIZED_NAME_SHARE_DETAILS = "share_details";
+  @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
+  @javax.annotation.Nullable
+  private ModelsShareDetails shareDetails;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -293,6 +299,25 @@ public class RoutesGetOutputResponse {
   }
 
 
+  public RoutesGetOutputResponse shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+    return this;
+  }
+
+  /**
+   * Get shareDetails
+   * @return shareDetails
+   */
+  @javax.annotation.Nullable
+  public ModelsShareDetails getShareDetails() {
+    return shareDetails;
+  }
+
+  public void setShareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+  }
+
+
   public RoutesGetOutputResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -350,13 +375,14 @@ public class RoutesGetOutputResponse {
         Objects.equals(this.name, routesGetOutputResponse.name) &&
         Objects.equals(this.organizationId, routesGetOutputResponse.organizationId) &&
         Objects.equals(this.references, routesGetOutputResponse.references) &&
+        Objects.equals(this.shareDetails, routesGetOutputResponse.shareDetails) &&
         Objects.equals(this.type, routesGetOutputResponse.type) &&
         Objects.equals(this.updatedAt, routesGetOutputResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, type, updatedAt);
+    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, type, updatedAt);
   }
 
   @Override
@@ -372,6 +398,7 @@ public class RoutesGetOutputResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
+    sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -392,7 +419,7 @@ public class RoutesGetOutputResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -459,6 +486,10 @@ public class RoutesGetOutputResponse {
       // validate the optional field `references`
       if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
         ModelsReferences.validateJsonElement(jsonObj.get("references"));
+      }
+      // validate the optional field `share_details`
+      if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
+        ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

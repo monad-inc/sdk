@@ -396,6 +396,7 @@ __all__ = [
     "ModelsSecret",
     "ModelsSecretWithComponents",
     "ModelsSecretWithComponentsList",
+    "ModelsShareDetails",
     "ModelsStorageTypeCostConfig",
     "ModelsStorageTypeCostEntry",
     "ModelsStorageTypeCostSummary",
@@ -1090,6 +1091,7 @@ from monad.models.models_role_with_permissions_list import ModelsRoleWithPermiss
 from monad.models.models_secret import ModelsSecret as ModelsSecret
 from monad.models.models_secret_with_components import ModelsSecretWithComponents as ModelsSecretWithComponents
 from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList as ModelsSecretWithComponentsList
+from monad.models.models_share_details import ModelsShareDetails as ModelsShareDetails
 from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig as ModelsStorageTypeCostConfig
 from monad.models.models_storage_type_cost_entry import ModelsStorageTypeCostEntry as ModelsStorageTypeCostEntry
 from monad.models.models_storage_type_cost_summary import ModelsStorageTypeCostSummary as ModelsStorageTypeCostSummary

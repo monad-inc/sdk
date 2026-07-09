@@ -25,6 +25,7 @@ import java.util.List;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipeline;
 import org.openapitools.client.model.ModelsReferences;
+import org.openapitools.client.model.ModelsShareDetails;
 import org.openapitools.client.model.ModelsTransformConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -113,6 +114,14 @@ public class RoutesGetTransformResponseTest {
     @Test
     public void referencesTest() {
         // TODO: test references
+    }
+
+    /**
+     * Test the property 'shareDetails'
+     */
+    @Test
+    public void shareDetailsTest() {
+        // TODO: test shareDetails
     }
 
     /**

@@ -90,6 +90,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_secret = monad.models.models/secret.models.Secret(
@@ -98,6 +102,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 ddsource = '',
@@ -118,6 +126,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             id = '', 
                             name = '', 
                             organization_id = '', 
+                            share_details = monad.models.models/share_details.models.ShareDetails(
+                                owner_organization_id = '', 
+                                shared_with_children = True, 
+                                shared_with_me = True, ), 
                             updated_at = '', 
                             value = '', ), ), ),
                 auth_type = '',
@@ -198,6 +210,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             id = '', 
                             name = '', 
                             organization_id = '', 
+                            share_details = monad.models.models/share_details.models.ShareDetails(
+                                owner_organization_id = '', 
+                                shared_with_children = True, 
+                                shared_with_me = True, ), 
                             updated_at = '', 
                             value = '', ), 
                         secret_key = monad.models.models/secret.models.Secret(
@@ -243,6 +259,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 allow_insecure = True,
@@ -287,6 +307,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_secret = monad.models.models/secret.models.Secret(
@@ -295,6 +319,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 index = '',
@@ -309,6 +337,10 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
         )

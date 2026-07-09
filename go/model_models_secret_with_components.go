@@ -33,6 +33,7 @@ type ModelsSecretWithComponents struct {
 	// The OrganizationID the secret belongs to
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Outputs []ModelsComponentReference `json:"outputs,omitempty"`
+	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
 	Transforms []ModelsComponentReference `json:"transforms,omitempty"`
 	// When the secret was updated
 	UpdatedAt *string `json:"updated_at,omitempty"`
@@ -313,6 +314,38 @@ func (o *ModelsSecretWithComponents) SetOutputs(v []ModelsComponentReference) {
 	o.Outputs = v
 }
 
+// GetShareDetails returns the ShareDetails field value if set, zero value otherwise.
+func (o *ModelsSecretWithComponents) GetShareDetails() ModelsShareDetails {
+	if o == nil || IsNil(o.ShareDetails) {
+		var ret ModelsShareDetails
+		return ret
+	}
+	return *o.ShareDetails
+}
+
+// GetShareDetailsOk returns a tuple with the ShareDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsSecretWithComponents) GetShareDetailsOk() (*ModelsShareDetails, bool) {
+	if o == nil || IsNil(o.ShareDetails) {
+		return nil, false
+	}
+	return o.ShareDetails, true
+}
+
+// HasShareDetails returns a boolean if a field has been set.
+func (o *ModelsSecretWithComponents) HasShareDetails() bool {
+	if o != nil && !IsNil(o.ShareDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetShareDetails gets a reference to the given ModelsShareDetails and assigns it to the ShareDetails field.
+func (o *ModelsSecretWithComponents) SetShareDetails(v ModelsShareDetails) {
+	o.ShareDetails = &v
+}
+
 // GetTransforms returns the Transforms field value if set, zero value otherwise.
 func (o *ModelsSecretWithComponents) GetTransforms() []ModelsComponentReference {
 	if o == nil || IsNil(o.Transforms) {
@@ -442,6 +475,9 @@ func (o ModelsSecretWithComponents) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Outputs) {
 		toSerialize["outputs"] = o.Outputs
+	}
+	if !IsNil(o.ShareDetails) {
+		toSerialize["share_details"] = o.ShareDetails
 	}
 	if !IsNil(o.Transforms) {
 		toSerialize["transforms"] = o.Transforms

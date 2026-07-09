@@ -11,6 +11,7 @@
  */
 
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { HttpFile } from '../http/http';
 
 export class ModelsSecretWithComponents {
@@ -37,6 +38,7 @@ export class ModelsSecretWithComponents {
     */
     'organizationId'?: string;
     'outputs'?: Array<ModelsComponentReference>;
+    'shareDetails'?: ModelsShareDetails;
     'transforms'?: Array<ModelsComponentReference>;
     /**
     * When the secret was updated
@@ -98,6 +100,12 @@ export class ModelsSecretWithComponents {
             "name": "outputs",
             "baseName": "outputs",
             "type": "Array<ModelsComponentReference>",
+            "format": ""
+        },
+        {
+            "name": "shareDetails",
+            "baseName": "share_details",
+            "type": "ModelsShareDetails",
             "format": ""
         },
         {

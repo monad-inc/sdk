@@ -45,6 +45,10 @@ class TestCommonAuthConfig(unittest.TestCase):
                         id = '', 
                         name = '', 
                         organization_id = '', 
+                        share_details = monad.models.models/share_details.models.ShareDetails(
+                            owner_organization_id = '', 
+                            shared_with_children = True, 
+                            shared_with_me = True, ), 
                         updated_at = '', 
                         value = '', ), ),
                 personal_access_token = monad.models.common/personal_access_token_variant.common.PersonalAccessTokenVariant(
@@ -54,6 +58,10 @@ class TestCommonAuthConfig(unittest.TestCase):
                         id = '', 
                         name = '', 
                         organization_id = '', 
+                        share_details = monad.models.models/share_details.models.ShareDetails(
+                            owner_organization_id = '', 
+                            shared_with_children = True, 
+                            shared_with_me = True, ), 
                         updated_at = '', 
                         value = '', ), ),
                 type = 'personal_access_token'

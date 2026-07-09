@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **str** | The ID of the secret | [optional] 
 **name** | **str** | The user set Name of the secret | [optional] 
 **organization_id** | **str** | The OrganizationID the secret belongs to | [optional] 
+**share_details** | [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **updated_at** | **str** | When the secret was updated | [optional] 
 **value** | **str** | The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload. | [optional] 
 

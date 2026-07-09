@@ -58,6 +58,10 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
                             id = '', 
                             name = '', 
                             organization_id = '', 
+                            share_details = monad.models.models/share_details.models.ShareDetails(
+                                owner_organization_id = '', 
+                                shared_with_children = True, 
+                                shared_with_me = True, ), 
                             updated_at = '', 
                             value = '', ), ), 
                     age = monad.models.encrypt/aes_variant.encrypt.AESVariant(), 
@@ -72,6 +76,10 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
                             id = '', 
                             name = '', 
                             organization_id = '', 
+                            share_details = monad.models.models/share_details.models.ShareDetails(
+                                owner_organization_id = '', 
+                                shared_with_children = True, 
+                                shared_with_me = True, ), 
                             updated_at = '', 
                             value = '', ), ), 
                     simple = monad.models.mask/simple_variant.mask.SimpleVariant(), 

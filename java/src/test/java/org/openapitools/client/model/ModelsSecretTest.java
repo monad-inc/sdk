@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsShareDetails;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -75,6 +76,14 @@ public class ModelsSecretTest {
     @Test
     public void organizationIdTest() {
         // TODO: test organizationId
+    }
+
+    /**
+     * Test the property 'shareDetails'
+     */
+    @Test
+    public void shareDetailsTest() {
+        // TODO: test shareDetails
     }
 
     /**

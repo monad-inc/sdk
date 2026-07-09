@@ -47,6 +47,10 @@ class TestDatabricksLakehouseSettingsConfig(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_secret = monad.models.models/secret.models.Secret(
@@ -55,6 +59,10 @@ class TestDatabricksLakehouseSettingsConfig(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 var_schema = '',
@@ -86,6 +94,10 @@ class TestDatabricksLakehouseSettingsConfig(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_secret = monad.models.models/secret.models.Secret(
@@ -94,6 +106,10 @@ class TestDatabricksLakehouseSettingsConfig(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 var_schema = '',

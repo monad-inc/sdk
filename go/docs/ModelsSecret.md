@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | The ID of the secret | [optional] 
 **Name** | Pointer to **string** | The user set Name of the secret | [optional] 
 **OrganizationId** | Pointer to **string** | The OrganizationID the secret belongs to | [optional] 
+**ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** | When the secret was updated | [optional] 
 **Value** | Pointer to **string** | The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload. | [optional] 
 
@@ -155,6 +156,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *ModelsSecret) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetShareDetails
+
+`func (o *ModelsSecret) GetShareDetails() ModelsShareDetails`
+
+GetShareDetails returns the ShareDetails field if non-nil, zero value otherwise.
+
+### GetShareDetailsOk
+
+`func (o *ModelsSecret) GetShareDetailsOk() (*ModelsShareDetails, bool)`
+
+GetShareDetailsOk returns a tuple with the ShareDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShareDetails
+
+`func (o *ModelsSecret) SetShareDetails(v ModelsShareDetails)`
+
+SetShareDetails sets ShareDetails field to given value.
+
+### HasShareDetails
+
+`func (o *ModelsSecret) HasShareDetails() bool`
+
+HasShareDetails returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

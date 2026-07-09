@@ -668,6 +668,7 @@ Class | Method | HTTP request | Description
  - [ModelsSecret](docs/ModelsSecret.md)
  - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
  - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)
+ - [ModelsShareDetails](docs/ModelsShareDetails.md)
  - [ModelsStorageTypeCostConfig](docs/ModelsStorageTypeCostConfig.md)
  - [ModelsStorageTypeCostEntry](docs/ModelsStorageTypeCostEntry.md)
  - [ModelsStorageTypeCostSummary](docs/ModelsStorageTypeCostSummary.md)

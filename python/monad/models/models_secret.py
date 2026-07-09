@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_share_details import ModelsShareDetails
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,9 +34,10 @@ class ModelsSecret(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="The ID of the secret")
     name: Optional[StrictStr] = Field(default=None, description="The user set Name of the secret")
     organization_id: Optional[StrictStr] = Field(default=None, description="The OrganizationID the secret belongs to")
+    share_details: Optional[ModelsShareDetails] = None
     updated_at: Optional[StrictStr] = Field(default=None, description="When the secret was updated")
     value: Optional[StrictStr] = Field(default=None, description="The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.")
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "updated_at", "value"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "share_details", "updated_at", "value"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -76,6 +78,9 @@ class ModelsSecret(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of share_details
+        if self.share_details:
+            _dict['share_details'] = self.share_details.to_dict()
         return _dict
 
     @classmethod
@@ -93,6 +98,7 @@ class ModelsSecret(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
+            "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
             "updated_at": obj.get("updated_at"),
             "value": obj.get("value")
         })

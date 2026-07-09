@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsComponentReference;
+import org.openapitools.client.model.ModelsShareDetails;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -102,6 +103,14 @@ public class ModelsSecretWithComponentsTest {
     @Test
     public void outputsTest() {
         // TODO: test outputs
+    }
+
+    /**
+     * Test the property 'shareDetails'
+     */
+    @Test
+    public void shareDetailsTest() {
+        // TODO: test shareDetails
     }
 
     /**

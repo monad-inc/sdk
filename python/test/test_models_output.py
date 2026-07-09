@@ -55,6 +55,10 @@ class TestModelsOutput(unittest.TestCase):
                             id = '', 
                             organization_id = '', )
                         ], ),
+                share_details = monad.models.models/share_details.models.ShareDetails(
+                    owner_organization_id = '', 
+                    shared_with_children = True, 
+                    shared_with_me = True, ),
                 type = '',
                 updated_at = ''
             )

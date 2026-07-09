@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { HttpFile } from '../http/http';
 
 /**
@@ -36,6 +37,7 @@ export class ModelsSecret {
     * The OrganizationID the secret belongs to
     */
     'organizationId'?: string;
+    'shareDetails'?: ModelsShareDetails;
     /**
     * When the secret was updated
     */
@@ -78,6 +80,12 @@ export class ModelsSecret {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "shareDetails",
+            "baseName": "share_details",
+            "type": "ModelsShareDetails",
             "format": ""
         },
         {

@@ -29,6 +29,7 @@ type RoutesGetTransformResponse struct {
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	References *ModelsReferences `json:"references,omitempty"`
+	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -337,6 +338,38 @@ func (o *RoutesGetTransformResponse) SetReferences(v ModelsReferences) {
 	o.References = &v
 }
 
+// GetShareDetails returns the ShareDetails field value if set, zero value otherwise.
+func (o *RoutesGetTransformResponse) GetShareDetails() ModelsShareDetails {
+	if o == nil || IsNil(o.ShareDetails) {
+		var ret ModelsShareDetails
+		return ret
+	}
+	return *o.ShareDetails
+}
+
+// GetShareDetailsOk returns a tuple with the ShareDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesGetTransformResponse) GetShareDetailsOk() (*ModelsShareDetails, bool) {
+	if o == nil || IsNil(o.ShareDetails) {
+		return nil, false
+	}
+	return o.ShareDetails, true
+}
+
+// HasShareDetails returns a boolean if a field has been set.
+func (o *RoutesGetTransformResponse) HasShareDetails() bool {
+	if o != nil && !IsNil(o.ShareDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetShareDetails gets a reference to the given ModelsShareDetails and assigns it to the ShareDetails field.
+func (o *RoutesGetTransformResponse) SetShareDetails(v ModelsShareDetails) {
+	o.ShareDetails = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *RoutesGetTransformResponse) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -405,6 +438,9 @@ func (o RoutesGetTransformResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.References) {
 		toSerialize["references"] = o.References
+	}
+	if !IsNil(o.ShareDetails) {
+		toSerialize["share_details"] = o.ShareDetails
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

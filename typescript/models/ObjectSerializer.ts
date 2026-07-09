@@ -326,6 +326,7 @@ export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSecret';
 export * from '../models/ModelsSecretWithComponents';
 export * from '../models/ModelsSecretWithComponentsList';
+export * from '../models/ModelsShareDetails';
 export * from '../models/ModelsStorageTypeCostConfig';
 export * from '../models/ModelsStorageTypeCostEntry';
 export * from '../models/ModelsStorageTypeCostSummary';
@@ -912,11 +913,11 @@ import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsElseAction } from '../models/ModelsElseAction';
-import { ModelsEnrichment           } from '../models/ModelsEnrichment';
+import { ModelsEnrichment            } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
-import { ModelsInput           } from '../models/ModelsInput';
+import { ModelsInput            } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
@@ -930,7 +931,7 @@ import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAudi
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
-import { ModelsOutput           } from '../models/ModelsOutput';
+import { ModelsOutput            } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
@@ -965,6 +966,7 @@ import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissio
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -973,7 +975,7 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
-import { ModelsTransform          } from '../models/ModelsTransform';
+import { ModelsTransform           } from '../models/ModelsTransform';
 import { ModelsTransformConditional   } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
@@ -1054,9 +1056,9 @@ import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettings
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
-import { RoutesGetInputResponse            } from '../models/RoutesGetInputResponse';
-import { RoutesGetOutputResponse            } from '../models/RoutesGetOutputResponse';
-import { RoutesGetTransformResponse           } from '../models/RoutesGetTransformResponse';
+import { RoutesGetInputResponse             } from '../models/RoutesGetInputResponse';
+import { RoutesGetOutputResponse             } from '../models/RoutesGetOutputResponse';
+import { RoutesGetTransformResponse            } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
@@ -1125,7 +1127,7 @@ import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSa
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
-import { RoutesV3GetEnrichmentResponse            } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetEnrichmentResponse             } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
@@ -1673,6 +1675,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsSecret": ModelsSecret,
     "ModelsSecretWithComponents": ModelsSecretWithComponents,
     "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,
+    "ModelsShareDetails": ModelsShareDetails,
     "ModelsStorageTypeCostConfig": ModelsStorageTypeCostConfig,
     "ModelsStorageTypeCostEntry": ModelsStorageTypeCostEntry,
     "ModelsStorageTypeCostSummary": ModelsStorageTypeCostSummary,

@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_component_reference import ModelsComponentReference
+from monad.models.models_share_details import ModelsShareDetails
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -37,10 +38,11 @@ class ModelsSecretWithComponents(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="The user set Name of the secret")
     organization_id: Optional[StrictStr] = Field(default=None, description="The OrganizationID the secret belongs to")
     outputs: Optional[List[ModelsComponentReference]] = None
+    share_details: Optional[ModelsShareDetails] = None
     transforms: Optional[List[ModelsComponentReference]] = None
     updated_at: Optional[StrictStr] = Field(default=None, description="When the secret was updated")
     value: Optional[StrictStr] = Field(default=None, description="The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.")
-    __properties: ClassVar[List[str]] = ["created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "transforms", "updated_at", "value"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "share_details", "transforms", "updated_at", "value"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -102,6 +104,9 @@ class ModelsSecretWithComponents(BaseModel):
                 if _item_outputs:
                     _items.append(_item_outputs.to_dict())
             _dict['outputs'] = _items
+        # override the default output from pydantic by calling `to_dict()` of share_details
+        if self.share_details:
+            _dict['share_details'] = self.share_details.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in transforms (list)
         _items = []
         if self.transforms:
@@ -129,6 +134,7 @@ class ModelsSecretWithComponents(BaseModel):
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "outputs": [ModelsComponentReference.from_dict(_item) for _item in obj["outputs"]] if obj.get("outputs") is not None else None,
+            "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
             "transforms": [ModelsComponentReference.from_dict(_item) for _item in obj["transforms"]] if obj.get("transforms") is not None else None,
             "updated_at": obj.get("updated_at"),
             "value": obj.get("value")

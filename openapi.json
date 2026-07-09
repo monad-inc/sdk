@@ -5254,6 +5254,9 @@
                     "references": {
                         "$ref": "#/components/schemas/models.References"
                     },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -5334,6 +5337,9 @@
                     },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
                     },
                     "type": {
                         "type": "string"
@@ -5652,6 +5658,9 @@
                     },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
                     },
                     "type": {
                         "type": "string"
@@ -6366,6 +6375,9 @@
                         "description": "The OrganizationID the secret belongs to",
                         "type": "string"
                     },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
                     "updated_at": {
                         "description": "When the secret was updated",
                         "type": "string"
@@ -6420,6 +6432,9 @@
                         "type": "array",
                         "uniqueItems": false
                     },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
                     "transforms": {
                         "items": {
                             "$ref": "#/components/schemas/models.ComponentReference"
@@ -6449,6 +6464,24 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "models.ShareDetails": {
+                "description": "ShareDetails is set when the enrichment is involved in org-to-org sharing.",
+                "properties": {
+                    "owner_organization_id": {
+                        "description": "OwnerOrganizationID is the org that owns the resource; set only when SharedWithMe.",
+                        "type": "string"
+                    },
+                    "shared_with_children": {
+                        "description": "SharedWithChildren is true when the requesting org owns the resource and has\nshared it out to at least one child org.",
+                        "type": "boolean"
+                    },
+                    "shared_with_me": {
+                        "description": "SharedWithMe is true when the resource is shared to the requesting org by a parent org.",
+                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -6641,6 +6674,9 @@
                     },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
                     },
                     "updated_at": {
                         "type": "string"
@@ -8043,6 +8079,9 @@
                     "references": {
                         "$ref": "#/components/schemas/models.References"
                     },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -8085,6 +8124,9 @@
                     "references": {
                         "$ref": "#/components/schemas/models.References"
                     },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -8126,6 +8168,9 @@
                     },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
                     },
                     "updated_at": {
                         "type": "string"
@@ -9411,6 +9456,9 @@
                     },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
                     },
                     "type": {
                         "type": "string"

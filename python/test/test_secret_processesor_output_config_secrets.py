@@ -42,6 +42,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_secret = monad.models.models/secret.models.Secret(
@@ -50,6 +54,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 tenant_id = monad.models.models/secret.models.Secret(
@@ -58,6 +66,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 api_token = monad.models.models/secret.models.Secret(
@@ -66,6 +78,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 application_key = monad.models.models/secret.models.Secret(
@@ -74,6 +90,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 application_key_id = monad.models.models/secret.models.Secret(
@@ -82,6 +102,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 credentials = monad.models.models/secret.models.Secret(
@@ -90,6 +114,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 auth_token = monad.models.models/secret.models.Secret(
@@ -98,6 +126,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 api_key = monad.models.models/secret.models.Secret(
@@ -106,6 +138,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 password = monad.models.models/secret.models.Secret(
@@ -114,6 +150,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 credentials_json = monad.models.models/secret.models.Secret(
@@ -122,6 +162,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 auth_headers = {
@@ -131,6 +175,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                         id = '', 
                         name = '', 
                         organization_id = '', 
+                        share_details = monad.models.models/share_details.models.ShareDetails(
+                            owner_organization_id = '', 
+                            shared_with_children = True, 
+                            shared_with_me = True, ), 
                         updated_at = '', 
                         value = '', )
                     },
@@ -140,6 +188,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_certificate = monad.models.models/secret.models.Secret(
@@ -148,6 +200,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_key = monad.models.models/secret.models.Secret(
@@ -156,6 +212,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 access_key = monad.models.models/secret.models.Secret(
@@ -164,6 +224,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 secret_key = monad.models.models/secret.models.Secret(
@@ -172,6 +236,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 routing_key = monad.models.models/secret.models.Secret(
@@ -180,6 +248,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 bearer_token = monad.models.models/secret.models.Secret(
@@ -188,6 +260,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 connection_string = monad.models.models/secret.models.Secret(
@@ -196,6 +272,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 private_key = monad.models.models/secret.models.Secret(
@@ -204,6 +284,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 token = monad.models.models/secret.models.Secret(
@@ -212,6 +296,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 access_id = monad.models.models/secret.models.Secret(
@@ -220,6 +308,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', )
             )
@@ -231,6 +323,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
                 client_secret = monad.models.models/secret.models.Secret(
@@ -239,6 +335,10 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     id = '', 
                     name = '', 
                     organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
         )

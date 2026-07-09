@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **references** | [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
+**share_details** | [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 

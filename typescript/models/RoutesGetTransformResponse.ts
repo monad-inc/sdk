@@ -13,6 +13,7 @@
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { HttpFile } from '../http/http';
 
@@ -26,6 +27,7 @@ export class RoutesGetTransformResponse {
     'name'?: string;
     'organizationId'?: string;
     'references'?: ModelsReferences;
+    'shareDetails'?: ModelsShareDetails;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -85,6 +87,12 @@ export class RoutesGetTransformResponse {
             "name": "references",
             "baseName": "references",
             "type": "ModelsReferences",
+            "format": ""
+        },
+        {
+            "name": "shareDetails",
+            "baseName": "share_details",
+            "type": "ModelsShareDetails",
             "format": ""
         },
         {
