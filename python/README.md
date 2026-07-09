@@ -675,6 +675,7 @@ Class | Method | HTTP request | Description
  - [ModelsResourceShareWithUsageList](docs/ModelsResourceShareWithUsageList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
+ - [ModelsSchemaDetection](docs/ModelsSchemaDetection.md)
  - [ModelsSecret](docs/ModelsSecret.md)
  - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
  - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)

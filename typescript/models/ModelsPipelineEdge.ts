@@ -11,6 +11,7 @@
  */
 
 import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
+import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineEdge {
@@ -23,7 +24,7 @@ export class ModelsPipelineEdge {
     'name'?: string;
     'organizationId'?: string;
     'pipelineId'?: string;
-    'schemaDetection'?: boolean;
+    'schemaDetectionSpec'?: ModelsSchemaDetection;
     'toNodeInstanceId'?: string;
     'updatedAt'?: string;
 
@@ -87,9 +88,9 @@ export class ModelsPipelineEdge {
             "format": ""
         },
         {
-            "name": "schemaDetection",
-            "baseName": "schema_detection",
-            "type": "boolean",
+            "name": "schemaDetectionSpec",
+            "baseName": "schema_detection_spec",
+            "type": "ModelsSchemaDetection",
             "format": ""
         },
         {

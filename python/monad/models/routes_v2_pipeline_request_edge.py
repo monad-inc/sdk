@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
+from monad.models.models_schema_detection import ModelsSchemaDetection
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -35,9 +36,9 @@ class RoutesV2PipelineRequestEdge(BaseModel):
     from_node_instance_id: StrictStr
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    schema_detection: Optional[StrictBool] = None
+    schema_detection_spec: Optional[ModelsSchemaDetection] = None
     to_node_instance_id: StrictStr
-    __properties: ClassVar[List[str]] = ["conditions", "description", "disabled", "from_node_instance_id", "id", "name", "schema_detection", "to_node_instance_id"]
+    __properties: ClassVar[List[str]] = ["conditions", "description", "disabled", "from_node_instance_id", "id", "name", "schema_detection_spec", "to_node_instance_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -81,6 +82,9 @@ class RoutesV2PipelineRequestEdge(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of conditions
         if self.conditions:
             _dict['conditions'] = self.conditions.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of schema_detection_spec
+        if self.schema_detection_spec:
+            _dict['schema_detection_spec'] = self.schema_detection_spec.to_dict()
         return _dict
 
     @classmethod
@@ -99,7 +103,7 @@ class RoutesV2PipelineRequestEdge(BaseModel):
             "from_node_instance_id": obj.get("from_node_instance_id"),
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "schema_detection": obj.get("schema_detection"),
+            "schema_detection_spec": ModelsSchemaDetection.from_dict(obj["schema_detection_spec"]) if obj.get("schema_detection_spec") is not None else None,
             "to_node_instance_id": obj.get("to_node_instance_id")
         })
         return _obj

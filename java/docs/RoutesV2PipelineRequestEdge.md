@@ -13,7 +13,7 @@
 |**fromNodeInstanceId** | **String** |  |  |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**schemaDetection** | **Boolean** |  |  [optional] |
+|**schemaDetectionSpec** | [**ModelsSchemaDetection**](ModelsSchemaDetection.md) |  |  [optional] |
 |**toNodeInstanceId** | **String** |  |  |
 
 

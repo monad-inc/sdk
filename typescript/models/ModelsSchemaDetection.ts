@@ -10,19 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
-import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { HttpFile } from '../http/http';
 
-export class RoutesV2PipelineRequestEdge {
-    'conditions'?: ModelsConditionEvaluatable;
-    'description'?: string;
-    'disabled'?: boolean;
-    'fromNodeInstanceId': string;
-    'id'?: string;
-    'name'?: string;
-    'schemaDetectionSpec'?: ModelsSchemaDetection;
-    'toNodeInstanceId': string;
+export class ModelsSchemaDetection {
+    'enabled'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,56 +21,14 @@ export class RoutesV2PipelineRequestEdge {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "conditions",
-            "baseName": "conditions",
-            "type": "ModelsConditionEvaluatable",
-            "format": ""
-        },
-        {
-            "name": "description",
-            "baseName": "description",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "disabled",
-            "baseName": "disabled",
+            "name": "enabled",
+            "baseName": "enabled",
             "type": "boolean",
-            "format": ""
-        },
-        {
-            "name": "fromNodeInstanceId",
-            "baseName": "from_node_instance_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "id",
-            "baseName": "id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "schemaDetectionSpec",
-            "baseName": "schema_detection_spec",
-            "type": "ModelsSchemaDetection",
-            "format": ""
-        },
-        {
-            "name": "toNodeInstanceId",
-            "baseName": "to_node_instance_id",
-            "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return RoutesV2PipelineRequestEdge.attributeTypeMap;
+        return ModelsSchemaDetection.attributeTypeMap;
     }
 
     public constructor() {

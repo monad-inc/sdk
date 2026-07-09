@@ -5887,8 +5887,8 @@
                     "pipeline_id": {
                         "type": "string"
                     },
-                    "schema_detection": {
-                        "type": "boolean"
+                    "schema_detection_spec": {
+                        "$ref": "#/components/schemas/models.SchemaDetection"
                     },
                     "to_node_instance_id": {
                         "type": "string"
@@ -6457,6 +6457,14 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "models.SchemaDetection": {
+                "properties": {
+                    "enabled": {
+                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -8945,8 +8953,8 @@
                     "name": {
                         "type": "string"
                     },
-                    "schema_detection": {
-                        "type": "boolean"
+                    "schema_detection_spec": {
+                        "$ref": "#/components/schemas/models.SchemaDetection"
                     },
                     "to_node_instance_id": {
                         "type": "string"

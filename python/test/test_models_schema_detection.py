@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.update_pipeline_request import UpdatePipelineRequest
+from monad.models.models_schema_detection import ModelsSchemaDetection
 
-class TestUpdatePipelineRequest(unittest.TestCase):
-    """UpdatePipelineRequest unit test stubs"""
+class TestModelsSchemaDetection(unittest.TestCase):
+    """ModelsSchemaDetection unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,52 +26,25 @@ class TestUpdatePipelineRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UpdatePipelineRequest:
-        """Test UpdatePipelineRequest
+    def make_instance(self, include_optional) -> ModelsSchemaDetection:
+        """Test ModelsSchemaDetection
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `UpdatePipelineRequest`
+        # uncomment below to create an instance of `ModelsSchemaDetection`
         """
-        model = UpdatePipelineRequest()
+        model = ModelsSchemaDetection()
         if include_optional:
-            return UpdatePipelineRequest(
-                description = '',
-                edges = [
-                    monad.models.routes_v2/pipeline_request_edge.routesV2.PipelineRequestEdge(
-                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                            config = {
-                                'key' : null
-                                }, 
-                            operator = 'always', 
-                            type_id = '', ), 
-                        description = '', 
-                        disabled = True, 
-                        from_node_instance_id = '', 
-                        id = '', 
-                        name = '', 
-                        schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
-                            enabled = True, ), 
-                        to_node_instance_id = '', )
-                    ],
-                enabled = True,
-                name = '',
-                nodes = [
-                    monad.models.routes_v2/pipeline_request_node.routesV2.PipelineRequestNode(
-                        component_id = '', 
-                        component_type = 'transform', 
-                        enabled = True, 
-                        id = '', 
-                        slug = '', )
-                    ]
+            return ModelsSchemaDetection(
+                enabled = True
             )
         else:
-            return UpdatePipelineRequest(
+            return ModelsSchemaDetection(
         )
         """
 
-    def testUpdatePipelineRequest(self):
-        """Test UpdatePipelineRequest"""
+    def testModelsSchemaDetection(self):
+        """Test ModelsSchemaDetection"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

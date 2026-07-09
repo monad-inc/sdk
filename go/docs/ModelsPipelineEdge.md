@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
-**SchemaDetection** | Pointer to **bool** |  | [optional] 
+**SchemaDetectionSpec** | Pointer to [**ModelsSchemaDetection**](ModelsSchemaDetection.md) |  | [optional] 
 **ToNodeInstanceId** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -261,30 +261,30 @@ SetPipelineId sets PipelineId field to given value.
 
 HasPipelineId returns a boolean if a field has been set.
 
-### GetSchemaDetection
+### GetSchemaDetectionSpec
 
-`func (o *ModelsPipelineEdge) GetSchemaDetection() bool`
+`func (o *ModelsPipelineEdge) GetSchemaDetectionSpec() ModelsSchemaDetection`
 
-GetSchemaDetection returns the SchemaDetection field if non-nil, zero value otherwise.
+GetSchemaDetectionSpec returns the SchemaDetectionSpec field if non-nil, zero value otherwise.
 
-### GetSchemaDetectionOk
+### GetSchemaDetectionSpecOk
 
-`func (o *ModelsPipelineEdge) GetSchemaDetectionOk() (*bool, bool)`
+`func (o *ModelsPipelineEdge) GetSchemaDetectionSpecOk() (*ModelsSchemaDetection, bool)`
 
-GetSchemaDetectionOk returns a tuple with the SchemaDetection field if it's non-nil, zero value otherwise
+GetSchemaDetectionSpecOk returns a tuple with the SchemaDetectionSpec field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSchemaDetection
+### SetSchemaDetectionSpec
 
-`func (o *ModelsPipelineEdge) SetSchemaDetection(v bool)`
+`func (o *ModelsPipelineEdge) SetSchemaDetectionSpec(v ModelsSchemaDetection)`
 
-SetSchemaDetection sets SchemaDetection field to given value.
+SetSchemaDetectionSpec sets SchemaDetectionSpec field to given value.
 
-### HasSchemaDetection
+### HasSchemaDetectionSpec
 
-`func (o *ModelsPipelineEdge) HasSchemaDetection() bool`
+`func (o *ModelsPipelineEdge) HasSchemaDetectionSpec() bool`
 
-HasSchemaDetection returns a boolean if a field has been set.
+HasSchemaDetectionSpec returns a boolean if a field has been set.
 
 ### GetToNodeInstanceId
 

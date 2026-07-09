@@ -50,7 +50,8 @@ class TestModelsPipelineEdge(unittest.TestCase):
                 name = '',
                 organization_id = '',
                 pipeline_id = '',
-                schema_detection = True,
+                schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                    enabled = True, ),
                 to_node_instance_id = '',
                 updated_at = ''
             )

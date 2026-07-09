@@ -20,87 +20,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsConditionEvaluatable;
-import org.openapitools.client.model.ModelsSchemaDetection;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV2PipelineRequestEdge
+ * Model tests for ModelsSchemaDetection
  */
-public class RoutesV2PipelineRequestEdgeTest {
-    private final RoutesV2PipelineRequestEdge model = new RoutesV2PipelineRequestEdge();
+public class ModelsSchemaDetectionTest {
+    private final ModelsSchemaDetection model = new ModelsSchemaDetection();
 
     /**
-     * Model tests for RoutesV2PipelineRequestEdge
+     * Model tests for ModelsSchemaDetection
      */
     @Test
-    public void testRoutesV2PipelineRequestEdge() {
-        // TODO: test RoutesV2PipelineRequestEdge
+    public void testModelsSchemaDetection() {
+        // TODO: test ModelsSchemaDetection
     }
 
     /**
-     * Test the property 'conditions'
+     * Test the property 'enabled'
      */
     @Test
-    public void conditionsTest() {
-        // TODO: test conditions
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'disabled'
-     */
-    @Test
-    public void disabledTest() {
-        // TODO: test disabled
-    }
-
-    /**
-     * Test the property 'fromNodeInstanceId'
-     */
-    @Test
-    public void fromNodeInstanceIdTest() {
-        // TODO: test fromNodeInstanceId
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'schemaDetectionSpec'
-     */
-    @Test
-    public void schemaDetectionSpecTest() {
-        // TODO: test schemaDetectionSpec
-    }
-
-    /**
-     * Test the property 'toNodeInstanceId'
-     */
-    @Test
-    public void toNodeInstanceIdTest() {
-        // TODO: test toNodeInstanceId
+    public void enabledTest() {
+        // TODO: test enabled
     }
 
 }

@@ -16,7 +16,7 @@
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**pipelineId** | **String** |  |  [optional] |
-|**schemaDetection** | **Boolean** |  |  [optional] |
+|**schemaDetectionSpec** | [**ModelsSchemaDetection**](ModelsSchemaDetection.md) |  |  [optional] |
 |**toNodeInstanceId** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 

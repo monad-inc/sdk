@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsConditionEvaluatable;
+import org.openapitools.client.model.ModelsSchemaDetection;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -96,10 +97,10 @@ public class ModelsPipelineEdge {
   @javax.annotation.Nullable
   private String pipelineId;
 
-  public static final String SERIALIZED_NAME_SCHEMA_DETECTION = "schema_detection";
-  @SerializedName(SERIALIZED_NAME_SCHEMA_DETECTION)
+  public static final String SERIALIZED_NAME_SCHEMA_DETECTION_SPEC = "schema_detection_spec";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_DETECTION_SPEC)
   @javax.annotation.Nullable
-  private Boolean schemaDetection;
+  private ModelsSchemaDetection schemaDetectionSpec;
 
   public static final String SERIALIZED_NAME_TO_NODE_INSTANCE_ID = "to_node_instance_id";
   @SerializedName(SERIALIZED_NAME_TO_NODE_INSTANCE_ID)
@@ -285,22 +286,22 @@ public class ModelsPipelineEdge {
   }
 
 
-  public ModelsPipelineEdge schemaDetection(@javax.annotation.Nullable Boolean schemaDetection) {
-    this.schemaDetection = schemaDetection;
+  public ModelsPipelineEdge schemaDetectionSpec(@javax.annotation.Nullable ModelsSchemaDetection schemaDetectionSpec) {
+    this.schemaDetectionSpec = schemaDetectionSpec;
     return this;
   }
 
   /**
-   * Get schemaDetection
-   * @return schemaDetection
+   * Get schemaDetectionSpec
+   * @return schemaDetectionSpec
    */
   @javax.annotation.Nullable
-  public Boolean getSchemaDetection() {
-    return schemaDetection;
+  public ModelsSchemaDetection getSchemaDetectionSpec() {
+    return schemaDetectionSpec;
   }
 
-  public void setSchemaDetection(@javax.annotation.Nullable Boolean schemaDetection) {
-    this.schemaDetection = schemaDetection;
+  public void setSchemaDetectionSpec(@javax.annotation.Nullable ModelsSchemaDetection schemaDetectionSpec) {
+    this.schemaDetectionSpec = schemaDetectionSpec;
   }
 
 
@@ -361,14 +362,14 @@ public class ModelsPipelineEdge {
         Objects.equals(this.name, modelsPipelineEdge.name) &&
         Objects.equals(this.organizationId, modelsPipelineEdge.organizationId) &&
         Objects.equals(this.pipelineId, modelsPipelineEdge.pipelineId) &&
-        Objects.equals(this.schemaDetection, modelsPipelineEdge.schemaDetection) &&
+        Objects.equals(this.schemaDetectionSpec, modelsPipelineEdge.schemaDetectionSpec) &&
         Objects.equals(this.toNodeInstanceId, modelsPipelineEdge.toNodeInstanceId) &&
         Objects.equals(this.updatedAt, modelsPipelineEdge.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, createdAt, description, disabled, fromNodeInstanceId, id, name, organizationId, pipelineId, schemaDetection, toNodeInstanceId, updatedAt);
+    return Objects.hash(conditions, createdAt, description, disabled, fromNodeInstanceId, id, name, organizationId, pipelineId, schemaDetectionSpec, toNodeInstanceId, updatedAt);
   }
 
   @Override
@@ -384,7 +385,7 @@ public class ModelsPipelineEdge {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
-    sb.append("    schemaDetection: ").append(toIndentedString(schemaDetection)).append("\n");
+    sb.append("    schemaDetectionSpec: ").append(toIndentedString(schemaDetectionSpec)).append("\n");
     sb.append("    toNodeInstanceId: ").append(toIndentedString(toNodeInstanceId)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -405,7 +406,7 @@ public class ModelsPipelineEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection", "to_node_instance_id", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection_spec", "to_node_instance_id", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -456,6 +457,10 @@ public class ModelsPipelineEdge {
       }
       if ((jsonObj.get("pipeline_id") != null && !jsonObj.get("pipeline_id").isJsonNull()) && !jsonObj.get("pipeline_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
+      }
+      // validate the optional field `schema_detection_spec`
+      if (jsonObj.get("schema_detection_spec") != null && !jsonObj.get("schema_detection_spec").isJsonNull()) {
+        ModelsSchemaDetection.validateJsonElement(jsonObj.get("schema_detection_spec"));
       }
       if ((jsonObj.get("to_node_instance_id") != null && !jsonObj.get("to_node_instance_id").isJsonNull()) && !jsonObj.get("to_node_instance_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `to_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_node_instance_id").toString()));

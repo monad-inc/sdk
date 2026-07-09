@@ -328,6 +328,7 @@ export * from '../models/ModelsResourceShareWithUsage';
 export * from '../models/ModelsResourceShareWithUsageList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
+export * from '../models/ModelsSchemaDetection';
 export * from '../models/ModelsSecret';
 export * from '../models/ModelsSecretWithComponents';
 export * from '../models/ModelsSecretWithComponentsList';
@@ -976,6 +977,7 @@ import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithU
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
+import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
@@ -1693,6 +1695,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsResourceShareWithUsageList": ModelsResourceShareWithUsageList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
+    "ModelsSchemaDetection": ModelsSchemaDetection,
     "ModelsSecret": ModelsSecret,
     "ModelsSecretWithComponents": ModelsSecretWithComponents,
     "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,

@@ -18,31 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
-from monad.models.models_schema_detection import ModelsSchemaDetection
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ModelsPipelineEdge(BaseModel):
+class ModelsSchemaDetection(BaseModel):
     """
-    ModelsPipelineEdge
+    ModelsSchemaDetection
     """ # noqa: E501
-    conditions: Optional[ModelsConditionEvaluatable] = None
-    created_at: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    disabled: Optional[StrictBool] = None
-    from_node_instance_id: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    pipeline_id: Optional[StrictStr] = None
-    schema_detection_spec: Optional[ModelsSchemaDetection] = None
-    to_node_instance_id: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "schema_detection_spec", "to_node_instance_id", "updated_at"]
+    enabled: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["enabled"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -62,7 +49,7 @@ class ModelsPipelineEdge(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsPipelineEdge from a JSON string"""
+        """Create an instance of ModelsSchemaDetection from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -83,17 +70,11 @@ class ModelsPipelineEdge(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of conditions
-        if self.conditions:
-            _dict['conditions'] = self.conditions.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of schema_detection_spec
-        if self.schema_detection_spec:
-            _dict['schema_detection_spec'] = self.schema_detection_spec.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsPipelineEdge from a dict"""
+        """Create an instance of ModelsSchemaDetection from a dict"""
         if obj is None:
             return None
 
@@ -101,18 +82,7 @@ class ModelsPipelineEdge(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "conditions": ModelsConditionEvaluatable.from_dict(obj["conditions"]) if obj.get("conditions") is not None else None,
-            "created_at": obj.get("created_at"),
-            "description": obj.get("description"),
-            "disabled": obj.get("disabled"),
-            "from_node_instance_id": obj.get("from_node_instance_id"),
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "organization_id": obj.get("organization_id"),
-            "pipeline_id": obj.get("pipeline_id"),
-            "schema_detection_spec": ModelsSchemaDetection.from_dict(obj["schema_detection_spec"]) if obj.get("schema_detection_spec") is not None else None,
-            "to_node_instance_id": obj.get("to_node_instance_id"),
-            "updated_at": obj.get("updated_at")
+            "enabled": obj.get("enabled")
         })
         return _obj
 

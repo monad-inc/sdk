@@ -50,7 +50,8 @@ class TestCreatePipelineRequest(unittest.TestCase):
                         from_node_instance_id = '', 
                         id = '', 
                         name = '', 
-                        schema_detection = True, 
+                        schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                            enabled = True, ), 
                         to_node_instance_id = '', )
                     ],
                 enabled = True,
@@ -79,7 +80,8 @@ class TestCreatePipelineRequest(unittest.TestCase):
                         from_node_instance_id = '', 
                         id = '', 
                         name = '', 
-                        schema_detection = True, 
+                        schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                            enabled = True, ), 
                         to_node_instance_id = '', )
                     ],
                 name = '',

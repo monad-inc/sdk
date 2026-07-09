@@ -333,6 +333,7 @@ import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithU
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
+import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';

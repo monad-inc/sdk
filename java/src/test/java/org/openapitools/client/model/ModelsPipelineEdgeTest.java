@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsConditionEvaluatable;
+import org.openapitools.client.model.ModelsSchemaDetection;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -111,11 +112,11 @@ public class ModelsPipelineEdgeTest {
     }
 
     /**
-     * Test the property 'schemaDetection'
+     * Test the property 'schemaDetectionSpec'
      */
     @Test
-    public void schemaDetectionTest() {
-        // TODO: test schemaDetection
+    public void schemaDetectionSpecTest() {
+        // TODO: test schemaDetectionSpec
     }
 
     /**

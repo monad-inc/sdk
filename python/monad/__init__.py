@@ -399,6 +399,7 @@ __all__ = [
     "ModelsResourceShareWithUsageList",
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
+    "ModelsSchemaDetection",
     "ModelsSecret",
     "ModelsSecretWithComponents",
     "ModelsSecretWithComponentsList",
@@ -1103,6 +1104,7 @@ from monad.models.models_resource_share_with_usage import ModelsResourceShareWit
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList as ModelsResourceShareWithUsageList
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
+from monad.models.models_schema_detection import ModelsSchemaDetection as ModelsSchemaDetection
 from monad.models.models_secret import ModelsSecret as ModelsSecret
 from monad.models.models_secret_with_components import ModelsSecretWithComponents as ModelsSecretWithComponents
 from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList as ModelsSecretWithComponentsList
