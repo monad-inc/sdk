@@ -260,6 +260,11 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 github_client_id = '',
                 include = '',
                 organization = '',
+                client_id = '',
+                verify_webhooks = True,
+                webhook_types = [
+                    ''
+                    ],
                 domain_url = '',
                 topic = '',
                 host_name = '',

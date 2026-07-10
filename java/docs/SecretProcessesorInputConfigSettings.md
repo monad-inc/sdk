@@ -138,6 +138,9 @@
 |**githubClientId** | **String** | GitHub Client ID (alternative to personal access token) |  [optional] |
 |**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
 |**organization** | **String** | Your GitHub organization name |  [optional] |
+|**clientId** | **String** | ClientID is the Plaid API client_id. Required only when verification is enabled. |  [optional] |
+|**verifyWebhooks** | **Boolean** | VerifyWebhooks toggles Plaid signature verification. Unset defaults to true. |  [optional] |
+|**webhookTypes** | **List&lt;String&gt;** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. |  [optional] |
 |**domainUrl** | **String** | Domain URL for the Salesforce instance |  [optional] |
 |**topic** | **String** | Pub/Sub topic to subscribe to |  [optional] |
 |**hostName** | **String** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. |  |

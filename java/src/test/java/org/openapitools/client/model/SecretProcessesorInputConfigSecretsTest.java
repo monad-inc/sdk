@@ -82,6 +82,7 @@ import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.OwnbackupAccountEventsSecretsConfig;
 import org.openapitools.client.model.PagerdutyAuditRecordsSecretsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
+import org.openapitools.client.model.PlaidWebhooksSecretsConfig;
 import org.openapitools.client.model.PolymerSecretsConfig;
 import org.openapitools.client.model.PostmanAuditLogsSecretsConfig;
 import org.openapitools.client.model.PubsubSecretsConfig;
@@ -317,6 +318,14 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void refreshTokenTest() {
         // TODO: test refreshToken
+    }
+
+    /**
+     * Test the property 'secret'
+     */
+    @Test
+    public void secretTest() {
+        // TODO: test secret
     }
 
     /**

@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | 

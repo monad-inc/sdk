@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **HarvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RefreshToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Secret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **UserOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TwilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -561,6 +562,31 @@ and a boolean to check if the value has been set.
 
 SetRefreshToken sets RefreshToken field to given value.
 
+
+### GetSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecret() ModelsSecret`
+
+GetSecret returns the Secret field if non-nil, zero value otherwise.
+
+### GetSecretOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecretOk() (*ModelsSecret, bool)`
+
+GetSecretOk returns a tuple with the Secret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) SetSecret(v ModelsSecret)`
+
+SetSecret sets Secret field to given value.
+
+### HasSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) HasSecret() bool`
+
+HasSecret returns a boolean if a field has been set.
 
 ### GetUserOauthToken
 

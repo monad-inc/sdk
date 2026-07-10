@@ -7835,6 +7835,37 @@
                 },
                 "type": "object"
             },
+            "plaid_webhooks.SecretsConfig": {
+                "description": "Plaid Webhooks secrets",
+                "properties": {
+                    "secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "type": "object"
+            },
+            "plaid_webhooks.SettingsConfig": {
+                "description": "Plaid Webhooks settings",
+                "properties": {
+                    "client_id": {
+                        "description": "ClientID is the Plaid API client_id. Required only when verification is enabled.",
+                        "type": "string"
+                    },
+                    "verify_webhooks": {
+                        "description": "VerifyWebhooks toggles Plaid signature verification. Unset defaults to true.",
+                        "type": "boolean"
+                    },
+                    "webhook_types": {
+                        "description": "WebhookTypes restricts which webhook_type values are emitted. Empty = keep all.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
             "polymer.SecretsConfig": {
                 "properties": {
                     "api_key": {
@@ -10556,6 +10587,9 @@
                                 "$ref": "#/components/schemas/palo_alto_data_security_alerts.SecretsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/plaid_webhooks.SecretsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/polymer.SecretsConfig"
                             },
                             {
@@ -10941,6 +10975,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/persona.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/plaid_webhooks.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/polymer.SettingsConfig"

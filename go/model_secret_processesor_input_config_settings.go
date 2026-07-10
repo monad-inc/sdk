@@ -88,6 +88,7 @@ type SecretProcessesorInputConfigSettings struct {
 	PagerdutyAuditRecordsSettingsConfig *PagerdutyAuditRecordsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	PersonaSettingsConfig *PersonaSettingsConfig
+	PlaidWebhooksSettingsConfig *PlaidWebhooksSettingsConfig
 	PolymerSettingsConfig *PolymerSettingsConfig
 	PostmanAuditLogsSettingsConfig *PostmanAuditLogsSettingsConfig
 	PubsubSettingsConfig *PubsubSettingsConfig
@@ -602,6 +603,13 @@ func PaloAltoDataSecurityAlertsSettingsConfigAsSecretProcessesorInputConfigSetti
 func PersonaSettingsConfigAsSecretProcessesorInputConfigSettings(v *PersonaSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		PersonaSettingsConfig: v,
+	}
+}
+
+// PlaidWebhooksSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PlaidWebhooksSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func PlaidWebhooksSettingsConfigAsSecretProcessesorInputConfigSettings(v *PlaidWebhooksSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		PlaidWebhooksSettingsConfig: v,
 	}
 }
 
@@ -2007,6 +2015,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PersonaSettingsConfig = nil
 	}
 
+	// try to unmarshal data into PlaidWebhooksSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PlaidWebhooksSettingsConfig)
+	if err == nil {
+		jsonPlaidWebhooksSettingsConfig, _ := json.Marshal(dst.PlaidWebhooksSettingsConfig)
+		if string(jsonPlaidWebhooksSettingsConfig) == "{}" { // empty struct
+			dst.PlaidWebhooksSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PlaidWebhooksSettingsConfig); err != nil {
+				dst.PlaidWebhooksSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PlaidWebhooksSettingsConfig = nil
+	}
+
 	// try to unmarshal data into PolymerSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.PolymerSettingsConfig)
 	if err == nil {
@@ -2622,6 +2647,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PagerdutyAuditRecordsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.PersonaSettingsConfig = nil
+		dst.PlaidWebhooksSettingsConfig = nil
 		dst.PolymerSettingsConfig = nil
 		dst.PostmanAuditLogsSettingsConfig = nil
 		dst.PubsubSettingsConfig = nil
@@ -2939,6 +2965,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.PersonaSettingsConfig != nil {
 		return json.Marshal(&src.PersonaSettingsConfig)
+	}
+
+	if src.PlaidWebhooksSettingsConfig != nil {
+		return json.Marshal(&src.PlaidWebhooksSettingsConfig)
 	}
 
 	if src.PolymerSettingsConfig != nil {
@@ -3353,6 +3383,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.PersonaSettingsConfig
 	}
 
+	if obj.PlaidWebhooksSettingsConfig != nil {
+		return obj.PlaidWebhooksSettingsConfig
+	}
+
 	if obj.PolymerSettingsConfig != nil {
 		return obj.PolymerSettingsConfig
 	}
@@ -3761,6 +3795,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.PersonaSettingsConfig != nil {
 		return *obj.PersonaSettingsConfig
+	}
+
+	if obj.PlaidWebhooksSettingsConfig != nil {
+		return *obj.PlaidWebhooksSettingsConfig
 	}
 
 	if obj.PolymerSettingsConfig != nil {

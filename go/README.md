@@ -719,6 +719,8 @@ Class | Method | HTTP request | Description
  - [PantherSettingsConfig](docs/PantherSettingsConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [PersonaSettingsConfig](docs/PersonaSettingsConfig.md)
+ - [PlaidWebhooksSecretsConfig](docs/PlaidWebhooksSecretsConfig.md)
+ - [PlaidWebhooksSettingsConfig](docs/PlaidWebhooksSettingsConfig.md)
  - [PolymerSecretsConfig](docs/PolymerSecretsConfig.md)
  - [PolymerSettingsConfig](docs/PolymerSettingsConfig.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)

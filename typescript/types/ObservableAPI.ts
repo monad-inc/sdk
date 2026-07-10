@@ -402,6 +402,8 @@ import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
+import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig';
+import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
 import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';

@@ -31,6 +31,7 @@
 |**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**refreshToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**secret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  |

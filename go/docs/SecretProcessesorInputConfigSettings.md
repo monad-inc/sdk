@@ -135,6 +135,9 @@ Name | Type | Description | Notes
 **GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Your GitHub organization name | [optional] 
+**ClientId** | Pointer to **string** | ClientID is the Plaid API client_id. Required only when verification is enabled. | [optional] 
+**VerifyWebhooks** | Pointer to **bool** | VerifyWebhooks toggles Plaid signature verification. Unset defaults to true. | [optional] 
+**WebhookTypes** | Pointer to **[]string** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
 **DomainUrl** | Pointer to **string** | Domain URL for the Salesforce instance | [optional] 
 **Topic** | Pointer to **string** | Pub/Sub topic to subscribe to | [optional] 
 **HostName** | **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
@@ -3280,6 +3283,81 @@ SetOrganization sets Organization field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *SecretProcessesorInputConfigSettings) GetClientId() string`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetClientIdOk() (*string, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *SecretProcessesorInputConfigSettings) SetClientId(v string)`
+
+SetClientId sets ClientId field to given value.
+
+### HasClientId
+
+`func (o *SecretProcessesorInputConfigSettings) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
+
+### GetVerifyWebhooks
+
+`func (o *SecretProcessesorInputConfigSettings) GetVerifyWebhooks() bool`
+
+GetVerifyWebhooks returns the VerifyWebhooks field if non-nil, zero value otherwise.
+
+### GetVerifyWebhooksOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetVerifyWebhooksOk() (*bool, bool)`
+
+GetVerifyWebhooksOk returns a tuple with the VerifyWebhooks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVerifyWebhooks
+
+`func (o *SecretProcessesorInputConfigSettings) SetVerifyWebhooks(v bool)`
+
+SetVerifyWebhooks sets VerifyWebhooks field to given value.
+
+### HasVerifyWebhooks
+
+`func (o *SecretProcessesorInputConfigSettings) HasVerifyWebhooks() bool`
+
+HasVerifyWebhooks returns a boolean if a field has been set.
+
+### GetWebhookTypes
+
+`func (o *SecretProcessesorInputConfigSettings) GetWebhookTypes() []string`
+
+GetWebhookTypes returns the WebhookTypes field if non-nil, zero value otherwise.
+
+### GetWebhookTypesOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetWebhookTypesOk() (*[]string, bool)`
+
+GetWebhookTypesOk returns a tuple with the WebhookTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookTypes
+
+`func (o *SecretProcessesorInputConfigSettings) SetWebhookTypes(v []string)`
+
+SetWebhookTypes sets WebhookTypes field to given value.
+
+### HasWebhookTypes
+
+`func (o *SecretProcessesorInputConfigSettings) HasWebhookTypes() bool`
+
+HasWebhookTypes returns a boolean if a field has been set.
 
 ### GetDomainUrl
 

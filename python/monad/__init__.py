@@ -468,6 +468,8 @@ __all__ = [
     "PantherSettingsConfig",
     "ParquetParquetFormatter",
     "PersonaSettingsConfig",
+    "PlaidWebhooksSecretsConfig",
+    "PlaidWebhooksSettingsConfig",
     "PolymerSecretsConfig",
     "PolymerSettingsConfig",
     "PostgresqlSecretsConfig",
@@ -1173,6 +1175,8 @@ from monad.models.panther_secrets_config import PantherSecretsConfig as PantherS
 from monad.models.panther_settings_config import PantherSettingsConfig as PantherSettingsConfig
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter as ParquetParquetFormatter
 from monad.models.persona_settings_config import PersonaSettingsConfig as PersonaSettingsConfig
+from monad.models.plaid_webhooks_secrets_config import PlaidWebhooksSecretsConfig as PlaidWebhooksSecretsConfig
+from monad.models.plaid_webhooks_settings_config import PlaidWebhooksSettingsConfig as PlaidWebhooksSettingsConfig
 from monad.models.polymer_secrets_config import PolymerSecretsConfig as PolymerSecretsConfig
 from monad.models.polymer_settings_config import PolymerSettingsConfig as PolymerSettingsConfig
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as PostgresqlSecretsConfig

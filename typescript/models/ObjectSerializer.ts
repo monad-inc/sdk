@@ -397,6 +397,8 @@ export * from '../models/PantherSecretsConfig';
 export * from '../models/PantherSettingsConfig';
 export * from '../models/ParquetParquetFormatter';
 export * from '../models/PersonaSettingsConfig';
+export * from '../models/PlaidWebhooksSecretsConfig';
+export * from '../models/PlaidWebhooksSettingsConfig';
 export * from '../models/PolymerSecretsConfig';
 export * from '../models/PolymerSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
@@ -1046,6 +1048,8 @@ import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
+import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig';
+import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
 import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
@@ -1762,6 +1766,8 @@ let typeMap: {[index: string]: any} = {
     "PantherSettingsConfig": PantherSettingsConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
     "PersonaSettingsConfig": PersonaSettingsConfig,
+    "PlaidWebhooksSecretsConfig": PlaidWebhooksSecretsConfig,
+    "PlaidWebhooksSettingsConfig": PlaidWebhooksSettingsConfig,
     "PolymerSecretsConfig": PolymerSecretsConfig,
     "PolymerSettingsConfig": PolymerSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,

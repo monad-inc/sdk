@@ -100,6 +100,7 @@ import org.openapitools.client.model.OwnbackupAccountEventsSettingsConfig;
 import org.openapitools.client.model.PagerdutyAuditRecordsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PersonaSettingsConfig;
+import org.openapitools.client.model.PlaidWebhooksSettingsConfig;
 import org.openapitools.client.model.PolymerSettingsConfig;
 import org.openapitools.client.model.PostmanAuditLogsSettingsConfig;
 import org.openapitools.client.model.PubsubSettingsConfig;
@@ -1213,6 +1214,30 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void organizationTest() {
         // TODO: test organization
+    }
+
+    /**
+     * Test the property 'clientId'
+     */
+    @Test
+    public void clientIdTest() {
+        // TODO: test clientId
+    }
+
+    /**
+     * Test the property 'verifyWebhooks'
+     */
+    @Test
+    public void verifyWebhooksTest() {
+        // TODO: test verifyWebhooks
+    }
+
+    /**
+     * Test the property 'webhookTypes'
+     */
+    @Test
+    public void webhookTypesTest() {
+        // TODO: test webhookTypes
     }
 
     /**
