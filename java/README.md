@@ -659,6 +659,7 @@ Class | Method | HTTP request | Description
  - [ModelsManagedBy](docs/ModelsManagedBy.md)
  - [ModelsNodeBackpressure](docs/ModelsNodeBackpressure.md)
  - [ModelsNodeComponent](docs/ModelsNodeComponent.md)
+ - [ModelsNodeSharedResource](docs/ModelsNodeSharedResource.md)
  - [ModelsOrganizationAuditLog](docs/ModelsOrganizationAuditLog.md)
  - [ModelsOrganizationAuditLogHistogram](docs/ModelsOrganizationAuditLogHistogram.md)
  - [ModelsOrganizationAuditLogList](docs/ModelsOrganizationAuditLogList.md)

@@ -286,6 +286,7 @@ export * from '../models/ModelsInputRateLimit';
 export * from '../models/ModelsManagedBy';
 export * from '../models/ModelsNodeBackpressure';
 export * from '../models/ModelsNodeComponent';
+export * from '../models/ModelsNodeSharedResource';
 export * from '../models/ModelsOrganizationAuditLog';
 export * from '../models/ModelsOrganizationAuditLogHistogram';
 export * from '../models/ModelsOrganizationAuditLogList';
@@ -937,6 +938,7 @@ import { ModelsInputRateLimit   } from '../models/ModelsInputRateLimit';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
+import { ModelsNodeSharedResource } from '../models/ModelsNodeSharedResource';
 import { ModelsOrganizationAuditLog        } from '../models/ModelsOrganizationAuditLog';
 import { ModelsOrganizationAuditLogHistogram } from '../models/ModelsOrganizationAuditLogHistogram';
 import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
@@ -955,7 +957,7 @@ import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
-import { ModelsPipelineNode             } from '../models/ModelsPipelineNode';
+import { ModelsPipelineNode              } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus                } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelinePurgeResponse } from '../models/ModelsPipelinePurgeResponse';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
@@ -1665,6 +1667,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsInputRateLimit": ModelsInputRateLimit,
     "ModelsNodeBackpressure": ModelsNodeBackpressure,
     "ModelsNodeComponent": ModelsNodeComponent,
+    "ModelsNodeSharedResource": ModelsNodeSharedResource,
     "ModelsOrganizationAuditLog": ModelsOrganizationAuditLog,
     "ModelsOrganizationAuditLogHistogram": ModelsOrganizationAuditLogHistogram,
     "ModelsOrganizationAuditLogList": ModelsOrganizationAuditLogList,

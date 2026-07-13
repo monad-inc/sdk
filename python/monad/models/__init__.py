@@ -302,6 +302,7 @@ from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent
+from monad.models.models_node_shared_resource import ModelsNodeSharedResource
 from monad.models.models_organization_audit_log import ModelsOrganizationAuditLog
 from monad.models.models_organization_audit_log_histogram import ModelsOrganizationAuditLogHistogram
 from monad.models.models_organization_audit_log_list import ModelsOrganizationAuditLogList

@@ -10,26 +10,15 @@
  * Do not edit the class manually.
  */
 
-import { ModelsComponentType } from '../models/ModelsComponentType';
-import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
-import { ModelsNodeSharedResource } from '../models/ModelsNodeSharedResource';
-import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { HttpFile } from '../http/http';
 
-export class ModelsPipelineNode {
-    'component'?: ModelsNodeComponent;
-    'componentHouse'?: string;
-    'componentId'?: string;
-    'componentSubType'?: string;
-    'componentType'?: ModelsComponentType;
-    'createdAt'?: string;
-    'enabled'?: boolean;
-    'id'?: string;
-    'organizationId'?: string;
-    'pipelineId'?: string;
-    'sharedResources'?: Array<ModelsNodeSharedResource>;
-    'slug'?: string;
-    'status'?: ModelsPipelineNodeStatus;
+export class ModelsNodeSharedResource {
+    'ownerOrganizationId'?: string;
+    'resourceId'?: string;
+    /**
+    * ResourceShareTypeComponent | ResourceShareTypeSecret
+    */
+    'resourceType'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,90 +26,28 @@ export class ModelsPipelineNode {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "component",
-            "baseName": "component",
-            "type": "ModelsNodeComponent",
-            "format": ""
-        },
-        {
-            "name": "componentHouse",
-            "baseName": "component_house",
+            "name": "ownerOrganizationId",
+            "baseName": "owner_organization_id",
             "type": "string",
             "format": ""
         },
         {
-            "name": "componentId",
-            "baseName": "component_id",
+            "name": "resourceId",
+            "baseName": "resource_id",
             "type": "string",
             "format": ""
         },
         {
-            "name": "componentSubType",
-            "baseName": "component_sub_type",
+            "name": "resourceType",
+            "baseName": "resource_type",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "componentType",
-            "baseName": "component_type",
-            "type": "ModelsComponentType",
-            "format": ""
-        },
-        {
-            "name": "createdAt",
-            "baseName": "created_at",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "enabled",
-            "baseName": "enabled",
-            "type": "boolean",
-            "format": ""
-        },
-        {
-            "name": "id",
-            "baseName": "id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "organizationId",
-            "baseName": "organization_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "pipelineId",
-            "baseName": "pipeline_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "sharedResources",
-            "baseName": "shared_resources",
-            "type": "Array<ModelsNodeSharedResource>",
-            "format": ""
-        },
-        {
-            "name": "slug",
-            "baseName": "slug",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "status",
-            "baseName": "status",
-            "type": "ModelsPipelineNodeStatus",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return ModelsPipelineNode.attributeTypeMap;
+        return ModelsNodeSharedResource.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
-
-

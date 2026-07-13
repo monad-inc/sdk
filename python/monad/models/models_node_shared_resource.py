@@ -18,34 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_component_type import ModelsComponentType
-from monad.models.models_node_component import ModelsNodeComponent
-from monad.models.models_node_shared_resource import ModelsNodeSharedResource
-from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ModelsPipelineNode(BaseModel):
+class ModelsNodeSharedResource(BaseModel):
     """
-    ModelsPipelineNode
+    ModelsNodeSharedResource
     """ # noqa: E501
-    component: Optional[ModelsNodeComponent] = None
-    component_house: Optional[StrictStr] = None
-    component_id: Optional[StrictStr] = None
-    component_sub_type: Optional[StrictStr] = None
-    component_type: Optional[ModelsComponentType] = None
-    created_at: Optional[StrictStr] = None
-    enabled: Optional[StrictBool] = None
-    id: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    pipeline_id: Optional[StrictStr] = None
-    shared_resources: Optional[List[ModelsNodeSharedResource]] = None
-    slug: Optional[StrictStr] = None
-    status: Optional[ModelsPipelineNodeStatus] = None
-    __properties: ClassVar[List[str]] = ["component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "shared_resources", "slug", "status"]
+    owner_organization_id: Optional[StrictStr] = None
+    resource_id: Optional[StrictStr] = None
+    resource_type: Optional[StrictStr] = Field(default=None, description="ResourceShareTypeComponent | ResourceShareTypeSecret")
+    __properties: ClassVar[List[str]] = ["owner_organization_id", "resource_id", "resource_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -65,7 +51,7 @@ class ModelsPipelineNode(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsPipelineNode from a JSON string"""
+        """Create an instance of ModelsNodeSharedResource from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -86,24 +72,11 @@ class ModelsPipelineNode(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of component
-        if self.component:
-            _dict['component'] = self.component.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in shared_resources (list)
-        _items = []
-        if self.shared_resources:
-            for _item_shared_resources in self.shared_resources:
-                if _item_shared_resources:
-                    _items.append(_item_shared_resources.to_dict())
-            _dict['shared_resources'] = _items
-        # override the default output from pydantic by calling `to_dict()` of status
-        if self.status:
-            _dict['status'] = self.status.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsPipelineNode from a dict"""
+        """Create an instance of ModelsNodeSharedResource from a dict"""
         if obj is None:
             return None
 
@@ -111,19 +84,9 @@ class ModelsPipelineNode(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "component": ModelsNodeComponent.from_dict(obj["component"]) if obj.get("component") is not None else None,
-            "component_house": obj.get("component_house"),
-            "component_id": obj.get("component_id"),
-            "component_sub_type": obj.get("component_sub_type"),
-            "component_type": obj.get("component_type"),
-            "created_at": obj.get("created_at"),
-            "enabled": obj.get("enabled"),
-            "id": obj.get("id"),
-            "organization_id": obj.get("organization_id"),
-            "pipeline_id": obj.get("pipeline_id"),
-            "shared_resources": [ModelsNodeSharedResource.from_dict(_item) for _item in obj["shared_resources"]] if obj.get("shared_resources") is not None else None,
-            "slug": obj.get("slug"),
-            "status": ModelsPipelineNodeStatus.from_dict(obj["status"]) if obj.get("status") is not None else None
+            "owner_organization_id": obj.get("owner_organization_id"),
+            "resource_id": obj.get("resource_id"),
+            "resource_type": obj.get("resource_type")
         })
         return _obj
 

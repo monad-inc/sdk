@@ -93,6 +93,12 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                         id = '', 
                         organization_id = '', 
                         pipeline_id = '', 
+                        shared_resources = [
+                            monad.models.models/node_shared_resource.models.NodeSharedResource(
+                                owner_organization_id = '', 
+                                resource_id = '', 
+                                resource_type = '', )
+                            ], 
                         slug = '', 
                         status = monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                             avg_bytes_per_record_egress = 56, 

@@ -5497,6 +5497,21 @@
                 },
                 "type": "object"
             },
+            "models.NodeSharedResource": {
+                "properties": {
+                    "owner_organization_id": {
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "ResourceShareTypeComponent | ResourceShareTypeSecret",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "models.OrganizationAuditLog": {
                 "properties": {
                     "action": {
@@ -5998,6 +6013,13 @@
                     },
                     "pipeline_id": {
                         "type": "string"
+                    },
+                    "shared_resources": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.NodeSharedResource"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     },
                     "slug": {
                         "type": "string"

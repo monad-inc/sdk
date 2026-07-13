@@ -30,6 +30,7 @@ type ModelsPipelineNode struct {
 	Id *string `json:"id,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
+	SharedResources []ModelsNodeSharedResource `json:"shared_resources,omitempty"`
 	Slug *string `json:"slug,omitempty"`
 	Status *ModelsPipelineNodeStatus `json:"status,omitempty"`
 }
@@ -371,6 +372,38 @@ func (o *ModelsPipelineNode) SetPipelineId(v string) {
 	o.PipelineId = &v
 }
 
+// GetSharedResources returns the SharedResources field value if set, zero value otherwise.
+func (o *ModelsPipelineNode) GetSharedResources() []ModelsNodeSharedResource {
+	if o == nil || IsNil(o.SharedResources) {
+		var ret []ModelsNodeSharedResource
+		return ret
+	}
+	return o.SharedResources
+}
+
+// GetSharedResourcesOk returns a tuple with the SharedResources field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNode) GetSharedResourcesOk() ([]ModelsNodeSharedResource, bool) {
+	if o == nil || IsNil(o.SharedResources) {
+		return nil, false
+	}
+	return o.SharedResources, true
+}
+
+// HasSharedResources returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasSharedResources() bool {
+	if o != nil && !IsNil(o.SharedResources) {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedResources gets a reference to the given []ModelsNodeSharedResource and assigns it to the SharedResources field.
+func (o *ModelsPipelineNode) SetSharedResources(v []ModelsNodeSharedResource) {
+	o.SharedResources = v
+}
+
 // GetSlug returns the Slug field value if set, zero value otherwise.
 func (o *ModelsPipelineNode) GetSlug() string {
 	if o == nil || IsNil(o.Slug) {
@@ -474,6 +507,9 @@ func (o ModelsPipelineNode) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PipelineId) {
 		toSerialize["pipeline_id"] = o.PipelineId
+	}
+	if !IsNil(o.SharedResources) {
+		toSerialize["shared_resources"] = o.SharedResources
 	}
 	if !IsNil(o.Slug) {
 		toSerialize["slug"] = o.Slug

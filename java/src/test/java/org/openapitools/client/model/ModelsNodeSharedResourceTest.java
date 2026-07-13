@@ -19,132 +19,46 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.client.model.ModelsComponentType;
-import org.openapitools.client.model.ModelsNodeComponent;
-import org.openapitools.client.model.ModelsNodeSharedResource;
-import org.openapitools.client.model.ModelsPipelineNodeStatus;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ModelsPipelineNode
+ * Model tests for ModelsNodeSharedResource
  */
-public class ModelsPipelineNodeTest {
-    private final ModelsPipelineNode model = new ModelsPipelineNode();
+public class ModelsNodeSharedResourceTest {
+    private final ModelsNodeSharedResource model = new ModelsNodeSharedResource();
 
     /**
-     * Model tests for ModelsPipelineNode
+     * Model tests for ModelsNodeSharedResource
      */
     @Test
-    public void testModelsPipelineNode() {
-        // TODO: test ModelsPipelineNode
+    public void testModelsNodeSharedResource() {
+        // TODO: test ModelsNodeSharedResource
     }
 
     /**
-     * Test the property 'component'
+     * Test the property 'ownerOrganizationId'
      */
     @Test
-    public void componentTest() {
-        // TODO: test component
+    public void ownerOrganizationIdTest() {
+        // TODO: test ownerOrganizationId
     }
 
     /**
-     * Test the property 'componentHouse'
+     * Test the property 'resourceId'
      */
     @Test
-    public void componentHouseTest() {
-        // TODO: test componentHouse
+    public void resourceIdTest() {
+        // TODO: test resourceId
     }
 
     /**
-     * Test the property 'componentId'
+     * Test the property 'resourceType'
      */
     @Test
-    public void componentIdTest() {
-        // TODO: test componentId
-    }
-
-    /**
-     * Test the property 'componentSubType'
-     */
-    @Test
-    public void componentSubTypeTest() {
-        // TODO: test componentSubType
-    }
-
-    /**
-     * Test the property 'componentType'
-     */
-    @Test
-    public void componentTypeTest() {
-        // TODO: test componentType
-    }
-
-    /**
-     * Test the property 'createdAt'
-     */
-    @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'enabled'
-     */
-    @Test
-    public void enabledTest() {
-        // TODO: test enabled
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'organizationId'
-     */
-    @Test
-    public void organizationIdTest() {
-        // TODO: test organizationId
-    }
-
-    /**
-     * Test the property 'pipelineId'
-     */
-    @Test
-    public void pipelineIdTest() {
-        // TODO: test pipelineId
-    }
-
-    /**
-     * Test the property 'sharedResources'
-     */
-    @Test
-    public void sharedResourcesTest() {
-        // TODO: test sharedResources
-    }
-
-    /**
-     * Test the property 'slug'
-     */
-    @Test
-    public void slugTest() {
-        // TODO: test slug
-    }
-
-    /**
-     * Test the property 'status'
-     */
-    @Test
-    public void statusTest() {
-        // TODO: test status
+    public void resourceTypeTest() {
+        // TODO: test resourceType
     }
 
 }

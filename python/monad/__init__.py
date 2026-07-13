@@ -357,6 +357,7 @@ __all__ = [
     "ModelsManagedBy",
     "ModelsNodeBackpressure",
     "ModelsNodeComponent",
+    "ModelsNodeSharedResource",
     "ModelsOrganizationAuditLog",
     "ModelsOrganizationAuditLogHistogram",
     "ModelsOrganizationAuditLogList",
@@ -1064,6 +1065,7 @@ from monad.models.models_input_rate_limit import ModelsInputRateLimit as ModelsI
 from monad.models.models_managed_by import ModelsManagedBy as ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure as ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent as ModelsNodeComponent
+from monad.models.models_node_shared_resource import ModelsNodeSharedResource as ModelsNodeSharedResource
 from monad.models.models_organization_audit_log import ModelsOrganizationAuditLog as ModelsOrganizationAuditLog
 from monad.models.models_organization_audit_log_histogram import ModelsOrganizationAuditLogHistogram as ModelsOrganizationAuditLogHistogram
 from monad.models.models_organization_audit_log_list import ModelsOrganizationAuditLogList as ModelsOrganizationAuditLogList

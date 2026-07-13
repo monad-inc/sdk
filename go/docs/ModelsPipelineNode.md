@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
+**SharedResources** | Pointer to [**[]ModelsNodeSharedResource**](ModelsNodeSharedResource.md) |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 
@@ -285,6 +286,31 @@ SetPipelineId sets PipelineId field to given value.
 `func (o *ModelsPipelineNode) HasPipelineId() bool`
 
 HasPipelineId returns a boolean if a field has been set.
+
+### GetSharedResources
+
+`func (o *ModelsPipelineNode) GetSharedResources() []ModelsNodeSharedResource`
+
+GetSharedResources returns the SharedResources field if non-nil, zero value otherwise.
+
+### GetSharedResourcesOk
+
+`func (o *ModelsPipelineNode) GetSharedResourcesOk() (*[]ModelsNodeSharedResource, bool)`
+
+GetSharedResourcesOk returns a tuple with the SharedResources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSharedResources
+
+`func (o *ModelsPipelineNode) SetSharedResources(v []ModelsNodeSharedResource)`
+
+SetSharedResources sets SharedResources field to given value.
+
+### HasSharedResources
+
+`func (o *ModelsPipelineNode) HasSharedResources() bool`
+
+HasSharedResources returns a boolean if a field has been set.
 
 ### GetSlug
 

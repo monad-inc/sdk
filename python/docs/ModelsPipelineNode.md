@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **pipeline_id** | **str** |  | [optional] 
+**shared_resources** | [**List[ModelsNodeSharedResource]**](ModelsNodeSharedResource.md) |  | [optional] 
 **slug** | **str** |  | [optional] 
 **status** | [**ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 

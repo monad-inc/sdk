@@ -20,9 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.client.model.ModelsComponentType;
 import org.openapitools.client.model.ModelsNodeComponent;
+import org.openapitools.client.model.ModelsNodeSharedResource;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
 
 import com.google.gson.Gson;
@@ -102,6 +105,11 @@ public class ModelsPipelineNode {
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
   @javax.annotation.Nullable
   private String pipelineId;
+
+  public static final String SERIALIZED_NAME_SHARED_RESOURCES = "shared_resources";
+  @SerializedName(SERIALIZED_NAME_SHARED_RESOURCES)
+  @javax.annotation.Nullable
+  private List<ModelsNodeSharedResource> sharedResources = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
@@ -306,6 +314,33 @@ public class ModelsPipelineNode {
   }
 
 
+  public ModelsPipelineNode sharedResources(@javax.annotation.Nullable List<ModelsNodeSharedResource> sharedResources) {
+    this.sharedResources = sharedResources;
+    return this;
+  }
+
+  public ModelsPipelineNode addSharedResourcesItem(ModelsNodeSharedResource sharedResourcesItem) {
+    if (this.sharedResources == null) {
+      this.sharedResources = new ArrayList<>();
+    }
+    this.sharedResources.add(sharedResourcesItem);
+    return this;
+  }
+
+  /**
+   * Get sharedResources
+   * @return sharedResources
+   */
+  @javax.annotation.Nullable
+  public List<ModelsNodeSharedResource> getSharedResources() {
+    return sharedResources;
+  }
+
+  public void setSharedResources(@javax.annotation.Nullable List<ModelsNodeSharedResource> sharedResources) {
+    this.sharedResources = sharedResources;
+  }
+
+
   public ModelsPipelineNode slug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
@@ -364,13 +399,14 @@ public class ModelsPipelineNode {
         Objects.equals(this.id, modelsPipelineNode.id) &&
         Objects.equals(this.organizationId, modelsPipelineNode.organizationId) &&
         Objects.equals(this.pipelineId, modelsPipelineNode.pipelineId) &&
+        Objects.equals(this.sharedResources, modelsPipelineNode.sharedResources) &&
         Objects.equals(this.slug, modelsPipelineNode.slug) &&
         Objects.equals(this.status, modelsPipelineNode.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(component, componentHouse, componentId, componentSubType, componentType, createdAt, enabled, id, organizationId, pipelineId, slug, status);
+    return Objects.hash(component, componentHouse, componentId, componentSubType, componentType, createdAt, enabled, id, organizationId, pipelineId, sharedResources, slug, status);
   }
 
   @Override
@@ -387,6 +423,7 @@ public class ModelsPipelineNode {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
+    sb.append("    sharedResources: ").append(toIndentedString(sharedResources)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
@@ -407,7 +444,7 @@ public class ModelsPipelineNode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "slug", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "shared_resources", "slug", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -462,6 +499,20 @@ public class ModelsPipelineNode {
       }
       if ((jsonObj.get("pipeline_id") != null && !jsonObj.get("pipeline_id").isJsonNull()) && !jsonObj.get("pipeline_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
+      }
+      if (jsonObj.get("shared_resources") != null && !jsonObj.get("shared_resources").isJsonNull()) {
+        JsonArray jsonArraysharedResources = jsonObj.getAsJsonArray("shared_resources");
+        if (jsonArraysharedResources != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("shared_resources").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shared_resources` to be an array in the JSON string but got `%s`", jsonObj.get("shared_resources").toString()));
+          }
+
+          // validate the optional field `shared_resources` (array)
+          for (int i = 0; i < jsonArraysharedResources.size(); i++) {
+            ModelsNodeSharedResource.validateJsonElement(jsonArraysharedResources.get(i));
+          };
+        }
       }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));

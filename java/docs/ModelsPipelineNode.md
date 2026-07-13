@@ -17,6 +17,7 @@
 |**id** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**pipelineId** | **String** |  |  [optional] |
+|**sharedResources** | [**List&lt;ModelsNodeSharedResource&gt;**](ModelsNodeSharedResource.md) |  |  [optional] |
 |**slug** | **String** |  |  [optional] |
 |**status** | [**ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  |  [optional] |
 

@@ -291,6 +291,7 @@ import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
+import { ModelsNodeSharedResource } from '../models/ModelsNodeSharedResource';
 import { ModelsOrganizationAuditLog } from '../models/ModelsOrganizationAuditLog';
 import { ModelsOrganizationAuditLogHistogram } from '../models/ModelsOrganizationAuditLogHistogram';
 import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
