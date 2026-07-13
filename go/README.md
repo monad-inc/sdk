@@ -283,6 +283,7 @@ Class | Method | HTTP request | Description
 *PipelinesAPI* | [**UpdatePipelineV1**](docs/PipelinesAPI.md#updatepipelinev1) | **Patch** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *QuotasAPI* | [**ListQuotas**](docs/QuotasAPI.md#listquotas) | **Get** /v2/quotas | List quotas
 *ResourceSharesAPI* | [**CreateResourceShares**](docs/ResourceSharesAPI.md#createresourceshares) | **Post** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
+*ResourceSharesAPI* | [**ListResourceShareTargets**](docs/ResourceSharesAPI.md#listresourcesharetargets) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource&#39;s share targets (all direct child orgs)
 *ResourceSharesAPI* | [**ListResourceShares**](docs/ResourceSharesAPI.md#listresourceshares) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares
 *ResourceSharesAPI* | [**ListSharedResources**](docs/ResourceSharesAPI.md#listsharedresources) | **Get** /v3/{organization_id}/resource_shares | List shared resources
 *ResourceSharesAPI* | [**UnshareResource**](docs/ResourceSharesAPI.md#unshareresource) | **Delete** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
@@ -647,6 +648,8 @@ Class | Method | HTTP request | Description
  - [ModelsReferences](docs/ModelsReferences.md)
  - [ModelsResourceShare](docs/ModelsResourceShare.md)
  - [ModelsResourceShareChangeSet](docs/ModelsResourceShareChangeSet.md)
+ - [ModelsResourceShareTarget](docs/ModelsResourceShareTarget.md)
+ - [ModelsResourceShareTargetList](docs/ModelsResourceShareTargetList.md)
  - [ModelsResourceShareWithUsage](docs/ModelsResourceShareWithUsage.md)
  - [ModelsResourceShareWithUsageList](docs/ModelsResourceShareWithUsageList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)

@@ -325,6 +325,8 @@ export * from '../models/ModelsReference';
 export * from '../models/ModelsReferences';
 export * from '../models/ModelsResourceShare';
 export * from '../models/ModelsResourceShareChangeSet';
+export * from '../models/ModelsResourceShareTarget';
+export * from '../models/ModelsResourceShareTargetList';
 export * from '../models/ModelsResourceShareWithUsage';
 export * from '../models/ModelsResourceShareWithUsageList';
 export * from '../models/ModelsRoleWithPermissions';
@@ -977,6 +979,8 @@ import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsResourceShare } from '../models/ModelsResourceShare';
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
+import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
@@ -1698,6 +1702,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsReferences": ModelsReferences,
     "ModelsResourceShare": ModelsResourceShare,
     "ModelsResourceShareChangeSet": ModelsResourceShareChangeSet,
+    "ModelsResourceShareTarget": ModelsResourceShareTarget,
+    "ModelsResourceShareTargetList": ModelsResourceShareTargetList,
     "ModelsResourceShareWithUsage": ModelsResourceShareWithUsage,
     "ModelsResourceShareWithUsageList": ModelsResourceShareWithUsageList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,

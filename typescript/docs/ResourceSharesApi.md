@@ -5,6 +5,7 @@ All URIs are relative to *https://monad.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createResourceShares**](ResourceSharesApi.md#createResourceShares) | **POST** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
+[**listResourceShareTargets**](ResourceSharesApi.md#listResourceShareTargets) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource\&#39;s share targets (all direct child orgs)
 [**listResourceShares**](ResourceSharesApi.md#listResourceShares) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource\&#39;s shares
 [**listSharedResources**](ResourceSharesApi.md#listSharedResources) | **GET** /v3/{organization_id}/resource_shares | List shared resources
 [**unshareResource**](ResourceSharesApi.md#unshareResource) | **DELETE** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
@@ -73,6 +74,86 @@ Name | Type | Description  | Notes
 **400** | Invalid request |  -  |
 **403** | Missing resource_sharing:write permission |  -  |
 **409** | A revoked share is in use by the target organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listResourceShareTargets**
+> ModelsResourceShareTargetList listResourceShareTargets()
+
+List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+
+### Example
+
+
+```typescript
+import { createConfiguration, ResourceSharesApi } from '';
+import type { ResourceSharesApiListResourceShareTargetsRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new ResourceSharesApi(configuration);
+
+const request: ResourceSharesApiListResourceShareTargetsRequest = {
+    // Owner organization ID
+  organizationId: "organization_id_example",
+    // Resource type
+  resourceType: "secret",
+    // Resource ID
+  resourceId: "resource_id_example",
+    // Case-insensitive substring filter on child org name, slug, or id (optional)
+  search: "search_example",
+    // Filter by share state: true = only shared, false = only not shared (optional)
+  shared: true,
+    // Column to sort by; default puts shared rows first (optional)
+  sortBy: "name",
+    // Sort direction (used with sort_by) (optional)
+  order: "asc",
+    // Page size (optional)
+  limit: 10,
+    // Rows to skip (optional)
+  offset: 0,
+};
+
+const data = await apiInstance.listResourceShareTargets(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Owner organization ID | defaults to undefined
+ **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
+ **resourceId** | [**string**] | Resource ID | defaults to undefined
+ **search** | [**string**] | Case-insensitive substring filter on child org name, slug, or id | (optional) defaults to undefined
+ **shared** | [**boolean**] | Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | (optional) defaults to undefined
+ **sortBy** | [**&#39;name&#39; | &#39;shared&#39; | &#39;shared_at&#39; | &#39;in_use&#39;**]**Array<&#39;name&#39; &#124; &#39;shared&#39; &#124; &#39;shared_at&#39; &#124; &#39;in_use&#39;>** | Column to sort by; default puts shared rows first | (optional) defaults to undefined
+ **order** | [**&#39;asc&#39; | &#39;desc&#39;**]**Array<&#39;asc&#39; &#124; &#39;desc&#39;>** | Sort direction (used with sort_by) | (optional) defaults to 'asc'
+ **limit** | [**number**] | Page size | (optional) defaults to 10
+ **offset** | [**number**] | Rows to skip | (optional) defaults to 0
+
+
+### Return type
+
+**ModelsResourceShareTargetList**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Direct child orgs annotated with share state |  -  |
+**400** | Invalid resource_type, sort_by, order, or shared value |  -  |
+**403** | Missing resource_sharing:read permission |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

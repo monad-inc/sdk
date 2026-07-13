@@ -329,6 +329,8 @@ import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsResourceShare } from '../models/ModelsResourceShare';
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
+import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
@@ -6691,6 +6693,72 @@ export interface ResourceSharesApiCreateResourceSharesRequest {
     createResourceSharesRequest: CreateResourceSharesRequest
 }
 
+export interface ResourceSharesApiListResourceShareTargetsRequest {
+    /**
+     * Owner organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    organizationId: string
+    /**
+     * Resource type
+     * Defaults to: undefined
+     * @type &#39;secret&#39; | &#39;component&#39;
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    resourceType: 'secret' | 'component'
+    /**
+     * Resource ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    resourceId: string
+    /**
+     * Case-insensitive substring filter on child org name, slug, or id
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    search?: string
+    /**
+     * Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    shared?: boolean
+    /**
+     * Column to sort by; default puts shared rows first
+     * Defaults to: undefined
+     * @type &#39;name&#39; | &#39;shared&#39; | &#39;shared_at&#39; | &#39;in_use&#39;
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use'
+    /**
+     * Sort direction (used with sort_by)
+     * Defaults to: &#39;asc&#39;
+     * @type &#39;asc&#39; | &#39;desc&#39;
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    order?: 'asc' | 'desc'
+    /**
+     * Page size
+     * Defaults to: 10
+     * @type number
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    limit?: number
+    /**
+     * Rows to skip
+     * Defaults to: 0
+     * @type number
+     * @memberof ResourceSharesApilistResourceShareTargets
+     */
+    offset?: number
+}
+
 export interface ResourceSharesApiListResourceSharesRequest {
     /**
      * Owner organization ID
@@ -6823,6 +6891,24 @@ export class ObjectResourceSharesApi {
      */
     public createResourceShares(param: ResourceSharesApiCreateResourceSharesRequest, options?: ConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
         return this.api.createResourceShares(param.organizationId, param.resourceType, param.resourceId, param.createResourceSharesRequest,  options).toPromise();
+    }
+
+    /**
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List a resource\'s share targets (all direct child orgs)
+     * @param param the request object
+     */
+    public listResourceShareTargetsWithHttpInfo(param: ResourceSharesApiListResourceShareTargetsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceShareTargetList>> {
+        return this.api.listResourceShareTargetsWithHttpInfo(param.organizationId, param.resourceType, param.resourceId, param.search, param.shared, param.sortBy, param.order, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List a resource\'s share targets (all direct child orgs)
+     * @param param the request object
+     */
+    public listResourceShareTargets(param: ResourceSharesApiListResourceShareTargetsRequest, options?: ConfigurationOptions): Promise<ModelsResourceShareTargetList> {
+        return this.api.listResourceShareTargets(param.organizationId, param.resourceType, param.resourceId, param.search, param.shared, param.sortBy, param.order, param.limit, param.offset,  options).toPromise();
     }
 
     /**

@@ -16,11 +16,12 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr, field_validator
+from pydantic import Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from monad.models.create_resource_shares_request import CreateResourceSharesRequest
 from monad.models.models_resource_share_change_set import ModelsResourceShareChangeSet
+from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList
 from monad.models.models_shared_resource_list import ModelsSharedResourceList
 
@@ -359,6 +360,409 @@ class ResourceSharesApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def list_resource_share_targets(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
+        resource_type: Annotated[StrictStr, Field(description="Resource type")],
+        resource_id: Annotated[StrictStr, Field(description="Resource ID")],
+        search: Annotated[Optional[StrictStr], Field(description="Case-insensitive substring filter on child org name, slug, or id")] = None,
+        shared: Annotated[Optional[StrictBool], Field(description="Filter by share state: true = only shared, false = only not shared")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Column to sort by; default puts shared rows first")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Sort direction (used with sort_by)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ModelsResourceShareTargetList:
+        """List a resource's share targets (all direct child orgs)
+
+        List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+
+        :param organization_id: Owner organization ID (required)
+        :type organization_id: str
+        :param resource_type: Resource type (required)
+        :type resource_type: str
+        :param resource_id: Resource ID (required)
+        :type resource_id: str
+        :param search: Case-insensitive substring filter on child org name, slug, or id
+        :type search: str
+        :param shared: Filter by share state: true = only shared, false = only not shared
+        :type shared: bool
+        :param sort_by: Column to sort by; default puts shared rows first
+        :type sort_by: str
+        :param order: Sort direction (used with sort_by)
+        :type order: str
+        :param limit: Page size
+        :type limit: int
+        :param offset: Rows to skip
+        :type offset: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_resource_share_targets_serialize(
+            organization_id=organization_id,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            search=search,
+            shared=shared,
+            sort_by=sort_by,
+            order=order,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsResourceShareTargetList",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def list_resource_share_targets_with_http_info(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
+        resource_type: Annotated[StrictStr, Field(description="Resource type")],
+        resource_id: Annotated[StrictStr, Field(description="Resource ID")],
+        search: Annotated[Optional[StrictStr], Field(description="Case-insensitive substring filter on child org name, slug, or id")] = None,
+        shared: Annotated[Optional[StrictBool], Field(description="Filter by share state: true = only shared, false = only not shared")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Column to sort by; default puts shared rows first")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Sort direction (used with sort_by)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ModelsResourceShareTargetList]:
+        """List a resource's share targets (all direct child orgs)
+
+        List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+
+        :param organization_id: Owner organization ID (required)
+        :type organization_id: str
+        :param resource_type: Resource type (required)
+        :type resource_type: str
+        :param resource_id: Resource ID (required)
+        :type resource_id: str
+        :param search: Case-insensitive substring filter on child org name, slug, or id
+        :type search: str
+        :param shared: Filter by share state: true = only shared, false = only not shared
+        :type shared: bool
+        :param sort_by: Column to sort by; default puts shared rows first
+        :type sort_by: str
+        :param order: Sort direction (used with sort_by)
+        :type order: str
+        :param limit: Page size
+        :type limit: int
+        :param offset: Rows to skip
+        :type offset: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_resource_share_targets_serialize(
+            organization_id=organization_id,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            search=search,
+            shared=shared,
+            sort_by=sort_by,
+            order=order,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsResourceShareTargetList",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def list_resource_share_targets_without_preload_content(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
+        resource_type: Annotated[StrictStr, Field(description="Resource type")],
+        resource_id: Annotated[StrictStr, Field(description="Resource ID")],
+        search: Annotated[Optional[StrictStr], Field(description="Case-insensitive substring filter on child org name, slug, or id")] = None,
+        shared: Annotated[Optional[StrictBool], Field(description="Filter by share state: true = only shared, false = only not shared")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Column to sort by; default puts shared rows first")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="Sort direction (used with sort_by)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """List a resource's share targets (all direct child orgs)
+
+        List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+
+        :param organization_id: Owner organization ID (required)
+        :type organization_id: str
+        :param resource_type: Resource type (required)
+        :type resource_type: str
+        :param resource_id: Resource ID (required)
+        :type resource_id: str
+        :param search: Case-insensitive substring filter on child org name, slug, or id
+        :type search: str
+        :param shared: Filter by share state: true = only shared, false = only not shared
+        :type shared: bool
+        :param sort_by: Column to sort by; default puts shared rows first
+        :type sort_by: str
+        :param order: Sort direction (used with sort_by)
+        :type order: str
+        :param limit: Page size
+        :type limit: int
+        :param offset: Rows to skip
+        :type offset: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_resource_share_targets_serialize(
+            organization_id=organization_id,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            search=search,
+            shared=shared,
+            sort_by=sort_by,
+            order=order,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsResourceShareTargetList",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _list_resource_share_targets_serialize(
+        self,
+        organization_id,
+        resource_type,
+        resource_id,
+        search,
+        shared,
+        sort_by,
+        order,
+        limit,
+        offset,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
+        if resource_type is not None:
+            _path_params['resource_type'] = resource_type
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if shared is not None:
+            
+            _query_params.append(('shared', shared))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sort_by', sort_by))
+            
+        if order is not None:
+            
+            _query_params.append(('order', order))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuth', 
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -218,6 +218,249 @@ func (a *ResourceSharesAPIService) CreateResourceSharesExecute(r ApiCreateResour
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListResourceShareTargetsRequest struct {
+	ctx context.Context
+	ApiService *ResourceSharesAPIService
+	organizationId string
+	resourceType string
+	resourceId string
+	search *string
+	shared *bool
+	sortBy *string
+	order *string
+	limit *int32
+	offset *int32
+}
+
+// Case-insensitive substring filter on child org name, slug, or id
+func (r ApiListResourceShareTargetsRequest) Search(search string) ApiListResourceShareTargetsRequest {
+	r.search = &search
+	return r
+}
+
+// Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
+func (r ApiListResourceShareTargetsRequest) Shared(shared bool) ApiListResourceShareTargetsRequest {
+	r.shared = &shared
+	return r
+}
+
+// Column to sort by; default puts shared rows first
+func (r ApiListResourceShareTargetsRequest) SortBy(sortBy string) ApiListResourceShareTargetsRequest {
+	r.sortBy = &sortBy
+	return r
+}
+
+// Sort direction (used with sort_by)
+func (r ApiListResourceShareTargetsRequest) Order(order string) ApiListResourceShareTargetsRequest {
+	r.order = &order
+	return r
+}
+
+// Page size
+func (r ApiListResourceShareTargetsRequest) Limit(limit int32) ApiListResourceShareTargetsRequest {
+	r.limit = &limit
+	return r
+}
+
+// Rows to skip
+func (r ApiListResourceShareTargetsRequest) Offset(offset int32) ApiListResourceShareTargetsRequest {
+	r.offset = &offset
+	return r
+}
+
+func (r ApiListResourceShareTargetsRequest) Execute() (*ModelsResourceShareTargetList, *http.Response, error) {
+	return r.ApiService.ListResourceShareTargetsExecute(r)
+}
+
+/*
+ListResourceShareTargets List a resource's share targets (all direct child orgs)
+
+List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Owner organization ID
+ @param resourceType Resource type
+ @param resourceId Resource ID
+ @return ApiListResourceShareTargetsRequest
+*/
+func (a *ResourceSharesAPIService) ListResourceShareTargets(ctx context.Context, organizationId string, resourceType string, resourceId string) ApiListResourceShareTargetsRequest {
+	return ApiListResourceShareTargetsRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		resourceType: resourceType,
+		resourceId: resourceId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsResourceShareTargetList
+func (a *ResourceSharesAPIService) ListResourceShareTargetsExecute(r ApiListResourceShareTargetsRequest) (*ModelsResourceShareTargetList, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsResourceShareTargetList
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceSharesAPIService.ListResourceShareTargets")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"resource_type"+"}", url.PathEscape(parameterValueToString(r.resourceType, "resourceType")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"resource_id"+"}", url.PathEscape(parameterValueToString(r.resourceId, "resourceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.search != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "search", r.search, "form", "")
+	}
+	if r.shared != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "shared", r.shared, "form", "")
+	}
+	if r.sortBy != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort_by", r.sortBy, "form", "")
+	}
+	if r.order != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "order", r.order, "form", "")
+	} else {
+		var defaultValue string = "asc"
+		parameterAddToHeaderOrQuery(localVarQueryParams, "order", defaultValue, "form", "")
+		r.order = &defaultValue
+	}
+	if r.limit != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
+	} else {
+		var defaultValue int32 = 10
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+		r.limit = &defaultValue
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	} else {
+		var defaultValue int32 = 0
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", defaultValue, "form", "")
+		r.offset = &defaultValue
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiListResourceSharesRequest struct {
 	ctx context.Context
 	ApiService *ResourceSharesAPIService

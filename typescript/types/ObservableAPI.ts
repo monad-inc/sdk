@@ -330,6 +330,8 @@ import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsResourceShare } from '../models/ModelsResourceShare';
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
+import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
@@ -6595,6 +6597,56 @@ export class ObservableResourceSharesApi {
      */
     public createResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: ConfigurationOptions): Observable<ModelsResourceShareChangeSet> {
         return this.createResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareChangeSet>) => apiResponse.data));
+    }
+
+    /**
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List a resource\'s share targets (all direct child orgs)
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param [search] Case-insensitive substring filter on child org name, slug, or id
+     * @param [shared] Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
+     * @param [sortBy] Column to sort by; default puts shared rows first
+     * @param [order] Sort direction (used with sort_by)
+     * @param [limit] Page size
+     * @param [offset] Rows to skip
+     */
+    public listResourceShareTargetsWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, search?: string, shared?: boolean, sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use', order?: 'asc' | 'desc', limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareTargetList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listResourceShareTargets(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listResourceShareTargetsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List a resource\'s share targets (all direct child orgs)
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param [search] Case-insensitive substring filter on child org name, slug, or id
+     * @param [shared] Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
+     * @param [sortBy] Column to sort by; default puts shared rows first
+     * @param [order] Sort direction (used with sort_by)
+     * @param [limit] Page size
+     * @param [offset] Rows to skip
+     */
+    public listResourceShareTargets(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, search?: string, shared?: boolean, sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use', order?: 'asc' | 'desc', limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsResourceShareTargetList> {
+        return this.listResourceShareTargetsWithHttpInfo(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareTargetList>) => apiResponse.data));
     }
 
     /**

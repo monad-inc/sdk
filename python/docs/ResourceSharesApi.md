@@ -5,6 +5,7 @@ All URIs are relative to *https://monad.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_resource_shares**](ResourceSharesApi.md#create_resource_shares) | **POST** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
+[**list_resource_share_targets**](ResourceSharesApi.md#list_resource_share_targets) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource&#39;s share targets (all direct child orgs)
 [**list_resource_shares**](ResourceSharesApi.md#list_resource_shares) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares
 [**list_shared_resources**](ResourceSharesApi.md#list_shared_resources) | **GET** /v3/{organization_id}/resource_shares | List shared resources
 [**unshare_resource**](ResourceSharesApi.md#unshare_resource) | **DELETE** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
@@ -104,6 +105,111 @@ Name | Type | Description  | Notes
 **400** | Invalid request |  -  |
 **403** | Missing resource_sharing:write permission |  -  |
 **409** | A revoked share is in use by the target organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_resource_share_targets**
+> ModelsResourceShareTargetList list_resource_share_targets(organization_id, resource_type, resource_id, search=search, shared=shared, sort_by=sort_by, order=order, limit=limit, offset=offset)
+
+List a resource's share targets (all direct child orgs)
+
+List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.ResourceSharesApi(api_client)
+    organization_id = 'organization_id_example' # str | Owner organization ID
+    resource_type = 'resource_type_example' # str | Resource type
+    resource_id = 'resource_id_example' # str | Resource ID
+    search = 'search_example' # str | Case-insensitive substring filter on child org name, slug, or id (optional)
+    shared = True # bool | Filter by share state: true = only shared, false = only not shared (optional)
+    sort_by = 'sort_by_example' # str | Column to sort by; default puts shared rows first (optional)
+    order = asc # str | Sort direction (used with sort_by) (optional) (default to asc)
+    limit = 10 # int | Page size (optional) (default to 10)
+    offset = 0 # int | Rows to skip (optional) (default to 0)
+
+    try:
+        # List a resource's share targets (all direct child orgs)
+        api_response = api_instance.list_resource_share_targets(organization_id, resource_type, resource_id, search=search, shared=shared, sort_by=sort_by, order=order, limit=limit, offset=offset)
+        print("The response of ResourceSharesApi->list_resource_share_targets:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ResourceSharesApi->list_resource_share_targets: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Owner organization ID | 
+ **resource_type** | **str**| Resource type | 
+ **resource_id** | **str**| Resource ID | 
+ **search** | **str**| Case-insensitive substring filter on child org name, slug, or id | [optional] 
+ **shared** | **bool**| Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | [optional] 
+ **sort_by** | **str**| Column to sort by; default puts shared rows first | [optional] 
+ **order** | **str**| Sort direction (used with sort_by) | [optional] [default to asc]
+ **limit** | **int**| Page size | [optional] [default to 10]
+ **offset** | **int**| Rows to skip | [optional] [default to 0]
+
+### Return type
+
+[**ModelsResourceShareTargetList**](ModelsResourceShareTargetList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Direct child orgs annotated with share state |  -  |
+**400** | Invalid resource_type, sort_by, order, or shared value |  -  |
+**403** | Missing resource_sharing:read permission |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

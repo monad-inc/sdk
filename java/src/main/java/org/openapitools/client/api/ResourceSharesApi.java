@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import org.openapitools.client.model.CreateResourceSharesRequest;
 import org.openapitools.client.model.ModelsResourceShareChangeSet;
+import org.openapitools.client.model.ModelsResourceShareTargetList;
 import org.openapitools.client.model.ModelsResourceShareWithUsageList;
 import org.openapitools.client.model.ModelsSharedResourceList;
 import org.openapitools.client.model.ResponderErrorResponse;
@@ -246,6 +247,213 @@ public class ResourceSharesApi {
 
         okhttp3.Call localVarCall = createResourceSharesValidateBeforeCall(organizationId, resourceType, resourceId, createResourceSharesRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsResourceShareChangeSet>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listResourceShareTargets
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param search Case-insensitive substring filter on child org name, slug, or id (optional)
+     * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
+     * @param sortBy Column to sort by; default puts shared rows first (optional)
+     * @param order Sort direction (used with sort_by) (optional, default to asc)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Direct child orgs annotated with share state </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type, sort_by, order, or shared value </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listResourceShareTargetsCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable String search, @javax.annotation.Nullable Boolean shared, @javax.annotation.Nullable String sortBy, @javax.annotation.Nullable String order, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "resource_type" + "}", localVarApiClient.escapeString(resourceType.toString()))
+            .replace("{" + "resource_id" + "}", localVarApiClient.escapeString(resourceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (search != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("search", search));
+        }
+
+        if (shared != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("shared", shared));
+        }
+
+        if (sortBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort_by", sortBy));
+        }
+
+        if (order != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order", order));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listResourceShareTargetsValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable String search, @javax.annotation.Nullable Boolean shared, @javax.annotation.Nullable String sortBy, @javax.annotation.Nullable String order, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling listResourceShareTargets(Async)");
+        }
+
+        // verify the required parameter 'resourceType' is set
+        if (resourceType == null) {
+            throw new ApiException("Missing the required parameter 'resourceType' when calling listResourceShareTargets(Async)");
+        }
+
+        // verify the required parameter 'resourceId' is set
+        if (resourceId == null) {
+            throw new ApiException("Missing the required parameter 'resourceId' when calling listResourceShareTargets(Async)");
+        }
+
+        return listResourceShareTargetsCall(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset, _callback);
+
+    }
+
+    /**
+     * List a resource&#39;s share targets (all direct child orgs)
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param search Case-insensitive substring filter on child org name, slug, or id (optional)
+     * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
+     * @param sortBy Column to sort by; default puts shared rows first (optional)
+     * @param order Sort direction (used with sort_by) (optional, default to asc)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @return ModelsResourceShareTargetList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Direct child orgs annotated with share state </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type, sort_by, order, or shared value </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsResourceShareTargetList listResourceShareTargets(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable String search, @javax.annotation.Nullable Boolean shared, @javax.annotation.Nullable String sortBy, @javax.annotation.Nullable String order, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<ModelsResourceShareTargetList> localVarResp = listResourceShareTargetsWithHttpInfo(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List a resource&#39;s share targets (all direct child orgs)
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param search Case-insensitive substring filter on child org name, slug, or id (optional)
+     * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
+     * @param sortBy Column to sort by; default puts shared rows first (optional)
+     * @param order Sort direction (used with sort_by) (optional, default to asc)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @return ApiResponse&lt;ModelsResourceShareTargetList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Direct child orgs annotated with share state </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type, sort_by, order, or shared value </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsResourceShareTargetList> listResourceShareTargetsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable String search, @javax.annotation.Nullable Boolean shared, @javax.annotation.Nullable String sortBy, @javax.annotation.Nullable String order, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listResourceShareTargetsValidateBeforeCall(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ModelsResourceShareTargetList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List a resource&#39;s share targets (all direct child orgs) (asynchronously)
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param search Case-insensitive substring filter on child org name, slug, or id (optional)
+     * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
+     * @param sortBy Column to sort by; default puts shared rows first (optional)
+     * @param order Sort direction (used with sort_by) (optional, default to asc)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Direct child orgs annotated with share state </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type, sort_by, order, or shared value </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listResourceShareTargetsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable String search, @javax.annotation.Nullable Boolean shared, @javax.annotation.Nullable String sortBy, @javax.annotation.Nullable String order, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsResourceShareTargetList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listResourceShareTargetsValidateBeforeCall(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ModelsResourceShareTargetList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

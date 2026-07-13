@@ -396,6 +396,8 @@ __all__ = [
     "ModelsReferences",
     "ModelsResourceShare",
     "ModelsResourceShareChangeSet",
+    "ModelsResourceShareTarget",
+    "ModelsResourceShareTargetList",
     "ModelsResourceShareWithUsage",
     "ModelsResourceShareWithUsageList",
     "ModelsRoleWithPermissions",
@@ -1104,6 +1106,8 @@ from monad.models.models_reference import ModelsReference as ModelsReference
 from monad.models.models_references import ModelsReferences as ModelsReferences
 from monad.models.models_resource_share import ModelsResourceShare as ModelsResourceShare
 from monad.models.models_resource_share_change_set import ModelsResourceShareChangeSet as ModelsResourceShareChangeSet
+from monad.models.models_resource_share_target import ModelsResourceShareTarget as ModelsResourceShareTarget
+from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList as ModelsResourceShareTargetList
 from monad.models.models_resource_share_with_usage import ModelsResourceShareWithUsage as ModelsResourceShareWithUsage
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList as ModelsResourceShareWithUsageList
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions

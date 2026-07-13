@@ -5,6 +5,7 @@ All URIs are relative to *https://monad.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateResourceShares**](ResourceSharesAPI.md#CreateResourceShares) | **Post** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
+[**ListResourceShareTargets**](ResourceSharesAPI.md#ListResourceShareTargets) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource&#39;s share targets (all direct child orgs)
 [**ListResourceShares**](ResourceSharesAPI.md#ListResourceShares) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares
 [**ListSharedResources**](ResourceSharesAPI.md#ListSharedResources) | **Get** /v3/{organization_id}/resource_shares | List shared resources
 [**UnshareResource**](ResourceSharesAPI.md#UnshareResource) | **Delete** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
@@ -83,6 +84,94 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListResourceShareTargets
+
+> ModelsResourceShareTargetList ListResourceShareTargets(ctx, organizationId, resourceType, resourceId).Search(search).Shared(shared).SortBy(sortBy).Order(order).Limit(limit).Offset(offset).Execute()
+
+List a resource's share targets (all direct child orgs)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Owner organization ID
+	resourceType := "resourceType_example" // string | Resource type
+	resourceId := "resourceId_example" // string | Resource ID
+	search := "search_example" // string | Case-insensitive substring filter on child org name, slug, or id (optional)
+	shared := true // bool | Filter by share state: true = only shared, false = only not shared (optional)
+	sortBy := "sortBy_example" // string | Column to sort by; default puts shared rows first (optional)
+	order := "order_example" // string | Sort direction (used with sort_by) (optional) (default to "asc")
+	limit := int32(56) // int32 | Page size (optional) (default to 10)
+	offset := int32(56) // int32 | Rows to skip (optional) (default to 0)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ResourceSharesAPI.ListResourceShareTargets(context.Background(), organizationId, resourceType, resourceId).Search(search).Shared(shared).SortBy(sortBy).Order(order).Limit(limit).Offset(offset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ResourceSharesAPI.ListResourceShareTargets``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListResourceShareTargets`: ModelsResourceShareTargetList
+	fmt.Fprintf(os.Stdout, "Response from `ResourceSharesAPI.ListResourceShareTargets`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Owner organization ID | 
+**resourceType** | **string** | Resource type | 
+**resourceId** | **string** | Resource ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListResourceShareTargetsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **search** | **string** | Case-insensitive substring filter on child org name, slug, or id | 
+ **shared** | **bool** | Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | 
+ **sortBy** | **string** | Column to sort by; default puts shared rows first | 
+ **order** | **string** | Sort direction (used with sort_by) | [default to &quot;asc&quot;]
+ **limit** | **int32** | Page size | [default to 10]
+ **offset** | **int32** | Rows to skip | [default to 0]
+
+### Return type
+
+[**ModelsResourceShareTargetList**](ModelsResourceShareTargetList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

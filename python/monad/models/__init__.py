@@ -341,6 +341,8 @@ from monad.models.models_reference import ModelsReference
 from monad.models.models_references import ModelsReferences
 from monad.models.models_resource_share import ModelsResourceShare
 from monad.models.models_resource_share_change_set import ModelsResourceShareChangeSet
+from monad.models.models_resource_share_target import ModelsResourceShareTarget
+from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList
 from monad.models.models_resource_share_with_usage import ModelsResourceShareWithUsage
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions

@@ -6381,6 +6381,51 @@
                 },
                 "type": "object"
             },
+            "models.ResourceShareTarget": {
+                "properties": {
+                    "in_use": {
+                        "description": "Whether the child is actively using the resource (references a shared\nsecret, or binds a shared component in a pipeline node). Always false when\nnot shared.",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "Friendly name of the child organization.",
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "description": "The direct child organization.",
+                        "type": "string"
+                    },
+                    "shared": {
+                        "description": "Whether the resource is currently shared to this child.",
+                        "type": "boolean"
+                    },
+                    "shared_at": {
+                        "description": "When the share was created; nil when not shared.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.ResourceShareTargetList": {
+                "properties": {
+                    "organizations": {
+                        "description": "The page of child orgs.",
+                        "items": {
+                            "$ref": "#/components/schemas/models.ResourceShareTarget"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "share_with_all_new_children": {
+                        "description": "Whether the resource's policy auto-shares it with new direct children.",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
             "models.ResourceShareWithUsage": {
                 "properties": {
                     "created_at": {
@@ -26400,6 +26445,163 @@
                 ],
                 "x-required-permissions": [
                     "resource_sharing:write"
+                ]
+            }
+        },
+        "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations": {
+            "get": {
+                "description": "List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.",
+                "operationId": "ListResourceShareTargets",
+                "parameters": [
+                    {
+                        "description": "Owner organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource type",
+                        "in": "path",
+                        "name": "resource_type",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "secret",
+                                "component"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource ID",
+                        "in": "path",
+                        "name": "resource_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Case-insensitive substring filter on child org name, slug, or id",
+                        "in": "query",
+                        "name": "search",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Filter by share state: true = only shared, false = only not shared",
+                        "in": "query",
+                        "name": "shared",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "Column to sort by; default puts shared rows first",
+                        "in": "query",
+                        "name": "sort_by",
+                        "schema": {
+                            "enum": [
+                                "name",
+                                "shared",
+                                "shared_at",
+                                "in_use"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Sort direction (used with sort_by)",
+                        "in": "query",
+                        "name": "order",
+                        "schema": {
+                            "default": "asc",
+                            "enum": [
+                                "asc",
+                                "desc"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Page size",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "default": 10,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Rows to skip",
+                        "in": "query",
+                        "name": "offset",
+                        "schema": {
+                            "default": 0,
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.ResourceShareTargetList"
+                                }
+                            }
+                        },
+                        "description": "Direct child orgs annotated with share state"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid resource_type, sort_by, order, or shared value"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing resource_sharing:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List a resource's share targets (all direct child orgs)",
+                "tags": [
+                    "Resource Shares"
+                ],
+                "x-required-permissions": [
+                    "resource_sharing:read"
                 ]
             }
         },

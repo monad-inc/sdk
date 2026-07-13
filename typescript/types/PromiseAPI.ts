@@ -329,6 +329,8 @@ import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsResourceShare } from '../models/ModelsResourceShare';
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
+import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
+import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
@@ -4906,6 +4908,44 @@ export class PromiseResourceSharesApi {
     public createResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List a resource\'s share targets (all direct child orgs)
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param [search] Case-insensitive substring filter on child org name, slug, or id
+     * @param [shared] Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
+     * @param [sortBy] Column to sort by; default puts shared rows first
+     * @param [order] Sort direction (used with sort_by)
+     * @param [limit] Page size
+     * @param [offset] Rows to skip
+     */
+    public listResourceShareTargetsWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, search?: string, shared?: boolean, sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use', order?: 'asc' | 'desc', limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareTargetList>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listResourceShareTargetsWithHttpInfo(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List a resource\'s share targets (all direct child orgs)
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param [search] Case-insensitive substring filter on child org name, slug, or id
+     * @param [shared] Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
+     * @param [sortBy] Column to sort by; default puts shared rows first
+     * @param [order] Sort direction (used with sort_by)
+     * @param [limit] Page size
+     * @param [offset] Rows to skip
+     */
+    public listResourceShareTargets(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, search?: string, shared?: boolean, sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use', order?: 'asc' | 'desc', limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareTargetList> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listResourceShareTargets(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset, observableOptions);
         return result.toPromise();
     }
 
