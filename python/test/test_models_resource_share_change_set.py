@@ -54,7 +54,16 @@ class TestModelsResourceShareChangeSet(unittest.TestCase):
                         resource_type = '', 
                         target_organization_id = '', )
                     ],
-                share_with_all_new_children = True
+                share_with_all_new_children = True,
+                skipped_in_use = [
+                    monad.models.models/resource_share.models.ResourceShare(
+                        created_at = '', 
+                        id = '', 
+                        owner_organization_id = '', 
+                        resource_id = '', 
+                        resource_type = '', 
+                        target_organization_id = '', )
+                    ]
             )
         else:
             return ModelsResourceShareChangeSet(

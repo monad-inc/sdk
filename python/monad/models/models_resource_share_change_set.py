@@ -32,7 +32,8 @@ class ModelsResourceShareChangeSet(BaseModel):
     created: Optional[List[ModelsResourceShare]] = Field(default=None, description="Shares newly created by the request.")
     revoked: Optional[List[ModelsResourceShare]] = Field(default=None, description="Shares revoked (deleted) by the request.")
     share_with_all_new_children: Optional[StrictBool] = Field(default=None, description="The resource's auto-share policy state after the request.")
-    __properties: ClassVar[List[str]] = ["created", "revoked", "share_with_all_new_children"]
+    skipped_in_use: Optional[List[ModelsResourceShare]] = Field(default=None, description="SkippedInUse holds shares a revoke_all_not_in_use request deliberately left in place because the target org is still using the resource. Empty for every other request shape.")
+    __properties: ClassVar[List[str]] = ["created", "revoked", "share_with_all_new_children", "skipped_in_use"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -87,6 +88,13 @@ class ModelsResourceShareChangeSet(BaseModel):
                 if _item_revoked:
                     _items.append(_item_revoked.to_dict())
             _dict['revoked'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in skipped_in_use (list)
+        _items = []
+        if self.skipped_in_use:
+            for _item_skipped_in_use in self.skipped_in_use:
+                if _item_skipped_in_use:
+                    _items.append(_item_skipped_in_use.to_dict())
+            _dict['skipped_in_use'] = _items
         return _dict
 
     @classmethod
@@ -101,7 +109,8 @@ class ModelsResourceShareChangeSet(BaseModel):
         _obj = cls.model_validate({
             "created": [ModelsResourceShare.from_dict(_item) for _item in obj["created"]] if obj.get("created") is not None else None,
             "revoked": [ModelsResourceShare.from_dict(_item) for _item in obj["revoked"]] if obj.get("revoked") is not None else None,
-            "share_with_all_new_children": obj.get("share_with_all_new_children")
+            "share_with_all_new_children": obj.get("share_with_all_new_children"),
+            "skipped_in_use": [ModelsResourceShare.from_dict(_item) for _item in obj["skipped_in_use"]] if obj.get("skipped_in_use") is not None else None
         })
         return _obj
 

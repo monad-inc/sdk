@@ -22,61 +22,39 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsPagination;
+import org.openapitools.client.model.ModelsResourceUsage;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV3ShareChangesRequest
+ * Model tests for ModelsResourceUsageList
  */
-public class RoutesV3ShareChangesRequestTest {
-    private final RoutesV3ShareChangesRequest model = new RoutesV3ShareChangesRequest();
+public class ModelsResourceUsageListTest {
+    private final ModelsResourceUsageList model = new ModelsResourceUsageList();
 
     /**
-     * Model tests for RoutesV3ShareChangesRequest
+     * Model tests for ModelsResourceUsageList
      */
     @Test
-    public void testRoutesV3ShareChangesRequest() {
-        // TODO: test RoutesV3ShareChangesRequest
+    public void testModelsResourceUsageList() {
+        // TODO: test ModelsResourceUsageList
     }
 
     /**
-     * Test the property 'allCurrentChildren'
+     * Test the property 'pagination'
      */
     @Test
-    public void allCurrentChildrenTest() {
-        // TODO: test allCurrentChildren
+    public void paginationTest() {
+        // TODO: test pagination
     }
 
     /**
-     * Test the property 'revokeAllNotInUse'
+     * Test the property 'usages'
      */
     @Test
-    public void revokeAllNotInUseTest() {
-        // TODO: test revokeAllNotInUse
-    }
-
-    /**
-     * Test the property 'revokeOrganizationIds'
-     */
-    @Test
-    public void revokeOrganizationIdsTest() {
-        // TODO: test revokeOrganizationIds
-    }
-
-    /**
-     * Test the property 'shareOrganizationIds'
-     */
-    @Test
-    public void shareOrganizationIdsTest() {
-        // TODO: test shareOrganizationIds
-    }
-
-    /**
-     * Test the property 'shareWithAllNewChildren'
-     */
-    @Test
-    public void shareWithAllNewChildrenTest() {
-        // TODO: test shareWithAllNewChildren
+    public void usagesTest() {
+        // TODO: test usages
     }
 
 }

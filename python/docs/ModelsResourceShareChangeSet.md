@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **created** | [**List[ModelsResourceShare]**](ModelsResourceShare.md) | Shares newly created by the request. | [optional] 
 **revoked** | [**List[ModelsResourceShare]**](ModelsResourceShare.md) | Shares revoked (deleted) by the request. | [optional] 
 **share_with_all_new_children** | **bool** | The resource&#39;s auto-share policy state after the request. | [optional] 
+**skipped_in_use** | [**List[ModelsResourceShare]**](ModelsResourceShare.md) | SkippedInUse holds shares a revoke_all_not_in_use request deliberately left in place because the target org is still using the resource. Empty for every other request shape. | [optional] 
 
 ## Example
 

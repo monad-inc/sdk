@@ -46,19 +46,29 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsNodeSharedResource
+ * ModelsResourceUsage
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
-public class ModelsNodeSharedResource {
+public class ModelsResourceUsage {
+  public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
+  @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
+  @javax.annotation.Nullable
+  private String componentType;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_OWNER_ORGANIZATION_ID = "owner_organization_id";
-  @SerializedName(SERIALIZED_NAME_OWNER_ORGANIZATION_ID)
+  public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
-  private String ownerOrganizationId;
+  private String organizationId;
+
+  public static final String SERIALIZED_NAME_ORGANIZATION_NAME = "organization_name";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_NAME)
+  @javax.annotation.Nullable
+  private String organizationName;
 
   public static final String SERIALIZED_NAME_RESOURCE_ID = "resource_id";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
@@ -75,16 +85,35 @@ public class ModelsNodeSharedResource {
   @javax.annotation.Nullable
   private String subType;
 
-  public ModelsNodeSharedResource() {
+  public ModelsResourceUsage() {
   }
 
-  public ModelsNodeSharedResource name(@javax.annotation.Nullable String name) {
+  public ModelsResourceUsage componentType(@javax.annotation.Nullable String componentType) {
+    this.componentType = componentType;
+    return this;
+  }
+
+  /**
+   * Get componentType
+   * @return componentType
+   */
+  @javax.annotation.Nullable
+  public String getComponentType() {
+    return componentType;
+  }
+
+  public void setComponentType(@javax.annotation.Nullable String componentType) {
+    this.componentType = componentType;
+  }
+
+
+  public ModelsResourceUsage name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * Name is the shared resource&#39;s name (component or secret). Populated for display context; empty if it could not be resolved.
+   * Get name
    * @return name
    */
   @javax.annotation.Nullable
@@ -97,26 +126,45 @@ public class ModelsNodeSharedResource {
   }
 
 
-  public ModelsNodeSharedResource ownerOrganizationId(@javax.annotation.Nullable String ownerOrganizationId) {
-    this.ownerOrganizationId = ownerOrganizationId;
+  public ModelsResourceUsage organizationId(@javax.annotation.Nullable String organizationId) {
+    this.organizationId = organizationId;
     return this;
   }
 
   /**
-   * Get ownerOrganizationId
-   * @return ownerOrganizationId
+   * Get organizationId
+   * @return organizationId
    */
   @javax.annotation.Nullable
-  public String getOwnerOrganizationId() {
-    return ownerOrganizationId;
+  public String getOrganizationId() {
+    return organizationId;
   }
 
-  public void setOwnerOrganizationId(@javax.annotation.Nullable String ownerOrganizationId) {
-    this.ownerOrganizationId = ownerOrganizationId;
+  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+    this.organizationId = organizationId;
   }
 
 
-  public ModelsNodeSharedResource resourceId(@javax.annotation.Nullable String resourceId) {
+  public ModelsResourceUsage organizationName(@javax.annotation.Nullable String organizationName) {
+    this.organizationName = organizationName;
+    return this;
+  }
+
+  /**
+   * Get organizationName
+   * @return organizationName
+   */
+  @javax.annotation.Nullable
+  public String getOrganizationName() {
+    return organizationName;
+  }
+
+  public void setOrganizationName(@javax.annotation.Nullable String organizationName) {
+    this.organizationName = organizationName;
+  }
+
+
+  public ModelsResourceUsage resourceId(@javax.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
     return this;
   }
@@ -135,13 +183,13 @@ public class ModelsNodeSharedResource {
   }
 
 
-  public ModelsNodeSharedResource resourceType(@javax.annotation.Nullable String resourceType) {
+  public ModelsResourceUsage resourceType(@javax.annotation.Nullable String resourceType) {
     this.resourceType = resourceType;
     return this;
   }
 
   /**
-   * ResourceShareTypeComponent | ResourceShareTypeSecret
+   * Get resourceType
    * @return resourceType
    */
   @javax.annotation.Nullable
@@ -154,13 +202,13 @@ public class ModelsNodeSharedResource {
   }
 
 
-  public ModelsNodeSharedResource subType(@javax.annotation.Nullable String subType) {
+  public ModelsResourceUsage subType(@javax.annotation.Nullable String subType) {
     this.subType = subType;
     return this;
   }
 
   /**
-   * SubType is the connector kind for a shared component (component entries only).
+   * Get subType
    * @return subType
    */
   @javax.annotation.Nullable
@@ -182,25 +230,29 @@ public class ModelsNodeSharedResource {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelsNodeSharedResource modelsNodeSharedResource = (ModelsNodeSharedResource) o;
-    return Objects.equals(this.name, modelsNodeSharedResource.name) &&
-        Objects.equals(this.ownerOrganizationId, modelsNodeSharedResource.ownerOrganizationId) &&
-        Objects.equals(this.resourceId, modelsNodeSharedResource.resourceId) &&
-        Objects.equals(this.resourceType, modelsNodeSharedResource.resourceType) &&
-        Objects.equals(this.subType, modelsNodeSharedResource.subType);
+    ModelsResourceUsage modelsResourceUsage = (ModelsResourceUsage) o;
+    return Objects.equals(this.componentType, modelsResourceUsage.componentType) &&
+        Objects.equals(this.name, modelsResourceUsage.name) &&
+        Objects.equals(this.organizationId, modelsResourceUsage.organizationId) &&
+        Objects.equals(this.organizationName, modelsResourceUsage.organizationName) &&
+        Objects.equals(this.resourceId, modelsResourceUsage.resourceId) &&
+        Objects.equals(this.resourceType, modelsResourceUsage.resourceType) &&
+        Objects.equals(this.subType, modelsResourceUsage.subType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, ownerOrganizationId, resourceId, resourceType, subType);
+    return Objects.hash(componentType, name, organizationId, organizationName, resourceId, resourceType, subType);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelsNodeSharedResource {\n");
+    sb.append("class ModelsResourceUsage {\n");
+    sb.append("    componentType: ").append(toIndentedString(componentType)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    ownerOrganizationId: ").append(toIndentedString(ownerOrganizationId)).append("\n");
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
@@ -222,7 +274,7 @@ public class ModelsNodeSharedResource {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("name", "owner_organization_id", "resource_id", "resource_type", "sub_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_type", "name", "organization_id", "organization_name", "resource_id", "resource_type", "sub_type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -232,28 +284,34 @@ public class ModelsNodeSharedResource {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ModelsNodeSharedResource
+   * @throws IOException if the JSON Element is invalid with respect to ModelsResourceUsage
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ModelsNodeSharedResource.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsNodeSharedResource is not found in the empty JSON string", ModelsNodeSharedResource.openapiRequiredFields.toString()));
+        if (!ModelsResourceUsage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsResourceUsage is not found in the empty JSON string", ModelsResourceUsage.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ModelsNodeSharedResource.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsNodeSharedResource` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ModelsResourceUsage.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsResourceUsage` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("component_type") != null && !jsonObj.get("component_type").isJsonNull()) && !jsonObj.get("component_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `component_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("owner_organization_id") != null && !jsonObj.get("owner_organization_id").isJsonNull()) && !jsonObj.get("owner_organization_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `owner_organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("owner_organization_id").toString()));
+      if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+      }
+      if ((jsonObj.get("organization_name") != null && !jsonObj.get("organization_name").isJsonNull()) && !jsonObj.get("organization_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_name").toString()));
       }
       if ((jsonObj.get("resource_id") != null && !jsonObj.get("resource_id").isJsonNull()) && !jsonObj.get("resource_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_id").toString()));
@@ -270,22 +328,22 @@ public class ModelsNodeSharedResource {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ModelsNodeSharedResource.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ModelsNodeSharedResource' and its subtypes
+       if (!ModelsResourceUsage.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelsResourceUsage' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ModelsNodeSharedResource> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsNodeSharedResource.class));
+       final TypeAdapter<ModelsResourceUsage> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsResourceUsage.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ModelsNodeSharedResource>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelsResourceUsage>() {
            @Override
-           public void write(JsonWriter out, ModelsNodeSharedResource value) throws IOException {
+           public void write(JsonWriter out, ModelsResourceUsage value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ModelsNodeSharedResource read(JsonReader in) throws IOException {
+           public ModelsResourceUsage read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -296,18 +354,18 @@ public class ModelsNodeSharedResource {
   }
 
   /**
-   * Create an instance of ModelsNodeSharedResource given an JSON string
+   * Create an instance of ModelsResourceUsage given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ModelsNodeSharedResource
-   * @throws IOException if the JSON string is invalid with respect to ModelsNodeSharedResource
+   * @return An instance of ModelsResourceUsage
+   * @throws IOException if the JSON string is invalid with respect to ModelsResourceUsage
    */
-  public static ModelsNodeSharedResource fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ModelsNodeSharedResource.class);
+  public static ModelsResourceUsage fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelsResourceUsage.class);
   }
 
   /**
-   * Convert an instance of ModelsNodeSharedResource to an JSON string
+   * Convert an instance of ModelsResourceUsage to an JSON string
    *
    * @return JSON string
    */

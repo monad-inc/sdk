@@ -36,9 +36,11 @@ class TestModelsNodeSharedResource(unittest.TestCase):
         model = ModelsNodeSharedResource()
         if include_optional:
             return ModelsNodeSharedResource(
+                name = '',
                 owner_organization_id = '',
                 resource_id = '',
-                resource_type = ''
+                resource_type = '',
+                sub_type = ''
             )
         else:
             return ModelsNodeSharedResource(

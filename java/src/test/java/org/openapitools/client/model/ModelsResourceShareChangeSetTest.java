@@ -64,4 +64,12 @@ public class ModelsResourceShareChangeSetTest {
         // TODO: test shareWithAllNewChildren
     }
 
+    /**
+     * Test the property 'skippedInUse'
+     */
+    @Test
+    public void skippedInUseTest() {
+        // TODO: test skippedInUse
+    }
+
 }

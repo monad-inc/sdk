@@ -23,6 +23,7 @@ from monad.models.create_resource_shares_request import CreateResourceSharesRequ
 from monad.models.models_resource_share_change_set import ModelsResourceShareChangeSet
 from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList
+from monad.models.models_resource_usage_list import ModelsResourceUsageList
 from monad.models.models_shared_resource_list import ModelsSharedResourceList
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -1080,6 +1081,341 @@ class ResourceSharesApi:
 
 
     @validate_call
+    def list_resource_usage(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
+        resource_type: Annotated[StrictStr, Field(description="Resource type")],
+        resource_id: Annotated[StrictStr, Field(description="Resource ID")],
+        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ModelsResourceUsageList:
+        """List a shared resource's consumers in other orgs
+
+        List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org's usages are contiguous.
+
+        :param organization_id: Owner organization ID (required)
+        :type organization_id: str
+        :param resource_type: Resource type (required)
+        :type resource_type: str
+        :param resource_id: Resource ID (required)
+        :type resource_id: str
+        :param limit: Page size
+        :type limit: int
+        :param offset: Rows to skip
+        :type offset: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_resource_usage_serialize(
+            organization_id=organization_id,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsResourceUsageList",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def list_resource_usage_with_http_info(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
+        resource_type: Annotated[StrictStr, Field(description="Resource type")],
+        resource_id: Annotated[StrictStr, Field(description="Resource ID")],
+        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ModelsResourceUsageList]:
+        """List a shared resource's consumers in other orgs
+
+        List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org's usages are contiguous.
+
+        :param organization_id: Owner organization ID (required)
+        :type organization_id: str
+        :param resource_type: Resource type (required)
+        :type resource_type: str
+        :param resource_id: Resource ID (required)
+        :type resource_id: str
+        :param limit: Page size
+        :type limit: int
+        :param offset: Rows to skip
+        :type offset: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_resource_usage_serialize(
+            organization_id=organization_id,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsResourceUsageList",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def list_resource_usage_without_preload_content(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
+        resource_type: Annotated[StrictStr, Field(description="Resource type")],
+        resource_id: Annotated[StrictStr, Field(description="Resource ID")],
+        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """List a shared resource's consumers in other orgs
+
+        List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org's usages are contiguous.
+
+        :param organization_id: Owner organization ID (required)
+        :type organization_id: str
+        :param resource_type: Resource type (required)
+        :type resource_type: str
+        :param resource_id: Resource ID (required)
+        :type resource_id: str
+        :param limit: Page size
+        :type limit: int
+        :param offset: Rows to skip
+        :type offset: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_resource_usage_serialize(
+            organization_id=organization_id,
+            resource_type=resource_type,
+            resource_id=resource_id,
+            limit=limit,
+            offset=offset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsResourceUsageList",
+            '400': "ResponderErrorResponse",
+            '403': "str",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _list_resource_usage_serialize(
+        self,
+        organization_id,
+        resource_type,
+        resource_id,
+        limit,
+        offset,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
+        if resource_type is not None:
+            _path_params['resource_type'] = resource_type
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuth', 
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def list_shared_resources(
         self,
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
@@ -1727,7 +2063,7 @@ class ResourceSharesApi:
     ) -> ModelsResourceShareChangeSet:
         """Update a resource's shares
 
-        Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+        Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
 
         :param organization_id: Owner organization ID (required)
         :type organization_id: str
@@ -1810,7 +2146,7 @@ class ResourceSharesApi:
     ) -> ApiResponse[ModelsResourceShareChangeSet]:
         """Update a resource's shares
 
-        Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+        Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
 
         :param organization_id: Owner organization ID (required)
         :type organization_id: str
@@ -1893,7 +2229,7 @@ class ResourceSharesApi:
     ) -> RESTResponseType:
         """Update a resource's shares
 
-        Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+        Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
 
         :param organization_id: Owner organization ID (required)
         :type organization_id: str

@@ -28,10 +28,12 @@ class ModelsNodeSharedResource(BaseModel):
     """
     ModelsNodeSharedResource
     """ # noqa: E501
+    name: Optional[StrictStr] = Field(default=None, description="Name is the shared resource's name (component or secret). Populated for display context; empty if it could not be resolved.")
     owner_organization_id: Optional[StrictStr] = None
     resource_id: Optional[StrictStr] = None
     resource_type: Optional[StrictStr] = Field(default=None, description="ResourceShareTypeComponent | ResourceShareTypeSecret")
-    __properties: ClassVar[List[str]] = ["owner_organization_id", "resource_id", "resource_type"]
+    sub_type: Optional[StrictStr] = Field(default=None, description="SubType is the connector kind for a shared component (component entries only).")
+    __properties: ClassVar[List[str]] = ["name", "owner_organization_id", "resource_id", "resource_type", "sub_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,9 +86,11 @@ class ModelsNodeSharedResource(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "name": obj.get("name"),
             "owner_organization_id": obj.get("owner_organization_id"),
             "resource_id": obj.get("resource_id"),
-            "resource_type": obj.get("resource_type")
+            "resource_type": obj.get("resource_type"),
+            "sub_type": obj.get("sub_type")
         })
         return _obj
 

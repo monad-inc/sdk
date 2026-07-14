@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.routes_v3_share_changes_request import RoutesV3ShareChangesRequest
+from monad.models.models_resource_usage_list import ModelsResourceUsageList
 
-class TestRoutesV3ShareChangesRequest(unittest.TestCase):
-    """RoutesV3ShareChangesRequest unit test stubs"""
+class TestModelsResourceUsageList(unittest.TestCase):
+    """ModelsResourceUsageList unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,33 +26,38 @@ class TestRoutesV3ShareChangesRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RoutesV3ShareChangesRequest:
-        """Test RoutesV3ShareChangesRequest
+    def make_instance(self, include_optional) -> ModelsResourceUsageList:
+        """Test ModelsResourceUsageList
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RoutesV3ShareChangesRequest`
+        # uncomment below to create an instance of `ModelsResourceUsageList`
         """
-        model = RoutesV3ShareChangesRequest()
+        model = ModelsResourceUsageList()
         if include_optional:
-            return RoutesV3ShareChangesRequest(
-                all_current_children = True,
-                revoke_all_not_in_use = True,
-                revoke_organization_ids = [
-                    ''
-                    ],
-                share_organization_ids = [
-                    ''
-                    ],
-                share_with_all_new_children = True
+            return ModelsResourceUsageList(
+                pagination = monad.models.models/pagination.models.Pagination(
+                    limit = 56, 
+                    offset = 56, 
+                    total = 56, ),
+                usages = [
+                    monad.models.models/resource_usage.models.ResourceUsage(
+                        component_type = '', 
+                        name = '', 
+                        organization_id = '', 
+                        organization_name = '', 
+                        resource_id = '', 
+                        resource_type = '', 
+                        sub_type = '', )
+                    ]
             )
         else:
-            return RoutesV3ShareChangesRequest(
+            return ModelsResourceUsageList(
         )
         """
 
-    def testRoutesV3ShareChangesRequest(self):
-        """Test RoutesV3ShareChangesRequest"""
+    def testModelsResourceUsageList(self):
+        """Test ModelsResourceUsageList"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -38,6 +38,14 @@ public class ModelsNodeSharedResourceTest {
     }
 
     /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
      * Test the property 'ownerOrganizationId'
      */
     @Test
@@ -59,6 +67,14 @@ public class ModelsNodeSharedResourceTest {
     @Test
     public void resourceTypeTest() {
         // TODO: test resourceType
+    }
+
+    /**
+     * Test the property 'subType'
+     */
+    @Test
+    public void subTypeTest() {
+        // TODO: test subType
     }
 
 }

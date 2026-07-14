@@ -18,22 +18,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class RoutesV3ShareChangesRequest(BaseModel):
+class ModelsResourceUsage(BaseModel):
     """
-    RoutesV3ShareChangesRequest
+    ModelsResourceUsage
     """ # noqa: E501
-    all_current_children: Optional[StrictBool] = Field(default=None, description="Share with every current direct child (future children excluded).")
-    revoke_all_not_in_use: Optional[StrictBool] = Field(default=None, description="Revoke every current share the target org is not using, leaving in-use shares in place (returned in skipped_in_use). Unlike revoke_organization_ids this never 409s on an in-use child — it skips it.")
-    revoke_organization_ids: Optional[List[StrictStr]] = Field(default=None, description="Target organization ids whose share of this resource should be revoked.")
-    share_organization_ids: Optional[List[StrictStr]] = Field(default=None, description="Explicit direct-child organizations to share with.")
-    share_with_all_new_children: Optional[StrictBool] = Field(default=None, description="Toggle auto-sharing with new direct children: omit to leave unchanged, true to enable, false to disable.")
-    __properties: ClassVar[List[str]] = ["all_current_children", "revoke_all_not_in_use", "revoke_organization_ids", "share_organization_ids", "share_with_all_new_children"]
+    component_type: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    organization_id: Optional[StrictStr] = None
+    organization_name: Optional[StrictStr] = None
+    resource_id: Optional[StrictStr] = None
+    resource_type: Optional[StrictStr] = None
+    sub_type: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["component_type", "name", "organization_id", "organization_name", "resource_id", "resource_type", "sub_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -53,7 +55,7 @@ class RoutesV3ShareChangesRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RoutesV3ShareChangesRequest from a JSON string"""
+        """Create an instance of ModelsResourceUsage from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,7 +80,7 @@ class RoutesV3ShareChangesRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RoutesV3ShareChangesRequest from a dict"""
+        """Create an instance of ModelsResourceUsage from a dict"""
         if obj is None:
             return None
 
@@ -86,11 +88,13 @@ class RoutesV3ShareChangesRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "all_current_children": obj.get("all_current_children"),
-            "revoke_all_not_in_use": obj.get("revoke_all_not_in_use"),
-            "revoke_organization_ids": obj.get("revoke_organization_ids"),
-            "share_organization_ids": obj.get("share_organization_ids"),
-            "share_with_all_new_children": obj.get("share_with_all_new_children")
+            "component_type": obj.get("component_type"),
+            "name": obj.get("name"),
+            "organization_id": obj.get("organization_id"),
+            "organization_name": obj.get("organization_name"),
+            "resource_id": obj.get("resource_id"),
+            "resource_type": obj.get("resource_type"),
+            "sub_type": obj.get("sub_type")
         })
         return _obj
 

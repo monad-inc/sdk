@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_resource_shares**](ResourceSharesApi.md#create_resource_shares) | **POST** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
 [**list_resource_share_targets**](ResourceSharesApi.md#list_resource_share_targets) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource&#39;s share targets (all direct child orgs)
 [**list_resource_shares**](ResourceSharesApi.md#list_resource_shares) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares
+[**list_resource_usage**](ResourceSharesApi.md#list_resource_usage) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage | List a shared resource&#39;s consumers in other orgs
 [**list_shared_resources**](ResourceSharesApi.md#list_shared_resources) | **GET** /v3/{organization_id}/resource_shares | List shared resources
 [**unshare_resource**](ResourceSharesApi.md#unshare_resource) | **DELETE** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
 [**update_resource_shares**](ResourceSharesApi.md#update_resource_shares) | **PATCH** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Update a resource&#39;s shares
@@ -307,6 +308,103 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_resource_usage**
+> ModelsResourceUsageList list_resource_usage(organization_id, resource_type, resource_id, limit=limit, offset=offset)
+
+List a shared resource's consumers in other orgs
+
+List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org's usages are contiguous.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_resource_usage_list import ModelsResourceUsageList
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.ResourceSharesApi(api_client)
+    organization_id = 'organization_id_example' # str | Owner organization ID
+    resource_type = 'resource_type_example' # str | Resource type
+    resource_id = 'resource_id_example' # str | Resource ID
+    limit = 10 # int | Page size (optional) (default to 10)
+    offset = 0 # int | Rows to skip (optional) (default to 0)
+
+    try:
+        # List a shared resource's consumers in other orgs
+        api_response = api_instance.list_resource_usage(organization_id, resource_type, resource_id, limit=limit, offset=offset)
+        print("The response of ResourceSharesApi->list_resource_usage:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ResourceSharesApi->list_resource_usage: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Owner organization ID | 
+ **resource_type** | **str**| Resource type | 
+ **resource_id** | **str**| Resource ID | 
+ **limit** | **int**| Page size | [optional] [default to 10]
+ **offset** | **int**| Rows to skip | [optional] [default to 0]
+
+### Return type
+
+[**ModelsResourceUsageList**](ModelsResourceUsageList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Cross-org consumers of the shared resource |  -  |
+**400** | Invalid resource_type |  -  |
+**403** | Missing resource_sharing:read permission |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_shared_resources**
 > ModelsSharedResourceList list_shared_resources(organization_id, limit=limit, offset=offset, resource_type=resource_type)
 
@@ -501,7 +599,7 @@ Name | Type | Description  | Notes
 
 Update a resource's shares
 
-Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
 
 ### Example
 

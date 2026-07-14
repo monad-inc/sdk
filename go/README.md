@@ -285,6 +285,7 @@ Class | Method | HTTP request | Description
 *ResourceSharesAPI* | [**CreateResourceShares**](docs/ResourceSharesAPI.md#createresourceshares) | **Post** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
 *ResourceSharesAPI* | [**ListResourceShareTargets**](docs/ResourceSharesAPI.md#listresourcesharetargets) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource&#39;s share targets (all direct child orgs)
 *ResourceSharesAPI* | [**ListResourceShares**](docs/ResourceSharesAPI.md#listresourceshares) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares
+*ResourceSharesAPI* | [**ListResourceUsage**](docs/ResourceSharesAPI.md#listresourceusage) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage | List a shared resource&#39;s consumers in other orgs
 *ResourceSharesAPI* | [**ListSharedResources**](docs/ResourceSharesAPI.md#listsharedresources) | **Get** /v3/{organization_id}/resource_shares | List shared resources
 *ResourceSharesAPI* | [**UnshareResource**](docs/ResourceSharesAPI.md#unshareresource) | **Delete** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
 *ResourceSharesAPI* | [**UpdateResourceShares**](docs/ResourceSharesAPI.md#updateresourceshares) | **Patch** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Update a resource&#39;s shares
@@ -652,6 +653,8 @@ Class | Method | HTTP request | Description
  - [ModelsResourceShareTargetList](docs/ModelsResourceShareTargetList.md)
  - [ModelsResourceShareWithUsage](docs/ModelsResourceShareWithUsage.md)
  - [ModelsResourceShareWithUsageList](docs/ModelsResourceShareWithUsageList.md)
+ - [ModelsResourceUsage](docs/ModelsResourceUsage.md)
+ - [ModelsResourceUsageList](docs/ModelsResourceUsageList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
  - [ModelsSchemaDetection](docs/ModelsSchemaDetection.md)

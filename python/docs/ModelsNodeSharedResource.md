@@ -5,9 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** | Name is the shared resource&#39;s name (component or secret). Populated for display context; empty if it could not be resolved. | [optional] 
 **owner_organization_id** | **str** |  | [optional] 
 **resource_id** | **str** |  | [optional] 
 **resource_type** | **str** | ResourceShareTypeComponent | ResourceShareTypeSecret | [optional] 
+**sub_type** | **str** | SubType is the connector kind for a shared component (component entries only). | [optional] 
 
 ## Example
 

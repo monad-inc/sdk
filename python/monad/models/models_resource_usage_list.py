@@ -18,22 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_pagination import ModelsPagination
+from monad.models.models_resource_usage import ModelsResourceUsage
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class RoutesV3ShareChangesRequest(BaseModel):
+class ModelsResourceUsageList(BaseModel):
     """
-    RoutesV3ShareChangesRequest
+    ModelsResourceUsageList
     """ # noqa: E501
-    all_current_children: Optional[StrictBool] = Field(default=None, description="Share with every current direct child (future children excluded).")
-    revoke_all_not_in_use: Optional[StrictBool] = Field(default=None, description="Revoke every current share the target org is not using, leaving in-use shares in place (returned in skipped_in_use). Unlike revoke_organization_ids this never 409s on an in-use child — it skips it.")
-    revoke_organization_ids: Optional[List[StrictStr]] = Field(default=None, description="Target organization ids whose share of this resource should be revoked.")
-    share_organization_ids: Optional[List[StrictStr]] = Field(default=None, description="Explicit direct-child organizations to share with.")
-    share_with_all_new_children: Optional[StrictBool] = Field(default=None, description="Toggle auto-sharing with new direct children: omit to leave unchanged, true to enable, false to disable.")
-    __properties: ClassVar[List[str]] = ["all_current_children", "revoke_all_not_in_use", "revoke_organization_ids", "share_organization_ids", "share_with_all_new_children"]
+    pagination: Optional[ModelsPagination] = None
+    usages: Optional[List[ModelsResourceUsage]] = None
+    __properties: ClassVar[List[str]] = ["pagination", "usages"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -53,7 +52,7 @@ class RoutesV3ShareChangesRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RoutesV3ShareChangesRequest from a JSON string"""
+        """Create an instance of ModelsResourceUsageList from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,11 +73,21 @@ class RoutesV3ShareChangesRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of pagination
+        if self.pagination:
+            _dict['pagination'] = self.pagination.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in usages (list)
+        _items = []
+        if self.usages:
+            for _item_usages in self.usages:
+                if _item_usages:
+                    _items.append(_item_usages.to_dict())
+            _dict['usages'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RoutesV3ShareChangesRequest from a dict"""
+        """Create an instance of ModelsResourceUsageList from a dict"""
         if obj is None:
             return None
 
@@ -86,11 +95,8 @@ class RoutesV3ShareChangesRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "all_current_children": obj.get("all_current_children"),
-            "revoke_all_not_in_use": obj.get("revoke_all_not_in_use"),
-            "revoke_organization_ids": obj.get("revoke_organization_ids"),
-            "share_organization_ids": obj.get("share_organization_ids"),
-            "share_with_all_new_children": obj.get("share_with_all_new_children")
+            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
+            "usages": [ModelsResourceUsage.from_dict(_item) for _item in obj["usages"]] if obj.get("usages") is not None else None
         })
         return _obj
 

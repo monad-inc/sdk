@@ -31,6 +31,7 @@ import org.openapitools.client.model.CreateResourceSharesRequest;
 import org.openapitools.client.model.ModelsResourceShareChangeSet;
 import org.openapitools.client.model.ModelsResourceShareTargetList;
 import org.openapitools.client.model.ModelsResourceShareWithUsageList;
+import org.openapitools.client.model.ModelsResourceUsageList;
 import org.openapitools.client.model.ModelsSharedResourceList;
 import org.openapitools.client.model.ResponderErrorResponse;
 
@@ -617,6 +618,181 @@ public class ResourceSharesApi {
         return localVarCall;
     }
     /**
+     * Build call for listResourceUsage
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cross-org consumers of the shared resource </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listResourceUsageCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "resource_type" + "}", localVarApiClient.escapeString(resourceType.toString()))
+            .replace("{" + "resource_id" + "}", localVarApiClient.escapeString(resourceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listResourceUsageValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling listResourceUsage(Async)");
+        }
+
+        // verify the required parameter 'resourceType' is set
+        if (resourceType == null) {
+            throw new ApiException("Missing the required parameter 'resourceType' when calling listResourceUsage(Async)");
+        }
+
+        // verify the required parameter 'resourceId' is set
+        if (resourceId == null) {
+            throw new ApiException("Missing the required parameter 'resourceId' when calling listResourceUsage(Async)");
+        }
+
+        return listResourceUsageCall(organizationId, resourceType, resourceId, limit, offset, _callback);
+
+    }
+
+    /**
+     * List a shared resource&#39;s consumers in other orgs
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org&#39;s usages are contiguous.
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @return ModelsResourceUsageList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cross-org consumers of the shared resource </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsResourceUsageList listResourceUsage(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<ModelsResourceUsageList> localVarResp = listResourceUsageWithHttpInfo(organizationId, resourceType, resourceId, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List a shared resource&#39;s consumers in other orgs
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org&#39;s usages are contiguous.
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @return ApiResponse&lt;ModelsResourceUsageList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cross-org consumers of the shared resource </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsResourceUsageList> listResourceUsageWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listResourceUsageValidateBeforeCall(organizationId, resourceType, resourceId, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ModelsResourceUsageList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List a shared resource&#39;s consumers in other orgs (asynchronously)
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org&#39;s usages are contiguous.
+     * @param organizationId Owner organization ID (required)
+     * @param resourceType Resource type (required)
+     * @param resourceId Resource ID (required)
+     * @param limit Page size (optional, default to 10)
+     * @param offset Rows to skip (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cross-org consumers of the shared resource </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid resource_type </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Missing resource_sharing:read permission </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listResourceUsageAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsResourceUsageList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listResourceUsageValidateBeforeCall(organizationId, resourceType, resourceId, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ModelsResourceUsageList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listSharedResources
      * @param organizationId Owner organization ID (required)
      * @param limit Page size (default: 10) (optional)
@@ -1038,7 +1214,7 @@ public class ResourceSharesApi {
 
     /**
      * Update a resource&#39;s shares
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
@@ -1063,7 +1239,7 @@ public class ResourceSharesApi {
 
     /**
      * Update a resource&#39;s shares
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
@@ -1089,7 +1265,7 @@ public class ResourceSharesApi {
 
     /**
      * Update a resource&#39;s shares (asynchronously)
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)

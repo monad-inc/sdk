@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Created** | Pointer to [**[]ModelsResourceShare**](ModelsResourceShare.md) | Shares newly created by the request. | [optional] 
 **Revoked** | Pointer to [**[]ModelsResourceShare**](ModelsResourceShare.md) | Shares revoked (deleted) by the request. | [optional] 
 **ShareWithAllNewChildren** | Pointer to **bool** | The resource&#39;s auto-share policy state after the request. | [optional] 
+**SkippedInUse** | Pointer to [**[]ModelsResourceShare**](ModelsResourceShare.md) | SkippedInUse holds shares a revoke_all_not_in_use request deliberately left in place because the target org is still using the resource. Empty for every other request shape. | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetShareWithAllNewChildren sets ShareWithAllNewChildren field to given value.
 `func (o *ModelsResourceShareChangeSet) HasShareWithAllNewChildren() bool`
 
 HasShareWithAllNewChildren returns a boolean if a field has been set.
+
+### GetSkippedInUse
+
+`func (o *ModelsResourceShareChangeSet) GetSkippedInUse() []ModelsResourceShare`
+
+GetSkippedInUse returns the SkippedInUse field if non-nil, zero value otherwise.
+
+### GetSkippedInUseOk
+
+`func (o *ModelsResourceShareChangeSet) GetSkippedInUseOk() (*[]ModelsResourceShare, bool)`
+
+GetSkippedInUseOk returns a tuple with the SkippedInUse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkippedInUse
+
+`func (o *ModelsResourceShareChangeSet) SetSkippedInUse(v []ModelsResourceShare)`
+
+SetSkippedInUse sets SkippedInUse field to given value.
+
+### HasSkippedInUse
+
+`func (o *ModelsResourceShareChangeSet) HasSkippedInUse() bool`
+
+HasSkippedInUse returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

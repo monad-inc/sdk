@@ -26,6 +26,8 @@ type ModelsResourceShareChangeSet struct {
 	Revoked []ModelsResourceShare `json:"revoked,omitempty"`
 	// The resource's auto-share policy state after the request.
 	ShareWithAllNewChildren *bool `json:"share_with_all_new_children,omitempty"`
+	// SkippedInUse holds shares a revoke_all_not_in_use request deliberately left in place because the target org is still using the resource. Empty for every other request shape.
+	SkippedInUse []ModelsResourceShare `json:"skipped_in_use,omitempty"`
 }
 
 // NewModelsResourceShareChangeSet instantiates a new ModelsResourceShareChangeSet object
@@ -141,6 +143,38 @@ func (o *ModelsResourceShareChangeSet) SetShareWithAllNewChildren(v bool) {
 	o.ShareWithAllNewChildren = &v
 }
 
+// GetSkippedInUse returns the SkippedInUse field value if set, zero value otherwise.
+func (o *ModelsResourceShareChangeSet) GetSkippedInUse() []ModelsResourceShare {
+	if o == nil || IsNil(o.SkippedInUse) {
+		var ret []ModelsResourceShare
+		return ret
+	}
+	return o.SkippedInUse
+}
+
+// GetSkippedInUseOk returns a tuple with the SkippedInUse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsResourceShareChangeSet) GetSkippedInUseOk() ([]ModelsResourceShare, bool) {
+	if o == nil || IsNil(o.SkippedInUse) {
+		return nil, false
+	}
+	return o.SkippedInUse, true
+}
+
+// HasSkippedInUse returns a boolean if a field has been set.
+func (o *ModelsResourceShareChangeSet) HasSkippedInUse() bool {
+	if o != nil && !IsNil(o.SkippedInUse) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkippedInUse gets a reference to the given []ModelsResourceShare and assigns it to the SkippedInUse field.
+func (o *ModelsResourceShareChangeSet) SetSkippedInUse(v []ModelsResourceShare) {
+	o.SkippedInUse = v
+}
+
 func (o ModelsResourceShareChangeSet) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -159,6 +193,9 @@ func (o ModelsResourceShareChangeSet) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ShareWithAllNewChildren) {
 		toSerialize["share_with_all_new_children"] = o.ShareWithAllNewChildren
+	}
+	if !IsNil(o.SkippedInUse) {
+		toSerialize["skipped_in_use"] = o.SkippedInUse
 	}
 	return toSerialize, nil
 }

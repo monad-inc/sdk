@@ -19,64 +19,78 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV3ShareChangesRequest
+ * Model tests for ModelsResourceUsage
  */
-public class RoutesV3ShareChangesRequestTest {
-    private final RoutesV3ShareChangesRequest model = new RoutesV3ShareChangesRequest();
+public class ModelsResourceUsageTest {
+    private final ModelsResourceUsage model = new ModelsResourceUsage();
 
     /**
-     * Model tests for RoutesV3ShareChangesRequest
+     * Model tests for ModelsResourceUsage
      */
     @Test
-    public void testRoutesV3ShareChangesRequest() {
-        // TODO: test RoutesV3ShareChangesRequest
+    public void testModelsResourceUsage() {
+        // TODO: test ModelsResourceUsage
     }
 
     /**
-     * Test the property 'allCurrentChildren'
+     * Test the property 'componentType'
      */
     @Test
-    public void allCurrentChildrenTest() {
-        // TODO: test allCurrentChildren
+    public void componentTypeTest() {
+        // TODO: test componentType
     }
 
     /**
-     * Test the property 'revokeAllNotInUse'
+     * Test the property 'name'
      */
     @Test
-    public void revokeAllNotInUseTest() {
-        // TODO: test revokeAllNotInUse
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'revokeOrganizationIds'
+     * Test the property 'organizationId'
      */
     @Test
-    public void revokeOrganizationIdsTest() {
-        // TODO: test revokeOrganizationIds
+    public void organizationIdTest() {
+        // TODO: test organizationId
     }
 
     /**
-     * Test the property 'shareOrganizationIds'
+     * Test the property 'organizationName'
      */
     @Test
-    public void shareOrganizationIdsTest() {
-        // TODO: test shareOrganizationIds
+    public void organizationNameTest() {
+        // TODO: test organizationName
     }
 
     /**
-     * Test the property 'shareWithAllNewChildren'
+     * Test the property 'resourceId'
      */
     @Test
-    public void shareWithAllNewChildrenTest() {
-        // TODO: test shareWithAllNewChildren
+    public void resourceIdTest() {
+        // TODO: test resourceId
+    }
+
+    /**
+     * Test the property 'resourceType'
+     */
+    @Test
+    public void resourceTypeTest() {
+        // TODO: test resourceType
+    }
+
+    /**
+     * Test the property 'subType'
+     */
+    @Test
+    public void subTypeTest() {
+        // TODO: test subType
     }
 
 }

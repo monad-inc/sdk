@@ -26,6 +26,10 @@ export class ModelsResourceShareChangeSet {
     * The resource\'s auto-share policy state after the request.
     */
     'shareWithAllNewChildren'?: boolean;
+    /**
+    * SkippedInUse holds shares a revoke_all_not_in_use request deliberately left in place because the target org is still using the resource. Empty for every other request shape.
+    */
+    'skippedInUse'?: Array<ModelsResourceShare>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -48,6 +52,12 @@ export class ModelsResourceShareChangeSet {
             "name": "shareWithAllNewChildren",
             "baseName": "share_with_all_new_children",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "skippedInUse",
+            "baseName": "skipped_in_use",
+            "type": "Array<ModelsResourceShare>",
             "format": ""
         }    ];
 

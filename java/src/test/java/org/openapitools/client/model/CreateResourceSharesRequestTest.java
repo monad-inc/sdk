@@ -48,6 +48,14 @@ public class CreateResourceSharesRequestTest {
     }
 
     /**
+     * Test the property 'revokeAllNotInUse'
+     */
+    @Test
+    public void revokeAllNotInUseTest() {
+        // TODO: test revokeAllNotInUse
+    }
+
+    /**
      * Test the property 'revokeOrganizationIds'
      */
     @Test

@@ -7,6 +7,7 @@ All URIs are relative to *https://monad.com/api*
 | [**createResourceShares**](ResourceSharesApi.md#createResourceShares) | **POST** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource |
 | [**listResourceShareTargets**](ResourceSharesApi.md#listResourceShareTargets) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource&#39;s share targets (all direct child orgs) |
 | [**listResourceShares**](ResourceSharesApi.md#listResourceShares) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares |
+| [**listResourceUsage**](ResourceSharesApi.md#listResourceUsage) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage | List a shared resource&#39;s consumers in other orgs |
 | [**listSharedResources**](ResourceSharesApi.md#listSharedResources) | **GET** /v3/{organization_id}/resource_shares | List shared resources |
 | [**unshareResource**](ResourceSharesApi.md#unshareResource) | **DELETE** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource |
 | [**updateResourceShares**](ResourceSharesApi.md#updateResourceShares) | **PATCH** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Update a resource&#39;s shares |
@@ -273,6 +274,92 @@ public class Example {
 | **403** | Missing resource_sharing:read permission |  -  |
 | **500** | Internal server error |  -  |
 
+<a id="listResourceUsage"></a>
+# **listResourceUsage**
+> ModelsResourceUsageList listResourceUsage(organizationId, resourceType, resourceId, limit, offset)
+
+List a shared resource&#39;s consumers in other orgs
+
+List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org&#39;s usages are contiguous.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ResourceSharesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    ResourceSharesApi apiInstance = new ResourceSharesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Owner organization ID
+    String resourceType = "secret"; // String | Resource type
+    String resourceId = "resourceId_example"; // String | Resource ID
+    Integer limit = 10; // Integer | Page size
+    Integer offset = 0; // Integer | Rows to skip
+    try {
+      ModelsResourceUsageList result = apiInstance.listResourceUsage(organizationId, resourceType, resourceId, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ResourceSharesApi#listResourceUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Owner organization ID | |
+| **resourceType** | **String**| Resource type | [enum: secret, component] |
+| **resourceId** | **String**| Resource ID | |
+| **limit** | **Integer**| Page size | [optional] [default to 10] |
+| **offset** | **Integer**| Rows to skip | [optional] [default to 0] |
+
+### Return type
+
+[**ModelsResourceUsageList**](ModelsResourceUsageList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Cross-org consumers of the shared resource |  -  |
+| **400** | Invalid resource_type |  -  |
+| **403** | Missing resource_sharing:read permission |  -  |
+| **500** | Internal server error |  -  |
+
 <a id="listSharedResources"></a>
 # **listSharedResources**
 > ModelsSharedResourceList listSharedResources(organizationId, limit, offset, resourceType)
@@ -446,7 +533,7 @@ public class Example {
 
 Update a resource&#39;s shares
 
-Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
 
 ### Example
 ```java

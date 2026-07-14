@@ -18,6 +18,10 @@ export class RoutesV3ShareChangesRequest {
     */
     'allCurrentChildren'?: boolean;
     /**
+    * Revoke every current share the target org is not using, leaving in-use shares in place (returned in skipped_in_use). Unlike revoke_organization_ids this never 409s on an in-use child — it skips it.
+    */
+    'revokeAllNotInUse'?: boolean;
+    /**
     * Target organization ids whose share of this resource should be revoked.
     */
     'revokeOrganizationIds'?: Array<string>;
@@ -38,6 +42,12 @@ export class RoutesV3ShareChangesRequest {
         {
             "name": "allCurrentChildren",
             "baseName": "all_current_children",
+            "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "revokeAllNotInUse",
+            "baseName": "revoke_all_not_in_use",
             "type": "boolean",
             "format": ""
         },

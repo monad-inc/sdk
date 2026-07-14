@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateResourceShares**](ResourceSharesAPI.md#CreateResourceShares) | **Post** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
 [**ListResourceShareTargets**](ResourceSharesAPI.md#ListResourceShareTargets) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource&#39;s share targets (all direct child orgs)
 [**ListResourceShares**](ResourceSharesAPI.md#ListResourceShares) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource&#39;s shares
+[**ListResourceUsage**](ResourceSharesAPI.md#ListResourceUsage) | **Get** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage | List a shared resource&#39;s consumers in other orgs
 [**ListSharedResources**](ResourceSharesAPI.md#ListSharedResources) | **Get** /v3/{organization_id}/resource_shares | List shared resources
 [**UnshareResource**](ResourceSharesAPI.md#UnshareResource) | **Delete** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
 [**UpdateResourceShares**](ResourceSharesAPI.md#UpdateResourceShares) | **Patch** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Update a resource&#39;s shares
@@ -240,6 +241,86 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsResourceShareWithUsageList**](ModelsResourceShareWithUsageList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListResourceUsage
+
+> ModelsResourceUsageList ListResourceUsage(ctx, organizationId, resourceType, resourceId).Limit(limit).Offset(offset).Execute()
+
+List a shared resource's consumers in other orgs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Owner organization ID
+	resourceType := "resourceType_example" // string | Resource type
+	resourceId := "resourceId_example" // string | Resource ID
+	limit := int32(56) // int32 | Page size (optional) (default to 10)
+	offset := int32(56) // int32 | Rows to skip (optional) (default to 0)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ResourceSharesAPI.ListResourceUsage(context.Background(), organizationId, resourceType, resourceId).Limit(limit).Offset(offset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ResourceSharesAPI.ListResourceUsage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListResourceUsage`: ModelsResourceUsageList
+	fmt.Fprintf(os.Stdout, "Response from `ResourceSharesAPI.ListResourceUsage`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Owner organization ID | 
+**resourceType** | **string** | Resource type | 
+**resourceId** | **string** | Resource ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListResourceUsageRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **limit** | **int32** | Page size | [default to 10]
+ **offset** | **int32** | Rows to skip | [default to 0]
+
+### Return type
+
+[**ModelsResourceUsageList**](ModelsResourceUsageList.md)
 
 ### Authorization
 

@@ -10,23 +10,13 @@
  * Do not edit the class manually.
  */
 
+import { ModelsPagination } from '../models/ModelsPagination';
+import { ModelsResourceUsage } from '../models/ModelsResourceUsage';
 import { HttpFile } from '../http/http';
 
-export class ModelsNodeSharedResource {
-    /**
-    * Name is the shared resource\'s name (component or secret). Populated for display context; empty if it could not be resolved.
-    */
-    'name'?: string;
-    'ownerOrganizationId'?: string;
-    'resourceId'?: string;
-    /**
-    * ResourceShareTypeComponent | ResourceShareTypeSecret
-    */
-    'resourceType'?: string;
-    /**
-    * SubType is the connector kind for a shared component (component entries only).
-    */
-    'subType'?: string;
+export class ModelsResourceUsageList {
+    'pagination'?: ModelsPagination;
+    'usages'?: Array<ModelsResourceUsage>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -34,38 +24,20 @@ export class ModelsNodeSharedResource {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "name",
-            "baseName": "name",
-            "type": "string",
+            "name": "pagination",
+            "baseName": "pagination",
+            "type": "ModelsPagination",
             "format": ""
         },
         {
-            "name": "ownerOrganizationId",
-            "baseName": "owner_organization_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "resourceId",
-            "baseName": "resource_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "resourceType",
-            "baseName": "resource_type",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "subType",
-            "baseName": "sub_type",
-            "type": "string",
+            "name": "usages",
+            "baseName": "usages",
+            "type": "Array<ModelsResourceUsage>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return ModelsNodeSharedResource.attributeTypeMap;
+        return ModelsResourceUsageList.attributeTypeMap;
     }
 
     public constructor() {

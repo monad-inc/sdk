@@ -333,6 +333,8 @@ import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
 import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
+import { ModelsResourceUsage } from '../models/ModelsResourceUsage';
+import { ModelsResourceUsageList } from '../models/ModelsResourceUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
@@ -4976,6 +4978,36 @@ export class PromiseResourceSharesApi {
     }
 
     /**
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org\'s usages are contiguous.
+     * List a shared resource\'s consumers in other orgs
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param [limit] Page size
+     * @param [offset] Rows to skip
+     */
+    public listResourceUsageWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceUsageList>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listResourceUsageWithHttpInfo(organizationId, resourceType, resourceId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org\'s usages are contiguous.
+     * List a shared resource\'s consumers in other orgs
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param [limit] Page size
+     * @param [offset] Rows to skip
+     */
+    public listResourceUsage(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsResourceUsageList> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listResourceUsage(organizationId, resourceType, resourceId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * List shared resources
      * @param organizationId Owner organization ID
@@ -5030,7 +5062,7 @@ export class PromiseResourceSharesApi {
     }
 
     /**
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * Update a resource\'s shares
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
@@ -5044,7 +5076,7 @@ export class PromiseResourceSharesApi {
     }
 
     /**
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * Update a resource\'s shares
      * @param organizationId Owner organization ID
      * @param resourceType Resource type

@@ -61,9 +61,11 @@ class TestModelsPipelineNode(unittest.TestCase):
                 pipeline_id = '',
                 shared_resources = [
                     monad.models.models/node_shared_resource.models.NodeSharedResource(
+                        name = '', 
                         owner_organization_id = '', 
                         resource_id = '', 
-                        resource_type = '', )
+                        resource_type = '', 
+                        sub_type = '', )
                     ],
                 slug = '',
                 status = monad.models.models/pipeline_node_status.models.PipelineNodeStatus(

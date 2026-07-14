@@ -12,20 +12,13 @@
 
 import { HttpFile } from '../http/http';
 
-export class ModelsNodeSharedResource {
-    /**
-    * Name is the shared resource\'s name (component or secret). Populated for display context; empty if it could not be resolved.
-    */
+export class ModelsResourceUsage {
+    'componentType'?: string;
     'name'?: string;
-    'ownerOrganizationId'?: string;
+    'organizationId'?: string;
+    'organizationName'?: string;
     'resourceId'?: string;
-    /**
-    * ResourceShareTypeComponent | ResourceShareTypeSecret
-    */
     'resourceType'?: string;
-    /**
-    * SubType is the connector kind for a shared component (component entries only).
-    */
     'subType'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -34,14 +27,26 @@ export class ModelsNodeSharedResource {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "componentType",
+            "baseName": "component_type",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "name",
             "baseName": "name",
             "type": "string",
             "format": ""
         },
         {
-            "name": "ownerOrganizationId",
-            "baseName": "owner_organization_id",
+            "name": "organizationId",
+            "baseName": "organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "organizationName",
+            "baseName": "organization_name",
             "type": "string",
             "format": ""
         },
@@ -65,7 +70,7 @@ export class ModelsNodeSharedResource {
         }    ];
 
     static getAttributeTypeMap() {
-        return ModelsNodeSharedResource.attributeTypeMap;
+        return ModelsResourceUsage.attributeTypeMap;
     }
 
     public constructor() {

@@ -37,6 +37,7 @@ class TestCreateResourceSharesRequest(unittest.TestCase):
         if include_optional:
             return CreateResourceSharesRequest(
                 all_current_children = True,
+                revoke_all_not_in_use = True,
                 revoke_organization_ids = [
                     ''
                     ],

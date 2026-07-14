@@ -5499,6 +5499,10 @@
             },
             "models.NodeSharedResource": {
                 "properties": {
+                    "name": {
+                        "description": "Name is the shared resource's name (component or secret). Populated for\ndisplay context; empty if it could not be resolved.",
+                        "type": "string"
+                    },
                     "owner_organization_id": {
                         "type": "string"
                     },
@@ -5507,6 +5511,10 @@
                     },
                     "resource_type": {
                         "description": "ResourceShareTypeComponent | ResourceShareTypeSecret",
+                        "type": "string"
+                    },
+                    "sub_type": {
+                        "description": "SubType is the connector kind for a shared component (component entries only).",
                         "type": "string"
                     }
                 },
@@ -6377,6 +6385,14 @@
                     "share_with_all_new_children": {
                         "description": "The resource's auto-share policy state after the request.",
                         "type": "boolean"
+                    },
+                    "skipped_in_use": {
+                        "description": "SkippedInUse holds shares a revoke_all_not_in_use request deliberately left\nin place because the target org is still using the resource. Empty for every\nother request shape.",
+                        "items": {
+                            "$ref": "#/components/schemas/models.ResourceShare"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     }
                 },
                 "type": "object"
@@ -6476,6 +6492,47 @@
                     "share_with_all_new_children": {
                         "description": "Whether the resource's policy auto-shares it with new direct children.",
                         "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "models.ResourceUsage": {
+                "properties": {
+                    "component_type": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "organization_name": {
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "type": "string"
+                    },
+                    "sub_type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.ResourceUsageList": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "usages": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.ResourceUsage"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     }
                 },
                 "type": "object"
@@ -9833,6 +9890,10 @@
                 "properties": {
                     "all_current_children": {
                         "description": "Share with every current direct child (future children excluded).",
+                        "type": "boolean"
+                    },
+                    "revoke_all_not_in_use": {
+                        "description": "Revoke every current share the target org is not using, leaving in-use\nshares in place (returned in skipped_in_use). Unlike revoke_organization_ids\nthis never 409s on an in-use child — it skips it.",
                         "type": "boolean"
                     },
                     "revoke_organization_ids": {
@@ -26200,7 +26261,7 @@
                 ]
             },
             "patch": {
-                "description": "Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.",
+                "description": "Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).",
                 "operationId": "UpdateResourceShares",
                 "parameters": [
                     {
@@ -26597,6 +26658,120 @@
                     }
                 ],
                 "summary": "List a resource's share targets (all direct child orgs)",
+                "tags": [
+                    "Resource Shares"
+                ],
+                "x-required-permissions": [
+                    "resource_sharing:read"
+                ]
+            }
+        },
+        "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage": {
+            "get": {
+                "description": "List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org's usages are contiguous.",
+                "operationId": "ListResourceUsage",
+                "parameters": [
+                    {
+                        "description": "Owner organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource type",
+                        "in": "path",
+                        "name": "resource_type",
+                        "required": true,
+                        "schema": {
+                            "enum": [
+                                "secret",
+                                "component"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Resource ID",
+                        "in": "path",
+                        "name": "resource_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Page size",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "default": 10,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Rows to skip",
+                        "in": "query",
+                        "name": "offset",
+                        "schema": {
+                            "default": 0,
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.ResourceUsageList"
+                                }
+                            }
+                        },
+                        "description": "Cross-org consumers of the shared resource"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid resource_type"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing resource_sharing:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List a shared resource's consumers in other orgs",
                 "tags": [
                     "Resource Shares"
                 ],

@@ -22,6 +22,8 @@ var _ MappedNullable = &RoutesV3ShareChangesRequest{}
 type RoutesV3ShareChangesRequest struct {
 	// Share with every current direct child (future children excluded).
 	AllCurrentChildren *bool `json:"all_current_children,omitempty"`
+	// Revoke every current share the target org is not using, leaving in-use shares in place (returned in skipped_in_use). Unlike revoke_organization_ids this never 409s on an in-use child — it skips it.
+	RevokeAllNotInUse *bool `json:"revoke_all_not_in_use,omitempty"`
 	// Target organization ids whose share of this resource should be revoked.
 	RevokeOrganizationIds []string `json:"revoke_organization_ids,omitempty"`
 	// Explicit direct-child organizations to share with.
@@ -77,6 +79,38 @@ func (o *RoutesV3ShareChangesRequest) HasAllCurrentChildren() bool {
 // SetAllCurrentChildren gets a reference to the given bool and assigns it to the AllCurrentChildren field.
 func (o *RoutesV3ShareChangesRequest) SetAllCurrentChildren(v bool) {
 	o.AllCurrentChildren = &v
+}
+
+// GetRevokeAllNotInUse returns the RevokeAllNotInUse field value if set, zero value otherwise.
+func (o *RoutesV3ShareChangesRequest) GetRevokeAllNotInUse() bool {
+	if o == nil || IsNil(o.RevokeAllNotInUse) {
+		var ret bool
+		return ret
+	}
+	return *o.RevokeAllNotInUse
+}
+
+// GetRevokeAllNotInUseOk returns a tuple with the RevokeAllNotInUse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3ShareChangesRequest) GetRevokeAllNotInUseOk() (*bool, bool) {
+	if o == nil || IsNil(o.RevokeAllNotInUse) {
+		return nil, false
+	}
+	return o.RevokeAllNotInUse, true
+}
+
+// HasRevokeAllNotInUse returns a boolean if a field has been set.
+func (o *RoutesV3ShareChangesRequest) HasRevokeAllNotInUse() bool {
+	if o != nil && !IsNil(o.RevokeAllNotInUse) {
+		return true
+	}
+
+	return false
+}
+
+// SetRevokeAllNotInUse gets a reference to the given bool and assigns it to the RevokeAllNotInUse field.
+func (o *RoutesV3ShareChangesRequest) SetRevokeAllNotInUse(v bool) {
+	o.RevokeAllNotInUse = &v
 }
 
 // GetRevokeOrganizationIds returns the RevokeOrganizationIds field value if set, zero value otherwise.
@@ -187,6 +221,9 @@ func (o RoutesV3ShareChangesRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AllCurrentChildren) {
 		toSerialize["all_current_children"] = o.AllCurrentChildren
+	}
+	if !IsNil(o.RevokeAllNotInUse) {
+		toSerialize["revoke_all_not_in_use"] = o.RevokeAllNotInUse
 	}
 	if !IsNil(o.RevokeOrganizationIds) {
 		toSerialize["revoke_organization_ids"] = o.RevokeOrganizationIds

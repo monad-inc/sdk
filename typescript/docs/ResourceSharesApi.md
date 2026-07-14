@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createResourceShares**](ResourceSharesApi.md#createResourceShares) | **POST** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Share a resource
 [**listResourceShareTargets**](ResourceSharesApi.md#listResourceShareTargets) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations | List a resource\&#39;s share targets (all direct child orgs)
 [**listResourceShares**](ResourceSharesApi.md#listResourceShares) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | List a resource\&#39;s shares
+[**listResourceUsage**](ResourceSharesApi.md#listResourceUsage) | **GET** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage | List a shared resource\&#39;s consumers in other orgs
 [**listSharedResources**](ResourceSharesApi.md#listSharedResources) | **GET** /v3/{organization_id}/resource_shares | List shared resources
 [**unshareResource**](ResourceSharesApi.md#unshareResource) | **DELETE** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Unshare a resource
 [**updateResourceShares**](ResourceSharesApi.md#updateResourceShares) | **PATCH** /v3/{organization_id}/resource_shares/{resource_type}/{resource_id} | Update a resource\&#39;s shares
@@ -220,6 +221,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **listResourceUsage**
+> ModelsResourceUsageList listResourceUsage()
+
+List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org\'s usages are contiguous.
+
+### Example
+
+
+```typescript
+import { createConfiguration, ResourceSharesApi } from '';
+import type { ResourceSharesApiListResourceUsageRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new ResourceSharesApi(configuration);
+
+const request: ResourceSharesApiListResourceUsageRequest = {
+    // Owner organization ID
+  organizationId: "organization_id_example",
+    // Resource type
+  resourceType: "secret",
+    // Resource ID
+  resourceId: "resource_id_example",
+    // Page size (optional)
+  limit: 10,
+    // Rows to skip (optional)
+  offset: 0,
+};
+
+const data = await apiInstance.listResourceUsage(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Owner organization ID | defaults to undefined
+ **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
+ **resourceId** | [**string**] | Resource ID | defaults to undefined
+ **limit** | [**number**] | Page size | (optional) defaults to 10
+ **offset** | [**number**] | Rows to skip | (optional) defaults to 0
+
+
+### Return type
+
+**ModelsResourceUsageList**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Cross-org consumers of the shared resource |  -  |
+**400** | Invalid resource_type |  -  |
+**403** | Missing resource_sharing:read permission |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **listSharedResources**
 > ModelsSharedResourceList listSharedResources()
 
@@ -351,7 +420,7 @@ Name | Type | Description  | Notes
 # **updateResourceShares**
 > ModelsResourceShareChangeSet updateResourceShares(createResourceSharesRequest)
 
-Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
 
 ### Example
 

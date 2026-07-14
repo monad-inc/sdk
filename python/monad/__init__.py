@@ -400,6 +400,8 @@ __all__ = [
     "ModelsResourceShareTargetList",
     "ModelsResourceShareWithUsage",
     "ModelsResourceShareWithUsageList",
+    "ModelsResourceUsage",
+    "ModelsResourceUsageList",
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
     "ModelsSchemaDetection",
@@ -1110,6 +1112,8 @@ from monad.models.models_resource_share_target import ModelsResourceShareTarget 
 from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList as ModelsResourceShareTargetList
 from monad.models.models_resource_share_with_usage import ModelsResourceShareWithUsage as ModelsResourceShareWithUsage
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList as ModelsResourceShareWithUsageList
+from monad.models.models_resource_usage import ModelsResourceUsage as ModelsResourceUsage
+from monad.models.models_resource_usage_list import ModelsResourceUsageList as ModelsResourceUsageList
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
 from monad.models.models_schema_detection import ModelsSchemaDetection as ModelsSchemaDetection

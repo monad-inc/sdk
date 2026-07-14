@@ -333,6 +333,8 @@ import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
 import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
+import { ModelsResourceUsage } from '../models/ModelsResourceUsage';
+import { ModelsResourceUsageList } from '../models/ModelsResourceUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
@@ -6783,6 +6785,44 @@ export interface ResourceSharesApiListResourceSharesRequest {
     resourceId: string
 }
 
+export interface ResourceSharesApiListResourceUsageRequest {
+    /**
+     * Owner organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistResourceUsage
+     */
+    organizationId: string
+    /**
+     * Resource type
+     * Defaults to: undefined
+     * @type &#39;secret&#39; | &#39;component&#39;
+     * @memberof ResourceSharesApilistResourceUsage
+     */
+    resourceType: 'secret' | 'component'
+    /**
+     * Resource ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ResourceSharesApilistResourceUsage
+     */
+    resourceId: string
+    /**
+     * Page size
+     * Defaults to: 10
+     * @type number
+     * @memberof ResourceSharesApilistResourceUsage
+     */
+    limit?: number
+    /**
+     * Rows to skip
+     * Defaults to: 0
+     * @type number
+     * @memberof ResourceSharesApilistResourceUsage
+     */
+    offset?: number
+}
+
 export interface ResourceSharesApiListSharedResourcesRequest {
     /**
      * Owner organization ID
@@ -6930,6 +6970,24 @@ export class ObjectResourceSharesApi {
     }
 
     /**
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org\'s usages are contiguous.
+     * List a shared resource\'s consumers in other orgs
+     * @param param the request object
+     */
+    public listResourceUsageWithHttpInfo(param: ResourceSharesApiListResourceUsageRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceUsageList>> {
+        return this.api.listResourceUsageWithHttpInfo(param.organizationId, param.resourceType, param.resourceId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org\'s usages are contiguous.
+     * List a shared resource\'s consumers in other orgs
+     * @param param the request object
+     */
+    public listResourceUsage(param: ResourceSharesApiListResourceUsageRequest, options?: ConfigurationOptions): Promise<ModelsResourceUsageList> {
+        return this.api.listResourceUsage(param.organizationId, param.resourceType, param.resourceId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * List shared resources
      * @param param the request object
@@ -6966,7 +7024,7 @@ export class ObjectResourceSharesApi {
     }
 
     /**
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * Update a resource\'s shares
      * @param param the request object
      */
@@ -6975,7 +7033,7 @@ export class ObjectResourceSharesApi {
     }
 
     /**
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * Update a resource\'s shares
      * @param param the request object
      */

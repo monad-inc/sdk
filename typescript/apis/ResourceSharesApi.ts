@@ -12,6 +12,7 @@ import { CreateResourceSharesRequest } from '../models/CreateResourceSharesReque
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
 import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
+import { ModelsResourceUsageList } from '../models/ModelsResourceUsageList';
 import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 
@@ -258,6 +259,79 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org\'s usages are contiguous.
+     * List a shared resource\'s consumers in other orgs
+     * @param organizationId Owner organization ID
+     * @param resourceType Resource type
+     * @param resourceId Resource ID
+     * @param limit Page size
+     * @param offset Rows to skip
+     */
+    public async listResourceUsage(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("ResourceSharesApi", "listResourceUsage", "organizationId");
+        }
+
+
+        // verify required parameter 'resourceType' is not null or undefined
+        if (resourceType === null || resourceType === undefined) {
+            throw new RequiredError("ResourceSharesApi", "listResourceUsage", "resourceType");
+        }
+
+
+        // verify required parameter 'resourceId' is not null or undefined
+        if (resourceId === null || resourceId === undefined) {
+            throw new RequiredError("ResourceSharesApi", "listResourceUsage", "resourceId");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/usage'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{resource_type}', encodeURIComponent(String(resourceType)))
+            .replace('{resource_id}', encodeURIComponent(String(resourceId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+        }
+
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * List shared resources
      * @param organizationId Owner organization ID
@@ -381,7 +455,7 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a share that the target organization is actively using is rejected with 409.
+     * Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
      * Update a resource\'s shares
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
@@ -612,6 +686,56 @@ export class ResourceSharesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsResourceShareWithUsageList", ""
             ) as ModelsResourceShareWithUsageList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listResourceUsage
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async listResourceUsageWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsResourceUsageList >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsResourceUsageList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsResourceUsageList", ""
+            ) as ModelsResourceUsageList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid resource_type", body, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Missing resource_sharing:read permission", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsResourceUsageList = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsResourceUsageList", ""
+            ) as ModelsResourceUsageList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllCurrentChildren** | Pointer to **bool** | Share with every current direct child (future children excluded). | [optional] 
+**RevokeAllNotInUse** | Pointer to **bool** | Revoke every current share the target org is not using, leaving in-use shares in place (returned in skipped_in_use). Unlike revoke_organization_ids this never 409s on an in-use child — it skips it. | [optional] 
 **RevokeOrganizationIds** | Pointer to **[]string** | Target organization ids whose share of this resource should be revoked. | [optional] 
 **ShareOrganizationIds** | Pointer to **[]string** | Explicit direct-child organizations to share with. | [optional] 
 **ShareWithAllNewChildren** | Pointer to **bool** | Toggle auto-sharing with new direct children: omit to leave unchanged, true to enable, false to disable. | [optional] 
@@ -52,6 +53,31 @@ SetAllCurrentChildren sets AllCurrentChildren field to given value.
 `func (o *CreateResourceSharesRequest) HasAllCurrentChildren() bool`
 
 HasAllCurrentChildren returns a boolean if a field has been set.
+
+### GetRevokeAllNotInUse
+
+`func (o *CreateResourceSharesRequest) GetRevokeAllNotInUse() bool`
+
+GetRevokeAllNotInUse returns the RevokeAllNotInUse field if non-nil, zero value otherwise.
+
+### GetRevokeAllNotInUseOk
+
+`func (o *CreateResourceSharesRequest) GetRevokeAllNotInUseOk() (*bool, bool)`
+
+GetRevokeAllNotInUseOk returns a tuple with the RevokeAllNotInUse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRevokeAllNotInUse
+
+`func (o *CreateResourceSharesRequest) SetRevokeAllNotInUse(v bool)`
+
+SetRevokeAllNotInUse sets RevokeAllNotInUse field to given value.
+
+### HasRevokeAllNotInUse
+
+`func (o *CreateResourceSharesRequest) HasRevokeAllNotInUse() bool`
+
+HasRevokeAllNotInUse returns a boolean if a field has been set.
 
 ### GetRevokeOrganizationIds
 

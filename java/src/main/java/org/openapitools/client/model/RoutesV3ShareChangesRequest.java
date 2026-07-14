@@ -57,6 +57,11 @@ public class RoutesV3ShareChangesRequest {
   @javax.annotation.Nullable
   private Boolean allCurrentChildren;
 
+  public static final String SERIALIZED_NAME_REVOKE_ALL_NOT_IN_USE = "revoke_all_not_in_use";
+  @SerializedName(SERIALIZED_NAME_REVOKE_ALL_NOT_IN_USE)
+  @javax.annotation.Nullable
+  private Boolean revokeAllNotInUse;
+
   public static final String SERIALIZED_NAME_REVOKE_ORGANIZATION_IDS = "revoke_organization_ids";
   @SerializedName(SERIALIZED_NAME_REVOKE_ORGANIZATION_IDS)
   @javax.annotation.Nullable
@@ -91,6 +96,25 @@ public class RoutesV3ShareChangesRequest {
 
   public void setAllCurrentChildren(@javax.annotation.Nullable Boolean allCurrentChildren) {
     this.allCurrentChildren = allCurrentChildren;
+  }
+
+
+  public RoutesV3ShareChangesRequest revokeAllNotInUse(@javax.annotation.Nullable Boolean revokeAllNotInUse) {
+    this.revokeAllNotInUse = revokeAllNotInUse;
+    return this;
+  }
+
+  /**
+   * Revoke every current share the target org is not using, leaving in-use shares in place (returned in skipped_in_use). Unlike revoke_organization_ids this never 409s on an in-use child — it skips it.
+   * @return revokeAllNotInUse
+   */
+  @javax.annotation.Nullable
+  public Boolean getRevokeAllNotInUse() {
+    return revokeAllNotInUse;
+  }
+
+  public void setRevokeAllNotInUse(@javax.annotation.Nullable Boolean revokeAllNotInUse) {
+    this.revokeAllNotInUse = revokeAllNotInUse;
   }
 
 
@@ -178,6 +202,7 @@ public class RoutesV3ShareChangesRequest {
     }
     RoutesV3ShareChangesRequest routesV3ShareChangesRequest = (RoutesV3ShareChangesRequest) o;
     return Objects.equals(this.allCurrentChildren, routesV3ShareChangesRequest.allCurrentChildren) &&
+        Objects.equals(this.revokeAllNotInUse, routesV3ShareChangesRequest.revokeAllNotInUse) &&
         Objects.equals(this.revokeOrganizationIds, routesV3ShareChangesRequest.revokeOrganizationIds) &&
         Objects.equals(this.shareOrganizationIds, routesV3ShareChangesRequest.shareOrganizationIds) &&
         Objects.equals(this.shareWithAllNewChildren, routesV3ShareChangesRequest.shareWithAllNewChildren);
@@ -185,7 +210,7 @@ public class RoutesV3ShareChangesRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allCurrentChildren, revokeOrganizationIds, shareOrganizationIds, shareWithAllNewChildren);
+    return Objects.hash(allCurrentChildren, revokeAllNotInUse, revokeOrganizationIds, shareOrganizationIds, shareWithAllNewChildren);
   }
 
   @Override
@@ -193,6 +218,7 @@ public class RoutesV3ShareChangesRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV3ShareChangesRequest {\n");
     sb.append("    allCurrentChildren: ").append(toIndentedString(allCurrentChildren)).append("\n");
+    sb.append("    revokeAllNotInUse: ").append(toIndentedString(revokeAllNotInUse)).append("\n");
     sb.append("    revokeOrganizationIds: ").append(toIndentedString(revokeOrganizationIds)).append("\n");
     sb.append("    shareOrganizationIds: ").append(toIndentedString(shareOrganizationIds)).append("\n");
     sb.append("    shareWithAllNewChildren: ").append(toIndentedString(shareWithAllNewChildren)).append("\n");
@@ -214,7 +240,7 @@ public class RoutesV3ShareChangesRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("all_current_children", "revoke_organization_ids", "share_organization_ids", "share_with_all_new_children"));
+    openapiFields = new HashSet<String>(Arrays.asList("all_current_children", "revoke_all_not_in_use", "revoke_organization_ids", "share_organization_ids", "share_with_all_new_children"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

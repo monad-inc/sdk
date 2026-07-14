@@ -68,6 +68,11 @@ public class ModelsResourceShareChangeSet {
   @javax.annotation.Nullable
   private Boolean shareWithAllNewChildren;
 
+  public static final String SERIALIZED_NAME_SKIPPED_IN_USE = "skipped_in_use";
+  @SerializedName(SERIALIZED_NAME_SKIPPED_IN_USE)
+  @javax.annotation.Nullable
+  private List<ModelsResourceShare> skippedInUse = new ArrayList<>();
+
   public ModelsResourceShareChangeSet() {
   }
 
@@ -144,6 +149,33 @@ public class ModelsResourceShareChangeSet {
   }
 
 
+  public ModelsResourceShareChangeSet skippedInUse(@javax.annotation.Nullable List<ModelsResourceShare> skippedInUse) {
+    this.skippedInUse = skippedInUse;
+    return this;
+  }
+
+  public ModelsResourceShareChangeSet addSkippedInUseItem(ModelsResourceShare skippedInUseItem) {
+    if (this.skippedInUse == null) {
+      this.skippedInUse = new ArrayList<>();
+    }
+    this.skippedInUse.add(skippedInUseItem);
+    return this;
+  }
+
+  /**
+   * SkippedInUse holds shares a revoke_all_not_in_use request deliberately left in place because the target org is still using the resource. Empty for every other request shape.
+   * @return skippedInUse
+   */
+  @javax.annotation.Nullable
+  public List<ModelsResourceShare> getSkippedInUse() {
+    return skippedInUse;
+  }
+
+  public void setSkippedInUse(@javax.annotation.Nullable List<ModelsResourceShare> skippedInUse) {
+    this.skippedInUse = skippedInUse;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -156,12 +188,13 @@ public class ModelsResourceShareChangeSet {
     ModelsResourceShareChangeSet modelsResourceShareChangeSet = (ModelsResourceShareChangeSet) o;
     return Objects.equals(this.created, modelsResourceShareChangeSet.created) &&
         Objects.equals(this.revoked, modelsResourceShareChangeSet.revoked) &&
-        Objects.equals(this.shareWithAllNewChildren, modelsResourceShareChangeSet.shareWithAllNewChildren);
+        Objects.equals(this.shareWithAllNewChildren, modelsResourceShareChangeSet.shareWithAllNewChildren) &&
+        Objects.equals(this.skippedInUse, modelsResourceShareChangeSet.skippedInUse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, revoked, shareWithAllNewChildren);
+    return Objects.hash(created, revoked, shareWithAllNewChildren, skippedInUse);
   }
 
   @Override
@@ -171,6 +204,7 @@ public class ModelsResourceShareChangeSet {
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    revoked: ").append(toIndentedString(revoked)).append("\n");
     sb.append("    shareWithAllNewChildren: ").append(toIndentedString(shareWithAllNewChildren)).append("\n");
+    sb.append("    skippedInUse: ").append(toIndentedString(skippedInUse)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -189,7 +223,7 @@ public class ModelsResourceShareChangeSet {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created", "revoked", "share_with_all_new_children"));
+    openapiFields = new HashSet<String>(Arrays.asList("created", "revoked", "share_with_all_new_children", "skipped_in_use"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -241,6 +275,20 @@ public class ModelsResourceShareChangeSet {
           // validate the optional field `revoked` (array)
           for (int i = 0; i < jsonArrayrevoked.size(); i++) {
             ModelsResourceShare.validateJsonElement(jsonArrayrevoked.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("skipped_in_use") != null && !jsonObj.get("skipped_in_use").isJsonNull()) {
+        JsonArray jsonArrayskippedInUse = jsonObj.getAsJsonArray("skipped_in_use");
+        if (jsonArrayskippedInUse != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("skipped_in_use").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `skipped_in_use` to be an array in the JSON string but got `%s`", jsonObj.get("skipped_in_use").toString()));
+          }
+
+          // validate the optional field `skipped_in_use` (array)
+          for (int i = 0; i < jsonArrayskippedInUse.size(); i++) {
+            ModelsResourceShare.validateJsonElement(jsonArrayskippedInUse.get(i));
           };
         }
       }

@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Name** | Pointer to **string** | Name is the shared resource&#39;s name (component or secret). Populated for display context; empty if it could not be resolved. | [optional] 
 **OwnerOrganizationId** | Pointer to **string** |  | [optional] 
 **ResourceId** | Pointer to **string** |  | [optional] 
 **ResourceType** | Pointer to **string** | ResourceShareTypeComponent | ResourceShareTypeSecret | [optional] 
+**SubType** | Pointer to **string** | SubType is the connector kind for a shared component (component entries only). | [optional] 
 
 ## Methods
 
@@ -26,6 +28,31 @@ will change when the set of required properties is changed
 NewModelsNodeSharedResourceWithDefaults instantiates a new ModelsNodeSharedResource object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetName
+
+`func (o *ModelsNodeSharedResource) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ModelsNodeSharedResource) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ModelsNodeSharedResource) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *ModelsNodeSharedResource) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetOwnerOrganizationId
 
@@ -101,6 +128,31 @@ SetResourceType sets ResourceType field to given value.
 `func (o *ModelsNodeSharedResource) HasResourceType() bool`
 
 HasResourceType returns a boolean if a field has been set.
+
+### GetSubType
+
+`func (o *ModelsNodeSharedResource) GetSubType() string`
+
+GetSubType returns the SubType field if non-nil, zero value otherwise.
+
+### GetSubTypeOk
+
+`func (o *ModelsNodeSharedResource) GetSubTypeOk() (*string, bool)`
+
+GetSubTypeOk returns a tuple with the SubType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubType
+
+`func (o *ModelsNodeSharedResource) SetSubType(v string)`
+
+SetSubType sets SubType field to given value.
+
+### HasSubType
+
+`func (o *ModelsNodeSharedResource) HasSubType() bool`
+
+HasSubType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

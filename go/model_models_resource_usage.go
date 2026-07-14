@@ -15,40 +15,71 @@ import (
 	"encoding/json"
 )
 
-// checks if the ModelsNodeSharedResource type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ModelsNodeSharedResource{}
+// checks if the ModelsResourceUsage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ModelsResourceUsage{}
 
-// ModelsNodeSharedResource struct for ModelsNodeSharedResource
-type ModelsNodeSharedResource struct {
-	// Name is the shared resource's name (component or secret). Populated for display context; empty if it could not be resolved.
+// ModelsResourceUsage struct for ModelsResourceUsage
+type ModelsResourceUsage struct {
+	ComponentType *string `json:"component_type,omitempty"`
 	Name *string `json:"name,omitempty"`
-	OwnerOrganizationId *string `json:"owner_organization_id,omitempty"`
+	OrganizationId *string `json:"organization_id,omitempty"`
+	OrganizationName *string `json:"organization_name,omitempty"`
 	ResourceId *string `json:"resource_id,omitempty"`
-	// ResourceShareTypeComponent | ResourceShareTypeSecret
 	ResourceType *string `json:"resource_type,omitempty"`
-	// SubType is the connector kind for a shared component (component entries only).
 	SubType *string `json:"sub_type,omitempty"`
 }
 
-// NewModelsNodeSharedResource instantiates a new ModelsNodeSharedResource object
+// NewModelsResourceUsage instantiates a new ModelsResourceUsage object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsNodeSharedResource() *ModelsNodeSharedResource {
-	this := ModelsNodeSharedResource{}
+func NewModelsResourceUsage() *ModelsResourceUsage {
+	this := ModelsResourceUsage{}
 	return &this
 }
 
-// NewModelsNodeSharedResourceWithDefaults instantiates a new ModelsNodeSharedResource object
+// NewModelsResourceUsageWithDefaults instantiates a new ModelsResourceUsage object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewModelsNodeSharedResourceWithDefaults() *ModelsNodeSharedResource {
-	this := ModelsNodeSharedResource{}
+func NewModelsResourceUsageWithDefaults() *ModelsResourceUsage {
+	this := ModelsResourceUsage{}
 	return &this
+}
+
+// GetComponentType returns the ComponentType field value if set, zero value otherwise.
+func (o *ModelsResourceUsage) GetComponentType() string {
+	if o == nil || IsNil(o.ComponentType) {
+		var ret string
+		return ret
+	}
+	return *o.ComponentType
+}
+
+// GetComponentTypeOk returns a tuple with the ComponentType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsResourceUsage) GetComponentTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ComponentType) {
+		return nil, false
+	}
+	return o.ComponentType, true
+}
+
+// HasComponentType returns a boolean if a field has been set.
+func (o *ModelsResourceUsage) HasComponentType() bool {
+	if o != nil && !IsNil(o.ComponentType) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentType gets a reference to the given string and assigns it to the ComponentType field.
+func (o *ModelsResourceUsage) SetComponentType(v string) {
+	o.ComponentType = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *ModelsNodeSharedResource) GetName() string {
+func (o *ModelsResourceUsage) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -58,7 +89,7 @@ func (o *ModelsNodeSharedResource) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeSharedResource) GetNameOk() (*string, bool) {
+func (o *ModelsResourceUsage) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -66,7 +97,7 @@ func (o *ModelsNodeSharedResource) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *ModelsNodeSharedResource) HasName() bool {
+func (o *ModelsResourceUsage) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -75,44 +106,76 @@ func (o *ModelsNodeSharedResource) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ModelsNodeSharedResource) SetName(v string) {
+func (o *ModelsResourceUsage) SetName(v string) {
 	o.Name = &v
 }
 
-// GetOwnerOrganizationId returns the OwnerOrganizationId field value if set, zero value otherwise.
-func (o *ModelsNodeSharedResource) GetOwnerOrganizationId() string {
-	if o == nil || IsNil(o.OwnerOrganizationId) {
+// GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
+func (o *ModelsResourceUsage) GetOrganizationId() string {
+	if o == nil || IsNil(o.OrganizationId) {
 		var ret string
 		return ret
 	}
-	return *o.OwnerOrganizationId
+	return *o.OrganizationId
 }
 
-// GetOwnerOrganizationIdOk returns a tuple with the OwnerOrganizationId field value if set, nil otherwise
+// GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeSharedResource) GetOwnerOrganizationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.OwnerOrganizationId) {
+func (o *ModelsResourceUsage) GetOrganizationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.OrganizationId) {
 		return nil, false
 	}
-	return o.OwnerOrganizationId, true
+	return o.OrganizationId, true
 }
 
-// HasOwnerOrganizationId returns a boolean if a field has been set.
-func (o *ModelsNodeSharedResource) HasOwnerOrganizationId() bool {
-	if o != nil && !IsNil(o.OwnerOrganizationId) {
+// HasOrganizationId returns a boolean if a field has been set.
+func (o *ModelsResourceUsage) HasOrganizationId() bool {
+	if o != nil && !IsNil(o.OrganizationId) {
 		return true
 	}
 
 	return false
 }
 
-// SetOwnerOrganizationId gets a reference to the given string and assigns it to the OwnerOrganizationId field.
-func (o *ModelsNodeSharedResource) SetOwnerOrganizationId(v string) {
-	o.OwnerOrganizationId = &v
+// SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
+func (o *ModelsResourceUsage) SetOrganizationId(v string) {
+	o.OrganizationId = &v
+}
+
+// GetOrganizationName returns the OrganizationName field value if set, zero value otherwise.
+func (o *ModelsResourceUsage) GetOrganizationName() string {
+	if o == nil || IsNil(o.OrganizationName) {
+		var ret string
+		return ret
+	}
+	return *o.OrganizationName
+}
+
+// GetOrganizationNameOk returns a tuple with the OrganizationName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsResourceUsage) GetOrganizationNameOk() (*string, bool) {
+	if o == nil || IsNil(o.OrganizationName) {
+		return nil, false
+	}
+	return o.OrganizationName, true
+}
+
+// HasOrganizationName returns a boolean if a field has been set.
+func (o *ModelsResourceUsage) HasOrganizationName() bool {
+	if o != nil && !IsNil(o.OrganizationName) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrganizationName gets a reference to the given string and assigns it to the OrganizationName field.
+func (o *ModelsResourceUsage) SetOrganizationName(v string) {
+	o.OrganizationName = &v
 }
 
 // GetResourceId returns the ResourceId field value if set, zero value otherwise.
-func (o *ModelsNodeSharedResource) GetResourceId() string {
+func (o *ModelsResourceUsage) GetResourceId() string {
 	if o == nil || IsNil(o.ResourceId) {
 		var ret string
 		return ret
@@ -122,7 +185,7 @@ func (o *ModelsNodeSharedResource) GetResourceId() string {
 
 // GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeSharedResource) GetResourceIdOk() (*string, bool) {
+func (o *ModelsResourceUsage) GetResourceIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ResourceId) {
 		return nil, false
 	}
@@ -130,7 +193,7 @@ func (o *ModelsNodeSharedResource) GetResourceIdOk() (*string, bool) {
 }
 
 // HasResourceId returns a boolean if a field has been set.
-func (o *ModelsNodeSharedResource) HasResourceId() bool {
+func (o *ModelsResourceUsage) HasResourceId() bool {
 	if o != nil && !IsNil(o.ResourceId) {
 		return true
 	}
@@ -139,12 +202,12 @@ func (o *ModelsNodeSharedResource) HasResourceId() bool {
 }
 
 // SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
-func (o *ModelsNodeSharedResource) SetResourceId(v string) {
+func (o *ModelsResourceUsage) SetResourceId(v string) {
 	o.ResourceId = &v
 }
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
-func (o *ModelsNodeSharedResource) GetResourceType() string {
+func (o *ModelsResourceUsage) GetResourceType() string {
 	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
@@ -154,7 +217,7 @@ func (o *ModelsNodeSharedResource) GetResourceType() string {
 
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeSharedResource) GetResourceTypeOk() (*string, bool) {
+func (o *ModelsResourceUsage) GetResourceTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
@@ -162,7 +225,7 @@ func (o *ModelsNodeSharedResource) GetResourceTypeOk() (*string, bool) {
 }
 
 // HasResourceType returns a boolean if a field has been set.
-func (o *ModelsNodeSharedResource) HasResourceType() bool {
+func (o *ModelsResourceUsage) HasResourceType() bool {
 	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
@@ -171,12 +234,12 @@ func (o *ModelsNodeSharedResource) HasResourceType() bool {
 }
 
 // SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
-func (o *ModelsNodeSharedResource) SetResourceType(v string) {
+func (o *ModelsResourceUsage) SetResourceType(v string) {
 	o.ResourceType = &v
 }
 
 // GetSubType returns the SubType field value if set, zero value otherwise.
-func (o *ModelsNodeSharedResource) GetSubType() string {
+func (o *ModelsResourceUsage) GetSubType() string {
 	if o == nil || IsNil(o.SubType) {
 		var ret string
 		return ret
@@ -186,7 +249,7 @@ func (o *ModelsNodeSharedResource) GetSubType() string {
 
 // GetSubTypeOk returns a tuple with the SubType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeSharedResource) GetSubTypeOk() (*string, bool) {
+func (o *ModelsResourceUsage) GetSubTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.SubType) {
 		return nil, false
 	}
@@ -194,7 +257,7 @@ func (o *ModelsNodeSharedResource) GetSubTypeOk() (*string, bool) {
 }
 
 // HasSubType returns a boolean if a field has been set.
-func (o *ModelsNodeSharedResource) HasSubType() bool {
+func (o *ModelsResourceUsage) HasSubType() bool {
 	if o != nil && !IsNil(o.SubType) {
 		return true
 	}
@@ -203,11 +266,11 @@ func (o *ModelsNodeSharedResource) HasSubType() bool {
 }
 
 // SetSubType gets a reference to the given string and assigns it to the SubType field.
-func (o *ModelsNodeSharedResource) SetSubType(v string) {
+func (o *ModelsResourceUsage) SetSubType(v string) {
 	o.SubType = &v
 }
 
-func (o ModelsNodeSharedResource) MarshalJSON() ([]byte, error) {
+func (o ModelsResourceUsage) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -215,13 +278,19 @@ func (o ModelsNodeSharedResource) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ModelsNodeSharedResource) ToMap() (map[string]interface{}, error) {
+func (o ModelsResourceUsage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ComponentType) {
+		toSerialize["component_type"] = o.ComponentType
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.OwnerOrganizationId) {
-		toSerialize["owner_organization_id"] = o.OwnerOrganizationId
+	if !IsNil(o.OrganizationId) {
+		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.OrganizationName) {
+		toSerialize["organization_name"] = o.OrganizationName
 	}
 	if !IsNil(o.ResourceId) {
 		toSerialize["resource_id"] = o.ResourceId
@@ -235,38 +304,38 @@ func (o ModelsNodeSharedResource) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableModelsNodeSharedResource struct {
-	value *ModelsNodeSharedResource
+type NullableModelsResourceUsage struct {
+	value *ModelsResourceUsage
 	isSet bool
 }
 
-func (v NullableModelsNodeSharedResource) Get() *ModelsNodeSharedResource {
+func (v NullableModelsResourceUsage) Get() *ModelsResourceUsage {
 	return v.value
 }
 
-func (v *NullableModelsNodeSharedResource) Set(val *ModelsNodeSharedResource) {
+func (v *NullableModelsResourceUsage) Set(val *ModelsResourceUsage) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableModelsNodeSharedResource) IsSet() bool {
+func (v NullableModelsResourceUsage) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableModelsNodeSharedResource) Unset() {
+func (v *NullableModelsResourceUsage) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableModelsNodeSharedResource(val *ModelsNodeSharedResource) *NullableModelsNodeSharedResource {
-	return &NullableModelsNodeSharedResource{value: val, isSet: true}
+func NewNullableModelsResourceUsage(val *ModelsResourceUsage) *NullableModelsResourceUsage {
+	return &NullableModelsResourceUsage{value: val, isSet: true}
 }
 
-func (v NullableModelsNodeSharedResource) MarshalJSON() ([]byte, error) {
+func (v NullableModelsResourceUsage) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableModelsNodeSharedResource) UnmarshalJSON(src []byte) error {
+func (v *NullableModelsResourceUsage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
