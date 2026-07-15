@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_resource_usage**
-> ModelsResourceUsageList list_resource_usage(organization_id, resource_type, resource_id, limit=limit, offset=offset)
+> RoutesV3ResourceUsageListResponse list_resource_usage(organization_id, resource_type, resource_id, limit=limit, offset=offset)
 
 List a shared resource's consumers in other orgs
 
@@ -322,7 +322,7 @@ List, paginated, everywhere a shared secret or component owned by this org is co
 
 ```python
 import monad
-from monad.models.models_resource_usage_list import ModelsResourceUsageList
+from monad.models.routes_v3_resource_usage_list_response import RoutesV3ResourceUsageListResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsResourceUsageList**](ModelsResourceUsageList.md)
+[**RoutesV3ResourceUsageListResponse**](RoutesV3ResourceUsageListResponse.md)
 
 ### Authorization
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_shared_resources**
-> ModelsSharedResourceList list_shared_resources(organization_id, limit=limit, offset=offset, resource_type=resource_type)
+> RoutesV3SharedResourceListResponse list_shared_resources(organization_id, limit=limit, offset=offset, resource_type=resource_type)
 
 List shared resources
 
@@ -419,7 +419,7 @@ List the resources this organization has shared with its child organizations, on
 
 ```python
 import monad
-from monad.models.models_shared_resource_list import ModelsSharedResourceList
+from monad.models.routes_v3_shared_resource_list_response import RoutesV3SharedResourceListResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSharedResourceList**](ModelsSharedResourceList.md)
+[**RoutesV3SharedResourceListResponse**](RoutesV3SharedResourceListResponse.md)
 
 ### Authorization
 

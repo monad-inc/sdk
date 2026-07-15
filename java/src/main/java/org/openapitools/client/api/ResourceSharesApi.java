@@ -31,9 +31,9 @@ import org.openapitools.client.model.CreateResourceSharesRequest;
 import org.openapitools.client.model.ModelsResourceShareChangeSet;
 import org.openapitools.client.model.ModelsResourceShareTargetList;
 import org.openapitools.client.model.ModelsResourceShareWithUsageList;
-import org.openapitools.client.model.ModelsResourceUsageList;
-import org.openapitools.client.model.ModelsSharedResourceList;
 import org.openapitools.client.model.ResponderErrorResponse;
+import org.openapitools.client.model.RoutesV3ResourceUsageListResponse;
+import org.openapitools.client.model.RoutesV3SharedResourceListResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -721,7 +721,7 @@ public class ResourceSharesApi {
      * @param resourceId Resource ID (required)
      * @param limit Page size (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
-     * @return ModelsResourceUsageList
+     * @return RoutesV3ResourceUsageListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -733,8 +733,8 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsResourceUsageList listResourceUsage(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<ModelsResourceUsageList> localVarResp = listResourceUsageWithHttpInfo(organizationId, resourceType, resourceId, limit, offset);
+    public RoutesV3ResourceUsageListResponse listResourceUsage(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<RoutesV3ResourceUsageListResponse> localVarResp = listResourceUsageWithHttpInfo(organizationId, resourceType, resourceId, limit, offset);
         return localVarResp.getData();
     }
 
@@ -746,7 +746,7 @@ public class ResourceSharesApi {
      * @param resourceId Resource ID (required)
      * @param limit Page size (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
-     * @return ApiResponse&lt;ModelsResourceUsageList&gt;
+     * @return ApiResponse&lt;RoutesV3ResourceUsageListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -758,9 +758,9 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsResourceUsageList> listResourceUsageWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+    public ApiResponse<RoutesV3ResourceUsageListResponse> listResourceUsageWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = listResourceUsageValidateBeforeCall(organizationId, resourceType, resourceId, limit, offset, null);
-        Type localVarReturnType = new TypeToken<ModelsResourceUsageList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3ResourceUsageListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -785,10 +785,10 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listResourceUsageAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsResourceUsageList> _callback) throws ApiException {
+    public okhttp3.Call listResourceUsageAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<RoutesV3ResourceUsageListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listResourceUsageValidateBeforeCall(organizationId, resourceType, resourceId, limit, offset, _callback);
-        Type localVarReturnType = new TypeToken<ModelsResourceUsageList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3ResourceUsageListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -886,7 +886,7 @@ public class ResourceSharesApi {
      * @param limit Page size (default: 10) (optional)
      * @param offset Offset (default: 0) (optional)
      * @param resourceType Filter by resource type (optional)
-     * @return ModelsSharedResourceList
+     * @return RoutesV3SharedResourceListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -898,8 +898,8 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsSharedResourceList listSharedResources(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String resourceType) throws ApiException {
-        ApiResponse<ModelsSharedResourceList> localVarResp = listSharedResourcesWithHttpInfo(organizationId, limit, offset, resourceType);
+    public RoutesV3SharedResourceListResponse listSharedResources(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String resourceType) throws ApiException {
+        ApiResponse<RoutesV3SharedResourceListResponse> localVarResp = listSharedResourcesWithHttpInfo(organizationId, limit, offset, resourceType);
         return localVarResp.getData();
     }
 
@@ -910,7 +910,7 @@ public class ResourceSharesApi {
      * @param limit Page size (default: 10) (optional)
      * @param offset Offset (default: 0) (optional)
      * @param resourceType Filter by resource type (optional)
-     * @return ApiResponse&lt;ModelsSharedResourceList&gt;
+     * @return ApiResponse&lt;RoutesV3SharedResourceListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -922,9 +922,9 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsSharedResourceList> listSharedResourcesWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String resourceType) throws ApiException {
+    public ApiResponse<RoutesV3SharedResourceListResponse> listSharedResourcesWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String resourceType) throws ApiException {
         okhttp3.Call localVarCall = listSharedResourcesValidateBeforeCall(organizationId, limit, offset, resourceType, null);
-        Type localVarReturnType = new TypeToken<ModelsSharedResourceList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3SharedResourceListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -948,10 +948,10 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSharedResourcesAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String resourceType, final ApiCallback<ModelsSharedResourceList> _callback) throws ApiException {
+    public okhttp3.Call listSharedResourcesAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String resourceType, final ApiCallback<RoutesV3SharedResourceListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSharedResourcesValidateBeforeCall(organizationId, limit, offset, resourceType, _callback);
-        Type localVarReturnType = new TypeToken<ModelsSharedResourceList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3SharedResourceListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

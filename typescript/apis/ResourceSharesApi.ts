@@ -12,9 +12,9 @@ import { CreateResourceSharesRequest } from '../models/CreateResourceSharesReque
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
 import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
-import { ModelsResourceUsageList } from '../models/ModelsResourceUsageList';
-import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
+import { RoutesV3ResourceUsageListResponse } from '../models/RoutesV3ResourceUsageListResponse';
+import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedResourceListResponse';
 
 /**
  * no description
@@ -699,13 +699,13 @@ export class ResourceSharesApiResponseProcessor {
      * @params response Response returned by the server for a request to listResourceUsage
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async listResourceUsageWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsResourceUsageList >> {
+     public async listResourceUsageWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3ResourceUsageListResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsResourceUsageList = ObjectSerializer.deserialize(
+            const body: RoutesV3ResourceUsageListResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsResourceUsageList", ""
-            ) as ModelsResourceUsageList;
+                "RoutesV3ResourceUsageListResponse", ""
+            ) as RoutesV3ResourceUsageListResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -732,10 +732,10 @@ export class ResourceSharesApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsResourceUsageList = ObjectSerializer.deserialize(
+            const body: RoutesV3ResourceUsageListResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsResourceUsageList", ""
-            ) as ModelsResourceUsageList;
+                "RoutesV3ResourceUsageListResponse", ""
+            ) as RoutesV3ResourceUsageListResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -749,13 +749,13 @@ export class ResourceSharesApiResponseProcessor {
      * @params response Response returned by the server for a request to listSharedResources
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async listSharedResourcesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsSharedResourceList >> {
+     public async listSharedResourcesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3SharedResourceListResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsSharedResourceList = ObjectSerializer.deserialize(
+            const body: RoutesV3SharedResourceListResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsSharedResourceList", ""
-            ) as ModelsSharedResourceList;
+                "RoutesV3SharedResourceListResponse", ""
+            ) as RoutesV3SharedResourceListResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -782,10 +782,10 @@ export class ResourceSharesApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsSharedResourceList = ObjectSerializer.deserialize(
+            const body: RoutesV3SharedResourceListResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsSharedResourceList", ""
-            ) as ModelsSharedResourceList;
+                "RoutesV3SharedResourceListResponse", ""
+            ) as RoutesV3SharedResourceListResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

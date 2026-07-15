@@ -333,8 +333,6 @@ import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
 import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
-import { ModelsResourceUsage } from '../models/ModelsResourceUsage';
-import { ModelsResourceUsageList } from '../models/ModelsResourceUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
@@ -342,8 +340,6 @@ import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
-import { ModelsSharedResource } from '../models/ModelsSharedResource';
-import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -440,6 +436,7 @@ import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -512,10 +509,14 @@ import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransfo
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3ResourceUsageListResponse } from '../models/RoutesV3ResourceUsageListResponse';
+import { RoutesV3ResourceUsageWithMetadata } from '../models/RoutesV3ResourceUsageWithMetadata';
 import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
 import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3ShareChangesRequest } from '../models/RoutesV3ShareChangesRequest';
+import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedResourceListResponse';
+import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedResourceWithMetadata';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -4986,7 +4987,7 @@ export class PromiseResourceSharesApi {
      * @param [limit] Page size
      * @param [offset] Rows to skip
      */
-    public listResourceUsageWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceUsageList>> {
+    public listResourceUsageWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3ResourceUsageListResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listResourceUsageWithHttpInfo(organizationId, resourceType, resourceId, limit, offset, observableOptions);
         return result.toPromise();
@@ -5001,7 +5002,7 @@ export class PromiseResourceSharesApi {
      * @param [limit] Page size
      * @param [offset] Rows to skip
      */
-    public listResourceUsage(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsResourceUsageList> {
+    public listResourceUsage(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<RoutesV3ResourceUsageListResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listResourceUsage(organizationId, resourceType, resourceId, limit, offset, observableOptions);
         return result.toPromise();
@@ -5015,7 +5016,7 @@ export class PromiseResourceSharesApi {
      * @param [offset] Offset (default: 0)
      * @param [resourceType] Filter by resource type
      */
-    public listSharedResourcesWithHttpInfo(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSharedResourceList>> {
+    public listSharedResourcesWithHttpInfo(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SharedResourceListResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listSharedResourcesWithHttpInfo(organizationId, limit, offset, resourceType, observableOptions);
         return result.toPromise();
@@ -5029,7 +5030,7 @@ export class PromiseResourceSharesApi {
      * @param [offset] Offset (default: 0)
      * @param [resourceType] Filter by resource type
      */
-    public listSharedResources(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: PromiseConfigurationOptions): Promise<ModelsSharedResourceList> {
+    public listSharedResources(organizationId: string, limit?: number, offset?: number, resourceType?: 'secret' | 'component', _options?: PromiseConfigurationOptions): Promise<RoutesV3SharedResourceListResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listSharedResources(organizationId, limit, offset, resourceType, observableOptions);
         return result.toPromise();

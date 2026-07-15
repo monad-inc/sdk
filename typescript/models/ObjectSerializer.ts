@@ -329,8 +329,6 @@ export * from '../models/ModelsResourceShareTarget';
 export * from '../models/ModelsResourceShareTargetList';
 export * from '../models/ModelsResourceShareWithUsage';
 export * from '../models/ModelsResourceShareWithUsageList';
-export * from '../models/ModelsResourceUsage';
-export * from '../models/ModelsResourceUsageList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSchemaDetection';
@@ -338,8 +336,6 @@ export * from '../models/ModelsSecret';
 export * from '../models/ModelsSecretWithComponents';
 export * from '../models/ModelsSecretWithComponentsList';
 export * from '../models/ModelsShareDetails';
-export * from '../models/ModelsSharedResource';
-export * from '../models/ModelsSharedResourceList';
 export * from '../models/ModelsStorageTypeCostConfig';
 export * from '../models/ModelsStorageTypeCostEntry';
 export * from '../models/ModelsStorageTypeCostSummary';
@@ -436,6 +432,7 @@ export * from '../models/RoutesGetOutputResponse';
 export * from '../models/RoutesGetTransformResponse';
 export * from '../models/RoutesInviteUserToOrganizationRequest';
 export * from '../models/RoutesLoginRequest';
+export * from '../models/RoutesResourceMetadata';
 export * from '../models/RoutesTransformConfig';
 export * from '../models/RoutesTransformOperation';
 export * from '../models/RoutesTransformOperationArguments';
@@ -508,10 +505,14 @@ export * from '../models/RoutesV3ImportTransformResponse';
 export * from '../models/RoutesV3MFAStatusResponse';
 export * from '../models/RoutesV3OptimizerType';
 export * from '../models/RoutesV3PutEnrichmentRequest';
+export * from '../models/RoutesV3ResourceUsageListResponse';
+export * from '../models/RoutesV3ResourceUsageWithMetadata';
 export * from '../models/RoutesV3SchemaHistoryEntryResponse';
 export * from '../models/RoutesV3SchemaStateResponse';
 export * from '../models/RoutesV3SecurityDataAnalysis';
 export * from '../models/RoutesV3ShareChangesRequest';
+export * from '../models/RoutesV3SharedResourceListResponse';
+export * from '../models/RoutesV3SharedResourceWithMetadata';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3Summary';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -985,8 +986,6 @@ import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
 import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
-import { ModelsResourceUsage } from '../models/ModelsResourceUsage';
-import { ModelsResourceUsageList } from '../models/ModelsResourceUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
@@ -994,8 +993,6 @@ import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
-import { ModelsSharedResource } from '../models/ModelsSharedResource';
-import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -1092,6 +1089,7 @@ import { RoutesGetOutputResponse             } from '../models/RoutesGetOutputRe
 import { RoutesGetTransformResponse            } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArgumentsClass } from '../models/RoutesTransformOperationArguments';
@@ -1164,10 +1162,14 @@ import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransfo
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3ResourceUsageListResponse } from '../models/RoutesV3ResourceUsageListResponse';
+import { RoutesV3ResourceUsageWithMetadata } from '../models/RoutesV3ResourceUsageWithMetadata';
 import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
 import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3ShareChangesRequest } from '../models/RoutesV3ShareChangesRequest';
+import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedResourceListResponse';
+import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedResourceWithMetadata';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -1710,8 +1712,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsResourceShareTargetList": ModelsResourceShareTargetList,
     "ModelsResourceShareWithUsage": ModelsResourceShareWithUsage,
     "ModelsResourceShareWithUsageList": ModelsResourceShareWithUsageList,
-    "ModelsResourceUsage": ModelsResourceUsage,
-    "ModelsResourceUsageList": ModelsResourceUsageList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
     "ModelsSchemaDetection": ModelsSchemaDetection,
@@ -1719,8 +1719,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsSecretWithComponents": ModelsSecretWithComponents,
     "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,
     "ModelsShareDetails": ModelsShareDetails,
-    "ModelsSharedResource": ModelsSharedResource,
-    "ModelsSharedResourceList": ModelsSharedResourceList,
     "ModelsStorageTypeCostConfig": ModelsStorageTypeCostConfig,
     "ModelsStorageTypeCostEntry": ModelsStorageTypeCostEntry,
     "ModelsStorageTypeCostSummary": ModelsStorageTypeCostSummary,
@@ -1815,6 +1813,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesGetTransformResponse": RoutesGetTransformResponse,
     "RoutesInviteUserToOrganizationRequest": RoutesInviteUserToOrganizationRequest,
     "RoutesLoginRequest": RoutesLoginRequest,
+    "RoutesResourceMetadata": RoutesResourceMetadata,
     "RoutesTransformConfig": RoutesTransformConfig,
     "RoutesTransformOperation": RoutesTransformOperation,
     "RoutesTransformOperationArguments": RoutesTransformOperationArgumentsClass,
@@ -1887,10 +1886,14 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3MFAStatusResponse": RoutesV3MFAStatusResponse,
     "RoutesV3OptimizerType": RoutesV3OptimizerType,
     "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,
+    "RoutesV3ResourceUsageListResponse": RoutesV3ResourceUsageListResponse,
+    "RoutesV3ResourceUsageWithMetadata": RoutesV3ResourceUsageWithMetadata,
     "RoutesV3SchemaHistoryEntryResponse": RoutesV3SchemaHistoryEntryResponse,
     "RoutesV3SchemaStateResponse": RoutesV3SchemaStateResponse,
     "RoutesV3SecurityDataAnalysis": RoutesV3SecurityDataAnalysis,
     "RoutesV3ShareChangesRequest": RoutesV3ShareChangesRequest,
+    "RoutesV3SharedResourceListResponse": RoutesV3SharedResourceListResponse,
+    "RoutesV3SharedResourceWithMetadata": RoutesV3SharedResourceWithMetadata,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3Summary": RoutesV3Summary,
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,

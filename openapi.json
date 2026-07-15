@@ -6496,47 +6496,6 @@
                 },
                 "type": "object"
             },
-            "models.ResourceUsage": {
-                "properties": {
-                    "component_type": {
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "organization_id": {
-                        "type": "string"
-                    },
-                    "organization_name": {
-                        "type": "string"
-                    },
-                    "resource_id": {
-                        "type": "string"
-                    },
-                    "resource_type": {
-                        "type": "string"
-                    },
-                    "sub_type": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "models.ResourceUsageList": {
-                "properties": {
-                    "pagination": {
-                        "$ref": "#/components/schemas/models.Pagination"
-                    },
-                    "usages": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.ResourceUsage"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    }
-                },
-                "type": "object"
-            },
             "models.RoleWithPermissions": {
                 "properties": {
                     "created_at": {
@@ -6723,63 +6682,6 @@
                     "shared_with_me": {
                         "description": "SharedWithMe is true when the resource is shared to the requesting org by a parent org.",
                         "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "models.SharedResource": {
-                "properties": {
-                    "component_type": {
-                        "description": "Component kind (input/output/transform/enrichment); components only.",
-                        "type": "string"
-                    },
-                    "description": {
-                        "description": "Description of the resource, when set.",
-                        "type": "string"
-                    },
-                    "explicit_target_count": {
-                        "description": "Number of explicit per-child share rows for this resource.",
-                        "type": "integer"
-                    },
-                    "last_shared_at": {
-                        "description": "Most recent time any share row for this resource was created.",
-                        "type": "string"
-                    },
-                    "name": {
-                        "description": "Name of the resource.",
-                        "type": "string"
-                    },
-                    "resource_id": {
-                        "description": "Identifier of the shared secret or component.",
-                        "type": "string"
-                    },
-                    "resource_type": {
-                        "description": "Type of the shared resource: \"secret\" or \"component\".",
-                        "type": "string"
-                    },
-                    "share_with_all_new_children": {
-                        "description": "Whether the resource's policy auto-shares it with new direct children.",
-                        "type": "boolean"
-                    },
-                    "sub_type": {
-                        "description": "Concrete connector kind; components only.",
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "models.SharedResourceList": {
-                "properties": {
-                    "pagination": {
-                        "$ref": "#/components/schemas/models.Pagination"
-                    },
-                    "shared_resources": {
-                        "description": "The page of shared resources.",
-                        "items": {
-                            "$ref": "#/components/schemas/models.SharedResource"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
                     }
                 },
                 "type": "object"
@@ -8533,6 +8435,32 @@
                 },
                 "type": "object"
             },
+            "routes.ResourceMetadata": {
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "house": {
+                        "type": "string"
+                    },
+                    "in_beta": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "tier": {
+                        "type": "integer"
+                    },
+                    "type_id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "routes.TransformConfig": {
                 "properties": {
                     "conditional": {
@@ -9868,6 +9796,50 @@
                 },
                 "type": "object"
             },
+            "routesV3.ResourceUsageListResponse": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "usages": {
+                        "items": {
+                            "$ref": "#/components/schemas/routesV3.ResourceUsageWithMetadata"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.ResourceUsageWithMetadata": {
+                "properties": {
+                    "component_type": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "organization_name": {
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "type": "string"
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/routes.ResourceMetadata"
+                    },
+                    "resource_type": {
+                        "type": "string"
+                    },
+                    "sub_type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "routesV3.SecurityDataAnalysis": {
                 "properties": {
                     "error_msg": {
@@ -9915,6 +9887,65 @@
                     "share_with_all_new_children": {
                         "description": "Toggle auto-sharing with new direct children: omit to leave unchanged,\ntrue to enable, false to disable.",
                         "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.SharedResourceListResponse": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "shared_resources": {
+                        "items": {
+                            "$ref": "#/components/schemas/routesV3.SharedResourceWithMetadata"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.SharedResourceWithMetadata": {
+                "properties": {
+                    "component_type": {
+                        "description": "Component kind (input/output/transform/enrichment); components only.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the resource, when set.",
+                        "type": "string"
+                    },
+                    "explicit_target_count": {
+                        "description": "Number of explicit per-child share rows for this resource.",
+                        "type": "integer"
+                    },
+                    "last_shared_at": {
+                        "description": "Most recent time any share row for this resource was created.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the resource.",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "description": "Identifier of the shared secret or component.",
+                        "type": "string"
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/routes.ResourceMetadata"
+                    },
+                    "resource_type": {
+                        "description": "Type of the shared resource: \"secret\" or \"component\".",
+                        "type": "string"
+                    },
+                    "share_with_all_new_children": {
+                        "description": "Whether the resource's policy auto-shares it with new direct children.",
+                        "type": "boolean"
+                    },
+                    "sub_type": {
+                        "description": "Concrete connector kind; components only.",
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -26007,7 +26038,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.SharedResourceList"
+                                    "$ref": "#/components/schemas/routesV3.SharedResourceListResponse"
                                 }
                             }
                         },
@@ -26726,7 +26757,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.ResourceUsageList"
+                                    "$ref": "#/components/schemas/routesV3.ResourceUsageListResponse"
                                 }
                             }
                         },

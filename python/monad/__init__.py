@@ -400,8 +400,6 @@ __all__ = [
     "ModelsResourceShareTargetList",
     "ModelsResourceShareWithUsage",
     "ModelsResourceShareWithUsageList",
-    "ModelsResourceUsage",
-    "ModelsResourceUsageList",
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
     "ModelsSchemaDetection",
@@ -409,8 +407,6 @@ __all__ = [
     "ModelsSecretWithComponents",
     "ModelsSecretWithComponentsList",
     "ModelsShareDetails",
-    "ModelsSharedResource",
-    "ModelsSharedResourceList",
     "ModelsStorageTypeCostConfig",
     "ModelsStorageTypeCostEntry",
     "ModelsStorageTypeCostSummary",
@@ -507,6 +503,7 @@ __all__ = [
     "RoutesGetTransformResponse",
     "RoutesInviteUserToOrganizationRequest",
     "RoutesLoginRequest",
+    "RoutesResourceMetadata",
     "RoutesTransformConfig",
     "RoutesTransformOperation",
     "RoutesTransformOperationArguments",
@@ -579,10 +576,14 @@ __all__ = [
     "RoutesV3MFAStatusResponse",
     "RoutesV3OptimizerType",
     "RoutesV3PutEnrichmentRequest",
+    "RoutesV3ResourceUsageListResponse",
+    "RoutesV3ResourceUsageWithMetadata",
     "RoutesV3SchemaHistoryEntryResponse",
     "RoutesV3SchemaStateResponse",
     "RoutesV3SecurityDataAnalysis",
     "RoutesV3ShareChangesRequest",
+    "RoutesV3SharedResourceListResponse",
+    "RoutesV3SharedResourceWithMetadata",
     "RoutesV3SuccessResponse",
     "RoutesV3Summary",
     "RoutesV3TestEnrichmentConnectionRequest",
@@ -1112,8 +1113,6 @@ from monad.models.models_resource_share_target import ModelsResourceShareTarget 
 from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList as ModelsResourceShareTargetList
 from monad.models.models_resource_share_with_usage import ModelsResourceShareWithUsage as ModelsResourceShareWithUsage
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList as ModelsResourceShareWithUsageList
-from monad.models.models_resource_usage import ModelsResourceUsage as ModelsResourceUsage
-from monad.models.models_resource_usage_list import ModelsResourceUsageList as ModelsResourceUsageList
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
 from monad.models.models_schema_detection import ModelsSchemaDetection as ModelsSchemaDetection
@@ -1121,8 +1120,6 @@ from monad.models.models_secret import ModelsSecret as ModelsSecret
 from monad.models.models_secret_with_components import ModelsSecretWithComponents as ModelsSecretWithComponents
 from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList as ModelsSecretWithComponentsList
 from monad.models.models_share_details import ModelsShareDetails as ModelsShareDetails
-from monad.models.models_shared_resource import ModelsSharedResource as ModelsSharedResource
-from monad.models.models_shared_resource_list import ModelsSharedResourceList as ModelsSharedResourceList
 from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig as ModelsStorageTypeCostConfig
 from monad.models.models_storage_type_cost_entry import ModelsStorageTypeCostEntry as ModelsStorageTypeCostEntry
 from monad.models.models_storage_type_cost_summary import ModelsStorageTypeCostSummary as ModelsStorageTypeCostSummary
@@ -1219,6 +1216,7 @@ from monad.models.routes_get_output_response import RoutesGetOutputResponse as R
 from monad.models.routes_get_transform_response import RoutesGetTransformResponse as RoutesGetTransformResponse
 from monad.models.routes_invite_user_to_organization_request import RoutesInviteUserToOrganizationRequest as RoutesInviteUserToOrganizationRequest
 from monad.models.routes_login_request import RoutesLoginRequest as RoutesLoginRequest
+from monad.models.routes_resource_metadata import RoutesResourceMetadata as RoutesResourceMetadata
 from monad.models.routes_transform_config import RoutesTransformConfig as RoutesTransformConfig
 from monad.models.routes_transform_operation import RoutesTransformOperation as RoutesTransformOperation
 from monad.models.routes_transform_operation_arguments import RoutesTransformOperationArguments as RoutesTransformOperationArguments
@@ -1291,10 +1289,14 @@ from monad.models.routes_v3_import_transform_response import RoutesV3ImportTrans
 from monad.models.routes_v3_mfa_status_response import RoutesV3MFAStatusResponse as RoutesV3MFAStatusResponse
 from monad.models.routes_v3_optimizer_type import RoutesV3OptimizerType as RoutesV3OptimizerType
 from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentRequest as RoutesV3PutEnrichmentRequest
+from monad.models.routes_v3_resource_usage_list_response import RoutesV3ResourceUsageListResponse as RoutesV3ResourceUsageListResponse
+from monad.models.routes_v3_resource_usage_with_metadata import RoutesV3ResourceUsageWithMetadata as RoutesV3ResourceUsageWithMetadata
 from monad.models.routes_v3_schema_history_entry_response import RoutesV3SchemaHistoryEntryResponse as RoutesV3SchemaHistoryEntryResponse
 from monad.models.routes_v3_schema_state_response import RoutesV3SchemaStateResponse as RoutesV3SchemaStateResponse
 from monad.models.routes_v3_security_data_analysis import RoutesV3SecurityDataAnalysis as RoutesV3SecurityDataAnalysis
 from monad.models.routes_v3_share_changes_request import RoutesV3ShareChangesRequest as RoutesV3ShareChangesRequest
+from monad.models.routes_v3_shared_resource_list_response import RoutesV3SharedResourceListResponse as RoutesV3SharedResourceListResponse
+from monad.models.routes_v3_shared_resource_with_metadata import RoutesV3SharedResourceWithMetadata as RoutesV3SharedResourceWithMetadata
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse as RoutesV3SuccessResponse
 from monad.models.routes_v3_summary import RoutesV3Summary as RoutesV3Summary
 from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest as RoutesV3TestEnrichmentConnectionRequest

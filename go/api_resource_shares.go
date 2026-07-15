@@ -654,7 +654,7 @@ func (r ApiListResourceUsageRequest) Offset(offset int32) ApiListResourceUsageRe
 	return r
 }
 
-func (r ApiListResourceUsageRequest) Execute() (*ModelsResourceUsageList, *http.Response, error) {
+func (r ApiListResourceUsageRequest) Execute() (*RoutesV3ResourceUsageListResponse, *http.Response, error) {
 	return r.ApiService.ListResourceUsageExecute(r)
 }
 
@@ -680,13 +680,13 @@ func (a *ResourceSharesAPIService) ListResourceUsage(ctx context.Context, organi
 }
 
 // Execute executes the request
-//  @return ModelsResourceUsageList
-func (a *ResourceSharesAPIService) ListResourceUsageExecute(r ApiListResourceUsageRequest) (*ModelsResourceUsageList, *http.Response, error) {
+//  @return RoutesV3ResourceUsageListResponse
+func (a *ResourceSharesAPIService) ListResourceUsageExecute(r ApiListResourceUsageRequest) (*RoutesV3ResourceUsageListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsResourceUsageList
+		localVarReturnValue  *RoutesV3ResourceUsageListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceSharesAPIService.ListResourceUsage")
@@ -858,7 +858,7 @@ func (r ApiListSharedResourcesRequest) ResourceType(resourceType string) ApiList
 	return r
 }
 
-func (r ApiListSharedResourcesRequest) Execute() (*ModelsSharedResourceList, *http.Response, error) {
+func (r ApiListSharedResourcesRequest) Execute() (*RoutesV3SharedResourceListResponse, *http.Response, error) {
 	return r.ApiService.ListSharedResourcesExecute(r)
 }
 
@@ -880,13 +880,13 @@ func (a *ResourceSharesAPIService) ListSharedResources(ctx context.Context, orga
 }
 
 // Execute executes the request
-//  @return ModelsSharedResourceList
-func (a *ResourceSharesAPIService) ListSharedResourcesExecute(r ApiListSharedResourcesRequest) (*ModelsSharedResourceList, *http.Response, error) {
+//  @return RoutesV3SharedResourceListResponse
+func (a *ResourceSharesAPIService) ListSharedResourcesExecute(r ApiListSharedResourcesRequest) (*RoutesV3SharedResourceListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsSharedResourceList
+		localVarReturnValue  *RoutesV3SharedResourceListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceSharesAPIService.ListSharedResources")

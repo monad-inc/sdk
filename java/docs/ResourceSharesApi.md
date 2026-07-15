@@ -276,7 +276,7 @@ public class Example {
 
 <a id="listResourceUsage"></a>
 # **listResourceUsage**
-> ModelsResourceUsageList listResourceUsage(organizationId, resourceType, resourceId, limit, offset)
+> RoutesV3ResourceUsageListResponse listResourceUsage(organizationId, resourceType, resourceId, limit, offset)
 
 List a shared resource&#39;s consumers in other orgs
 
@@ -316,7 +316,7 @@ public class Example {
     Integer limit = 10; // Integer | Page size
     Integer offset = 0; // Integer | Rows to skip
     try {
-      ModelsResourceUsageList result = apiInstance.listResourceUsage(organizationId, resourceType, resourceId, limit, offset);
+      RoutesV3ResourceUsageListResponse result = apiInstance.listResourceUsage(organizationId, resourceType, resourceId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResourceSharesApi#listResourceUsage");
@@ -341,7 +341,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsResourceUsageList**](ModelsResourceUsageList.md)
+[**RoutesV3ResourceUsageListResponse**](RoutesV3ResourceUsageListResponse.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ public class Example {
 
 <a id="listSharedResources"></a>
 # **listSharedResources**
-> ModelsSharedResourceList listSharedResources(organizationId, limit, offset, resourceType)
+> RoutesV3SharedResourceListResponse listSharedResources(organizationId, limit, offset, resourceType)
 
 List shared resources
 
@@ -401,7 +401,7 @@ public class Example {
     Integer offset = 56; // Integer | Offset (default: 0)
     String resourceType = "secret"; // String | Filter by resource type
     try {
-      ModelsSharedResourceList result = apiInstance.listSharedResources(organizationId, limit, offset, resourceType);
+      RoutesV3SharedResourceListResponse result = apiInstance.listSharedResources(organizationId, limit, offset, resourceType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResourceSharesApi#listSharedResources");
@@ -425,7 +425,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsSharedResourceList**](ModelsSharedResourceList.md)
+[**RoutesV3SharedResourceListResponse**](RoutesV3SharedResourceListResponse.md)
 
 ### Authorization
 

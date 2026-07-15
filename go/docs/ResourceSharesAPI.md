@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ## ListResourceUsage
 
-> ModelsResourceUsageList ListResourceUsage(ctx, organizationId, resourceType, resourceId).Limit(limit).Offset(offset).Execute()
+> RoutesV3ResourceUsageListResponse ListResourceUsage(ctx, organizationId, resourceType, resourceId).Limit(limit).Offset(offset).Execute()
 
 List a shared resource's consumers in other orgs
 
@@ -290,7 +290,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ResourceSharesAPI.ListResourceUsage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListResourceUsage`: ModelsResourceUsageList
+	// response from `ListResourceUsage`: RoutesV3ResourceUsageListResponse
 	fmt.Fprintf(os.Stdout, "Response from `ResourceSharesAPI.ListResourceUsage`: %v\n", resp)
 }
 ```
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsResourceUsageList**](ModelsResourceUsageList.md)
+[**RoutesV3ResourceUsageListResponse**](RoutesV3ResourceUsageListResponse.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ## ListSharedResources
 
-> ModelsSharedResourceList ListSharedResources(ctx, organizationId).Limit(limit).Offset(offset).ResourceType(resourceType).Execute()
+> RoutesV3SharedResourceListResponse ListSharedResources(ctx, organizationId).Limit(limit).Offset(offset).ResourceType(resourceType).Execute()
 
 List shared resources
 
@@ -369,7 +369,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ResourceSharesAPI.ListSharedResources``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListSharedResources`: ModelsSharedResourceList
+	// response from `ListSharedResources`: RoutesV3SharedResourceListResponse
 	fmt.Fprintf(os.Stdout, "Response from `ResourceSharesAPI.ListSharedResources`: %v\n", resp)
 }
 ```
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSharedResourceList**](ModelsSharedResourceList.md)
+[**RoutesV3SharedResourceListResponse**](RoutesV3SharedResourceListResponse.md)
 
 ### Authorization
 

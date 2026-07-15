@@ -333,8 +333,6 @@ import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
 import { ModelsResourceShareTargetList } from '../models/ModelsResourceShareTargetList';
 import { ModelsResourceShareWithUsage } from '../models/ModelsResourceShareWithUsage';
 import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareWithUsageList';
-import { ModelsResourceUsage } from '../models/ModelsResourceUsage';
-import { ModelsResourceUsageList } from '../models/ModelsResourceUsageList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
@@ -342,8 +340,6 @@ import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
-import { ModelsSharedResource } from '../models/ModelsSharedResource';
-import { ModelsSharedResourceList } from '../models/ModelsSharedResourceList';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
 import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
@@ -440,6 +436,7 @@ import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -512,10 +509,14 @@ import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransfo
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3ResourceUsageListResponse } from '../models/RoutesV3ResourceUsageListResponse';
+import { RoutesV3ResourceUsageWithMetadata } from '../models/RoutesV3ResourceUsageWithMetadata';
 import { RoutesV3SchemaHistoryEntryResponse } from '../models/RoutesV3SchemaHistoryEntryResponse';
 import { RoutesV3SchemaStateResponse } from '../models/RoutesV3SchemaStateResponse';
 import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3ShareChangesRequest } from '../models/RoutesV3ShareChangesRequest';
+import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedResourceListResponse';
+import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedResourceWithMetadata';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -6974,7 +6975,7 @@ export class ObjectResourceSharesApi {
      * List a shared resource\'s consumers in other orgs
      * @param param the request object
      */
-    public listResourceUsageWithHttpInfo(param: ResourceSharesApiListResourceUsageRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceUsageList>> {
+    public listResourceUsageWithHttpInfo(param: ResourceSharesApiListResourceUsageRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3ResourceUsageListResponse>> {
         return this.api.listResourceUsageWithHttpInfo(param.organizationId, param.resourceType, param.resourceId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -6983,7 +6984,7 @@ export class ObjectResourceSharesApi {
      * List a shared resource\'s consumers in other orgs
      * @param param the request object
      */
-    public listResourceUsage(param: ResourceSharesApiListResourceUsageRequest, options?: ConfigurationOptions): Promise<ModelsResourceUsageList> {
+    public listResourceUsage(param: ResourceSharesApiListResourceUsageRequest, options?: ConfigurationOptions): Promise<RoutesV3ResourceUsageListResponse> {
         return this.api.listResourceUsage(param.organizationId, param.resourceType, param.resourceId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -6992,7 +6993,7 @@ export class ObjectResourceSharesApi {
      * List shared resources
      * @param param the request object
      */
-    public listSharedResourcesWithHttpInfo(param: ResourceSharesApiListSharedResourcesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSharedResourceList>> {
+    public listSharedResourcesWithHttpInfo(param: ResourceSharesApiListSharedResourcesRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SharedResourceListResponse>> {
         return this.api.listSharedResourcesWithHttpInfo(param.organizationId, param.limit, param.offset, param.resourceType,  options).toPromise();
     }
 
@@ -7001,7 +7002,7 @@ export class ObjectResourceSharesApi {
      * List shared resources
      * @param param the request object
      */
-    public listSharedResources(param: ResourceSharesApiListSharedResourcesRequest, options?: ConfigurationOptions): Promise<ModelsSharedResourceList> {
+    public listSharedResources(param: ResourceSharesApiListSharedResourcesRequest, options?: ConfigurationOptions): Promise<RoutesV3SharedResourceListResponse> {
         return this.api.listSharedResources(param.organizationId, param.limit, param.offset, param.resourceType,  options).toPromise();
     }
 

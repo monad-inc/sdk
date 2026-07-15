@@ -23,8 +23,8 @@ from monad.models.create_resource_shares_request import CreateResourceSharesRequ
 from monad.models.models_resource_share_change_set import ModelsResourceShareChangeSet
 from monad.models.models_resource_share_target_list import ModelsResourceShareTargetList
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList
-from monad.models.models_resource_usage_list import ModelsResourceUsageList
-from monad.models.models_shared_resource_list import ModelsSharedResourceList
+from monad.models.routes_v3_resource_usage_list_response import RoutesV3ResourceUsageListResponse
+from monad.models.routes_v3_shared_resource_list_response import RoutesV3SharedResourceListResponse
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -1100,7 +1100,7 @@ class ResourceSharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsResourceUsageList:
+    ) -> RoutesV3ResourceUsageListResponse:
         """List a shared resource's consumers in other orgs
 
         List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org's usages are contiguous.
@@ -1150,7 +1150,7 @@ class ResourceSharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsResourceUsageList",
+            '200': "RoutesV3ResourceUsageListResponse",
             '400': "ResponderErrorResponse",
             '403': "str",
             '500': "ResponderErrorResponse",
@@ -1186,7 +1186,7 @@ class ResourceSharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsResourceUsageList]:
+    ) -> ApiResponse[RoutesV3ResourceUsageListResponse]:
         """List a shared resource's consumers in other orgs
 
         List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org's usages are contiguous.
@@ -1236,7 +1236,7 @@ class ResourceSharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsResourceUsageList",
+            '200': "RoutesV3ResourceUsageListResponse",
             '400': "ResponderErrorResponse",
             '403': "str",
             '500': "ResponderErrorResponse",
@@ -1322,7 +1322,7 @@ class ResourceSharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsResourceUsageList",
+            '200': "RoutesV3ResourceUsageListResponse",
             '400': "ResponderErrorResponse",
             '403': "str",
             '500': "ResponderErrorResponse",
@@ -1434,7 +1434,7 @@ class ResourceSharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsSharedResourceList:
+    ) -> RoutesV3SharedResourceListResponse:
         """List shared resources
 
         List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
@@ -1481,7 +1481,7 @@ class ResourceSharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSharedResourceList",
+            '200': "RoutesV3SharedResourceListResponse",
             '400': "ResponderErrorResponse",
             '403': "str",
             '500': "ResponderErrorResponse",
@@ -1516,7 +1516,7 @@ class ResourceSharesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsSharedResourceList]:
+    ) -> ApiResponse[RoutesV3SharedResourceListResponse]:
         """List shared resources
 
         List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
@@ -1563,7 +1563,7 @@ class ResourceSharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSharedResourceList",
+            '200': "RoutesV3SharedResourceListResponse",
             '400': "ResponderErrorResponse",
             '403': "str",
             '500': "ResponderErrorResponse",
@@ -1645,7 +1645,7 @@ class ResourceSharesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSharedResourceList",
+            '200': "RoutesV3SharedResourceListResponse",
             '400': "ResponderErrorResponse",
             '403': "str",
             '500': "ResponderErrorResponse",

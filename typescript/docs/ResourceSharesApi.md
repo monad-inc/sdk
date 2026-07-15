@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **listResourceUsage**
-> ModelsResourceUsageList listResourceUsage()
+> RoutesV3ResourceUsageListResponse listResourceUsage()
 
 List, paginated, everywhere a shared secret or component owned by this org is consumed by OTHER (child) organizations — the remediation view. For a secret, consumers are the child-org components referencing it; for a component, the child-org pipelines binding it. Each row carries the child org and the consuming resource; rows are ordered so an org\'s usages are contiguous.
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsResourceUsageList**
+**RoutesV3ResourceUsageListResponse**
 
 ### Authorization
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **listSharedResources**
-> ModelsSharedResourceList listSharedResources()
+> RoutesV3SharedResourceListResponse listSharedResources()
 
 List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsSharedResourceList**
+**RoutesV3SharedResourceListResponse**
 
 ### Authorization
 
