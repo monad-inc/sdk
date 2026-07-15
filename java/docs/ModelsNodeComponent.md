@@ -13,6 +13,7 @@
 |**name** | **String** |  |  [optional] |
 |**references** | [**ModelsReferences**](ModelsReferences.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 
 
 

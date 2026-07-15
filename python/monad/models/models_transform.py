@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_references import ModelsReferences
@@ -42,7 +42,8 @@ class ModelsTransform(BaseModel):
     references: Optional[ModelsReferences] = None
     share_details: Optional[ModelsShareDetails] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "updated_at"]
+    version: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "updated_at", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -113,7 +114,8 @@ class ModelsTransform(BaseModel):
             "organization_id": obj.get("organization_id"),
             "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
             "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
-            "updated_at": obj.get("updated_at")
+            "updated_at": obj.get("updated_at"),
+            "version": obj.get("version")
         })
         return _obj
 

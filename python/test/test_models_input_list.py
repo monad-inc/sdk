@@ -57,7 +57,8 @@ class TestModelsInputList(unittest.TestCase):
                             shared_with_children = True, 
                             shared_with_me = True, ), 
                         type = '', 
-                        updated_at = '', )
+                        updated_at = '', 
+                        version = 56, )
                     ],
                 pagination = monad.models.models/pagination.models.Pagination(
                     limit = 56, 

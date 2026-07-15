@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_references import ModelsReferences
 from typing import Optional, Set
@@ -35,7 +35,8 @@ class ModelsNodeComponent(BaseModel):
     name: Optional[StrictStr] = None
     references: Optional[ModelsReferences] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "description", "id", "name", "references", "type"]
+    version: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["config", "description", "id", "name", "references", "type", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -96,7 +97,8 @@ class ModelsNodeComponent(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
-            "type": obj.get("type")
+            "type": obj.get("type"),
+            "version": obj.get("version")
         })
         return _obj
 

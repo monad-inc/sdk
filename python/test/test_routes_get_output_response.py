@@ -117,7 +117,8 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
                     shared_with_children = True, 
                     shared_with_me = True, ),
                 type = '',
-                updated_at = ''
+                updated_at = '',
+                version = 56
             )
         else:
             return RoutesGetOutputResponse(

@@ -18,6 +18,7 @@
 |**shareDetails** | [**ModelsShareDetails**](ModelsShareDetails.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 
 
 

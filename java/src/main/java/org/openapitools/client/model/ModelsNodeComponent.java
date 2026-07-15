@@ -83,6 +83,11 @@ public class ModelsNodeComponent {
   @javax.annotation.Nullable
   private String type;
 
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
+  private Integer version;
+
   public ModelsNodeComponent() {
   }
 
@@ -208,6 +213,25 @@ public class ModelsNodeComponent {
   }
 
 
+  public ModelsNodeComponent version(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * Get version
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -223,12 +247,13 @@ public class ModelsNodeComponent {
         Objects.equals(this.id, modelsNodeComponent.id) &&
         Objects.equals(this.name, modelsNodeComponent.name) &&
         Objects.equals(this.references, modelsNodeComponent.references) &&
-        Objects.equals(this.type, modelsNodeComponent.type);
+        Objects.equals(this.type, modelsNodeComponent.type) &&
+        Objects.equals(this.version, modelsNodeComponent.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, id, name, references, type);
+    return Objects.hash(config, description, id, name, references, type, version);
   }
 
   @Override
@@ -241,6 +266,7 @@ public class ModelsNodeComponent {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -259,7 +285,7 @@ public class ModelsNodeComponent {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "id", "name", "references", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "id", "name", "references", "type", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

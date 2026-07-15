@@ -140,4 +140,12 @@ public class RoutesGetOutputResponseTest {
         // TODO: test updatedAt
     }
 
+    /**
+     * Test the property 'version'
+     */
+    @Test
+    public void versionTest() {
+        // TODO: test version
+    }
+
 }

@@ -28,6 +28,7 @@ export class ModelsInput {
     'shareDetails'?: ModelsShareDetails;
     'type'?: string;
     'updatedAt'?: string;
+    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -98,6 +99,12 @@ export class ModelsInput {
             "name": "updatedAt",
             "baseName": "updated_at",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "version",
+            "baseName": "version",
+            "type": "number",
             "format": ""
         }    ];
 

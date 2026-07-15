@@ -83,7 +83,8 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                                         id = '', 
                                         organization_id = '', )
                                     ], ), 
-                            type = '', ), 
+                            type = '', 
+                            version = 56, ), 
                         component_house = '', 
                         component_id = '', 
                         component_sub_type = '', 

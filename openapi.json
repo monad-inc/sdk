@@ -5262,6 +5262,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -5346,6 +5349,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -5493,6 +5499,9 @@
                     },
                     "type": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -5690,6 +5699,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -6880,6 +6892,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8318,6 +8333,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8363,6 +8381,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8405,6 +8426,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -9722,6 +9746,9 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"

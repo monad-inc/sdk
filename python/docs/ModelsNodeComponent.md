@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **references** | [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **type** | **str** |  | [optional] 
+**version** | **int** |  | [optional] 
 
 ## Example
 

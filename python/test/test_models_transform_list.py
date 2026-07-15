@@ -72,7 +72,8 @@ class TestModelsTransformList(unittest.TestCase):
                             owner_organization_id = '', 
                             shared_with_children = True, 
                             shared_with_me = True, ), 
-                        updated_at = '', )
+                        updated_at = '', 
+                        version = 56, )
                     ]
             )
         else:

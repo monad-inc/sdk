@@ -109,6 +109,11 @@ public class ModelsOutput {
   @javax.annotation.Nullable
   private String updatedAt;
 
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
+  private Integer version;
+
   public ModelsOutput() {
   }
 
@@ -321,6 +326,25 @@ public class ModelsOutput {
   }
 
 
+  public ModelsOutput version(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * Get version
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -341,12 +365,13 @@ public class ModelsOutput {
         Objects.equals(this.references, modelsOutput.references) &&
         Objects.equals(this.shareDetails, modelsOutput.shareDetails) &&
         Objects.equals(this.type, modelsOutput.type) &&
-        Objects.equals(this.updatedAt, modelsOutput.updatedAt);
+        Objects.equals(this.updatedAt, modelsOutput.updatedAt) &&
+        Objects.equals(this.version, modelsOutput.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, type, updatedAt);
+    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, type, updatedAt, version);
   }
 
   @Override
@@ -364,6 +389,7 @@ public class ModelsOutput {
     sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -382,7 +408,7 @@ public class ModelsOutput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

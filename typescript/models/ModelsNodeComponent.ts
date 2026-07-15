@@ -20,6 +20,7 @@ export class ModelsNodeComponent {
     'name'?: string;
     'references'?: ModelsReferences;
     'type'?: string;
+    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -60,6 +61,12 @@ export class ModelsNodeComponent {
             "name": "type",
             "baseName": "type",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "version",
+            "baseName": "version",
+            "type": "number",
             "format": ""
         }    ];
 

@@ -30,6 +30,7 @@ export class RoutesV3GetEnrichmentResponse {
     'shareDetails'?: ModelsShareDetails;
     'type'?: string;
     'updatedAt'?: string;
+    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -106,6 +107,12 @@ export class RoutesV3GetEnrichmentResponse {
             "name": "updatedAt",
             "baseName": "updated_at",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "version",
+            "baseName": "version",
+            "type": "number",
             "format": ""
         }    ];
 

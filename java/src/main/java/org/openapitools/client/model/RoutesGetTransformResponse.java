@@ -112,6 +112,11 @@ public class RoutesGetTransformResponse {
   @javax.annotation.Nullable
   private String updatedAt;
 
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
+  private Integer version;
+
   public RoutesGetTransformResponse() {
   }
 
@@ -332,6 +337,25 @@ public class RoutesGetTransformResponse {
   }
 
 
+  public RoutesGetTransformResponse version(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * Get version
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -352,12 +376,13 @@ public class RoutesGetTransformResponse {
         Objects.equals(this.organizationId, routesGetTransformResponse.organizationId) &&
         Objects.equals(this.references, routesGetTransformResponse.references) &&
         Objects.equals(this.shareDetails, routesGetTransformResponse.shareDetails) &&
-        Objects.equals(this.updatedAt, routesGetTransformResponse.updatedAt);
+        Objects.equals(this.updatedAt, routesGetTransformResponse.updatedAt) &&
+        Objects.equals(this.version, routesGetTransformResponse.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, updatedAt);
+    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, updatedAt, version);
   }
 
   @Override
@@ -375,6 +400,7 @@ public class RoutesGetTransformResponse {
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -393,7 +419,7 @@ public class RoutesGetTransformResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "updated_at", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

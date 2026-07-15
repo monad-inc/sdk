@@ -48,7 +48,8 @@ class TestModelsNodeComponent(unittest.TestCase):
                             id = '', 
                             organization_id = '', )
                         ], ),
-                type = ''
+                type = '',
+                version = 56
             )
         else:
             return ModelsNodeComponent(
