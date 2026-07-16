@@ -594,6 +594,7 @@ __all__ = [
     "RoutesV3UpdateAlertRuleRequest",
     "RoutesV3UpdateChildOrganizationRequest",
     "RoutesV3UpdateConnectionRequest",
+    "RoutesV3UpdateConnectionRequestSaml",
     "RoutesV3UpdateEnrichmentRequest",
     "S3SecretsConfig",
     "S3SettingsConfig",
@@ -1307,6 +1308,7 @@ from monad.models.routes_v3_transform_recommendation_request import RoutesV3Tran
 from monad.models.routes_v3_update_alert_rule_request import RoutesV3UpdateAlertRuleRequest as RoutesV3UpdateAlertRuleRequest
 from monad.models.routes_v3_update_child_organization_request import RoutesV3UpdateChildOrganizationRequest as RoutesV3UpdateChildOrganizationRequest
 from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConnectionRequest as RoutesV3UpdateConnectionRequest
+from monad.models.routes_v3_update_connection_request_saml import RoutesV3UpdateConnectionRequestSaml as RoutesV3UpdateConnectionRequestSaml
 from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest as RoutesV3UpdateEnrichmentRequest
 from monad.models.s3_secrets_config import S3SecretsConfig as S3SecretsConfig
 from monad.models.s3_settings_config import S3SettingsConfig as S3SettingsConfig

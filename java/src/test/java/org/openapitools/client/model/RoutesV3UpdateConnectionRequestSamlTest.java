@@ -20,63 +20,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsConnectionSessionSettings;
-import org.openapitools.client.model.RoutesV3UpdateConnectionRequestSaml;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV3UpdateConnectionRequest
+ * Model tests for RoutesV3UpdateConnectionRequestSaml
  */
-public class RoutesV3UpdateConnectionRequestTest {
-    private final RoutesV3UpdateConnectionRequest model = new RoutesV3UpdateConnectionRequest();
+public class RoutesV3UpdateConnectionRequestSamlTest {
+    private final RoutesV3UpdateConnectionRequestSaml model = new RoutesV3UpdateConnectionRequestSaml();
 
     /**
-     * Model tests for RoutesV3UpdateConnectionRequest
+     * Model tests for RoutesV3UpdateConnectionRequestSaml
      */
     @Test
-    public void testRoutesV3UpdateConnectionRequest() {
-        // TODO: test RoutesV3UpdateConnectionRequest
+    public void testRoutesV3UpdateConnectionRequestSaml() {
+        // TODO: test RoutesV3UpdateConnectionRequestSaml
     }
 
     /**
-     * Test the property 'description'
+     * Test the property 'metadataUrl'
      */
     @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'publicName'
-     */
-    @Test
-    public void publicNameTest() {
-        // TODO: test publicName
-    }
-
-    /**
-     * Test the property 'saml'
-     */
-    @Test
-    public void samlTest() {
-        // TODO: test saml
-    }
-
-    /**
-     * Test the property 'sessionSettings'
-     */
-    @Test
-    public void sessionSettingsTest() {
-        // TODO: test sessionSettings
+    public void metadataUrlTest() {
+        // TODO: test metadataUrl
     }
 
 }

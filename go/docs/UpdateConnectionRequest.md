@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Connection Description to be updated | [optional] 
 **Name** | Pointer to **string** | Connection Name to be updated | [optional] 
 **PublicName** | Pointer to **string** | PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites. | [optional] 
+**Saml** | Pointer to [**RoutesV3UpdateConnectionRequestSaml**](RoutesV3UpdateConnectionRequestSaml.md) |  | [optional] 
 **SessionSettings** | Pointer to [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetPublicName sets PublicName field to given value.
 `func (o *UpdateConnectionRequest) HasPublicName() bool`
 
 HasPublicName returns a boolean if a field has been set.
+
+### GetSaml
+
+`func (o *UpdateConnectionRequest) GetSaml() RoutesV3UpdateConnectionRequestSaml`
+
+GetSaml returns the Saml field if non-nil, zero value otherwise.
+
+### GetSamlOk
+
+`func (o *UpdateConnectionRequest) GetSamlOk() (*RoutesV3UpdateConnectionRequestSaml, bool)`
+
+GetSamlOk returns a tuple with the Saml field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSaml
+
+`func (o *UpdateConnectionRequest) SetSaml(v RoutesV3UpdateConnectionRequestSaml)`
+
+SetSaml sets Saml field to given value.
+
+### HasSaml
+
+`func (o *UpdateConnectionRequest) HasSaml() bool`
+
+HasSaml returns a boolean if a field has been set.
 
 ### GetSessionSettings
 

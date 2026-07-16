@@ -39,6 +39,8 @@ class TestRoutesV3UpdateConnectionRequest(unittest.TestCase):
                 description = '',
                 name = '',
                 public_name = '',
+                saml = monad.models.routes_v3_update_connection_request_saml.routesV3_UpdateConnectionRequest_saml(
+                    metadata_url = '', ),
                 session_settings = monad.models.models/connection_session_settings.models.ConnectionSessionSettings(
                     session_timeout = 56, )
             )

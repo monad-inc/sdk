@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.update_connection_request import UpdateConnectionRequest
+from monad.models.routes_v3_update_connection_request_saml import RoutesV3UpdateConnectionRequestSaml
 
-class TestUpdateConnectionRequest(unittest.TestCase):
-    """UpdateConnectionRequest unit test stubs"""
+class TestRoutesV3UpdateConnectionRequestSaml(unittest.TestCase):
+    """RoutesV3UpdateConnectionRequestSaml unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,31 +26,25 @@ class TestUpdateConnectionRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UpdateConnectionRequest:
-        """Test UpdateConnectionRequest
+    def make_instance(self, include_optional) -> RoutesV3UpdateConnectionRequestSaml:
+        """Test RoutesV3UpdateConnectionRequestSaml
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `UpdateConnectionRequest`
+        # uncomment below to create an instance of `RoutesV3UpdateConnectionRequestSaml`
         """
-        model = UpdateConnectionRequest()
+        model = RoutesV3UpdateConnectionRequestSaml()
         if include_optional:
-            return UpdateConnectionRequest(
-                description = '',
-                name = '',
-                public_name = '',
-                saml = monad.models.routes_v3_update_connection_request_saml.routesV3_UpdateConnectionRequest_saml(
-                    metadata_url = '', ),
-                session_settings = monad.models.models/connection_session_settings.models.ConnectionSessionSettings(
-                    session_timeout = 56, )
+            return RoutesV3UpdateConnectionRequestSaml(
+                metadata_url = ''
             )
         else:
-            return UpdateConnectionRequest(
+            return RoutesV3UpdateConnectionRequestSaml(
         )
         """
 
-    def testUpdateConnectionRequest(self):
-        """Test UpdateConnectionRequest"""
+    def testRoutesV3UpdateConnectionRequestSaml(self):
+        """Test RoutesV3UpdateConnectionRequestSaml"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

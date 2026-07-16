@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsConnectionSessionSettings;
+import org.openapitools.client.model.RoutesV3UpdateConnectionRequestSaml;
 
 
 

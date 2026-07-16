@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **description** | **str** | Connection Description to be updated | [optional] 
 **name** | **str** | Connection Name to be updated | [optional] 
 **public_name** | **str** | PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites. | [optional] 
+**saml** | [**RoutesV3UpdateConnectionRequestSaml**](RoutesV3UpdateConnectionRequestSaml.md) |  | [optional] 
 **session_settings** | [**ModelsConnectionSessionSettings**](ModelsConnectionSessionSettings.md) |  | [optional] 
 
 ## Example

@@ -527,6 +527,7 @@ import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3Transf
 import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
 import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3UpdateChildOrganizationRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
+import { RoutesV3UpdateConnectionRequestSaml } from '../models/RoutesV3UpdateConnectionRequestSaml';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';

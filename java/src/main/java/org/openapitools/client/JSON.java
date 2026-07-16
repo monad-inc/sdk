@@ -588,6 +588,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.RoutesV3UpdateAlertRuleRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.RoutesV3UpdateChildOrganizationRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.RoutesV3UpdateConnectionRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.RoutesV3UpdateConnectionRequestSaml.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.RoutesV3UpdateEnrichmentRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.S3SecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.S3SettingsConfig.CustomTypeAdapterFactory());

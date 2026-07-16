@@ -26,6 +26,7 @@ type RoutesV3UpdateConnectionRequest struct {
 	Name *string `json:"name,omitempty"`
 	// PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.
 	PublicName *string `json:"public_name,omitempty"`
+	Saml *RoutesV3UpdateConnectionRequestSaml `json:"saml,omitempty"`
 	SessionSettings *ModelsConnectionSessionSettings `json:"session_settings,omitempty"`
 }
 
@@ -142,6 +143,38 @@ func (o *RoutesV3UpdateConnectionRequest) SetPublicName(v string) {
 	o.PublicName = &v
 }
 
+// GetSaml returns the Saml field value if set, zero value otherwise.
+func (o *RoutesV3UpdateConnectionRequest) GetSaml() RoutesV3UpdateConnectionRequestSaml {
+	if o == nil || IsNil(o.Saml) {
+		var ret RoutesV3UpdateConnectionRequestSaml
+		return ret
+	}
+	return *o.Saml
+}
+
+// GetSamlOk returns a tuple with the Saml field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3UpdateConnectionRequest) GetSamlOk() (*RoutesV3UpdateConnectionRequestSaml, bool) {
+	if o == nil || IsNil(o.Saml) {
+		return nil, false
+	}
+	return o.Saml, true
+}
+
+// HasSaml returns a boolean if a field has been set.
+func (o *RoutesV3UpdateConnectionRequest) HasSaml() bool {
+	if o != nil && !IsNil(o.Saml) {
+		return true
+	}
+
+	return false
+}
+
+// SetSaml gets a reference to the given RoutesV3UpdateConnectionRequestSaml and assigns it to the Saml field.
+func (o *RoutesV3UpdateConnectionRequest) SetSaml(v RoutesV3UpdateConnectionRequestSaml) {
+	o.Saml = &v
+}
+
 // GetSessionSettings returns the SessionSettings field value if set, zero value otherwise.
 func (o *RoutesV3UpdateConnectionRequest) GetSessionSettings() ModelsConnectionSessionSettings {
 	if o == nil || IsNil(o.SessionSettings) {
@@ -192,6 +225,9 @@ func (o RoutesV3UpdateConnectionRequest) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.PublicName) {
 		toSerialize["public_name"] = o.PublicName
+	}
+	if !IsNil(o.Saml) {
+		toSerialize["saml"] = o.Saml
 	}
 	if !IsNil(o.SessionSettings) {
 		toSerialize["session_settings"] = o.SessionSettings

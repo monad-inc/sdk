@@ -847,6 +847,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3UpdateAlertRuleRequest](docs/RoutesV3UpdateAlertRuleRequest.md)
  - [RoutesV3UpdateChildOrganizationRequest](docs/RoutesV3UpdateChildOrganizationRequest.md)
  - [RoutesV3UpdateConnectionRequest](docs/RoutesV3UpdateConnectionRequest.md)
+ - [RoutesV3UpdateConnectionRequestSaml](docs/RoutesV3UpdateConnectionRequestSaml.md)
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
  - [S3SecretsConfig](docs/S3SecretsConfig.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)

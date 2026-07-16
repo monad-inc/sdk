@@ -10,25 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
-import { RoutesV3UpdateConnectionRequestSaml } from '../models/RoutesV3UpdateConnectionRequestSaml';
 import { HttpFile } from '../http/http';
 
-export class RoutesV3UpdateConnectionRequest {
-    /**
-    * Connection Description to be updated
-    */
-    'description'?: string;
-    /**
-    * Connection Name to be updated
-    */
-    'name'?: string;
-    /**
-    * PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.
-    */
-    'publicName'?: string;
-    'saml'?: RoutesV3UpdateConnectionRequestSaml;
-    'sessionSettings'?: ModelsConnectionSessionSettings;
+/**
+* SAML holds updatable SAML fields; only metadata_url may change (entity ID is immutable).
+*/
+export class RoutesV3UpdateConnectionRequestSaml {
+    'metadataUrl'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -36,38 +24,14 @@ export class RoutesV3UpdateConnectionRequest {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "description",
-            "baseName": "description",
+            "name": "metadataUrl",
+            "baseName": "metadata_url",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "publicName",
-            "baseName": "public_name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "saml",
-            "baseName": "saml",
-            "type": "RoutesV3UpdateConnectionRequestSaml",
-            "format": ""
-        },
-        {
-            "name": "sessionSettings",
-            "baseName": "session_settings",
-            "type": "ModelsConnectionSessionSettings",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return RoutesV3UpdateConnectionRequest.attributeTypeMap;
+        return RoutesV3UpdateConnectionRequestSaml.attributeTypeMap;
     }
 
     public constructor() {

@@ -13,46 +13,77 @@
 """  # noqa: E501
 
 
-import unittest
+from __future__ import annotations
+import pprint
+import re  # noqa: F401
+import json
 
-from monad.models.update_connection_request import UpdateConnectionRequest
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
-class TestUpdateConnectionRequest(unittest.TestCase):
-    """UpdateConnectionRequest unit test stubs"""
+class RoutesV3UpdateConnectionRequestSaml(BaseModel):
+    """
+    SAML holds updatable SAML fields; only metadata_url may change (entity ID is immutable).
+    """ # noqa: E501
+    metadata_url: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["metadata_url"]
 
-    def setUp(self):
-        pass
+    model_config = ConfigDict(
+        validate_by_name=True,
+        validate_by_alias=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
-    def tearDown(self):
-        pass
 
-    def make_instance(self, include_optional) -> UpdateConnectionRequest:
-        """Test UpdateConnectionRequest
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `UpdateConnectionRequest`
+    def to_str(self) -> str:
+        """Returns the string representation of the model using alias"""
+        return pprint.pformat(self.model_dump(by_alias=True))
+
+    def to_json(self) -> str:
+        """Returns the JSON representation of the model using alias"""
+        return json.dumps(to_jsonable_python(self.to_dict()))
+
+    @classmethod
+    def from_json(cls, json_str: str) -> Optional[Self]:
+        """Create an instance of RoutesV3UpdateConnectionRequestSaml from a JSON string"""
+        return cls.from_dict(json.loads(json_str))
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
         """
-        model = UpdateConnectionRequest()
-        if include_optional:
-            return UpdateConnectionRequest(
-                description = '',
-                name = '',
-                public_name = '',
-                saml = monad.models.routes_v3_update_connection_request_saml.routesV3_UpdateConnectionRequest_saml(
-                    metadata_url = '', ),
-                session_settings = monad.models.models/connection_session_settings.models.ConnectionSessionSettings(
-                    session_timeout = 56, )
-            )
-        else:
-            return UpdateConnectionRequest(
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
         )
-        """
+        return _dict
 
-    def testUpdateConnectionRequest(self):
-        """Test UpdateConnectionRequest"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+    @classmethod
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+        """Create an instance of RoutesV3UpdateConnectionRequestSaml from a dict"""
+        if obj is None:
+            return None
 
-if __name__ == '__main__':
-    unittest.main()
+        if not isinstance(obj, dict):
+            return cls.model_validate(obj)
+
+        _obj = cls.model_validate({
+            "metadata_url": obj.get("metadata_url")
+        })
+        return _obj
+
+

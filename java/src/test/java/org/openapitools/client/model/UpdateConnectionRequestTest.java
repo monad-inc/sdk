@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsConnectionSessionSettings;
+import org.openapitools.client.model.RoutesV3UpdateConnectionRequestSaml;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -60,6 +61,14 @@ public class UpdateConnectionRequestTest {
     @Test
     public void publicNameTest() {
         // TODO: test publicName
+    }
+
+    /**
+     * Test the property 'saml'
+     */
+    @Test
+    public void samlTest() {
+        // TODO: test saml
     }
 
     /**

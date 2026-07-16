@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings
+from monad.models.routes_v3_update_connection_request_saml import RoutesV3UpdateConnectionRequestSaml
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -32,8 +33,9 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="Connection Description to be updated")
     name: Optional[StrictStr] = Field(default=None, description="Connection Name to be updated")
     public_name: Optional[StrictStr] = Field(default=None, description="PublicName is the customer-facing label shown to end users in the SSO discovery picker. Optional; nil preserves the existing value, non-nil overwrites.")
+    saml: Optional[RoutesV3UpdateConnectionRequestSaml] = None
     session_settings: Optional[ModelsConnectionSessionSettings] = None
-    __properties: ClassVar[List[str]] = ["description", "name", "public_name", "session_settings"]
+    __properties: ClassVar[List[str]] = ["description", "name", "public_name", "saml", "session_settings"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -74,6 +76,9 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of saml
+        if self.saml:
+            _dict['saml'] = self.saml.to_dict()
         # override the default output from pydantic by calling `to_dict()` of session_settings
         if self.session_settings:
             _dict['session_settings'] = self.session_settings.to_dict()
@@ -92,6 +97,7 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
             "description": obj.get("description"),
             "name": obj.get("name"),
             "public_name": obj.get("public_name"),
+            "saml": RoutesV3UpdateConnectionRequestSaml.from_dict(obj["saml"]) if obj.get("saml") is not None else None,
             "session_settings": ModelsConnectionSessionSettings.from_dict(obj["session_settings"]) if obj.get("session_settings") is not None else None
         })
         return _obj

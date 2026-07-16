@@ -10119,6 +10119,15 @@
                         "description": "PublicName is the customer-facing label shown to end users in the\nSSO discovery picker. Optional; nil preserves the existing value,\nnon-nil overwrites.",
                         "type": "string"
                     },
+                    "saml": {
+                        "description": "SAML holds updatable SAML fields; only metadata_url may change (entity ID is immutable).",
+                        "properties": {
+                            "metadata_url": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
                     "session_settings": {
                         "$ref": "#/components/schemas/models.ConnectionSessionSettings"
                     }
