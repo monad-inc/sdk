@@ -40,6 +40,7 @@ class TestAzureEventHubsSettingsConfig(unittest.TestCase):
                 event_hub_name = '',
                 event_hub_namespace = '',
                 lookback_duration = 56,
+                record_location = '',
                 subscription_id = '',
                 tenant_id = ''
             )

@@ -12,6 +12,7 @@ Microsoft Event Hubs settings
 |**eventHubName** | **String** | The name of the specific Event Hub to consume from |  [optional] |
 |**eventHubNamespace** | **String** | The fully qualified namespace URL (e.g., &#x60;your-namespace.servicebus.windows.net&#x60;) |  [optional] |
 |**lookbackDuration** | **Integer** | The duration to look back for events in minutes (default: 60 minutes) |  [optional] |
+|**recordLocation** | **String** | Location of the record in the JSON object. Leave empty if you want the entire record. |  [optional] |
 |**subscriptionId** | **String** | The Azure subscription ID containing your Event Hubs namespace |  [optional] |
 |**tenantId** | **String** | The Azure Entra ID tenant (directory) ID |  [optional] |
 

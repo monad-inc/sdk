@@ -28,6 +28,8 @@ type AzureEventHubsSettingsConfig struct {
 	EventHubNamespace *string `json:"event_hub_namespace,omitempty"`
 	// The duration to look back for events in minutes (default: 60 minutes)
 	LookbackDuration *int32 `json:"lookback_duration,omitempty"`
+	// Location of the record in the JSON object. Leave empty if you want the entire record.
+	RecordLocation *string `json:"record_location,omitempty"`
 	// The Azure subscription ID containing your Event Hubs namespace
 	SubscriptionId *string `json:"subscription_id,omitempty"`
 	// The Azure Entra ID tenant (directory) ID
@@ -179,6 +181,38 @@ func (o *AzureEventHubsSettingsConfig) SetLookbackDuration(v int32) {
 	o.LookbackDuration = &v
 }
 
+// GetRecordLocation returns the RecordLocation field value if set, zero value otherwise.
+func (o *AzureEventHubsSettingsConfig) GetRecordLocation() string {
+	if o == nil || IsNil(o.RecordLocation) {
+		var ret string
+		return ret
+	}
+	return *o.RecordLocation
+}
+
+// GetRecordLocationOk returns a tuple with the RecordLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureEventHubsSettingsConfig) GetRecordLocationOk() (*string, bool) {
+	if o == nil || IsNil(o.RecordLocation) {
+		return nil, false
+	}
+	return o.RecordLocation, true
+}
+
+// HasRecordLocation returns a boolean if a field has been set.
+func (o *AzureEventHubsSettingsConfig) HasRecordLocation() bool {
+	if o != nil && !IsNil(o.RecordLocation) {
+		return true
+	}
+
+	return false
+}
+
+// SetRecordLocation gets a reference to the given string and assigns it to the RecordLocation field.
+func (o *AzureEventHubsSettingsConfig) SetRecordLocation(v string) {
+	o.RecordLocation = &v
+}
+
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *AzureEventHubsSettingsConfig) GetSubscriptionId() string {
 	if o == nil || IsNil(o.SubscriptionId) {
@@ -264,6 +298,9 @@ func (o AzureEventHubsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LookbackDuration) {
 		toSerialize["lookback_duration"] = o.LookbackDuration
+	}
+	if !IsNil(o.RecordLocation) {
+		toSerialize["record_location"] = o.RecordLocation
 	}
 	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscription_id"] = o.SubscriptionId

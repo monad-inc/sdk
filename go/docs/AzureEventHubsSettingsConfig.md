@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **EventHubName** | Pointer to **string** | The name of the specific Event Hub to consume from | [optional] 
 **EventHubNamespace** | Pointer to **string** | The fully qualified namespace URL (e.g., &#x60;your-namespace.servicebus.windows.net&#x60;) | [optional] 
 **LookbackDuration** | Pointer to **int32** | The duration to look back for events in minutes (default: 60 minutes) | [optional] 
+**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. Leave empty if you want the entire record. | [optional] 
 **SubscriptionId** | Pointer to **string** | The Azure subscription ID containing your Event Hubs namespace | [optional] 
 **TenantId** | Pointer to **string** | The Azure Entra ID tenant (directory) ID | [optional] 
 
@@ -129,6 +130,31 @@ SetLookbackDuration sets LookbackDuration field to given value.
 `func (o *AzureEventHubsSettingsConfig) HasLookbackDuration() bool`
 
 HasLookbackDuration returns a boolean if a field has been set.
+
+### GetRecordLocation
+
+`func (o *AzureEventHubsSettingsConfig) GetRecordLocation() string`
+
+GetRecordLocation returns the RecordLocation field if non-nil, zero value otherwise.
+
+### GetRecordLocationOk
+
+`func (o *AzureEventHubsSettingsConfig) GetRecordLocationOk() (*string, bool)`
+
+GetRecordLocationOk returns a tuple with the RecordLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecordLocation
+
+`func (o *AzureEventHubsSettingsConfig) SetRecordLocation(v string)`
+
+SetRecordLocation sets RecordLocation field to given value.
+
+### HasRecordLocation
+
+`func (o *AzureEventHubsSettingsConfig) HasRecordLocation() bool`
+
+HasRecordLocation returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

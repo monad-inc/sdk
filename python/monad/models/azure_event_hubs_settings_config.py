@@ -32,9 +32,10 @@ class AzureEventHubsSettingsConfig(BaseModel):
     event_hub_name: Optional[StrictStr] = Field(default=None, description="The name of the specific Event Hub to consume from")
     event_hub_namespace: Optional[StrictStr] = Field(default=None, description="The fully qualified namespace URL (e.g., `your-namespace.servicebus.windows.net`)")
     lookback_duration: Optional[StrictInt] = Field(default=None, description="The duration to look back for events in minutes (default: 60 minutes)")
+    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. Leave empty if you want the entire record.")
     subscription_id: Optional[StrictStr] = Field(default=None, description="The Azure subscription ID containing your Event Hubs namespace")
     tenant_id: Optional[StrictStr] = Field(default=None, description="The Azure Entra ID tenant (directory) ID")
-    __properties: ClassVar[List[str]] = ["consumer_group", "event_hub_name", "event_hub_namespace", "lookback_duration", "subscription_id", "tenant_id"]
+    __properties: ClassVar[List[str]] = ["consumer_group", "event_hub_name", "event_hub_namespace", "lookback_duration", "record_location", "subscription_id", "tenant_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -91,6 +92,7 @@ class AzureEventHubsSettingsConfig(BaseModel):
             "event_hub_name": obj.get("event_hub_name"),
             "event_hub_namespace": obj.get("event_hub_namespace"),
             "lookback_duration": obj.get("lookback_duration"),
+            "record_location": obj.get("record_location"),
             "subscription_id": obj.get("subscription_id"),
             "tenant_id": obj.get("tenant_id")
         })

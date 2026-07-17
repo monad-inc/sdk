@@ -70,6 +70,11 @@ public class AzureEventHubsSettingsConfig {
   @javax.annotation.Nullable
   private Integer lookbackDuration;
 
+  public static final String SERIALIZED_NAME_RECORD_LOCATION = "record_location";
+  @SerializedName(SERIALIZED_NAME_RECORD_LOCATION)
+  @javax.annotation.Nullable
+  private String recordLocation;
+
   public static final String SERIALIZED_NAME_SUBSCRIPTION_ID = "subscription_id";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_ID)
   @javax.annotation.Nullable
@@ -159,6 +164,25 @@ public class AzureEventHubsSettingsConfig {
   }
 
 
+  public AzureEventHubsSettingsConfig recordLocation(@javax.annotation.Nullable String recordLocation) {
+    this.recordLocation = recordLocation;
+    return this;
+  }
+
+  /**
+   * Location of the record in the JSON object. Leave empty if you want the entire record.
+   * @return recordLocation
+   */
+  @javax.annotation.Nullable
+  public String getRecordLocation() {
+    return recordLocation;
+  }
+
+  public void setRecordLocation(@javax.annotation.Nullable String recordLocation) {
+    this.recordLocation = recordLocation;
+  }
+
+
   public AzureEventHubsSettingsConfig subscriptionId(@javax.annotation.Nullable String subscriptionId) {
     this.subscriptionId = subscriptionId;
     return this;
@@ -211,13 +235,14 @@ public class AzureEventHubsSettingsConfig {
         Objects.equals(this.eventHubName, azureEventHubsSettingsConfig.eventHubName) &&
         Objects.equals(this.eventHubNamespace, azureEventHubsSettingsConfig.eventHubNamespace) &&
         Objects.equals(this.lookbackDuration, azureEventHubsSettingsConfig.lookbackDuration) &&
+        Objects.equals(this.recordLocation, azureEventHubsSettingsConfig.recordLocation) &&
         Objects.equals(this.subscriptionId, azureEventHubsSettingsConfig.subscriptionId) &&
         Objects.equals(this.tenantId, azureEventHubsSettingsConfig.tenantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(consumerGroup, eventHubName, eventHubNamespace, lookbackDuration, subscriptionId, tenantId);
+    return Objects.hash(consumerGroup, eventHubName, eventHubNamespace, lookbackDuration, recordLocation, subscriptionId, tenantId);
   }
 
   @Override
@@ -228,6 +253,7 @@ public class AzureEventHubsSettingsConfig {
     sb.append("    eventHubName: ").append(toIndentedString(eventHubName)).append("\n");
     sb.append("    eventHubNamespace: ").append(toIndentedString(eventHubNamespace)).append("\n");
     sb.append("    lookbackDuration: ").append(toIndentedString(lookbackDuration)).append("\n");
+    sb.append("    recordLocation: ").append(toIndentedString(recordLocation)).append("\n");
     sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("}");
@@ -248,7 +274,7 @@ public class AzureEventHubsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("consumer_group", "event_hub_name", "event_hub_namespace", "lookback_duration", "subscription_id", "tenant_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("consumer_group", "event_hub_name", "event_hub_namespace", "lookback_duration", "record_location", "subscription_id", "tenant_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -283,6 +309,9 @@ public class AzureEventHubsSettingsConfig {
       }
       if ((jsonObj.get("event_hub_namespace") != null && !jsonObj.get("event_hub_namespace").isJsonNull()) && !jsonObj.get("event_hub_namespace").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `event_hub_namespace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event_hub_namespace").toString()));
+      }
+      if ((jsonObj.get("record_location") != null && !jsonObj.get("record_location").isJsonNull()) && !jsonObj.get("record_location").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record_location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_location").toString()));
       }
       if ((jsonObj.get("subscription_id") != null && !jsonObj.get("subscription_id").isJsonNull()) && !jsonObj.get("subscription_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subscription_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subscription_id").toString()));

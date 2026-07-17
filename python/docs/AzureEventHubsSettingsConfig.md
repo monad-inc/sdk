@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **event_hub_name** | **str** | The name of the specific Event Hub to consume from | [optional] 
 **event_hub_namespace** | **str** | The fully qualified namespace URL (e.g., &#x60;your-namespace.servicebus.windows.net&#x60;) | [optional] 
 **lookback_duration** | **int** | The duration to look back for events in minutes (default: 60 minutes) | [optional] 
+**record_location** | **str** | Location of the record in the JSON object. Leave empty if you want the entire record. | [optional] 
 **subscription_id** | **str** | The Azure subscription ID containing your Event Hubs namespace | [optional] 
 **tenant_id** | **str** | The Azure Entra ID tenant (directory) ID | [optional] 
 

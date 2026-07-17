@@ -33,6 +33,10 @@ export class AzureEventHubsSettingsConfig {
     */
     'lookbackDuration'?: number;
     /**
+    * Location of the record in the JSON object. Leave empty if you want the entire record.
+    */
+    'recordLocation'?: string;
+    /**
     * The Azure subscription ID containing your Event Hubs namespace
     */
     'subscriptionId'?: string;
@@ -68,6 +72,12 @@ export class AzureEventHubsSettingsConfig {
             "name": "lookbackDuration",
             "baseName": "lookback_duration",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "recordLocation",
+            "baseName": "record_location",
+            "type": "string",
             "format": ""
         },
         {

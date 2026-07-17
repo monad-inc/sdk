@@ -70,6 +70,14 @@ public class AzureEventHubsSettingsConfigTest {
     }
 
     /**
+     * Test the property 'recordLocation'
+     */
+    @Test
+    public void recordLocationTest() {
+        // TODO: test recordLocation
+    }
+
+    /**
      * Test the property 'subscriptionId'
      */
     @Test
