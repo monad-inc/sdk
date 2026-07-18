@@ -242,6 +242,8 @@ Class | Method | HTTP request | Description
 *OrganizationInputsApi* | [**test_input_connection**](docs/OrganizationInputsApi.md#test_input_connection) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
 *OrganizationInputsApi* | [**update_input**](docs/OrganizationInputsApi.md#update_input) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInvitesApi* | [**invite_user**](docs/OrganizationInvitesApi.md#invite_user) | **POST** /v1/{organization_id}/invites | Invite user to organization
+*OrganizationMCPRegistrationsApi* | [**list_mcp_client_registrations**](docs/OrganizationMCPRegistrationsApi.md#list_mcp_client_registrations) | **GET** /v2/{organization_id}/mcp/registrations | List MCP client registrations
+*OrganizationMCPRegistrationsApi* | [**revoke_mcp_client_registration**](docs/OrganizationMCPRegistrationsApi.md#revoke_mcp_client_registration) | **DELETE** /v2/{organization_id}/mcp/registrations/{client_id} | Revoke an MCP client registration
 *OrganizationOutputsApi* | [**create_output**](docs/OrganizationOutputsApi.md#create_output) | **POST** /v2/{organization_id}/outputs | Create output
 *OrganizationOutputsApi* | [**delete_organization_output**](docs/OrganizationOutputsApi.md#delete_organization_output) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 *OrganizationOutputsApi* | [**get_organization_output**](docs/OrganizationOutputsApi.md#get_organization_output) | **GET** /v1/{organization_id}/outputs/{output_id} | Get a output
@@ -632,6 +634,8 @@ Class | Method | HTTP request | Description
  - [ModelsInputConnectorCategory](docs/ModelsInputConnectorCategory.md)
  - [ModelsInputList](docs/ModelsInputList.md)
  - [ModelsInputRateLimit](docs/ModelsInputRateLimit.md)
+ - [ModelsMCPClientRegistration](docs/ModelsMCPClientRegistration.md)
+ - [ModelsMCPClientRegistrationList](docs/ModelsMCPClientRegistrationList.md)
  - [ModelsManagedBy](docs/ModelsManagedBy.md)
  - [ModelsNodeBackpressure](docs/ModelsNodeBackpressure.md)
  - [ModelsNodeComponent](docs/ModelsNodeComponent.md)

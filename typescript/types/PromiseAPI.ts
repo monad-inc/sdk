@@ -287,6 +287,8 @@ import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
+import { ModelsMCPClientRegistration } from '../models/ModelsMCPClientRegistration';
+import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegistrationList';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
@@ -2950,6 +2952,77 @@ export class PromiseOrganizationInvitesApi {
     public inviteUser(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<string> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.inviteUser(organizationId, routesInviteUserToOrganizationRequest, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableOrganizationMCPRegistrationsApi } from './ObservableAPI';
+
+import { OrganizationMCPRegistrationsApiRequestFactory, OrganizationMCPRegistrationsApiResponseProcessor} from "../apis/OrganizationMCPRegistrationsApi";
+export class PromiseOrganizationMCPRegistrationsApi {
+    private api: ObservableOrganizationMCPRegistrationsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: OrganizationMCPRegistrationsApiRequestFactory,
+        responseProcessor?: OrganizationMCPRegistrationsApiResponseProcessor
+    ) {
+        this.api = new ObservableOrganizationMCPRegistrationsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List Connected-Applications: caller\'s own with `owned_by=me`, or all in the org for admins.
+     * List MCP client registrations
+     * @param organizationId Organization ID
+     * @param [ownedBy] Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public listMCPClientRegistrationsWithHttpInfo(organizationId: string, ownedBy?: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsMCPClientRegistrationList>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listMCPClientRegistrationsWithHttpInfo(organizationId, ownedBy, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List Connected-Applications: caller\'s own with `owned_by=me`, or all in the org for admins.
+     * List MCP client registrations
+     * @param organizationId Organization ID
+     * @param [ownedBy] Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public listMCPClientRegistrations(organizationId: string, ownedBy?: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsMCPClientRegistrationList> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listMCPClientRegistrations(organizationId, ownedBy, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Revoke a Connected Application. Owners can revoke their own; admins (mcp_registration:delete) can revoke any in the org.
+     * Revoke an MCP client registration
+     * @param organizationId Organization ID
+     * @param clientId MCP client registration ID
+     */
+    public revokeMCPClientRegistrationWithHttpInfo(organizationId: string, clientId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.revokeMCPClientRegistrationWithHttpInfo(organizationId, clientId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Revoke a Connected Application. Owners can revoke their own; admins (mcp_registration:delete) can revoke any in the org.
+     * Revoke an MCP client registration
+     * @param organizationId Organization ID
+     * @param clientId MCP client registration ID
+     */
+    public revokeMCPClientRegistration(organizationId: string, clientId: string, _options?: PromiseConfigurationOptions): Promise<void> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.revokeMCPClientRegistration(organizationId, clientId, observableOptions);
         return result.toPromise();
     }
 

@@ -287,6 +287,8 @@ import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
+import { ModelsMCPClientRegistration } from '../models/ModelsMCPClientRegistration';
+import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegistrationList';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
@@ -3761,6 +3763,102 @@ export class ObjectOrganizationInvitesApi {
      */
     public inviteUser(param: OrganizationInvitesApiInviteUserRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.inviteUser(param.organizationId, param.routesInviteUserToOrganizationRequest,  options).toPromise();
+    }
+
+}
+
+import { ObservableOrganizationMCPRegistrationsApi } from "./ObservableAPI";
+import { OrganizationMCPRegistrationsApiRequestFactory, OrganizationMCPRegistrationsApiResponseProcessor} from "../apis/OrganizationMCPRegistrationsApi";
+
+export interface OrganizationMCPRegistrationsApiListMCPClientRegistrationsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationMCPRegistrationsApilistMCPClientRegistrations
+     */
+    organizationId: string
+    /**
+     * Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationMCPRegistrationsApilistMCPClientRegistrations
+     */
+    ownedBy?: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationMCPRegistrationsApilistMCPClientRegistrations
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationMCPRegistrationsApilistMCPClientRegistrations
+     */
+    offset?: number
+}
+
+export interface OrganizationMCPRegistrationsApiRevokeMCPClientRegistrationRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationMCPRegistrationsApirevokeMCPClientRegistration
+     */
+    organizationId: string
+    /**
+     * MCP client registration ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationMCPRegistrationsApirevokeMCPClientRegistration
+     */
+    clientId: string
+}
+
+export class ObjectOrganizationMCPRegistrationsApi {
+    private api: ObservableOrganizationMCPRegistrationsApi
+
+    public constructor(configuration: Configuration, requestFactory?: OrganizationMCPRegistrationsApiRequestFactory, responseProcessor?: OrganizationMCPRegistrationsApiResponseProcessor) {
+        this.api = new ObservableOrganizationMCPRegistrationsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List Connected-Applications: caller\'s own with `owned_by=me`, or all in the org for admins.
+     * List MCP client registrations
+     * @param param the request object
+     */
+    public listMCPClientRegistrationsWithHttpInfo(param: OrganizationMCPRegistrationsApiListMCPClientRegistrationsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsMCPClientRegistrationList>> {
+        return this.api.listMCPClientRegistrationsWithHttpInfo(param.organizationId, param.ownedBy, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List Connected-Applications: caller\'s own with `owned_by=me`, or all in the org for admins.
+     * List MCP client registrations
+     * @param param the request object
+     */
+    public listMCPClientRegistrations(param: OrganizationMCPRegistrationsApiListMCPClientRegistrationsRequest, options?: ConfigurationOptions): Promise<ModelsMCPClientRegistrationList> {
+        return this.api.listMCPClientRegistrations(param.organizationId, param.ownedBy, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Revoke a Connected Application. Owners can revoke their own; admins (mcp_registration:delete) can revoke any in the org.
+     * Revoke an MCP client registration
+     * @param param the request object
+     */
+    public revokeMCPClientRegistrationWithHttpInfo(param: OrganizationMCPRegistrationsApiRevokeMCPClientRegistrationRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.revokeMCPClientRegistrationWithHttpInfo(param.organizationId, param.clientId,  options).toPromise();
+    }
+
+    /**
+     * Revoke a Connected Application. Owners can revoke their own; admins (mcp_registration:delete) can revoke any in the org.
+     * Revoke an MCP client registration
+     * @param param the request object
+     */
+    public revokeMCPClientRegistration(param: OrganizationMCPRegistrationsApiRevokeMCPClientRegistrationRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.revokeMCPClientRegistration(param.organizationId, param.clientId,  options).toPromise();
     }
 
 }

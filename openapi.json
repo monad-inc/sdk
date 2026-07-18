@@ -5459,6 +5459,70 @@
                 },
                 "type": "object"
             },
+            "models.MCPClientRegistration": {
+                "properties": {
+                    "client_id": {
+                        "type": "string"
+                    },
+                    "client_name": {
+                        "type": "string"
+                    },
+                    "created_by_user_id": {
+                        "type": "string"
+                    },
+                    "grant_types": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "last_used_at": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "redirect_uris": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "revoked_at": {
+                        "type": "string"
+                    },
+                    "software_id": {
+                        "type": "string"
+                    },
+                    "software_version": {
+                        "type": "string"
+                    },
+                    "token_endpoint_auth_method": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.MCPClientRegistrationList": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "registrations": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.MCPClientRegistration"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
             "models.ManagedBy": {
                 "enum": [
                     "customer",
@@ -18748,6 +18812,164 @@
                 ],
                 "x-required-permissions": [
                     "input:write"
+                ]
+            }
+        },
+        "/v2/{organization_id}/mcp/registrations": {
+            "get": {
+                "description": "List Connected-Applications: caller's own with `owned_by=me`, or all in the org for admins.",
+                "operationId": "ListMCPClientRegistrations",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Set to `me` to scope to the caller's own registrations",
+                        "in": "query",
+                        "name": "owned_by",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Limit",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Offset",
+                        "in": "query",
+                        "name": "offset",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.MCPClientRegistrationList"
+                                }
+                            }
+                        },
+                        "description": "OK"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "access denied"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Failed to list registrations"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List MCP client registrations",
+                "tags": [
+                    "Organization MCP Registrations"
+                ]
+            }
+        },
+        "/v2/{organization_id}/mcp/registrations/{client_id}": {
+            "delete": {
+                "description": "Revoke a Connected Application. Owners can revoke their own; admins (mcp_registration:delete) can revoke any in the org.",
+                "operationId": "RevokeMCPClientRegistration",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "MCP client registration ID",
+                        "in": "path",
+                        "name": "client_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Revoked"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "access denied"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "registration not found in this organization"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Failed to revoke registration"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Revoke an MCP client registration",
+                "tags": [
+                    "Organization MCP Registrations"
                 ]
             }
         },

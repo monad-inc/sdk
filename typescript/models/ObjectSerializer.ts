@@ -283,6 +283,8 @@ export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputConnectorCategory';
 export * from '../models/ModelsInputList';
 export * from '../models/ModelsInputRateLimit';
+export * from '../models/ModelsMCPClientRegistration';
+export * from '../models/ModelsMCPClientRegistrationList';
 export * from '../models/ModelsManagedBy';
 export * from '../models/ModelsNodeBackpressure';
 export * from '../models/ModelsNodeComponent';
@@ -941,6 +943,8 @@ import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsInputRateLimit   } from '../models/ModelsInputRateLimit';
+import { ModelsMCPClientRegistration } from '../models/ModelsMCPClientRegistration';
+import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegistrationList';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
@@ -1677,6 +1681,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,
     "ModelsInputRateLimit": ModelsInputRateLimit,
+    "ModelsMCPClientRegistration": ModelsMCPClientRegistration,
+    "ModelsMCPClientRegistrationList": ModelsMCPClientRegistrationList,
     "ModelsNodeBackpressure": ModelsNodeBackpressure,
     "ModelsNodeComponent": ModelsNodeComponent,
     "ModelsNodeSharedResource": ModelsNodeSharedResource,

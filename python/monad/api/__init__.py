@@ -22,6 +22,7 @@ from monad.api.organization_api_keys_api import OrganizationAPIKeysApi
 from monad.api.organization_enrichments_api import OrganizationEnrichmentsApi
 from monad.api.organization_inputs_api import OrganizationInputsApi
 from monad.api.organization_invites_api import OrganizationInvitesApi
+from monad.api.organization_mcp_registrations_api import OrganizationMCPRegistrationsApi
 from monad.api.organization_outputs_api import OrganizationOutputsApi
 from monad.api.organization_quotas_api import OrganizationQuotasApi
 from monad.api.organization_transforms_api import OrganizationTransformsApi

@@ -299,6 +299,8 @@ from monad.models.models_input_config import ModelsInputConfig
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory
 from monad.models.models_input_list import ModelsInputList
 from monad.models.models_input_rate_limit import ModelsInputRateLimit
+from monad.models.models_mcp_client_registration import ModelsMCPClientRegistration
+from monad.models.models_mcp_client_registration_list import ModelsMCPClientRegistrationList
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent

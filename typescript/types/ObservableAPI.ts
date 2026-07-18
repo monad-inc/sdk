@@ -288,6 +288,8 @@ import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
+import { ModelsMCPClientRegistration } from '../models/ModelsMCPClientRegistration';
+import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegistrationList';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
@@ -3859,6 +3861,100 @@ export class ObservableOrganizationInvitesApi {
      */
     public inviteUser(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: ConfigurationOptions): Observable<string> {
         return this.inviteUserWithHttpInfo(organizationId, routesInviteUserToOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+}
+
+import { OrganizationMCPRegistrationsApiRequestFactory, OrganizationMCPRegistrationsApiResponseProcessor} from "../apis/OrganizationMCPRegistrationsApi";
+export class ObservableOrganizationMCPRegistrationsApi {
+    private requestFactory: OrganizationMCPRegistrationsApiRequestFactory;
+    private responseProcessor: OrganizationMCPRegistrationsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: OrganizationMCPRegistrationsApiRequestFactory,
+        responseProcessor?: OrganizationMCPRegistrationsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new OrganizationMCPRegistrationsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new OrganizationMCPRegistrationsApiResponseProcessor();
+    }
+
+    /**
+     * List Connected-Applications: caller\'s own with `owned_by=me`, or all in the org for admins.
+     * List MCP client registrations
+     * @param organizationId Organization ID
+     * @param [ownedBy] Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public listMCPClientRegistrationsWithHttpInfo(organizationId: string, ownedBy?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsMCPClientRegistrationList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listMCPClientRegistrations(organizationId, ownedBy, limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listMCPClientRegistrationsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List Connected-Applications: caller\'s own with `owned_by=me`, or all in the org for admins.
+     * List MCP client registrations
+     * @param organizationId Organization ID
+     * @param [ownedBy] Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public listMCPClientRegistrations(organizationId: string, ownedBy?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsMCPClientRegistrationList> {
+        return this.listMCPClientRegistrationsWithHttpInfo(organizationId, ownedBy, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsMCPClientRegistrationList>) => apiResponse.data));
+    }
+
+    /**
+     * Revoke a Connected Application. Owners can revoke their own; admins (mcp_registration:delete) can revoke any in the org.
+     * Revoke an MCP client registration
+     * @param organizationId Organization ID
+     * @param clientId MCP client registration ID
+     */
+    public revokeMCPClientRegistrationWithHttpInfo(organizationId: string, clientId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.revokeMCPClientRegistration(organizationId, clientId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.revokeMCPClientRegistrationWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Revoke a Connected Application. Owners can revoke their own; admins (mcp_registration:delete) can revoke any in the org.
+     * Revoke an MCP client registration
+     * @param organizationId Organization ID
+     * @param clientId MCP client registration ID
+     */
+    public revokeMCPClientRegistration(organizationId: string, clientId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.revokeMCPClientRegistrationWithHttpInfo(organizationId, clientId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
 }

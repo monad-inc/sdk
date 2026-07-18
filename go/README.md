@@ -217,6 +217,8 @@ Class | Method | HTTP request | Description
 *OrganizationInputsAPI* | [**TestInputConnection**](docs/OrganizationInputsAPI.md#testinputconnection) | **Post** /v2/{organization_id}/inputs/test-connection | Test input connection
 *OrganizationInputsAPI* | [**UpdateInput**](docs/OrganizationInputsAPI.md#updateinput) | **Patch** /v2/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInvitesAPI* | [**InviteUser**](docs/OrganizationInvitesAPI.md#inviteuser) | **Post** /v1/{organization_id}/invites | Invite user to organization
+*OrganizationMCPRegistrationsAPI* | [**ListMCPClientRegistrations**](docs/OrganizationMCPRegistrationsAPI.md#listmcpclientregistrations) | **Get** /v2/{organization_id}/mcp/registrations | List MCP client registrations
+*OrganizationMCPRegistrationsAPI* | [**RevokeMCPClientRegistration**](docs/OrganizationMCPRegistrationsAPI.md#revokemcpclientregistration) | **Delete** /v2/{organization_id}/mcp/registrations/{client_id} | Revoke an MCP client registration
 *OrganizationOutputsAPI* | [**CreateOutput**](docs/OrganizationOutputsAPI.md#createoutput) | **Post** /v2/{organization_id}/outputs | Create output
 *OrganizationOutputsAPI* | [**DeleteOrganizationOutput**](docs/OrganizationOutputsAPI.md#deleteorganizationoutput) | **Delete** /v1/{organization_id}/outputs/{output_id} | Delete output
 *OrganizationOutputsAPI* | [**GetOrganizationOutput**](docs/OrganizationOutputsAPI.md#getorganizationoutput) | **Get** /v1/{organization_id}/outputs/{output_id} | Get a output
@@ -607,6 +609,8 @@ Class | Method | HTTP request | Description
  - [ModelsInputConnectorCategory](docs/ModelsInputConnectorCategory.md)
  - [ModelsInputList](docs/ModelsInputList.md)
  - [ModelsInputRateLimit](docs/ModelsInputRateLimit.md)
+ - [ModelsMCPClientRegistration](docs/ModelsMCPClientRegistration.md)
+ - [ModelsMCPClientRegistrationList](docs/ModelsMCPClientRegistrationList.md)
  - [ModelsManagedBy](docs/ModelsManagedBy.md)
  - [ModelsNodeBackpressure](docs/ModelsNodeBackpressure.md)
  - [ModelsNodeComponent](docs/ModelsNodeComponent.md)

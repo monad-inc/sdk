@@ -40,6 +40,7 @@ __all__ = [
     "OrganizationEnrichmentsApi",
     "OrganizationInputsApi",
     "OrganizationInvitesApi",
+    "OrganizationMCPRegistrationsApi",
     "OrganizationOutputsApi",
     "OrganizationQuotasApi",
     "OrganizationTransformsApi",
@@ -354,6 +355,8 @@ __all__ = [
     "ModelsInputConnectorCategory",
     "ModelsInputList",
     "ModelsInputRateLimit",
+    "ModelsMCPClientRegistration",
+    "ModelsMCPClientRegistrationList",
     "ModelsManagedBy",
     "ModelsNodeBackpressure",
     "ModelsNodeComponent",
@@ -750,6 +753,7 @@ from monad.api.organization_api_keys_api import OrganizationAPIKeysApi as Organi
 from monad.api.organization_enrichments_api import OrganizationEnrichmentsApi as OrganizationEnrichmentsApi
 from monad.api.organization_inputs_api import OrganizationInputsApi as OrganizationInputsApi
 from monad.api.organization_invites_api import OrganizationInvitesApi as OrganizationInvitesApi
+from monad.api.organization_mcp_registrations_api import OrganizationMCPRegistrationsApi as OrganizationMCPRegistrationsApi
 from monad.api.organization_outputs_api import OrganizationOutputsApi as OrganizationOutputsApi
 from monad.api.organization_quotas_api import OrganizationQuotasApi as OrganizationQuotasApi
 from monad.api.organization_transforms_api import OrganizationTransformsApi as OrganizationTransformsApi
@@ -1068,6 +1072,8 @@ from monad.models.models_input_config import ModelsInputConfig as ModelsInputCon
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory as ModelsInputConnectorCategory
 from monad.models.models_input_list import ModelsInputList as ModelsInputList
 from monad.models.models_input_rate_limit import ModelsInputRateLimit as ModelsInputRateLimit
+from monad.models.models_mcp_client_registration import ModelsMCPClientRegistration as ModelsMCPClientRegistration
+from monad.models.models_mcp_client_registration_list import ModelsMCPClientRegistrationList as ModelsMCPClientRegistrationList
 from monad.models.models_managed_by import ModelsManagedBy as ModelsManagedBy
 from monad.models.models_node_backpressure import ModelsNodeBackpressure as ModelsNodeBackpressure
 from monad.models.models_node_component import ModelsNodeComponent as ModelsNodeComponent
