@@ -23,7 +23,7 @@ type RoutesTransformOperation struct {
 	Arguments *RoutesTransformOperationArguments `json:"arguments,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Operation *string `json:"operation,omitempty"`
-	Secrets map[string]interface{} `json:"secrets,omitempty"`
+	Secrets map[string]*interface{} `json:"secrets,omitempty"`
 }
 
 // NewRoutesTransformOperation instantiates a new RoutesTransformOperation object
@@ -140,9 +140,9 @@ func (o *RoutesTransformOperation) SetOperation(v string) {
 }
 
 // GetSecrets returns the Secrets field value if set, zero value otherwise.
-func (o *RoutesTransformOperation) GetSecrets() map[string]interface{} {
+func (o *RoutesTransformOperation) GetSecrets() map[string]*interface{} {
 	if o == nil || IsNil(o.Secrets) {
-		var ret map[string]interface{}
+		var ret map[string]*interface{}
 		return ret
 	}
 	return o.Secrets
@@ -150,9 +150,9 @@ func (o *RoutesTransformOperation) GetSecrets() map[string]interface{} {
 
 // GetSecretsOk returns a tuple with the Secrets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesTransformOperation) GetSecretsOk() (map[string]interface{}, bool) {
+func (o *RoutesTransformOperation) GetSecretsOk() (map[string]*interface{}, bool) {
 	if o == nil || IsNil(o.Secrets) {
-		return map[string]interface{}{}, false
+		return map[string]*interface{}{}, false
 	}
 	return o.Secrets, true
 }
@@ -166,8 +166,8 @@ func (o *RoutesTransformOperation) HasSecrets() bool {
 	return false
 }
 
-// SetSecrets gets a reference to the given map[string]interface{} and assigns it to the Secrets field.
-func (o *RoutesTransformOperation) SetSecrets(v map[string]interface{}) {
+// SetSecrets gets a reference to the given map[string]*interface{} and assigns it to the Secrets field.
+func (o *RoutesTransformOperation) SetSecrets(v map[string]*interface{}) {
 	o.Secrets = v
 }
 

@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import org.openapitools.client.model.AdminLogsSettingsConfig;
 import org.openapitools.client.model.AivenServiceLogsSettingsConfig;
@@ -40,8 +39,6 @@ import org.openapitools.client.model.AzureEventHubsSettingsConfig;
 import org.openapitools.client.model.AzureVnetFlowLogsSettingsConfig;
 import org.openapitools.client.model.BackblazeB2SettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
-import org.openapitools.client.model.BitwardenEventsSettingsConfig;
-import org.openapitools.client.model.BoxEventsSettingsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSettingsConfig;
 import org.openapitools.client.model.BugsnagOrgEventsSettingsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig;
@@ -58,10 +55,9 @@ import org.openapitools.client.model.CloudflareZeroTrustAccessRequestsSettingsCo
 import org.openapitools.client.model.CloudtrailSettingsConfig;
 import org.openapitools.client.model.ClumioAuditLogsSettingsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSettingsConfig;
-import org.openapitools.client.model.CodaAuditEventsSettingsConfig;
 import org.openapitools.client.model.CommonAuthConfig;
+import org.openapitools.client.model.CommonAuthType;
 import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
-import org.openapitools.client.model.CustomerEventDataSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
 import org.openapitools.client.model.DuoSecurityActivityLogsSettingsConfig;
 import org.openapitools.client.model.EksAuditLogsSettingsConfig;
@@ -71,7 +67,6 @@ import org.openapitools.client.model.EventSettingsConfig;
 import org.openapitools.client.model.FullScansSettingsConfig;
 import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookScopeConfig;
 import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookSettingsConfig;
-import org.openapitools.client.model.GitlabIssuesSettingsConfig;
 import org.openapitools.client.model.GkeAuditLogsSettingsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
@@ -90,25 +85,15 @@ import org.openapitools.client.model.MonadGraphqlInputVariable;
 import org.openapitools.client.model.MonadLogSettingsConfig;
 import org.openapitools.client.model.ObjectStorageInputSettingsConfig;
 import org.openapitools.client.model.OfflineenrollmentlogsSettingsConfig;
-import org.openapitools.client.model.OneloginEventsSettingsConfig;
-import org.openapitools.client.model.OpalEventsSettingsConfig;
-import org.openapitools.client.model.OpenaiAuditLogsSettingsConfig;
 import org.openapitools.client.model.OperationLogsSettingsConfig;
-import org.openapitools.client.model.OracleSettingsConfig;
 import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.OwnbackupAccountEventsSettingsConfig;
-import org.openapitools.client.model.PagerdutyAuditRecordsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PersonaSettingsConfig;
 import org.openapitools.client.model.PlaidWebhooksSettingsConfig;
-import org.openapitools.client.model.PolymerSettingsConfig;
-import org.openapitools.client.model.PostmanAuditLogsSettingsConfig;
-import org.openapitools.client.model.PubsubSettingsConfig;
 import org.openapitools.client.model.RedshiftAuditLogsSettingsConfig;
-import org.openapitools.client.model.RootlyAuditLogsSettingsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
-import org.openapitools.client.model.SentryOrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
 import org.openapitools.client.model.SnykIssuesSettingsConfig;
 import org.openapitools.client.model.SnykTargetsSettingsConfig;
@@ -119,10 +104,6 @@ import org.openapitools.client.model.TaniumGraphqlInputSettingsConfig;
 import org.openapitools.client.model.TeamAccessLogsSettingsConfig;
 import org.openapitools.client.model.TeamIntegrationLogsSettingsConfig;
 import org.openapitools.client.model.TelephonyLogsSettingsConfig;
-import org.openapitools.client.model.TenableAssetsCronSettingsConfig;
-import org.openapitools.client.model.TenableAssetsSettingsConfig;
-import org.openapitools.client.model.TenableVulnerabilitiesCronSettingsConfig;
-import org.openapitools.client.model.TenableVulnerabilitiesSettingsConfig;
 import org.openapitools.client.model.TinesAuditLogsSettingsConfig;
 import org.openapitools.client.model.TinesEventsLogsSettingsConfig;
 import org.openapitools.client.model.TwilioEventsSettingsConfig;
@@ -149,8 +130,6 @@ import org.openapitools.client.model.WizServiceTicketFilter;
 import org.openapitools.client.model.WizStackLayer;
 import org.openapitools.client.model.WizStatus;
 import org.openapitools.client.model.WizVendorSeverity;
-import org.openapitools.client.model.ZendeskAuditLogsAuthType;
-import org.openapitools.client.model.ZendeskAuditLogsSettingsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -417,6 +396,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'partitionFormatTemplate'
+     */
+    @Test
+    public void partitionFormatTemplateTest() {
+        // TODO: test partitionFormatTemplate
+    }
+
+    /**
      * Test the property 'consumerGroup'
      */
     @Test
@@ -494,22 +481,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void timestampColumnTest() {
         // TODO: test timestampColumn
-    }
-
-    /**
-     * Test the property 'baseUrl'
-     */
-    @Test
-    public void baseUrlTest() {
-        // TODO: test baseUrl
-    }
-
-    /**
-     * Test the property 'eventType'
-     */
-    @Test
-    public void eventTypeTest() {
-        // TODO: test eventType
     }
 
     /**
@@ -713,14 +684,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'orgId'
-     */
-    @Test
-    public void orgIdTest() {
-        // TODO: test orgId
-    }
-
-    /**
      * Test the property 'apiKeyId'
      */
     @Test
@@ -734,22 +697,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void domainNameTest() {
         // TODO: test domainName
-    }
-
-    /**
-     * Test the property 'environment'
-     */
-    @Test
-    public void environmentTest() {
-        // TODO: test environment
-    }
-
-    /**
-     * Test the property 'userId'
-     */
-    @Test
-    public void userIdTest() {
-        // TODO: test userId
     }
 
     /**
@@ -857,27 +804,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'confidential'
+     * Test the property 'location'
      */
     @Test
-    public void confidentialTest() {
-        // TODO: test confidential
-    }
-
-    /**
-     * Test the property 'gitlabUrl'
-     */
-    @Test
-    public void gitlabUrlTest() {
-        // TODO: test gitlabUrl
-    }
-
-    /**
-     * Test the property 'issueType'
-     */
-    @Test
-    public void issueTypeTest() {
-        // TODO: test issueType
+    public void locationTest() {
+        // TODO: test location
     }
 
     /**
@@ -886,30 +817,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void projectIdTest() {
         // TODO: test projectId
-    }
-
-    /**
-     * Test the property 'state'
-     */
-    @Test
-    public void stateTest() {
-        // TODO: test state
-    }
-
-    /**
-     * Test the property 'withLabelDetails'
-     */
-    @Test
-    public void withLabelDetailsTest() {
-        // TODO: test withLabelDetails
-    }
-
-    /**
-     * Test the property 'location'
-     */
-    @Test
-    public void locationTest() {
-        // TODO: test location
     }
 
     /**
@@ -934,6 +841,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void emailTest() {
         // TODO: test email
+    }
+
+    /**
+     * Test the property 'userId'
+     */
+    @Test
+    public void userIdTest() {
+        // TODO: test userId
     }
 
     /**
@@ -1113,11 +1028,27 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'baseUrl'
+     */
+    @Test
+    public void baseUrlTest() {
+        // TODO: test baseUrl
+    }
+
+    /**
      * Test the property 'logCategories'
      */
     @Test
     public void logCategoriesTest() {
         // TODO: test logCategories
+    }
+
+    /**
+     * Test the property 'orgId'
+     */
+    @Test
+    public void orgIdTest() {
+        // TODO: test orgId
     }
 
     /**
@@ -1153,35 +1084,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'subdomain'
-     */
-    @Test
-    public void subdomainTest() {
-        // TODO: test subdomain
-    }
-
-    /**
      * Test the property 'categoryType'
      */
     @Test
     public void categoryTypeTest() {
         // TODO: test categoryType
-    }
-
-    /**
-     * Test the property 'domain'
-     */
-    @Test
-    public void domainTest() {
-        // TODO: test domain
-    }
-
-    /**
-     * Test the property 'username'
-     */
-    @Test
-    public void usernameTest() {
-        // TODO: test username
     }
 
     /**
@@ -1241,30 +1148,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'domainUrl'
-     */
-    @Test
-    public void domainUrlTest() {
-        // TODO: test domainUrl
-    }
-
-    /**
-     * Test the property 'topic'
-     */
-    @Test
-    public void topicTest() {
-        // TODO: test topic
-    }
-
-    /**
-     * Test the property 'hostName'
-     */
-    @Test
-    public void hostNameTest() {
-        // TODO: test hostName
-    }
-
-    /**
      * Test the property 'rate'
      */
     @Test
@@ -1286,14 +1169,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void customTemplateTest() {
         // TODO: test customTemplate
-    }
-
-    /**
-     * Test the property 'cron'
-     */
-    @Test
-    public void cronTest() {
-        // TODO: test cron
     }
 
     /**
@@ -1350,6 +1225,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void actorSidTest() {
         // TODO: test actorSid
+    }
+
+    /**
+     * Test the property 'eventType'
+     */
+    @Test
+    public void eventTypeTest() {
+        // TODO: test eventType
     }
 
     /**
@@ -1430,22 +1313,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void vendorSeverityTest() {
         // TODO: test vendorSeverity
-    }
-
-    /**
-     * Test the property 'emailAddress'
-     */
-    @Test
-    public void emailAddressTest() {
-        // TODO: test emailAddress
-    }
-
-    /**
-     * Test the property 'subDomain'
-     */
-    @Test
-    public void subDomainTest() {
-        // TODO: test subDomain
     }
 
 }

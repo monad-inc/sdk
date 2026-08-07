@@ -21,7 +21,11 @@ var _ MappedNullable = &ModelsReference{}
 // ModelsReference struct for ModelsReference
 type ModelsReference struct {
 	Id *string `json:"id,omitempty"`
+	// Name is the referenced resource's display name, filled at read time on component responses. Never persisted: writes rebuild references from request state (the name is display sugar and would go stale), and an empty name is omitted from the stored JSON.
+	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
+	// Shared reports that the referenced resource is owned by an org other than the component's owner — a directly-shared secret the component pulls in. Same read-time-only contract as Name: computed on responses, never persisted (omitted when false).
+	Shared *bool `json:"shared,omitempty"`
 }
 
 // NewModelsReference instantiates a new ModelsReference object
@@ -73,6 +77,38 @@ func (o *ModelsReference) SetId(v string) {
 	o.Id = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ModelsReference) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsReference) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *ModelsReference) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ModelsReference) SetName(v string) {
+	o.Name = &v
+}
+
 // GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
 func (o *ModelsReference) GetOrganizationId() string {
 	if o == nil || IsNil(o.OrganizationId) {
@@ -105,6 +141,38 @@ func (o *ModelsReference) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetShared returns the Shared field value if set, zero value otherwise.
+func (o *ModelsReference) GetShared() bool {
+	if o == nil || IsNil(o.Shared) {
+		var ret bool
+		return ret
+	}
+	return *o.Shared
+}
+
+// GetSharedOk returns a tuple with the Shared field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsReference) GetSharedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Shared) {
+		return nil, false
+	}
+	return o.Shared, true
+}
+
+// HasShared returns a boolean if a field has been set.
+func (o *ModelsReference) HasShared() bool {
+	if o != nil && !IsNil(o.Shared) {
+		return true
+	}
+
+	return false
+}
+
+// SetShared gets a reference to the given bool and assigns it to the Shared field.
+func (o *ModelsReference) SetShared(v bool) {
+	o.Shared = &v
+}
+
 func (o ModelsReference) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -118,8 +186,14 @@ func (o ModelsReference) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.Shared) {
+		toSerialize["shared"] = o.Shared
 	}
 	return toSerialize, nil
 }

@@ -10,9 +10,9 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsAuditResource } from '../models/GithubComMonadIncCorePkgTypesModelsAuditResource';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
+import { ModelsAuditResource } from '../models/ModelsAuditResource';
 import { HttpFile } from '../http/http';
 
 export class ModelsOrganizationAuditLog {
@@ -22,7 +22,7 @@ export class ModelsOrganizationAuditLog {
     'occurredAt'?: string;
     'organizationId'?: string;
     'requestId'?: string;
-    'resource'?: GithubComMonadIncCorePkgTypesModelsAuditResource;
+    'resource'?: ModelsAuditResource;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -68,7 +68,7 @@ export class ModelsOrganizationAuditLog {
         {
             "name": "resource",
             "baseName": "resource",
-            "type": "GithubComMonadIncCorePkgTypesModelsAuditResource",
+            "type": "ModelsAuditResource",
             "format": ""
         }    ];
 

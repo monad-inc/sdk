@@ -10,7 +10,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="getInputTypeMeta"></a>
 # **getInputTypeMeta**
-> ModelsConnectorMeta getInputTypeMeta(inputTypeId)
+> InputsConnectorMeta getInputTypeMeta(inputTypeId)
 
 Get input config meta
 
@@ -46,7 +46,7 @@ public class Example {
     InputsApi apiInstance = new InputsApi(defaultClient);
     String inputTypeId = "inputTypeId_example"; // String | Input type ID
     try {
-      ModelsConnectorMeta result = apiInstance.getInputTypeMeta(inputTypeId);
+      InputsConnectorMeta result = apiInstance.getInputTypeMeta(inputTypeId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InputsApi#getInputTypeMeta");
@@ -67,7 +67,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsConnectorMeta**](ModelsConnectorMeta.md)
+[**InputsConnectorMeta**](InputsConnectorMeta.md)
 
 ### Authorization
 

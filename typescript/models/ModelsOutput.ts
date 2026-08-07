@@ -14,6 +14,7 @@ import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
 import { HttpFile } from '../http/http';
 
 export class ModelsOutput {
@@ -26,6 +27,7 @@ export class ModelsOutput {
     'organizationId'?: string;
     'references'?: ModelsReferences;
     'shareDetails'?: ModelsShareDetails;
+    'templateSettings'?: ModelsTemplateSettings;
     'type'?: string;
     'updatedAt'?: string;
     'version'?: number;
@@ -87,6 +89,12 @@ export class ModelsOutput {
             "name": "shareDetails",
             "baseName": "share_details",
             "type": "ModelsShareDetails",
+            "format": ""
+        },
+        {
+            "name": "templateSettings",
+            "baseName": "template_settings",
+            "type": "ModelsTemplateSettings",
             "format": ""
         },
         {

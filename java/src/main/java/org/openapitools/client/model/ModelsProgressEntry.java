@@ -23,8 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsTimeRange;
 import org.openapitools.client.model.ModelsProgressLabel;
+import org.openapitools.client.model.ModelsTimeRange;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsProgressEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsProgressEntry {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
@@ -67,7 +67,7 @@ public class ModelsProgressEntry {
   public static final String SERIALIZED_NAME_RANGES = "ranges";
   @SerializedName(SERIALIZED_NAME_RANGES)
   @javax.annotation.Nullable
-  private List<GithubComMonadIncCorePkgTypesModelsTimeRange> ranges = new ArrayList<>();
+  private List<ModelsTimeRange> ranges = new ArrayList<>();
 
   public ModelsProgressEntry() {
   }
@@ -110,12 +110,12 @@ public class ModelsProgressEntry {
   }
 
 
-  public ModelsProgressEntry ranges(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsTimeRange> ranges) {
+  public ModelsProgressEntry ranges(@javax.annotation.Nullable List<ModelsTimeRange> ranges) {
     this.ranges = ranges;
     return this;
   }
 
-  public ModelsProgressEntry addRangesItem(GithubComMonadIncCorePkgTypesModelsTimeRange rangesItem) {
+  public ModelsProgressEntry addRangesItem(ModelsTimeRange rangesItem) {
     if (this.ranges == null) {
       this.ranges = new ArrayList<>();
     }
@@ -128,11 +128,11 @@ public class ModelsProgressEntry {
    * @return ranges
    */
   @javax.annotation.Nullable
-  public List<GithubComMonadIncCorePkgTypesModelsTimeRange> getRanges() {
+  public List<ModelsTimeRange> getRanges() {
     return ranges;
   }
 
-  public void setRanges(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsTimeRange> ranges) {
+  public void setRanges(@javax.annotation.Nullable List<ModelsTimeRange> ranges) {
     this.ranges = ranges;
   }
 
@@ -226,7 +226,7 @@ public class ModelsProgressEntry {
 
           // validate the optional field `ranges` (array)
           for (int i = 0; i < jsonArrayranges.size(); i++) {
-            GithubComMonadIncCorePkgTypesModelsTimeRange.validateJsonElement(jsonArrayranges.get(i));
+            ModelsTimeRange.validateJsonElement(jsonArrayranges.get(i));
           };
         }
       }

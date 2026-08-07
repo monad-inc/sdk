@@ -17,6 +17,7 @@ import { HttpFile } from '../http/http';
 * OpenSearch Output Secrets
 */
 export class OpensearchSecretsConfig {
+    'caCertificate'?: ModelsSecret;
     'password'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
@@ -24,6 +25,12 @@ export class OpensearchSecretsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "caCertificate",
+            "baseName": "ca_certificate",
+            "type": "ModelsSecret",
+            "format": ""
+        },
         {
             "name": "password",
             "baseName": "password",

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2TestOutputConnectionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesV2TestOutputConnectionRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
@@ -60,6 +60,11 @@ public class RoutesV2TestOutputConnectionRequest {
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
   private String type;
+
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
+  private Integer version;
 
   public RoutesV2TestOutputConnectionRequest() {
   }
@@ -102,6 +107,25 @@ public class RoutesV2TestOutputConnectionRequest {
   }
 
 
+  public RoutesV2TestOutputConnectionRequest version(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * Get version
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -113,12 +137,13 @@ public class RoutesV2TestOutputConnectionRequest {
     }
     RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest = (RoutesV2TestOutputConnectionRequest) o;
     return Objects.equals(this.config, routesV2TestOutputConnectionRequest.config) &&
-        Objects.equals(this.type, routesV2TestOutputConnectionRequest.type);
+        Objects.equals(this.type, routesV2TestOutputConnectionRequest.type) &&
+        Objects.equals(this.version, routesV2TestOutputConnectionRequest.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, type);
+    return Objects.hash(config, type, version);
   }
 
   @Override
@@ -127,6 +152,7 @@ public class RoutesV2TestOutputConnectionRequest {
     sb.append("class RoutesV2TestOutputConnectionRequest {\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -145,7 +171,7 @@ public class RoutesV2TestOutputConnectionRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "type", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

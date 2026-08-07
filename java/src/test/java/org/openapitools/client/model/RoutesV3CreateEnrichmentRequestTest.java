@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsTemplateSettings;
 import org.openapitools.client.model.SecretProcessesorEnrichmentConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -60,6 +61,14 @@ public class RoutesV3CreateEnrichmentRequestTest {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'templateSettings'
+     */
+    @Test
+    public void templateSettingsTest() {
+        // TODO: test templateSettings
     }
 
     /**

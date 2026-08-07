@@ -666,6 +666,13 @@ type ApiRegenerateAPIKeyRequest struct {
 	ApiService *OrganizationAPIKeysAPIService
 	organizationId string
 	apiKeyId string
+	regenerateAPIKeyRequest *RegenerateAPIKeyRequest
+}
+
+// Optional new expiration for the regenerated key
+func (r ApiRegenerateAPIKeyRequest) RegenerateAPIKeyRequest(regenerateAPIKeyRequest RegenerateAPIKeyRequest) ApiRegenerateAPIKeyRequest {
+	r.regenerateAPIKeyRequest = &regenerateAPIKeyRequest
+	return r
 }
 
 func (r ApiRegenerateAPIKeyRequest) Execute() (*ModelsAPIKeyWithToken, *http.Response, error) {
@@ -675,7 +682,7 @@ func (r ApiRegenerateAPIKeyRequest) Execute() (*ModelsAPIKeyWithToken, *http.Res
 /*
 RegenerateAPIKey Regenerate API key
 
-Regenerates an API key by creating a new one with the same metadata and deleting the old one
+Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -715,7 +722,7 @@ func (a *OrganizationAPIKeysAPIService) RegenerateAPIKeyExecute(r ApiRegenerateA
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -731,6 +738,8 @@ func (a *OrganizationAPIKeysAPIService) RegenerateAPIKeyExecute(r ApiRegenerateA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.regenerateAPIKeyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -781,7 +790,29 @@ func (a *OrganizationAPIKeysAPIService) RegenerateAPIKeyExecute(r ApiRegenerateA
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 422 {
 			var v string
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

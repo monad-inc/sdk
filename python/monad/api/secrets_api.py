@@ -23,6 +23,7 @@ from monad.models.create_secret_request import CreateSecretRequest
 from monad.models.models_secret_with_components import ModelsSecretWithComponents
 from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse
+from monad.models.update_secret_request import UpdateSecretRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -358,7 +359,7 @@ class SecretsApi:
     ) -> None:
         """Delete secret
 
-        Deletes a specific secret by ID
+        Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. \"Referenced\" means configured on an input, output, enrichment or transform, or on a pipeline node's config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -397,7 +398,9 @@ class SecretsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '403': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -431,7 +434,7 @@ class SecretsApi:
     ) -> ApiResponse[None]:
         """Delete secret
 
-        Deletes a specific secret by ID
+        Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. \"Referenced\" means configured on an input, output, enrichment or transform, or on a pipeline node's config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -470,7 +473,9 @@ class SecretsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '403': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -504,7 +509,7 @@ class SecretsApi:
     ) -> RESTResponseType:
         """Delete secret
 
-        Deletes a specific secret by ID
+        Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. \"Referenced\" means configured on an input, output, enrichment or transform, or on a pipeline node's config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -543,7 +548,9 @@ class SecretsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '403': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -641,7 +648,7 @@ class SecretsApi:
     ) -> ModelsSecretWithComponents:
         """Get secret with components
 
-        Gets a specific secret by ID including inputs and outputs that use it
+        Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -714,7 +721,7 @@ class SecretsApi:
     ) -> ApiResponse[ModelsSecretWithComponents]:
         """Get secret with components
 
-        Gets a specific secret by ID including inputs and outputs that use it
+        Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -787,7 +794,7 @@ class SecretsApi:
     ) -> RESTResponseType:
         """Get secret with components
 
-        Gets a specific secret by ID including inputs and outputs that use it
+        Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -925,7 +932,7 @@ class SecretsApi:
     ) -> ModelsSecretWithComponentsList:
         """List secrets with components
 
-        Lists all secrets for the specified organization including inputs and outputs that use them
+        Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -1001,7 +1008,7 @@ class SecretsApi:
     ) -> ApiResponse[ModelsSecretWithComponentsList]:
         """List secrets with components
 
-        Lists all secrets for the specified organization including inputs and outputs that use them
+        Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -1077,7 +1084,7 @@ class SecretsApi:
     ) -> RESTResponseType:
         """List secrets with components
 
-        Lists all secrets for the specified organization including inputs and outputs that use them
+        Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -1208,7 +1215,7 @@ class SecretsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         secret_id: Annotated[StrictStr, Field(description="Secret ID")],
-        create_secret_request: Annotated[CreateSecretRequest, Field(description="Secret updates")],
+        update_secret_request: Annotated[UpdateSecretRequest, Field(description="Secret updates")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1230,8 +1237,8 @@ class SecretsApi:
         :type organization_id: str
         :param secret_id: Secret ID (required)
         :type secret_id: str
-        :param create_secret_request: Secret updates (required)
-        :type create_secret_request: CreateSecretRequest
+        :param update_secret_request: Secret updates (required)
+        :type update_secret_request: UpdateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1257,7 +1264,7 @@ class SecretsApi:
         _param = self._update_secret_serialize(
             organization_id=organization_id,
             secret_id=secret_id,
-            create_secret_request=create_secret_request,
+            update_secret_request=update_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1286,7 +1293,7 @@ class SecretsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         secret_id: Annotated[StrictStr, Field(description="Secret ID")],
-        create_secret_request: Annotated[CreateSecretRequest, Field(description="Secret updates")],
+        update_secret_request: Annotated[UpdateSecretRequest, Field(description="Secret updates")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1308,8 +1315,8 @@ class SecretsApi:
         :type organization_id: str
         :param secret_id: Secret ID (required)
         :type secret_id: str
-        :param create_secret_request: Secret updates (required)
-        :type create_secret_request: CreateSecretRequest
+        :param update_secret_request: Secret updates (required)
+        :type update_secret_request: UpdateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1335,7 +1342,7 @@ class SecretsApi:
         _param = self._update_secret_serialize(
             organization_id=organization_id,
             secret_id=secret_id,
-            create_secret_request=create_secret_request,
+            update_secret_request=update_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1364,7 +1371,7 @@ class SecretsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         secret_id: Annotated[StrictStr, Field(description="Secret ID")],
-        create_secret_request: Annotated[CreateSecretRequest, Field(description="Secret updates")],
+        update_secret_request: Annotated[UpdateSecretRequest, Field(description="Secret updates")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1386,8 +1393,8 @@ class SecretsApi:
         :type organization_id: str
         :param secret_id: Secret ID (required)
         :type secret_id: str
-        :param create_secret_request: Secret updates (required)
-        :type create_secret_request: CreateSecretRequest
+        :param update_secret_request: Secret updates (required)
+        :type update_secret_request: UpdateSecretRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1413,7 +1420,7 @@ class SecretsApi:
         _param = self._update_secret_serialize(
             organization_id=organization_id,
             secret_id=secret_id,
-            create_secret_request=create_secret_request,
+            update_secret_request=update_secret_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1437,7 +1444,7 @@ class SecretsApi:
         self,
         organization_id,
         secret_id,
-        create_secret_request,
+        update_secret_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1467,8 +1474,8 @@ class SecretsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if create_secret_request is not None:
-            _body_params = create_secret_request
+        if update_secret_request is not None:
+            _body_params = update_secret_request
 
 
         # set the HTTP header `Accept`

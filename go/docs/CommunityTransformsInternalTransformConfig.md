@@ -58,20 +58,20 @@ HasAuthor returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *CommunityTransformsInternalTransformConfig) GetConfig() map[string]interface{}`
+`func (o *CommunityTransformsInternalTransformConfig) GetConfig() map[string]*interface{}`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CommunityTransformsInternalTransformConfig) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *CommunityTransformsInternalTransformConfig) GetConfigOk() (*map[string]*interface{}, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CommunityTransformsInternalTransformConfig) SetConfig(v map[string]interface{})`
+`func (o *CommunityTransformsInternalTransformConfig) SetConfig(v map[string]*interface{})`
 
 SetConfig sets Config field to given value.
 

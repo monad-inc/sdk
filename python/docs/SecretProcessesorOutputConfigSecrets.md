@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **credentials** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **auth_headers** | [**Dict[str, ModelsSecret]**](ModelsSecret.md) | Authentication headers | [optional] 
 **ca_certificate** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

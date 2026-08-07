@@ -45,6 +45,10 @@ class TestCreateInputRequest(unittest.TestCase):
                         }, ),
                 description = '',
                 name = '',
+                template_settings = monad.models.models/template_settings.models.TemplateSettings(
+                    overridable_paths = [
+                        ''
+                        ], ),
                 type = ''
             )
         else:

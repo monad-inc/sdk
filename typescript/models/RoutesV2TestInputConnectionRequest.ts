@@ -16,6 +16,7 @@ import { HttpFile } from '../http/http';
 export class RoutesV2TestInputConnectionRequest {
     'config'?: SecretProcessesorInputConfig;
     'type'?: string;
+    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,6 +33,12 @@ export class RoutesV2TestInputConnectionRequest {
             "name": "type",
             "baseName": "type",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "version",
+            "baseName": "version",
+            "type": "number",
             "format": ""
         }    ];
 

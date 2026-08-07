@@ -31,6 +31,7 @@ import org.openapitools.client.model.CreateAPIKeyRequest;
 import org.openapitools.client.model.ModelsAPIKey;
 import org.openapitools.client.model.ModelsAPIKeyList;
 import org.openapitools.client.model.ModelsAPIKeyWithToken;
+import org.openapitools.client.model.RegenerateAPIKeyRequest;
 import org.openapitools.client.model.UpdateAPIKeyRequest;
 
 import java.lang.reflect.Type;
@@ -662,6 +663,7 @@ public class OrganizationApiKeysApi {
      * Build call for regenerateAPIKey
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
+     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -670,11 +672,13 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call regenerateAPIKeyCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call regenerateAPIKeyCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nullable RegenerateAPIKeyRequest regenerateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -688,7 +692,7 @@ public class OrganizationApiKeysApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = regenerateAPIKeyRequest;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/api_keys/{api_key_id}/regenerate"
@@ -710,6 +714,7 @@ public class OrganizationApiKeysApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -721,7 +726,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call regenerateAPIKeyValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call regenerateAPIKeyValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nullable RegenerateAPIKeyRequest regenerateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling regenerateAPIKey(Async)");
@@ -732,15 +737,16 @@ public class OrganizationApiKeysApi {
             throw new ApiException("Missing the required parameter 'apiKeyId' when calling regenerateAPIKey(Async)");
         }
 
-        return regenerateAPIKeyCall(organizationId, apiKeyId, _callback);
+        return regenerateAPIKeyCall(organizationId, apiKeyId, regenerateAPIKeyRequest, _callback);
 
     }
 
     /**
      * Regenerate API key
-     * Regenerates an API key by creating a new one with the same metadata and deleting the old one
+     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
+     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
      * @return ModelsAPIKeyWithToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -748,20 +754,23 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKeyWithToken regenerateAPIKey(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
-        ApiResponse<ModelsAPIKeyWithToken> localVarResp = regenerateAPIKeyWithHttpInfo(organizationId, apiKeyId);
+    public ModelsAPIKeyWithToken regenerateAPIKey(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nullable RegenerateAPIKeyRequest regenerateAPIKeyRequest) throws ApiException {
+        ApiResponse<ModelsAPIKeyWithToken> localVarResp = regenerateAPIKeyWithHttpInfo(organizationId, apiKeyId, regenerateAPIKeyRequest);
         return localVarResp.getData();
     }
 
     /**
      * Regenerate API key
-     * Regenerates an API key by creating a new one with the same metadata and deleting the old one
+     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
+     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
      * @return ApiResponse&lt;ModelsAPIKeyWithToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -769,21 +778,24 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKeyWithToken> regenerateAPIKeyWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
-        okhttp3.Call localVarCall = regenerateAPIKeyValidateBeforeCall(organizationId, apiKeyId, null);
+    public ApiResponse<ModelsAPIKeyWithToken> regenerateAPIKeyWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nullable RegenerateAPIKeyRequest regenerateAPIKeyRequest) throws ApiException {
+        okhttp3.Call localVarCall = regenerateAPIKeyValidateBeforeCall(organizationId, apiKeyId, regenerateAPIKeyRequest, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Regenerate API key (asynchronously)
-     * Regenerates an API key by creating a new one with the same metadata and deleting the old one
+     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
+     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -792,13 +804,15 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call regenerateAPIKeyAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
+    public okhttp3.Call regenerateAPIKeyAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nullable RegenerateAPIKeyRequest regenerateAPIKeyRequest, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = regenerateAPIKeyValidateBeforeCall(organizationId, apiKeyId, _callback);
+        okhttp3.Call localVarCall = regenerateAPIKeyValidateBeforeCall(organizationId, apiKeyId, regenerateAPIKeyRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

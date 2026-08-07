@@ -30,7 +30,7 @@ type ApiGetOutputTypeMetaRequest struct {
 	outputTypeId string
 }
 
-func (r ApiGetOutputTypeMetaRequest) Execute() (*ModelsConnectorMeta, *http.Response, error) {
+func (r ApiGetOutputTypeMetaRequest) Execute() (*OutputsConnectorMeta, *http.Response, error) {
 	return r.ApiService.GetOutputTypeMetaExecute(r)
 }
 
@@ -52,13 +52,13 @@ func (a *OutputsAPIService) GetOutputTypeMeta(ctx context.Context, outputTypeId 
 }
 
 // Execute executes the request
-//  @return ModelsConnectorMeta
-func (a *OutputsAPIService) GetOutputTypeMetaExecute(r ApiGetOutputTypeMetaRequest) (*ModelsConnectorMeta, *http.Response, error) {
+//  @return OutputsConnectorMeta
+func (a *OutputsAPIService) GetOutputTypeMetaExecute(r ApiGetOutputTypeMetaRequest) (*OutputsConnectorMeta, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsConnectorMeta
+		localVarReturnValue  *OutputsConnectorMeta
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OutputsAPIService.GetOutputTypeMeta")

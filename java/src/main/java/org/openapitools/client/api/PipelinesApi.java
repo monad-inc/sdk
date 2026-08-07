@@ -35,11 +35,14 @@ import org.openapitools.client.model.ModelsPipelineMetrics;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
 import org.openapitools.client.model.ModelsPipelinePurgeResponse;
 import org.openapitools.client.model.ModelsPipelineStatus;
+import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV2GetOrganizationSummaryResponse;
 import org.openapitools.client.model.RoutesV2MetricsResponse;
 import org.openapitools.client.model.RoutesV2PipelineWithStatus;
+import org.openapitools.client.model.RoutesV2SuccessResponse;
 import org.openapitools.client.model.RoutesV3SchemaHistoryEntryResponse;
 import org.openapitools.client.model.RoutesV3SchemaStateResponse;
+import org.openapitools.client.model.TestPipelineNodeConnectionRequest;
 import org.openapitools.client.model.UpdatePipelineEdgeRequest;
 import org.openapitools.client.model.UpdatePipelineRequest;
 import org.openapitools.client.model.UpdatePipelineV1Request;
@@ -100,6 +103,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -178,6 +182,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -199,6 +204,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -222,6 +228,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -3688,6 +3695,161 @@ public class PipelinesApi {
         return localVarCall;
     }
     /**
+     * Build call for testPipelineNodeConnection
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param testPipelineNodeConnectionRequest Node config to test (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or unsupported component type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call testPipelineNodeConnectionCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull TestPipelineNodeConnectionRequest testPipelineNodeConnectionRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = testPipelineNodeConnectionRequest;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/pipelines/{pipeline_id}/test-connection"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call testPipelineNodeConnectionValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull TestPipelineNodeConnectionRequest testPipelineNodeConnectionRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling testPipelineNodeConnection(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling testPipelineNodeConnection(Async)");
+        }
+
+        // verify the required parameter 'testPipelineNodeConnectionRequest' is set
+        if (testPipelineNodeConnectionRequest == null) {
+            throw new ApiException("Missing the required parameter 'testPipelineNodeConnectionRequest' when calling testPipelineNodeConnection(Async)");
+        }
+
+        return testPipelineNodeConnectionCall(organizationId, pipelineId, testPipelineNodeConnectionRequest, _callback);
+
+    }
+
+    /**
+     * Test a pipeline node connection
+     * Tests the connection for a node&#39;s submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param testPipelineNodeConnectionRequest Node config to test (required)
+     * @return RoutesV2SuccessResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or unsupported component type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV2SuccessResponse testPipelineNodeConnection(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull TestPipelineNodeConnectionRequest testPipelineNodeConnectionRequest) throws ApiException {
+        ApiResponse<RoutesV2SuccessResponse> localVarResp = testPipelineNodeConnectionWithHttpInfo(organizationId, pipelineId, testPipelineNodeConnectionRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Test a pipeline node connection
+     * Tests the connection for a node&#39;s submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param testPipelineNodeConnectionRequest Node config to test (required)
+     * @return ApiResponse&lt;RoutesV2SuccessResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or unsupported component type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV2SuccessResponse> testPipelineNodeConnectionWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull TestPipelineNodeConnectionRequest testPipelineNodeConnectionRequest) throws ApiException {
+        okhttp3.Call localVarCall = testPipelineNodeConnectionValidateBeforeCall(organizationId, pipelineId, testPipelineNodeConnectionRequest, null);
+        Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Test a pipeline node connection (asynchronously)
+     * Tests the connection for a node&#39;s submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param testPipelineNodeConnectionRequest Node config to test (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or unsupported component type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call testPipelineNodeConnectionAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull TestPipelineNodeConnectionRequest testPipelineNodeConnectionRequest, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = testPipelineNodeConnectionValidateBeforeCall(organizationId, pipelineId, testPipelineNodeConnectionRequest, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for triggerPipeline
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
@@ -3854,6 +4016,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
@@ -3939,6 +4102,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
@@ -3961,6 +4125,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
@@ -3985,6 +4150,7 @@ public class PipelinesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Node config overrides are not enabled for this organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */

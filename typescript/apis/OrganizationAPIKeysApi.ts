@@ -12,6 +12,7 @@ import { CreateAPIKeyRequest } from '../models/CreateAPIKeyRequest';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { RegenerateAPIKeyRequest } from '../models/RegenerateAPIKeyRequest';
 import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
 
 /**
@@ -240,12 +241,13 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
     }
 
     /**
-     * Regenerates an API key by creating a new one with the same metadata and deleting the old one
+     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
      * Regenerate API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
+     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key
      */
-    public async regenerateAPIKey(organizationId: string, apiKeyId: string, _options?: Configuration): Promise<RequestContext> {
+    public async regenerateAPIKey(organizationId: string, apiKeyId: string, regenerateAPIKeyRequest?: RegenerateAPIKeyRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -260,6 +262,7 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
+
         // Path Params
         const localVarPath = '/v2/{organization_id}/api_keys/{api_key_id}/regenerate'
             .replace('{organization_id}', encodeURIComponent(String(organizationId)))
@@ -269,6 +272,17 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(regenerateAPIKeyRequest, "RegenerateAPIKeyRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -544,12 +558,26 @@ export class OrganizationAPIKeysApiResponseProcessor {
             ) as ModelsAPIKeyWithToken;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body or expiration time", body, response.headers);
+        }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "API key not found", body, response.headers);
+        }
+        if (isCodeInRange("422", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Expiration time required for an expired API key", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

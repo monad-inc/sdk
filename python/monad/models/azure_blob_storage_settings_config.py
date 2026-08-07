@@ -33,10 +33,11 @@ class AzureBlobStorageSettingsConfig(BaseModel):
     compression: Optional[StrictStr] = Field(default=None, description="The compression format of objects in the Azure container")
     container: Optional[StrictStr] = Field(default=None, description="A container organizes a set of blobs, similar to a directory in a file system.")
     format: Optional[StrictStr] = Field(default=None, description="File format of the Blob storage objects in Azure.")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
+    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), simple date ('2024/01/01'), or custom (specify your own template in PartitionFormatTemplate).")
+    partition_format_template: Optional[StrictStr] = Field(default=None, description="Only used when PartitionFormat is \"custom\": the template describing your bucket's partition path, e.g. 'y={yyyy}/m={mm}/d={dd}'.")
     prefix: Optional[StrictStr] = Field(default=None, description="An optional prefix for Azure object keys to organize data within the container")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
-    __properties: ClassVar[List[str]] = ["account_url", "backfill_start_time", "compression", "container", "format", "partition_format", "prefix", "record_location"]
+    __properties: ClassVar[List[str]] = ["account_url", "backfill_start_time", "compression", "container", "format", "partition_format", "partition_format_template", "prefix", "record_location"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -95,6 +96,7 @@ class AzureBlobStorageSettingsConfig(BaseModel):
             "container": obj.get("container"),
             "format": obj.get("format"),
             "partition_format": obj.get("partition_format"),
+            "partition_format_template": obj.get("partition_format_template"),
             "prefix": obj.get("prefix"),
             "record_location": obj.get("record_location")
         })

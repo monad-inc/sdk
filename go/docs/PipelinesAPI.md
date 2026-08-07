@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**PurgePipeline**](PipelinesAPI.md#PurgePipeline) | **Post** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**PurgePipelineNode**](PipelinesAPI.md#PurgePipelineNode) | **Post** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**ResetSchemaState**](PipelinesAPI.md#ResetSchemaState) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
+[**TestPipelineNodeConnection**](PipelinesAPI.md#TestPipelineNodeConnection) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/test-connection | Test a pipeline node connection
 [**TriggerPipeline**](PipelinesAPI.md#TriggerPipeline) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**UpdatePipeline**](PipelinesAPI.md#UpdatePipeline) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**UpdatePipelineEdge**](PipelinesAPI.md#UpdatePipelineEdge) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -1750,6 +1751,81 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TestPipelineNodeConnection
+
+> RoutesV2SuccessResponse TestPipelineNodeConnection(ctx, organizationId, pipelineId).TestPipelineNodeConnectionRequest(testPipelineNodeConnectionRequest).Execute()
+
+Test a pipeline node connection
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	testPipelineNodeConnectionRequest := openapiclient.TestPipelineNodeConnection_request{RoutesV2TestNodeConnectionRequest: openapiclient.NewRoutesV2TestNodeConnectionRequest()} // TestPipelineNodeConnectionRequest | Node config to test
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.TestPipelineNodeConnection(context.Background(), organizationId, pipelineId).TestPipelineNodeConnectionRequest(testPipelineNodeConnectionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.TestPipelineNodeConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TestPipelineNodeConnection`: RoutesV2SuccessResponse
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.TestPipelineNodeConnection`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTestPipelineNodeConnectionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **testPipelineNodeConnectionRequest** | [**TestPipelineNodeConnectionRequest**](TestPipelineNodeConnectionRequest.md) | Node config to test | 
+
+### Return type
+
+[**RoutesV2SuccessResponse**](RoutesV2SuccessResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

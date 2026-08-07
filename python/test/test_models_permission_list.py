@@ -41,7 +41,7 @@ class TestModelsPermissionList(unittest.TestCase):
                     offset = 56, 
                     total = 56, ),
                 permissions = [
-                    monad.models.github_com_monad_inc_core_pkg_types_models/permission.github_com_monad-inc_core_pkg_types_models.Permission(
+                    monad.models.models/permission.models.Permission(
                         created_at = '', 
                         description = '', 
                         id = '', 

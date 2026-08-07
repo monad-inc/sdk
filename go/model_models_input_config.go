@@ -20,8 +20,8 @@ var _ MappedNullable = &ModelsInputConfig{}
 
 // ModelsInputConfig struct for ModelsInputConfig
 type ModelsInputConfig struct {
-	Secrets map[string]interface{} `json:"secrets,omitempty"`
-	Settings map[string]interface{} `json:"settings,omitempty"`
+	Secrets map[string]*interface{} `json:"secrets,omitempty"`
+	Settings map[string]*interface{} `json:"settings,omitempty"`
 }
 
 // NewModelsInputConfig instantiates a new ModelsInputConfig object
@@ -42,9 +42,9 @@ func NewModelsInputConfigWithDefaults() *ModelsInputConfig {
 }
 
 // GetSecrets returns the Secrets field value if set, zero value otherwise.
-func (o *ModelsInputConfig) GetSecrets() map[string]interface{} {
+func (o *ModelsInputConfig) GetSecrets() map[string]*interface{} {
 	if o == nil || IsNil(o.Secrets) {
-		var ret map[string]interface{}
+		var ret map[string]*interface{}
 		return ret
 	}
 	return o.Secrets
@@ -52,9 +52,9 @@ func (o *ModelsInputConfig) GetSecrets() map[string]interface{} {
 
 // GetSecretsOk returns a tuple with the Secrets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsInputConfig) GetSecretsOk() (map[string]interface{}, bool) {
+func (o *ModelsInputConfig) GetSecretsOk() (map[string]*interface{}, bool) {
 	if o == nil || IsNil(o.Secrets) {
-		return map[string]interface{}{}, false
+		return map[string]*interface{}{}, false
 	}
 	return o.Secrets, true
 }
@@ -68,15 +68,15 @@ func (o *ModelsInputConfig) HasSecrets() bool {
 	return false
 }
 
-// SetSecrets gets a reference to the given map[string]interface{} and assigns it to the Secrets field.
-func (o *ModelsInputConfig) SetSecrets(v map[string]interface{}) {
+// SetSecrets gets a reference to the given map[string]*interface{} and assigns it to the Secrets field.
+func (o *ModelsInputConfig) SetSecrets(v map[string]*interface{}) {
 	o.Secrets = v
 }
 
 // GetSettings returns the Settings field value if set, zero value otherwise.
-func (o *ModelsInputConfig) GetSettings() map[string]interface{} {
+func (o *ModelsInputConfig) GetSettings() map[string]*interface{} {
 	if o == nil || IsNil(o.Settings) {
-		var ret map[string]interface{}
+		var ret map[string]*interface{}
 		return ret
 	}
 	return o.Settings
@@ -84,9 +84,9 @@ func (o *ModelsInputConfig) GetSettings() map[string]interface{} {
 
 // GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsInputConfig) GetSettingsOk() (map[string]interface{}, bool) {
+func (o *ModelsInputConfig) GetSettingsOk() (map[string]*interface{}, bool) {
 	if o == nil || IsNil(o.Settings) {
-		return map[string]interface{}{}, false
+		return map[string]*interface{}{}, false
 	}
 	return o.Settings, true
 }
@@ -100,8 +100,8 @@ func (o *ModelsInputConfig) HasSettings() bool {
 	return false
 }
 
-// SetSettings gets a reference to the given map[string]interface{} and assigns it to the Settings field.
-func (o *ModelsInputConfig) SetSettings(v map[string]interface{}) {
+// SetSettings gets a reference to the given map[string]*interface{} and assigns it to the Settings field.
+func (o *ModelsInputConfig) SetSettings(v map[string]*interface{}) {
 	o.Settings = v
 }
 

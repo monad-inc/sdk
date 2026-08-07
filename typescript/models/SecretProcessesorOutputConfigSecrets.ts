@@ -32,6 +32,7 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
+import { WazuhSecretsConfig } from '../models/WazuhSecretsConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -39,7 +40,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | WazuhSecretsConfig | any;
 
 /**
 * @type SecretProcessesorOutputConfigSecretsClass

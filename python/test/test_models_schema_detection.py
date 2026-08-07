@@ -36,6 +36,7 @@ class TestModelsSchemaDetection(unittest.TestCase):
         model = ModelsSchemaDetection()
         if include_optional:
             return ModelsSchemaDetection(
+                disable_alerting = True,
                 enabled = True
             )
         else:

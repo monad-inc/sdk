@@ -30,8 +30,10 @@ type AzureBlobStorageSettingsConfig struct {
 	Container *string `json:"container,omitempty"`
 	// File format of the Blob storage objects in Azure.
 	Format *string `json:"format,omitempty"`
-	// Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').
+	// Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), simple date ('2024/01/01'), or custom (specify your own template in PartitionFormatTemplate).
 	PartitionFormat *string `json:"partition_format,omitempty"`
+	// Only used when PartitionFormat is \"custom\": the template describing your bucket's partition path, e.g. 'y={yyyy}/m={mm}/d={dd}'.
+	PartitionFormatTemplate *string `json:"partition_format_template,omitempty"`
 	// An optional prefix for Azure object keys to organize data within the container
 	Prefix *string `json:"prefix,omitempty"`
 	// Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
@@ -247,6 +249,38 @@ func (o *AzureBlobStorageSettingsConfig) SetPartitionFormat(v string) {
 	o.PartitionFormat = &v
 }
 
+// GetPartitionFormatTemplate returns the PartitionFormatTemplate field value if set, zero value otherwise.
+func (o *AzureBlobStorageSettingsConfig) GetPartitionFormatTemplate() string {
+	if o == nil || IsNil(o.PartitionFormatTemplate) {
+		var ret string
+		return ret
+	}
+	return *o.PartitionFormatTemplate
+}
+
+// GetPartitionFormatTemplateOk returns a tuple with the PartitionFormatTemplate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureBlobStorageSettingsConfig) GetPartitionFormatTemplateOk() (*string, bool) {
+	if o == nil || IsNil(o.PartitionFormatTemplate) {
+		return nil, false
+	}
+	return o.PartitionFormatTemplate, true
+}
+
+// HasPartitionFormatTemplate returns a boolean if a field has been set.
+func (o *AzureBlobStorageSettingsConfig) HasPartitionFormatTemplate() bool {
+	if o != nil && !IsNil(o.PartitionFormatTemplate) {
+		return true
+	}
+
+	return false
+}
+
+// SetPartitionFormatTemplate gets a reference to the given string and assigns it to the PartitionFormatTemplate field.
+func (o *AzureBlobStorageSettingsConfig) SetPartitionFormatTemplate(v string) {
+	o.PartitionFormatTemplate = &v
+}
+
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
 func (o *AzureBlobStorageSettingsConfig) GetPrefix() string {
 	if o == nil || IsNil(o.Prefix) {
@@ -338,6 +372,9 @@ func (o AzureBlobStorageSettingsConfig) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.PartitionFormat) {
 		toSerialize["partition_format"] = o.PartitionFormat
+	}
+	if !IsNil(o.PartitionFormatTemplate) {
+		toSerialize["partition_format_template"] = o.PartitionFormatTemplate
 	}
 	if !IsNil(o.Prefix) {
 		toSerialize["prefix"] = o.Prefix

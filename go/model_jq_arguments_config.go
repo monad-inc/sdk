@@ -22,6 +22,8 @@ var _ MappedNullable = &JqArgumentsConfig{}
 type JqArgumentsConfig struct {
 	// Optional key to store result under
 	Key *string `json:"key,omitempty"`
+	// PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record.
+	PreventDataDropping *bool `json:"prevent_data_dropping,omitempty"`
 	// The raw query string from config
 	Query *string `json:"query,omitempty"`
 }
@@ -75,6 +77,38 @@ func (o *JqArgumentsConfig) SetKey(v string) {
 	o.Key = &v
 }
 
+// GetPreventDataDropping returns the PreventDataDropping field value if set, zero value otherwise.
+func (o *JqArgumentsConfig) GetPreventDataDropping() bool {
+	if o == nil || IsNil(o.PreventDataDropping) {
+		var ret bool
+		return ret
+	}
+	return *o.PreventDataDropping
+}
+
+// GetPreventDataDroppingOk returns a tuple with the PreventDataDropping field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JqArgumentsConfig) GetPreventDataDroppingOk() (*bool, bool) {
+	if o == nil || IsNil(o.PreventDataDropping) {
+		return nil, false
+	}
+	return o.PreventDataDropping, true
+}
+
+// HasPreventDataDropping returns a boolean if a field has been set.
+func (o *JqArgumentsConfig) HasPreventDataDropping() bool {
+	if o != nil && !IsNil(o.PreventDataDropping) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreventDataDropping gets a reference to the given bool and assigns it to the PreventDataDropping field.
+func (o *JqArgumentsConfig) SetPreventDataDropping(v bool) {
+	o.PreventDataDropping = &v
+}
+
 // GetQuery returns the Query field value if set, zero value otherwise.
 func (o *JqArgumentsConfig) GetQuery() string {
 	if o == nil || IsNil(o.Query) {
@@ -119,6 +153,9 @@ func (o JqArgumentsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Key) {
 		toSerialize["key"] = o.Key
+	}
+	if !IsNil(o.PreventDataDropping) {
+		toSerialize["prevent_data_dropping"] = o.PreventDataDropping
 	}
 	if !IsNil(o.Query) {
 		toSerialize["query"] = o.Query

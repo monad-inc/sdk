@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **Compression** | Pointer to **string** | The compression format of objects in the Azure container | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **Format** | Pointer to **string** | File format of the Blob storage objects in Azure. | [optional] 
-**PartitionFormat** | Pointer to **string** | Partition format of your Azure container. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
+**PartitionFormat** | Pointer to **string** | Partition format of your Azure container. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), simple date (&#39;2024/01/01&#39;), or custom (specify your own template in PartitionFormatTemplate). | [optional] 
+**PartitionFormatTemplate** | Pointer to **string** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for Azure object keys to organize data within the container | [optional] 
 **RecordLocation** | Pointer to **string** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 
@@ -181,6 +182,31 @@ SetPartitionFormat sets PartitionFormat field to given value.
 `func (o *AzureBlobStorageSettingsConfig) HasPartitionFormat() bool`
 
 HasPartitionFormat returns a boolean if a field has been set.
+
+### GetPartitionFormatTemplate
+
+`func (o *AzureBlobStorageSettingsConfig) GetPartitionFormatTemplate() string`
+
+GetPartitionFormatTemplate returns the PartitionFormatTemplate field if non-nil, zero value otherwise.
+
+### GetPartitionFormatTemplateOk
+
+`func (o *AzureBlobStorageSettingsConfig) GetPartitionFormatTemplateOk() (*string, bool)`
+
+GetPartitionFormatTemplateOk returns a tuple with the PartitionFormatTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartitionFormatTemplate
+
+`func (o *AzureBlobStorageSettingsConfig) SetPartitionFormatTemplate(v string)`
+
+SetPartitionFormatTemplate sets PartitionFormatTemplate field to given value.
+
+### HasPartitionFormatTemplate
+
+`func (o *AzureBlobStorageSettingsConfig) HasPartitionFormatTemplate() bool`
+
+HasPartitionFormatTemplate returns a boolean if a field has been set.
 
 ### GetPrefix
 

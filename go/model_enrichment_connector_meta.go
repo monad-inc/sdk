@@ -27,6 +27,7 @@ type EnrichmentConnectorMeta struct {
 	InBeta *bool `json:"in_beta,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 	Name *string `json:"name,omitempty"`
+	ReleaseDate *string `json:"release_date,omitempty"`
 	SupportedFeatures *ModelsSupportedFeatures `json:"supported_features,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
@@ -274,6 +275,38 @@ func (o *EnrichmentConnectorMeta) SetName(v string) {
 	o.Name = &v
 }
 
+// GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise.
+func (o *EnrichmentConnectorMeta) GetReleaseDate() string {
+	if o == nil || IsNil(o.ReleaseDate) {
+		var ret string
+		return ret
+	}
+	return *o.ReleaseDate
+}
+
+// GetReleaseDateOk returns a tuple with the ReleaseDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrichmentConnectorMeta) GetReleaseDateOk() (*string, bool) {
+	if o == nil || IsNil(o.ReleaseDate) {
+		return nil, false
+	}
+	return o.ReleaseDate, true
+}
+
+// HasReleaseDate returns a boolean if a field has been set.
+func (o *EnrichmentConnectorMeta) HasReleaseDate() bool {
+	if o != nil && !IsNil(o.ReleaseDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetReleaseDate gets a reference to the given string and assigns it to the ReleaseDate field.
+func (o *EnrichmentConnectorMeta) SetReleaseDate(v string) {
+	o.ReleaseDate = &v
+}
+
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EnrichmentConnectorMeta) GetSupportedFeatures() ModelsSupportedFeatures {
 	if o == nil || IsNil(o.SupportedFeatures) {
@@ -400,6 +433,9 @@ func (o EnrichmentConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.ReleaseDate) {
+		toSerialize["release_date"] = o.ReleaseDate
 	}
 	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supported_features"] = o.SupportedFeatures

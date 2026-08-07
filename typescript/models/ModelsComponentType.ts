@@ -12,6 +12,9 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* base type (input, output, enrichment)
+*/
 export enum ModelsComponentType {
     ComponentTypeTransform = 'transform',
     ComponentTypeInput = 'input',

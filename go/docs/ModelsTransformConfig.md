@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Conditional** | Pointer to [**ModelsTransformConditional**](ModelsTransformConditional.md) |  | [optional] 
 **Operations** | Pointer to [**[]ModelsTransformOperation**](ModelsTransformOperation.md) |  | [optional] 
 
 ## Methods
@@ -25,31 +24,6 @@ will change when the set of required properties is changed
 NewModelsTransformConfigWithDefaults instantiates a new ModelsTransformConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetConditional
-
-`func (o *ModelsTransformConfig) GetConditional() ModelsTransformConditional`
-
-GetConditional returns the Conditional field if non-nil, zero value otherwise.
-
-### GetConditionalOk
-
-`func (o *ModelsTransformConfig) GetConditionalOk() (*ModelsTransformConditional, bool)`
-
-GetConditionalOk returns a tuple with the Conditional field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConditional
-
-`func (o *ModelsTransformConfig) SetConditional(v ModelsTransformConditional)`
-
-SetConditional sets Conditional field to given value.
-
-### HasConditional
-
-`func (o *ModelsTransformConfig) HasConditional() bool`
-
-HasConditional returns a boolean if a field has been set.
 
 ### GetOperations
 

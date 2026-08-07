@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the SplunkSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -25,21 +27,25 @@ type SplunkSettingsConfig struct {
 	// The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token & Index scoping.
 	Index *string `json:"index,omitempty"`
 	// The port of the Splunk instance.
-	Port *string `json:"port,omitempty"`
+	Port string `json:"port"`
 	// Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
 	ToCreate *bool `json:"to_create,omitempty"`
 	// The URL of the Splunk instance (must start with http or https).
-	Url *string `json:"url,omitempty"`
+	Url string `json:"url"`
 	// Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used.
 	Username *string `json:"username,omitempty"`
 }
+
+type _SplunkSettingsConfig SplunkSettingsConfig
 
 // NewSplunkSettingsConfig instantiates a new SplunkSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSplunkSettingsConfig() *SplunkSettingsConfig {
+func NewSplunkSettingsConfig(port string, url string) *SplunkSettingsConfig {
 	this := SplunkSettingsConfig{}
+	this.Port = port
+	this.Url = url
 	return &this
 }
 
@@ -115,36 +121,28 @@ func (o *SplunkSettingsConfig) SetIndex(v string) {
 	o.Index = &v
 }
 
-// GetPort returns the Port field value if set, zero value otherwise.
+// GetPort returns the Port field value
 func (o *SplunkSettingsConfig) GetPort() string {
-	if o == nil || IsNil(o.Port) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Port
+
+	return o.Port
 }
 
-// GetPortOk returns a tuple with the Port field value if set, nil otherwise
+// GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
 func (o *SplunkSettingsConfig) GetPortOk() (*string, bool) {
-	if o == nil || IsNil(o.Port) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Port, true
+	return &o.Port, true
 }
 
-// HasPort returns a boolean if a field has been set.
-func (o *SplunkSettingsConfig) HasPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
-}
-
-// SetPort gets a reference to the given string and assigns it to the Port field.
+// SetPort sets field value
 func (o *SplunkSettingsConfig) SetPort(v string) {
-	o.Port = &v
+	o.Port = v
 }
 
 // GetToCreate returns the ToCreate field value if set, zero value otherwise.
@@ -179,36 +177,28 @@ func (o *SplunkSettingsConfig) SetToCreate(v bool) {
 	o.ToCreate = &v
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
+// GetUrl returns the Url field value
 func (o *SplunkSettingsConfig) GetUrl() string {
-	if o == nil || IsNil(o.Url) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+
+	return o.Url
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value
 // and a boolean to check if the value has been set.
 func (o *SplunkSettingsConfig) GetUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.Url) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return &o.Url, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *SplunkSettingsConfig) HasUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrl gets a reference to the given string and assigns it to the Url field.
+// SetUrl sets field value
 func (o *SplunkSettingsConfig) SetUrl(v string) {
-	o.Url = &v
+	o.Url = v
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise.
@@ -259,19 +249,53 @@ func (o SplunkSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Index) {
 		toSerialize["index"] = o.Index
 	}
-	if !IsNil(o.Port) {
-		toSerialize["port"] = o.Port
-	}
+	toSerialize["port"] = o.Port
 	if !IsNil(o.ToCreate) {
 		toSerialize["to_create"] = o.ToCreate
 	}
-	if !IsNil(o.Url) {
-		toSerialize["url"] = o.Url
-	}
+	toSerialize["url"] = o.Url
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
 	return toSerialize, nil
+}
+
+func (o *SplunkSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"port",
+		"url",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSplunkSettingsConfig := _SplunkSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSplunkSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SplunkSettingsConfig(varSplunkSettingsConfig)
+
+	return err
 }
 
 type NullableSplunkSettingsConfig struct {

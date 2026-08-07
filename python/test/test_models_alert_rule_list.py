@@ -42,6 +42,7 @@ class TestModelsAlertRuleList(unittest.TestCase):
                         created_at = '', 
                         description = '', 
                         id = '', 
+                        invert_selection = True, 
                         managed_by = 'customer', 
                         name = '', 
                         organization_id = '', 

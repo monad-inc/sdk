@@ -12,7 +12,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createUser"></a>
 # **createUser**
-> GithubComMonadIncCorePkgTypesModelsUser createUser(body)
+> ModelsUser createUser(body)
 
 Create user
 
@@ -48,7 +48,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     Object body = null; // Object | 
     try {
-      GithubComMonadIncCorePkgTypesModelsUser result = apiInstance.createUser(body);
+      ModelsUser result = apiInstance.createUser(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#createUser");
@@ -69,7 +69,7 @@ public class Example {
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsUser**](GithubComMonadIncCorePkgTypesModelsUser.md)
+[**ModelsUser**](ModelsUser.md)
 
 ### Authorization
 

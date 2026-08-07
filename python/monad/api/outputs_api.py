@@ -19,7 +19,6 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List
 from typing_extensions import Annotated
-from monad.models.models_connector_meta import ModelsConnectorMeta
 from monad.models.outputs_connector_meta import OutputsConnectorMeta
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -56,7 +55,7 @@ class OutputsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsConnectorMeta:
+    ) -> OutputsConnectorMeta:
         """Get output config meta
 
         Get output config meta
@@ -94,7 +93,7 @@ class OutputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsConnectorMeta",
+            '200': "OutputsConnectorMeta",
             '404': "str",
         }
         response_data = self.api_client.call_api(
@@ -124,7 +123,7 @@ class OutputsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsConnectorMeta]:
+    ) -> ApiResponse[OutputsConnectorMeta]:
         """Get output config meta
 
         Get output config meta
@@ -162,7 +161,7 @@ class OutputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsConnectorMeta",
+            '200': "OutputsConnectorMeta",
             '404': "str",
         }
         response_data = self.api_client.call_api(
@@ -230,7 +229,7 @@ class OutputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsConnectorMeta",
+            '200': "OutputsConnectorMeta",
             '404': "str",
         }
         response_data = self.api_client.call_api(

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetOutputTypeMeta
 
-> ModelsConnectorMeta GetOutputTypeMeta(ctx, outputTypeId).Execute()
+> OutputsConnectorMeta GetOutputTypeMeta(ctx, outputTypeId).Execute()
 
 Get output config meta
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OutputsAPI.GetOutputTypeMeta``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOutputTypeMeta`: ModelsConnectorMeta
+	// response from `GetOutputTypeMeta`: OutputsConnectorMeta
 	fmt.Fprintf(os.Stdout, "Response from `OutputsAPI.GetOutputTypeMeta`: %v\n", resp)
 }
 ```
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsConnectorMeta**](ModelsConnectorMeta.md)
+[**OutputsConnectorMeta**](OutputsConnectorMeta.md)
 
 ### Authorization
 

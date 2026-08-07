@@ -51,6 +51,7 @@ class TestRoutesV2CreatePipelineRequest(unittest.TestCase):
                         id = '', 
                         name = '', 
                         schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                            disable_alerting = True, 
                             enabled = True, ), 
                         to_node_instance_id = '', )
                     ],
@@ -60,6 +61,9 @@ class TestRoutesV2CreatePipelineRequest(unittest.TestCase):
                     monad.models.routes_v2/pipeline_request_node.routesV2.PipelineRequestNode(
                         component_id = '', 
                         component_type = 'transform', 
+                        config_overrides = {
+                            'key' : null
+                            }, 
                         enabled = True, 
                         id = '', 
                         slug = '', )
@@ -81,6 +85,7 @@ class TestRoutesV2CreatePipelineRequest(unittest.TestCase):
                         id = '', 
                         name = '', 
                         schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                            disable_alerting = True, 
                             enabled = True, ), 
                         to_node_instance_id = '', )
                     ],
@@ -89,6 +94,9 @@ class TestRoutesV2CreatePipelineRequest(unittest.TestCase):
                     monad.models.routes_v2/pipeline_request_node.routesV2.PipelineRequestNode(
                         component_id = '', 
                         component_type = 'transform', 
+                        config_overrides = {
+                            'key' : null
+                            }, 
                         enabled = True, 
                         id = '', 
                         slug = '', )

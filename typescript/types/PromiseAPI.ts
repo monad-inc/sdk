@@ -51,10 +51,6 @@ import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
-import { BitwardenEventsSecretsConfig } from '../models/BitwardenEventsSecretsConfig';
-import { BitwardenEventsSettingsConfig } from '../models/BitwardenEventsSettingsConfig';
-import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
-import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
@@ -85,8 +81,6 @@ import { ClumioAuditLogsSecretsConfig } from '../models/ClumioAuditLogsSecretsCo
 import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
 import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolidatedAlertsSecretsConfig';
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
-import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
-import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
 import { CommonAuthConfig } from '../models/CommonAuthConfig';
 import { CommonAuthType } from '../models/CommonAuthType';
 import { CommonGitHubAppVariant } from '../models/CommonGitHubAppVariant';
@@ -121,8 +115,6 @@ import { CreateTransformRecommendationRequest } from '../models/CreateTransformR
 import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
-import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
-import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
 import { DatabricksDeltaTableAutoLoaderWriteMode } from '../models/DatabricksDeltaTableAutoLoaderWriteMode';
 import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDeltaTableCopyIntoWriteMode';
 import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTableSecretsConfig';
@@ -186,17 +178,6 @@ import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/Git
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { GithubActionsWorkflowLogsWebhookScopeConfig } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
-import { GithubComMonadIncCorePkgTypesModelsAlertStatus } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
-import { GithubComMonadIncCorePkgTypesModelsAuditResource } from '../models/GithubComMonadIncCorePkgTypesModelsAuditResource';
-import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
-import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
-import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
-import { GithubComMonadIncCorePkgTypesModelsResourceReference } from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
-import { GithubComMonadIncCorePkgTypesModelsTimeRange } from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
-import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
-import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
-import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
 import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -211,6 +192,10 @@ import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
+import { HydrolixAuthConfig } from '../models/HydrolixAuthConfig';
+import { HydrolixPasswordAuth } from '../models/HydrolixPasswordAuth';
+import { HydrolixServiceAccountAuth } from '../models/HydrolixServiceAccountAuth';
+import { HydrolixSettingsConfig } from '../models/HydrolixSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
@@ -252,11 +237,14 @@ import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
+import { ModelsAlert } from '../models/ModelsAlert';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
+import { ModelsAlertStatus } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
 import { ModelsAuditLogHistogramBucket } from '../models/ModelsAuditLogHistogramBucket';
+import { ModelsAuditResource } from '../models/ModelsAuditResource';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -274,10 +262,8 @@ import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
-import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
-import { ModelsElseAction } from '../models/ModelsElseAction';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
@@ -292,7 +278,7 @@ import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegist
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
-import { ModelsNodeSharedResource } from '../models/ModelsNodeSharedResource';
+import { ModelsOrganization } from '../models/ModelsOrganization';
 import { ModelsOrganizationAuditLog } from '../models/ModelsOrganizationAuditLog';
 import { ModelsOrganizationAuditLogHistogram } from '../models/ModelsOrganizationAuditLogHistogram';
 import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
@@ -304,6 +290,7 @@ import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
+import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
@@ -321,6 +308,7 @@ import { ModelsPipelineStreamInfo } from '../models/ModelsPipelineStreamInfo';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
 import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
+import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaAction } from '../models/ModelsQuotaAction';
 import { ModelsQuotaLimitType } from '../models/ModelsQuotaLimitType';
 import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
@@ -329,6 +317,7 @@ import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsResourceReference } from '../models/ModelsResourceReference';
 import { ModelsResourceShare } from '../models/ModelsResourceShare';
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
 import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
@@ -350,13 +339,15 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
+import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
+import { ModelsTimeRange } from '../models/ModelsTimeRange';
 import { ModelsTransform } from '../models/ModelsTransform';
-import { ModelsTransformConditional } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
+import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserOrganization } from '../models/ModelsUserOrganization';
 import { ModelsUserOrganizationList } from '../models/ModelsUserOrganizationList';
@@ -374,26 +365,18 @@ import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
 import { OfflineenrollmentlogsSecretsConfig } from '../models/OfflineenrollmentlogsSecretsConfig';
 import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
-import { OneloginEventsSecretsConfig } from '../models/OneloginEventsSecretsConfig';
-import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
-import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
-import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
-import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
 import { OpensearchAuthMode } from '../models/OpensearchAuthMode';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig';
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
-import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
-import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
-import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
 import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
@@ -406,12 +389,8 @@ import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
 import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig';
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
-import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
-import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
-import { PostmanAuditLogsSecretsConfig } from '../models/PostmanAuditLogsSecretsConfig';
-import { PostmanAuditLogsSettingsConfig } from '../models/PostmanAuditLogsSettingsConfig';
 import { PrometheusAuthConfig } from '../models/PrometheusAuthConfig';
 import { PrometheusBasicVariant } from '../models/PrometheusBasicVariant';
 import { PrometheusBearerVariant } from '../models/PrometheusBearerVariant';
@@ -419,17 +398,14 @@ import { PrometheusFieldMetricVariant } from '../models/PrometheusFieldMetricVar
 import { PrometheusMetricNameConfig } from '../models/PrometheusMetricNameConfig';
 import { PrometheusSettingsConfig } from '../models/PrometheusSettingsConfig';
 import { PrometheusStaticMetricVariant } from '../models/PrometheusStaticMetricVariant';
-import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
-import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RedshiftAuditLogsSettingsConfig } from '../models/RedshiftAuditLogsSettingsConfig';
+import { RegenerateAPIKeyRequest } from '../models/RegenerateAPIKeyRequest';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
 import { ReplaceEnrichmentRequest } from '../models/ReplaceEnrichmentRequest';
 import { ReplaceInputRequest } from '../models/ReplaceInputRequest';
 import { ReplaceOutputRequest } from '../models/ReplaceOutputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
-import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
@@ -478,6 +454,7 @@ import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
+import { RoutesV2RegenerateAPIKeyRequest } from '../models/RoutesV2RegenerateAPIKeyRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
@@ -485,6 +462,8 @@ import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTyp
 import { RoutesV2StorageTypeOutputDetailResponse } from '../models/RoutesV2StorageTypeOutputDetailResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
+import { RoutesV2TestNodeConfig } from '../models/RoutesV2TestNodeConfig';
+import { RoutesV2TestNodeConnectionRequest } from '../models/RoutesV2TestNodeConnectionRequest';
 import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
@@ -531,6 +510,7 @@ import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3Update
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateConnectionRequestSaml } from '../models/RoutesV3UpdateConnectionRequestSaml';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { RunrevealSettingsConfig } from '../models/RunrevealSettingsConfig';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { ScannerAuthConfig } from '../models/ScannerAuthConfig';
@@ -558,8 +538,6 @@ import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupply
 import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
-import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
-import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
 import { SetStorageTypeCostRequest } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
@@ -595,17 +573,10 @@ import { TeamIntegrationLogsSecretsConfig } from '../models/TeamIntegrationLogsS
 import { TeamIntegrationLogsSettingsConfig } from '../models/TeamIntegrationLogsSettingsConfig';
 import { TelephonyLogsSecretsConfig } from '../models/TelephonyLogsSecretsConfig';
 import { TelephonyLogsSettingsConfig } from '../models/TelephonyLogsSettingsConfig';
-import { TenableAssetsCronSecretsConfig } from '../models/TenableAssetsCronSecretsConfig';
-import { TenableAssetsCronSettingsConfig } from '../models/TenableAssetsCronSettingsConfig';
-import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
-import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
-import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulnerabilitiesCronSecretsConfig';
-import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
-import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
-import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
 import { TestEnrichmentConnectionRequest } from '../models/TestEnrichmentConnectionRequest';
 import { TestInputConnectionRequest } from '../models/TestInputConnectionRequest';
 import { TestOutputConnectionRequest } from '../models/TestOutputConnectionRequest';
+import { TestPipelineNodeConnectionRequest } from '../models/TestPipelineNodeConnectionRequest';
 import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
@@ -630,7 +601,9 @@ import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
 import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
+import { UpdateResourceSharesRequest } from '../models/UpdateResourceSharesRequest';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
+import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
@@ -639,6 +612,8 @@ import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsCo
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
+import { WazuhSecretsConfig } from '../models/WazuhSecretsConfig';
+import { WazuhSettingsConfig } from '../models/WazuhSettingsConfig';
 import { WizAssetStatus } from '../models/WizAssetStatus';
 import { WizAssetType } from '../models/WizAssetType';
 import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
@@ -658,9 +633,6 @@ import { WizServiceTicketFilter } from '../models/WizServiceTicketFilter';
 import { WizStackLayer } from '../models/WizStackLayer';
 import { WizStatus } from '../models/WizStatus';
 import { WizVendorSeverity } from '../models/WizVendorSeverity';
-import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
-import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
-import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
 import { ObservableAlertRulesApi } from './ObservableAPI';
 
 import { AlertRulesApiRequestFactory, AlertRulesApiResponseProcessor} from "../apis/AlertRulesApi";
@@ -950,7 +922,7 @@ export class PromiseAuditLogsApi {
     }
 
     /**
-     * Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to).
      * Audit log change histogram
      * @param organizationId Organization ID
      * @param _from Bucket window start (inclusive), RFC3339
@@ -968,7 +940,7 @@ export class PromiseAuditLogsApi {
     }
 
     /**
-     * Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to).
      * Audit log change histogram
      * @param organizationId Organization ID
      * @param _from Bucket window start (inclusive), RFC3339
@@ -986,7 +958,7 @@ export class PromiseAuditLogsApi {
     }
 
     /**
-     * List the organization\'s audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline\'s merged history: the pipeline\'s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+     * List the organization\'s audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline\'s merged history: the pipeline\'s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource.
      * List organization audit logs
      * @param organizationId Organization ID
      * @param [limit] Page size (default 50, max 100)
@@ -1005,7 +977,7 @@ export class PromiseAuditLogsApi {
     }
 
     /**
-     * List the organization\'s audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline\'s merged history: the pipeline\'s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+     * List the organization\'s audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline\'s merged history: the pipeline\'s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource.
      * List organization audit logs
      * @param organizationId Organization ID
      * @param [limit] Page size (default 50, max 100)
@@ -1975,7 +1947,7 @@ export class PromiseInputsApi {
      * Get input config meta
      * @param inputTypeId Input type ID
      */
-    public getInputTypeMetaWithHttpInfo(inputTypeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
+    public getInputTypeMetaWithHttpInfo(inputTypeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<InputsConnectorMeta>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getInputTypeMetaWithHttpInfo(inputTypeId, observableOptions);
         return result.toPromise();
@@ -1986,7 +1958,7 @@ export class PromiseInputsApi {
      * Get input config meta
      * @param inputTypeId Input type ID
      */
-    public getInputTypeMeta(inputTypeId: string, _options?: PromiseConfigurationOptions): Promise<ModelsConnectorMeta> {
+    public getInputTypeMeta(inputTypeId: string, _options?: PromiseConfigurationOptions): Promise<InputsConnectorMeta> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getInputTypeMeta(inputTypeId, observableOptions);
         return result.toPromise();
@@ -2465,26 +2437,28 @@ export class PromiseOrganizationAPIKeysApi {
     }
 
     /**
-     * Regenerates an API key by creating a new one with the same metadata and deleting the old one
+     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
      * Regenerate API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
+     * @param [regenerateAPIKeyRequest] Optional new expiration for the regenerated key
      */
-    public regenerateAPIKeyWithHttpInfo(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+    public regenerateAPIKeyWithHttpInfo(organizationId: string, apiKeyId: string, regenerateAPIKeyRequest?: RegenerateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.regenerateAPIKeyWithHttpInfo(organizationId, apiKeyId, observableOptions);
+        const result = this.api.regenerateAPIKeyWithHttpInfo(organizationId, apiKeyId, regenerateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
-     * Regenerates an API key by creating a new one with the same metadata and deleting the old one
+     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
      * Regenerate API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
+     * @param [regenerateAPIKeyRequest] Optional new expiration for the regenerated key
      */
-    public regenerateAPIKey(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
+    public regenerateAPIKey(organizationId: string, apiKeyId: string, regenerateAPIKeyRequest?: RegenerateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.regenerateAPIKey(organizationId, apiKeyId, observableOptions);
+        const result = this.api.regenerateAPIKey(organizationId, apiKeyId, regenerateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -3583,7 +3557,7 @@ export class PromiseOrganizationsApi {
      * @param organizationId Parent Organization ID
      * @param createChildOrganizationRequest Request body
      */
-    public createChildOrganizationWithHttpInfo(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public createChildOrganizationWithHttpInfo(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createChildOrganizationWithHttpInfo(organizationId, createChildOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -3595,7 +3569,7 @@ export class PromiseOrganizationsApi {
      * @param organizationId Parent Organization ID
      * @param createChildOrganizationRequest Request body
      */
-    public createChildOrganization(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+    public createChildOrganization(organizationId: string, createChildOrganizationRequest: CreateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganization> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createChildOrganization(organizationId, createChildOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -3606,7 +3580,7 @@ export class PromiseOrganizationsApi {
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization
      */
-    public createOrganizationWithHttpInfo(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public createOrganizationWithHttpInfo(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createOrganizationWithHttpInfo(routesCreateOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -3617,7 +3591,7 @@ export class PromiseOrganizationsApi {
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization
      */
-    public createOrganization(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+    public createOrganization(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganization> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createOrganization(routesCreateOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -3766,7 +3740,7 @@ export class PromiseOrganizationsApi {
      * @param childOrganizationId Child Organization ID
      * @param updateChildOrganizationRequest Request body
      */
-    public updateChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public updateChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.updateChildOrganizationWithHttpInfo(organizationId, childOrganizationId, updateChildOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -3779,7 +3753,7 @@ export class PromiseOrganizationsApi {
      * @param childOrganizationId Child Organization ID
      * @param updateChildOrganizationRequest Request body
      */
-    public updateChildOrganization(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+    public updateChildOrganization(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganization> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -3791,7 +3765,7 @@ export class PromiseOrganizationsApi {
      * @param organizationId Organization ID
      * @param routesUpdateOrganizationRequest Request body for updating an organization
      */
-    public updateOrganizationWithHttpInfo(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+    public updateOrganizationWithHttpInfo(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.updateOrganizationWithHttpInfo(organizationId, routesUpdateOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -3803,7 +3777,7 @@ export class PromiseOrganizationsApi {
      * @param organizationId Organization ID
      * @param routesUpdateOrganizationRequest Request body for updating an organization
      */
-    public updateOrganization(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+    public updateOrganization(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganization> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.updateOrganization(organizationId, routesUpdateOrganizationRequest, observableOptions);
         return result.toPromise();
@@ -4073,7 +4047,7 @@ export class PromiseOutputsApi {
      * Get output config meta
      * @param outputTypeId Output type ID
      */
-    public getOutputTypeMetaWithHttpInfo(outputTypeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
+    public getOutputTypeMetaWithHttpInfo(outputTypeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<OutputsConnectorMeta>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getOutputTypeMetaWithHttpInfo(outputTypeId, observableOptions);
         return result.toPromise();
@@ -4084,7 +4058,7 @@ export class PromiseOutputsApi {
      * Get output config meta
      * @param outputTypeId Output type ID
      */
-    public getOutputTypeMeta(outputTypeId: string, _options?: PromiseConfigurationOptions): Promise<ModelsConnectorMeta> {
+    public getOutputTypeMeta(outputTypeId: string, _options?: PromiseConfigurationOptions): Promise<OutputsConnectorMeta> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getOutputTypeMeta(outputTypeId, observableOptions);
         return result.toPromise();
@@ -4789,6 +4763,32 @@ export class PromisePipelinesApi {
     }
 
     /**
+     * Tests the connection for a node\'s submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.
+     * Test a pipeline node connection
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param testPipelineNodeConnectionRequest Node config to test
+     */
+    public testPipelineNodeConnectionWithHttpInfo(organizationId: string, pipelineId: string, testPipelineNodeConnectionRequest: TestPipelineNodeConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.testPipelineNodeConnectionWithHttpInfo(organizationId, pipelineId, testPipelineNodeConnectionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Tests the connection for a node\'s submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.
+     * Test a pipeline node connection
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param testPipelineNodeConnectionRequest Node config to test
+     */
+    public testPipelineNodeConnection(organizationId: string, pipelineId: string, testPipelineNodeConnectionRequest: TestPipelineNodeConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SuccessResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.testPipelineNodeConnection(organizationId, pipelineId, testPipelineNodeConnectionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Manually trigger a cron-scheduled pipeline to run
      * Trigger pipeline manually
      * @param organizationId Organization ID
@@ -5142,11 +5142,11 @@ export class PromiseResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param createResourceSharesRequest Share delta request
+     * @param updateResourceSharesRequest Share delta request
      */
-    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, updateResourceSharesRequest: UpdateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
+        const result = this.api.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, updateResourceSharesRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5156,11 +5156,11 @@ export class PromiseResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param createResourceSharesRequest Share delta request
+     * @param updateResourceSharesRequest Share delta request
      */
-    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, updateResourceSharesRequest: UpdateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
+        const result = this.api.updateResourceShares(organizationId, resourceType, resourceId, updateResourceSharesRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5351,7 +5351,7 @@ export class PromiseSecretsApi {
     }
 
     /**
-     * Deletes a specific secret by ID
+     * Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. \"Referenced\" means configured on an input, output, enrichment or transform, or on a pipeline node\'s config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
      * Delete secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
@@ -5363,7 +5363,7 @@ export class PromiseSecretsApi {
     }
 
     /**
-     * Deletes a specific secret by ID
+     * Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. \"Referenced\" means configured on an input, output, enrichment or transform, or on a pipeline node\'s config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
      * Delete secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
@@ -5375,7 +5375,7 @@ export class PromiseSecretsApi {
     }
 
     /**
-     * Gets a specific secret by ID including inputs and outputs that use it
+     * Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
      * Get secret with components
      * @param organizationId Organization ID
      * @param secretId Secret ID
@@ -5387,7 +5387,7 @@ export class PromiseSecretsApi {
     }
 
     /**
-     * Gets a specific secret by ID including inputs and outputs that use it
+     * Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
      * Get secret with components
      * @param organizationId Organization ID
      * @param secretId Secret ID
@@ -5399,7 +5399,7 @@ export class PromiseSecretsApi {
     }
 
     /**
-     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * List secrets with components
      * @param organizationId Organization ID
      * @param [limit] Limit number of results
@@ -5412,7 +5412,7 @@ export class PromiseSecretsApi {
     }
 
     /**
-     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * List secrets with components
      * @param organizationId Organization ID
      * @param [limit] Limit number of results
@@ -5429,11 +5429,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param createSecretRequest Secret updates
+     * @param updateSecretRequest Secret updates
      */
-    public updateSecretWithHttpInfo(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public updateSecretWithHttpInfo(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, createSecretRequest, observableOptions);
+        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5442,11 +5442,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param createSecretRequest Secret updates
+     * @param updateSecretRequest Secret updates
      */
-    public updateSecret(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
+    public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecret(organizationId, secretId, createSecretRequest, observableOptions);
+        const result = this.api.updateSecret(organizationId, secretId, updateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5905,7 +5905,7 @@ export class PromiseUsersApi {
      * Create user
      * @param [body]
      */
-    public createUserWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsUser>> {
+    public createUserWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createUserWithHttpInfo(body, observableOptions);
         return result.toPromise();
@@ -5916,7 +5916,7 @@ export class PromiseUsersApi {
      * Create user
      * @param [body]
      */
-    public createUser(body?: any, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsUser> {
+    public createUser(body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsUser> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createUser(body, observableOptions);
         return result.toPromise();

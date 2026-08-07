@@ -20,6 +20,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import org.openapitools.client.model.ModelsComponentType;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -52,6 +54,14 @@ public class RoutesV2PipelineRequestNodeTest {
     @Test
     public void componentTypeTest() {
         // TODO: test componentType
+    }
+
+    /**
+     * Test the property 'configOverrides'
+     */
+    @Test
+    public void configOverridesTest() {
+        // TODO: test configOverrides
     }
 
     /**

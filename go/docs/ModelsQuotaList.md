@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
-**Quotas** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsQuota**](GithubComMonadIncCorePkgTypesModelsQuota.md) |  | [optional] 
+**Quotas** | Pointer to [**[]ModelsQuota**](ModelsQuota.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPagination returns a boolean if a field has been set.
 
 ### GetQuotas
 
-`func (o *ModelsQuotaList) GetQuotas() []GithubComMonadIncCorePkgTypesModelsQuota`
+`func (o *ModelsQuotaList) GetQuotas() []ModelsQuota`
 
 GetQuotas returns the Quotas field if non-nil, zero value otherwise.
 
 ### GetQuotasOk
 
-`func (o *ModelsQuotaList) GetQuotasOk() (*[]GithubComMonadIncCorePkgTypesModelsQuota, bool)`
+`func (o *ModelsQuotaList) GetQuotasOk() (*[]ModelsQuota, bool)`
 
 GetQuotasOk returns a tuple with the Quotas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuotas
 
-`func (o *ModelsQuotaList) SetQuotas(v []GithubComMonadIncCorePkgTypesModelsQuota)`
+`func (o *ModelsQuotaList) SetQuotas(v []ModelsQuota)`
 
 SetQuotas sets Quotas field to given value.
 

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * EnrichmentConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class EnrichmentConnectorMeta {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
@@ -87,6 +87,11 @@ public class EnrichmentConnectorMeta {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_RELEASE_DATE = "release_date";
+  @SerializedName(SERIALIZED_NAME_RELEASE_DATE)
+  @javax.annotation.Nullable
+  private String releaseDate;
 
   public static final String SERIALIZED_NAME_SUPPORTED_FEATURES = "supported_features";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_FEATURES)
@@ -239,6 +244,25 @@ public class EnrichmentConnectorMeta {
   }
 
 
+  public EnrichmentConnectorMeta releaseDate(@javax.annotation.Nullable String releaseDate) {
+    this.releaseDate = releaseDate;
+    return this;
+  }
+
+  /**
+   * Get releaseDate
+   * @return releaseDate
+   */
+  @javax.annotation.Nullable
+  public String getReleaseDate() {
+    return releaseDate;
+  }
+
+  public void setReleaseDate(@javax.annotation.Nullable String releaseDate) {
+    this.releaseDate = releaseDate;
+  }
+
+
   public EnrichmentConnectorMeta supportedFeatures(@javax.annotation.Nullable ModelsSupportedFeatures supportedFeatures) {
     this.supportedFeatures = supportedFeatures;
     return this;
@@ -313,6 +337,7 @@ public class EnrichmentConnectorMeta {
         Objects.equals(this.inBeta, enrichmentConnectorMeta.inBeta) &&
         Objects.equals(this.internal, enrichmentConnectorMeta.internal) &&
         Objects.equals(this.name, enrichmentConnectorMeta.name) &&
+        Objects.equals(this.releaseDate, enrichmentConnectorMeta.releaseDate) &&
         Objects.equals(this.supportedFeatures, enrichmentConnectorMeta.supportedFeatures) &&
         Objects.equals(this.tier, enrichmentConnectorMeta.tier) &&
         Objects.equals(this.typeId, enrichmentConnectorMeta.typeId);
@@ -324,7 +349,7 @@ public class EnrichmentConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, connectorCategory, description, house, inBeta, internal, name, supportedFeatures, tier, typeId);
+    return Objects.hash(config, connectorCategory, description, house, inBeta, internal, name, releaseDate, supportedFeatures, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -345,6 +370,7 @@ public class EnrichmentConnectorMeta {
     sb.append("    inBeta: ").append(toIndentedString(inBeta)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
     sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
@@ -366,7 +392,7 @@ public class EnrichmentConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "connector_category", "description", "house", "in_beta", "internal", "name", "supported_features", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "connector_category", "description", "house", "in_beta", "internal", "name", "release_date", "supported_features", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -405,6 +431,9 @@ public class EnrichmentConnectorMeta {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("release_date") != null && !jsonObj.get("release_date").isJsonNull()) && !jsonObj.get("release_date").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `release_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("release_date").toString()));
       }
       // validate the optional field `supported_features`
       if (jsonObj.get("supported_features") != null && !jsonObj.get("supported_features").isJsonNull()) {

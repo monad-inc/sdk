@@ -202,7 +202,7 @@ func (r ApiDeleteSecretRequest) Execute() (*http.Response, error) {
 /*
 DeleteSecret Delete secret
 
-Deletes a specific secret by ID
+Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. "Referenced" means configured on an input, output, enrichment or transform, or on a pipeline node's config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -306,7 +306,29 @@ func (a *SecretsAPIService) DeleteSecretExecute(r ApiDeleteSecretRequest) (*http
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
 		if localVarHTTPResponse.StatusCode == 404 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 409 {
 			var v ResponderErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -347,7 +369,7 @@ func (r ApiGetSecretRequest) Execute() (*ModelsSecretWithComponents, *http.Respo
 /*
 GetSecret Get secret with components
 
-Gets a specific secret by ID including inputs and outputs that use it
+Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -516,7 +538,7 @@ func (r ApiListSecretsRequest) Execute() (*ModelsSecretWithComponentsList, *http
 /*
 ListSecrets List secrets with components
 
-Lists all secrets for the specified organization including inputs and outputs that use them
+Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -655,12 +677,12 @@ type ApiUpdateSecretRequest struct {
 	ApiService *SecretsAPIService
 	organizationId string
 	secretId string
-	createSecretRequest *CreateSecretRequest
+	updateSecretRequest *UpdateSecretRequest
 }
 
 // Secret updates
-func (r ApiUpdateSecretRequest) CreateSecretRequest(createSecretRequest CreateSecretRequest) ApiUpdateSecretRequest {
-	r.createSecretRequest = &createSecretRequest
+func (r ApiUpdateSecretRequest) UpdateSecretRequest(updateSecretRequest UpdateSecretRequest) ApiUpdateSecretRequest {
+	r.updateSecretRequest = &updateSecretRequest
 	return r
 }
 
@@ -709,8 +731,8 @@ func (a *SecretsAPIService) UpdateSecretExecute(r ApiUpdateSecretRequest) (*Rout
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.createSecretRequest == nil {
-		return localVarReturnValue, nil, reportError("createSecretRequest is required and must be specified")
+	if r.updateSecretRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSecretRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -731,7 +753,7 @@ func (a *SecretsAPIService) UpdateSecretExecute(r ApiUpdateSecretRequest) (*Rout
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createSecretRequest
+	localVarPostBody = r.updateSecretRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ShareDetails is set when the enrichment is involved in org-to-org sharing.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsShareDetails {
   public static final String SERIALIZED_NAME_OWNER_ORGANIZATION_ID = "owner_organization_id";
   @SerializedName(SERIALIZED_NAME_OWNER_ORGANIZATION_ID)

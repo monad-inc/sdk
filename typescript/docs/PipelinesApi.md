@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**purgePipeline**](PipelinesApi.md#purgePipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**purgePipelineNode**](PipelinesApi.md#purgePipelineNode) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**resetSchemaState**](PipelinesApi.md#resetSchemaState) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
+[**testPipelineNodeConnection**](PipelinesApi.md#testPipelineNodeConnection) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/test-connection | Test a pipeline node connection
 [**triggerPipeline**](PipelinesApi.md#triggerPipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**updatePipeline**](PipelinesApi.md#updatePipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**updatePipelineEdge**](PipelinesApi.md#updatePipelineEdge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -87,6 +88,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** | Pipeline created successfully |  -  |
 **400** | Invalid JSON request body or Failed to create pipeline |  -  |
+**403** | Node config overrides are not enabled for this organization |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -1451,6 +1453,67 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **testPipelineNodeConnection**
+> RoutesV2SuccessResponse testPipelineNodeConnection(testPipelineNodeConnectionRequest)
+
+Tests the connection for a node\'s submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiTestPipelineNodeConnectionRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiTestPipelineNodeConnectionRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Node config to test
+  testPipelineNodeConnectionRequest: null,
+};
+
+const data = await apiInstance.testPipelineNodeConnection(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **testPipelineNodeConnectionRequest** | **TestPipelineNodeConnectionRequest**| Node config to test |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+
+
+### Return type
+
+**RoutesV2SuccessResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Connection test successful |  -  |
+**400** | Invalid request body or unsupported component type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **triggerPipeline**
 > string triggerPipeline()
 
@@ -1568,6 +1631,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Pipeline updated successfully |  -  |
 **400** | Invalid JSON request body |  -  |
+**403** | Node config overrides are not enabled for this organization |  -  |
 **500** | Failed to update pipeline |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

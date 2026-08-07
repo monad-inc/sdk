@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ## RegenerateAPIKey
 
-> ModelsAPIKeyWithToken RegenerateAPIKey(ctx, organizationId, apiKeyId).Execute()
+> ModelsAPIKeyWithToken RegenerateAPIKey(ctx, organizationId, apiKeyId).RegenerateAPIKeyRequest(regenerateAPIKeyRequest).Execute()
 
 Regenerate API key
 
@@ -328,10 +328,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	apiKeyId := "apiKeyId_example" // string | API Key ID
+	regenerateAPIKeyRequest := openapiclient.RegenerateAPIKey_request{RoutesV2RegenerateAPIKeyRequest: openapiclient.NewRoutesV2RegenerateAPIKeyRequest()} // RegenerateAPIKeyRequest | Optional new expiration for the regenerated key (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationAPIKeysAPI.RegenerateAPIKey(context.Background(), organizationId, apiKeyId).Execute()
+	resp, r, err := apiClient.OrganizationAPIKeysAPI.RegenerateAPIKey(context.Background(), organizationId, apiKeyId).RegenerateAPIKeyRequest(regenerateAPIKeyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationAPIKeysAPI.RegenerateAPIKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -359,6 +360,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **regenerateAPIKeyRequest** | [**RegenerateAPIKeyRequest**](RegenerateAPIKeyRequest.md) | Optional new expiration for the regenerated key | 
 
 ### Return type
 
@@ -370,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

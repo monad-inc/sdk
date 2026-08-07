@@ -17,7 +17,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createChildOrganization"></a>
 # **createChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(organizationId, createChildOrganizationRequest)
+> ModelsOrganization createChildOrganization(organizationId, createChildOrganizationRequest)
 
 Create child organization (team)
 
@@ -54,7 +54,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Parent Organization ID
     CreateChildOrganizationRequest createChildOrganizationRequest = new CreateChildOrganizationRequest(); // CreateChildOrganizationRequest | Request body
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.createChildOrganization(organizationId, createChildOrganizationRequest);
+      ModelsOrganization result = apiInstance.createChildOrganization(organizationId, createChildOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#createChildOrganization");
@@ -76,7 +76,7 @@ public class Example {
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ public class Example {
 
 <a id="createOrganization"></a>
 # **createOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization createOrganization(routesCreateOrganizationRequest)
+> ModelsOrganization createOrganization(routesCreateOrganizationRequest)
 
 Create organization
 
@@ -132,7 +132,7 @@ public class Example {
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     RoutesCreateOrganizationRequest routesCreateOrganizationRequest = new RoutesCreateOrganizationRequest(); // RoutesCreateOrganizationRequest | Request body for creating an organization
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.createOrganization(routesCreateOrganizationRequest);
+      ModelsOrganization result = apiInstance.createOrganization(routesCreateOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#createOrganization");
@@ -153,7 +153,7 @@ public class Example {
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -577,7 +577,7 @@ public class Example {
 
 <a id="updateChildOrganization"></a>
 # **updateChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest)
+> ModelsOrganization updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest)
 
 Update child organization (team)
 
@@ -615,7 +615,7 @@ public class Example {
     String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
     UpdateChildOrganizationRequest updateChildOrganizationRequest = new UpdateChildOrganizationRequest(); // UpdateChildOrganizationRequest | Request body
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest);
+      ModelsOrganization result = apiInstance.updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#updateChildOrganization");
@@ -638,7 +638,7 @@ public class Example {
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -659,7 +659,7 @@ public class Example {
 
 <a id="updateOrganization"></a>
 # **updateOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization updateOrganization(organizationId, routesUpdateOrganizationRequest)
+> ModelsOrganization updateOrganization(organizationId, routesUpdateOrganizationRequest)
 
 Update organization
 
@@ -696,7 +696,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest = new RoutesUpdateOrganizationRequest(); // RoutesUpdateOrganizationRequest | Request body for updating an organization
     try {
-      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.updateOrganization(organizationId, routesUpdateOrganizationRequest);
+      ModelsOrganization result = apiInstance.updateOrganization(organizationId, routesUpdateOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#updateOrganization");
@@ -718,7 +718,7 @@ public class Example {
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 

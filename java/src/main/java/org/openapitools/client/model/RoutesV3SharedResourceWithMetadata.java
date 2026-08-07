@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3SharedResourceWithMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesV3SharedResourceWithMetadata {
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)

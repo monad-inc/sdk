@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**disable_alerting** | **bool** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
 
 ## Example

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateChildOrganization
 
-> GithubComMonadIncCorePkgTypesModelsOrganization CreateChildOrganization(ctx, organizationId).CreateChildOrganizationRequest(createChildOrganizationRequest).Execute()
+> ModelsOrganization CreateChildOrganization(ctx, organizationId).CreateChildOrganizationRequest(createChildOrganizationRequest).Execute()
 
 Create child organization (team)
 
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.CreateChildOrganization``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateChildOrganization`: GithubComMonadIncCorePkgTypesModelsOrganization
+	// response from `CreateChildOrganization`: ModelsOrganization
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.CreateChildOrganization`: %v\n", resp)
 }
 ```
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## CreateOrganization
 
-> GithubComMonadIncCorePkgTypesModelsOrganization CreateOrganization(ctx).RoutesCreateOrganizationRequest(routesCreateOrganizationRequest).Execute()
+> ModelsOrganization CreateOrganization(ctx).RoutesCreateOrganizationRequest(routesCreateOrganizationRequest).Execute()
 
 Create organization
 
@@ -118,7 +118,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.CreateOrganization``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateOrganization`: GithubComMonadIncCorePkgTypesModelsOrganization
+	// response from `CreateOrganization`: ModelsOrganization
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.CreateOrganization`: %v\n", resp)
 }
 ```
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ## UpdateChildOrganization
 
-> GithubComMonadIncCorePkgTypesModelsOrganization UpdateChildOrganization(ctx, organizationId, childOrganizationId).UpdateChildOrganizationRequest(updateChildOrganizationRequest).Execute()
+> ModelsOrganization UpdateChildOrganization(ctx, organizationId, childOrganizationId).UpdateChildOrganizationRequest(updateChildOrganizationRequest).Execute()
 
 Update child organization (team)
 
@@ -558,7 +558,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.UpdateChildOrganization``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateChildOrganization`: GithubComMonadIncCorePkgTypesModelsOrganization
+	// response from `UpdateChildOrganization`: ModelsOrganization
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.UpdateChildOrganization`: %v\n", resp)
 }
 ```
@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ## UpdateOrganization
 
-> GithubComMonadIncCorePkgTypesModelsOrganization UpdateOrganization(ctx, organizationId).RoutesUpdateOrganizationRequest(routesUpdateOrganizationRequest).Execute()
+> ModelsOrganization UpdateOrganization(ctx, organizationId).RoutesUpdateOrganizationRequest(routesUpdateOrganizationRequest).Execute()
 
 Update organization
 
@@ -632,7 +632,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.UpdateOrganization``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateOrganization`: GithubComMonadIncCorePkgTypesModelsOrganization
+	// response from `UpdateOrganization`: ModelsOrganization
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.UpdateOrganization`: %v\n", resp)
 }
 ```
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 

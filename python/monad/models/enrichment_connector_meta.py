@@ -37,10 +37,11 @@ class EnrichmentConnectorMeta(BaseModel):
     in_beta: Optional[StrictBool] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
+    release_date: Optional[StrictStr] = None
     supported_features: Optional[ModelsSupportedFeatures] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "connector_category", "description", "house", "in_beta", "internal", "name", "supported_features", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["config", "connector_category", "description", "house", "in_beta", "internal", "name", "release_date", "supported_features", "tier", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -108,6 +109,7 @@ class EnrichmentConnectorMeta(BaseModel):
             "in_beta": obj.get("in_beta"),
             "internal": obj.get("internal"),
             "name": obj.get("name"),
+            "release_date": obj.get("release_date"),
             "supported_features": ModelsSupportedFeatures.from_dict(obj["supported_features"]) if obj.get("supported_features") is not None else None,
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")

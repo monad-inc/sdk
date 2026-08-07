@@ -34,7 +34,7 @@ func (r ApiCreateUserRequest) Body(body map[string]interface{}) ApiCreateUserReq
 	return r
 }
 
-func (r ApiCreateUserRequest) Execute() (*GithubComMonadIncCorePkgTypesModelsUser, *http.Response, error) {
+func (r ApiCreateUserRequest) Execute() (*ModelsUser, *http.Response, error) {
 	return r.ApiService.CreateUserExecute(r)
 }
 
@@ -54,13 +54,13 @@ func (a *UsersAPIService) CreateUser(ctx context.Context) ApiCreateUserRequest {
 }
 
 // Execute executes the request
-//  @return GithubComMonadIncCorePkgTypesModelsUser
-func (a *UsersAPIService) CreateUserExecute(r ApiCreateUserRequest) (*GithubComMonadIncCorePkgTypesModelsUser, *http.Response, error) {
+//  @return ModelsUser
+func (a *UsersAPIService) CreateUserExecute(r ApiCreateUserRequest) (*ModelsUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GithubComMonadIncCorePkgTypesModelsUser
+		localVarReturnValue  *ModelsUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.CreateUser")

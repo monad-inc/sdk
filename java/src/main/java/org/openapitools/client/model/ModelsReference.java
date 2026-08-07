@@ -48,17 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * ModelsReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsReference {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
 
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
   private String organizationId;
+
+  public static final String SERIALIZED_NAME_SHARED = "shared";
+  @SerializedName(SERIALIZED_NAME_SHARED)
+  @javax.annotation.Nullable
+  private Boolean shared;
 
   public ModelsReference() {
   }
@@ -82,6 +92,25 @@ public class ModelsReference {
   }
 
 
+  public ModelsReference name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Name is the referenced resource&#39;s display name, filled at read time on component responses. Never persisted: writes rebuild references from request state (the name is display sugar and would go stale), and an empty name is omitted from the stored JSON.
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
   public ModelsReference organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
@@ -101,6 +130,25 @@ public class ModelsReference {
   }
 
 
+  public ModelsReference shared(@javax.annotation.Nullable Boolean shared) {
+    this.shared = shared;
+    return this;
+  }
+
+  /**
+   * Shared reports that the referenced resource is owned by an org other than the component&#39;s owner — a directly-shared secret the component pulls in. Same read-time-only contract as Name: computed on responses, never persisted (omitted when false).
+   * @return shared
+   */
+  @javax.annotation.Nullable
+  public Boolean getShared() {
+    return shared;
+  }
+
+  public void setShared(@javax.annotation.Nullable Boolean shared) {
+    this.shared = shared;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +160,14 @@ public class ModelsReference {
     }
     ModelsReference modelsReference = (ModelsReference) o;
     return Objects.equals(this.id, modelsReference.id) &&
-        Objects.equals(this.organizationId, modelsReference.organizationId);
+        Objects.equals(this.name, modelsReference.name) &&
+        Objects.equals(this.organizationId, modelsReference.organizationId) &&
+        Objects.equals(this.shared, modelsReference.shared);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, organizationId);
+    return Objects.hash(id, name, organizationId, shared);
   }
 
   @Override
@@ -125,7 +175,9 @@ public class ModelsReference {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsReference {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,7 +196,7 @@ public class ModelsReference {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "organization_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "name", "organization_id", "shared"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -173,6 +225,9 @@ public class ModelsReference {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));

@@ -39,7 +39,9 @@ class TestModelsReferences(unittest.TestCase):
                 secrets = [
                     monad.models.models/reference.models.Reference(
                         id = '', 
-                        organization_id = '', )
+                        name = '', 
+                        organization_id = '', 
+                        shared = True, )
                     ]
             )
         else:

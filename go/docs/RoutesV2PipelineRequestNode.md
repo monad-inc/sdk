@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ComponentId** | **string** |  | 
 **ComponentType** | [**ModelsComponentType**](ModelsComponentType.md) |  | 
+**ConfigOverrides** | Pointer to **map[string]interface{}** | ConfigOverrides is the per-node override delta applied to a template component&#39;s base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on. | [optional] 
 **Enabled** | Pointer to **bool** | nil &#x3D;&gt; enabled | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
@@ -68,6 +69,31 @@ and a boolean to check if the value has been set.
 
 SetComponentType sets ComponentType field to given value.
 
+
+### GetConfigOverrides
+
+`func (o *RoutesV2PipelineRequestNode) GetConfigOverrides() map[string]*interface{}`
+
+GetConfigOverrides returns the ConfigOverrides field if non-nil, zero value otherwise.
+
+### GetConfigOverridesOk
+
+`func (o *RoutesV2PipelineRequestNode) GetConfigOverridesOk() (*map[string]*interface{}, bool)`
+
+GetConfigOverridesOk returns a tuple with the ConfigOverrides field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigOverrides
+
+`func (o *RoutesV2PipelineRequestNode) SetConfigOverrides(v map[string]*interface{})`
+
+SetConfigOverrides sets ConfigOverrides field to given value.
+
+### HasConfigOverrides
+
+`func (o *RoutesV2PipelineRequestNode) HasConfigOverrides() bool`
+
+HasConfigOverrides returns a boolean if a field has been set.
 
 ### GetEnabled
 

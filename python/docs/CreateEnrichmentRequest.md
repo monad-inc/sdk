@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **config** | [**SecretProcessesorEnrichmentConfig**](SecretProcessesorEnrichmentConfig.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**template_settings** | [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

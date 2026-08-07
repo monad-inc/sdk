@@ -36,17 +36,33 @@ class TestModelsNodeComponent(unittest.TestCase):
         model = ModelsNodeComponent()
         if include_optional:
             return ModelsNodeComponent(
+                base_config = {
+                    'key' : null
+                    },
                 config = {
                     'key' : null
                     },
                 description = '',
                 id = '',
                 name = '',
+                overrides = {
+                    'key' : null
+                    },
                 references = monad.models.models/references.models.References(
                     secrets = [
                         monad.models.models/reference.models.Reference(
                             id = '', 
-                            organization_id = '', )
+                            name = '', 
+                            organization_id = '', 
+                            shared = True, )
+                        ], ),
+                share_details = monad.models.models/share_details.models.ShareDetails(
+                    owner_organization_id = '', 
+                    shared_with_children = True, 
+                    shared_with_me = True, ),
+                template_settings = monad.models.models/template_settings.models.TemplateSettings(
+                    overridable_paths = [
+                        ''
                         ], ),
                 type = '',
                 version = 56

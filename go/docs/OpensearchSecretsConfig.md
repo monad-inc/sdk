@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CaCertificate** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewOpensearchSecretsConfigWithDefaults instantiates a new OpensearchSecretsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCaCertificate
+
+`func (o *OpensearchSecretsConfig) GetCaCertificate() ModelsSecret`
+
+GetCaCertificate returns the CaCertificate field if non-nil, zero value otherwise.
+
+### GetCaCertificateOk
+
+`func (o *OpensearchSecretsConfig) GetCaCertificateOk() (*ModelsSecret, bool)`
+
+GetCaCertificateOk returns a tuple with the CaCertificate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCaCertificate
+
+`func (o *OpensearchSecretsConfig) SetCaCertificate(v ModelsSecret)`
+
+SetCaCertificate sets CaCertificate field to given value.
+
+### HasCaCertificate
+
+`func (o *OpensearchSecretsConfig) HasCaCertificate() bool`
+
+HasCaCertificate returns a boolean if a field has been set.
 
 ### GetPassword
 

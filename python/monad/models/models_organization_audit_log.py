@@ -20,9 +20,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_core_pkg_types_models_audit_resource import GithubComMonadIncCorePkgTypesModelsAuditResource
 from monad.models.models_api_log_actor import ModelsAPILogActor
 from monad.models.models_audit_action import ModelsAuditAction
+from monad.models.models_audit_resource import ModelsAuditResource
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -37,7 +37,7 @@ class ModelsOrganizationAuditLog(BaseModel):
     occurred_at: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     request_id: Optional[StrictStr] = None
-    resource: Optional[GithubComMonadIncCorePkgTypesModelsAuditResource] = None
+    resource: Optional[ModelsAuditResource] = None
     __properties: ClassVar[List[str]] = ["action", "actor", "id", "occurred_at", "organization_id", "request_id", "resource"]
 
     model_config = ConfigDict(
@@ -103,7 +103,7 @@ class ModelsOrganizationAuditLog(BaseModel):
             "occurred_at": obj.get("occurred_at"),
             "organization_id": obj.get("organization_id"),
             "request_id": obj.get("request_id"),
-            "resource": GithubComMonadIncCorePkgTypesModelsAuditResource.from_dict(obj["resource"]) if obj.get("resource") is not None else None
+            "resource": ModelsAuditResource.from_dict(obj["resource"]) if obj.get("resource") is not None else None
         })
         return _obj
 

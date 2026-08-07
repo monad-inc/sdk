@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Credentials** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthHeaders** | Pointer to [**map[string]ModelsSecret**](ModelsSecret.md) | Authentication headers | [optional] 
 **CaCertificate** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSecrets
 
-`func NewSecretProcessesorOutputConfigSecrets(clientId ModelsSecret, clientSecret ModelsSecret, ) *SecretProcessesorOutputConfigSecrets`
+`func NewSecretProcessesorOutputConfigSecrets(clientId ModelsSecret, clientSecret ModelsSecret, password ModelsSecret, ) *SecretProcessesorOutputConfigSecrets`
 
 NewSecretProcessesorOutputConfigSecrets instantiates a new SecretProcessesorOutputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -281,11 +281,6 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
-### HasPassword
-
-`func (o *SecretProcessesorOutputConfigSecrets) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
 
 ### GetCredentialsJson
 

@@ -22,6 +22,7 @@ var _ MappedNullable = &RoutesV2TestOutputConnectionRequest{}
 type RoutesV2TestOutputConnectionRequest struct {
 	Config *SecretProcessesorOutputConfig `json:"config,omitempty"`
 	Type *string `json:"type,omitempty"`
+	Version *int32 `json:"version,omitempty"`
 }
 
 // NewRoutesV2TestOutputConnectionRequest instantiates a new RoutesV2TestOutputConnectionRequest object
@@ -105,6 +106,38 @@ func (o *RoutesV2TestOutputConnectionRequest) SetType(v string) {
 	o.Type = &v
 }
 
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *RoutesV2TestOutputConnectionRequest) GetVersion() int32 {
+	if o == nil || IsNil(o.Version) {
+		var ret int32
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2TestOutputConnectionRequest) GetVersionOk() (*int32, bool) {
+	if o == nil || IsNil(o.Version) {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *RoutesV2TestOutputConnectionRequest) HasVersion() bool {
+	if o != nil && !IsNil(o.Version) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given int32 and assigns it to the Version field.
+func (o *RoutesV2TestOutputConnectionRequest) SetVersion(v int32) {
+	o.Version = &v
+}
+
 func (o RoutesV2TestOutputConnectionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o RoutesV2TestOutputConnectionRequest) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Version) {
+		toSerialize["version"] = o.Version
 	}
 	return toSerialize, nil
 }

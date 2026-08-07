@@ -20,7 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Map;
 import org.openapitools.client.model.AddArgumentsConfig;
 import org.openapitools.client.model.AddIdArgumentsConfig;
 import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
@@ -189,6 +188,14 @@ public class RoutesTransformOperationArgumentsTest {
     @Test
     public void delimiterTest() {
         // TODO: test delimiter
+    }
+
+    /**
+     * Test the property 'preventDataDropping'
+     */
+    @Test
+    public void preventDataDroppingTest() {
+        // TODO: test preventDataDropping
     }
 
     /**

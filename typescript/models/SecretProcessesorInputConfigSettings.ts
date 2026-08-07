@@ -24,8 +24,6 @@ import { AzureEventHubsSettingsConfig } from '../models/AzureEventHubsSettingsCo
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
 import { BackblazeB2SettingsConfig } from '../models/BackblazeB2SettingsConfig';
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
-import { BitwardenEventsSettingsConfig } from '../models/BitwardenEventsSettingsConfig';
-import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BugsnagOrgEventsSettingsConfig } from '../models/BugsnagOrgEventsSettingsConfig';
 import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
@@ -42,9 +40,7 @@ import { CloudflareZeroTrustAccessRequestsSettingsConfig } from '../models/Cloud
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
-import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
-import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
 import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { EksAuditLogsSettingsConfig } from '../models/EksAuditLogsSettingsConfig';
@@ -53,7 +49,6 @@ import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
 import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettingsConfig';
@@ -69,25 +64,15 @@ import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365Generic
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSettingsConfig';
 import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
-import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
-import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
-import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
-import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
 import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
-import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
 import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
 import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
-import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
-import { PostmanAuditLogsSettingsConfig } from '../models/PostmanAuditLogsSettingsConfig';
-import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RedshiftAuditLogsSettingsConfig } from '../models/RedshiftAuditLogsSettingsConfig';
-import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
 import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
 import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
-import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
 import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
 import { SnykTargetsSettingsConfig } from '../models/SnykTargetsSettingsConfig';
@@ -97,10 +82,6 @@ import { TaniumGraphqlInputSettingsConfig } from '../models/TaniumGraphqlInputSe
 import { TeamAccessLogsSettingsConfig } from '../models/TeamAccessLogsSettingsConfig';
 import { TeamIntegrationLogsSettingsConfig } from '../models/TeamIntegrationLogsSettingsConfig';
 import { TelephonyLogsSettingsConfig } from '../models/TelephonyLogsSettingsConfig';
-import { TenableAssetsCronSettingsConfig } from '../models/TenableAssetsCronSettingsConfig';
-import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
-import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
-import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSettingsConfig } from '../models/TinesEventsLogsSettingsConfig';
 import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
@@ -110,7 +91,6 @@ import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettin
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
-import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -118,7 +98,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSettings = AdminLogsSettingsConfig | AivenServiceLogsSettingsConfig | ArizeAuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwsSqsS3CloudtrailSettingsConfig | Awssqss3SettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureEventHubsSettingsConfig | AzureVnetFlowLogsSettingsConfig | BackblazeB2SettingsConfig | BigqueryInputSettingsConfig | BitwardenEventsSettingsConfig | BoxEventsSettingsConfig | BrinqaAuditLogsSettingsConfig | BugsnagOrgEventsSettingsConfig | BuildkiteAuditLogsSettingsConfig | BuildkiteGraphqlInputSettingsConfig | CisaUserSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudflareDdosAttackAnalyticsSettingsConfig | CloudflareFirewallEventsSettingsConfig | CloudflareHttpRequestsSettingsConfig | CloudflareUrlScannerSettingsConfig | CloudflareZeroTrustAccessRequestsSettingsConfig | CloudtrailSettingsConfig | ClumioAuditLogsSettingsConfig | ClumioConsolidatedAlertsSettingsConfig | CodaAuditEventsSettingsConfig | CortexXsoarManagementLogsSettingsConfig | CustomerEventDataSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DuoSecurityActivityLogsSettingsConfig | EksAuditLogsSettingsConfig | EndorLabsAuditLogsSettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | FullScansSettingsConfig | GithubActionsWorkflowLogsWebhookSettingsConfig | GitlabIssuesSettingsConfig | GkeAuditLogsSettingsConfig | GoogleCloudStorageSettingsConfig | GoogleWorkspaceSettingsConfig | GreenhouseAuditLogsSettingsConfig | IndividualAlertsSettingsConfig | InspectorSettingsConfig | IssuesSettingsConfig | KoiAuditLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LookerAuditLogsSettingsConfig | MerakiConfigLogsSettingsConfig | Microsoft365GenericSettingsConfig | MonadLogSettingsConfig | ObjectStorageInputSettingsConfig | OfflineenrollmentlogsSettingsConfig | OneloginEventsSettingsConfig | OpalEventsSettingsConfig | OpenaiAuditLogsSettingsConfig | OperationLogsSettingsConfig | OracleSettingsConfig | OrgAuditLogsSettingsConfig | OwnbackupAccountEventsSettingsConfig | PagerdutyAuditRecordsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | PersonaSettingsConfig | PlaidWebhooksSettingsConfig | PolymerSettingsConfig | PostmanAuditLogsSettingsConfig | PubsubSettingsConfig | RedshiftAuditLogsSettingsConfig | RootlyAuditLogsSettingsConfig | SemgrepCodeFindingsSettingsConfig | SemgrepSupplyChainFindingsSettingsConfig | SentryOrgAuditLogsSettingsConfig | SlackEnterpriseAuditLogsSettingsConfig | SnykIssuesSettingsConfig | SnykTargetsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | TaniumGraphqlInputSettingsConfig | TeamAccessLogsSettingsConfig | TeamIntegrationLogsSettingsConfig | TelephonyLogsSettingsConfig | TenableAssetsCronSettingsConfig | TenableAssetsSettingsConfig | TenableVulnerabilitiesCronSettingsConfig | TenableVulnerabilitiesSettingsConfig | TinesAuditLogsSettingsConfig | TinesEventsLogsSettingsConfig | TwilioEventsSettingsConfig | TwilioSendgridEmailActivitySettingsConfig | UniversalSettingsConfig | VercelUserEventsSettingsConfig | VoltioAuditLogsSettingsConfig | VulnerabilityFindingsSettingsConfig | WizAuditLogsSettingsConfig | ZendeskAuditLogsSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorInputConfigSettings = AdminLogsSettingsConfig | AivenServiceLogsSettingsConfig | ArizeAuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwsSqsS3CloudtrailSettingsConfig | Awssqss3SettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureEventHubsSettingsConfig | AzureVnetFlowLogsSettingsConfig | BackblazeB2SettingsConfig | BigqueryInputSettingsConfig | BrinqaAuditLogsSettingsConfig | BugsnagOrgEventsSettingsConfig | BuildkiteAuditLogsSettingsConfig | BuildkiteGraphqlInputSettingsConfig | CisaUserSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudflareDdosAttackAnalyticsSettingsConfig | CloudflareFirewallEventsSettingsConfig | CloudflareHttpRequestsSettingsConfig | CloudflareUrlScannerSettingsConfig | CloudflareZeroTrustAccessRequestsSettingsConfig | CloudtrailSettingsConfig | ClumioAuditLogsSettingsConfig | ClumioConsolidatedAlertsSettingsConfig | CortexXsoarManagementLogsSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DuoSecurityActivityLogsSettingsConfig | EksAuditLogsSettingsConfig | EndorLabsAuditLogsSettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | FullScansSettingsConfig | GithubActionsWorkflowLogsWebhookSettingsConfig | GkeAuditLogsSettingsConfig | GoogleCloudStorageSettingsConfig | GoogleWorkspaceSettingsConfig | GreenhouseAuditLogsSettingsConfig | IndividualAlertsSettingsConfig | InspectorSettingsConfig | IssuesSettingsConfig | KoiAuditLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LookerAuditLogsSettingsConfig | MerakiConfigLogsSettingsConfig | Microsoft365GenericSettingsConfig | MonadLogSettingsConfig | ObjectStorageInputSettingsConfig | OfflineenrollmentlogsSettingsConfig | OperationLogsSettingsConfig | OrgAuditLogsSettingsConfig | OwnbackupAccountEventsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | PersonaSettingsConfig | PlaidWebhooksSettingsConfig | RedshiftAuditLogsSettingsConfig | SemgrepCodeFindingsSettingsConfig | SemgrepSupplyChainFindingsSettingsConfig | SlackEnterpriseAuditLogsSettingsConfig | SnykIssuesSettingsConfig | SnykTargetsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | TaniumGraphqlInputSettingsConfig | TeamAccessLogsSettingsConfig | TeamIntegrationLogsSettingsConfig | TelephonyLogsSettingsConfig | TinesAuditLogsSettingsConfig | TinesEventsLogsSettingsConfig | TwilioEventsSettingsConfig | TwilioSendgridEmailActivitySettingsConfig | UniversalSettingsConfig | VercelUserEventsSettingsConfig | VoltioAuditLogsSettingsConfig | VulnerabilityFindingsSettingsConfig | WizAuditLogsSettingsConfig;
 
 /**
 * @type SecretProcessesorInputConfigSettingsClass
@@ -129,27 +109,6 @@ export class SecretProcessesorInputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

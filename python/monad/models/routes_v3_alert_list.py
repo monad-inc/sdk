@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_core_pkg_types_models_alert import GithubComMonadIncCorePkgTypesModelsAlert
+from monad.models.models_alert import ModelsAlert
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,7 +29,7 @@ class RoutesV3AlertList(BaseModel):
     """
     RoutesV3AlertList
     """ # noqa: E501
-    alerts: Optional[List[GithubComMonadIncCorePkgTypesModelsAlert]] = None
+    alerts: Optional[List[ModelsAlert]] = None
     total: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["alerts", "total"]
 
@@ -91,7 +91,7 @@ class RoutesV3AlertList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "alerts": [GithubComMonadIncCorePkgTypesModelsAlert.from_dict(_item) for _item in obj["alerts"]] if obj.get("alerts") is not None else None,
+            "alerts": [ModelsAlert.from_dict(_item) for _item in obj["alerts"]] if obj.get("alerts") is not None else None,
             "total": obj.get("total")
         })
         return _obj

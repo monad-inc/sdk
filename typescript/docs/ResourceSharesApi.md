@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateResourceShares**
-> ModelsResourceShareChangeSet updateResourceShares(createResourceSharesRequest)
+> ModelsResourceShareChangeSet updateResourceShares(updateResourceSharesRequest)
 
 Apply per-child share additions and revocations to one resource in a single transaction, returning the before/after diff. Revoking a named share (revoke_organization_ids) that the target organization is actively using is rejected with 409. Set revoke_all_not_in_use to instead revoke every current share the target is NOT using and leave the in-use ones in place (returned in skipped_in_use).
 
@@ -440,7 +440,7 @@ const request: ResourceSharesApiUpdateResourceSharesRequest = {
     // Resource ID
   resourceId: "resource_id_example",
     // Share delta request
-  createResourceSharesRequest: null,
+  updateResourceSharesRequest: null,
 };
 
 const data = await apiInstance.updateResourceShares(request);
@@ -452,7 +452,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createResourceSharesRequest** | **CreateResourceSharesRequest**| Share delta request |
+ **updateResourceSharesRequest** | **UpdateResourceSharesRequest**| Share delta request |
  **organizationId** | [**string**] | Owner organization ID | defaults to undefined
  **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
  **resourceId** | [**string**] | Resource ID | defaults to undefined

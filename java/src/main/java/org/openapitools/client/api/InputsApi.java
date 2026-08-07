@@ -28,7 +28,6 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.InputsConnectorMeta;
-import org.openapitools.client.model.ModelsConnectorMeta;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -147,7 +146,7 @@ public class InputsApi {
      * Get input config meta
      * Get input config meta
      * @param inputTypeId Input type ID (required)
-     * @return ModelsConnectorMeta
+     * @return InputsConnectorMeta
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -157,8 +156,8 @@ public class InputsApi {
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsConnectorMeta getInputTypeMeta(@javax.annotation.Nonnull String inputTypeId) throws ApiException {
-        ApiResponse<ModelsConnectorMeta> localVarResp = getInputTypeMetaWithHttpInfo(inputTypeId);
+    public InputsConnectorMeta getInputTypeMeta(@javax.annotation.Nonnull String inputTypeId) throws ApiException {
+        ApiResponse<InputsConnectorMeta> localVarResp = getInputTypeMetaWithHttpInfo(inputTypeId);
         return localVarResp.getData();
     }
 
@@ -166,7 +165,7 @@ public class InputsApi {
      * Get input config meta
      * Get input config meta
      * @param inputTypeId Input type ID (required)
-     * @return ApiResponse&lt;ModelsConnectorMeta&gt;
+     * @return ApiResponse&lt;InputsConnectorMeta&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -176,9 +175,9 @@ public class InputsApi {
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsConnectorMeta> getInputTypeMetaWithHttpInfo(@javax.annotation.Nonnull String inputTypeId) throws ApiException {
+    public ApiResponse<InputsConnectorMeta> getInputTypeMetaWithHttpInfo(@javax.annotation.Nonnull String inputTypeId) throws ApiException {
         okhttp3.Call localVarCall = getInputTypeMetaValidateBeforeCall(inputTypeId, null);
-        Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();
+        Type localVarReturnType = new TypeToken<InputsConnectorMeta>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -197,10 +196,10 @@ public class InputsApi {
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInputTypeMetaAsync(@javax.annotation.Nonnull String inputTypeId, final ApiCallback<ModelsConnectorMeta> _callback) throws ApiException {
+    public okhttp3.Call getInputTypeMetaAsync(@javax.annotation.Nonnull String inputTypeId, final ApiCallback<InputsConnectorMeta> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInputTypeMetaValidateBeforeCall(inputTypeId, _callback);
-        Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();
+        Type localVarReturnType = new TypeToken<InputsConnectorMeta>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

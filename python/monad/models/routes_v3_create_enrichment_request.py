@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_template_settings import ModelsTemplateSettings
 from monad.models.secret_processesor_enrichment_config import SecretProcessesorEnrichmentConfig
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,8 +33,9 @@ class RoutesV3CreateEnrichmentRequest(BaseModel):
     config: Optional[SecretProcessesorEnrichmentConfig] = None
     description: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    template_settings: Optional[ModelsTemplateSettings] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "description", "name", "type"]
+    __properties: ClassVar[List[str]] = ["config", "description", "name", "template_settings", "type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -77,6 +79,9 @@ class RoutesV3CreateEnrichmentRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of config
         if self.config:
             _dict['config'] = self.config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of template_settings
+        if self.template_settings:
+            _dict['template_settings'] = self.template_settings.to_dict()
         return _dict
 
     @classmethod
@@ -92,6 +97,7 @@ class RoutesV3CreateEnrichmentRequest(BaseModel):
             "config": SecretProcessesorEnrichmentConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
             "name": obj.get("name"),
+            "template_settings": ModelsTemplateSettings.from_dict(obj["template_settings"]) if obj.get("template_settings") is not None else None,
             "type": obj.get("type")
         })
         return _obj

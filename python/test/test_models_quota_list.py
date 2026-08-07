@@ -41,7 +41,7 @@ class TestModelsQuotaList(unittest.TestCase):
                     offset = 56, 
                     total = 56, ),
                 quotas = [
-                    monad.models.github_com_monad_inc_core_pkg_types_models/quota.github_com_monad-inc_core_pkg_types_models.Quota(
+                    monad.models.models/quota.models.Quota(
                         action = 'NONE', 
                         billing_account_id = '', 
                         created_at = '', 

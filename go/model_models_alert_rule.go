@@ -24,11 +24,13 @@ type ModelsAlertRule struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
+	// InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs.
+	InvertSelection *bool `json:"invert_selection,omitempty"`
 	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineIds []string `json:"pipeline_ids,omitempty"`
-	RuleConfig map[string]interface{} `json:"rule_config,omitempty"`
+	RuleConfig map[string]*interface{} `json:"rule_config,omitempty"`
 	Severity *string `json:"severity,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
@@ -179,6 +181,38 @@ func (o *ModelsAlertRule) SetId(v string) {
 	o.Id = &v
 }
 
+// GetInvertSelection returns the InvertSelection field value if set, zero value otherwise.
+func (o *ModelsAlertRule) GetInvertSelection() bool {
+	if o == nil || IsNil(o.InvertSelection) {
+		var ret bool
+		return ret
+	}
+	return *o.InvertSelection
+}
+
+// GetInvertSelectionOk returns a tuple with the InvertSelection field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsAlertRule) GetInvertSelectionOk() (*bool, bool) {
+	if o == nil || IsNil(o.InvertSelection) {
+		return nil, false
+	}
+	return o.InvertSelection, true
+}
+
+// HasInvertSelection returns a boolean if a field has been set.
+func (o *ModelsAlertRule) HasInvertSelection() bool {
+	if o != nil && !IsNil(o.InvertSelection) {
+		return true
+	}
+
+	return false
+}
+
+// SetInvertSelection gets a reference to the given bool and assigns it to the InvertSelection field.
+func (o *ModelsAlertRule) SetInvertSelection(v bool) {
+	o.InvertSelection = &v
+}
+
 // GetManagedBy returns the ManagedBy field value if set, zero value otherwise.
 func (o *ModelsAlertRule) GetManagedBy() ModelsManagedBy {
 	if o == nil || IsNil(o.ManagedBy) {
@@ -308,9 +342,9 @@ func (o *ModelsAlertRule) SetPipelineIds(v []string) {
 }
 
 // GetRuleConfig returns the RuleConfig field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetRuleConfig() map[string]interface{} {
+func (o *ModelsAlertRule) GetRuleConfig() map[string]*interface{} {
 	if o == nil || IsNil(o.RuleConfig) {
-		var ret map[string]interface{}
+		var ret map[string]*interface{}
 		return ret
 	}
 	return o.RuleConfig
@@ -318,9 +352,9 @@ func (o *ModelsAlertRule) GetRuleConfig() map[string]interface{} {
 
 // GetRuleConfigOk returns a tuple with the RuleConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetRuleConfigOk() (map[string]interface{}, bool) {
+func (o *ModelsAlertRule) GetRuleConfigOk() (map[string]*interface{}, bool) {
 	if o == nil || IsNil(o.RuleConfig) {
-		return map[string]interface{}{}, false
+		return map[string]*interface{}{}, false
 	}
 	return o.RuleConfig, true
 }
@@ -334,8 +368,8 @@ func (o *ModelsAlertRule) HasRuleConfig() bool {
 	return false
 }
 
-// SetRuleConfig gets a reference to the given map[string]interface{} and assigns it to the RuleConfig field.
-func (o *ModelsAlertRule) SetRuleConfig(v map[string]interface{}) {
+// SetRuleConfig gets a reference to the given map[string]*interface{} and assigns it to the RuleConfig field.
+func (o *ModelsAlertRule) SetRuleConfig(v map[string]*interface{}) {
 	o.RuleConfig = v
 }
 
@@ -456,6 +490,9 @@ func (o ModelsAlertRule) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.InvertSelection) {
+		toSerialize["invert_selection"] = o.InvertSelection
 	}
 	if !IsNil(o.ManagedBy) {
 		toSerialize["managed_by"] = o.ManagedBy

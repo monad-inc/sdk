@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 Delete secret
 
-Deletes a specific secret by ID
+Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. "Referenced" means configured on an input, output, enrichment or transform, or on a pipeline node's config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
 
 ### Example
 
@@ -184,7 +184,9 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | No Content |  -  |
+**403** | Secret is shared with this organization by another organization and can only be deleted by its owner |  -  |
 **404** | Secret not found |  -  |
+**409** | Secret is still referenced by a component or pipeline node, or is shared with other organizations; the message names the referencing resources |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -194,7 +196,7 @@ void (empty response body)
 
 Get secret with components
 
-Gets a specific secret by ID including inputs and outputs that use it
+Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
 
 ### Example
 
@@ -284,7 +286,7 @@ Name | Type | Description  | Notes
 
 List secrets with components
 
-Lists all secrets for the specified organization including inputs and outputs that use them
+Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
 
 ### Example
 
@@ -371,7 +373,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_secret**
-> RoutesV2SecretResponse update_secret(organization_id, secret_id, create_secret_request)
+> RoutesV2SecretResponse update_secret(organization_id, secret_id, update_secret_request)
 
 Update secret
 
@@ -384,8 +386,8 @@ Updates a specific secret by ID
 
 ```python
 import monad
-from monad.models.create_secret_request import CreateSecretRequest
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse
+from monad.models.update_secret_request import UpdateSecretRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -418,11 +420,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.SecretsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     secret_id = 'secret_id_example' # str | Secret ID
-    create_secret_request = monad.CreateSecretRequest() # CreateSecretRequest | Secret updates
+    update_secret_request = monad.UpdateSecretRequest() # UpdateSecretRequest | Secret updates
 
     try:
         # Update secret
-        api_response = api_instance.update_secret(organization_id, secret_id, create_secret_request)
+        api_response = api_instance.update_secret(organization_id, secret_id, update_secret_request)
         print("The response of SecretsApi->update_secret:\n")
         pprint(api_response)
     except Exception as e:
@@ -438,7 +440,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **secret_id** | **str**| Secret ID | 
- **create_secret_request** | [**CreateSecretRequest**](CreateSecretRequest.md)| Secret updates | 
+ **update_secret_request** | [**UpdateSecretRequest**](UpdateSecretRequest.md)| Secret updates | 
 
 ### Return type
 

@@ -46,6 +46,14 @@ public class JqArgumentsConfigTest {
     }
 
     /**
+     * Test the property 'preventDataDropping'
+     */
+    @Test
+    public void preventDataDroppingTest() {
+        // TODO: test preventDataDropping
+    }
+
+    /**
      * Test the property 'query'
      */
     @Test

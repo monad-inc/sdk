@@ -18,6 +18,10 @@ export class JqArgumentsConfig {
     */
     'key'?: string;
     /**
+    * PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record.
+    */
+    'preventDataDropping'?: boolean;
+    /**
     * The raw query string from config
     */
     'query'?: string;
@@ -31,6 +35,12 @@ export class JqArgumentsConfig {
             "name": "key",
             "baseName": "key",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "preventDataDropping",
+            "baseName": "prevent_data_dropping",
+            "type": "boolean",
             "format": ""
         },
         {

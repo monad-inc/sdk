@@ -37,11 +37,6 @@ class TestApplyTransformationV2Request(unittest.TestCase):
         if include_optional:
             return ApplyTransformationV2Request(
                 config = monad.models.models/transform_config.models.TransformConfig(
-                    conditional = monad.models.models/transform_conditional.models.TransformConditional(
-                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                            operator = 'always', 
-                            type_id = '', ), 
-                        else = 'bypass', ), 
                     operations = [
                         monad.models.models/transform_operation.models.TransformOperation(
                             arguments = {

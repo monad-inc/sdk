@@ -30,7 +30,7 @@ type ApiGetInputTypeMetaRequest struct {
 	inputTypeId string
 }
 
-func (r ApiGetInputTypeMetaRequest) Execute() (*ModelsConnectorMeta, *http.Response, error) {
+func (r ApiGetInputTypeMetaRequest) Execute() (*InputsConnectorMeta, *http.Response, error) {
 	return r.ApiService.GetInputTypeMetaExecute(r)
 }
 
@@ -52,13 +52,13 @@ func (a *InputsAPIService) GetInputTypeMeta(ctx context.Context, inputTypeId str
 }
 
 // Execute executes the request
-//  @return ModelsConnectorMeta
-func (a *InputsAPIService) GetInputTypeMetaExecute(r ApiGetInputTypeMetaRequest) (*ModelsConnectorMeta, *http.Response, error) {
+//  @return InputsConnectorMeta
+func (a *InputsAPIService) GetInputTypeMetaExecute(r ApiGetInputTypeMetaRequest) (*InputsConnectorMeta, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsConnectorMeta
+		localVarReturnValue  *InputsConnectorMeta
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InputsAPIService.GetInputTypeMeta")

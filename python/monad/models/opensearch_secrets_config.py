@@ -29,8 +29,9 @@ class OpensearchSecretsConfig(BaseModel):
     """
     OpenSearch Output Secrets
     """ # noqa: E501
+    ca_certificate: Optional[ModelsSecret] = None
     password: Optional[ModelsSecret] = None
-    __properties: ClassVar[List[str]] = ["password"]
+    __properties: ClassVar[List[str]] = ["ca_certificate", "password"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -71,6 +72,9 @@ class OpensearchSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of ca_certificate
+        if self.ca_certificate:
+            _dict['ca_certificate'] = self.ca_certificate.to_dict()
         # override the default output from pydantic by calling `to_dict()` of password
         if self.password:
             _dict['password'] = self.password.to_dict()
@@ -86,6 +90,7 @@ class OpensearchSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "ca_certificate": ModelsSecret.from_dict(obj["ca_certificate"]) if obj.get("ca_certificate") is not None else None,
             "password": ModelsSecret.from_dict(obj["password"]) if obj.get("password") is not None else None
         })
         return _obj

@@ -21,9 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsAuditResource;
 import org.openapitools.client.model.ModelsAPILogActor;
 import org.openapitools.client.model.ModelsAuditAction;
+import org.openapitools.client.model.ModelsAuditResource;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationAuditLog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsOrganizationAuditLog {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
@@ -86,7 +86,7 @@ public class ModelsOrganizationAuditLog {
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
   @javax.annotation.Nullable
-  private GithubComMonadIncCorePkgTypesModelsAuditResource resource;
+  private ModelsAuditResource resource;
 
   public ModelsOrganizationAuditLog() {
   }
@@ -205,7 +205,7 @@ public class ModelsOrganizationAuditLog {
   }
 
 
-  public ModelsOrganizationAuditLog resource(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsAuditResource resource) {
+  public ModelsOrganizationAuditLog resource(@javax.annotation.Nullable ModelsAuditResource resource) {
     this.resource = resource;
     return this;
   }
@@ -215,11 +215,11 @@ public class ModelsOrganizationAuditLog {
    * @return resource
    */
   @javax.annotation.Nullable
-  public GithubComMonadIncCorePkgTypesModelsAuditResource getResource() {
+  public ModelsAuditResource getResource() {
     return resource;
   }
 
-  public void setResource(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsAuditResource resource) {
+  public void setResource(@javax.annotation.Nullable ModelsAuditResource resource) {
     this.resource = resource;
   }
 
@@ -326,7 +326,7 @@ public class ModelsOrganizationAuditLog {
       }
       // validate the optional field `resource`
       if (jsonObj.get("resource") != null && !jsonObj.get("resource").isJsonNull()) {
-        GithubComMonadIncCorePkgTypesModelsAuditResource.validateJsonElement(jsonObj.get("resource"));
+        ModelsAuditResource.validateJsonElement(jsonObj.get("resource"));
       }
   }
 

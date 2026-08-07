@@ -48,6 +48,7 @@ class TestRoutesV2PipelineRequestEdge(unittest.TestCase):
                 id = '',
                 name = '',
                 schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                    disable_alerting = True, 
                     enabled = True, ),
                 to_node_instance_id = ''
             )

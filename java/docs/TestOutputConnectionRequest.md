@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**config** | [**SecretProcessesorOutputConfig**](SecretProcessesorOutputConfig.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 
 
 

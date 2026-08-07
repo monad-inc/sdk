@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **OccurredAt** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **RequestId** | Pointer to **string** |  | [optional] 
-**Resource** | Pointer to [**GithubComMonadIncCorePkgTypesModelsAuditResource**](GithubComMonadIncCorePkgTypesModelsAuditResource.md) |  | [optional] 
+**Resource** | Pointer to [**ModelsAuditResource**](ModelsAuditResource.md) |  | [optional] 
 
 ## Methods
 
@@ -183,20 +183,20 @@ HasRequestId returns a boolean if a field has been set.
 
 ### GetResource
 
-`func (o *ModelsOrganizationAuditLog) GetResource() GithubComMonadIncCorePkgTypesModelsAuditResource`
+`func (o *ModelsOrganizationAuditLog) GetResource() ModelsAuditResource`
 
 GetResource returns the Resource field if non-nil, zero value otherwise.
 
 ### GetResourceOk
 
-`func (o *ModelsOrganizationAuditLog) GetResourceOk() (*GithubComMonadIncCorePkgTypesModelsAuditResource, bool)`
+`func (o *ModelsOrganizationAuditLog) GetResourceOk() (*ModelsAuditResource, bool)`
 
 GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResource
 
-`func (o *ModelsOrganizationAuditLog) SetResource(v GithubComMonadIncCorePkgTypesModelsAuditResource)`
+`func (o *ModelsOrganizationAuditLog) SetResource(v ModelsAuditResource)`
 
 SetResource sets Resource field to given value.
 

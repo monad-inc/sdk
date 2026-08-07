@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AzureBlobStorageSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class AzureBlobStorageSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_URL = "account_url";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_URL)
@@ -79,6 +79,11 @@ public class AzureBlobStorageSettingsConfig {
   @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT)
   @javax.annotation.Nullable
   private String partitionFormat;
+
+  public static final String SERIALIZED_NAME_PARTITION_FORMAT_TEMPLATE = "partition_format_template";
+  @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT_TEMPLATE)
+  @javax.annotation.Nullable
+  private String partitionFormatTemplate;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
@@ -194,7 +199,7 @@ public class AzureBlobStorageSettingsConfig {
   }
 
   /**
-   * Partition format of your Azure container. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;).
+   * Partition format of your Azure container. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), simple date (&#39;2024/01/01&#39;), or custom (specify your own template in PartitionFormatTemplate).
    * @return partitionFormat
    */
   @javax.annotation.Nullable
@@ -204,6 +209,25 @@ public class AzureBlobStorageSettingsConfig {
 
   public void setPartitionFormat(@javax.annotation.Nullable String partitionFormat) {
     this.partitionFormat = partitionFormat;
+  }
+
+
+  public AzureBlobStorageSettingsConfig partitionFormatTemplate(@javax.annotation.Nullable String partitionFormatTemplate) {
+    this.partitionFormatTemplate = partitionFormatTemplate;
+    return this;
+  }
+
+  /**
+   * Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;.
+   * @return partitionFormatTemplate
+   */
+  @javax.annotation.Nullable
+  public String getPartitionFormatTemplate() {
+    return partitionFormatTemplate;
+  }
+
+  public void setPartitionFormatTemplate(@javax.annotation.Nullable String partitionFormatTemplate) {
+    this.partitionFormatTemplate = partitionFormatTemplate;
   }
 
 
@@ -261,13 +285,14 @@ public class AzureBlobStorageSettingsConfig {
         Objects.equals(this.container, azureBlobStorageSettingsConfig.container) &&
         Objects.equals(this.format, azureBlobStorageSettingsConfig.format) &&
         Objects.equals(this.partitionFormat, azureBlobStorageSettingsConfig.partitionFormat) &&
+        Objects.equals(this.partitionFormatTemplate, azureBlobStorageSettingsConfig.partitionFormatTemplate) &&
         Objects.equals(this.prefix, azureBlobStorageSettingsConfig.prefix) &&
         Objects.equals(this.recordLocation, azureBlobStorageSettingsConfig.recordLocation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountUrl, backfillStartTime, compression, container, format, partitionFormat, prefix, recordLocation);
+    return Objects.hash(accountUrl, backfillStartTime, compression, container, format, partitionFormat, partitionFormatTemplate, prefix, recordLocation);
   }
 
   @Override
@@ -280,6 +305,7 @@ public class AzureBlobStorageSettingsConfig {
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    partitionFormat: ").append(toIndentedString(partitionFormat)).append("\n");
+    sb.append("    partitionFormatTemplate: ").append(toIndentedString(partitionFormatTemplate)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    recordLocation: ").append(toIndentedString(recordLocation)).append("\n");
     sb.append("}");
@@ -300,7 +326,7 @@ public class AzureBlobStorageSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("account_url", "backfill_start_time", "compression", "container", "format", "partition_format", "prefix", "record_location"));
+    openapiFields = new HashSet<String>(Arrays.asList("account_url", "backfill_start_time", "compression", "container", "format", "partition_format", "partition_format_template", "prefix", "record_location"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -344,6 +370,9 @@ public class AzureBlobStorageSettingsConfig {
       }
       if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
+      }
+      if ((jsonObj.get("partition_format_template") != null && !jsonObj.get("partition_format_template").isJsonNull()) && !jsonObj.get("partition_format_template").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format_template` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format_template").toString()));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));

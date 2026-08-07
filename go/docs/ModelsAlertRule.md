@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**InvertSelection** | Pointer to **bool** | InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs. | [optional] 
 **ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
@@ -136,6 +137,31 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### GetInvertSelection
+
+`func (o *ModelsAlertRule) GetInvertSelection() bool`
+
+GetInvertSelection returns the InvertSelection field if non-nil, zero value otherwise.
+
+### GetInvertSelectionOk
+
+`func (o *ModelsAlertRule) GetInvertSelectionOk() (*bool, bool)`
+
+GetInvertSelectionOk returns a tuple with the InvertSelection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvertSelection
+
+`func (o *ModelsAlertRule) SetInvertSelection(v bool)`
+
+SetInvertSelection sets InvertSelection field to given value.
+
+### HasInvertSelection
+
+`func (o *ModelsAlertRule) HasInvertSelection() bool`
+
+HasInvertSelection returns a boolean if a field has been set.
+
 ### GetManagedBy
 
 `func (o *ModelsAlertRule) GetManagedBy() ModelsManagedBy`
@@ -238,20 +264,20 @@ HasPipelineIds returns a boolean if a field has been set.
 
 ### GetRuleConfig
 
-`func (o *ModelsAlertRule) GetRuleConfig() map[string]interface{}`
+`func (o *ModelsAlertRule) GetRuleConfig() map[string]*interface{}`
 
 GetRuleConfig returns the RuleConfig field if non-nil, zero value otherwise.
 
 ### GetRuleConfigOk
 
-`func (o *ModelsAlertRule) GetRuleConfigOk() (*map[string]interface{}, bool)`
+`func (o *ModelsAlertRule) GetRuleConfigOk() (*map[string]*interface{}, bool)`
 
 GetRuleConfigOk returns a tuple with the RuleConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleConfig
 
-`func (o *ModelsAlertRule) SetRuleConfig(v map[string]interface{})`
+`func (o *ModelsAlertRule) SetRuleConfig(v map[string]*interface{})`
 
 SetRuleConfig sets RuleConfig field to given value.
 

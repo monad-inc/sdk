@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_references import ModelsReferences
+from monad.models.models_share_details import ModelsShareDetails
+from monad.models.models_template_settings import ModelsTemplateSettings
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,14 +31,18 @@ class ModelsNodeComponent(BaseModel):
     """
     ModelsNodeComponent
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = None
+    base_config: Optional[Dict[str, Any]] = Field(default=None, description="BaseConfig is the template's config before the override delta is applied.")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Config is the node's effective config: for a template-backed node it is the base merged with the node's override delta (RFC 0017 §3); otherwise it is the component's base config unchanged.")
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    overrides: Optional[Dict[str, Any]] = Field(default=None, description="Overrides is the node's sparse override delta (secrets as {id} refs only).")
     references: Optional[ModelsReferences] = None
+    share_details: Optional[ModelsShareDetails] = None
+    template_settings: Optional[ModelsTemplateSettings] = None
     type: Optional[StrictStr] = None
     version: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["config", "description", "id", "name", "references", "type", "version"]
+    __properties: ClassVar[List[str]] = ["base_config", "config", "description", "id", "name", "overrides", "references", "share_details", "template_settings", "type", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -80,6 +86,12 @@ class ModelsNodeComponent(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of references
         if self.references:
             _dict['references'] = self.references.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of share_details
+        if self.share_details:
+            _dict['share_details'] = self.share_details.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of template_settings
+        if self.template_settings:
+            _dict['template_settings'] = self.template_settings.to_dict()
         return _dict
 
     @classmethod
@@ -92,11 +104,15 @@ class ModelsNodeComponent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "base_config": obj.get("base_config"),
             "config": obj.get("config"),
             "description": obj.get("description"),
             "id": obj.get("id"),
             "name": obj.get("name"),
+            "overrides": obj.get("overrides"),
             "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
+            "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
+            "template_settings": ModelsTemplateSettings.from_dict(obj["template_settings"]) if obj.get("template_settings") is not None else None,
             "type": obj.get("type"),
             "version": obj.get("version")
         })

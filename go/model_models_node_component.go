@@ -20,11 +20,18 @@ var _ MappedNullable = &ModelsNodeComponent{}
 
 // ModelsNodeComponent struct for ModelsNodeComponent
 type ModelsNodeComponent struct {
-	Config map[string]interface{} `json:"config,omitempty"`
+	// BaseConfig is the template's config before the override delta is applied.
+	BaseConfig map[string]*interface{} `json:"base_config,omitempty"`
+	// Config is the node's effective config: for a template-backed node it is the base merged with the node's override delta (RFC 0017 §3); otherwise it is the component's base config unchanged.
+	Config map[string]*interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	// Overrides is the node's sparse override delta (secrets as {id} refs only).
+	Overrides map[string]*interface{} `json:"overrides,omitempty"`
 	References *ModelsReferences `json:"references,omitempty"`
+	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
+	TemplateSettings *ModelsTemplateSettings `json:"template_settings,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Version *int32 `json:"version,omitempty"`
 }
@@ -46,10 +53,42 @@ func NewModelsNodeComponentWithDefaults() *ModelsNodeComponent {
 	return &this
 }
 
+// GetBaseConfig returns the BaseConfig field value if set, zero value otherwise.
+func (o *ModelsNodeComponent) GetBaseConfig() map[string]*interface{} {
+	if o == nil || IsNil(o.BaseConfig) {
+		var ret map[string]*interface{}
+		return ret
+	}
+	return o.BaseConfig
+}
+
+// GetBaseConfigOk returns a tuple with the BaseConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsNodeComponent) GetBaseConfigOk() (map[string]*interface{}, bool) {
+	if o == nil || IsNil(o.BaseConfig) {
+		return map[string]*interface{}{}, false
+	}
+	return o.BaseConfig, true
+}
+
+// HasBaseConfig returns a boolean if a field has been set.
+func (o *ModelsNodeComponent) HasBaseConfig() bool {
+	if o != nil && !IsNil(o.BaseConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetBaseConfig gets a reference to the given map[string]*interface{} and assigns it to the BaseConfig field.
+func (o *ModelsNodeComponent) SetBaseConfig(v map[string]*interface{}) {
+	o.BaseConfig = v
+}
+
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ModelsNodeComponent) GetConfig() map[string]interface{} {
+func (o *ModelsNodeComponent) GetConfig() map[string]*interface{} {
 	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
+		var ret map[string]*interface{}
 		return ret
 	}
 	return o.Config
@@ -57,9 +96,9 @@ func (o *ModelsNodeComponent) GetConfig() map[string]interface{} {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeComponent) GetConfigOk() (map[string]interface{}, bool) {
+func (o *ModelsNodeComponent) GetConfigOk() (map[string]*interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
+		return map[string]*interface{}{}, false
 	}
 	return o.Config, true
 }
@@ -73,8 +112,8 @@ func (o *ModelsNodeComponent) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *ModelsNodeComponent) SetConfig(v map[string]interface{}) {
+// SetConfig gets a reference to the given map[string]*interface{} and assigns it to the Config field.
+func (o *ModelsNodeComponent) SetConfig(v map[string]*interface{}) {
 	o.Config = v
 }
 
@@ -174,6 +213,38 @@ func (o *ModelsNodeComponent) SetName(v string) {
 	o.Name = &v
 }
 
+// GetOverrides returns the Overrides field value if set, zero value otherwise.
+func (o *ModelsNodeComponent) GetOverrides() map[string]*interface{} {
+	if o == nil || IsNil(o.Overrides) {
+		var ret map[string]*interface{}
+		return ret
+	}
+	return o.Overrides
+}
+
+// GetOverridesOk returns a tuple with the Overrides field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsNodeComponent) GetOverridesOk() (map[string]*interface{}, bool) {
+	if o == nil || IsNil(o.Overrides) {
+		return map[string]*interface{}{}, false
+	}
+	return o.Overrides, true
+}
+
+// HasOverrides returns a boolean if a field has been set.
+func (o *ModelsNodeComponent) HasOverrides() bool {
+	if o != nil && !IsNil(o.Overrides) {
+		return true
+	}
+
+	return false
+}
+
+// SetOverrides gets a reference to the given map[string]*interface{} and assigns it to the Overrides field.
+func (o *ModelsNodeComponent) SetOverrides(v map[string]*interface{}) {
+	o.Overrides = v
+}
+
 // GetReferences returns the References field value if set, zero value otherwise.
 func (o *ModelsNodeComponent) GetReferences() ModelsReferences {
 	if o == nil || IsNil(o.References) {
@@ -204,6 +275,70 @@ func (o *ModelsNodeComponent) HasReferences() bool {
 // SetReferences gets a reference to the given ModelsReferences and assigns it to the References field.
 func (o *ModelsNodeComponent) SetReferences(v ModelsReferences) {
 	o.References = &v
+}
+
+// GetShareDetails returns the ShareDetails field value if set, zero value otherwise.
+func (o *ModelsNodeComponent) GetShareDetails() ModelsShareDetails {
+	if o == nil || IsNil(o.ShareDetails) {
+		var ret ModelsShareDetails
+		return ret
+	}
+	return *o.ShareDetails
+}
+
+// GetShareDetailsOk returns a tuple with the ShareDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsNodeComponent) GetShareDetailsOk() (*ModelsShareDetails, bool) {
+	if o == nil || IsNil(o.ShareDetails) {
+		return nil, false
+	}
+	return o.ShareDetails, true
+}
+
+// HasShareDetails returns a boolean if a field has been set.
+func (o *ModelsNodeComponent) HasShareDetails() bool {
+	if o != nil && !IsNil(o.ShareDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetShareDetails gets a reference to the given ModelsShareDetails and assigns it to the ShareDetails field.
+func (o *ModelsNodeComponent) SetShareDetails(v ModelsShareDetails) {
+	o.ShareDetails = &v
+}
+
+// GetTemplateSettings returns the TemplateSettings field value if set, zero value otherwise.
+func (o *ModelsNodeComponent) GetTemplateSettings() ModelsTemplateSettings {
+	if o == nil || IsNil(o.TemplateSettings) {
+		var ret ModelsTemplateSettings
+		return ret
+	}
+	return *o.TemplateSettings
+}
+
+// GetTemplateSettingsOk returns a tuple with the TemplateSettings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsNodeComponent) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool) {
+	if o == nil || IsNil(o.TemplateSettings) {
+		return nil, false
+	}
+	return o.TemplateSettings, true
+}
+
+// HasTemplateSettings returns a boolean if a field has been set.
+func (o *ModelsNodeComponent) HasTemplateSettings() bool {
+	if o != nil && !IsNil(o.TemplateSettings) {
+		return true
+	}
+
+	return false
+}
+
+// SetTemplateSettings gets a reference to the given ModelsTemplateSettings and assigns it to the TemplateSettings field.
+func (o *ModelsNodeComponent) SetTemplateSettings(v ModelsTemplateSettings) {
+	o.TemplateSettings = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -280,6 +415,9 @@ func (o ModelsNodeComponent) MarshalJSON() ([]byte, error) {
 
 func (o ModelsNodeComponent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BaseConfig) {
+		toSerialize["base_config"] = o.BaseConfig
+	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
@@ -292,8 +430,17 @@ func (o ModelsNodeComponent) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.Overrides) {
+		toSerialize["overrides"] = o.Overrides
+	}
 	if !IsNil(o.References) {
 		toSerialize["references"] = o.References
+	}
+	if !IsNil(o.ShareDetails) {
+		toSerialize["share_details"] = o.ShareDetails
+	}
+	if !IsNil(o.TemplateSettings) {
+		toSerialize["template_settings"] = o.TemplateSettings
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

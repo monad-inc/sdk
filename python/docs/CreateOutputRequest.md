@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **promise_id** | **str** |  | [optional] 
+**template_settings** | [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

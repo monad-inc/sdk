@@ -21,7 +21,7 @@ var _ MappedNullable = &ModelsQuotaList{}
 // ModelsQuotaList struct for ModelsQuotaList
 type ModelsQuotaList struct {
 	Pagination *ModelsPagination `json:"pagination,omitempty"`
-	Quotas []GithubComMonadIncCorePkgTypesModelsQuota `json:"quotas,omitempty"`
+	Quotas []ModelsQuota `json:"quotas,omitempty"`
 }
 
 // NewModelsQuotaList instantiates a new ModelsQuotaList object
@@ -74,9 +74,9 @@ func (o *ModelsQuotaList) SetPagination(v ModelsPagination) {
 }
 
 // GetQuotas returns the Quotas field value if set, zero value otherwise.
-func (o *ModelsQuotaList) GetQuotas() []GithubComMonadIncCorePkgTypesModelsQuota {
+func (o *ModelsQuotaList) GetQuotas() []ModelsQuota {
 	if o == nil || IsNil(o.Quotas) {
-		var ret []GithubComMonadIncCorePkgTypesModelsQuota
+		var ret []ModelsQuota
 		return ret
 	}
 	return o.Quotas
@@ -84,7 +84,7 @@ func (o *ModelsQuotaList) GetQuotas() []GithubComMonadIncCorePkgTypesModelsQuota
 
 // GetQuotasOk returns a tuple with the Quotas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQuotaList) GetQuotasOk() ([]GithubComMonadIncCorePkgTypesModelsQuota, bool) {
+func (o *ModelsQuotaList) GetQuotasOk() ([]ModelsQuota, bool) {
 	if o == nil || IsNil(o.Quotas) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *ModelsQuotaList) HasQuotas() bool {
 	return false
 }
 
-// SetQuotas gets a reference to the given []GithubComMonadIncCorePkgTypesModelsQuota and assigns it to the Quotas field.
-func (o *ModelsQuotaList) SetQuotas(v []GithubComMonadIncCorePkgTypesModelsQuota) {
+// SetQuotas gets a reference to the given []ModelsQuota and assigns it to the Quotas field.
+func (o *ModelsQuotaList) SetQuotas(v []ModelsQuota) {
 	o.Quotas = v
 }
 

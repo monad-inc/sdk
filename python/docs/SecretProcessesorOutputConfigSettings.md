@@ -20,10 +20,10 @@ Name | Type | Description | Notes
 **dataset** | **str** | The name of the BigQuery dataset where the table resides | [optional] 
 **bucket** | **str** | The S3 bucket in your AWS account that Scanner indexes. | 
 **project_id** | **str** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
-**table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
+**table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | 
 **ingress_address** | **str** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
 **path** | **str** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
-**port** | **str** | The port of the Splunk instance. | [optional] 
+**port** | **str** | The port of the Splunk instance. | 
 **catalog** | **str** | The Unity Catalog name | 
 **var_schema** | **str** | The schema within the database that contains the target pipe. | 
 **server_hostname** | **str** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
@@ -40,10 +40,10 @@ Name | Type | Description | Notes
 **cloud_id** | **str** |  | [optional] 
 **connection_config** | [**ElasticsearchConnectionConfig**](ElasticsearchConnectionConfig.md) |  | [optional] 
 **connection_type** | **str** |  | [optional] 
-**index** | **str** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | 
+**index** | **str** | The name of the index to write to. | 
 **insecure_skip_verify** | **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
-**url** | **str** | The URL of the Sumo Logic instance. | [optional] 
-**username** | **str** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | 
+**url** | **str** | The URL of the Wazuh indexer API (must start with https). | 
+**username** | **str** | The username for authenticating with the Wazuh indexer. | 
 **format** | [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
 **endpoint** | **str** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **headers** | [**List[KafkaKafkaHeader]**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
@@ -54,6 +54,10 @@ Name | Type | Description | Notes
 **rate_limit** | **int** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **tls_skip_verify** | **bool** |  | [optional] 
 **wrapper_key** | **str** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
+**auth** | [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | 
+**host** | **str** | The host of the PostgreSQL database | 
+**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**transform** | **str** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. | [optional] 
 **acks** | [**KafkaAcks**](KafkaAcks.md) |  | [optional] 
 **bootstrap_servers** | **str** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
 **compression_type** | [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
@@ -67,19 +71,19 @@ Name | Type | Description | Notes
 **value_field** | **str** |  | [optional] 
 **skip_ssl_verification** | **bool** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) | [optional] 
 **use_path_style** | **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
-**auth_mode** | [**OpensearchAuthMode**](OpensearchAuthMode.md) |  | [optional] 
+**auth_mode** | **str** | Not exposed in the config meta; present only to reject AWS role auth submitted via the API. | [optional] 
 **alerts_config** | [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
 **default_event_type** | [**PagerdutyEventType**](PagerdutyEventType.md) |  | [optional] 
 **summary_config** | [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 **http_ingest_url** | **str** |  | [optional] 
 **column_names** | **List[str]** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
 **database** | **str** | The Snowflake database that contains the target pipe. | 
-**host** | **str** | The host of the PostgreSQL database | [optional] 
 **user** | **str** | The username of the Snowflake account used to authenticate. The user&#39;s DEFAULT_ROLE must be set to a role with access to the pipe. | 
-**auth** | [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | [optional] 
 **label_fields** | **List[str]** |  | [optional] 
 **metric_name** | [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
 **timestamp_field** | **str** |  | [optional] 
+**bearer_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**webhook_id** | **str** | The RunReveal webhook ID. Only the ID — not the full URL shown in the RunReveal UI. | 
 **bucket_name** | **str** | Bucket Name | [optional] 
 **bucket_url** | **str** | The name of the S3 bucket where data will be stored | [optional] 
 **key** | **str** | S3 Key | [optional] 

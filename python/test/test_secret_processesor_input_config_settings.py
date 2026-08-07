@@ -76,6 +76,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 tenant_id = '',
                 account_url = '',
                 container = '',
+                partition_format_template = '',
                 consumer_group = '',
                 event_hub_name = '',
                 event_hub_namespace = '',
@@ -86,8 +87,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 query = '',
                 table = '',
                 timestamp_column = '',
-                base_url = '',
-                event_type = '',
                 hostname = '',
                 organization_id = '',
                 org_slug = '',
@@ -129,11 +128,8 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 filter_my_scans = True,
                 parent_entity_id = '',
                 parent_entity_type = '',
-                org_id = '',
                 api_key_id = '',
                 domain_name = '',
-                environment = 'production',
-                user_id = '',
                 category = 'AuditLogs',
                 cluster_name = '',
                 uses_static_creds = True,
@@ -189,16 +185,12 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                         shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
-                confidential = True,
-                gitlab_url = '',
-                issue_type = '',
-                project_id = '',
-                state = '',
-                with_label_details = True,
                 location = '',
+                project_id = '',
                 bucket_name = '',
-                auth_type = 'api_auth',
+                auth_type = 'personal_access_token',
                 email = '',
+                user_id = '',
                 alert_type = '',
                 embed = '',
                 primary_entity_type = '',
@@ -245,17 +237,16 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 audit_log_types = [
                     ''
                     ],
+                base_url = '',
                 log_categories = [
                     ''
                     ],
+                org_id = '',
                 log_type = 'connectionlog',
                 endpoint = '',
                 skip_ssl_verification = True,
                 use_path_style = True,
-                subdomain = '',
                 category_type = '',
-                domain = '',
-                username = '',
                 github_app_installation_id = '',
                 github_client_id = '',
                 include = '',
@@ -265,13 +256,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 webhook_types = [
                     ''
                     ],
-                domain_url = '',
-                topic = '',
-                host_name = '',
                 rate = 56,
                 record_type = '',
                 custom_template = '',
-                cron = '',
                 operation_names = [
                     ''
                     ],
@@ -283,6 +270,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 team_id = '',
                 tenant_url = '',
                 actor_sid = '',
+                event_type = '',
                 replication_start_time = '',
                 resource_sid = '',
                 instance_name = '',
@@ -302,9 +290,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 vendor_severity = [
                     'NONE'
-                    ],
-                email_address = '',
-                sub_domain = ''
+                    ]
             )
         else:
             return SecretProcessesorInputConfigSettings(
@@ -320,7 +306,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 queue_url = '',
                 tenant_id = '',
                 query = '',
-                base_url = '',
                 org_slug = '',
                 endpoint_url = '',
                 entity_type = [
@@ -328,8 +313,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 api_key_id = '',
                 domain_name = '',
-                environment = 'production',
-                user_id = '',
                 category = 'AuditLogs',
                 cluster_name = '',
                 namespace = '',
@@ -346,29 +329,24 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                         shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
-                gitlab_url = '',
-                project_id = '',
                 location = '',
-                auth_type = 'api_auth',
+                project_id = '',
+                user_id = '',
                 project_ids = [
                     ''
                     ],
                 tenant_data_center = '',
+                base_url = '',
                 log_categories = [
                     ''
                     ],
                 log_type = 'connectionlog',
                 endpoint = '',
-                subdomain = '',
-                domain = '',
-                username = '',
-                host_name = '',
                 tenant_domain = '',
                 tenant_url = '',
                 asset_types = [
                     'SERVERLESS'
                     ],
-                sub_domain = '',
         )
         """
 

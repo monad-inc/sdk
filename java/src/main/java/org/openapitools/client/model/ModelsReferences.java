@@ -49,9 +49,9 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsReferences
+ * ResourceReferences are the resources (e.g. secrets) referenced only via the override delta, tracked so deletion/rotation see them like component refs.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsReferences {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)

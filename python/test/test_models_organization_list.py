@@ -37,7 +37,7 @@ class TestModelsOrganizationList(unittest.TestCase):
         if include_optional:
             return ModelsOrganizationList(
                 organizations = [
-                    monad.models.github_com_monad_inc_core_pkg_types_models/organization.github_com_monad-inc_core_pkg_types_models.Organization(
+                    monad.models.models/organization.models.Organization(
                         billing_account_id = '', 
                         connection_id = '', 
                         created_at = '', 

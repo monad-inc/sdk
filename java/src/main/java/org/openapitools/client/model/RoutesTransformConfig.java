@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.ModelsTransformConditional;
 import org.openapitools.client.model.RoutesTransformOperation;
 
 import com.google.gson.Gson;
@@ -52,13 +51,8 @@ import org.openapitools.client.JSON;
 /**
  * RoutesTransformConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesTransformConfig {
-  public static final String SERIALIZED_NAME_CONDITIONAL = "conditional";
-  @SerializedName(SERIALIZED_NAME_CONDITIONAL)
-  @javax.annotation.Nullable
-  private ModelsTransformConditional conditional;
-
   public static final String SERIALIZED_NAME_OPERATIONS = "operations";
   @SerializedName(SERIALIZED_NAME_OPERATIONS)
   @javax.annotation.Nullable
@@ -66,25 +60,6 @@ public class RoutesTransformConfig {
 
   public RoutesTransformConfig() {
   }
-
-  public RoutesTransformConfig conditional(@javax.annotation.Nullable ModelsTransformConditional conditional) {
-    this.conditional = conditional;
-    return this;
-  }
-
-  /**
-   * Get conditional
-   * @return conditional
-   */
-  @javax.annotation.Nullable
-  public ModelsTransformConditional getConditional() {
-    return conditional;
-  }
-
-  public void setConditional(@javax.annotation.Nullable ModelsTransformConditional conditional) {
-    this.conditional = conditional;
-  }
-
 
   public RoutesTransformConfig operations(@javax.annotation.Nullable List<RoutesTransformOperation> operations) {
     this.operations = operations;
@@ -123,20 +98,18 @@ public class RoutesTransformConfig {
       return false;
     }
     RoutesTransformConfig routesTransformConfig = (RoutesTransformConfig) o;
-    return Objects.equals(this.conditional, routesTransformConfig.conditional) &&
-        Objects.equals(this.operations, routesTransformConfig.operations);
+    return Objects.equals(this.operations, routesTransformConfig.operations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditional, operations);
+    return Objects.hash(operations);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesTransformConfig {\n");
-    sb.append("    conditional: ").append(toIndentedString(conditional)).append("\n");
     sb.append("    operations: ").append(toIndentedString(operations)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -156,7 +129,7 @@ public class RoutesTransformConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditional", "operations"));
+    openapiFields = new HashSet<String>(Arrays.asList("operations"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -183,10 +156,6 @@ public class RoutesTransformConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `conditional`
-      if (jsonObj.get("conditional") != null && !jsonObj.get("conditional").isJsonNull()) {
-        ModelsTransformConditional.validateJsonElement(jsonObj.get("conditional"));
-      }
       if (jsonObj.get("operations") != null && !jsonObj.get("operations").isJsonNull()) {
         JsonArray jsonArrayoperations = jsonObj.getAsJsonArray("operations");
         if (jsonArrayoperations != null) {

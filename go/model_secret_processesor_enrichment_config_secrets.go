@@ -85,7 +85,16 @@ func (dst *SecretProcessesorEnrichmentConfigSecrets) UnmarshalJSON(data []byte) 
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSecrets)")
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSecrets): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSecrets)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSecrets): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSecrets)")
+        }
 	}
 }
 

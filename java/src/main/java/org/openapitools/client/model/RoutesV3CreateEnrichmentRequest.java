@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsTemplateSettings;
 import org.openapitools.client.model.SecretProcessesorEnrichmentConfig;
 
 import com.google.gson.Gson;
@@ -49,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3CreateEnrichmentRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesV3CreateEnrichmentRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
@@ -65,6 +66,11 @@ public class RoutesV3CreateEnrichmentRequest {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_TEMPLATE_SETTINGS = "template_settings";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_SETTINGS)
+  @javax.annotation.Nullable
+  private ModelsTemplateSettings templateSettings;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -131,6 +137,25 @@ public class RoutesV3CreateEnrichmentRequest {
   }
 
 
+  public RoutesV3CreateEnrichmentRequest templateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
+    this.templateSettings = templateSettings;
+    return this;
+  }
+
+  /**
+   * Get templateSettings
+   * @return templateSettings
+   */
+  @javax.annotation.Nullable
+  public ModelsTemplateSettings getTemplateSettings() {
+    return templateSettings;
+  }
+
+  public void setTemplateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
+    this.templateSettings = templateSettings;
+  }
+
+
   public RoutesV3CreateEnrichmentRequest type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -163,12 +188,13 @@ public class RoutesV3CreateEnrichmentRequest {
     return Objects.equals(this.config, routesV3CreateEnrichmentRequest.config) &&
         Objects.equals(this.description, routesV3CreateEnrichmentRequest.description) &&
         Objects.equals(this.name, routesV3CreateEnrichmentRequest.name) &&
+        Objects.equals(this.templateSettings, routesV3CreateEnrichmentRequest.templateSettings) &&
         Objects.equals(this.type, routesV3CreateEnrichmentRequest.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name, type);
+    return Objects.hash(config, description, name, templateSettings, type);
   }
 
   @Override
@@ -178,6 +204,7 @@ public class RoutesV3CreateEnrichmentRequest {
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    templateSettings: ").append(toIndentedString(templateSettings)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -197,7 +224,7 @@ public class RoutesV3CreateEnrichmentRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "template_settings", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -233,6 +260,10 @@ public class RoutesV3CreateEnrichmentRequest {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the optional field `template_settings`
+      if (jsonObj.get("template_settings") != null && !jsonObj.get("template_settings").isJsonNull()) {
+        ModelsTemplateSettings.validateJsonElement(jsonObj.get("template_settings"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conditional** | [**ModelsTransformConditional**](ModelsTransformConditional.md) |  | [optional] 
 **operations** | [**List[RoutesTransformOperation]**](RoutesTransformOperation.md) |  | [optional] 
 
 ## Example

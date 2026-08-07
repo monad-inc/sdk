@@ -31,10 +31,11 @@ class RoutesV2PipelineRequestNode(BaseModel):
     """ # noqa: E501
     component_id: StrictStr
     component_type: ModelsComponentType
+    config_overrides: Optional[Dict[str, Any]] = Field(default=None, description="ConfigOverrides is the per-node override delta applied to a template component's base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.")
     enabled: Optional[StrictBool] = Field(default=None, description="nil => enabled")
     id: Optional[StrictStr] = None
     slug: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component_id", "component_type", "enabled", "id", "slug"]
+    __properties: ClassVar[List[str]] = ["component_id", "component_type", "config_overrides", "enabled", "id", "slug"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,6 +90,7 @@ class RoutesV2PipelineRequestNode(BaseModel):
         _obj = cls.model_validate({
             "component_id": obj.get("component_id"),
             "component_type": obj.get("component_type"),
+            "config_overrides": obj.get("config_overrides"),
             "enabled": obj.get("enabled"),
             "id": obj.get("id"),
             "slug": obj.get("slug")

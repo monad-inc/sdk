@@ -9,12 +9,13 @@ Name | Type | Description | Notes
 **ComponentId** | Pointer to **string** |  | [optional] 
 **ComponentSubType** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to [**ModelsComponentType**](ModelsComponentType.md) |  | [optional] 
+**ConfigOverrides** | Pointer to **map[string]interface{}** | ConfigOverrides is the node&#39;s sparse override delta over its template component&#39;s base config (RFC 0017 §3). Nil for a non-template-backed node. | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
-**SharedResources** | Pointer to [**[]ModelsNodeSharedResource**](ModelsNodeSharedResource.md) |  | [optional] 
+**ResourceReferences** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 
@@ -162,6 +163,31 @@ SetComponentType sets ComponentType field to given value.
 
 HasComponentType returns a boolean if a field has been set.
 
+### GetConfigOverrides
+
+`func (o *ModelsPipelineNode) GetConfigOverrides() map[string]*interface{}`
+
+GetConfigOverrides returns the ConfigOverrides field if non-nil, zero value otherwise.
+
+### GetConfigOverridesOk
+
+`func (o *ModelsPipelineNode) GetConfigOverridesOk() (*map[string]*interface{}, bool)`
+
+GetConfigOverridesOk returns a tuple with the ConfigOverrides field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigOverrides
+
+`func (o *ModelsPipelineNode) SetConfigOverrides(v map[string]*interface{})`
+
+SetConfigOverrides sets ConfigOverrides field to given value.
+
+### HasConfigOverrides
+
+`func (o *ModelsPipelineNode) HasConfigOverrides() bool`
+
+HasConfigOverrides returns a boolean if a field has been set.
+
 ### GetCreatedAt
 
 `func (o *ModelsPipelineNode) GetCreatedAt() string`
@@ -287,30 +313,30 @@ SetPipelineId sets PipelineId field to given value.
 
 HasPipelineId returns a boolean if a field has been set.
 
-### GetSharedResources
+### GetResourceReferences
 
-`func (o *ModelsPipelineNode) GetSharedResources() []ModelsNodeSharedResource`
+`func (o *ModelsPipelineNode) GetResourceReferences() ModelsReferences`
 
-GetSharedResources returns the SharedResources field if non-nil, zero value otherwise.
+GetResourceReferences returns the ResourceReferences field if non-nil, zero value otherwise.
 
-### GetSharedResourcesOk
+### GetResourceReferencesOk
 
-`func (o *ModelsPipelineNode) GetSharedResourcesOk() (*[]ModelsNodeSharedResource, bool)`
+`func (o *ModelsPipelineNode) GetResourceReferencesOk() (*ModelsReferences, bool)`
 
-GetSharedResourcesOk returns a tuple with the SharedResources field if it's non-nil, zero value otherwise
+GetResourceReferencesOk returns a tuple with the ResourceReferences field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSharedResources
+### SetResourceReferences
 
-`func (o *ModelsPipelineNode) SetSharedResources(v []ModelsNodeSharedResource)`
+`func (o *ModelsPipelineNode) SetResourceReferences(v ModelsReferences)`
 
-SetSharedResources sets SharedResources field to given value.
+SetResourceReferences sets ResourceReferences field to given value.
 
-### HasSharedResources
+### HasResourceReferences
 
-`func (o *ModelsPipelineNode) HasSharedResources() bool`
+`func (o *ModelsPipelineNode) HasResourceReferences() bool`
 
-HasSharedResources returns a boolean if a field has been set.
+HasResourceReferences returns a boolean if a field has been set.
 
 ### GetSlug
 

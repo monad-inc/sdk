@@ -39,7 +39,6 @@ type RoutesTransformOperationArguments struct {
 	RenameKeyArgumentsConfig *RenameKeyArgumentsConfig
 	RenameKeyWhereValueEqArgumentsConfig *RenameKeyWhereValueEqArgumentsConfig
 	UtcTimestampArgumentsConfig *UtcTimestampArgumentsConfig
-	MapmapOfStringAny *map[string]interface{}
 }
 
 // AddArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns AddArgumentsConfig wrapped in RoutesTransformOperationArguments
@@ -179,13 +178,6 @@ func RenameKeyWhereValueEqArgumentsConfigAsRoutesTransformOperationArguments(v *
 func UtcTimestampArgumentsConfigAsRoutesTransformOperationArguments(v *UtcTimestampArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		UtcTimestampArgumentsConfig: v,
-	}
-}
-
-// map[string]interface{}AsRoutesTransformOperationArguments is a convenience function that returns map[string]interface{} wrapped in RoutesTransformOperationArguments
-func MapmapOfStringAnyAsRoutesTransformOperationArguments(v *map[string]interface{}) RoutesTransformOperationArguments {
-	return RoutesTransformOperationArguments{
-		MapmapOfStringAny: v,
 	}
 }
 
@@ -534,23 +526,6 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.UtcTimestampArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into MapmapOfStringAny
-	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
-	if err == nil {
-		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
-		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
-			dst.MapmapOfStringAny = nil
-		} else {
-			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
-				dst.MapmapOfStringAny = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.MapmapOfStringAny = nil
-	}
-
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddArgumentsConfig = nil
@@ -573,13 +548,111 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.RenameKeyArgumentsConfig = nil
 		dst.RenameKeyWhereValueEqArgumentsConfig = nil
 		dst.UtcTimestampArgumentsConfig = nil
-		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(RoutesTransformOperationArguments)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(RoutesTransformOperationArguments)")
+        }
 	}
 }
 
@@ -663,10 +736,6 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 
 	if src.UtcTimestampArgumentsConfig != nil {
 		return json.Marshal(&src.UtcTimestampArgumentsConfig)
-	}
-
-	if src.MapmapOfStringAny != nil {
-		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -757,10 +826,6 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 		return obj.UtcTimestampArgumentsConfig
 	}
 
-	if obj.MapmapOfStringAny != nil {
-		return obj.MapmapOfStringAny
-	}
-
 	// all schemas are nil
 	return nil
 }
@@ -845,10 +910,6 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 
 	if obj.UtcTimestampArgumentsConfig != nil {
 		return *obj.UtcTimestampArgumentsConfig
-	}
-
-	if obj.MapmapOfStringAny != nil {
-		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

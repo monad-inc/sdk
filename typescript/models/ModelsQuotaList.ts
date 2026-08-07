@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
 import { ModelsPagination } from '../models/ModelsPagination';
+import { ModelsQuota } from '../models/ModelsQuota';
 import { HttpFile } from '../http/http';
 
 export class ModelsQuotaList {
     'pagination'?: ModelsPagination;
-    'quotas'?: Array<GithubComMonadIncCorePkgTypesModelsQuota>;
+    'quotas'?: Array<ModelsQuota>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,7 +32,7 @@ export class ModelsQuotaList {
         {
             "name": "quotas",
             "baseName": "quotas",
-            "type": "Array<GithubComMonadIncCorePkgTypesModelsQuota>",
+            "type": "Array<ModelsQuota>",
             "format": ""
         }    ];
 

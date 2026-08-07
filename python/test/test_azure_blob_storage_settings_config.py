@@ -42,6 +42,7 @@ class TestAzureBlobStorageSettingsConfig(unittest.TestCase):
                 container = '',
                 format = '',
                 partition_format = '',
+                partition_format_template = '',
                 prefix = '',
                 record_location = ''
             )

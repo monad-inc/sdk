@@ -24,6 +24,7 @@ import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsOutputConfig;
 import org.openapitools.client.model.ModelsReferences;
 import org.openapitools.client.model.ModelsShareDetails;
+import org.openapitools.client.model.ModelsTemplateSettings;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -111,6 +112,14 @@ public class ModelsOutputTest {
     @Test
     public void shareDetailsTest() {
         // TODO: test shareDetails
+    }
+
+    /**
+     * Test the property 'templateSettings'
+     */
+    @Test
+    public void templateSettingsTest() {
+        // TODO: test templateSettings
     }
 
     /**

@@ -1,5 +1,6 @@
 # ModelsComponentType
 
+base type (input, output, enrichment)
 
 ## Enum
 

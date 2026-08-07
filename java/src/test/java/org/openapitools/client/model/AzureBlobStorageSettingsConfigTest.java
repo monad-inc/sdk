@@ -86,6 +86,14 @@ public class AzureBlobStorageSettingsConfigTest {
     }
 
     /**
+     * Test the property 'partitionFormatTemplate'
+     */
+    @Test
+    public void partitionFormatTemplateTest() {
+        // TODO: test partitionFormatTemplate
+    }
+
+    /**
      * Test the property 'prefix'
      */
     @Test

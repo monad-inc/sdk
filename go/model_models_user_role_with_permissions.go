@@ -22,7 +22,7 @@ var _ MappedNullable = &ModelsUserRoleWithPermissions{}
 type ModelsUserRoleWithPermissions struct {
 	Inherited *bool `json:"inherited,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
-	Permissions []GithubComMonadIncCorePkgTypesModelsPermission `json:"permissions,omitempty"`
+	Permissions []ModelsPermission `json:"permissions,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
 	RoleName *string `json:"role_name,omitempty"`
 	SourceOrganizationId *string `json:"source_organization_id,omitempty"`
@@ -110,9 +110,9 @@ func (o *ModelsUserRoleWithPermissions) SetOrganizationId(v string) {
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ModelsUserRoleWithPermissions) GetPermissions() []GithubComMonadIncCorePkgTypesModelsPermission {
+func (o *ModelsUserRoleWithPermissions) GetPermissions() []ModelsPermission {
 	if o == nil || IsNil(o.Permissions) {
-		var ret []GithubComMonadIncCorePkgTypesModelsPermission
+		var ret []ModelsPermission
 		return ret
 	}
 	return o.Permissions
@@ -120,7 +120,7 @@ func (o *ModelsUserRoleWithPermissions) GetPermissions() []GithubComMonadIncCore
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsUserRoleWithPermissions) GetPermissionsOk() ([]GithubComMonadIncCorePkgTypesModelsPermission, bool) {
+func (o *ModelsUserRoleWithPermissions) GetPermissionsOk() ([]ModelsPermission, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *ModelsUserRoleWithPermissions) HasPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given []GithubComMonadIncCorePkgTypesModelsPermission and assigns it to the Permissions field.
-func (o *ModelsUserRoleWithPermissions) SetPermissions(v []GithubComMonadIncCorePkgTypesModelsPermission) {
+// SetPermissions gets a reference to the given []ModelsPermission and assigns it to the Permissions field.
+func (o *ModelsUserRoleWithPermissions) SetPermissions(v []ModelsPermission) {
 	o.Permissions = v
 }
 

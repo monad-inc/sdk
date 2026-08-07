@@ -23,6 +23,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.openapitools.client.model.ModelsReferences;
+import org.openapitools.client.model.ModelsShareDetails;
+import org.openapitools.client.model.ModelsTemplateSettings;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -38,6 +40,14 @@ public class ModelsNodeComponentTest {
     @Test
     public void testModelsNodeComponent() {
         // TODO: test ModelsNodeComponent
+    }
+
+    /**
+     * Test the property 'baseConfig'
+     */
+    @Test
+    public void baseConfigTest() {
+        // TODO: test baseConfig
     }
 
     /**
@@ -73,11 +83,35 @@ public class ModelsNodeComponentTest {
     }
 
     /**
+     * Test the property 'overrides'
+     */
+    @Test
+    public void overridesTest() {
+        // TODO: test overrides
+    }
+
+    /**
      * Test the property 'references'
      */
     @Test
     public void referencesTest() {
         // TODO: test references
+    }
+
+    /**
+     * Test the property 'shareDetails'
+     */
+    @Test
+    public void shareDetailsTest() {
+        // TODO: test shareDetails
+    }
+
+    /**
+     * Test the property 'templateSettings'
+     */
+    @Test
+    public void templateSettingsTest() {
+        // TODO: test templateSettings
     }
 
     /**

@@ -46,6 +46,10 @@ class TestRoutesV2CreateOutputRequest(unittest.TestCase):
                 description = '',
                 name = '',
                 promise_id = '',
+                template_settings = monad.models.models/template_settings.models.TemplateSettings(
+                    overridable_paths = [
+                        ''
+                        ], ),
                 type = ''
             )
         else:

@@ -36,14 +36,6 @@ class TestRoutesTransformConfig(unittest.TestCase):
         model = RoutesTransformConfig()
         if include_optional:
             return RoutesTransformConfig(
-                conditional = monad.models.models/transform_conditional.models.TransformConditional(
-                    conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                        config = {
-                            'key' : null
-                            }, 
-                        operator = 'always', 
-                        type_id = '', ), 
-                    else = 'bypass', ),
                 operations = [
                     monad.models.routes/transform_operation.routes.TransformOperation(
                         arguments = {

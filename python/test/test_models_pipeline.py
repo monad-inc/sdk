@@ -77,7 +77,7 @@ class TestModelsPipeline(unittest.TestCase):
                                         label = 'Last Processed', 
                                         partition_key = '', 
                                         ranges = [
-                                            monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
+                                            monad.models.models/time_range.models.TimeRange(
                                                 end = '', 
                                                 start = '', )
                                             ], )

@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
 import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { HttpFile } from '../http/http';
 
@@ -17,6 +18,7 @@ export class RoutesV2CreateInputRequest {
     'config'?: SecretProcessesorInputConfig;
     'description'?: string;
     'name'?: string;
+    'templateSettings'?: ModelsTemplateSettings;
     'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -40,6 +42,12 @@ export class RoutesV2CreateInputRequest {
             "name": "name",
             "baseName": "name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "templateSettings",
+            "baseName": "template_settings",
+            "type": "ModelsTemplateSettings",
             "format": ""
         },
         {

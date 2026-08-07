@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**SecretProcessesorInputConfig**](SecretProcessesorInputConfig.md) |  | [optional] 
 **type** | **str** |  | [optional] 
+**version** | **int** |  | [optional] 
 
 ## Example
 

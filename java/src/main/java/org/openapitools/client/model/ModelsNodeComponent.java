@@ -24,6 +24,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.openapitools.client.model.ModelsReferences;
+import org.openapitools.client.model.ModelsShareDetails;
+import org.openapitools.client.model.ModelsTemplateSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,8 +53,13 @@ import org.openapitools.client.JSON;
 /**
  * ModelsNodeComponent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsNodeComponent {
+  public static final String SERIALIZED_NAME_BASE_CONFIG = "base_config";
+  @SerializedName(SERIALIZED_NAME_BASE_CONFIG)
+  @javax.annotation.Nullable
+  private Map<String, Object> baseConfig = new HashMap<>();
+
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
@@ -73,10 +80,25 @@ public class ModelsNodeComponent {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_OVERRIDES = "overrides";
+  @SerializedName(SERIALIZED_NAME_OVERRIDES)
+  @javax.annotation.Nullable
+  private Map<String, Object> overrides = new HashMap<>();
+
   public static final String SERIALIZED_NAME_REFERENCES = "references";
   @SerializedName(SERIALIZED_NAME_REFERENCES)
   @javax.annotation.Nullable
   private ModelsReferences references;
+
+  public static final String SERIALIZED_NAME_SHARE_DETAILS = "share_details";
+  @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
+  @javax.annotation.Nullable
+  private ModelsShareDetails shareDetails;
+
+  public static final String SERIALIZED_NAME_TEMPLATE_SETTINGS = "template_settings";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_SETTINGS)
+  @javax.annotation.Nullable
+  private ModelsTemplateSettings templateSettings;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -90,6 +112,33 @@ public class ModelsNodeComponent {
 
   public ModelsNodeComponent() {
   }
+
+  public ModelsNodeComponent baseConfig(@javax.annotation.Nullable Map<String, Object> baseConfig) {
+    this.baseConfig = baseConfig;
+    return this;
+  }
+
+  public ModelsNodeComponent putBaseConfigItem(String key, Object baseConfigItem) {
+    if (this.baseConfig == null) {
+      this.baseConfig = new HashMap<>();
+    }
+    this.baseConfig.put(key, baseConfigItem);
+    return this;
+  }
+
+  /**
+   * BaseConfig is the template&#39;s config before the override delta is applied.
+   * @return baseConfig
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getBaseConfig() {
+    return baseConfig;
+  }
+
+  public void setBaseConfig(@javax.annotation.Nullable Map<String, Object> baseConfig) {
+    this.baseConfig = baseConfig;
+  }
+
 
   public ModelsNodeComponent config(@javax.annotation.Nullable Map<String, Object> config) {
     this.config = config;
@@ -105,7 +154,7 @@ public class ModelsNodeComponent {
   }
 
   /**
-   * Get config
+   * Config is the node&#39;s effective config: for a template-backed node it is the base merged with the node&#39;s override delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged.
    * @return config
    */
   @javax.annotation.Nullable
@@ -175,6 +224,33 @@ public class ModelsNodeComponent {
   }
 
 
+  public ModelsNodeComponent overrides(@javax.annotation.Nullable Map<String, Object> overrides) {
+    this.overrides = overrides;
+    return this;
+  }
+
+  public ModelsNodeComponent putOverridesItem(String key, Object overridesItem) {
+    if (this.overrides == null) {
+      this.overrides = new HashMap<>();
+    }
+    this.overrides.put(key, overridesItem);
+    return this;
+  }
+
+  /**
+   * Overrides is the node&#39;s sparse override delta (secrets as {id} refs only).
+   * @return overrides
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getOverrides() {
+    return overrides;
+  }
+
+  public void setOverrides(@javax.annotation.Nullable Map<String, Object> overrides) {
+    this.overrides = overrides;
+  }
+
+
   public ModelsNodeComponent references(@javax.annotation.Nullable ModelsReferences references) {
     this.references = references;
     return this;
@@ -191,6 +267,44 @@ public class ModelsNodeComponent {
 
   public void setReferences(@javax.annotation.Nullable ModelsReferences references) {
     this.references = references;
+  }
+
+
+  public ModelsNodeComponent shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+    return this;
+  }
+
+  /**
+   * Get shareDetails
+   * @return shareDetails
+   */
+  @javax.annotation.Nullable
+  public ModelsShareDetails getShareDetails() {
+    return shareDetails;
+  }
+
+  public void setShareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+    this.shareDetails = shareDetails;
+  }
+
+
+  public ModelsNodeComponent templateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
+    this.templateSettings = templateSettings;
+    return this;
+  }
+
+  /**
+   * Get templateSettings
+   * @return templateSettings
+   */
+  @javax.annotation.Nullable
+  public ModelsTemplateSettings getTemplateSettings() {
+    return templateSettings;
+  }
+
+  public void setTemplateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
+    this.templateSettings = templateSettings;
   }
 
 
@@ -242,29 +356,37 @@ public class ModelsNodeComponent {
       return false;
     }
     ModelsNodeComponent modelsNodeComponent = (ModelsNodeComponent) o;
-    return Objects.equals(this.config, modelsNodeComponent.config) &&
+    return Objects.equals(this.baseConfig, modelsNodeComponent.baseConfig) &&
+        Objects.equals(this.config, modelsNodeComponent.config) &&
         Objects.equals(this.description, modelsNodeComponent.description) &&
         Objects.equals(this.id, modelsNodeComponent.id) &&
         Objects.equals(this.name, modelsNodeComponent.name) &&
+        Objects.equals(this.overrides, modelsNodeComponent.overrides) &&
         Objects.equals(this.references, modelsNodeComponent.references) &&
+        Objects.equals(this.shareDetails, modelsNodeComponent.shareDetails) &&
+        Objects.equals(this.templateSettings, modelsNodeComponent.templateSettings) &&
         Objects.equals(this.type, modelsNodeComponent.type) &&
         Objects.equals(this.version, modelsNodeComponent.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, id, name, references, type, version);
+    return Objects.hash(baseConfig, config, description, id, name, overrides, references, shareDetails, templateSettings, type, version);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsNodeComponent {\n");
+    sb.append("    baseConfig: ").append(toIndentedString(baseConfig)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    overrides: ").append(toIndentedString(overrides)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
+    sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
+    sb.append("    templateSettings: ").append(toIndentedString(templateSettings)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
@@ -285,7 +407,7 @@ public class ModelsNodeComponent {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "id", "name", "references", "type", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("base_config", "config", "description", "id", "name", "overrides", "references", "share_details", "template_settings", "type", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -324,6 +446,14 @@ public class ModelsNodeComponent {
       // validate the optional field `references`
       if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
         ModelsReferences.validateJsonElement(jsonObj.get("references"));
+      }
+      // validate the optional field `share_details`
+      if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
+        ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
+      }
+      // validate the optional field `template_settings`
+      if (jsonObj.get("template_settings") != null && !jsonObj.get("template_settings").isJsonNull()) {
+        ModelsTemplateSettings.validateJsonElement(jsonObj.get("template_settings"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 ## UpdateResourceShares
 
-> ModelsResourceShareChangeSet UpdateResourceShares(ctx, organizationId, resourceType, resourceId).CreateResourceSharesRequest(createResourceSharesRequest).Execute()
+> ModelsResourceShareChangeSet UpdateResourceShares(ctx, organizationId, resourceType, resourceId).UpdateResourceSharesRequest(updateResourceSharesRequest).Execute()
 
 Update a resource's shares
 
@@ -512,11 +512,11 @@ func main() {
 	organizationId := "organizationId_example" // string | Owner organization ID
 	resourceType := "resourceType_example" // string | Resource type
 	resourceId := "resourceId_example" // string | Resource ID
-	createResourceSharesRequest := openapiclient.CreateResourceShares_request{RoutesV3ShareChangesRequest: openapiclient.NewRoutesV3ShareChangesRequest()} // CreateResourceSharesRequest | Share delta request
+	updateResourceSharesRequest := openapiclient.UpdateResourceShares_request{RoutesV3ShareChangesRequest: openapiclient.NewRoutesV3ShareChangesRequest()} // UpdateResourceSharesRequest | Share delta request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ResourceSharesAPI.UpdateResourceShares(context.Background(), organizationId, resourceType, resourceId).CreateResourceSharesRequest(createResourceSharesRequest).Execute()
+	resp, r, err := apiClient.ResourceSharesAPI.UpdateResourceShares(context.Background(), organizationId, resourceType, resourceId).UpdateResourceSharesRequest(updateResourceSharesRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ResourceSharesAPI.UpdateResourceShares``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 
 
- **createResourceSharesRequest** | [**CreateResourceSharesRequest**](CreateResourceSharesRequest.md) | Share delta request | 
+ **updateResourceSharesRequest** | [**UpdateResourceSharesRequest**](UpdateResourceSharesRequest.md) | Share delta request | 
 
 ### Return type
 

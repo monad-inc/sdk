@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.ModelsConnectorMeta;
 import org.openapitools.client.model.OutputsConnectorMeta;
 
 import java.lang.reflect.Type;
@@ -147,7 +146,7 @@ public class OutputsApi {
      * Get output config meta
      * Get output config meta
      * @param outputTypeId Output type ID (required)
-     * @return ModelsConnectorMeta
+     * @return OutputsConnectorMeta
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -157,8 +156,8 @@ public class OutputsApi {
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsConnectorMeta getOutputTypeMeta(@javax.annotation.Nonnull String outputTypeId) throws ApiException {
-        ApiResponse<ModelsConnectorMeta> localVarResp = getOutputTypeMetaWithHttpInfo(outputTypeId);
+    public OutputsConnectorMeta getOutputTypeMeta(@javax.annotation.Nonnull String outputTypeId) throws ApiException {
+        ApiResponse<OutputsConnectorMeta> localVarResp = getOutputTypeMetaWithHttpInfo(outputTypeId);
         return localVarResp.getData();
     }
 
@@ -166,7 +165,7 @@ public class OutputsApi {
      * Get output config meta
      * Get output config meta
      * @param outputTypeId Output type ID (required)
-     * @return ApiResponse&lt;ModelsConnectorMeta&gt;
+     * @return ApiResponse&lt;OutputsConnectorMeta&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -176,9 +175,9 @@ public class OutputsApi {
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsConnectorMeta> getOutputTypeMetaWithHttpInfo(@javax.annotation.Nonnull String outputTypeId) throws ApiException {
+    public ApiResponse<OutputsConnectorMeta> getOutputTypeMetaWithHttpInfo(@javax.annotation.Nonnull String outputTypeId) throws ApiException {
         okhttp3.Call localVarCall = getOutputTypeMetaValidateBeforeCall(outputTypeId, null);
-        Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();
+        Type localVarReturnType = new TypeToken<OutputsConnectorMeta>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -197,10 +196,10 @@ public class OutputsApi {
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOutputTypeMetaAsync(@javax.annotation.Nonnull String outputTypeId, final ApiCallback<ModelsConnectorMeta> _callback) throws ApiException {
+    public okhttp3.Call getOutputTypeMetaAsync(@javax.annotation.Nonnull String outputTypeId, final ApiCallback<OutputsConnectorMeta> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOutputTypeMetaValidateBeforeCall(outputTypeId, _callback);
-        Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();
+        Type localVarReturnType = new TypeToken<OutputsConnectorMeta>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

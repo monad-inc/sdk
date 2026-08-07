@@ -24,6 +24,8 @@ var _ MappedNullable = &RoutesV2PipelineRequestNode{}
 type RoutesV2PipelineRequestNode struct {
 	ComponentId string `json:"component_id"`
 	ComponentType ModelsComponentType `json:"component_type"`
+	// ConfigOverrides is the per-node override delta applied to a template component's base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.
+	ConfigOverrides map[string]*interface{} `json:"config_overrides,omitempty"`
 	// nil => enabled
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -97,6 +99,38 @@ func (o *RoutesV2PipelineRequestNode) GetComponentTypeOk() (*ModelsComponentType
 // SetComponentType sets field value
 func (o *RoutesV2PipelineRequestNode) SetComponentType(v ModelsComponentType) {
 	o.ComponentType = v
+}
+
+// GetConfigOverrides returns the ConfigOverrides field value if set, zero value otherwise.
+func (o *RoutesV2PipelineRequestNode) GetConfigOverrides() map[string]*interface{} {
+	if o == nil || IsNil(o.ConfigOverrides) {
+		var ret map[string]*interface{}
+		return ret
+	}
+	return o.ConfigOverrides
+}
+
+// GetConfigOverridesOk returns a tuple with the ConfigOverrides field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PipelineRequestNode) GetConfigOverridesOk() (map[string]*interface{}, bool) {
+	if o == nil || IsNil(o.ConfigOverrides) {
+		return map[string]*interface{}{}, false
+	}
+	return o.ConfigOverrides, true
+}
+
+// HasConfigOverrides returns a boolean if a field has been set.
+func (o *RoutesV2PipelineRequestNode) HasConfigOverrides() bool {
+	if o != nil && !IsNil(o.ConfigOverrides) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigOverrides gets a reference to the given map[string]*interface{} and assigns it to the ConfigOverrides field.
+func (o *RoutesV2PipelineRequestNode) SetConfigOverrides(v map[string]*interface{}) {
+	o.ConfigOverrides = v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -207,6 +241,9 @@ func (o RoutesV2PipelineRequestNode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["component_id"] = o.ComponentId
 	toSerialize["component_type"] = o.ComponentType
+	if !IsNil(o.ConfigOverrides) {
+		toSerialize["config_overrides"] = o.ConfigOverrides
+	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}

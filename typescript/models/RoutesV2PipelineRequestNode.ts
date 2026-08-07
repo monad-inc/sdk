@@ -17,6 +17,10 @@ export class RoutesV2PipelineRequestNode {
     'componentId': string;
     'componentType': ModelsComponentType;
     /**
+    * ConfigOverrides is the per-node override delta applied to a template component\'s base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.
+    */
+    'configOverrides'?: { [key: string]: any | null; };
+    /**
     * nil => enabled
     */
     'enabled'?: boolean;
@@ -38,6 +42,12 @@ export class RoutesV2PipelineRequestNode {
             "name": "componentType",
             "baseName": "component_type",
             "type": "ModelsComponentType",
+            "format": ""
+        },
+        {
+            "name": "configOverrides",
+            "baseName": "config_overrides",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         },
         {

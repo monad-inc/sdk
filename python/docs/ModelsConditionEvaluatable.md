@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **conditions** | [**List[ModelsConditionEvaluatable]**](ModelsConditionEvaluatable.md) |  | [optional] 
-**config** | **Dict[str, object]** | leaf config | [optional] 
+**config** | **Dict[str, Optional[object]]** | leaf config | [optional] 
 **operator** | [**ModelsConditionOperator**](ModelsConditionOperator.md) |  | [optional] 
 **type_id** | **str** | Only set for leaf nodes | [optional] 
 

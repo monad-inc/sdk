@@ -43,7 +43,8 @@ class TestRoutesV2TestInputConnectionRequest(unittest.TestCase):
                     settings = {
                         'key' : null
                         }, ),
-                type = ''
+                type = '',
+                version = 56
             )
         else:
             return RoutesV2TestInputConnectionRequest(

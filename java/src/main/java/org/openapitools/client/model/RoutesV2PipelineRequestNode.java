@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import org.openapitools.client.model.ModelsComponentType;
 
 import com.google.gson.Gson;
@@ -49,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesV2PipelineRequestNode {
   public static final String SERIALIZED_NAME_COMPONENT_ID = "component_id";
   @SerializedName(SERIALIZED_NAME_COMPONENT_ID)
@@ -60,6 +62,11 @@ public class RoutesV2PipelineRequestNode {
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
   @javax.annotation.Nonnull
   private ModelsComponentType componentType;
+
+  public static final String SERIALIZED_NAME_CONFIG_OVERRIDES = "config_overrides";
+  @SerializedName(SERIALIZED_NAME_CONFIG_OVERRIDES)
+  @javax.annotation.Nullable
+  private Map<String, Object> configOverrides = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -114,6 +121,33 @@ public class RoutesV2PipelineRequestNode {
 
   public void setComponentType(@javax.annotation.Nonnull ModelsComponentType componentType) {
     this.componentType = componentType;
+  }
+
+
+  public RoutesV2PipelineRequestNode configOverrides(@javax.annotation.Nullable Map<String, Object> configOverrides) {
+    this.configOverrides = configOverrides;
+    return this;
+  }
+
+  public RoutesV2PipelineRequestNode putConfigOverridesItem(String key, Object configOverridesItem) {
+    if (this.configOverrides == null) {
+      this.configOverrides = new HashMap<>();
+    }
+    this.configOverrides.put(key, configOverridesItem);
+    return this;
+  }
+
+  /**
+   * ConfigOverrides is the per-node override delta applied to a template component&#39;s base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.
+   * @return configOverrides
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getConfigOverrides() {
+    return configOverrides;
+  }
+
+  public void setConfigOverrides(@javax.annotation.Nullable Map<String, Object> configOverrides) {
+    this.configOverrides = configOverrides;
   }
 
 
@@ -186,6 +220,7 @@ public class RoutesV2PipelineRequestNode {
     RoutesV2PipelineRequestNode routesV2PipelineRequestNode = (RoutesV2PipelineRequestNode) o;
     return Objects.equals(this.componentId, routesV2PipelineRequestNode.componentId) &&
         Objects.equals(this.componentType, routesV2PipelineRequestNode.componentType) &&
+        Objects.equals(this.configOverrides, routesV2PipelineRequestNode.configOverrides) &&
         Objects.equals(this.enabled, routesV2PipelineRequestNode.enabled) &&
         Objects.equals(this.id, routesV2PipelineRequestNode.id) &&
         Objects.equals(this.slug, routesV2PipelineRequestNode.slug);
@@ -193,7 +228,7 @@ public class RoutesV2PipelineRequestNode {
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentId, componentType, enabled, id, slug);
+    return Objects.hash(componentId, componentType, configOverrides, enabled, id, slug);
   }
 
   @Override
@@ -202,6 +237,7 @@ public class RoutesV2PipelineRequestNode {
     sb.append("class RoutesV2PipelineRequestNode {\n");
     sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
     sb.append("    componentType: ").append(toIndentedString(componentType)).append("\n");
+    sb.append("    configOverrides: ").append(toIndentedString(configOverrides)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
@@ -223,7 +259,7 @@ public class RoutesV2PipelineRequestNode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_id", "component_type", "enabled", "id", "slug"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_id", "component_type", "config_overrides", "enabled", "id", "slug"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("component_id", "component_type"));

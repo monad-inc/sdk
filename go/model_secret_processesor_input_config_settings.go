@@ -33,8 +33,6 @@ type SecretProcessesorInputConfigSettings struct {
 	AzureVnetFlowLogsSettingsConfig *AzureVnetFlowLogsSettingsConfig
 	BackblazeB2SettingsConfig *BackblazeB2SettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
-	BitwardenEventsSettingsConfig *BitwardenEventsSettingsConfig
-	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BrinqaAuditLogsSettingsConfig *BrinqaAuditLogsSettingsConfig
 	BugsnagOrgEventsSettingsConfig *BugsnagOrgEventsSettingsConfig
 	BuildkiteAuditLogsSettingsConfig *BuildkiteAuditLogsSettingsConfig
@@ -51,9 +49,7 @@ type SecretProcessesorInputConfigSettings struct {
 	CloudtrailSettingsConfig *CloudtrailSettingsConfig
 	ClumioAuditLogsSettingsConfig *ClumioAuditLogsSettingsConfig
 	ClumioConsolidatedAlertsSettingsConfig *ClumioConsolidatedAlertsSettingsConfig
-	CodaAuditEventsSettingsConfig *CodaAuditEventsSettingsConfig
 	CortexXsoarManagementLogsSettingsConfig *CortexXsoarManagementLogsSettingsConfig
-	CustomerEventDataSettingsConfig *CustomerEventDataSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
 	DuoSecurityActivityLogsSettingsConfig *DuoSecurityActivityLogsSettingsConfig
 	EksAuditLogsSettingsConfig *EksAuditLogsSettingsConfig
@@ -62,7 +58,6 @@ type SecretProcessesorInputConfigSettings struct {
 	EventSettingsConfig *EventSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GithubActionsWorkflowLogsWebhookSettingsConfig *GithubActionsWorkflowLogsWebhookSettingsConfig
-	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
 	GkeAuditLogsSettingsConfig *GkeAuditLogsSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	GoogleWorkspaceSettingsConfig *GoogleWorkspaceSettingsConfig
@@ -78,25 +73,15 @@ type SecretProcessesorInputConfigSettings struct {
 	MonadLogSettingsConfig *MonadLogSettingsConfig
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	OfflineenrollmentlogsSettingsConfig *OfflineenrollmentlogsSettingsConfig
-	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
-	OpalEventsSettingsConfig *OpalEventsSettingsConfig
-	OpenaiAuditLogsSettingsConfig *OpenaiAuditLogsSettingsConfig
 	OperationLogsSettingsConfig *OperationLogsSettingsConfig
-	OracleSettingsConfig *OracleSettingsConfig
 	OrgAuditLogsSettingsConfig *OrgAuditLogsSettingsConfig
 	OwnbackupAccountEventsSettingsConfig *OwnbackupAccountEventsSettingsConfig
-	PagerdutyAuditRecordsSettingsConfig *PagerdutyAuditRecordsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	PersonaSettingsConfig *PersonaSettingsConfig
 	PlaidWebhooksSettingsConfig *PlaidWebhooksSettingsConfig
-	PolymerSettingsConfig *PolymerSettingsConfig
-	PostmanAuditLogsSettingsConfig *PostmanAuditLogsSettingsConfig
-	PubsubSettingsConfig *PubsubSettingsConfig
 	RedshiftAuditLogsSettingsConfig *RedshiftAuditLogsSettingsConfig
-	RootlyAuditLogsSettingsConfig *RootlyAuditLogsSettingsConfig
 	SemgrepCodeFindingsSettingsConfig *SemgrepCodeFindingsSettingsConfig
 	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
-	SentryOrgAuditLogsSettingsConfig *SentryOrgAuditLogsSettingsConfig
 	SlackEnterpriseAuditLogsSettingsConfig *SlackEnterpriseAuditLogsSettingsConfig
 	SnykIssuesSettingsConfig *SnykIssuesSettingsConfig
 	SnykTargetsSettingsConfig *SnykTargetsSettingsConfig
@@ -106,10 +91,6 @@ type SecretProcessesorInputConfigSettings struct {
 	TeamAccessLogsSettingsConfig *TeamAccessLogsSettingsConfig
 	TeamIntegrationLogsSettingsConfig *TeamIntegrationLogsSettingsConfig
 	TelephonyLogsSettingsConfig *TelephonyLogsSettingsConfig
-	TenableAssetsCronSettingsConfig *TenableAssetsCronSettingsConfig
-	TenableAssetsSettingsConfig *TenableAssetsSettingsConfig
-	TenableVulnerabilitiesCronSettingsConfig *TenableVulnerabilitiesCronSettingsConfig
-	TenableVulnerabilitiesSettingsConfig *TenableVulnerabilitiesSettingsConfig
 	TinesAuditLogsSettingsConfig *TinesAuditLogsSettingsConfig
 	TinesEventsLogsSettingsConfig *TinesEventsLogsSettingsConfig
 	TwilioEventsSettingsConfig *TwilioEventsSettingsConfig
@@ -119,8 +100,6 @@ type SecretProcessesorInputConfigSettings struct {
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
-	ZendeskAuditLogsSettingsConfig *ZendeskAuditLogsSettingsConfig
-	MapmapOfStringAny *map[string]interface{}
 }
 
 // AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AdminLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
@@ -218,20 +197,6 @@ func BackblazeB2SettingsConfigAsSecretProcessesorInputConfigSettings(v *Backblaz
 func BigqueryInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *BigqueryInputSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BigqueryInputSettingsConfig: v,
-	}
-}
-
-// BitwardenEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BitwardenEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func BitwardenEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BitwardenEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		BitwardenEventsSettingsConfig: v,
-	}
-}
-
-// BoxEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BoxEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func BoxEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		BoxEventsSettingsConfig: v,
 	}
 }
 
@@ -347,24 +312,10 @@ func ClumioConsolidatedAlertsSettingsConfigAsSecretProcessesorInputConfigSetting
 	}
 }
 
-// CodaAuditEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CodaAuditEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func CodaAuditEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CodaAuditEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		CodaAuditEventsSettingsConfig: v,
-	}
-}
-
 // CortexXsoarManagementLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CortexXsoarManagementLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func CortexXsoarManagementLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CortexXsoarManagementLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CortexXsoarManagementLogsSettingsConfig: v,
-	}
-}
-
-// CustomerEventDataSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CustomerEventDataSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func CustomerEventDataSettingsConfigAsSecretProcessesorInputConfigSettings(v *CustomerEventDataSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		CustomerEventDataSettingsConfig: v,
 	}
 }
 
@@ -421,13 +372,6 @@ func FullScansSettingsConfigAsSecretProcessesorInputConfigSettings(v *FullScansS
 func GithubActionsWorkflowLogsWebhookSettingsConfigAsSecretProcessesorInputConfigSettings(v *GithubActionsWorkflowLogsWebhookSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		GithubActionsWorkflowLogsWebhookSettingsConfig: v,
-	}
-}
-
-// GitlabIssuesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns GitlabIssuesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func GitlabIssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *GitlabIssuesSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		GitlabIssuesSettingsConfig: v,
 	}
 }
 
@@ -536,38 +480,10 @@ func OfflineenrollmentlogsSettingsConfigAsSecretProcessesorInputConfigSettings(v
 	}
 }
 
-// OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OneloginEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OneloginEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		OneloginEventsSettingsConfig: v,
-	}
-}
-
-// OpalEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OpalEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OpalEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpalEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		OpalEventsSettingsConfig: v,
-	}
-}
-
-// OpenaiAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OpenaiAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OpenaiAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpenaiAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		OpenaiAuditLogsSettingsConfig: v,
-	}
-}
-
 // OperationLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OperationLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func OperationLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OperationLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		OperationLogsSettingsConfig: v,
-	}
-}
-
-// OracleSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OracleSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OracleSettingsConfigAsSecretProcessesorInputConfigSettings(v *OracleSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		OracleSettingsConfig: v,
 	}
 }
 
@@ -582,13 +498,6 @@ func OrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrgAudi
 func OwnbackupAccountEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OwnbackupAccountEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		OwnbackupAccountEventsSettingsConfig: v,
-	}
-}
-
-// PagerdutyAuditRecordsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PagerdutyAuditRecordsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func PagerdutyAuditRecordsSettingsConfigAsSecretProcessesorInputConfigSettings(v *PagerdutyAuditRecordsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		PagerdutyAuditRecordsSettingsConfig: v,
 	}
 }
 
@@ -613,38 +522,10 @@ func PlaidWebhooksSettingsConfigAsSecretProcessesorInputConfigSettings(v *PlaidW
 	}
 }
 
-// PolymerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PolymerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func PolymerSettingsConfigAsSecretProcessesorInputConfigSettings(v *PolymerSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		PolymerSettingsConfig: v,
-	}
-}
-
-// PostmanAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PostmanAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func PostmanAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *PostmanAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		PostmanAuditLogsSettingsConfig: v,
-	}
-}
-
-// PubsubSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PubsubSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func PubsubSettingsConfigAsSecretProcessesorInputConfigSettings(v *PubsubSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		PubsubSettingsConfig: v,
-	}
-}
-
 // RedshiftAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns RedshiftAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func RedshiftAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *RedshiftAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RedshiftAuditLogsSettingsConfig: v,
-	}
-}
-
-// RootlyAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns RootlyAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func RootlyAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *RootlyAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		RootlyAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -659,13 +540,6 @@ func SemgrepCodeFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *
 func SemgrepSupplyChainFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SemgrepSupplyChainFindingsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		SemgrepSupplyChainFindingsSettingsConfig: v,
-	}
-}
-
-// SentryOrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SentryOrgAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SentryOrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SentryOrgAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SentryOrgAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -732,34 +606,6 @@ func TelephonyLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Teleph
 	}
 }
 
-// TenableAssetsCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableAssetsCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func TenableAssetsCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableAssetsCronSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		TenableAssetsCronSettingsConfig: v,
-	}
-}
-
-// TenableAssetsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableAssetsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func TenableAssetsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableAssetsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		TenableAssetsSettingsConfig: v,
-	}
-}
-
-// TenableVulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableVulnerabilitiesCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func TenableVulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableVulnerabilitiesCronSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		TenableVulnerabilitiesCronSettingsConfig: v,
-	}
-}
-
-// TenableVulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableVulnerabilitiesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func TenableVulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableVulnerabilitiesSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		TenableVulnerabilitiesSettingsConfig: v,
-	}
-}
-
 // TinesAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TinesAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func TinesAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TinesAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -820,20 +666,6 @@ func VulnerabilityFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v
 func WizAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *WizAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		WizAuditLogsSettingsConfig: v,
-	}
-}
-
-// ZendeskAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ZendeskAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func ZendeskAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ZendeskAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		ZendeskAuditLogsSettingsConfig: v,
-	}
-}
-
-// map[string]interface{}AsSecretProcessesorInputConfigSettings is a convenience function that returns map[string]interface{} wrapped in SecretProcessesorInputConfigSettings
-func MapmapOfStringAnyAsSecretProcessesorInputConfigSettings(v *map[string]interface{}) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		MapmapOfStringAny: v,
 	}
 }
 
@@ -1078,40 +910,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BigqueryInputSettingsConfig = nil
-	}
-
-	// try to unmarshal data into BitwardenEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.BitwardenEventsSettingsConfig)
-	if err == nil {
-		jsonBitwardenEventsSettingsConfig, _ := json.Marshal(dst.BitwardenEventsSettingsConfig)
-		if string(jsonBitwardenEventsSettingsConfig) == "{}" { // empty struct
-			dst.BitwardenEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BitwardenEventsSettingsConfig); err != nil {
-				dst.BitwardenEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BitwardenEventsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into BoxEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.BoxEventsSettingsConfig)
-	if err == nil {
-		jsonBoxEventsSettingsConfig, _ := json.Marshal(dst.BoxEventsSettingsConfig)
-		if string(jsonBoxEventsSettingsConfig) == "{}" { // empty struct
-			dst.BoxEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BoxEventsSettingsConfig); err != nil {
-				dst.BoxEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BoxEventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BrinqaAuditLogsSettingsConfig
@@ -1386,23 +1184,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ClumioConsolidatedAlertsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into CodaAuditEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.CodaAuditEventsSettingsConfig)
-	if err == nil {
-		jsonCodaAuditEventsSettingsConfig, _ := json.Marshal(dst.CodaAuditEventsSettingsConfig)
-		if string(jsonCodaAuditEventsSettingsConfig) == "{}" { // empty struct
-			dst.CodaAuditEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CodaAuditEventsSettingsConfig); err != nil {
-				dst.CodaAuditEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CodaAuditEventsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into CortexXsoarManagementLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.CortexXsoarManagementLogsSettingsConfig)
 	if err == nil {
@@ -1418,23 +1199,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CortexXsoarManagementLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into CustomerEventDataSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.CustomerEventDataSettingsConfig)
-	if err == nil {
-		jsonCustomerEventDataSettingsConfig, _ := json.Marshal(dst.CustomerEventDataSettingsConfig)
-		if string(jsonCustomerEventDataSettingsConfig) == "{}" { // empty struct
-			dst.CustomerEventDataSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.CustomerEventDataSettingsConfig); err != nil {
-				dst.CustomerEventDataSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.CustomerEventDataSettingsConfig = nil
 	}
 
 	// try to unmarshal data into DefenderForEndpointAlertsSettingsConfig
@@ -1571,23 +1335,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.GithubActionsWorkflowLogsWebhookSettingsConfig = nil
-	}
-
-	// try to unmarshal data into GitlabIssuesSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.GitlabIssuesSettingsConfig)
-	if err == nil {
-		jsonGitlabIssuesSettingsConfig, _ := json.Marshal(dst.GitlabIssuesSettingsConfig)
-		if string(jsonGitlabIssuesSettingsConfig) == "{}" { // empty struct
-			dst.GitlabIssuesSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.GitlabIssuesSettingsConfig); err != nil {
-				dst.GitlabIssuesSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.GitlabIssuesSettingsConfig = nil
 	}
 
 	// try to unmarshal data into GkeAuditLogsSettingsConfig
@@ -1845,57 +1592,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OfflineenrollmentlogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into OneloginEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OneloginEventsSettingsConfig)
-	if err == nil {
-		jsonOneloginEventsSettingsConfig, _ := json.Marshal(dst.OneloginEventsSettingsConfig)
-		if string(jsonOneloginEventsSettingsConfig) == "{}" { // empty struct
-			dst.OneloginEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OneloginEventsSettingsConfig); err != nil {
-				dst.OneloginEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OneloginEventsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into OpalEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OpalEventsSettingsConfig)
-	if err == nil {
-		jsonOpalEventsSettingsConfig, _ := json.Marshal(dst.OpalEventsSettingsConfig)
-		if string(jsonOpalEventsSettingsConfig) == "{}" { // empty struct
-			dst.OpalEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OpalEventsSettingsConfig); err != nil {
-				dst.OpalEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OpalEventsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into OpenaiAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OpenaiAuditLogsSettingsConfig)
-	if err == nil {
-		jsonOpenaiAuditLogsSettingsConfig, _ := json.Marshal(dst.OpenaiAuditLogsSettingsConfig)
-		if string(jsonOpenaiAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.OpenaiAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OpenaiAuditLogsSettingsConfig); err != nil {
-				dst.OpenaiAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OpenaiAuditLogsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into OperationLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.OperationLogsSettingsConfig)
 	if err == nil {
@@ -1911,23 +1607,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.OperationLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into OracleSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OracleSettingsConfig)
-	if err == nil {
-		jsonOracleSettingsConfig, _ := json.Marshal(dst.OracleSettingsConfig)
-		if string(jsonOracleSettingsConfig) == "{}" { // empty struct
-			dst.OracleSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OracleSettingsConfig); err != nil {
-				dst.OracleSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OracleSettingsConfig = nil
 	}
 
 	// try to unmarshal data into OrgAuditLogsSettingsConfig
@@ -1962,23 +1641,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.OwnbackupAccountEventsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into PagerdutyAuditRecordsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.PagerdutyAuditRecordsSettingsConfig)
-	if err == nil {
-		jsonPagerdutyAuditRecordsSettingsConfig, _ := json.Marshal(dst.PagerdutyAuditRecordsSettingsConfig)
-		if string(jsonPagerdutyAuditRecordsSettingsConfig) == "{}" { // empty struct
-			dst.PagerdutyAuditRecordsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.PagerdutyAuditRecordsSettingsConfig); err != nil {
-				dst.PagerdutyAuditRecordsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.PagerdutyAuditRecordsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into PaloAltoDataSecurityAlertsSettingsConfig
@@ -2032,57 +1694,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PlaidWebhooksSettingsConfig = nil
 	}
 
-	// try to unmarshal data into PolymerSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.PolymerSettingsConfig)
-	if err == nil {
-		jsonPolymerSettingsConfig, _ := json.Marshal(dst.PolymerSettingsConfig)
-		if string(jsonPolymerSettingsConfig) == "{}" { // empty struct
-			dst.PolymerSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.PolymerSettingsConfig); err != nil {
-				dst.PolymerSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.PolymerSettingsConfig = nil
-	}
-
-	// try to unmarshal data into PostmanAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.PostmanAuditLogsSettingsConfig)
-	if err == nil {
-		jsonPostmanAuditLogsSettingsConfig, _ := json.Marshal(dst.PostmanAuditLogsSettingsConfig)
-		if string(jsonPostmanAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.PostmanAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.PostmanAuditLogsSettingsConfig); err != nil {
-				dst.PostmanAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.PostmanAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into PubsubSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.PubsubSettingsConfig)
-	if err == nil {
-		jsonPubsubSettingsConfig, _ := json.Marshal(dst.PubsubSettingsConfig)
-		if string(jsonPubsubSettingsConfig) == "{}" { // empty struct
-			dst.PubsubSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.PubsubSettingsConfig); err != nil {
-				dst.PubsubSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.PubsubSettingsConfig = nil
-	}
-
 	// try to unmarshal data into RedshiftAuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.RedshiftAuditLogsSettingsConfig)
 	if err == nil {
@@ -2098,23 +1709,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.RedshiftAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into RootlyAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.RootlyAuditLogsSettingsConfig)
-	if err == nil {
-		jsonRootlyAuditLogsSettingsConfig, _ := json.Marshal(dst.RootlyAuditLogsSettingsConfig)
-		if string(jsonRootlyAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.RootlyAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.RootlyAuditLogsSettingsConfig); err != nil {
-				dst.RootlyAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.RootlyAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SemgrepCodeFindingsSettingsConfig
@@ -2149,23 +1743,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into SentryOrgAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SentryOrgAuditLogsSettingsConfig)
-	if err == nil {
-		jsonSentryOrgAuditLogsSettingsConfig, _ := json.Marshal(dst.SentryOrgAuditLogsSettingsConfig)
-		if string(jsonSentryOrgAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.SentryOrgAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SentryOrgAuditLogsSettingsConfig); err != nil {
-				dst.SentryOrgAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SentryOrgAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SlackEnterpriseAuditLogsSettingsConfig
@@ -2321,74 +1898,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TelephonyLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into TenableAssetsCronSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.TenableAssetsCronSettingsConfig)
-	if err == nil {
-		jsonTenableAssetsCronSettingsConfig, _ := json.Marshal(dst.TenableAssetsCronSettingsConfig)
-		if string(jsonTenableAssetsCronSettingsConfig) == "{}" { // empty struct
-			dst.TenableAssetsCronSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TenableAssetsCronSettingsConfig); err != nil {
-				dst.TenableAssetsCronSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TenableAssetsCronSettingsConfig = nil
-	}
-
-	// try to unmarshal data into TenableAssetsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.TenableAssetsSettingsConfig)
-	if err == nil {
-		jsonTenableAssetsSettingsConfig, _ := json.Marshal(dst.TenableAssetsSettingsConfig)
-		if string(jsonTenableAssetsSettingsConfig) == "{}" { // empty struct
-			dst.TenableAssetsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TenableAssetsSettingsConfig); err != nil {
-				dst.TenableAssetsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TenableAssetsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into TenableVulnerabilitiesCronSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesCronSettingsConfig)
-	if err == nil {
-		jsonTenableVulnerabilitiesCronSettingsConfig, _ := json.Marshal(dst.TenableVulnerabilitiesCronSettingsConfig)
-		if string(jsonTenableVulnerabilitiesCronSettingsConfig) == "{}" { // empty struct
-			dst.TenableVulnerabilitiesCronSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TenableVulnerabilitiesCronSettingsConfig); err != nil {
-				dst.TenableVulnerabilitiesCronSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TenableVulnerabilitiesCronSettingsConfig = nil
-	}
-
-	// try to unmarshal data into TenableVulnerabilitiesSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesSettingsConfig)
-	if err == nil {
-		jsonTenableVulnerabilitiesSettingsConfig, _ := json.Marshal(dst.TenableVulnerabilitiesSettingsConfig)
-		if string(jsonTenableVulnerabilitiesSettingsConfig) == "{}" { // empty struct
-			dst.TenableVulnerabilitiesSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TenableVulnerabilitiesSettingsConfig); err != nil {
-				dst.TenableVulnerabilitiesSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TenableVulnerabilitiesSettingsConfig = nil
-	}
-
 	// try to unmarshal data into TinesAuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.TinesAuditLogsSettingsConfig)
 	if err == nil {
@@ -2542,40 +2051,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.WizAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into ZendeskAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.ZendeskAuditLogsSettingsConfig)
-	if err == nil {
-		jsonZendeskAuditLogsSettingsConfig, _ := json.Marshal(dst.ZendeskAuditLogsSettingsConfig)
-		if string(jsonZendeskAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.ZendeskAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ZendeskAuditLogsSettingsConfig); err != nil {
-				dst.ZendeskAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ZendeskAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into MapmapOfStringAny
-	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
-	if err == nil {
-		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
-		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
-			dst.MapmapOfStringAny = nil
-		} else {
-			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
-				dst.MapmapOfStringAny = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.MapmapOfStringAny = nil
-	}
-
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AdminLogsSettingsConfig = nil
@@ -2592,8 +2067,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AzureVnetFlowLogsSettingsConfig = nil
 		dst.BackblazeB2SettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
-		dst.BitwardenEventsSettingsConfig = nil
-		dst.BoxEventsSettingsConfig = nil
 		dst.BrinqaAuditLogsSettingsConfig = nil
 		dst.BugsnagOrgEventsSettingsConfig = nil
 		dst.BuildkiteAuditLogsSettingsConfig = nil
@@ -2610,9 +2083,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudtrailSettingsConfig = nil
 		dst.ClumioAuditLogsSettingsConfig = nil
 		dst.ClumioConsolidatedAlertsSettingsConfig = nil
-		dst.CodaAuditEventsSettingsConfig = nil
 		dst.CortexXsoarManagementLogsSettingsConfig = nil
-		dst.CustomerEventDataSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 		dst.DuoSecurityActivityLogsSettingsConfig = nil
 		dst.EksAuditLogsSettingsConfig = nil
@@ -2621,7 +2092,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EventSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
 		dst.GithubActionsWorkflowLogsWebhookSettingsConfig = nil
-		dst.GitlabIssuesSettingsConfig = nil
 		dst.GkeAuditLogsSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.GoogleWorkspaceSettingsConfig = nil
@@ -2637,25 +2107,15 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.MonadLogSettingsConfig = nil
 		dst.ObjectStorageInputSettingsConfig = nil
 		dst.OfflineenrollmentlogsSettingsConfig = nil
-		dst.OneloginEventsSettingsConfig = nil
-		dst.OpalEventsSettingsConfig = nil
-		dst.OpenaiAuditLogsSettingsConfig = nil
 		dst.OperationLogsSettingsConfig = nil
-		dst.OracleSettingsConfig = nil
 		dst.OrgAuditLogsSettingsConfig = nil
 		dst.OwnbackupAccountEventsSettingsConfig = nil
-		dst.PagerdutyAuditRecordsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.PersonaSettingsConfig = nil
 		dst.PlaidWebhooksSettingsConfig = nil
-		dst.PolymerSettingsConfig = nil
-		dst.PostmanAuditLogsSettingsConfig = nil
-		dst.PubsubSettingsConfig = nil
 		dst.RedshiftAuditLogsSettingsConfig = nil
-		dst.RootlyAuditLogsSettingsConfig = nil
 		dst.SemgrepCodeFindingsSettingsConfig = nil
 		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
-		dst.SentryOrgAuditLogsSettingsConfig = nil
 		dst.SlackEnterpriseAuditLogsSettingsConfig = nil
 		dst.SnykIssuesSettingsConfig = nil
 		dst.SnykTargetsSettingsConfig = nil
@@ -2665,10 +2125,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TeamAccessLogsSettingsConfig = nil
 		dst.TeamIntegrationLogsSettingsConfig = nil
 		dst.TelephonyLogsSettingsConfig = nil
-		dst.TenableAssetsCronSettingsConfig = nil
-		dst.TenableAssetsSettingsConfig = nil
-		dst.TenableVulnerabilitiesCronSettingsConfig = nil
-		dst.TenableVulnerabilitiesSettingsConfig = nil
 		dst.TinesAuditLogsSettingsConfig = nil
 		dst.TinesEventsLogsSettingsConfig = nil
 		dst.TwilioEventsSettingsConfig = nil
@@ -2678,14 +2134,416 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.VoltioAuditLogsSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.WizAuditLogsSettingsConfig = nil
-		dst.ZendeskAuditLogsSettingsConfig = nil
-		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorInputConfigSettings)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
+        }
 	}
 }
 
@@ -2745,14 +2603,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BigqueryInputSettingsConfig != nil {
 		return json.Marshal(&src.BigqueryInputSettingsConfig)
-	}
-
-	if src.BitwardenEventsSettingsConfig != nil {
-		return json.Marshal(&src.BitwardenEventsSettingsConfig)
-	}
-
-	if src.BoxEventsSettingsConfig != nil {
-		return json.Marshal(&src.BoxEventsSettingsConfig)
 	}
 
 	if src.BrinqaAuditLogsSettingsConfig != nil {
@@ -2819,16 +2669,8 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ClumioConsolidatedAlertsSettingsConfig)
 	}
 
-	if src.CodaAuditEventsSettingsConfig != nil {
-		return json.Marshal(&src.CodaAuditEventsSettingsConfig)
-	}
-
 	if src.CortexXsoarManagementLogsSettingsConfig != nil {
 		return json.Marshal(&src.CortexXsoarManagementLogsSettingsConfig)
-	}
-
-	if src.CustomerEventDataSettingsConfig != nil {
-		return json.Marshal(&src.CustomerEventDataSettingsConfig)
 	}
 
 	if src.DefenderForEndpointAlertsSettingsConfig != nil {
@@ -2861,10 +2703,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.GithubActionsWorkflowLogsWebhookSettingsConfig != nil {
 		return json.Marshal(&src.GithubActionsWorkflowLogsWebhookSettingsConfig)
-	}
-
-	if src.GitlabIssuesSettingsConfig != nil {
-		return json.Marshal(&src.GitlabIssuesSettingsConfig)
 	}
 
 	if src.GkeAuditLogsSettingsConfig != nil {
@@ -2927,24 +2765,8 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.OfflineenrollmentlogsSettingsConfig)
 	}
 
-	if src.OneloginEventsSettingsConfig != nil {
-		return json.Marshal(&src.OneloginEventsSettingsConfig)
-	}
-
-	if src.OpalEventsSettingsConfig != nil {
-		return json.Marshal(&src.OpalEventsSettingsConfig)
-	}
-
-	if src.OpenaiAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.OpenaiAuditLogsSettingsConfig)
-	}
-
 	if src.OperationLogsSettingsConfig != nil {
 		return json.Marshal(&src.OperationLogsSettingsConfig)
-	}
-
-	if src.OracleSettingsConfig != nil {
-		return json.Marshal(&src.OracleSettingsConfig)
 	}
 
 	if src.OrgAuditLogsSettingsConfig != nil {
@@ -2953,10 +2775,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OwnbackupAccountEventsSettingsConfig != nil {
 		return json.Marshal(&src.OwnbackupAccountEventsSettingsConfig)
-	}
-
-	if src.PagerdutyAuditRecordsSettingsConfig != nil {
-		return json.Marshal(&src.PagerdutyAuditRecordsSettingsConfig)
 	}
 
 	if src.PaloAltoDataSecurityAlertsSettingsConfig != nil {
@@ -2971,24 +2789,8 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.PlaidWebhooksSettingsConfig)
 	}
 
-	if src.PolymerSettingsConfig != nil {
-		return json.Marshal(&src.PolymerSettingsConfig)
-	}
-
-	if src.PostmanAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.PostmanAuditLogsSettingsConfig)
-	}
-
-	if src.PubsubSettingsConfig != nil {
-		return json.Marshal(&src.PubsubSettingsConfig)
-	}
-
 	if src.RedshiftAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.RedshiftAuditLogsSettingsConfig)
-	}
-
-	if src.RootlyAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.RootlyAuditLogsSettingsConfig)
 	}
 
 	if src.SemgrepCodeFindingsSettingsConfig != nil {
@@ -2997,10 +2799,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SemgrepSupplyChainFindingsSettingsConfig != nil {
 		return json.Marshal(&src.SemgrepSupplyChainFindingsSettingsConfig)
-	}
-
-	if src.SentryOrgAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.SentryOrgAuditLogsSettingsConfig)
 	}
 
 	if src.SlackEnterpriseAuditLogsSettingsConfig != nil {
@@ -3039,22 +2837,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TelephonyLogsSettingsConfig)
 	}
 
-	if src.TenableAssetsCronSettingsConfig != nil {
-		return json.Marshal(&src.TenableAssetsCronSettingsConfig)
-	}
-
-	if src.TenableAssetsSettingsConfig != nil {
-		return json.Marshal(&src.TenableAssetsSettingsConfig)
-	}
-
-	if src.TenableVulnerabilitiesCronSettingsConfig != nil {
-		return json.Marshal(&src.TenableVulnerabilitiesCronSettingsConfig)
-	}
-
-	if src.TenableVulnerabilitiesSettingsConfig != nil {
-		return json.Marshal(&src.TenableVulnerabilitiesSettingsConfig)
-	}
-
 	if src.TinesAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.TinesAuditLogsSettingsConfig)
 	}
@@ -3089,14 +2871,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.WizAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.WizAuditLogsSettingsConfig)
-	}
-
-	if src.ZendeskAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.ZendeskAuditLogsSettingsConfig)
-	}
-
-	if src.MapmapOfStringAny != nil {
-		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -3163,14 +2937,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.BigqueryInputSettingsConfig
 	}
 
-	if obj.BitwardenEventsSettingsConfig != nil {
-		return obj.BitwardenEventsSettingsConfig
-	}
-
-	if obj.BoxEventsSettingsConfig != nil {
-		return obj.BoxEventsSettingsConfig
-	}
-
 	if obj.BrinqaAuditLogsSettingsConfig != nil {
 		return obj.BrinqaAuditLogsSettingsConfig
 	}
@@ -3235,16 +3001,8 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.ClumioConsolidatedAlertsSettingsConfig
 	}
 
-	if obj.CodaAuditEventsSettingsConfig != nil {
-		return obj.CodaAuditEventsSettingsConfig
-	}
-
 	if obj.CortexXsoarManagementLogsSettingsConfig != nil {
 		return obj.CortexXsoarManagementLogsSettingsConfig
-	}
-
-	if obj.CustomerEventDataSettingsConfig != nil {
-		return obj.CustomerEventDataSettingsConfig
 	}
 
 	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
@@ -3277,10 +3035,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.GithubActionsWorkflowLogsWebhookSettingsConfig != nil {
 		return obj.GithubActionsWorkflowLogsWebhookSettingsConfig
-	}
-
-	if obj.GitlabIssuesSettingsConfig != nil {
-		return obj.GitlabIssuesSettingsConfig
 	}
 
 	if obj.GkeAuditLogsSettingsConfig != nil {
@@ -3343,24 +3097,8 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OfflineenrollmentlogsSettingsConfig
 	}
 
-	if obj.OneloginEventsSettingsConfig != nil {
-		return obj.OneloginEventsSettingsConfig
-	}
-
-	if obj.OpalEventsSettingsConfig != nil {
-		return obj.OpalEventsSettingsConfig
-	}
-
-	if obj.OpenaiAuditLogsSettingsConfig != nil {
-		return obj.OpenaiAuditLogsSettingsConfig
-	}
-
 	if obj.OperationLogsSettingsConfig != nil {
 		return obj.OperationLogsSettingsConfig
-	}
-
-	if obj.OracleSettingsConfig != nil {
-		return obj.OracleSettingsConfig
 	}
 
 	if obj.OrgAuditLogsSettingsConfig != nil {
@@ -3369,10 +3107,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.OwnbackupAccountEventsSettingsConfig != nil {
 		return obj.OwnbackupAccountEventsSettingsConfig
-	}
-
-	if obj.PagerdutyAuditRecordsSettingsConfig != nil {
-		return obj.PagerdutyAuditRecordsSettingsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
@@ -3387,24 +3121,8 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.PlaidWebhooksSettingsConfig
 	}
 
-	if obj.PolymerSettingsConfig != nil {
-		return obj.PolymerSettingsConfig
-	}
-
-	if obj.PostmanAuditLogsSettingsConfig != nil {
-		return obj.PostmanAuditLogsSettingsConfig
-	}
-
-	if obj.PubsubSettingsConfig != nil {
-		return obj.PubsubSettingsConfig
-	}
-
 	if obj.RedshiftAuditLogsSettingsConfig != nil {
 		return obj.RedshiftAuditLogsSettingsConfig
-	}
-
-	if obj.RootlyAuditLogsSettingsConfig != nil {
-		return obj.RootlyAuditLogsSettingsConfig
 	}
 
 	if obj.SemgrepCodeFindingsSettingsConfig != nil {
@@ -3413,10 +3131,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.SemgrepSupplyChainFindingsSettingsConfig != nil {
 		return obj.SemgrepSupplyChainFindingsSettingsConfig
-	}
-
-	if obj.SentryOrgAuditLogsSettingsConfig != nil {
-		return obj.SentryOrgAuditLogsSettingsConfig
 	}
 
 	if obj.SlackEnterpriseAuditLogsSettingsConfig != nil {
@@ -3455,22 +3169,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.TelephonyLogsSettingsConfig
 	}
 
-	if obj.TenableAssetsCronSettingsConfig != nil {
-		return obj.TenableAssetsCronSettingsConfig
-	}
-
-	if obj.TenableAssetsSettingsConfig != nil {
-		return obj.TenableAssetsSettingsConfig
-	}
-
-	if obj.TenableVulnerabilitiesCronSettingsConfig != nil {
-		return obj.TenableVulnerabilitiesCronSettingsConfig
-	}
-
-	if obj.TenableVulnerabilitiesSettingsConfig != nil {
-		return obj.TenableVulnerabilitiesSettingsConfig
-	}
-
 	if obj.TinesAuditLogsSettingsConfig != nil {
 		return obj.TinesAuditLogsSettingsConfig
 	}
@@ -3505,14 +3203,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.WizAuditLogsSettingsConfig != nil {
 		return obj.WizAuditLogsSettingsConfig
-	}
-
-	if obj.ZendeskAuditLogsSettingsConfig != nil {
-		return obj.ZendeskAuditLogsSettingsConfig
-	}
-
-	if obj.MapmapOfStringAny != nil {
-		return obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil
@@ -3575,14 +3265,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BigqueryInputSettingsConfig != nil {
 		return *obj.BigqueryInputSettingsConfig
-	}
-
-	if obj.BitwardenEventsSettingsConfig != nil {
-		return *obj.BitwardenEventsSettingsConfig
-	}
-
-	if obj.BoxEventsSettingsConfig != nil {
-		return *obj.BoxEventsSettingsConfig
 	}
 
 	if obj.BrinqaAuditLogsSettingsConfig != nil {
@@ -3649,16 +3331,8 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.ClumioConsolidatedAlertsSettingsConfig
 	}
 
-	if obj.CodaAuditEventsSettingsConfig != nil {
-		return *obj.CodaAuditEventsSettingsConfig
-	}
-
 	if obj.CortexXsoarManagementLogsSettingsConfig != nil {
 		return *obj.CortexXsoarManagementLogsSettingsConfig
-	}
-
-	if obj.CustomerEventDataSettingsConfig != nil {
-		return *obj.CustomerEventDataSettingsConfig
 	}
 
 	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
@@ -3691,10 +3365,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.GithubActionsWorkflowLogsWebhookSettingsConfig != nil {
 		return *obj.GithubActionsWorkflowLogsWebhookSettingsConfig
-	}
-
-	if obj.GitlabIssuesSettingsConfig != nil {
-		return *obj.GitlabIssuesSettingsConfig
 	}
 
 	if obj.GkeAuditLogsSettingsConfig != nil {
@@ -3757,24 +3427,8 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.OfflineenrollmentlogsSettingsConfig
 	}
 
-	if obj.OneloginEventsSettingsConfig != nil {
-		return *obj.OneloginEventsSettingsConfig
-	}
-
-	if obj.OpalEventsSettingsConfig != nil {
-		return *obj.OpalEventsSettingsConfig
-	}
-
-	if obj.OpenaiAuditLogsSettingsConfig != nil {
-		return *obj.OpenaiAuditLogsSettingsConfig
-	}
-
 	if obj.OperationLogsSettingsConfig != nil {
 		return *obj.OperationLogsSettingsConfig
-	}
-
-	if obj.OracleSettingsConfig != nil {
-		return *obj.OracleSettingsConfig
 	}
 
 	if obj.OrgAuditLogsSettingsConfig != nil {
@@ -3783,10 +3437,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.OwnbackupAccountEventsSettingsConfig != nil {
 		return *obj.OwnbackupAccountEventsSettingsConfig
-	}
-
-	if obj.PagerdutyAuditRecordsSettingsConfig != nil {
-		return *obj.PagerdutyAuditRecordsSettingsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
@@ -3801,24 +3451,8 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.PlaidWebhooksSettingsConfig
 	}
 
-	if obj.PolymerSettingsConfig != nil {
-		return *obj.PolymerSettingsConfig
-	}
-
-	if obj.PostmanAuditLogsSettingsConfig != nil {
-		return *obj.PostmanAuditLogsSettingsConfig
-	}
-
-	if obj.PubsubSettingsConfig != nil {
-		return *obj.PubsubSettingsConfig
-	}
-
 	if obj.RedshiftAuditLogsSettingsConfig != nil {
 		return *obj.RedshiftAuditLogsSettingsConfig
-	}
-
-	if obj.RootlyAuditLogsSettingsConfig != nil {
-		return *obj.RootlyAuditLogsSettingsConfig
 	}
 
 	if obj.SemgrepCodeFindingsSettingsConfig != nil {
@@ -3827,10 +3461,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.SemgrepSupplyChainFindingsSettingsConfig != nil {
 		return *obj.SemgrepSupplyChainFindingsSettingsConfig
-	}
-
-	if obj.SentryOrgAuditLogsSettingsConfig != nil {
-		return *obj.SentryOrgAuditLogsSettingsConfig
 	}
 
 	if obj.SlackEnterpriseAuditLogsSettingsConfig != nil {
@@ -3869,22 +3499,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.TelephonyLogsSettingsConfig
 	}
 
-	if obj.TenableAssetsCronSettingsConfig != nil {
-		return *obj.TenableAssetsCronSettingsConfig
-	}
-
-	if obj.TenableAssetsSettingsConfig != nil {
-		return *obj.TenableAssetsSettingsConfig
-	}
-
-	if obj.TenableVulnerabilitiesCronSettingsConfig != nil {
-		return *obj.TenableVulnerabilitiesCronSettingsConfig
-	}
-
-	if obj.TenableVulnerabilitiesSettingsConfig != nil {
-		return *obj.TenableVulnerabilitiesSettingsConfig
-	}
-
 	if obj.TinesAuditLogsSettingsConfig != nil {
 		return *obj.TinesAuditLogsSettingsConfig
 	}
@@ -3919,14 +3533,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.WizAuditLogsSettingsConfig != nil {
 		return *obj.WizAuditLogsSettingsConfig
-	}
-
-	if obj.ZendeskAuditLogsSettingsConfig != nil {
-		return *obj.ZendeskAuditLogsSettingsConfig
-	}
-
-	if obj.MapmapOfStringAny != nil {
-		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

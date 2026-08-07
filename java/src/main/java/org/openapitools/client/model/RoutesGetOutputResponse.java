@@ -28,6 +28,7 @@ import org.openapitools.client.model.ModelsOutputConfig;
 import org.openapitools.client.model.ModelsPipeline;
 import org.openapitools.client.model.ModelsReferences;
 import org.openapitools.client.model.ModelsShareDetails;
+import org.openapitools.client.model.ModelsTemplateSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,7 +56,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesGetOutputResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesGetOutputResponse {
   public static final String SERIALIZED_NAME_COMPONENT_OF = "component_of";
   @SerializedName(SERIALIZED_NAME_COMPONENT_OF)
@@ -106,6 +107,11 @@ public class RoutesGetOutputResponse {
   @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
   @javax.annotation.Nullable
   private ModelsShareDetails shareDetails;
+
+  public static final String SERIALIZED_NAME_TEMPLATE_SETTINGS = "template_settings";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_SETTINGS)
+  @javax.annotation.Nullable
+  private ModelsTemplateSettings templateSettings;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -323,6 +329,25 @@ public class RoutesGetOutputResponse {
   }
 
 
+  public RoutesGetOutputResponse templateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
+    this.templateSettings = templateSettings;
+    return this;
+  }
+
+  /**
+   * Get templateSettings
+   * @return templateSettings
+   */
+  @javax.annotation.Nullable
+  public ModelsTemplateSettings getTemplateSettings() {
+    return templateSettings;
+  }
+
+  public void setTemplateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
+    this.templateSettings = templateSettings;
+  }
+
+
   public RoutesGetOutputResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -400,6 +425,7 @@ public class RoutesGetOutputResponse {
         Objects.equals(this.organizationId, routesGetOutputResponse.organizationId) &&
         Objects.equals(this.references, routesGetOutputResponse.references) &&
         Objects.equals(this.shareDetails, routesGetOutputResponse.shareDetails) &&
+        Objects.equals(this.templateSettings, routesGetOutputResponse.templateSettings) &&
         Objects.equals(this.type, routesGetOutputResponse.type) &&
         Objects.equals(this.updatedAt, routesGetOutputResponse.updatedAt) &&
         Objects.equals(this.version, routesGetOutputResponse.version);
@@ -407,7 +433,7 @@ public class RoutesGetOutputResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, type, updatedAt, version);
+    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, templateSettings, type, updatedAt, version);
   }
 
   @Override
@@ -424,6 +450,7 @@ public class RoutesGetOutputResponse {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
+    sb.append("    templateSettings: ").append(toIndentedString(templateSettings)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
@@ -445,7 +472,7 @@ public class RoutesGetOutputResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "template_settings", "type", "updated_at", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -516,6 +543,10 @@ public class RoutesGetOutputResponse {
       // validate the optional field `share_details`
       if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
         ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
+      }
+      // validate the optional field `template_settings`
+      if (jsonObj.get("template_settings") != null && !jsonObj.get("template_settings").isJsonNull()) {
+        ModelsTemplateSettings.validateJsonElement(jsonObj.get("template_settings"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

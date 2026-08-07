@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsSchemaDetection{}
 
 // ModelsSchemaDetection struct for ModelsSchemaDetection
 type ModelsSchemaDetection struct {
+	DisableAlerting *bool `json:"disable_alerting,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 }
 
@@ -38,6 +39,38 @@ func NewModelsSchemaDetection() *ModelsSchemaDetection {
 func NewModelsSchemaDetectionWithDefaults() *ModelsSchemaDetection {
 	this := ModelsSchemaDetection{}
 	return &this
+}
+
+// GetDisableAlerting returns the DisableAlerting field value if set, zero value otherwise.
+func (o *ModelsSchemaDetection) GetDisableAlerting() bool {
+	if o == nil || IsNil(o.DisableAlerting) {
+		var ret bool
+		return ret
+	}
+	return *o.DisableAlerting
+}
+
+// GetDisableAlertingOk returns a tuple with the DisableAlerting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsSchemaDetection) GetDisableAlertingOk() (*bool, bool) {
+	if o == nil || IsNil(o.DisableAlerting) {
+		return nil, false
+	}
+	return o.DisableAlerting, true
+}
+
+// HasDisableAlerting returns a boolean if a field has been set.
+func (o *ModelsSchemaDetection) HasDisableAlerting() bool {
+	if o != nil && !IsNil(o.DisableAlerting) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisableAlerting gets a reference to the given bool and assigns it to the DisableAlerting field.
+func (o *ModelsSchemaDetection) SetDisableAlerting(v bool) {
+	o.DisableAlerting = &v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -82,6 +115,9 @@ func (o ModelsSchemaDetection) MarshalJSON() ([]byte, error) {
 
 func (o ModelsSchemaDetection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DisableAlerting) {
+		toSerialize["disable_alerting"] = o.DisableAlerting
+	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}

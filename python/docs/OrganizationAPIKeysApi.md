@@ -374,11 +374,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **regenerate_api_key**
-> ModelsAPIKeyWithToken regenerate_api_key(organization_id, api_key_id)
+> ModelsAPIKeyWithToken regenerate_api_key(organization_id, api_key_id, regenerate_api_key_request=regenerate_api_key_request)
 
 Regenerate API key
 
-Regenerates an API key by creating a new one with the same metadata and deleting the old one
+Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
 
 ### Example
 
@@ -388,6 +388,7 @@ Regenerates an API key by creating a new one with the same metadata and deleting
 ```python
 import monad
 from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken
+from monad.models.regenerate_api_key_request import RegenerateAPIKeyRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -420,10 +421,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationAPIKeysApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     api_key_id = 'api_key_id_example' # str | API Key ID
+    regenerate_api_key_request = monad.RegenerateAPIKeyRequest() # RegenerateAPIKeyRequest | Optional new expiration for the regenerated key (optional)
 
     try:
         # Regenerate API key
-        api_response = api_instance.regenerate_api_key(organization_id, api_key_id)
+        api_response = api_instance.regenerate_api_key(organization_id, api_key_id, regenerate_api_key_request=regenerate_api_key_request)
         print("The response of OrganizationAPIKeysApi->regenerate_api_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -439,6 +441,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **api_key_id** | **str**| API Key ID | 
+ **regenerate_api_key_request** | [**RegenerateAPIKeyRequest**](RegenerateAPIKeyRequest.md)| Optional new expiration for the regenerated key | [optional] 
 
 ### Return type
 
@@ -450,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -458,7 +461,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New API key generated successfully |  -  |
+**400** | Invalid JSON request body or expiration time |  -  |
 **404** | API key not found |  -  |
+**422** | Expiration time required for an expired API key |  -  |
 **500** | Failed to regenerate API key |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

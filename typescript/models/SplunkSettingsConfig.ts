@@ -27,7 +27,7 @@ export class SplunkSettingsConfig {
     /**
     * The port of the Splunk instance.
     */
-    'port'?: string;
+    'port': string;
     /**
     * Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
     */
@@ -35,7 +35,7 @@ export class SplunkSettingsConfig {
     /**
     * The URL of the Splunk instance (must start with http or https).
     */
-    'url'?: string;
+    'url': string;
     /**
     * Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used.
     */

@@ -19,13 +19,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import org.openapitools.client.model.ModelsComponentType;
 import org.openapitools.client.model.ModelsNodeComponent;
-import org.openapitools.client.model.ModelsNodeSharedResource;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
+import org.openapitools.client.model.ModelsReferences;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -84,6 +84,14 @@ public class ModelsPipelineNodeTest {
     }
 
     /**
+     * Test the property 'configOverrides'
+     */
+    @Test
+    public void configOverridesTest() {
+        // TODO: test configOverrides
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
@@ -124,11 +132,11 @@ public class ModelsPipelineNodeTest {
     }
 
     /**
-     * Test the property 'sharedResources'
+     * Test the property 'resourceReferences'
      */
     @Test
-    public void sharedResourcesTest() {
-        // TODO: test sharedResources
+    public void resourceReferencesTest() {
+        // TODO: test resourceReferences
     }
 
     /**

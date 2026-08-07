@@ -27,7 +27,7 @@ from pydantic_core import to_jsonable_python
 
 class ModelsReferences(BaseModel):
     """
-    ModelsReferences
+    ResourceReferences are the resources (e.g. secrets) referenced only via the override delta, tracked so deletion/rotation see them like component refs.
     """ # noqa: E501
     secrets: Optional[List[ModelsReference]] = None
     __properties: ClassVar[List[str]] = ["secrets"]

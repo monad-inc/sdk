@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Splunk Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class SplunkSettingsConfig {
   public static final String SERIALIZED_NAME_ALLOW_INSECURE = "allow_insecure";
   @SerializedName(SERIALIZED_NAME_ALLOW_INSECURE)
@@ -62,7 +62,7 @@ public class SplunkSettingsConfig {
 
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String port;
 
   public static final String SERIALIZED_NAME_TO_CREATE = "to_create";
@@ -72,7 +72,7 @@ public class SplunkSettingsConfig {
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
@@ -121,7 +121,7 @@ public class SplunkSettingsConfig {
   }
 
 
-  public SplunkSettingsConfig port(@javax.annotation.Nullable String port) {
+  public SplunkSettingsConfig port(@javax.annotation.Nonnull String port) {
     this.port = port;
     return this;
   }
@@ -130,12 +130,12 @@ public class SplunkSettingsConfig {
    * The port of the Splunk instance.
    * @return port
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getPort() {
     return port;
   }
 
-  public void setPort(@javax.annotation.Nullable String port) {
+  public void setPort(@javax.annotation.Nonnull String port) {
     this.port = port;
   }
 
@@ -159,7 +159,7 @@ public class SplunkSettingsConfig {
   }
 
 
-  public SplunkSettingsConfig url(@javax.annotation.Nullable String url) {
+  public SplunkSettingsConfig url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -168,12 +168,12 @@ public class SplunkSettingsConfig {
    * The URL of the Splunk instance (must start with http or https).
    * @return url
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nullable String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
@@ -251,7 +251,7 @@ public class SplunkSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("allow_insecure", "index", "port", "to_create", "url", "username"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("port", "url"));
   }
 
   /**
@@ -274,14 +274,21 @@ public class SplunkSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SplunkSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SplunkSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("index") != null && !jsonObj.get("index").isJsonNull()) && !jsonObj.get("index").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `index` to be a primitive type in the JSON string but got `%s`", jsonObj.get("index").toString()));
       }
-      if ((jsonObj.get("port") != null && !jsonObj.get("port").isJsonNull()) && !jsonObj.get("port").isJsonPrimitive()) {
+      if (!jsonObj.get("port").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `port` to be a primitive type in the JSON string but got `%s`", jsonObj.get("port").toString()));
       }
-      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
+      if (!jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {

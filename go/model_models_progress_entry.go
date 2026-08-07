@@ -24,7 +24,7 @@ type ModelsProgressEntry struct {
 	// PartitionKey is an optional identifier for multi-entity inputs (e.g., \"detector-123\", \"us-east-1\") In a case where we store multiple state timestamps for a singular input we would use this field as a differentiator
 	PartitionKey *string `json:"partition_key,omitempty"`
 	// Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.
-	Ranges []GithubComMonadIncCorePkgTypesModelsTimeRange `json:"ranges,omitempty"`
+	Ranges []ModelsTimeRange `json:"ranges,omitempty"`
 }
 
 // NewModelsProgressEntry instantiates a new ModelsProgressEntry object
@@ -109,9 +109,9 @@ func (o *ModelsProgressEntry) SetPartitionKey(v string) {
 }
 
 // GetRanges returns the Ranges field value if set, zero value otherwise.
-func (o *ModelsProgressEntry) GetRanges() []GithubComMonadIncCorePkgTypesModelsTimeRange {
+func (o *ModelsProgressEntry) GetRanges() []ModelsTimeRange {
 	if o == nil || IsNil(o.Ranges) {
-		var ret []GithubComMonadIncCorePkgTypesModelsTimeRange
+		var ret []ModelsTimeRange
 		return ret
 	}
 	return o.Ranges
@@ -119,7 +119,7 @@ func (o *ModelsProgressEntry) GetRanges() []GithubComMonadIncCorePkgTypesModelsT
 
 // GetRangesOk returns a tuple with the Ranges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsProgressEntry) GetRangesOk() ([]GithubComMonadIncCorePkgTypesModelsTimeRange, bool) {
+func (o *ModelsProgressEntry) GetRangesOk() ([]ModelsTimeRange, bool) {
 	if o == nil || IsNil(o.Ranges) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *ModelsProgressEntry) HasRanges() bool {
 	return false
 }
 
-// SetRanges gets a reference to the given []GithubComMonadIncCorePkgTypesModelsTimeRange and assigns it to the Ranges field.
-func (o *ModelsProgressEntry) SetRanges(v []GithubComMonadIncCorePkgTypesModelsTimeRange) {
+// SetRanges gets a reference to the given []ModelsTimeRange and assigns it to the Ranges field.
+func (o *ModelsProgressEntry) SetRanges(v []ModelsTimeRange) {
 	o.Ranges = v
 }
 

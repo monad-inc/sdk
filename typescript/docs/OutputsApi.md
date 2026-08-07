@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getOutputTypeMeta**
-> ModelsConnectorMeta getOutputTypeMeta()
+> OutputsConnectorMeta getOutputTypeMeta()
 
 Get output config meta
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsConnectorMeta**
+**OutputsConnectorMeta**
 
 ### Authorization
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DisableAlerting** | Pointer to **bool** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewModelsSchemaDetectionWithDefaults instantiates a new ModelsSchemaDetection object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDisableAlerting
+
+`func (o *ModelsSchemaDetection) GetDisableAlerting() bool`
+
+GetDisableAlerting returns the DisableAlerting field if non-nil, zero value otherwise.
+
+### GetDisableAlertingOk
+
+`func (o *ModelsSchemaDetection) GetDisableAlertingOk() (*bool, bool)`
+
+GetDisableAlertingOk returns a tuple with the DisableAlerting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisableAlerting
+
+`func (o *ModelsSchemaDetection) SetDisableAlerting(v bool)`
+
+SetDisableAlerting sets DisableAlerting field to given value.
+
+### HasDisableAlerting
+
+`func (o *ModelsSchemaDetection) HasDisableAlerting() bool`
+
+HasDisableAlerting returns a boolean if a field has been set.
 
 ### GetEnabled
 

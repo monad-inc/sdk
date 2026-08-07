@@ -19,10 +19,10 @@ Name | Type | Description | Notes
 **Dataset** | Pointer to **string** | The name of the BigQuery dataset where the table resides | [optional] 
 **Bucket** | **string** | The S3 bucket in your AWS account that Scanner indexes. | 
 **ProjectId** | Pointer to **string** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
-**Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
+**Table** | **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | 
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
-**Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
+**Port** | **string** | The port of the Splunk instance. | 
 **Catalog** | **string** | The Unity Catalog name | 
 **Schema** | **string** | The schema within the database that contains the target pipe. | 
 **ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
@@ -39,10 +39,10 @@ Name | Type | Description | Notes
 **CloudId** | Pointer to **string** |  | [optional] 
 **ConnectionConfig** | Pointer to [**ElasticsearchConnectionConfig**](ElasticsearchConnectionConfig.md) |  | [optional] 
 **ConnectionType** | Pointer to **string** |  | [optional] 
-**Index** | **string** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | 
+**Index** | **string** | The name of the index to write to. | 
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
-**Url** | Pointer to **string** | The URL of the Sumo Logic instance. | [optional] 
-**Username** | **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | 
+**Url** | **string** | The URL of the Wazuh indexer API (must start with https). | 
+**Username** | **string** | The username for authenticating with the Wazuh indexer. | 
 **Format** | Pointer to [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
 **Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
@@ -53,6 +53,10 @@ Name | Type | Description | Notes
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** |  | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
+**Auth** | [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | 
+**Host** | **string** | The host of the PostgreSQL database | 
+**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Transform** | Pointer to **string** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. | [optional] 
 **Acks** | Pointer to [**KafkaAcks**](KafkaAcks.md) |  | [optional] 
 **BootstrapServers** | Pointer to **string** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
 **CompressionType** | Pointer to [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
@@ -66,19 +70,19 @@ Name | Type | Description | Notes
 **ValueField** | Pointer to **string** |  | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
-**AuthMode** | Pointer to [**OpensearchAuthMode**](OpensearchAuthMode.md) |  | [optional] 
+**AuthMode** | Pointer to **string** | Not exposed in the config meta; present only to reject AWS role auth submitted via the API. | [optional] 
 **AlertsConfig** | Pointer to [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
 **DefaultEventType** | Pointer to [**PagerdutyEventType**](PagerdutyEventType.md) |  | [optional] 
 **SummaryConfig** | Pointer to [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 **HttpIngestUrl** | Pointer to **string** |  | [optional] 
 **ColumnNames** | Pointer to **[]string** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
 **Database** | **string** | The Snowflake database that contains the target pipe. | 
-**Host** | Pointer to **string** | The host of the PostgreSQL database | [optional] 
 **User** | **string** | The username of the Snowflake account used to authenticate. The user&#39;s DEFAULT_ROLE must be set to a role with access to the pipe. | 
-**Auth** | Pointer to [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | [optional] 
 **LabelFields** | Pointer to **[]string** |  | [optional] 
 **MetricName** | Pointer to [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
 **TimestampField** | Pointer to **string** |  | [optional] 
+**BearerToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**WebhookId** | **string** | The RunReveal webhook ID. Only the ID — not the full URL shown in the RunReveal UI. | 
 **BucketName** | Pointer to **string** | Bucket Name | [optional] 
 **BucketUrl** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Key** | Pointer to **string** | S3 Key | [optional] 
@@ -103,7 +107,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, catalog string, schema string, serverHostname string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, username string, database string, user string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -492,11 +496,6 @@ and a boolean to check if the value has been set.
 
 SetTable sets Table field to given value.
 
-### HasTable
-
-`func (o *SecretProcessesorOutputConfigSettings) HasTable() bool`
-
-HasTable returns a boolean if a field has been set.
 
 ### GetIngressAddress
 
@@ -567,11 +566,6 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
-### HasPort
-
-`func (o *SecretProcessesorOutputConfigSettings) HasPort() bool`
-
-HasPort returns a boolean if a field has been set.
 
 ### GetCatalog
 
@@ -1007,11 +1001,6 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
-
-`func (o *SecretProcessesorOutputConfigSettings) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
 
 ### GetUsername
 
@@ -1282,6 +1271,96 @@ SetWrapperKey sets WrapperKey field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasWrapperKey() bool`
 
 HasWrapperKey returns a boolean if a field has been set.
+
+### GetAuth
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuth() ScannerAuthConfig`
+
+GetAuth returns the Auth field if non-nil, zero value otherwise.
+
+### GetAuthOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthOk() (*ScannerAuthConfig, bool)`
+
+GetAuthOk returns a tuple with the Auth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuth
+
+`func (o *SecretProcessesorOutputConfigSettings) SetAuth(v ScannerAuthConfig)`
+
+SetAuth sets Auth field to given value.
+
+
+### GetHost
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHost
+
+`func (o *SecretProcessesorOutputConfigSettings) SetHost(v string)`
+
+SetHost sets Host field to given value.
+
+
+### GetToken
+
+`func (o *SecretProcessesorOutputConfigSettings) GetToken() ModelsSecret`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTokenOk() (*ModelsSecret, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *SecretProcessesorOutputConfigSettings) SetToken(v ModelsSecret)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *SecretProcessesorOutputConfigSettings) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
+
+### GetTransform
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTransform() string`
+
+GetTransform returns the Transform field if non-nil, zero value otherwise.
+
+### GetTransformOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTransformOk() (*string, bool)`
+
+GetTransformOk returns a tuple with the Transform field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransform
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTransform(v string)`
+
+SetTransform sets Transform field to given value.
+
+### HasTransform
+
+`func (o *SecretProcessesorOutputConfigSettings) HasTransform() bool`
+
+HasTransform returns a boolean if a field has been set.
 
 ### GetAcks
 
@@ -1610,20 +1689,20 @@ HasUsePathStyle returns a boolean if a field has been set.
 
 ### GetAuthMode
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthMode() OpensearchAuthMode`
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthMode() string`
 
 GetAuthMode returns the AuthMode field if non-nil, zero value otherwise.
 
 ### GetAuthModeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthModeOk() (*OpensearchAuthMode, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetAuthModeOk() (*string, bool)`
 
 GetAuthModeOk returns a tuple with the AuthMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthMode
 
-`func (o *SecretProcessesorOutputConfigSettings) SetAuthMode(v OpensearchAuthMode)`
+`func (o *SecretProcessesorOutputConfigSettings) SetAuthMode(v string)`
 
 SetAuthMode sets AuthMode field to given value.
 
@@ -1778,31 +1857,6 @@ and a boolean to check if the value has been set.
 SetDatabase sets Database field to given value.
 
 
-### GetHost
-
-`func (o *SecretProcessesorOutputConfigSettings) GetHost() string`
-
-GetHost returns the Host field if non-nil, zero value otherwise.
-
-### GetHostOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetHostOk() (*string, bool)`
-
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHost
-
-`func (o *SecretProcessesorOutputConfigSettings) SetHost(v string)`
-
-SetHost sets Host field to given value.
-
-### HasHost
-
-`func (o *SecretProcessesorOutputConfigSettings) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
-
 ### GetUser
 
 `func (o *SecretProcessesorOutputConfigSettings) GetUser() string`
@@ -1822,31 +1876,6 @@ and a boolean to check if the value has been set.
 
 SetUser sets User field to given value.
 
-
-### GetAuth
-
-`func (o *SecretProcessesorOutputConfigSettings) GetAuth() ScannerAuthConfig`
-
-GetAuth returns the Auth field if non-nil, zero value otherwise.
-
-### GetAuthOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetAuthOk() (*ScannerAuthConfig, bool)`
-
-GetAuthOk returns a tuple with the Auth field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuth
-
-`func (o *SecretProcessesorOutputConfigSettings) SetAuth(v ScannerAuthConfig)`
-
-SetAuth sets Auth field to given value.
-
-### HasAuth
-
-`func (o *SecretProcessesorOutputConfigSettings) HasAuth() bool`
-
-HasAuth returns a boolean if a field has been set.
 
 ### GetLabelFields
 
@@ -1922,6 +1951,51 @@ SetTimestampField sets TimestampField field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasTimestampField() bool`
 
 HasTimestampField returns a boolean if a field has been set.
+
+### GetBearerToken
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBearerToken() ModelsSecret`
+
+GetBearerToken returns the BearerToken field if non-nil, zero value otherwise.
+
+### GetBearerTokenOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBearerTokenOk() (*ModelsSecret, bool)`
+
+GetBearerTokenOk returns a tuple with the BearerToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBearerToken
+
+`func (o *SecretProcessesorOutputConfigSettings) SetBearerToken(v ModelsSecret)`
+
+SetBearerToken sets BearerToken field to given value.
+
+### HasBearerToken
+
+`func (o *SecretProcessesorOutputConfigSettings) HasBearerToken() bool`
+
+HasBearerToken returns a boolean if a field has been set.
+
+### GetWebhookId
+
+`func (o *SecretProcessesorOutputConfigSettings) GetWebhookId() string`
+
+GetWebhookId returns the WebhookId field if non-nil, zero value otherwise.
+
+### GetWebhookIdOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetWebhookIdOk() (*string, bool)`
+
+GetWebhookIdOk returns a tuple with the WebhookId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookId
+
+`func (o *SecretProcessesorOutputConfigSettings) SetWebhookId(v string)`
+
+SetWebhookId sets WebhookId field to given value.
+
 
 ### GetBucketName
 

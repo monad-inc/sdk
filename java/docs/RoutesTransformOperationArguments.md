@@ -23,6 +23,7 @@
 |**newKey** | **String** | The new key to rename to |  [optional] |
 |**algorithm** | [**EncryptAlgorithmConfig**](EncryptAlgorithmConfig.md) |  |  [optional] |
 |**delimiter** | **String** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 |  [optional] |
+|**preventDataDropping** | **Boolean** | PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record. |  [optional] |
 |**query** | **String** | The raw query string from config |  [optional] |
 |**mode** | [**MaskModeConfig**](MaskModeConfig.md) |  |  [optional] |
 |**valueToSet** | **Object** |  |  [optional] |

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,9 @@ class JqArgumentsConfig(BaseModel):
     JqArgumentsConfig
     """ # noqa: E501
     key: Optional[StrictStr] = Field(default=None, description="Optional key to store result under")
+    prevent_data_dropping: Optional[StrictBool] = Field(default=None, description="PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record.")
     query: Optional[StrictStr] = Field(default=None, description="The raw query string from config")
-    __properties: ClassVar[List[str]] = ["key", "query"]
+    __properties: ClassVar[List[str]] = ["key", "prevent_data_dropping", "query"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +85,7 @@ class JqArgumentsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "key": obj.get("key"),
+            "prevent_data_dropping": obj.get("prevent_data_dropping"),
             "query": obj.get("query")
         })
         return _obj

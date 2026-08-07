@@ -47,10 +47,6 @@ export * from '../models/BigqueryInputSecretsConfig';
 export * from '../models/BigqueryInputSettingsConfig';
 export * from '../models/BigquerySecretsConfig';
 export * from '../models/BigquerySettingsConfig';
-export * from '../models/BitwardenEventsSecretsConfig';
-export * from '../models/BitwardenEventsSettingsConfig';
-export * from '../models/BoxEventsSecretsConfig';
-export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BrinqaAuditLogsSecretsConfig';
 export * from '../models/BrinqaAuditLogsSettingsConfig';
 export * from '../models/BugsnagOrgEventsSecretsConfig';
@@ -81,8 +77,6 @@ export * from '../models/ClumioAuditLogsSecretsConfig';
 export * from '../models/ClumioAuditLogsSettingsConfig';
 export * from '../models/ClumioConsolidatedAlertsSecretsConfig';
 export * from '../models/ClumioConsolidatedAlertsSettingsConfig';
-export * from '../models/CodaAuditEventsSecretsConfig';
-export * from '../models/CodaAuditEventsSettingsConfig';
 export * from '../models/CommonAuthConfig';
 export * from '../models/CommonAuthType';
 export * from '../models/CommonGitHubAppVariant';
@@ -117,8 +111,6 @@ export * from '../models/CreateTransformRecommendationRequest';
 export * from '../models/CreateTransformRequest';
 export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
-export * from '../models/CustomerEventDataSecretsConfig';
-export * from '../models/CustomerEventDataSettingsConfig';
 export * from '../models/DatabricksDeltaTableAutoLoaderWriteMode';
 export * from '../models/DatabricksDeltaTableCopyIntoWriteMode';
 export * from '../models/DatabricksDeltaTableSecretsConfig';
@@ -182,17 +174,6 @@ export * from '../models/GithubActionsWorkflowLogsWebhookOrganizationScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 export * from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsAuditResource';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsUser';
-export * from '../models/GitlabIssuesSecretsConfig';
-export * from '../models/GitlabIssuesSettingsConfig';
 export * from '../models/GkeAuditLogsSecretsConfig';
 export * from '../models/GkeAuditLogsSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -207,6 +188,10 @@ export * from '../models/HttpHeaders';
 export * from '../models/HttpPayloadStructure';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
+export * from '../models/HydrolixAuthConfig';
+export * from '../models/HydrolixPasswordAuth';
+export * from '../models/HydrolixServiceAccountAuth';
+export * from '../models/HydrolixSettingsConfig';
 export * from '../models/IndividualAlertsSecretsConfig';
 export * from '../models/IndividualAlertsSettingsConfig';
 export * from '../models/InputsConnectorMeta';
@@ -248,11 +233,14 @@ export * from '../models/ModelsAPIKeyList';
 export * from '../models/ModelsAPIKeyWithToken';
 export * from '../models/ModelsAPILogActor';
 export * from '../models/ModelsAPILogActorRole';
+export * from '../models/ModelsAlert';
 export * from '../models/ModelsAlertRule';
 export * from '../models/ModelsAlertRuleList';
 export * from '../models/ModelsAlertState';
+export * from '../models/ModelsAlertStatus';
 export * from '../models/ModelsAuditAction';
 export * from '../models/ModelsAuditLogHistogramBucket';
+export * from '../models/ModelsAuditResource';
 export * from '../models/ModelsBillingAccount';
 export * from '../models/ModelsBillingAccountList';
 export * from '../models/ModelsBillingAccountPermission';
@@ -270,10 +258,8 @@ export * from '../models/ModelsConnection';
 export * from '../models/ModelsConnectionList';
 export * from '../models/ModelsConnectionSessionSettings';
 export * from '../models/ModelsConnectorInfo';
-export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsCursorPagination';
 export * from '../models/ModelsDataUsage';
-export * from '../models/ModelsElseAction';
 export * from '../models/ModelsEnrichment';
 export * from '../models/ModelsEnrichmentConfig';
 export * from '../models/ModelsEnrichmentList';
@@ -288,7 +274,7 @@ export * from '../models/ModelsMCPClientRegistrationList';
 export * from '../models/ModelsManagedBy';
 export * from '../models/ModelsNodeBackpressure';
 export * from '../models/ModelsNodeComponent';
-export * from '../models/ModelsNodeSharedResource';
+export * from '../models/ModelsOrganization';
 export * from '../models/ModelsOrganizationAuditLog';
 export * from '../models/ModelsOrganizationAuditLogHistogram';
 export * from '../models/ModelsOrganizationAuditLogList';
@@ -300,6 +286,7 @@ export * from '../models/ModelsOutputConfig';
 export * from '../models/ModelsOutputConnectorCategory';
 export * from '../models/ModelsOutputList';
 export * from '../models/ModelsPagination';
+export * from '../models/ModelsPermission';
 export * from '../models/ModelsPermissionList';
 export * from '../models/ModelsPipeline';
 export * from '../models/ModelsPipelineConfigV2';
@@ -317,6 +304,7 @@ export * from '../models/ModelsPipelineStreamInfo';
 export * from '../models/ModelsProgressEntries';
 export * from '../models/ModelsProgressEntry';
 export * from '../models/ModelsProgressLabel';
+export * from '../models/ModelsQuota';
 export * from '../models/ModelsQuotaAction';
 export * from '../models/ModelsQuotaLimitType';
 export * from '../models/ModelsQuotaLimitUnit';
@@ -325,6 +313,7 @@ export * from '../models/ModelsQuotaTimeframe';
 export * from '../models/ModelsRateUnit';
 export * from '../models/ModelsReference';
 export * from '../models/ModelsReferences';
+export * from '../models/ModelsResourceReference';
 export * from '../models/ModelsResourceShare';
 export * from '../models/ModelsResourceShareChangeSet';
 export * from '../models/ModelsResourceShareTarget';
@@ -346,13 +335,15 @@ export * from '../models/ModelsStorageTypeSummaryResponse';
 export * from '../models/ModelsStorageTypeTimeSeries';
 export * from '../models/ModelsStorageTypeTimeSeriesResponse';
 export * from '../models/ModelsSupportedFeatures';
+export * from '../models/ModelsTemplateSettings';
+export * from '../models/ModelsTimeRange';
 export * from '../models/ModelsTransform';
-export * from '../models/ModelsTransformConditional';
 export * from '../models/ModelsTransformConfig';
 export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsTransformsRepositoryList';
 export * from '../models/ModelsTransformsRepositoryTransform';
+export * from '../models/ModelsUser';
 export * from '../models/ModelsUserAuthProvider';
 export * from '../models/ModelsUserOrganization';
 export * from '../models/ModelsUserOrganizationList';
@@ -370,26 +361,18 @@ export * from '../models/ObjectStorageSecretsConfig';
 export * from '../models/ObjectStorageSettingsConfig';
 export * from '../models/OfflineenrollmentlogsSecretsConfig';
 export * from '../models/OfflineenrollmentlogsSettingsConfig';
-export * from '../models/OneloginEventsSecretsConfig';
-export * from '../models/OneloginEventsSettingsConfig';
-export * from '../models/OpalEventsSecretsConfig';
-export * from '../models/OpalEventsSettingsConfig';
-export * from '../models/OpenaiAuditLogsSettingsConfig';
 export * from '../models/OpensearchAuthMode';
 export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OperationLogsSecretsConfig';
 export * from '../models/OperationLogsSettingsConfig';
-export * from '../models/OracleSettingsConfig';
 export * from '../models/OrgAuditLogsSecretsConfig';
 export * from '../models/OrgAuditLogsSettingsConfig';
 export * from '../models/OutputsConnectorMeta';
 export * from '../models/OwnbackupAccountEventsSecretsConfig';
 export * from '../models/OwnbackupAccountEventsSettingsConfig';
 export * from '../models/PagerdutyAlertsConfig';
-export * from '../models/PagerdutyAuditRecordsSecretsConfig';
-export * from '../models/PagerdutyAuditRecordsSettingsConfig';
 export * from '../models/PagerdutyEventType';
 export * from '../models/PagerdutySecretsConfig';
 export * from '../models/PagerdutySettingsConfig';
@@ -402,12 +385,8 @@ export * from '../models/ParquetParquetFormatter';
 export * from '../models/PersonaSettingsConfig';
 export * from '../models/PlaidWebhooksSecretsConfig';
 export * from '../models/PlaidWebhooksSettingsConfig';
-export * from '../models/PolymerSecretsConfig';
-export * from '../models/PolymerSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
 export * from '../models/PostgresqlSettingsConfig';
-export * from '../models/PostmanAuditLogsSecretsConfig';
-export * from '../models/PostmanAuditLogsSettingsConfig';
 export * from '../models/PrometheusAuthConfig';
 export * from '../models/PrometheusBasicVariant';
 export * from '../models/PrometheusBearerVariant';
@@ -415,17 +394,14 @@ export * from '../models/PrometheusFieldMetricVariant';
 export * from '../models/PrometheusMetricNameConfig';
 export * from '../models/PrometheusSettingsConfig';
 export * from '../models/PrometheusStaticMetricVariant';
-export * from '../models/PubsubSecretsConfig';
-export * from '../models/PubsubSettingsConfig';
 export * from '../models/RedshiftAuditLogsSettingsConfig';
+export * from '../models/RegenerateAPIKeyRequest';
 export * from '../models/RenameKeyArgumentsConfig';
 export * from '../models/RenameKeyWhereValueEqArgumentsConfig';
 export * from '../models/ReplaceEnrichmentRequest';
 export * from '../models/ReplaceInputRequest';
 export * from '../models/ReplaceOutputRequest';
 export * from '../models/ResponderErrorResponse';
-export * from '../models/RootlyAuditLogsSecretsConfig';
-export * from '../models/RootlyAuditLogsSettingsConfig';
 export * from '../models/RoutesAddUserToOrganizationRequest';
 export * from '../models/RoutesCreateOrganizationRequest';
 export * from '../models/RoutesCreateTransformRequest';
@@ -474,6 +450,7 @@ export * from '../models/RoutesV2PipelineStatus';
 export * from '../models/RoutesV2PipelineWithStatus';
 export * from '../models/RoutesV2PutInputRequest';
 export * from '../models/RoutesV2PutOutputRequest';
+export * from '../models/RoutesV2RegenerateAPIKeyRequest';
 export * from '../models/RoutesV2SecretResponse';
 export * from '../models/RoutesV2SetStorageTypeCostEntry';
 export * from '../models/RoutesV2SetStorageTypeCostRequest';
@@ -481,6 +458,8 @@ export * from '../models/RoutesV2StorageTypeDetailsResponse';
 export * from '../models/RoutesV2StorageTypeOutputDetailResponse';
 export * from '../models/RoutesV2SuccessResponse';
 export * from '../models/RoutesV2TestInputConnectionRequest';
+export * from '../models/RoutesV2TestNodeConfig';
+export * from '../models/RoutesV2TestNodeConnectionRequest';
 export * from '../models/RoutesV2TestOutputConnectionRequest';
 export * from '../models/RoutesV2UpdateAPIKeyRequest';
 export * from '../models/RoutesV2UpdateBillingAccountRequest';
@@ -527,6 +506,7 @@ export * from '../models/RoutesV3UpdateChildOrganizationRequest';
 export * from '../models/RoutesV3UpdateConnectionRequest';
 export * from '../models/RoutesV3UpdateConnectionRequestSaml';
 export * from '../models/RoutesV3UpdateEnrichmentRequest';
+export * from '../models/RunrevealSettingsConfig';
 export * from '../models/S3SecretsConfig';
 export * from '../models/S3SettingsConfig';
 export * from '../models/ScannerAuthConfig';
@@ -554,8 +534,6 @@ export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 export * from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 export * from '../models/SentinelSecretsConfig';
 export * from '../models/SentinelSettingsConfig';
-export * from '../models/SentryOrgAuditLogsSecretsConfig';
-export * from '../models/SentryOrgAuditLogsSettingsConfig';
 export * from '../models/SetStorageTypeCostRequest';
 export * from '../models/SlackAuthConfig';
 export * from '../models/SlackBotTokenVariant';
@@ -591,17 +569,10 @@ export * from '../models/TeamIntegrationLogsSecretsConfig';
 export * from '../models/TeamIntegrationLogsSettingsConfig';
 export * from '../models/TelephonyLogsSecretsConfig';
 export * from '../models/TelephonyLogsSettingsConfig';
-export * from '../models/TenableAssetsCronSecretsConfig';
-export * from '../models/TenableAssetsCronSettingsConfig';
-export * from '../models/TenableAssetsSecretsConfig';
-export * from '../models/TenableAssetsSettingsConfig';
-export * from '../models/TenableVulnerabilitiesCronSecretsConfig';
-export * from '../models/TenableVulnerabilitiesCronSettingsConfig';
-export * from '../models/TenableVulnerabilitiesSecretsConfig';
-export * from '../models/TenableVulnerabilitiesSettingsConfig';
 export * from '../models/TestEnrichmentConnectionRequest';
 export * from '../models/TestInputConnectionRequest';
 export * from '../models/TestOutputConnectionRequest';
+export * from '../models/TestPipelineNodeConnectionRequest';
 export * from '../models/TinesAuditLogsSecretsConfig';
 export * from '../models/TinesAuditLogsSettingsConfig';
 export * from '../models/TinesEventsLogsSecretsConfig';
@@ -626,7 +597,9 @@ export * from '../models/UpdateOutputRequest';
 export * from '../models/UpdatePipelineEdgeRequest';
 export * from '../models/UpdatePipelineRequest';
 export * from '../models/UpdatePipelineV1Request';
+export * from '../models/UpdateResourceSharesRequest';
 export * from '../models/UpdateRoleRequest';
+export * from '../models/UpdateSecretRequest';
 export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/UtcTimestampTimestampFormat';
 export * from '../models/VercelUserEventsSecretsConfig';
@@ -635,6 +608,8 @@ export * from '../models/VoltioAuditLogsSecretsConfig';
 export * from '../models/VoltioAuditLogsSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
 export * from '../models/VulnerabilityFindingsSettingsConfig';
+export * from '../models/WazuhSecretsConfig';
+export * from '../models/WazuhSettingsConfig';
 export * from '../models/WizAssetStatus';
 export * from '../models/WizAssetType';
 export * from '../models/WizAuditLogsSecretsConfig';
@@ -654,9 +629,6 @@ export * from '../models/WizServiceTicketFilter';
 export * from '../models/WizStackLayer';
 export * from '../models/WizStatus';
 export * from '../models/WizVendorSeverity';
-export * from '../models/ZendeskAuditLogsAuthType';
-export * from '../models/ZendeskAuditLogsSecretsConfig';
-export * from '../models/ZendeskAuditLogsSettingsConfig';
 
 import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
@@ -707,10 +679,6 @@ import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
-import { BitwardenEventsSecretsConfig } from '../models/BitwardenEventsSecretsConfig';
-import { BitwardenEventsSettingsConfig } from '../models/BitwardenEventsSettingsConfig';
-import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
-import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
@@ -741,8 +709,6 @@ import { ClumioAuditLogsSecretsConfig } from '../models/ClumioAuditLogsSecretsCo
 import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
 import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolidatedAlertsSecretsConfig';
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
-import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
-import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
 import { CommonAuthConfig  , CommonAuthConfigTypeEnum   } from '../models/CommonAuthConfig';
 import { CommonAuthType } from '../models/CommonAuthType';
 import { CommonGitHubAppVariant } from '../models/CommonGitHubAppVariant';
@@ -777,8 +743,6 @@ import { CreateTransformRecommendationRequestClass } from '../models/CreateTrans
 import { CreateTransformRequestClass } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
-import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
-import { CustomerEventDataSettingsConfig , CustomerEventDataSettingsConfigEnvironmentEnum     } from '../models/CustomerEventDataSettingsConfig';
 import { DatabricksDeltaTableAutoLoaderWriteMode } from '../models/DatabricksDeltaTableAutoLoaderWriteMode';
 import { DatabricksDeltaTableCopyIntoWriteMode } from '../models/DatabricksDeltaTableCopyIntoWriteMode';
 import { DatabricksDeltaTableSecretsConfig } from '../models/DatabricksDeltaTableSecretsConfig';
@@ -822,7 +786,7 @@ import { EncryptAlgorithmConfig } from '../models/EncryptAlgorithmConfig';
 import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
-import { EnrichmentConnectorMeta           } from '../models/EnrichmentConnectorMeta';
+import { EnrichmentConnectorMeta            } from '../models/EnrichmentConnectorMeta';
 import { EnrichmentSandboxRequestClass } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig , EntraIdSettingsConfigCategoryEnum        } from '../models/EntraIdSettingsConfig';
@@ -842,17 +806,6 @@ import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/Git
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { GithubActionsWorkflowLogsWebhookScopeConfig  , GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum   } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
-import { GithubComMonadIncCorePkgTypesModelsAlertStatus    } from '../models/GithubComMonadIncCorePkgTypesModelsAlertStatus';
-import { GithubComMonadIncCorePkgTypesModelsAuditResource } from '../models/GithubComMonadIncCorePkgTypesModelsAuditResource';
-import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
-import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
-import { GithubComMonadIncCorePkgTypesModelsQuota                } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
-import { GithubComMonadIncCorePkgTypesModelsResourceReference } from '../models/GithubComMonadIncCorePkgTypesModelsResourceReference';
-import { GithubComMonadIncCorePkgTypesModelsTimeRange } from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
-import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
-import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
-import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
 import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -867,6 +820,10 @@ import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig          } from '../models/HttpSettingsConfig';
+import { HydrolixAuthConfig  , HydrolixAuthConfigTypeEnum   } from '../models/HydrolixAuthConfig';
+import { HydrolixPasswordAuth } from '../models/HydrolixPasswordAuth';
+import { HydrolixServiceAccountAuth } from '../models/HydrolixServiceAccountAuth';
+import { HydrolixSettingsConfig } from '../models/HydrolixSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta              } from '../models/InputsConnectorMeta';
@@ -908,11 +865,14 @@ import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
-import { ModelsAlertRule             } from '../models/ModelsAlertRule';
+import { ModelsAlert } from '../models/ModelsAlert';
+import { ModelsAlertRule              } from '../models/ModelsAlertRule';
 import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
+import { ModelsAlertStatus    } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
 import { ModelsAuditLogHistogramBucket } from '../models/ModelsAuditLogHistogramBucket';
+import { ModelsAuditResource } from '../models/ModelsAuditResource';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -930,15 +890,13 @@ import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
-import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
-import { ModelsElseAction } from '../models/ModelsElseAction';
-import { ModelsEnrichment             } from '../models/ModelsEnrichment';
+import { ModelsEnrichment              } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
-import { ModelsInput             } from '../models/ModelsInput';
+import { ModelsInput              } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputList } from '../models/ModelsInputList';
@@ -948,18 +906,19 @@ import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegist
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsNodeBackpressure } from '../models/ModelsNodeBackpressure';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
-import { ModelsNodeSharedResource } from '../models/ModelsNodeSharedResource';
+import { ModelsOrganization } from '../models/ModelsOrganization';
 import { ModelsOrganizationAuditLog        } from '../models/ModelsOrganizationAuditLog';
 import { ModelsOrganizationAuditLogHistogram } from '../models/ModelsOrganizationAuditLogHistogram';
 import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAuditLogList';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
-import { ModelsOutput             } from '../models/ModelsOutput';
+import { ModelsOutput              } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
+import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline             } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2                   } from '../models/ModelsPipelineConfigV2';
@@ -967,7 +926,7 @@ import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
-import { ModelsPipelineNode              } from '../models/ModelsPipelineNode';
+import { ModelsPipelineNode               } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus                } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelinePurgeResponse } from '../models/ModelsPipelinePurgeResponse';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
@@ -977,6 +936,7 @@ import { ModelsPipelineStreamInfo } from '../models/ModelsPipelineStreamInfo';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry    } from '../models/ModelsProgressEntry';
 import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
+import { ModelsQuota                } from '../models/ModelsQuota';
 import { ModelsQuotaAction } from '../models/ModelsQuotaAction';
 import { ModelsQuotaLimitType } from '../models/ModelsQuotaLimitType';
 import { ModelsQuotaLimitUnit } from '../models/ModelsQuotaLimitUnit';
@@ -985,6 +945,7 @@ import { ModelsQuotaTimeframe } from '../models/ModelsQuotaTimeframe';
 import { ModelsRateUnit } from '../models/ModelsRateUnit';
 import { ModelsReference } from '../models/ModelsReference';
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsResourceReference } from '../models/ModelsResourceReference';
 import { ModelsResourceShare } from '../models/ModelsResourceShare';
 import { ModelsResourceShareChangeSet } from '../models/ModelsResourceShareChangeSet';
 import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
@@ -1006,13 +967,15 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
+import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
+import { ModelsTimeRange } from '../models/ModelsTimeRange';
 import { ModelsTransform            } from '../models/ModelsTransform';
-import { ModelsTransformConditional   } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
+import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserOrganization } from '../models/ModelsUserOrganization';
 import { ModelsUserOrganizationList } from '../models/ModelsUserOrganizationList';
@@ -1030,26 +993,18 @@ import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
 import { OfflineenrollmentlogsSecretsConfig } from '../models/OfflineenrollmentlogsSecretsConfig';
 import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
-import { OneloginEventsSecretsConfig } from '../models/OneloginEventsSecretsConfig';
-import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
-import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
-import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
-import { OpenaiAuditLogsSettingsConfig } from '../models/OpenaiAuditLogsSettingsConfig';
 import { OpensearchAuthMode } from '../models/OpensearchAuthMode';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig        } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig';
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
-import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig         } from '../models/OrgAuditLogsSettingsConfig';
 import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
 import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
 import { OwnbackupAccountEventsSettingsConfig , OwnbackupAccountEventsSettingsConfigRegionEnum    } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
-import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
-import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
 import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PagerdutySettingsConfig    } from '../models/PagerdutySettingsConfig';
@@ -1062,12 +1017,8 @@ import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
 import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig';
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
-import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
-import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
-import { PostmanAuditLogsSecretsConfig } from '../models/PostmanAuditLogsSecretsConfig';
-import { PostmanAuditLogsSettingsConfig } from '../models/PostmanAuditLogsSettingsConfig';
 import { PrometheusAuthConfig } from '../models/PrometheusAuthConfig';
 import { PrometheusBasicVariant } from '../models/PrometheusBasicVariant';
 import { PrometheusBearerVariant } from '../models/PrometheusBearerVariant';
@@ -1075,22 +1026,19 @@ import { PrometheusFieldMetricVariant } from '../models/PrometheusFieldMetricVar
 import { PrometheusMetricNameConfig } from '../models/PrometheusMetricNameConfig';
 import { PrometheusSettingsConfig } from '../models/PrometheusSettingsConfig';
 import { PrometheusStaticMetricVariant } from '../models/PrometheusStaticMetricVariant';
-import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
-import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RedshiftAuditLogsSettingsConfig  , RedshiftAuditLogsSettingsConfigLogTypeEnum      } from '../models/RedshiftAuditLogsSettingsConfig';
+import { RegenerateAPIKeyRequestClass } from '../models/RegenerateAPIKeyRequest';
 import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
 import { ReplaceEnrichmentRequestClass } from '../models/ReplaceEnrichmentRequest';
 import { ReplaceInputRequestClass } from '../models/ReplaceInputRequest';
 import { ReplaceOutputRequestClass } from '../models/ReplaceOutputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
-import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
-import { RoutesGetInputResponse              } from '../models/RoutesGetInputResponse';
-import { RoutesGetOutputResponse              } from '../models/RoutesGetOutputResponse';
+import { RoutesGetInputResponse               } from '../models/RoutesGetInputResponse';
+import { RoutesGetOutputResponse               } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse             } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
@@ -1129,11 +1077,12 @@ import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOver
 import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelineEdgeRequest';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
-import { RoutesV2PipelineRequestNode      } from '../models/RoutesV2PipelineRequestNode';
+import { RoutesV2PipelineRequestNode       } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus    } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
+import { RoutesV2RegenerateAPIKeyRequest } from '../models/RoutesV2RegenerateAPIKeyRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
@@ -1141,6 +1090,8 @@ import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTyp
 import { RoutesV2StorageTypeOutputDetailResponse } from '../models/RoutesV2StorageTypeOutputDetailResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
+import { RoutesV2TestNodeConfig } from '../models/RoutesV2TestNodeConfig';
+import { RoutesV2TestNodeConnectionRequest     } from '../models/RoutesV2TestNodeConnectionRequest';
 import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
@@ -1161,7 +1112,7 @@ import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSa
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
-import { RoutesV3GetEnrichmentResponse              } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetEnrichmentResponse               } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
@@ -1187,6 +1138,7 @@ import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3Update
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateConnectionRequestSaml } from '../models/RoutesV3UpdateConnectionRequestSaml';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { RunrevealSettingsConfig } from '../models/RunrevealSettingsConfig';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { ScannerAuthConfig  , ScannerAuthConfigTypeEnum   } from '../models/ScannerAuthConfig';
@@ -1214,8 +1166,6 @@ import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupply
 import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
-import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
-import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
 import { SetStorageTypeCostRequestClass } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
@@ -1251,17 +1201,10 @@ import { TeamIntegrationLogsSecretsConfig } from '../models/TeamIntegrationLogsS
 import { TeamIntegrationLogsSettingsConfig } from '../models/TeamIntegrationLogsSettingsConfig';
 import { TelephonyLogsSecretsConfig } from '../models/TelephonyLogsSecretsConfig';
 import { TelephonyLogsSettingsConfig } from '../models/TelephonyLogsSettingsConfig';
-import { TenableAssetsCronSecretsConfig } from '../models/TenableAssetsCronSecretsConfig';
-import { TenableAssetsCronSettingsConfig } from '../models/TenableAssetsCronSettingsConfig';
-import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
-import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
-import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulnerabilitiesCronSecretsConfig';
-import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
-import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
-import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
 import { TestEnrichmentConnectionRequestClass } from '../models/TestEnrichmentConnectionRequest';
 import { TestInputConnectionRequestClass } from '../models/TestInputConnectionRequest';
 import { TestOutputConnectionRequestClass } from '../models/TestOutputConnectionRequest';
+import { TestPipelineNodeConnectionRequestClass } from '../models/TestPipelineNodeConnectionRequest';
 import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
@@ -1286,7 +1229,9 @@ import { UpdateOutputRequestClass } from '../models/UpdateOutputRequest';
 import { UpdatePipelineEdgeRequestClass } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequestClass } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1RequestClass } from '../models/UpdatePipelineV1Request';
+import { UpdateResourceSharesRequestClass } from '../models/UpdateResourceSharesRequest';
 import { UpdateRoleRequestClass } from '../models/UpdateRoleRequest';
+import { UpdateSecretRequestClass } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig   } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
@@ -1295,6 +1240,8 @@ import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsCo
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
+import { WazuhSecretsConfig } from '../models/WazuhSecretsConfig';
+import { WazuhSettingsConfig } from '../models/WazuhSettingsConfig';
 import { WizAssetStatus } from '../models/WizAssetStatus';
 import { WizAssetType } from '../models/WizAssetType';
 import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
@@ -1314,9 +1261,6 @@ import { WizServiceTicketFilter } from '../models/WizServiceTicketFilter';
 import { WizStackLayer } from '../models/WizStackLayer';
 import { WizStatus } from '../models/WizStatus';
 import { WizVendorSeverity } from '../models/WizVendorSeverity';
-import { ZendeskAuditLogsAuthType } from '../models/ZendeskAuditLogsAuthType';
-import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
-import { ZendeskAuditLogsSettingsConfig      } from '../models/ZendeskAuditLogsSettingsConfig';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -1341,7 +1285,6 @@ let enumsMap: Set<string> = new Set<string>([
     "CommonAuthConfigTypeEnum",
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
-    "CustomerEventDataSettingsConfigEnvironmentEnum",
     "DatabricksDeltaTableWriteModeWriteModeEnum",
     "DatabricksLakehousePipelineConfigModeEnum",
     "DatabricksLakehouseWriteModeWriteModeEnum",
@@ -1352,6 +1295,7 @@ let enumsMap: Set<string> = new Set<string>([
     "FormatterType",
     "GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum",
     "HttpPayloadStructure",
+    "HydrolixAuthConfigTypeEnum",
     "JsonFormatType",
     "KafkaAcks",
     "KafkaCompressionType",
@@ -1363,7 +1307,6 @@ let enumsMap: Set<string> = new Set<string>([
     "ModelsBillingType",
     "ModelsComponentType",
     "ModelsConditionOperator",
-    "ModelsElseAction",
     "ModelsInputConnectorCategory",
     "ModelsManagedBy",
     "ModelsOutputConnectorCategory",
@@ -1388,7 +1331,6 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsCompressionEnum",
     "SecretProcessesorInputConfigSettingsFormatEnum",
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
-    "SecretProcessesorInputConfigSettingsEnvironmentEnum",
     "SecretProcessesorInputConfigSettingsCategoryEnum",
     "SecretProcessesorInputConfigSettingsLogTypeEnum",
     "SecretProcessesorOutputConfigSettingsCompressionEnum",
@@ -1414,7 +1356,6 @@ let enumsMap: Set<string> = new Set<string>([
     "WizStackLayer",
     "WizStatus",
     "WizVendorSeverity",
-    "ZendeskAuditLogsAuthType",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -1462,10 +1403,6 @@ let typeMap: {[index: string]: any} = {
     "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,
     "BigquerySecretsConfig": BigquerySecretsConfig,
     "BigquerySettingsConfig": BigquerySettingsConfig,
-    "BitwardenEventsSecretsConfig": BitwardenEventsSecretsConfig,
-    "BitwardenEventsSettingsConfig": BitwardenEventsSettingsConfig,
-    "BoxEventsSecretsConfig": BoxEventsSecretsConfig,
-    "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BrinqaAuditLogsSecretsConfig": BrinqaAuditLogsSecretsConfig,
     "BrinqaAuditLogsSettingsConfig": BrinqaAuditLogsSettingsConfig,
     "BugsnagOrgEventsSecretsConfig": BugsnagOrgEventsSecretsConfig,
@@ -1496,8 +1433,6 @@ let typeMap: {[index: string]: any} = {
     "ClumioAuditLogsSettingsConfig": ClumioAuditLogsSettingsConfig,
     "ClumioConsolidatedAlertsSecretsConfig": ClumioConsolidatedAlertsSecretsConfig,
     "ClumioConsolidatedAlertsSettingsConfig": ClumioConsolidatedAlertsSettingsConfig,
-    "CodaAuditEventsSecretsConfig": CodaAuditEventsSecretsConfig,
-    "CodaAuditEventsSettingsConfig": CodaAuditEventsSettingsConfig,
     "CommonAuthConfig": CommonAuthConfig,
     "CommonGitHubAppVariant": CommonGitHubAppVariant,
     "CommonPersonalAccessTokenVariant": CommonPersonalAccessTokenVariant,
@@ -1530,8 +1465,6 @@ let typeMap: {[index: string]: any} = {
     "CreateTransformRequest": CreateTransformRequestClass,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
-    "CustomerEventDataSecretsConfig": CustomerEventDataSecretsConfig,
-    "CustomerEventDataSettingsConfig": CustomerEventDataSettingsConfig,
     "DatabricksDeltaTableAutoLoaderWriteMode": DatabricksDeltaTableAutoLoaderWriteMode,
     "DatabricksDeltaTableCopyIntoWriteMode": DatabricksDeltaTableCopyIntoWriteMode,
     "DatabricksDeltaTableSecretsConfig": DatabricksDeltaTableSecretsConfig,
@@ -1594,17 +1527,6 @@ let typeMap: {[index: string]: any} = {
     "GithubActionsWorkflowLogsWebhookRepositoryScope": GithubActionsWorkflowLogsWebhookRepositoryScope,
     "GithubActionsWorkflowLogsWebhookScopeConfig": GithubActionsWorkflowLogsWebhookScopeConfig,
     "GithubActionsWorkflowLogsWebhookSettingsConfig": GithubActionsWorkflowLogsWebhookSettingsConfig,
-    "GithubComMonadIncCorePkgTypesModelsAlert": GithubComMonadIncCorePkgTypesModelsAlert,
-    "GithubComMonadIncCorePkgTypesModelsAlertStatus": GithubComMonadIncCorePkgTypesModelsAlertStatus,
-    "GithubComMonadIncCorePkgTypesModelsAuditResource": GithubComMonadIncCorePkgTypesModelsAuditResource,
-    "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,
-    "GithubComMonadIncCorePkgTypesModelsPermission": GithubComMonadIncCorePkgTypesModelsPermission,
-    "GithubComMonadIncCorePkgTypesModelsQuota": GithubComMonadIncCorePkgTypesModelsQuota,
-    "GithubComMonadIncCorePkgTypesModelsResourceReference": GithubComMonadIncCorePkgTypesModelsResourceReference,
-    "GithubComMonadIncCorePkgTypesModelsTimeRange": GithubComMonadIncCorePkgTypesModelsTimeRange,
-    "GithubComMonadIncCorePkgTypesModelsUser": GithubComMonadIncCorePkgTypesModelsUser,
-    "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
-    "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
     "GkeAuditLogsSecretsConfig": GkeAuditLogsSecretsConfig,
     "GkeAuditLogsSettingsConfig": GkeAuditLogsSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -1618,6 +1540,10 @@ let typeMap: {[index: string]: any} = {
     "HttpHeaders": HttpHeaders,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
+    "HydrolixAuthConfig": HydrolixAuthConfig,
+    "HydrolixPasswordAuth": HydrolixPasswordAuth,
+    "HydrolixServiceAccountAuth": HydrolixServiceAccountAuth,
+    "HydrolixSettingsConfig": HydrolixSettingsConfig,
     "IndividualAlertsSecretsConfig": IndividualAlertsSecretsConfig,
     "IndividualAlertsSettingsConfig": IndividualAlertsSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
@@ -1654,9 +1580,12 @@ let typeMap: {[index: string]: any} = {
     "ModelsAPIKeyWithToken": ModelsAPIKeyWithToken,
     "ModelsAPILogActor": ModelsAPILogActor,
     "ModelsAPILogActorRole": ModelsAPILogActorRole,
+    "ModelsAlert": ModelsAlert,
     "ModelsAlertRule": ModelsAlertRule,
     "ModelsAlertRuleList": ModelsAlertRuleList,
+    "ModelsAlertStatus": ModelsAlertStatus,
     "ModelsAuditLogHistogramBucket": ModelsAuditLogHistogramBucket,
+    "ModelsAuditResource": ModelsAuditResource,
     "ModelsBillingAccount": ModelsBillingAccount,
     "ModelsBillingAccountList": ModelsBillingAccountList,
     "ModelsBillingAccountPermission": ModelsBillingAccountPermission,
@@ -1670,7 +1599,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsConnectionList": ModelsConnectionList,
     "ModelsConnectionSessionSettings": ModelsConnectionSessionSettings,
     "ModelsConnectorInfo": ModelsConnectorInfo,
-    "ModelsConnectorMeta": ModelsConnectorMeta,
     "ModelsCursorPagination": ModelsCursorPagination,
     "ModelsDataUsage": ModelsDataUsage,
     "ModelsEnrichment": ModelsEnrichment,
@@ -1685,7 +1613,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsMCPClientRegistrationList": ModelsMCPClientRegistrationList,
     "ModelsNodeBackpressure": ModelsNodeBackpressure,
     "ModelsNodeComponent": ModelsNodeComponent,
-    "ModelsNodeSharedResource": ModelsNodeSharedResource,
+    "ModelsOrganization": ModelsOrganization,
     "ModelsOrganizationAuditLog": ModelsOrganizationAuditLog,
     "ModelsOrganizationAuditLogHistogram": ModelsOrganizationAuditLogHistogram,
     "ModelsOrganizationAuditLogList": ModelsOrganizationAuditLogList,
@@ -1696,6 +1624,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsOutputConfig": ModelsOutputConfig,
     "ModelsOutputList": ModelsOutputList,
     "ModelsPagination": ModelsPagination,
+    "ModelsPermission": ModelsPermission,
     "ModelsPermissionList": ModelsPermissionList,
     "ModelsPipeline": ModelsPipeline,
     "ModelsPipelineConfigV2": ModelsPipelineConfigV2,
@@ -1711,9 +1640,11 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineStreamInfo": ModelsPipelineStreamInfo,
     "ModelsProgressEntries": ModelsProgressEntries,
     "ModelsProgressEntry": ModelsProgressEntry,
+    "ModelsQuota": ModelsQuota,
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsReference": ModelsReference,
     "ModelsReferences": ModelsReferences,
+    "ModelsResourceReference": ModelsResourceReference,
     "ModelsResourceShare": ModelsResourceShare,
     "ModelsResourceShareChangeSet": ModelsResourceShareChangeSet,
     "ModelsResourceShareTarget": ModelsResourceShareTarget,
@@ -1735,13 +1666,15 @@ let typeMap: {[index: string]: any} = {
     "ModelsStorageTypeTimeSeries": ModelsStorageTypeTimeSeries,
     "ModelsStorageTypeTimeSeriesResponse": ModelsStorageTypeTimeSeriesResponse,
     "ModelsSupportedFeatures": ModelsSupportedFeatures,
+    "ModelsTemplateSettings": ModelsTemplateSettings,
+    "ModelsTimeRange": ModelsTimeRange,
     "ModelsTransform": ModelsTransform,
-    "ModelsTransformConditional": ModelsTransformConditional,
     "ModelsTransformConfig": ModelsTransformConfig,
     "ModelsTransformList": ModelsTransformList,
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsTransformsRepositoryList": ModelsTransformsRepositoryList,
     "ModelsTransformsRepositoryTransform": ModelsTransformsRepositoryTransform,
+    "ModelsUser": ModelsUser,
     "ModelsUserAuthProvider": ModelsUserAuthProvider,
     "ModelsUserOrganization": ModelsUserOrganization,
     "ModelsUserOrganizationList": ModelsUserOrganizationList,
@@ -1759,25 +1692,17 @@ let typeMap: {[index: string]: any} = {
     "ObjectStorageSettingsConfig": ObjectStorageSettingsConfig,
     "OfflineenrollmentlogsSecretsConfig": OfflineenrollmentlogsSecretsConfig,
     "OfflineenrollmentlogsSettingsConfig": OfflineenrollmentlogsSettingsConfig,
-    "OneloginEventsSecretsConfig": OneloginEventsSecretsConfig,
-    "OneloginEventsSettingsConfig": OneloginEventsSettingsConfig,
-    "OpalEventsSecretsConfig": OpalEventsSecretsConfig,
-    "OpalEventsSettingsConfig": OpalEventsSettingsConfig,
-    "OpenaiAuditLogsSettingsConfig": OpenaiAuditLogsSettingsConfig,
     "OpensearchSecretsConfig": OpensearchSecretsConfig,
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
     "OperationLogsSecretsConfig": OperationLogsSecretsConfig,
     "OperationLogsSettingsConfig": OperationLogsSettingsConfig,
-    "OracleSettingsConfig": OracleSettingsConfig,
     "OrgAuditLogsSecretsConfig": OrgAuditLogsSecretsConfig,
     "OrgAuditLogsSettingsConfig": OrgAuditLogsSettingsConfig,
     "OutputsConnectorMeta": OutputsConnectorMeta,
     "OwnbackupAccountEventsSecretsConfig": OwnbackupAccountEventsSecretsConfig,
     "OwnbackupAccountEventsSettingsConfig": OwnbackupAccountEventsSettingsConfig,
     "PagerdutyAlertsConfig": PagerdutyAlertsConfig,
-    "PagerdutyAuditRecordsSecretsConfig": PagerdutyAuditRecordsSecretsConfig,
-    "PagerdutyAuditRecordsSettingsConfig": PagerdutyAuditRecordsSettingsConfig,
     "PagerdutySecretsConfig": PagerdutySecretsConfig,
     "PagerdutySettingsConfig": PagerdutySettingsConfig,
     "PagerdutySummaryConfig": PagerdutySummaryConfig,
@@ -1789,12 +1714,8 @@ let typeMap: {[index: string]: any} = {
     "PersonaSettingsConfig": PersonaSettingsConfig,
     "PlaidWebhooksSecretsConfig": PlaidWebhooksSecretsConfig,
     "PlaidWebhooksSettingsConfig": PlaidWebhooksSettingsConfig,
-    "PolymerSecretsConfig": PolymerSecretsConfig,
-    "PolymerSettingsConfig": PolymerSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,
     "PostgresqlSettingsConfig": PostgresqlSettingsConfig,
-    "PostmanAuditLogsSecretsConfig": PostmanAuditLogsSecretsConfig,
-    "PostmanAuditLogsSettingsConfig": PostmanAuditLogsSettingsConfig,
     "PrometheusAuthConfig": PrometheusAuthConfig,
     "PrometheusBasicVariant": PrometheusBasicVariant,
     "PrometheusBearerVariant": PrometheusBearerVariant,
@@ -1802,17 +1723,14 @@ let typeMap: {[index: string]: any} = {
     "PrometheusMetricNameConfig": PrometheusMetricNameConfig,
     "PrometheusSettingsConfig": PrometheusSettingsConfig,
     "PrometheusStaticMetricVariant": PrometheusStaticMetricVariant,
-    "PubsubSecretsConfig": PubsubSecretsConfig,
-    "PubsubSettingsConfig": PubsubSettingsConfig,
     "RedshiftAuditLogsSettingsConfig": RedshiftAuditLogsSettingsConfig,
+    "RegenerateAPIKeyRequest": RegenerateAPIKeyRequestClass,
     "RenameKeyArgumentsConfig": RenameKeyArgumentsConfig,
     "RenameKeyWhereValueEqArgumentsConfig": RenameKeyWhereValueEqArgumentsConfig,
     "ReplaceEnrichmentRequest": ReplaceEnrichmentRequestClass,
     "ReplaceInputRequest": ReplaceInputRequestClass,
     "ReplaceOutputRequest": ReplaceOutputRequestClass,
     "ResponderErrorResponse": ResponderErrorResponse,
-    "RootlyAuditLogsSecretsConfig": RootlyAuditLogsSecretsConfig,
-    "RootlyAuditLogsSettingsConfig": RootlyAuditLogsSettingsConfig,
     "RoutesAddUserToOrganizationRequest": RoutesAddUserToOrganizationRequest,
     "RoutesCreateOrganizationRequest": RoutesCreateOrganizationRequest,
     "RoutesCreateTransformRequest": RoutesCreateTransformRequest,
@@ -1861,6 +1779,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2PipelineWithStatus": RoutesV2PipelineWithStatus,
     "RoutesV2PutInputRequest": RoutesV2PutInputRequest,
     "RoutesV2PutOutputRequest": RoutesV2PutOutputRequest,
+    "RoutesV2RegenerateAPIKeyRequest": RoutesV2RegenerateAPIKeyRequest,
     "RoutesV2SecretResponse": RoutesV2SecretResponse,
     "RoutesV2SetStorageTypeCostEntry": RoutesV2SetStorageTypeCostEntry,
     "RoutesV2SetStorageTypeCostRequest": RoutesV2SetStorageTypeCostRequest,
@@ -1868,6 +1787,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2StorageTypeOutputDetailResponse": RoutesV2StorageTypeOutputDetailResponse,
     "RoutesV2SuccessResponse": RoutesV2SuccessResponse,
     "RoutesV2TestInputConnectionRequest": RoutesV2TestInputConnectionRequest,
+    "RoutesV2TestNodeConfig": RoutesV2TestNodeConfig,
+    "RoutesV2TestNodeConnectionRequest": RoutesV2TestNodeConnectionRequest,
     "RoutesV2TestOutputConnectionRequest": RoutesV2TestOutputConnectionRequest,
     "RoutesV2UpdateAPIKeyRequest": RoutesV2UpdateAPIKeyRequest,
     "RoutesV2UpdateBillingAccountRequest": RoutesV2UpdateBillingAccountRequest,
@@ -1914,6 +1835,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3UpdateConnectionRequest": RoutesV3UpdateConnectionRequest,
     "RoutesV3UpdateConnectionRequestSaml": RoutesV3UpdateConnectionRequestSaml,
     "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
+    "RunrevealSettingsConfig": RunrevealSettingsConfig,
     "S3SecretsConfig": S3SecretsConfig,
     "S3SettingsConfig": S3SettingsConfig,
     "ScannerAuthConfig": ScannerAuthConfig,
@@ -1941,8 +1863,6 @@ let typeMap: {[index: string]: any} = {
     "SemgrepSupplyChainFindingsSettingsConfig": SemgrepSupplyChainFindingsSettingsConfig,
     "SentinelSecretsConfig": SentinelSecretsConfig,
     "SentinelSettingsConfig": SentinelSettingsConfig,
-    "SentryOrgAuditLogsSecretsConfig": SentryOrgAuditLogsSecretsConfig,
-    "SentryOrgAuditLogsSettingsConfig": SentryOrgAuditLogsSettingsConfig,
     "SetStorageTypeCostRequest": SetStorageTypeCostRequestClass,
     "SlackAuthConfig": SlackAuthConfig,
     "SlackBotTokenVariant": SlackBotTokenVariant,
@@ -1975,17 +1895,10 @@ let typeMap: {[index: string]: any} = {
     "TeamIntegrationLogsSettingsConfig": TeamIntegrationLogsSettingsConfig,
     "TelephonyLogsSecretsConfig": TelephonyLogsSecretsConfig,
     "TelephonyLogsSettingsConfig": TelephonyLogsSettingsConfig,
-    "TenableAssetsCronSecretsConfig": TenableAssetsCronSecretsConfig,
-    "TenableAssetsCronSettingsConfig": TenableAssetsCronSettingsConfig,
-    "TenableAssetsSecretsConfig": TenableAssetsSecretsConfig,
-    "TenableAssetsSettingsConfig": TenableAssetsSettingsConfig,
-    "TenableVulnerabilitiesCronSecretsConfig": TenableVulnerabilitiesCronSecretsConfig,
-    "TenableVulnerabilitiesCronSettingsConfig": TenableVulnerabilitiesCronSettingsConfig,
-    "TenableVulnerabilitiesSecretsConfig": TenableVulnerabilitiesSecretsConfig,
-    "TenableVulnerabilitiesSettingsConfig": TenableVulnerabilitiesSettingsConfig,
     "TestEnrichmentConnectionRequest": TestEnrichmentConnectionRequestClass,
     "TestInputConnectionRequest": TestInputConnectionRequestClass,
     "TestOutputConnectionRequest": TestOutputConnectionRequestClass,
+    "TestPipelineNodeConnectionRequest": TestPipelineNodeConnectionRequestClass,
     "TinesAuditLogsSecretsConfig": TinesAuditLogsSecretsConfig,
     "TinesAuditLogsSettingsConfig": TinesAuditLogsSettingsConfig,
     "TinesEventsLogsSecretsConfig": TinesEventsLogsSecretsConfig,
@@ -2009,7 +1922,9 @@ let typeMap: {[index: string]: any} = {
     "UpdatePipelineEdgeRequest": UpdatePipelineEdgeRequestClass,
     "UpdatePipelineRequest": UpdatePipelineRequestClass,
     "UpdatePipelineV1Request": UpdatePipelineV1RequestClass,
+    "UpdateResourceSharesRequest": UpdateResourceSharesRequestClass,
     "UpdateRoleRequest": UpdateRoleRequestClass,
+    "UpdateSecretRequest": UpdateSecretRequestClass,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,
@@ -2017,10 +1932,10 @@ let typeMap: {[index: string]: any} = {
     "VoltioAuditLogsSettingsConfig": VoltioAuditLogsSettingsConfig,
     "VulnerabilityFindingsSecretsConfig": VulnerabilityFindingsSecretsConfig,
     "VulnerabilityFindingsSettingsConfig": VulnerabilityFindingsSettingsConfig,
+    "WazuhSecretsConfig": WazuhSecretsConfig,
+    "WazuhSettingsConfig": WazuhSettingsConfig,
     "WizAuditLogsSecretsConfig": WizAuditLogsSecretsConfig,
     "WizAuditLogsSettingsConfig": WizAuditLogsSettingsConfig,
-    "ZendeskAuditLogsSecretsConfig": ZendeskAuditLogsSecretsConfig,
-    "ZendeskAuditLogsSettingsConfig": ZendeskAuditLogsSettingsConfig,
 }
 
 type MimeTypeDescriptor = {

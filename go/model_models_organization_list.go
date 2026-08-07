@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsOrganizationList{}
 
 // ModelsOrganizationList struct for ModelsOrganizationList
 type ModelsOrganizationList struct {
-	Organizations []GithubComMonadIncCorePkgTypesModelsOrganization `json:"organizations,omitempty"`
+	Organizations []ModelsOrganization `json:"organizations,omitempty"`
 	Pagination *ModelsPagination `json:"pagination,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewModelsOrganizationListWithDefaults() *ModelsOrganizationList {
 }
 
 // GetOrganizations returns the Organizations field value if set, zero value otherwise.
-func (o *ModelsOrganizationList) GetOrganizations() []GithubComMonadIncCorePkgTypesModelsOrganization {
+func (o *ModelsOrganizationList) GetOrganizations() []ModelsOrganization {
 	if o == nil || IsNil(o.Organizations) {
-		var ret []GithubComMonadIncCorePkgTypesModelsOrganization
+		var ret []ModelsOrganization
 		return ret
 	}
 	return o.Organizations
@@ -52,7 +52,7 @@ func (o *ModelsOrganizationList) GetOrganizations() []GithubComMonadIncCorePkgTy
 
 // GetOrganizationsOk returns a tuple with the Organizations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsOrganizationList) GetOrganizationsOk() ([]GithubComMonadIncCorePkgTypesModelsOrganization, bool) {
+func (o *ModelsOrganizationList) GetOrganizationsOk() ([]ModelsOrganization, bool) {
 	if o == nil || IsNil(o.Organizations) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *ModelsOrganizationList) HasOrganizations() bool {
 	return false
 }
 
-// SetOrganizations gets a reference to the given []GithubComMonadIncCorePkgTypesModelsOrganization and assigns it to the Organizations field.
-func (o *ModelsOrganizationList) SetOrganizations(v []GithubComMonadIncCorePkgTypesModelsOrganization) {
+// SetOrganizations gets a reference to the given []ModelsOrganization and assigns it to the Organizations field.
+func (o *ModelsOrganizationList) SetOrganizations(v []ModelsOrganization) {
 	o.Organizations = v
 }
 

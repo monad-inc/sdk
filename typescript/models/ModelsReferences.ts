@@ -13,6 +13,9 @@
 import { ModelsReference } from '../models/ModelsReference';
 import { HttpFile } from '../http/http';
 
+/**
+* ResourceReferences are the resources (e.g. secrets) referenced only via the override delta, tracked so deletion/rotation see them like component refs.
+*/
 export class ModelsReferences {
     'secrets'?: Array<ModelsReference>;
 

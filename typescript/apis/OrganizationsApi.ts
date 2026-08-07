@@ -9,7 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { CreateChildOrganizationRequest } from '../models/CreateChildOrganizationRequest';
-import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
+import { ModelsOrganization } from '../models/ModelsOrganization';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
 import { ModelsUserOrganizationList } from '../models/ModelsUserOrganizationList';
@@ -585,13 +585,13 @@ export class OrganizationsApiResponseProcessor {
      * @params response Response returned by the server for a request to createChildOrganization
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async createChildOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization >> {
+     public async createChildOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsOrganization >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -611,10 +611,10 @@ export class OrganizationsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -628,22 +628,22 @@ export class OrganizationsApiResponseProcessor {
      * @params response Response returned by the server for a request to createOrganization
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async createOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization >> {
+     public async createOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsOrganization >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -840,13 +840,13 @@ export class OrganizationsApiResponseProcessor {
      * @params response Response returned by the server for a request to updateChildOrganization
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async updateChildOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization >> {
+     public async updateChildOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsOrganization >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -873,10 +873,10 @@ export class OrganizationsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -890,22 +890,22 @@ export class OrganizationsApiResponseProcessor {
      * @params response Response returned by the server for a request to updateOrganization
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async updateOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization >> {
+     public async updateOrganizationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsOrganization >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+            const body: ModelsOrganization = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
-            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+                "ModelsOrganization", ""
+            ) as ModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

@@ -11,14 +11,29 @@
  */
 
 import { ModelsReferences } from '../models/ModelsReferences';
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
 import { HttpFile } from '../http/http';
 
 export class ModelsNodeComponent {
-    'config'?: { [key: string]: any; };
+    /**
+    * BaseConfig is the template\'s config before the override delta is applied.
+    */
+    'baseConfig'?: { [key: string]: any | null; };
+    /**
+    * Config is the node\'s effective config: for a template-backed node it is the base merged with the node\'s override delta (RFC 0017 §3); otherwise it is the component\'s base config unchanged.
+    */
+    'config'?: { [key: string]: any | null; };
     'description'?: string;
     'id'?: string;
     'name'?: string;
+    /**
+    * Overrides is the node\'s sparse override delta (secrets as {id} refs only).
+    */
+    'overrides'?: { [key: string]: any | null; };
     'references'?: ModelsReferences;
+    'shareDetails'?: ModelsShareDetails;
+    'templateSettings'?: ModelsTemplateSettings;
     'type'?: string;
     'version'?: number;
 
@@ -28,9 +43,15 @@ export class ModelsNodeComponent {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "baseConfig",
+            "baseName": "base_config",
+            "type": "{ [key: string]: any | null; }",
+            "format": ""
+        },
+        {
             "name": "config",
             "baseName": "config",
-            "type": "{ [key: string]: any; }",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         },
         {
@@ -52,9 +73,27 @@ export class ModelsNodeComponent {
             "format": ""
         },
         {
+            "name": "overrides",
+            "baseName": "overrides",
+            "type": "{ [key: string]: any | null; }",
+            "format": ""
+        },
+        {
             "name": "references",
             "baseName": "references",
             "type": "ModelsReferences",
+            "format": ""
+        },
+        {
+            "name": "shareDetails",
+            "baseName": "share_details",
+            "type": "ModelsShareDetails",
+            "format": ""
+        },
+        {
+            "name": "templateSettings",
+            "baseName": "template_settings",
+            "type": "ModelsTemplateSettings",
             "format": ""
         },
         {

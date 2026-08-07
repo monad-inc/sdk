@@ -331,11 +331,11 @@ public class Example {
 
 <a id="regenerateAPIKey"></a>
 # **regenerateAPIKey**
-> ModelsAPIKeyWithToken regenerateAPIKey(organizationId, apiKeyId)
+> ModelsAPIKeyWithToken regenerateAPIKey(organizationId, apiKeyId, regenerateAPIKeyRequest)
 
 Regenerate API key
 
-Regenerates an API key by creating a new one with the same metadata and deleting the old one
+Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
 
 ### Example
 ```java
@@ -367,8 +367,9 @@ public class Example {
     OrganizationApiKeysApi apiInstance = new OrganizationApiKeysApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String apiKeyId = "apiKeyId_example"; // String | API Key ID
+    RegenerateAPIKeyRequest regenerateAPIKeyRequest = new RegenerateAPIKeyRequest(); // RegenerateAPIKeyRequest | Optional new expiration for the regenerated key
     try {
-      ModelsAPIKeyWithToken result = apiInstance.regenerateAPIKey(organizationId, apiKeyId);
+      ModelsAPIKeyWithToken result = apiInstance.regenerateAPIKey(organizationId, apiKeyId, regenerateAPIKeyRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationApiKeysApi#regenerateAPIKey");
@@ -387,6 +388,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **apiKeyId** | **String**| API Key ID | |
+| **regenerateAPIKeyRequest** | [**RegenerateAPIKeyRequest**](RegenerateAPIKeyRequest.md)| Optional new expiration for the regenerated key | [optional] |
 
 ### Return type
 
@@ -398,14 +400,16 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | New API key generated successfully |  -  |
+| **400** | Invalid JSON request body or expiration time |  -  |
 | **404** | API key not found |  -  |
+| **422** | Expiration time required for an expired API key |  -  |
 | **500** | Failed to regenerate API key |  -  |
 
 <a id="updateAPIKey"></a>

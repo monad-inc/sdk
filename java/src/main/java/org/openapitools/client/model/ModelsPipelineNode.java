@@ -20,13 +20,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import org.openapitools.client.model.ModelsComponentType;
 import org.openapitools.client.model.ModelsNodeComponent;
-import org.openapitools.client.model.ModelsNodeSharedResource;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
+import org.openapitools.client.model.ModelsReferences;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsPipelineNode {
   public static final String SERIALIZED_NAME_COMPONENT = "component";
   @SerializedName(SERIALIZED_NAME_COMPONENT)
@@ -81,6 +81,11 @@ public class ModelsPipelineNode {
   @javax.annotation.Nullable
   private ModelsComponentType componentType;
 
+  public static final String SERIALIZED_NAME_CONFIG_OVERRIDES = "config_overrides";
+  @SerializedName(SERIALIZED_NAME_CONFIG_OVERRIDES)
+  @javax.annotation.Nullable
+  private Map<String, Object> configOverrides = new HashMap<>();
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -106,10 +111,10 @@ public class ModelsPipelineNode {
   @javax.annotation.Nullable
   private String pipelineId;
 
-  public static final String SERIALIZED_NAME_SHARED_RESOURCES = "shared_resources";
-  @SerializedName(SERIALIZED_NAME_SHARED_RESOURCES)
+  public static final String SERIALIZED_NAME_RESOURCE_REFERENCES = "resource_references";
+  @SerializedName(SERIALIZED_NAME_RESOURCE_REFERENCES)
   @javax.annotation.Nullable
-  private List<ModelsNodeSharedResource> sharedResources = new ArrayList<>();
+  private ModelsReferences resourceReferences;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
@@ -219,6 +224,33 @@ public class ModelsPipelineNode {
   }
 
 
+  public ModelsPipelineNode configOverrides(@javax.annotation.Nullable Map<String, Object> configOverrides) {
+    this.configOverrides = configOverrides;
+    return this;
+  }
+
+  public ModelsPipelineNode putConfigOverridesItem(String key, Object configOverridesItem) {
+    if (this.configOverrides == null) {
+      this.configOverrides = new HashMap<>();
+    }
+    this.configOverrides.put(key, configOverridesItem);
+    return this;
+  }
+
+  /**
+   * ConfigOverrides is the node&#39;s sparse override delta over its template component&#39;s base config (RFC 0017 §3). Nil for a non-template-backed node.
+   * @return configOverrides
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getConfigOverrides() {
+    return configOverrides;
+  }
+
+  public void setConfigOverrides(@javax.annotation.Nullable Map<String, Object> configOverrides) {
+    this.configOverrides = configOverrides;
+  }
+
+
   public ModelsPipelineNode createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -314,30 +346,22 @@ public class ModelsPipelineNode {
   }
 
 
-  public ModelsPipelineNode sharedResources(@javax.annotation.Nullable List<ModelsNodeSharedResource> sharedResources) {
-    this.sharedResources = sharedResources;
-    return this;
-  }
-
-  public ModelsPipelineNode addSharedResourcesItem(ModelsNodeSharedResource sharedResourcesItem) {
-    if (this.sharedResources == null) {
-      this.sharedResources = new ArrayList<>();
-    }
-    this.sharedResources.add(sharedResourcesItem);
+  public ModelsPipelineNode resourceReferences(@javax.annotation.Nullable ModelsReferences resourceReferences) {
+    this.resourceReferences = resourceReferences;
     return this;
   }
 
   /**
-   * Get sharedResources
-   * @return sharedResources
+   * Get resourceReferences
+   * @return resourceReferences
    */
   @javax.annotation.Nullable
-  public List<ModelsNodeSharedResource> getSharedResources() {
-    return sharedResources;
+  public ModelsReferences getResourceReferences() {
+    return resourceReferences;
   }
 
-  public void setSharedResources(@javax.annotation.Nullable List<ModelsNodeSharedResource> sharedResources) {
-    this.sharedResources = sharedResources;
+  public void setResourceReferences(@javax.annotation.Nullable ModelsReferences resourceReferences) {
+    this.resourceReferences = resourceReferences;
   }
 
 
@@ -394,19 +418,20 @@ public class ModelsPipelineNode {
         Objects.equals(this.componentId, modelsPipelineNode.componentId) &&
         Objects.equals(this.componentSubType, modelsPipelineNode.componentSubType) &&
         Objects.equals(this.componentType, modelsPipelineNode.componentType) &&
+        Objects.equals(this.configOverrides, modelsPipelineNode.configOverrides) &&
         Objects.equals(this.createdAt, modelsPipelineNode.createdAt) &&
         Objects.equals(this.enabled, modelsPipelineNode.enabled) &&
         Objects.equals(this.id, modelsPipelineNode.id) &&
         Objects.equals(this.organizationId, modelsPipelineNode.organizationId) &&
         Objects.equals(this.pipelineId, modelsPipelineNode.pipelineId) &&
-        Objects.equals(this.sharedResources, modelsPipelineNode.sharedResources) &&
+        Objects.equals(this.resourceReferences, modelsPipelineNode.resourceReferences) &&
         Objects.equals(this.slug, modelsPipelineNode.slug) &&
         Objects.equals(this.status, modelsPipelineNode.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(component, componentHouse, componentId, componentSubType, componentType, createdAt, enabled, id, organizationId, pipelineId, sharedResources, slug, status);
+    return Objects.hash(component, componentHouse, componentId, componentSubType, componentType, configOverrides, createdAt, enabled, id, organizationId, pipelineId, resourceReferences, slug, status);
   }
 
   @Override
@@ -418,12 +443,13 @@ public class ModelsPipelineNode {
     sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
     sb.append("    componentSubType: ").append(toIndentedString(componentSubType)).append("\n");
     sb.append("    componentType: ").append(toIndentedString(componentType)).append("\n");
+    sb.append("    configOverrides: ").append(toIndentedString(configOverrides)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
-    sb.append("    sharedResources: ").append(toIndentedString(sharedResources)).append("\n");
+    sb.append("    resourceReferences: ").append(toIndentedString(resourceReferences)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
@@ -444,7 +470,7 @@ public class ModelsPipelineNode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "shared_resources", "slug", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("component", "component_house", "component_id", "component_sub_type", "component_type", "config_overrides", "created_at", "enabled", "id", "organization_id", "pipeline_id", "resource_references", "slug", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -500,19 +526,9 @@ public class ModelsPipelineNode {
       if ((jsonObj.get("pipeline_id") != null && !jsonObj.get("pipeline_id").isJsonNull()) && !jsonObj.get("pipeline_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
       }
-      if (jsonObj.get("shared_resources") != null && !jsonObj.get("shared_resources").isJsonNull()) {
-        JsonArray jsonArraysharedResources = jsonObj.getAsJsonArray("shared_resources");
-        if (jsonArraysharedResources != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("shared_resources").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `shared_resources` to be an array in the JSON string but got `%s`", jsonObj.get("shared_resources").toString()));
-          }
-
-          // validate the optional field `shared_resources` (array)
-          for (int i = 0; i < jsonArraysharedResources.size(); i++) {
-            ModelsNodeSharedResource.validateJsonElement(jsonArraysharedResources.get(i));
-          };
-        }
+      // validate the optional field `resource_references`
+      if (jsonObj.get("resource_references") != null && !jsonObj.get("resource_references").isJsonNull()) {
+        ModelsReferences.validateJsonElement(jsonObj.get("resource_references"));
       }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));

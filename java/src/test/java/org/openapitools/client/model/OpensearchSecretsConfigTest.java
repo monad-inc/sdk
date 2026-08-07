@@ -39,6 +39,14 @@ public class OpensearchSecretsConfigTest {
     }
 
     /**
+     * Test the property 'caCertificate'
+     */
+    @Test
+    public void caCertificateTest() {
+        // TODO: test caCertificate
+    }
+
+    /**
      * Test the property 'password'
      */
     @Test

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Alerts** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsAlert**](GithubComMonadIncCorePkgTypesModelsAlert.md) |  | [optional] 
+**Alerts** | Pointer to [**[]ModelsAlert**](ModelsAlert.md) |  | [optional] 
 **Total** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAlerts
 
-`func (o *RoutesV3AlertList) GetAlerts() []GithubComMonadIncCorePkgTypesModelsAlert`
+`func (o *RoutesV3AlertList) GetAlerts() []ModelsAlert`
 
 GetAlerts returns the Alerts field if non-nil, zero value otherwise.
 
 ### GetAlertsOk
 
-`func (o *RoutesV3AlertList) GetAlertsOk() (*[]GithubComMonadIncCorePkgTypesModelsAlert, bool)`
+`func (o *RoutesV3AlertList) GetAlertsOk() (*[]ModelsAlert, bool)`
 
 GetAlertsOk returns a tuple with the Alerts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlerts
 
-`func (o *RoutesV3AlertList) SetAlerts(v []GithubComMonadIncCorePkgTypesModelsAlert)`
+`func (o *RoutesV3AlertList) SetAlerts(v []ModelsAlert)`
 
 SetAlerts sets Alerts field to given value.
 

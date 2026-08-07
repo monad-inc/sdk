@@ -58,6 +58,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                         organization_id = '', 
                         pipeline_id = '', 
                         schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                            disable_alerting = True, 
                             enabled = True, ), 
                         to_node_instance_id = '', 
                         updated_at = '', )
@@ -71,17 +72,33 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                 nodes = [
                     monad.models.models/pipeline_node.models.PipelineNode(
                         component = monad.models.models/node_component.models.NodeComponent(
+                            base_config = {
+                                'key' : null
+                                }, 
                             config = {
                                 'key' : null
                                 }, 
                             description = '', 
                             id = '', 
                             name = '', 
+                            overrides = {
+                                'key' : null
+                                }, 
                             references = monad.models.models/references.models.References(
                                 secrets = [
                                     monad.models.models/reference.models.Reference(
                                         id = '', 
-                                        organization_id = '', )
+                                        name = '', 
+                                        organization_id = '', 
+                                        shared = True, )
+                                    ], ), 
+                            share_details = monad.models.models/share_details.models.ShareDetails(
+                                owner_organization_id = '', 
+                                shared_with_children = True, 
+                                shared_with_me = True, ), 
+                            template_settings = monad.models.models/template_settings.models.TemplateSettings(
+                                overridable_paths = [
+                                    ''
                                     ], ), 
                             type = '', 
                             version = 56, ), 
@@ -89,19 +106,15 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                         component_id = '', 
                         component_sub_type = '', 
                         component_type = 'transform', 
+                        config_overrides = {
+                            'key' : null
+                            }, 
                         created_at = '', 
                         enabled = True, 
                         id = '', 
                         organization_id = '', 
                         pipeline_id = '', 
-                        shared_resources = [
-                            monad.models.models/node_shared_resource.models.NodeSharedResource(
-                                name = '', 
-                                owner_organization_id = '', 
-                                resource_id = '', 
-                                resource_type = '', 
-                                sub_type = '', )
-                            ], 
+                        resource_references = monad.models.models/references.models.References(), 
                         slug = '', 
                         status = monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                             avg_bytes_per_record_egress = 56, 
@@ -126,7 +139,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                                         label = 'Last Processed', 
                                         partition_key = '', 
                                         ranges = [
-                                            monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
+                                            monad.models.models/time_range.models.TimeRange(
                                                 end = '', 
                                                 start = '', )
                                             ], )
@@ -168,7 +181,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                                         label = 'Last Processed', 
                                         partition_key = '', 
                                         ranges = [
-                                            monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
+                                            monad.models.models/time_range.models.TimeRange(
                                                 end = '', 
                                                 start = '', )
                                             ], )

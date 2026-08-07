@@ -20,6 +20,7 @@ var _ MappedNullable = &OpensearchSecretsConfig{}
 
 // OpensearchSecretsConfig OpenSearch Output Secrets
 type OpensearchSecretsConfig struct {
+	CaCertificate *ModelsSecret `json:"ca_certificate,omitempty"`
 	Password *ModelsSecret `json:"password,omitempty"`
 }
 
@@ -38,6 +39,38 @@ func NewOpensearchSecretsConfig() *OpensearchSecretsConfig {
 func NewOpensearchSecretsConfigWithDefaults() *OpensearchSecretsConfig {
 	this := OpensearchSecretsConfig{}
 	return &this
+}
+
+// GetCaCertificate returns the CaCertificate field value if set, zero value otherwise.
+func (o *OpensearchSecretsConfig) GetCaCertificate() ModelsSecret {
+	if o == nil || IsNil(o.CaCertificate) {
+		var ret ModelsSecret
+		return ret
+	}
+	return *o.CaCertificate
+}
+
+// GetCaCertificateOk returns a tuple with the CaCertificate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpensearchSecretsConfig) GetCaCertificateOk() (*ModelsSecret, bool) {
+	if o == nil || IsNil(o.CaCertificate) {
+		return nil, false
+	}
+	return o.CaCertificate, true
+}
+
+// HasCaCertificate returns a boolean if a field has been set.
+func (o *OpensearchSecretsConfig) HasCaCertificate() bool {
+	if o != nil && !IsNil(o.CaCertificate) {
+		return true
+	}
+
+	return false
+}
+
+// SetCaCertificate gets a reference to the given ModelsSecret and assigns it to the CaCertificate field.
+func (o *OpensearchSecretsConfig) SetCaCertificate(v ModelsSecret) {
+	o.CaCertificate = &v
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
@@ -82,6 +115,9 @@ func (o OpensearchSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OpensearchSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CaCertificate) {
+		toSerialize["ca_certificate"] = o.CaCertificate
+	}
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password
 	}

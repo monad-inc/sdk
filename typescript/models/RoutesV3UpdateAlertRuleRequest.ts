@@ -22,6 +22,10 @@ export class RoutesV3UpdateAlertRuleRequest {
     */
     'description'?: string;
     /**
+    * InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.
+    */
+    'invertSelection'?: boolean;
+    /**
     * Name of the alert rule
     */
     'name'?: string;
@@ -32,9 +36,9 @@ export class RoutesV3UpdateAlertRuleRequest {
     /**
     * RuleConfig contains the configuration for the alert rule
     */
-    'ruleConfig'?: { [key: string]: any; };
+    'ruleConfig'?: { [key: string]: any | null; };
     /**
-    * Severity level of the alert (e.g., \"critical\", \"warning\", \"info\")
+    * Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".
     */
     'severity'?: string;
 
@@ -56,6 +60,12 @@ export class RoutesV3UpdateAlertRuleRequest {
             "format": ""
         },
         {
+            "name": "invertSelection",
+            "baseName": "invert_selection",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "name",
             "baseName": "name",
             "type": "string",
@@ -70,7 +80,7 @@ export class RoutesV3UpdateAlertRuleRequest {
         {
             "name": "ruleConfig",
             "baseName": "rule_config",
-            "type": "{ [key: string]: any; }",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         },
         {

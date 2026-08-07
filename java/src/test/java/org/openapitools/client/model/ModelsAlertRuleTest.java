@@ -75,6 +75,14 @@ public class ModelsAlertRuleTest {
     }
 
     /**
+     * Test the property 'invertSelection'
+     */
+    @Test
+    public void invertSelectionTest() {
+        // TODO: test invertSelection
+    }
+
+    /**
      * Test the property 'managedBy'
      */
     @Test

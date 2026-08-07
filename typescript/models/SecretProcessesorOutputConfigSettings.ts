@@ -23,6 +23,7 @@ import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
+import { HydrolixSettingsConfig } from '../models/HydrolixSettingsConfig';
 import { KafkaSettingsConfig } from '../models/KafkaSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
@@ -32,6 +33,7 @@ import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
 import { PrometheusSettingsConfig } from '../models/PrometheusSettingsConfig';
+import { RunrevealSettingsConfig } from '../models/RunrevealSettingsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { ScannerSettingsConfig } from '../models/ScannerSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
@@ -41,6 +43,7 @@ import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettings
 import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
+import { WazuhSettingsConfig } from '../models/WazuhSettingsConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -48,7 +51,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatabricksLakewatchSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatabricksLakewatchSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | HydrolixSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | RunrevealSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | WazuhSettingsConfig;
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass
@@ -59,6 +62,8 @@ export class SecretProcessesorOutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
 
 
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Label** | Pointer to [**ModelsProgressLabel**](ModelsProgressLabel.md) |  | [optional] 
 **PartitionKey** | Pointer to **string** | PartitionKey is an optional identifier for multi-entity inputs (e.g., \&quot;detector-123\&quot;, \&quot;us-east-1\&quot;) In a case where we store multiple state timestamps for a singular input we would use this field as a differentiator | [optional] 
-**Ranges** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsTimeRange**](GithubComMonadIncCorePkgTypesModelsTimeRange.md) | Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads. | [optional] 
+**Ranges** | Pointer to [**[]ModelsTimeRange**](ModelsTimeRange.md) | Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads. | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasPartitionKey returns a boolean if a field has been set.
 
 ### GetRanges
 
-`func (o *ModelsProgressEntry) GetRanges() []GithubComMonadIncCorePkgTypesModelsTimeRange`
+`func (o *ModelsProgressEntry) GetRanges() []ModelsTimeRange`
 
 GetRanges returns the Ranges field if non-nil, zero value otherwise.
 
 ### GetRangesOk
 
-`func (o *ModelsProgressEntry) GetRangesOk() (*[]GithubComMonadIncCorePkgTypesModelsTimeRange, bool)`
+`func (o *ModelsProgressEntry) GetRangesOk() (*[]ModelsTimeRange, bool)`
 
 GetRangesOk returns a tuple with the Ranges field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRanges
 
-`func (o *ModelsProgressEntry) SetRanges(v []GithubComMonadIncCorePkgTypesModelsTimeRange)`
+`func (o *ModelsProgressEntry) SetRanges(v []ModelsTimeRange)`
 
 SetRanges sets Ranges field to given value.
 

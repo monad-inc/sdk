@@ -49,8 +49,13 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class OpensearchSecretsConfig {
+  public static final String SERIALIZED_NAME_CA_CERTIFICATE = "ca_certificate";
+  @SerializedName(SERIALIZED_NAME_CA_CERTIFICATE)
+  @javax.annotation.Nullable
+  private ModelsSecret caCertificate;
+
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   @javax.annotation.Nullable
@@ -58,6 +63,25 @@ public class OpensearchSecretsConfig {
 
   public OpensearchSecretsConfig() {
   }
+
+  public OpensearchSecretsConfig caCertificate(@javax.annotation.Nullable ModelsSecret caCertificate) {
+    this.caCertificate = caCertificate;
+    return this;
+  }
+
+  /**
+   * Get caCertificate
+   * @return caCertificate
+   */
+  @javax.annotation.Nullable
+  public ModelsSecret getCaCertificate() {
+    return caCertificate;
+  }
+
+  public void setCaCertificate(@javax.annotation.Nullable ModelsSecret caCertificate) {
+    this.caCertificate = caCertificate;
+  }
+
 
   public OpensearchSecretsConfig password(@javax.annotation.Nullable ModelsSecret password) {
     this.password = password;
@@ -88,18 +112,20 @@ public class OpensearchSecretsConfig {
       return false;
     }
     OpensearchSecretsConfig opensearchSecretsConfig = (OpensearchSecretsConfig) o;
-    return Objects.equals(this.password, opensearchSecretsConfig.password);
+    return Objects.equals(this.caCertificate, opensearchSecretsConfig.caCertificate) &&
+        Objects.equals(this.password, opensearchSecretsConfig.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(password);
+    return Objects.hash(caCertificate, password);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OpensearchSecretsConfig {\n");
+    sb.append("    caCertificate: ").append(toIndentedString(caCertificate)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -119,7 +145,7 @@ public class OpensearchSecretsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("password"));
+    openapiFields = new HashSet<String>(Arrays.asList("ca_certificate", "password"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -146,6 +172,10 @@ public class OpensearchSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `ca_certificate`
+      if (jsonObj.get("ca_certificate") != null && !jsonObj.get("ca_certificate").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("ca_certificate"));
+      }
       // validate the optional field `password`
       if (jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) {
         ModelsSecret.validateJsonElement(jsonObj.get("password"));

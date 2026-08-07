@@ -28,8 +28,9 @@ class ModelsSchemaDetection(BaseModel):
     """
     ModelsSchemaDetection
     """ # noqa: E501
+    disable_alerting: Optional[StrictBool] = None
     enabled: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["enabled"]
+    __properties: ClassVar[List[str]] = ["disable_alerting", "enabled"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -82,6 +83,7 @@ class ModelsSchemaDetection(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "disable_alerting": obj.get("disable_alerting"),
             "enabled": obj.get("enabled")
         })
         return _obj

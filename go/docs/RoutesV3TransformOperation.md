@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetArguments
 
-`func (o *RoutesV3TransformOperation) GetArguments() map[string]interface{}`
+`func (o *RoutesV3TransformOperation) GetArguments() map[string]*interface{}`
 
 GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
 ### GetArgumentsOk
 
-`func (o *RoutesV3TransformOperation) GetArgumentsOk() (*map[string]interface{}, bool)`
+`func (o *RoutesV3TransformOperation) GetArgumentsOk() (*map[string]*interface{}, bool)`
 
 GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetArguments
 
-`func (o *RoutesV3TransformOperation) SetArguments(v map[string]interface{})`
+`func (o *RoutesV3TransformOperation) SetArguments(v map[string]*interface{})`
 
 SetArguments sets Arguments field to given value.
 

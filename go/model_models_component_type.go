@@ -16,7 +16,7 @@ import (
 	"fmt"
 )
 
-// ModelsComponentType the model 'ModelsComponentType'
+// ModelsComponentType base type (input, output, enrichment)
 type ModelsComponentType string
 
 // List of models.ComponentType

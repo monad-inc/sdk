@@ -79,7 +79,7 @@ class TestRoutesV3GetEnrichmentResponse(unittest.TestCase):
                                                 label = 'Last Processed', 
                                                 partition_key = '', 
                                                 ranges = [
-                                                    monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
+                                                    monad.models.models/time_range.models.TimeRange(
                                                         end = '', 
                                                         start = '', )
                                                     ], )
@@ -110,12 +110,18 @@ class TestRoutesV3GetEnrichmentResponse(unittest.TestCase):
                     secrets = [
                         monad.models.models/reference.models.Reference(
                             id = '', 
-                            organization_id = '', )
+                            name = '', 
+                            organization_id = '', 
+                            shared = True, )
                         ], ),
                 share_details = monad.models.models/share_details.models.ShareDetails(
                     owner_organization_id = '', 
                     shared_with_children = True, 
                     shared_with_me = True, ),
+                template_settings = monad.models.models/template_settings.models.TemplateSettings(
+                    overridable_paths = [
+                        ''
+                        ], ),
                 type = '',
                 updated_at = '',
                 version = 56

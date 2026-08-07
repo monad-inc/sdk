@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 # **deleteSecret**
 > void deleteSecret()
 
-Deletes a specific secret by ID
+Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. \"Referenced\" means configured on an input, output, enrichment or transform, or on a pipeline node\'s config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.
 
 ### Example
 
@@ -122,7 +122,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | No Content |  -  |
+**403** | Secret is shared with this organization by another organization and can only be deleted by its owner |  -  |
 **404** | Secret not found |  -  |
+**409** | Secret is still referenced by a component or pipeline node, or is shared with other organizations; the message names the referencing resources |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -130,7 +132,7 @@ Name | Type | Description  | Notes
 # **getSecret**
 > ModelsSecretWithComponents getSecret()
 
-Gets a specific secret by ID including inputs and outputs that use it
+Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
 
 ### Example
 
@@ -188,7 +190,7 @@ Name | Type | Description  | Notes
 # **listSecrets**
 > ModelsSecretWithComponentsList listSecrets()
 
-Lists all secrets for the specified organization including inputs and outputs that use them
+Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
 
 ### Example
 
@@ -246,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateSecret**
-> RoutesV2SecretResponse updateSecret(createSecretRequest)
+> RoutesV2SecretResponse updateSecret(updateSecretRequest)
 
 Updates a specific secret by ID
 
@@ -266,7 +268,7 @@ const request: SecretsApiUpdateSecretRequest = {
     // Secret ID
   secretId: "secret_id_example",
     // Secret updates
-  createSecretRequest: null,
+  updateSecretRequest: null,
 };
 
 const data = await apiInstance.updateSecret(request);
@@ -278,7 +280,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createSecretRequest** | **CreateSecretRequest**| Secret updates |
+ **updateSecretRequest** | **UpdateSecretRequest**| Secret updates |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **secretId** | [**string**] | Secret ID | defaults to undefined
 

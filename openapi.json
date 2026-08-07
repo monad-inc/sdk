@@ -698,7 +698,11 @@
                         "type": "string"
                     },
                     "partition_format": {
-                        "description": "Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').",
+                        "description": "Partition format of your Azure container. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), simple date ('2024/01/01'), or custom (specify your own template in PartitionFormatTemplate).",
+                        "type": "string"
+                    },
+                    "partition_format_template": {
+                        "description": "Only used when PartitionFormat is \"custom\": the template describing your bucket's partition path, e.g. 'y={yyyy}/m={mm}/d={dd}'.",
                         "type": "string"
                     },
                     "prefix": {
@@ -972,88 +976,6 @@
                     "timestamp_column": {
                         "description": "The column containing timestamp values used for incremental loading",
                         "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "bitwarden_events.SecretsConfig": {
-                "description": "Bitwarden Events secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "bitwarden_events.SettingsConfig": {
-                "description": "Bitwarden Events settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, will fetch from the most recent data available.",
-                        "type": "string"
-                    },
-                    "base_url": {
-                        "description": "Base URL for self-hosted Bitwarden instance (required if region is SelfHosted)",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "region": {
-                        "description": "Region of the Bitwarden instance: US, EU, or SelfHosted (default: US)",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "box_events.SecretsConfig": {
-                "description": "Box Events secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "enterprise_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "client_id",
-                    "client_secret",
-                    "enterprise_id"
-                ],
-                "type": "object"
-            },
-            "box_events.SettingsConfig": {
-                "description": "Box Events secrets",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, data from 1 year ago upto now from box is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "event_type": {
-                        "description": "A list of event types to filter by.",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -1631,36 +1553,6 @@
                 },
                 "type": "object"
             },
-            "coda_audit_events.SecretsConfig": {
-                "description": "Coda Audit Events secrets",
-                "properties": {
-                    "api_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "coda_audit_events.SettingsConfig": {
-                "description": "Coda Audit Events settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "org_id": {
-                        "description": "Coda Organization ID.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "common.AuthConfig": {
                 "description": "AuthConfig downloads logs; needs actions:read on the scoped repos.",
                 "properties": {
@@ -2021,51 +1913,6 @@
                         "type": "integer"
                     }
                 },
-                "type": "object"
-            },
-            "customer_event_data.SecretsConfig": {
-                "description": "Docusign Customer Event Data secrets",
-                "properties": {
-                    "integration_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "rsa_private_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "integration_key",
-                    "rsa_private_key"
-                ],
-                "type": "object"
-            },
-            "customer_event_data.SettingsConfig": {
-                "description": "Docusign Customer Event Data settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from in RFC3339 format. If not specified, a full sync of data upto now would be performed on the first sync (since the previous 7 days). You must specify a backfill time to query for data for a time before 7 days. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "environment": {
-                        "description": "Determines the URI {environment}.docusign.com",
-                        "enum": [
-                            "production",
-                            "development"
-                        ],
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "user_id": {
-                        "description": "User id of the Docusign admin",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "environment",
-                    "user_id"
-                ],
                 "type": "object"
             },
             "databricks_delta_table.AutoLoaderWriteMode": {
@@ -2877,6 +2724,9 @@
                     "name": {
                         "type": "string"
                     },
+                    "release_date": {
+                        "type": "string"
+                    },
                     "supported_features": {
                         "$ref": "#/components/schemas/models.SupportedFeatures"
                     },
@@ -3169,295 +3019,6 @@
                 ],
                 "type": "object"
             },
-            "github_com_monad-inc_core_pkg_types_models.Alert": {
-                "properties": {
-                    "created_at": {
-                        "description": "incident start (frozen across re-fires)",
-                        "type": "integer"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "fired_at": {
-                        "description": "this emission's fire time; differs per re-fire",
-                        "type": "integer"
-                    },
-                    "id": {
-                        "type": "string"
-                    },
-                    "metadata": {},
-                    "name": {
-                        "type": "string"
-                    },
-                    "organization_id": {
-                        "type": "string"
-                    },
-                    "resource": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.ResourceReference"
-                    },
-                    "rule_id": {
-                        "type": "string"
-                    },
-                    "rule_type": {
-                        "type": "string"
-                    },
-                    "severity": {
-                        "type": "string"
-                    },
-                    "status": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.AlertStatus"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.AlertStatus": {
-                "properties": {
-                    "clearing_started_at": {
-                        "description": "When clearing began",
-                        "type": "integer"
-                    },
-                    "resolved_at": {
-                        "description": "Unix timestamp when resolved",
-                        "type": "integer"
-                    },
-                    "state": {
-                        "$ref": "#/components/schemas/models.AlertState"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.AuditResource": {
-                "properties": {
-                    "id": {
-                        "type": "string"
-                    },
-                    "new": {},
-                    "old": {},
-                    "type": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.Organization": {
-                "properties": {
-                    "billing_account_id": {
-                        "type": "string"
-                    },
-                    "connection_id": {
-                        "type": "string"
-                    },
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "friendly_name": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "parent_organization_id": {
-                        "type": "string"
-                    },
-                    "updated_at": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.Permission": {
-                "properties": {
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "slug": {
-                        "type": "string"
-                    },
-                    "updated_at": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.Quota": {
-                "properties": {
-                    "action": {
-                        "$ref": "#/components/schemas/models.QuotaAction"
-                    },
-                    "billing_account_id": {
-                        "type": "string"
-                    },
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "current_usage": {
-                        "type": "integer"
-                    },
-                    "current_usage_updated_at": {
-                        "type": "string"
-                    },
-                    "end_at": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "type": "string"
-                    },
-                    "limit_amount": {
-                        "type": "integer"
-                    },
-                    "limit_type": {
-                        "$ref": "#/components/schemas/models.QuotaLimitType"
-                    },
-                    "limit_unit": {
-                        "$ref": "#/components/schemas/models.QuotaLimitUnit"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "organization_id": {
-                        "type": "string"
-                    },
-                    "start_at": {
-                        "type": "string"
-                    },
-                    "timeframe": {
-                        "$ref": "#/components/schemas/models.QuotaTimeframe"
-                    },
-                    "updated_at": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.ResourceReference": {
-                "properties": {
-                    "parent_id": {
-                        "description": "e.g., pipeline ID if resource is a node",
-                        "type": "string"
-                    },
-                    "parent_type": {
-                        "description": "For hierarchical resources",
-                        "type": "string"
-                    },
-                    "resource_id": {
-                        "type": "string"
-                    },
-                    "resource_type": {
-                        "description": "\"pipeline\", \"node\", \"organization\"",
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.TimeRange": {
-                "properties": {
-                    "end": {
-                        "description": "End is the end of the time range (inclusive)",
-                        "type": "string"
-                    },
-                    "start": {
-                        "description": "Start is the beginning of the time range (inclusive)",
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.User": {
-                "properties": {
-                    "auth_providers": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.UserAuthProvider"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "email": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "type": "string"
-                    },
-                    "updated_at": {
-                        "type": "string"
-                    },
-                    "username": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "gitlab_issues.SecretsConfig": {
-                "description": "Gitlab Issues secrets",
-                "properties": {
-                    "personal_access_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "personal_access_token"
-                ],
-                "type": "object"
-            },
-            "gitlab_issues.SettingsConfig": {
-                "description": "Gitlab Issues settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "confidential": {
-                        "description": "Confidential to filter issues by confidentiality status. Confidential = true means only show confidential issues.",
-                        "type": "boolean"
-                    },
-                    "gitlab_url": {
-                        "description": "GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.)",
-                        "type": "string"
-                    },
-                    "issue_type": {
-                        "description": "IssueType to filter issues by type e.g. issue, incident, etc.",
-                        "type": "string"
-                    },
-                    "project_id": {
-                        "description": "Project ID to get issues for",
-                        "type": "string"
-                    },
-                    "state": {
-                        "description": "State to filter issues by e.g. opened, closed",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    },
-                    "with_label_details": {
-                        "description": "Include label details in the response",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "gitlab_url",
-                    "project_id"
-                ],
-                "type": "object"
-            },
             "gke_audit_logs.SecretsConfig": {
                 "description": "GKE Audit Logs secrets",
                 "properties": {
@@ -3722,6 +3283,84 @@
                         "type": "string"
                     }
                 },
+                "type": "object"
+            },
+            "hydrolix.AuthConfig": {
+                "description": "Authentication method. Either a static service-account bearer token or\na username/password pair exchanged at Init time for a 24h access token.",
+                "properties": {
+                    "password": {
+                        "$ref": "#/components/schemas/hydrolix.PasswordAuth"
+                    },
+                    "service_account": {
+                        "$ref": "#/components/schemas/hydrolix.ServiceAccountAuth"
+                    },
+                    "type": {
+                        "enum": [
+                            "service_account",
+                            "password"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "hydrolix.PasswordAuth": {
+                "properties": {
+                    "password": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "username": {
+                        "description": "Hydrolix user account username.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "password",
+                    "username"
+                ],
+                "type": "object"
+            },
+            "hydrolix.ServiceAccountAuth": {
+                "properties": {
+                    "token": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "token"
+                ],
+                "type": "object"
+            },
+            "hydrolix.SettingsConfig": {
+                "description": "Hydrolix Output Settings",
+                "properties": {
+                    "auth": {
+                        "$ref": "#/components/schemas/hydrolix.AuthConfig"
+                    },
+                    "host": {
+                        "description": "The hostname of the Hydrolix cluster (no scheme). Example: mycluster.hydrolix.live.",
+                        "type": "string"
+                    },
+                    "table": {
+                        "description": "The fully-qualified target table in the form `project.table`. Sent as\nthe `X-Hdx-Table` header on `/ingest/event`.",
+                        "type": "string"
+                    },
+                    "token": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "transform": {
+                        "description": "Optional transform schema Hydrolix should apply when handling payloads.\nSent as the `X-Hdx-Transform` header.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "auth",
+                    "host",
+                    "table"
+                ],
                 "type": "object"
             },
             "individual_alerts.SecretsConfig": {
@@ -4011,6 +3650,10 @@
                     "key": {
                         "description": "Optional key to store result under",
                         "type": "string"
+                    },
+                    "prevent_data_dropping": {
+                        "description": "PreventDataDropping errors instead of dropping the record when the query\nproduces no output. Only applies when Key is unset, since storing the\nresult under a key always emits a record.",
+                        "type": "boolean"
                     },
                     "query": {
                         "description": "The raw query string from config",
@@ -4676,6 +4319,47 @@
                 },
                 "type": "object"
             },
+            "models.Alert": {
+                "properties": {
+                    "created_at": {
+                        "description": "incident start (frozen across re-fires)",
+                        "type": "integer"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "fired_at": {
+                        "description": "this emission's fire time; differs per re-fire",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "metadata": {},
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "resource": {
+                        "$ref": "#/components/schemas/models.ResourceReference"
+                    },
+                    "rule_id": {
+                        "type": "string"
+                    },
+                    "rule_type": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/models.AlertStatus"
+                    }
+                },
+                "type": "object"
+            },
             "models.AlertRule": {
                 "properties": {
                     "active": {
@@ -4689,6 +4373,10 @@
                     },
                     "id": {
                         "type": "string"
+                    },
+                    "invert_selection": {
+                        "description": "InvertSelection flips the meaning of PipelineIDs from an include-list to an\nexclude-list, so the rule monitors every pipeline except those listed. It only\napplies to pipeline-granularity rule types; billing- and organization-scoped\ntypes never consult PipelineIDs.",
+                        "type": "boolean"
                     },
                     "managed_by": {
                         "$ref": "#/components/schemas/models.ManagedBy"
@@ -4748,6 +4436,22 @@
                     "AlertStatusResolved"
                 ]
             },
+            "models.AlertStatus": {
+                "properties": {
+                    "clearing_started_at": {
+                        "description": "When clearing began",
+                        "type": "integer"
+                    },
+                    "resolved_at": {
+                        "description": "Unix timestamp when resolved",
+                        "type": "integer"
+                    },
+                    "state": {
+                        "$ref": "#/components/schemas/models.AlertState"
+                    }
+                },
+                "type": "object"
+            },
             "models.AuditAction": {
                 "enum": [
                     "insert",
@@ -4782,6 +4486,19 @@
                         "type": "integer"
                     },
                     "start": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.AuditResource": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "new": {},
+                    "old": {},
+                    "type": {
                         "type": "string"
                     }
                 },
@@ -5034,6 +4751,7 @@
                 "type": "object"
             },
             "models.ComponentType": {
+                "description": "base type (input, output, enrichment)",
                 "enum": [
                     "transform",
                     "input",
@@ -5180,24 +4898,6 @@
                 },
                 "type": "object"
             },
-            "models.ConnectorMeta": {
-                "properties": {
-                    "config": {},
-                    "description": {
-                        "type": "string"
-                    },
-                    "internal": {
-                        "type": "boolean"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "type_id": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
             "models.CursorPagination": {
                 "properties": {
                     "limit": {
@@ -5219,18 +4919,6 @@
                     }
                 },
                 "type": "object"
-            },
-            "models.ElseAction": {
-                "description": "will default to bypass if left empty on create/update",
-                "enum": [
-                    "bypass",
-                    "drop"
-                ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "ElseActionBypass",
-                    "ElseActionDrop"
-                ]
             },
             "models.Enrichment": {
                 "properties": {
@@ -5260,6 +4948,9 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -5347,6 +5038,9 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -5448,7 +5142,7 @@
                 "type": "object"
             },
             "models.InputRateLimit": {
-                "description": "Optional outbound request rate limit. Unlimited when unset. Zendesk's per-minute\nlimit is plan-tier-specific (lowest tier 200/min), so a conservative shared ceiling\nis used to avoid capping higher-tier customers.",
+                "description": "Optional outbound request rate limit. Falls back to the Wiz default when unset.",
                 "properties": {
                     "rate": {
                         "type": "number"
@@ -5549,8 +5243,14 @@
             },
             "models.NodeComponent": {
                 "properties": {
+                    "base_config": {
+                        "additionalProperties": {},
+                        "description": "BaseConfig is the template's config before the override delta is applied.",
+                        "type": "object"
+                    },
                     "config": {
                         "additionalProperties": {},
+                        "description": "Config is the node's effective config: for a template-backed node it is the\nbase merged with the node's override delta (RFC 0017 §3); otherwise it is\nthe component's base config unchanged.",
                         "type": "object"
                     },
                     "description": {
@@ -5562,8 +5262,19 @@
                     "name": {
                         "type": "string"
                     },
+                    "overrides": {
+                        "additionalProperties": {},
+                        "description": "Overrides is the node's sparse override delta (secrets as {id} refs only).",
+                        "type": "object"
+                    },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -5574,24 +5285,33 @@
                 },
                 "type": "object"
             },
-            "models.NodeSharedResource": {
+            "models.Organization": {
                 "properties": {
+                    "billing_account_id": {
+                        "type": "string"
+                    },
+                    "connection_id": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "friendly_name": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
                     "name": {
-                        "description": "Name is the shared resource's name (component or secret). Populated for\ndisplay context; empty if it could not be resolved.",
                         "type": "string"
                     },
-                    "owner_organization_id": {
+                    "parent_organization_id": {
                         "type": "string"
                     },
-                    "resource_id": {
-                        "type": "string"
-                    },
-                    "resource_type": {
-                        "description": "ResourceShareTypeComponent | ResourceShareTypeSecret",
-                        "type": "string"
-                    },
-                    "sub_type": {
-                        "description": "SubType is the connector kind for a shared component (component entries only).",
+                    "updated_at": {
                         "type": "string"
                     }
                 },
@@ -5618,7 +5338,7 @@
                         "type": "string"
                     },
                     "resource": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.AuditResource"
+                        "$ref": "#/components/schemas/models.AuditResource"
                     }
                 },
                 "type": "object"
@@ -5666,7 +5386,7 @@
                 "properties": {
                     "organizations": {
                         "items": {
-                            "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Organization"
+                            "$ref": "#/components/schemas/models.Organization"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -5762,6 +5482,9 @@
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
                     },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -5838,6 +5561,29 @@
                 },
                 "type": "object"
             },
+            "models.Permission": {
+                "properties": {
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "models.PermissionList": {
                 "properties": {
                     "pagination": {
@@ -5845,7 +5591,7 @@
                     },
                     "permissions": {
                         "items": {
-                            "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Permission"
+                            "$ref": "#/components/schemas/models.Permission"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -6087,6 +5833,11 @@
                     "component_type": {
                         "$ref": "#/components/schemas/models.ComponentType"
                     },
+                    "config_overrides": {
+                        "additionalProperties": {},
+                        "description": "ConfigOverrides is the node's sparse override delta over its template\ncomponent's base config (RFC 0017 §3). Nil for a non-template-backed node.",
+                        "type": "object"
+                    },
                     "created_at": {
                         "type": "string"
                     },
@@ -6102,12 +5853,8 @@
                     "pipeline_id": {
                         "type": "string"
                     },
-                    "shared_resources": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.NodeSharedResource"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                    "resource_references": {
+                        "$ref": "#/components/schemas/models.References"
                     },
                     "slug": {
                         "type": "string"
@@ -6300,7 +6047,7 @@
                     "ranges": {
                         "description": "Ranges represents the time ranges that have been read by an input node.\nEach range is a tuple of (start, end) timestamps indicating what data has been processed.\nMultiple ranges allow tracking non-contiguous data reads.",
                         "items": {
-                            "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.TimeRange"
+                            "$ref": "#/components/schemas/models.TimeRange"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -6317,6 +6064,56 @@
                 "x-enum-varnames": [
                     "ProgressLabelLastProcessed"
                 ]
+            },
+            "models.Quota": {
+                "properties": {
+                    "action": {
+                        "$ref": "#/components/schemas/models.QuotaAction"
+                    },
+                    "billing_account_id": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "current_usage": {
+                        "type": "integer"
+                    },
+                    "current_usage_updated_at": {
+                        "type": "string"
+                    },
+                    "end_at": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "limit_amount": {
+                        "type": "integer"
+                    },
+                    "limit_type": {
+                        "$ref": "#/components/schemas/models.QuotaLimitType"
+                    },
+                    "limit_unit": {
+                        "$ref": "#/components/schemas/models.QuotaLimitUnit"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "start_at": {
+                        "type": "string"
+                    },
+                    "timeframe": {
+                        "$ref": "#/components/schemas/models.QuotaTimeframe"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
             },
             "models.QuotaAction": {
                 "enum": [
@@ -6356,7 +6153,7 @@
                     },
                     "quotas": {
                         "items": {
-                            "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Quota"
+                            "$ref": "#/components/schemas/models.Quota"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -6388,22 +6185,27 @@
                     "RatePerHour"
                 ]
             },
-            "models.RawConfig": {
-                "additionalProperties": {},
-                "type": "object"
-            },
             "models.Reference": {
                 "properties": {
                     "id": {
                         "type": "string"
                     },
+                    "name": {
+                        "description": "Name is the referenced resource's display name, filled at read time on\ncomponent responses. Never persisted: writes rebuild references from\nrequest state (the name is display sugar and would go stale), and an\nempty name is omitted from the stored JSON.",
+                        "type": "string"
+                    },
                     "organization_id": {
                         "type": "string"
+                    },
+                    "shared": {
+                        "description": "Shared reports that the referenced resource is owned by an org other than\nthe component's owner — a directly-shared secret the component pulls in.\nSame read-time-only contract as Name: computed on responses, never\npersisted (omitted when false).",
+                        "type": "boolean"
                     }
                 },
                 "type": "object"
             },
             "models.References": {
+                "description": "ResourceReferences are the resources (e.g. secrets) referenced only via the\noverride delta, tracked so deletion/rotation see them like component refs.",
                 "properties": {
                     "secrets": {
                         "items": {
@@ -6411,6 +6213,26 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "models.ResourceReference": {
+                "properties": {
+                    "parent_id": {
+                        "description": "e.g., pipeline ID if resource is a node",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "For hierarchical resources",
+                        "type": "string"
+                    },
+                    "resource_id": {
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "\"pipeline\", \"node\", \"organization\"",
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -6595,7 +6417,7 @@
                     },
                     "permissions": {
                         "items": {
-                            "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Permission"
+                            "$ref": "#/components/schemas/models.Permission"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -6626,6 +6448,9 @@
             },
             "models.SchemaDetection": {
                 "properties": {
+                    "disable_alerting": {
+                        "type": "boolean"
+                    },
                     "enabled": {
                         "type": "boolean"
                     }
@@ -6929,6 +6754,33 @@
                 },
                 "type": "object"
             },
+            "models.TemplateSettings": {
+                "description": "TemplateSettings is present iff this component is a template: it carries the\nlock allow-list for per-pipeline overrides (RFC 0017 §2).",
+                "properties": {
+                    "overridable_paths": {
+                        "description": "OverridablePaths is the allow-list of config paths a pipeline may override\n(nested paths at any depth, subtree inheritance); everything else is locked.\nEmpty/absent means fully locked.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "models.TimeRange": {
+                "properties": {
+                    "end": {
+                        "description": "End is the end of the time range (inclusive)",
+                        "type": "string"
+                    },
+                    "start": {
+                        "description": "Start is the beginning of the time range (inclusive)",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "models.Transform": {
                 "properties": {
                     "config": {
@@ -6967,22 +6819,8 @@
                 },
                 "type": "object"
             },
-            "models.TransformConditional": {
-                "properties": {
-                    "conditions": {
-                        "$ref": "#/components/schemas/models.ConditionEvaluatable"
-                    },
-                    "else": {
-                        "$ref": "#/components/schemas/models.ElseAction"
-                    }
-                },
-                "type": "object"
-            },
             "models.TransformConfig": {
                 "properties": {
-                    "conditional": {
-                        "$ref": "#/components/schemas/models.TransformConditional"
-                    },
                     "operations": {
                         "items": {
                             "$ref": "#/components/schemas/models.TransformOperation"
@@ -7059,6 +6897,33 @@
                         "type": "string"
                     },
                     "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.User": {
+                "properties": {
+                    "auth_providers": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.UserAuthProvider"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "username": {
                         "type": "string"
                     }
                 },
@@ -7150,7 +7015,7 @@
                     },
                     "permissions": {
                         "items": {
-                            "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Permission"
+                            "$ref": "#/components/schemas/models.Permission"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -7423,87 +7288,6 @@
                 ],
                 "type": "object"
             },
-            "onelogin_events.SecretsConfig": {
-                "description": "Onelogin Events secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "client_id",
-                    "client_secret"
-                ],
-                "type": "object"
-            },
-            "onelogin_events.SettingsConfig": {
-                "description": "Onelogin Events settings",
-                "properties": {
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "subdomain": {
-                        "description": "SubDomain is a placeholder that represents your specific OneLogin subdomain.",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "subdomain"
-                ],
-                "type": "object"
-            },
-            "opal_events.SecretsConfig": {
-                "description": "Opal Events secrets",
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "api_key"
-                ],
-                "type": "object"
-            },
-            "opal_events.SettingsConfig": {
-                "description": "Opal Events settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "openai_audit_logs.SettingsConfig": {
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "opensearch.AuthMode": {
                 "description": "The authentication mode (basic, aws_role)",
                 "enum": [
@@ -7519,6 +7303,9 @@
             "opensearch.SecretsConfig": {
                 "description": "OpenSearch Output Secrets",
                 "properties": {
+                    "ca_certificate": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
                     "password": {
                         "$ref": "#/components/schemas/models.Secret"
                     }
@@ -7608,34 +7395,6 @@
                         "type": "boolean"
                     }
                 },
-                "type": "object"
-            },
-            "oracle.SettingsConfig": {
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "domain": {
-                        "description": "Domain name for the Oracle Cloud service",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    },
-                    "username": {
-                        "description": "Username of Oracle Cloud service user with permissions to access the resource",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "domain",
-                    "username"
-                ],
                 "type": "object"
             },
             "org_audit_logs.SecretsConfig": {
@@ -7847,31 +7606,6 @@
                 },
                 "type": "object"
             },
-            "pagerduty_audit_records.SecretsConfig": {
-                "description": "Pagerduty Audit Records secrets",
-                "properties": {
-                    "auth_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "auth_token"
-                ],
-                "type": "object"
-            },
-            "pagerduty_audit_records.SettingsConfig": {
-                "description": "Pagerduty Audit Records settings",
-                "properties": {
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "palo_alto_data_security_alerts.SecretsConfig": {
                 "description": "Palo Alto Data Security Alerts secrets",
                 "properties": {
@@ -7975,36 +7709,6 @@
                 },
                 "type": "object"
             },
-            "polymer.SecretsConfig": {
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "api_key"
-                ],
-                "type": "object"
-            },
-            "polymer.SettingsConfig": {
-                "properties": {
-                    "domain_name": {
-                        "description": "TODO: Name of domain added on Polymer Hub portal",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "domain_name"
-                ],
-                "type": "object"
-            },
             "postgresql.SecretsConfig": {
                 "properties": {
                     "connection_string": {
@@ -8045,31 +7749,6 @@
                     "user": {
                         "description": "The user to connect to the PostgreSQL database",
                         "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "postman_audit_logs.SecretsConfig": {
-                "description": "Postman Audit Logs secrets",
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "api_key"
-                ],
-                "type": "object"
-            },
-            "postman_audit_logs.SettingsConfig": {
-                "description": "Postman Audit Logs settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
                     }
                 },
                 "type": "object"
@@ -8167,36 +7846,6 @@
                 },
                 "type": "object"
             },
-            "pubsub.SecretsConfig": {
-                "description": "Salesforce Pubsub secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "pubsub.SettingsConfig": {
-                "description": "Salesforce Pubsub settings",
-                "properties": {
-                    "domain_url": {
-                        "description": "Domain URL for the Salesforce instance",
-                        "type": "string"
-                    },
-                    "organization_id": {
-                        "description": "Organization ID for the Salesforce instance",
-                        "type": "string"
-                    },
-                    "topic": {
-                        "description": "Pub/Sub topic to subscribe to",
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
             "redshift_audit_logs.SettingsConfig": {
                 "description": "Amazon Redshift audit logs settings",
                 "properties": {
@@ -8275,35 +7924,6 @@
                     },
                     "error_type": {
                         "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "rootly_audit_logs.SecretsConfig": {
-                "description": "Rootly Audit Logs secrets",
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "api_key"
-                ],
-                "type": "object"
-            },
-            "rootly_audit_logs.SettingsConfig": {
-                "description": "Rootly Audit Logs settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -8396,6 +8016,9 @@
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
                     },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
+                    },
                     "type": {
                         "type": "string"
                     },
@@ -8443,6 +8066,9 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -8555,9 +8181,6 @@
             },
             "routes.TransformConfig": {
                 "properties": {
-                    "conditional": {
-                        "$ref": "#/components/schemas/models.TransformConditional"
-                    },
                     "operations": {
                         "items": {
                             "$ref": "#/components/schemas/routes.TransformOperation"
@@ -8616,9 +8239,6 @@
                                 "$ref": "#/components/schemas/math_multiply_with_value.ArgumentsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/models.RawConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/mutate_type.ArgumentsConfig"
                             },
                             {
@@ -8647,11 +8267,6 @@
                     },
                     "secrets": {
                         "additionalProperties": {},
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schemas/models.RawConfig"
-                            }
-                        ],
                         "type": "object"
                     }
                 },
@@ -8909,6 +8524,9 @@
                     "name": {
                         "type": "string"
                     },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
+                    },
                     "type": {
                         "type": "string"
                     }
@@ -8942,6 +8560,9 @@
                     },
                     "promise_id": {
                         "type": "string"
+                    },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -9149,6 +8770,11 @@
                     "component_type": {
                         "$ref": "#/components/schemas/models.ComponentType"
                     },
+                    "config_overrides": {
+                        "additionalProperties": {},
+                        "description": "ConfigOverrides is the per-node override delta applied to a template\ncomponent's base config (RFC 0017). Ignored for non-template components\n(rejected by the save-time gate if present). A non-empty delta requires the\npipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the\ncolumn stays nil for every org until the feature is turned on.",
+                        "type": "object"
+                    },
                     "enabled": {
                         "description": "nil =\u003e enabled",
                         "type": "boolean"
@@ -9195,6 +8821,15 @@
                         "type": "string"
                     },
                     "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV2.RegenerateAPIKeyRequest": {
+                "properties": {
+                    "expiration_time": {
+                        "description": "Omitted (nil) keeps the key's existing expiration — rotating the secret\ndoes not extend the key's term on its own.",
                         "type": "string"
                     }
                 },
@@ -9312,6 +8947,40 @@
                     },
                     "type": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV2.TestNodeConfig": {
+                "properties": {
+                    "secrets": {
+                        "additionalProperties": {},
+                        "type": "object"
+                    },
+                    "settings": {
+                        "additionalProperties": {},
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV2.TestNodeConnectionRequest": {
+                "properties": {
+                    "component_type": {
+                        "$ref": "#/components/schemas/models.ComponentType"
+                    },
+                    "config": {
+                        "$ref": "#/components/schemas/routesV2.TestNodeConfig"
+                    },
+                    "type": {
+                        "description": "connector subtype (e.g. \"s3\")",
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -9323,6 +8992,9 @@
                     },
                     "type": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -9567,7 +9239,7 @@
                 "properties": {
                     "alerts": {
                         "items": {
-                            "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Alert"
+                            "$ref": "#/components/schemas/models.Alert"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -9588,6 +9260,10 @@
                         "description": "Description of the alert rule",
                         "type": "string"
                     },
+                    "invert_selection": {
+                        "description": "InvertSelection reads pipeline_ids as an exclude-list instead of an include-list,\nso the rule applies to all pipelines except those listed. An empty pipeline_ids\nstill means all pipelines either way.",
+                        "type": "boolean"
+                    },
                     "name": {
                         "description": "Name of the alert rule",
                         "type": "string"
@@ -9606,7 +9282,7 @@
                         "type": "object"
                     },
                     "severity": {
-                        "description": "Severity level of the alert (e.g., \"critical\", \"warning\", \"info\")",
+                        "description": "Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".",
                         "type": "string"
                     },
                     "type": {
@@ -9685,6 +9361,9 @@
                     },
                     "name": {
                         "type": "string"
+                    },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -9808,6 +9487,9 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "template_settings": {
+                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -10138,6 +9820,10 @@
                         "description": "Description of the alert rule",
                         "type": "string"
                     },
+                    "invert_selection": {
+                        "description": "InvertSelection reads pipeline_ids as an exclude-list instead of an include-list,\nso the rule applies to all pipelines except those listed. An empty pipeline_ids\nstill means all pipelines either way.",
+                        "type": "boolean"
+                    },
                     "name": {
                         "description": "Name of the alert rule",
                         "type": "string"
@@ -10156,7 +9842,7 @@
                         "type": "object"
                     },
                     "severity": {
-                        "description": "Severity level of the alert (e.g., \"critical\", \"warning\", \"info\")",
+                        "description": "Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".",
                         "type": "string"
                     }
                 },
@@ -10308,6 +9994,25 @@
                         "type": "string"
                     }
                 },
+                "type": "object"
+            },
+            "runreveal.SettingsConfig": {
+                "description": "RunReveal Output Settings",
+                "properties": {
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "bearer_token": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "webhook_id": {
+                        "description": "The RunReveal webhook ID. Only the ID — not the full URL shown in the RunReveal UI.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "webhook_id"
+                ],
                 "type": "object"
             },
             "s3.SecretsConfig": {
@@ -10546,9 +10251,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/kv_lookup.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/models.RawConfig"
                             }
                         ],
                         "type": "object"
@@ -10564,9 +10266,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/kv_lookup.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/models.RawConfig"
                             }
                         ],
                         "type": "object"
@@ -10616,12 +10315,6 @@
                                 "$ref": "#/components/schemas/bigquery_input.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/bitwarden_events.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/box_events.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/brinqa_audit_logs.SecretsConfig"
                             },
                             {
@@ -10667,13 +10360,7 @@
                                 "$ref": "#/components/schemas/clumio_consolidated_alerts.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/coda_audit_events.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/cortex_xsoar_management_logs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/customer_event_data.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/defender_for_endpoint_alerts.SecretsConfig"
@@ -10697,82 +10384,10 @@
                                 "$ref": "#/components/schemas/full_scans.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/gitlab_issues.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/gke_audit_logs.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/google_cloud_storage.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/google_workspace.SecretsConfig"
@@ -10805,21 +10420,6 @@
                                 "$ref": "#/components/schemas/microsoft_365_generic.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/models.RawConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/monad_log.SecretsConfig"
                             },
                             {
@@ -10827,12 +10427,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/offlineenrollmentlogs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/onelogin_events.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/opal_events.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/operation_logs.SecretsConfig"
@@ -10844,34 +10438,16 @@
                                 "$ref": "#/components/schemas/ownbackup_account_events.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/pagerduty_audit_records.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/palo_alto_data_security_alerts.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/plaid_webhooks.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/polymer.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/postman_audit_logs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/pubsub.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/rootly_audit_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/semgrep_code_findings.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/semgrep_supply_chain_findings.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/sentry_org_audit_logs.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/slack_enterprise_audit_logs.SecretsConfig"
@@ -10901,18 +10477,6 @@
                                 "$ref": "#/components/schemas/telephony_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/tenable_assets.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/tenable_assets_cron.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/tenable_vulnerabilities.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/tenable_vulnerabilities_cron.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/tines_audit_logs.SecretsConfig"
                             },
                             {
@@ -10938,9 +10502,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/wiz_audit_logs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/zendesk_audit_logs.SecretsConfig"
                             }
                         ],
                         "type": "object"
@@ -10991,12 +10552,6 @@
                                 "$ref": "#/components/schemas/bigquery_input.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/bitwarden_events.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/box_events.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/brinqa_audit_logs.SettingsConfig"
                             },
                             {
@@ -11045,13 +10600,7 @@
                                 "$ref": "#/components/schemas/clumio_consolidated_alerts.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/coda_audit_events.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/cortex_xsoar_management_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/customer_event_data.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/defender_for_endpoint_alerts.SettingsConfig"
@@ -11078,82 +10627,10 @@
                                 "$ref": "#/components/schemas/github_actions_workflow_logs_webhook.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/gitlab_issues.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/gke_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/google_cloud_storage.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/google_workspace.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/google_workspace.SettingsConfig"
@@ -11186,21 +10663,6 @@
                                 "$ref": "#/components/schemas/microsoft_365_generic.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/microsoft_365_generic.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/models.RawConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/monad_log.SettingsConfig"
                             },
                             {
@@ -11210,28 +10672,13 @@
                                 "$ref": "#/components/schemas/offlineenrollmentlogs.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/onelogin_events.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/opal_events.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/openai_audit_logs.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/operation_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/oracle.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/org_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/ownbackup_account_events.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/pagerduty_audit_records.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/palo_alto_data_security_alerts.SettingsConfig"
@@ -11243,28 +10690,13 @@
                                 "$ref": "#/components/schemas/plaid_webhooks.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/polymer.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/postman_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/pubsub.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/redshift_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/rootly_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/semgrep_code_findings.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/semgrep_supply_chain_findings.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/sentry_org_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/slack_enterprise_audit_logs.SettingsConfig"
@@ -11294,18 +10726,6 @@
                                 "$ref": "#/components/schemas/telephony_logs.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/tenable_assets.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/tenable_assets_cron.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/tenable_vulnerabilities.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/tenable_vulnerabilities_cron.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/tines_audit_logs.SettingsConfig"
                             },
                             {
@@ -11331,9 +10751,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/wiz_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/zendesk_audit_logs.SettingsConfig"
                             }
                         ],
                         "type": "object"
@@ -11383,9 +10800,6 @@
                                 "$ref": "#/components/schemas/kv_lookup_output.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/models.RawConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/next_gen_siem.SecretsConfig"
                             },
                             {
@@ -11417,6 +10831,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/sumologic.SecretsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/wazuh.SecretsConfig"
                             }
                         ],
                         "type": "object"
@@ -11464,13 +10881,13 @@
                                 "$ref": "#/components/schemas/http.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/hydrolix.SettingsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/kafka.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/kv_lookup_output.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/models.RawConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/next_gen_siem.SettingsConfig"
@@ -11492,6 +10909,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/prometheus.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/runreveal.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/s3.SettingsConfig"
@@ -11519,6 +10939,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/sumologic.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/wazuh.SettingsConfig"
                             }
                         ],
                         "type": "object"
@@ -11660,47 +11083,6 @@
                         "type": "string"
                     }
                 },
-                "type": "object"
-            },
-            "sentry_org_audit_logs.SecretsConfig": {
-                "description": "Sentry Organization Audit Logs secrets",
-                "properties": {
-                    "auth_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "auth_token"
-                ],
-                "type": "object"
-            },
-            "sentry_org_audit_logs.SettingsConfig": {
-                "description": "Sentry Organization Audit Logs settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "host_name": {
-                        "description": "For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.",
-                        "type": "string"
-                    },
-                    "org_slug": {
-                        "description": "The ID or slug of the organization",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "host_name",
-                    "org_slug"
-                ],
                 "type": "object"
             },
             "slack.AuthConfig": {
@@ -11977,6 +11359,10 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "port",
+                    "url"
+                ],
                 "type": "object"
             },
             "sqs_s3_base.FilterVariant": {
@@ -12285,130 +11671,6 @@
                 "required": [
                     "host"
                 ],
-                "type": "object"
-            },
-            "tenable_assets.SecretsConfig": {
-                "description": "Tenable assets secrets",
-                "properties": {
-                    "access_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "access_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "tenable_assets.SettingsConfig": {
-                "description": "Tenable assets settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "tenable_assets_cron.SecretsConfig": {
-                "description": "Tenable assets secrets",
-                "properties": {
-                    "access_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "access_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "tenable_assets_cron.SettingsConfig": {
-                "description": "Tenable assets settings",
-                "properties": {
-                    "cron": {
-                        "description": "Cron expression to schedule the data collection.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    }
-                },
-                "type": "object"
-            },
-            "tenable_vulnerabilities.SecretsConfig": {
-                "description": "Tenable vulnerabilities secrets",
-                "properties": {
-                    "access_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "access_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "tenable_vulnerabilities.SettingsConfig": {
-                "description": "Tenable vulnerabilities settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching vulnerabilities from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "tenable_vulnerabilities_cron.SecretsConfig": {
-                "description": "Tenable vulnerabilities secrets",
-                "properties": {
-                    "access_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "access_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "tenable_vulnerabilities_cron.SettingsConfig": {
-                "description": "Tenable vulnerabilities settings",
-                "properties": {
-                    "cron": {
-                        "description": "Cron expression to schedule the data collection.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    }
-                },
                 "type": "object"
             },
             "tines_audit_logs.SecretsConfig": {
@@ -12829,6 +12091,52 @@
                 "required": [
                     "asset_types",
                     "endpoint_url"
+                ],
+                "type": "object"
+            },
+            "wazuh.SecretsConfig": {
+                "description": "Wazuh Output Secrets",
+                "properties": {
+                    "ca_certificate": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "password": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "password"
+                ],
+                "type": "object"
+            },
+            "wazuh.SettingsConfig": {
+                "description": "Wazuh Output Settings",
+                "properties": {
+                    "auth_mode": {
+                        "description": "Not exposed in the config meta; present only to reject AWS role auth submitted via the API.",
+                        "type": "string"
+                    },
+                    "index": {
+                        "description": "The name of the index to write to.",
+                        "type": "string"
+                    },
+                    "insecure_skip_verify": {
+                        "description": "Whether to skip TLS certificate verification (not recommended for production).",
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "description": "The URL of the Wazuh indexer API (must start with https).",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "The username for authenticating with the Wazuh indexer.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "index",
+                    "url",
+                    "username"
                 ],
                 "type": "object"
             },
@@ -13351,58 +12659,6 @@
                     "tenant_data_center"
                 ],
                 "type": "object"
-            },
-            "zendesk_audit_logs.AuthType": {
-                "description": "AuthType is the type of authentication used for the input",
-                "enum": [
-                    "api_auth",
-                    "oauth"
-                ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "AuthTypeAPIAuth",
-                    "AuthTypeOAuth"
-                ]
-            },
-            "zendesk_audit_logs.SecretsConfig": {
-                "description": "Zendesk Audit Logs secrets",
-                "properties": {
-                    "token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "token"
-                ],
-                "type": "object"
-            },
-            "zendesk_audit_logs.SettingsConfig": {
-                "description": "Zendesk Audit Logs settings",
-                "properties": {
-                    "auth_type": {
-                        "$ref": "#/components/schemas/zendesk_audit_logs.AuthType"
-                    },
-                    "email_address": {
-                        "description": "This is the email address registered with your Zendesk account",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "sub_domain": {
-                        "description": "This is the subdomain found in your Zendesk account URL\nFor example, if the URL is https://demo.zendesk.com then the subdomain will be demo",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "auth_type",
-                    "sub_domain"
-                ],
-                "type": "object"
             }
         },
         "securitySchemes": {
@@ -13490,7 +12746,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.ConnectorMeta"
+                                    "$ref": "#/components/schemas/inputs.ConnectorMeta"
                                 }
                             }
                         },
@@ -13905,7 +13161,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Organization"
+                                    "$ref": "#/components/schemas/models.Organization"
                                 }
                             }
                         },
@@ -14002,7 +13258,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Organization"
+                                    "$ref": "#/components/schemas/models.Organization"
                                 }
                             }
                         },
@@ -14080,7 +13336,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.ConnectorMeta"
+                                    "$ref": "#/components/schemas/outputs.ConnectorMeta"
                                 }
                             }
                         },
@@ -14299,7 +13555,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.User"
+                                    "$ref": "#/components/schemas/models.User"
                                 }
                             }
                         },
@@ -18348,7 +17604,7 @@
         },
         "/v2/{organization_id}/api_keys/{api_key_id}/regenerate": {
             "post": {
-                "description": "Regenerates an API key by creating a new one with the same metadata and deleting the old one",
+                "description": "Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.",
                 "operationId": "RegenerateAPIKey",
                 "parameters": [
                     {
@@ -18370,6 +17626,25 @@
                         }
                     }
                 ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV2.RegenerateAPIKeyRequest",
+                                        "description": "Optional new expiration for the regenerated key",
+                                        "summary": "regenerateAPIKeyRequest"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Optional new expiration for the regenerated key"
+                },
                 "responses": {
                     "200": {
                         "content": {
@@ -18381,6 +17656,16 @@
                         },
                         "description": "New API key generated successfully"
                     },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Invalid JSON request body or expiration time"
+                    },
                     "404": {
                         "content": {
                             "application/json": {
@@ -18390,6 +17675,16 @@
                             }
                         },
                         "description": "API key not found"
+                    },
+                    "422": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Expiration time required for an expired API key"
                     },
                     "500": {
                         "content": {
@@ -20484,6 +19779,16 @@
                         },
                         "description": "Invalid JSON request body or Failed to create pipeline"
                     },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Node config overrides are not enabled for this organization"
+                    },
                     "500": {
                         "content": {
                             "application/json": {
@@ -20886,6 +20191,16 @@
                             }
                         },
                         "description": "Invalid JSON request body"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Node config overrides are not enabled for this organization"
                     },
                     "500": {
                         "content": {
@@ -21356,6 +20671,99 @@
                 ],
                 "x-required-permissions": [
                     "pipeline:read"
+                ]
+            }
+        },
+        "/v2/{organization_id}/pipelines/{pipeline_id}/test-connection": {
+            "post": {
+                "description": "Tests the connection for a node's submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.",
+                "operationId": "TestPipelineNodeConnection",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pipeline ID",
+                        "in": "path",
+                        "name": "pipeline_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV2.TestNodeConnectionRequest",
+                                        "description": "Node config to test",
+                                        "summary": "testConnectionRequest"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Node config to test",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV2.SuccessResponse"
+                                }
+                            }
+                        },
+                        "description": "Connection test successful"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid request body or unsupported component type"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Test a pipeline node connection",
+                "tags": [
+                    "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:write"
                 ]
             }
         },
@@ -22188,7 +21596,7 @@
         },
         "/v2/{organization_id}/secrets": {
             "get": {
-                "description": "Lists all secrets for the specified organization including inputs and outputs that use them",
+                "description": "Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.",
                 "operationId": "ListSecrets",
                 "parameters": [
                     {
@@ -22340,7 +21748,7 @@
         },
         "/v2/{organization_id}/secrets/{secret_id}": {
             "delete": {
-                "description": "Deletes a specific secret by ID",
+                "description": "Deletes a specific secret by ID. A secret that is still referenced cannot be deleted: the request is refused with 409 and the error message names what holds the reference. \"Referenced\" means configured on an input, output, enrichment or transform, or on a pipeline node's config override — it does not require the pipeline to be running, so an idle component still blocks the delete. Use GET /v2/{organization_id}/secrets/{secret_id} to see the referencing inputs, outputs, enrichments and transforms before deleting; note that response does not list pipeline-node overrides, so a 409 can name a pipeline the pre-check did not show. Secrets shared with other organizations must have their shares removed first.",
                 "operationId": "DeleteSecret",
                 "parameters": [
                     {
@@ -22366,6 +21774,16 @@
                     "204": {
                         "description": "No Content"
                     },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Secret is shared with this organization by another organization and can only be deleted by its owner"
+                    },
                     "404": {
                         "content": {
                             "application/json": {
@@ -22375,6 +21793,16 @@
                             }
                         },
                         "description": "Secret not found"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Secret is still referenced by a component or pipeline node, or is shared with other organizations; the message names the referencing resources"
                     },
                     "500": {
                         "content": {
@@ -22404,7 +21832,7 @@
                 ]
             },
             "get": {
-                "description": "Gets a specific secret by ID including inputs and outputs that use it",
+                "description": "Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.",
                 "operationId": "GetSecret",
                 "parameters": [
                     {
@@ -23922,7 +23350,7 @@
         },
         "/v3/{organization_id}/audit_logs": {
             "get": {
-                "description": "List the organization's audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline's merged history: the pipeline's own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.",
+                "description": "List the organization's audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline's merged history: the pipeline's own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource.",
                 "operationId": "ListOrganizationAuditLogs",
                 "parameters": [
                     {
@@ -24057,7 +23485,7 @@
         },
         "/v3/{organization_id}/audit_logs/histogram": {
             "get": {
-                "description": "Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.",
+                "description": "Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to).",
                 "operationId": "GetOrganizationAuditLogHistogram",
                 "parameters": [
                     {
@@ -25701,7 +25129,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Organization"
+                                    "$ref": "#/components/schemas/models.Organization"
                                 }
                             }
                         },
@@ -25858,7 +25286,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Organization"
+                                    "$ref": "#/components/schemas/models.Organization"
                                 }
                             }
                         },

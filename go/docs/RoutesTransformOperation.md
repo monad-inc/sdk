@@ -105,20 +105,20 @@ HasOperation returns a boolean if a field has been set.
 
 ### GetSecrets
 
-`func (o *RoutesTransformOperation) GetSecrets() map[string]interface{}`
+`func (o *RoutesTransformOperation) GetSecrets() map[string]*interface{}`
 
 GetSecrets returns the Secrets field if non-nil, zero value otherwise.
 
 ### GetSecretsOk
 
-`func (o *RoutesTransformOperation) GetSecretsOk() (*map[string]interface{}, bool)`
+`func (o *RoutesTransformOperation) GetSecretsOk() (*map[string]*interface{}, bool)`
 
 GetSecretsOk returns a tuple with the Secrets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecrets
 
-`func (o *RoutesTransformOperation) SetSecrets(v map[string]interface{})`
+`func (o *RoutesTransformOperation) SetSecrets(v map[string]*interface{})`
 
 SetSecrets sets Secrets field to given value.
 

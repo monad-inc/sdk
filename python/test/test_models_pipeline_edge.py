@@ -51,6 +51,7 @@ class TestModelsPipelineEdge(unittest.TestCase):
                 organization_id = '',
                 pipeline_id = '',
                 schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                    disable_alerting = True, 
                     enabled = True, ),
                 to_node_instance_id = '',
                 updated_at = ''

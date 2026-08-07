@@ -45,6 +45,7 @@ import org.openapitools.client.model.SentinelSecretsConfig;
 import org.openapitools.client.model.SnowflakeOutputSecretsConfig;
 import org.openapitools.client.model.SplunkSecretsConfig;
 import org.openapitools.client.model.SumologicSecretsConfig;
+import org.openapitools.client.model.WazuhSecretsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

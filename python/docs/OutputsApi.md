@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_output_type_meta**
-> ModelsConnectorMeta get_output_type_meta(output_type_id)
+> OutputsConnectorMeta get_output_type_meta(output_type_id)
 
 Get output config meta
 
@@ -22,7 +22,7 @@ Get output config meta
 
 ```python
 import monad
-from monad.models.models_connector_meta import ModelsConnectorMeta
+from monad.models.outputs_connector_meta import OutputsConnectorMeta
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsConnectorMeta**](ModelsConnectorMeta.md)
+[**OutputsConnectorMeta**](OutputsConnectorMeta.md)
 
 ### Authorization
 

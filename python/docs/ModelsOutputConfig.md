@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**secrets** | **Dict[str, object]** |  | [optional] 
-**settings** | **Dict[str, object]** |  | [optional] 
+**secrets** | **Dict[str, Optional[object]]** |  | [optional] 
+**settings** | **Dict[str, Optional[object]]** |  | [optional] 
 
 ## Example
 

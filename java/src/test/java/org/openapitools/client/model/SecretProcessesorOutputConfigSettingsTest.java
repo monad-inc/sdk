@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import org.openapitools.client.model.AbsSettingsConfig;
 import org.openapitools.client.model.AwssqsoutputQueueType;
 import org.openapitools.client.model.AwssqsoutputSettingsConfig;
@@ -42,6 +41,7 @@ import org.openapitools.client.model.FormatterFormatConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;
 import org.openapitools.client.model.HttpPayloadStructure;
 import org.openapitools.client.model.HttpSettingsConfig;
+import org.openapitools.client.model.HydrolixSettingsConfig;
 import org.openapitools.client.model.KafkaAcks;
 import org.openapitools.client.model.KafkaCompressionType;
 import org.openapitools.client.model.KafkaKafkaHeader;
@@ -52,7 +52,6 @@ import org.openapitools.client.model.KvLookupOutputSettingsConfig;
 import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.NextGenSiemSettingsConfig;
 import org.openapitools.client.model.ObjectStorageSettingsConfig;
-import org.openapitools.client.model.OpensearchAuthMode;
 import org.openapitools.client.model.OpensearchSettingsConfig;
 import org.openapitools.client.model.PagerdutyAlertsConfig;
 import org.openapitools.client.model.PagerdutyEventType;
@@ -63,6 +62,7 @@ import org.openapitools.client.model.ParquetParquetFormatter;
 import org.openapitools.client.model.PostgresqlSettingsConfig;
 import org.openapitools.client.model.PrometheusMetricNameConfig;
 import org.openapitools.client.model.PrometheusSettingsConfig;
+import org.openapitools.client.model.RunrevealSettingsConfig;
 import org.openapitools.client.model.S3SettingsConfig;
 import org.openapitools.client.model.ScannerAuthConfig;
 import org.openapitools.client.model.ScannerFormatConfig;
@@ -77,6 +77,7 @@ import org.openapitools.client.model.SnowflakeSnowpipeStreamingSettingsConfig;
 import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
 import org.openapitools.client.model.SumologicSourceMetadata;
+import org.openapitools.client.model.WazuhSettingsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -487,6 +488,38 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'auth'
+     */
+    @Test
+    public void authTest() {
+        // TODO: test auth
+    }
+
+    /**
+     * Test the property 'host'
+     */
+    @Test
+    public void hostTest() {
+        // TODO: test host
+    }
+
+    /**
+     * Test the property 'token'
+     */
+    @Test
+    public void tokenTest() {
+        // TODO: test token
+    }
+
+    /**
+     * Test the property 'transform'
+     */
+    @Test
+    public void transformTest() {
+        // TODO: test transform
+    }
+
+    /**
      * Test the property 'acks'
      */
     @Test
@@ -647,27 +680,11 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'host'
-     */
-    @Test
-    public void hostTest() {
-        // TODO: test host
-    }
-
-    /**
      * Test the property 'user'
      */
     @Test
     public void userTest() {
         // TODO: test user
-    }
-
-    /**
-     * Test the property 'auth'
-     */
-    @Test
-    public void authTest() {
-        // TODO: test auth
     }
 
     /**
@@ -692,6 +709,22 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void timestampFieldTest() {
         // TODO: test timestampField
+    }
+
+    /**
+     * Test the property 'bearerToken'
+     */
+    @Test
+    public void bearerTokenTest() {
+        // TODO: test bearerToken
+    }
+
+    /**
+     * Test the property 'webhookId'
+     */
+    @Test
+    public void webhookIdTest() {
+        // TODO: test webhookId
     }
 
     /**

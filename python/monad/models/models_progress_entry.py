@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_core_pkg_types_models_time_range import GithubComMonadIncCorePkgTypesModelsTimeRange
 from monad.models.models_progress_label import ModelsProgressLabel
+from monad.models.models_time_range import ModelsTimeRange
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -32,7 +32,7 @@ class ModelsProgressEntry(BaseModel):
     """ # noqa: E501
     label: Optional[ModelsProgressLabel] = None
     partition_key: Optional[StrictStr] = Field(default=None, description="PartitionKey is an optional identifier for multi-entity inputs (e.g., \"detector-123\", \"us-east-1\") In a case where we store multiple state timestamps for a singular input we would use this field as a differentiator")
-    ranges: Optional[List[GithubComMonadIncCorePkgTypesModelsTimeRange]] = Field(default=None, description="Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.")
+    ranges: Optional[List[ModelsTimeRange]] = Field(default=None, description="Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.")
     __properties: ClassVar[List[str]] = ["label", "partition_key", "ranges"]
 
     model_config = ConfigDict(
@@ -95,7 +95,7 @@ class ModelsProgressEntry(BaseModel):
         _obj = cls.model_validate({
             "label": obj.get("label"),
             "partition_key": obj.get("partition_key"),
-            "ranges": [GithubComMonadIncCorePkgTypesModelsTimeRange.from_dict(_item) for _item in obj["ranges"]] if obj.get("ranges") is not None else None
+            "ranges": [ModelsTimeRange.from_dict(_item) for _item in obj["ranges"]] if obj.get("ranges") is not None else None
         })
         return _obj
 

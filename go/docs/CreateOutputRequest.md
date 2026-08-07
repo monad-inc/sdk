@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PromiseId** | Pointer to **string** |  | [optional] 
+**TemplateSettings** | Pointer to [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetPromiseId sets PromiseId field to given value.
 `func (o *CreateOutputRequest) HasPromiseId() bool`
 
 HasPromiseId returns a boolean if a field has been set.
+
+### GetTemplateSettings
+
+`func (o *CreateOutputRequest) GetTemplateSettings() ModelsTemplateSettings`
+
+GetTemplateSettings returns the TemplateSettings field if non-nil, zero value otherwise.
+
+### GetTemplateSettingsOk
+
+`func (o *CreateOutputRequest) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool)`
+
+GetTemplateSettingsOk returns a tuple with the TemplateSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemplateSettings
+
+`func (o *CreateOutputRequest) SetTemplateSettings(v ModelsTemplateSettings)`
+
+SetTemplateSettings sets TemplateSettings field to given value.
+
+### HasTemplateSettings
+
+`func (o *CreateOutputRequest) HasTemplateSettings() bool`
+
+HasTemplateSettings returns a boolean if a field has been set.
 
 ### GetType
 

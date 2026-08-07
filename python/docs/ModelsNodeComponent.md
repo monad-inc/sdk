@@ -5,11 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | **Dict[str, object]** |  | [optional] 
+**base_config** | **Dict[str, Optional[object]]** | BaseConfig is the template&#39;s config before the override delta is applied. | [optional] 
+**config** | **Dict[str, Optional[object]]** | Config is the node&#39;s effective config: for a template-backed node it is the base merged with the node&#39;s override delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged. | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**overrides** | **Dict[str, Optional[object]]** | Overrides is the node&#39;s sparse override delta (secrets as {id} refs only). | [optional] 
 **references** | [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
+**share_details** | [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
+**template_settings** | [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **version** | **int** |  | [optional] 
 

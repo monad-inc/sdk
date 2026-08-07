@@ -37,7 +37,9 @@ class TestModelsReference(unittest.TestCase):
         if include_optional:
             return ModelsReference(
                 id = '',
-                organization_id = ''
+                name = '',
+                organization_id = '',
+                shared = True
             )
         else:
             return ModelsReference(

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**arguments** | **Dict[str, object]** |  | [optional] 
+**arguments** | **Dict[str, Optional[object]]** |  | [optional] 
 **operation** | **str** |  | [optional] 
 
 ## Example

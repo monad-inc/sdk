@@ -23,6 +23,7 @@ from monad.models.create_api_key_request import CreateAPIKeyRequest
 from monad.models.models_api_key import ModelsAPIKey
 from monad.models.models_api_key_list import ModelsAPIKeyList
 from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken
+from monad.models.regenerate_api_key_request import RegenerateAPIKeyRequest
 from monad.models.update_api_key_request import UpdateAPIKeyRequest
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -1209,6 +1210,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
+        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new expiration for the regenerated key")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1224,12 +1226,14 @@ class OrganizationAPIKeysApi:
     ) -> ModelsAPIKeyWithToken:
         """Regenerate API key
 
-        Regenerates an API key by creating a new one with the same metadata and deleting the old one
+        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
+        :param regenerate_api_key_request: Optional new expiration for the regenerated key
+        :type regenerate_api_key_request: RegenerateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1255,6 +1259,7 @@ class OrganizationAPIKeysApi:
         _param = self._regenerate_api_key_serialize(
             organization_id=organization_id,
             api_key_id=api_key_id,
+            regenerate_api_key_request=regenerate_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1263,7 +1268,9 @@ class OrganizationAPIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsAPIKeyWithToken",
+            '400': "str",
             '404': "str",
+            '422': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1282,6 +1289,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
+        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new expiration for the regenerated key")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1297,12 +1305,14 @@ class OrganizationAPIKeysApi:
     ) -> ApiResponse[ModelsAPIKeyWithToken]:
         """Regenerate API key
 
-        Regenerates an API key by creating a new one with the same metadata and deleting the old one
+        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
+        :param regenerate_api_key_request: Optional new expiration for the regenerated key
+        :type regenerate_api_key_request: RegenerateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1328,6 +1338,7 @@ class OrganizationAPIKeysApi:
         _param = self._regenerate_api_key_serialize(
             organization_id=organization_id,
             api_key_id=api_key_id,
+            regenerate_api_key_request=regenerate_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1336,7 +1347,9 @@ class OrganizationAPIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsAPIKeyWithToken",
+            '400': "str",
             '404': "str",
+            '422': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1355,6 +1368,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
+        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new expiration for the regenerated key")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1370,12 +1384,14 @@ class OrganizationAPIKeysApi:
     ) -> RESTResponseType:
         """Regenerate API key
 
-        Regenerates an API key by creating a new one with the same metadata and deleting the old one
+        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
+        :param regenerate_api_key_request: Optional new expiration for the regenerated key
+        :type regenerate_api_key_request: RegenerateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1401,6 +1417,7 @@ class OrganizationAPIKeysApi:
         _param = self._regenerate_api_key_serialize(
             organization_id=organization_id,
             api_key_id=api_key_id,
+            regenerate_api_key_request=regenerate_api_key_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1409,7 +1426,9 @@ class OrganizationAPIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsAPIKeyWithToken",
+            '400': "str",
             '404': "str",
+            '422': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1423,6 +1442,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id,
         api_key_id,
+        regenerate_api_key_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1452,6 +1472,8 @@ class OrganizationAPIKeysApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if regenerate_api_key_request is not None:
+            _body_params = regenerate_api_key_request
 
 
         # set the HTTP header `Accept`
@@ -1462,6 +1484,19 @@ class OrganizationAPIKeysApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [

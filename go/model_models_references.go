@@ -18,7 +18,7 @@ import (
 // checks if the ModelsReferences type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsReferences{}
 
-// ModelsReferences struct for ModelsReferences
+// ModelsReferences ResourceReferences are the resources (e.g. secrets) referenced only via the override delta, tracked so deletion/rotation see them like component refs.
 type ModelsReferences struct {
 	Secrets []ModelsReference `json:"secrets,omitempty"`
 }

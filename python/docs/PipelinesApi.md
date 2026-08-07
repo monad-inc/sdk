@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**purge_pipeline**](PipelinesApi.md#purge_pipeline) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/purge | Purge pipeline data
 [**purge_pipeline_node**](PipelinesApi.md#purge_pipeline_node) | **POST** /v3/{organization_id}/pipelines/{pipeline_id}/nodes/{node_id}/purge | Purge pipeline node data
 [**reset_schema_state**](PipelinesApi.md#reset_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/reset | Reset schema state
+[**test_pipeline_node_connection**](PipelinesApi.md#test_pipeline_node_connection) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/test-connection | Test a pipeline node connection
 [**trigger_pipeline**](PipelinesApi.md#trigger_pipeline) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**update_pipeline**](PipelinesApi.md#update_pipeline) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**update_pipeline_edge**](PipelinesApi.md#update_pipeline_edge) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
@@ -120,6 +121,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** | Pipeline created successfully |  -  |
 **400** | Invalid JSON request body or Failed to create pipeline |  -  |
+**403** | Node config overrides are not enabled for this organization |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2147,6 +2149,99 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **test_pipeline_node_connection**
+> RoutesV2SuccessResponse test_pipeline_node_connection(organization_id, pipeline_id, test_pipeline_node_connection_request)
+
+Test a pipeline node connection
+
+Tests the connection for a node's submitted config (effective config plus one-shot ephemeral values). Nothing is persisted.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
+from monad.models.test_pipeline_node_connection_request import TestPipelineNodeConnectionRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    test_pipeline_node_connection_request = monad.TestPipelineNodeConnectionRequest() # TestPipelineNodeConnectionRequest | Node config to test
+
+    try:
+        # Test a pipeline node connection
+        api_response = api_instance.test_pipeline_node_connection(organization_id, pipeline_id, test_pipeline_node_connection_request)
+        print("The response of PipelinesApi->test_pipeline_node_connection:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->test_pipeline_node_connection: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **test_pipeline_node_connection_request** | [**TestPipelineNodeConnectionRequest**](TestPipelineNodeConnectionRequest.md)| Node config to test | 
+
+### Return type
+
+[**RoutesV2SuccessResponse**](RoutesV2SuccessResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Connection test successful |  -  |
+**400** | Invalid request body or unsupported component type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **trigger_pipeline**
 > str trigger_pipeline(organization_id, pipeline_id)
 
@@ -2327,6 +2422,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Pipeline updated successfully |  -  |
 **400** | Invalid JSON request body |  -  |
+**403** | Node config overrides are not enabled for this organization |  -  |
 **500** | Failed to update pipeline |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

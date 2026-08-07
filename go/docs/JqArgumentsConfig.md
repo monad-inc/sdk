@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | Pointer to **string** | Optional key to store result under | [optional] 
+**PreventDataDropping** | Pointer to **bool** | PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record. | [optional] 
 **Query** | Pointer to **string** | The raw query string from config | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetKey sets Key field to given value.
 `func (o *JqArgumentsConfig) HasKey() bool`
 
 HasKey returns a boolean if a field has been set.
+
+### GetPreventDataDropping
+
+`func (o *JqArgumentsConfig) GetPreventDataDropping() bool`
+
+GetPreventDataDropping returns the PreventDataDropping field if non-nil, zero value otherwise.
+
+### GetPreventDataDroppingOk
+
+`func (o *JqArgumentsConfig) GetPreventDataDroppingOk() (*bool, bool)`
+
+GetPreventDataDroppingOk returns a tuple with the PreventDataDropping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventDataDropping
+
+`func (o *JqArgumentsConfig) SetPreventDataDropping(v bool)`
+
+SetPreventDataDropping sets PreventDataDropping field to given value.
+
+### HasPreventDataDropping
+
+`func (o *JqArgumentsConfig) HasPreventDataDropping() bool`
+
+HasPreventDataDropping returns a boolean if a field has been set.
 
 ### GetQuery
 

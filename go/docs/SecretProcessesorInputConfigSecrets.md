@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IntegrationKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**AuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -15,18 +15,16 @@ Name | Type | Description | Notes
 **ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CredentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**EnterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**RsaPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**PersonalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **HarvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RefreshToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Secret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **UserOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -38,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, authToken ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, enterpriseId ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, rsaPrivateKey ModelsSecret, apiSecret ModelsSecret, personalAccessToken ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, apiSecret ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -112,6 +110,11 @@ and a boolean to check if the value has been set.
 
 SetAuthToken sets AuthToken field to given value.
 
+### HasAuthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasAuthToken() bool`
+
+HasAuthToken returns a boolean if a field has been set.
 
 ### GetApiKey
 
@@ -288,26 +291,6 @@ and a boolean to check if the value has been set.
 SetCredentialsJson sets CredentialsJson field to given value.
 
 
-### GetEnterpriseId
-
-`func (o *SecretProcessesorInputConfigSecrets) GetEnterpriseId() ModelsSecret`
-
-GetEnterpriseId returns the EnterpriseId field if non-nil, zero value otherwise.
-
-### GetEnterpriseIdOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetEnterpriseIdOk() (*ModelsSecret, bool)`
-
-GetEnterpriseIdOk returns a tuple with the EnterpriseId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnterpriseId
-
-`func (o *SecretProcessesorInputConfigSecrets) SetEnterpriseId(v ModelsSecret)`
-
-SetEnterpriseId sets EnterpriseId field to given value.
-
-
 ### GetPassword
 
 `func (o *SecretProcessesorInputConfigSecrets) GetPassword() ModelsSecret`
@@ -413,26 +396,6 @@ and a boolean to check if the value has been set.
 SetAccessToken sets AccessToken field to given value.
 
 
-### GetRsaPrivateKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetRsaPrivateKey() ModelsSecret`
-
-GetRsaPrivateKey returns the RsaPrivateKey field if non-nil, zero value otherwise.
-
-### GetRsaPrivateKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetRsaPrivateKeyOk() (*ModelsSecret, bool)`
-
-GetRsaPrivateKeyOk returns a tuple with the RsaPrivateKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRsaPrivateKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetRsaPrivateKey(v ModelsSecret)`
-
-SetRsaPrivateKey sets RsaPrivateKey field to given value.
-
-
 ### GetApiSecret
 
 `func (o *SecretProcessesorInputConfigSecrets) GetApiSecret() ModelsSecret`
@@ -451,26 +414,6 @@ and a boolean to check if the value has been set.
 `func (o *SecretProcessesorInputConfigSecrets) SetApiSecret(v ModelsSecret)`
 
 SetApiSecret sets ApiSecret field to given value.
-
-
-### GetPersonalAccessToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessToken() ModelsSecret`
-
-GetPersonalAccessToken returns the PersonalAccessToken field if non-nil, zero value otherwise.
-
-### GetPersonalAccessTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessTokenOk() (*ModelsSecret, bool)`
-
-GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPersonalAccessToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetPersonalAccessToken(v ModelsSecret)`
-
-SetPersonalAccessToken sets PersonalAccessToken field to given value.
 
 
 ### GetOauthToken
@@ -542,6 +485,31 @@ SetGithubAppPrivateKey sets GithubAppPrivateKey field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasGithubAppPrivateKey() bool`
 
 HasGithubAppPrivateKey returns a boolean if a field has been set.
+
+### GetPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessToken() ModelsSecret`
+
+GetPersonalAccessToken returns the PersonalAccessToken field if non-nil, zero value otherwise.
+
+### GetPersonalAccessTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessTokenOk() (*ModelsSecret, bool)`
+
+GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetPersonalAccessToken(v ModelsSecret)`
+
+SetPersonalAccessToken sets PersonalAccessToken field to given value.
+
+### HasPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasPersonalAccessToken() bool`
+
+HasPersonalAccessToken returns a boolean if a field has been set.
 
 ### GetRefreshToken
 

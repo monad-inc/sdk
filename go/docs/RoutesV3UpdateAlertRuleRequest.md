@@ -6,10 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Active indicates whether the alert rule is active | [optional] 
 **Description** | Pointer to **string** | Description of the alert rule | [optional] 
+**InvertSelection** | Pointer to **bool** | InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way. | [optional] 
 **Name** | Pointer to **string** | Name of the alert rule | [optional] 
 **PipelineIds** | Pointer to **[]string** | Pipeline IDs that this alert rule applies to | [optional] 
 **RuleConfig** | Pointer to **map[string]interface{}** | RuleConfig contains the configuration for the alert rule | [optional] 
-**Severity** | Pointer to **string** | Severity level of the alert (e.g., \&quot;critical\&quot;, \&quot;warning\&quot;, \&quot;info\&quot;) | [optional] 
+**Severity** | Pointer to **string** | Severity level of the alert. Must be one of \&quot;critical\&quot;, \&quot;high\&quot;, \&quot;medium\&quot;, \&quot;low\&quot;, \&quot;info\&quot;. | [optional] 
 
 ## Methods
 
@@ -80,6 +81,31 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetInvertSelection
+
+`func (o *RoutesV3UpdateAlertRuleRequest) GetInvertSelection() bool`
+
+GetInvertSelection returns the InvertSelection field if non-nil, zero value otherwise.
+
+### GetInvertSelectionOk
+
+`func (o *RoutesV3UpdateAlertRuleRequest) GetInvertSelectionOk() (*bool, bool)`
+
+GetInvertSelectionOk returns a tuple with the InvertSelection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvertSelection
+
+`func (o *RoutesV3UpdateAlertRuleRequest) SetInvertSelection(v bool)`
+
+SetInvertSelection sets InvertSelection field to given value.
+
+### HasInvertSelection
+
+`func (o *RoutesV3UpdateAlertRuleRequest) HasInvertSelection() bool`
+
+HasInvertSelection returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *RoutesV3UpdateAlertRuleRequest) GetName() string`
@@ -132,20 +158,20 @@ HasPipelineIds returns a boolean if a field has been set.
 
 ### GetRuleConfig
 
-`func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfig() map[string]interface{}`
+`func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfig() map[string]*interface{}`
 
 GetRuleConfig returns the RuleConfig field if non-nil, zero value otherwise.
 
 ### GetRuleConfigOk
 
-`func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfigOk() (*map[string]interface{}, bool)`
+`func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfigOk() (*map[string]*interface{}, bool)`
 
 GetRuleConfigOk returns a tuple with the RuleConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleConfig
 
-`func (o *RoutesV3UpdateAlertRuleRequest) SetRuleConfig(v map[string]interface{})`
+`func (o *RoutesV3UpdateAlertRuleRequest) SetRuleConfig(v map[string]*interface{})`
 
 SetRuleConfig sets RuleConfig field to given value.
 

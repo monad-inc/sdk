@@ -26,7 +26,7 @@ type ModelsOrganizationAuditLog struct {
 	OccurredAt *string `json:"occurred_at,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	RequestId *string `json:"request_id,omitempty"`
-	Resource *GithubComMonadIncCorePkgTypesModelsAuditResource `json:"resource,omitempty"`
+	Resource *ModelsAuditResource `json:"resource,omitempty"`
 }
 
 // NewModelsOrganizationAuditLog instantiates a new ModelsOrganizationAuditLog object
@@ -239,9 +239,9 @@ func (o *ModelsOrganizationAuditLog) SetRequestId(v string) {
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
-func (o *ModelsOrganizationAuditLog) GetResource() GithubComMonadIncCorePkgTypesModelsAuditResource {
+func (o *ModelsOrganizationAuditLog) GetResource() ModelsAuditResource {
 	if o == nil || IsNil(o.Resource) {
-		var ret GithubComMonadIncCorePkgTypesModelsAuditResource
+		var ret ModelsAuditResource
 		return ret
 	}
 	return *o.Resource
@@ -249,7 +249,7 @@ func (o *ModelsOrganizationAuditLog) GetResource() GithubComMonadIncCorePkgTypes
 
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsOrganizationAuditLog) GetResourceOk() (*GithubComMonadIncCorePkgTypesModelsAuditResource, bool) {
+func (o *ModelsOrganizationAuditLog) GetResourceOk() (*ModelsAuditResource, bool) {
 	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
@@ -265,8 +265,8 @@ func (o *ModelsOrganizationAuditLog) HasResource() bool {
 	return false
 }
 
-// SetResource gets a reference to the given GithubComMonadIncCorePkgTypesModelsAuditResource and assigns it to the Resource field.
-func (o *ModelsOrganizationAuditLog) SetResource(v GithubComMonadIncCorePkgTypesModelsAuditResource) {
+// SetResource gets a reference to the given ModelsAuditResource and assigns it to the Resource field.
+func (o *ModelsOrganizationAuditLog) SetResource(v ModelsAuditResource) {
 	o.Resource = &v
 }
 

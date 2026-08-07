@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsTimeRange } from '../models/GithubComMonadIncCorePkgTypesModelsTimeRange';
 import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
+import { ModelsTimeRange } from '../models/ModelsTimeRange';
 import { HttpFile } from '../http/http';
 
 export class ModelsProgressEntry {
@@ -23,7 +23,7 @@ export class ModelsProgressEntry {
     /**
     * Ranges represents the time ranges that have been read by an input node. Each range is a tuple of (start, end) timestamps indicating what data has been processed. Multiple ranges allow tracking non-contiguous data reads.
     */
-    'ranges'?: Array<GithubComMonadIncCorePkgTypesModelsTimeRange>;
+    'ranges'?: Array<ModelsTimeRange>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -45,7 +45,7 @@ export class ModelsProgressEntry {
         {
             "name": "ranges",
             "baseName": "ranges",
-            "type": "Array<GithubComMonadIncCorePkgTypesModelsTimeRange>",
+            "type": "Array<ModelsTimeRange>",
             "format": ""
         }    ];
 

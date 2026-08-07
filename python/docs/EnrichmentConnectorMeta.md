@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **in_beta** | **bool** |  | [optional] 
 **internal** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
+**release_date** | **str** |  | [optional] 
 **supported_features** | [**ModelsSupportedFeatures**](ModelsSupportedFeatures.md) |  | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 

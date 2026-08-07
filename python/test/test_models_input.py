@@ -53,12 +53,18 @@ class TestModelsInput(unittest.TestCase):
                     secrets = [
                         monad.models.models/reference.models.Reference(
                             id = '', 
-                            organization_id = '', )
+                            name = '', 
+                            organization_id = '', 
+                            shared = True, )
                         ], ),
                 share_details = monad.models.models/share_details.models.ShareDetails(
                     owner_organization_id = '', 
                     shared_with_children = True, 
                     shared_with_me = True, ),
+                template_settings = monad.models.models/template_settings.models.TemplateSettings(
+                    overridable_paths = [
+                        ''
+                        ], ),
                 type = '',
                 updated_at = '',
                 version = 56

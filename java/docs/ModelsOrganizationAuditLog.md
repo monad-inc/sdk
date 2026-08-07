@@ -13,7 +13,7 @@
 |**occurredAt** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**requestId** | **String** |  |  [optional] |
-|**resource** | [**GithubComMonadIncCorePkgTypesModelsAuditResource**](GithubComMonadIncCorePkgTypesModelsAuditResource.md) |  |  [optional] |
+|**resource** | [**ModelsAuditResource**](ModelsAuditResource.md) |  |  [optional] |
 
 
 

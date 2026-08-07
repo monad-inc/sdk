@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **NewKey** | Pointer to **string** | The new key to rename to | [optional] 
 **Algorithm** | Pointer to [**EncryptAlgorithmConfig**](EncryptAlgorithmConfig.md) |  | [optional] 
 **Delimiter** | Pointer to **string** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
+**PreventDataDropping** | Pointer to **bool** | PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record. | [optional] 
 **Query** | Pointer to **string** | The raw query string from config | [optional] 
 **Mode** | Pointer to [**MaskModeConfig**](MaskModeConfig.md) |  | [optional] 
 **ValueToSet** | Pointer to **interface{}** |  | [optional] 
@@ -463,6 +464,31 @@ SetDelimiter sets Delimiter field to given value.
 `func (o *RoutesTransformOperationArguments) HasDelimiter() bool`
 
 HasDelimiter returns a boolean if a field has been set.
+
+### GetPreventDataDropping
+
+`func (o *RoutesTransformOperationArguments) GetPreventDataDropping() bool`
+
+GetPreventDataDropping returns the PreventDataDropping field if non-nil, zero value otherwise.
+
+### GetPreventDataDroppingOk
+
+`func (o *RoutesTransformOperationArguments) GetPreventDataDroppingOk() (*bool, bool)`
+
+GetPreventDataDroppingOk returns a tuple with the PreventDataDropping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventDataDropping
+
+`func (o *RoutesTransformOperationArguments) SetPreventDataDropping(v bool)`
+
+SetPreventDataDropping sets PreventDataDropping field to given value.
+
+### HasPreventDataDropping
+
+`func (o *RoutesTransformOperationArguments) HasPreventDataDropping() bool`
+
+HasPreventDataDropping returns a boolean if a field has been set.
 
 ### GetQuery
 

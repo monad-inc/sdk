@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_user**
-> GithubComMonadIncCorePkgTypesModelsUser create_user(body=body)
+> ModelsUser create_user(body=body)
 
 Create user
 
@@ -24,7 +24,7 @@ Create user
 
 ```python
 import monad
-from monad.models.github_com_monad_inc_core_pkg_types_models_user import GithubComMonadIncCorePkgTypesModelsUser
+from monad.models.models_user import ModelsUser
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsUser**](GithubComMonadIncCorePkgTypesModelsUser.md)
+[**ModelsUser**](ModelsUser.md)
 
 ### Authorization
 

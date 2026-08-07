@@ -17,7 +17,7 @@ export class RoutesTransformOperation {
     'arguments'?: RoutesTransformOperationArguments;
     'description'?: string;
     'operation'?: string;
-    'secrets'?: { [key: string]: any; };
+    'secrets'?: { [key: string]: any | null; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -45,7 +45,7 @@ export class RoutesTransformOperation {
         {
             "name": "secrets",
             "baseName": "secrets",
-            "type": "{ [key: string]: any; }",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         }    ];
 

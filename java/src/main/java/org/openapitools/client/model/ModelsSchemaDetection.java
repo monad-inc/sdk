@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * ModelsSchemaDetection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsSchemaDetection {
+  public static final String SERIALIZED_NAME_DISABLE_ALERTING = "disable_alerting";
+  @SerializedName(SERIALIZED_NAME_DISABLE_ALERTING)
+  @javax.annotation.Nullable
+  private Boolean disableAlerting;
+
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
   @javax.annotation.Nullable
@@ -57,6 +62,25 @@ public class ModelsSchemaDetection {
 
   public ModelsSchemaDetection() {
   }
+
+  public ModelsSchemaDetection disableAlerting(@javax.annotation.Nullable Boolean disableAlerting) {
+    this.disableAlerting = disableAlerting;
+    return this;
+  }
+
+  /**
+   * Get disableAlerting
+   * @return disableAlerting
+   */
+  @javax.annotation.Nullable
+  public Boolean getDisableAlerting() {
+    return disableAlerting;
+  }
+
+  public void setDisableAlerting(@javax.annotation.Nullable Boolean disableAlerting) {
+    this.disableAlerting = disableAlerting;
+  }
+
 
   public ModelsSchemaDetection enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
@@ -87,18 +111,20 @@ public class ModelsSchemaDetection {
       return false;
     }
     ModelsSchemaDetection modelsSchemaDetection = (ModelsSchemaDetection) o;
-    return Objects.equals(this.enabled, modelsSchemaDetection.enabled);
+    return Objects.equals(this.disableAlerting, modelsSchemaDetection.disableAlerting) &&
+        Objects.equals(this.enabled, modelsSchemaDetection.enabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled);
+    return Objects.hash(disableAlerting, enabled);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsSchemaDetection {\n");
+    sb.append("    disableAlerting: ").append(toIndentedString(disableAlerting)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -118,7 +144,7 @@ public class ModelsSchemaDetection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("enabled"));
+    openapiFields = new HashSet<String>(Arrays.asList("disable_alerting", "enabled"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

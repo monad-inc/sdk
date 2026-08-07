@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsAlert;
+import org.openapitools.client.model.ModelsAlert;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,12 +51,12 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3AlertList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesV3AlertList {
   public static final String SERIALIZED_NAME_ALERTS = "alerts";
   @SerializedName(SERIALIZED_NAME_ALERTS)
   @javax.annotation.Nullable
-  private List<GithubComMonadIncCorePkgTypesModelsAlert> alerts = new ArrayList<>();
+  private List<ModelsAlert> alerts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
@@ -66,12 +66,12 @@ public class RoutesV3AlertList {
   public RoutesV3AlertList() {
   }
 
-  public RoutesV3AlertList alerts(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsAlert> alerts) {
+  public RoutesV3AlertList alerts(@javax.annotation.Nullable List<ModelsAlert> alerts) {
     this.alerts = alerts;
     return this;
   }
 
-  public RoutesV3AlertList addAlertsItem(GithubComMonadIncCorePkgTypesModelsAlert alertsItem) {
+  public RoutesV3AlertList addAlertsItem(ModelsAlert alertsItem) {
     if (this.alerts == null) {
       this.alerts = new ArrayList<>();
     }
@@ -84,11 +84,11 @@ public class RoutesV3AlertList {
    * @return alerts
    */
   @javax.annotation.Nullable
-  public List<GithubComMonadIncCorePkgTypesModelsAlert> getAlerts() {
+  public List<ModelsAlert> getAlerts() {
     return alerts;
   }
 
-  public void setAlerts(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsAlert> alerts) {
+  public void setAlerts(@javax.annotation.Nullable List<ModelsAlert> alerts) {
     this.alerts = alerts;
   }
 
@@ -192,7 +192,7 @@ public class RoutesV3AlertList {
 
           // validate the optional field `alerts` (array)
           for (int i = 0; i < jsonArrayalerts.size(); i++) {
-            GithubComMonadIncCorePkgTypesModelsAlert.validateJsonElement(jsonArrayalerts.get(i));
+            ModelsAlert.validateJsonElement(jsonArrayalerts.get(i));
           };
         }
       }

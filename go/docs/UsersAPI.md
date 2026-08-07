@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateUser
 
-> GithubComMonadIncCorePkgTypesModelsUser CreateUser(ctx).Body(body).Execute()
+> ModelsUser CreateUser(ctx).Body(body).Execute()
 
 Create user
 
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.CreateUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateUser`: GithubComMonadIncCorePkgTypesModelsUser
+	// response from `CreateUser`: ModelsUser
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.CreateUser`: %v\n", resp)
 }
 ```
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsUser**](GithubComMonadIncCorePkgTypesModelsUser.md)
+[**ModelsUser**](ModelsUser.md)
 
 ### Authorization
 

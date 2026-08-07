@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * JqArgumentsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class JqArgumentsConfig {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
   @javax.annotation.Nullable
   private String key;
+
+  public static final String SERIALIZED_NAME_PREVENT_DATA_DROPPING = "prevent_data_dropping";
+  @SerializedName(SERIALIZED_NAME_PREVENT_DATA_DROPPING)
+  @javax.annotation.Nullable
+  private Boolean preventDataDropping;
 
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
@@ -79,6 +84,25 @@ public class JqArgumentsConfig {
 
   public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
+  }
+
+
+  public JqArgumentsConfig preventDataDropping(@javax.annotation.Nullable Boolean preventDataDropping) {
+    this.preventDataDropping = preventDataDropping;
+    return this;
+  }
+
+  /**
+   * PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record.
+   * @return preventDataDropping
+   */
+  @javax.annotation.Nullable
+  public Boolean getPreventDataDropping() {
+    return preventDataDropping;
+  }
+
+  public void setPreventDataDropping(@javax.annotation.Nullable Boolean preventDataDropping) {
+    this.preventDataDropping = preventDataDropping;
   }
 
 
@@ -112,12 +136,13 @@ public class JqArgumentsConfig {
     }
     JqArgumentsConfig jqArgumentsConfig = (JqArgumentsConfig) o;
     return Objects.equals(this.key, jqArgumentsConfig.key) &&
+        Objects.equals(this.preventDataDropping, jqArgumentsConfig.preventDataDropping) &&
         Objects.equals(this.query, jqArgumentsConfig.query);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, query);
+    return Objects.hash(key, preventDataDropping, query);
   }
 
   @Override
@@ -125,6 +150,7 @@ public class JqArgumentsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class JqArgumentsConfig {\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    preventDataDropping: ").append(toIndentedString(preventDataDropping)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -144,7 +170,7 @@ public class JqArgumentsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "query"));
+    openapiFields = new HashSet<String>(Arrays.asList("key", "prevent_data_dropping", "query"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

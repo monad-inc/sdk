@@ -30,12 +30,13 @@ class RoutesV3CreateAlertRuleRequest(BaseModel):
     """ # noqa: E501
     active: Optional[StrictBool] = Field(default=None, description="Active indicates whether the alert rule is active")
     description: Optional[StrictStr] = Field(default=None, description="Description of the alert rule")
+    invert_selection: Optional[StrictBool] = Field(default=None, description="InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the alert rule")
     pipeline_ids: Optional[List[StrictStr]] = Field(default=None, description="Pipeline IDs that this alert rule applies to")
     rule_config: Optional[Dict[str, Any]] = Field(default=None, description="RuleConfig contains the configuration for the alert rule")
-    severity: Optional[StrictStr] = Field(default=None, description="Severity level of the alert (e.g., \"critical\", \"warning\", \"info\")")
+    severity: Optional[StrictStr] = Field(default=None, description="Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".")
     type: Optional[StrictStr] = Field(default=None, description="Type of the alert rule")
-    __properties: ClassVar[List[str]] = ["active", "description", "name", "pipeline_ids", "rule_config", "severity", "type"]
+    __properties: ClassVar[List[str]] = ["active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity", "type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -90,6 +91,7 @@ class RoutesV3CreateAlertRuleRequest(BaseModel):
         _obj = cls.model_validate({
             "active": obj.get("active"),
             "description": obj.get("description"),
+            "invert_selection": obj.get("invert_selection"),
             "name": obj.get("name"),
             "pipeline_ids": obj.get("pipeline_ids"),
             "rule_config": obj.get("rule_config"),

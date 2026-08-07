@@ -46,11 +46,27 @@ public class ModelsReferenceTest {
     }
 
     /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
      * Test the property 'organizationId'
      */
     @Test
     public void organizationIdTest() {
         // TODO: test organizationId
+    }
+
+    /**
+     * Test the property 'shared'
+     */
+    @Test
+    public void sharedTest() {
+        // TODO: test shared
     }
 
 }

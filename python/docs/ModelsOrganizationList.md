@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organizations** | [**List[GithubComMonadIncCorePkgTypesModelsOrganization]**](GithubComMonadIncCorePkgTypesModelsOrganization.md) |  | [optional] 
+**organizations** | [**List[ModelsOrganization]**](ModelsOrganization.md) |  | [optional] 
 **pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
 
 ## Example

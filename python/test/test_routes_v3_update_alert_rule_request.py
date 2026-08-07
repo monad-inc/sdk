@@ -38,6 +38,7 @@ class TestRoutesV3UpdateAlertRuleRequest(unittest.TestCase):
             return RoutesV3UpdateAlertRuleRequest(
                 active = True,
                 description = '',
+                invert_selection = True,
                 name = '',
                 pipeline_ids = [
                     ''

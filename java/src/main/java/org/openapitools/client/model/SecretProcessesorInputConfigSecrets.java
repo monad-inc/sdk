@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Map;
 import org.openapitools.client.model.AdminLogsSecretsConfig;
 import org.openapitools.client.model.AivenServiceLogsSecretsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
@@ -34,8 +33,6 @@ import org.openapitools.client.model.AzureEventHubsSecretsConfig;
 import org.openapitools.client.model.AzureVnetFlowLogsSecretsConfig;
 import org.openapitools.client.model.BackblazeB2SecretsConfig;
 import org.openapitools.client.model.BigqueryInputSecretsConfig;
-import org.openapitools.client.model.BitwardenEventsSecretsConfig;
-import org.openapitools.client.model.BoxEventsSecretsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSecretsConfig;
 import org.openapitools.client.model.BugsnagOrgEventsSecretsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSecretsConfig;
@@ -50,9 +47,7 @@ import org.openapitools.client.model.CloudflareUrlScannerSecretsConfig;
 import org.openapitools.client.model.CloudflareZeroTrustAccessRequestsSecretsConfig;
 import org.openapitools.client.model.ClumioAuditLogsSecretsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSecretsConfig;
-import org.openapitools.client.model.CodaAuditEventsSecretsConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSecretsConfig;
-import org.openapitools.client.model.CustomerEventDataSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
 import org.openapitools.client.model.DuoSecurityActivityLogsSecretsConfig;
 import org.openapitools.client.model.EksAuditLogsSecretsConfig;
@@ -60,7 +55,6 @@ import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
 import org.openapitools.client.model.EventSecretsConfig;
 import org.openapitools.client.model.FullScansSecretsConfig;
-import org.openapitools.client.model.GitlabIssuesSecretsConfig;
 import org.openapitools.client.model.GkeAuditLogsSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSecretsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSecretsConfig;
@@ -76,21 +70,13 @@ import org.openapitools.client.model.Microsoft365GenericSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.ObjectStorageInputSecretsConfig;
 import org.openapitools.client.model.OfflineenrollmentlogsSecretsConfig;
-import org.openapitools.client.model.OneloginEventsSecretsConfig;
-import org.openapitools.client.model.OpalEventsSecretsConfig;
 import org.openapitools.client.model.OperationLogsSecretsConfig;
 import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.OwnbackupAccountEventsSecretsConfig;
-import org.openapitools.client.model.PagerdutyAuditRecordsSecretsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
 import org.openapitools.client.model.PlaidWebhooksSecretsConfig;
-import org.openapitools.client.model.PolymerSecretsConfig;
-import org.openapitools.client.model.PostmanAuditLogsSecretsConfig;
-import org.openapitools.client.model.PubsubSecretsConfig;
-import org.openapitools.client.model.RootlyAuditLogsSecretsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSecretsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig;
-import org.openapitools.client.model.SentryOrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSecretsConfig;
 import org.openapitools.client.model.SnykIssuesSecretsConfig;
 import org.openapitools.client.model.SnykTargetsSecretsConfig;
@@ -98,10 +84,6 @@ import org.openapitools.client.model.TaniumGraphqlInputSecretsConfig;
 import org.openapitools.client.model.TeamAccessLogsSecretsConfig;
 import org.openapitools.client.model.TeamIntegrationLogsSecretsConfig;
 import org.openapitools.client.model.TelephonyLogsSecretsConfig;
-import org.openapitools.client.model.TenableAssetsCronSecretsConfig;
-import org.openapitools.client.model.TenableAssetsSecretsConfig;
-import org.openapitools.client.model.TenableVulnerabilitiesCronSecretsConfig;
-import org.openapitools.client.model.TenableVulnerabilitiesSecretsConfig;
 import org.openapitools.client.model.TinesAuditLogsSecretsConfig;
 import org.openapitools.client.model.TinesEventsLogsSecretsConfig;
 import org.openapitools.client.model.TwilioEventsSecretsConfig;
@@ -111,7 +93,6 @@ import org.openapitools.client.model.VercelUserEventsSecretsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSecretsConfig;
 import org.openapitools.client.model.WizAuditLogsSecretsConfig;
-import org.openapitools.client.model.ZendeskAuditLogsSecretsConfig;
 
 
 
@@ -148,7 +129,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorInputConfigSecrets.class.getName());
 
@@ -172,8 +153,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<AzureVnetFlowLogsSecretsConfig> adapterAzureVnetFlowLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureVnetFlowLogsSecretsConfig.class));
             final TypeAdapter<BackblazeB2SecretsConfig> adapterBackblazeB2SecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BackblazeB2SecretsConfig.class));
             final TypeAdapter<BigqueryInputSecretsConfig> adapterBigqueryInputSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigqueryInputSecretsConfig.class));
-            final TypeAdapter<BitwardenEventsSecretsConfig> adapterBitwardenEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BitwardenEventsSecretsConfig.class));
-            final TypeAdapter<BoxEventsSecretsConfig> adapterBoxEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxEventsSecretsConfig.class));
             final TypeAdapter<BrinqaAuditLogsSecretsConfig> adapterBrinqaAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BrinqaAuditLogsSecretsConfig.class));
             final TypeAdapter<BugsnagOrgEventsSecretsConfig> adapterBugsnagOrgEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BugsnagOrgEventsSecretsConfig.class));
             final TypeAdapter<BuildkiteAuditLogsSecretsConfig> adapterBuildkiteAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BuildkiteAuditLogsSecretsConfig.class));
@@ -189,9 +168,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<CloudflareZeroTrustAccessRequestsSecretsConfig> adapterCloudflareZeroTrustAccessRequestsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudflareZeroTrustAccessRequestsSecretsConfig.class));
             final TypeAdapter<ClumioAuditLogsSecretsConfig> adapterClumioAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(ClumioAuditLogsSecretsConfig.class));
             final TypeAdapter<ClumioConsolidatedAlertsSecretsConfig> adapterClumioConsolidatedAlertsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(ClumioConsolidatedAlertsSecretsConfig.class));
-            final TypeAdapter<CodaAuditEventsSecretsConfig> adapterCodaAuditEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CodaAuditEventsSecretsConfig.class));
             final TypeAdapter<CortexXsoarManagementLogsSecretsConfig> adapterCortexXsoarManagementLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CortexXsoarManagementLogsSecretsConfig.class));
-            final TypeAdapter<CustomerEventDataSecretsConfig> adapterCustomerEventDataSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CustomerEventDataSecretsConfig.class));
             final TypeAdapter<DefenderForEndpointAlertsSecretsConfig> adapterDefenderForEndpointAlertsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DefenderForEndpointAlertsSecretsConfig.class));
             final TypeAdapter<DuoSecurityActivityLogsSecretsConfig> adapterDuoSecurityActivityLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DuoSecurityActivityLogsSecretsConfig.class));
             final TypeAdapter<EksAuditLogsSecretsConfig> adapterEksAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EksAuditLogsSecretsConfig.class));
@@ -199,7 +176,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<EntraIdSecretsConfig> adapterEntraIdSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EntraIdSecretsConfig.class));
             final TypeAdapter<EventSecretsConfig> adapterEventSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EventSecretsConfig.class));
             final TypeAdapter<FullScansSecretsConfig> adapterFullScansSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(FullScansSecretsConfig.class));
-            final TypeAdapter<GitlabIssuesSecretsConfig> adapterGitlabIssuesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(GitlabIssuesSecretsConfig.class));
             final TypeAdapter<GkeAuditLogsSecretsConfig> adapterGkeAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(GkeAuditLogsSecretsConfig.class));
             final TypeAdapter<GoogleCloudStorageSecretsConfig> adapterGoogleCloudStorageSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(GoogleCloudStorageSecretsConfig.class));
             final TypeAdapter<GoogleWorkspaceSecretsConfig> adapterGoogleWorkspaceSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(GoogleWorkspaceSecretsConfig.class));
@@ -212,25 +188,15 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<LookerAuditLogsSecretsConfig> adapterLookerAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(LookerAuditLogsSecretsConfig.class));
             final TypeAdapter<MerakiConfigLogsSecretsConfig> adapterMerakiConfigLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(MerakiConfigLogsSecretsConfig.class));
             final TypeAdapter<Microsoft365GenericSecretsConfig> adapterMicrosoft365GenericSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(Microsoft365GenericSecretsConfig.class));
-            final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
-            final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
             final TypeAdapter<ObjectStorageInputSecretsConfig> adapterObjectStorageInputSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(ObjectStorageInputSecretsConfig.class));
             final TypeAdapter<OfflineenrollmentlogsSecretsConfig> adapterOfflineenrollmentlogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OfflineenrollmentlogsSecretsConfig.class));
-            final TypeAdapter<OneloginEventsSecretsConfig> adapterOneloginEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OneloginEventsSecretsConfig.class));
-            final TypeAdapter<OpalEventsSecretsConfig> adapterOpalEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OpalEventsSecretsConfig.class));
             final TypeAdapter<OperationLogsSecretsConfig> adapterOperationLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OperationLogsSecretsConfig.class));
             final TypeAdapter<OrgAuditLogsSecretsConfig> adapterOrgAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OrgAuditLogsSecretsConfig.class));
             final TypeAdapter<OwnbackupAccountEventsSecretsConfig> adapterOwnbackupAccountEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OwnbackupAccountEventsSecretsConfig.class));
-            final TypeAdapter<PagerdutyAuditRecordsSecretsConfig> adapterPagerdutyAuditRecordsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PagerdutyAuditRecordsSecretsConfig.class));
             final TypeAdapter<PaloAltoDataSecurityAlertsSecretsConfig> adapterPaloAltoDataSecurityAlertsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PaloAltoDataSecurityAlertsSecretsConfig.class));
             final TypeAdapter<PlaidWebhooksSecretsConfig> adapterPlaidWebhooksSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PlaidWebhooksSecretsConfig.class));
-            final TypeAdapter<PolymerSecretsConfig> adapterPolymerSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PolymerSecretsConfig.class));
-            final TypeAdapter<PostmanAuditLogsSecretsConfig> adapterPostmanAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PostmanAuditLogsSecretsConfig.class));
-            final TypeAdapter<PubsubSecretsConfig> adapterPubsubSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PubsubSecretsConfig.class));
-            final TypeAdapter<RootlyAuditLogsSecretsConfig> adapterRootlyAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(RootlyAuditLogsSecretsConfig.class));
             final TypeAdapter<SemgrepCodeFindingsSecretsConfig> adapterSemgrepCodeFindingsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepCodeFindingsSecretsConfig.class));
             final TypeAdapter<SemgrepSupplyChainFindingsSecretsConfig> adapterSemgrepSupplyChainFindingsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepSupplyChainFindingsSecretsConfig.class));
-            final TypeAdapter<SentryOrgAuditLogsSecretsConfig> adapterSentryOrgAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SentryOrgAuditLogsSecretsConfig.class));
             final TypeAdapter<SlackEnterpriseAuditLogsSecretsConfig> adapterSlackEnterpriseAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SlackEnterpriseAuditLogsSecretsConfig.class));
             final TypeAdapter<SnykIssuesSecretsConfig> adapterSnykIssuesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykIssuesSecretsConfig.class));
             final TypeAdapter<SnykTargetsSecretsConfig> adapterSnykTargetsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykTargetsSecretsConfig.class));
@@ -238,10 +204,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<TeamAccessLogsSecretsConfig> adapterTeamAccessLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TeamAccessLogsSecretsConfig.class));
             final TypeAdapter<TeamIntegrationLogsSecretsConfig> adapterTeamIntegrationLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TeamIntegrationLogsSecretsConfig.class));
             final TypeAdapter<TelephonyLogsSecretsConfig> adapterTelephonyLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TelephonyLogsSecretsConfig.class));
-            final TypeAdapter<TenableAssetsSecretsConfig> adapterTenableAssetsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TenableAssetsSecretsConfig.class));
-            final TypeAdapter<TenableAssetsCronSecretsConfig> adapterTenableAssetsCronSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TenableAssetsCronSecretsConfig.class));
-            final TypeAdapter<TenableVulnerabilitiesSecretsConfig> adapterTenableVulnerabilitiesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TenableVulnerabilitiesSecretsConfig.class));
-            final TypeAdapter<TenableVulnerabilitiesCronSecretsConfig> adapterTenableVulnerabilitiesCronSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TenableVulnerabilitiesCronSecretsConfig.class));
             final TypeAdapter<TinesAuditLogsSecretsConfig> adapterTinesAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TinesAuditLogsSecretsConfig.class));
             final TypeAdapter<TinesEventsLogsSecretsConfig> adapterTinesEventsLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TinesEventsLogsSecretsConfig.class));
             final TypeAdapter<TwilioEventsSecretsConfig> adapterTwilioEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TwilioEventsSecretsConfig.class));
@@ -251,7 +213,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<VoltioAuditLogsSecretsConfig> adapterVoltioAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(VoltioAuditLogsSecretsConfig.class));
             final TypeAdapter<VulnerabilityFindingsSecretsConfig> adapterVulnerabilityFindingsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(VulnerabilityFindingsSecretsConfig.class));
             final TypeAdapter<WizAuditLogsSecretsConfig> adapterWizAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(WizAuditLogsSecretsConfig.class));
-            final TypeAdapter<ZendeskAuditLogsSecretsConfig> adapterZendeskAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(ZendeskAuditLogsSecretsConfig.class));
 
             return (TypeAdapter<T>) new TypeAdapter<SecretProcessesorInputConfigSecrets>() {
                 @Override
@@ -330,18 +291,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `BigqueryInputSecretsConfig`
                     if (value.getActualInstance() instanceof BigqueryInputSecretsConfig) {
                         JsonElement element = adapterBigqueryInputSecretsConfig.toJsonTree((BigqueryInputSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `BitwardenEventsSecretsConfig`
-                    if (value.getActualInstance() instanceof BitwardenEventsSecretsConfig) {
-                        JsonElement element = adapterBitwardenEventsSecretsConfig.toJsonTree((BitwardenEventsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `BoxEventsSecretsConfig`
-                    if (value.getActualInstance() instanceof BoxEventsSecretsConfig) {
-                        JsonElement element = adapterBoxEventsSecretsConfig.toJsonTree((BoxEventsSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -435,21 +384,9 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `CodaAuditEventsSecretsConfig`
-                    if (value.getActualInstance() instanceof CodaAuditEventsSecretsConfig) {
-                        JsonElement element = adapterCodaAuditEventsSecretsConfig.toJsonTree((CodaAuditEventsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
                     // check if the actual instance is of the type `CortexXsoarManagementLogsSecretsConfig`
                     if (value.getActualInstance() instanceof CortexXsoarManagementLogsSecretsConfig) {
                         JsonElement element = adapterCortexXsoarManagementLogsSecretsConfig.toJsonTree((CortexXsoarManagementLogsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `CustomerEventDataSecretsConfig`
-                    if (value.getActualInstance() instanceof CustomerEventDataSecretsConfig) {
-                        JsonElement element = adapterCustomerEventDataSecretsConfig.toJsonTree((CustomerEventDataSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -492,12 +429,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `FullScansSecretsConfig`
                     if (value.getActualInstance() instanceof FullScansSecretsConfig) {
                         JsonElement element = adapterFullScansSecretsConfig.toJsonTree((FullScansSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `GitlabIssuesSecretsConfig`
-                    if (value.getActualInstance() instanceof GitlabIssuesSecretsConfig) {
-                        JsonElement element = adapterGitlabIssuesSecretsConfig.toJsonTree((GitlabIssuesSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -573,12 +504,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `Map<String, Object>`
-                    if (value.getActualInstance() instanceof Map<?, ?>) {
-                        JsonObject object = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, object);
-                        return;
-                    }
                     // check if the actual instance is of the type `ObjectStorageInputSecretsConfig`
                     if (value.getActualInstance() instanceof ObjectStorageInputSecretsConfig) {
                         JsonElement element = adapterObjectStorageInputSecretsConfig.toJsonTree((ObjectStorageInputSecretsConfig)value.getActualInstance());
@@ -588,18 +513,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `OfflineenrollmentlogsSecretsConfig`
                     if (value.getActualInstance() instanceof OfflineenrollmentlogsSecretsConfig) {
                         JsonElement element = adapterOfflineenrollmentlogsSecretsConfig.toJsonTree((OfflineenrollmentlogsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `OneloginEventsSecretsConfig`
-                    if (value.getActualInstance() instanceof OneloginEventsSecretsConfig) {
-                        JsonElement element = adapterOneloginEventsSecretsConfig.toJsonTree((OneloginEventsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `OpalEventsSecretsConfig`
-                    if (value.getActualInstance() instanceof OpalEventsSecretsConfig) {
-                        JsonElement element = adapterOpalEventsSecretsConfig.toJsonTree((OpalEventsSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -621,12 +534,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `PagerdutyAuditRecordsSecretsConfig`
-                    if (value.getActualInstance() instanceof PagerdutyAuditRecordsSecretsConfig) {
-                        JsonElement element = adapterPagerdutyAuditRecordsSecretsConfig.toJsonTree((PagerdutyAuditRecordsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
                     // check if the actual instance is of the type `PaloAltoDataSecurityAlertsSecretsConfig`
                     if (value.getActualInstance() instanceof PaloAltoDataSecurityAlertsSecretsConfig) {
                         JsonElement element = adapterPaloAltoDataSecurityAlertsSecretsConfig.toJsonTree((PaloAltoDataSecurityAlertsSecretsConfig)value.getActualInstance());
@@ -639,30 +546,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `PolymerSecretsConfig`
-                    if (value.getActualInstance() instanceof PolymerSecretsConfig) {
-                        JsonElement element = adapterPolymerSecretsConfig.toJsonTree((PolymerSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `PostmanAuditLogsSecretsConfig`
-                    if (value.getActualInstance() instanceof PostmanAuditLogsSecretsConfig) {
-                        JsonElement element = adapterPostmanAuditLogsSecretsConfig.toJsonTree((PostmanAuditLogsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `PubsubSecretsConfig`
-                    if (value.getActualInstance() instanceof PubsubSecretsConfig) {
-                        JsonElement element = adapterPubsubSecretsConfig.toJsonTree((PubsubSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `RootlyAuditLogsSecretsConfig`
-                    if (value.getActualInstance() instanceof RootlyAuditLogsSecretsConfig) {
-                        JsonElement element = adapterRootlyAuditLogsSecretsConfig.toJsonTree((RootlyAuditLogsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
                     // check if the actual instance is of the type `SemgrepCodeFindingsSecretsConfig`
                     if (value.getActualInstance() instanceof SemgrepCodeFindingsSecretsConfig) {
                         JsonElement element = adapterSemgrepCodeFindingsSecretsConfig.toJsonTree((SemgrepCodeFindingsSecretsConfig)value.getActualInstance());
@@ -672,12 +555,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `SemgrepSupplyChainFindingsSecretsConfig`
                     if (value.getActualInstance() instanceof SemgrepSupplyChainFindingsSecretsConfig) {
                         JsonElement element = adapterSemgrepSupplyChainFindingsSecretsConfig.toJsonTree((SemgrepSupplyChainFindingsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `SentryOrgAuditLogsSecretsConfig`
-                    if (value.getActualInstance() instanceof SentryOrgAuditLogsSecretsConfig) {
-                        JsonElement element = adapterSentryOrgAuditLogsSecretsConfig.toJsonTree((SentryOrgAuditLogsSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -720,30 +597,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `TelephonyLogsSecretsConfig`
                     if (value.getActualInstance() instanceof TelephonyLogsSecretsConfig) {
                         JsonElement element = adapterTelephonyLogsSecretsConfig.toJsonTree((TelephonyLogsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `TenableAssetsSecretsConfig`
-                    if (value.getActualInstance() instanceof TenableAssetsSecretsConfig) {
-                        JsonElement element = adapterTenableAssetsSecretsConfig.toJsonTree((TenableAssetsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `TenableAssetsCronSecretsConfig`
-                    if (value.getActualInstance() instanceof TenableAssetsCronSecretsConfig) {
-                        JsonElement element = adapterTenableAssetsCronSecretsConfig.toJsonTree((TenableAssetsCronSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `TenableVulnerabilitiesSecretsConfig`
-                    if (value.getActualInstance() instanceof TenableVulnerabilitiesSecretsConfig) {
-                        JsonElement element = adapterTenableVulnerabilitiesSecretsConfig.toJsonTree((TenableVulnerabilitiesSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `TenableVulnerabilitiesCronSecretsConfig`
-                    if (value.getActualInstance() instanceof TenableVulnerabilitiesCronSecretsConfig) {
-                        JsonElement element = adapterTenableVulnerabilitiesCronSecretsConfig.toJsonTree((TenableVulnerabilitiesCronSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -801,13 +654,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `ZendeskAuditLogsSecretsConfig`
-                    if (value.getActualInstance() instanceof ZendeskAuditLogsSecretsConfig) {
-                        JsonElement element = adapterZendeskAuditLogsSecretsConfig.toJsonTree((ZendeskAuditLogsSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig");
                 }
 
                 @Override
@@ -962,30 +809,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BigqueryInputSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'BigqueryInputSecretsConfig'", e);
-                    }
-                    // deserialize BitwardenEventsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        BitwardenEventsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterBitwardenEventsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'BitwardenEventsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BitwardenEventsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'BitwardenEventsSecretsConfig'", e);
-                    }
-                    // deserialize BoxEventsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        BoxEventsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterBoxEventsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'BoxEventsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BoxEventsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'BoxEventsSecretsConfig'", e);
                     }
                     // deserialize BrinqaAuditLogsSecretsConfig
                     try {
@@ -1169,18 +992,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ClumioConsolidatedAlertsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ClumioConsolidatedAlertsSecretsConfig'", e);
                     }
-                    // deserialize CodaAuditEventsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        CodaAuditEventsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterCodaAuditEventsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'CodaAuditEventsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CodaAuditEventsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'CodaAuditEventsSecretsConfig'", e);
-                    }
                     // deserialize CortexXsoarManagementLogsSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1192,18 +1003,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CortexXsoarManagementLogsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CortexXsoarManagementLogsSecretsConfig'", e);
-                    }
-                    // deserialize CustomerEventDataSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        CustomerEventDataSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterCustomerEventDataSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'CustomerEventDataSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CustomerEventDataSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'CustomerEventDataSecretsConfig'", e);
                     }
                     // deserialize DefenderForEndpointAlertsSecretsConfig
                     try {
@@ -1288,18 +1087,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FullScansSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FullScansSecretsConfig'", e);
-                    }
-                    // deserialize GitlabIssuesSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        GitlabIssuesSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterGitlabIssuesSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'GitlabIssuesSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for GitlabIssuesSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'GitlabIssuesSecretsConfig'", e);
                     }
                     // deserialize GkeAuditLogsSecretsConfig
                     try {
@@ -1445,21 +1232,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Microsoft365GenericSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Microsoft365GenericSecretsConfig'", e);
                     }
-                    // deserialize Map<String, Object>
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        if (!jsonElement.isJsonObject()) {
-                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
-                        }
-
-                        actualAdapter = adapterMapStringObject;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'Map<String, Object>'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
-                    }
                     // deserialize ObjectStorageInputSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1483,30 +1255,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OfflineenrollmentlogsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'OfflineenrollmentlogsSecretsConfig'", e);
-                    }
-                    // deserialize OneloginEventsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        OneloginEventsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterOneloginEventsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'OneloginEventsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OneloginEventsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'OneloginEventsSecretsConfig'", e);
-                    }
-                    // deserialize OpalEventsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        OpalEventsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterOpalEventsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'OpalEventsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OpalEventsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'OpalEventsSecretsConfig'", e);
                     }
                     // deserialize OperationLogsSecretsConfig
                     try {
@@ -1544,18 +1292,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OwnbackupAccountEventsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'OwnbackupAccountEventsSecretsConfig'", e);
                     }
-                    // deserialize PagerdutyAuditRecordsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        PagerdutyAuditRecordsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterPagerdutyAuditRecordsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'PagerdutyAuditRecordsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PagerdutyAuditRecordsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'PagerdutyAuditRecordsSecretsConfig'", e);
-                    }
                     // deserialize PaloAltoDataSecurityAlertsSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1580,54 +1316,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PlaidWebhooksSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'PlaidWebhooksSecretsConfig'", e);
                     }
-                    // deserialize PolymerSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        PolymerSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterPolymerSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'PolymerSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PolymerSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'PolymerSecretsConfig'", e);
-                    }
-                    // deserialize PostmanAuditLogsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        PostmanAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterPostmanAuditLogsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'PostmanAuditLogsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PostmanAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'PostmanAuditLogsSecretsConfig'", e);
-                    }
-                    // deserialize PubsubSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        PubsubSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterPubsubSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'PubsubSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PubsubSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'PubsubSecretsConfig'", e);
-                    }
-                    // deserialize RootlyAuditLogsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        RootlyAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterRootlyAuditLogsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'RootlyAuditLogsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RootlyAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'RootlyAuditLogsSecretsConfig'", e);
-                    }
                     // deserialize SemgrepCodeFindingsSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1651,18 +1339,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SemgrepSupplyChainFindingsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SemgrepSupplyChainFindingsSecretsConfig'", e);
-                    }
-                    // deserialize SentryOrgAuditLogsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        SentryOrgAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterSentryOrgAuditLogsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'SentryOrgAuditLogsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SentryOrgAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'SentryOrgAuditLogsSecretsConfig'", e);
                     }
                     // deserialize SlackEnterpriseAuditLogsSecretsConfig
                     try {
@@ -1747,54 +1423,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TelephonyLogsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'TelephonyLogsSecretsConfig'", e);
-                    }
-                    // deserialize TenableAssetsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        TenableAssetsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterTenableAssetsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'TenableAssetsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableAssetsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'TenableAssetsSecretsConfig'", e);
-                    }
-                    // deserialize TenableAssetsCronSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        TenableAssetsCronSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterTenableAssetsCronSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'TenableAssetsCronSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableAssetsCronSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'TenableAssetsCronSecretsConfig'", e);
-                    }
-                    // deserialize TenableVulnerabilitiesSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        TenableVulnerabilitiesSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterTenableVulnerabilitiesSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'TenableVulnerabilitiesSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableVulnerabilitiesSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'TenableVulnerabilitiesSecretsConfig'", e);
-                    }
-                    // deserialize TenableVulnerabilitiesCronSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        TenableVulnerabilitiesCronSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterTenableVulnerabilitiesCronSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'TenableVulnerabilitiesCronSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableVulnerabilitiesCronSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'TenableVulnerabilitiesCronSecretsConfig'", e);
                     }
                     // deserialize TinesAuditLogsSecretsConfig
                     try {
@@ -1904,18 +1532,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for WizAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WizAuditLogsSecretsConfig'", e);
                     }
-                    // deserialize ZendeskAuditLogsSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        ZendeskAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterZendeskAuditLogsSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'ZendeskAuditLogsSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ZendeskAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'ZendeskAuditLogsSecretsConfig'", e);
-                    }
 
                     if (match == 1) {
                         SecretProcessesorInputConfigSecrets ret = new SecretProcessesorInputConfigSecrets();
@@ -1954,8 +1570,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("AzureVnetFlowLogsSecretsConfig", AzureVnetFlowLogsSecretsConfig.class);
         schemas.put("BackblazeB2SecretsConfig", BackblazeB2SecretsConfig.class);
         schemas.put("BigqueryInputSecretsConfig", BigqueryInputSecretsConfig.class);
-        schemas.put("BitwardenEventsSecretsConfig", BitwardenEventsSecretsConfig.class);
-        schemas.put("BoxEventsSecretsConfig", BoxEventsSecretsConfig.class);
         schemas.put("BrinqaAuditLogsSecretsConfig", BrinqaAuditLogsSecretsConfig.class);
         schemas.put("BugsnagOrgEventsSecretsConfig", BugsnagOrgEventsSecretsConfig.class);
         schemas.put("BuildkiteAuditLogsSecretsConfig", BuildkiteAuditLogsSecretsConfig.class);
@@ -1971,9 +1585,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("CloudflareZeroTrustAccessRequestsSecretsConfig", CloudflareZeroTrustAccessRequestsSecretsConfig.class);
         schemas.put("ClumioAuditLogsSecretsConfig", ClumioAuditLogsSecretsConfig.class);
         schemas.put("ClumioConsolidatedAlertsSecretsConfig", ClumioConsolidatedAlertsSecretsConfig.class);
-        schemas.put("CodaAuditEventsSecretsConfig", CodaAuditEventsSecretsConfig.class);
         schemas.put("CortexXsoarManagementLogsSecretsConfig", CortexXsoarManagementLogsSecretsConfig.class);
-        schemas.put("CustomerEventDataSecretsConfig", CustomerEventDataSecretsConfig.class);
         schemas.put("DefenderForEndpointAlertsSecretsConfig", DefenderForEndpointAlertsSecretsConfig.class);
         schemas.put("DuoSecurityActivityLogsSecretsConfig", DuoSecurityActivityLogsSecretsConfig.class);
         schemas.put("EksAuditLogsSecretsConfig", EksAuditLogsSecretsConfig.class);
@@ -1981,7 +1593,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("EntraIdSecretsConfig", EntraIdSecretsConfig.class);
         schemas.put("EventSecretsConfig", EventSecretsConfig.class);
         schemas.put("FullScansSecretsConfig", FullScansSecretsConfig.class);
-        schemas.put("GitlabIssuesSecretsConfig", GitlabIssuesSecretsConfig.class);
         schemas.put("GkeAuditLogsSecretsConfig", GkeAuditLogsSecretsConfig.class);
         schemas.put("GoogleCloudStorageSecretsConfig", GoogleCloudStorageSecretsConfig.class);
         schemas.put("GoogleWorkspaceSecretsConfig", GoogleWorkspaceSecretsConfig.class);
@@ -1994,24 +1605,15 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("LookerAuditLogsSecretsConfig", LookerAuditLogsSecretsConfig.class);
         schemas.put("MerakiConfigLogsSecretsConfig", MerakiConfigLogsSecretsConfig.class);
         schemas.put("Microsoft365GenericSecretsConfig", Microsoft365GenericSecretsConfig.class);
-        schemas.put("Map<String, Object>", Map.class);
         schemas.put("ObjectStorageInputSecretsConfig", ObjectStorageInputSecretsConfig.class);
         schemas.put("OfflineenrollmentlogsSecretsConfig", OfflineenrollmentlogsSecretsConfig.class);
-        schemas.put("OneloginEventsSecretsConfig", OneloginEventsSecretsConfig.class);
-        schemas.put("OpalEventsSecretsConfig", OpalEventsSecretsConfig.class);
         schemas.put("OperationLogsSecretsConfig", OperationLogsSecretsConfig.class);
         schemas.put("OrgAuditLogsSecretsConfig", OrgAuditLogsSecretsConfig.class);
         schemas.put("OwnbackupAccountEventsSecretsConfig", OwnbackupAccountEventsSecretsConfig.class);
-        schemas.put("PagerdutyAuditRecordsSecretsConfig", PagerdutyAuditRecordsSecretsConfig.class);
         schemas.put("PaloAltoDataSecurityAlertsSecretsConfig", PaloAltoDataSecurityAlertsSecretsConfig.class);
         schemas.put("PlaidWebhooksSecretsConfig", PlaidWebhooksSecretsConfig.class);
-        schemas.put("PolymerSecretsConfig", PolymerSecretsConfig.class);
-        schemas.put("PostmanAuditLogsSecretsConfig", PostmanAuditLogsSecretsConfig.class);
-        schemas.put("PubsubSecretsConfig", PubsubSecretsConfig.class);
-        schemas.put("RootlyAuditLogsSecretsConfig", RootlyAuditLogsSecretsConfig.class);
         schemas.put("SemgrepCodeFindingsSecretsConfig", SemgrepCodeFindingsSecretsConfig.class);
         schemas.put("SemgrepSupplyChainFindingsSecretsConfig", SemgrepSupplyChainFindingsSecretsConfig.class);
-        schemas.put("SentryOrgAuditLogsSecretsConfig", SentryOrgAuditLogsSecretsConfig.class);
         schemas.put("SlackEnterpriseAuditLogsSecretsConfig", SlackEnterpriseAuditLogsSecretsConfig.class);
         schemas.put("SnykIssuesSecretsConfig", SnykIssuesSecretsConfig.class);
         schemas.put("SnykTargetsSecretsConfig", SnykTargetsSecretsConfig.class);
@@ -2019,10 +1621,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("TeamAccessLogsSecretsConfig", TeamAccessLogsSecretsConfig.class);
         schemas.put("TeamIntegrationLogsSecretsConfig", TeamIntegrationLogsSecretsConfig.class);
         schemas.put("TelephonyLogsSecretsConfig", TelephonyLogsSecretsConfig.class);
-        schemas.put("TenableAssetsSecretsConfig", TenableAssetsSecretsConfig.class);
-        schemas.put("TenableAssetsCronSecretsConfig", TenableAssetsCronSecretsConfig.class);
-        schemas.put("TenableVulnerabilitiesSecretsConfig", TenableVulnerabilitiesSecretsConfig.class);
-        schemas.put("TenableVulnerabilitiesCronSecretsConfig", TenableVulnerabilitiesCronSecretsConfig.class);
         schemas.put("TinesAuditLogsSecretsConfig", TinesAuditLogsSecretsConfig.class);
         schemas.put("TinesEventsLogsSecretsConfig", TinesEventsLogsSecretsConfig.class);
         schemas.put("TwilioEventsSecretsConfig", TwilioEventsSecretsConfig.class);
@@ -2032,7 +1630,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("VoltioAuditLogsSecretsConfig", VoltioAuditLogsSecretsConfig.class);
         schemas.put("VulnerabilityFindingsSecretsConfig", VulnerabilityFindingsSecretsConfig.class);
         schemas.put("WizAuditLogsSecretsConfig", WizAuditLogsSecretsConfig.class);
-        schemas.put("ZendeskAuditLogsSecretsConfig", ZendeskAuditLogsSecretsConfig.class);
     }
 
     @Override
@@ -2043,7 +1640,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig
+     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -2105,16 +1702,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof BigqueryInputSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof BitwardenEventsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof BoxEventsSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2194,17 +1781,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof CodaAuditEventsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof CortexXsoarManagementLogsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof CustomerEventDataSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2240,11 +1817,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof FullScansSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof GitlabIssuesSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2309,27 +1881,12 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof Map<?, ?>) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof ObjectStorageInputSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
         if (instance instanceof OfflineenrollmentlogsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof OneloginEventsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof OpalEventsSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2349,11 +1906,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof PagerdutyAuditRecordsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof PaloAltoDataSecurityAlertsSecretsConfig) {
             super.setActualInstance(instance);
             return;
@@ -2364,37 +1916,12 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof PolymerSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof PostmanAuditLogsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof PubsubSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof RootlyAuditLogsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof SemgrepCodeFindingsSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
         if (instance instanceof SemgrepSupplyChainFindingsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof SentryOrgAuditLogsSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2430,26 +1957,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof TelephonyLogsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof TenableAssetsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof TenableAssetsCronSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof TenableVulnerabilitiesSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof TenableVulnerabilitiesCronSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2499,19 +2006,14 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof ZendeskAuditLogsSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        throw new RuntimeException("Invalid instance type. Must be AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig
+     * AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig
      *
-     * @return The actual instance (AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig)
+     * @return The actual instance (AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -2661,30 +2163,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public BigqueryInputSecretsConfig getBigqueryInputSecretsConfig() throws ClassCastException {
         return (BigqueryInputSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `BitwardenEventsSecretsConfig`. If the actual instance is not `BitwardenEventsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `BitwardenEventsSecretsConfig`
-     * @throws ClassCastException if the instance is not `BitwardenEventsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public BitwardenEventsSecretsConfig getBitwardenEventsSecretsConfig() throws ClassCastException {
-        return (BitwardenEventsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `BoxEventsSecretsConfig`. If the actual instance is not `BoxEventsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `BoxEventsSecretsConfig`
-     * @throws ClassCastException if the instance is not `BoxEventsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public BoxEventsSecretsConfig getBoxEventsSecretsConfig() throws ClassCastException {
-        return (BoxEventsSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -2868,18 +2346,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `CodaAuditEventsSecretsConfig`. If the actual instance is not `CodaAuditEventsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `CodaAuditEventsSecretsConfig`
-     * @throws ClassCastException if the instance is not `CodaAuditEventsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public CodaAuditEventsSecretsConfig getCodaAuditEventsSecretsConfig() throws ClassCastException {
-        return (CodaAuditEventsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
      * Get the actual instance of `CortexXsoarManagementLogsSecretsConfig`. If the actual instance is not `CortexXsoarManagementLogsSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -2889,18 +2355,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public CortexXsoarManagementLogsSecretsConfig getCortexXsoarManagementLogsSecretsConfig() throws ClassCastException {
         return (CortexXsoarManagementLogsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `CustomerEventDataSecretsConfig`. If the actual instance is not `CustomerEventDataSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `CustomerEventDataSecretsConfig`
-     * @throws ClassCastException if the instance is not `CustomerEventDataSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public CustomerEventDataSecretsConfig getCustomerEventDataSecretsConfig() throws ClassCastException {
-        return (CustomerEventDataSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -2985,18 +2439,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public FullScansSecretsConfig getFullScansSecretsConfig() throws ClassCastException {
         return (FullScansSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `GitlabIssuesSecretsConfig`. If the actual instance is not `GitlabIssuesSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `GitlabIssuesSecretsConfig`
-     * @throws ClassCastException if the instance is not `GitlabIssuesSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public GitlabIssuesSecretsConfig getGitlabIssuesSecretsConfig() throws ClassCastException {
-        return (GitlabIssuesSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -3144,18 +2586,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `Map&lt;String, Object&gt;`
-     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
-     */
-    @SuppressWarnings("unchecked")
-    public Map<String, Object> getMapStringObject() throws ClassCastException {
-        return (Map<String, Object>)super.getActualInstance();
-    }
-
-    /**
      * Get the actual instance of `ObjectStorageInputSecretsConfig`. If the actual instance is not `ObjectStorageInputSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -3177,30 +2607,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public OfflineenrollmentlogsSecretsConfig getOfflineenrollmentlogsSecretsConfig() throws ClassCastException {
         return (OfflineenrollmentlogsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `OneloginEventsSecretsConfig`. If the actual instance is not `OneloginEventsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `OneloginEventsSecretsConfig`
-     * @throws ClassCastException if the instance is not `OneloginEventsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public OneloginEventsSecretsConfig getOneloginEventsSecretsConfig() throws ClassCastException {
-        return (OneloginEventsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `OpalEventsSecretsConfig`. If the actual instance is not `OpalEventsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `OpalEventsSecretsConfig`
-     * @throws ClassCastException if the instance is not `OpalEventsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public OpalEventsSecretsConfig getOpalEventsSecretsConfig() throws ClassCastException {
-        return (OpalEventsSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -3240,18 +2646,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `PagerdutyAuditRecordsSecretsConfig`. If the actual instance is not `PagerdutyAuditRecordsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `PagerdutyAuditRecordsSecretsConfig`
-     * @throws ClassCastException if the instance is not `PagerdutyAuditRecordsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public PagerdutyAuditRecordsSecretsConfig getPagerdutyAuditRecordsSecretsConfig() throws ClassCastException {
-        return (PagerdutyAuditRecordsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
      * Get the actual instance of `PaloAltoDataSecurityAlertsSecretsConfig`. If the actual instance is not `PaloAltoDataSecurityAlertsSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -3276,54 +2670,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `PolymerSecretsConfig`. If the actual instance is not `PolymerSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `PolymerSecretsConfig`
-     * @throws ClassCastException if the instance is not `PolymerSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public PolymerSecretsConfig getPolymerSecretsConfig() throws ClassCastException {
-        return (PolymerSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `PostmanAuditLogsSecretsConfig`. If the actual instance is not `PostmanAuditLogsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `PostmanAuditLogsSecretsConfig`
-     * @throws ClassCastException if the instance is not `PostmanAuditLogsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public PostmanAuditLogsSecretsConfig getPostmanAuditLogsSecretsConfig() throws ClassCastException {
-        return (PostmanAuditLogsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `PubsubSecretsConfig`. If the actual instance is not `PubsubSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `PubsubSecretsConfig`
-     * @throws ClassCastException if the instance is not `PubsubSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public PubsubSecretsConfig getPubsubSecretsConfig() throws ClassCastException {
-        return (PubsubSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `RootlyAuditLogsSecretsConfig`. If the actual instance is not `RootlyAuditLogsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `RootlyAuditLogsSecretsConfig`
-     * @throws ClassCastException if the instance is not `RootlyAuditLogsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public RootlyAuditLogsSecretsConfig getRootlyAuditLogsSecretsConfig() throws ClassCastException {
-        return (RootlyAuditLogsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
      * Get the actual instance of `SemgrepCodeFindingsSecretsConfig`. If the actual instance is not `SemgrepCodeFindingsSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -3345,18 +2691,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public SemgrepSupplyChainFindingsSecretsConfig getSemgrepSupplyChainFindingsSecretsConfig() throws ClassCastException {
         return (SemgrepSupplyChainFindingsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `SentryOrgAuditLogsSecretsConfig`. If the actual instance is not `SentryOrgAuditLogsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `SentryOrgAuditLogsSecretsConfig`
-     * @throws ClassCastException if the instance is not `SentryOrgAuditLogsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public SentryOrgAuditLogsSecretsConfig getSentryOrgAuditLogsSecretsConfig() throws ClassCastException {
-        return (SentryOrgAuditLogsSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -3441,54 +2775,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public TelephonyLogsSecretsConfig getTelephonyLogsSecretsConfig() throws ClassCastException {
         return (TelephonyLogsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `TenableAssetsSecretsConfig`. If the actual instance is not `TenableAssetsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `TenableAssetsSecretsConfig`
-     * @throws ClassCastException if the instance is not `TenableAssetsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public TenableAssetsSecretsConfig getTenableAssetsSecretsConfig() throws ClassCastException {
-        return (TenableAssetsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `TenableAssetsCronSecretsConfig`. If the actual instance is not `TenableAssetsCronSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `TenableAssetsCronSecretsConfig`
-     * @throws ClassCastException if the instance is not `TenableAssetsCronSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public TenableAssetsCronSecretsConfig getTenableAssetsCronSecretsConfig() throws ClassCastException {
-        return (TenableAssetsCronSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `TenableVulnerabilitiesSecretsConfig`. If the actual instance is not `TenableVulnerabilitiesSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `TenableVulnerabilitiesSecretsConfig`
-     * @throws ClassCastException if the instance is not `TenableVulnerabilitiesSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public TenableVulnerabilitiesSecretsConfig getTenableVulnerabilitiesSecretsConfig() throws ClassCastException {
-        return (TenableVulnerabilitiesSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `TenableVulnerabilitiesCronSecretsConfig`. If the actual instance is not `TenableVulnerabilitiesCronSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `TenableVulnerabilitiesCronSecretsConfig`
-     * @throws ClassCastException if the instance is not `TenableVulnerabilitiesCronSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public TenableVulnerabilitiesCronSecretsConfig getTenableVulnerabilitiesCronSecretsConfig() throws ClassCastException {
-        return (TenableVulnerabilitiesCronSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -3600,18 +2886,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `ZendeskAuditLogsSecretsConfig`. If the actual instance is not `ZendeskAuditLogsSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `ZendeskAuditLogsSecretsConfig`
-     * @throws ClassCastException if the instance is not `ZendeskAuditLogsSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public ZendeskAuditLogsSecretsConfig getZendeskAuditLogsSecretsConfig() throws ClassCastException {
-        return (ZendeskAuditLogsSecretsConfig)super.getActualInstance();
-    }
-
-    /**
      * Validates the JSON Element and throws an exception if issues found
      *
      * @param jsonElement JSON Element
@@ -3715,22 +2989,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BigqueryInputSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with BitwardenEventsSecretsConfig
-        try {
-            BitwardenEventsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BitwardenEventsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with BoxEventsSecretsConfig
-        try {
-            BoxEventsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BoxEventsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with BrinqaAuditLogsSecretsConfig
@@ -3855,28 +3113,12 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ClumioConsolidatedAlertsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with CodaAuditEventsSecretsConfig
-        try {
-            CodaAuditEventsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CodaAuditEventsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         // validate the json string with CortexXsoarManagementLogsSecretsConfig
         try {
             CortexXsoarManagementLogsSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CortexXsoarManagementLogsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with CustomerEventDataSecretsConfig
-        try {
-            CustomerEventDataSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CustomerEventDataSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with DefenderForEndpointAlertsSecretsConfig
@@ -3933,14 +3175,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FullScansSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with GitlabIssuesSecretsConfig
-        try {
-            GitlabIssuesSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for GitlabIssuesSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with GkeAuditLogsSecretsConfig
@@ -4039,17 +3273,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Microsoft365GenericSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with Map<String, Object>
-        try {
-            if (!jsonElement.isJsonObject()) {
-                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
-            }
-
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         // validate the json string with ObjectStorageInputSecretsConfig
         try {
             ObjectStorageInputSecretsConfig.validateJsonElement(jsonElement);
@@ -4064,22 +3287,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OfflineenrollmentlogsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with OneloginEventsSecretsConfig
-        try {
-            OneloginEventsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OneloginEventsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with OpalEventsSecretsConfig
-        try {
-            OpalEventsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OpalEventsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with OperationLogsSecretsConfig
@@ -4106,14 +3313,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OwnbackupAccountEventsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with PagerdutyAuditRecordsSecretsConfig
-        try {
-            PagerdutyAuditRecordsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PagerdutyAuditRecordsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         // validate the json string with PaloAltoDataSecurityAlertsSecretsConfig
         try {
             PaloAltoDataSecurityAlertsSecretsConfig.validateJsonElement(jsonElement);
@@ -4130,38 +3329,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PlaidWebhooksSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with PolymerSecretsConfig
-        try {
-            PolymerSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PolymerSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with PostmanAuditLogsSecretsConfig
-        try {
-            PostmanAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PostmanAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with PubsubSecretsConfig
-        try {
-            PubsubSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PubsubSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with RootlyAuditLogsSecretsConfig
-        try {
-            RootlyAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RootlyAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         // validate the json string with SemgrepCodeFindingsSecretsConfig
         try {
             SemgrepCodeFindingsSecretsConfig.validateJsonElement(jsonElement);
@@ -4176,14 +3343,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SemgrepSupplyChainFindingsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with SentryOrgAuditLogsSecretsConfig
-        try {
-            SentryOrgAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SentryOrgAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SlackEnterpriseAuditLogsSecretsConfig
@@ -4240,38 +3399,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TelephonyLogsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with TenableAssetsSecretsConfig
-        try {
-            TenableAssetsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableAssetsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with TenableAssetsCronSecretsConfig
-        try {
-            TenableAssetsCronSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableAssetsCronSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with TenableVulnerabilitiesSecretsConfig
-        try {
-            TenableVulnerabilitiesSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableVulnerabilitiesSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with TenableVulnerabilitiesCronSecretsConfig
-        try {
-            TenableVulnerabilitiesCronSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for TenableVulnerabilitiesCronSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with TinesAuditLogsSecretsConfig
@@ -4346,16 +3473,8 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for WizAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with ZendeskAuditLogsSecretsConfig
-        try {
-            ZendeskAuditLogsSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ZendeskAuditLogsSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorInputConfigSecrets with oneOf schemas: AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BitwardenEventsSecretsConfig, BoxEventsSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CodaAuditEventsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, CustomerEventDataSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OneloginEventsSecretsConfig, OpalEventsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PagerdutyAuditRecordsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, PolymerSecretsConfig, PostmanAuditLogsSecretsConfig, PubsubSecretsConfig, RootlyAuditLogsSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SentryOrgAuditLogsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, ZendeskAuditLogsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorInputConfigSecrets with oneOf schemas: AdminLogsSecretsConfig, AivenServiceLogsSecretsConfig, ArizeAuditLogsSecretsConfig, AuthLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BugsnagOrgEventsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DuoSecurityActivityLogsSecretsConfig, EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, GreenhouseAuditLogsSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OfflineenrollmentlogsSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, OwnbackupAccountEventsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackEnterpriseAuditLogsSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TeamAccessLogsSecretsConfig, TeamIntegrationLogsSecretsConfig, TelephonyLogsSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, UniversalSecretsConfig, VercelUserEventsSecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

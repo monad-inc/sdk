@@ -16,7 +16,7 @@
 |**credentials** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**authHeaders** | [**Map&lt;String, ModelsSecret&gt;**](ModelsSecret.md) | Authentication headers |  [optional] |
 |**caCertificate** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

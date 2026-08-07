@@ -36,14 +36,6 @@ class TestModelsTransformConfig(unittest.TestCase):
         model = ModelsTransformConfig()
         if include_optional:
             return ModelsTransformConfig(
-                conditional = monad.models.models/transform_conditional.models.TransformConditional(
-                    conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                        config = {
-                            'key' : null
-                            }, 
-                        operator = 'always', 
-                        type_id = '', ), 
-                    else = 'bypass', ),
                 operations = [
                     monad.models.models/transform_operation.models.TransformOperation(
                         arguments = {

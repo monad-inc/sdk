@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsTransformOperation {
-    'arguments'?: { [key: string]: any; };
+    'arguments'?: { [key: string]: any | null; };
     'description'?: string;
     'operation'?: string;
 
@@ -25,7 +25,7 @@ export class ModelsTransformOperation {
         {
             "name": "arguments",
             "baseName": "arguments",
-            "type": "{ [key: string]: any; }",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         },
         {

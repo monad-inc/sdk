@@ -38,6 +38,7 @@ class TestRoutesV3CreateAlertRuleRequest(unittest.TestCase):
             return RoutesV3CreateAlertRuleRequest(
                 active = True,
                 description = '',
+                invert_selection = True,
                 name = '',
                 pipeline_ids = [
                     ''

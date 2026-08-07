@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.ModelsTransformConditional;
 import org.openapitools.client.model.ModelsTransformOperation;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -39,14 +38,6 @@ public class ModelsTransformConfigTest {
     @Test
     public void testModelsTransformConfig() {
         // TODO: test ModelsTransformConfig
-    }
-
-    /**
-     * Test the property 'conditional'
-     */
-    @Test
-    public void conditionalTest() {
-        // TODO: test conditional
     }
 
     /**

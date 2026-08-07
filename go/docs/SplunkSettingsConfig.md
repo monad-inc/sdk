@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
 **Index** | Pointer to **string** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
-**Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
+**Port** | **string** | The port of the Splunk instance. | 
 **ToCreate** | Pointer to **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
-**Url** | Pointer to **string** | The URL of the Splunk instance (must start with http or https). | [optional] 
+**Url** | **string** | The URL of the Splunk instance (must start with http or https). | 
 **Username** | Pointer to **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
 
 ## Methods
 
 ### NewSplunkSettingsConfig
 
-`func NewSplunkSettingsConfig() *SplunkSettingsConfig`
+`func NewSplunkSettingsConfig(port string, url string, ) *SplunkSettingsConfig`
 
 NewSplunkSettingsConfig instantiates a new SplunkSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -99,11 +99,6 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
-### HasPort
-
-`func (o *SplunkSettingsConfig) HasPort() bool`
-
-HasPort returns a boolean if a field has been set.
 
 ### GetToCreate
 
@@ -149,11 +144,6 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
-
-`func (o *SplunkSettingsConfig) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
 
 ### GetUsername
 

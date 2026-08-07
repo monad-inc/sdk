@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **createChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(createChildOrganizationRequest)
+> ModelsOrganization createChildOrganization(createChildOrganizationRequest)
 
 Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**GithubComMonadIncCorePkgTypesModelsOrganization**
+**ModelsOrganization**
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **createOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization createOrganization(routesCreateOrganizationRequest)
+> ModelsOrganization createOrganization(routesCreateOrganizationRequest)
 
 Create organization
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**GithubComMonadIncCorePkgTypesModelsOrganization**
+**ModelsOrganization**
 
 ### Authorization
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateChildOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(updateChildOrganizationRequest)
+> ModelsOrganization updateChildOrganization(updateChildOrganizationRequest)
 
 Update a child organization under the given parent organization. Known as a \"team\" in the UI.
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**GithubComMonadIncCorePkgTypesModelsOrganization**
+**ModelsOrganization**
 
 ### Authorization
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateOrganization**
-> GithubComMonadIncCorePkgTypesModelsOrganization updateOrganization(routesUpdateOrganizationRequest)
+> ModelsOrganization updateOrganization(routesUpdateOrganizationRequest)
 
 Update organization
 
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**GithubComMonadIncCorePkgTypesModelsOrganization**
+**ModelsOrganization**
 
 ### Authorization
 

@@ -6,6 +6,7 @@ OpenSearch Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ca_certificate** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example

@@ -34,9 +34,13 @@ export class AzureBlobStorageSettingsConfig {
     */
     'format'?: string;
     /**
-    * Partition format of your Azure container. Options: hive compliant (\'year=2024/month=01/day=01\'), flat hive compliant (\'dt=2024-01-01\'), or simple date (\'2024/01/01\').
+    * Partition format of your Azure container. Options: hive compliant (\'year=2024/month=01/day=01\'), flat hive compliant (\'dt=2024-01-01\'), simple date (\'2024/01/01\'), or custom (specify your own template in PartitionFormatTemplate).
     */
     'partitionFormat'?: string;
+    /**
+    * Only used when PartitionFormat is \"custom\": the template describing your bucket\'s partition path, e.g. \'y={yyyy}/m={mm}/d={dd}\'.
+    */
+    'partitionFormatTemplate'?: string;
     /**
     * An optional prefix for Azure object keys to organize data within the container
     */
@@ -84,6 +88,12 @@ export class AzureBlobStorageSettingsConfig {
         {
             "name": "partitionFormat",
             "baseName": "partition_format",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "partitionFormatTemplate",
+            "baseName": "partition_format_template",
             "type": "string",
             "format": ""
         },

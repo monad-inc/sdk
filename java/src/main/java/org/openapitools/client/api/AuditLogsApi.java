@@ -193,7 +193,7 @@ public class AuditLogsApi {
 
     /**
      * Audit log change histogram
-     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to).
      * @param organizationId Organization ID (required)
      * @param from Bucket window start (inclusive), RFC3339 (required)
      * @param to Bucket window end (exclusive), RFC3339 (required)
@@ -221,7 +221,7 @@ public class AuditLogsApi {
 
     /**
      * Audit log change histogram
-     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to).
      * @param organizationId Organization ID (required)
      * @param from Bucket window start (inclusive), RFC3339 (required)
      * @param to Bucket window end (exclusive), RFC3339 (required)
@@ -250,7 +250,7 @@ public class AuditLogsApi {
 
     /**
      * Audit log change histogram (asynchronously)
-     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+     * Bucketed change counts over [from, to) for the audit timeline. For resource_type&#x3D;pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to).
      * @param organizationId Organization ID (required)
      * @param from Bucket window start (inclusive), RFC3339 (required)
      * @param to Bucket window end (exclusive), RFC3339 (required)
@@ -393,7 +393,7 @@ public class AuditLogsApi {
 
     /**
      * List organization audit logs
-     * List the organization&#39;s audit log, newest first, with cursor pagination. Filtering by resource_type&#x3D;pipeline with a resource_id returns the pipeline&#39;s merged history: the pipeline&#39;s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+     * List the organization&#39;s audit log, newest first, with cursor pagination. Filtering by resource_type&#x3D;pipeline with a resource_id returns the pipeline&#39;s merged history: the pipeline&#39;s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource.
      * @param organizationId Organization ID (required)
      * @param limit Page size (default 50, max 100) (optional)
      * @param cursor Opaque cursor from a previous response; filters are carried by the cursor (optional)
@@ -422,7 +422,7 @@ public class AuditLogsApi {
 
     /**
      * List organization audit logs
-     * List the organization&#39;s audit log, newest first, with cursor pagination. Filtering by resource_type&#x3D;pipeline with a resource_id returns the pipeline&#39;s merged history: the pipeline&#39;s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+     * List the organization&#39;s audit log, newest first, with cursor pagination. Filtering by resource_type&#x3D;pipeline with a resource_id returns the pipeline&#39;s merged history: the pipeline&#39;s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource.
      * @param organizationId Organization ID (required)
      * @param limit Page size (default 50, max 100) (optional)
      * @param cursor Opaque cursor from a previous response; filters are carried by the cursor (optional)
@@ -452,7 +452,7 @@ public class AuditLogsApi {
 
     /**
      * List organization audit logs (asynchronously)
-     * List the organization&#39;s audit log, newest first, with cursor pagination. Filtering by resource_type&#x3D;pipeline with a resource_id returns the pipeline&#39;s merged history: the pipeline&#39;s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+     * List the organization&#39;s audit log, newest first, with cursor pagination. Filtering by resource_type&#x3D;pipeline with a resource_id returns the pipeline&#39;s merged history: the pipeline&#39;s own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource.
      * @param organizationId Organization ID (required)
      * @param limit Page size (default 50, max 100) (optional)
      * @param cursor Opaque cursor from a previous response; filters are carried by the cursor (optional)

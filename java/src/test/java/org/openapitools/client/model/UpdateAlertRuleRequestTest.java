@@ -58,6 +58,14 @@ public class UpdateAlertRuleRequestTest {
     }
 
     /**
+     * Test the property 'invertSelection'
+     */
+    @Test
+    public void invertSelectionTest() {
+        // TODO: test invertSelection
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

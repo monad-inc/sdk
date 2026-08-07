@@ -14,7 +14,15 @@ import { HttpFile } from '../http/http';
 
 export class ModelsReference {
     'id'?: string;
+    /**
+    * Name is the referenced resource\'s display name, filled at read time on component responses. Never persisted: writes rebuild references from request state (the name is display sugar and would go stale), and an empty name is omitted from the stored JSON.
+    */
+    'name'?: string;
     'organizationId'?: string;
+    /**
+    * Shared reports that the referenced resource is owned by an org other than the component\'s owner — a directly-shared secret the component pulls in. Same read-time-only contract as Name: computed on responses, never persisted (omitted when false).
+    */
+    'shared'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,9 +36,21 @@ export class ModelsReference {
             "format": ""
         },
         {
+            "name": "name",
+            "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "shared",
+            "baseName": "shared",
+            "type": "boolean",
             "format": ""
         }    ];
 

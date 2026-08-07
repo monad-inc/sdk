@@ -1212,12 +1212,12 @@ type ApiUpdateResourceSharesRequest struct {
 	organizationId string
 	resourceType string
 	resourceId string
-	createResourceSharesRequest *CreateResourceSharesRequest
+	updateResourceSharesRequest *UpdateResourceSharesRequest
 }
 
 // Share delta request
-func (r ApiUpdateResourceSharesRequest) CreateResourceSharesRequest(createResourceSharesRequest CreateResourceSharesRequest) ApiUpdateResourceSharesRequest {
-	r.createResourceSharesRequest = &createResourceSharesRequest
+func (r ApiUpdateResourceSharesRequest) UpdateResourceSharesRequest(updateResourceSharesRequest UpdateResourceSharesRequest) ApiUpdateResourceSharesRequest {
+	r.updateResourceSharesRequest = &updateResourceSharesRequest
 	return r
 }
 
@@ -1269,8 +1269,8 @@ func (a *ResourceSharesAPIService) UpdateResourceSharesExecute(r ApiUpdateResour
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.createResourceSharesRequest == nil {
-		return localVarReturnValue, nil, reportError("createResourceSharesRequest is required and must be specified")
+	if r.updateResourceSharesRequest == nil {
+		return localVarReturnValue, nil, reportError("updateResourceSharesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1291,7 +1291,7 @@ func (a *ResourceSharesAPIService) UpdateResourceSharesExecute(r ApiUpdateResour
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createResourceSharesRequest
+	localVarPostBody = r.updateResourceSharesRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

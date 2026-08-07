@@ -85,7 +85,16 @@ func (dst *ApplyTransformationV2Request) UnmarshalJSON(data []byte) error {
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(ApplyTransformationV2Request)")
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(ApplyTransformationV2Request): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(ApplyTransformationV2Request)")
+        }
+        if err != nil {
+            return fmt.Errorf("data failed to match schemas in oneOf(ApplyTransformationV2Request): %v", err)
+        } else {
+            return fmt.Errorf("data failed to match schemas in oneOf(ApplyTransformationV2Request)")
+        }
 	}
 }
 

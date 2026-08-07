@@ -30,9 +30,9 @@ class SplunkSettingsConfig(BaseModel):
     """ # noqa: E501
     allow_insecure: Optional[StrictBool] = Field(default=None, description="Whether to allow insecure connections (not recommended for production).")
     index: Optional[StrictStr] = Field(default=None, description="The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token & Index scoping.")
-    port: Optional[StrictStr] = Field(default=None, description="The port of the Splunk instance.")
+    port: StrictStr = Field(description="The port of the Splunk instance.")
     to_create: Optional[StrictBool] = Field(default=None, description="Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.")
-    url: Optional[StrictStr] = Field(default=None, description="The URL of the Splunk instance (must start with http or https).")
+    url: StrictStr = Field(description="The URL of the Splunk instance (must start with http or https).")
     username: Optional[StrictStr] = Field(default=None, description="Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used.")
     __properties: ClassVar[List[str]] = ["allow_insecure", "index", "port", "to_create", "url", "username"]
 

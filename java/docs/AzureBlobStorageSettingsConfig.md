@@ -12,7 +12,8 @@
 |**compression** | **String** | The compression format of objects in the Azure container |  [optional] |
 |**container** | **String** | A container organizes a set of blobs, similar to a directory in a file system. |  [optional] |
 |**format** | **String** | File format of the Blob storage objects in Azure. |  [optional] |
-|**partitionFormat** | **String** | Partition format of your Azure container. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). |  [optional] |
+|**partitionFormat** | **String** | Partition format of your Azure container. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), simple date (&#39;2024/01/01&#39;), or custom (specify your own template in PartitionFormatTemplate). |  [optional] |
+|**partitionFormatTemplate** | **String** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. |  [optional] |
 |**prefix** | **String** | An optional prefix for Azure object keys to organize data within the container |  [optional] |
 |**recordLocation** | **String** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. |  [optional] |
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alerts** | [**List[GithubComMonadIncCorePkgTypesModelsAlert]**](GithubComMonadIncCorePkgTypesModelsAlert.md) |  | [optional] 
+**alerts** | [**List[ModelsAlert]**](ModelsAlert.md) |  | [optional] 
 **total** | **int** |  | [optional] 
 
 ## Example

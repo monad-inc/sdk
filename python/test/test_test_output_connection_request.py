@@ -43,7 +43,8 @@ class TestTestOutputConnectionRequest(unittest.TestCase):
                     settings = {
                         'key' : null
                         }, ),
-                type = ''
+                type = '',
+                version = 56
             )
         else:
             return TestOutputConnectionRequest(

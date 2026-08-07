@@ -51,7 +51,7 @@ class TestModelsOrganizationAuditLog(unittest.TestCase):
                 occurred_at = '',
                 organization_id = '',
                 request_id = '',
-                resource = monad.models.github_com_monad_inc_core_pkg_types_models/audit_resource.github_com_monad-inc_core_pkg_types_models.AuditResource(
+                resource = monad.models.models/audit_resource.models.AuditResource(
                     id = '', 
                     new = null, 
                     old = null, 

@@ -25,12 +25,14 @@ type ModelsPipelineNode struct {
 	ComponentId *string `json:"component_id,omitempty"`
 	ComponentSubType *string `json:"component_sub_type,omitempty"`
 	ComponentType *ModelsComponentType `json:"component_type,omitempty"`
+	// ConfigOverrides is the node's sparse override delta over its template component's base config (RFC 0017 §3). Nil for a non-template-backed node.
+	ConfigOverrides map[string]*interface{} `json:"config_overrides,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
-	SharedResources []ModelsNodeSharedResource `json:"shared_resources,omitempty"`
+	ResourceReferences *ModelsReferences `json:"resource_references,omitempty"`
 	Slug *string `json:"slug,omitempty"`
 	Status *ModelsPipelineNodeStatus `json:"status,omitempty"`
 }
@@ -212,6 +214,38 @@ func (o *ModelsPipelineNode) SetComponentType(v ModelsComponentType) {
 	o.ComponentType = &v
 }
 
+// GetConfigOverrides returns the ConfigOverrides field value if set, zero value otherwise.
+func (o *ModelsPipelineNode) GetConfigOverrides() map[string]*interface{} {
+	if o == nil || IsNil(o.ConfigOverrides) {
+		var ret map[string]*interface{}
+		return ret
+	}
+	return o.ConfigOverrides
+}
+
+// GetConfigOverridesOk returns a tuple with the ConfigOverrides field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNode) GetConfigOverridesOk() (map[string]*interface{}, bool) {
+	if o == nil || IsNil(o.ConfigOverrides) {
+		return map[string]*interface{}{}, false
+	}
+	return o.ConfigOverrides, true
+}
+
+// HasConfigOverrides returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasConfigOverrides() bool {
+	if o != nil && !IsNil(o.ConfigOverrides) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigOverrides gets a reference to the given map[string]*interface{} and assigns it to the ConfigOverrides field.
+func (o *ModelsPipelineNode) SetConfigOverrides(v map[string]*interface{}) {
+	o.ConfigOverrides = v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *ModelsPipelineNode) GetCreatedAt() string {
 	if o == nil || IsNil(o.CreatedAt) {
@@ -372,36 +406,36 @@ func (o *ModelsPipelineNode) SetPipelineId(v string) {
 	o.PipelineId = &v
 }
 
-// GetSharedResources returns the SharedResources field value if set, zero value otherwise.
-func (o *ModelsPipelineNode) GetSharedResources() []ModelsNodeSharedResource {
-	if o == nil || IsNil(o.SharedResources) {
-		var ret []ModelsNodeSharedResource
+// GetResourceReferences returns the ResourceReferences field value if set, zero value otherwise.
+func (o *ModelsPipelineNode) GetResourceReferences() ModelsReferences {
+	if o == nil || IsNil(o.ResourceReferences) {
+		var ret ModelsReferences
 		return ret
 	}
-	return o.SharedResources
+	return *o.ResourceReferences
 }
 
-// GetSharedResourcesOk returns a tuple with the SharedResources field value if set, nil otherwise
+// GetResourceReferencesOk returns a tuple with the ResourceReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipelineNode) GetSharedResourcesOk() ([]ModelsNodeSharedResource, bool) {
-	if o == nil || IsNil(o.SharedResources) {
+func (o *ModelsPipelineNode) GetResourceReferencesOk() (*ModelsReferences, bool) {
+	if o == nil || IsNil(o.ResourceReferences) {
 		return nil, false
 	}
-	return o.SharedResources, true
+	return o.ResourceReferences, true
 }
 
-// HasSharedResources returns a boolean if a field has been set.
-func (o *ModelsPipelineNode) HasSharedResources() bool {
-	if o != nil && !IsNil(o.SharedResources) {
+// HasResourceReferences returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasResourceReferences() bool {
+	if o != nil && !IsNil(o.ResourceReferences) {
 		return true
 	}
 
 	return false
 }
 
-// SetSharedResources gets a reference to the given []ModelsNodeSharedResource and assigns it to the SharedResources field.
-func (o *ModelsPipelineNode) SetSharedResources(v []ModelsNodeSharedResource) {
-	o.SharedResources = v
+// SetResourceReferences gets a reference to the given ModelsReferences and assigns it to the ResourceReferences field.
+func (o *ModelsPipelineNode) SetResourceReferences(v ModelsReferences) {
+	o.ResourceReferences = &v
 }
 
 // GetSlug returns the Slug field value if set, zero value otherwise.
@@ -493,6 +527,9 @@ func (o ModelsPipelineNode) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ComponentType) {
 		toSerialize["component_type"] = o.ComponentType
 	}
+	if !IsNil(o.ConfigOverrides) {
+		toSerialize["config_overrides"] = o.ConfigOverrides
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}
@@ -508,8 +545,8 @@ func (o ModelsPipelineNode) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PipelineId) {
 		toSerialize["pipeline_id"] = o.PipelineId
 	}
-	if !IsNil(o.SharedResources) {
-		toSerialize["shared_resources"] = o.SharedResources
+	if !IsNil(o.ResourceReferences) {
+		toSerialize["resource_references"] = o.ResourceReferences
 	}
 	if !IsNil(o.Slug) {
 		toSerialize["slug"] = o.Slug

@@ -20,7 +20,7 @@ from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
 from monad.models.create_child_organization_request import CreateChildOrganizationRequest
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.models.models_organization_list import ModelsOrganizationList
 from monad.models.models_storage_type_summary_response import ModelsStorageTypeSummaryResponse
 from monad.models.models_user_organization_list import ModelsUserOrganizationList
@@ -63,7 +63,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> GithubComMonadIncCorePkgTypesModelsOrganization:
+    ) -> ModelsOrganization:
         """Create child organization (team)
 
         Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
@@ -104,7 +104,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
             '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -136,7 +136,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[GithubComMonadIncCorePkgTypesModelsOrganization]:
+    ) -> ApiResponse[ModelsOrganization]:
         """Create child organization (team)
 
         Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
@@ -177,7 +177,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
             '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -250,7 +250,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
             '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -358,7 +358,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> GithubComMonadIncCorePkgTypesModelsOrganization:
+    ) -> ModelsOrganization:
         """Create organization
 
         Create organization
@@ -396,7 +396,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -425,7 +425,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[GithubComMonadIncCorePkgTypesModelsOrganization]:
+    ) -> ApiResponse[ModelsOrganization]:
         """Create organization
 
         Create organization
@@ -463,7 +463,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -530,7 +530,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2182,7 +2182,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> GithubComMonadIncCorePkgTypesModelsOrganization:
+    ) -> ModelsOrganization:
         """Update child organization (team)
 
         Update a child organization under the given parent organization. Known as a \"team\" in the UI.
@@ -2226,7 +2226,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -2260,7 +2260,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[GithubComMonadIncCorePkgTypesModelsOrganization]:
+    ) -> ApiResponse[ModelsOrganization]:
         """Update child organization (team)
 
         Update a child organization under the given parent organization. Known as a \"team\" in the UI.
@@ -2304,7 +2304,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -2382,7 +2382,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -2495,7 +2495,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> GithubComMonadIncCorePkgTypesModelsOrganization:
+    ) -> ModelsOrganization:
         """Update organization
 
         Update organization
@@ -2536,7 +2536,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2566,7 +2566,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[GithubComMonadIncCorePkgTypesModelsOrganization]:
+    ) -> ApiResponse[ModelsOrganization]:
         """Update organization
 
         Update organization
@@ -2607,7 +2607,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2678,7 +2678,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsOrganization",
+            '200': "ModelsOrganization",
         }
         response_data = self.api_client.call_api(
             *_param,

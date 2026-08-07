@@ -86,7 +86,7 @@ func (r ApiGetOrganizationAuditLogHistogramRequest) Execute() (*ModelsOrganizati
 /*
 GetOrganizationAuditLogHistogram Audit log change histogram
 
-Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to). Gated by the resource_audit_logs feature flag.
+Bucketed change counts over [from, to) for the audit timeline. For resource_type=pipeline (or a component type) with a resource_id, counts span the same merged feed as the list endpoint. Each non-empty bucket carries per-action and per-resource-type breakdowns; the response also includes the total and the true earliest/latest event times across all history (ignoring from/to).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -328,7 +328,7 @@ func (r ApiListOrganizationAuditLogsRequest) Execute() (*ModelsOrganizationAudit
 /*
 ListOrganizationAuditLogs List organization audit logs
 
-List the organization's audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline's merged history: the pipeline's own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource. Gated by the resource_audit_logs feature flag.
+List the organization's audit log, newest first, with cursor pagination. Filtering by resource_type=pipeline with a resource_id returns the pipeline's merged history: the pipeline's own changes plus changes to the components — and the secrets those components referenced — scoped to the time windows in which the pipeline actually used them. Rows self-identify via resource.type. Audit visibility is organization-wide under organization:logs:read: the merged feed surfaces nothing the caller could not query directly by resource.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID

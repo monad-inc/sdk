@@ -37,7 +37,7 @@ class TestRoutesV3AlertList(unittest.TestCase):
         if include_optional:
             return RoutesV3AlertList(
                 alerts = [
-                    monad.models.github_com_monad_inc_core_pkg_types_models/alert.github_com_monad-inc_core_pkg_types_models.Alert(
+                    monad.models.models/alert.models.Alert(
                         created_at = 56, 
                         description = '', 
                         fired_at = 56, 
@@ -45,7 +45,7 @@ class TestRoutesV3AlertList(unittest.TestCase):
                         metadata = null, 
                         name = '', 
                         organization_id = '', 
-                        resource = monad.models.github_com_monad_inc_core_pkg_types_models/resource_reference.github_com_monad-inc_core_pkg_types_models.ResourceReference(
+                        resource = monad.models.models/resource_reference.models.ResourceReference(
                             parent_id = '', 
                             parent_type = '', 
                             resource_id = '', 
@@ -53,7 +53,7 @@ class TestRoutesV3AlertList(unittest.TestCase):
                         rule_id = '', 
                         rule_type = '', 
                         severity = '', 
-                        status = monad.models.github_com_monad_inc_core_pkg_types_models/alert_status.github_com_monad-inc_core_pkg_types_models.AlertStatus(
+                        status = monad.models.models/alert_status.models.AlertStatus(
                             clearing_started_at = 56, 
                             resolved_at = 56, 
                             state = 'FIRING', ), )

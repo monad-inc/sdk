@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3UpdateAlertRuleRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class RoutesV3UpdateAlertRuleRequest {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
@@ -63,6 +63,11 @@ public class RoutesV3UpdateAlertRuleRequest {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_INVERT_SELECTION = "invert_selection";
+  @SerializedName(SERIALIZED_NAME_INVERT_SELECTION)
+  @javax.annotation.Nullable
+  private Boolean invertSelection;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -122,6 +127,25 @@ public class RoutesV3UpdateAlertRuleRequest {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public RoutesV3UpdateAlertRuleRequest invertSelection(@javax.annotation.Nullable Boolean invertSelection) {
+    this.invertSelection = invertSelection;
+    return this;
+  }
+
+  /**
+   * InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.
+   * @return invertSelection
+   */
+  @javax.annotation.Nullable
+  public Boolean getInvertSelection() {
+    return invertSelection;
+  }
+
+  public void setInvertSelection(@javax.annotation.Nullable Boolean invertSelection) {
+    this.invertSelection = invertSelection;
   }
 
 
@@ -204,7 +228,7 @@ public class RoutesV3UpdateAlertRuleRequest {
   }
 
   /**
-   * Severity level of the alert (e.g., \&quot;critical\&quot;, \&quot;warning\&quot;, \&quot;info\&quot;)
+   * Severity level of the alert. Must be one of \&quot;critical\&quot;, \&quot;high\&quot;, \&quot;medium\&quot;, \&quot;low\&quot;, \&quot;info\&quot;.
    * @return severity
    */
   @javax.annotation.Nullable
@@ -229,6 +253,7 @@ public class RoutesV3UpdateAlertRuleRequest {
     RoutesV3UpdateAlertRuleRequest routesV3UpdateAlertRuleRequest = (RoutesV3UpdateAlertRuleRequest) o;
     return Objects.equals(this.active, routesV3UpdateAlertRuleRequest.active) &&
         Objects.equals(this.description, routesV3UpdateAlertRuleRequest.description) &&
+        Objects.equals(this.invertSelection, routesV3UpdateAlertRuleRequest.invertSelection) &&
         Objects.equals(this.name, routesV3UpdateAlertRuleRequest.name) &&
         Objects.equals(this.pipelineIds, routesV3UpdateAlertRuleRequest.pipelineIds) &&
         Objects.equals(this.ruleConfig, routesV3UpdateAlertRuleRequest.ruleConfig) &&
@@ -237,7 +262,7 @@ public class RoutesV3UpdateAlertRuleRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, description, name, pipelineIds, ruleConfig, severity);
+    return Objects.hash(active, description, invertSelection, name, pipelineIds, ruleConfig, severity);
   }
 
   @Override
@@ -246,6 +271,7 @@ public class RoutesV3UpdateAlertRuleRequest {
     sb.append("class RoutesV3UpdateAlertRuleRequest {\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    invertSelection: ").append(toIndentedString(invertSelection)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    pipelineIds: ").append(toIndentedString(pipelineIds)).append("\n");
     sb.append("    ruleConfig: ").append(toIndentedString(ruleConfig)).append("\n");
@@ -268,7 +294,7 @@ public class RoutesV3UpdateAlertRuleRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "description", "name", "pipeline_ids", "rule_config", "severity"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

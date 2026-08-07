@@ -12,8 +12,8 @@
 
 import { ModelsComponentType } from '../models/ModelsComponentType';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
-import { ModelsNodeSharedResource } from '../models/ModelsNodeSharedResource';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineNode {
@@ -22,12 +22,16 @@ export class ModelsPipelineNode {
     'componentId'?: string;
     'componentSubType'?: string;
     'componentType'?: ModelsComponentType;
+    /**
+    * ConfigOverrides is the node\'s sparse override delta over its template component\'s base config (RFC 0017 §3). Nil for a non-template-backed node.
+    */
+    'configOverrides'?: { [key: string]: any | null; };
     'createdAt'?: string;
     'enabled'?: boolean;
     'id'?: string;
     'organizationId'?: string;
     'pipelineId'?: string;
-    'sharedResources'?: Array<ModelsNodeSharedResource>;
+    'resourceReferences'?: ModelsReferences;
     'slug'?: string;
     'status'?: ModelsPipelineNodeStatus;
 
@@ -67,6 +71,12 @@ export class ModelsPipelineNode {
             "format": ""
         },
         {
+            "name": "configOverrides",
+            "baseName": "config_overrides",
+            "type": "{ [key: string]: any | null; }",
+            "format": ""
+        },
+        {
             "name": "createdAt",
             "baseName": "created_at",
             "type": "string",
@@ -97,9 +107,9 @@ export class ModelsPipelineNode {
             "format": ""
         },
         {
-            "name": "sharedResources",
-            "baseName": "shared_resources",
-            "type": "Array<ModelsNodeSharedResource>",
+            "name": "resourceReferences",
+            "baseName": "resource_references",
+            "type": "ModelsReferences",
             "format": ""
         },
         {

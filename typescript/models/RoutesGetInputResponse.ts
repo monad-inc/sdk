@@ -15,6 +15,7 @@ import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
 import { HttpFile } from '../http/http';
 
 export class RoutesGetInputResponse {
@@ -28,6 +29,7 @@ export class RoutesGetInputResponse {
     'organizationId'?: string;
     'references'?: ModelsReferences;
     'shareDetails'?: ModelsShareDetails;
+    'templateSettings'?: ModelsTemplateSettings;
     'type'?: string;
     'updatedAt'?: string;
     'version'?: number;
@@ -95,6 +97,12 @@ export class RoutesGetInputResponse {
             "name": "shareDetails",
             "baseName": "share_details",
             "type": "ModelsShareDetails",
+            "format": ""
+        },
+        {
+            "name": "templateSettings",
+            "baseName": "template_settings",
+            "type": "ModelsTemplateSettings",
             "format": ""
         },
         {

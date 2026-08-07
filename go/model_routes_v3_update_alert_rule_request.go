@@ -24,13 +24,15 @@ type RoutesV3UpdateAlertRuleRequest struct {
 	Active *bool `json:"active,omitempty"`
 	// Description of the alert rule
 	Description *string `json:"description,omitempty"`
+	// InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.
+	InvertSelection *bool `json:"invert_selection,omitempty"`
 	// Name of the alert rule
 	Name *string `json:"name,omitempty"`
 	// Pipeline IDs that this alert rule applies to
 	PipelineIds []string `json:"pipeline_ids,omitempty"`
 	// RuleConfig contains the configuration for the alert rule
-	RuleConfig map[string]interface{} `json:"rule_config,omitempty"`
-	// Severity level of the alert (e.g., \"critical\", \"warning\", \"info\")
+	RuleConfig map[string]*interface{} `json:"rule_config,omitempty"`
+	// Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".
 	Severity *string `json:"severity,omitempty"`
 }
 
@@ -115,6 +117,38 @@ func (o *RoutesV3UpdateAlertRuleRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetInvertSelection returns the InvertSelection field value if set, zero value otherwise.
+func (o *RoutesV3UpdateAlertRuleRequest) GetInvertSelection() bool {
+	if o == nil || IsNil(o.InvertSelection) {
+		var ret bool
+		return ret
+	}
+	return *o.InvertSelection
+}
+
+// GetInvertSelectionOk returns a tuple with the InvertSelection field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3UpdateAlertRuleRequest) GetInvertSelectionOk() (*bool, bool) {
+	if o == nil || IsNil(o.InvertSelection) {
+		return nil, false
+	}
+	return o.InvertSelection, true
+}
+
+// HasInvertSelection returns a boolean if a field has been set.
+func (o *RoutesV3UpdateAlertRuleRequest) HasInvertSelection() bool {
+	if o != nil && !IsNil(o.InvertSelection) {
+		return true
+	}
+
+	return false
+}
+
+// SetInvertSelection gets a reference to the given bool and assigns it to the InvertSelection field.
+func (o *RoutesV3UpdateAlertRuleRequest) SetInvertSelection(v bool) {
+	o.InvertSelection = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *RoutesV3UpdateAlertRuleRequest) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -180,9 +214,9 @@ func (o *RoutesV3UpdateAlertRuleRequest) SetPipelineIds(v []string) {
 }
 
 // GetRuleConfig returns the RuleConfig field value if set, zero value otherwise.
-func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfig() map[string]interface{} {
+func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfig() map[string]*interface{} {
 	if o == nil || IsNil(o.RuleConfig) {
-		var ret map[string]interface{}
+		var ret map[string]*interface{}
 		return ret
 	}
 	return o.RuleConfig
@@ -190,9 +224,9 @@ func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfig() map[string]interface{} 
 
 // GetRuleConfigOk returns a tuple with the RuleConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfigOk() (map[string]interface{}, bool) {
+func (o *RoutesV3UpdateAlertRuleRequest) GetRuleConfigOk() (map[string]*interface{}, bool) {
 	if o == nil || IsNil(o.RuleConfig) {
-		return map[string]interface{}{}, false
+		return map[string]*interface{}{}, false
 	}
 	return o.RuleConfig, true
 }
@@ -206,8 +240,8 @@ func (o *RoutesV3UpdateAlertRuleRequest) HasRuleConfig() bool {
 	return false
 }
 
-// SetRuleConfig gets a reference to the given map[string]interface{} and assigns it to the RuleConfig field.
-func (o *RoutesV3UpdateAlertRuleRequest) SetRuleConfig(v map[string]interface{}) {
+// SetRuleConfig gets a reference to the given map[string]*interface{} and assigns it to the RuleConfig field.
+func (o *RoutesV3UpdateAlertRuleRequest) SetRuleConfig(v map[string]*interface{}) {
 	o.RuleConfig = v
 }
 
@@ -258,6 +292,9 @@ func (o RoutesV3UpdateAlertRuleRequest) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.InvertSelection) {
+		toSerialize["invert_selection"] = o.InvertSelection
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

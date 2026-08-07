@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetInputTypeMeta
 
-> ModelsConnectorMeta GetInputTypeMeta(ctx, inputTypeId).Execute()
+> InputsConnectorMeta GetInputTypeMeta(ctx, inputTypeId).Execute()
 
 Get input config meta
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InputsAPI.GetInputTypeMeta``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInputTypeMeta`: ModelsConnectorMeta
+	// response from `GetInputTypeMeta`: InputsConnectorMeta
 	fmt.Fprintf(os.Stdout, "Response from `InputsAPI.GetInputTypeMeta`: %v\n", resp)
 }
 ```
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsConnectorMeta**](ModelsConnectorMeta.md)
+[**InputsConnectorMeta**](InputsConnectorMeta.md)
 
 ### Authorization
 

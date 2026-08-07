@@ -43,11 +43,6 @@ class TestModelsTransformList(unittest.TestCase):
                 transforms = [
                     monad.models.models/transform.models.Transform(
                         config = monad.models.models/transform_config.models.TransformConfig(
-                            conditional = monad.models.models/transform_conditional.models.TransformConditional(
-                                conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                                    operator = 'always', 
-                                    type_id = '', ), 
-                                else = 'bypass', ), 
                             operations = [
                                 monad.models.models/transform_operation.models.TransformOperation(
                                     arguments = {
@@ -66,7 +61,9 @@ class TestModelsTransformList(unittest.TestCase):
                             secrets = [
                                 monad.models.models/reference.models.Reference(
                                     id = '', 
-                                    organization_id = '', )
+                                    name = '', 
+                                    organization_id = '', 
+                                    shared = True, )
                                 ], ), 
                         share_details = monad.models.models/share_details.models.ShareDetails(
                             owner_organization_id = '', 

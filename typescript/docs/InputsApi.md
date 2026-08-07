@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getInputTypeMeta**
-> ModelsConnectorMeta getInputTypeMeta()
+> InputsConnectorMeta getInputTypeMeta()
 
 Get input config meta
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsConnectorMeta**
+**InputsConnectorMeta**
 
 ### Authorization
 

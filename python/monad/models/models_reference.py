@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,10 @@ class ModelsReference(BaseModel):
     ModelsReference
     """ # noqa: E501
     id: Optional[StrictStr] = None
+    name: Optional[StrictStr] = Field(default=None, description="Name is the referenced resource's display name, filled at read time on component responses. Never persisted: writes rebuild references from request state (the name is display sugar and would go stale), and an empty name is omitted from the stored JSON.")
     organization_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "organization_id"]
+    shared: Optional[StrictBool] = Field(default=None, description="Shared reports that the referenced resource is owned by an org other than the component's owner — a directly-shared secret the component pulls in. Same read-time-only contract as Name: computed on responses, never persisted (omitted when false).")
+    __properties: ClassVar[List[str]] = ["id", "name", "organization_id", "shared"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,7 +86,9 @@ class ModelsReference(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "organization_id": obj.get("organization_id")
+            "name": obj.get("name"),
+            "organization_id": obj.get("organization_id"),
+            "shared": obj.get("shared")
         })
         return _obj
 

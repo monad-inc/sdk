@@ -55,20 +55,20 @@ HasConditions returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *ModelsConditionEvaluatable) GetConfig() map[string]interface{}`
+`func (o *ModelsConditionEvaluatable) GetConfig() map[string]*interface{}`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ModelsConditionEvaluatable) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *ModelsConditionEvaluatable) GetConfigOk() (*map[string]*interface{}, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ModelsConditionEvaluatable) SetConfig(v map[string]interface{})`
+`func (o *ModelsConditionEvaluatable) SetConfig(v map[string]*interface{})`
 
 SetConfig sets Config field to given value.
 

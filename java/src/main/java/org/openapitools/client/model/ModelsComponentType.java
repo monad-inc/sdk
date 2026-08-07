@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets models.ComponentType
+ * base type (input, output, enrichment)
  */
 @JsonAdapter(ModelsComponentType.Adapter.class)
 public enum ModelsComponentType {

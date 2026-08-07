@@ -79,7 +79,7 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                                                 label = 'Last Processed', 
                                                 partition_key = '', 
                                                 ranges = [
-                                                    monad.models.github_com_monad_inc_core_pkg_types_models/time_range.github_com_monad-inc_core_pkg_types_models.TimeRange(
+                                                    monad.models.models/time_range.models.TimeRange(
                                                         end = '', 
                                                         start = '', )
                                                     ], )
@@ -94,14 +94,6 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                         updated_at = '', )
                     ],
                 config = monad.models.models/transform_config.models.TransformConfig(
-                    conditional = monad.models.models/transform_conditional.models.TransformConditional(
-                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                            config = {
-                                'key' : null
-                                }, 
-                            operator = 'always', 
-                            type_id = '', ), 
-                        else = 'bypass', ), 
                     operations = [
                         monad.models.models/transform_operation.models.TransformOperation(
                             arguments = {
@@ -120,7 +112,9 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                     secrets = [
                         monad.models.models/reference.models.Reference(
                             id = '', 
-                            organization_id = '', )
+                            name = '', 
+                            organization_id = '', 
+                            shared = True, )
                         ], ),
                 share_details = monad.models.models/share_details.models.ShareDetails(
                     owner_organization_id = '', 

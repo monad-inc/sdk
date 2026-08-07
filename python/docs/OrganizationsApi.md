@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_child_organization**
-> GithubComMonadIncCorePkgTypesModelsOrganization create_child_organization(organization_id, create_child_organization_request)
+> ModelsOrganization create_child_organization(organization_id, create_child_organization_request)
 
 Create child organization (team)
 
@@ -30,7 +30,7 @@ Create a new child organization under the given parent organization. Known as a 
 ```python
 import monad
 from monad.models.create_child_organization_request import CreateChildOrganizationRequest
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_organization**
-> GithubComMonadIncCorePkgTypesModelsOrganization create_organization(routes_create_organization_request)
+> ModelsOrganization create_organization(routes_create_organization_request)
 
 Create organization
 
@@ -120,7 +120,7 @@ Create organization
 
 ```python
 import monad
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.models.routes_create_organization_request import RoutesCreateOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_child_organization**
-> GithubComMonadIncCorePkgTypesModelsOrganization update_child_organization(organization_id, child_organization_id, update_child_organization_request)
+> ModelsOrganization update_child_organization(organization_id, child_organization_id, update_child_organization_request)
 
 Update child organization (team)
 
@@ -665,7 +665,7 @@ Update a child organization under the given parent organization. Known as a "tea
 
 ```python
 import monad
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.models.update_child_organization_request import UpdateChildOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_organization**
-> GithubComMonadIncCorePkgTypesModelsOrganization update_organization(organization_id, routes_update_organization_request)
+> ModelsOrganization update_organization(organization_id, routes_update_organization_request)
 
 Update organization
 
@@ -759,7 +759,7 @@ Update organization
 
 ```python
 import monad
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.models.routes_update_organization_request import RoutesUpdateOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 

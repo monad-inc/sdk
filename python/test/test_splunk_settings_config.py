@@ -45,6 +45,8 @@ class TestSplunkSettingsConfig(unittest.TestCase):
             )
         else:
             return SplunkSettingsConfig(
+                port = '',
+                url = '',
         )
         """
 

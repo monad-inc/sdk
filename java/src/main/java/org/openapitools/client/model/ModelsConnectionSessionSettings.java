@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SessionSettings controls the session length for logins through this connection. Optional; nil preserves the existing value, non-nil overwrites.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsConnectionSessionSettings {
   public static final String SERIALIZED_NAME_SESSION_TIMEOUT = "session_timeout";
   @SerializedName(SERIALIZED_NAME_SESSION_TIMEOUT)

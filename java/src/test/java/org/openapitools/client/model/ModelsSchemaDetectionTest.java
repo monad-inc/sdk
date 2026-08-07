@@ -38,6 +38,14 @@ public class ModelsSchemaDetectionTest {
     }
 
     /**
+     * Test the property 'disableAlerting'
+     */
+    @Test
+    public void disableAlertingTest() {
+        // TODO: test disableAlerting
+    }
+
+    /**
      * Test the property 'enabled'
      */
     @Test

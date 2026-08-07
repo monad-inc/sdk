@@ -43,11 +43,6 @@ class TestModelsTransformsRepositoryList(unittest.TestCase):
                 transforms = [
                     monad.models.models/transforms_repository_transform.models.TransformsRepositoryTransform(
                         config = monad.models.models/transform_config.models.TransformConfig(
-                            conditional = monad.models.models/transform_conditional.models.TransformConditional(
-                                conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
-                                    operator = 'always', 
-                                    type_id = '', ), 
-                                else = 'bypass', ), 
                             operations = [
                                 monad.models.models/transform_operation.models.TransformOperation(
                                     arguments = {

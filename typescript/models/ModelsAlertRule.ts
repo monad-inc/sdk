@@ -18,11 +18,15 @@ export class ModelsAlertRule {
     'createdAt'?: string;
     'description'?: string;
     'id'?: string;
+    /**
+    * InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs.
+    */
+    'invertSelection'?: boolean;
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
     'organizationId'?: string;
     'pipelineIds'?: Array<string>;
-    'ruleConfig'?: { [key: string]: any; };
+    'ruleConfig'?: { [key: string]: any | null; };
     'severity'?: string;
     'type'?: string;
     'updatedAt'?: string;
@@ -57,6 +61,12 @@ export class ModelsAlertRule {
             "format": ""
         },
         {
+            "name": "invertSelection",
+            "baseName": "invert_selection",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "managedBy",
             "baseName": "managed_by",
             "type": "ModelsManagedBy",
@@ -83,7 +93,7 @@ export class ModelsAlertRule {
         {
             "name": "ruleConfig",
             "baseName": "rule_config",
-            "type": "{ [key: string]: any; }",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         },
         {

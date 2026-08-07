@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.CreateChildOrganizationRequest;
-import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsOrganization;
+import org.openapitools.client.model.ModelsOrganization;
 import org.openapitools.client.model.ModelsOrganizationList;
 import org.openapitools.client.model.ModelsStorageTypeSummaryResponse;
 import org.openapitools.client.model.ModelsUserOrganizationList;
@@ -163,7 +163,7 @@ public class OrganizationsApi {
      * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param createChildOrganizationRequest Request body (required)
-     * @return GithubComMonadIncCorePkgTypesModelsOrganization
+     * @return ModelsOrganization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -174,8 +174,8 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GithubComMonadIncCorePkgTypesModelsOrganization createChildOrganization(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateChildOrganizationRequest createChildOrganizationRequest) throws ApiException {
-        ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> localVarResp = createChildOrganizationWithHttpInfo(organizationId, createChildOrganizationRequest);
+    public ModelsOrganization createChildOrganization(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateChildOrganizationRequest createChildOrganizationRequest) throws ApiException {
+        ApiResponse<ModelsOrganization> localVarResp = createChildOrganizationWithHttpInfo(organizationId, createChildOrganizationRequest);
         return localVarResp.getData();
     }
 
@@ -184,7 +184,7 @@ public class OrganizationsApi {
      * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
      * @param organizationId Parent Organization ID (required)
      * @param createChildOrganizationRequest Request body (required)
-     * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsOrganization&gt;
+     * @return ApiResponse&lt;ModelsOrganization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -195,9 +195,9 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> createChildOrganizationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateChildOrganizationRequest createChildOrganizationRequest) throws ApiException {
+    public ApiResponse<ModelsOrganization> createChildOrganizationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateChildOrganizationRequest createChildOrganizationRequest) throws ApiException {
         okhttp3.Call localVarCall = createChildOrganizationValidateBeforeCall(organizationId, createChildOrganizationRequest, null);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -218,10 +218,10 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createChildOrganizationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateChildOrganizationRequest createChildOrganizationRequest, final ApiCallback<GithubComMonadIncCorePkgTypesModelsOrganization> _callback) throws ApiException {
+    public okhttp3.Call createChildOrganizationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateChildOrganizationRequest createChildOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createChildOrganizationValidateBeforeCall(organizationId, createChildOrganizationRequest, _callback);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -298,7 +298,7 @@ public class OrganizationsApi {
      * Create organization
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization (required)
-     * @return GithubComMonadIncCorePkgTypesModelsOrganization
+     * @return ModelsOrganization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -307,8 +307,8 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for creating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public GithubComMonadIncCorePkgTypesModelsOrganization createOrganization(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
-        ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> localVarResp = createOrganizationWithHttpInfo(routesCreateOrganizationRequest);
+    public ModelsOrganization createOrganization(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
+        ApiResponse<ModelsOrganization> localVarResp = createOrganizationWithHttpInfo(routesCreateOrganizationRequest);
         return localVarResp.getData();
     }
 
@@ -316,7 +316,7 @@ public class OrganizationsApi {
      * Create organization
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization (required)
-     * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsOrganization&gt;
+     * @return ApiResponse&lt;ModelsOrganization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -325,9 +325,9 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for creating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> createOrganizationWithHttpInfo(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
+    public ApiResponse<ModelsOrganization> createOrganizationWithHttpInfo(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
         okhttp3.Call localVarCall = createOrganizationValidateBeforeCall(routesCreateOrganizationRequest, null);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -345,10 +345,10 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for creating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOrganizationAsync(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback<GithubComMonadIncCorePkgTypesModelsOrganization> _callback) throws ApiException {
+    public okhttp3.Call createOrganizationAsync(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createOrganizationValidateBeforeCall(routesCreateOrganizationRequest, _callback);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1205,7 +1205,7 @@ public class OrganizationsApi {
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @param updateChildOrganizationRequest Request body (required)
-     * @return GithubComMonadIncCorePkgTypesModelsOrganization
+     * @return ModelsOrganization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1217,8 +1217,8 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GithubComMonadIncCorePkgTypesModelsOrganization updateChildOrganization(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull UpdateChildOrganizationRequest updateChildOrganizationRequest) throws ApiException {
-        ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> localVarResp = updateChildOrganizationWithHttpInfo(organizationId, childOrganizationId, updateChildOrganizationRequest);
+    public ModelsOrganization updateChildOrganization(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull UpdateChildOrganizationRequest updateChildOrganizationRequest) throws ApiException {
+        ApiResponse<ModelsOrganization> localVarResp = updateChildOrganizationWithHttpInfo(organizationId, childOrganizationId, updateChildOrganizationRequest);
         return localVarResp.getData();
     }
 
@@ -1228,7 +1228,7 @@ public class OrganizationsApi {
      * @param organizationId Parent Organization ID (required)
      * @param childOrganizationId Child Organization ID (required)
      * @param updateChildOrganizationRequest Request body (required)
-     * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsOrganization&gt;
+     * @return ApiResponse&lt;ModelsOrganization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1240,9 +1240,9 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> updateChildOrganizationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull UpdateChildOrganizationRequest updateChildOrganizationRequest) throws ApiException {
+    public ApiResponse<ModelsOrganization> updateChildOrganizationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull UpdateChildOrganizationRequest updateChildOrganizationRequest) throws ApiException {
         okhttp3.Call localVarCall = updateChildOrganizationValidateBeforeCall(organizationId, childOrganizationId, updateChildOrganizationRequest, null);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1265,10 +1265,10 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChildOrganizationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull UpdateChildOrganizationRequest updateChildOrganizationRequest, final ApiCallback<GithubComMonadIncCorePkgTypesModelsOrganization> _callback) throws ApiException {
+    public okhttp3.Call updateChildOrganizationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull UpdateChildOrganizationRequest updateChildOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateChildOrganizationValidateBeforeCall(organizationId, childOrganizationId, updateChildOrganizationRequest, _callback);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1353,7 +1353,7 @@ public class OrganizationsApi {
      * Update organization
      * @param organizationId Organization ID (required)
      * @param routesUpdateOrganizationRequest Request body for updating an organization (required)
-     * @return GithubComMonadIncCorePkgTypesModelsOrganization
+     * @return ModelsOrganization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1362,8 +1362,8 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for updating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public GithubComMonadIncCorePkgTypesModelsOrganization updateOrganization(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
-        ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> localVarResp = updateOrganizationWithHttpInfo(organizationId, routesUpdateOrganizationRequest);
+    public ModelsOrganization updateOrganization(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
+        ApiResponse<ModelsOrganization> localVarResp = updateOrganizationWithHttpInfo(organizationId, routesUpdateOrganizationRequest);
         return localVarResp.getData();
     }
 
@@ -1372,7 +1372,7 @@ public class OrganizationsApi {
      * Update organization
      * @param organizationId Organization ID (required)
      * @param routesUpdateOrganizationRequest Request body for updating an organization (required)
-     * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsOrganization&gt;
+     * @return ApiResponse&lt;ModelsOrganization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1381,9 +1381,9 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for updating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> updateOrganizationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
+    public ApiResponse<ModelsOrganization> updateOrganizationWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
         okhttp3.Call localVarCall = updateOrganizationValidateBeforeCall(organizationId, routesUpdateOrganizationRequest, null);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1402,10 +1402,10 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for updating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOrganizationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback<GithubComMonadIncCorePkgTypesModelsOrganization> _callback) throws ApiException {
+    public okhttp3.Call updateOrganizationAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateOrganizationValidateBeforeCall(organizationId, routesUpdateOrganizationRequest, _callback);
-        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

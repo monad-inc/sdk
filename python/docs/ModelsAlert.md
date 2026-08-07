@@ -1,0 +1,40 @@
+# ModelsAlert
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**created_at** | **int** | incident start (frozen across re-fires) | [optional] 
+**description** | **str** |  | [optional] 
+**fired_at** | **int** | this emission&#39;s fire time; differs per re-fire | [optional] 
+**id** | **str** |  | [optional] 
+**metadata** | **object** |  | [optional] 
+**name** | **str** |  | [optional] 
+**organization_id** | **str** |  | [optional] 
+**resource** | [**ModelsResourceReference**](ModelsResourceReference.md) |  | [optional] 
+**rule_id** | **str** |  | [optional] 
+**rule_type** | **str** |  | [optional] 
+**severity** | **str** |  | [optional] 
+**status** | [**ModelsAlertStatus**](ModelsAlertStatus.md) |  | [optional] 
+
+## Example
+
+```python
+from monad.models.models_alert import ModelsAlert
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ModelsAlert from a JSON string
+models_alert_instance = ModelsAlert.from_json(json)
+# print the JSON string representation of the object
+print(ModelsAlert.to_json())
+
+# convert the object into a dict
+models_alert_dict = models_alert_instance.to_dict()
+# create an instance of ModelsAlert from a dict
+models_alert_from_dict = ModelsAlert.from_dict(models_alert_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

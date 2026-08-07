@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Any, Dict, List, Optional
+from typing import Any, List, Optional
 from monad.models.community_edition_settings_config import CommunityEditionSettingsConfig
 from monad.models.geolocus_settings_config import GeolocusSettingsConfig
 from monad.models.kv_lookup_settings_config import KvLookupSettingsConfig
@@ -25,7 +25,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SECRETPROCESSESORENRICHMENTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["CommunityEditionSettingsConfig", "Dict[str, object]", "GeolocusSettingsConfig", "KvLookupSettingsConfig"]
+SECRETPROCESSESORENRICHMENTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["CommunityEditionSettingsConfig", "GeolocusSettingsConfig", "KvLookupSettingsConfig"]
 
 class SecretProcessesorEnrichmentConfigSettings(BaseModel):
     """
@@ -37,10 +37,8 @@ class SecretProcessesorEnrichmentConfigSettings(BaseModel):
     oneof_schema_2_validator: Optional[GeolocusSettingsConfig] = None
     # data type: KvLookupSettingsConfig
     oneof_schema_3_validator: Optional[KvLookupSettingsConfig] = None
-    # data type: Dict[str, object]
-    oneof_schema_4_validator: Optional[Dict[str, Any]] = None
-    actual_instance: Optional[Union[CommunityEditionSettingsConfig, Dict[str, object], GeolocusSettingsConfig, KvLookupSettingsConfig]] = None
-    one_of_schemas: Set[str] = { "CommunityEditionSettingsConfig", "Dict[str, object]", "GeolocusSettingsConfig", "KvLookupSettingsConfig" }
+    actual_instance: Optional[Union[CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig]] = None
+    one_of_schemas: Set[str] = { "CommunityEditionSettingsConfig", "GeolocusSettingsConfig", "KvLookupSettingsConfig" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -78,18 +76,12 @@ class SecretProcessesorEnrichmentConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `KvLookupSettingsConfig`")
         else:
             match += 1
-        # validate data type: Dict[str, object]
-        try:
-            instance.oneof_schema_4_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, Dict[str, object], GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, Dict[str, object], GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -122,22 +114,13 @@ class SecretProcessesorEnrichmentConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into Dict[str, object]
-        try:
-            # validation
-            instance.oneof_schema_4_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_4_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, Dict[str, object], GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, Dict[str, object], GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -151,7 +134,7 @@ class SecretProcessesorEnrichmentConfigSettings(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], CommunityEditionSettingsConfig, Dict[str, object], GeolocusSettingsConfig, KvLookupSettingsConfig]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

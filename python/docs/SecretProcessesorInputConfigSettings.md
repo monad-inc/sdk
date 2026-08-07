@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **tenant_id** | **str** | The Azure Entra ID tenant (directory) ID | 
 **account_url** | **str** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **container** | **str** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
+**partition_format_template** | **str** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. | [optional] 
 **consumer_group** | **str** | The consumer group name for reading events (default: &#x60;$Default&#x60;) | [optional] 
 **event_hub_name** | **str** | The name of the specific Event Hub to consume from | [optional] 
 **event_hub_namespace** | **str** | The fully qualified namespace URL (e.g., &#x60;your-namespace.servicebus.windows.net&#x60;) | [optional] 
@@ -46,11 +47,9 @@ Name | Type | Description | Notes
 **query** | **str** | The query to run against the Log Analytics workspace | 
 **table** | **str** | The BigQuery table ID to query data from | [optional] 
 **timestamp_column** | **str** | The column containing timestamp values used for incremental loading | [optional] 
-**base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
-**event_type** | **str** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **hostname** | **str** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
-**organization_id** | **str** | Organization ID for the Salesforce instance | [optional] 
-**org_slug** | **str** | The ID or slug of the organization | 
+**organization_id** | **str** | Organization ID | [optional] 
+**org_slug** | **str** | Cron expression for scheduling the input | 
 **enable_pagination** | **bool** | Enable pagination support | [optional] 
 **graphql_query** | **str** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
 **has_next_page_path** | **str** | JSONPath location to check if there are more pages | [optional] 
@@ -73,11 +72,8 @@ Name | Type | Description | Notes
 **filter_my_scans** | **bool** | Filter to only show scans created by the current API token | [optional] 
 **parent_entity_id** | **str** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **parent_entity_type** | **str** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
-**org_id** | **str** | URL of the organization | [optional] 
 **api_key_id** | **str** | API Key ID for authentication | 
-**domain_name** | **str** | TODO: Name of domain added on Polymer Hub portal | 
-**environment** | **str** | Determines the URI {environment}.docusign.com | 
-**user_id** | **str** | ID of the user to harvest audit logs for | 
+**domain_name** | **str** | Domain name of the Cortex XSOAR instance | 
 **category** | **str** | The Category of logs to query | 
 **cluster_name** | **str** | The name of the GKE cluster. | 
 **uses_static_creds** | **bool** |  | [optional] 
@@ -91,16 +87,12 @@ Name | Type | Description | Notes
 **auth_config** | [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
 **scope** | [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  | [optional] 
 **webhook_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**confidential** | **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
-**gitlab_url** | **str** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | 
-**issue_type** | **str** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
-**project_id** | **str** | The Google Cloud project ID to use | 
-**state** | **str** | State to filter issues by e.g. opened, closed | [optional] 
-**with_label_details** | **bool** | Include label details in the response | [optional] 
 **location** | **str** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. | 
+**project_id** | **str** | The Google Cloud project ID to use | 
 **bucket_name** | **str** | The name of the Google Cloud Storage bucket to use | [optional] 
-**auth_type** | [**ZendeskAuditLogsAuthType**](ZendeskAuditLogsAuthType.md) |  | 
+**auth_type** | [**CommonAuthType**](CommonAuthType.md) |  | [optional] 
 **email** | **str** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
+**user_id** | **str** | ID of the user to harvest audit logs for | 
 **alert_type** | **str** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **embed** | **str** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **primary_entity_type** | **str** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
@@ -123,15 +115,14 @@ Name | Type | Description | Notes
 **stack_layers** | [**List[WizStackLayer]**](WizStackLayer.md) | @Description Filter Issues from specific stack layers | [optional] 
 **tenant_data_center** | **str** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **audit_log_types** | **List[str]** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
+**base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **log_categories** | **List[str]** | The audit log categories to ingest. | 
+**org_id** | **str** | URL of the organization | [optional] 
 **log_type** | **str** | Which Redshift audit log to ingest. Must be one of the supported log types (connectionlog, userlog). | 
 **endpoint** | **str** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
 **skip_ssl_verification** | **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **use_path_style** | **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
-**subdomain** | **str** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | 
 **category_type** | **str** | The category of logs to pull | [optional] 
-**domain** | **str** | Domain name for the Oracle Cloud service | 
-**username** | **str** | Username of Oracle Cloud service user with permissions to access the resource | 
 **github_app_installation_id** | **str** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
 **github_client_id** | **str** | GitHub Client ID (alternative to personal access token) | [optional] 
 **include** | **str** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
@@ -139,13 +130,9 @@ Name | Type | Description | Notes
 **client_id** | **str** | ClientID is the Plaid API client_id. Required only when verification is enabled. | [optional] 
 **verify_webhooks** | **bool** | VerifyWebhooks toggles Plaid signature verification. Unset defaults to true. | [optional] 
 **webhook_types** | **List[str]** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
-**domain_url** | **str** | Domain URL for the Salesforce instance | [optional] 
-**topic** | **str** | Pub/Sub topic to subscribe to | [optional] 
-**host_name** | **str** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | 
 **rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **record_type** | **str** | The type of record to generate | [optional] 
 **custom_template** | **str** | A custom template using the functions we provide to generate demo data | [optional] 
-**cron** | **str** | Cron expression to schedule the data collection. | [optional] 
 **operation_names** | **List[str]** | Filter by specific operation names (optional) | [optional] 
 **tenant_domain** | **str** | The Tines tenant domain (e.g., your-org.tines.com) | 
 **user_ids** | **List[str]** | Filter by specific user IDs (optional) | [optional] 
@@ -153,6 +140,7 @@ Name | Type | Description | Notes
 **team_id** | **str** | Filter by the given team. | [optional] 
 **tenant_url** | **str** | Unique URL for your Tines instance | 
 **actor_sid** | **str** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. | [optional] 
+**event_type** | **str** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **replication_start_time** | **str** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
 **resource_sid** | **str** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 
 **instance_name** | **str** | Name of the ServiceNow instance | [optional] 
@@ -163,8 +151,6 @@ Name | Type | Description | Notes
 **asset_types** | [**List[WizAssetType]**](WizAssetType.md) | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | 
 **detection_method** | [**List[WizDetectionMethod]**](WizDetectionMethod.md) | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
 **vendor_severity** | [**List[WizVendorSeverity]**](WizVendorSeverity.md) | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39; | [optional] 
-**email_address** | **str** | This is the email address registered with your Zendesk account | [optional] 
-**sub_domain** | **str** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | 
 
 ## Example
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **occurred_at** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **request_id** | **str** |  | [optional] 
-**resource** | [**GithubComMonadIncCorePkgTypesModelsAuditResource**](GithubComMonadIncCorePkgTypesModelsAuditResource.md) |  | [optional] 
+**resource** | [**ModelsAuditResource**](ModelsAuditResource.md) |  | [optional] 
 
 ## Example
 

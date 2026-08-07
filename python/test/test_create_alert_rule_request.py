@@ -38,6 +38,7 @@ class TestCreateAlertRuleRequest(unittest.TestCase):
             return CreateAlertRuleRequest(
                 active = True,
                 description = '',
+                invert_selection = True,
                 name = '',
                 pipeline_ids = [
                     ''

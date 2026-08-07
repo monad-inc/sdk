@@ -4,11 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to **map[string]interface{}** |  | [optional] 
+**BaseConfig** | Pointer to **map[string]interface{}** | BaseConfig is the template&#39;s config before the override delta is applied. | [optional] 
+**Config** | Pointer to **map[string]interface{}** | Config is the node&#39;s effective config: for a template-backed node it is the base merged with the node&#39;s override delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged. | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Overrides** | Pointer to **map[string]interface{}** | Overrides is the node&#39;s sparse override delta (secrets as {id} refs only). | [optional] 
 **References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
+**ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
+**TemplateSettings** | Pointer to [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
 
@@ -31,22 +35,47 @@ NewModelsNodeComponentWithDefaults instantiates a new ModelsNodeComponent object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetBaseConfig
+
+`func (o *ModelsNodeComponent) GetBaseConfig() map[string]*interface{}`
+
+GetBaseConfig returns the BaseConfig field if non-nil, zero value otherwise.
+
+### GetBaseConfigOk
+
+`func (o *ModelsNodeComponent) GetBaseConfigOk() (*map[string]*interface{}, bool)`
+
+GetBaseConfigOk returns a tuple with the BaseConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBaseConfig
+
+`func (o *ModelsNodeComponent) SetBaseConfig(v map[string]*interface{})`
+
+SetBaseConfig sets BaseConfig field to given value.
+
+### HasBaseConfig
+
+`func (o *ModelsNodeComponent) HasBaseConfig() bool`
+
+HasBaseConfig returns a boolean if a field has been set.
+
 ### GetConfig
 
-`func (o *ModelsNodeComponent) GetConfig() map[string]interface{}`
+`func (o *ModelsNodeComponent) GetConfig() map[string]*interface{}`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ModelsNodeComponent) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *ModelsNodeComponent) GetConfigOk() (*map[string]*interface{}, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ModelsNodeComponent) SetConfig(v map[string]interface{})`
+`func (o *ModelsNodeComponent) SetConfig(v map[string]*interface{})`
 
 SetConfig sets Config field to given value.
 
@@ -131,6 +160,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetOverrides
+
+`func (o *ModelsNodeComponent) GetOverrides() map[string]*interface{}`
+
+GetOverrides returns the Overrides field if non-nil, zero value otherwise.
+
+### GetOverridesOk
+
+`func (o *ModelsNodeComponent) GetOverridesOk() (*map[string]*interface{}, bool)`
+
+GetOverridesOk returns a tuple with the Overrides field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverrides
+
+`func (o *ModelsNodeComponent) SetOverrides(v map[string]*interface{})`
+
+SetOverrides sets Overrides field to given value.
+
+### HasOverrides
+
+`func (o *ModelsNodeComponent) HasOverrides() bool`
+
+HasOverrides returns a boolean if a field has been set.
+
 ### GetReferences
 
 `func (o *ModelsNodeComponent) GetReferences() ModelsReferences`
@@ -155,6 +209,56 @@ SetReferences sets References field to given value.
 `func (o *ModelsNodeComponent) HasReferences() bool`
 
 HasReferences returns a boolean if a field has been set.
+
+### GetShareDetails
+
+`func (o *ModelsNodeComponent) GetShareDetails() ModelsShareDetails`
+
+GetShareDetails returns the ShareDetails field if non-nil, zero value otherwise.
+
+### GetShareDetailsOk
+
+`func (o *ModelsNodeComponent) GetShareDetailsOk() (*ModelsShareDetails, bool)`
+
+GetShareDetailsOk returns a tuple with the ShareDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShareDetails
+
+`func (o *ModelsNodeComponent) SetShareDetails(v ModelsShareDetails)`
+
+SetShareDetails sets ShareDetails field to given value.
+
+### HasShareDetails
+
+`func (o *ModelsNodeComponent) HasShareDetails() bool`
+
+HasShareDetails returns a boolean if a field has been set.
+
+### GetTemplateSettings
+
+`func (o *ModelsNodeComponent) GetTemplateSettings() ModelsTemplateSettings`
+
+GetTemplateSettings returns the TemplateSettings field if non-nil, zero value otherwise.
+
+### GetTemplateSettingsOk
+
+`func (o *ModelsNodeComponent) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool)`
+
+GetTemplateSettingsOk returns a tuple with the TemplateSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemplateSettings
+
+`func (o *ModelsNodeComponent) SetTemplateSettings(v ModelsTemplateSettings)`
+
+SetTemplateSettings sets TemplateSettings field to given value.
+
+### HasTemplateSettings
+
+`func (o *ModelsNodeComponent) HasTemplateSettings() bool`
+
+HasTemplateSettings returns a boolean if a field has been set.
 
 ### GetType
 

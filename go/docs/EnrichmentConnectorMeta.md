@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **InBeta** | Pointer to **bool** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**ReleaseDate** | Pointer to **string** |  | [optional] 
 **SupportedFeatures** | Pointer to [**ModelsSupportedFeatures**](ModelsSupportedFeatures.md) |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -218,6 +219,31 @@ SetName sets Name field to given value.
 `func (o *EnrichmentConnectorMeta) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetReleaseDate
+
+`func (o *EnrichmentConnectorMeta) GetReleaseDate() string`
+
+GetReleaseDate returns the ReleaseDate field if non-nil, zero value otherwise.
+
+### GetReleaseDateOk
+
+`func (o *EnrichmentConnectorMeta) GetReleaseDateOk() (*string, bool)`
+
+GetReleaseDateOk returns a tuple with the ReleaseDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseDate
+
+`func (o *EnrichmentConnectorMeta) SetReleaseDate(v string)`
+
+SetReleaseDate sets ReleaseDate field to given value.
+
+### HasReleaseDate
+
+`func (o *EnrichmentConnectorMeta) HasReleaseDate() bool`
+
+HasReleaseDate returns a boolean if a field has been set.
 
 ### GetSupportedFeatures
 

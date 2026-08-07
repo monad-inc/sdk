@@ -21,7 +21,7 @@ from typing_extensions import Self
 
 class ModelsComponentType(str, Enum):
     """
-    ModelsComponentType
+    base type (input, output, enrichment)
     """
 
     """

@@ -10,7 +10,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="getOutputTypeMeta"></a>
 # **getOutputTypeMeta**
-> ModelsConnectorMeta getOutputTypeMeta(outputTypeId)
+> OutputsConnectorMeta getOutputTypeMeta(outputTypeId)
 
 Get output config meta
 
@@ -46,7 +46,7 @@ public class Example {
     OutputsApi apiInstance = new OutputsApi(defaultClient);
     String outputTypeId = "outputTypeId_example"; // String | Output type ID
     try {
-      ModelsConnectorMeta result = apiInstance.getOutputTypeMeta(outputTypeId);
+      OutputsConnectorMeta result = apiInstance.getOutputTypeMeta(outputTypeId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OutputsApi#getOutputTypeMeta");
@@ -67,7 +67,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsConnectorMeta**](ModelsConnectorMeta.md)
+[**OutputsConnectorMeta**](OutputsConnectorMeta.md)
 
 ### Authorization
 

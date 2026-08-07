@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createUser**
-> GithubComMonadIncCorePkgTypesModelsUser createUser()
+> ModelsUser createUser()
 
 Create user
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**GithubComMonadIncCorePkgTypesModelsUser**
+**ModelsUser**
 
 ### Authorization
 

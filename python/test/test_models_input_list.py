@@ -56,6 +56,10 @@ class TestModelsInputList(unittest.TestCase):
                             owner_organization_id = '', 
                             shared_with_children = True, 
                             shared_with_me = True, ), 
+                        template_settings = monad.models.models/template_settings.models.TemplateSettings(
+                            overridable_paths = [
+                                ''
+                                ], ), 
                         type = '', 
                         updated_at = '', 
                         version = 56, )

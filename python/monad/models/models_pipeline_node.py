@@ -18,12 +18,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_component_type import ModelsComponentType
 from monad.models.models_node_component import ModelsNodeComponent
-from monad.models.models_node_shared_resource import ModelsNodeSharedResource
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
+from monad.models.models_references import ModelsReferences
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -37,15 +37,16 @@ class ModelsPipelineNode(BaseModel):
     component_id: Optional[StrictStr] = None
     component_sub_type: Optional[StrictStr] = None
     component_type: Optional[ModelsComponentType] = None
+    config_overrides: Optional[Dict[str, Any]] = Field(default=None, description="ConfigOverrides is the node's sparse override delta over its template component's base config (RFC 0017 §3). Nil for a non-template-backed node.")
     created_at: Optional[StrictStr] = None
     enabled: Optional[StrictBool] = None
     id: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
-    shared_resources: Optional[List[ModelsNodeSharedResource]] = None
+    resource_references: Optional[ModelsReferences] = None
     slug: Optional[StrictStr] = None
     status: Optional[ModelsPipelineNodeStatus] = None
-    __properties: ClassVar[List[str]] = ["component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "shared_resources", "slug", "status"]
+    __properties: ClassVar[List[str]] = ["component", "component_house", "component_id", "component_sub_type", "component_type", "config_overrides", "created_at", "enabled", "id", "organization_id", "pipeline_id", "resource_references", "slug", "status"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,13 +90,9 @@ class ModelsPipelineNode(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of component
         if self.component:
             _dict['component'] = self.component.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in shared_resources (list)
-        _items = []
-        if self.shared_resources:
-            for _item_shared_resources in self.shared_resources:
-                if _item_shared_resources:
-                    _items.append(_item_shared_resources.to_dict())
-            _dict['shared_resources'] = _items
+        # override the default output from pydantic by calling `to_dict()` of resource_references
+        if self.resource_references:
+            _dict['resource_references'] = self.resource_references.to_dict()
         # override the default output from pydantic by calling `to_dict()` of status
         if self.status:
             _dict['status'] = self.status.to_dict()
@@ -116,12 +113,13 @@ class ModelsPipelineNode(BaseModel):
             "component_id": obj.get("component_id"),
             "component_sub_type": obj.get("component_sub_type"),
             "component_type": obj.get("component_type"),
+            "config_overrides": obj.get("config_overrides"),
             "created_at": obj.get("created_at"),
             "enabled": obj.get("enabled"),
             "id": obj.get("id"),
             "organization_id": obj.get("organization_id"),
             "pipeline_id": obj.get("pipeline_id"),
-            "shared_resources": [ModelsNodeSharedResource.from_dict(_item) for _item in obj["shared_resources"]] if obj.get("shared_resources") is not None else None,
+            "resource_references": ModelsReferences.from_dict(obj["resource_references"]) if obj.get("resource_references") is not None else None,
             "slug": obj.get("slug"),
             "status": ModelsPipelineNodeStatus.from_dict(obj["status"]) if obj.get("status") is not None else None
         })

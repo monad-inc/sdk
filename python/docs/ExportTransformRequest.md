@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **author** | **str** |  | [optional] 
-**config** | **Dict[str, object]** |  | [optional] 
+**config** | **Dict[str, Optional[object]]** |  | [optional] 
 **contributors** | **List[str]** |  | [optional] 
 **description** | **str** |  | [optional] 
 **inputs** | **List[str]** |  | [optional] 

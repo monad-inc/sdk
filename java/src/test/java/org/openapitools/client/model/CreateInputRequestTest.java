@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsTemplateSettings;
 import org.openapitools.client.model.SecretProcessesorInputConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -60,6 +61,14 @@ public class CreateInputRequestTest {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'templateSettings'
+     */
+    @Test
+    public void templateSettingsTest() {
+        // TODO: test templateSettings
     }
 
     /**

@@ -50,7 +50,15 @@ class TestEncryptArgumentsConfig(unittest.TestCase):
                                 shared_with_me = True, ), 
                             updated_at = '', 
                             value = '', ), ), 
-                    age = monad.models.encrypt/aes_variant.encrypt.AESVariant(), 
+                    age = monad.models.encrypt/aes_variant.encrypt.AESVariant(
+                        encryption_key = monad.models.models/secret.models.Secret(
+                            created_at = '', 
+                            description = '', 
+                            id = '', 
+                            name = '', 
+                            organization_id = '', 
+                            updated_at = '', 
+                            value = '', ), ), 
                     type = '', ),
                 key = ''
             )

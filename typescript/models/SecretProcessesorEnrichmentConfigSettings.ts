@@ -20,7 +20,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorEnrichmentConfigSettings = CommunityEditionSettingsConfig | GeolocusSettingsConfig | KvLookupSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorEnrichmentConfigSettings = CommunityEditionSettingsConfig | GeolocusSettingsConfig | KvLookupSettingsConfig;
 
 /**
 * @type SecretProcessesorEnrichmentConfigSettingsClass
@@ -31,6 +31,5 @@ export class SecretProcessesorEnrichmentConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-
 
 

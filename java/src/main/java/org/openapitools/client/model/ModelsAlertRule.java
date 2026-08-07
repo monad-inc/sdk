@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsAlertRule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ModelsAlertRule {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
@@ -74,6 +74,11 @@ public class ModelsAlertRule {
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
+
+  public static final String SERIALIZED_NAME_INVERT_SELECTION = "invert_selection";
+  @SerializedName(SERIALIZED_NAME_INVERT_SELECTION)
+  @javax.annotation.Nullable
+  private Boolean invertSelection;
 
   public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
   @SerializedName(SERIALIZED_NAME_MANAGED_BY)
@@ -191,6 +196,25 @@ public class ModelsAlertRule {
 
   public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
+  }
+
+
+  public ModelsAlertRule invertSelection(@javax.annotation.Nullable Boolean invertSelection) {
+    this.invertSelection = invertSelection;
+    return this;
+  }
+
+  /**
+   * InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs.
+   * @return invertSelection
+   */
+  @javax.annotation.Nullable
+  public Boolean getInvertSelection() {
+    return invertSelection;
+  }
+
+  public void setInvertSelection(@javax.annotation.Nullable Boolean invertSelection) {
+    this.invertSelection = invertSelection;
   }
 
 
@@ -376,6 +400,7 @@ public class ModelsAlertRule {
         Objects.equals(this.createdAt, modelsAlertRule.createdAt) &&
         Objects.equals(this.description, modelsAlertRule.description) &&
         Objects.equals(this.id, modelsAlertRule.id) &&
+        Objects.equals(this.invertSelection, modelsAlertRule.invertSelection) &&
         Objects.equals(this.managedBy, modelsAlertRule.managedBy) &&
         Objects.equals(this.name, modelsAlertRule.name) &&
         Objects.equals(this.organizationId, modelsAlertRule.organizationId) &&
@@ -388,7 +413,7 @@ public class ModelsAlertRule {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, createdAt, description, id, managedBy, name, organizationId, pipelineIds, ruleConfig, severity, type, updatedAt);
+    return Objects.hash(active, createdAt, description, id, invertSelection, managedBy, name, organizationId, pipelineIds, ruleConfig, severity, type, updatedAt);
   }
 
   @Override
@@ -399,6 +424,7 @@ public class ModelsAlertRule {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    invertSelection: ").append(toIndentedString(invertSelection)).append("\n");
     sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
@@ -425,7 +451,7 @@ public class ModelsAlertRule {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "managed_by", "name", "organization_id", "pipeline_ids", "rule_config", "severity", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "invert_selection", "managed_by", "name", "organization_id", "pipeline_ids", "rule_config", "severity", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

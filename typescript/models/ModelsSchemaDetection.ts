@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsSchemaDetection {
+    'disableAlerting'?: boolean;
     'enabled'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
@@ -20,6 +21,12 @@ export class ModelsSchemaDetection {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "disableAlerting",
+            "baseName": "disable_alerting",
+            "type": "boolean",
+            "format": ""
+        },
         {
             "name": "enabled",
             "baseName": "enabled",

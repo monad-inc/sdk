@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Map;
 import org.openapitools.client.model.CommunityEditionSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
 
@@ -60,7 +59,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorEnrichmentConfigSecrets.class.getName());
 
@@ -74,8 +73,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<CommunityEditionSecretsConfig> adapterCommunityEditionSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CommunityEditionSecretsConfig.class));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
-            final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
-            final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
 
             return (TypeAdapter<T>) new TypeAdapter<SecretProcessesorEnrichmentConfigSecrets>() {
                 @Override
@@ -97,13 +94,7 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
                         elementAdapter.write(out, primitive);
                         return;
                     }
-                    // check if the actual instance is of the type `Map<String, Object>`
-                    if (value.getActualInstance() instanceof Map<?, ?>) {
-                        JsonObject object = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, object);
-                        return;
-                    }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CommunityEditionSecretsConfig, Map<String, Object>, Object");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CommunityEditionSecretsConfig, Object");
                 }
 
                 @Override
@@ -141,21 +132,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Object failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Object'", e);
                     }
-                    // deserialize Map<String, Object>
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        if (!jsonElement.isJsonObject()) {
-                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
-                        }
-
-                        actualAdapter = adapterMapStringObject;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'Map<String, Object>'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
-                    }
 
                     if (match == 1) {
                         SecretProcessesorEnrichmentConfigSecrets ret = new SecretProcessesorEnrichmentConfigSecrets();
@@ -184,7 +160,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
     static {
         schemas.put("CommunityEditionSecretsConfig", CommunityEditionSecretsConfig.class);
         schemas.put("Object", Object.class);
-        schemas.put("Map<String, Object>", Map.class);
     }
 
     @Override
@@ -195,7 +170,7 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * CommunityEditionSecretsConfig, Map&lt;String, Object&gt;, Object
+     * CommunityEditionSecretsConfig, Object
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -211,19 +186,14 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
             return;
         }
 
-        if (instance instanceof Map<?, ?>) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        throw new RuntimeException("Invalid instance type. Must be CommunityEditionSecretsConfig, Map<String, Object>, Object");
+        throw new RuntimeException("Invalid instance type. Must be CommunityEditionSecretsConfig, Object");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * CommunityEditionSecretsConfig, Map&lt;String, Object&gt;, Object
+     * CommunityEditionSecretsConfig, Object
      *
-     * @return The actual instance (CommunityEditionSecretsConfig, Map&lt;String, Object&gt;, Object)
+     * @return The actual instance (CommunityEditionSecretsConfig, Object)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -256,18 +226,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
     }
 
     /**
-     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `Map&lt;String, Object&gt;`
-     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
-     */
-    @SuppressWarnings("unchecked")
-    public Map<String, Object> getMapStringObject() throws ClassCastException {
-        return (Map<String, Object>)super.getActualInstance();
-    }
-
-    /**
      * Validates the JSON Element and throws an exception if issues found
      *
      * @param jsonElement JSON Element
@@ -295,19 +253,8 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Object failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with Map<String, Object>
-        try {
-            if (!jsonElement.isJsonObject()) {
-                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
-            }
-
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: CommunityEditionSecretsConfig, Map<String, Object>, Object. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: CommunityEditionSecretsConfig, Object. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

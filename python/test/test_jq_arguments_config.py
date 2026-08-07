@@ -37,6 +37,7 @@ class TestJqArgumentsConfig(unittest.TestCase):
         if include_optional:
             return JqArgumentsConfig(
                 key = '',
+                prevent_data_dropping = True,
                 query = ''
             )
         else:

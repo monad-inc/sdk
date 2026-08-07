@@ -13,8 +13,8 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsInputConfig {
-    'secrets'?: { [key: string]: any; };
-    'settings'?: { [key: string]: any; };
+    'secrets'?: { [key: string]: any | null; };
+    'settings'?: { [key: string]: any | null; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,13 +24,13 @@ export class ModelsInputConfig {
         {
             "name": "secrets",
             "baseName": "secrets",
-            "type": "{ [key: string]: any; }",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         },
         {
             "name": "settings",
             "baseName": "settings",
-            "type": "{ [key: string]: any; }",
+            "type": "{ [key: string]: any | null; }",
             "format": ""
         }    ];
 

@@ -97,6 +97,14 @@ public class EnrichmentConnectorMetaTest {
     }
 
     /**
+     * Test the property 'releaseDate'
+     */
+    @Test
+    public void releaseDateTest() {
+        // TODO: test releaseDate
+    }
+
+    /**
      * Test the property 'supportedFeatures'
      */
     @Test

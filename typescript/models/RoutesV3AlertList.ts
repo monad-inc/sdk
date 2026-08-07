@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsAlert } from '../models/GithubComMonadIncCorePkgTypesModelsAlert';
+import { ModelsAlert } from '../models/ModelsAlert';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3AlertList {
-    'alerts'?: Array<GithubComMonadIncCorePkgTypesModelsAlert>;
+    'alerts'?: Array<ModelsAlert>;
     'total'?: number;
 
     static readonly discriminator: string | undefined = undefined;
@@ -25,7 +25,7 @@ export class RoutesV3AlertList {
         {
             "name": "alerts",
             "baseName": "alerts",
-            "type": "Array<GithubComMonadIncCorePkgTypesModelsAlert>",
+            "type": "Array<ModelsAlert>",
             "format": ""
         },
         {

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_input_type_meta**
-> ModelsConnectorMeta get_input_type_meta(input_type_id)
+> InputsConnectorMeta get_input_type_meta(input_type_id)
 
 Get input config meta
 
@@ -22,7 +22,7 @@ Get input config meta
 
 ```python
 import monad
-from monad.models.models_connector_meta import ModelsConnectorMeta
+from monad.models.inputs_connector_meta import InputsConnectorMeta
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsConnectorMeta**](ModelsConnectorMeta.md)
+[**InputsConnectorMeta**](InputsConnectorMeta.md)
 
 ### Authorization
 

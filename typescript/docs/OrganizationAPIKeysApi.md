@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 # **regenerateAPIKey**
 > ModelsAPIKeyWithToken regenerateAPIKey()
 
-Regenerates an API key by creating a new one with the same metadata and deleting the old one
+Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
 
 ### Example
 
@@ -266,6 +266,8 @@ const request: OrganizationAPIKeysApiRegenerateAPIKeyRequest = {
   organizationId: "organization_id_example",
     // API Key ID
   apiKeyId: "api_key_id_example",
+    // Optional new expiration for the regenerated key (optional)
+  regenerateAPIKeyRequest: null,
 };
 
 const data = await apiInstance.regenerateAPIKey(request);
@@ -277,6 +279,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **regenerateAPIKeyRequest** | **RegenerateAPIKeyRequest**| Optional new expiration for the regenerated key |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **apiKeyId** | [**string**] | API Key ID | defaults to undefined
 
@@ -291,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -299,7 +302,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New API key generated successfully |  -  |
+**400** | Invalid JSON request body or expiration time |  -  |
 **404** | API key not found |  -  |
+**422** | Expiration time required for an expired API key |  -  |
 **500** | Failed to regenerate API key |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

@@ -2,6 +2,7 @@
 
 # ModelsReferences
 
+ResourceReferences are the resources (e.g. secrets) referenced only via the override delta, tracked so deletion/rotation see them like component refs.
 
 ## Properties
 
