@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.sentinel_settings_config import SentinelSettingsConfig
+from monad.models.sentinelv2_manual_dcr_variant import Sentinelv2ManualDCRVariant
 
-class TestSentinelSettingsConfig(unittest.TestCase):
-    """SentinelSettingsConfig unit test stubs"""
+class TestSentinelv2ManualDCRVariant(unittest.TestCase):
+    """Sentinelv2ManualDCRVariant unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,26 @@ class TestSentinelSettingsConfig(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SentinelSettingsConfig:
-        """Test SentinelSettingsConfig
+    def make_instance(self, include_optional) -> Sentinelv2ManualDCRVariant:
+        """Test Sentinelv2ManualDCRVariant
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SentinelSettingsConfig`
+        # uncomment below to create an instance of `Sentinelv2ManualDCRVariant`
         """
-        model = SentinelSettingsConfig()
+        model = Sentinelv2ManualDCRVariant()
         if include_optional:
-            return SentinelSettingsConfig(
-                endpoint = '',
-                rule_id = '',
-                stream_name = ''
+            return Sentinelv2ManualDCRVariant(
+                rule_id = ''
             )
         else:
-            return SentinelSettingsConfig(
+            return Sentinelv2ManualDCRVariant(
+                rule_id = '',
         )
         """
 
-    def testSentinelSettingsConfig(self):
-        """Test SentinelSettingsConfig"""
+    def testSentinelv2ManualDCRVariant(self):
+        """Test Sentinelv2ManualDCRVariant"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

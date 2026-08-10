@@ -69,7 +69,8 @@ import org.openapitools.client.model.ScannerFormatConfig;
 import org.openapitools.client.model.ScannerSettingsConfig;
 import org.openapitools.client.model.SecurityLakeSettingsConfig;
 import org.openapitools.client.model.SecurityLakeSourceAccountDetails;
-import org.openapitools.client.model.SentinelSettingsConfig;
+import org.openapitools.client.model.Sentinelv2DCRConfig;
+import org.openapitools.client.model.Sentinelv2SettingsConfig;
 import org.openapitools.client.model.SlackAuthConfig;
 import org.openapitools.client.model.SlackSettingsConfig;
 import org.openapitools.client.model.SnowflakeOutputSettingsConfig;
@@ -768,11 +769,11 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'ruleId'
+     * Test the property 'dcrConfig'
      */
     @Test
-    public void ruleIdTest() {
-        // TODO: test ruleId
+    public void dcrConfigTest() {
+        // TODO: test dcrConfig
     }
 
     /**

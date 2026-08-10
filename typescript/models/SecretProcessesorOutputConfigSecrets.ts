@@ -28,7 +28,7 @@ import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
-import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
+import { Sentinelv2SecretsConfig } from '../models/Sentinelv2SecretsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
@@ -40,7 +40,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | WazuhSecretsConfig | any;
+export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | Sentinelv2SecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | WazuhSecretsConfig | any;
 
 /**
 * @type SecretProcessesorOutputConfigSecretsClass

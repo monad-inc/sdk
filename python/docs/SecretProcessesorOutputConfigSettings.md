@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **url** | **str** | The URL of the Wazuh indexer API (must start with https). | 
 **username** | **str** | The username for authenticating with the Wazuh indexer. | 
 **format** | [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
-**endpoint** | **str** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
+**endpoint** | **str** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | 
 **headers** | [**List[KafkaKafkaHeader]**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **max_batch_data_size** | **int** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **max_batch_record_count** | **int** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
@@ -89,8 +89,8 @@ Name | Type | Description | Notes
 **key** | **str** | S3 Key | [optional] 
 **parquet_format** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
 **source_account_details** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
-**rule_id** | **str** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
-**stream_name** | **str** | The name of the data stream defined in the Data Collection Rule. | [optional] 
+**dcr_config** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  | 
+**stream_name** | **str** | The name of the data stream defined in the Data Collection Rule. | 
 **message_template** | **str** |  | [optional] 
 **account** | **str** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. | 
 **case_insensitivity** | **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 

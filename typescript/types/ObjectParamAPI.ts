@@ -535,8 +535,11 @@ import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsS
 import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
-import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
-import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { Sentinelv2DCRConfig } from '../models/Sentinelv2DCRConfig';
+import { Sentinelv2ManagedDCRVariant } from '../models/Sentinelv2ManagedDCRVariant';
+import { Sentinelv2ManualDCRVariant } from '../models/Sentinelv2ManualDCRVariant';
+import { Sentinelv2SecretsConfig } from '../models/Sentinelv2SecretsConfig';
+import { Sentinelv2SettingsConfig } from '../models/Sentinelv2SettingsConfig';
 import { SetStorageTypeCostRequest } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';

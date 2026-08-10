@@ -16,7 +16,7 @@ import { HttpFile } from '../http/http';
 /**
 * Sentinel Output Secrets
 */
-export class SentinelSecretsConfig {
+export class Sentinelv2SecretsConfig {
     'clientId'?: ModelsSecret;
     'clientSecret'?: ModelsSecret;
     'tenantId'?: ModelsSecret;
@@ -46,7 +46,7 @@ export class SentinelSecretsConfig {
         }    ];
 
     static getAttributeTypeMap() {
-        return SentinelSecretsConfig.attributeTypeMap;
+        return Sentinelv2SecretsConfig.attributeTypeMap;
     }
 
     public constructor() {

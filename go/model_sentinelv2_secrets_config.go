@@ -15,35 +15,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the SentinelSecretsConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SentinelSecretsConfig{}
+// checks if the Sentinelv2SecretsConfig type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Sentinelv2SecretsConfig{}
 
-// SentinelSecretsConfig Sentinel Output Secrets
-type SentinelSecretsConfig struct {
+// Sentinelv2SecretsConfig Sentinel Output Secrets
+type Sentinelv2SecretsConfig struct {
 	ClientId *ModelsSecret `json:"client_id,omitempty"`
 	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
 	TenantId *ModelsSecret `json:"tenant_id,omitempty"`
 }
 
-// NewSentinelSecretsConfig instantiates a new SentinelSecretsConfig object
+// NewSentinelv2SecretsConfig instantiates a new Sentinelv2SecretsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSentinelSecretsConfig() *SentinelSecretsConfig {
-	this := SentinelSecretsConfig{}
+func NewSentinelv2SecretsConfig() *Sentinelv2SecretsConfig {
+	this := Sentinelv2SecretsConfig{}
 	return &this
 }
 
-// NewSentinelSecretsConfigWithDefaults instantiates a new SentinelSecretsConfig object
+// NewSentinelv2SecretsConfigWithDefaults instantiates a new Sentinelv2SecretsConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSentinelSecretsConfigWithDefaults() *SentinelSecretsConfig {
-	this := SentinelSecretsConfig{}
+func NewSentinelv2SecretsConfigWithDefaults() *Sentinelv2SecretsConfig {
+	this := Sentinelv2SecretsConfig{}
 	return &this
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *SentinelSecretsConfig) GetClientId() ModelsSecret {
+func (o *Sentinelv2SecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
 		var ret ModelsSecret
 		return ret
@@ -53,7 +53,7 @@ func (o *SentinelSecretsConfig) GetClientId() ModelsSecret {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SentinelSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
+func (o *Sentinelv2SecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *SentinelSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 }
 
 // HasClientId returns a boolean if a field has been set.
-func (o *SentinelSecretsConfig) HasClientId() bool {
+func (o *Sentinelv2SecretsConfig) HasClientId() bool {
 	if o != nil && !IsNil(o.ClientId) {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *SentinelSecretsConfig) HasClientId() bool {
 }
 
 // SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
-func (o *SentinelSecretsConfig) SetClientId(v ModelsSecret) {
+func (o *Sentinelv2SecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *SentinelSecretsConfig) GetClientSecret() ModelsSecret {
+func (o *Sentinelv2SecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
 		var ret ModelsSecret
 		return ret
@@ -85,7 +85,7 @@ func (o *SentinelSecretsConfig) GetClientSecret() ModelsSecret {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SentinelSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
+func (o *Sentinelv2SecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *SentinelSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 }
 
 // HasClientSecret returns a boolean if a field has been set.
-func (o *SentinelSecretsConfig) HasClientSecret() bool {
+func (o *Sentinelv2SecretsConfig) HasClientSecret() bool {
 	if o != nil && !IsNil(o.ClientSecret) {
 		return true
 	}
@@ -102,12 +102,12 @@ func (o *SentinelSecretsConfig) HasClientSecret() bool {
 }
 
 // SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
-func (o *SentinelSecretsConfig) SetClientSecret(v ModelsSecret) {
+func (o *Sentinelv2SecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 
 // GetTenantId returns the TenantId field value if set, zero value otherwise.
-func (o *SentinelSecretsConfig) GetTenantId() ModelsSecret {
+func (o *Sentinelv2SecretsConfig) GetTenantId() ModelsSecret {
 	if o == nil || IsNil(o.TenantId) {
 		var ret ModelsSecret
 		return ret
@@ -117,7 +117,7 @@ func (o *SentinelSecretsConfig) GetTenantId() ModelsSecret {
 
 // GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SentinelSecretsConfig) GetTenantIdOk() (*ModelsSecret, bool) {
+func (o *Sentinelv2SecretsConfig) GetTenantIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
@@ -125,7 +125,7 @@ func (o *SentinelSecretsConfig) GetTenantIdOk() (*ModelsSecret, bool) {
 }
 
 // HasTenantId returns a boolean if a field has been set.
-func (o *SentinelSecretsConfig) HasTenantId() bool {
+func (o *Sentinelv2SecretsConfig) HasTenantId() bool {
 	if o != nil && !IsNil(o.TenantId) {
 		return true
 	}
@@ -134,11 +134,11 @@ func (o *SentinelSecretsConfig) HasTenantId() bool {
 }
 
 // SetTenantId gets a reference to the given ModelsSecret and assigns it to the TenantId field.
-func (o *SentinelSecretsConfig) SetTenantId(v ModelsSecret) {
+func (o *Sentinelv2SecretsConfig) SetTenantId(v ModelsSecret) {
 	o.TenantId = &v
 }
 
-func (o SentinelSecretsConfig) MarshalJSON() ([]byte, error) {
+func (o Sentinelv2SecretsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -146,7 +146,7 @@ func (o SentinelSecretsConfig) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o SentinelSecretsConfig) ToMap() (map[string]interface{}, error) {
+func (o Sentinelv2SecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ClientId) {
 		toSerialize["client_id"] = o.ClientId
@@ -160,38 +160,38 @@ func (o SentinelSecretsConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableSentinelSecretsConfig struct {
-	value *SentinelSecretsConfig
+type NullableSentinelv2SecretsConfig struct {
+	value *Sentinelv2SecretsConfig
 	isSet bool
 }
 
-func (v NullableSentinelSecretsConfig) Get() *SentinelSecretsConfig {
+func (v NullableSentinelv2SecretsConfig) Get() *Sentinelv2SecretsConfig {
 	return v.value
 }
 
-func (v *NullableSentinelSecretsConfig) Set(val *SentinelSecretsConfig) {
+func (v *NullableSentinelv2SecretsConfig) Set(val *Sentinelv2SecretsConfig) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableSentinelSecretsConfig) IsSet() bool {
+func (v NullableSentinelv2SecretsConfig) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableSentinelSecretsConfig) Unset() {
+func (v *NullableSentinelv2SecretsConfig) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableSentinelSecretsConfig(val *SentinelSecretsConfig) *NullableSentinelSecretsConfig {
-	return &NullableSentinelSecretsConfig{value: val, isSet: true}
+func NewNullableSentinelv2SecretsConfig(val *Sentinelv2SecretsConfig) *NullableSentinelv2SecretsConfig {
+	return &NullableSentinelv2SecretsConfig{value: val, isSet: true}
 }
 
-func (v NullableSentinelSecretsConfig) MarshalJSON() ([]byte, error) {
+func (v NullableSentinelv2SecretsConfig) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableSentinelSecretsConfig) UnmarshalJSON(src []byte) error {
+func (v *NullableSentinelv2SecretsConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

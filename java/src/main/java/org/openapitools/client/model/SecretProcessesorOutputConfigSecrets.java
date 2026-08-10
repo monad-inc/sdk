@@ -42,7 +42,7 @@ import org.openapitools.client.model.PagerdutySecretsConfig;
 import org.openapitools.client.model.PantherSecretsConfig;
 import org.openapitools.client.model.PostgresqlSecretsConfig;
 import org.openapitools.client.model.S3SecretsConfig;
-import org.openapitools.client.model.SentinelSecretsConfig;
+import org.openapitools.client.model.Sentinelv2SecretsConfig;
 import org.openapitools.client.model.SnowflakeOutputSecretsConfig;
 import org.openapitools.client.model.SplunkSecretsConfig;
 import org.openapitools.client.model.SumologicSecretsConfig;
@@ -114,7 +114,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             final TypeAdapter<PantherSecretsConfig> adapterPantherSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PantherSecretsConfig.class));
             final TypeAdapter<PostgresqlSecretsConfig> adapterPostgresqlSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PostgresqlSecretsConfig.class));
             final TypeAdapter<S3SecretsConfig> adapterS3SecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(S3SecretsConfig.class));
-            final TypeAdapter<SentinelSecretsConfig> adapterSentinelSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SentinelSecretsConfig.class));
+            final TypeAdapter<Sentinelv2SecretsConfig> adapterSentinelv2SecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(Sentinelv2SecretsConfig.class));
             final TypeAdapter<SnowflakeOutputSecretsConfig> adapterSnowflakeOutputSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnowflakeOutputSecretsConfig.class));
             final TypeAdapter<SplunkSecretsConfig> adapterSplunkSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SplunkSecretsConfig.class));
             final TypeAdapter<SumologicSecretsConfig> adapterSumologicSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SumologicSecretsConfig.class));
@@ -242,9 +242,9 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `SentinelSecretsConfig`
-                    if (value.getActualInstance() instanceof SentinelSecretsConfig) {
-                        JsonElement element = adapterSentinelSecretsConfig.toJsonTree((SentinelSecretsConfig)value.getActualInstance());
+                    // check if the actual instance is of the type `Sentinelv2SecretsConfig`
+                    if (value.getActualInstance() instanceof Sentinelv2SecretsConfig) {
+                        JsonElement element = adapterSentinelv2SecretsConfig.toJsonTree((Sentinelv2SecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -272,7 +272,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
                 }
 
                 @Override
@@ -514,17 +514,17 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for S3SecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'S3SecretsConfig'", e);
                     }
-                    // deserialize SentinelSecretsConfig
+                    // deserialize Sentinelv2SecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        SentinelSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterSentinelSecretsConfig;
+                        Sentinelv2SecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterSentinelv2SecretsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'SentinelSecretsConfig'");
+                        log.log(Level.FINER, "Input data matches schema 'Sentinelv2SecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SentinelSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'SentinelSecretsConfig'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Sentinelv2SecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'Sentinelv2SecretsConfig'", e);
                     }
                     // deserialize SnowflakeOutputSecretsConfig
                     try {
@@ -619,7 +619,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
         schemas.put("PantherSecretsConfig", PantherSecretsConfig.class);
         schemas.put("PostgresqlSecretsConfig", PostgresqlSecretsConfig.class);
         schemas.put("S3SecretsConfig", S3SecretsConfig.class);
-        schemas.put("SentinelSecretsConfig", SentinelSecretsConfig.class);
+        schemas.put("Sentinelv2SecretsConfig", Sentinelv2SecretsConfig.class);
         schemas.put("SnowflakeOutputSecretsConfig", SnowflakeOutputSecretsConfig.class);
         schemas.put("SplunkSecretsConfig", SplunkSecretsConfig.class);
         schemas.put("SumologicSecretsConfig", SumologicSecretsConfig.class);
@@ -634,7 +634,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -735,7 +735,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
-        if (instance instanceof SentinelSecretsConfig) {
+        if (instance instanceof Sentinelv2SecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -760,14 +760,14 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
      *
-     * @return The actual instance (AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig)
+     * @return The actual instance (AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -1004,15 +1004,15 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     }
 
     /**
-     * Get the actual instance of `SentinelSecretsConfig`. If the actual instance is not `SentinelSecretsConfig`,
+     * Get the actual instance of `Sentinelv2SecretsConfig`. If the actual instance is not `Sentinelv2SecretsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `SentinelSecretsConfig`
-     * @throws ClassCastException if the instance is not `SentinelSecretsConfig`
+     * @return The actual instance of `Sentinelv2SecretsConfig`
+     * @throws ClassCastException if the instance is not `Sentinelv2SecretsConfig`
      */
     @SuppressWarnings("unchecked")
-    public SentinelSecretsConfig getSentinelSecretsConfig() throws ClassCastException {
-        return (SentinelSecretsConfig)super.getActualInstance();
+    public Sentinelv2SecretsConfig getSentinelv2SecretsConfig() throws ClassCastException {
+        return (Sentinelv2SecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -1227,12 +1227,12 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for S3SecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with SentinelSecretsConfig
+        // validate the json string with Sentinelv2SecretsConfig
         try {
-            SentinelSecretsConfig.validateJsonElement(jsonElement);
+            Sentinelv2SecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SentinelSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Sentinelv2SecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SnowflakeOutputSecretsConfig
@@ -1268,7 +1268,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

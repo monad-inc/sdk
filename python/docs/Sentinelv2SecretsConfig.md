@@ -1,4 +1,4 @@
-# SentinelSecretsConfig
+# Sentinelv2SecretsConfig
 
 Sentinel Output Secrets
 
@@ -13,19 +13,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from monad.models.sentinel_secrets_config import SentinelSecretsConfig
+from monad.models.sentinelv2_secrets_config import Sentinelv2SecretsConfig
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of SentinelSecretsConfig from a JSON string
-sentinel_secrets_config_instance = SentinelSecretsConfig.from_json(json)
+# create an instance of Sentinelv2SecretsConfig from a JSON string
+sentinelv2_secrets_config_instance = Sentinelv2SecretsConfig.from_json(json)
 # print the JSON string representation of the object
-print(SentinelSecretsConfig.to_json())
+print(Sentinelv2SecretsConfig.to_json())
 
 # convert the object into a dict
-sentinel_secrets_config_dict = sentinel_secrets_config_instance.to_dict()
-# create an instance of SentinelSecretsConfig from a dict
-sentinel_secrets_config_from_dict = SentinelSecretsConfig.from_dict(sentinel_secrets_config_dict)
+sentinelv2_secrets_config_dict = sentinelv2_secrets_config_instance.to_dict()
+# create an instance of Sentinelv2SecretsConfig from a dict
+sentinelv2_secrets_config_from_dict = Sentinelv2SecretsConfig.from_dict(sentinelv2_secrets_config_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

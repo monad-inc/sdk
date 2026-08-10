@@ -37,7 +37,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	PantherSecretsConfig *PantherSecretsConfig
 	PostgresqlSecretsConfig *PostgresqlSecretsConfig
 	S3SecretsConfig *S3SecretsConfig
-	SentinelSecretsConfig *SentinelSecretsConfig
+	Sentinelv2SecretsConfig *Sentinelv2SecretsConfig
 	SnowflakeOutputSecretsConfig *SnowflakeOutputSecretsConfig
 	SplunkSecretsConfig *SplunkSecretsConfig
 	SumologicSecretsConfig *SumologicSecretsConfig
@@ -171,10 +171,10 @@ func S3SecretsConfigAsSecretProcessesorOutputConfigSecrets(v *S3SecretsConfig) S
 	}
 }
 
-// SentinelSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns SentinelSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
-func SentinelSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *SentinelSecretsConfig) SecretProcessesorOutputConfigSecrets {
+// Sentinelv2SecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns Sentinelv2SecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func Sentinelv2SecretsConfigAsSecretProcessesorOutputConfigSecrets(v *Sentinelv2SecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
-		SentinelSecretsConfig: v,
+		Sentinelv2SecretsConfig: v,
 	}
 }
 
@@ -524,21 +524,21 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.S3SecretsConfig = nil
 	}
 
-	// try to unmarshal data into SentinelSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SentinelSecretsConfig)
+	// try to unmarshal data into Sentinelv2SecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.Sentinelv2SecretsConfig)
 	if err == nil {
-		jsonSentinelSecretsConfig, _ := json.Marshal(dst.SentinelSecretsConfig)
-		if string(jsonSentinelSecretsConfig) == "{}" { // empty struct
-			dst.SentinelSecretsConfig = nil
+		jsonSentinelv2SecretsConfig, _ := json.Marshal(dst.Sentinelv2SecretsConfig)
+		if string(jsonSentinelv2SecretsConfig) == "{}" { // empty struct
+			dst.Sentinelv2SecretsConfig = nil
 		} else {
-			if err = validator.Validate(dst.SentinelSecretsConfig); err != nil {
-				dst.SentinelSecretsConfig = nil
+			if err = validator.Validate(dst.Sentinelv2SecretsConfig); err != nil {
+				dst.Sentinelv2SecretsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.SentinelSecretsConfig = nil
+		dst.Sentinelv2SecretsConfig = nil
 	}
 
 	// try to unmarshal data into SnowflakeOutputSecretsConfig
@@ -646,7 +646,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.PantherSecretsConfig = nil
 		dst.PostgresqlSecretsConfig = nil
 		dst.S3SecretsConfig = nil
-		dst.SentinelSecretsConfig = nil
+		dst.Sentinelv2SecretsConfig = nil
 		dst.SnowflakeOutputSecretsConfig = nil
 		dst.SplunkSecretsConfig = nil
 		dst.SumologicSecretsConfig = nil
@@ -854,8 +854,8 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.S3SecretsConfig)
 	}
 
-	if src.SentinelSecretsConfig != nil {
-		return json.Marshal(&src.SentinelSecretsConfig)
+	if src.Sentinelv2SecretsConfig != nil {
+		return json.Marshal(&src.Sentinelv2SecretsConfig)
 	}
 
 	if src.SnowflakeOutputSecretsConfig != nil {
@@ -958,8 +958,8 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.S3SecretsConfig
 	}
 
-	if obj.SentinelSecretsConfig != nil {
-		return obj.SentinelSecretsConfig
+	if obj.Sentinelv2SecretsConfig != nil {
+		return obj.Sentinelv2SecretsConfig
 	}
 
 	if obj.SnowflakeOutputSecretsConfig != nil {
@@ -1060,8 +1060,8 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 		return *obj.S3SecretsConfig
 	}
 
-	if obj.SentinelSecretsConfig != nil {
-		return *obj.SentinelSecretsConfig
+	if obj.Sentinelv2SecretsConfig != nil {
+		return *obj.Sentinelv2SecretsConfig
 	}
 
 	if obj.SnowflakeOutputSecretsConfig != nil {

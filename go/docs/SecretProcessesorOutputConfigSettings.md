@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 **Url** | **string** | The URL of the Wazuh indexer API (must start with https). | 
 **Username** | **string** | The username for authenticating with the Wazuh indexer. | 
 **Format** | Pointer to [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
-**Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
+**Endpoint** | **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | 
 **Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **MaxBatchRecordCount** | Pointer to **int32** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
@@ -88,8 +88,8 @@ Name | Type | Description | Notes
 **Key** | Pointer to **string** | S3 Key | [optional] 
 **ParquetFormat** | Pointer to [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
 **SourceAccountDetails** | Pointer to [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
-**RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
-**StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
+**DcrConfig** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  | 
+**StreamName** | **string** | The name of the data stream defined in the Data Collection Rule. | 
 **MessageTemplate** | Pointer to **string** |  | [optional] 
 **Account** | **string** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. | 
 **CaseInsensitivity** | Pointer to **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
@@ -107,7 +107,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -1066,11 +1066,6 @@ and a boolean to check if the value has been set.
 
 SetEndpoint sets Endpoint field to given value.
 
-### HasEndpoint
-
-`func (o *SecretProcessesorOutputConfigSettings) HasEndpoint() bool`
-
-HasEndpoint returns a boolean if a field has been set.
 
 ### GetHeaders
 
@@ -2122,30 +2117,25 @@ SetSourceAccountDetails sets SourceAccountDetails field to given value.
 
 HasSourceAccountDetails returns a boolean if a field has been set.
 
-### GetRuleId
+### GetDcrConfig
 
-`func (o *SecretProcessesorOutputConfigSettings) GetRuleId() string`
+`func (o *SecretProcessesorOutputConfigSettings) GetDcrConfig() Sentinelv2DCRConfig`
 
-GetRuleId returns the RuleId field if non-nil, zero value otherwise.
+GetDcrConfig returns the DcrConfig field if non-nil, zero value otherwise.
 
-### GetRuleIdOk
+### GetDcrConfigOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetRuleIdOk() (*string, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetDcrConfigOk() (*Sentinelv2DCRConfig, bool)`
 
-GetRuleIdOk returns a tuple with the RuleId field if it's non-nil, zero value otherwise
+GetDcrConfigOk returns a tuple with the DcrConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRuleId
+### SetDcrConfig
 
-`func (o *SecretProcessesorOutputConfigSettings) SetRuleId(v string)`
+`func (o *SecretProcessesorOutputConfigSettings) SetDcrConfig(v Sentinelv2DCRConfig)`
 
-SetRuleId sets RuleId field to given value.
+SetDcrConfig sets DcrConfig field to given value.
 
-### HasRuleId
-
-`func (o *SecretProcessesorOutputConfigSettings) HasRuleId() bool`
-
-HasRuleId returns a boolean if a field has been set.
 
 ### GetStreamName
 
@@ -2166,11 +2156,6 @@ and a boolean to check if the value has been set.
 
 SetStreamName sets StreamName field to given value.
 
-### HasStreamName
-
-`func (o *SecretProcessesorOutputConfigSettings) HasStreamName() bool`
-
-HasStreamName returns a boolean if a field has been set.
 
 ### GetMessageTemplate
 

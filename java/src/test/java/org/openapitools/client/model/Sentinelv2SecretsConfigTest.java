@@ -25,17 +25,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SentinelSecretsConfig
+ * Model tests for Sentinelv2SecretsConfig
  */
-public class SentinelSecretsConfigTest {
-    private final SentinelSecretsConfig model = new SentinelSecretsConfig();
+public class Sentinelv2SecretsConfigTest {
+    private final Sentinelv2SecretsConfig model = new Sentinelv2SecretsConfig();
 
     /**
-     * Model tests for SentinelSecretsConfig
+     * Model tests for Sentinelv2SecretsConfig
      */
     @Test
-    public void testSentinelSecretsConfig() {
-        // TODO: test SentinelSecretsConfig
+    public void testSentinelv2SecretsConfig() {
+        // TODO: test Sentinelv2SecretsConfig
     }
 
     /**

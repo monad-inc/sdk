@@ -20,45 +20,47 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.Sentinelv2ManagedDCRVariant;
+import org.openapitools.client.model.Sentinelv2ManualDCRVariant;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SentinelSettingsConfig
+ * Model tests for Sentinelv2DCRConfig
  */
-public class SentinelSettingsConfigTest {
-    private final SentinelSettingsConfig model = new SentinelSettingsConfig();
+public class Sentinelv2DCRConfigTest {
+    private final Sentinelv2DCRConfig model = new Sentinelv2DCRConfig();
 
     /**
-     * Model tests for SentinelSettingsConfig
+     * Model tests for Sentinelv2DCRConfig
      */
     @Test
-    public void testSentinelSettingsConfig() {
-        // TODO: test SentinelSettingsConfig
+    public void testSentinelv2DCRConfig() {
+        // TODO: test Sentinelv2DCRConfig
     }
 
     /**
-     * Test the property 'endpoint'
+     * Test the property 'managed'
      */
     @Test
-    public void endpointTest() {
-        // TODO: test endpoint
+    public void managedTest() {
+        // TODO: test managed
     }
 
     /**
-     * Test the property 'ruleId'
+     * Test the property 'manual'
      */
     @Test
-    public void ruleIdTest() {
-        // TODO: test ruleId
+    public void manualTest() {
+        // TODO: test manual
     }
 
     /**
-     * Test the property 'streamName'
+     * Test the property 'type'
      */
     @Test
-    public void streamNameTest() {
-        // TODO: test streamName
+    public void typeTest() {
+        // TODO: test type
     }
 
 }

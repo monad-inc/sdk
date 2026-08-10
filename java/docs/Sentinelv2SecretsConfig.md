@@ -1,6 +1,6 @@
 
 
-# SentinelSecretsConfig
+# Sentinelv2SecretsConfig
 
 Sentinel Output Secrets
 

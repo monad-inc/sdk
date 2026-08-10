@@ -47,7 +47,7 @@
 |**url** | **String** | The URL of the Wazuh indexer API (must start with https). |  |
 |**username** | **String** | The username for authenticating with the Wazuh indexer. |  |
 |**format** | [**ScannerFormatConfig**](ScannerFormatConfig.md) |  |  [optional] |
-|**endpoint** | **String** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. |  [optional] |
+|**endpoint** | **String** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. |  |
 |**headers** | [**List&lt;KafkaKafkaHeader&gt;**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message |  [optional] |
 |**maxBatchDataSize** | **Integer** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. |  [optional] |
 |**maxBatchRecordCount** | **Integer** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. |  [optional] |
@@ -91,8 +91,8 @@
 |**key** | **String** | S3 Key |  [optional] |
 |**parquetFormat** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  |  [optional] |
 |**sourceAccountDetails** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  |  [optional] |
-|**ruleId** | **String** | The unique identifier of the Data Collection Rule (DCR). |  [optional] |
-|**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  [optional] |
+|**dcrConfig** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  |  |
+|**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  |
 |**messageTemplate** | **String** |  |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. |  |
 |**caseInsensitivity** | **Boolean** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. |  [optional] |

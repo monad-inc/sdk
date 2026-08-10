@@ -10783,7 +10783,7 @@
                                 "$ref": "#/components/schemas/s3.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/sentinel.SecretsConfig"
+                                "$ref": "#/components/schemas/sentinelv2.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/snowflake_output.SecretsConfig"
@@ -10885,7 +10885,7 @@
                                 "$ref": "#/components/schemas/security_lake.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/sentinel.SettingsConfig"
+                                "$ref": "#/components/schemas/sentinelv2.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/slack.SettingsConfig"
@@ -11014,7 +11014,53 @@
                 },
                 "type": "object"
             },
-            "sentinel.SecretsConfig": {
+            "sentinelv2.DCRConfig": {
+                "description": "How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.",
+                "properties": {
+                    "managed": {
+                        "$ref": "#/components/schemas/sentinelv2.ManagedDCRVariant"
+                    },
+                    "manual": {
+                        "$ref": "#/components/schemas/sentinelv2.ManualDCRVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "manual",
+                            "managed"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "sentinelv2.ManagedDCRVariant": {
+                "properties": {
+                    "dcr_resource_id": {
+                        "description": "The full ARM resource ID of the customer's DCR, cloned per pod.\ne.g. /subscriptions/\u003csub\u003e/resourceGroups/\u003crg\u003e/providers/Microsoft.Insights/dataCollectionRules/\u003cname\u003e",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "dcr_resource_id"
+                ],
+                "type": "object"
+            },
+            "sentinelv2.ManualDCRVariant": {
+                "properties": {
+                    "rule_id": {
+                        "description": "The immutable identifier (rule id) of the Data Collection Rule (DCR).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "rule_id"
+                ],
+                "type": "object"
+            },
+            "sentinelv2.SecretsConfig": {
                 "description": "Sentinel Output Secrets",
                 "properties": {
                     "client_id": {
@@ -11029,15 +11075,14 @@
                 },
                 "type": "object"
             },
-            "sentinel.SettingsConfig": {
+            "sentinelv2.SettingsConfig": {
                 "description": "Sentinel Output Settings",
                 "properties": {
+                    "dcr_config": {
+                        "$ref": "#/components/schemas/sentinelv2.DCRConfig"
+                    },
                     "endpoint": {
                         "description": "The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL.",
-                        "type": "string"
-                    },
-                    "rule_id": {
-                        "description": "The unique identifier of the Data Collection Rule (DCR).",
                         "type": "string"
                     },
                     "stream_name": {
@@ -11045,6 +11090,11 @@
                         "type": "string"
                     }
                 },
+                "required": [
+                    "dcr_config",
+                    "endpoint",
+                    "stream_name"
+                ],
                 "type": "object"
             },
             "slack.AuthConfig": {

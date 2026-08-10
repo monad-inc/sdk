@@ -275,7 +275,12 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 source_account_details = monad.models.security_lake/source_account_details.security_lake.SourceAccountDetails(
                     source_account_id = '', 
                     source_region = '', ),
-                rule_id = '',
+                dcr_config = monad.models.sentinelv2/dcr_config.sentinelv2.DCRConfig(
+                    managed = monad.models.sentinelv2/managed_dcr_variant.sentinelv2.ManagedDCRVariant(
+                        dcr_resource_id = '', ), 
+                    manual = monad.models.sentinelv2/manual_dcr_variant.sentinelv2.ManualDCRVariant(
+                        rule_id = '', ), 
+                    type = 'manual', ),
                 stream_name = '',
                 message_template = '',
                 account = '',
@@ -365,6 +370,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 index = '',
                 url = '',
                 username = '',
+                endpoint = '',
                 auth = monad.models.scanner/auth_config.scanner.AuthConfig(
                     iam_role = monad.models.scanner/iam_role_variant.scanner.IAMRoleVariant(
                         role_arn = '', ), 
@@ -395,6 +401,13 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 database = '',
                 user = '',
                 webhook_id = '',
+                dcr_config = monad.models.sentinelv2/dcr_config.sentinelv2.DCRConfig(
+                    managed = monad.models.sentinelv2/managed_dcr_variant.sentinelv2.ManagedDCRVariant(
+                        dcr_resource_id = '', ), 
+                    manual = monad.models.sentinelv2/manual_dcr_variant.sentinelv2.ManualDCRVariant(
+                        rule_id = '', ), 
+                    type = 'manual', ),
+                stream_name = '',
                 account = '',
                 pipe = '',
                 private_key = monad.models.models/secret.models.Secret(

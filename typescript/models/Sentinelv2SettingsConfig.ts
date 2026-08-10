@@ -10,24 +10,22 @@
  * Do not edit the class manually.
  */
 
+import { Sentinelv2DCRConfig } from '../models/Sentinelv2DCRConfig';
 import { HttpFile } from '../http/http';
 
 /**
 * Sentinel Output Settings
 */
-export class SentinelSettingsConfig {
+export class Sentinelv2SettingsConfig {
+    'dcrConfig': Sentinelv2DCRConfig;
     /**
     * The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL.
     */
-    'endpoint'?: string;
-    /**
-    * The unique identifier of the Data Collection Rule (DCR).
-    */
-    'ruleId'?: string;
+    'endpoint': string;
     /**
     * The name of the data stream defined in the Data Collection Rule.
     */
-    'streamName'?: string;
+    'streamName': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -35,14 +33,14 @@ export class SentinelSettingsConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "endpoint",
-            "baseName": "endpoint",
-            "type": "string",
+            "name": "dcrConfig",
+            "baseName": "dcr_config",
+            "type": "Sentinelv2DCRConfig",
             "format": ""
         },
         {
-            "name": "ruleId",
-            "baseName": "rule_id",
+            "name": "endpoint",
+            "baseName": "endpoint",
             "type": "string",
             "format": ""
         },
@@ -54,7 +52,7 @@ export class SentinelSettingsConfig {
         }    ];
 
     static getAttributeTypeMap() {
-        return SentinelSettingsConfig.attributeTypeMap;
+        return Sentinelv2SettingsConfig.attributeTypeMap;
     }
 
     public constructor() {

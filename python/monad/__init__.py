@@ -603,8 +603,11 @@ __all__ = [
     "SemgrepCodeFindingsSettingsConfig",
     "SemgrepSupplyChainFindingsSecretsConfig",
     "SemgrepSupplyChainFindingsSettingsConfig",
-    "SentinelSecretsConfig",
-    "SentinelSettingsConfig",
+    "Sentinelv2DCRConfig",
+    "Sentinelv2ManagedDCRVariant",
+    "Sentinelv2ManualDCRVariant",
+    "Sentinelv2SecretsConfig",
+    "Sentinelv2SettingsConfig",
     "SetStorageTypeCostRequest",
     "SlackAuthConfig",
     "SlackBotTokenVariant",
@@ -1289,8 +1292,11 @@ from monad.models.semgrep_code_findings_secrets_config import SemgrepCodeFinding
 from monad.models.semgrep_code_findings_settings_config import SemgrepCodeFindingsSettingsConfig as SemgrepCodeFindingsSettingsConfig
 from monad.models.semgrep_supply_chain_findings_secrets_config import SemgrepSupplyChainFindingsSecretsConfig as SemgrepSupplyChainFindingsSecretsConfig
 from monad.models.semgrep_supply_chain_findings_settings_config import SemgrepSupplyChainFindingsSettingsConfig as SemgrepSupplyChainFindingsSettingsConfig
-from monad.models.sentinel_secrets_config import SentinelSecretsConfig as SentinelSecretsConfig
-from monad.models.sentinel_settings_config import SentinelSettingsConfig as SentinelSettingsConfig
+from monad.models.sentinelv2_dcr_config import Sentinelv2DCRConfig as Sentinelv2DCRConfig
+from monad.models.sentinelv2_managed_dcr_variant import Sentinelv2ManagedDCRVariant as Sentinelv2ManagedDCRVariant
+from monad.models.sentinelv2_manual_dcr_variant import Sentinelv2ManualDCRVariant as Sentinelv2ManualDCRVariant
+from monad.models.sentinelv2_secrets_config import Sentinelv2SecretsConfig as Sentinelv2SecretsConfig
+from monad.models.sentinelv2_settings_config import Sentinelv2SettingsConfig as Sentinelv2SettingsConfig
 from monad.models.set_storage_type_cost_request import SetStorageTypeCostRequest as SetStorageTypeCostRequest
 from monad.models.slack_auth_config import SlackAuthConfig as SlackAuthConfig
 from monad.models.slack_bot_token_variant import SlackBotTokenVariant as SlackBotTokenVariant

@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsSecret;
+import org.openapitools.client.model.Sentinelv2DCRConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,82 +47,82 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Sentinel Output Secrets
+ * Sentinel Output Settings
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class SentinelSecretsConfig {
-  public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
-  @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nullable
-  private ModelsSecret clientId;
+public class Sentinelv2SettingsConfig {
+  public static final String SERIALIZED_NAME_DCR_CONFIG = "dcr_config";
+  @SerializedName(SERIALIZED_NAME_DCR_CONFIG)
+  @javax.annotation.Nonnull
+  private Sentinelv2DCRConfig dcrConfig;
 
-  public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
-  @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  @javax.annotation.Nullable
-  private ModelsSecret clientSecret;
+  public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
+  @SerializedName(SERIALIZED_NAME_ENDPOINT)
+  @javax.annotation.Nonnull
+  private String endpoint;
 
-  public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
-  @SerializedName(SERIALIZED_NAME_TENANT_ID)
-  @javax.annotation.Nullable
-  private ModelsSecret tenantId;
+  public static final String SERIALIZED_NAME_STREAM_NAME = "stream_name";
+  @SerializedName(SERIALIZED_NAME_STREAM_NAME)
+  @javax.annotation.Nonnull
+  private String streamName;
 
-  public SentinelSecretsConfig() {
+  public Sentinelv2SettingsConfig() {
   }
 
-  public SentinelSecretsConfig clientId(@javax.annotation.Nullable ModelsSecret clientId) {
-    this.clientId = clientId;
+  public Sentinelv2SettingsConfig dcrConfig(@javax.annotation.Nonnull Sentinelv2DCRConfig dcrConfig) {
+    this.dcrConfig = dcrConfig;
     return this;
   }
 
   /**
-   * Get clientId
-   * @return clientId
+   * Get dcrConfig
+   * @return dcrConfig
    */
-  @javax.annotation.Nullable
-  public ModelsSecret getClientId() {
-    return clientId;
+  @javax.annotation.Nonnull
+  public Sentinelv2DCRConfig getDcrConfig() {
+    return dcrConfig;
   }
 
-  public void setClientId(@javax.annotation.Nullable ModelsSecret clientId) {
-    this.clientId = clientId;
+  public void setDcrConfig(@javax.annotation.Nonnull Sentinelv2DCRConfig dcrConfig) {
+    this.dcrConfig = dcrConfig;
   }
 
 
-  public SentinelSecretsConfig clientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
-    this.clientSecret = clientSecret;
+  public Sentinelv2SettingsConfig endpoint(@javax.annotation.Nonnull String endpoint) {
+    this.endpoint = endpoint;
     return this;
   }
 
   /**
-   * Get clientSecret
-   * @return clientSecret
+   * The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL.
+   * @return endpoint
    */
-  @javax.annotation.Nullable
-  public ModelsSecret getClientSecret() {
-    return clientSecret;
+  @javax.annotation.Nonnull
+  public String getEndpoint() {
+    return endpoint;
   }
 
-  public void setClientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
-    this.clientSecret = clientSecret;
+  public void setEndpoint(@javax.annotation.Nonnull String endpoint) {
+    this.endpoint = endpoint;
   }
 
 
-  public SentinelSecretsConfig tenantId(@javax.annotation.Nullable ModelsSecret tenantId) {
-    this.tenantId = tenantId;
+  public Sentinelv2SettingsConfig streamName(@javax.annotation.Nonnull String streamName) {
+    this.streamName = streamName;
     return this;
   }
 
   /**
-   * Get tenantId
-   * @return tenantId
+   * The name of the data stream defined in the Data Collection Rule.
+   * @return streamName
    */
-  @javax.annotation.Nullable
-  public ModelsSecret getTenantId() {
-    return tenantId;
+  @javax.annotation.Nonnull
+  public String getStreamName() {
+    return streamName;
   }
 
-  public void setTenantId(@javax.annotation.Nullable ModelsSecret tenantId) {
-    this.tenantId = tenantId;
+  public void setStreamName(@javax.annotation.Nonnull String streamName) {
+    this.streamName = streamName;
   }
 
 
@@ -135,24 +135,24 @@ public class SentinelSecretsConfig {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SentinelSecretsConfig sentinelSecretsConfig = (SentinelSecretsConfig) o;
-    return Objects.equals(this.clientId, sentinelSecretsConfig.clientId) &&
-        Objects.equals(this.clientSecret, sentinelSecretsConfig.clientSecret) &&
-        Objects.equals(this.tenantId, sentinelSecretsConfig.tenantId);
+    Sentinelv2SettingsConfig sentinelv2SettingsConfig = (Sentinelv2SettingsConfig) o;
+    return Objects.equals(this.dcrConfig, sentinelv2SettingsConfig.dcrConfig) &&
+        Objects.equals(this.endpoint, sentinelv2SettingsConfig.endpoint) &&
+        Objects.equals(this.streamName, sentinelv2SettingsConfig.streamName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, clientSecret, tenantId);
+    return Objects.hash(dcrConfig, endpoint, streamName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SentinelSecretsConfig {\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
-    sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+    sb.append("class Sentinelv2SettingsConfig {\n");
+    sb.append("    dcrConfig: ").append(toIndentedString(dcrConfig)).append("\n");
+    sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+    sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -171,44 +171,47 @@ public class SentinelSecretsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("client_id", "client_secret", "tenant_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("dcr_config", "endpoint", "stream_name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("dcr_config", "endpoint", "stream_name"));
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SentinelSecretsConfig
+   * @throws IOException if the JSON Element is invalid with respect to Sentinelv2SettingsConfig
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!SentinelSecretsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SentinelSecretsConfig is not found in the empty JSON string", SentinelSecretsConfig.openapiRequiredFields.toString()));
+        if (!Sentinelv2SettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Sentinelv2SettingsConfig is not found in the empty JSON string", Sentinelv2SettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!SentinelSecretsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SentinelSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!Sentinelv2SettingsConfig.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Sentinelv2SettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Sentinelv2SettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `client_id`
-      if (jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
+      // validate the required field `dcr_config`
+      Sentinelv2DCRConfig.validateJsonElement(jsonObj.get("dcr_config"));
+      if (!jsonObj.get("endpoint").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
       }
-      // validate the optional field `client_secret`
-      if (jsonObj.get("client_secret") != null && !jsonObj.get("client_secret").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
-      }
-      // validate the optional field `tenant_id`
-      if (jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("tenant_id"));
+      if (!jsonObj.get("stream_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `stream_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stream_name").toString()));
       }
   }
 
@@ -216,22 +219,22 @@ public class SentinelSecretsConfig {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SentinelSecretsConfig.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SentinelSecretsConfig' and its subtypes
+       if (!Sentinelv2SettingsConfig.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Sentinelv2SettingsConfig' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SentinelSecretsConfig> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SentinelSecretsConfig.class));
+       final TypeAdapter<Sentinelv2SettingsConfig> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Sentinelv2SettingsConfig.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<SentinelSecretsConfig>() {
+       return (TypeAdapter<T>) new TypeAdapter<Sentinelv2SettingsConfig>() {
            @Override
-           public void write(JsonWriter out, SentinelSecretsConfig value) throws IOException {
+           public void write(JsonWriter out, Sentinelv2SettingsConfig value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public SentinelSecretsConfig read(JsonReader in) throws IOException {
+           public Sentinelv2SettingsConfig read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -242,18 +245,18 @@ public class SentinelSecretsConfig {
   }
 
   /**
-   * Create an instance of SentinelSecretsConfig given an JSON string
+   * Create an instance of Sentinelv2SettingsConfig given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of SentinelSecretsConfig
-   * @throws IOException if the JSON string is invalid with respect to SentinelSecretsConfig
+   * @return An instance of Sentinelv2SettingsConfig
+   * @throws IOException if the JSON string is invalid with respect to Sentinelv2SettingsConfig
    */
-  public static SentinelSecretsConfig fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SentinelSecretsConfig.class);
+  public static Sentinelv2SettingsConfig fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Sentinelv2SettingsConfig.class);
   }
 
   /**
-   * Convert an instance of SentinelSecretsConfig to an JSON string
+   * Convert an instance of Sentinelv2SettingsConfig to an JSON string
    *
    * @return JSON string
    */

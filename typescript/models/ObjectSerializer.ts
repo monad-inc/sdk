@@ -531,8 +531,11 @@ export * from '../models/SemgrepCodeFindingsSecretsConfig';
 export * from '../models/SemgrepCodeFindingsSettingsConfig';
 export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 export * from '../models/SemgrepSupplyChainFindingsSettingsConfig';
-export * from '../models/SentinelSecretsConfig';
-export * from '../models/SentinelSettingsConfig';
+export * from '../models/Sentinelv2DCRConfig';
+export * from '../models/Sentinelv2ManagedDCRVariant';
+export * from '../models/Sentinelv2ManualDCRVariant';
+export * from '../models/Sentinelv2SecretsConfig';
+export * from '../models/Sentinelv2SettingsConfig';
 export * from '../models/SetStorageTypeCostRequest';
 export * from '../models/SlackAuthConfig';
 export * from '../models/SlackBotTokenVariant';
@@ -1160,8 +1163,11 @@ import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsS
 import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
-import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
-import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { Sentinelv2DCRConfig  , Sentinelv2DCRConfigTypeEnum   } from '../models/Sentinelv2DCRConfig';
+import { Sentinelv2ManagedDCRVariant } from '../models/Sentinelv2ManagedDCRVariant';
+import { Sentinelv2ManualDCRVariant } from '../models/Sentinelv2ManualDCRVariant';
+import { Sentinelv2SecretsConfig } from '../models/Sentinelv2SecretsConfig';
+import { Sentinelv2SettingsConfig } from '../models/Sentinelv2SettingsConfig';
 import { SetStorageTypeCostRequestClass } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
@@ -1328,6 +1334,7 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsCategoryEnum",
     "SecretProcessesorInputConfigSettingsLogTypeEnum",
     "SecretProcessesorOutputConfigSettingsCompressionEnum",
+    "Sentinelv2DCRConfigTypeEnum",
     "SqsS3BaseKeyFilterMode",
     "SqsS3BaseKeyFilterOperator",
     "SqsS3BaseKeyFilterType",
@@ -1854,8 +1861,11 @@ let typeMap: {[index: string]: any} = {
     "SemgrepCodeFindingsSettingsConfig": SemgrepCodeFindingsSettingsConfig,
     "SemgrepSupplyChainFindingsSecretsConfig": SemgrepSupplyChainFindingsSecretsConfig,
     "SemgrepSupplyChainFindingsSettingsConfig": SemgrepSupplyChainFindingsSettingsConfig,
-    "SentinelSecretsConfig": SentinelSecretsConfig,
-    "SentinelSettingsConfig": SentinelSettingsConfig,
+    "Sentinelv2DCRConfig": Sentinelv2DCRConfig,
+    "Sentinelv2ManagedDCRVariant": Sentinelv2ManagedDCRVariant,
+    "Sentinelv2ManualDCRVariant": Sentinelv2ManualDCRVariant,
+    "Sentinelv2SecretsConfig": Sentinelv2SecretsConfig,
+    "Sentinelv2SettingsConfig": Sentinelv2SettingsConfig,
     "SetStorageTypeCostRequest": SetStorageTypeCostRequestClass,
     "SlackAuthConfig": SlackAuthConfig,
     "SlackBotTokenVariant": SlackBotTokenVariant,

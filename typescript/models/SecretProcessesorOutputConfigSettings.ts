@@ -37,7 +37,7 @@ import { RunrevealSettingsConfig } from '../models/RunrevealSettingsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { ScannerSettingsConfig } from '../models/ScannerSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
-import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { Sentinelv2SettingsConfig } from '../models/Sentinelv2SettingsConfig';
 import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
@@ -51,7 +51,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatabricksLakewatchSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | HydrolixSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | RunrevealSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | WazuhSettingsConfig;
+export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatabricksLakewatchSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | HydrolixSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | RunrevealSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | Sentinelv2SettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | WazuhSettingsConfig;
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass

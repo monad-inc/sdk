@@ -41,7 +41,7 @@ import org.openapitools.client.model.PagerdutySecretsConfig;
 import org.openapitools.client.model.PantherSecretsConfig;
 import org.openapitools.client.model.PostgresqlSecretsConfig;
 import org.openapitools.client.model.S3SecretsConfig;
-import org.openapitools.client.model.SentinelSecretsConfig;
+import org.openapitools.client.model.Sentinelv2SecretsConfig;
 import org.openapitools.client.model.SnowflakeOutputSecretsConfig;
 import org.openapitools.client.model.SplunkSecretsConfig;
 import org.openapitools.client.model.SumologicSecretsConfig;

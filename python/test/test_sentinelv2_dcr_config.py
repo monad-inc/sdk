@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.sentinel_secrets_config import SentinelSecretsConfig
+from monad.models.sentinelv2_dcr_config import Sentinelv2DCRConfig
 
-class TestSentinelSecretsConfig(unittest.TestCase):
-    """SentinelSecretsConfig unit test stubs"""
+class TestSentinelv2DCRConfig(unittest.TestCase):
+    """Sentinelv2DCRConfig unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,63 +26,30 @@ class TestSentinelSecretsConfig(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SentinelSecretsConfig:
-        """Test SentinelSecretsConfig
+    def make_instance(self, include_optional) -> Sentinelv2DCRConfig:
+        """Test Sentinelv2DCRConfig
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SentinelSecretsConfig`
+        # uncomment below to create an instance of `Sentinelv2DCRConfig`
         """
-        model = SentinelSecretsConfig()
+        model = Sentinelv2DCRConfig()
         if include_optional:
-            return SentinelSecretsConfig(
-                client_id = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    share_details = monad.models.models/share_details.models.ShareDetails(
-                        owner_organization_id = '', 
-                        owner_organization_name = '', 
-                        shared_with_children = True, 
-                        shared_with_me = True, ), 
-                    updated_at = '', 
-                    value = '', ),
-                client_secret = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    share_details = monad.models.models/share_details.models.ShareDetails(
-                        owner_organization_id = '', 
-                        owner_organization_name = '', 
-                        shared_with_children = True, 
-                        shared_with_me = True, ), 
-                    updated_at = '', 
-                    value = '', ),
-                tenant_id = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    share_details = monad.models.models/share_details.models.ShareDetails(
-                        owner_organization_id = '', 
-                        owner_organization_name = '', 
-                        shared_with_children = True, 
-                        shared_with_me = True, ), 
-                    updated_at = '', 
-                    value = '', )
+            return Sentinelv2DCRConfig(
+                managed = monad.models.sentinelv2/managed_dcr_variant.sentinelv2.ManagedDCRVariant(
+                    dcr_resource_id = '', ),
+                manual = monad.models.sentinelv2/manual_dcr_variant.sentinelv2.ManualDCRVariant(
+                    rule_id = '', ),
+                type = 'manual'
             )
         else:
-            return SentinelSecretsConfig(
+            return Sentinelv2DCRConfig(
+                type = 'manual',
         )
         """
 
-    def testSentinelSecretsConfig(self):
-        """Test SentinelSecretsConfig"""
+    def testSentinelv2DCRConfig(self):
+        """Test Sentinelv2DCRConfig"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
