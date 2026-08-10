@@ -1,6 +1,6 @@
 
 
-# RoutesV3FieldStateResponse
+# ModelsTypeState
 
 
 ## Properties
@@ -10,7 +10,6 @@
 |**count** | **Integer** |  |  [optional] |
 |**firstSeen** | **Integer** |  |  [optional] |
 |**lastSeen** | **Integer** |  |  [optional] |
-|**types** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

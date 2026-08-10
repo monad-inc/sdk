@@ -20,9 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import org.openapitools.client.model.ModelsTypeState;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,100 +49,28 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * RoutesV3FieldStateResponse
+ * ModelsFieldState
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class RoutesV3FieldStateResponse {
-  public static final String SERIALIZED_NAME_COUNT = "count";
-  @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nullable
-  private Integer count;
-
-  public static final String SERIALIZED_NAME_FIRST_SEEN = "first_seen";
-  @SerializedName(SERIALIZED_NAME_FIRST_SEEN)
-  @javax.annotation.Nullable
-  private Integer firstSeen;
-
-  public static final String SERIALIZED_NAME_LAST_SEEN = "last_seen";
-  @SerializedName(SERIALIZED_NAME_LAST_SEEN)
-  @javax.annotation.Nullable
-  private Integer lastSeen;
-
+public class ModelsFieldState {
   public static final String SERIALIZED_NAME_TYPES = "types";
   @SerializedName(SERIALIZED_NAME_TYPES)
   @javax.annotation.Nullable
-  private List<String> types = new ArrayList<>();
+  private Map<String, ModelsTypeState> types = new HashMap<>();
 
-  public RoutesV3FieldStateResponse() {
+  public ModelsFieldState() {
   }
 
-  public RoutesV3FieldStateResponse count(@javax.annotation.Nullable Integer count) {
-    this.count = count;
-    return this;
-  }
-
-  /**
-   * Get count
-   * @return count
-   */
-  @javax.annotation.Nullable
-  public Integer getCount() {
-    return count;
-  }
-
-  public void setCount(@javax.annotation.Nullable Integer count) {
-    this.count = count;
-  }
-
-
-  public RoutesV3FieldStateResponse firstSeen(@javax.annotation.Nullable Integer firstSeen) {
-    this.firstSeen = firstSeen;
-    return this;
-  }
-
-  /**
-   * Get firstSeen
-   * @return firstSeen
-   */
-  @javax.annotation.Nullable
-  public Integer getFirstSeen() {
-    return firstSeen;
-  }
-
-  public void setFirstSeen(@javax.annotation.Nullable Integer firstSeen) {
-    this.firstSeen = firstSeen;
-  }
-
-
-  public RoutesV3FieldStateResponse lastSeen(@javax.annotation.Nullable Integer lastSeen) {
-    this.lastSeen = lastSeen;
-    return this;
-  }
-
-  /**
-   * Get lastSeen
-   * @return lastSeen
-   */
-  @javax.annotation.Nullable
-  public Integer getLastSeen() {
-    return lastSeen;
-  }
-
-  public void setLastSeen(@javax.annotation.Nullable Integer lastSeen) {
-    this.lastSeen = lastSeen;
-  }
-
-
-  public RoutesV3FieldStateResponse types(@javax.annotation.Nullable List<String> types) {
+  public ModelsFieldState types(@javax.annotation.Nullable Map<String, ModelsTypeState> types) {
     this.types = types;
     return this;
   }
 
-  public RoutesV3FieldStateResponse addTypesItem(String typesItem) {
+  public ModelsFieldState putTypesItem(String key, ModelsTypeState typesItem) {
     if (this.types == null) {
-      this.types = new ArrayList<>();
+      this.types = new HashMap<>();
     }
-    this.types.add(typesItem);
+    this.types.put(key, typesItem);
     return this;
   }
 
@@ -150,11 +79,11 @@ public class RoutesV3FieldStateResponse {
    * @return types
    */
   @javax.annotation.Nullable
-  public List<String> getTypes() {
+  public Map<String, ModelsTypeState> getTypes() {
     return types;
   }
 
-  public void setTypes(@javax.annotation.Nullable List<String> types) {
+  public void setTypes(@javax.annotation.Nullable Map<String, ModelsTypeState> types) {
     this.types = types;
   }
 
@@ -168,25 +97,19 @@ public class RoutesV3FieldStateResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RoutesV3FieldStateResponse routesV3FieldStateResponse = (RoutesV3FieldStateResponse) o;
-    return Objects.equals(this.count, routesV3FieldStateResponse.count) &&
-        Objects.equals(this.firstSeen, routesV3FieldStateResponse.firstSeen) &&
-        Objects.equals(this.lastSeen, routesV3FieldStateResponse.lastSeen) &&
-        Objects.equals(this.types, routesV3FieldStateResponse.types);
+    ModelsFieldState modelsFieldState = (ModelsFieldState) o;
+    return Objects.equals(this.types, modelsFieldState.types);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, firstSeen, lastSeen, types);
+    return Objects.hash(types);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RoutesV3FieldStateResponse {\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    firstSeen: ").append(toIndentedString(firstSeen)).append("\n");
-    sb.append("    lastSeen: ").append(toIndentedString(lastSeen)).append("\n");
+    sb.append("class ModelsFieldState {\n");
     sb.append("    types: ").append(toIndentedString(types)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -206,7 +129,7 @@ public class RoutesV3FieldStateResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("count", "first_seen", "last_seen", "types"));
+    openapiFields = new HashSet<String>(Arrays.asList("types"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -216,49 +139,45 @@ public class RoutesV3FieldStateResponse {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to RoutesV3FieldStateResponse
+   * @throws IOException if the JSON Element is invalid with respect to ModelsFieldState
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!RoutesV3FieldStateResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV3FieldStateResponse is not found in the empty JSON string", RoutesV3FieldStateResponse.openapiRequiredFields.toString()));
+        if (!ModelsFieldState.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsFieldState is not found in the empty JSON string", ModelsFieldState.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!RoutesV3FieldStateResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV3FieldStateResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ModelsFieldState.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsFieldState` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("types") != null && !jsonObj.get("types").isJsonNull() && !jsonObj.get("types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `types` to be an array in the JSON string but got `%s`", jsonObj.get("types").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!RoutesV3FieldStateResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'RoutesV3FieldStateResponse' and its subtypes
+       if (!ModelsFieldState.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelsFieldState' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<RoutesV3FieldStateResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(RoutesV3FieldStateResponse.class));
+       final TypeAdapter<ModelsFieldState> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsFieldState.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<RoutesV3FieldStateResponse>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelsFieldState>() {
            @Override
-           public void write(JsonWriter out, RoutesV3FieldStateResponse value) throws IOException {
+           public void write(JsonWriter out, ModelsFieldState value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public RoutesV3FieldStateResponse read(JsonReader in) throws IOException {
+           public ModelsFieldState read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -269,18 +188,18 @@ public class RoutesV3FieldStateResponse {
   }
 
   /**
-   * Create an instance of RoutesV3FieldStateResponse given an JSON string
+   * Create an instance of ModelsFieldState given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of RoutesV3FieldStateResponse
-   * @throws IOException if the JSON string is invalid with respect to RoutesV3FieldStateResponse
+   * @return An instance of ModelsFieldState
+   * @throws IOException if the JSON string is invalid with respect to ModelsFieldState
    */
-  public static RoutesV3FieldStateResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RoutesV3FieldStateResponse.class);
+  public static ModelsFieldState fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelsFieldState.class);
   }
 
   /**
-   * Convert an instance of RoutesV3FieldStateResponse to an JSON string
+   * Convert an instance of ModelsFieldState to an JSON string
    *
    * @return JSON string
    */

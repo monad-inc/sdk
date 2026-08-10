@@ -4976,6 +4976,17 @@
                 },
                 "type": "object"
             },
+            "models.FieldState": {
+                "properties": {
+                    "types": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/models.TypeState"
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            },
             "models.Input": {
                 "properties": {
                     "config": {
@@ -6868,6 +6879,20 @@
                     },
                     "updated_at": {
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.TypeState": {
+                "properties": {
+                    "count": {
+                        "type": "integer"
+                    },
+                    "first_seen": {
+                        "type": "integer"
+                    },
+                    "last_seen": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -9875,27 +9900,6 @@
                 },
                 "type": "object"
             },
-            "routesV3.fieldStateResponse": {
-                "properties": {
-                    "count": {
-                        "type": "integer"
-                    },
-                    "first_seen": {
-                        "type": "integer"
-                    },
-                    "last_seen": {
-                        "type": "integer"
-                    },
-                    "types": {
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    }
-                },
-                "type": "object"
-            },
             "routesV3.optimizerType": {
                 "properties": {
                     "description": {
@@ -9930,7 +9934,7 @@
                     },
                     "schema": {
                         "additionalProperties": {
-                            "$ref": "#/components/schemas/routesV3.fieldStateResponse"
+                            "$ref": "#/components/schemas/models.FieldState"
                         },
                         "type": "object"
                     }
@@ -9953,7 +9957,7 @@
                     },
                     "schema": {
                         "additionalProperties": {
-                            "$ref": "#/components/schemas/routesV3.fieldStateResponse"
+                            "$ref": "#/components/schemas/models.FieldState"
                         },
                         "type": "object"
                     },

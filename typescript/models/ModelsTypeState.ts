@@ -10,17 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { ModelsFieldState } from '../models/ModelsFieldState';
 import { HttpFile } from '../http/http';
 
-export class RoutesV3SchemaStateResponse {
-    'edgeId'?: string;
-    'learningStart'?: string;
-    'mode'?: string;
-    'pipelineId'?: string;
-    'schema'?: { [key: string]: ModelsFieldState; };
-    'totalRecordsObserved'?: number;
-    'updatedAt'?: string;
+export class ModelsTypeState {
+    'count'?: number;
+    'firstSeen'?: number;
+    'lastSeen'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,50 +23,26 @@ export class RoutesV3SchemaStateResponse {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "edgeId",
-            "baseName": "edge_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "learningStart",
-            "baseName": "learning_start",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "mode",
-            "baseName": "mode",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "pipelineId",
-            "baseName": "pipeline_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "schema",
-            "baseName": "schema",
-            "type": "{ [key: string]: ModelsFieldState; }",
-            "format": ""
-        },
-        {
-            "name": "totalRecordsObserved",
-            "baseName": "total_records_observed",
+            "name": "count",
+            "baseName": "count",
             "type": "number",
             "format": ""
         },
         {
-            "name": "updatedAt",
-            "baseName": "updated_at",
-            "type": "string",
+            "name": "firstSeen",
+            "baseName": "first_seen",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "lastSeen",
+            "baseName": "last_seen",
+            "type": "number",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return RoutesV3SchemaStateResponse.attributeTypeMap;
+        return ModelsTypeState.attributeTypeMap;
     }
 
     public constructor() {

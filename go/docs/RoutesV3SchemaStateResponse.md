@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **LearningStart** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
-**Schema** | Pointer to [**map[string]RoutesV3FieldStateResponse**](RoutesV3FieldStateResponse.md) |  | [optional] 
+**Schema** | Pointer to [**map[string]ModelsFieldState**](ModelsFieldState.md) |  | [optional] 
 **TotalRecordsObserved** | Pointer to **int32** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -133,20 +133,20 @@ HasPipelineId returns a boolean if a field has been set.
 
 ### GetSchema
 
-`func (o *RoutesV3SchemaStateResponse) GetSchema() map[string]RoutesV3FieldStateResponse`
+`func (o *RoutesV3SchemaStateResponse) GetSchema() map[string]ModelsFieldState`
 
 GetSchema returns the Schema field if non-nil, zero value otherwise.
 
 ### GetSchemaOk
 
-`func (o *RoutesV3SchemaStateResponse) GetSchemaOk() (*map[string]RoutesV3FieldStateResponse, bool)`
+`func (o *RoutesV3SchemaStateResponse) GetSchemaOk() (*map[string]ModelsFieldState, bool)`
 
 GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchema
 
-`func (o *RoutesV3SchemaStateResponse) SetSchema(v map[string]RoutesV3FieldStateResponse)`
+`func (o *RoutesV3SchemaStateResponse) SetSchema(v map[string]ModelsFieldState)`
 
 SetSchema sets Schema field to given value.
 

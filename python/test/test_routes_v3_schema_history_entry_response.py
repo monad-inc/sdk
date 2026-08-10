@@ -43,13 +43,13 @@ class TestRoutesV3SchemaHistoryEntryResponse(unittest.TestCase):
                     ],
                 id = '',
                 var_schema = {
-                    'key' : monad.models.routes_v3/field_state_response.routesV3.fieldStateResponse(
-                        count = 56, 
-                        first_seen = 56, 
-                        last_seen = 56, 
-                        types = [
-                            ''
-                            ], )
+                    'key' : monad.models.models/field_state.models.FieldState(
+                        types = {
+                            'key' : monad.models.models/type_state.models.TypeState(
+                                count = 56, 
+                                first_seen = 56, 
+                                last_seen = 56, )
+                            }, )
                     }
             )
         else:

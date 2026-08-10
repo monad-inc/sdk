@@ -18,23 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_field_state import ModelsFieldState
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class RoutesV3SchemaHistoryEntryResponse(BaseModel):
+class ModelsTypeState(BaseModel):
     """
-    RoutesV3SchemaHistoryEntryResponse
+    ModelsTypeState
     """ # noqa: E501
-    created_at: Optional[StrictStr] = None
-    edge_id: Optional[StrictStr] = None
-    event_tags: Optional[List[StrictStr]] = None
-    id: Optional[StrictStr] = None
-    var_schema: Optional[Dict[str, ModelsFieldState]] = Field(default=None, alias="schema")
-    __properties: ClassVar[List[str]] = ["created_at", "edge_id", "event_tags", "id", "schema"]
+    count: Optional[StrictInt] = None
+    first_seen: Optional[StrictInt] = None
+    last_seen: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["count", "first_seen", "last_seen"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -54,7 +51,7 @@ class RoutesV3SchemaHistoryEntryResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RoutesV3SchemaHistoryEntryResponse from a JSON string"""
+        """Create an instance of ModelsTypeState from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,18 +72,11 @@ class RoutesV3SchemaHistoryEntryResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each value in var_schema (dict)
-        _field_dict = {}
-        if self.var_schema:
-            for _key_var_schema in self.var_schema:
-                if self.var_schema[_key_var_schema]:
-                    _field_dict[_key_var_schema] = self.var_schema[_key_var_schema].to_dict()
-            _dict['schema'] = _field_dict
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RoutesV3SchemaHistoryEntryResponse from a dict"""
+        """Create an instance of ModelsTypeState from a dict"""
         if obj is None:
             return None
 
@@ -94,16 +84,9 @@ class RoutesV3SchemaHistoryEntryResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "created_at": obj.get("created_at"),
-            "edge_id": obj.get("edge_id"),
-            "event_tags": obj.get("event_tags"),
-            "id": obj.get("id"),
-            "schema": dict(
-                (_k, ModelsFieldState.from_dict(_v))
-                for _k, _v in obj["schema"].items()
-            )
-            if obj.get("schema") is not None
-            else None
+            "count": obj.get("count"),
+            "first_seen": obj.get("first_seen"),
+            "last_seen": obj.get("last_seen")
         })
         return _obj
 

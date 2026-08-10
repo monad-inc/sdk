@@ -15,36 +15,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the RoutesV3FieldStateResponse type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &RoutesV3FieldStateResponse{}
+// checks if the ModelsTypeState type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ModelsTypeState{}
 
-// RoutesV3FieldStateResponse struct for RoutesV3FieldStateResponse
-type RoutesV3FieldStateResponse struct {
+// ModelsTypeState struct for ModelsTypeState
+type ModelsTypeState struct {
 	Count *int32 `json:"count,omitempty"`
 	FirstSeen *int32 `json:"first_seen,omitempty"`
 	LastSeen *int32 `json:"last_seen,omitempty"`
-	Types []string `json:"types,omitempty"`
 }
 
-// NewRoutesV3FieldStateResponse instantiates a new RoutesV3FieldStateResponse object
+// NewModelsTypeState instantiates a new ModelsTypeState object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutesV3FieldStateResponse() *RoutesV3FieldStateResponse {
-	this := RoutesV3FieldStateResponse{}
+func NewModelsTypeState() *ModelsTypeState {
+	this := ModelsTypeState{}
 	return &this
 }
 
-// NewRoutesV3FieldStateResponseWithDefaults instantiates a new RoutesV3FieldStateResponse object
+// NewModelsTypeStateWithDefaults instantiates a new ModelsTypeState object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRoutesV3FieldStateResponseWithDefaults() *RoutesV3FieldStateResponse {
-	this := RoutesV3FieldStateResponse{}
+func NewModelsTypeStateWithDefaults() *ModelsTypeState {
+	this := ModelsTypeState{}
 	return &this
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *RoutesV3FieldStateResponse) GetCount() int32 {
+func (o *ModelsTypeState) GetCount() int32 {
 	if o == nil || IsNil(o.Count) {
 		var ret int32
 		return ret
@@ -54,7 +53,7 @@ func (o *RoutesV3FieldStateResponse) GetCount() int32 {
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3FieldStateResponse) GetCountOk() (*int32, bool) {
+func (o *ModelsTypeState) GetCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.Count) {
 		return nil, false
 	}
@@ -62,7 +61,7 @@ func (o *RoutesV3FieldStateResponse) GetCountOk() (*int32, bool) {
 }
 
 // HasCount returns a boolean if a field has been set.
-func (o *RoutesV3FieldStateResponse) HasCount() bool {
+func (o *ModelsTypeState) HasCount() bool {
 	if o != nil && !IsNil(o.Count) {
 		return true
 	}
@@ -71,12 +70,12 @@ func (o *RoutesV3FieldStateResponse) HasCount() bool {
 }
 
 // SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *RoutesV3FieldStateResponse) SetCount(v int32) {
+func (o *ModelsTypeState) SetCount(v int32) {
 	o.Count = &v
 }
 
 // GetFirstSeen returns the FirstSeen field value if set, zero value otherwise.
-func (o *RoutesV3FieldStateResponse) GetFirstSeen() int32 {
+func (o *ModelsTypeState) GetFirstSeen() int32 {
 	if o == nil || IsNil(o.FirstSeen) {
 		var ret int32
 		return ret
@@ -86,7 +85,7 @@ func (o *RoutesV3FieldStateResponse) GetFirstSeen() int32 {
 
 // GetFirstSeenOk returns a tuple with the FirstSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3FieldStateResponse) GetFirstSeenOk() (*int32, bool) {
+func (o *ModelsTypeState) GetFirstSeenOk() (*int32, bool) {
 	if o == nil || IsNil(o.FirstSeen) {
 		return nil, false
 	}
@@ -94,7 +93,7 @@ func (o *RoutesV3FieldStateResponse) GetFirstSeenOk() (*int32, bool) {
 }
 
 // HasFirstSeen returns a boolean if a field has been set.
-func (o *RoutesV3FieldStateResponse) HasFirstSeen() bool {
+func (o *ModelsTypeState) HasFirstSeen() bool {
 	if o != nil && !IsNil(o.FirstSeen) {
 		return true
 	}
@@ -103,12 +102,12 @@ func (o *RoutesV3FieldStateResponse) HasFirstSeen() bool {
 }
 
 // SetFirstSeen gets a reference to the given int32 and assigns it to the FirstSeen field.
-func (o *RoutesV3FieldStateResponse) SetFirstSeen(v int32) {
+func (o *ModelsTypeState) SetFirstSeen(v int32) {
 	o.FirstSeen = &v
 }
 
 // GetLastSeen returns the LastSeen field value if set, zero value otherwise.
-func (o *RoutesV3FieldStateResponse) GetLastSeen() int32 {
+func (o *ModelsTypeState) GetLastSeen() int32 {
 	if o == nil || IsNil(o.LastSeen) {
 		var ret int32
 		return ret
@@ -118,7 +117,7 @@ func (o *RoutesV3FieldStateResponse) GetLastSeen() int32 {
 
 // GetLastSeenOk returns a tuple with the LastSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3FieldStateResponse) GetLastSeenOk() (*int32, bool) {
+func (o *ModelsTypeState) GetLastSeenOk() (*int32, bool) {
 	if o == nil || IsNil(o.LastSeen) {
 		return nil, false
 	}
@@ -126,7 +125,7 @@ func (o *RoutesV3FieldStateResponse) GetLastSeenOk() (*int32, bool) {
 }
 
 // HasLastSeen returns a boolean if a field has been set.
-func (o *RoutesV3FieldStateResponse) HasLastSeen() bool {
+func (o *ModelsTypeState) HasLastSeen() bool {
 	if o != nil && !IsNil(o.LastSeen) {
 		return true
 	}
@@ -135,43 +134,11 @@ func (o *RoutesV3FieldStateResponse) HasLastSeen() bool {
 }
 
 // SetLastSeen gets a reference to the given int32 and assigns it to the LastSeen field.
-func (o *RoutesV3FieldStateResponse) SetLastSeen(v int32) {
+func (o *ModelsTypeState) SetLastSeen(v int32) {
 	o.LastSeen = &v
 }
 
-// GetTypes returns the Types field value if set, zero value otherwise.
-func (o *RoutesV3FieldStateResponse) GetTypes() []string {
-	if o == nil || IsNil(o.Types) {
-		var ret []string
-		return ret
-	}
-	return o.Types
-}
-
-// GetTypesOk returns a tuple with the Types field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV3FieldStateResponse) GetTypesOk() ([]string, bool) {
-	if o == nil || IsNil(o.Types) {
-		return nil, false
-	}
-	return o.Types, true
-}
-
-// HasTypes returns a boolean if a field has been set.
-func (o *RoutesV3FieldStateResponse) HasTypes() bool {
-	if o != nil && !IsNil(o.Types) {
-		return true
-	}
-
-	return false
-}
-
-// SetTypes gets a reference to the given []string and assigns it to the Types field.
-func (o *RoutesV3FieldStateResponse) SetTypes(v []string) {
-	o.Types = v
-}
-
-func (o RoutesV3FieldStateResponse) MarshalJSON() ([]byte, error) {
+func (o ModelsTypeState) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -179,7 +146,7 @@ func (o RoutesV3FieldStateResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o RoutesV3FieldStateResponse) ToMap() (map[string]interface{}, error) {
+func (o ModelsTypeState) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
@@ -190,44 +157,41 @@ func (o RoutesV3FieldStateResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastSeen) {
 		toSerialize["last_seen"] = o.LastSeen
 	}
-	if !IsNil(o.Types) {
-		toSerialize["types"] = o.Types
-	}
 	return toSerialize, nil
 }
 
-type NullableRoutesV3FieldStateResponse struct {
-	value *RoutesV3FieldStateResponse
+type NullableModelsTypeState struct {
+	value *ModelsTypeState
 	isSet bool
 }
 
-func (v NullableRoutesV3FieldStateResponse) Get() *RoutesV3FieldStateResponse {
+func (v NullableModelsTypeState) Get() *ModelsTypeState {
 	return v.value
 }
 
-func (v *NullableRoutesV3FieldStateResponse) Set(val *RoutesV3FieldStateResponse) {
+func (v *NullableModelsTypeState) Set(val *ModelsTypeState) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableRoutesV3FieldStateResponse) IsSet() bool {
+func (v NullableModelsTypeState) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableRoutesV3FieldStateResponse) Unset() {
+func (v *NullableModelsTypeState) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableRoutesV3FieldStateResponse(val *RoutesV3FieldStateResponse) *NullableRoutesV3FieldStateResponse {
-	return &NullableRoutesV3FieldStateResponse{value: val, isSet: true}
+func NewNullableModelsTypeState(val *ModelsTypeState) *NullableModelsTypeState {
+	return &NullableModelsTypeState{value: val, isSet: true}
 }
 
-func (v NullableRoutesV3FieldStateResponse) MarshalJSON() ([]byte, error) {
+func (v NullableModelsTypeState) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableRoutesV3FieldStateResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableModelsTypeState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

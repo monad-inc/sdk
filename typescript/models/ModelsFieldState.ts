@@ -10,13 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { ModelsTypeState } from '../models/ModelsTypeState';
 import { HttpFile } from '../http/http';
 
-export class RoutesV3FieldStateResponse {
-    'count'?: number;
-    'firstSeen'?: number;
-    'lastSeen'?: number;
-    'types'?: Array<string>;
+export class ModelsFieldState {
+    'types'?: { [key: string]: ModelsTypeState; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,32 +22,14 @@ export class RoutesV3FieldStateResponse {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "count",
-            "baseName": "count",
-            "type": "number",
-            "format": ""
-        },
-        {
-            "name": "firstSeen",
-            "baseName": "first_seen",
-            "type": "number",
-            "format": ""
-        },
-        {
-            "name": "lastSeen",
-            "baseName": "last_seen",
-            "type": "number",
-            "format": ""
-        },
-        {
             "name": "types",
             "baseName": "types",
-            "type": "Array<string>",
+            "type": "{ [key: string]: ModelsTypeState; }",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return RoutesV3FieldStateResponse.attributeTypeMap;
+        return ModelsFieldState.attributeTypeMap;
     }
 
     public constructor() {

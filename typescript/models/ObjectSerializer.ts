@@ -262,6 +262,7 @@ export * from '../models/ModelsEnrichment';
 export * from '../models/ModelsEnrichmentConfig';
 export * from '../models/ModelsEnrichmentList';
 export * from '../models/ModelsFeatureFlag';
+export * from '../models/ModelsFieldState';
 export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputConnectorCategory';
@@ -341,6 +342,7 @@ export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsTransformsRepositoryList';
 export * from '../models/ModelsTransformsRepositoryTransform';
+export * from '../models/ModelsTypeState';
 export * from '../models/ModelsUser';
 export * from '../models/ModelsUserAuthProvider';
 export * from '../models/ModelsUserOrganization';
@@ -476,7 +478,6 @@ export * from '../models/RoutesV3CreateSessionRequest';
 export * from '../models/RoutesV3CreateSessionResponse';
 export * from '../models/RoutesV3EnrichmentSandboxRequest';
 export * from '../models/RoutesV3EnrichmentSandboxResponse';
-export * from '../models/RoutesV3FieldStateResponse';
 export * from '../models/RoutesV3FieldUpdation';
 export * from '../models/RoutesV3GetEnrichmentResponse';
 export * from '../models/RoutesV3GetFeatureFlagResponse';
@@ -892,6 +893,7 @@ import { ModelsEnrichment              } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
+import { ModelsFieldState } from '../models/ModelsFieldState';
 import { ModelsInput              } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
@@ -971,6 +973,7 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
+import { ModelsTypeState } from '../models/ModelsTypeState';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserOrganization } from '../models/ModelsUserOrganization';
@@ -1106,7 +1109,6 @@ import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionReq
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
-import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse               } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -1599,6 +1601,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsEnrichmentConfig": ModelsEnrichmentConfig,
     "ModelsEnrichmentList": ModelsEnrichmentList,
     "ModelsFeatureFlag": ModelsFeatureFlag,
+    "ModelsFieldState": ModelsFieldState,
     "ModelsInput": ModelsInput,
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,
@@ -1668,6 +1671,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsTransformsRepositoryList": ModelsTransformsRepositoryList,
     "ModelsTransformsRepositoryTransform": ModelsTransformsRepositoryTransform,
+    "ModelsTypeState": ModelsTypeState,
     "ModelsUser": ModelsUser,
     "ModelsUserAuthProvider": ModelsUserAuthProvider,
     "ModelsUserOrganization": ModelsUserOrganization,
@@ -1801,7 +1805,6 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3CreateSessionResponse": RoutesV3CreateSessionResponse,
     "RoutesV3EnrichmentSandboxRequest": RoutesV3EnrichmentSandboxRequest,
     "RoutesV3EnrichmentSandboxResponse": RoutesV3EnrichmentSandboxResponse,
-    "RoutesV3FieldStateResponse": RoutesV3FieldStateResponse,
     "RoutesV3FieldUpdation": RoutesV3FieldUpdation,
     "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
     "RoutesV3GetFeatureFlagResponse": RoutesV3GetFeatureFlagResponse,

@@ -18,21 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_type_state import ModelsTypeState
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class RoutesV3FieldStateResponse(BaseModel):
+class ModelsFieldState(BaseModel):
     """
-    RoutesV3FieldStateResponse
+    ModelsFieldState
     """ # noqa: E501
-    count: Optional[StrictInt] = None
-    first_seen: Optional[StrictInt] = None
-    last_seen: Optional[StrictInt] = None
-    types: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["count", "first_seen", "last_seen", "types"]
+    types: Optional[Dict[str, ModelsTypeState]] = None
+    __properties: ClassVar[List[str]] = ["types"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -52,7 +50,7 @@ class RoutesV3FieldStateResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RoutesV3FieldStateResponse from a JSON string"""
+        """Create an instance of ModelsFieldState from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,11 +71,18 @@ class RoutesV3FieldStateResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each value in types (dict)
+        _field_dict = {}
+        if self.types:
+            for _key_types in self.types:
+                if self.types[_key_types]:
+                    _field_dict[_key_types] = self.types[_key_types].to_dict()
+            _dict['types'] = _field_dict
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RoutesV3FieldStateResponse from a dict"""
+        """Create an instance of ModelsFieldState from a dict"""
         if obj is None:
             return None
 
@@ -85,10 +90,12 @@ class RoutesV3FieldStateResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "count": obj.get("count"),
-            "first_seen": obj.get("first_seen"),
-            "last_seen": obj.get("last_seen"),
-            "types": obj.get("types")
+            "types": dict(
+                (_k, ModelsTypeState.from_dict(_v))
+                for _k, _v in obj["types"].items()
+            )
+            if obj.get("types") is not None
+            else None
         })
         return _obj
 

@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_v3_field_state_response import RoutesV3FieldStateResponse
+from monad.models.models_field_state import ModelsFieldState
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,7 +33,7 @@ class RoutesV3SchemaStateResponse(BaseModel):
     learning_start: Optional[StrictStr] = None
     mode: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
-    var_schema: Optional[Dict[str, RoutesV3FieldStateResponse]] = Field(default=None, alias="schema")
+    var_schema: Optional[Dict[str, ModelsFieldState]] = Field(default=None, alias="schema")
     total_records_observed: Optional[StrictInt] = None
     updated_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["edge_id", "learning_start", "mode", "pipeline_id", "schema", "total_records_observed", "updated_at"]
@@ -101,7 +101,7 @@ class RoutesV3SchemaStateResponse(BaseModel):
             "mode": obj.get("mode"),
             "pipeline_id": obj.get("pipeline_id"),
             "schema": dict(
-                (_k, RoutesV3FieldStateResponse.from_dict(_v))
+                (_k, ModelsFieldState.from_dict(_v))
                 for _k, _v in obj["schema"].items()
             )
             if obj.get("schema") is not None

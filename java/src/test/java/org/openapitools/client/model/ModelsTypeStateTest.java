@@ -19,24 +19,22 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV3FieldStateResponse
+ * Model tests for ModelsTypeState
  */
-public class RoutesV3FieldStateResponseTest {
-    private final RoutesV3FieldStateResponse model = new RoutesV3FieldStateResponse();
+public class ModelsTypeStateTest {
+    private final ModelsTypeState model = new ModelsTypeState();
 
     /**
-     * Model tests for RoutesV3FieldStateResponse
+     * Model tests for ModelsTypeState
      */
     @Test
-    public void testRoutesV3FieldStateResponse() {
-        // TODO: test RoutesV3FieldStateResponse
+    public void testModelsTypeState() {
+        // TODO: test ModelsTypeState
     }
 
     /**
@@ -61,14 +59,6 @@ public class RoutesV3FieldStateResponseTest {
     @Test
     public void lastSeenTest() {
         // TODO: test lastSeen
-    }
-
-    /**
-     * Test the property 'types'
-     */
-    @Test
-    public void typesTest() {
-        // TODO: test types
     }
 
 }

@@ -24,7 +24,7 @@ type RoutesV3SchemaStateResponse struct {
 	LearningStart *string `json:"learning_start,omitempty"`
 	Mode *string `json:"mode,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
-	Schema map[string]RoutesV3FieldStateResponse `json:"schema,omitempty"`
+	Schema map[string]ModelsFieldState `json:"schema,omitempty"`
 	TotalRecordsObserved *int32 `json:"total_records_observed,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -175,9 +175,9 @@ func (o *RoutesV3SchemaStateResponse) SetPipelineId(v string) {
 }
 
 // GetSchema returns the Schema field value if set, zero value otherwise.
-func (o *RoutesV3SchemaStateResponse) GetSchema() map[string]RoutesV3FieldStateResponse {
+func (o *RoutesV3SchemaStateResponse) GetSchema() map[string]ModelsFieldState {
 	if o == nil || IsNil(o.Schema) {
-		var ret map[string]RoutesV3FieldStateResponse
+		var ret map[string]ModelsFieldState
 		return ret
 	}
 	return o.Schema
@@ -185,9 +185,9 @@ func (o *RoutesV3SchemaStateResponse) GetSchema() map[string]RoutesV3FieldStateR
 
 // GetSchemaOk returns a tuple with the Schema field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3SchemaStateResponse) GetSchemaOk() (map[string]RoutesV3FieldStateResponse, bool) {
+func (o *RoutesV3SchemaStateResponse) GetSchemaOk() (map[string]ModelsFieldState, bool) {
 	if o == nil || IsNil(o.Schema) {
-		return map[string]RoutesV3FieldStateResponse{}, false
+		return map[string]ModelsFieldState{}, false
 	}
 	return o.Schema, true
 }
@@ -201,8 +201,8 @@ func (o *RoutesV3SchemaStateResponse) HasSchema() bool {
 	return false
 }
 
-// SetSchema gets a reference to the given map[string]RoutesV3FieldStateResponse and assigns it to the Schema field.
-func (o *RoutesV3SchemaStateResponse) SetSchema(v map[string]RoutesV3FieldStateResponse) {
+// SetSchema gets a reference to the given map[string]ModelsFieldState and assigns it to the Schema field.
+func (o *RoutesV3SchemaStateResponse) SetSchema(v map[string]ModelsFieldState) {
 	o.Schema = v
 }
 

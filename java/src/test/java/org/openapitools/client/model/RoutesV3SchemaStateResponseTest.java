@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.client.model.RoutesV3FieldStateResponse;
+import org.openapitools.client.model.ModelsFieldState;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

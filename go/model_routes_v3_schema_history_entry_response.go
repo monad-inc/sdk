@@ -24,7 +24,7 @@ type RoutesV3SchemaHistoryEntryResponse struct {
 	EdgeId *string `json:"edge_id,omitempty"`
 	EventTags []string `json:"event_tags,omitempty"`
 	Id *string `json:"id,omitempty"`
-	Schema map[string]RoutesV3FieldStateResponse `json:"schema,omitempty"`
+	Schema map[string]ModelsFieldState `json:"schema,omitempty"`
 }
 
 // NewRoutesV3SchemaHistoryEntryResponse instantiates a new RoutesV3SchemaHistoryEntryResponse object
@@ -173,9 +173,9 @@ func (o *RoutesV3SchemaHistoryEntryResponse) SetId(v string) {
 }
 
 // GetSchema returns the Schema field value if set, zero value otherwise.
-func (o *RoutesV3SchemaHistoryEntryResponse) GetSchema() map[string]RoutesV3FieldStateResponse {
+func (o *RoutesV3SchemaHistoryEntryResponse) GetSchema() map[string]ModelsFieldState {
 	if o == nil || IsNil(o.Schema) {
-		var ret map[string]RoutesV3FieldStateResponse
+		var ret map[string]ModelsFieldState
 		return ret
 	}
 	return o.Schema
@@ -183,9 +183,9 @@ func (o *RoutesV3SchemaHistoryEntryResponse) GetSchema() map[string]RoutesV3Fiel
 
 // GetSchemaOk returns a tuple with the Schema field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3SchemaHistoryEntryResponse) GetSchemaOk() (map[string]RoutesV3FieldStateResponse, bool) {
+func (o *RoutesV3SchemaHistoryEntryResponse) GetSchemaOk() (map[string]ModelsFieldState, bool) {
 	if o == nil || IsNil(o.Schema) {
-		return map[string]RoutesV3FieldStateResponse{}, false
+		return map[string]ModelsFieldState{}, false
 	}
 	return o.Schema, true
 }
@@ -199,8 +199,8 @@ func (o *RoutesV3SchemaHistoryEntryResponse) HasSchema() bool {
 	return false
 }
 
-// SetSchema gets a reference to the given map[string]RoutesV3FieldStateResponse and assigns it to the Schema field.
-func (o *RoutesV3SchemaHistoryEntryResponse) SetSchema(v map[string]RoutesV3FieldStateResponse) {
+// SetSchema gets a reference to the given map[string]ModelsFieldState and assigns it to the Schema field.
+func (o *RoutesV3SchemaHistoryEntryResponse) SetSchema(v map[string]ModelsFieldState) {
 	o.Schema = v
 }
 

@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.routes_v3_schema_state_response import RoutesV3SchemaStateResponse
+from monad.models.models_field_state import ModelsFieldState
 
-class TestRoutesV3SchemaStateResponse(unittest.TestCase):
-    """RoutesV3SchemaStateResponse unit test stubs"""
+class TestModelsFieldState(unittest.TestCase):
+    """ModelsFieldState unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,39 +26,30 @@ class TestRoutesV3SchemaStateResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RoutesV3SchemaStateResponse:
-        """Test RoutesV3SchemaStateResponse
+    def make_instance(self, include_optional) -> ModelsFieldState:
+        """Test ModelsFieldState
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RoutesV3SchemaStateResponse`
+        # uncomment below to create an instance of `ModelsFieldState`
         """
-        model = RoutesV3SchemaStateResponse()
+        model = ModelsFieldState()
         if include_optional:
-            return RoutesV3SchemaStateResponse(
-                edge_id = '',
-                learning_start = '',
-                mode = '',
-                pipeline_id = '',
-                var_schema = {
-                    'key' : monad.models.models/field_state.models.FieldState(
-                        types = {
-                            'key' : monad.models.models/type_state.models.TypeState(
-                                count = 56, 
-                                first_seen = 56, 
-                                last_seen = 56, )
-                            }, )
-                    },
-                total_records_observed = 56,
-                updated_at = ''
+            return ModelsFieldState(
+                types = {
+                    'key' : monad.models.models/type_state.models.TypeState(
+                        count = 56, 
+                        first_seen = 56, 
+                        last_seen = 56, )
+                    }
             )
         else:
-            return RoutesV3SchemaStateResponse(
+            return ModelsFieldState(
         )
         """
 
-    def testRoutesV3SchemaStateResponse(self):
-        """Test RoutesV3SchemaStateResponse"""
+    def testModelsFieldState(self):
+        """Test ModelsFieldState"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { RoutesV3FieldStateResponse } from '../models/RoutesV3FieldStateResponse';
+import { ModelsFieldState } from '../models/ModelsFieldState';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3SchemaHistoryEntryResponse {
@@ -18,7 +18,7 @@ export class RoutesV3SchemaHistoryEntryResponse {
     'edgeId'?: string;
     'eventTags'?: Array<string>;
     'id'?: string;
-    'schema'?: { [key: string]: RoutesV3FieldStateResponse; };
+    'schema'?: { [key: string]: ModelsFieldState; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -52,7 +52,7 @@ export class RoutesV3SchemaHistoryEntryResponse {
         {
             "name": "schema",
             "baseName": "schema",
-            "type": "{ [key: string]: RoutesV3FieldStateResponse; }",
+            "type": "{ [key: string]: ModelsFieldState; }",
             "format": ""
         }    ];
 

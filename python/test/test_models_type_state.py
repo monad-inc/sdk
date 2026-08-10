@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.routes_v3_field_state_response import RoutesV3FieldStateResponse
+from monad.models.models_type_state import ModelsTypeState
 
-class TestRoutesV3FieldStateResponse(unittest.TestCase):
-    """RoutesV3FieldStateResponse unit test stubs"""
+class TestModelsTypeState(unittest.TestCase):
+    """ModelsTypeState unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,30 +26,27 @@ class TestRoutesV3FieldStateResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RoutesV3FieldStateResponse:
-        """Test RoutesV3FieldStateResponse
+    def make_instance(self, include_optional) -> ModelsTypeState:
+        """Test ModelsTypeState
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RoutesV3FieldStateResponse`
+        # uncomment below to create an instance of `ModelsTypeState`
         """
-        model = RoutesV3FieldStateResponse()
+        model = ModelsTypeState()
         if include_optional:
-            return RoutesV3FieldStateResponse(
+            return ModelsTypeState(
                 count = 56,
                 first_seen = 56,
-                last_seen = 56,
-                types = [
-                    ''
-                    ]
+                last_seen = 56
             )
         else:
-            return RoutesV3FieldStateResponse(
+            return ModelsTypeState(
         )
         """
 
-    def testRoutesV3FieldStateResponse(self):
-        """Test RoutesV3FieldStateResponse"""
+    def testModelsTypeState(self):
+        """Test ModelsTypeState"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

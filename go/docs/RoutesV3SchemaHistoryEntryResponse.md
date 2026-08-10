@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **EdgeId** | Pointer to **string** |  | [optional] 
 **EventTags** | Pointer to **[]string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**Schema** | Pointer to [**map[string]RoutesV3FieldStateResponse**](RoutesV3FieldStateResponse.md) |  | [optional] 
+**Schema** | Pointer to [**map[string]ModelsFieldState**](ModelsFieldState.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetSchema
 
-`func (o *RoutesV3SchemaHistoryEntryResponse) GetSchema() map[string]RoutesV3FieldStateResponse`
+`func (o *RoutesV3SchemaHistoryEntryResponse) GetSchema() map[string]ModelsFieldState`
 
 GetSchema returns the Schema field if non-nil, zero value otherwise.
 
 ### GetSchemaOk
 
-`func (o *RoutesV3SchemaHistoryEntryResponse) GetSchemaOk() (*map[string]RoutesV3FieldStateResponse, bool)`
+`func (o *RoutesV3SchemaHistoryEntryResponse) GetSchemaOk() (*map[string]ModelsFieldState, bool)`
 
 GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchema
 
-`func (o *RoutesV3SchemaHistoryEntryResponse) SetSchema(v map[string]RoutesV3FieldStateResponse)`
+`func (o *RoutesV3SchemaHistoryEntryResponse) SetSchema(v map[string]ModelsFieldState)`
 
 SetSchema sets Schema field to given value.
 

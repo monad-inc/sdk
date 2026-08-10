@@ -19,67 +19,33 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import org.openapitools.client.model.ModelsFieldState;
+import org.openapitools.client.model.ModelsTypeState;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV3SchemaHistoryEntryResponse
+ * Model tests for ModelsFieldState
  */
-public class RoutesV3SchemaHistoryEntryResponseTest {
-    private final RoutesV3SchemaHistoryEntryResponse model = new RoutesV3SchemaHistoryEntryResponse();
+public class ModelsFieldStateTest {
+    private final ModelsFieldState model = new ModelsFieldState();
 
     /**
-     * Model tests for RoutesV3SchemaHistoryEntryResponse
+     * Model tests for ModelsFieldState
      */
     @Test
-    public void testRoutesV3SchemaHistoryEntryResponse() {
-        // TODO: test RoutesV3SchemaHistoryEntryResponse
+    public void testModelsFieldState() {
+        // TODO: test ModelsFieldState
     }
 
     /**
-     * Test the property 'createdAt'
+     * Test the property 'types'
      */
     @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'edgeId'
-     */
-    @Test
-    public void edgeIdTest() {
-        // TODO: test edgeId
-    }
-
-    /**
-     * Test the property 'eventTags'
-     */
-    @Test
-    public void eventTagsTest() {
-        // TODO: test eventTags
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'schema'
-     */
-    @Test
-    public void schemaTest() {
-        // TODO: test schema
+    public void typesTest() {
+        // TODO: test types
     }
 
 }

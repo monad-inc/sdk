@@ -11,7 +11,7 @@
 |**learningStart** | **String** |  |  [optional] |
 |**mode** | **String** |  |  [optional] |
 |**pipelineId** | **String** |  |  [optional] |
-|**schema** | [**Map&lt;String, RoutesV3FieldStateResponse&gt;**](RoutesV3FieldStateResponse.md) |  |  [optional] |
+|**schema** | [**Map&lt;String, ModelsFieldState&gt;**](ModelsFieldState.md) |  |  [optional] |
 |**totalRecordsObserved** | **Integer** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 

@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.client.model.RoutesV3FieldStateResponse;
+import org.openapitools.client.model.ModelsFieldState;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -76,7 +76,7 @@ public class RoutesV3SchemaStateResponse {
   public static final String SERIALIZED_NAME_SCHEMA = "schema";
   @SerializedName(SERIALIZED_NAME_SCHEMA)
   @javax.annotation.Nullable
-  private Map<String, RoutesV3FieldStateResponse> schema = new HashMap<>();
+  private Map<String, ModelsFieldState> schema = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TOTAL_RECORDS_OBSERVED = "total_records_observed";
   @SerializedName(SERIALIZED_NAME_TOTAL_RECORDS_OBSERVED)
@@ -167,12 +167,12 @@ public class RoutesV3SchemaStateResponse {
   }
 
 
-  public RoutesV3SchemaStateResponse schema(@javax.annotation.Nullable Map<String, RoutesV3FieldStateResponse> schema) {
+  public RoutesV3SchemaStateResponse schema(@javax.annotation.Nullable Map<String, ModelsFieldState> schema) {
     this.schema = schema;
     return this;
   }
 
-  public RoutesV3SchemaStateResponse putSchemaItem(String key, RoutesV3FieldStateResponse schemaItem) {
+  public RoutesV3SchemaStateResponse putSchemaItem(String key, ModelsFieldState schemaItem) {
     if (this.schema == null) {
       this.schema = new HashMap<>();
     }
@@ -185,11 +185,11 @@ public class RoutesV3SchemaStateResponse {
    * @return schema
    */
   @javax.annotation.Nullable
-  public Map<String, RoutesV3FieldStateResponse> getSchema() {
+  public Map<String, ModelsFieldState> getSchema() {
     return schema;
   }
 
-  public void setSchema(@javax.annotation.Nullable Map<String, RoutesV3FieldStateResponse> schema) {
+  public void setSchema(@javax.annotation.Nullable Map<String, ModelsFieldState> schema) {
     this.schema = schema;
   }
 

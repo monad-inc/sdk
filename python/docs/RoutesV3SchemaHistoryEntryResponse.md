@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **edge_id** | **str** |  | [optional] 
 **event_tags** | **List[str]** |  | [optional] 
 **id** | **str** |  | [optional] 
-**var_schema** | [**Dict[str, RoutesV3FieldStateResponse]**](RoutesV3FieldStateResponse.md) |  | [optional] 
+**var_schema** | [**Dict[str, ModelsFieldState]**](ModelsFieldState.md) |  | [optional] 
 
 ## Example
 
